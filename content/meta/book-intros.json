@@ -2666,7 +2666,60 @@
         "caption": "The Nativity",
         "credit": "Robert Campin · Public domain"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To present Jesus as the promised Messiah and King of Israel, the fulfillment of OT prophecy, who establishes the kingdom of heaven. Matthew bridges the Testaments, showing Jewish readers that Jesus is the Son of David, Son of Abraham.",
+    "key_verses": [
+      {
+        "ref": "Matt 1:1",
+        "text": "This is the genealogy of Jesus the Messiah the son of David, the son of Abraham.",
+        "why": "Opening thesis—Jesus fulfills Davidic and Abrahamic promises."
+      },
+      {
+        "ref": "Matt 5:17",
+        "text": "Do not think that I have come to abolish the Law or the Prophets; I have not come to abolish them but to fulfill them.",
+        "why": "Jesus as fulfillment, not replacement, of the OT."
+      },
+      {
+        "ref": "Matt 28:18-20",
+        "text": "Then Jesus came to them and said, \"All authority in heaven and on earth has been given to me. Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you.\"",
+        "why": "The Great Commission—Jesus' universal authority and mission."
+      }
+    ],
+    "christ_in": "Matthew presents Jesus as King. The genealogy traces his royal lineage through David. The Magi seek one 'born king of the Jews.' The Sermon on the Mount reveals the King's ethic. Parables describe 'the kingdom of heaven.' Jesus enters Jerusalem as king and is crucified as 'King of the Jews.' The resurrection confirms his reign.",
+    "outline": [
+      {
+        "label": "Birth & Preparation",
+        "range": "1-4",
+        "summary": "Genealogy, infancy, baptism, temptation"
+      },
+      {
+        "label": "Galilean Ministry",
+        "range": "5-18",
+        "summary": "Sermon, miracles, parables, disciples"
+      },
+      {
+        "label": "Journey to Jerusalem",
+        "range": "19-25",
+        "summary": "Teaching, conflicts, Olivet Discourse"
+      },
+      {
+        "label": "Passion & Resurrection",
+        "range": "26-28",
+        "summary": "Last Supper, cross, empty tomb, commission"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Matthew (Levi)",
+      "date": "c. AD 60-70",
+      "chapters": 28,
+      "genre": "Gospel / Theological Biography",
+      "key_theme": "Jesus is the Messianic King who fulfills Scripture",
+      "key_word": "basileia (kingdom)"
+    }
   },
   {
     "book": "mark",
@@ -2783,7 +2836,60 @@
         "caption": "The darkness at the crucifixion",
         "credit": "Gustave Doré · Public domain"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To present Jesus as the Suffering Servant and Son of God who came not to be served but to serve and give his life as a ransom. Mark emphasizes Jesus' actions over his teachings, moving rapidly ('immediately') toward the cross.",
+    "key_verses": [
+      {
+        "ref": "Mark 1:1",
+        "text": "The beginning of the good news about Jesus the Messiah, the Son of God.",
+        "why": "Mark's thesis—Jesus is Messiah and Son of God."
+      },
+      {
+        "ref": "Mark 10:45",
+        "text": "For even the Son of Man did not come to be served, but to serve, and to give his life as a ransom for many.",
+        "why": "The theological center—Jesus' purpose: service and sacrifice."
+      },
+      {
+        "ref": "Mark 15:39",
+        "text": "And when the centurion, who stood there in front of Jesus, saw how he died, he said, \"Surely this man was the Son of God!\"",
+        "why": "The crucifixion reveals Jesus' identity to a Gentile."
+      }
+    ],
+    "christ_in": "Mark presents Jesus as the Suffering Servant (Isa 53). He silences demons and charges people to silence about his identity (the 'Messianic Secret') until the cross reveals what kind of Messiah he is. The passion narrative dominates the book—Mark has been called 'a passion narrative with an extended introduction.'",
+    "outline": [
+      {
+        "label": "Galilean Ministry",
+        "range": "1-8a",
+        "summary": "Baptism, miracles, opposition, feeding"
+      },
+      {
+        "label": "Journey to Jerusalem",
+        "range": "8b-10",
+        "summary": "Peter's confession, passion predictions"
+      },
+      {
+        "label": "Jerusalem Ministry",
+        "range": "11-13",
+        "summary": "Entry, temple, Olivet Discourse"
+      },
+      {
+        "label": "Passion & Resurrection",
+        "range": "14-16",
+        "summary": "Arrest, trial, cross, empty tomb"
+      }
+    ],
+    "at_a_glance": {
+      "author": "John Mark",
+      "date": "c. AD 50-65",
+      "chapters": 16,
+      "genre": "Gospel / Theological Biography",
+      "key_theme": "Jesus the Suffering Servant gives his life as ransom",
+      "key_word": "euthys (immediately)"
+    }
   },
   {
     "book": "luke",
@@ -2902,7 +3008,60 @@
         "caption": "Return of the Prodigal Son",
         "credit": "Rembrandt · Public domain"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To provide an orderly, historically grounded account of Jesus' life, emphasizing his compassion for outsiders—the poor, women, Samaritans, Gentiles, sinners. Luke presents Jesus as the Savior of all humanity.",
+    "key_verses": [
+      {
+        "ref": "Luke 1:3-4",
+        "text": "With this in mind, since I myself have carefully investigated everything from the beginning, I too decided to write an orderly account for you, most excellent Theophilus, so that you may know the certainty of the things you have been taught.",
+        "why": "Luke's historical method and pastoral purpose."
+      },
+      {
+        "ref": "Luke 4:18-19",
+        "text": "\"The Spirit of the Lord is on me, because he has anointed me to proclaim good news to the poor. He has sent me to proclaim freedom for the prisoners and recovery of sight for the blind, to set the oppressed free, to proclaim the year of the Lord's favor.\"",
+        "why": "Jesus' mission statement—Isaiah 61 fulfilled."
+      },
+      {
+        "ref": "Luke 19:10",
+        "text": "For the Son of Man came to seek and to save the lost.",
+        "why": "Summary of Jesus' mission."
+      }
+    ],
+    "christ_in": "Luke presents Jesus as the compassionate Savior for all. His genealogy traces back to Adam, not just Abraham. Unique parables (Good Samaritan, Prodigal Son) reveal divine mercy. Jesus welcomes sinners, heals women, includes Gentiles. The resurrection journey to Emmaus shows Christ opening Scripture.",
+    "outline": [
+      {
+        "label": "Prologue & Birth",
+        "range": "1-2",
+        "summary": "Annunciation, Magnificat, manger"
+      },
+      {
+        "label": "Preparation & Galilean Ministry",
+        "range": "3-9",
+        "summary": "Baptism, Nazareth, miracles, Twelve sent"
+      },
+      {
+        "label": "Journey to Jerusalem",
+        "range": "9-19",
+        "summary": "Travel narrative, parables, teaching"
+      },
+      {
+        "label": "Jerusalem, Passion, Resurrection",
+        "range": "19-24",
+        "summary": "Temple, Last Supper, cross, Emmaus, ascension"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Luke (physician, Paul's companion)",
+      "date": "c. AD 60-80",
+      "chapters": 24,
+      "genre": "Gospel / Historical Monograph",
+      "key_theme": "Jesus is the Savior of all people—especially outsiders",
+      "key_word": "soteria (salvation)"
+    }
   },
   {
     "book": "john",
@@ -3016,7 +3175,65 @@
         "caption": "Papyrus 46 — early New Testament manuscript",
         "credit": "Public domain, via Wikimedia Commons"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To lead readers to believe that Jesus is the Christ, the Son of God, and through believing to have life in his name. John presents Jesus as the eternal Word made flesh, God incarnate, who reveals the Father.",
+    "key_verses": [
+      {
+        "ref": "John 1:14",
+        "text": "The Word became flesh and made his dwelling among us. We have seen his glory, the glory of the one and only Son, who came from the Father, full of grace and truth.",
+        "why": "The incarnation—God dwelling among humanity."
+      },
+      {
+        "ref": "John 3:16",
+        "text": "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
+        "why": "The gospel in miniature."
+      },
+      {
+        "ref": "John 14:6",
+        "text": "Jesus answered, \"I am the way and the truth and the life. No one comes to the Father except through me.\"",
+        "why": "Jesus as the exclusive path to God."
+      },
+      {
+        "ref": "John 20:31",
+        "text": "But these are written that you may believe that Jesus is the Messiah, the Son of God, and that by believing you may have life in his name.",
+        "why": "John's stated purpose."
+      }
+    ],
+    "christ_in": "John's Christology is the highest. The prologue declares Jesus is the eternal Logos, God himself. Seven 'I AM' statements reveal his divine identity. Seven signs demonstrate his glory. The passion shows Jesus in sovereign control. Thomas's confession—'My Lord and my God!'—is the climax.",
+    "outline": [
+      {
+        "label": "Prologue",
+        "range": "1:1-18",
+        "summary": "The Word made flesh"
+      },
+      {
+        "label": "Book of Signs",
+        "range": "1-12",
+        "summary": "Seven signs, 'I AM' statements"
+      },
+      {
+        "label": "Book of Glory",
+        "range": "13-20",
+        "summary": "Upper room, passion, resurrection"
+      },
+      {
+        "label": "Epilogue",
+        "range": "21",
+        "summary": "Galilee appearance, Peter restored"
+      }
+    ],
+    "at_a_glance": {
+      "author": "John (the beloved disciple)",
+      "date": "c. AD 85-95",
+      "chapters": 21,
+      "genre": "Gospel / Theological Witness",
+      "key_theme": "Jesus is God's Son—believe and have life",
+      "key_word": "pisteuo (believe)"
+    }
   },
   {
     "book": "acts",
@@ -3142,7 +3359,60 @@
         "caption": "The Apostle Paul",
         "credit": "Rembrandt · Public domain"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To record the Spirit-empowered expansion of the church from Jerusalem to Rome, showing how the gospel crossed ethnic, geographic, and cultural boundaries to become a worldwide movement—despite all opposition.",
+    "key_verses": [
+      {
+        "ref": "Acts 1:8",
+        "text": "But you will receive power when the Holy Spirit comes on you; and you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth.",
+        "why": "The book's outline—gospel expansion in widening circles."
+      },
+      {
+        "ref": "Acts 2:42",
+        "text": "They devoted themselves to the apostles' teaching and to fellowship, to the breaking of bread and to prayer.",
+        "why": "The marks of the Spirit-formed community."
+      },
+      {
+        "ref": "Acts 4:12",
+        "text": "Salvation is found in no one else, for there is no other name under heaven given to mankind by which we must be saved.",
+        "why": "The exclusivity of salvation in Christ."
+      }
+    ],
+    "christ_in": "Though ascended, Christ remains the book's center. The Spirit is the Spirit of Jesus. Sermons proclaim Jesus as risen Lord and Messiah. Converts are baptized in Jesus' name. Paul meets the risen Christ on Damascus road. The gospel about Jesus spreads unstoppably. Acts ends with Paul preaching Jesus in Rome.",
+    "outline": [
+      {
+        "label": "Jerusalem Church",
+        "range": "1-7",
+        "summary": "Ascension, Pentecost, community, Stephen"
+      },
+      {
+        "label": "Expansion to Samaria",
+        "range": "8-12",
+        "summary": "Philip, Paul's conversion, Cornelius, Antioch"
+      },
+      {
+        "label": "Paul's Missions",
+        "range": "13-21",
+        "summary": "Three journeys, Jerusalem council"
+      },
+      {
+        "label": "Paul to Rome",
+        "range": "21-28",
+        "summary": "Arrest, trials, voyage, Rome"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Luke",
+      "date": "c. AD 62-80",
+      "chapters": 28,
+      "genre": "Historical Monograph / Sequel",
+      "key_theme": "The Spirit empowers the church to spread the gospel to all nations",
+      "key_word": "martys (witness)"
+    }
   },
   {
     "book": "ezra",
