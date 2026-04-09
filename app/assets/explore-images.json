@@ -1,0 +1,163 @@
+{
+  "GenealogyTree": {
+    "count": 282,
+    "noun": "people",
+    "contentType": "people",
+    "featured": ["jacob", "adam", "abraham", "moses", "david", "jesus"]
+  },
+  "Timeline": {
+    "count": 543,
+    "noun": "events",
+    "contentType": "timeline",
+    "featured": ["creation", "exodus", "crucifixion", "pentecost"]
+  },
+  "Map": {
+    "count": 28,
+    "noun": "journeys",
+    "contentType": "map_story",
+    "featured": ["abram-call", "exodus-plagues", "paul-journey3", "nativity"]
+  },
+  "ConceptBrowse": {
+    "count": 48,
+    "noun": "concepts",
+    "contentType": "concept",
+    "featured": ["covenant", "sacrifice-atonement", "creation", "redemption"]
+  },
+  "TopicBrowse": {
+    "count": 110,
+    "noun": "topics",
+    "contentType": "topic",
+    "featured": []
+  },
+  "ProphecyBrowse": {
+    "count": 50,
+    "noun": "chains",
+    "contentType": "prophecy",
+    "featured": []
+  },
+  "ThreadBrowse": {
+    "count": 31,
+    "noun": "threads",
+    "contentType": "thread",
+    "featured": []
+  },
+  "HarmonyBrowse": {
+    "count": 89,
+    "noun": "parallels",
+    "contentType": "harmony",
+    "featured": []
+  },
+  "WordStudyBrowse": {
+    "count": 120,
+    "noun": "studies",
+    "contentType": "word_study",
+    "featured": []
+  },
+  "Concordance": {
+    "count": null,
+    "noun": "words",
+    "contentType": null,
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Codex_Sinaiticus_open_full.jpg/400px-Codex_Sinaiticus_open_full.jpg",
+        "caption": "Codex Sinaiticus — one of the oldest complete New Testaments",
+        "credit": "Public domain, via Wikimedia Commons"
+      }
+    ]
+  },
+  "DictionaryBrowse": {
+    "count": null,
+    "noun": "terms",
+    "contentType": null,
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Aleppo_Codex_%28Deuteronomy%29.jpg/400px-Aleppo_Codex_%28Deuteronomy%29.jpg",
+        "caption": "The Aleppo Codex — the oldest near-complete Hebrew Bible manuscript",
+        "credit": "Public domain, via Wikimedia Commons"
+      }
+    ]
+  },
+  "ScholarBrowse": {
+    "count": 54,
+    "noun": "scholars",
+    "contentType": "scholar",
+    "featured": []
+  },
+  "DebateBrowse": {
+    "count": 303,
+    "noun": "debates",
+    "contentType": "debate",
+    "featured": []
+  },
+  "DifficultPassagesBrowse": {
+    "count": 53,
+    "noun": "passages",
+    "contentType": "difficult",
+    "featured": []
+  },
+  "ContentLibrary": {
+    "count": null,
+    "noun": "resources",
+    "contentType": null,
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg/400px-Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg",
+        "caption": "Gutenberg Bible — the printed word transforms biblical scholarship",
+        "credit": "Public domain, via Wikimedia Commons"
+      }
+    ]
+  },
+  "LifeTopics": {
+    "count": 40,
+    "noun": "topics",
+    "contentType": "life_topic",
+    "featured": []
+  },
+  "LensBrowse": {
+    "count": 8,
+    "noun": "lenses",
+    "contentType": null,
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Rembrandt_Harmensz._van_Rijn_079.jpg/400px-Rembrandt_Harmensz._van_Rijn_079.jpg",
+        "caption": "Rembrandt's Moses — different lenses see different truths",
+        "credit": "Rembrandt · Public domain"
+      }
+    ]
+  },
+  "ArchaeologyBrowse": {
+    "count": 14,
+    "noun": "discoveries",
+    "contentType": "archaeology",
+    "featured": ["dead-sea-scrolls", "cyrus-cylinder", "tel-dan-stele", "pilate-stone", "merneptah-stele", "shroud-of-turin"]
+  },
+  "TimeTravelBrowse": {
+    "count": null,
+    "noun": "interpretations",
+    "contentType": null,
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/St_Augustine_Portrait.jpg/400px-St_Augustine_Portrait.jpg",
+        "caption": "Augustine of Hippo — the patristic era",
+        "credit": "Public domain, via Wikimedia Commons"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Martin_Luther_by_Cranach-restoration.tif/lossy-page1-400px-Martin_Luther_by_Cranach-restoration.tif.jpg",
+        "caption": "Martin Luther — Reformation-era reading",
+        "credit": "Lucas Cranach the Elder · Public domain"
+      }
+    ]
+  },
+  "GrammarBrowse": {
+    "count": null,
+    "noun": "articles",
+    "contentType": null,
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/P46.jpg/400px-P46.jpg",
+        "caption": "Papyrus 46 — Greek verb forms preserved in ancient manuscripts",
+        "credit": "Public domain, via Wikimedia Commons"
+      }
+    ]
+  }
+}
