@@ -58,12 +58,6 @@ function PersonDetailScreen() {
 
         {eraLabel ? <BadgeChip label={eraLabel} color={eraColor} /> : null}
 
-        <View style={{ backgroundColor: '#ff0000', padding: 8, borderRadius: 4, marginVertical: 4 }}>
-          <Text style={{ color: '#fff', fontSize: 12 }}>
-            DEBUG: personId={personId}, images={contentImages.length}
-          </Text>
-        </View>
-
         {contentImages.length > 0 && <ContentImageGallery images={contentImages} />}
 
         <View style={[styles.divider, { backgroundColor: base.border }]} />
