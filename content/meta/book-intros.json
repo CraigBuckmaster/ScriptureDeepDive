@@ -2468,7 +2468,70 @@
         "caption": "Solomon's wisdom — a gift from God",
         "credit": "Julius Schnorr von Carolsfeld · Public domain"
       }
-    ]
+    ],
+    "era": "kingdom",
+    "era_span": [
+      "kingdom"
+    ],
+    "purpose": "To impart practical wisdom for skillful living—how to navigate relationships, work, speech, money, and moral choices in light of the fear of the Lord. Proverbs trains the young in covenant wisdom passed from generation to generation.",
+    "key_verses": [
+      {
+        "ref": "Prov 1:7",
+        "text": "The fear of the Lord is the beginning of knowledge, but fools despise wisdom and instruction.",
+        "why": "The motto of Proverbs—all wisdom starts with reverence for God."
+      },
+      {
+        "ref": "Prov 3:5-6",
+        "text": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.",
+        "why": "The call to whole-hearted trust over self-reliance."
+      },
+      {
+        "ref": "Prov 9:10",
+        "text": "The fear of the Lord is the beginning of wisdom, and knowledge of the Holy One is understanding.",
+        "why": "Wisdom personified—relationship with God as the source."
+      },
+      {
+        "ref": "Prov 31:30",
+        "text": "Charm is deceptive, and beauty is fleeting; but a woman who fears the Lord is to be praised.",
+        "why": "The capstone—true worth is measured by reverence for God."
+      }
+    ],
+    "christ_in": "Wisdom personified in chapters 1-9 points to Christ as the wisdom of God (1 Cor 1:24, 30). Wisdom was present at creation (8:22-31), as was Christ (John 1:1-3; Col 1:16). Wisdom calls out publicly, inviting all to life—as Christ does. The 'fear of the Lord' that anchors Proverbs finds its fullest expression in Christ who reveals the Father.",
+    "outline": [
+      {
+        "label": "Wisdom's Call",
+        "range": "1-9",
+        "summary": "Father to son, Lady Wisdom vs. Folly"
+      },
+      {
+        "label": "Solomon's Proverbs I",
+        "range": "10-22",
+        "summary": "Antithetic parallelism"
+      },
+      {
+        "label": "Words of the Wise",
+        "range": "22-24",
+        "summary": "Thirty sayings"
+      },
+      {
+        "label": "Solomon's Proverbs II",
+        "range": "25-29",
+        "summary": "Hezekiah's collection"
+      },
+      {
+        "label": "Appendices",
+        "range": "30-31",
+        "summary": "Agur, Lemuel, noble wife"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Solomon (primary), Agur, Lemuel",
+      "date": "c. 970-700 BC",
+      "chapters": 31,
+      "genre": "Wisdom Literature",
+      "key_theme": "Fear the Lord and live skillfully in every domain",
+      "key_word": "chokmah (wisdom/skill)"
+    }
   },
   {
     "book": "matthew",
@@ -3606,7 +3669,70 @@
         "caption": "The darkness at the crucifixion",
         "credit": "Gustave Doré · Public domain"
       }
-    ]
+    ],
+    "era": "patriarch",
+    "era_span": [
+      "patriarch"
+    ],
+    "purpose": "To explore the mystery of innocent suffering and vindicate God's justice through the story of a righteous man who loses everything yet clings to faith. Job confronts the inadequacy of simplistic retribution theology and reveals that relationship with God transcends material blessing.",
+    "key_verses": [
+      {
+        "ref": "Job 1:21",
+        "text": "and said: \"Naked I came from my mother's womb, and naked I will depart. The Lord gave and the Lord has taken away; may the name of the Lord be praised.\"",
+        "why": "Job's initial response—worship in loss, acknowledging God's sovereignty."
+      },
+      {
+        "ref": "Job 13:15",
+        "text": "Though he slay me, yet will I hope in him; I will surely defend my ways to his face.",
+        "why": "Job's defiant faith—trusting God even when God seems hostile."
+      },
+      {
+        "ref": "Job 19:25",
+        "text": "I know that my redeemer lives, and that in the end he will stand on the earth.",
+        "why": "Job's confession of a living Redeemer—hope beyond death."
+      },
+      {
+        "ref": "Job 42:5",
+        "text": "My ears had heard of you but now my eyes have seen you.",
+        "why": "Job's transformation—from theology about God to encounter with God."
+      }
+    ],
+    "christ_in": "Job's suffering as a righteous man foreshadows Christ's innocent suffering. His role as intercessor for his friends (42:8-10) anticipates Christ's priestly intercession. The 'Redeemer who lives' (19:25) points to Christ who conquers death. Job's restoration after suffering mirrors Christ's exaltation after the cross.",
+    "outline": [
+      {
+        "label": "Prologue",
+        "range": "1-2",
+        "summary": "Heavenly council, Job's losses"
+      },
+      {
+        "label": "Dialogue with Friends",
+        "range": "3-31",
+        "summary": "Three cycles of debate"
+      },
+      {
+        "label": "Elihu's Speeches",
+        "range": "32-37",
+        "summary": "Younger voice, preparing for God"
+      },
+      {
+        "label": "God Speaks",
+        "range": "38-41",
+        "summary": "Theophany from the whirlwind"
+      },
+      {
+        "label": "Epilogue",
+        "range": "42",
+        "summary": "Job's repentance, restoration"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Unknown",
+      "date": "Patriarchal era (c. 2000-1800 BC)",
+      "chapters": 42,
+      "genre": "Wisdom Literature / Poetic Dialogue",
+      "key_theme": "Trusting God's wisdom when life makes no sense",
+      "key_word": "go'el (redeemer/vindicator)"
+    }
   },
   {
     "book": "psalms",
@@ -3729,7 +3855,75 @@
         "caption": "The Great Isaiah Scroll — Dead Sea Scrolls",
         "credit": "Public domain, via Wikimedia Commons"
       }
-    ]
+    ],
+    "era": "kingdom",
+    "era_span": [
+      "patriarch",
+      "exodus",
+      "judges",
+      "kingdom",
+      "exile",
+      "post-exilic"
+    ],
+    "purpose": "To provide Israel with a hymnbook for worship and a school of prayer that covers the full range of human experience before God—praise, lament, thanksgiving, confession, trust, and royal hope. Psalms shapes how God's people speak to God and about God.",
+    "key_verses": [
+      {
+        "ref": "Ps 1:1-2",
+        "text": "Blessed is the one who does not walk in step with the wicked or stand in the way that sinners take or sit in the company of mockers, but whose delight is in the law of the Lord, and who meditates on his law day and night.",
+        "why": "The gateway psalm—the two ways of wisdom and folly."
+      },
+      {
+        "ref": "Ps 23:1",
+        "text": "The Lord is my shepherd, I lack nothing.",
+        "why": "The most beloved psalm—God as personal provider and protector."
+      },
+      {
+        "ref": "Ps 51:10",
+        "text": "Create in me a pure heart, O God, and renew a steadfast spirit within me.",
+        "why": "The penitential heart—David's prayer for inner transformation."
+      },
+      {
+        "ref": "Ps 119:105",
+        "text": "Your word is a lamp for my feet, a light on my path.",
+        "why": "Scripture as guide—the centerpiece of the Torah psalm."
+      }
+    ],
+    "christ_in": "The Psalms are saturated with Christ. Royal psalms (2, 45, 72, 110) proclaim the Messiah-King. Psalm 22 prophesies the crucifixion in detail. Psalm 16:10 predicts resurrection. Psalm 110 establishes Christ's priesthood. Jesus quoted Psalms from the cross and used them to interpret his mission. The NT cites Psalms more than any other OT book.",
+    "outline": [
+      {
+        "label": "Book I",
+        "range": "1-41",
+        "summary": "Davidic, personal laments and trust"
+      },
+      {
+        "label": "Book II",
+        "range": "42-72",
+        "summary": "Davidic/Korahite, national focus"
+      },
+      {
+        "label": "Book III",
+        "range": "73-89",
+        "summary": "Asaph/Korah, exile crisis"
+      },
+      {
+        "label": "Book IV",
+        "range": "90-106",
+        "summary": "Moses, YHWH reigns"
+      },
+      {
+        "label": "Book V",
+        "range": "107-150",
+        "summary": "Davidic, Hallel, closing praise"
+      }
+    ],
+    "at_a_glance": {
+      "author": "David (73), Asaph (12), Korah (11), others",
+      "date": "c. 1400-400 BC (spans 1,000 years)",
+      "chapters": 150,
+      "genre": "Poetry / Hymnody / Wisdom",
+      "key_theme": "Worship God in all circumstances through honest prayer",
+      "key_word": "tehillah (praise)"
+    }
   },
   {
     "book": "ecclesiastes",
@@ -3826,7 +4020,60 @@
         "caption": "Solomon reflects — vanity of vanities",
         "credit": "Julius Schnorr von Carolsfeld · Public domain"
       }
-    ]
+    ],
+    "era": "kingdom",
+    "era_span": [
+      "kingdom"
+    ],
+    "purpose": "To expose the futility of life 'under the sun'—apart from God—and redirect the reader to fear God and enjoy life as his gift. Ecclesiastes dismantles human pretensions to find meaning through pleasure, work, or wisdom alone, pointing instead to divine gift and final judgment.",
+    "key_verses": [
+      {
+        "ref": "Eccl 1:2",
+        "text": "\"Meaningless! Meaningless!\" says the Teacher. \"Utterly meaningless! Everything is meaningless.\"",
+        "why": "The thesis—life apart from God is vapor, fleeting, elusive."
+      },
+      {
+        "ref": "Eccl 3:11",
+        "text": "He has made everything beautiful in its time. He has also set eternity in the human heart; yet no one can fathom what God has done from beginning to end.",
+        "why": "The tension—we long for transcendence but cannot grasp it fully."
+      },
+      {
+        "ref": "Eccl 12:13",
+        "text": "Now all has been heard; here is the conclusion of the matter: Fear God and keep his commandments, for this is the duty of all mankind.",
+        "why": "The conclusion—reverence and obedience are life's true purpose."
+      }
+    ],
+    "christ_in": "Ecclesiastes' relentless exposure of futility prepares for Christ who offers abundant life (John 10:10). The search for meaning 'under the sun' ends in the One who came from above the sun. Christ gives what Qoheleth sought—wisdom that satisfies, joy that endures, purpose that transcends death. He brings eternity into time.",
+    "outline": [
+      {
+        "label": "The Problem",
+        "range": "1-2",
+        "summary": "Vapor thesis, experiments fail"
+      },
+      {
+        "label": "Life's Mysteries",
+        "range": "3-6",
+        "summary": "Time, injustice, toil, death"
+      },
+      {
+        "label": "Wisdom's Limits",
+        "range": "7-10",
+        "summary": "Better-than sayings, uncertainties"
+      },
+      {
+        "label": "Live Wisely",
+        "range": "11-12",
+        "summary": "Act now, youth, old age, conclusion"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Qoheleth ('the Teacher'—likely Solomon)",
+      "date": "c. 940-930 BC",
+      "chapters": 12,
+      "genre": "Wisdom Literature / Philosophical Reflection",
+      "key_theme": "Fear God because life apart from him is vapor",
+      "key_word": "hevel (vapor/breath/meaningless)"
+    }
   },
   {
     "book": "song_of_solomon",
@@ -3914,7 +4161,55 @@
         "caption": "Solomon — love poetry and wisdom",
         "credit": "Julius Schnorr von Carolsfeld · Public domain"
       }
-    ]
+    ],
+    "era": "kingdom",
+    "era_span": [
+      "kingdom"
+    ],
+    "purpose": "To celebrate the goodness of romantic love and sexual intimacy within covenant marriage. Song of Solomon affirms the body as God's good creation and points to the exclusive, passionate love between husband and wife as a reflection of divine love.",
+    "key_verses": [
+      {
+        "ref": "Song 2:16",
+        "text": "My beloved is mine and I am his; he browses among the lilies.",
+        "why": "Mutual belonging—the covenant formula of exclusive love."
+      },
+      {
+        "ref": "Song 8:6",
+        "text": "Place me like a seal over your heart, like a seal on your arm; for love is as strong as death, its jealousy unyielding as the grave. It burns like blazing fire, like a mighty flame.",
+        "why": "Love's power—fierce, exclusive, inextinguishable."
+      },
+      {
+        "ref": "Song 8:7",
+        "text": "Many waters cannot quench love; rivers cannot sweep it away. If one were to give all the wealth of one's house for love, it would be utterly scorned.",
+        "why": "Love's value—beyond all calculation or purchase."
+      }
+    ],
+    "christ_in": "The Song has been read allegorically as Christ's love for his bride, the Church (Eph 5:25-32). While the primary sense celebrates human marriage, the intensity of covenant love points beyond itself. The seeking, finding, and exclusive commitment between lover and beloved mirrors Christ's pursuit of his people. 'My beloved is mine and I am his' echoes the covenant formula.",
+    "outline": [
+      {
+        "label": "Courtship",
+        "range": "1-3",
+        "summary": "Longing, meeting, dreams"
+      },
+      {
+        "label": "Wedding",
+        "range": "4-5",
+        "summary": "Praise, consummation, separation"
+      },
+      {
+        "label": "Maturation",
+        "range": "6-8",
+        "summary": "Reunion, deepening, permanence"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Solomon (or about Solomon)",
+      "date": "c. 970-930 BC",
+      "chapters": 8,
+      "genre": "Love Poetry / Lyric",
+      "key_theme": "Covenant love—exclusive, passionate, enduring",
+      "key_word": "dod (beloved/lover)"
+    }
   },
   {
     "book": "isaiah",
