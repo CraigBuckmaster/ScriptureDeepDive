@@ -27,9 +27,11 @@ interface Props {
   onNavigate: (personId: string) => void;
   onChapterPress?: (chapterLink: string) => void;
   onTreePress?: (personId: string) => void;
+  onJourneyPress?: (personId: string) => void;
+  hasJourney?: boolean;
 }
 
-export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterPress, onTreePress }: Props) {
+export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterPress, onTreePress, onJourneyPress, hasJourney }: Props) {
   const { base } = useTheme();
   const [children, setChildren] = useState<Person[]>([]);
   const [spouses, setSpouses] = useState<Person[]>([]);
@@ -165,6 +167,14 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
             <TouchableOpacity onPress={() => onChapterPress(person.chapter_link!)} style={styles.actionLink}>
               <Text style={[styles.actionLinkText, { color: base.gold }]}>
                 Read in Companion Study →
+              </Text>
+            </TouchableOpacity>
+          )}
+
+          {hasJourney && onJourneyPress && (
+            <TouchableOpacity onPress={() => onJourneyPress(person.id)} style={styles.actionLink}>
+              <Text style={[styles.actionLinkText, { color: base.gold }]}>
+                Follow their journey →
               </Text>
             </TouchableOpacity>
           )}

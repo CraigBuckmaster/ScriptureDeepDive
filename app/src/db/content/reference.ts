@@ -5,7 +5,7 @@
 import { getDb } from '../database';
 import type {
   WordStudy, SynopticEntry, CrossRefThread, CrossRefPair,
-  TimelineEntry, GenealogyConfig,
+  TimelineEntry, GenealogyConfig, RedemptiveAct,
 } from '../../types';
 import type { LexiconEntry } from '../../types/lexicon';
 import type { Topic } from '../../types/topic';
@@ -165,6 +165,20 @@ export async function getEras(): Promise<EraRow[]> {
 export async function getEra(id: string): Promise<EraRow | null> {
   return getDb().getFirstAsync<EraRow>(
     'SELECT * FROM eras WHERE id = ?', [id]
+  );
+}
+
+// ── Redemptive Acts (#1118) ───────────────────────────────────────
+
+export async function getRedemptiveActs(): Promise<RedemptiveAct[]> {
+  return getDb().getAllAsync<RedemptiveAct>(
+    'SELECT * FROM redemptive_acts ORDER BY act_order'
+  );
+}
+
+export async function getRedemptiveAct(id: string): Promise<RedemptiveAct | null> {
+  return getDb().getFirstAsync<RedemptiveAct>(
+    'SELECT * FROM redemptive_acts WHERE id = ?', [id]
   );
 }
 

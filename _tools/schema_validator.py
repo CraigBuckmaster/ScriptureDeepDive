@@ -200,6 +200,55 @@ def main():
     check("People parent refs valid", len(bad_parents) == 0,
           f"{len(bad_parents)} broken: {bad_parents[:5]}")
 
+    # People journey/legacy_refs validation (#1125)
+    all_book_ids_pj = {b['id'] for b in books}
+    tl_pj = META / 'timelines.json'
+    valid_era_keys_pj = set()
+    if tl_pj.exists():
+        valid_era_keys_pj = set(json.loads(tl_pj.read_text(encoding='utf-8')).get('era_config', {}).keys())
+
+    journey_count = 0
+    for p in people_list:
+        pid = p.get('id', '?')
+
+        # journey — optional array of stage objects
+        journey = p.get('journey')
+        if journey is not None:
+            check(f"person {pid} journey is list", isinstance(journey, list))
+            if isinstance(journey, list):
+                journey_count += 1
+                for j, stage in enumerate(journey):
+                    for sk in ('stage', 'summary'):
+                        check(f"person {pid} journey [{j}] has '{sk}'",
+                              sk in stage, f"missing '{sk}'")
+
+                    # era cross-reference
+                    sera = stage.get('era')
+                    if sera and valid_era_keys_pj:
+                        check(f"person {pid} journey [{j}] era valid",
+                              sera in valid_era_keys_pj,
+                              f"'{sera}' not in era_config")
+
+                    # book_dir cross-reference
+                    sbook = stage.get('book_dir')
+                    if sbook:
+                        check(f"person {pid} journey [{j}] book_dir valid",
+                              sbook in all_book_ids_pj,
+                              f"'{sbook}' not in books.json")
+
+        # legacy_refs — optional array of {ref, note}
+        legacy = p.get('legacy_refs')
+        if legacy is not None:
+            check(f"person {pid} legacy_refs is list", isinstance(legacy, list))
+            if isinstance(legacy, list):
+                for j, lr in enumerate(legacy):
+                    for lk in ('ref', 'note'):
+                        check(f"person {pid} legacy_ref [{j}] has '{lk}'",
+                              lk in lr, f"missing '{lk}'")
+
+    if journey_count > 0:
+        print(f"  people with journeys: {journey_count}")
+
     # VHL css_class values
     valid_css = {'vhl-divine', 'vhl-place', 'vhl-person', 'vhl-time', 'vhl-key'}
     bad_css = set()
@@ -336,6 +385,85 @@ def main():
                 enriched_bi += 1
 
         print(f"  book intros: {len(bi_data)} total, {enriched_bi} enriched")
+
+    # ── Redemptive arc (#1118) ──
+    ra_path = META / 'redemptive-arc.json'
+    if ra_path.exists():
+        ra_data = json.loads(ra_path.read_text(encoding='utf-8'))
+        check("redemptive-arc.json is object", isinstance(ra_data, dict))
+
+        # Load valid cross-reference IDs
+        tl_ra = META / 'timelines.json'
+        valid_era_keys_ra = set()
+        if tl_ra.exists():
+            valid_era_keys_ra = set(json.loads(tl_ra.read_text(encoding='utf-8')).get('era_config', {}).keys())
+
+        pc_ra = META / 'prophecy-chains.json'
+        valid_chain_ids = set()
+        if pc_ra.exists():
+            for c in json.loads(pc_ra.read_text(encoding='utf-8')):
+                if 'id' in c:
+                    valid_chain_ids.add(c['id'])
+
+        # Validate acts array
+        acts = ra_data.get('acts', [])
+        check("redemptive-arc has acts", isinstance(acts, list) and len(acts) >= 1,
+              f"got {len(acts) if isinstance(acts, list) else type(acts).__name__}")
+
+        for i, act in enumerate(acts):
+            aid = act.get('id', f'index_{i}')
+            for key in ('id', 'name', 'tagline', 'summary', 'key_verse'):
+                check(f"redemptive act {aid} has '{key}'", key in act,
+                      f"missing '{key}'")
+
+            # era_ids — must reference valid era_config keys
+            era_ids = act.get('era_ids', [])
+            if era_ids:
+                check(f"redemptive act {aid} era_ids is list", isinstance(era_ids, list))
+                if isinstance(era_ids, list):
+                    for eid in era_ids:
+                        check(f"redemptive act {aid} era '{eid}' valid",
+                              eid in valid_era_keys_ra,
+                              f"'{eid}' not in era_config")
+
+            # book_range — optional string
+            book_range = act.get('book_range')
+            if book_range is not None:
+                check(f"redemptive act {aid} book_range is string",
+                      isinstance(book_range, str) and len(book_range.strip()) > 0)
+
+            # threads — optional list of thread IDs
+            threads = act.get('threads', [])
+            if threads:
+                check(f"redemptive act {aid} threads is list", isinstance(threads, list))
+
+            # prophecy_chains — optional list of chain IDs
+            chains = act.get('prophecy_chains', [])
+            if chains and valid_chain_ids:
+                for cid in chains:
+                    check(f"redemptive act {aid} chain '{cid}' valid",
+                          cid in valid_chain_ids,
+                          f"'{cid}' not in prophecy-chains.json")
+
+        # Validate chapter_map
+        chapter_map = ra_data.get('chapter_map', {})
+        if chapter_map:
+            check("redemptive-arc chapter_map is object", isinstance(chapter_map, dict))
+            act_ids = {a.get('id') for a in acts}
+            all_book_ids_ra = {b['id'] for b in books}
+            for chap_key, act_id in chapter_map.items():
+                check(f"chapter_map {chap_key} references valid act",
+                      act_id in act_ids,
+                      f"'{act_id}' not in acts")
+                # chap_key should be book_chapter format
+                parts = chap_key.rsplit('_', 1)
+                if len(parts) == 2:
+                    book_part = parts[0]
+                    check(f"chapter_map {chap_key} book valid",
+                          book_part in all_book_ids_ra,
+                          f"'{book_part}' not in books.json")
+
+        print(f"  redemptive arc: {len(acts)} acts, {len(chapter_map)} chapter mappings")
 
     # Prophecy chains
     pc_path = META / 'prophecy-chains.json'
