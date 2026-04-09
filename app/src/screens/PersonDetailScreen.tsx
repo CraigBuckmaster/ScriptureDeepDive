@@ -58,14 +58,13 @@ function PersonDetailScreen() {
 
         {eraLabel ? <BadgeChip label={eraLabel} color={eraColor} /> : null}
 
-        {contentImages.length > 0 ? (
-          <>
-            {console.log(`[PersonDetail] Rendering gallery for ${personId} with ${contentImages.length} images:`, contentImages.map(i => i.url.slice(-40)))}
-            <ContentImageGallery images={contentImages} />
-          </>
-        ) : (
-          <>{console.log(`[PersonDetail] No images for ${personId}, contentImages.length=${contentImages.length}`)}</>
-        )}
+        <View style={{ backgroundColor: '#ff0000', padding: 8, borderRadius: 4, marginVertical: 4 }}>
+          <Text style={{ color: '#fff', fontSize: 12 }}>
+            DEBUG: personId={personId}, images={contentImages.length}
+          </Text>
+        </View>
+
+        {contentImages.length > 0 && <ContentImageGallery images={contentImages} />}
 
         <View style={[styles.divider, { backgroundColor: base.border }]} />
 
