@@ -35,7 +35,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
   relatedLifeTopicsJson,
 }: Props) {
   const { base } = useTheme();
-  const { verse, panel, callbacks, layout, coaching } = useChapterReader();
+  const { verse, panel, callbacks, layout, coaching, display } = useChapterReader();
 
   const sectionElements = useMemo(() => {
     return sections.flatMap((sec) => {
@@ -60,8 +60,8 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
             onVerseLongPress={callbacks.onVerseLongPress}
             onVerseNumPress={callbacks.onInterlinearPress}
             activeVerseNum={verse.activeVerseNum}
-            depthExplored={panel.depthMap.get(sec.id)?.explored}
-            depthTotal={panel.depthMap.get(sec.id)?.total}
+            depthExplored={display.focusMode ? undefined : panel.depthMap.get(sec.id)?.explored}
+            depthTotal={display.focusMode ? undefined : panel.depthMap.get(sec.id)?.total}
             onDepthRecord={callbacks.recordOpen}
             comparisonVerses={verse.comparisonVerses}
             comparisonLabel={verse.comparisonLabel}
@@ -71,7 +71,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
             onVerseLayout={(verseNum, y, sectionId) => {
               layout.onVerseLayout(verseNum, y, sectionId);
             }}
-            renderButtonRow={(panels, sectionId) => (
+            renderButtonRow={display.focusMode ? undefined : (panels, sectionId) => (
               <View onLayout={(e) => {
                 layout.onBtnRowLayout(sectionId, 0, e.nativeEvent.layout.y);
               }}>
@@ -86,7 +86,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
                 />
               </View>
             )}
-            renderPanel={(p) => (
+            renderPanel={display.focusMode ? undefined : (p) => (
               <PanelContainer
                 panelType={p.panel_type}
                 contentJson={p.content_json}
@@ -104,8 +104,8 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
         </View>,
       ];
 
-      // Inject coaching card after this section if applicable
-      if (coaching.studyCoachEnabled && coaching.coachingTips.length > 0) {
+      // Inject coaching card after this section if applicable (hidden in focus mode)
+      if (!display.focusMode && coaching.studyCoachEnabled && coaching.coachingTips.length > 0) {
         const tip = coaching.coachingTips.find((t) => t.after_section === sec.section_num);
         if (tip && !coaching.dismissedTips.has(tip.after_section)) {
           elements.push(
@@ -121,33 +121,37 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
 
       return elements;
     });
-  }, [sections, verse, panel, callbacks, layout, coaching]);
+  }, [sections, verse, panel, callbacks, layout, coaching, display]);
 
   return (
     <>
       {sectionElements}
 
-      {/* Chapter-level scholarly block */}
-      <ScholarlyBlock
-        chapterPanels={chapterPanels}
-        activePanel={panel.activeChapterPanelType}
-        onToggle={callbacks.handleChapterPanelToggle}
-        onClose={callbacks.clearActivePanel}
-        onRefPress={callbacks.onRefPress}
-        defaultTab={
-          panel.openPanel && !panel.openPanel.sectionNum && panel.openPanel.tabKey
-            ? panel.openPanel.tabKey
-            : undefined
-        }
-      />
+      {/* Chapter-level scholarly block (hidden in focus mode) */}
+      {!display.focusMode && (
+        <ScholarlyBlock
+          chapterPanels={chapterPanels}
+          activePanel={panel.activeChapterPanelType}
+          onToggle={callbacks.handleChapterPanelToggle}
+          onClose={callbacks.clearActivePanel}
+          onRefPress={callbacks.onRefPress}
+          defaultTab={
+            panel.openPanel && !panel.openPanel.sectionNum && panel.openPanel.tabKey
+              ? panel.openPanel.tabKey
+              : undefined
+          }
+        />
+      )}
 
       {/* Scholar disclaimer */}
-      <Text style={[styles.scholarDisclaimer, { color: base.textMuted }]}>
-        Scholar commentary panels present paraphrased summaries of positions found in published works and are not direct quotations. For exact wording, consult the original sources cited.
-      </Text>
+      {!display.focusMode && (
+        <Text style={[styles.scholarDisclaimer, { color: base.textMuted }]}>
+          Scholar commentary panels present paraphrased summaries of positions found in published works and are not direct quotations. For exact wording, consult the original sources cited.
+        </Text>
+      )}
 
       {/* Chapter-level coaching (study guide) */}
-      {coaching.studyCoachEnabled && coaching.chapterCoaching ? (
+      {!display.focusMode && coaching.studyCoachEnabled && coaching.chapterCoaching ? (
         <ChapterCoachingCard coaching={coaching.chapterCoaching} />
       ) : null}
 

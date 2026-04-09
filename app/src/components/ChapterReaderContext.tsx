@@ -60,12 +60,18 @@ interface CoachingState {
   onDismissTip: (afterSection: number) => void;
 }
 
+// ── Display state ──
+interface DisplayState {
+  focusMode: boolean;
+}
+
 export interface ChapterReaderContextValue {
   verse: VerseState;
   panel: PanelState;
   callbacks: Callbacks;
   layout: LayoutCallbacks;
   coaching: CoachingState;
+  display: DisplayState;
 }
 
 const ChapterReaderCtx = createContext<ChapterReaderContextValue | null>(null);
