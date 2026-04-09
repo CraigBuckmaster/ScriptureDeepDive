@@ -4335,7 +4335,76 @@
         "caption": "The Great Isaiah Scroll — Dead Sea Scrolls",
         "credit": "Public domain, via Wikimedia Commons"
       }
-    ]
+    ],
+    "era": "divided_kingdom",
+    "era_span": [
+      "divided_kingdom",
+      "prophets"
+    ],
+    "purpose": "To call Judah to covenant faithfulness through judgment oracles and to comfort God's people with unparalleled visions of future salvation—the Suffering Servant, the new exodus, the new creation. Isaiah is the 'fifth gospel,' containing the most extensive messianic prophecies in the OT.",
+    "key_verses": [
+      {
+        "ref": "Isa 6:3",
+        "text": "And they were calling to one another: \"Holy, holy, holy is the Lord Almighty; the whole earth is full of his glory.\"",
+        "why": "The trisagion—God's holiness as the foundation of Isaiah's message."
+      },
+      {
+        "ref": "Isa 7:14",
+        "text": "Therefore the Lord himself will give you a sign: The virgin will conceive and give birth to a son, and will call him Immanuel.",
+        "why": "Immanuel prophecy—God with us, fulfilled in Christ's incarnation."
+      },
+      {
+        "ref": "Isa 53:5",
+        "text": "But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.",
+        "why": "The Suffering Servant—substitutionary atonement prophesied."
+      },
+      {
+        "ref": "Isa 55:11",
+        "text": "so is my word that goes out from my mouth: It will not return to me empty, but will accomplish what I desire and achieve the purpose for which I sent it.",
+        "why": "The power of God's word—certain to accomplish his purposes."
+      }
+    ],
+    "christ_in": "Isaiah is the most Christological OT book. The Servant Songs (42, 49, 50, 52-53) depict Christ's gentle ministry, worldwide mission, obedient suffering, and atoning death. Immanuel (7:14; 9:6-7) is the divine child-king. The Branch (11:1-10) brings justice and peace. Jesus launched his ministry reading Isaiah 61 (Luke 4:18-21). The NT quotes Isaiah over 400 times.",
+    "outline": [
+      {
+        "label": "Judgment on Judah",
+        "range": "1-12",
+        "summary": "Woes, Immanuel, future king"
+      },
+      {
+        "label": "Oracles Against Nations",
+        "range": "13-27",
+        "summary": "Babylon to apocalypse"
+      },
+      {
+        "label": "Woes and Hopes",
+        "range": "28-35",
+        "summary": "Judah's folly, future glory"
+      },
+      {
+        "label": "Historical Interlude",
+        "range": "36-39",
+        "summary": "Hezekiah, Assyria, Babylon"
+      },
+      {
+        "label": "Comfort & Servant",
+        "range": "40-55",
+        "summary": "New exodus, Servant Songs"
+      },
+      {
+        "label": "Future Glory",
+        "range": "56-66",
+        "summary": "New heavens, new earth"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Isaiah son of Amoz",
+      "date": "c. 740-680 BC",
+      "chapters": 66,
+      "genre": "Prophetic Oracle / Poetry",
+      "key_theme": "The Holy One of Israel judges and saves",
+      "key_word": "qadosh (holy)"
+    }
   },
   {
     "book": "daniel",
@@ -4429,7 +4498,50 @@
         "caption": "Daniel in the lions' den",
         "credit": "Julius Schnorr von Carolsfeld · Public domain"
       }
-    ]
+    ],
+    "era": "exile",
+    "era_span": [
+      "exile"
+    ],
+    "purpose": "To demonstrate God's sovereignty over all earthly kingdoms and to reveal his plan for history culminating in the eternal kingdom of the Son of Man. Daniel encourages faithfulness under pagan rule with stories of deliverance and visions of the future.",
+    "key_verses": [
+      {
+        "ref": "Dan 2:44",
+        "text": "In the time of those kings, the God of heaven will set up a kingdom that will never be destroyed, nor will it be left to another people. It will crush all those kingdoms and bring them to an end, but it will itself endure forever.",
+        "why": "The stone kingdom—God's eternal reign over human empires."
+      },
+      {
+        "ref": "Dan 3:17-18",
+        "text": "If we are thrown into the blazing furnace, the God we serve is able to deliver us from it, and he will deliver us from Your Majesty's hand. But even if he does not, we want you to know, Your Majesty, that we will not serve your gods or worship the image of gold you have set up.",
+        "why": "Faithful defiance—trusting God regardless of outcome."
+      },
+      {
+        "ref": "Dan 7:13-14",
+        "text": "In my vision at night I looked, and there before me was one like a son of man, coming with the clouds of heaven... He was given authority, glory and sovereign power; all nations and peoples of every language worshiped him.",
+        "why": "The Son of Man—Christ's favorite self-designation."
+      }
+    ],
+    "christ_in": "The Son of Man (7:13-14) is Jesus' most frequent title for himself, claiming Daniel's divine figure who receives eternal dominion. The fourth figure in the furnace ('like a son of the gods,' 3:25) prefigures Christ's presence with his people in trial. The stone cut without hands (2:34-35) is Christ's kingdom crushing human empires. The seventy weeks (9:24-27) prophesy Messiah's coming and atoning work.",
+    "outline": [
+      {
+        "label": "Court Tales",
+        "range": "1-6",
+        "summary": "Faithfulness in Babylon"
+      },
+      {
+        "label": "Night Visions",
+        "range": "7-12",
+        "summary": "Four beasts, ram/goat, seventy weeks, end times"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Daniel",
+      "date": "c. 605-530 BC",
+      "chapters": 12,
+      "genre": "Court Narrative / Apocalyptic",
+      "key_theme": "God rules over all kingdoms and will establish his eternal reign",
+      "key_word": "malkut (kingdom/sovereignty)"
+    }
   },
   {
     "book": "lamentations",
@@ -4539,7 +4651,65 @@
         "caption": "The prophet Jeremiah — Sistine Chapel",
         "credit": "Michelangelo · Public domain"
       }
-    ]
+    ],
+    "era": "exile",
+    "era_span": [
+      "exile"
+    ],
+    "purpose": "To provide a liturgy of grief for Jerusalem's destruction in 586 BC—an inspired model for processing catastrophic loss while maintaining faith in God's faithfulness. Lamentations validates lament as a legitimate form of worship.",
+    "key_verses": [
+      {
+        "ref": "Lam 1:1",
+        "text": "How deserted lies the city, once so full of people! How like a widow is she, who once was great among the nations! She who was queen among the provinces has now become a slave.",
+        "why": "The opening lament—Jerusalem personified in desolation."
+      },
+      {
+        "ref": "Lam 3:22-23",
+        "text": "Because of the Lord's great love we are not consumed, for his compassions never fail. They are new every morning; great is your faithfulness.",
+        "why": "The center of hope—God's hesed endures despite judgment."
+      },
+      {
+        "ref": "Lam 3:40",
+        "text": "Let us examine our ways and test them, and let us return to the Lord.",
+        "why": "The call to self-examination and repentance."
+      }
+    ],
+    "christ_in": "Christ is the Man of Sorrows who embodies Israel's suffering. His cry of dereliction ('My God, why have you forsaken me?') echoes Lamentations' anguish. Yet as Lamentations finds hope in God's faithfulness (3:22-23), Christ's resurrection proves that faithfulness. The destruction of Jerusalem foreshadows judgment Christ bore on the cross.",
+    "outline": [
+      {
+        "label": "First Poem",
+        "range": "1",
+        "summary": "Jerusalem as widow"
+      },
+      {
+        "label": "Second Poem",
+        "range": "2",
+        "summary": "God as enemy"
+      },
+      {
+        "label": "Third Poem",
+        "range": "3",
+        "summary": "The man who has seen affliction—hope"
+      },
+      {
+        "label": "Fourth Poem",
+        "range": "4",
+        "summary": "Zion's punishment"
+      },
+      {
+        "label": "Fifth Poem",
+        "range": "5",
+        "summary": "Communal prayer for restoration"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Anonymous (traditionally Jeremiah)",
+      "date": "c. 586-580 BC",
+      "chapters": 5,
+      "genre": "Lament / Acrostic Poetry",
+      "key_theme": "Grieving destruction while trusting God's faithfulness",
+      "key_word": "hesed (steadfast love/faithfulness)"
+    }
   },
   {
     "book": "jeremiah",
@@ -4673,7 +4843,71 @@
         "caption": "The Babylonian exile",
         "credit": "James Tissot · Public domain"
       }
-    ]
+    ],
+    "era": "prophets",
+    "era_span": [
+      "prophets",
+      "exile"
+    ],
+    "purpose": "To call Judah to repentance before the Babylonian exile and to explain why judgment came. Jeremiah announces the destruction of Jerusalem while preserving hope through the promise of a new covenant written on the heart, not stone.",
+    "key_verses": [
+      {
+        "ref": "Jer 1:5",
+        "text": "\"Before I formed you in the womb I knew you, before you were born I set you apart; I appointed you as a prophet to the nations.\"",
+        "why": "Jeremiah's call—God's sovereign purpose from before birth."
+      },
+      {
+        "ref": "Jer 29:11",
+        "text": "For I know the plans I have for you,\" declares the Lord, \"plans to prosper you and not to harm you, plans to give you hope and a future.",
+        "why": "God's purpose for exiles—hope beyond judgment."
+      },
+      {
+        "ref": "Jer 31:31-33",
+        "text": "\"The days are coming,\" declares the Lord, \"when I will make a new covenant with the people of Israel... I will put my law in their minds and write it on their hearts. I will be their God, and they will be my people.\"",
+        "why": "The new covenant promise—internal transformation, not external law."
+      }
+    ],
+    "christ_in": "Jeremiah's new covenant (31:31-34) is explicitly fulfilled in Christ (Heb 8:8-12; Luke 22:20). Jeremiah as the 'weeping prophet' who suffered rejection foreshadows Christ weeping over Jerusalem. The righteous Branch (23:5-6; 33:15-16) is the Davidic Messiah. Jeremiah's purchase of a field during siege (ch. 32) pictures hope of restoration fulfilled in Christ's redemption.",
+    "outline": [
+      {
+        "label": "Call & Early Oracles",
+        "range": "1-20",
+        "summary": "Commission, temple sermon, confessions"
+      },
+      {
+        "label": "Kings & Prophets",
+        "range": "21-29",
+        "summary": "Judah's leaders judged, exiles"
+      },
+      {
+        "label": "Book of Comfort",
+        "range": "30-33",
+        "summary": "Restoration, new covenant"
+      },
+      {
+        "label": "Fall of Jerusalem",
+        "range": "34-45",
+        "summary": "Siege, Baruch, remnant"
+      },
+      {
+        "label": "Oracles Against Nations",
+        "range": "46-51",
+        "summary": "Egypt to Babylon"
+      },
+      {
+        "label": "Historical Appendix",
+        "range": "52",
+        "summary": "Jerusalem's destruction"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Jeremiah (Baruch as scribe)",
+      "date": "c. 627-580 BC",
+      "chapters": 52,
+      "genre": "Prophetic Oracle / Biography",
+      "key_theme": "Judgment comes, but God promises a new covenant",
+      "key_word": "berit chadashah (new covenant)"
+    }
   },
   {
     "book": "ezekiel",
@@ -4791,7 +5025,60 @@
         "caption": "The Babylonian exile",
         "credit": "James Tissot · Public domain"
       }
-    ]
+    ],
+    "era": "exile",
+    "era_span": [
+      "exile"
+    ],
+    "purpose": "To explain the exile as just judgment on Judah's persistent unfaithfulness while proclaiming future restoration—a new heart, a new spirit, resurrection from death, and God's glory returning to a new temple. Ezekiel ministers to exiles in Babylon, destroying false hope before rebuilding true hope.",
+    "key_verses": [
+      {
+        "ref": "Ezek 36:26",
+        "text": "I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh.",
+        "why": "The promise of spiritual transformation—heart surgery by God."
+      },
+      {
+        "ref": "Ezek 37:14",
+        "text": "I will put my Spirit in you and you will live, and I will settle you in your own land. Then you will know that I the Lord have spoken, and I have done it, declares the Lord.",
+        "why": "The valley of dry bones—resurrection and Spirit-filling."
+      },
+      {
+        "ref": "Ezek 48:35",
+        "text": "And the name of the city from that time on will be: The Lord is There.",
+        "why": "The final word—YHWH Shammah, God's presence restored."
+      }
+    ],
+    "christ_in": "Ezekiel's Good Shepherd (ch. 34) who seeks the lost and binds the injured is fulfilled in Christ (John 10). The Son of Man title (used 93× of Ezekiel) becomes Jesus' preferred self-designation. The new temple with its river of life (chs. 40-48) finds fulfillment in Christ as the temple (John 2:19-21) and the water of life (John 7:37-39; Rev 22:1-2).",
+    "outline": [
+      {
+        "label": "Judgment on Judah",
+        "range": "1-24",
+        "summary": "Call, visions, enacted signs, fall"
+      },
+      {
+        "label": "Oracles Against Nations",
+        "range": "25-32",
+        "summary": "Ammon to Egypt"
+      },
+      {
+        "label": "Restoration Oracles",
+        "range": "33-39",
+        "summary": "Shepherd, dry bones, Gog"
+      },
+      {
+        "label": "New Temple Vision",
+        "range": "40-48",
+        "summary": "Temple, glory, river, land"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Ezekiel the priest",
+      "date": "c. 593-571 BC",
+      "chapters": 48,
+      "genre": "Prophetic Oracle / Apocalyptic Vision",
+      "key_theme": "God's glory departs and returns to a renewed people",
+      "key_word": "kavod (glory)"
+    }
   },
   {
     "book": "hosea",
