@@ -37,7 +37,8 @@ function extractPeople(panel: ChapterPanel): ExploreCard[] {
   const data = tryParseJson(panel.content_json);
   if (!data) return [];
   // People panel is typically { people: [{ name, id, ... }] } or similar
-  const people = data.people ?? data.entries ?? (Array.isArray(data) ? data : []);
+  const raw = data.people ?? data.entries ?? (Array.isArray(data) ? data : []);
+  const people = Array.isArray(raw) ? raw : [];
   return people.slice(0, 2).map((p: any) => ({
     type: 'people',
     title: p.name ?? p.label ?? 'Person',
