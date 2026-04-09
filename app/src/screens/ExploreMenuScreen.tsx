@@ -55,8 +55,8 @@ const SECTIONS: FeatureSection[] = [
       { title: 'Concepts', subtitle: 'Trace covenant, atonement, kingdom & more across the whole Bible', screen: 'ConceptBrowse' },
       { title: 'Topical Index', subtitle: 'What does the Bible say about...?', screen: 'TopicBrowse' },
       { title: 'Prophecy & Typology', subtitle: '50 chains showing how OT promises connect to NT fulfillment', screen: 'ProphecyBrowse' },
-      { title: 'Threads', subtitle: 'Follow one idea \u2014 like \u2018temple\u2019 or \u2018exile\u2019 \u2014 from Genesis to Revelation', screen: 'ThreadBrowse' },
-      { title: 'Gospel Harmony', subtitle: 'Read parallel accounts of the same event across Matthew, Mark, Luke & John', screen: 'HarmonyBrowse' },
+      { title: 'Threads', subtitle: 'Follow one idea from Genesis to Revelation across 31 chains', screen: 'ThreadBrowse' },
+      { title: 'Gospel Harmony', subtitle: 'Read parallel accounts of the same event across all four Gospels', screen: 'HarmonyBrowse' },
     ],
   },
   {
@@ -74,7 +74,7 @@ const SECTIONS: FeatureSection[] = [
     subtitle: 'Academic perspectives and debate',
     layout: 'grid',
     features: [
-      { title: 'Scholars', subtitle: 'Browse all 54 scholars by tradition \u2014 read their bios and find their commentary', screen: 'ScholarBrowse' },
+      { title: 'Scholars', subtitle: 'Browse all 54 scholars by tradition with full bios', screen: 'ScholarBrowse' },
       { title: 'Scholar Debates', subtitle: '303 topics where scholars disagree \u2014 see each side with citations', screen: 'DebateBrowse' },
       { title: 'Difficult Passages', subtitle: '53 hard passages with multi-view scholarly responses', screen: 'DifficultPassagesBrowse' },
       { title: 'Content Library', subtitle: 'Discourse analysis, manuscript notes, chiastic structures & more', screen: 'ContentLibrary' },
@@ -93,10 +93,10 @@ const SECTIONS: FeatureSection[] = [
     subtitle: 'Advanced study tools',
     layout: 'grid',
     features: [
-      { title: 'Hermeneutic Lenses', subtitle: 'Read a chapter through a feminist, liberation, or canonical lens', screen: 'LensBrowse' },
-      { title: 'Archaeological Evidence', subtitle: 'Real artifacts and sites that confirm or illuminate the biblical text', screen: 'ArchaeologyBrowse' },
+      { title: 'Hermeneutic Lenses', subtitle: 'Read a chapter through feminist, liberation, or canonical frameworks', screen: 'LensBrowse' },
+      { title: 'Archaeological Evidence', subtitle: 'Real artifacts and sites that illuminate the biblical text', screen: 'ArchaeologyBrowse' },
       { title: 'Time-Travel Reader', subtitle: 'How did Augustine, Aquinas, Luther & modern scholars read this passage?', screen: 'TimeTravelBrowse' },
-      { title: 'Grammar Reference', subtitle: 'Verb forms, noun cases & syntax patterns explained in plain English', screen: 'GrammarBrowse' },
+      { title: 'Grammar Reference', subtitle: 'Verb forms, noun cases & syntax patterns in plain English', screen: 'GrammarBrowse' },
     ],
   },
 ];

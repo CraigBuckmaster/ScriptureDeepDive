@@ -64,7 +64,7 @@ const PAGES: PageData[] = [
   {
     key: 'panels',
     title: 'Study Panels',
-    subtitle: 'Tap any button to explore.',
+    subtitle: 'Tap a button below the text.',
     body: 'Every passage has study buttons below the text. Tap \u2018Hebrew\u2019 to see original word meanings. Tap a scholar\u2019s name to read their commentary. Tap \u2018History\u2019 for what was happening in the ancient world.',
     renderContent: (base) => (
       <View style={styles.panelDemo}>
