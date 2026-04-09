@@ -35,6 +35,7 @@ export interface Chapter {
   difficulty: number | null;
   prayer_prompt?: string | null;
   related_life_topics_json?: string | null;
+  redemptive_act?: string | null;
 }
 
 export interface CoachingTip {
@@ -124,6 +125,42 @@ export interface Person {
   scripture_role: string | null;
   refs_json: string | null;
   chapter_link: string | null;
+}
+
+/** Row from people_journeys table (#1125). */
+export interface PersonJourneyStage {
+  id: number;
+  person_id: string;
+  stage_order: number;
+  stage: string;
+  era: string | null;
+  book_dir: string | null;
+  chapters: string | null;   // JSON array
+  verse_ref: string | null;
+  summary: string | null;
+  theme: string | null;
+}
+
+/** Row from people_legacy_refs table (#1125). */
+export interface PersonLegacyRef {
+  id: number;
+  person_id: string;
+  ref: string;
+  note: string | null;
+}
+
+/** Row from redemptive_acts table (#1118). */
+export interface RedemptiveAct {
+  id: string;
+  act_order: number;
+  name: string;
+  tagline: string | null;
+  summary: string | null;
+  key_verse: string | null;
+  era_ids: string | null;      // JSON array
+  book_range: string | null;
+  threads: string | null;      // JSON array
+  prophecy_chains: string | null; // JSON array
 }
 
 export interface Scholar {
@@ -712,12 +749,44 @@ export interface BookIntroAuthorship {
   prompt?: string;
 }
 
+/** Enriched outline item with range string and summary (#1112). */
+export interface BookIntroEnrichedOutlineItem {
+  label: string;
+  range: string;
+  summary: string;
+}
+
+/** Key verse with reference, text, and significance (#1112). */
+export interface BookIntroKeyVerse {
+  ref: string;
+  text: string;
+  why: string;
+}
+
+/** At-a-glance metadata for quick book overview (#1112). */
+export interface BookIntroAtAGlance {
+  author: string;
+  date: string;
+  chapters: number | string;
+  genre: string;
+  key_theme: string;
+  key_word: string;
+}
+
 export interface ParsedBookIntro {
   title?: string;
   subtitle?: string;
   authorship?: string | BookIntroAuthorship;
   sections?: BookIntroSection[];
   text?: string;
+  /* Enrichment fields (#1112) */
+  era?: string;
+  era_span?: string[];
+  purpose?: string;
+  key_verses?: BookIntroKeyVerse[];
+  christ_in?: string;
+  outline?: BookIntroEnrichedOutlineItem[];
+  at_a_glance?: BookIntroAtAGlance;
 }
 
 // ── Archaeological Evidence ────────────────────────────────

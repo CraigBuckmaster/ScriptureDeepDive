@@ -26,7 +26,7 @@ import { useTranslationSwitch } from '../hooks/useTranslationSwitch';
 import { useStoreReview } from '../hooks/useStoreReview';
 import { logEvent } from '../services/analytics';
 import { updateLastActive, cancelReengagement } from '../services/reengagement';
-import { getBook } from '../db/content';
+import { getBook, getRedemptiveAct } from '../db/content';
 
 import { useRedLetter } from '../hooks/useRedLetter';
 import { ChapterNavBar } from '../components/ChapterNavBar';
@@ -137,6 +137,14 @@ function ChapterScreen() {
   useEffect(() => {
     if (bookId) getBook(bookId).then(setBookData);
   }, [bookId]);
+
+  // Redemptive act name for story pill (#1119)
+  const [storyActName, setStoryActName] = useState<string | null>(null);
+  useEffect(() => {
+    const actId = chapter?.redemptive_act;
+    if (!actId) { setStoryActName(null); return; }
+    getRedemptiveAct(actId).then((act) => setStoryActName(act ? act.name : null));
+  }, [chapter?.redemptive_act]);
 
   // Record visit
   useEffect(() => {
@@ -276,6 +284,13 @@ function ChapterScreen() {
             : undefined}
           onMapPress={chapter.map_story_link_id
             ? () => (navigation as any).navigate('ExploreTab', { screen: 'Map', params: { storyId: chapter.map_story_link_id } })
+            : undefined}
+          storyActName={storyActName}
+          onStoryPress={chapter.redemptive_act
+            ? () => {
+                if (!isPremium) { showUpgrade('explore', 'The Story of the Bible'); return; }
+                (navigation as any).navigate('ExploreTab', { screen: 'RedemptiveArc' });
+              }
             : undefined}
         />
 

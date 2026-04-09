@@ -47,6 +47,8 @@ const SECTIONS: FeatureSection[] = [
     features: [
       { title: 'People',    subtitle: '282 people on a zoomable family tree with bios',                color: '#e86040', screen: 'GenealogyTree' },
       { title: 'Timeline',  subtitle: '543 events from creation to revelation',                        color: '#70b8e8', screen: 'Timeline' },
+      { title: 'Periods',   subtitle: '12 eras from creation to the apostolic age',                    color: '#8a6e3a', screen: 'Periods', premium: true },
+      { title: 'Story',     subtitle: '8 acts in God\'s redemptive narrative',                          color: '#c8a040', screen: 'RedemptiveArc', premium: true },
       { title: 'Map',       subtitle: '28 journeys with route overlays across 73 places',              color: '#81C784', screen: 'Map' },
     ],
   },
