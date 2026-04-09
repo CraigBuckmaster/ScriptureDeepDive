@@ -22,6 +22,7 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { BadgeChip } from '../components/BadgeChip';
 import { UpgradePrompt } from '../components/UpgradePrompt';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import type { BaseColors } from '../theme/palettes';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 /** Number of eras visible without premium. */
@@ -112,7 +113,7 @@ interface EraCardProps {
   era: ParsedEra;
   isLast: boolean;
   nextEra: ParsedEra | null;
-  base: Record<string, string>;
+  base: BaseColors;
   onPersonPress: (personId: string) => void;
   onBookPress: (bookId: string) => void;
 }
@@ -277,7 +278,7 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   eraPill: {
-    borderRadius: radii.full,
+    borderRadius: radii.pill,
     paddingHorizontal: spacing.sm,
     paddingVertical: 2,
   },
@@ -307,7 +308,7 @@ const styles = StyleSheet.create({
     gap: 6,
   },
   personChip: {
-    borderRadius: radii.full,
+    borderRadius: radii.pill,
     paddingHorizontal: spacing.sm,
     paddingVertical: 3,
   },
