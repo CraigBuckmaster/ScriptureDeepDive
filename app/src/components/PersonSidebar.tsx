@@ -8,7 +8,9 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Modal, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { BadgeChip } from './BadgeChip';
+import { ContentImageGallery } from './ContentImageGallery';
 import { getPersonChildren, getSpousesOf, getPerson } from '../db/content';
+import { useContentImages } from '../hooks/useContentImages';
 import { useTheme, spacing, radii, eras, eraNames, fontFamily } from '../theme';
 import type { Person } from '../types';
 import { parseJSON } from '../utils/parseJSON';
@@ -27,6 +29,7 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
   const [spouses, setSpouses] = useState<Person[]>([]);
   const [father, setFather] = useState<Person | null>(null);
   const [mother, setMother] = useState<Person | null>(null);
+  const { images: contentImages } = useContentImages('people', person?.id);
 
   useEffect(() => {
     if (!person || !visible) return;
@@ -101,6 +104,9 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
           <Text style={[styles.role, { color: base.gold }]}>
             {person.role}
           </Text>
+
+          {/* Images */}
+          {contentImages.length > 0 && <ContentImageGallery images={contentImages} />}
 
           {/* Family block */}
           <View style={styles.familyBlock}>
