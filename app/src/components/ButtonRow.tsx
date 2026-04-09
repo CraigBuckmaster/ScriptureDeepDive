@@ -23,12 +23,13 @@ interface Props {
   panels: (SectionPanel | ChapterPanel)[];
   activePanel: string | null;
   onToggle: (panelType: string) => void;
+  onLongPress?: (panelType: string) => void;
   isChapterLevel?: boolean;
   /** When provided, content panels are grouped under category labels. */
   categories?: PanelCategory[];
 }
 
-function ButtonRow({ panels, activePanel, onToggle, isChapterLevel, categories }: Props) {
+function ButtonRow({ panels, activePanel, onToggle, onLongPress, isChapterLevel, categories }: Props) {
   const { base } = useTheme();
 
   const { contentTypes, scholarTypes } = useMemo(() => {
@@ -102,6 +103,7 @@ function ButtonRow({ panels, activePanel, onToggle, isChapterLevel, categories }
                   panelType={type}
                   isActive={activePanel === type}
                   onPress={() => onToggle(type)}
+                  onLongPress={onLongPress ? () => onLongPress(type) : undefined}
                 />
               ))}
             </View>
@@ -115,6 +117,7 @@ function ButtonRow({ panels, activePanel, onToggle, isChapterLevel, categories }
             panelType={type}
             isActive={activePanel === type}
             onPress={() => onToggle(type)}
+            onLongPress={onLongPress ? () => onLongPress(type) : undefined}
           />
         ))
       )}
@@ -131,6 +134,7 @@ function ButtonRow({ panels, activePanel, onToggle, isChapterLevel, categories }
           panelType={type}
           isActive={activePanel === type}
           onPress={() => onToggle(type)}
+          onLongPress={onLongPress ? () => onLongPress(type) : undefined}
         />
       ))}
     </View>

@@ -22,9 +22,10 @@ interface Props {
   panelType: string;
   isActive: boolean;
   onPress: () => void;
+  onLongPress?: () => void;
 }
 
-function PanelButton({ panelType, isActive, onPress }: Props) {
+function PanelButton({ panelType, isActive, onPress, onLongPress }: Props) {
   const { base } = useTheme();
   const isScholar = isScholarPanel(panelType);
   const label = getPanelLabel(panelType);
@@ -32,6 +33,8 @@ function PanelButton({ panelType, isActive, onPress }: Props) {
   return (
     <TouchableOpacity
       onPress={() => { lightImpact(); onPress(); }}
+      onLongPress={onLongPress ? () => { lightImpact(); onLongPress(); } : undefined}
+      delayLongPress={400}
       activeOpacity={0.7}
       hitSlop={{ top: 6, bottom: 6, left: 2, right: 2 }}
       accessibilityRole="button"
