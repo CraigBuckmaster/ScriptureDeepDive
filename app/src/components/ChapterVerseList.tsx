@@ -18,14 +18,25 @@ import { ScholarlyBlock } from './ScholarlyBlock';
 import { StudyCoachCard } from './StudyCoachCard';
 import { ChapterCoachingCard } from './ChapterCoachingCard';
 import { PrayerPromptCard } from './PrayerPromptCard';
+import { ContinueExploringFooter } from './ContinueExploringFooter';
+import { useContinueExploring } from '../hooks/useContinueExploring';
 import RelatedLifeTopics from './RelatedLifeTopics';
 import { useTheme, spacing, fontFamily } from '../theme';
+
+export interface ChapterMeta {
+  timeline_link_event?: string | null;
+  timeline_link_text?: string | null;
+  map_story_link_id?: string | null;
+  map_story_link_text?: string | null;
+  book_name?: string;
+}
 
 interface Props {
   sections: (Section & { panels: SectionPanel[] })[];
   chapterPanels: ChapterPanel[];
   prayerPrompt?: string | null;
   relatedLifeTopicsJson?: string | null;
+  chapterMeta?: ChapterMeta | null;
 }
 
 const ChapterVerseList = React.memo(function ChapterVerseList({
@@ -33,9 +44,11 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
   chapterPanels,
   prayerPrompt,
   relatedLifeTopicsJson,
+  chapterMeta,
 }: Props) {
   const { base } = useTheme();
   const { verse, panel, callbacks, layout, coaching, display } = useChapterReader();
+  const exploreCards = useContinueExploring(chapterMeta, chapterPanels);
 
   const sectionElements = useMemo(() => {
     return sections.flatMap((sec) => {
@@ -160,6 +173,9 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
 
       {/* Prayer prompt card */}
       {prayerPrompt ? <PrayerPromptCard prompt={prayerPrompt} /> : null}
+
+      {/* Continue Exploring footer (hidden in focus mode) */}
+      {!display.focusMode && <ContinueExploringFooter cards={exploreCards} />}
     </>
   );
 });

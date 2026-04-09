@@ -319,6 +319,13 @@ function ChapterScreen() {
             sections={sections}
             chapterPanels={chapterPanels}
             prayerPrompt={chapter?.prayer_prompt}
+            chapterMeta={chapter ? {
+              timeline_link_event: chapter.timeline_link_event,
+              timeline_link_text: chapter.timeline_link_text,
+              map_story_link_id: chapter.map_story_link_id,
+              map_story_link_text: chapter.map_story_link_text,
+              book_name: bookData?.name,
+            } : null}
           />
         </ChapterReaderProvider>
       </ScrollView>
