@@ -1605,8 +1605,8 @@ def populate_eras(cur):
              _json_str(era['key_themes']) if 'key_themes' in era else None,
              _json_str(era['key_people']) if 'key_people' in era else None,
              _json_str(era['books']) if 'books' in era else None,
-             era.get('chapter_range'),
-             era.get('geographic_center'),
+             _json_str(era['chapter_range']) if 'chapter_range' in era else None,
+             _json_str(era['geographic_center']) if 'geographic_center' in era else None,
              era.get('redemptive_thread'),
              era.get('transition_to_next'))
         )
@@ -1629,7 +1629,7 @@ def populate_redemptive_acts(cur):
             'era_ids, book_range, threads, prophecy_chains) '
             'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (act['id'], i, act['name'], act.get('tagline'),
-             act.get('summary'), act.get('key_verse'),
+             act.get('summary'), _json_str(act['key_verse']) if 'key_verse' in act else None,
              _json_str(act['era_ids']) if 'era_ids' in act else None,
              act.get('book_range'),
              _json_str(act['threads']) if 'threads' in act else None,
