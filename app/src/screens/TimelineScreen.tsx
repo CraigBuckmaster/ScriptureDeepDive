@@ -34,6 +34,7 @@ import {
 import { useTheme, spacing, radii, eraNames, fontFamily } from '../theme';
 import type { TimelineEntry } from '../types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+import { useSettingsStore } from '../stores';
 
 interface CategoryFilters {
   event: boolean;
@@ -81,6 +82,9 @@ function TimelineScreen() {
   useEffect(() => {
     getAllTimelineEntries().then((e) => { setEvents(e); setIsLoading(false); });
   }, []);
+
+  // Mark getting-started checklist item
+  useEffect(() => { useSettingsStore.getState().markGettingStartedDone('explore_timeline'); }, []);
 
   // Filter by active categories
   const categoryFiltered = useMemo(() => {

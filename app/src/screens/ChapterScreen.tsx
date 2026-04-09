@@ -146,6 +146,7 @@ function ChapterScreen() {
       updateLastActive();
       cancelReengagement();
       checkAndPrompt();
+      useSettingsStore.getState().markGettingStartedDone('first_chapter');
     }
   }, [bookId, chapterNum, checkAndPrompt]);
 

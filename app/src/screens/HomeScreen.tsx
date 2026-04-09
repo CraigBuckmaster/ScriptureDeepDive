@@ -23,6 +23,7 @@ import { useRecommendations, type Recommendation } from '../hooks/useRecommendat
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { StreakBadge } from '../components/StreakBadge';
 import { ActivePlanCard } from '../components/ActivePlanCard';
+import { GettingStartedCard, GETTING_STARTED_ITEMS, type GettingStartedItem } from '../components/GettingStartedCard';
 import { MilestoneToast } from '../components/MilestoneToast';
 import { useSettingsStore } from '../stores';
 import { shareVerse, shareProgress } from '../utils/shareVerse';
@@ -37,6 +38,7 @@ function HomeScreen() {
   const navigation = useNavigation<ScreenNavProp<'Home', 'HomeMain'>>();
   const { greeting, subtitle, verse, recentChapters, readingStats, isLoading, refresh } = useHomeData();
   const translation = useSettingsStore((s) => s.translation);
+  const gettingStartedDone = useSettingsStore((s) => s.gettingStartedDone);
   const { currentStreak, pendingMilestone, markMilestoneSeen } = useStreakData();
   const recommendations = useRecommendations();
   const [refreshing, setRefreshing] = useState(false);
@@ -51,6 +53,21 @@ function HomeScreen() {
 
   const handleRecPress = useCallback((rec: Recommendation) => {
     navigation.navigate(rec.screen as any, rec.params as any);
+  }, [navigation]);
+
+  const handleGettingStartedPress = useCallback((item: GettingStartedItem) => {
+    switch (item.key) {
+      case 'first_chapter':
+      case 'first_panel':
+        navigation.navigate('Chapter', { bookId: 'genesis', chapterNum: 1 });
+        break;
+      case 'meet_scholars':
+        (navigation as any).navigate('ExploreTab', { screen: 'ScholarBrowse' });
+        break;
+      case 'explore_timeline':
+        (navigation as any).navigate('ExploreTab', { screen: 'Timeline' });
+        break;
+    }
   }, [navigation]);
   // Re-load on focus (useFocusEffect not available here, piggyback on refresh)
 
@@ -182,7 +199,14 @@ function HomeScreen() {
         {/* ── 4. Active Reading Plan ─────────────────── */}
         <ActivePlanCard />
 
-        {/* ── 5. Contextual Suggestions ─────────────────── */}
+        {/* ── 5. Getting Started / Contextual Suggestions ──── */}
+        {chaptersRead === 0 && gettingStartedDone.size < GETTING_STARTED_ITEMS.length ? (
+          <GettingStartedCard
+            items={GETTING_STARTED_ITEMS}
+            completedKeys={gettingStartedDone}
+            onItemPress={handleGettingStartedPress}
+          />
+        ) : (
         <View style={styles.suggestionsSection}>
           <Text
             style={[styles.sectionLabel, { color: base.textMuted }]}
@@ -274,6 +298,7 @@ function HomeScreen() {
             </>
           )}
         </View>
+        )}
 
         {/* ── 6. Overall Progress ──────────────────────── */}
         {chaptersRead > 0 && pct && (

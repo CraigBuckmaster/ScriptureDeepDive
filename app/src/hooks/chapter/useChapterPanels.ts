@@ -6,7 +6,7 @@
 
 import { useState, useCallback, useEffect, useMemo, type RefObject } from 'react';
 import { LayoutAnimation, type ScrollView } from 'react-native';
-import { useReaderStore } from '../../stores';
+import { useReaderStore, useSettingsStore } from '../../stores';
 import { useStudyDepth } from '../useStudyDepth';
 import { useStudyRecorder } from '../useStudyRecorder';
 import type { Section, SectionPanel } from '../../types';
@@ -64,6 +64,7 @@ export function useChapterPanels({
         section_id: sectionId,
         panel_type: panelType,
       });
+      if (!isOpen) useSettingsStore.getState().markGettingStartedDone('first_panel');
     },
     [setActivePanel, recordOpen, activePanel, recordEvent],
   );
@@ -78,6 +79,7 @@ export function useChapterPanels({
         section_id: '__chapter__',
         panel_type: panelType,
       });
+      if (!isOpen) useSettingsStore.getState().markGettingStartedDone('first_panel');
     },
     [setActivePanel, activePanel, recordEvent],
   );
