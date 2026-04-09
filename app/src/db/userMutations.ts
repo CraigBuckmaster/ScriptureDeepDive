@@ -364,7 +364,7 @@ export async function unbookmarkTopic(topicId: string): Promise<void> {
 export async function resetToNewUser(): Promise<void> {
   const db = getUserDb();
   await db.runAsync('DELETE FROM reading_progress');
-  await db.runAsync('DELETE FROM session_events');
+  await db.runAsync('DELETE FROM study_session_events');
   await db.runAsync('DELETE FROM study_sessions');
   await db.runAsync("DELETE FROM user_preferences WHERE key IN ('onboarding_complete', 'focusMode', 'getting_started', 'startHereDismissed', 'lastStreakDate', 'currentStreak', 'longestStreak', 'studyMaturityOverride', 'panelOpenSet', 'lastSeenLevel')");
   await db.runAsync('DELETE FROM plan_progress');

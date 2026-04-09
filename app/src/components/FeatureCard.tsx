@@ -1,7 +1,7 @@
 /**
  * FeatureCard — Individual card in an Explore feature carousel.
  *
- * 140px fixed width with icon, title (accent color), subtitle,
+ * 140px fixed width with title (accent color), subtitle,
  * and optional premium badge.
  *
  * Part of Epic #1048 (#1054).
@@ -43,7 +43,6 @@ export function FeatureCard({ feature, onPress, isPremium }: Props) {
       }]}
     >
       <View style={styles.header}>
-        <Text style={styles.icon}>{feature.icon}</Text>
         <Text style={[styles.title, { color: feature.color }]} numberOfLines={1}>
           {feature.title}
         </Text>
@@ -72,9 +71,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 4,
     marginBottom: 3,
-  },
-  icon: {
-    fontSize: 12,
   },
   title: {
     fontFamily: fontFamily.uiMedium,

@@ -32,7 +32,6 @@ interface FeatureSection {
   id: string;
   label: string;
   subtitle: string;
-  icon: string;
   features: FeatureCardData[];
 }
 
@@ -44,53 +43,53 @@ const PREMIUM_SCREENS: Record<string, string> = {
 
 const SECTIONS: FeatureSection[] = [
   {
-    id: 'biblical-world', label: 'The Biblical World', subtitle: 'Where, when, and who', icon: '\u{1F30D}',
+    id: 'biblical-world', label: 'The Biblical World', subtitle: 'Where, when, and who',
     features: [
-      { title: 'People',    subtitle: '282 people on a zoomable family tree with bios',                icon: '\u{1F464}', color: '#e86040', screen: 'GenealogyTree' },
-      { title: 'Timeline',  subtitle: '543 events from creation to revelation',                        icon: '\u23F1',    color: '#70b8e8', screen: 'Timeline' },
-      { title: 'Map',       subtitle: '28 journeys with route overlays across 73 places',              icon: '\u{1F4CD}', color: '#81C784', screen: 'Map' },
+      { title: 'People',    subtitle: '282 people on a zoomable family tree with bios',                icon: '', color: '#e86040', screen: 'GenealogyTree' },
+      { title: 'Timeline',  subtitle: '543 events from creation to revelation',                        icon: '', color: '#70b8e8', screen: 'Timeline' },
+      { title: 'Map',       subtitle: '28 journeys with route overlays across 73 places',              icon: '', color: '#81C784', screen: 'Map' },
     ],
   },
   {
-    id: 'themes', label: 'Themes & Connections', subtitle: 'Trace ideas across Scripture', icon: '\u{1F517}',
+    id: 'themes', label: 'Themes & Connections', subtitle: 'Trace ideas across Scripture',
     features: [
-      { title: 'Concepts',           subtitle: 'Covenant, atonement, kingdom & more',                  icon: '\u2726',    color: '#bfa050', screen: 'ConceptBrowse' },
-      { title: 'Topical Index',      subtitle: 'What does the Bible say about...?',                    icon: '\u{1F4D1}', color: '#c8a040', screen: 'TopicBrowse' },
-      { title: 'Prophecy',           subtitle: '50 chains \u2014 OT to NT fulfillment',                icon: '\u{1F52E}', color: '#e8a070', screen: 'ProphecyBrowse' },
-      { title: 'Threads',            subtitle: 'One idea across 31 chains',                            icon: '\u{1F9F5}', color: '#9090e0', screen: 'ThreadBrowse', premium: true },
-      { title: 'Gospel Harmony',     subtitle: 'Parallel accounts across four Gospels',                icon: '\u{1F4D6}', color: '#70d098', screen: 'HarmonyBrowse' },
+      { title: 'Concepts',           subtitle: 'Covenant, atonement, kingdom & more',                  icon: '', color: '#bfa050', screen: 'ConceptBrowse' },
+      { title: 'Topical Index',      subtitle: 'What does the Bible say about...?',                    icon: '', color: '#c8a040', screen: 'TopicBrowse' },
+      { title: 'Prophecy',           subtitle: '50 chains \u2014 OT to NT fulfillment',                icon: '', color: '#e8a070', screen: 'ProphecyBrowse' },
+      { title: 'Threads',            subtitle: 'One idea across 31 chains',                            icon: '', color: '#9090e0', screen: 'ThreadBrowse', premium: true },
+      { title: 'Gospel Harmony',     subtitle: 'Parallel accounts across four Gospels',                icon: '', color: '#70d098', screen: 'HarmonyBrowse' },
     ],
   },
   {
-    id: 'language', label: 'Language & Reference', subtitle: 'Original words and definitions', icon: '\u05D0',
+    id: 'language', label: 'Language & Reference', subtitle: 'Original words and definitions',
     features: [
-      { title: 'Word Studies', subtitle: 'Hebrew & Greek deep dives',                                  icon: '\u{1F4DD}', color: '#e890b8', screen: 'WordStudyBrowse' },
-      { title: 'Concordance',  subtitle: 'Every occurrence of a word',                                 icon: '\u{1F50D}', color: '#70b8e8', screen: 'Concordance', premium: true },
-      { title: 'Dictionary',   subtitle: 'Definitions for every biblical term',                         icon: '\u{1F4DA}', color: '#c090e0', screen: 'DictionaryBrowse' },
+      { title: 'Word Studies', subtitle: 'Hebrew & Greek deep dives',                                  icon: '', color: '#e890b8', screen: 'WordStudyBrowse' },
+      { title: 'Concordance',  subtitle: 'Every occurrence of a word',                                 icon: '', color: '#70b8e8', screen: 'Concordance', premium: true },
+      { title: 'Dictionary',   subtitle: 'Definitions for every biblical term',                         icon: '', color: '#c090e0', screen: 'DictionaryBrowse' },
     ],
   },
   {
-    id: 'scholarly', label: 'Scholarly Analysis', subtitle: 'Academic perspectives & debate', icon: '\u{1F393}',
+    id: 'scholarly', label: 'Scholarly Analysis', subtitle: 'Academic perspectives & debate',
     features: [
-      { title: 'Scholars',           subtitle: 'Browse all 54 by tradition',                            icon: '\u{1F464}', color: '#a0b8d0', screen: 'ScholarBrowse' },
-      { title: 'Debates',            subtitle: '303 topics where scholars disagree',                    icon: '\u2696',    color: '#d08080', screen: 'DebateBrowse' },
-      { title: 'Difficult Passages', subtitle: '53 hard texts with multi-view responses',               icon: '\u2753',    color: '#FFB74D', screen: 'DifficultPassagesBrowse' },
-      { title: 'Content Library',    subtitle: 'Discourse, manuscripts & more',                          icon: '\u{1F3DB}', color: '#b8a0d0', screen: 'ContentLibrary', premium: true },
+      { title: 'Scholars',           subtitle: 'Browse all 54 by tradition',                            icon: '', color: '#a0b8d0', screen: 'ScholarBrowse' },
+      { title: 'Debates',            subtitle: '303 topics where scholars disagree',                    icon: '', color: '#d08080', screen: 'DebateBrowse' },
+      { title: 'Difficult Passages', subtitle: '53 hard texts with multi-view responses',               icon: '', color: '#FFB74D', screen: 'DifficultPassagesBrowse' },
+      { title: 'Content Library',    subtitle: 'Discourse, manuscripts & more',                          icon: '', color: '#b8a0d0', screen: 'ContentLibrary', premium: true },
     ],
   },
   {
-    id: 'life', label: 'Life & Faith', subtitle: 'Biblical guidance for everyday life', icon: '\u{1F4A1}',
+    id: 'life', label: 'Life & Faith', subtitle: 'Biblical guidance for everyday life',
     features: [
-      { title: 'Life Topics', subtitle: 'Practical guidance from Scripture',                             icon: '\u{1F331}', color: '#81C784', screen: 'LifeTopics' },
+      { title: 'Life Topics', subtitle: 'Practical guidance from Scripture',                             icon: '', color: '#81C784', screen: 'LifeTopics' },
     ],
   },
   {
-    id: 'deep-dive', label: 'Deep Dive', subtitle: 'Advanced study tools', icon: '\u{1F52C}',
+    id: 'deep-dive', label: 'Deep Dive', subtitle: 'Advanced study tools',
     features: [
-      { title: 'Hermeneutic Lenses', subtitle: 'Feminist, liberation, canonical & more',                icon: '\u{1F50E}', color: '#BA68C8', screen: 'LensBrowse' },
-      { title: 'Archaeology',        subtitle: 'Real artifacts that illuminate the text',                icon: '\u{1FAAC}', color: '#b07d4f', screen: 'ArchaeologyBrowse' },
-      { title: 'Time-Travel Reader', subtitle: 'Augustine, Luther & modern scholars',                   icon: '\u231B',    color: '#8a6a3a', screen: 'TimeTravelBrowse' },
-      { title: 'Grammar',            subtitle: 'Verb forms & syntax in plain English',                  icon: '\u{1F4D0}', color: '#7a9ab0', screen: 'GrammarBrowse' },
+      { title: 'Hermeneutic Lenses', subtitle: 'Feminist, liberation, canonical & more',                icon: '', color: '#BA68C8', screen: 'LensBrowse' },
+      { title: 'Archaeology',        subtitle: 'Real artifacts that illuminate the text',                icon: '', color: '#b07d4f', screen: 'ArchaeologyBrowse' },
+      { title: 'Time-Travel Reader', subtitle: 'Augustine, Luther & modern scholars',                   icon: '', color: '#8a6a3a', screen: 'TimeTravelBrowse' },
+      { title: 'Grammar',            subtitle: 'Verb forms & syntax in plain English',                  icon: '', color: '#7a9ab0', screen: 'GrammarBrowse' },
     ],
   },
 ];
@@ -160,7 +159,6 @@ function ExploreMenuScreen() {
                 backgroundColor: activeJump === s.id ? base.gold + '12' : 'transparent',
               }]}
             >
-              <Text style={styles.pillIcon}>{s.icon}</Text>
               <Text style={[styles.pillLabel, { color: activeJump === s.id ? base.gold : base.textMuted }]}>
                 {s.label}
               </Text>
@@ -202,10 +200,7 @@ function ExploreMenuScreen() {
         {/* ── Sections with carousels ─── */}
         {filteredSections.map((section) => (
           <View key={section.id} style={styles.section}>
-            <View style={styles.sectionHeader}>
-              <Text style={styles.sectionIcon}>{section.icon}</Text>
-              <Text style={[styles.sectionLabel, { color: base.gold }]}>{section.label}</Text>
-            </View>
+            <Text style={[styles.sectionLabel, { color: base.gold }]}>{section.label}</Text>
             <Text style={[styles.sectionSubtitle, { color: base.textMuted }]}>{section.subtitle}</Text>
 
             <ScrollView
@@ -265,7 +260,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row', alignItems: 'center', gap: 4,
     paddingHorizontal: 10, paddingVertical: 5, borderRadius: 14, borderWidth: 1,
   },
-  pillIcon: { fontSize: 11 },
   pillLabel: { fontFamily: fontFamily.uiMedium, fontSize: 10 },
 
   // Recommendations
@@ -275,10 +269,8 @@ const styles = StyleSheet.create({
 
   // Sections
   section: { marginBottom: spacing.md },
-  sectionHeader: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 2 },
-  sectionIcon: { fontSize: 13 },
-  sectionLabel: { fontFamily: fontFamily.displayMedium, fontSize: 13, letterSpacing: 0.5 },
-  sectionSubtitle: { fontFamily: fontFamily.ui, fontSize: 11, marginBottom: spacing.sm, marginLeft: 22 },
+  sectionLabel: { fontFamily: fontFamily.displayMedium, fontSize: 13, letterSpacing: 0.5, marginBottom: 2 },
+  sectionSubtitle: { fontFamily: fontFamily.ui, fontSize: 11, marginBottom: spacing.sm },
 
   // Carousels
   carouselContent: { gap: spacing.sm },
