@@ -169,6 +169,45 @@ def main():
     # Meta tables — counts derived from meta files (people.json, scholars.json)
     check(f"{expected_people} people", q1(cur, "SELECT COUNT(*) FROM people") == expected_people)
     check(f"{expected_scholars} scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == expected_scholars)
+
+    # People journeys (#1125)
+    pj_count = q1(cur, "SELECT COUNT(*) FROM people_journeys")
+    if pj_count and pj_count > 0:
+        # Every journey stage must reference a valid person
+        orphan_journeys = q(cur,
+            "SELECT pj.person_id FROM people_journeys pj "
+            "WHERE pj.person_id NOT IN (SELECT id FROM people)")
+        check("Journey stages reference valid people", len(orphan_journeys) == 0,
+              f"orphaned: {[r[0] for r in orphan_journeys[:5]]}")
+
+        # era cross-reference
+        bad_journey_eras = q(cur,
+            "SELECT pj.person_id, pj.era FROM people_journeys pj "
+            "WHERE pj.era IS NOT NULL AND pj.era NOT IN (SELECT id FROM eras)")
+        check("Journey eras reference valid eras", len(bad_journey_eras) == 0,
+              f"invalid: {[(r[0], r[1]) for r in bad_journey_eras[:5]]}")
+
+        # book_dir cross-reference
+        bad_journey_books = q(cur,
+            "SELECT pj.person_id, pj.book_dir FROM people_journeys pj "
+            "WHERE pj.book_dir IS NOT NULL AND pj.book_dir NOT IN (SELECT id FROM books)")
+        check("Journey book_dirs reference valid books", len(bad_journey_books) == 0,
+              f"invalid: {[(r[0], r[1]) for r in bad_journey_books[:5]]}")
+
+        people_with_journey = q1(cur,
+            "SELECT COUNT(DISTINCT person_id) FROM people_journeys")
+        print(f"  people_journeys: {pj_count} stages across {people_with_journey} people")
+
+    # People legacy refs (#1125)
+    plr_count = q1(cur, "SELECT COUNT(*) FROM people_legacy_refs")
+    if plr_count and plr_count > 0:
+        orphan_legacy = q(cur,
+            "SELECT person_id FROM people_legacy_refs "
+            "WHERE person_id NOT IN (SELECT id FROM people)")
+        check("Legacy refs reference valid people", len(orphan_legacy) == 0,
+              f"orphaned: {[r[0] for r in orphan_legacy[:5]]}")
+        print(f"  people_legacy_refs: {plr_count}")
+
     check("71+ places", q1(cur, "SELECT COUNT(*) FROM places") >= 60)
     check("28+ map stories", q1(cur, "SELECT COUNT(*) FROM map_stories") >= 15)
     check("14+ word studies", q1(cur, "SELECT COUNT(*) FROM word_studies") >= 14)
@@ -247,6 +286,42 @@ def main():
     era_enriched = q1(cur, "SELECT COUNT(*) FROM eras WHERE summary IS NOT NULL")
     print(f"  eras: {era_count}, {era_enriched} with summary, "
           f"{len(eras_with_people)} with key_people, {len(eras_with_books)} with books")
+
+    # Redemptive acts (#1118) — validate when present
+    ra_count = q1(cur, "SELECT COUNT(*) FROM redemptive_acts")
+    if ra_count and ra_count > 0:
+        missing_name_ra = q(cur, "SELECT id FROM redemptive_acts WHERE name IS NULL OR name = ''")
+        check("All redemptive acts have names", len(missing_name_ra) == 0,
+              f"missing: {[r[0] for r in missing_name_ra]}")
+
+        # era_ids must reference valid eras
+        acts_with_eras = q(cur, "SELECT id, era_ids FROM redemptive_acts WHERE era_ids IS NOT NULL")
+        bad_act_eras = []
+        era_id_set = {r[0] for r in q(cur, "SELECT id FROM eras")}
+        for row in acts_with_eras:
+            try:
+                eids = json.loads(row[1])
+                if isinstance(eids, list):
+                    for eid in eids:
+                        if eid not in era_id_set:
+                            bad_act_eras.append(f"{row[0]}: {eid}")
+            except (json.JSONDecodeError, TypeError):
+                bad_act_eras.append(f"{row[0]}: invalid JSON")
+        check("Redemptive act era_ids reference valid eras", len(bad_act_eras) == 0,
+              f"invalid: {bad_act_eras[:5]}")
+
+        # chapters with redemptive_act should reference valid acts
+        bad_ch_acts = q(cur,
+            "SELECT id, redemptive_act FROM chapters "
+            "WHERE redemptive_act IS NOT NULL AND redemptive_act NOT IN "
+            "(SELECT id FROM redemptive_acts)")
+        check("Chapter redemptive_act refs valid", len(bad_ch_acts) == 0,
+              f"invalid: {[(r[0], r[1]) for r in bad_ch_acts[:5]]}")
+
+        ch_with_act = q1(cur, "SELECT COUNT(*) FROM chapters WHERE redemptive_act IS NOT NULL")
+        print(f"  redemptive_acts: {ra_count}, {ch_with_act} chapters mapped")
+    else:
+        print(f"  redemptive_acts: 0 (not yet populated)")
 
     # Book intros enrichment columns (#1111) — validate new fields when present
     bi_count = q1(cur, "SELECT COUNT(*) FROM book_intros")

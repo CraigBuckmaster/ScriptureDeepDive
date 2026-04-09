@@ -2,7 +2,7 @@
  * ChapterHeader — Title, subtitle, and inline badge pills.
  *
  * Compact layout: title on its own line, subtitle + tappable pills
- * (timeline, map, notes) flow together on the next line.
+ * (timeline, map, notes, story context) flow together on the next line.
  * "About This Book" moved to ⓘ icon in ChapterNavBar.
  */
 
@@ -18,14 +18,20 @@ interface Props {
   onNotesPress: () => void;
   onTimelinePress?: () => void;
   onMapPress?: () => void;
+  onStoryPress?: () => void;
+  storyActName?: string | null;
 }
 
 export function ChapterHeader({
   chapter, noteCount, onNotesPress,
   onTimelinePress, onMapPress,
+  onStoryPress, storyActName,
 }: Props) {
   const { base } = useTheme();
-  const hasContextPills = !!(chapter.timeline_link_text || chapter.map_story_link_text || noteCount > 0);
+  const hasContextPills = !!(
+    chapter.timeline_link_text || chapter.map_story_link_text ||
+    noteCount > 0 || storyActName
+  );
 
   return (
     <View style={styles.container}>
@@ -50,6 +56,12 @@ export function ChapterHeader({
           {chapter.map_story_link_text && onMapPress && (
             <TouchableOpacity onPress={onMapPress}>
               <BadgeChip label={chapter.map_story_link_text} color="#30a848" />
+            </TouchableOpacity>
+          )}
+
+          {storyActName && onStoryPress && (
+            <TouchableOpacity onPress={onStoryPress}>
+              <BadgeChip label={storyActName} color="#c8a040" />
             </TouchableOpacity>
           )}
 

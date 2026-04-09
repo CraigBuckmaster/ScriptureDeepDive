@@ -131,7 +131,8 @@ CREATE TABLE chapters (
   coaching_json TEXT,
   difficulty INTEGER,
   prayer_prompt TEXT,
-  related_life_topics TEXT
+  related_life_topics TEXT,
+  redemptive_act TEXT
 );
 
 CREATE TABLE sections (
@@ -194,6 +195,26 @@ CREATE TABLE people (
   scripture_role TEXT,
   refs_json TEXT,
   chapter_link TEXT
+);
+
+CREATE TABLE people_journeys (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  person_id TEXT NOT NULL REFERENCES people(id),
+  stage_order INTEGER NOT NULL,
+  stage TEXT NOT NULL,
+  era TEXT,
+  book_dir TEXT,
+  chapters TEXT,
+  verse_ref TEXT,
+  summary TEXT,
+  theme TEXT
+);
+
+CREATE TABLE people_legacy_refs (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  person_id TEXT NOT NULL REFERENCES people(id),
+  ref TEXT NOT NULL,
+  note TEXT
 );
 
 CREATE TABLE scholars (
@@ -349,6 +370,19 @@ CREATE TABLE eras (
   geographic_center TEXT,
   redemptive_thread TEXT,
   transition_to_next TEXT
+);
+
+CREATE TABLE redemptive_acts (
+  id TEXT PRIMARY KEY,
+  act_order INTEGER NOT NULL,
+  name TEXT NOT NULL,
+  tagline TEXT,
+  summary TEXT,
+  key_verse TEXT,
+  era_ids TEXT,
+  book_range TEXT,
+  threads TEXT,
+  prophecy_chains TEXT
 );
 
 -- Database version metadata
@@ -870,6 +904,13 @@ def populate_chapters(cur):
         total_refuted = sum(len(v) for v in refuted_claims.values())
         print(f"  Refuted claims loaded: {total_refuted} (will be hidden from DB)")
 
+    # Load redemptive arc chapter_map for act assignment (#1118)
+    ra_path = META / 'redemptive-arc.json'
+    ra_chapter_map = {}
+    if ra_path.exists():
+        ra_data = _load_json(ra_path)
+        ra_chapter_map = ra_data.get('chapter_map', {})
+
     content_dir = ROOT / 'content'
     for book_dir in sorted(content_dir.iterdir()):
         if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar'):
@@ -891,8 +932,9 @@ def populate_chapters(cur):
             cur.execute(
                 'INSERT INTO chapters (id, book_id, chapter_num, title, subtitle, '
                 'timeline_link_event, timeline_link_text, '
-                'map_story_link_id, map_story_link_text, coaching_json, prayer_prompt) '
-                'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                'map_story_link_id, map_story_link_text, coaching_json, prayer_prompt, '
+                'redemptive_act) '
+                'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                 (chapter_id, book_id, ch_num,
                  data.get('title'), data.get('subtitle'),
                  tl['event_id'] if tl else None,
@@ -900,7 +942,8 @@ def populate_chapters(cur):
                  ms['story_id'] if ms else None,
                  ms['text'] if ms else None,
                  coaching_str,
-                 data.get('prayer_prompt'))
+                 data.get('prayer_prompt'),
+                 ra_chapter_map.get(chapter_id))
             )
             chapter_count += 1
 
@@ -1133,6 +1176,8 @@ def populate_people(cur):
     spine_ids = set(gc.get('spine_ids', []))
 
     count = 0
+    journey_count = 0
+    legacy_count = 0
     for p in people:
         ptype = 'spine' if p['id'] in spine_ids else 'satellite'
         cur.execute(
@@ -1147,6 +1192,35 @@ def populate_people(cur):
              p.get('chapter'))
         )
         count += 1
+
+        # Journey stages (#1125)
+        for j, stage in enumerate(p.get('journey', [])):
+            cur.execute(
+                'INSERT INTO people_journeys '
+                '(person_id, stage_order, stage, era, book_dir, chapters, '
+                'verse_ref, summary, theme) '
+                'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                (p['id'], j, stage['stage'], stage.get('era'),
+                 stage.get('book_dir'),
+                 _json_str(stage['chapters']) if 'chapters' in stage else None,
+                 stage.get('verse_ref'), stage.get('summary'),
+                 stage.get('theme'))
+            )
+            journey_count += 1
+
+        # Legacy refs (#1125)
+        for lr in p.get('legacy_refs', []):
+            cur.execute(
+                'INSERT INTO people_legacy_refs (person_id, ref, note) '
+                'VALUES (?, ?, ?)',
+                (p['id'], lr['ref'], lr.get('note'))
+            )
+            legacy_count += 1
+
+    if journey_count > 0:
+        print(f"  [OK] people_journeys: {journey_count} stages")
+    if legacy_count > 0:
+        print(f"  [OK] people_legacy_refs: {legacy_count} refs")
     return count
 
 
@@ -1535,6 +1609,31 @@ def populate_eras(cur):
              era.get('geographic_center'),
              era.get('redemptive_thread'),
              era.get('transition_to_next'))
+        )
+        count += 1
+    return count
+
+
+def populate_redemptive_acts(cur):
+    """Populate the redemptive_acts table from redemptive-arc.json."""
+    path = META / 'redemptive-arc.json'
+    if not path.exists():
+        return 0
+    data = _load_json(path)
+    acts = data.get('acts', [])
+    count = 0
+    for i, act in enumerate(acts):
+        cur.execute(
+            'INSERT OR IGNORE INTO redemptive_acts '
+            '(id, act_order, name, tagline, summary, key_verse, '
+            'era_ids, book_range, threads, prophecy_chains) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (act['id'], i, act['name'], act.get('tagline'),
+             act.get('summary'), act.get('key_verse'),
+             _json_str(act['era_ids']) if 'era_ids' in act else None,
+             act.get('book_range'),
+             _json_str(act['threads']) if 'threads' in act else None,
+             _json_str(act['prophecy_chains']) if 'prophecy_chains' in act else None)
         )
         count += 1
     return count
@@ -2405,6 +2504,9 @@ def main():
 
     n = populate_eras(cur)
     print(f"  [OK] eras: {n} rows")
+
+    n = populate_redemptive_acts(cur)
+    print(f"  [OK] redemptive_acts: {n} rows")
 
     n = populate_prophecy_chains(cur)
     print(f"  [OK] prophecy_chains: {n} rows")
