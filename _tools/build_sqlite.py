@@ -1629,7 +1629,7 @@ def populate_redemptive_acts(cur):
             'era_ids, book_range, threads, prophecy_chains) '
             'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (act['id'], i, act['name'], act.get('tagline'),
-             act.get('summary'), act.get('key_verse'),
+             act.get('summary'), _json_str(act['key_verse']) if 'key_verse' in act else None,
              _json_str(act['era_ids']) if 'era_ids' in act else None,
              act.get('book_range'),
              _json_str(act['threads']) if 'threads' in act else None,
