@@ -3040,7 +3040,7 @@
       "id": "book-james",
       "name": "James Written",
       "year": 48,
-      "era": "nt",
+      "era": "general_epistles",
       "author": [
         "james-brother"
       ],
@@ -3052,7 +3052,7 @@
       "id": "book-galatians",
       "name": "Galatians Written",
       "year": 49,
-      "era": "nt",
+      "era": "pauline_mission",
       "author": [
         "paul"
       ],
@@ -3064,7 +3064,7 @@
       "id": "book-1-thessalonians",
       "name": "1 Thessalonians Written",
       "year": 51,
-      "era": "apostolic",
+      "era": "pauline_mission",
       "author": [
         "paul"
       ],
@@ -3076,7 +3076,7 @@
       "id": "book-2-thessalonians",
       "name": "2 Thessalonians Written",
       "year": 51,
-      "era": "apostolic",
+      "era": "pauline_mission",
       "author": [
         "paul"
       ],
@@ -3088,7 +3088,7 @@
       "id": "book-1-corinthians",
       "name": "1 Corinthians Written",
       "year": 55,
-      "era": "apostolic",
+      "era": "pauline_mission",
       "author": [
         "paul"
       ],
@@ -3100,7 +3100,7 @@
       "id": "book-mark",
       "name": "Mark Written",
       "year": 55,
-      "era": "nt",
+      "era": "life_of_christ",
       "author": [],
       "ref": "Mark",
       "chapter": "nt/mark/Mark_1.html",
@@ -3110,7 +3110,7 @@
       "id": "book-2-corinthians",
       "name": "2 Corinthians Written",
       "year": 56,
-      "era": "apostolic",
+      "era": "pauline_mission",
       "author": [
         "paul"
       ],
@@ -3122,7 +3122,7 @@
       "id": "book-romans",
       "name": "Romans Written",
       "year": 57,
-      "era": "apostolic",
+      "era": "pauline_mission",
       "author": [
         "paul"
       ],
@@ -3134,7 +3134,7 @@
       "id": "book-ephesians",
       "name": "Ephesians Written",
       "year": 60,
-      "era": "apostolic",
+      "era": "pauline_mission",
       "author": [
         "paul"
       ],
@@ -3146,7 +3146,7 @@
       "id": "book-colossians",
       "name": "Colossians Written",
       "year": 60,
-      "era": "apostolic",
+      "era": "pauline_mission",
       "author": [
         "paul"
       ],
@@ -3158,7 +3158,7 @@
       "id": "book-philemon",
       "name": "Philemon Written",
       "year": 60,
-      "era": "apostolic",
+      "era": "pauline_mission",
       "author": [
         "paul"
       ],
@@ -3170,7 +3170,7 @@
       "id": "book-matthew",
       "name": "Matthew Written",
       "year": 60,
-      "era": "nt",
+      "era": "life_of_christ",
       "author": [
         "matthew-ap"
       ],
@@ -3182,7 +3182,7 @@
       "id": "book-philippians",
       "name": "Philippians Written",
       "year": 61,
-      "era": "apostolic",
+      "era": "pauline_mission",
       "author": [
         "paul"
       ],
@@ -3194,7 +3194,7 @@
       "id": "book-luke",
       "name": "Luke Written",
       "year": 62,
-      "era": "apostolic",
+      "era": "life_of_christ",
       "author": [],
       "ref": "Luke",
       "chapter": "nt/luke/Luke_1.html",
@@ -3204,7 +3204,7 @@
       "id": "book-acts",
       "name": "Acts Written",
       "year": 62,
-      "era": "apostolic",
+      "era": "early_church",
       "author": [],
       "ref": "Acts",
       "chapter": "nt/acts/Acts_1.html",
@@ -3214,7 +3214,7 @@
       "id": "book-1-timothy",
       "name": "1 Timothy Written",
       "year": 64,
-      "era": "apostolic",
+      "era": "pauline_mission",
       "author": [
         "paul"
       ],
@@ -3226,7 +3226,7 @@
       "id": "book-titus",
       "name": "Titus Written",
       "year": 64,
-      "era": "apostolic",
+      "era": "pauline_mission",
       "author": [
         "paul"
       ],
@@ -3238,7 +3238,7 @@
       "id": "book-1-peter",
       "name": "1 Peter Written",
       "year": 64,
-      "era": "apostolic",
+      "era": "general_epistles",
       "author": [
         "peter"
       ],
@@ -3250,7 +3250,7 @@
       "id": "book-2-peter",
       "name": "2 Peter Written",
       "year": 67,
-      "era": "apostolic",
+      "era": "general_epistles",
       "author": [
         "peter"
       ],
@@ -3262,7 +3262,7 @@
       "id": "book-2-timothy",
       "name": "2 Timothy Written",
       "year": 67,
-      "era": "apostolic",
+      "era": "pauline_mission",
       "author": [
         "paul"
       ],
@@ -3274,7 +3274,7 @@
       "id": "book-hebrews",
       "name": "Hebrews Written",
       "year": 67,
-      "era": "apostolic",
+      "era": "general_epistles",
       "author": [],
       "ref": "Hebrews",
       "chapter": "nt/hebrews/Hebrews_1.html",
@@ -3284,7 +3284,7 @@
       "id": "book-jude",
       "name": "Jude Written",
       "year": 68,
-      "era": "apostolic",
+      "era": "general_epistles",
       "author": [],
       "ref": "Jude",
       "chapter": "nt/jude/Jude_1.html",
@@ -3294,7 +3294,7 @@
       "id": "book-1-john",
       "name": "1 John Written",
       "year": 90,
-      "era": "apostolic",
+      "era": "general_epistles",
       "author": [
         "john-ap"
       ],
@@ -3306,7 +3306,7 @@
       "id": "book-2-john",
       "name": "2 John Written",
       "year": 90,
-      "era": "apostolic",
+      "era": "general_epistles",
       "author": [
         "john-ap"
       ],
@@ -3318,7 +3318,7 @@
       "id": "book-3-john",
       "name": "3 John Written",
       "year": 90,
-      "era": "apostolic",
+      "era": "general_epistles",
       "author": [
         "john-ap"
       ],
@@ -3330,7 +3330,7 @@
       "id": "book-john",
       "name": "John Written",
       "year": 90,
-      "era": "apostolic",
+      "era": "life_of_christ",
       "author": [
         "john-ap"
       ],
@@ -3342,7 +3342,7 @@
       "id": "book-revelation",
       "name": "Revelation Written",
       "year": 95,
-      "era": "apostolic",
+      "era": "apocalyptic",
       "author": [
         "john-ap"
       ],
@@ -4394,55 +4394,55 @@
       "id": "joseph-nt",
       "name": "Joseph (Mary's husband)",
       "year": -40,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "anna",
       "name": "Anna",
       "year": -36,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "herod-antipas",
       "name": "Herod Antipas",
       "year": -20,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "mary",
       "name": "Mary (Mother of Jesus)",
       "year": -18,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "herodias",
       "name": "Herodias",
       "year": -15,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "zechariah-nt",
       "name": "Zechariah (priest)",
       "year": -10,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "elizabeth",
       "name": "Elizabeth",
       "year": -10,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "gamaliel",
       "name": "Gamaliel",
       "year": -10,
-      "era": "nt"
+      "era": "early_church"
     },
     {
       "id": "james-brother",
       "name": "James (brother of Jesus)",
       "year": -8,
-      "era": "nt"
+      "era": "general_epistles"
     },
     {
       "id": "buzi",
@@ -4454,241 +4454,241 @@
       "id": "john-baptist",
       "name": "John the Baptist",
       "year": -6,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "annas",
       "name": "Annas",
       "year": -6,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "jesus",
       "name": "Jesus of Nazareth",
       "year": -5,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "herod-great",
       "name": "Herod the Great",
       "year": -4,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "james-lord",
       "name": "James (brother of Jesus)",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "peter",
       "name": "Peter (Simon)",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "andrew",
       "name": "Andrew",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "james-z",
       "name": "James (son of Zebedee)",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "john-ap",
       "name": "John (Apostle)",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "philip",
       "name": "Philip (Apostle)",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "matthew-ap",
       "name": "Matthew (Levi)",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "thomas",
       "name": "Thomas (Didymus)",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "judas",
       "name": "Judas Iscariot",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "nicodemus",
       "name": "Nicodemus",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "mary-magdalene",
       "name": "Mary Magdalene",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "stephen",
       "name": "Stephen",
       "year": 1,
-      "era": "nt"
+      "era": "early_church"
     },
     {
       "id": "barnabas",
       "name": "Barnabas",
       "year": 1,
-      "era": "nt"
+      "era": "early_church"
     },
     {
       "id": "philip-nt",
       "name": "Philip (the Evangelist)",
       "year": 1,
-      "era": "nt"
+      "era": "early_church"
     },
     {
       "id": "lazarus",
       "name": "Lazarus",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "martha",
       "name": "Martha",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "mary-bethany",
       "name": "Mary of Bethany",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "zacchaeus",
       "name": "Zacchaeus",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "nathanael",
       "name": "Nathanael (Bartholomew)",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "joseph-arimathea",
       "name": "Joseph of Arimathea",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "matthias",
       "name": "Matthias",
       "year": 1,
-      "era": "nt"
+      "era": "early_church"
     },
     {
       "id": "joanna",
       "name": "Joanna",
       "year": 1,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "paul",
       "name": "Paul (Saul of Tarsus)",
       "year": 5,
-      "era": "nt"
+      "era": "pauline_mission"
     },
     {
       "id": "philip-ev",
       "name": "Philip (Evangelist)",
       "year": 10,
-      "era": "nt"
+      "era": "early_church"
     },
     {
       "id": "caiaphas",
       "name": "Caiaphas",
       "year": 18,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "pilate",
       "name": "Pontius Pilate",
       "year": 26,
-      "era": "nt"
+      "era": "life_of_christ"
     },
     {
       "id": "simon-magus",
       "name": "Simon Magus",
       "year": 30,
-      "era": "nt"
+      "era": "early_church"
     },
     {
       "id": "cornelius",
       "name": "Cornelius",
       "year": 35,
-      "era": "nt"
+      "era": "early_church"
     },
     {
       "id": "silas",
       "name": "Silas",
       "year": 45,
-      "era": "nt"
+      "era": "pauline_mission"
     },
     {
       "id": "lydia",
       "name": "Lydia",
       "year": 50,
-      "era": "nt"
+      "era": "pauline_mission"
     },
     {
       "id": "aquila",
       "name": "Aquila",
       "year": 50,
-      "era": "nt"
+      "era": "pauline_mission"
     },
     {
       "id": "priscilla",
       "name": "Priscilla (Prisca)",
       "year": 50,
-      "era": "nt"
+      "era": "pauline_mission"
     },
     {
       "id": "apollos",
       "name": "Apollos",
       "year": 50,
-      "era": "nt"
+      "era": "pauline_mission"
     },
     {
       "id": "felix",
       "name": "Felix",
       "year": 59,
-      "era": "nt"
+      "era": "pauline_mission"
     },
     {
       "id": "festus",
       "name": "Festus",
       "year": 62,
-      "era": "nt"
+      "era": "pauline_mission"
     },
     {
       "id": "agrippa",
       "name": "Agrippa II",
       "year": 100,
-      "era": "nt"
+      "era": "pauline_mission"
     },
     {
       "id": "abimelech-judge",
@@ -5915,6 +5915,14 @@
       "range": [
         -4,
         70
+      ],
+      "deprecated": true,
+      "replaced_by": [
+        "life_of_christ",
+        "early_church",
+        "pauline_mission",
+        "general_epistles",
+        "apocalyptic"
       ]
     },
     "apostolic": {
@@ -5924,7 +5932,474 @@
       "range": [
         30,
         100
+      ],
+      "deprecated": true,
+      "replaced_by": [
+        "early_church",
+        "pauline_mission",
+        "general_epistles",
+        "apocalyptic"
       ]
+    },
+    "life_of_christ": {
+      "hex": "#46370f",
+      "name": "Life of Christ",
+      "pill": "Christ",
+      "range": [
+        -6,
+        30
+      ],
+      "order": 11,
+      "summary": "God breaks four centuries of silence by entering history as a human being. Jesus of Nazareth announces the kingdom of God, demonstrates it through signs and teaching, and accomplishes salvation through his death and resurrection.",
+      "narrative": "The Gospels present four complementary portraits of Jesus. Matthew shows the Jewish Messiah who fulfills Old Testament prophecy. Mark presents the suffering servant who acts with urgent authority. Luke emphasizes the Savior who seeks the lost, the poor, and the marginalized. John reveals the eternal Word made flesh, the divine Son who makes the Father known.\n\nJesus’s ministry unfolds in three movements. In Galilee, he announces the kingdom, calls disciples, heals the sick, and teaches in parables. His miracles are not mere displays of power but signs of the kingdom’s arrival—the blind see, the lame walk, the dead are raised, and the poor hear good news. The Transfiguration reveals his glory to the inner circle, confirming his identity before the journey to Jerusalem.\n\nThe final week concentrates the narrative’s full weight. Jesus enters Jerusalem as king, cleanses the temple, shares a final meal with his disciples, prays in Gethsemane, endures trial and crucifixion, and rises on the third day. The resurrection is not an epilogue but the climax—the vindication of everything Jesus claimed and the foundation on which the entire Christian faith rests. His ascension commissions the disciples and promises the Spirit.",
+      "key_themes": [
+        {
+          "theme": "Kingdom of God",
+          "ref": "Mark 1:15",
+          "note": "Jesus announces that God’s reign has arrived and calls for repentance and faith."
+        },
+        {
+          "theme": "Incarnation",
+          "ref": "John 1:14",
+          "note": "The eternal Word takes on human flesh, dwelling among humanity as the ultimate revelation of God."
+        },
+        {
+          "theme": "Substitutionary Death",
+          "ref": "Mark 10:45",
+          "note": "Jesus defines his mission as giving his life as a ransom for many."
+        },
+        {
+          "theme": "Resurrection",
+          "ref": "1 Cor 15:17",
+          "note": "The bodily resurrection of Jesus is the hinge event of all history and the guarantee of the new creation."
+        },
+        {
+          "theme": "Fulfillment of Prophecy",
+          "ref": "Luke 24:44",
+          "note": "Jesus reveals that the entire Old Testament—Law, Prophets, and Writings—points to him."
+        }
+      ],
+      "key_verses": [
+        "John 1:14",
+        "John 3:16",
+        "Mark 10:45",
+        "Matt 28:18-20",
+        "Luke 4:18-19"
+      ],
+      "key_people": [
+        "jesus",
+        "mary",
+        "joseph-nt",
+        "john-baptist",
+        "peter",
+        "john-ap",
+        "james-z",
+        "judas",
+        "pilate",
+        "mary-magdalene",
+        "nicodemus",
+        "lazarus",
+        "martha",
+        "mary-bethany",
+        "herod-great",
+        "herod-antipas",
+        "caiaphas",
+        "anna",
+        "elizabeth",
+        "zechariah-nt"
+      ],
+      "books": [
+        "matthew",
+        "mark",
+        "luke",
+        "john"
+      ],
+      "chapter_range": {
+        "matthew": [
+          1,
+          28
+        ],
+        "mark": [
+          1,
+          16
+        ],
+        "luke": [
+          1,
+          24
+        ],
+        "john": [
+          1,
+          21
+        ]
+      },
+      "geographic_center": {
+        "region": "Palestine",
+        "place_ids": [
+          "bethlehem",
+          "nazareth",
+          "capernaum",
+          "galilee-sea",
+          "jerusalem",
+          "gethsemane",
+          "golgotha"
+        ]
+      },
+      "redemptive_thread": "Everything the Old Testament anticipated converges in Jesus: the seed of the woman, the Passover lamb, the prophet like Moses, the Davidic king, the suffering servant, the new covenant mediator.",
+      "transition_to_next": "The risen Jesus commissions his followers to be witnesses 'to the ends of the earth,' promises the Holy Spirit, and ascends to the Father's right hand."
+    },
+    "early_church": {
+      "hex": "#2e4a3a",
+      "name": "Early Church",
+      "pill": "Early Church",
+      "range": [
+        30,
+        46
+      ],
+      "order": 12,
+      "summary": "The Holy Spirit descends at Pentecost, and the church explodes from a handful of Galilean disciples into a multiethnic, boundary-breaking movement. Peter’s leadership, Stephen’s martyrdom, and the conversion of Cornelius reshape Israel’s story forever.",
+      "narrative": "Acts 1–12 narrates the most dramatic community transformation in history. At Pentecost, the Spirit falls on the gathered disciples, reversing Babel’s scattering as people from every nation hear God’s mighty works in their own languages. Peter’s sermon interprets the event through Joel’s prophecy and David’s psalms, and three thousand people respond.\n\nThe early Jerusalem church lives as a radical community: sharing possessions, meeting in homes, and growing daily despite escalating opposition. Stephen’s speech and martyrdom mark a turning point—his death scatters the church beyond Jerusalem, and the gospel begins moving outward. Philip’s ministry in Samaria and to the Ethiopian eunuch demonstrates that the gospel is for those beyond Israel’s traditional boundaries.\n\nThe Cornelius episode (Acts 10–11) is the era’s most theologically significant event. Peter’s vision, Cornelius’s conversion, and the Spirit’s falling on Gentile believers without circumcision force the Jerusalem church to acknowledge that God does not show favoritism. The Antioch church—the first to include Jews and Gentiles as equals—becomes the launching pad for the Gentile mission.",
+      "key_themes": [
+        {
+          "theme": "Pentecost and the Spirit",
+          "ref": "Acts 2:1-4",
+          "note": "The Spirit’s outpouring fulfills Joel’s prophecy and empowers the church for its mission."
+        },
+        {
+          "theme": "Community of Goods",
+          "ref": "Acts 2:44-45",
+          "note": "The early church’s radical sharing embodies the new covenant community."
+        },
+        {
+          "theme": "Gentile Inclusion",
+          "ref": "Acts 10:34-35",
+          "note": "The Cornelius episode shatters ethnic boundaries and redefines the people of God."
+        },
+        {
+          "theme": "Witness Under Persecution",
+          "ref": "Acts 8:1-4",
+          "note": "Persecution scatters the church but spreads the gospel—opposition becomes vehicle for mission."
+        }
+      ],
+      "key_verses": [
+        "Acts 1:8",
+        "Acts 2:42-47",
+        "Acts 4:12",
+        "Acts 10:34-35"
+      ],
+      "key_people": [
+        "peter",
+        "stephen",
+        "barnabas",
+        "philip-ev",
+        "cornelius",
+        "james-lord",
+        "gamaliel",
+        "simon-magus",
+        "joanna",
+        "matthias",
+        "andrew"
+      ],
+      "books": [
+        "acts"
+      ],
+      "chapter_range": {
+        "acts": [
+          1,
+          12
+        ]
+      },
+      "geographic_center": {
+        "region": "Jerusalem, Judea & Samaria",
+        "place_ids": [
+          "jerusalem",
+          "samaria",
+          "joppa",
+          "caesarea-m",
+          "antioch-s"
+        ]
+      },
+      "redemptive_thread": "Pentecost inaugurates the new covenant community—the Spirit writes God’s law on hearts, as Jeremiah promised. The church becomes the new temple where God dwells.",
+      "transition_to_next": "From the cosmopolitan church at Antioch, the Holy Spirit sends Barnabas and Saul on the first missionary journey."
+    },
+    "pauline_mission": {
+      "hex": "#3a4a5a",
+      "name": "Pauline Mission",
+      "pill": "Paul’s Mission",
+      "range": [
+        46,
+        67
+      ],
+      "order": 13,
+      "summary": "Paul’s three missionary journeys and his letters to young churches define Christian theology and plant the gospel across the Roman Empire.",
+      "narrative": "Paul’s conversion transforms Christianity’s fiercest opponent into its greatest missionary. His three journeys (Acts 13–21) establish churches in Galatia, Macedonia, Achaia, and Asia Minor. The pattern is consistent: Paul enters a city, preaches in the synagogue, faces opposition, gathers a believing community, and moves on—leaving behind letters that become Scripture.\n\nThe Jerusalem Council (Acts 15) resolves the era’s defining question: must Gentile believers become Jews? The decision—that Gentiles are saved by grace through faith without circumcision—is the Magna Carta of Gentile Christianity. Paul’s letters to Galatia and Rome provide the theological foundation for this verdict.\n\nPaul’s prison epistles (Ephesians, Philippians, Colossians, Philemon) represent his most mature theology, written during Roman imprisonment. His pastoral letters to Timothy and Titus address church order and leadership succession. Paul’s final years—arrest in Jerusalem, appeal to Caesar, voyage and shipwreck, arrival in Rome—demonstrate that the gospel advances through suffering, not despite it.",
+      "key_themes": [
+        {
+          "theme": "Justification by Faith",
+          "ref": "Rom 3:28",
+          "note": "Right standing with God comes through faith, not works of the law."
+        },
+        {
+          "theme": "Jew-Gentile Unity",
+          "ref": "Eph 2:14-16",
+          "note": "Christ destroys the dividing wall between Jew and Gentile, creating one new humanity."
+        },
+        {
+          "theme": "Body of Christ",
+          "ref": "1 Cor 12:12-27",
+          "note": "The church is Christ’s body—diverse in gifts, unified in Spirit, interdependent in mission."
+        },
+        {
+          "theme": "Christological Hymns",
+          "ref": "Phil 2:5-11",
+          "note": "Paul’s letters preserve early hymns confessing Christ’s pre-existence, incarnation, death, and exaltation."
+        },
+        {
+          "theme": "Gospel Through Suffering",
+          "ref": "Phil 1:12-14",
+          "note": "Paul’s imprisonment becomes an opportunity for the gospel, not a setback."
+        }
+      ],
+      "key_verses": [
+        "Rom 1:16",
+        "Rom 3:23-24",
+        "Rom 8:28",
+        "Gal 2:20",
+        "Eph 2:8-9",
+        "Phil 2:5-11"
+      ],
+      "key_people": [
+        "paul",
+        "barnabas",
+        "silas",
+        "timothy",
+        "titus_companion",
+        "luke_evangelist",
+        "aquila",
+        "priscilla",
+        "apollos",
+        "lydia",
+        "philemon",
+        "onesimus",
+        "epaphras",
+        "epaphroditus",
+        "phoebe",
+        "felix",
+        "festus",
+        "agrippa"
+      ],
+      "books": [
+        "acts",
+        "romans",
+        "1_corinthians",
+        "2_corinthians",
+        "galatians",
+        "ephesians",
+        "philippians",
+        "colossians",
+        "1_thessalonians",
+        "2_thessalonians",
+        "1_timothy",
+        "2_timothy",
+        "titus",
+        "philemon"
+      ],
+      "chapter_range": {
+        "acts": [
+          13,
+          28
+        ]
+      },
+      "geographic_center": {
+        "region": "Asia Minor, Greece & Rome",
+        "place_ids": [
+          "antioch-s",
+          "iconium",
+          "lystra",
+          "derbe",
+          "philippi",
+          "thessalonica",
+          "athens",
+          "corinth",
+          "ephesus",
+          "troas",
+          "rome",
+          "malta",
+          "caesarea-m",
+          "cyprus"
+        ]
+      },
+      "redemptive_thread": "Paul’s theology articulates what Christ’s death and resurrection accomplish: justification, reconciliation, adoption, sanctification, and future glorification.",
+      "transition_to_next": "As the apostolic generation ages, other voices address the church’s ongoing needs for endurance, holiness, and discernment against false teaching."
+    },
+    "general_epistles": {
+      "hex": "#4a3a5a",
+      "name": "General Epistles",
+      "pill": "Epistles",
+      "range": [
+        45,
+        90
+      ],
+      "order": 14,
+      "summary": "Hebrews, James, Peter, John, and Jude address the church’s second-generation challenges: persecution, false teaching, cultural assimilation, and the delay of Christ’s return.",
+      "narrative": "The general epistles speak to a church moving beyond its founding generation. Hebrews addresses Jewish Christians tempted to revert to Judaism under persecution, presenting Christ as the superior priest, sacrifice, and covenant mediator who renders the old covenant obsolete. Its hall of faith (chapter 11) recapitulates the entire Old Testament as a story of believing trust.\n\nJames, writing from Jerusalem, insists that genuine faith produces visible works—not as the basis of salvation but as its evidence. Peter’s letters address suffering and false teaching: 1 Peter develops a theology of suffering as participation in Christ’s sufferings; 2 Peter warns against scoffers who deny the Lord’s return.\n\nJohn’s three letters combat early proto-Gnostic threats that deny Christ’s incarnation and separate knowledge from ethics. Jude, brief and urgent, warns against false teachers who have infiltrated the community and calls believers to contend earnestly for the faith.",
+      "key_themes": [
+        {
+          "theme": "Christ’s Superior Priesthood",
+          "ref": "Heb 4:14-16",
+          "note": "Jesus is the great high priest who sympathizes with our weakness and provides confident access to God."
+        },
+        {
+          "theme": "Faith and Works",
+          "ref": "Jas 2:17",
+          "note": "Faith without corresponding action is dead—genuine belief always produces fruit."
+        },
+        {
+          "theme": "Suffering with Purpose",
+          "ref": "1 Pet 4:12-13",
+          "note": "Suffering for Christ is participatory—believers share in his sufferings and will share in his glory."
+        },
+        {
+          "theme": "Testing the Spirits",
+          "ref": "1 John 4:1-3",
+          "note": "The church must evaluate teaching by its christological content."
+        },
+        {
+          "theme": "Contending for the Faith",
+          "ref": "Jude 3",
+          "note": "The faith has been delivered once for all; the church’s task is to guard and defend it."
+        }
+      ],
+      "key_verses": [
+        "Heb 11:1",
+        "Heb 12:1-2",
+        "Jas 1:22",
+        "1 Pet 2:9",
+        "1 John 4:8",
+        "Jude 3"
+      ],
+      "key_people": [
+        "james-brother",
+        "peter",
+        "john-ap"
+      ],
+      "books": [
+        "hebrews",
+        "james",
+        "1_peter",
+        "2_peter",
+        "1_john",
+        "2_john",
+        "3_john",
+        "jude"
+      ],
+      "chapter_range": {
+        "hebrews": [
+          1,
+          13
+        ],
+        "james": [
+          1,
+          5
+        ],
+        "1_peter": [
+          1,
+          5
+        ],
+        "2_peter": [
+          1,
+          3
+        ],
+        "1_john": [
+          1,
+          5
+        ],
+        "2_john": [
+          1,
+          1
+        ],
+        "3_john": [
+          1,
+          1
+        ],
+        "jude": [
+          1,
+          1
+        ]
+      },
+      "geographic_center": {
+        "region": "Dispersed Church",
+        "place_ids": [
+          "jerusalem",
+          "rome"
+        ]
+      },
+      "redemptive_thread": "The general epistles demonstrate how the gospel sustains the church under pressure. Hebrews shows Christ as the fulfillment of the entire sacrificial system.",
+      "transition_to_next": "The aging apostle John, exiled on Patmos, receives a final apocalyptic vision that brings the entire biblical narrative to its consummation."
+    },
+    "apocalyptic": {
+      "hex": "#5a2a2a",
+      "name": "Apocalyptic",
+      "pill": "Revelation",
+      "range": [
+        90,
+        96
+      ],
+      "order": 15,
+      "summary": "The Revelation of Jesus Christ, given to John on Patmos, unveils the cosmic conflict between God and evil, the judgment of Babylon, and the triumph of the Lamb.",
+      "narrative": "Revelation is both letter, prophecy, and apocalypse—addressing seven real churches in Asia Minor while lifting the curtain on the spiritual realities behind history. The opening vision of the risen Christ among the lampstands establishes that Jesus is present with his persecuted church.\n\nThe book’s central drama unfolds through interlocking cycles of seals, trumpets, and bowls, each intensifying the themes of divine judgment and redemptive purpose. The Lamb who was slain is the only one worthy to open the scroll of history—victory through sacrifice, power through weakness, a throne occupied by a slaughtered Lamb.\n\nBabylon’s fall, the beast’s defeat, and the final judgment clear the stage for the book’s climactic vision: a new heaven and new earth where God dwells with humanity, every tear is wiped away, and the curse of Genesis 3 is finally reversed. The tree of life, lost in Eden, stands in the new Jerusalem. The Bible ends where it began—with God and humanity together—but now the relationship is unbreakable.",
+      "key_themes": [
+        {
+          "theme": "Sovereignty of the Lamb",
+          "ref": "Rev 5:5-6",
+          "note": "The Lion of Judah conquers as a slain Lamb—redefining power through sacrificial love."
+        },
+        {
+          "theme": "Faithful Witness",
+          "ref": "Rev 2:10",
+          "note": "The letters to seven churches call believers to endure faithfully even unto death."
+        },
+        {
+          "theme": "Cosmic Conflict",
+          "ref": "Rev 12:7-12",
+          "note": "The dragon’s war reveals the spiritual battle behind human history."
+        },
+        {
+          "theme": "New Creation",
+          "ref": "Rev 21:1-5",
+          "note": "God makes all things new—not escape from creation but its renewal and perfection."
+        },
+        {
+          "theme": "Maranatha",
+          "ref": "Rev 22:20",
+          "note": "The Bible’s final prayer expresses the church’s longing for Christ’s return."
+        }
+      ],
+      "key_verses": [
+        "Rev 1:8",
+        "Rev 5:9-10",
+        "Rev 21:3-4",
+        "Rev 22:20"
+      ],
+      "key_people": [
+        "john-ap"
+      ],
+      "books": [
+        "revelation"
+      ],
+      "chapter_range": {
+        "revelation": [
+          1,
+          22
+        ]
+      },
+      "geographic_center": {
+        "region": "Asia Minor (Patmos)",
+        "place_ids": [
+          "ephesus"
+        ]
+      },
+      "redemptive_thread": "Revelation completes the redemptive arc: the serpent of Genesis 3 is the dragon of Revelation 12, the lost paradise becomes the new Jerusalem, and God dwells permanently with redeemed humanity.",
+      "transition_to_next": ""
     }
   }
 }
