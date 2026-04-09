@@ -1605,8 +1605,8 @@ def populate_eras(cur):
              _json_str(era['key_themes']) if 'key_themes' in era else None,
              _json_str(era['key_people']) if 'key_people' in era else None,
              _json_str(era['books']) if 'books' in era else None,
-             era.get('chapter_range'),
-             era.get('geographic_center'),
+             _json_str(era['chapter_range']) if 'chapter_range' in era else None,
+             _json_str(era['geographic_center']) if 'geographic_center' in era else None,
              era.get('redemptive_thread'),
              era.get('transition_to_next'))
         )
