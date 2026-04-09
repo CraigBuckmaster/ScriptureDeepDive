@@ -60,7 +60,6 @@ export function ContinueExploringFooter({ cards }: Props) {
             }]}
           >
             <View style={styles.cardHeader}>
-              <Text style={styles.cardIcon}>{card.icon}</Text>
               <Text
                 style={[styles.cardTitle, { color: card.color }]}
                 numberOfLines={1}
@@ -114,11 +113,7 @@ const styles = StyleSheet.create({
   cardHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 4,
     marginBottom: 4,
-  },
-  cardIcon: {
-    fontSize: 12,
   },
   cardTitle: {
     fontFamily: fontFamily.uiMedium,

@@ -15,7 +15,6 @@ export interface ExploreCard {
   type: string;
   title: string;
   subtitle: string;
-  icon: string;
   color: string;
   screen: string;
   params: Record<string, any>;
@@ -43,7 +42,6 @@ function extractPeople(panel: ChapterPanel): ExploreCard[] {
     type: 'people',
     title: p.name ?? p.label ?? 'Person',
     subtitle: p.role ?? p.description?.slice(0, 40) ?? 'Biblical figure',
-    icon: '👤',
     color: '#e86040',
     screen: 'PersonDetail',
     params: { personId: p.id ?? p.name },
@@ -58,7 +56,6 @@ function extractDebate(panel: ChapterPanel): ExploreCard | null {
     type: 'debate',
     title: typeof title === 'string' ? (title.length > 35 ? title.slice(0, 32) + '…' : title) : 'Debate',
     subtitle: 'Scholarly debate',
-    icon: '⚖',
     color: '#d08080',
     screen: 'DebateDetail',
     params: { debateId: data.id ?? data.debate_id },
@@ -76,7 +73,6 @@ function extractThemes(panel: ChapterPanel): ExploreCard | null {
     type: 'concept',
     title: typeof name === 'string' ? name : 'Theme',
     subtitle: 'Concept theme',
-    icon: '✦',
     color: '#bfa050',
     screen: 'ConceptBrowse',
     params: {},
@@ -107,7 +103,6 @@ export function useContinueExploring(
         type: 'timeline',
         title: 'Timeline',
         subtitle: chapter.timeline_link_text ?? 'See on the timeline',
-        icon: '⏱',
         color: '#70b8e8',
         screen: 'Timeline',
         params: { eventId: chapter.timeline_link_event },
@@ -120,7 +115,6 @@ export function useContinueExploring(
         type: 'map',
         title: 'Map',
         subtitle: chapter.map_story_link_text ?? 'See on the map',
-        icon: '📍',
         color: '#81C784',
         screen: 'Map',
         params: { storyId: chapter.map_story_link_id },
