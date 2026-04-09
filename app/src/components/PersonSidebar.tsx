@@ -1,12 +1,17 @@
 /**
- * PersonSidebar — Bio panel for genealogy tree.
- * On phone: bottom sheet. Shows era badge, name, dates, role,
- * family links (tappable → chaining), bio, scriptureRole, refs, chapter link.
+ * PersonSidebar — Canonical person bio panel used everywhere.
+ *
+ * On genealogy tree: bottom sheet modal.
+ * On PersonDetail route: auto-opened modal (wraps this component).
+ *
+ * Shows: era badge, name, dates, role, images, family links,
+ * bio, scriptureRole, refs, chapter link, "See on Family Tree" link.
  */
 
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Modal, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { ArrowRight } from 'lucide-react-native';
 import { BadgeChip } from './BadgeChip';
 import { ContentImageGallery } from './ContentImageGallery';
 import { getPersonChildren, getSpousesOf, getPerson } from '../db/content';
@@ -21,9 +26,10 @@ interface Props {
   person: Person | null;
   onNavigate: (personId: string) => void;
   onChapterPress?: (chapterLink: string) => void;
+  onTreePress?: (personId: string) => void;
 }
 
-export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterPress }: Props) {
+export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterPress, onTreePress }: Props) {
   const { base } = useTheme();
   const [children, setChildren] = useState<Person[]>([]);
   const [spouses, setSpouses] = useState<Person[]>([]);
@@ -64,9 +70,8 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
       <SafeAreaView style={[styles.sheet, {
         backgroundColor: base.bgElevated, borderColor: base.border,
       }]}>
-        {/* Sticky header — stays fixed above the scroll */}
+        {/* Sticky header */}
         <View style={styles.headerPad}>
-          {/* Grab handle + close button */}
           <View style={styles.grabRow}>
             <View style={styles.grabSpacer} />
             <View style={[styles.grabHandle, { backgroundColor: base.textMuted }]} />
@@ -81,15 +86,12 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
             </TouchableOpacity>
           </View>
 
-          {/* Era badge */}
           {eraLabel ? <BadgeChip label={eraLabel} color={eraColor} /> : null}
 
-          {/* Name */}
           <Text style={[styles.name, { color: base.text }]}>
             {person.name}
           </Text>
 
-          {/* Dates */}
           {person.dates ? (
             <Text style={[styles.dates, { color: base.textDim }]}>
               {person.dates}
@@ -100,12 +102,10 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
         </View>
 
         <ScrollView contentContainerStyle={styles.scrollContent}>
-          {/* Role */}
           <Text style={[styles.role, { color: base.gold }]}>
             {person.role}
           </Text>
 
-          {/* Images */}
           {contentImages.length > 0 && <ContentImageGallery images={contentImages} />}
 
           {/* Family block */}
@@ -132,20 +132,18 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
                 <Text style={[styles.familyLabel, { color: base.textMuted }]}>
                   {children.length > 1 ? 'Children' : 'Child'}
                 </Text>
-                {children.slice(0, 12).map((c) => <FamilyLink key={c.id} p={c} />)}
-                {children.length > 12 && <Text style={[styles.moreText, { color: base.textMuted }]}>+{children.length - 12} more</Text>}
+                {children.slice(0, 15).map((c) => <FamilyLink key={c.id} p={c} />)}
+                {children.length > 15 && <Text style={[styles.moreText, { color: base.textMuted }]}>+{children.length - 15} more</Text>}
               </View>
             )}
           </View>
 
-          {/* Bio */}
           {person.bio ? (
             <Text style={[styles.bio, { color: base.textDim }]}>
               {person.bio}
             </Text>
           ) : null}
 
-          {/* Scripture Role */}
           {person.scripture_role ? (
             <View style={styles.sectionBlock}>
               <Text style={[styles.sectionLabel, { color: base.gold }]}>
@@ -157,19 +155,29 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
             </View>
           ) : null}
 
-          {/* Key References */}
           {refs.length > 0 && (
             <View style={styles.refsRow}>
               {refs.map((r, i) => <BadgeChip key={i} label={r} color={base.textMuted} />)}
             </View>
           )}
 
-          {/* Chapter link */}
           {person.chapter_link && onChapterPress && (
-            <TouchableOpacity onPress={() => onChapterPress(person.chapter_link!)} style={styles.chapterLink}>
-              <Text style={[styles.chapterLinkText, { color: base.gold }]}>
+            <TouchableOpacity onPress={() => onChapterPress(person.chapter_link!)} style={styles.actionLink}>
+              <Text style={[styles.actionLinkText, { color: base.gold }]}>
                 Read in Companion Study →
               </Text>
+            </TouchableOpacity>
+          )}
+
+          {onTreePress && (
+            <TouchableOpacity
+              onPress={() => onTreePress(person.id)}
+              style={styles.actionLink}
+              accessibilityLabel="See on family tree"
+              accessibilityRole="link"
+            >
+              <Text style={[styles.actionLinkText, { color: base.gold }]}>See on Family Tree</Text>
+              <ArrowRight size={14} color={base.gold} />
             </TouchableOpacity>
           )}
         </ScrollView>
@@ -285,10 +293,13 @@ const styles = StyleSheet.create({
     gap: 6,
     marginTop: spacing.md,
   },
-  chapterLink: {
+  actionLink: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
     marginTop: spacing.md,
   },
-  chapterLinkText: {
+  actionLinkText: {
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 13,
   },
