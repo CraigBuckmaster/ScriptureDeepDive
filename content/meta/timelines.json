@@ -5031,7 +5031,71 @@
       "range": [
         -4000,
         -2200
-      ]
+      ],
+      "order": 1,
+      "summary": "The opening chapters of Genesis establish the foundations of all reality: God creates a good world, places humanity as his image-bearers, and watches as rebellion fractures every relationship. From Adam to Babel, the primeval narrative sets the stage for everything that follows.",
+      "narrative": "Genesis 1–11 reads like a theological overture, introducing every major theme the rest of Scripture will develop. Creation establishes God as sovereign, generous, and relational. The garden of Eden pictures what human life is meant to be—intimate communion with God, purposeful work, and harmonious community.\n\nThe fall shatters this picture. Adam and Eve’s choice to grasp autonomy introduces sin, shame, and death into the world. The consequences cascade rapidly: Cain murders Abel, violence escalates through Lamech, and by Noah’s generation the earth is filled with corruption. The flood functions as a de-creation and re-creation, a divine reset that nevertheless cannot solve the deeper problem of the human heart.\n\nThe tower of Babel represents humanity’s final collective act of defiance in the primeval period—an attempt to secure identity and glory apart from God. God’s scattering of the nations sets the stage for his surprising response: rather than another judgment, he will choose one family through whom he will bless all the scattered peoples of the earth.",
+      "key_themes": [
+        {
+          "theme": "Image of God",
+          "ref": "Gen 1:26–27",
+          "note": "Humanity created as God’s representatives, bearing his likeness and charged with stewarding creation."
+        },
+        {
+          "theme": "Fall and Its Consequences",
+          "ref": "Gen 3:1–24",
+          "note": "Disobedience fractures humanity’s relationship with God, each other, and the created order."
+        },
+        {
+          "theme": "Spread of Sin",
+          "ref": "Gen 4–11",
+          "note": "Sin escalates from individual act to systemic corruption across generations."
+        },
+        {
+          "theme": "Proto-Evangelium",
+          "ref": "Gen 3:15",
+          "note": "The first gospel promise: the seed of the woman will crush the serpent’s head."
+        },
+        {
+          "theme": "Covenant Faithfulness",
+          "ref": "Gen 9:8–17",
+          "note": "God’s covenant with Noah establishes the pattern of divine promise-keeping that structures all of Scripture."
+        }
+      ],
+      "key_verses": [
+        "Gen 1:1",
+        "Gen 1:27",
+        "Gen 3:15",
+        "Gen 6:5–6",
+        "Gen 9:11"
+      ],
+      "key_people": [
+        "adam",
+        "eve",
+        "cain",
+        "abel",
+        "noah",
+        "enoch-g"
+      ],
+      "books": [
+        "genesis"
+      ],
+      "chapter_range": {
+        "genesis": [
+          1,
+          11
+        ]
+      },
+      "geographic_center": {
+        "region": "Mesopotamia",
+        "place_ids": [
+          "eden",
+          "babel",
+          "ararat"
+        ]
+      },
+      "redemptive_thread": "God’s promise that the seed of the woman will crush the serpent introduces the redemptive trajectory that culminates in Christ. Even in judgment, God provides—clothing for Adam and Eve, a mark for Cain, an ark for Noah.",
+      "transition_to_next": "From the scattered nations at Babel, God narrows his focus to one man in Ur of the Chaldeans—Abram—through whom he will begin to reverse the curse."
     },
     "patriarch": {
       "hex": "#4b395f",
@@ -5040,7 +5104,72 @@
       "range": [
         -2200,
         -1800
-      ]
+      ],
+      "order": 2,
+      "summary": "God calls Abraham out of Mesopotamia and makes an extraordinary promise: through his family, all nations will be blessed. Across four generations—Abraham, Isaac, Jacob, and Joseph—the promise is tested, nearly lost, and preserved by divine faithfulness.",
+      "narrative": "The patriarchal narratives (Genesis 12–50) shift the biblical lens from universal history to a single family. God’s call to Abraham is breathtaking in its scope: leave everything familiar and go to a land I will show you. The threefold promise—land, descendants, and blessing to all nations—becomes the backbone of the biblical story.\n\nEach generation tests the promise in different ways. Abraham waits decades for the promised son, nearly sacrifices him on Mount Moriah, and dies owning only a burial cave in the land God pledged to give him. Isaac’s quieter story bridges the generations. Jacob’s wrestling—with Esau, with Laban, and finally with God himself at Peniel—transforms a deceiver into Israel, the father of twelve tribes.\n\nJoseph’s narrative brings the patriarchal era to its climax. Sold into slavery by his brothers, Joseph rises to power in Egypt and ultimately saves his family from famine. His declaration—“You intended to harm me, but God intended it for good”—crystallizes the theology of providence that runs through the entire patriarchal period. The family that entered Canaan as wandering herders leaves Egypt as a nation-in-waiting.",
+      "key_themes": [
+        {
+          "theme": "Election and Promise",
+          "ref": "Gen 12:1–3",
+          "note": "God chooses Abraham and establishes an unconditional covenant of land, seed, and blessing."
+        },
+        {
+          "theme": "Faith Tested",
+          "ref": "Gen 22:1–14",
+          "note": "The binding of Isaac tests whether Abraham trusts God more than the promise itself."
+        },
+        {
+          "theme": "Providence",
+          "ref": "Gen 50:20",
+          "note": "Joseph’s story demonstrates God’s sovereign orchestration of human choices for redemptive purposes."
+        },
+        {
+          "theme": "Covenant Ceremony",
+          "ref": "Gen 15:1–21",
+          "note": "God alone passes between the cut pieces, taking the entire covenant obligation upon himself."
+        }
+      ],
+      "key_verses": [
+        "Gen 12:1–3",
+        "Gen 15:6",
+        "Gen 22:14",
+        "Gen 28:15",
+        "Gen 50:20"
+      ],
+      "key_people": [
+        "abraham",
+        "sarah",
+        "isaac",
+        "rebekah",
+        "jacob",
+        "rachel",
+        "leah",
+        "joseph-ot"
+      ],
+      "books": [
+        "genesis"
+      ],
+      "chapter_range": {
+        "genesis": [
+          12,
+          50
+        ]
+      },
+      "geographic_center": {
+        "region": "Canaan & Mesopotamia",
+        "place_ids": [
+          "ur",
+          "haran",
+          "shechem",
+          "hebron",
+          "bethel",
+          "peniel",
+          "egypt"
+        ]
+      },
+      "redemptive_thread": "The Abrahamic covenant narrows the channel through which God’s blessing will flow to all nations. Each patriarch foreshadows Christ: Abraham offers his only son, Isaac is the child of promise, Jacob the unlikely chosen one, Joseph the suffering savior of his people.",
+      "transition_to_next": "Jacob’s family settles in Egypt under Joseph’s protection, but after Joseph’s death a new pharaoh arises who does not know him—and the people of promise become a people in bondage."
     },
     "exodus": {
       "hex": "#26472e",
@@ -5049,7 +5178,91 @@
       "range": [
         -1800,
         -1400
-      ]
+      ],
+      "order": 3,
+      "summary": "God hears his people’s cries in Egypt and raises up Moses to lead the greatest deliverance in the Old Testament. Through plagues, Red Sea, Sinai covenant, and tabernacle, Israel is formed from a slave population into a holy nation.",
+      "narrative": "The exodus is the defining event of Old Testament theology. When God reveals his name to Moses at the burning bush—“I AM WHO I AM”—he identifies himself as the covenant God who has heard, remembered, and come down to deliver. The ten plagues systematically dismantle Egypt’s gods and demonstrate Yahweh’s absolute sovereignty over creation.\n\nThe Passover night establishes the pattern of substitutionary deliverance that echoes through the entire Bible. A lamb dies so that the firstborn may live. Israel passes through the Red Sea—a baptism of sorts—and arrives at Sinai, where God proposes a covenant relationship: “If you obey me fully and keep my covenant, you will be my treasured possession.” The law given at Sinai is not a burden but a gift, describing what life looks like for a people redeemed by grace.\n\nThe tabernacle instructions consume the final third of Exodus and all of Leviticus, underscoring the central question of the period: how can a holy God dwell among an unholy people? The sacrificial system, the priesthood, and the tabernacle itself are God’s answer—provision for ongoing relationship despite ongoing sin. Numbers records the wilderness generation’s failure to trust God at Kadesh, and Deuteronomy presents Moses’s farewell sermons to the next generation standing on the brink of the promised land.",
+      "key_themes": [
+        {
+          "theme": "Deliverance",
+          "ref": "Exod 14:13–14",
+          "note": "God fights for his people and delivers them from an impossible situation through his own power."
+        },
+        {
+          "theme": "Covenant at Sinai",
+          "ref": "Exod 19:5–6",
+          "note": "Israel is called to be a kingdom of priests and a holy nation, mediating God’s presence to the world."
+        },
+        {
+          "theme": "God’s Dwelling",
+          "ref": "Exod 25:8",
+          "note": "The tabernacle fulfills God’s desire to dwell among his people—a theme that runs to Revelation 21."
+        },
+        {
+          "theme": "Law as Gift",
+          "ref": "Deut 6:4–9",
+          "note": "Torah shapes Israel’s identity as God’s people, governing every dimension of communal life."
+        },
+        {
+          "theme": "Wilderness Testing",
+          "ref": "Deut 8:2–3",
+          "note": "Forty years of wandering reveal what is in Israel’s heart and teach dependence on God."
+        }
+      ],
+      "key_verses": [
+        "Exod 3:14",
+        "Exod 12:13",
+        "Exod 19:5–6",
+        "Lev 19:2",
+        "Deut 6:4–5"
+      ],
+      "key_people": [
+        "moses",
+        "aaron",
+        "miriam",
+        "joshua",
+        "caleb",
+        "jochebed",
+        "zipporah",
+        "phinehas"
+      ],
+      "books": [
+        "exodus",
+        "leviticus",
+        "numbers",
+        "deuteronomy"
+      ],
+      "chapter_range": {
+        "exodus": [
+          1,
+          40
+        ],
+        "leviticus": [
+          1,
+          27
+        ],
+        "numbers": [
+          1,
+          36
+        ],
+        "deuteronomy": [
+          1,
+          34
+        ]
+      },
+      "geographic_center": {
+        "region": "Egypt, Sinai & Transjordan",
+        "place_ids": [
+          "egypt",
+          "goshen",
+          "red-sea",
+          "sinai",
+          "kadesh",
+          "sinai-pen"
+        ]
+      },
+      "redemptive_thread": "The exodus becomes the supreme Old Testament picture of salvation—deliverance from bondage by God’s power and through substitutionary blood. Passover, manna, water from the rock, and the bronze serpent all prefigure Christ’s redemptive work.",
+      "transition_to_next": "Moses dies on Mount Nebo overlooking the promised land he cannot enter, and Joshua takes command of a new generation ready to cross the Jordan and claim their inheritance."
     },
     "judges": {
       "hex": "#503d18",
@@ -5058,7 +5271,88 @@
       "range": [
         -1400,
         -1050
-      ]
+      ],
+      "order": 4,
+      "summary": "Israel conquers Canaan under Joshua but quickly falls into a cycle of apostasy, oppression, and deliverance by charismatic judges. The period reveals both God’s patience and Israel’s inability to sustain covenant faithfulness without godly leadership.",
+      "narrative": "Joshua’s campaigns conquer the promised land in a series of swift military actions, but the conquest is incomplete. The opening chapters of Judges catalogue the territories left unconquered—a failure that will haunt Israel for centuries. Without a central authority, the tribes fragment, and the book’s recurring refrain captures the chaos: “In those days Israel had no king; everyone did as they saw fit.”\n\nThe judges cycle operates with grim regularity: Israel worships Canaanite gods, God allows an oppressor to discipline them, Israel cries out, God raises a deliverer, and the land has rest—until the cycle restarts. The judges themselves decline in quality as the period progresses. Othniel is exemplary; Gideon tears down altars but later makes an idol; Jephthah makes a reckless vow; Samson is a deeply compromised figure whose greatest act of faith is also his death.\n\nThe book of Ruth provides a counternarrative—a quiet story of covenant loyalty (hesed) in the midst of the judges’ darkness. Ruth the Moabitess becomes an ancestor of David and ultimately of Christ, demonstrating that God’s redemptive purposes include outsiders. The period ends with Samuel, the last judge and first prophet, who anoints Israel’s first king.",
+      "key_themes": [
+        {
+          "theme": "Judges Cycle",
+          "ref": "Judg 2:11–19",
+          "note": "A repeating pattern of sin, oppression, crying out, and deliverance reveals Israel’s persistent unfaithfulness."
+        },
+        {
+          "theme": "Incomplete Obedience",
+          "ref": "Judg 1:27–36",
+          "note": "Failure to fully obey God’s commands leads to compromise, syncretism, and eventual apostasy."
+        },
+        {
+          "theme": "Hesed (Covenant Loyalty)",
+          "ref": "Ruth 1:16–17",
+          "note": "Ruth’s loyalty to Naomi embodies the faithful love that Israel as a nation fails to show."
+        },
+        {
+          "theme": "Need for a King",
+          "ref": "Judg 21:25",
+          "note": "The refrain ‘everyone did as they saw fit’ points forward to the monarchy as God’s next provision."
+        }
+      ],
+      "key_verses": [
+        "Josh 1:9",
+        "Josh 24:15",
+        "Judg 2:16",
+        "Judg 21:25",
+        "Ruth 1:16"
+      ],
+      "key_people": [
+        "joshua",
+        "caleb",
+        "deborah",
+        "gideon",
+        "samson",
+        "ruth",
+        "boaz",
+        "samuel",
+        "othniel",
+        "barak",
+        "jephthah"
+      ],
+      "books": [
+        "joshua",
+        "judges",
+        "ruth",
+        "1_samuel"
+      ],
+      "chapter_range": {
+        "joshua": [
+          1,
+          24
+        ],
+        "judges": [
+          1,
+          21
+        ],
+        "ruth": [
+          1,
+          4
+        ],
+        "1_samuel": [
+          1,
+          7
+        ]
+      },
+      "geographic_center": {
+        "region": "Canaan",
+        "place_ids": [
+          "jericho",
+          "shechem",
+          "bethlehem",
+          "hazor",
+          "gibeah"
+        ]
+      },
+      "redemptive_thread": "The judges are imperfect deliverers who point to the need for a perfect one. Ruth’s kinsman-redeemer Boaz foreshadows Christ’s role as the one who buys back what was lost and restores the outsider to the covenant family.",
+      "transition_to_next": "Israel demands a king ‘like all the other nations,’ and God grants their request—first with Saul, a king after the people’s heart, then with David, a man after God’s own heart."
     },
     "kingdom": {
       "hex": "#304153",
@@ -5067,7 +5361,96 @@
       "range": [
         -1050,
         -930
-      ]
+      ],
+      "order": 5,
+      "summary": "Under Saul, David, and Solomon, Israel becomes a unified kingdom with a capital in Jerusalem and a magnificent temple. The Davidic covenant promises an eternal throne, but Solomon’s later apostasy fractures the unity that his father fought to build.",
+      "narrative": "The United Kingdom era represents Israel’s golden age. Saul’s reign begins with promise but deteriorates as he repeatedly disobeys God’s commands. His jealous pursuit of David dominates the latter half of 1 Samuel, revealing that outward kingship without inward submission to Yahweh leads to ruin.\n\nDavid’s rise and reign form the theological center of the monarchy. Despite his grievous sin with Bathsheba, David remains the standard against which all subsequent kings are measured because of his heart for God. The Davidic covenant (2 Samuel 7) is the era’s defining moment: God promises David a dynasty, a kingdom, and a throne that will endure forever. This covenant becomes the foundation for all messianic expectation.\n\nSolomon builds the temple—the permanent dwelling place of God among his people—and Israel reaches its greatest territorial extent. Yet Solomon’s 700 wives and 300 concubines turn his heart to other gods, fulfilling the very warning Moses gave about kings in Deuteronomy 17. The seeds of division are sown even at the height of glory.",
+      "key_themes": [
+        {
+          "theme": "Davidic Covenant",
+          "ref": "2 Sam 7:12–16",
+          "note": "God’s unconditional promise of an eternal dynasty becomes the basis for messianic hope."
+        },
+        {
+          "theme": "Heart After God",
+          "ref": "1 Sam 13:14",
+          "note": "David is chosen not for outward appearance but for his heart’s orientation toward God."
+        },
+        {
+          "theme": "Temple as God’s Dwelling",
+          "ref": "1 Kgs 8:27–30",
+          "note": "Solomon’s temple fulfills God’s desire to dwell among his people, though heaven itself cannot contain him."
+        },
+        {
+          "theme": "Wisdom and Its Limits",
+          "ref": "1 Kgs 3:9–12",
+          "note": "Solomon’s God-given wisdom is extraordinary but cannot save him from his own divided heart."
+        },
+        {
+          "theme": "Danger of Compromise",
+          "ref": "1 Kgs 11:1–6",
+          "note": "Even the wisest king falls when covenant loyalty is traded for political alliance and personal desire."
+        }
+      ],
+      "key_verses": [
+        "2 Sam 7:16",
+        "1 Sam 16:7",
+        "1 Kgs 8:27",
+        "Ps 23:1",
+        "Ps 51:10"
+      ],
+      "key_people": [
+        "saul",
+        "david",
+        "jonathan",
+        "bathsheba",
+        "nathan-prophet",
+        "solomon",
+        "samuel",
+        "absalom",
+        "joab"
+      ],
+      "books": [
+        "1_samuel",
+        "2_samuel",
+        "1_kings",
+        "1_chronicles",
+        "psalms",
+        "proverbs",
+        "ecclesiastes",
+        "song_of_solomon"
+      ],
+      "chapter_range": {
+        "1_samuel": [
+          8,
+          31
+        ],
+        "2_samuel": [
+          1,
+          24
+        ],
+        "1_kings": [
+          1,
+          11
+        ],
+        "1_chronicles": [
+          1,
+          29
+        ]
+      },
+      "geographic_center": {
+        "region": "Jerusalem & Greater Israel",
+        "place_ids": [
+          "jerusalem",
+          "hebron",
+          "bethlehem",
+          "moriah",
+          "gibeah",
+          "ziklag"
+        ]
+      },
+      "redemptive_thread": "David’s throne foreshadows Christ’s eternal kingship. The temple points to the incarnation—God dwelling among his people. The psalms give voice to the full range of human experience directed toward God, and the wisdom literature explores what it means to live under God’s rule.",
+      "transition_to_next": "Solomon’s death triggers the kingdom’s fracture: Rehoboam’s foolishness drives ten northern tribes to secede under Jeroboam, creating two rival kingdoms that will never reunite."
     },
     "divided_kingdom": {
       "hex": "#5a4535",
@@ -5076,7 +5459,82 @@
       "range": [
         -930,
         -722
-      ]
+      ],
+      "order": 6,
+      "summary": "After Solomon’s death the kingdom splits into Israel (north) and Judah (south). The northern kingdom descends rapidly into idolatry under a succession of dynasties, while Judah’s Davidic line produces occasional reformers but ultimately follows the same trajectory.",
+      "narrative": "The division of the kingdom in 930 BC is one of Scripture’s most consequential turning points. Jeroboam I establishes rival worship centers at Dan and Bethel with golden calves, setting the northern kingdom on an irreversible course of apostasy. Every northern king is evaluated as doing “evil in the eyes of the Lord,” following in “the sins of Jeroboam son of Nebat.”\n\nIn the south, the Davidic dynasty continues, producing a mixed record. Reforming kings like Asa, Jehoshaphat, Hezekiah, and Josiah restore covenant faithfulness for a time, but the overall trajectory is downward. The narratives of Kings and Chronicles weave royal history with prophetic confrontation, showing that God’s word through his prophets is the true force shaping history.\n\nElijah and Elisha dominate the northern narrative, confronting Baalism head-on. Elijah’s contest on Mount Carmel is the era’s dramatic high point—Yahweh versus Baal, with fire from heaven settling the question. Yet even this spectacular demonstration fails to produce lasting repentance. The northern kingdom falls to Assyria in 722 BC, its ten tribes scattered and largely lost to history.",
+      "key_themes": [
+        {
+          "theme": "Idolatry’s Consequences",
+          "ref": "1 Kgs 12:28–30",
+          "note": "Jeroboam’s golden calves institutionalize apostasy and set the pattern for the north’s entire history."
+        },
+        {
+          "theme": "Prophetic Confrontation",
+          "ref": "1 Kgs 18:21",
+          "note": "Elijah’s challenge—‘How long will you waver between two opinions?’—defines the era’s central question."
+        },
+        {
+          "theme": "Covenant Faithfulness vs. Apostasy",
+          "ref": "2 Kgs 17:7–18",
+          "note": "The narrator’s theological summary explains the fall of Israel as the consequence of persistent covenant violation."
+        },
+        {
+          "theme": "Remnant Theology",
+          "ref": "1 Kgs 19:18",
+          "note": "God preserves 7,000 who have not bowed to Baal—the first explicit remnant promise."
+        }
+      ],
+      "key_verses": [
+        "1 Kgs 12:16",
+        "1 Kgs 18:21",
+        "1 Kgs 19:12",
+        "2 Kgs 17:23",
+        "2 Chr 7:14"
+      ],
+      "key_people": [
+        "rehoboam",
+        "jeroboam-1",
+        "elijah",
+        "elisha",
+        "ahab",
+        "jezebel",
+        "hezekiah",
+        "josiah",
+        "jeroboam_ii"
+      ],
+      "books": [
+        "1_kings",
+        "2_kings",
+        "2_chronicles"
+      ],
+      "chapter_range": {
+        "1_kings": [
+          12,
+          22
+        ],
+        "2_kings": [
+          1,
+          17
+        ],
+        "2_chronicles": [
+          10,
+          28
+        ]
+      },
+      "geographic_center": {
+        "region": "Israel & Judah",
+        "place_ids": [
+          "jerusalem",
+          "samaria",
+          "bethel",
+          "mt-carmel",
+          "jezreel",
+          "megiddo"
+        ]
+      },
+      "redemptive_thread": "Despite political fragmentation, God preserves the Davidic line and raises prophets to call both kingdoms back. The remnant theme emerges—God will save not through national institutions but through a faithful few.",
+      "transition_to_next": "Assyria destroys the northern kingdom in 722 BC, and the prophetic voice intensifies in Judah as Isaiah, Micah, and others warn that the south faces the same fate unless it repents."
     },
     "prophets": {
       "hex": "#653030",
@@ -5085,7 +5543,124 @@
       "range": [
         -930,
         -586
-      ]
+      ],
+      "order": 7,
+      "summary": "God raises up prophets who indict Israel’s covenant violations, announce coming judgment, and plant seeds of hope for a future restoration that will surpass anything Israel has known. The prophetic books span the divided kingdom, exile, and return.",
+      "narrative": "The writing prophets emerge as Israel’s conscience during its darkest centuries. Their message follows a consistent pattern: covenant lawsuit (God charges Israel with unfaithfulness), judgment announcement (consequences are coming), and hope oracle (God will restore a remnant and establish something new).\n\nThe eighth-century prophets—Amos, Hosea, Isaiah, Micah—address both kingdoms. Amos thunders against social injustice; Hosea’s marriage to Gomer dramatizes God’s faithful love for unfaithful Israel; Isaiah’s vision of the Holy One shapes Israel’s theology of God’s transcendence and immanence; Micah distills what God requires to its essence: justice, mercy, and humble walking with God.\n\nThe seventh-century prophets—Jeremiah, Habakkuk, Zephaniah, Nahum—confront Judah as Babylon rises. Jeremiah’s forty-year ministry of tears warns of Jerusalem’s destruction while promising a new covenant written on hearts rather than stone. The prophets’ vision extends far beyond their historical moment: they see a suffering servant, a righteous branch, a new temple, a new exodus, and a day when God’s Spirit will be poured out on all flesh.",
+      "key_themes": [
+        {
+          "theme": "Covenant Lawsuit",
+          "ref": "Mic 6:1–8",
+          "note": "Prophets prosecute Israel on God’s behalf, demanding justice and covenant loyalty rather than empty ritual."
+        },
+        {
+          "theme": "Social Justice",
+          "ref": "Amos 5:24",
+          "note": "The prophets insist that worship without justice is detestable to God."
+        },
+        {
+          "theme": "New Covenant Promise",
+          "ref": "Jer 31:31–34",
+          "note": "Jeremiah envisions a covenant that transforms hearts, not just governs behavior."
+        },
+        {
+          "theme": "Suffering Servant",
+          "ref": "Isa 52:13–53:12",
+          "note": "Isaiah’s servant songs describe one who bears the sins of many and is pierced for their transgressions."
+        },
+        {
+          "theme": "Day of the Lord",
+          "ref": "Joel 2:28–32",
+          "note": "The prophets anticipate a day of both judgment and salvation when God acts decisively in history."
+        }
+      ],
+      "key_verses": [
+        "Isa 6:3",
+        "Isa 53:5",
+        "Jer 31:33",
+        "Mic 6:8",
+        "Amos 5:24"
+      ],
+      "key_people": [
+        "isaiah",
+        "jeremiah",
+        "hosea",
+        "amos",
+        "micah_prophet",
+        "habakkuk",
+        "zephaniah",
+        "nahum"
+      ],
+      "books": [
+        "isaiah",
+        "jeremiah",
+        "hosea",
+        "joel",
+        "amos",
+        "obadiah",
+        "jonah",
+        "micah",
+        "nahum",
+        "habakkuk",
+        "zephaniah"
+      ],
+      "chapter_range": {
+        "isaiah": [
+          1,
+          66
+        ],
+        "jeremiah": [
+          1,
+          52
+        ],
+        "hosea": [
+          1,
+          14
+        ],
+        "joel": [
+          1,
+          3
+        ],
+        "amos": [
+          1,
+          9
+        ],
+        "obadiah": [
+          1,
+          1
+        ],
+        "jonah": [
+          1,
+          4
+        ],
+        "micah": [
+          1,
+          7
+        ],
+        "nahum": [
+          1,
+          3
+        ],
+        "habakkuk": [
+          1,
+          3
+        ],
+        "zephaniah": [
+          1,
+          3
+        ]
+      },
+      "geographic_center": {
+        "region": "Judah & Israel",
+        "place_ids": [
+          "jerusalem",
+          "samaria",
+          "nineveh",
+          "babylon"
+        ]
+      },
+      "redemptive_thread": "The prophets provide the theological vocabulary for understanding Christ: suffering servant, righteous branch, new covenant mediator, Spirit-anointed deliverer. Their vision of future restoration shapes the entire New Testament’s understanding of what Jesus came to accomplish.",
+      "transition_to_next": "Despite decades of prophetic warning, Judah refuses to repent. Nebuchadnezzar besieges Jerusalem three times, and in 586 BC the temple is destroyed and the nation is carried into Babylonian exile."
     },
     "exile": {
       "hex": "#29444d",
@@ -5094,7 +5669,81 @@
       "range": [
         -586,
         -538
-      ]
+      ],
+      "order": 8,
+      "summary": "Babylon destroys Jerusalem and its temple in 586 BC, carrying Judah’s population into exile. The crisis forces Israel to reimagine faith without land, king, or temple—and prophets like Ezekiel and Daniel minister to the exiles with visions of God’s undiminished sovereignty.",
+      "narrative": "The exile is the Old Testament’s darkest hour. Everything that defined Israel’s identity—the promised land, the Davidic throne, the temple where God’s glory dwelt—is gone. Lamentations gives voice to the community’s grief: “How deserted lies the city, once so full of people.” The theological crisis is acute: has God abandoned his covenant? Have the promises failed?\n\nEzekiel addresses these questions from Babylon itself. His opening vision of God’s throne-chariot demonstrates that Yahweh is not confined to Jerusalem’s temple—his glory is mobile, present even among the exiles. Ezekiel watches the glory depart from the temple (chapters 8–11), announces judgment on the nations, and then pivots to breathtaking restoration oracles: a valley of dry bones raised to life, a new heart and spirit for the people, a new temple from which living water flows.\n\nDaniel’s ministry in the Babylonian court demonstrates faithful living under pagan rule. His apocalyptic visions reveal that God governs the rise and fall of empires, and that “the God of heaven will set up a kingdom that will never be destroyed.” The exile lasts seventy years—long enough to purge idolatry from Judah permanently. When Cyrus of Persia conquers Babylon and issues his decree, the return begins.",
+      "key_themes": [
+        {
+          "theme": "God’s Sovereignty Over Empires",
+          "ref": "Dan 2:44",
+          "note": "God raises and removes kingdoms; his purposes transcend political power."
+        },
+        {
+          "theme": "Faithful Witness in Exile",
+          "ref": "Dan 3:17–18",
+          "note": "Daniel and his companions model covenant loyalty in a hostile environment."
+        },
+        {
+          "theme": "New Heart Promise",
+          "ref": "Ezek 36:26–27",
+          "note": "God promises to replace Israel’s heart of stone with a heart of flesh, empowered by his Spirit."
+        },
+        {
+          "theme": "Dry Bones Vision",
+          "ref": "Ezek 37:1–14",
+          "note": "The vision of resurrected bones promises national and spiritual restoration from death itself."
+        },
+        {
+          "theme": "Grief and Hope",
+          "ref": "Lam 3:22–23",
+          "note": "Even in deepest grief, the exile community confesses that God’s mercies are new every morning."
+        }
+      ],
+      "key_verses": [
+        "Lam 3:22–23",
+        "Ezek 36:26",
+        "Ezek 37:14",
+        "Dan 2:44",
+        "Dan 3:17–18"
+      ],
+      "key_people": [
+        "daniel",
+        "ezekiel",
+        "nebuchadnezzar",
+        "gedaliah",
+        "jehoiachin",
+        "zedekiah_king"
+      ],
+      "books": [
+        "lamentations",
+        "ezekiel",
+        "daniel"
+      ],
+      "chapter_range": {
+        "lamentations": [
+          1,
+          5
+        ],
+        "ezekiel": [
+          1,
+          48
+        ],
+        "daniel": [
+          1,
+          12
+        ]
+      },
+      "geographic_center": {
+        "region": "Babylon & Persia",
+        "place_ids": [
+          "babylon",
+          "persia",
+          "jerusalem"
+        ]
+      },
+      "redemptive_thread": "The exile strips away every external support so that Israel must trust God alone. Daniel’s Son of Man vision (7:13–14) and Ezekiel’s new temple vision (40–48) point forward to a restoration that transcends anything the return from Babylon will achieve.",
+      "transition_to_next": "Cyrus’s edict in 538 BC permits the Jews to return, fulfilling Jeremiah’s seventy-year prophecy and beginning the long, difficult process of rebuilding."
     },
     "post-exilic": {
       "hex": "#3a5a4a",
@@ -5103,7 +5752,99 @@
       "range": [
         -538,
         -432
-      ]
+      ],
+      "order": 9,
+      "summary": "A remnant returns to Jerusalem under Zerubbabel, Ezra, and Nehemiah to rebuild the temple, restore the law, and reconstruct the walls. The return is real but underwhelming—the glory of the second temple cannot match the first, and the prophets insist that the greater restoration is still to come.",
+      "narrative": "The return from exile unfolds in three waves. Zerubbabel leads the first wave around 538 BC, rebuilding the altar and eventually completing a modest second temple (516 BC). Older priests who remember Solomon’s temple weep at the comparison. Haggai and Zechariah prophesy during this period, encouraging the builders and casting visions of a future glory that will surpass the first temple.\n\nEzra arrives around 458 BC with a mandate to teach the law. His grief over intermarriage leads to a painful community purification, reestablishing covenant boundaries. Nehemiah follows around 445 BC to rebuild Jerusalem’s walls in just fifty-two days despite intense opposition. The reforms of Ezra and Nehemiah restore institutional faithfulness, but the community remains small, poor, and under Persian rule.\n\nMalachi, the final Old Testament prophet, exposes the community’s spiritual lethargy: blemished sacrifices, withheld tithes, cynicism about God’s justice. His closing words—a promise that Elijah will come before the great day of the Lord—hang in the air as the Old Testament falls silent. The stage is set for four centuries of waiting.",
+      "key_themes": [
+        {
+          "theme": "Restoration and Disappointment",
+          "ref": "Hag 2:3",
+          "note": "The second temple’s modest scale reveals that physical return is not yet the promised restoration."
+        },
+        {
+          "theme": "Word-Centered Community",
+          "ref": "Neh 8:1–8",
+          "note": "Ezra’s public reading of the law reconstitutes Israel as a people formed by Scripture."
+        },
+        {
+          "theme": "Messianic Expectation",
+          "ref": "Zech 9:9",
+          "note": "Zechariah’s visions of a coming king riding on a donkey and a pierced one fuel messianic hope."
+        },
+        {
+          "theme": "Covenant Renewal",
+          "ref": "Neh 9–10",
+          "note": "The community confesses its history of unfaithfulness and recommits to the covenant."
+        },
+        {
+          "theme": "Prophetic Silence Ahead",
+          "ref": "Mal 4:5–6",
+          "note": "Malachi’s final words promise Elijah’s return and set up four hundred years of prophetic silence."
+        }
+      ],
+      "key_verses": [
+        "Ezra 1:1–3",
+        "Neh 8:10",
+        "Hag 2:9",
+        "Zech 9:9",
+        "Mal 3:1"
+      ],
+      "key_people": [
+        "zerubbabel",
+        "ezra",
+        "nehemiah",
+        "esther",
+        "mordecai",
+        "haggai",
+        "zechariah_prophet",
+        "malachi",
+        "joshua_son_of_jozadak"
+      ],
+      "books": [
+        "ezra",
+        "nehemiah",
+        "esther",
+        "haggai",
+        "zechariah",
+        "malachi"
+      ],
+      "chapter_range": {
+        "ezra": [
+          1,
+          10
+        ],
+        "nehemiah": [
+          1,
+          13
+        ],
+        "esther": [
+          1,
+          10
+        ],
+        "haggai": [
+          1,
+          2
+        ],
+        "zechariah": [
+          1,
+          14
+        ],
+        "malachi": [
+          1,
+          4
+        ]
+      },
+      "geographic_center": {
+        "region": "Judah (Persian Province of Yehud)",
+        "place_ids": [
+          "jerusalem",
+          "susa",
+          "persia"
+        ]
+      },
+      "redemptive_thread": "The return from exile is a new exodus, but an incomplete one. The prophets’ visions of a greater restoration—a new temple filled with glory, a fountain for cleansing, a messenger who prepares the way—point beyond the post-exilic community to something only Christ can fulfill.",
+      "transition_to_next": "Malachi falls silent around 432 BC, and Israel enters four centuries without a prophetic voice—the intertestamental period during which Greek and Roman empires reshape the world and set the stage for the incarnation."
     },
     "intertestamental": {
       "hex": "#4a3e27",
@@ -5112,7 +5853,60 @@
       "range": [
         -432,
         -4
-      ]
+      ],
+      "order": 10,
+      "summary": "Four hundred years of prophetic silence see Israel pass through Persian, Greek, and Roman rule. The Maccabean revolt, the rise of Pharisees and Sadducees, synagogue worship, and messianic expectation shape the world into which Jesus will be born.",
+      "narrative": "The intertestamental period is often called the “silent years,” but God is far from inactive. Alexander the Great’s conquests (334–323 BC) spread Greek language and culture across the ancient world, creating the common tongue (koine Greek) in which the New Testament will be written. The Septuagint—the Greek translation of the Hebrew Scriptures—makes Israel’s story accessible to the entire Mediterranean world.\n\nAfter Alexander’s death, Judea is caught between the Ptolemies of Egypt and the Seleucids of Syria. The Seleucid king Antiochus IV Epiphanes desecrates the temple in 167 BC, triggering the Maccabean revolt. The successful revolt produces the Hasmonean dynasty—priest-kings who rule an independent Judea for about a century until Roman intervention.\n\nDuring this period, the major Jewish sects emerge: Pharisees (Torah-focused, belief in resurrection), Sadducees (temple aristocracy, no resurrection belief), Essenes (desert separatists, possibly behind the Dead Sea Scrolls), and Zealots (armed resistance to Rome). Synagogue worship becomes central to Jewish life, shifting religious practice from sacrificial cult to Scripture reading and prayer. By the time Rome annexes Judea in 63 BC and installs Herod the Great as client king, messianic expectation is at fever pitch. Israel waits for a deliverer.",
+      "key_themes": [
+        {
+          "theme": "Providence in Silence",
+          "ref": "Gal 4:4",
+          "note": "God orchestrates political, linguistic, and cultural conditions to prepare ‘the fullness of time’ for Christ’s coming."
+        },
+        {
+          "theme": "Hellenization",
+          "ref": "Dan 8:21",
+          "note": "Greek culture and language spread across the known world, preparing a common medium for the gospel."
+        },
+        {
+          "theme": "Messianic Expectation",
+          "ref": "Mal 3:1",
+          "note": "Centuries of waiting intensify hope for the promised deliverer, shaping the expectations Jesus will both fulfill and overturn."
+        },
+        {
+          "theme": "Faithful Resistance",
+          "ref": "Dan 11:32",
+          "note": "The Maccabean revolt demonstrates that ‘the people who know their God will firmly resist’ cultural and religious oppression."
+        }
+      ],
+      "key_verses": [
+        "Mal 3:1",
+        "Mal 4:5–6",
+        "Dan 9:25–26",
+        "Gal 4:4"
+      ],
+      "key_people": [
+        "herod-great"
+      ],
+      "books": [
+        "daniel"
+      ],
+      "chapter_range": {
+        "daniel": [
+          7,
+          12
+        ]
+      },
+      "geographic_center": {
+        "region": "Judea under Foreign Rule",
+        "place_ids": [
+          "jerusalem",
+          "egypt",
+          "persia"
+        ]
+      },
+      "redemptive_thread": "The silent centuries are pregnant with preparation. Roman roads, Greek language, Jewish diaspora communities, synagogue networks, and messianic longing all converge to create the conditions for the gospel’s rapid spread once the silence breaks.",
+      "transition_to_next": "In a backwater town in Galilee, an angel appears to a young woman named Mary with news that will shatter four centuries of silence: ‘You will conceive and give birth to a son, and you are to call him Jesus.’"
     },
     "nt": {
       "hex": "#46370f",
