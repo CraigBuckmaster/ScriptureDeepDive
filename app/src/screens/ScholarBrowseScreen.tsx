@@ -2,12 +2,13 @@
  * ScholarBrowseScreen — Grid of 43 scholar cards, filterable by tradition.
  */
 
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useScholars } from '../hooks/useScholars';
 import { BrowseScreenTemplate } from '../components/BrowseScreenTemplate';
+import { useSettingsStore } from '../stores';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
@@ -18,6 +19,9 @@ function ScholarBrowseScreen() {
   const { scholars, isLoading } = useScholars();
   const [search, setSearch] = useState('');
   const [tradition, setTradition] = useState<string>('all');
+
+  // Mark getting-started checklist item
+  useEffect(() => { useSettingsStore.getState().markGettingStartedDone('meet_scholars'); }, []);
 
   const broadTradition = (t: string | null | undefined): string => {
     if (!t) return '';

@@ -22,6 +22,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { BookOpen, Layers, Map, Clock, Users, Search } from 'lucide-react-native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { OnboardingDemo } from '../components/OnboardingDemo';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -54,7 +55,7 @@ const PAGES: PageData[] = [
     key: 'thesis',
     title: 'Companion Study',
     subtitle: 'Learn to read it the way\nit was written.',
-    body: 'Every chapter pairs the biblical text with scholarly commentary from 45+ commentators — evangelical, reformed, Jewish, critical, and patristic — placing multiple perspectives side by side.',
+    body: 'See what a Jewish scholar, a reformed pastor, and a literary critic each notice in the same passage — side by side, one tap away.',
     renderContent: (base) => (
       <View style={styles.thesisContent}>
         <BookOpen size={48} color={base.gold} style={styles.thesisIcon} />
@@ -62,28 +63,19 @@ const PAGES: PageData[] = [
     ),
   },
   {
-    key: 'panels',
-    title: 'Study Panels',
-    subtitle: 'Tap any button to explore.',
-    body: 'Each section of Scripture comes with Hebrew word studies, historical context, cross-references, and commentary from scholars across traditions. Everything is one tap away.',
+    key: 'demo',
+    title: 'Try It Now',
+    subtitle: 'Tap a button below the text.',
+    body: '',
     renderContent: (base) => (
-      <View style={styles.panelDemo}>
-        {['Hebrew', 'History', 'Cross-Refs', 'MacArthur', 'Calvin', 'NET'].map((label) => (
-          <View
-            key={label}
-            style={[styles.panelPill, { backgroundColor: base.bgElevated, borderColor: base.border }]}
-          >
-            <Text style={[styles.panelPillText, { color: base.textDim }]}>{label}</Text>
-          </View>
-        ))}
-      </View>
+      <OnboardingDemo base={base} />
     ),
   },
   {
     key: 'explore',
     title: 'Explore Tools',
-    subtitle: '8 features no other app offers.',
-    body: 'Genealogy trees, biblical maps, timelines, word studies, prophecy chains, and more — all offline, all free.',
+    subtitle: 'Tools that connect the dots across Scripture.',
+    body: 'Follow Abraham\u2019s journey on a map. Trace a Hebrew word through every book. See how an Old Testament promise finds its fulfillment. All offline, all free.',
     renderContent: (base) => (
       <View style={styles.toolGrid}>
         <ToolIcon Icon={Users} label="People" base={base} />

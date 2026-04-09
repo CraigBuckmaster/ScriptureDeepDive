@@ -74,6 +74,8 @@ function ChapterScreen() {
   const { checkAndPrompt } = useStoreReview();
   const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
   const vhlEnabled = useSettingsStore((s) => s.vhlEnabled);
+  const focusMode = useSettingsStore((s) => s.focusMode);
+  const toggleFocusMode = useSettingsStore((s) => s.toggleFocusMode);
   const qnavOpen = useReaderStore((s) => s.qnavOpen);
   const toggleQnav = useReaderStore((s) => s.toggleQnav);
   const notesOverlayOpen = useReaderStore((s) => s.notesOverlayOpen);
@@ -144,8 +146,14 @@ function ChapterScreen() {
       updateLastActive();
       cancelReengagement();
       checkAndPrompt();
+      useSettingsStore.getState().markGettingStartedDone('first_chapter');
     }
   }, [bookId, chapterNum, checkAndPrompt]);
+
+  // Clear active panels when focus mode is enabled
+  useEffect(() => {
+    if (focusMode) panels.clearActivePanel();
+  }, [focusMode]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Reset breadcrumb + lens on chapter change
   useEffect(() => {
@@ -168,10 +176,10 @@ function ChapterScreen() {
     hasNext ? goNext : undefined,
   );
 
-  // VHL highlights — controlled by Settings toggle
+  // VHL highlights — controlled by Settings toggle; disabled in focus mode
   const activeVhlGroups = useMemo(
-    () => (vhlEnabled ? vhlGroups.map((g) => g.group_name) : []),
-    [vhlGroups, vhlEnabled],
+    () => (vhlEnabled && !focusMode ? vhlGroups.map((g) => g.group_name) : []),
+    [vhlGroups, vhlEnabled, focusMode],
   );
 
   // Callbacks
@@ -211,6 +219,8 @@ function ChapterScreen() {
         comparisonTranslation={comparisonTranslation}
         onCompareStart={setComparisonTranslation}
         onCompareEnd={() => setComparisonTranslation(null)}
+        focusMode={focusMode}
+        onFocusToggle={toggleFocusMode}
       />
 
       {showBreadcrumb && openPanel && (
@@ -223,11 +233,11 @@ function ChapterScreen() {
         </TouchableOpacity>
       )}
 
-      {availableLenses.length > 0 && (
+      {!focusMode && availableLenses.length > 0 && (
         <LensToggleBar lenses={availableLenses} activeLensId={activeLens} onSelect={handleLensSelect} />
       )}
 
-      {comparisonTranslation && (
+      {!focusMode && comparisonTranslation && (
         <CompareBar
           primaryLabel={TRANSLATION_MAP.get(translation)?.label ?? translation.toUpperCase()}
           comparisonLabel={TRANSLATION_MAP.get(comparisonTranslation)?.label ?? comparisonTranslation.toUpperCase()}
@@ -269,7 +279,7 @@ function ChapterScreen() {
             : undefined}
         />
 
-        {bookData?.genre_label && bookData?.genre_guidance ? (
+        {!focusMode && bookData?.genre_label && bookData?.genre_guidance ? (
           <GenreBanner genreLabel={bookData.genre_label} genreGuidance={bookData.genre_guidance} />
         ) : null}
 
@@ -304,11 +314,19 @@ function ChapterScreen() {
             studyCoachEnabled, coachingTips, chapterCoaching,
             dismissedTips, onDismissTip: handleDismissTip,
           }}
+          display={{ focusMode }}
         >
           <ChapterVerseList
             sections={sections}
             chapterPanels={chapterPanels}
             prayerPrompt={chapter?.prayer_prompt}
+            chapterMeta={chapter ? {
+              timeline_link_event: chapter.timeline_link_event,
+              timeline_link_text: chapter.timeline_link_text,
+              map_story_link_id: chapter.map_story_link_id,
+              map_story_link_text: chapter.map_story_link_text,
+              book_name: bookData?.name,
+            } : null}
           />
         </ChapterReaderProvider>
       </ScrollView>

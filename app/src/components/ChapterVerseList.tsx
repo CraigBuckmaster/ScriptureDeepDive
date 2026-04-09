@@ -6,8 +6,9 @@
  * direct props for data that varies per-instance.
  */
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import type { Section, SectionPanel, ChapterPanel } from '../types';
 
 import { useChapterReader } from './ChapterReaderContext';
@@ -18,14 +19,26 @@ import { ScholarlyBlock } from './ScholarlyBlock';
 import { StudyCoachCard } from './StudyCoachCard';
 import { ChapterCoachingCard } from './ChapterCoachingCard';
 import { PrayerPromptCard } from './PrayerPromptCard';
+import { ContinueExploringFooter } from './ContinueExploringFooter';
+import { useContinueExploring } from '../hooks/useContinueExploring';
+import { PanelInfoSheet } from './PanelInfoSheet';
 import RelatedLifeTopics from './RelatedLifeTopics';
 import { useTheme, spacing, fontFamily } from '../theme';
+
+export interface ChapterMeta {
+  timeline_link_event?: string | null;
+  timeline_link_text?: string | null;
+  map_story_link_id?: string | null;
+  map_story_link_text?: string | null;
+  book_name?: string;
+}
 
 interface Props {
   sections: (Section & { panels: SectionPanel[] })[];
   chapterPanels: ChapterPanel[];
   prayerPrompt?: string | null;
   relatedLifeTopicsJson?: string | null;
+  chapterMeta?: ChapterMeta | null;
 }
 
 const ChapterVerseList = React.memo(function ChapterVerseList({
@@ -33,9 +46,21 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
   chapterPanels,
   prayerPrompt,
   relatedLifeTopicsJson,
+  chapterMeta,
 }: Props) {
   const { base } = useTheme();
-  const { verse, panel, callbacks, layout, coaching } = useChapterReader();
+  const { verse, panel, callbacks, layout, coaching, display } = useChapterReader();
+  const exploreCards = useContinueExploring(chapterMeta, chapterPanels);
+  const navigation = useNavigation();
+  const [panelInfoType, setPanelInfoType] = useState<string | null>(null);
+
+  const handlePanelLongPress = useCallback((type: string) => {
+    setPanelInfoType(type);
+  }, []);
+
+  const handleGoToFullBio = useCallback((scholarId: string) => {
+    (navigation as any).navigate('ExploreTab', { screen: 'ScholarBio', params: { scholarId } });
+  }, [navigation]);
 
   const sectionElements = useMemo(() => {
     return sections.flatMap((sec) => {
@@ -60,8 +85,8 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
             onVerseLongPress={callbacks.onVerseLongPress}
             onVerseNumPress={callbacks.onInterlinearPress}
             activeVerseNum={verse.activeVerseNum}
-            depthExplored={panel.depthMap.get(sec.id)?.explored}
-            depthTotal={panel.depthMap.get(sec.id)?.total}
+            depthExplored={display.focusMode ? undefined : panel.depthMap.get(sec.id)?.explored}
+            depthTotal={display.focusMode ? undefined : panel.depthMap.get(sec.id)?.total}
             onDepthRecord={callbacks.recordOpen}
             comparisonVerses={verse.comparisonVerses}
             comparisonLabel={verse.comparisonLabel}
@@ -71,7 +96,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
             onVerseLayout={(verseNum, y, sectionId) => {
               layout.onVerseLayout(verseNum, y, sectionId);
             }}
-            renderButtonRow={(panels, sectionId) => (
+            renderButtonRow={display.focusMode ? undefined : (panels, sectionId) => (
               <View onLayout={(e) => {
                 layout.onBtnRowLayout(sectionId, 0, e.nativeEvent.layout.y);
               }}>
@@ -83,10 +108,11 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
                       : null
                   }
                   onToggle={(type) => callbacks.handleSectionPanelToggle(sectionId, type)}
+                  onLongPress={handlePanelLongPress}
                 />
               </View>
             )}
-            renderPanel={(p) => (
+            renderPanel={display.focusMode ? undefined : (p) => (
               <PanelContainer
                 panelType={p.panel_type}
                 contentJson={p.content_json}
@@ -104,8 +130,8 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
         </View>,
       ];
 
-      // Inject coaching card after this section if applicable
-      if (coaching.studyCoachEnabled && coaching.coachingTips.length > 0) {
+      // Inject coaching card after this section if applicable (hidden in focus mode)
+      if (!display.focusMode && coaching.studyCoachEnabled && coaching.coachingTips.length > 0) {
         const tip = coaching.coachingTips.find((t) => t.after_section === sec.section_num);
         if (tip && !coaching.dismissedTips.has(tip.after_section)) {
           elements.push(
@@ -121,33 +147,38 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
 
       return elements;
     });
-  }, [sections, verse, panel, callbacks, layout, coaching]);
+  }, [sections, verse, panel, callbacks, layout, coaching, display]);
 
   return (
     <>
       {sectionElements}
 
-      {/* Chapter-level scholarly block */}
-      <ScholarlyBlock
-        chapterPanels={chapterPanels}
-        activePanel={panel.activeChapterPanelType}
-        onToggle={callbacks.handleChapterPanelToggle}
-        onClose={callbacks.clearActivePanel}
-        onRefPress={callbacks.onRefPress}
-        defaultTab={
-          panel.openPanel && !panel.openPanel.sectionNum && panel.openPanel.tabKey
-            ? panel.openPanel.tabKey
-            : undefined
-        }
-      />
+      {/* Chapter-level scholarly block (hidden in focus mode) */}
+      {!display.focusMode && (
+        <ScholarlyBlock
+          chapterPanels={chapterPanels}
+          activePanel={panel.activeChapterPanelType}
+          onToggle={callbacks.handleChapterPanelToggle}
+          onLongPress={handlePanelLongPress}
+          onClose={callbacks.clearActivePanel}
+          onRefPress={callbacks.onRefPress}
+          defaultTab={
+            panel.openPanel && !panel.openPanel.sectionNum && panel.openPanel.tabKey
+              ? panel.openPanel.tabKey
+              : undefined
+          }
+        />
+      )}
 
       {/* Scholar disclaimer */}
-      <Text style={[styles.scholarDisclaimer, { color: base.textMuted }]}>
-        Scholar commentary panels present paraphrased summaries of positions found in published works and are not direct quotations. For exact wording, consult the original sources cited.
-      </Text>
+      {!display.focusMode && (
+        <Text style={[styles.scholarDisclaimer, { color: base.textMuted }]}>
+          Scholar commentary panels present paraphrased summaries of positions found in published works and are not direct quotations. For exact wording, consult the original sources cited.
+        </Text>
+      )}
 
       {/* Chapter-level coaching (study guide) */}
-      {coaching.studyCoachEnabled && coaching.chapterCoaching ? (
+      {!display.focusMode && coaching.studyCoachEnabled && coaching.chapterCoaching ? (
         <ChapterCoachingCard coaching={coaching.chapterCoaching} />
       ) : null}
 
@@ -156,6 +187,17 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
 
       {/* Prayer prompt card */}
       {prayerPrompt ? <PrayerPromptCard prompt={prayerPrompt} /> : null}
+
+      {/* Continue Exploring footer (hidden in focus mode) */}
+      {!display.focusMode && <ContinueExploringFooter cards={exploreCards} />}
+
+      {/* Panel info tooltip (long-press) */}
+      <PanelInfoSheet
+        visible={panelInfoType !== null}
+        panelType={panelInfoType}
+        onClose={() => setPanelInfoType(null)}
+        onGoToFullBio={handleGoToFullBio}
+      />
     </>
   );
 });

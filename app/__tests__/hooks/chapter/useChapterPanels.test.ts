@@ -24,6 +24,10 @@ jest.mock('@/stores', () => ({
       setActivePanel: mockSetActivePanel,
       clearActivePanel: mockClearActivePanel,
     }),
+  useSettingsStore: Object.assign(
+    (selector: any) => selector({ gettingStartedDone: new Set() }),
+    { getState: () => ({ markGettingStartedDone: jest.fn() }) },
+  ),
 }));
 
 // --- Study depth mock ---
