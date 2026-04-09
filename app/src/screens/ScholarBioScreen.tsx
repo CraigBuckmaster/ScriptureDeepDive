@@ -8,6 +8,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { getScholar, getAllScholars } from '../db/content';
+import { useContentImages } from '../hooks/useContentImages';
+import { ContentImageGallery } from '../components/ContentImageGallery';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
@@ -23,6 +25,7 @@ function ScholarBioScreen() {
   const [scholar, setScholar] = useState<Scholar | null>(null);
   const [bio, setBio] = useState<ScholarBio | null>(null);
   const [allScholars, setAllScholars] = useState<Scholar[]>([]);
+  const { images: contentImages } = useContentImages('scholar', scholarId);
 
   useEffect(() => {
     if (scholarId) {
@@ -66,6 +69,8 @@ function ScholarBioScreen() {
         {bio?.eyebrow && (
           <Text style={[styles.eyebrow, { color: base.textMuted }]}>{bio.eyebrow}</Text>
         )}
+
+        {contentImages.length > 0 && <ContentImageGallery images={contentImages} />}
 
         <View style={[styles.divider, { backgroundColor: base.border }]} />
 
