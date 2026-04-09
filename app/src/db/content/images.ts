@@ -10,6 +10,7 @@
 
 import { getDb } from '../database';
 import type { ContentImage } from '../../types';
+import { logger } from '../../utils/logger';
 
 /**
  * Get all images for a specific content item.
@@ -19,10 +20,16 @@ export async function getContentImages(
   contentType: string,
   contentId: string,
 ): Promise<ContentImage[]> {
-  return getDb().getAllAsync<ContentImage>(
-    'SELECT * FROM content_images WHERE content_type = ? AND content_id = ? ORDER BY display_order',
-    [contentType, contentId],
-  );
+  try {
+    return await getDb().getAllAsync<ContentImage>(
+      'SELECT * FROM content_images WHERE content_type = ? AND content_id = ? ORDER BY display_order',
+      [contentType, contentId],
+    );
+  } catch (err) {
+    // Table may not exist in older cached DBs
+    logger.warn('getContentImages', `Query failed for ${contentType}/${contentId} — content_images table may not exist`, err);
+    return [];
+  }
 }
 
 /**

@@ -10,6 +10,7 @@
 import { useState, useEffect } from 'react';
 import { getContentImages } from '../db/content/images';
 import type { ContentImage } from '../types';
+import { logger } from '../utils/logger';
 
 export function useContentImages(
   contentType: string,
@@ -21,7 +22,10 @@ export function useContentImages(
   useEffect(() => {
     let cancelled = false;
 
-    if (!contentId) return;
+    if (!contentId) {
+      setIsLoading(false);
+      return;
+    }
 
     getContentImages(contentType, contentId)
       .then((result) => {
@@ -30,7 +34,8 @@ export function useContentImages(
           setIsLoading(false);
         }
       })
-      .catch(() => {
+      .catch((err) => {
+        logger.warn('useContentImages', `Failed to load ${contentType}/${contentId}`, err);
         if (!cancelled) {
           setImages([]);
           setIsLoading(false);
