@@ -169,7 +169,14 @@ CREATE INDEX idx_verses ON verses(book_id, chapter_num, verse_num, translation);
 
 CREATE TABLE book_intros (
   book_id TEXT PRIMARY KEY REFERENCES books(id),
-  intro_json TEXT NOT NULL
+  intro_json TEXT NOT NULL,
+  era TEXT,
+  era_span TEXT,
+  purpose TEXT,
+  key_verses TEXT,
+  christ_in TEXT,
+  outline TEXT,
+  at_a_glance TEXT
 );
 
 CREATE TABLE people (
@@ -324,6 +331,24 @@ CREATE TABLE timelines (
   people_json TEXT,
   summary TEXT,
   region TEXT
+);
+
+CREATE TABLE eras (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  pill TEXT,
+  hex TEXT,
+  range_start INTEGER,
+  range_end INTEGER,
+  summary TEXT,
+  narrative TEXT,
+  key_themes TEXT,
+  key_people TEXT,
+  books TEXT,
+  chapter_range TEXT,
+  geographic_center TEXT,
+  redemptive_thread TEXT,
+  transition_to_next TEXT
 );
 
 -- Database version metadata
@@ -1083,8 +1108,17 @@ def populate_book_intros(cur):
         if not book_id:
             continue
         cur.execute(
-            'INSERT OR IGNORE INTO book_intros (book_id, intro_json) VALUES (?, ?)',
-            (book_id, _json_str(intro))
+            'INSERT OR IGNORE INTO book_intros '
+            '(book_id, intro_json, era, era_span, purpose, key_verses, christ_in, outline, at_a_glance) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (book_id, _json_str(intro),
+             intro.get('era'),
+             _json_str(intro['era_span']) if 'era_span' in intro else None,
+             intro.get('purpose'),
+             _json_str(intro['key_verses']) if 'key_verses' in intro else None,
+             intro.get('christ_in'),
+             _json_str(intro['outline']) if 'outline' in intro else None,
+             _json_str(intro['at_a_glance']) if 'at_a_glance' in intro else None)
         )
         count += 1
     return count
@@ -1467,6 +1501,42 @@ def populate_timelines(cur):
                 (f'timeline_{key}', _json_str(data[key]))
             )
 
+    return count
+
+
+def populate_eras(cur):
+    """Populate the eras table from timelines.json era_config.
+
+    Stores each era as a row with enriched narrative fields (summary, narrative,
+    key_themes, key_people, books, geographic_center, redemptive_thread,
+    transition_to_next) when available. This enables the PeriodsScreen to query
+    eras directly without parsing the genealogy_config blob.
+    """
+    data = _load_json(META / 'timelines.json')
+    era_config = data.get('era_config', {})
+    count = 0
+    for era_id, era in era_config.items():
+        rng = era.get('range', [None, None])
+        cur.execute(
+            'INSERT OR IGNORE INTO eras '
+            '(id, name, pill, hex, range_start, range_end, summary, narrative, '
+            'key_themes, key_people, books, chapter_range, geographic_center, '
+            'redemptive_thread, transition_to_next) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (era_id, era['name'], era.get('pill'), era.get('hex'),
+             rng[0] if len(rng) > 0 else None,
+             rng[1] if len(rng) > 1 else None,
+             era.get('summary'),
+             era.get('narrative'),
+             _json_str(era['key_themes']) if 'key_themes' in era else None,
+             _json_str(era['key_people']) if 'key_people' in era else None,
+             _json_str(era['books']) if 'books' in era else None,
+             era.get('chapter_range'),
+             era.get('geographic_center'),
+             era.get('redemptive_thread'),
+             era.get('transition_to_next'))
+        )
+        count += 1
     return count
 
 
@@ -2332,6 +2402,9 @@ def main():
 
     n = populate_timelines(cur)
     print(f"  [OK] timelines: {n} rows")
+
+    n = populate_eras(cur)
+    print(f"  [OK] eras: {n} rows")
 
     n = populate_prophecy_chains(cur)
     print(f"  [OK] prophecy_chains: {n} rows")

@@ -200,6 +200,108 @@ def main():
     tl_count = q1(cur, "SELECT COUNT(*) FROM timelines")
     check("543 timeline entries", tl_count == 543, f"got {tl_count}")
 
+    # Eras table (#1115) — one row per era from era_config
+    era_count = q1(cur, "SELECT COUNT(*) FROM eras")
+    check("12 eras", era_count == 12, f"got {era_count}")
+
+    # Every era must have name and hex
+    missing_name = q(cur, "SELECT id FROM eras WHERE name IS NULL OR name = ''")
+    check("All eras have names", len(missing_name) == 0,
+          f"missing: {[r[0] for r in missing_name]}")
+    missing_hex = q(cur, "SELECT id FROM eras WHERE hex IS NULL OR hex = ''")
+    check("All eras have hex colors", len(missing_hex) == 0,
+          f"missing: {[r[0] for r in missing_hex]}")
+
+    # Cross-reference: key_people must be valid people IDs
+    eras_with_people = q(cur, "SELECT id, key_people FROM eras WHERE key_people IS NOT NULL")
+    bad_era_people = []
+    for row in eras_with_people:
+        try:
+            people_list = json.loads(row[1])
+            if isinstance(people_list, list):
+                people_in_db = {r[0] for r in q(cur, "SELECT id FROM people")}
+                for pid in people_list:
+                    if pid not in people_in_db:
+                        bad_era_people.append(f"{row[0]}: {pid}")
+        except (json.JSONDecodeError, TypeError):
+            bad_era_people.append(f"{row[0]}: invalid JSON")
+    check("Era key_people reference valid people", len(bad_era_people) == 0,
+          f"invalid: {bad_era_people[:5]}")
+
+    # Cross-reference: books must be valid book IDs
+    eras_with_books = q(cur, "SELECT id, books FROM eras WHERE books IS NOT NULL")
+    bad_era_books = []
+    all_book_ids_v = {r[0] for r in q(cur, "SELECT id FROM books")}
+    for row in eras_with_books:
+        try:
+            book_list = json.loads(row[1])
+            if isinstance(book_list, list):
+                for bk in book_list:
+                    if bk not in all_book_ids_v:
+                        bad_era_books.append(f"{row[0]}: {bk}")
+        except (json.JSONDecodeError, TypeError):
+            bad_era_books.append(f"{row[0]}: invalid JSON")
+    check("Era books reference valid book IDs", len(bad_era_books) == 0,
+          f"invalid: {bad_era_books[:5]}")
+
+    era_enriched = q1(cur, "SELECT COUNT(*) FROM eras WHERE summary IS NOT NULL")
+    print(f"  eras: {era_count}, {era_enriched} with summary, "
+          f"{len(eras_with_people)} with key_people, {len(eras_with_books)} with books")
+
+    # Book intros enrichment columns (#1111) — validate new fields when present
+    bi_count = q1(cur, "SELECT COUNT(*) FROM book_intros")
+    check("66 book intros", bi_count == 66, f"got {bi_count}")
+
+    # era column — if present, must be valid JSON-free text
+    bi_era_count = q1(cur,
+        "SELECT COUNT(*) FROM book_intros WHERE era IS NOT NULL")
+
+    # key_verses — if present, must be valid JSON arrays
+    bi_kv = q(cur,
+        "SELECT book_id, key_verses FROM book_intros WHERE key_verses IS NOT NULL")
+    bad_kv = []
+    for row in bi_kv:
+        try:
+            parsed = json.loads(row[1])
+            if not isinstance(parsed, list):
+                bad_kv.append(row[0])
+        except (json.JSONDecodeError, TypeError):
+            bad_kv.append(row[0])
+    check("book_intros key_verses valid JSON arrays", len(bad_kv) == 0,
+          f"invalid: {bad_kv[:5]}")
+
+    # outline — if present, must be valid JSON arrays
+    bi_ol = q(cur,
+        "SELECT book_id, outline FROM book_intros WHERE outline IS NOT NULL")
+    bad_ol = []
+    for row in bi_ol:
+        try:
+            parsed = json.loads(row[1])
+            if not isinstance(parsed, list):
+                bad_ol.append(row[0])
+        except (json.JSONDecodeError, TypeError):
+            bad_ol.append(row[0])
+    check("book_intros outline valid JSON arrays", len(bad_ol) == 0,
+          f"invalid: {bad_ol[:5]}")
+
+    # at_a_glance — if present, must be valid JSON objects
+    bi_aag = q(cur,
+        "SELECT book_id, at_a_glance FROM book_intros WHERE at_a_glance IS NOT NULL")
+    bad_aag = []
+    for row in bi_aag:
+        try:
+            parsed = json.loads(row[1])
+            if not isinstance(parsed, dict):
+                bad_aag.append(row[0])
+        except (json.JSONDecodeError, TypeError):
+            bad_aag.append(row[0])
+    check("book_intros at_a_glance valid JSON objects", len(bad_aag) == 0,
+          f"invalid: {bad_aag[:5]}")
+
+    print(f"  book_intros: {bi_count}, {bi_era_count} with era, "
+          f"{len(bi_kv)} with key_verses, {len(bi_ol)} with outline, "
+          f"{len(bi_aag)} with at_a_glance")
+
     # Feature tables (prophecy chains, concepts, difficult passages)
     pc_count = q1(cur, "SELECT COUNT(*) FROM prophecy_chains")
     check("prophecy_chains table exists", pc_count is not None, "table missing")

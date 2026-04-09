@@ -54,3 +54,4 @@ export { useFollowingFeed } from './useFollowingFeed';
 export { useTrustLevel } from './useTrustLevel';
 export { useSubmissionFeed } from './useSubmissionFeed';
 export { useMySubmissions } from './useMySubmissions';
+export { useEras } from './useEras';

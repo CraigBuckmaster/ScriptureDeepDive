@@ -22,10 +22,11 @@ export {
   getCrossRefThreads, getCrossRefThread, getCrossRefPairsForVerse,
   getTimelineEvents, getTimelinePeople, getAllTimelineEntries,
   getGenealogyConfig, getTimelineEraConfig,
+  getEras, getEra,
   getLexiconEntry, getLexiconEntries,
   getTopics, getTopic, searchTopics,
 } from './reference';
-export type { EraConfig } from './reference';
+export type { EraConfig, EraRow } from './reference';
 export {
   getAllProphecyChains, getProphecyChain, getProphecyChainsByCategory,
   getProphecyChainsForChapter, getAllConcepts, getConcept,

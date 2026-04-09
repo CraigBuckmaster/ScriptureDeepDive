@@ -3,14 +3,20 @@
  *
  * Renders title, subtitle, authorship, and all sections from book_intros.
  * Sections may contain: content (prose), outline (structured list), themes (tags).
+ *
+ * Enrichment sections (#1112): at_a_glance, outline bar, key_verses, christ_in.
+ * These render above existing sections when present, with graceful null handling.
  */
 
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
-import type { BookIntroSection, BookIntroOutlineItem, BookIntroPlanItem } from '../types';
+import type {
+  BookIntroSection, BookIntroOutlineItem, BookIntroPlanItem,
+  BookIntroKeyVerse, BookIntroEnrichedOutlineItem, BookIntroAtAGlance,
+} from '../types';
 import { useBookIntro } from '../hooks/useBookIntro';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
@@ -42,6 +48,99 @@ function BookIntroScreen() {
           onBack={() => navigation.goBack()}
           style={styles.header}
         />
+
+        {/* ── At-a-Glance Card (#1112) ── */}
+        {intro.at_a_glance && (
+          <View style={[styles.atAGlanceCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}>
+            <Text style={[styles.enrichLabel, { color: base.gold }]}>AT A GLANCE</Text>
+            <View style={styles.atAGlanceGrid}>
+              {([
+                ['Author', intro.at_a_glance.author],
+                ['Date', intro.at_a_glance.date],
+                ['Chapters', String(intro.at_a_glance.chapters)],
+                ['Genre', intro.at_a_glance.genre],
+                ['Key Theme', intro.at_a_glance.key_theme],
+                ['Key Word', intro.at_a_glance.key_word],
+              ] as [string, string][]).map(([label, value]) => (
+                <View key={label} style={styles.atAGlanceCell}>
+                  <Text style={[styles.atAGlanceCellLabel, { color: base.gold }]}>{label}</Text>
+                  <Text style={[styles.atAGlanceCellValue, { color: base.text }]}>{value}</Text>
+                </View>
+              ))}
+            </View>
+          </View>
+        )}
+
+        {/* ── Enriched Outline Bar (#1112) ── */}
+        {intro.outline && Array.isArray(intro.outline) && intro.outline.length > 0 && (
+          <View style={styles.section}>
+            <Text style={[styles.enrichLabel, { color: base.gold }]}>OUTLINE</Text>
+            {/* Segmented bar — width proportional to chapter range */}
+            <View style={[styles.outlineBar, { backgroundColor: base.bg3 ?? base.bgElevated }]}>
+              {intro.outline.map((item: BookIntroEnrichedOutlineItem, j: number) => (
+                <View
+                  key={j}
+                  style={[
+                    styles.outlineBarSegment,
+                    {
+                      flex: 1,
+                      backgroundColor: base.gold + (j % 2 === 0 ? '20' : '10'),
+                      borderRightColor: base.border,
+                      borderRightWidth: j < intro.outline!.length - 1 ? 1 : 0,
+                    },
+                  ]}
+                >
+                  <Text style={[styles.outlineBarLabel, { color: base.text }]} numberOfLines={1}>
+                    {item.label}
+                  </Text>
+                  <Text style={[styles.outlineBarRange, { color: base.goldDim }]} numberOfLines={1}>
+                    {item.range}
+                  </Text>
+                </View>
+              ))}
+            </View>
+            {/* Summaries below */}
+            <View style={styles.outlineBlock}>
+              {intro.outline.map((item: BookIntroEnrichedOutlineItem, j: number) => (
+                <View key={j} style={[styles.outlineItem, { backgroundColor: base.bgElevated, borderLeftColor: base.gold + '40' }]}>
+                  <View style={styles.outlineRow}>
+                    <Text style={[styles.outlineLabel, { color: base.text }]}>{item.label}</Text>
+                    <Text style={[styles.outlineChapters, { color: base.goldDim }]}>{item.range}</Text>
+                  </View>
+                  <Text style={[styles.outlineNote, { color: base.textMuted }]}>{item.summary}</Text>
+                </View>
+              ))}
+            </View>
+          </View>
+        )}
+
+        {/* ── Key Verses (#1112) ── */}
+        {intro.key_verses && Array.isArray(intro.key_verses) && intro.key_verses.length > 0 && (
+          <View style={styles.section}>
+            <Text style={[styles.enrichLabel, { color: base.gold }]}>KEY VERSES</Text>
+            <View style={styles.keyVersesBlock}>
+              {intro.key_verses.map((verse: BookIntroKeyVerse, j: number) => (
+                <TouchableOpacity
+                  key={j}
+                  activeOpacity={0.7}
+                  style={[styles.keyVerseCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
+                >
+                  <Text style={[styles.keyVerseRef, { color: base.gold }]}>{verse.ref}</Text>
+                  <Text style={[styles.keyVerseText, { color: base.text }]}>{verse.text}</Text>
+                  <Text style={[styles.keyVerseWhy, { color: base.textMuted }]}>{verse.why}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </View>
+        )}
+
+        {/* ── Christ In This Book (#1112) ── */}
+        {intro.christ_in && (
+          <View style={[styles.christInBlock, { backgroundColor: base.gold + '0D', borderColor: base.gold + '30' }]}>
+            <Text style={[styles.enrichLabel, { color: base.gold }]}>CHRIST IN THIS BOOK</Text>
+            <Text style={[styles.bodyText, { color: base.text }]}>{intro.christ_in}</Text>
+          </View>
+        )}
 
         {/* Authorship */}
         {intro.authorship && (
@@ -155,6 +254,90 @@ const styles = StyleSheet.create({
   header: {
     marginBottom: spacing.md,
   },
+  /* ── Enrichment styles (#1112) ── */
+  enrichLabel: {
+    fontFamily: fontFamily.display,
+    fontSize: 10,
+    letterSpacing: 0.5,
+    marginBottom: spacing.sm,
+  },
+  atAGlanceCard: {
+    borderRadius: radii.md,
+    borderWidth: 1,
+    padding: spacing.md,
+    marginBottom: spacing.lg,
+  },
+  atAGlanceGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  atAGlanceCell: {
+    width: '50%',
+    paddingVertical: spacing.xs,
+    paddingRight: spacing.sm,
+  },
+  atAGlanceCellLabel: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 10,
+    letterSpacing: 0.3,
+    marginBottom: 2,
+  },
+  atAGlanceCellValue: {
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    lineHeight: 20,
+  },
+  outlineBar: {
+    flexDirection: 'row',
+    borderRadius: radii.sm,
+    overflow: 'hidden',
+    marginBottom: spacing.sm,
+  },
+  outlineBarSegment: {
+    paddingVertical: spacing.xs,
+    paddingHorizontal: spacing.xs,
+    alignItems: 'center',
+  },
+  outlineBarLabel: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 9,
+  },
+  outlineBarRange: {
+    fontFamily: fontFamily.ui,
+    fontSize: 8,
+    marginTop: 1,
+  },
+  keyVersesBlock: {
+    gap: spacing.sm,
+  },
+  keyVerseCard: {
+    borderRadius: radii.md,
+    borderWidth: 1,
+    padding: spacing.md,
+  },
+  keyVerseRef: {
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 12,
+    marginBottom: spacing.xs,
+  },
+  keyVerseText: {
+    fontFamily: fontFamily.bodyItalic ?? fontFamily.body,
+    fontSize: 15,
+    lineHeight: 24,
+    marginBottom: spacing.xs,
+  },
+  keyVerseWhy: {
+    fontFamily: fontFamily.ui,
+    fontSize: 12,
+    lineHeight: 18,
+  },
+  christInBlock: {
+    borderRadius: radii.md,
+    borderWidth: 1,
+    padding: spacing.md,
+    marginBottom: spacing.lg,
+  },
+  /* ── Existing styles ── */
   authorshipBlock: {
     marginBottom: spacing.lg,
     paddingBottom: spacing.md,

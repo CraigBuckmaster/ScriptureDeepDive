@@ -133,6 +133,41 @@ export async function getTimelineEraConfig(): Promise<Record<string, EraConfig> 
   }
 }
 
+// ── Eras (enriched era_config — #1115) ────────────────────────────
+
+/** Row from the `eras` table with enriched narrative data. */
+export interface EraRow {
+  id: string;
+  name: string;
+  pill: string | null;
+  hex: string | null;
+  range_start: number | null;
+  range_end: number | null;
+  summary: string | null;
+  narrative: string | null;
+  key_themes: string | null;   // JSON array
+  key_people: string | null;   // JSON array
+  books: string | null;        // JSON array
+  chapter_range: string | null;
+  geographic_center: string | null;
+  redemptive_thread: string | null;
+  transition_to_next: string | null;
+}
+
+/** Fetch all eras ordered by range_start (chronological). */
+export async function getEras(): Promise<EraRow[]> {
+  return getDb().getAllAsync<EraRow>(
+    'SELECT * FROM eras ORDER BY range_start'
+  );
+}
+
+/** Fetch a single era by ID. */
+export async function getEra(id: string): Promise<EraRow | null> {
+  return getDb().getFirstAsync<EraRow>(
+    'SELECT * FROM eras WHERE id = ?', [id]
+  );
+}
+
 // ── Lexicon ────────────────────────────────────────────────────────
 
 export async function getLexiconEntry(strongs: string): Promise<LexiconEntry | null> {

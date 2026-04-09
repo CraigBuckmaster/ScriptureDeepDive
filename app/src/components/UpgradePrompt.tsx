@@ -45,6 +45,7 @@ const FEATURE_DESCRIPTIONS: Record<string, string> = {
   'Cross-Device Sync': 'Sync your notes, highlights, and reading progress across all your devices.',
   'Premium TTS': 'Natural-sounding voices with verse-level sync for a better listening experience.',
   'PDF Export': 'Export formatted study notes with scholar citations as a shareable PDF.',
+  'Bible Periods': 'Explore all 12 eras of biblical history with key people, books, themes, and the redemptive thread connecting each period.',
 };
 
 export function UpgradePrompt({ visible, onClose, variant, featureName }: Props) {
