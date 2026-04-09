@@ -19,8 +19,8 @@ import { ScholarlyBlock } from './ScholarlyBlock';
 import { StudyCoachCard } from './StudyCoachCard';
 import { ChapterCoachingCard } from './ChapterCoachingCard';
 import { PrayerPromptCard } from './PrayerPromptCard';
-import { ContinueExploringFooter } from './ContinueExploringFooter';
-import { useContinueExploring } from '../hooks/useContinueExploring';
+import { RelatedContentCarousel } from './RelatedContentCarousel';
+import { useRelatedContent } from '../hooks/useRelatedContent';
 import { PanelInfoSheet } from './PanelInfoSheet';
 import RelatedLifeTopics from './RelatedLifeTopics';
 import { useTheme, spacing, fontFamily } from '../theme';
@@ -50,7 +50,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
 }: Props) {
   const { base } = useTheme();
   const { verse, panel, callbacks, layout, coaching, display } = useChapterReader();
-  const exploreCards = useContinueExploring(chapterMeta, chapterPanels);
+  const relatedItems = useRelatedContent(chapterMeta, chapterPanels);
   const navigation = useNavigation();
   const [panelInfoType, setPanelInfoType] = useState<string | null>(null);
 
@@ -188,8 +188,8 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
       {/* Prayer prompt card */}
       {prayerPrompt ? <PrayerPromptCard prompt={prayerPrompt} /> : null}
 
-      {/* Continue Exploring footer (hidden in focus mode) */}
-      {!display.focusMode && <ContinueExploringFooter cards={exploreCards} />}
+      {/* Related Content carousel (hidden in focus mode) */}
+      {!display.focusMode && <RelatedContentCarousel items={relatedItems} />}
 
       {/* Panel info tooltip (long-press) */}
       <PanelInfoSheet
