@@ -11,7 +11,6 @@ import React, { useState } from 'react';
 import {
   View, Text, TouchableOpacity, Image, StyleSheet,
 } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 export interface RelatedContentItem {
@@ -55,14 +54,9 @@ export function RelatedContentCard({ item, onPress }: Props) {
           resizeMode="cover"
         />
       ) : (
-        <LinearGradient
-          colors={[item.color + '40', item.color + '10']}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.image}
-        >
+        <View style={[styles.image, { backgroundColor: item.color + '20' }]}>
           <Text style={[styles.gradientLabel, { color: item.color }]}>{item.label}</Text>
-        </LinearGradient>
+        </View>
       )}
 
       {/* Content */}
