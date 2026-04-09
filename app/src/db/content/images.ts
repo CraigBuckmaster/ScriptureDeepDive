@@ -43,11 +43,16 @@ export async function getFeaturedImages(
 ): Promise<ContentImage[]> {
   if (contentIds.length === 0) return [];
 
-  const placeholders = contentIds.map(() => '?').join(',');
-  return getDb().getAllAsync<ContentImage>(
-    `SELECT * FROM content_images
-     WHERE content_type = ? AND content_id IN (${placeholders})
-     ORDER BY content_id, display_order`,
-    [contentType, ...contentIds],
-  );
+  try {
+    const placeholders = contentIds.map(() => '?').join(',');
+    return await getDb().getAllAsync<ContentImage>(
+      `SELECT * FROM content_images
+       WHERE content_type = ? AND content_id IN (${placeholders})
+       ORDER BY content_id, display_order`,
+      [contentType, ...contentIds],
+    );
+  } catch (err) {
+    logger.warn('getFeaturedImages', `Query failed for ${contentType} — content_images table may not exist`, err);
+    return [];
+  }
 }

@@ -71,7 +71,7 @@ export function RecommendedCard({
 
   // ── Image cycling ────────────────────────────────────────
   const [activeIndex, setActiveIndex] = useState(0);
-  const [imageError, setImageError] = useState(false);
+  const [failedUrls, setFailedUrls] = useState<Set<string>>(new Set());
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -89,7 +89,9 @@ export function RecommendedCard({
     };
   }, [hasImages, images?.length, staggerMs]);
 
-  const currentImage = hasImages ? images[activeIndex] : null;
+  const validImages = hasImages ? images.filter((img) => !failedUrls.has(img.url)) : [];
+  const safeIndex = validImages.length > 0 ? activeIndex % validImages.length : 0;
+  const currentImage = validImages.length > 0 ? validImages[safeIndex] : null;
 
   const handleImagePress = () => {
     if (currentImage && onImagePress) {
@@ -108,21 +110,21 @@ export function RecommendedCard({
       borderColor: base.gold + '1F',
     }]}>
       {/* ── Image header ─── */}
-      {hasImages && !imageError ? (
+      {currentImage ? (
         <TouchableOpacity
           onPress={handleImagePress}
           activeOpacity={0.85}
           accessibilityRole="button"
-          accessibilityLabel={currentImage?.caption ?? `${recommendation.title} image`}
+          accessibilityLabel={currentImage.caption ?? `${recommendation.title} image`}
         >
           <View style={styles.imageContainer}>
             <Image
-              source={{ uri: currentImage!.url }}
+              source={{ uri: currentImage.url }}
               style={styles.image}
               contentFit="cover"
               transition={400}
-              onError={() => setImageError(true)}
-              recyclingKey={currentImage!.url}
+              onError={() => setFailedUrls((prev) => new Set(prev).add(currentImage.url))}
+              recyclingKey={currentImage.url}
             />
             <View style={styles.imageGradient} />
             {/* Gold CTA caption */}
@@ -132,13 +134,13 @@ export function RecommendedCard({
               </Text>
             )}
             {/* Indicator dots */}
-            {images.length > 1 && (
+            {validImages.length > 1 && (
               <View style={styles.dots}>
-                {images.map((_, i) => (
+                {validImages.map((_, i) => (
                   <View
                     key={i}
                     style={[styles.dot, {
-                      backgroundColor: i === activeIndex ? '#fff' : 'rgba(255,255,255,0.4)',
+                      backgroundColor: i === safeIndex ? '#fff' : 'rgba(255,255,255,0.4)',
                     }]}
                   />
                 ))}
