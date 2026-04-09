@@ -15,7 +15,7 @@ import { useState, useEffect } from 'react';
 import type { ExploreImage, ExploreFeatureImages } from '../types';
 import { getFeaturedImages } from '../db/content/images';
 import { getDb } from '../db/database';
-import rawManifest from '../../../content/meta/explore-images.json';
+import rawManifest from '../../assets/explore-images.json';
 
 // ── Deep-link resolver: content_type + content_id → screen + params ──
 

@@ -2423,6 +2423,13 @@ def main():
     assets_db.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(DB_PATH, assets_db)
 
+    # Sync explore-images manifest into app/assets (Metro can't resolve outside app/)
+    explore_src = META / 'explore-images.json'
+    explore_dst = ROOT / 'app' / 'assets' / 'explore-images.json'
+    if explore_src.exists():
+        shutil.copy2(explore_src, explore_dst)
+        print(f"  [OK] explore-images.json synced to app/assets/")
+
     # File size
     size = DB_PATH.stat().st_size
     print(f"\n{'='*60}")
