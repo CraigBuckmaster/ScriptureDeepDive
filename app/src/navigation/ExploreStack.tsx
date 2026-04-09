@@ -5,6 +5,8 @@ import PersonDetailScreen from '../screens/PersonDetailScreen';
 import MapScreen from '../screens/MapScreen';
 import TimelineScreen from '../screens/TimelineScreen';
 import PeriodsScreen from '../screens/PeriodsScreen';
+import RedemptiveArcScreen from '../screens/RedemptiveArcScreen';
+import PersonJourneyScreen from '../screens/PersonJourneyScreen';
 import WordStudyBrowseScreen from '../screens/WordStudyBrowseScreen';
 import WordStudyDetailScreen from '../screens/WordStudyDetailScreen';
 import ScholarBrowseScreen from '../screens/ScholarBrowseScreen';
@@ -64,6 +66,8 @@ export function ExploreStack() {
       <Stack.Screen name="Map" component={MapScreen} options={{ gestureEnabled: false }} />
       <Stack.Screen name="Timeline" component={TimelineScreen} options={{ gestureEnabled: false }} />
       <Stack.Screen name="Periods" component={PeriodsScreen} />
+      <Stack.Screen name="RedemptiveArc" component={RedemptiveArcScreen} />
+      <Stack.Screen name="PersonJourney" component={PersonJourneyScreen} />
       <Stack.Screen name="WordStudyBrowse" component={WordStudyBrowseScreen} />
       <Stack.Screen name="WordStudyDetail" component={WordStudyDetailScreen} />
       <Stack.Screen name="ScholarBrowse" component={ScholarBrowseScreen} />

@@ -46,6 +46,8 @@ const FEATURE_DESCRIPTIONS: Record<string, string> = {
   'Premium TTS': 'Natural-sounding voices with verse-level sync for a better listening experience.',
   'PDF Export': 'Export formatted study notes with scholar citations as a shareable PDF.',
   'Bible Periods': 'Explore all 12 eras of biblical history with key people, books, themes, and the redemptive thread connecting each period.',
+  'The Story of the Bible': 'Trace the 8-act redemptive narrative from Creation to Restoration — see how every chapter fits into God\'s story.',
+  'Person Journey': 'Follow key biblical figures across multiple books — see their full arc from calling to legacy.',
 };
 
 export function UpgradePrompt({ visible, onClose, variant, featureName }: Props) {

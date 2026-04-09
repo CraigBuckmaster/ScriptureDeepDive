@@ -14,7 +14,10 @@ export {
   getRedLetterVerses,
 } from './chapters';
 export { getAllScholars, getScholar, getScholarsForBook } from './scholars';
-export { getAllPeople, getPerson, getPersonChildren, getSpousesOf } from './people';
+export {
+  getAllPeople, getPerson, getPersonChildren, getSpousesOf,
+  getPersonJourney, getPersonLegacyRefs, hasPersonJourney,
+} from './people';
 export { getPlaces, getPlace, getMapStories, getMapStory } from './places';
 export {
   getAllWordStudies, getWordStudy, getSynopticEntries, getSynopticEntry,
@@ -23,6 +26,7 @@ export {
   getTimelineEvents, getTimelinePeople, getAllTimelineEntries,
   getGenealogyConfig, getTimelineEraConfig,
   getEras, getEra,
+  getRedemptiveActs, getRedemptiveAct,
   getLexiconEntry, getLexiconEntries,
   getTopics, getTopic, searchTopics,
 } from './reference';
