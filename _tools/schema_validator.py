@@ -247,6 +247,96 @@ def main():
     # ── 5. Feature meta files ──
     print("\n--- 5. FEATURE META FILES ---")
 
+    # ── Book intros enrichment (optional fields — #1111) ──
+    bi_path = META / 'book-intros.json'
+    if bi_path.exists():
+        bi_data = json.loads(bi_path.read_text(encoding='utf-8'))
+        check("book-intros.json is list", isinstance(bi_data, list))
+
+        # Load valid era keys for cross-reference validation
+        tl_path_bi = META / 'timelines.json'
+        valid_era_keys = set()
+        if tl_path_bi.exists():
+            tl_bi = json.loads(tl_path_bi.read_text(encoding='utf-8'))
+            valid_era_keys = set(tl_bi.get('era_config', {}).keys())
+
+        enriched_bi = 0
+        for i, intro in enumerate(bi_data):
+            bid = intro.get('book', f'index_{i}')
+
+            # era — optional, must match a valid era_config key
+            era = intro.get('era')
+            if era is not None:
+                check(f"book-intro {bid} era valid",
+                      era in valid_era_keys,
+                      f"'{era}' not in era_config")
+
+            # era_span — optional array of valid era keys
+            era_span = intro.get('era_span')
+            if era_span is not None:
+                check(f"book-intro {bid} era_span is list",
+                      isinstance(era_span, list))
+                if isinstance(era_span, list):
+                    for ek in era_span:
+                        check(f"book-intro {bid} era_span key '{ek}' valid",
+                              ek in valid_era_keys,
+                              f"'{ek}' not in era_config")
+
+            # purpose — optional non-empty string
+            purpose = intro.get('purpose')
+            if purpose is not None:
+                check(f"book-intro {bid} purpose non-empty",
+                      isinstance(purpose, str) and len(purpose.strip()) > 0)
+
+            # key_verses — optional array of {ref, text, why}
+            kv = intro.get('key_verses')
+            if kv is not None:
+                check(f"book-intro {bid} key_verses is list",
+                      isinstance(kv, list))
+                if isinstance(kv, list):
+                    for j, verse in enumerate(kv):
+                        for vk in ('ref', 'text', 'why'):
+                            check(f"book-intro {bid} key_verse [{j}] has '{vk}'",
+                                  vk in verse,
+                                  f"missing '{vk}'")
+
+            # christ_in — optional non-empty string
+            ci = intro.get('christ_in')
+            if ci is not None:
+                check(f"book-intro {bid} christ_in non-empty",
+                      isinstance(ci, str) and len(ci.strip()) > 0)
+
+            # outline — optional array of {label, range, summary}
+            ol = intro.get('outline')
+            if ol is not None:
+                check(f"book-intro {bid} outline is list",
+                      isinstance(ol, list))
+                if isinstance(ol, list):
+                    for j, item in enumerate(ol):
+                        for ok in ('label', 'range', 'summary'):
+                            check(f"book-intro {bid} outline [{j}] has '{ok}'",
+                                  ok in item,
+                                  f"missing '{ok}'")
+
+            # at_a_glance — optional object with required sub-fields
+            aag = intro.get('at_a_glance')
+            if aag is not None:
+                check(f"book-intro {bid} at_a_glance is object",
+                      isinstance(aag, dict))
+                if isinstance(aag, dict):
+                    for ak in ('author', 'date', 'chapters', 'genre', 'key_theme', 'key_word'):
+                        check(f"book-intro {bid} at_a_glance has '{ak}'",
+                              ak in aag,
+                              f"missing '{ak}'")
+
+            # Track enrichment progress
+            has_enrichment = any(intro.get(f) is not None for f in
+                                ('era', 'purpose', 'key_verses', 'christ_in', 'outline', 'at_a_glance'))
+            if has_enrichment:
+                enriched_bi += 1
+
+        print(f"  book intros: {len(bi_data)} total, {enriched_bi} enriched")
+
     # Prophecy chains
     pc_path = META / 'prophecy-chains.json'
     if pc_path.exists():
@@ -571,6 +661,82 @@ def main():
 
         print(f"  Timeline links checked: {tl_checked}")
         print(f"  Invalid event IDs: {tl_invalid}")
+
+        # ── Era config enrichment validation (#1115) ──
+        era_config = tl_data.get('era_config', {})
+        all_book_ids_ec = {b['id'] for b in books}
+        enriched_eras = 0
+        for era_key, era in era_config.items():
+            # Required base fields
+            for rk in ('hex', 'name', 'pill', 'range'):
+                check(f"era_config {era_key} has '{rk}'", rk in era,
+                      f"missing '{rk}'")
+
+            # Optional enrichment fields — validate types when present
+            summary = era.get('summary')
+            if summary is not None:
+                check(f"era_config {era_key} summary non-empty",
+                      isinstance(summary, str) and len(summary.strip()) > 0)
+
+            narrative = era.get('narrative')
+            if narrative is not None:
+                check(f"era_config {era_key} narrative non-empty",
+                      isinstance(narrative, str) and len(narrative.strip()) > 0)
+
+            key_themes = era.get('key_themes')
+            if key_themes is not None:
+                check(f"era_config {era_key} key_themes is list",
+                      isinstance(key_themes, list) and len(key_themes) > 0)
+
+            key_people = era.get('key_people')
+            if key_people is not None:
+                check(f"era_config {era_key} key_people is list",
+                      isinstance(key_people, list))
+                if isinstance(key_people, list):
+                    for pid in key_people:
+                        check(f"era_config {era_key} key_people '{pid}' valid",
+                              pid in people_ids,
+                              f"'{pid}' not in people.json")
+
+            era_books = era.get('books')
+            if era_books is not None:
+                check(f"era_config {era_key} books is list",
+                      isinstance(era_books, list))
+                if isinstance(era_books, list):
+                    for bk in era_books:
+                        check(f"era_config {era_key} book '{bk}' valid",
+                              bk in all_book_ids_ec,
+                              f"'{bk}' not in books.json")
+
+            chapter_range = era.get('chapter_range')
+            if chapter_range is not None:
+                check(f"era_config {era_key} chapter_range is string",
+                      isinstance(chapter_range, str))
+
+            geographic_center = era.get('geographic_center')
+            if geographic_center is not None:
+                check(f"era_config {era_key} geographic_center is string",
+                      isinstance(geographic_center, str))
+
+            redemptive_thread = era.get('redemptive_thread')
+            if redemptive_thread is not None:
+                check(f"era_config {era_key} redemptive_thread non-empty",
+                      isinstance(redemptive_thread, str) and len(redemptive_thread.strip()) > 0)
+
+            transition_to_next = era.get('transition_to_next')
+            if transition_to_next is not None:
+                check(f"era_config {era_key} transition_to_next non-empty",
+                      isinstance(transition_to_next, str) and len(transition_to_next.strip()) > 0)
+
+            has_enrichment = any(era.get(f) is not None for f in
+                                ('summary', 'narrative', 'key_themes', 'key_people',
+                                 'books', 'chapter_range', 'geographic_center',
+                                 'redemptive_thread', 'transition_to_next'))
+            if has_enrichment:
+                enriched_eras += 1
+
+        print(f"  era_config: {len(era_config)} eras, {enriched_eras} enriched")
+
     else:
         print("  timelines.json not found — skipping")
 

@@ -91,6 +91,7 @@ export type ExploreStackParamList = {
   SubmissionDetail: { submissionId: string };
   SubmissionFeed: undefined;
   ContentLibrary: undefined;
+  Periods: undefined;
   Concordance: {
     strongs?: string;
     original?: string;

@@ -712,12 +712,44 @@ export interface BookIntroAuthorship {
   prompt?: string;
 }
 
+/** Enriched outline item with range string and summary (#1112). */
+export interface BookIntroEnrichedOutlineItem {
+  label: string;
+  range: string;
+  summary: string;
+}
+
+/** Key verse with reference, text, and significance (#1112). */
+export interface BookIntroKeyVerse {
+  ref: string;
+  text: string;
+  why: string;
+}
+
+/** At-a-glance metadata for quick book overview (#1112). */
+export interface BookIntroAtAGlance {
+  author: string;
+  date: string;
+  chapters: number | string;
+  genre: string;
+  key_theme: string;
+  key_word: string;
+}
+
 export interface ParsedBookIntro {
   title?: string;
   subtitle?: string;
   authorship?: string | BookIntroAuthorship;
   sections?: BookIntroSection[];
   text?: string;
+  /* Enrichment fields (#1112) */
+  era?: string;
+  era_span?: string[];
+  purpose?: string;
+  key_verses?: BookIntroKeyVerse[];
+  christ_in?: string;
+  outline?: BookIntroEnrichedOutlineItem[];
+  at_a_glance?: BookIntroAtAGlance;
 }
 
 // ── Archaeological Evidence ────────────────────────────────
