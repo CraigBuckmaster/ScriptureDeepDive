@@ -56,12 +56,16 @@ jest.mock('@/hooks/useRecommendations', () => ({
 }));
 
 jest.mock('@/stores', () => ({
-  useSettingsStore: (sel: any) => sel({
-    translation: 'kjv',
-    fontSize: 16,
-    bookListMode: 'canonical',
-    studyCoachEnabled: true,
-  }),
+  useSettingsStore: Object.assign(
+    (sel: any) => sel({
+      translation: 'kjv',
+      fontSize: 16,
+      bookListMode: 'canonical',
+      studyCoachEnabled: true,
+      gettingStartedDone: new Set(),
+    }),
+    { getState: () => ({ markGettingStartedDone: jest.fn(), gettingStartedDone: new Set() }) },
+  ),
 }));
 
 // Stub child components with complex deps
@@ -157,11 +161,20 @@ describe('HomeScreen', () => {
     expect(mockNavigate).toHaveBeenCalledWith('Chapter', { bookId: 'john', chapterNum: 3 });
   });
 
-  it('shows Explore section when no recommendations', () => {
+  it('shows Getting Started checklist for new users when no reading history', () => {
+    const { getByText } = renderWithProviders(<HomeScreen />);
+    expect(getByText('GETTING STARTED')).toBeTruthy();
+    expect(getByText('Read your first chapter')).toBeTruthy();
+    expect(getByText('Tap a study panel')).toBeTruthy();
+  });
+
+  it('shows Explore section when user has reading history', () => {
+    mockHomeData.readingStats = { totalChapters: 5, currentStreak: 1, longestStreak: 1 };
     const { getByText } = renderWithProviders(<HomeScreen />);
     expect(getByText('EXPLORE')).toBeTruthy();
     expect(getByText('People')).toBeTruthy();
     expect(getByText('Timeline')).toBeTruthy();
+    mockHomeData.readingStats = null;
   });
 
   it('shows progress bar when chapters have been read', () => {

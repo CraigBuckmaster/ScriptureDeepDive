@@ -30,7 +30,10 @@ jest.mock('@react-navigation/native', () => {
 // ── Stores ────────────────────────────────────────────────────────
 
 jest.mock('@/stores', () => ({
-  useSettingsStore: (sel: any) => sel({ translation: 'kjv', fontSize: 16 }),
+  useSettingsStore: Object.assign(
+    (sel: any) => sel({ translation: 'kjv', fontSize: 16 }),
+    { getState: () => ({ markGettingStartedDone: jest.fn() }) },
+  ),
   useReaderStore: (sel: any) => sel({}),
 }));
 

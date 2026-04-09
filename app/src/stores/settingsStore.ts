@@ -32,6 +32,7 @@ interface SettingsState {
   comparisonTranslation: string | null;
   redLetterEnabled: boolean;
   focusMode: boolean;
+  gettingStartedDone: Set<string>;
   isHydrated: boolean;
 
   setTranslation: (t: string) => void;
@@ -44,6 +45,7 @@ interface SettingsState {
   setComparisonTranslation: (t: string | null) => void;
   setRedLetterEnabled: (v: boolean) => void;
   toggleFocusMode: () => void;
+  markGettingStartedDone: (key: string) => void;
   hydrate: () => Promise<void>;
 }
 
@@ -58,6 +60,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   comparisonTranslation: null,
   redLetterEnabled: true,
   focusMode: false,
+  gettingStartedDone: new Set<string>(),
   isHydrated: false,
 
   setTranslation: (t) => {
@@ -107,6 +110,15 @@ export const useSettingsStore = create<SettingsState>((set) => ({
     setPreference('focusMode', next ? '1' : '0').catch((err) => { logger.warn('settingsStore', 'Failed to persist focusMode', err); });
   },
 
+  markGettingStartedDone: (key: string) => {
+    const current = useSettingsStore.getState().gettingStartedDone;
+    if (current.has(key)) return;
+    const next = new Set(current);
+    next.add(key);
+    set({ gettingStartedDone: next });
+    setPreference('getting_started', JSON.stringify([...next])).catch((err) => { logger.warn('settingsStore', 'Failed to persist getting_started', err); });
+  },
+
   setComparisonTranslation: (t) => {
     set({ comparisonTranslation: t });
     setPreference('comparisonTranslation', t ?? '').catch((err) => { logger.warn('settingsStore', 'Failed to persist comparisonTranslation', err); });
@@ -124,6 +136,10 @@ export const useSettingsStore = create<SettingsState>((set) => ({
       const comp = await getPreference('comparisonTranslation');
       const rl = await getPreference('redLetterEnabled');
       const fm = await getPreference('focusMode');
+      const gs = await getPreference('getting_started');
+
+      let gsDone = new Set<string>();
+      if (gs) { try { gsDone = new Set(JSON.parse(gs)); } catch {} }
 
       set({
         translation: (t && TRANSLATION_MAP.has(t) ? t : 'kjv'),
@@ -136,6 +152,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
         comparisonTranslation: (comp && TRANSLATION_MAP.has(comp)) ? comp : null,
         redLetterEnabled: rl !== '0',
         focusMode: fm === '1',
+        gettingStartedDone: gsDone,
         isHydrated: true,
       });
     } catch (err) {

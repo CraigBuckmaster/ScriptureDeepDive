@@ -104,12 +104,16 @@ jest.mock('@/hooks/useStudyDepth', () => ({
 }));
 
 jest.mock('@/stores', () => ({
-  useSettingsStore: (sel: any) => sel({
-    translation: 'kjv',
-    fontSize: 16,
-    studyCoachEnabled: false,
-    setTranslation: jest.fn(),
-  }),
+  useSettingsStore: Object.assign(
+    (sel: any) => sel({
+      translation: 'kjv',
+      fontSize: 16,
+      studyCoachEnabled: false,
+      setTranslation: jest.fn(),
+      gettingStartedDone: new Set(),
+    }),
+    { getState: () => ({ markGettingStartedDone: jest.fn(), focusMode: false, gettingStartedDone: new Set() }) },
+  ),
   useReaderStore: (sel: any) => sel({
     activePanel: null,
     qnavOpen: false,
