@@ -12,7 +12,7 @@
 import React, { useCallback, useState } from 'react';
 import { View, Text, TouchableOpacity, Modal, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ArrowLeft, ChevronLeft, ChevronRight, Info, Volume2, Check } from 'lucide-react-native';
+import { ArrowLeft, ChevronLeft, ChevronRight, Info, Volume2, Check, BookOpen, Eye } from 'lucide-react-native';
 import { CompactDropdown, type DropdownOption } from './CompactDropdown';
 import { lightImpact, selectionFeedback } from '../utils/haptics';
 import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
@@ -40,6 +40,8 @@ interface Props {
   comparisonTranslation: string | null;
   onCompareStart: (t: string) => void;
   onCompareEnd: () => void;
+  focusMode?: boolean;
+  onFocusToggle?: () => void;
 }
 
 export function ChapterNavBar({
@@ -47,6 +49,7 @@ export function ChapterNavBar({
   onPrev, onNext, onQnav, onBack, onIntroPress, onTTSPress, ttsActive,
   translation, onTranslationChange,
   comparisonTranslation, onCompareStart, onCompareEnd,
+  focusMode, onFocusToggle,
 }: Props) {
   const { base } = useTheme();
   const [comparePicker, setComparePicker] = useState(false);
@@ -143,8 +146,20 @@ export function ChapterNavBar({
           </TouchableOpacity>
         </View>
 
-        {/* Right: TTS + ⓘ */}
+        {/* Right: Focus + TTS + ⓘ */}
         <View style={[styles.sideSection, styles.sideSectionRight]}>
+          {onFocusToggle ? (
+            <TouchableOpacity
+              onPress={onFocusToggle}
+              accessibilityLabel={focusMode ? 'Exit reading mode' : 'Enter reading mode'}
+              accessibilityRole="button"
+              style={styles.actionButton}
+            >
+              {focusMode
+                ? <BookOpen size={18} color={base.gold} />
+                : <Eye size={18} color={base.textMuted} />}
+            </TouchableOpacity>
+          ) : null}
           {onTTSPress ? (
             <TouchableOpacity
               onPress={onTTSPress}

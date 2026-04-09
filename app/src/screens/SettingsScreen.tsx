@@ -71,6 +71,8 @@ function SettingsScreen() {
   const setRedLetterEnabled = useSettingsStore((s) => s.setRedLetterEnabled);
   const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
   const setStudyCoachEnabled = useSettingsStore((s) => s.setStudyCoachEnabled);
+  const focusMode = useSettingsStore((s) => s.focusMode);
+  const toggleFocusMode = useSettingsStore((s) => s.toggleFocusMode);
   const theme = useSettingsStore((s) => s.theme);
   const setTheme = useSettingsStore((s) => s.setTheme);
   const isPremium = usePremiumStore((s) => s.isPremium);
@@ -230,6 +232,16 @@ function SettingsScreen() {
             onValueChange={setStudyCoachEnabled}
             trackColor={{ false: base.bgSurface, true: base.gold + '60' }}
             thumbColor={studyCoachEnabled ? base.gold : base.textMuted}
+          />
+        </Row>
+
+        {/* Focus / Reading Mode */}
+        <Row label="Focus Mode" base={base}>
+          <Switch
+            value={focusMode}
+            onValueChange={toggleFocusMode}
+            trackColor={{ false: base.bgSurface, true: base.gold + '60' }}
+            thumbColor={focusMode ? base.gold : base.textMuted}
           />
         </Row>
 

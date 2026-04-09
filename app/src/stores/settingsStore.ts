@@ -31,6 +31,7 @@ interface SettingsState {
   ttsVoice: string;
   comparisonTranslation: string | null;
   redLetterEnabled: boolean;
+  focusMode: boolean;
   isHydrated: boolean;
 
   setTranslation: (t: string) => void;
@@ -42,6 +43,7 @@ interface SettingsState {
   setTtsVoice: (v: string) => void;
   setComparisonTranslation: (t: string | null) => void;
   setRedLetterEnabled: (v: boolean) => void;
+  toggleFocusMode: () => void;
   hydrate: () => Promise<void>;
 }
 
@@ -55,6 +57,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   ttsVoice: '',
   comparisonTranslation: null,
   redLetterEnabled: true,
+  focusMode: false,
   isHydrated: false,
 
   setTranslation: (t) => {
@@ -98,6 +101,12 @@ export const useSettingsStore = create<SettingsState>((set) => ({
     setPreference('redLetterEnabled', v ? '1' : '0').catch((err) => { logger.warn('settingsStore', 'Failed to persist redLetterEnabled', err); });
   },
 
+  toggleFocusMode: () => {
+    const next = !useSettingsStore.getState().focusMode;
+    set({ focusMode: next });
+    setPreference('focusMode', next ? '1' : '0').catch((err) => { logger.warn('settingsStore', 'Failed to persist focusMode', err); });
+  },
+
   setComparisonTranslation: (t) => {
     set({ comparisonTranslation: t });
     setPreference('comparisonTranslation', t ?? '').catch((err) => { logger.warn('settingsStore', 'Failed to persist comparisonTranslation', err); });
@@ -114,6 +123,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
       const voice = await getPreference('ttsVoice');
       const comp = await getPreference('comparisonTranslation');
       const rl = await getPreference('redLetterEnabled');
+      const fm = await getPreference('focusMode');
 
       set({
         translation: (t && TRANSLATION_MAP.has(t) ? t : 'kjv'),
@@ -125,6 +135,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
         ttsVoice: voice ?? '',
         comparisonTranslation: (comp && TRANSLATION_MAP.has(comp)) ? comp : null,
         redLetterEnabled: rl !== '0',
+        focusMode: fm === '1',
         isHydrated: true,
       });
     } catch (err) {
