@@ -34,6 +34,7 @@ const CONTENT_TYPE_TO_SCREEN: Record<string, { screen: string; paramKey: string 
   difficult: { screen: 'DifficultPassagesBrowse', paramKey: 'passageId' },
   life_topic: { screen: 'LifeTopics', paramKey: 'topicId' },
   archaeology: { screen: 'ArchaeologyDetail', paramKey: 'discoveryId' },
+  book: { screen: 'Chapter', paramKey: 'bookId' },
 };
 
 type ImageRegistry = Record<string, ExploreFeatureImages>;
