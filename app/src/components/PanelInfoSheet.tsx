@@ -32,6 +32,7 @@ function getFirstSentence(text: string): string {
 export function PanelInfoSheet({ visible, panelType, onClose, onGoToFullBio }: Props) {
   const { base, getScholarColor, getPanelColors } = useTheme();
   const [scholar, setScholar] = useState<Scholar | null>(null);
+  const [scholarDesc, setScholarDesc] = useState<string | null>(null);
 
   const isScholar = panelType ? isScholarPanel(panelType) : false;
   const contentDesc = panelType ? PANEL_DESCRIPTIONS[panelType] : null;
@@ -40,9 +41,20 @@ export function PanelInfoSheet({ visible, panelType, onClose, onGoToFullBio }: P
   useEffect(() => {
     if (!panelType || !visible || !isScholar) {
       setScholar(null);
+      setScholarDesc(null);
       return;
     }
-    getScholar(panelType).then(setScholar).catch(() => setScholar(null));
+    getScholar(panelType).then((s) => {
+      setScholar(s);
+      // Extract description from bio_json
+      if (s?.bio_json) {
+        try {
+          const bio = JSON.parse(s.bio_json);
+          const desc = bio.description || bio.sections?.[0]?.body || '';
+          setScholarDesc(desc ? getFirstSentence(desc) : null);
+        } catch { setScholarDesc(null); }
+      }
+    }).catch(() => { setScholar(null); setScholarDesc(null); });
   }, [panelType, visible, isScholar]);
 
   if (!visible || !panelType) return null;
@@ -83,7 +95,7 @@ export function PanelInfoSheet({ visible, panelType, onClose, onGoToFullBio }: P
           {/* Description */}
           <Text style={[styles.description, { color: base.textDim }]}>
             {isScholar
-              ? (scholar?.description ? getFirstSentence(scholar.description) : 'Loading...')
+              ? (scholarDesc ?? 'Loading...')
               : (contentDesc?.description ?? 'Study panel')
             }
           </Text>
