@@ -76,5 +76,8 @@
     "prettier": "^3.8.1",
     "typescript": "^5.3.3"
   },
+  "overrides": {
+    "@tootallnate/once": ">=3.0.1"
+  },
   "private": true
 }
