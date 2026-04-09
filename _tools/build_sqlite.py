@@ -2064,6 +2064,7 @@ def populate_content_images(cur):
         ('difficult', META / 'difficult-passages.json', lambda d: d if isinstance(d, list) else [], 'id'),
         ('grammar', ROOT / 'content' / 'grammar' / 'articles.json', lambda d: d if isinstance(d, list) else [], 'id'),
         ('time_travel', ROOT / 'content' / 'historical_interpretations' / 'eras.json', lambda d: d if isinstance(d, list) else [], 'id'),
+        ('book', META / 'book-intros.json', lambda d: d if isinstance(d, list) else [], 'book'),
     ]
 
     count = 0

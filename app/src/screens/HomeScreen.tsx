@@ -1,87 +1,69 @@
 /**
- * HomeScreen — Personal dashboard landing page.
+ * HomeScreen — Redesigned personal dashboard.
  *
  * Layout (top to bottom):
- *   1. Time-aware greeting + personal subtitle
- *   2. Continue Reading card (primary action)
- *   3. Verse of the Day
- *   4. Contextual "From Your Study" suggestions
- *   5. Overall progress bar
+ *   1. Greeting row (text + streak)
+ *   2. ContinueReadingHero (full-width image hero)
+ *   3. Verse of the Day (typography-forward)
+ *   4. ActivePlanCard compact row (if active plan)
+ *   5. "From your study" image carousel (FeatureCard reuse)
+ *   6. ProgressRow collapsible
+ *
+ * Part of Epic #1089 (#1091, #1093, #1094).
  */
 
-import React, { useState, useCallback, useMemo, useRef } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, RefreshControl, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useScrollToTop } from '@react-navigation/native';
+import { Share2 } from 'lucide-react-native';
 import type { ScreenNavProp } from '../navigation/types';
-import { useScrollToTop } from '@react-navigation/native';
-import { ArrowRight, Share2 } from 'lucide-react-native';
 import { useHomeData } from '../hooks/useHomeData';
-import { getTestamentProgress, type TestamentProgress } from '../db/user';
 import { useStreakData } from '../hooks/useStreakData';
 import { useRecommendations, type Recommendation } from '../hooks/useRecommendations';
+import { useExploreImages } from '../hooks/useExploreImages';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { StreakBadge } from '../components/StreakBadge';
 import { ActivePlanCard } from '../components/ActivePlanCard';
-import { GettingStartedCard, GETTING_STARTED_ITEMS, type GettingStartedItem } from '../components/GettingStartedCard';
+import { ContinueReadingHero } from '../components/ContinueReadingHero';
+import { ProgressRow } from '../components/ProgressRow';
+import { FeatureCard, CARD_WIDTH, type FeatureCardData } from '../components/FeatureCard';
 import { MilestoneToast } from '../components/MilestoneToast';
 import { useSettingsStore } from '../stores';
-import { shareVerse, shareProgress } from '../utils/shareVerse';
+import { shareVerse } from '../utils/shareVerse';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
-import { logger } from '../utils/logger';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-const TOTAL_BIBLE_CHAPTERS = 1189;
+// ── Static cards for new users ────────────────────────────────
+const NEW_USER_CARDS: FeatureCardData[] = [
+  { title: 'People',       subtitle: 'Lives that shaped sacred history',        color: '#e86040', screen: 'GenealogyTree' },
+  { title: 'Timeline',     subtitle: 'The arc of redemption',                   color: '#70b8e8', screen: 'Timeline' },
+  { title: 'Scholars',     subtitle: 'Centuries of scholarship',                color: '#a0b8d0', screen: 'ScholarBrowse' },
+  { title: 'Word Studies', subtitle: 'Meaning in the original languages',       color: '#e890b8', screen: 'WordStudyBrowse' },
+];
 
 function HomeScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Home', 'HomeMain'>>();
   const { greeting, subtitle, verse, recentChapters, readingStats, isLoading, refresh } = useHomeData();
   const translation = useSettingsStore((s) => s.translation);
-  const gettingStartedDone = useSettingsStore((s) => s.gettingStartedDone);
   const { currentStreak, pendingMilestone, markMilestoneSeen } = useStreakData();
   const recommendations = useRecommendations();
+  const imageRegistry = useExploreImages();
   const [refreshing, setRefreshing] = useState(false);
-  const [testamentProgress, setTestamentProgress] = useState<TestamentProgress[]>([]);
   const scrollRef = useRef<ScrollView>(null);
   useScrollToTop(scrollRef);
-
-  // Load testament progress when home screen is focused
-  const loadTestamentProgress = useCallback(() => {
-    getTestamentProgress().then(setTestamentProgress).catch((err) => { logger.warn('HomeScreen', 'Failed to load testament progress', err); });
-  }, []);
-
-  const handleRecPress = useCallback((rec: Recommendation) => {
-    navigation.navigate(rec.screen as any, rec.params as any);
-  }, [navigation]);
-
-  const handleGettingStartedPress = useCallback((item: GettingStartedItem) => {
-    switch (item.key) {
-      case 'first_chapter':
-      case 'first_panel':
-        navigation.navigate('Chapter', { bookId: 'genesis', chapterNum: 1 });
-        break;
-      case 'meet_scholars':
-        (navigation as any).navigate('ExploreTab', { screen: 'ScholarBrowse' });
-        break;
-      case 'explore_timeline':
-        (navigation as any).navigate('ExploreTab', { screen: 'Timeline' });
-        break;
-    }
-  }, [navigation]);
-  // Re-load on focus (useFocusEffect not available here, piggyback on refresh)
 
   const handleRefresh = useCallback(async () => {
     setRefreshing(true);
     await refresh();
-    loadTestamentProgress();
     setRefreshing(false);
   }, [refresh]);
 
-  // Load testament progress when data is ready
-  React.useEffect(() => {
-    if (!isLoading) loadTestamentProgress();
-  }, [isLoading, loadTestamentProgress]);
+  const handleNavigate = useCallback((screen: string, params?: object) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    navigation.navigate(screen as any, params as any);
+  }, [navigation]);
 
   if (isLoading) {
     return (
@@ -95,7 +77,6 @@ function HomeScreen() {
 
   const mostRecent = recentChapters[0] ?? null;
   const chaptersRead = readingStats?.totalChapters ?? 0;
-  const pct = chaptersRead > 0 ? ((chaptersRead / TOTAL_BIBLE_CHAPTERS) * 100).toFixed(1) : null;
 
   const handleContinuePress = () => {
     if (mostRecent) {
@@ -108,6 +89,23 @@ function HomeScreen() {
   const handleVersePress = () => {
     navigation.navigate('Chapter', { bookId: verse.bookId, chapterNum: verse.chapter });
   };
+
+  // ── Map recommendations to FeatureCardData + images ──────
+  const recCards: FeatureCardData[] = recommendations.map((r: Recommendation) => ({
+    title: r.title,
+    subtitle: r.subtitle,
+    color: '#bfa050',
+    screen: r.screen,
+    params: r.params as Record<string, string> | undefined,
+  }));
+
+  const carouselCards = chaptersRead > 0 && recCards.length > 0
+    ? recCards
+    : NEW_USER_CARDS;
+
+  const carouselLabel = chaptersRead > 0 && recCards.length > 0
+    ? 'FROM YOUR STUDY'
+    : 'START EXPLORING';
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
@@ -127,57 +125,25 @@ function HomeScreen() {
 
         {/* ── 1. Greeting ──────────────────────────────── */}
         <View style={styles.greetingSection}>
-          <Text style={[styles.greetingText, { color: base.text }]} accessibilityRole="header">{greeting}</Text>
-          <Text style={[styles.greetingSubtitle, { color: base.textDim }]}>{subtitle}</Text>
-          <StreakBadge streak={currentStreak} />
+          <View style={styles.greetingRow}>
+            <View style={styles.greetingLeft}>
+              <Text style={[styles.greetingText, { color: base.text }]} accessibilityRole="header">{greeting}</Text>
+              <Text style={[styles.greetingSubtitle, { color: base.textDim }]}>{subtitle}</Text>
+            </View>
+            <StreakBadge streak={currentStreak} />
+          </View>
         </View>
 
-        {/* ── 2. Continue Reading (primary action) ──────── */}
-        {mostRecent ? (
-          <TouchableOpacity
-            activeOpacity={0.7}
-            onPress={handleContinuePress}
-            style={[styles.continueCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}
-            accessibilityRole="button"
-            accessibilityLabel={`Continue reading ${mostRecent.book_name} chapter ${mostRecent.chapter_num}`}
-          >
-            <View style={styles.continueCardContent}>
-              <Text style={[styles.continueBookName, { color: base.text }]}>
-                {mostRecent.book_name} · Chapter {mostRecent.chapter_num}
-              </Text>
-              <Text style={[styles.continueChapter, { color: base.textDim }]}>
-                {mostRecent.title ?? 'Continue reading'}
-              </Text>
-            </View>
-            <View style={styles.continueAction}>
-              <Text style={[styles.continueLabel, { color: base.gold }]}>Continue</Text>
-              <ArrowRight size={14} color={base.gold} />
-            </View>
-          </TouchableOpacity>
-        ) : (
-          <TouchableOpacity
-            activeOpacity={0.7}
-            onPress={handleContinuePress}
-            style={[styles.continueCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}
-            accessibilityRole="button"
-            accessibilityLabel="Begin your journey, start reading Genesis 1"
-          >
-            <View style={styles.continueCardContent}>
-              <Text style={[styles.continueBookName, { color: base.text }]}>Begin Your Journey</Text>
-              <Text style={[styles.continueChapter, { color: base.textDim }]}>Start reading through Scripture</Text>
-            </View>
-            <View style={styles.continueAction}>
-              <Text style={[styles.continueLabel, { color: base.gold }]}>Genesis 1</Text>
-              <ArrowRight size={14} color={base.gold} />
-            </View>
-          </TouchableOpacity>
-        )}
+        {/* ── 2. Continue Reading Hero ──────────────────── */}
+        <View style={styles.sectionGap}>
+          <ContinueReadingHero mostRecent={mostRecent} onPress={handleContinuePress} />
+        </View>
 
-        {/* ── 3. Verse of the Day ──────────────────────── */}
+        {/* ── 3. Verse of the Day (typography-forward) ──── */}
         <TouchableOpacity
           activeOpacity={0.7}
           onPress={handleVersePress}
-          style={[styles.verseCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
+          style={[styles.verseCard, { backgroundColor: '#1a1508', borderColor: base.gold + '14' }]}
           accessibilityRole="button"
           accessibilityLabel={`Verse of the day: ${verse.ref}. ${verse.text}. Tap to read in context`}
         >
@@ -189,165 +155,51 @@ function HomeScreen() {
               accessibilityRole="button"
               accessibilityLabel="Share verse of the day"
             >
-              <Share2 size={15} color={base.textMuted} />
+              <Share2 size={15} color="#706858" />
             </TouchableOpacity>
           </View>
           <Text style={[styles.verseCardRef, { color: base.gold }]}>{verse.ref}</Text>
           <Text style={[styles.verseCardText, { color: base.text }]}>{verse.text}</Text>
         </TouchableOpacity>
 
-        {/* ── 4. Active Reading Plan ─────────────────── */}
-        <ActivePlanCard />
-
-        {/* ── 5. Getting Started / Contextual Suggestions ──── */}
-        {chaptersRead === 0 && gettingStartedDone.size < GETTING_STARTED_ITEMS.length ? (
-          <GettingStartedCard
-            items={GETTING_STARTED_ITEMS}
-            completedKeys={gettingStartedDone}
-            onItemPress={handleGettingStartedPress}
-          />
-        ) : (
-        <View style={styles.suggestionsSection}>
-          <Text
-            style={[styles.sectionLabel, { color: base.textMuted }]}
-            accessibilityRole="header"
-          >
-            {recommendations.length > 0 ? 'FROM YOUR STUDY' : 'EXPLORE'}
-          </Text>
-          {recommendations.length > 0 ? (
-            <>
-              <View style={styles.suggestionsRow}>
-                {recommendations.slice(0, 2).map((rec) => (
-                  <TouchableOpacity
-                    key={rec.id}
-                    style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
-                    activeOpacity={0.7}
-                    onPress={() => handleRecPress(rec)}
-                    accessibilityRole="button"
-                    accessibilityLabel={`${rec.title}: ${rec.subtitle}`}
-                  >
-                    <Text style={[styles.suggestionTitle, { color: base.gold }]}>{rec.title}</Text>
-                    <Text style={[styles.suggestionSubtitle, { color: base.textDim }]}>{rec.subtitle}</Text>
-                  </TouchableOpacity>
-                ))}
-              </View>
-              {recommendations.length > 2 && (
-                <View style={[styles.suggestionsRow, styles.suggestionsRowSpaced]}>
-                  {recommendations.slice(2, 4).map((rec) => (
-                    <TouchableOpacity
-                      key={rec.id}
-                      style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
-                      activeOpacity={0.7}
-                      onPress={() => handleRecPress(rec)}
-                      accessibilityRole="button"
-                      accessibilityLabel={`${rec.title}: ${rec.subtitle}`}
-                    >
-                      <Text style={[styles.suggestionTitle, { color: base.gold }]}>{rec.title}</Text>
-                      <Text style={[styles.suggestionSubtitle, { color: base.textDim }]}>{rec.subtitle}</Text>
-                    </TouchableOpacity>
-                  ))}
-                </View>
-              )}
-            </>
-          ) : (
-            <>
-              <View style={styles.suggestionsRow}>
-                <TouchableOpacity
-                  style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
-                  activeOpacity={0.7}
-                  onPress={() => navigation.navigate('ExploreTab' as any, { screen: 'GenealogyTree' })}
-                  accessibilityRole="button"
-                  accessibilityLabel="Explore people: Lives that shaped sacred history"
-                >
-                  <Text style={[styles.suggestionTitle, { color: base.gold }]}>People</Text>
-                  <Text style={[styles.suggestionSubtitle, { color: base.textDim }]}>Lives that shaped sacred history</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
-                  activeOpacity={0.7}
-                  onPress={() => navigation.navigate('ExploreTab' as any, { screen: 'Timeline' })}
-                  accessibilityRole="button"
-                  accessibilityLabel="Explore timeline: The arc of redemption"
-                >
-                  <Text style={[styles.suggestionTitle, { color: base.gold }]}>Timeline</Text>
-                  <Text style={[styles.suggestionSubtitle, { color: base.textDim }]}>The arc of redemption</Text>
-                </TouchableOpacity>
-              </View>
-              <View style={[styles.suggestionsRow, styles.suggestionsRowSpaced]}>
-                <TouchableOpacity
-                  style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
-                  activeOpacity={0.7}
-                  onPress={() => navigation.navigate('ExploreTab' as any, { screen: 'ScholarBrowse' })}
-                  accessibilityRole="button"
-                  accessibilityLabel="Explore scholars: Centuries of scholarship"
-                >
-                  <Text style={[styles.suggestionTitle, { color: base.gold }]}>Scholars</Text>
-                  <Text style={[styles.suggestionSubtitle, { color: base.textDim }]}>Centuries of scholarship</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
-                  activeOpacity={0.7}
-                  onPress={() => navigation.navigate('ExploreTab' as any, { screen: 'WordStudyBrowse' })}
-                  accessibilityRole="button"
-                  accessibilityLabel="Explore word studies: Meaning in the original languages"
-                >
-                  <Text style={[styles.suggestionTitle, { color: base.gold }]}>Word Studies</Text>
-                  <Text style={[styles.suggestionSubtitle, { color: base.textDim }]}>Meaning in the original languages</Text>
-                </TouchableOpacity>
-              </View>
-            </>
-          )}
+        {/* ── 4. Active Reading Plan (compact) ─────────── */}
+        <View style={styles.sectionGap}>
+          <ActivePlanCard />
         </View>
-        )}
 
-        {/* ── 6. Overall Progress ──────────────────────── */}
-        {chaptersRead > 0 && pct && (
-          <View style={[styles.progressCard, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
-            <View style={styles.progressHeader}>
-              <Text style={[styles.progressText, { color: base.text }]}>{chaptersRead} of {TOTAL_BIBLE_CHAPTERS} chapters</Text>
-              <View style={styles.progressPctRow}>
-                <Text style={[styles.progressPct, { color: base.gold }]}>{pct}%</Text>
-                <TouchableOpacity
-                  onPress={() => shareProgress(pct!, chaptersRead)}
-                  hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-                  accessibilityRole="button"
-                  accessibilityLabel="Share your reading progress"
-                >
-                  <Share2 size={14} color={base.gold} style={{ opacity: 0.6 }} />
-                </TouchableOpacity>
-              </View>
-            </View>
-            <View style={[styles.progressTrack, { backgroundColor: base.border }]}>
-              <View style={[styles.progressFill, { width: `${Math.max(1, parseFloat(pct))}%`, backgroundColor: base.gold }]} />
-            </View>
-          </View>
-        )}
-
-        {/* ── 7. Testament Progress ─────────────────────── */}
-        {testamentProgress.length > 0 && chaptersRead > 0 && (
-          <View style={styles.testamentList}>
-            {testamentProgress.map((tp) => {
-              const tpPct = tp.totalChapters > 0
-                ? ((tp.chaptersRead / tp.totalChapters) * 100).toFixed(0)
-                : '0';
-              if (tp.chaptersRead === 0) return null;
+        {/* ── 5. "From your study" / "Start exploring" carousel ── */}
+        <View style={styles.carouselSection}>
+          <Text style={[styles.sectionLabel, { color: base.textMuted }]}>{carouselLabel}</Text>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.carouselContent}
+            decelerationRate="fast"
+            snapToInterval={CARD_WIDTH + spacing.sm}
+          >
+            {carouselCards.map((card, i) => {
+              const imgData = imageRegistry[card.screen];
               return (
-                <View
-                  key={tp.testament}
-                  style={[styles.testamentRow, { backgroundColor: base.bgElevated, borderColor: base.border }]}
-                >
-                  <View style={styles.progressHeader}>
-                    <Text style={[styles.testamentLabel, { color: base.textDim }]}>{tp.testament}</Text>
-                    <Text style={[styles.testamentPct, { color: base.textMuted }]}>{tp.chaptersRead}/{tp.totalChapters} ({tpPct}%)</Text>
-                  </View>
-                  <View style={[styles.progressTrack, { backgroundColor: base.border }]}>
-                    <View style={[styles.progressFill, { width: `${Math.max(1, parseFloat(tpPct))}%`, backgroundColor: base.gold + '80' }]} />
-                  </View>
-                </View>
+                <FeatureCard
+                  key={card.screen + i}
+                  feature={card}
+                  onPress={() => handleNavigate(card.screen, card.params)}
+                  isPremium={false}
+                  images={imgData?.images}
+                  count={imgData?.count}
+                  noun={imgData?.noun}
+                  onImagePress={(dl) => handleNavigate(dl.screen, dl.params)}
+                  staggerMs={i * 1200}
+                />
               );
             })}
-          </View>
-        )}
+          </ScrollView>
+        </View>
+
+        {/* ── 6. Progress (collapsible) ─────────────────── */}
+        <View style={styles.sectionGap}>
+          <ProgressRow chaptersRead={chaptersRead} />
+        </View>
 
       </ScrollView>
 
@@ -358,19 +210,29 @@ function HomeScreen() {
 
 // ── Styles ────────────────────────────────────────────────────────
 
+const HORIZONTAL_PAD = 20;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
   content: {
-    padding: spacing.md,
+    paddingHorizontal: HORIZONTAL_PAD,
     paddingBottom: spacing.xxl,
   },
 
   // Greeting
   greetingSection: {
     paddingTop: spacing.lg,
-    paddingBottom: spacing.lg,
+    paddingBottom: spacing.md,
+  },
+  greetingRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+  },
+  greetingLeft: {
+    flex: 1,
   },
   greetingText: {
     fontFamily: fontFamily.displaySemiBold,
@@ -382,51 +244,24 @@ const styles = StyleSheet.create({
     marginTop: spacing.xs,
   },
 
-  // Continue Reading
-  continueCard: {
-    borderRadius: radii.lg,
-    borderWidth: 1,
-    padding: spacing.md,
-    marginBottom: spacing.md,
-    flexDirection: 'row' as const,
-    alignItems: 'center' as const,
-    justifyContent: 'space-between' as const,
-  },
-  continueCardContent: {
-    flex: 1,
-  },
-  continueBookName: {
-    fontFamily: fontFamily.displayMedium,
-    fontSize: 14,
-  },
-  continueChapter: {
-    fontFamily: fontFamily.ui,
-    fontSize: 13,
-    marginTop: 2,
-  },
-  continueAction: {
-    flexDirection: 'row' as const,
-    alignItems: 'center' as const,
-    gap: spacing.xs,
-    marginLeft: spacing.md,
-  },
-  continueLabel: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 13,
+  // Section gap (consistent 20-22px between sections)
+  sectionGap: {
+    marginBottom: 22,
   },
 
-  // Verse of the Day
-  verseCardHeader: {
-    flexDirection: 'row' as const,
-    justifyContent: 'space-between' as const,
-    alignItems: 'center' as const,
-    marginBottom: spacing.sm,
-  },
+  // Verse of the Day (#1091 restyle)
   verseCard: {
     borderRadius: radii.lg,
     borderWidth: 1,
-    padding: spacing.lg,
-    marginBottom: spacing.lg,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: 28,
+    marginBottom: 22,
+  },
+  verseCardHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: spacing.sm,
   },
   verseCardLabel: {
     fontFamily: fontFamily.uiMedium,
@@ -439,14 +274,16 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
   verseCardText: {
-    fontFamily: fontFamily.body,
-    fontSize: 18,
-    lineHeight: 28,
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 20,
+    lineHeight: 32,
   },
 
-  // Suggestions
-  suggestionsSection: {
-    marginBottom: spacing.lg,
+  // Carousel section (#1093)
+  carouselSection: {
+    marginBottom: 22,
+    marginHorizontal: -HORIZONTAL_PAD,
+    paddingHorizontal: HORIZONTAL_PAD,
   },
   sectionLabel: {
     fontFamily: fontFamily.uiMedium,
@@ -454,77 +291,8 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
     marginBottom: spacing.sm,
   },
-  suggestionsRow: {
-    flexDirection: 'row' as const,
+  carouselContent: {
     gap: spacing.sm,
-  },
-  suggestionCard: {
-    flex: 1,
-    borderRadius: radii.md,
-    borderWidth: 1,
-    padding: spacing.sm + 2,
-  },
-  suggestionTitle: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 12,
-    marginBottom: 2,
-  },
-  suggestionSubtitle: {
-    fontFamily: fontFamily.ui,
-    fontSize: 12,
-  },
-
-  // Progress
-  progressCard: {
-    borderRadius: radii.md,
-    borderWidth: 1,
-    padding: spacing.sm + 4,
-  },
-  progressHeader: {
-    flexDirection: 'row' as const,
-    justifyContent: 'space-between' as const,
-    marginBottom: spacing.xs + 2,
-  },
-  progressText: {
-    fontFamily: fontFamily.ui,
-    fontSize: 12,
-  },
-  progressPct: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 12,
-  },
-  progressTrack: {
-    height: 4,
-    borderRadius: 2,
-  },
-  progressFill: {
-    height: 4,
-    borderRadius: 2,
-    minWidth: 8,
-  },
-  testamentRow: {
-    borderRadius: radii.md,
-    borderWidth: 1,
-    padding: spacing.sm + 2,
-  },
-  testamentLabel: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 12,
-  },
-  testamentPct: {
-    fontFamily: fontFamily.ui,
-    fontSize: 11,
-  },
-  progressPctRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.sm,
-  },
-  testamentList: {
-    gap: spacing.xs,
-  },
-  suggestionsRowSpaced: {
-    marginTop: spacing.sm,
   },
 });
 

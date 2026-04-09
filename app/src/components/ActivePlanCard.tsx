@@ -1,11 +1,15 @@
 /**
- * ActivePlanCard — Shows active reading plan with progress on HomeScreen.
- * Tappable to navigate to PlanDetailScreen. Returns null if no active plan.
+ * ActivePlanCard — Compact single-row reading plan card for HomeScreen.
+ * Shows plan icon, title, day subtitle, progress bar, and chevron.
+ * Returns null if no active plan.
+ *
+ * Part of Epic #1089 (#1092).
  */
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import { ChevronRight } from 'lucide-react-native';
 import type { ScreenNavProp } from '../navigation/types';
 import { getActivePlanId, getPlans, getPlanProgress, type ReadingPlan, type PlanProgress } from '../db/user';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
@@ -36,8 +40,7 @@ function ActivePlanCard() {
     }
 
     const progress = await getPlanProgress(activePlanId);
-    
-    // Parse chapters JSON
+
     let days: { day: number; chapters: string[] }[] = [];
     try {
       days = JSON.parse(plan.chapters_json);
@@ -45,7 +48,6 @@ function ActivePlanCard() {
       days = [];
     }
 
-    // Find next incomplete day
     const nextDay = days.find((d) => {
       const dayProgress = progress.find((p) => p.day_num === d.day);
       return !dayProgress?.completed_at;
@@ -54,7 +56,6 @@ function ActivePlanCard() {
     setPlanData({ plan, progress, nextDay });
   }, []);
 
-  // Load on mount and when screen is focused
   useFocusEffect(
     useCallback(() => {
       loadPlanData();
@@ -68,40 +69,38 @@ function ActivePlanCard() {
   const total = progress.length;
   const progressPercent = total > 0 ? Math.round((completed / total) * 100) : 0;
 
-  const handlePress = () => {
-    navigation.navigate('PlanDetail', { planId: plan.id });
-  };
+  const dayLabel = nextDay
+    ? `Day ${nextDay.day} · ${nextDay.chapters.map((c) => c.replace('_', ' ')).join(', ')}`
+    : '✓ Complete';
 
   return (
     <TouchableOpacity
       style={[styles.container, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}
-      onPress={handlePress}
+      onPress={() => navigation.navigate('PlanDetail', { planId: plan.id })}
       activeOpacity={0.7}
       accessibilityRole="button"
       accessibilityLabel={`Active reading plan: ${plan.name}, ${progressPercent}% complete`}
     >
-      <View style={styles.header}>
-        <Text style={[styles.label, { color: base.textMuted }]}>ACTIVE READING PLAN</Text>
-        <Text style={[styles.progress, { color: base.gold }]}>{progressPercent}%</Text>
+      {/* Icon container */}
+      <View style={[styles.iconBox, { backgroundColor: base.gold + '18' }]}>
+        <Text style={styles.iconText}>📖</Text>
       </View>
 
-      <Text style={[styles.planName, { color: base.text }]}>{plan.name}</Text>
-
-      {/* Progress bar */}
-      <View style={[styles.progressBar, { backgroundColor: base.border }]}>
-        <View style={[styles.progressFill, { width: `${progressPercent}%`, backgroundColor: base.gold }]} />
-      </View>
-
-      {/* Next day info */}
-      {nextDay ? (
-        <Text style={[styles.nextDay, { color: base.textDim }]}>
-          Day {nextDay.day}: {nextDay.chapters.map((c) => c.replace('_', ' ')).join(', ')}
+      {/* Center: title + subtitle + bar */}
+      <View style={styles.center}>
+        <Text style={[styles.title, { color: base.text }]} numberOfLines={1}>
+          {plan.name}
         </Text>
-      ) : (
-        <Text style={[styles.nextDay, { color: base.gold }]}>✓ Plan complete!</Text>
-      )}
+        <Text style={[styles.subtitle, { color: base.textMuted }]} numberOfLines={1}>
+          {dayLabel}
+        </Text>
+        <View style={[styles.bar, { backgroundColor: base.border }]}>
+          <View style={[styles.barFill, { width: `${progressPercent}%`, backgroundColor: base.gold }]} />
+        </View>
+      </View>
 
-      <Text style={[styles.cta, { color: base.gold }]}>Continue reading →</Text>
+      {/* Right: chevron */}
+      <ChevronRight size={16} color={base.textMuted} />
     </TouchableOpacity>
   );
 }
@@ -112,48 +111,43 @@ export default MemoizedActivePlanCard;
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: radii.md,
-    borderWidth: 1,
-    padding: spacing.md,
-    marginBottom: spacing.md,
-  },
-  header: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderRadius: radii.lg,
+    borderWidth: 1,
+    padding: spacing.sm + 2,
+    gap: spacing.sm + 2,
+  },
+  iconBox: {
+    width: 36,
+    height: 36,
+    borderRadius: radii.md,
+    justifyContent: 'center',
     alignItems: 'center',
   },
-  label: {
+  iconText: {
+    fontSize: 16,
+  },
+  center: {
+    flex: 1,
+  },
+  title: {
     fontFamily: fontFamily.uiMedium,
-    fontSize: 9,
-    letterSpacing: 0.5,
+    fontSize: 13,
   },
-  progress: {
-    fontFamily: fontFamily.uiSemiBold,
-    fontSize: 12,
+  subtitle: {
+    fontFamily: fontFamily.ui,
+    fontSize: 11,
+    marginTop: 1,
   },
-  planName: {
-    fontFamily: fontFamily.uiSemiBold,
-    fontSize: 15,
-    marginTop: 4,
-  },
-  progressBar: {
-    height: 4,
-    borderRadius: 2,
-    marginTop: spacing.sm,
+  bar: {
+    height: 3,
+    borderRadius: 1.5,
+    marginTop: 5,
     overflow: 'hidden',
   },
-  progressFill: {
+  barFill: {
     height: '100%',
-    borderRadius: 2,
-  },
-  nextDay: {
-    fontFamily: fontFamily.ui,
-    fontSize: 12,
-    marginTop: spacing.sm,
-  },
-  cta: {
-    fontFamily: fontFamily.uiSemiBold,
-    fontSize: 12,
-    marginTop: spacing.sm,
+    borderRadius: 1.5,
   },
 });
