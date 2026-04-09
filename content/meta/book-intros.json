@@ -6942,7 +6942,75 @@
         "caption": "Papyrus 46 — early New Testament manuscript",
         "credit": "Public domain, via Wikimedia Commons"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To present the gospel systematically—humanity's universal guilt, justification by faith alone, freedom from sin's power, Israel's place in God's plan, and life transformed by grace. Romans is Paul's theological masterpiece, written to a church he had not yet visited.",
+    "key_verses": [
+      {
+        "ref": "Rom 1:16-17",
+        "text": "For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes: first to the Jew, then to the Gentile. For in the gospel the righteousness of God is revealed—a righteousness that is by faith from first to last, just as it is written: \"The righteous will live by faith.\"",
+        "why": "The thesis—gospel power, righteousness by faith."
+      },
+      {
+        "ref": "Rom 3:23-24",
+        "text": "for all have sinned and fall short of the glory of God, and all are justified freely by his grace through the redemption that came by Christ Jesus.",
+        "why": "Universal sin, universal grace."
+      },
+      {
+        "ref": "Rom 8:28",
+        "text": "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.",
+        "why": "God's sovereign providence in believers' lives."
+      },
+      {
+        "ref": "Rom 12:1-2",
+        "text": "Therefore, I urge you, brothers and sisters, in view of God's mercy, to offer your bodies as a living sacrifice, holy and pleasing to God—this is your true and proper worship. Do not conform to the pattern of this world, but be transformed by the renewing of your mind.",
+        "why": "Gospel-driven transformation."
+      }
+    ],
+    "christ_in": "Christ is central to every argument. He is God's righteousness revealed (1:17; 3:21-26). His death justifies (5:9), his life saves (5:10), his resurrection guarantees ours (6:4-5). In Christ there is no condemnation (8:1). Christ is the end of the law (10:4). He is Lord of all (14:9).",
+    "outline": [
+      {
+        "label": "Gospel Introduced",
+        "range": "1:1-17",
+        "summary": "Greeting, thesis"
+      },
+      {
+        "label": "Condemnation",
+        "range": "1:18-3:20",
+        "summary": "Gentile and Jewish guilt"
+      },
+      {
+        "label": "Justification",
+        "range": "3:21-5:21",
+        "summary": "Righteousness by faith"
+      },
+      {
+        "label": "Sanctification",
+        "range": "6-8",
+        "summary": "Freedom from sin, Spirit life"
+      },
+      {
+        "label": "Israel",
+        "range": "9-11",
+        "summary": "Election, hardening, restoration"
+      },
+      {
+        "label": "Application",
+        "range": "12-16",
+        "summary": "Transformed living, greetings"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Paul",
+      "date": "c. AD 57",
+      "chapters": 16,
+      "genre": "Epistle / Theological Treatise",
+      "key_theme": "The righteous live by faith—justified, sanctified, glorified",
+      "key_word": "dikaiosyne (righteousness)"
+    }
   },
   {
     "book": "1_corinthians",
@@ -7068,7 +7136,70 @@
         "caption": "Papyrus 46 — early New Testament manuscript",
         "credit": "Public domain, via Wikimedia Commons"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To address divisions, immorality, and doctrinal confusion in the Corinthian church—calling them to unity in Christ, holiness, proper worship, and hope in resurrection. Paul applies the gospel to messy congregational life.",
+    "key_verses": [
+      {
+        "ref": "1 Cor 1:18",
+        "text": "For the message of the cross is foolishness to those who are perishing, but to us who are being saved it is the power of God.",
+        "why": "The cross—foolishness to the world, power to believers."
+      },
+      {
+        "ref": "1 Cor 13:13",
+        "text": "And now these three remain: faith, hope and love. But the greatest of these is love.",
+        "why": "The 'love chapter' climax."
+      },
+      {
+        "ref": "1 Cor 15:3-4",
+        "text": "For what I received I passed on to you as of first importance: that Christ died for our sins according to the Scriptures, that he was buried, that he was raised on the third day according to the Scriptures.",
+        "why": "The gospel in summary."
+      }
+    ],
+    "christ_in": "Christ crucified is the answer to every problem. Division? Christ is not divided (1:13). Immorality? You were bought with a price (6:20). Idolatry? We have one Lord (8:6). Lord's Supper? Proclaim his death (11:26). Resurrection? Christ is raised, firstfruits of the dead (15:20).",
+    "outline": [
+      {
+        "label": "Divisions",
+        "range": "1-4",
+        "summary": "Factions, true wisdom"
+      },
+      {
+        "label": "Moral Issues",
+        "range": "5-6",
+        "summary": "Immorality, lawsuits"
+      },
+      {
+        "label": "Marriage & Idols",
+        "range": "7-10",
+        "summary": "Singleness, food, freedom"
+      },
+      {
+        "label": "Worship Order",
+        "range": "11-14",
+        "summary": "Head coverings, Supper, gifts"
+      },
+      {
+        "label": "Resurrection",
+        "range": "15",
+        "summary": "Christ raised, we will be raised"
+      },
+      {
+        "label": "Closing",
+        "range": "16",
+        "summary": "Collection, plans, greetings"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Paul",
+      "date": "c. AD 55",
+      "chapters": 16,
+      "genre": "Epistle / Pastoral Letter",
+      "key_theme": "Christ crucified solves every church problem",
+      "key_word": "stauros (cross)"
+    }
   },
   {
     "book": "2_corinthians",
@@ -7162,7 +7293,55 @@
         "caption": "Papyrus 46 — early New Testament manuscript",
         "credit": "Public domain, via Wikimedia Commons"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To defend Paul's apostolic ministry against opponents, explain his change of travel plans, and appeal for completion of the collection for Jerusalem. Paul opens his heart, revealing the paradox of power in weakness.",
+    "key_verses": [
+      {
+        "ref": "2 Cor 4:7",
+        "text": "But we have this treasure in jars of clay to show that this all-surpassing power is from God and not from us.",
+        "why": "Power through weakness—the minister's paradox."
+      },
+      {
+        "ref": "2 Cor 5:17",
+        "text": "Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!",
+        "why": "New creation in Christ."
+      },
+      {
+        "ref": "2 Cor 12:9",
+        "text": "But he said to me, \"My grace is sufficient for you, for my power is made perfect in weakness.\" Therefore I will boast all the more gladly about my weaknesses, so that Christ's power may rest on me.",
+        "why": "Grace sufficient in weakness."
+      }
+    ],
+    "christ_in": "Christ is the image of God (4:4), the 'Yes' to all God's promises (1:20), the one who became poor that we might become rich (8:9). Paul's sufferings mirror Christ's; his power flows from Christ's resurrection. The ministry of reconciliation centers on Christ's atoning work (5:18-21).",
+    "outline": [
+      {
+        "label": "Ministry Defense",
+        "range": "1-7",
+        "summary": "Comfort, new covenant, reconciliation"
+      },
+      {
+        "label": "Collection Appeal",
+        "range": "8-9",
+        "summary": "Generosity, Christ's example"
+      },
+      {
+        "label": "Apostolic Authority",
+        "range": "10-13",
+        "summary": "Boasting in weakness, thorn, warning"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Paul",
+      "date": "c. AD 56",
+      "chapters": 13,
+      "genre": "Epistle / Apologetic Letter",
+      "key_theme": "God's power is perfected in human weakness",
+      "key_word": "astheneia (weakness)"
+    }
   },
   {
     "book": "galatians",
@@ -7256,7 +7435,55 @@
         "caption": "Papyrus 46 — early New Testament manuscript",
         "credit": "Public domain, via Wikimedia Commons"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To defend the gospel of grace against Judaizers who demanded Gentile circumcision. Paul argues that justification is by faith alone, apart from works of the law, and that believers live by the Spirit, not legalism.",
+    "key_verses": [
+      {
+        "ref": "Gal 2:16",
+        "text": "know that a person is not justified by the works of the law, but by faith in Jesus Christ. So we, too, have put our faith in Christ Jesus that we may be justified by faith in Christ and not by the works of the law, because by the works of the law no one will be justified.",
+        "why": "Justification by faith, not law-works."
+      },
+      {
+        "ref": "Gal 2:20",
+        "text": "I have been crucified with Christ and I no longer live, but Christ lives in me. The life I now live in the body, I live by faith in the Son of God, who loved me and gave himself for me.",
+        "why": "Union with Christ—crucified and alive."
+      },
+      {
+        "ref": "Gal 5:22-23",
+        "text": "But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness, gentleness and self-control. Against such things there is no law.",
+        "why": "Spirit-produced character, not law-keeping."
+      }
+    ],
+    "christ_in": "Christ is the one who loved me and gave himself for me (2:20). He redeemed us from the curse of the law by becoming a curse (3:13). In Christ there is neither Jew nor Gentile (3:28). Christ is formed in believers (4:19). Freedom is found in Christ alone (5:1).",
+    "outline": [
+      {
+        "label": "Personal Defense",
+        "range": "1-2",
+        "summary": "Apostleship, Jerusalem council"
+      },
+      {
+        "label": "Doctrinal Argument",
+        "range": "3-4",
+        "summary": "Faith vs. law, Abraham, allegory"
+      },
+      {
+        "label": "Practical Application",
+        "range": "5-6",
+        "summary": "Freedom, Spirit, new creation"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Paul",
+      "date": "c. AD 49-55",
+      "chapters": 6,
+      "genre": "Epistle / Polemical Letter",
+      "key_theme": "Justified by faith alone, free from the law",
+      "key_word": "eleutheria (freedom)"
+    }
   },
   {
     "book": "ephesians",
@@ -7342,7 +7569,50 @@
         "caption": "Papyrus 46 — early New Testament manuscript",
         "credit": "Public domain, via Wikimedia Commons"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To celebrate God's eternal plan to unite all things in Christ and to call the church—Jews and Gentiles reconciled—to walk worthy of this calling in unity, holiness, and spiritual warfare.",
+    "key_verses": [
+      {
+        "ref": "Eph 1:3",
+        "text": "Praise be to the God and Father of our Lord Jesus Christ, who has blessed us in the heavenly realms with every spiritual blessing in Christ.",
+        "why": "Our position—blessed with every blessing in Christ."
+      },
+      {
+        "ref": "Eph 2:8-9",
+        "text": "For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God—not by works, so that no one can boast.",
+        "why": "Salvation by grace through faith."
+      },
+      {
+        "ref": "Eph 4:4-6",
+        "text": "There is one body and one Spirit, just as you were called to one hope when you were called; one Lord, one faith, one baptism; one God and Father of all, who is over all and through all and in all.",
+        "why": "The sevenfold unity of the church."
+      }
+    ],
+    "christ_in": "Christ is exalted above all (1:20-23), the one in whom God reconciles Jew and Gentile (2:14-16), the head of the church which is his body (4:15-16). His love is the model for marriage (5:25). Believers are in Christ, seated with him in heavenly places (2:6).",
+    "outline": [
+      {
+        "label": "Doctrine",
+        "range": "1-3",
+        "summary": "Blessings, salvation, mystery of unity"
+      },
+      {
+        "label": "Practice",
+        "range": "4-6",
+        "summary": "Walk worthy, relationships, armor"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Paul",
+      "date": "c. AD 60-62",
+      "chapters": 6,
+      "genre": "Epistle / Circular Letter",
+      "key_theme": "In Christ, God unites all things and creates one new humanity",
+      "key_word": "en Christo (in Christ)"
+    }
   },
   {
     "book": "philippians",
@@ -7444,7 +7714,65 @@
         "caption": "Codex Sinaiticus — 4th century Bible manuscript",
         "credit": "Public domain, via Wikimedia Commons"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To thank the Philippians for their partnership and gift, to encourage joy amid suffering, to warn against false teaching, and to urge unity through Christ-like humility—modeled in the great Christ-hymn.",
+    "key_verses": [
+      {
+        "ref": "Phil 1:21",
+        "text": "For to me, to live is Christ and to die is gain.",
+        "why": "Paul's singular focus—Christ in life and death."
+      },
+      {
+        "ref": "Phil 2:5-8",
+        "text": "In your relationships with one another, have the same mindset as Christ Jesus: Who, being in very nature God, did not consider equality with God something to be used to his own advantage; rather, he made himself nothing by taking the very nature of a servant, being made in human likeness. And being found in appearance as a man, he humbled himself by becoming obedient to death—even death on a cross!",
+        "why": "The Christ-hymn—incarnation and humiliation."
+      },
+      {
+        "ref": "Phil 4:13",
+        "text": "I can do all this through him who gives me strength.",
+        "why": "Contentment through Christ's empowerment."
+      }
+    ],
+    "christ_in": "The Christ-hymn (2:5-11) is the letter's theological center—Christ's self-emptying, death, and exaltation. Paul's life is Christ (1:21), his gain is knowing Christ (3:8), his goal is resurrection in Christ (3:10-11). Christ is the source of peace (4:7), strength (4:13), and supply (4:19).",
+    "outline": [
+      {
+        "label": "Thanksgiving & Prayer",
+        "range": "1:1-11",
+        "summary": "Partnership, affection"
+      },
+      {
+        "label": "Paul's Circumstances",
+        "range": "1:12-26",
+        "summary": "Chains advance gospel"
+      },
+      {
+        "label": "Exhortations",
+        "range": "1:27-2:30",
+        "summary": "Unity, humility, examples"
+      },
+      {
+        "label": "Warnings & Goals",
+        "range": "3",
+        "summary": "Beware dogs, press on"
+      },
+      {
+        "label": "Final Appeals",
+        "range": "4",
+        "summary": "Rejoice, peace, thanks"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Paul",
+      "date": "c. AD 61-62",
+      "chapters": 4,
+      "genre": "Epistle / Friendship Letter",
+      "key_theme": "Rejoice in Christ—humility, unity, and contentment",
+      "key_word": "chara (joy)"
+    }
   },
   {
     "book": "colossians",
@@ -7534,7 +7862,55 @@
         "caption": "Codex Sinaiticus — 4th century Bible manuscript",
         "credit": "Public domain, via Wikimedia Commons"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To combat a syncretistic heresy by exalting Christ's supremacy over all creation and powers, showing that in him believers have fullness and need no supplementary philosophy, ritual, or asceticism.",
+    "key_verses": [
+      {
+        "ref": "Col 1:15-17",
+        "text": "The Son is the image of the invisible God, the firstborn over all creation. For in him all things were created: things in heaven and on earth, visible and invisible, whether thrones or powers or rulers or authorities; all things have been created through him and for him. He is before all things, and in him all things hold together.",
+        "why": "Christ's cosmic supremacy."
+      },
+      {
+        "ref": "Col 2:9-10",
+        "text": "For in Christ all the fullness of the Deity lives in bodily form, and in Christ you have been brought to fullness. He is the head over every power and authority.",
+        "why": "Fullness in Christ alone."
+      },
+      {
+        "ref": "Col 3:1-2",
+        "text": "Since, then, you have been raised with Christ, set your hearts on things above, where Christ is, seated at the right hand of God. Set your minds on things above, not on earthly things.",
+        "why": "Union with Christ shapes life."
+      }
+    ],
+    "christ_in": "Colossians has the highest Christology of the prison epistles. Christ is the image of God, creator, sustainer, and goal of all things (1:15-20). In him all the fullness of deity dwells bodily (2:9). He is head of the church (1:18), victor over powers (2:15), and believers' life (3:4).",
+    "outline": [
+      {
+        "label": "Christ's Supremacy",
+        "range": "1",
+        "summary": "Hymn, Paul's ministry"
+      },
+      {
+        "label": "Freedom in Christ",
+        "range": "2",
+        "summary": "Warning, fullness, victory"
+      },
+      {
+        "label": "Life in Christ",
+        "range": "3-4",
+        "summary": "New self, household, greetings"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Paul",
+      "date": "c. AD 60-62",
+      "chapters": 4,
+      "genre": "Epistle / Corrective Letter",
+      "key_theme": "Christ is supreme—in him you have fullness",
+      "key_word": "pleroma (fullness)"
+    }
   },
   {
     "book": "1_thessalonians",
@@ -7624,7 +8000,50 @@
         "caption": "Papyrus 46 — early New Testament manuscript",
         "credit": "Public domain, via Wikimedia Commons"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To commend the Thessalonians for their faith, defend Paul's ministry, encourage holy living, and clarify questions about Christ's return and the fate of believers who die before that day.",
+    "key_verses": [
+      {
+        "ref": "1 Thess 4:16-17",
+        "text": "For the Lord himself will come down from heaven, with a loud command, with the voice of the archangel and with the trumpet call of God, and the dead in Christ will rise first. After that, we who are still alive and are left will be caught up together with them in the clouds to meet the Lord in the air. And so we will be with the Lord forever.",
+        "why": "The Lord's return and resurrection hope."
+      },
+      {
+        "ref": "1 Thess 5:16-18",
+        "text": "Rejoice always, pray continually, give thanks in all circumstances; for this is God's will for you in Christ Jesus.",
+        "why": "The threefold will of God."
+      }
+    ],
+    "christ_in": "Jesus is the one who rescues from coming wrath (1:10), the Lord who is coming (2:19; 4:15-17), and the source of sanctification (5:23). Believers who die are 'dead in Christ' and will rise with him. Hope centers on being 'with the Lord forever' (4:17).",
+    "outline": [
+      {
+        "label": "Thanksgiving",
+        "range": "1",
+        "summary": "Faith, hope, love remembered"
+      },
+      {
+        "label": "Ministry Defense",
+        "range": "2-3",
+        "summary": "Paul's conduct, Timothy's report"
+      },
+      {
+        "label": "Exhortations",
+        "range": "4-5",
+        "summary": "Holiness, second coming, final appeals"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Paul",
+      "date": "c. AD 50-51",
+      "chapters": 5,
+      "genre": "Epistle / Pastoral Letter",
+      "key_theme": "Live holy, hope for Christ's return",
+      "key_word": "parousia (coming/presence)"
+    }
   },
   {
     "book": "2_thessalonians",
@@ -7713,7 +8132,50 @@
         "caption": "Papyrus 46 — early New Testament manuscript",
         "credit": "Public domain, via Wikimedia Commons"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To correct misunderstandings about the Day of the Lord—it has not yet come; specific events must occur first—and to address idleness among some who used eschatological excitement as an excuse not to work.",
+    "key_verses": [
+      {
+        "ref": "2 Thess 2:3",
+        "text": "Don't let anyone deceive you in any way, for that day will not come until the rebellion occurs and the man of lawlessness is revealed, the man doomed to destruction.",
+        "why": "Events preceding the Day of the Lord."
+      },
+      {
+        "ref": "2 Thess 3:10",
+        "text": "For even when we were with you, we gave you this rule: \"The one who is unwilling to work shall not eat.\"",
+        "why": "Work ethic amid eschatological hope."
+      }
+    ],
+    "christ_in": "Christ is the Lord who will be revealed from heaven with blazing fire (1:7-8), who will overthrow the lawless one by the breath of his mouth (2:8), and who gives strength and protection (3:3). Believers are loved by the Lord and chosen for salvation (2:13).",
+    "outline": [
+      {
+        "label": "Thanksgiving & Judgment",
+        "range": "1",
+        "summary": "Endurance, Christ's return"
+      },
+      {
+        "label": "Day of the Lord",
+        "range": "2",
+        "summary": "Not yet, lawless one, stand firm"
+      },
+      {
+        "label": "Exhortations",
+        "range": "3",
+        "summary": "Prayer, discipline, work"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Paul",
+      "date": "c. AD 51-52",
+      "chapters": 3,
+      "genre": "Epistle / Eschatological Correction",
+      "key_theme": "The Day hasn't come—stand firm and work",
+      "key_word": "hemera (day)"
+    }
   },
   {
     "book": "1_timothy",
@@ -7803,7 +8265,55 @@
         "caption": "Codex Sinaiticus — 4th century Bible manuscript",
         "credit": "Public domain, via Wikimedia Commons"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To instruct Timothy in ordering the church at Ephesus—combating false teaching, establishing qualified leadership, organizing support for widows, and conducting worship—so that people may know how to conduct themselves in God's household.",
+    "key_verses": [
+      {
+        "ref": "1 Tim 2:5",
+        "text": "For there is one God and one mediator between God and mankind, the man Christ Jesus.",
+        "why": "Christ as sole mediator."
+      },
+      {
+        "ref": "1 Tim 3:15",
+        "text": "if I am delayed, you will know how people ought to conduct themselves in God's household, which is the church of the living God, the pillar and foundation of the truth.",
+        "why": "Purpose statement—church conduct."
+      },
+      {
+        "ref": "1 Tim 6:12",
+        "text": "Fight the good fight of the faith. Take hold of the eternal life to which you were called when you made your good confession in the presence of many witnesses.",
+        "why": "The call to persevere in faith."
+      }
+    ],
+    "christ_in": "Christ Jesus is the one mediator (2:5), who gave himself as a ransom for all (2:6). He appeared in a body, was vindicated by the Spirit, seen by angels, preached among nations, believed on in the world, taken up in glory (3:16). Timothy is to guard the gospel about Christ (6:20).",
+    "outline": [
+      {
+        "label": "Charge to Timothy",
+        "range": "1",
+        "summary": "False teaching, Paul's example"
+      },
+      {
+        "label": "Worship & Leadership",
+        "range": "2-3",
+        "summary": "Prayer, elders, deacons"
+      },
+      {
+        "label": "Ministry Instructions",
+        "range": "4-6",
+        "summary": "Teaching, widows, slaves, wealth"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Paul",
+      "date": "c. AD 62-66",
+      "chapters": 6,
+      "genre": "Epistle / Pastoral Manual",
+      "key_theme": "Guard the gospel and order the church rightly",
+      "key_word": "eusebeia (godliness)"
+    }
   },
   {
     "book": "2_timothy",
@@ -7905,7 +8415,60 @@
         "caption": "Codex Sinaiticus — 4th century Bible manuscript",
         "credit": "Public domain, via Wikimedia Commons"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To urge Timothy to endure hardship, guard the gospel deposit, and continue faithful ministry even as Paul faces execution. This is Paul's final letter—a passionate charge to the next generation of leaders.",
+    "key_verses": [
+      {
+        "ref": "2 Tim 2:15",
+        "text": "Do your best to present yourself to God as one approved, a worker who does not need to be ashamed and who correctly handles the word of truth.",
+        "why": "The call to faithful Scripture handling."
+      },
+      {
+        "ref": "2 Tim 3:16-17",
+        "text": "All Scripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness, so that the servant of God may be thoroughly equipped for every good work.",
+        "why": "Scripture's inspiration and sufficiency."
+      },
+      {
+        "ref": "2 Tim 4:7-8",
+        "text": "I have fought the good fight, I have finished the race, I have kept the faith. Now there is in store for me the crown of righteousness, which the Lord, the righteous Judge, will award to me on that day—and not only to me, but also to all who have longed for his appearing.",
+        "why": "Paul's farewell—faithfulness to the end."
+      }
+    ],
+    "christ_in": "Christ Jesus abolished death and brought life through the gospel (1:10). He is the risen descendant of David (2:8), the one who will judge the living and dead (4:1). Paul's crown comes from Christ the righteous Judge (4:8). Endurance is 'in Christ Jesus' (2:1, 10).",
+    "outline": [
+      {
+        "label": "Encouragement",
+        "range": "1",
+        "summary": "Fan the flame, guard the deposit"
+      },
+      {
+        "label": "Endurance",
+        "range": "2",
+        "summary": "Soldier, athlete, farmer, worker"
+      },
+      {
+        "label": "Warning",
+        "range": "3",
+        "summary": "Last days, Scripture's power"
+      },
+      {
+        "label": "Charge",
+        "range": "4",
+        "summary": "Preach the Word, Paul's farewell"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Paul",
+      "date": "c. AD 66-67",
+      "chapters": 4,
+      "genre": "Epistle / Testament",
+      "key_theme": "Guard the gospel, endure hardship, preach the Word",
+      "key_word": "paratheke (deposit/entrusted)"
+    }
   },
   {
     "book": "titus",
@@ -7995,7 +8558,50 @@
         "caption": "Codex Sinaiticus — 4th century Bible manuscript",
         "credit": "Public domain, via Wikimedia Commons"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To guide Titus in establishing church order on Crete—appointing qualified elders, silencing false teachers, and teaching grace-shaped conduct for various groups. Sound doctrine produces godly living.",
+    "key_verses": [
+      {
+        "ref": "Titus 2:11-12",
+        "text": "For the grace of God has appeared that offers salvation to all people. It teaches us to say \"No\" to ungodliness and worldly passions, and to live self-controlled, upright and godly lives in this present age.",
+        "why": "Grace as teacher of godliness."
+      },
+      {
+        "ref": "Titus 3:5",
+        "text": "he saved us, not because of righteous things we had done, but because of his mercy. He saved us through the washing of rebirth and renewal by the Holy Spirit.",
+        "why": "Salvation by mercy, not works."
+      }
+    ],
+    "christ_in": "God our Savior and Christ Jesus our Savior are interchangeable (1:3-4; 2:13; 3:4-6). Christ gave himself to redeem and purify a people for his own (2:14). The 'blessed hope' is the appearing of our great God and Savior, Jesus Christ (2:13).",
+    "outline": [
+      {
+        "label": "Elders & False Teachers",
+        "range": "1",
+        "summary": "Qualifications, Cretan character"
+      },
+      {
+        "label": "Sound Doctrine",
+        "range": "2",
+        "summary": "Groups, grace, good deeds"
+      },
+      {
+        "label": "Grace & Works",
+        "range": "3",
+        "summary": "Salvation, behavior, final greetings"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Paul",
+      "date": "c. AD 62-66",
+      "chapters": 3,
+      "genre": "Epistle / Pastoral Manual",
+      "key_theme": "Grace teaches godly living; appoint good leaders",
+      "key_word": "soter (Savior)"
+    }
   },
   {
     "book": "philemon",
@@ -8077,7 +8683,55 @@
         "caption": "Codex Sinaiticus — 4th century Bible manuscript",
         "credit": "Public domain, via Wikimedia Commons"
       }
-    ]
+    ],
+    "era": "nt",
+    "era_span": [
+      "nt"
+    ],
+    "purpose": "To appeal to Philemon to receive back his runaway slave Onesimus—now a Christian brother—with forgiveness, modeling how the gospel transforms social relationships and calls for reconciliation.",
+    "key_verses": [
+      {
+        "ref": "Phlm 1:15-16",
+        "text": "Perhaps the reason he was separated from you for a little while was that you might have him back forever—no longer as a slave, but better than a slave, as a dear brother. He is very dear to me but even dearer to you, both as a fellow man and as a brother in the Lord.",
+        "why": "From slave to brother—gospel transformation."
+      },
+      {
+        "ref": "Phlm 1:18",
+        "text": "If he has done you any wrong or owes you anything, charge it to me.",
+        "why": "Paul models substitution and grace."
+      }
+    ],
+    "christ_in": "Paul's offer to pay Onesimus's debt ('charge it to me') reflects Christ's imputation. The gospel creates a new identity—slave becomes brother 'in the Lord.' Reconciliation between Philemon and Onesimus mirrors believers' reconciliation to God through Christ.",
+    "outline": [
+      {
+        "label": "Greeting",
+        "range": "1-3",
+        "summary": "To Philemon, church in his house"
+      },
+      {
+        "label": "Thanksgiving",
+        "range": "4-7",
+        "summary": "Philemon's love and faith"
+      },
+      {
+        "label": "Appeal",
+        "range": "8-21",
+        "summary": "Receive Onesimus as brother"
+      },
+      {
+        "label": "Closing",
+        "range": "22-25",
+        "summary": "Visit, greetings, grace"
+      }
+    ],
+    "at_a_glance": {
+      "author": "Paul",
+      "date": "c. AD 60-62",
+      "chapters": 1,
+      "genre": "Epistle / Personal Letter",
+      "key_theme": "In Christ, slave becomes brother—receive him",
+      "key_word": "adelphos (brother)"
+    }
   },
   {
     "book": "hebrews",
