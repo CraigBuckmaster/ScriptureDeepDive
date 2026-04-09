@@ -25,6 +25,10 @@ jest.mock('@/utils/logger', () => ({
 
 import { useFollow } from '@/hooks/useFollow';
 
+// Default waitFor timeout (1000ms) is too tight when the full suite runs
+// concurrently and the event loop is congested.
+const WAIT_OPTS = { timeout: 3000 };
+
 describe('useFollow', () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -51,7 +55,7 @@ describe('useFollow', () => {
 
     await waitFor(() => {
       expect(result.current.loading).toBe(false);
-    });
+    }, WAIT_OPTS);
 
     expect(result.current.isFollowing).toBe(false);
     expect(result.current.followerCount).toBe(42);
@@ -70,7 +74,7 @@ describe('useFollow', () => {
 
     await waitFor(() => {
       expect(result.current.loading).toBe(false);
-    });
+    }, WAIT_OPTS);
 
     expect(result.current.isFollowing).toBe(true);
     expect(result.current.followerCount).toBe(10);
@@ -86,7 +90,7 @@ describe('useFollow', () => {
 
     await waitFor(() => {
       expect(result.current.loading).toBe(false);
-    });
+    }, WAIT_OPTS);
 
     expect(result.current.isFollowing).toBe(false);
   });
@@ -99,7 +103,7 @@ describe('useFollow', () => {
 
     await waitFor(() => {
       expect(result.current.loading).toBe(false);
-    });
+    }, WAIT_OPTS);
 
     expect(result.current.isFollowing).toBe(false);
     expect(result.current.followerCount).toBe(0);
@@ -113,7 +117,7 @@ describe('useFollow', () => {
 
     await waitFor(() => {
       expect(result.current.loading).toBe(false);
-    });
+    }, WAIT_OPTS);
 
     act(() => {
       result.current.toggle();
@@ -138,7 +142,7 @@ describe('useFollow', () => {
 
     await waitFor(() => {
       expect(result.current.loading).toBe(false);
-    });
+    }, WAIT_OPTS);
 
     act(() => {
       result.current.toggle();
@@ -162,7 +166,7 @@ describe('useFollow', () => {
 
     await waitFor(() => {
       expect(result.current.loading).toBe(false);
-    });
+    }, WAIT_OPTS);
 
     act(() => {
       result.current.toggle();
@@ -190,7 +194,7 @@ describe('useFollow', () => {
 
     await waitFor(() => {
       expect(result.current.loading).toBe(false);
-    });
+    }, WAIT_OPTS);
 
     act(() => {
       result.current.toggle();
@@ -217,7 +221,7 @@ describe('useFollow', () => {
 
     await waitFor(() => {
       expect(result.current.loading).toBe(false);
-    });
+    }, WAIT_OPTS);
 
     act(() => {
       result.current.toggle();
