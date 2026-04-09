@@ -825,5 +825,20 @@ export interface AppNotification {
   created_at: string;
 }
 
+// ── Explore Image Cards (Epic #1071) ────────────────────────
+
+export interface ExploreImage {
+  url: string;
+  caption: string;
+  credit: string;
+  deepLink: { screen: string; params?: Record<string, string> };
+}
+
+export interface ExploreFeatureImages {
+  count: number | null;
+  noun: string;
+  images: ExploreImage[];
+}
+
 // Re-export ParsedRef so panel components can import from types
 export type { ParsedRef } from '../utils/verseResolver';

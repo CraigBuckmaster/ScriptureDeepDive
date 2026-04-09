@@ -1,55 +1,72 @@
 /**
- * FeatureCard — Image-forward card in an Explore feature carousel.
+ * RecommendedCard — Wide editorial card for "Recommended for you" section.
  *
- * 174px fixed width with cycling image header (88px), caption overlay,
- * indicator dots, title, subtitle, and gold count CTA.
- * Image tap → deep-link; text tap → feature browse screen.
+ * 310px width, 130px image, gold-tinted border, chevron in text area,
+ * and "View [type] ›" deep-link CTA in caption overlay.
+ * Shares cycling + dual-tap patterns with FeatureCard.
  *
- * Part of Epic #1071 (#1075).
+ * Part of Epic #1071 (#1076).
  */
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 import { Image } from 'expo-image';
+import { ChevronRight } from 'lucide-react-native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ExploreImage } from '../types';
+import type { ExploreRecommendation } from '../hooks/useExploreRecommendations';
 
-export interface FeatureCardData {
-  title: string;
-  subtitle: string;
-  color: string;
-  screen: string;
-  params?: Record<string, string>;
-  premium?: boolean;
-}
+// ── Screen → label mapping ─────────────────────────────────
+
+const SCREEN_LABELS: Record<string, string> = {
+  ArchaeologyDetail: 'View discovery',
+  ArchaeologyBrowse: 'View discoveries',
+  ProphecyBrowse: 'View chain',
+  ProphecyDetail: 'View chain',
+  ConceptBrowse: 'View concept',
+  PersonDetail: 'View person',
+  GenealogyTree: 'View family tree',
+  Map: 'View journey',
+  Timeline: 'View event',
+  WordStudyBrowse: 'View study',
+  DebateBrowse: 'View debate',
+  HarmonyBrowse: 'View parallel',
+  GrammarBrowse: 'View article',
+  ScholarBrowse: 'View scholar',
+  ThreadBrowse: 'View thread',
+  TopicBrowse: 'View topic',
+  LifeTopics: 'View topic',
+  LensBrowse: 'View lens',
+  TimeTravelBrowse: 'View reading',
+  DifficultPassagesBrowse: 'View passage',
+  DictionaryBrowse: 'View definition',
+  Concordance: 'View search',
+  ContentLibrary: 'View resource',
+};
 
 interface Props {
-  feature: FeatureCardData;
+  recommendation: ExploreRecommendation;
   onPress: () => void;
   isPremium: boolean;
   images?: ExploreImage[];
-  count?: number | null;
-  noun?: string;
   onImagePress?: (deepLink: { screen: string; params?: Record<string, string> }) => void;
-  /** Stagger offset in ms to prevent synchronised cycling across cards */
   staggerMs?: number;
 }
 
-const IMAGE_HEIGHT = 88;
+const CARD_WIDTH = 310;
+const IMAGE_HEIGHT = 130;
 const CYCLE_INTERVAL = 6000;
 
-export function FeatureCard({
-  feature,
+export function RecommendedCard({
+  recommendation,
   onPress,
   isPremium,
   images,
-  count,
-  noun,
   onImagePress,
   staggerMs = 0,
 }: Props) {
   const { base } = useTheme();
-  const isLocked = feature.premium && !isPremium;
+  const isLocked = recommendation.premium && !isPremium;
   const hasImages = images && images.length > 0;
 
   // ── Image cycling ────────────────────────────────────────
@@ -60,7 +77,6 @@ export function FeatureCard({
   useEffect(() => {
     if (!hasImages || images.length <= 1) return;
 
-    // Stagger start so cards don't cycle in unison
     const staggerTimer = setTimeout(() => {
       timerRef.current = setInterval(() => {
         setActiveIndex((prev) => (prev + 1) % images.length);
@@ -81,13 +97,15 @@ export function FeatureCard({
     }
   };
 
-  // ── Count CTA text ───────────────────────────────────────
-  const ctaText = count != null && noun ? `${count} ${noun} ›` : null;
+  // Caption CTA label
+  const captionLabel = currentImage
+    ? SCREEN_LABELS[currentImage.deepLink.screen] ?? 'View'
+    : null;
 
   return (
     <View style={[styles.card, {
       backgroundColor: base.bgElevated,
-      borderColor: feature.color + '20',
+      borderColor: base.gold + '1F',
     }]}>
       {/* ── Image header ─── */}
       {hasImages && !imageError ? (
@@ -95,7 +113,7 @@ export function FeatureCard({
           onPress={handleImagePress}
           activeOpacity={0.85}
           accessibilityRole="button"
-          accessibilityLabel={currentImage?.caption ?? `${feature.title} image`}
+          accessibilityLabel={currentImage?.caption ?? `${recommendation.title} image`}
         >
           <View style={styles.imageContainer}>
             <Image
@@ -106,14 +124,13 @@ export function FeatureCard({
               onError={() => setImageError(true)}
               recyclingKey={currentImage!.url}
             />
-            {/* Gradient overlay for caption legibility */}
             <View style={styles.imageGradient} />
-            {/* Caption */}
-            {currentImage!.caption ? (
-              <Text style={styles.caption} numberOfLines={1}>
-                {currentImage!.caption}
+            {/* Gold CTA caption */}
+            {captionLabel && (
+              <Text style={[styles.captionCta, { color: base.goldBright }]}>
+                {captionLabel} ›
               </Text>
-            ) : null}
+            )}
             {/* Indicator dots */}
             {images.length > 1 && (
               <View style={styles.dots}>
@@ -130,36 +147,35 @@ export function FeatureCard({
           </View>
         </TouchableOpacity>
       ) : (
-        /* Fallback: accent-colored strip */
-        <View style={[styles.fallbackStrip, { backgroundColor: feature.color + '30' }]} />
+        <View style={[styles.fallbackStrip, { backgroundColor: recommendation.color + '30' }]} />
       )}
 
-      {/* ── Text area (tappable → feature browse) ─── */}
+      {/* ── Text area with chevron ─── */}
       <TouchableOpacity
         onPress={onPress}
         activeOpacity={0.7}
         accessibilityRole="button"
-        accessibilityLabel={`${feature.title}: ${feature.subtitle}${isLocked ? ', requires Companion+' : ''}`}
+        accessibilityLabel={`${recommendation.title}: ${recommendation.subtitle}${isLocked ? ', requires Companion+' : ''}`}
         style={styles.textArea}
       >
-        <View style={styles.header}>
-          <Text style={[styles.title, { color: feature.color }]} numberOfLines={1}>
-            {feature.title}
-          </Text>
-          {isLocked && <Text style={[styles.lockIcon, { color: base.gold }]}>✦</Text>}
+        <View style={styles.textContent}>
+          <View style={styles.textLeft}>
+            <View style={styles.header}>
+              <Text style={[styles.title, { color: recommendation.color }]} numberOfLines={1}>
+                {recommendation.title}
+              </Text>
+              {isLocked && <Text style={[styles.lockIcon, { color: base.gold }]}>✦</Text>}
+            </View>
+            <Text style={[styles.subtitle, { color: base.textMuted }]} numberOfLines={2}>
+              {recommendation.subtitle}
+            </Text>
+          </View>
+          <ChevronRight size={16} color={base.textMuted} style={styles.chevron} />
         </View>
-        <Text style={[styles.subtitle, { color: base.textMuted }]} numberOfLines={2}>
-          {feature.subtitle}
-        </Text>
-        {ctaText && (
-          <Text style={[styles.cta, { color: base.gold }]}>{ctaText}</Text>
-        )}
       </TouchableOpacity>
     </View>
   );
 }
-
-const CARD_WIDTH = 174;
 
 const styles = StyleSheet.create({
   card: {
@@ -183,22 +199,19 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    height: 32,
+    height: 40,
     backgroundColor: 'transparent',
-    // Simulated gradient via layered shadow
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: -8 },
+    shadowOffset: { width: 0, height: -10 },
     shadowOpacity: 0.5,
-    shadowRadius: 8,
+    shadowRadius: 10,
   },
-  caption: {
+  captionCta: {
     position: 'absolute',
-    bottom: 4,
-    left: 6,
-    right: 24,
-    color: '#fff',
-    fontFamily: fontFamily.ui,
-    fontSize: 11,
+    bottom: 6,
+    left: 10,
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 12,
     textShadowColor: 'rgba(0,0,0,0.8)',
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 3,
@@ -206,7 +219,7 @@ const styles = StyleSheet.create({
   dots: {
     position: 'absolute',
     top: 6,
-    right: 6,
+    right: 8,
     flexDirection: 'row',
     gap: 3,
   },
@@ -218,11 +231,18 @@ const styles = StyleSheet.create({
   // Fallback
   fallbackStrip: {
     width: CARD_WIDTH,
-    height: 6,
+    height: 8,
   },
   // Text area
   textArea: {
-    padding: spacing.sm + 2,
+    padding: spacing.sm + 4,
+  },
+  textContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  textLeft: {
+    flex: 1,
   },
   header: {
     flexDirection: 'row',
@@ -232,7 +252,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: fontFamily.uiMedium,
-    fontSize: 13,
+    fontSize: 15,
     flex: 1,
   },
   lockIcon: {
@@ -240,14 +260,12 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontFamily: fontFamily.ui,
-    fontSize: 11,
-    lineHeight: 15,
+    fontSize: 12,
+    lineHeight: 17,
   },
-  cta: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 11,
-    marginTop: 4,
+  chevron: {
+    marginLeft: spacing.sm,
   },
 });
 
-export { CARD_WIDTH };
+export { CARD_WIDTH as RECOMMENDED_CARD_WIDTH };
