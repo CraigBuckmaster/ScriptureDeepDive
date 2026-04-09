@@ -16,6 +16,7 @@ interface Props {
   chapterPanels: ChapterPanel[];
   activePanel: string | null;
   onToggle: (panelType: string) => void;
+  onLongPress?: (panelType: string) => void;
   onClose?: () => void;
   onRefPress?: (ref: ParsedRef) => void;
   onWordStudyPress?: (word: string) => void;
@@ -26,7 +27,7 @@ interface Props {
 }
 
 function ScholarlyBlock({
-  chapterPanels, activePanel, onToggle, onClose,
+  chapterPanels, activePanel, onToggle, onLongPress, onClose,
   onRefPress, onWordStudyPress, onScholarPress, onPersonPress,
   defaultTab,
 }: Props) {
@@ -52,6 +53,7 @@ function ScholarlyBlock({
         panels={chapterPanels}
         activePanel={activePanel}
         onToggle={onToggle}
+        onLongPress={onLongPress}
         isChapterLevel
         categories={CHAPTER_PANEL_CATEGORIES}
       />

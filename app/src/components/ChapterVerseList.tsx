@@ -6,8 +6,9 @@
  * direct props for data that varies per-instance.
  */
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import type { Section, SectionPanel, ChapterPanel } from '../types';
 
 import { useChapterReader } from './ChapterReaderContext';
@@ -20,6 +21,7 @@ import { ChapterCoachingCard } from './ChapterCoachingCard';
 import { PrayerPromptCard } from './PrayerPromptCard';
 import { ContinueExploringFooter } from './ContinueExploringFooter';
 import { useContinueExploring } from '../hooks/useContinueExploring';
+import { PanelInfoSheet } from './PanelInfoSheet';
 import RelatedLifeTopics from './RelatedLifeTopics';
 import { useTheme, spacing, fontFamily } from '../theme';
 
@@ -49,6 +51,16 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
   const { base } = useTheme();
   const { verse, panel, callbacks, layout, coaching, display } = useChapterReader();
   const exploreCards = useContinueExploring(chapterMeta, chapterPanels);
+  const navigation = useNavigation();
+  const [panelInfoType, setPanelInfoType] = useState<string | null>(null);
+
+  const handlePanelLongPress = useCallback((type: string) => {
+    setPanelInfoType(type);
+  }, []);
+
+  const handleGoToFullBio = useCallback((scholarId: string) => {
+    (navigation as any).navigate('ExploreTab', { screen: 'ScholarBio', params: { scholarId } });
+  }, [navigation]);
 
   const sectionElements = useMemo(() => {
     return sections.flatMap((sec) => {
@@ -96,6 +108,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
                       : null
                   }
                   onToggle={(type) => callbacks.handleSectionPanelToggle(sectionId, type)}
+                  onLongPress={handlePanelLongPress}
                 />
               </View>
             )}
@@ -146,6 +159,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
           chapterPanels={chapterPanels}
           activePanel={panel.activeChapterPanelType}
           onToggle={callbacks.handleChapterPanelToggle}
+          onLongPress={handlePanelLongPress}
           onClose={callbacks.clearActivePanel}
           onRefPress={callbacks.onRefPress}
           defaultTab={
@@ -176,6 +190,14 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
 
       {/* Continue Exploring footer (hidden in focus mode) */}
       {!display.focusMode && <ContinueExploringFooter cards={exploreCards} />}
+
+      {/* Panel info tooltip (long-press) */}
+      <PanelInfoSheet
+        visible={panelInfoType !== null}
+        panelType={panelInfoType}
+        onClose={() => setPanelInfoType(null)}
+        onGoToFullBio={handleGoToFullBio}
+      />
     </>
   );
 });
