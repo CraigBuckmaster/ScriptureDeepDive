@@ -22,6 +22,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { BookOpen, Layers, Map, Clock, Users, Search } from 'lucide-react-native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { OnboardingDemo } from '../components/OnboardingDemo';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -62,21 +63,12 @@ const PAGES: PageData[] = [
     ),
   },
   {
-    key: 'panels',
-    title: 'Study Panels',
-    subtitle: 'Tap any button to explore.',
-    body: 'Every passage has study buttons below the text. Tap \u2018Hebrew\u2019 to see original word meanings. Tap a scholar\u2019s name to read their commentary. Tap \u2018History\u2019 for what was happening in the ancient world.',
+    key: 'demo',
+    title: 'Try It Now',
+    subtitle: 'Tap a button below the text.',
+    body: '',
     renderContent: (base) => (
-      <View style={styles.panelDemo}>
-        {['Hebrew', 'History', 'Cross-Refs', 'MacArthur', 'Calvin', 'NET'].map((label) => (
-          <View
-            key={label}
-            style={[styles.panelPill, { backgroundColor: base.bgElevated, borderColor: base.border }]}
-          >
-            <Text style={[styles.panelPillText, { color: base.textDim }]}>{label}</Text>
-          </View>
-        ))}
-      </View>
+      <OnboardingDemo base={base} />
     ),
   },
   {
