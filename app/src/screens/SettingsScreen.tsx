@@ -33,6 +33,7 @@ import { isTranslationInstalled, downloadTranslation, deleteTranslation, getInst
 import { useTranslationSwitch } from '../hooks/useTranslationSwitch';
 import { getContentStats, type ContentStats } from '../db/content';
 import { getUserDb } from '../db/userDatabase';
+import { resetToNewUser } from '../db/userMutations';
 import { exportStudyData, ExportError } from '../utils/exportData';
 import { useAvailableVoices } from '../hooks/useAvailableVoices';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
@@ -71,6 +72,8 @@ function SettingsScreen() {
   const setRedLetterEnabled = useSettingsStore((s) => s.setRedLetterEnabled);
   const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
   const setStudyCoachEnabled = useSettingsStore((s) => s.setStudyCoachEnabled);
+  const focusMode = useSettingsStore((s) => s.focusMode);
+  const toggleFocusMode = useSettingsStore((s) => s.toggleFocusMode);
   const theme = useSettingsStore((s) => s.theme);
   const setTheme = useSettingsStore((s) => s.setTheme);
   const isPremium = usePremiumStore((s) => s.isPremium);
@@ -233,6 +236,16 @@ function SettingsScreen() {
           />
         </Row>
 
+        {/* Focus / Reading Mode */}
+        <Row label="Focus Mode" base={base}>
+          <Switch
+            value={focusMode}
+            onValueChange={toggleFocusMode}
+            trackColor={{ false: base.bgSurface, true: base.gold + '60' }}
+            thumbColor={focusMode ? base.gold : base.textMuted}
+          />
+        </Row>
+
         {/* ── TTS VOICE ─────────────────────────────────────────── */}
         <VoicePicker base={base} />
 
@@ -324,6 +337,26 @@ function SettingsScreen() {
             </TouchableOpacity>
             <TouchableOpacity onPress={handleClearBookmarks} style={styles.dangerRow}>
               <Text style={[styles.dangerText, { color: base.danger }]}>Clear All Bookmarks</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+              Alert.alert(
+                'Reset to New User?',
+                'Clears reading history, onboarding, streaks, and plan progress. Notes, bookmarks, and highlights are kept. Force-close the app after reset.',
+                [
+                  { text: 'Cancel', style: 'cancel' },
+                  { text: 'Reset', style: 'destructive', onPress: async () => {
+                    try {
+                      await resetToNewUser();
+                      Alert.alert('Reset Complete', 'Force-close and reopen the app to see the new-user experience.');
+                    } catch (err) {
+                      logger.error('SettingsScreen', 'Failed to reset new user state', err);
+                      Alert.alert('Error', 'Reset failed. Please try again.');
+                    }
+                  }},
+                ],
+              );
+            }} style={styles.dangerRow}>
+              <Text style={[styles.dangerText, { color: base.danger }]}>Reset to New User (Dev)</Text>
             </TouchableOpacity>
           </View>
         </View>

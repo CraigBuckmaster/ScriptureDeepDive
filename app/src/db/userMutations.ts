@@ -354,3 +354,19 @@ export async function unbookmarkTopic(topicId: string): Promise<void> {
     [topicId],
   );
 }
+
+/**
+ * DEV TOOL: Reset app to new-user state for testing onboarding,
+ * getting-started flows, and first-launch UX. Clears reading history,
+ * onboarding flag, study sessions, and streaks. Does NOT clear notes,
+ * bookmarks, highlights, or collections (personal data the user created).
+ */
+export async function resetToNewUser(): Promise<void> {
+  const db = getUserDb();
+  await db.runAsync('DELETE FROM reading_progress');
+  await db.runAsync('DELETE FROM study_session_events');
+  await db.runAsync('DELETE FROM study_sessions');
+  await db.runAsync("DELETE FROM user_preferences WHERE key IN ('onboarding_complete', 'focusMode', 'getting_started', 'startHereDismissed', 'lastStreakDate', 'currentStreak', 'longestStreak', 'studyMaturityOverride', 'panelOpenSet', 'lastSeenLevel')");
+  await db.runAsync('DELETE FROM plan_progress');
+  await db.runAsync("UPDATE reading_plans SET started_at = NULL, completed_at = NULL, abandoned_at = NULL WHERE started_at IS NOT NULL");
+}
