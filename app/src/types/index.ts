@@ -825,6 +825,18 @@ export interface AppNotification {
   created_at: string;
 }
 
+// ── Content Images (generic, Epic #1071 #1087) ─────────────
+
+export interface ContentImage {
+  id: number;
+  content_type: string;
+  content_id: string;
+  url: string;
+  caption: string | null;
+  credit: string | null;
+  display_order: number;
+}
+
 // ── Explore Image Cards (Epic #1071) ────────────────────────
 
 export interface ExploreImage {

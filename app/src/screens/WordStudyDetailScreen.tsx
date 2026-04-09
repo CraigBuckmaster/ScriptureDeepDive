@@ -9,6 +9,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { getWordStudy } from '../db/content';
+import { useContentImages } from '../hooks/useContentImages';
+import { ContentImageGallery } from '../components/ContentImageGallery';
 import { BadgeChip } from '../components/BadgeChip';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
@@ -23,6 +25,7 @@ function WordStudyDetailScreen() {
   const route = useRoute<ScreenRouteProp<'Explore', 'WordStudyDetail'>>();
   const { wordId } = route.params ?? {};
   const [word, setWord] = useState<WordStudy | null>(null);
+  const { images: contentImages } = useContentImages('word_study', wordId);
 
   useEffect(() => {
     if (wordId) getWordStudy(wordId).then(setWord);
@@ -58,6 +61,8 @@ function WordStudyDetailScreen() {
           onBack={() => navigation.goBack()}
           style={styles.header}
         />
+
+        {contentImages.length > 0 && <ContentImageGallery images={contentImages} />}
 
         {/* Original word */}
         <Text style={[styles.original, { color: accentColor }]}>{word.original}</Text>

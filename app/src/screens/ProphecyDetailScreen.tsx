@@ -18,6 +18,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { useProphecyChainDetail } from '../hooks/useProphecyChains';
+import { useContentImages } from '../hooks/useContentImages';
+import { ContentImageGallery } from '../components/ContentImageGallery';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { BadgeChip } from '../components/BadgeChip';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
@@ -79,6 +81,7 @@ function ProphecyDetailScreen() {
   const route = useRoute<ScreenRouteProp<'Explore', 'ProphecyDetail'>>();
   const { chainId } = route.params ?? {};
   const { chain, isLoading } = useProphecyChainDetail(chainId || '');
+  const { images: contentImages } = useContentImages('prophecy', chainId);
 
   const handleVersePress = (link: ProphecyChainLink) => {
     // Navigate to Chapter screen in ExploreStack
@@ -117,6 +120,8 @@ function ProphecyDetailScreen() {
           onBack={() => navigation.goBack()}
           style={styles.header}
         />
+
+        {contentImages.length > 0 && <ContentImageGallery images={contentImages} />}
 
         {/* Title and badges */}
         <Text style={[styles.chainTitle, { color: base.text }]}>{chain.title}</Text>

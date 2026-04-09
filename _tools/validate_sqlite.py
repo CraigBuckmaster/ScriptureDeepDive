@@ -330,6 +330,21 @@ def main():
     else:
         print("  dictionary_entries: table not found (optional)")
 
+    # Content images (generic table — currently 0 images until Phase 3 curation)
+    ci_count = q1(cur, "SELECT COUNT(*) FROM content_images")
+    if ci_count is not None:
+        # Report per-type counts
+        cur.execute(
+            "SELECT content_type, COUNT(*) FROM content_images GROUP BY content_type ORDER BY content_type"
+        )
+        type_counts = cur.fetchall()
+        if type_counts:
+            for ct, cnt in type_counts:
+                print(f"  content_images[{ct}]: {cnt}")
+        print(f"  content_images: {ci_count} total")
+    else:
+        print("  content_images: table not found")
+
     # =========================================================
     # 2. REFERENTIAL INTEGRITY
     # =========================================================

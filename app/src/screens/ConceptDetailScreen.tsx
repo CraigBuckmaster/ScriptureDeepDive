@@ -19,6 +19,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { ChevronLeft, BookOpen, Users, Scroll, Link2, MapPin, ChevronRight } from 'lucide-react-native';
 import { useConceptData } from '../hooks/useConceptData';
+import { useContentImages } from '../hooks/useContentImages';
+import { ContentImageGallery } from '../components/ContentImageGallery';
 import { usePremium } from '../hooks/usePremium';
 import ConceptJourney from '../components/ConceptJourney';
 import { UpgradePrompt } from '../components/UpgradePrompt';
@@ -48,6 +50,7 @@ function ConceptDetailScreen() {
     loading,
     error,
   } = useConceptData(conceptId);
+  const { images: contentImages } = useContentImages('concept', conceptId);
 
   const handleThreadPress = (threadId: string) => {
     if (!isPremium) {
@@ -139,6 +142,8 @@ function ConceptDetailScreen() {
         </ScrollView>
       ) : (
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+        {contentImages.length > 0 && <ContentImageGallery images={contentImages} />}
+
         {/* Overview */}
         <View style={[styles.overviewCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}>
           <Text style={[styles.overviewText, { color: base.text }]}>{concept.description}</Text>
