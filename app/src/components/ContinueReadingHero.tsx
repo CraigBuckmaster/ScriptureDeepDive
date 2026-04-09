@@ -59,7 +59,7 @@ export function ContinueReadingHero({ mostRecent, onPress }: Props) {
 
   // ── Image cycling (8s interval) ──────────────────────────
   const [activeIndex, setActiveIndex] = useState(0);
-  const [imageError, setImageError] = useState(false);
+  const [failedUrls, setFailedUrls] = useState<Set<string>>(new Set());
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -74,7 +74,13 @@ export function ContinueReadingHero({ mostRecent, onPress }: Props) {
     };
   }, [hasImages, images.length]);
 
-  const currentImage = hasImages ? images[activeIndex] : null;
+  // Filter to images that haven't failed
+  const validImages = hasImages
+    ? images.filter((img) => !failedUrls.has(img.url))
+    : [];
+  const safeIndex = validImages.length > 0 ? activeIndex % validImages.length : 0;
+  const currentImage = validImages.length > 0 ? validImages[safeIndex] : null;
+  const showImages = currentImage !== null;
 
   // ── Display text ──────────────────────────────────────────
   const titleText = mostRecent
@@ -94,28 +100,28 @@ export function ContinueReadingHero({ mostRecent, onPress }: Props) {
       accessibilityLabel={`${titleText}: ${subtitleText}. Tap to ${ctaText.toLowerCase()}`}
     >
       {/* ── Image header ─── */}
-      {hasImages && !imageError ? (
+      {showImages ? (
         <View style={styles.imageContainer}>
           <Image
-            source={{ uri: currentImage!.url }}
+            source={{ uri: currentImage.url }}
             style={styles.image}
             contentFit="cover"
             transition={500}
-            onError={() => setImageError(true)}
-            recyclingKey={currentImage!.url}
+            onError={() => setFailedUrls((prev) => new Set(prev).add(currentImage.url))}
+            recyclingKey={currentImage.url}
           />
           {/* Gradient fade */}
           <View style={styles.gradient} />
           {/* Caption */}
-          {currentImage!.caption ? (
+          {currentImage.caption ? (
             <Text style={styles.caption} numberOfLines={1}>
-              {currentImage!.caption}
+              {currentImage.caption}
             </Text>
           ) : null}
           {/* Dot indicators */}
-          {images.length > 1 && (
+          {validImages.length > 1 && (
             <View style={styles.dots}>
-              {images.map((_, i) => (
+              {validImages.map((_, i) => (
                 <View
                   key={i}
                   style={[styles.dot, {

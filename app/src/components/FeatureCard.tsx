@@ -54,7 +54,7 @@ export function FeatureCard({
 
   // ── Image cycling ────────────────────────────────────────
   const [activeIndex, setActiveIndex] = useState(0);
-  const [imageError, setImageError] = useState(false);
+  const [failedUrls, setFailedUrls] = useState<Set<string>>(new Set());
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -73,7 +73,9 @@ export function FeatureCard({
     };
   }, [hasImages, images?.length, staggerMs]);
 
-  const currentImage = hasImages ? images[activeIndex] : null;
+  const validImages = hasImages ? images.filter((img) => !failedUrls.has(img.url)) : [];
+  const safeIndex = validImages.length > 0 ? activeIndex % validImages.length : 0;
+  const currentImage = validImages.length > 0 ? validImages[safeIndex] : null;
 
   const handleImagePress = () => {
     if (currentImage && onImagePress) {
@@ -90,34 +92,34 @@ export function FeatureCard({
       borderColor: feature.color + '20',
     }]}>
       {/* ── Image header ─── */}
-      {hasImages && !imageError ? (
+      {currentImage ? (
         <TouchableOpacity
           onPress={handleImagePress}
           activeOpacity={0.85}
           accessibilityRole="button"
-          accessibilityLabel={currentImage?.caption ?? `${feature.title} image`}
+          accessibilityLabel={currentImage.caption ?? `${feature.title} image`}
         >
           <View style={styles.imageContainer}>
             <Image
-              source={{ uri: currentImage!.url }}
+              source={{ uri: currentImage.url }}
               style={styles.image}
               contentFit="cover"
               transition={400}
-              onError={() => setImageError(true)}
-              recyclingKey={currentImage!.url}
+              onError={() => setFailedUrls((prev) => new Set(prev).add(currentImage.url))}
+              recyclingKey={currentImage.url}
             />
             {/* Gradient overlay for caption legibility */}
             <View style={styles.imageGradient} />
             {/* Caption */}
-            {currentImage!.caption ? (
+            {currentImage.caption ? (
               <Text style={styles.caption} numberOfLines={1}>
-                {currentImage!.caption}
+                {currentImage.caption}
               </Text>
             ) : null}
             {/* Indicator dots */}
-            {images.length > 1 && (
+            {validImages.length > 1 && (
               <View style={styles.dots}>
-                {images.map((_, i) => (
+                {validImages.map((_, i) => (
                   <View
                     key={i}
                     style={[styles.dot, {
