@@ -2051,12 +2051,12 @@ def populate_content_images(cur):
     CONTENT_SOURCES = [
         # (content_type, file_path, entries_extractor, id_field)
         ('people', META / 'people.json', lambda d: d.get('people', []), 'id'),
-        ('timeline', META / 'timelines.json', lambda d: d if isinstance(d, list) else [], 'id'),
-        ('map_story', META / 'map-stories.json', lambda d: d if isinstance(d, list) else [], 'id'),
+        ('timeline', META / 'timelines.json', lambda d: d.get('events', []) if isinstance(d, dict) else d, 'id'),
+        ('map_story', META / 'map-stories.json', lambda d: d.get('stories', []) if isinstance(d, dict) else d, 'id'),
         ('concept', META / 'concepts.json', lambda d: d if isinstance(d, list) else [], 'id'),
         ('topic', META / 'topics.json', lambda d: d if isinstance(d, list) else [], 'id'),
         ('prophecy', META / 'prophecy-chains.json', lambda d: d if isinstance(d, list) else [], 'id'),
-        ('thread', META / 'cross-refs.json', lambda d: d if isinstance(d, list) else [], 'id'),
+        ('thread', META / 'cross-refs.json', lambda d: d.get('threads', []) if isinstance(d, dict) else d, 'id'),
         ('harmony', META / 'synoptic.json', lambda d: d if isinstance(d, list) else [], 'id'),
         ('word_study', META / 'word-studies.json', lambda d: d if isinstance(d, list) else [], 'id'),
         ('scholar', META / 'scholar-bios.json', lambda d: list(d.values()) if isinstance(d, dict) else d, 'key'),
