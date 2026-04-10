@@ -28,18 +28,17 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { CompactDropdown, type DropdownOption } from '../components/CompactDropdown';
 import { NotificationSettings } from '../components/NotificationSettings';
 import { ThemePicker } from '../components/ThemePicker';
-import { TRANSLATIONS, DOWNLOADABLE_TRANSLATIONS } from '../db/translationRegistry';
-import { isTranslationInstalled, downloadTranslation, deleteTranslation, getInstalledSize } from '../db/translationManager';
+import { TRANSLATIONS } from '../db/translationRegistry';
 import { useTranslationSwitch } from '../hooks/useTranslationSwitch';
 import { getContentStats, type ContentStats } from '../db/content';
 import { getUserDb } from '../db/userDatabase';
 import { resetToNewUser } from '../db/userMutations';
 import { exportStudyData, ExportError } from '../utils/exportData';
-import { useAvailableVoices } from '../hooks/useAvailableVoices';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { usePremiumStore } from '../stores/premiumStore';
 import { logger } from '../utils/logger';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+import { SectionLabel, SettingsRow, TranslationManager, VoicePicker, sharedStyles } from './settings';
 
 const APP_VERSION = require('../../app.json').expo.version ?? '1.0.0';
 
@@ -165,19 +164,19 @@ function SettingsScreen() {
         <SectionLabel text="PREFERENCES" base={base} />
 
         {/* Translation */}
-        <Row label="Default Translation" base={base}>
+        <SettingsRow label="Default Translation" base={base}>
           <CompactDropdown
             value={translation}
             options={TRANSLATION_OPTIONS}
             onSelect={switchTranslation}
           />
-        </Row>
+        </SettingsRow>
 
         {/* Appearance */}
         <ThemePicker theme={theme} setTheme={setTheme} />
 
         {/* Font Size */}
-        <Row label={`Font Size: ${fontSize}pt`} base={base}>
+        <SettingsRow label={`Font Size: ${fontSize}pt`} base={base}>
           <View style={styles.sizeControls}>
             <TouchableOpacity
               onPress={() => setFontSize(fontSize - 1)}
@@ -192,7 +191,7 @@ function SettingsScreen() {
               <Text style={[styles.sizeButtonText, { color: base.gold }]}>+</Text>
             </TouchableOpacity>
           </View>
-        </Row>
+        </SettingsRow>
 
         {/* Font preview */}
         <View style={styles.preview}>
@@ -207,44 +206,44 @@ function SettingsScreen() {
         </View>
 
         {/* VHL Toggle */}
-        <Row label="Verse Highlighting" base={base}>
+        <SettingsRow label="Verse Highlighting" base={base}>
           <Switch
             value={vhlEnabled}
             onValueChange={setVhlEnabled}
             trackColor={{ false: base.bgSurface, true: base.gold + '60' }}
             thumbColor={vhlEnabled ? base.gold : base.textMuted}
           />
-        </Row>
+        </SettingsRow>
 
         {/* Red Letter Toggle */}
-        <Row label="Words of Christ in Red" base={base}>
+        <SettingsRow label="Words of Christ in Red" base={base}>
           <Switch
             value={redLetterEnabled}
             onValueChange={setRedLetterEnabled}
             trackColor={{ false: base.bgSurface, true: base.redLetter + '60' }}
             thumbColor={redLetterEnabled ? base.redLetter : base.textMuted}
           />
-        </Row>
+        </SettingsRow>
 
         {/* Study Coach */}
-        <Row label="Study Coach" base={base}>
+        <SettingsRow label="Study Coach" base={base}>
           <Switch
             value={studyCoachEnabled}
             onValueChange={setStudyCoachEnabled}
             trackColor={{ false: base.bgSurface, true: base.gold + '60' }}
             thumbColor={studyCoachEnabled ? base.gold : base.textMuted}
           />
-        </Row>
+        </SettingsRow>
 
         {/* Focus / Reading Mode */}
-        <Row label="Focus Mode" base={base}>
+        <SettingsRow label="Focus Mode" base={base}>
           <Switch
             value={focusMode}
             onValueChange={toggleFocusMode}
             trackColor={{ false: base.bgSurface, true: base.gold + '60' }}
             thumbColor={focusMode ? base.gold : base.textMuted}
           />
-        </Row>
+        </SettingsRow>
 
         {/* ── TTS VOICE ─────────────────────────────────────────── */}
         <VoicePicker base={base} />
@@ -258,16 +257,16 @@ function SettingsScreen() {
         {/* Notification preferences link */}
         <TouchableOpacity
           onPress={() => navigation.navigate('NotificationPrefs' as any)}
-          style={[styles.row, { borderBottomColor: base.border + '40' }]}
+          style={[sharedStyles.row, { borderBottomColor: base.border + '40' }]}
           accessibilityRole="button"
           accessibilityLabel="Notification Preferences"
         >
-          <Text style={[styles.rowLabel, { color: base.text }]}>Notification Preferences</Text>
+          <Text style={[sharedStyles.rowLabel, { color: base.text }]}>Notification Preferences</Text>
           <Text style={[styles.premiumArrow, { color: base.textMuted }]}>{'\u203A'}</Text>
         </TouchableOpacity>
 
         {/* ── ABOUT ────────────────────────────────────────────── */}
-        <View style={styles.section}>
+        <View style={sharedStyles.section}>
           <SectionLabel text="ABOUT" base={base} />
 
           {ABOUT_PARAGRAPHS.map((para, idx) => (
@@ -304,7 +303,7 @@ function SettingsScreen() {
         </View>
 
         {/* ── DATA ─────────────────────────────────────────────── */}
-        <View style={styles.section}>
+        <View style={sharedStyles.section}>
           <SectionLabel text="DATA" base={base} />
 
           {/* Export */}
@@ -407,172 +406,6 @@ function confirmClear(
   ]);
 }
 
-/* ── Sub-components ─────────────────────────────────────────────── */
-
-function TranslationManager({ base }: { base: ReturnType<typeof useTheme>['base'] }) {
-  const [statuses, setStatuses] = useState<Record<string, { installed: boolean; size: number }>>({});
-  const [busy, setBusy] = useState<string | null>(null);
-
-  const refresh = async () => {
-    const result: Record<string, { installed: boolean; size: number }> = {};
-    for (const t of DOWNLOADABLE_TRANSLATIONS) {
-      const installed = await isTranslationInstalled(t.id);
-      const size = installed ? await getInstalledSize(t.id) : t.sizeBytes;
-      result[t.id] = { installed, size };
-    }
-    setStatuses(result);
-  };
-
-  useEffect(() => { refresh(); }, [busy]);
-
-  const handleDownload = async (id: string) => {
-    setBusy(id);
-    try {
-      await downloadTranslation(id);
-    } catch {
-      Alert.alert('Download Failed', 'Please try again.');
-    }
-    setBusy(null);
-  };
-
-  const handleDelete = (id: string, label: string) => {
-    Alert.alert(
-      `Remove ${label}?`,
-      'You can re-download it anytime.',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Remove', style: 'destructive',
-          onPress: async () => {
-            setBusy(id);
-            await deleteTranslation(id);
-            setBusy(null);
-          },
-        },
-      ],
-    );
-  };
-
-  if (DOWNLOADABLE_TRANSLATIONS.length === 0) return null;
-
-  return (
-    <View style={styles.section}>
-      <SectionLabel text="TRANSLATIONS" base={base} />
-      <Text style={[styles.translationHint, { color: base.textMuted }]}>
-        NIV and KJV are built in. Others can be downloaded on demand.
-      </Text>
-      {DOWNLOADABLE_TRANSLATIONS.map((t) => {
-        const status = statuses[t.id];
-        const isInstalled = status?.installed ?? false;
-        const isBusy = busy === t.id;
-        const sizeMB = ((status?.size ?? t.sizeBytes) / 1024 / 1024).toFixed(1);
-
-        return (
-          <View key={t.id} style={[styles.translationRow, { borderBottomColor: base.border + '40' }]}>
-            <View style={styles.translationInfo}>
-              <Text style={[styles.rowLabel, { color: base.text }]}>{t.label}</Text>
-              <Text style={[styles.translationDetail, { color: base.textMuted }]}>
-                {t.fullName}{isInstalled ? ` · ${sizeMB} MB` : ''}
-              </Text>
-            </View>
-            {isBusy ? (
-              <ActivityIndicator size="small" color={base.gold} />
-            ) : isInstalled ? (
-              <TouchableOpacity onPress={() => handleDelete(t.id, t.label)} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
-                <Trash2 size={16} color={base.textMuted} />
-              </TouchableOpacity>
-            ) : (
-              <TouchableOpacity onPress={() => handleDownload(t.id)} style={styles.downloadButton}>
-                <Download size={14} color={base.gold} />
-                <Text style={[styles.downloadLabel, { color: base.gold }]}>
-                  {Number(sizeMB) > 0 ? `${sizeMB} MB` : 'Install'}
-                </Text>
-              </TouchableOpacity>
-            )}
-          </View>
-        );
-      })}
-    </View>
-  );
-}
-
-function VoicePicker({ base }: { base: ReturnType<typeof useTheme>['base'] }) {
-  const voices = useAvailableVoices();
-  const ttsVoice = useSettingsStore((s) => s.ttsVoice);
-  const setTtsVoice = useSettingsStore((s) => s.setTtsVoice);
-  const [expanded, setExpanded] = useState(false);
-
-  if (voices.length === 0) return null;
-
-  const currentName = voices.find((v) => v.identifier === ttsVoice)?.name ?? 'System Default';
-
-  return (
-    <View style={styles.section}>
-      <SectionLabel text="TEXT-TO-SPEECH" base={base} />
-      <TouchableOpacity
-        onPress={() => setExpanded(!expanded)}
-        style={[styles.voiceRow, { borderBottomColor: base.border + '40' }]}
-        accessibilityRole="button"
-        accessibilityLabel={`TTS voice: ${currentName}. Tap to change.`}
-      >
-        <Text style={[styles.rowLabel, { color: base.text }]}>Voice</Text>
-        <Text style={[styles.voiceValue, { color: base.gold }]}>
-          {currentName} {expanded ? '▲' : '▼'}
-        </Text>
-      </TouchableOpacity>
-      {expanded && (
-        <View style={[styles.voiceList, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
-          <TouchableOpacity
-            onPress={() => { setTtsVoice(''); setExpanded(false); }}
-            style={[styles.voiceOption, !ttsVoice && { backgroundColor: base.gold + '15' }]}
-          >
-            <Text style={[styles.voiceOptionText, { color: !ttsVoice ? base.gold : base.text }]}>
-              System Default
-            </Text>
-          </TouchableOpacity>
-          {voices.map((v) => (
-            <TouchableOpacity
-              key={v.identifier}
-              onPress={() => { setTtsVoice(v.identifier); setExpanded(false); }}
-              style={[styles.voiceOption, ttsVoice === v.identifier && { backgroundColor: base.gold + '15' }]}
-            >
-              <View style={styles.voiceNameRow}>
-                <Text style={[styles.voiceOptionText, { color: ttsVoice === v.identifier ? base.gold : base.text }]}>
-                  {v.name}
-                </Text>
-                {v.recommended && (
-                  <Text style={[styles.recommendedBadge, { color: base.gold }]}>
-                    RECOMMENDED
-                  </Text>
-                )}
-              </View>
-              <Text style={[styles.voiceQuality, { color: base.textMuted }]}>
-                {v.quality !== 'Default' ? v.quality : v.language}
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-      )}
-      <Text style={[styles.translationHint, { color: base.textMuted }]}>
-        For better voices, go to iPhone Settings → Accessibility → Spoken Content → Voices → English and download enhanced voices.
-      </Text>
-    </View>
-  );
-}
-
-function SectionLabel({ text, base }: { text: string; base: ReturnType<typeof useTheme>['base'] }) {
-  return <Text style={[styles.sectionLabel, { color: base.textMuted }]}>{text}</Text>;
-}
-
-function Row({ label, children, base }: { label: string; children: React.ReactNode; base: ReturnType<typeof useTheme>['base'] }) {
-  return (
-    <View style={[styles.row, { borderBottomColor: base.border + '40' }]}>
-      <Text style={[styles.rowLabel, { color: base.text }]}>{label}</Text>
-      {children}
-    </View>
-  );
-}
-
 /* ── Styles ──────────────────────────────────────────────────────── */
 
 const styles = StyleSheet.create({
@@ -584,30 +417,6 @@ const styles = StyleSheet.create({
   },
   headerSpacing: {
     marginBottom: spacing.lg,
-  },
-
-  /* Section label */
-  sectionLabel: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 11,
-    letterSpacing: 0.5,
-    marginBottom: spacing.sm,
-  },
-  section: {
-    marginTop: spacing.xl,
-  },
-
-  /* Preference rows */
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingVertical: spacing.md,
-    borderBottomWidth: 1,
-  },
-  rowLabel: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 14,
   },
 
   /* Font size controls */
@@ -699,81 +508,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 
-  /* Translation manager */
-  translationHint: {
-    fontFamily: fontFamily.ui,
-    fontSize: 11,
-    marginBottom: spacing.sm,
-  },
-  translationRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingVertical: spacing.md,
-    borderBottomWidth: 1,
-  },
-  downloadButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-
-  /* Voice picker */
-  voiceRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingVertical: spacing.md,
-    borderBottomWidth: 1,
-  },
-  voiceList: {
-    borderRadius: radii.md,
-    borderWidth: 1,
-    marginTop: spacing.xs,
-    marginBottom: spacing.sm,
-    maxHeight: 280,
-    overflow: 'hidden',
-  },
-  voiceOption: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingVertical: spacing.sm + 2,
-    paddingHorizontal: spacing.md,
-  },
-  voiceOptionText: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 13,
-  },
-  voiceValue: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 13,
-  },
-  voiceNameRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.xs,
-  },
-  recommendedBadge: {
-    fontSize: 9,
-    fontFamily: fontFamily.uiSemiBold,
-    opacity: 0.8,
-  },
-  voiceQuality: {
-    fontSize: 10,
-    fontFamily: fontFamily.ui,
-  },
-  translationInfo: {
-    flex: 1,
-  },
-  translationDetail: {
-    fontSize: 11,
-    fontFamily: fontFamily.ui,
-  },
-  downloadLabel: {
-    fontSize: 12,
-    fontFamily: fontFamily.uiSemiBold,
-    marginLeft: 4,
-  },
   bottomSpacer: {
     height: spacing.xxl,
   },
