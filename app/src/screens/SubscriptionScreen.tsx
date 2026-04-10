@@ -134,8 +134,8 @@ function SubscriptionScreen() {
               accessibilityRole="button"
               accessibilityLabel={`Subscribe to ${selectedPlan.label} plan`}
             >
+              {/* data-color: intentional — dark spinner on gold button */}
               {purchasing ? (
-                {/* data-color: intentional — dark spinner on gold button */}
                 <ActivityIndicator size="small" color="#1a1a1a" />
               ) : (
                 <Text style={styles.purchaseBtnText}>Subscribe Now</Text>
