@@ -8,13 +8,15 @@ import { spacing, fontFamily } from '../../theme';
 import { SectionLabel } from './SectionLabel';
 import { SettingsRow } from './SettingsRow';
 
+type ThemePreference = 'dark' | 'sepia' | 'light' | 'system';
+
 interface PreferencesSectionProps {
   base: BaseColors;
   translation: string;
   translationOptions: DropdownOption[];
   onTranslationChange: (key: string) => void;
-  theme: string;
-  setTheme: (t: string) => void;
+  theme: ThemePreference;
+  setTheme: (t: ThemePreference) => void;
   fontSize: number;
   setFontSize: (s: number) => void;
   vhlEnabled: boolean;

@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import type { BaseColors } from '../../theme/palettes';
+import type { PurchaseType } from '../../stores/premiumStore';
 import { spacing, radii, fontFamily } from '../../theme';
 
 interface PremiumBannerProps {
   base: BaseColors;
   isPremium: boolean;
-  purchaseType: string | null;
+  purchaseType: PurchaseType;
   onPress: () => void;
 }
 
