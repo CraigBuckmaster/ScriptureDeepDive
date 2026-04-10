@@ -168,7 +168,7 @@ def main():
         r2_base = "https://contentcompanionstudy.com/art/"
         print(f"[!]  Upload manifest not found, using default R2 URL: {r2_base}")
     else:
-        with open(UPLOAD_MANIFEST) as f:
+        with open(UPLOAD_MANIFEST, encoding='utf-8') as f:
             manifest = json.load(f)
         r2_base = manifest.get('public_url_base', "https://contentcompanionstudy.com/art/")
     
@@ -191,7 +191,7 @@ def main():
         print(f"Processing {fname}...")
         
         try:
-            with open(fpath) as f:
+            with open(fpath, encoding='utf-8') as f:
                 data = json.load(f)
         except Exception as e:
             print(f"  [X] Error reading: {e}")
@@ -207,7 +207,7 @@ def main():
             print(f"  [OK] {replaced} URLs replaced, {unmatched} unmatched")
             
             if not dry_run:
-                with open(fpath, 'w') as f:
+                with open(fpath, 'w', encoding='utf-8') as f:
                     json.dump(updated_data, f, indent=2, ensure_ascii=False)
                 print(f"  -- File saved")
         else:
@@ -242,7 +242,7 @@ def main():
         print("\n[!]  DRY RUN - No files were modified")
         print("   Run without --dry-run to apply changes")
     else:
-        print("\n✅ All files updated!")
+        print("\n[OK] All files updated!")
         print("\nNext steps:")
         print("  1. Review changes: git diff content/meta/")
         print("  2. Validate: python3 _tools/schema_validator.py")
