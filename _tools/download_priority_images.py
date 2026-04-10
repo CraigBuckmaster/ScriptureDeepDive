@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-download_priority_images.py — Download the 19 priority Explore screen images.
+download_priority_images.py - Download the 19 priority Explore screen images.
 
 Downloads from creationism.org (Doré collection) which is the only source
 that works from this environment. For images without Doré equivalents,
@@ -10,8 +10,8 @@ Usage:
     python3 _tools/download_priority_images.py
 
 Output:
-    _tools/art_staging/priority/ — Downloaded images
-    _tools/art_staging/priority_manifest.json — Manifest for R2 upload
+    _tools/art_staging/priority/ - Downloaded images
+    _tools/art_staging/priority_manifest.json - Manifest for R2 upload
 """
 import json
 import os
@@ -32,110 +32,110 @@ PRIORITY_IMAGES = [
     # Spirit of God / Pentecost
     ('dore-pentecost.jpg', 
      'vAct0202Dore_TheDescentOfTheSpirit.jpg',
-     'The Descent of the Spirit — Pentecost',
-     'Gustave Doré · Public domain'),
+     'The Descent of the Spirit - Pentecost',
+     'Gustave Doré - Public domain'),
     
     # Faith / Abraham & Isaac
     ('dore-abraham-isaac.jpg',
      'aGen2210Dore_TheTrialOfAbraham_sFaith.jpg',
-     'The Trial of Abraham\'s Faith — binding of Isaac',
-     'Gustave Doré · Public domain'),
+     'The Trial of Abraham\'s Faith - binding of Isaac',
+     'Gustave Doré - Public domain'),
     
     # Mercy & Grace / Prodigal Son
     ('dore-prodigal-son.jpg',
      'tLuk1520Dore_TheProdigalSonInTheArmsOfHisFather.jpg',
      'The Prodigal Son in the Arms of His Father',
-     'Gustave Doré · Public domain'),
+     'Gustave Doré - Public domain'),
     
     # Judgment / Crucifixion Darkness
     ('dore-crucifixion-darkness.jpg',
      'tLuk2344Dore_TheDarknessAtTheCrucifixion.jpg',
-     'The Darkness at the Crucifixion — judgment',
-     'Gustave Doré · Public domain'),
+     'The Darkness at the Crucifixion - judgment',
+     'Gustave Doré - Public domain'),
     
     # Creation / Light
     ('dore-creation-light.jpg',
      'aGen0103Dore_TheCreationOfLight.jpg',
      'The Creation of Light',
-     'Gustave Doré · Public domain'),
+     'Gustave Doré - Public domain'),
     
     # Redemption / Red Sea
     ('dore-red-sea.jpg',
      'bExo1427Dore_TheEgyptiansDrownedInTheRedSea.jpg',
-     'The Egyptians Drowned in the Red Sea — redemption',
-     'Gustave Doré · Public domain'),
+     'The Egyptians Drowned in the Red Sea - redemption',
+     'Gustave Doré - Public domain'),
     
     # Prophecy / Isaiah
     ('dore-isaiah.jpg',
      'nIsa0608Dore_Isaiah.jpg',
      'Isaiah the Prophet',
-     'Gustave Doré · Public domain'),
+     'Gustave Doré - Public domain'),
     
     # Suffering / Jeremiah
     ('dore-jeremiah.jpg',
      'nJer0114Dore_Jeremiah.jpg',
-     'Jeremiah the Prophet — suffering and lament',
-     'Gustave Doré · Public domain'),
+     'Jeremiah the Prophet - suffering and lament',
+     'Gustave Doré - Public domain'),
     
     # Resurrection
     ('dore-resurrection.jpg',
      'rMat2805Dore_TheResurrection.jpg',
      'The Resurrection of Jesus',
-     'Gustave Doré · Public domain'),
+     'Gustave Doré - Public domain'),
     
     # Jacob blessing (Isaac blessing Jacob is closest)
     ('dore-jacob-blessing.jpg',
      'aGen2729Dore_IsaacBlessingJacob.jpg',
      'Isaac Blessing Jacob',
-     'Gustave Doré · Public domain'),
+     'Gustave Doré - Public domain'),
     
     # Jericho / Joshua
     ('dore-jericho.jpg',
      'dJos0620Dore_TheWallsOfJerichoFallingDown.jpg',
      'The Walls of Jericho Falling Down',
-     'Gustave Doré · Public domain'),
+     'Gustave Doré - Public domain'),
     
     # Ezekiel
     ('dore-ezekiel.jpg',
      'oEze0103Dore_EzekielProphesying.jpg',
      'Ezekiel Prophesying',
-     'Gustave Doré · Public domain'),
+     'Gustave Doré - Public domain'),
     
     # Daniel
     ('dore-daniel.jpg',
      'pDan0220Dore_Daniel.jpg',
      'Daniel',
-     'Gustave Doré · Public domain'),
+     'Gustave Doré - Public domain'),
     
     # Jonah
     ('dore-jonah.jpg',
      'qJon0201Dore_JonahCastForthByTheWhale.jpg',
      'Jonah Cast Forth by the Whale',
-     'Gustave Doré · Public domain'),
+     'Gustave Doré - Public domain'),
     
     # Abram's call / Journey
     ('dore-abram-call.jpg',
      'aGen1201Dore_AbrahamJourneyingIntoTheLandOfCanaan.jpg',
      'Abraham Journeying into the Land of Canaan',
-     'Gustave Doré · Public domain'),
+     'Gustave Doré - Public domain'),
     
     # Nativity
     ('dore-nativity.jpg',
      'tLuk0215Dore_TheNativity.jpg',
-     'The Nativity — Jesus birth',
-     'Gustave Doré · Public domain'),
+     'The Nativity - Jesus birth',
+     'Gustave Doré - Public domain'),
     
     # Paul / Mission (using Paul preaching to Thessalonians)
     ('dore-paul.jpg',
      'w1Th0211Dore_St_PaulPreachingToTheThessalonians.jpg',
-     'St. Paul Preaching to the Thessalonians — missionary to the nations',
-     'Gustave Doré · Public domain'),
+     'St. Paul Preaching to the Thessalonians - missionary to the nations',
+     'Gustave Doré - Public domain'),
 ]
 
 # Images that need manual sourcing (no Doré equivalent)
 MANUAL_IMAGES = [
     ('codex-sinaiticus.jpg', 
-     'Codex Sinaiticus — 4th century Bible manuscript',
+     'Codex Sinaiticus - 4th century Bible manuscript',
      'Needs: British Library or Codex Sinaiticus Project image'),
     ('paul-journey3.jpg',
      "Paul's Third Missionary Journey map",
@@ -155,11 +155,11 @@ def download_image(url: str, dest_path: Path) -> bool:
         
         # Verify it's actual image data
         if len(data) < 5000:
-            print(f"      ⚠️  Response too small ({len(data)} bytes)")
+            print(f"      [!]  Response too small ({len(data)} bytes)")
             return False
         
         if data[:4] == b'<!DO' or data[:5] == b'<html':
-            print(f"      ⚠️  Got HTML instead of image")
+            print(f"      [!]  Got HTML instead of image")
             return False
         
         with open(dest_path, 'wb') as f:
@@ -168,13 +168,13 @@ def download_image(url: str, dest_path: Path) -> bool:
         return True
         
     except HTTPError as e:
-        print(f"      ❌ HTTP {e.code}: {e.reason}")
+        print(f"      [X] HTTP {e.code}: {e.reason}")
         return False
     except URLError as e:
-        print(f"      ❌ URL Error: {e.reason}")
+        print(f"      [X] URL Error: {e.reason}")
         return False
     except Exception as e:
-        print(f"      ❌ Error: {e}")
+        print(f"      [X] Error: {e}")
         return False
 
 
@@ -202,7 +202,7 @@ def main():
         
         if dest.exists():
             size_kb = dest.stat().st_size / 1024
-            print(f"      ✓ Already exists ({size_kb:.1f} KB)")
+            print(f"      [OK] Already exists ({size_kb:.1f} KB)")
             manifest['downloaded'].append({
                 'filename': filename,
                 'source_url': url,
@@ -215,7 +215,7 @@ def main():
         print(f"      Downloading from creationism.org...")
         if download_image(url, dest):
             size_kb = dest.stat().st_size / 1024
-            print(f"      ✓ Downloaded ({size_kb:.1f} KB)")
+            print(f"      [OK] Downloaded ({size_kb:.1f} KB)")
             manifest['downloaded'].append({
                 'filename': filename,
                 'source_url': url,
@@ -234,7 +234,7 @@ def main():
     
     # Record manual images
     for filename, caption, note in MANUAL_IMAGES:
-        print(f"\n⚠️  {filename}: {note}")
+        print(f"\n[!]  {filename}: {note}")
         manifest['manual_needed'].append({
             'filename': filename,
             'caption': caption,
@@ -250,10 +250,10 @@ def main():
     print("\n" + "=" * 60)
     print("SUMMARY")
     print("=" * 60)
-    print(f"  ✓ Downloaded:    {len(manifest['downloaded'])}")
-    print(f"  ⚠️  Manual needed: {len(manifest['manual_needed'])}")
-    print(f"  ❌ Failed:        {len(manifest['failed'])}")
-    print(f"\n📋 Manifest saved: {manifest_path}")
+    print(f"  [OK] Downloaded:    {len(manifest['downloaded'])}")
+    print(f"  [!]  Manual needed: {len(manifest['manual_needed'])}")
+    print(f"  [X] Failed:        {len(manifest['failed'])}")
+    print(f"\n-- Manifest saved: {manifest_path}")
     
     if manifest['failed']:
         print("\n=== FAILED ===")

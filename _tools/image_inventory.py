@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-image_inventory.py — Inventory all Wikimedia image URLs and prepare for R2 migration.
+image_inventory.py - Inventory all Wikimedia image URLs and prepare for R2 migration.
 
 Scans all content JSON files, extracts Wikimedia URLs, generates:
-  1. _tools/art_staging/inventory.json — Full mapping of old URLs to new names
+  1. _tools/art_staging/inventory.json - Full mapping of old URLs to new names
   2. Console summary of images by source
 
 Usage:
@@ -135,7 +135,7 @@ def url_to_filename(url: str, caption: str = "") -> str:
 
 def main():
     print("=" * 60)
-    print("Image Inventory — Wikimedia URL Scanner")
+    print("Image Inventory - Wikimedia URL Scanner")
     print("=" * 60)
     
     STAGING_DIR.mkdir(parents=True, exist_ok=True)
@@ -179,7 +179,7 @@ def main():
                 seen_urls[url]['source_file'] += f", {item['source_file']}"
     
     unique_items = list(seen_urls.values())
-    print(f"  {len(all_items)} total → {len(unique_items)} unique URLs")
+    print(f"  {len(all_items)} total -> {len(unique_items)} unique URLs")
     
     # Generate inventory with new filenames
     inventory = []
