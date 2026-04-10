@@ -41,6 +41,7 @@ import {
   GestureHandlerRootView,
 } from 'react-native-gesture-handler';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { ImageCredit } from './ImageCredit';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 const GALLERY_PADDING = spacing.md;
@@ -119,9 +120,7 @@ function GalleryImageItem({ image, width, height, onPress }: ImageItemProps) {
         {image.caption ? (
           <Text style={[styles.caption, { color: base.textDim }]}>{image.caption}</Text>
         ) : null}
-        {image.credit ? (
-          <Text style={[styles.credit, { color: base.textMuted }]}>{image.credit}</Text>
-        ) : null}
+        <ImageCredit credit={image.credit} />
       </View>
     </TouchableOpacity>
   );
@@ -247,16 +246,16 @@ function ZoomViewer({ image, visible, onClose }: ZoomViewerProps) {
           </GestureDetector>
 
           {/* Caption overlay */}
-          {image.caption ? (
-            <TouchableWithoutFeedback onPress={handleClose}>
-              <View style={styles.captionOverlay}>
+          <TouchableWithoutFeedback onPress={handleClose}>
+            <View style={styles.captionOverlay}>
+              {image.caption ? (
                 <Text style={styles.captionOverlayText}>{image.caption}</Text>
-                {image.credit ? (
-                  <Text style={styles.creditOverlayText}>{image.credit}</Text>
-                ) : null}
-              </View>
-            </TouchableWithoutFeedback>
-          ) : null}
+              ) : null}
+              <Text style={styles.creditOverlayText}>
+                Image: {image.credit || 'Public domain via Wikimedia Commons'}
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
         </View>
       </GestureHandlerRootView>
     </Modal>
@@ -384,11 +383,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 17,
     marginTop: spacing.xs,
-  },
-  credit: {
-    fontFamily: fontFamily.ui,
-    fontSize: 10,
-    marginTop: 2,
   },
   dotsRow: {
     flexDirection: 'row',
