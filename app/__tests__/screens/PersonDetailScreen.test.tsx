@@ -3,6 +3,14 @@ import { fireEvent, waitFor } from '@testing-library/react-native';
 import { renderWithProviders } from '../helpers/renderWithProviders';
 import PersonDetailScreen from '@/screens/PersonDetailScreen';
 
+// ── Modal mock (renders children inline so testing-library can query them) ──
+jest.mock('react-native/Libraries/Modal/Modal', () => {
+  const { createElement } = require('react');
+  const { View } = jest.requireActual('react-native');
+  const MockModal = (props: any) => props.visible ? createElement(View, null, props.children) : null;
+  return { __esModule: true, default: MockModal };
+});
+
 // ── Navigation mocks ────────────────────────────────────────
 const mockNavigate = jest.fn();
 const mockGoBack = jest.fn();
@@ -76,8 +84,8 @@ beforeEach(() => {
 
 describe('PersonDetailScreen', () => {
   it('renders person bio via PersonSidebar', async () => {
-    const { findByText } = renderWithProviders(<PersonDetailScreen />);
-    expect(await findByText('Abraham')).toBeTruthy();
+    const { getByText } = renderWithProviders(<PersonDetailScreen />);
+    await waitFor(() => expect(getByText('Abraham')).toBeTruthy(), { timeout: 3000 });
   });
 
   it('displays person role', async () => {
