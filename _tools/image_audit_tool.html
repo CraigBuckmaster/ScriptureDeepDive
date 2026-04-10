@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Audit Tool</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+      background: #1a1710; 
+      color: #e8dcc8; 
+      margin: 0; 
+      padding: 20px;
+      line-height: 1.5;
+    }
+    h1 { color: #bfa050; font-size: 24px; margin: 0 0 8px; }
+    .subtitle { color: #908878; font-size: 14px; margin-bottom: 24px; }
+    .stats { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+    .stat { 
+      background: #252015; 
+      padding: 12px 16px; 
+      border-radius: 8px; 
+      text-align: center; 
+      min-width: 90px;
+      border: 1px solid #3a3020;
+    }
+    .stat-label { font-size: 12px; color: #908878; margin-bottom: 4px; }
+    .stat-value { font-size: 24px; font-weight: 600; }
+    .stat-value.ok { color: #5cb85c; }
+    .stat-value.fail { color: #e06050; }
+    .stat-value.pending { color: #bfa050; }
+    .filters { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .btn { 
+      padding: 8px 16px; 
+      font-size: 13px; 
+      border-radius: 6px; 
+      cursor: pointer; 
+      border: 1px solid #5a5040;
+      background: transparent;
+      color: #c8baa8;
+      transition: all 0.15s;
+    }
+    .btn:hover { background: #2a2518; }
+    .btn.active { background: #bfa050; color: #1a1710; border-color: #bfa050; }
+    .card {
+      background: #252015;
+      border: 1px solid #3a3020;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .card.ok { border-left: 4px solid #5cb85c; }
+    .card.error { border-left: 4px solid #e06050; }
+    .card-header { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: flex-start; 
+      gap: 12px; 
+      margin-bottom: 12px; 
+    }
+    .card-info { flex: 1; min-width: 0; }
+    .card-title { font-weight: 600; font-size: 15px; margin: 0 0 4px; color: #e8dcc8; }
+    .card-usages { font-size: 12px; color: #908878; }
+    .img-container { display: flex; gap: 16px; flex-wrap: wrap; }
+    .img-block { text-align: center; }
+    .img-label { font-size: 11px; color: #908878; margin-bottom: 4px; }
+    .img-preview { 
+      width: 120px; 
+      height: 90px; 
+      object-fit: cover; 
+      border-radius: 6px; 
+      background: #1a1710;
+      border: 1px solid #3a3020;
+    }
+    .img-status { font-size: 11px; margin-top: 4px; }
+    .img-status.ok { color: #5cb85c; }
+    .img-status.fail { color: #e06050; }
+    .img-status.pending { color: #bfa050; }
+    .results-section {
+      margin-top: 24px;
+      padding: 16px;
+      background: #252015;
+      border: 1px solid #3a3020;
+      border-radius: 10px;
+    }
+    .results-section h3 { margin: 0 0 12px; color: #bfa050; font-size: 14px; }
+    .results-section textarea {
+      width: 100%;
+      height: 250px;
+      background: #1a1710;
+      border: 1px solid #3a3020;
+      border-radius: 6px;
+      color: #c8baa8;
+      font-family: monospace;
+      font-size: 11px;
+      padding: 12px;
+      resize: vertical;
+    }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <h1>Image Audit Tool</h1>
+  <p class="subtitle" id="subtitle">Loading images...</p>
+  
+  <div class="stats">
+    <div class="stat"><div class="stat-label">Total</div><div class="stat-value" id="stat-total">0</div></div>
+    <div class="stat"><div class="stat-label">Working</div><div class="stat-value ok" id="stat-ok">0</div></div>
+    <div class="stat"><div class="stat-label">Broken</div><div class="stat-value fail" id="stat-fail">0</div></div>
+    <div class="stat"><div class="stat-label">Testing</div><div class="stat-value pending" id="stat-pending">0</div></div>
+  </div>
+  
+  <div class="filters">
+    <button class="btn active" id="filter-all" onclick="setFilter('all')">All</button>
+    <button class="btn" id="filter-ok" onclick="setFilter('ok')">Working</button>
+    <button class="btn" id="filter-fail" onclick="setFilter('fail')">Broken</button>
+    <button class="btn" id="filter-pending" onclick="setFilter('pending')">Testing</button>
+  </div>
+  
+  <div id="cards"></div>
+  
+  <div class="results-section">
+    <h3>Results (copy when testing complete)</h3>
+    <textarea id="results" readonly></textarea>
+  </div>
+
+<script>
+// ============================================================================
+// IMAGE DATA - Edit this array to add/update images
+// ============================================================================
+// Each image needs:
+//   id: unique identifier (used in output)
+//   caption: display name
+//   usages: array of where it's used (concepts, people, etc)
+//   urls: array of URLs to test (first working one wins)
+// ============================================================================
+
+const IMAGES = [
+  // --- BROKEN IMAGES (testing alternatives) ---
+  {
+    id: "pentecost",
+    caption: "Pentecost — Spirit descends",
+    usages: ["Spirit of God"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_254.png/800px-Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_254.png",
+      "https://upload.wikimedia.org/wikipedia/commons/9/92/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_254.png"
+    ]
+  },
+  {
+    id: "abraham-isaac",
+    caption: "Abraham & Isaac — binding",
+    usages: ["Faith", "Abraham", "Isaac"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Rembrandt_Abraham_and_Isaac_1634.jpg/800px-Rembrandt_Abraham_and_Isaac_1634.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/60/Rembrandt_Abraham_and_Isaac_1634.jpg"
+    ]
+  },
+  {
+    id: "prodigal-son",
+    caption: "Prodigal Son — mercy",
+    usages: ["Mercy & Grace"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Rembrandt_Harmensz._van_Rijn_-_The_Return_of_the_Prodigal_Son_-_Google_Art_Project.jpg/800px-Rembrandt_Harmensz._van_Rijn_-_The_Return_of_the_Prodigal_Son_-_Google_Art_Project.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/ec/Rembrandt_Harmensz._van_Rijn_-_The_Return_of_the_Prodigal_Son_-_Google_Art_Project.jpg"
+    ]
+  },
+  {
+    id: "crucifixion-darkness",
+    caption: "Crucifixion darkness — judgment",
+    usages: ["Judgment"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Gustave_Dor%C3%A9_-_The_Holy_Bible_-_Plate_CXL_-_The_Darkness_at_the_Crucifixion.jpg/800px-Gustave_Dor%C3%A9_-_The_Holy_Bible_-_Plate_CXL_-_The_Darkness_at_the_Crucifixion.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d5/Gustave_Dor%C3%A9_-_The_Holy_Bible_-_Plate_CXL_-_The_Darkness_at_the_Crucifixion.jpg"
+    ]
+  },
+  {
+    id: "creation-light",
+    caption: "Creation of light",
+    usages: ["Creation & New Creation"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Gustave_Dor%C3%A9_-_The_Holy_Bible_-_Plate_I%2C_The_Creation_of_Light.jpg/800px-Gustave_Dor%C3%A9_-_The_Holy_Bible_-_Plate_I%2C_The_Creation_of_Light.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/41/Gustave_Dor%C3%A9_-_The_Holy_Bible_-_Plate_I%2C_The_Creation_of_Light.jpg"
+    ]
+  },
+  {
+    id: "red-sea",
+    caption: "Crossing Red Sea — redemption",
+    usages: ["Redemption"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Figures_Crossing_of_the_Red_Sea.jpg/800px-Figures_Crossing_of_the_Red_Sea.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/70/Figures_Crossing_of_the_Red_Sea.jpg"
+    ]
+  },
+  {
+    id: "isaiah",
+    caption: "Michelangelo Isaiah",
+    usages: ["Prophecy & Fulfillment", "Isaiah"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Michelangelo%2C_profeta_Isaia_02.jpg/800px-Michelangelo%2C_profeta_Isaia_02.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/f/f2/Michelangelo%2C_profeta_Isaia_02.jpg"
+    ]
+  },
+  {
+    id: "jeremiah",
+    caption: "Michelangelo Jeremiah",
+    usages: ["Suffering & Lament", "Jeremiah"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Michelangelo_Buonarroti_-_Sistine_Chapel_Ceiling_-_Jeremiah.jpg/800px-Michelangelo_Buonarroti_-_Sistine_Chapel_Ceiling_-_Jeremiah.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/2c/Michelangelo_Buonarroti_-_Sistine_Chapel_Ceiling_-_Jeremiah.jpg"
+    ]
+  },
+  {
+    id: "resurrection",
+    caption: "Resurrection of Jesus",
+    usages: ["Resurrection"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_251.png/800px-Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_251.png",
+      "https://upload.wikimedia.org/wikipedia/commons/5/5e/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_251.png"
+    ]
+  },
+  {
+    id: "paul",
+    caption: "Rembrandt Apostle Paul",
+    usages: ["Mission & Witness", "Paul"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Rembrandt_-_The_Apostle_Paul_-_WGA19120.jpg/800px-Rembrandt_-_The_Apostle_Paul_-_WGA19120.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/97/Rembrandt_-_The_Apostle_Paul_-_WGA19120.jpg"
+    ]
+  },
+  {
+    id: "codex-sinaiticus",
+    caption: "Codex Sinaiticus",
+    usages: ["Word of God"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Codex_Sinaiticus_open_full.jpg/800px-Codex_Sinaiticus_open_full.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d8/Codex_Sinaiticus_open_full.jpg"
+    ]
+  },
+  {
+    id: "jacob-blessing",
+    caption: "Jacob blesses sons",
+    usages: ["Jacob"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Tissot_The_Blessing_of_Ephraim_and_Manasseh.jpg/800px-Tissot_The_Blessing_of_Ephraim_and_Manasseh.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/98/Tissot_The_Blessing_of_Ephraim_and_Manasseh.jpg"
+    ]
+  },
+  {
+    id: "jericho",
+    caption: "Jericho falls — Joshua",
+    usages: ["Joshua"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Holman_The_Walls_of_Jericho_Fall_Down.jpg/800px-Holman_The_Walls_of_Jericho_Fall_Down.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/20/Holman_The_Walls_of_Jericho_Fall_Down.jpg"
+    ]
+  },
+  {
+    id: "ezekiel",
+    caption: "Michelangelo Ezekiel",
+    usages: ["Ezekiel"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Michelangelo%2C_profeta_Ezechiele_02.jpg/800px-Michelangelo%2C_profeta_Ezechiele_02.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/1c/Michelangelo%2C_profeta_Ezechiele_02.jpg"
+    ]
+  },
+  {
+    id: "daniel",
+    caption: "Michelangelo Daniel",
+    usages: ["Daniel"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Michelangelo%2C_profeta_Daniele_02.jpg/800px-Michelangelo%2C_profeta_Daniele_02.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/9f/Michelangelo%2C_profeta_Daniele_02.jpg"
+    ]
+  },
+  {
+    id: "jonah",
+    caption: "Michelangelo Jonah",
+    usages: ["Jonah"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Michelangelo_Buonarroti_-_Jonah_%28detail%29.jpg/800px-Michelangelo_Buonarroti_-_Jonah_%28detail%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/95/Michelangelo_Buonarroti_-_Jonah_%28detail%29.jpg"
+    ]
+  },
+  {
+    id: "abram-call",
+    caption: "Abram's call — journey from Ur",
+    usages: ["Call of Abram"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Figures_The_Journey_of_Abraham.jpg/800px-Figures_The_Journey_of_Abraham.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6e/Figures_The_Journey_of_Abraham.jpg"
+    ]
+  },
+  {
+    id: "nativity",
+    caption: "Nativity — Jesus birth",
+    usages: ["Jesus"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Robert_Campin_-_The_Nativity_-_WGA14420.jpg/800px-Robert_Campin_-_The_Nativity_-_WGA14420.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/69/Robert_Campin_-_The_Nativity_-_WGA14420.jpg"
+    ]
+  },
+  {
+    id: "paul-journey3",
+    caption: "Paul's 3rd journey",
+    usages: ["Paul"],
+    urls: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Holman_Paul%27s_Third_Missionary_Journey.jpg/800px-Holman_Paul%27s_Third_Missionary_Journey.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/5/58/Holman_Paul%27s_Third_Missionary_Journey.jpg"
+    ]
+  }
+];
+
+// ============================================================================
+// TOOL LOGIC (no need to edit below)
+// ============================================================================
+
+const results = {}; // results[imageIndex] = { urlIndex: true/false, ... }
+let currentFilter = 'all';
+
+function init() {
+  document.getElementById('subtitle').textContent = `${IMAGES.length} images to test`;
+  document.getElementById('stat-total').textContent = IMAGES.length;
+  document.getElementById('stat-pending').textContent = IMAGES.length;
+  buildCards();
+}
+
+function buildCards() {
+  const container = document.getElementById('cards');
+  container.innerHTML = IMAGES.map((img, i) => `
+    <div class="card" id="card-${i}">
+      <div class="card-header">
+        <div class="card-info">
+          <p class="card-title">${i + 1}. ${img.caption} <span style="color:#bfa050">[${img.id}]</span></p>
+          <p class="card-usages">Used by: ${img.usages.join(', ')}</p>
+        </div>
+      </div>
+      <div class="img-container">
+        ${img.urls.map((url, j) => `
+          <div class="img-block">
+            <div class="img-label">URL ${j + 1}</div>
+            <img class="img-preview" src="${url}" 
+              onload="markResult(${i}, ${j}, true)" 
+              onerror="markResult(${i}, ${j}, false)" />
+            <div class="img-status pending" id="status-${i}-${j}">testing...</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function markResult(imgIndex, urlIndex, success) {
+  if (!results[imgIndex]) results[imgIndex] = {};
+  if (results[imgIndex][urlIndex] !== undefined) return; // already set
+  
+  results[imgIndex][urlIndex] = success;
+  
+  const statusEl = document.getElementById(`status-${imgIndex}-${urlIndex}`);
+  statusEl.textContent = success ? '✓ works' : '✗ broken';
+  statusEl.className = 'img-status ' + (success ? 'ok' : 'fail');
+  
+  updateCardStyle(imgIndex);
+  updateStats();
+  updateResults();
+}
+
+function getImageStatus(imgIndex) {
+  const r = results[imgIndex] || {};
+  const img = IMAGES[imgIndex];
+  const testedCount = Object.keys(r).length;
+  
+  if (testedCount < img.urls.length) return 'pending';
+  
+  // Check if any URL works
+  for (let j = 0; j < img.urls.length; j++) {
+    if (r[j] === true) return 'ok';
+  }
+  return 'fail';
+}
+
+function getWorkingUrl(imgIndex) {
+  const r = results[imgIndex] || {};
+  const img = IMAGES[imgIndex];
+  for (let j = 0; j < img.urls.length; j++) {
+    if (r[j] === true) return img.urls[j];
+  }
+  return null;
+}
+
+function updateCardStyle(imgIndex) {
+  const card = document.getElementById(`card-${imgIndex}`);
+  const status = getImageStatus(imgIndex);
+  
+  card.classList.remove('ok', 'error');
+  if (status === 'ok') card.classList.add('ok');
+  else if (status === 'fail') card.classList.add('error');
+}
+
+function updateStats() {
+  let ok = 0, fail = 0, pending = 0;
+  for (let i = 0; i < IMAGES.length; i++) {
+    const status = getImageStatus(i);
+    if (status === 'ok') ok++;
+    else if (status === 'fail') fail++;
+    else pending++;
+  }
+  document.getElementById('stat-ok').textContent = ok;
+  document.getElementById('stat-fail').textContent = fail;
+  document.getElementById('stat-pending').textContent = pending;
+}
+
+function updateResults() {
+  const lines = [];
+  const working = [];
+  const broken = [];
+  
+  for (let i = 0; i < IMAGES.length; i++) {
+    const status = getImageStatus(i);
+    const img = IMAGES[i];
+    
+    if (status === 'ok') {
+      working.push({ id: img.id, url: getWorkingUrl(i) });
+    } else if (status === 'fail') {
+      broken.push({ id: img.id, caption: img.caption, usages: img.usages });
+    }
+  }
+  
+  if (working.length > 0) {
+    lines.push('=== WORKING (use these URLs) ===');
+    working.forEach(w => lines.push(`${w.id}: ${w.url}`));
+    lines.push('');
+  }
+  
+  if (broken.length > 0) {
+    lines.push('=== NEED REPLACEMENT ===');
+    broken.forEach(b => lines.push(`${b.id}: ${b.caption} (${b.usages.join(', ')})`));
+  }
+  
+  if (working.length === 0 && broken.length === 0) {
+    lines.push('Testing in progress...');
+  }
+  
+  document.getElementById('results').value = lines.join('\n');
+}
+
+function setFilter(filter) {
+  currentFilter = filter;
+  document.querySelectorAll('.filters .btn').forEach(btn => btn.classList.remove('active'));
+  document.getElementById(`filter-${filter}`).classList.add('active');
+  applyFilter();
+}
+
+function applyFilter() {
+  for (let i = 0; i < IMAGES.length; i++) {
+    const card = document.getElementById(`card-${i}`);
+    const status = getImageStatus(i);
+    const show = currentFilter === 'all' || currentFilter === status;
+    card.classList.toggle('hidden', !show);
+  }
+}
+
+init();
+</script>
+</body>
+</html>
