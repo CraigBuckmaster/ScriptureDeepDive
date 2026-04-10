@@ -20,48 +20,69 @@ git pull origin "$BRANCH" || echo "⚠  Pull failed (offline?) — continuing wi
 # ── 2. Build scripture.db if missing, stale, or --rebuild ───────
 NEED_BUILD=false
 
+# Compute content hash from source files (deterministic, git-safe)
+CONTENT_HASH=$(python3 -c "
+import hashlib
+from pathlib import Path
+content_dir = Path('content')
+json_files = sorted(content_dir.rglob('*.json'))
+json_files = [f for f in json_files if 'verses' not in f.parts]
+h = hashlib.sha256()
+for f in json_files:
+    h.update(str(f.relative_to(content_dir)).encode())
+    h.update(f.read_bytes())
+print(h.hexdigest()[:16])
+" 2>/dev/null || echo "")
+
+# Read the content hash baked into the current DB
+DB_HASH=""
+if [ -f "$ROOT/scripture.db" ]; then
+  DB_HASH=$(python3 -c "
+import sqlite3
+db = sqlite3.connect('scripture.db')
+row = db.execute(\"SELECT value FROM db_meta WHERE key='content_hash'\").fetchone()
+print(row[0] if row else '')
+db.close()
+" 2>/dev/null || echo "")
+fi
+
 if [[ "$*" == *"--rebuild"* ]]; then
   NEED_BUILD=true
 elif [ ! -f "$ROOT/scripture.db" ]; then
   NEED_BUILD=true
-else
-  # Rebuild if any content or build tool file is newer than the DB
-  STALE=$(find "$ROOT/content" "$ROOT/_tools/build_sqlite.py" \
-    -newer "$ROOT/scripture.db" -print -quit 2>/dev/null)
-  if [ -n "$STALE" ]; then
-    echo "📦 Content changed since last build — rebuilding..."
-    NEED_BUILD=true
-  fi
+elif [ -n "$CONTENT_HASH" ] && [ "$CONTENT_HASH" != "$DB_HASH" ]; then
+  echo "📦 Content changed (${DB_HASH:-none} → $CONTENT_HASH) — rebuilding..."
+  NEED_BUILD=true
 fi
 
 if [ "$NEED_BUILD" = true ]; then
   echo "📦 Building scripture.db..."
   python3 "$ROOT/_tools/build_sqlite.py" 2>/dev/null \
     || python "$ROOT/_tools/build_sqlite.py"
+  # Re-read hash after build
+  DB_HASH=$CONTENT_HASH
 else
-  echo "✓  scripture.db is up to date"
+  echo "✓  scripture.db is up to date ($DB_HASH)"
 fi
 
 # ── 2b. Check if R2 manifest is in sync with local DB ──────────
-if [ -f "$ROOT/scripture.db" ]; then
-  MANIFEST_JSON=$(curl -s --max-time 5 "https://contentcompanionstudy.com/db/manifest.json" 2>/dev/null || echo "")
-  if [ -n "$MANIFEST_JSON" ]; then
-    REMOTE_SHA=$(echo "$MANIFEST_JSON" | python3 -c "import sys,json; print(json.load(sys.stdin).get('full_db_sha256',''))" 2>/dev/null \
-      || echo "$MANIFEST_JSON" | python -c "import sys,json; print(json.load(sys.stdin).get('full_db_sha256',''))" 2>/dev/null)
-    if [ -n "$REMOTE_SHA" ]; then
-      LOCAL_SHA=$(sha256sum "$ROOT/scripture.db" 2>/dev/null | cut -d' ' -f1 \
-        || shasum -a 256 "$ROOT/scripture.db" 2>/dev/null | cut -d' ' -f1 \
-        || python3 -c "import hashlib;print(hashlib.sha256(open('$ROOT/scripture.db','rb').read()).hexdigest())" 2>/dev/null \
-        || python -c "import hashlib;print(hashlib.sha256(open('$ROOT/scripture.db','rb').read()).hexdigest())" 2>/dev/null)
-      if [ -n "$LOCAL_SHA" ] && [ "$LOCAL_SHA" != "$REMOTE_SHA" ]; then
-        echo ""
-        echo "⚠️  R2 is out of sync with local DB"
-        echo "   Local:  ${LOCAL_SHA:0:16}..."
-        echo "   Remote: ${REMOTE_SHA:0:16}..."
-        echo "   Run:    python _tools/upload_to_r2.py"
-        echo ""
-      fi
+if [ -n "$DB_HASH" ]; then
+  REMOTE_VERSION=$(curl -s --max-time 5 "https://contentcompanionstudy.com/db/manifest.json" 2>/dev/null \
+    | python3 -c "import sys,json; print(json.load(sys.stdin).get('current_version',''))" 2>/dev/null \
+    || echo "")
+  if [ -n "$REMOTE_VERSION" ]; then
+    if [ "$DB_HASH" != "$REMOTE_VERSION" ]; then
+      echo ""
+      echo "⚠️  R2 is out of sync with local DB"
+      echo "   Local:  $DB_HASH"
+      echo "   Remote: $REMOTE_VERSION"
+      echo "   Fix:    gh workflow run content-pipeline.yml   (or run _tools/upload_to_r2.py)"
+      echo ""
+    else
+      echo "✓  R2 manifest is in sync ($REMOTE_VERSION)"
     fi
+  else
+    echo "⚠  Could not reach R2 manifest (offline?) — skipping sync check"
   fi
 fi
 
