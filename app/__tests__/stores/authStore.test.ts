@@ -101,4 +101,91 @@ describe('authStore', () => {
 
     expect(useAuthStore.getState().isLoading).toBe(false);
   });
+
+  it('hydrate subscribes to auth state changes and updates user on SIGNED_IN', async () => {
+    const mockUser = { id: 'user-456', email: 'new@example.com', user_metadata: {}, app_metadata: {} };
+    let authCallback: Function | null = null;
+    mockOnAuthStateChange.mockImplementation((cb: Function) => {
+      authCallback = cb;
+      return { data: { subscription: { unsubscribe: jest.fn() } } };
+    });
+
+    await useAuthStore.getState().hydrate();
+
+    expect(authCallback).not.toBeNull();
+
+    // Simulate SIGNED_IN event
+    authCallback!('SIGNED_IN', { user: mockUser });
+
+    expect(useAuthStore.getState().user).toEqual(mockUser);
+  });
+
+  it('hydrate sets isHydrated true even when hydrate throws', async () => {
+    mockGetSupabase.mockImplementation(() => {
+      throw new Error('Supabase init failed');
+    });
+
+    await useAuthStore.getState().hydrate();
+
+    expect(useAuthStore.getState().isHydrated).toBe(true);
+  });
+
+  it('signInWithEmail delegates to supabase and returns empty on success', async () => {
+    const mockSignIn = jest.fn().mockResolvedValue({ error: null });
+    mockGetSupabase.mockReturnValue({
+      auth: {
+        getSession: mockGetSession,
+        onAuthStateChange: mockOnAuthStateChange,
+        signInWithPassword: mockSignIn,
+        signOut: mockSignOut,
+      },
+    });
+
+    const result = await useAuthStore.getState().signInWithEmail('test@test.com', 'password123');
+
+    expect(mockSignIn).toHaveBeenCalledWith({ email: 'test@test.com', password: 'password123' });
+    expect(result).toEqual({});
+    expect(useAuthStore.getState().isLoading).toBe(false);
+  });
+
+  it('signInWithEmail returns error message on failure', async () => {
+    const mockSignIn = jest.fn().mockResolvedValue({ error: { message: 'Invalid credentials' } });
+    mockGetSupabase.mockReturnValue({
+      auth: {
+        getSession: mockGetSession,
+        onAuthStateChange: mockOnAuthStateChange,
+        signInWithPassword: mockSignIn,
+        signOut: mockSignOut,
+      },
+    });
+
+    const result = await useAuthStore.getState().signInWithEmail('bad@test.com', 'wrong');
+
+    expect(result).toEqual({ error: 'Invalid credentials' });
+    expect(useAuthStore.getState().isLoading).toBe(false);
+  });
+
+  it('signInWithEmail returns error when supabase is not available', async () => {
+    mockGetSupabase.mockReturnValue(null);
+
+    const result = await useAuthStore.getState().signInWithEmail('test@test.com', 'pass');
+
+    expect(result).toEqual({ error: 'Auth not available in this environment' });
+  });
+
+  it('auth state change with null session clears user', async () => {
+    let authCallback: Function | null = null;
+    mockOnAuthStateChange.mockImplementation((cb: Function) => {
+      authCallback = cb;
+      return { data: { subscription: { unsubscribe: jest.fn() } } };
+    });
+
+    useAuthStore.setState({ user: { id: 'existing-user' } });
+    await useAuthStore.getState().hydrate();
+
+    // Simulate sign out event
+    authCallback!('SIGNED_OUT', null);
+
+    expect(useAuthStore.getState().user).toBeNull();
+  });
 });
