@@ -6,6 +6,7 @@ module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^@react-native-async-storage/async-storage$': '<rootDir>/__tests__/helpers/asyncStorageMock.js',
+    '^@sentry/react-native$': '<rootDir>/__tests__/helpers/sentryMock.js',
     '^@supabase/supabase-js$': '<rootDir>/__tests__/helpers/supabaseMock.js',
     '^react-native-url-polyfill/auto$': '<rootDir>/__tests__/helpers/noop.js',
   },

@@ -77,7 +77,7 @@ export async function signOut(): Promise<{ error?: string }> {
   return {};
 }
 
-export function getCurrentUser(): unknown | null {
+export function getCurrentUser(): { id: string; [key: string]: unknown } | null {
   const { getSupabase, isSupabaseAvailable } = getAuth();
   if (!isSupabaseAvailable()) return null;
   const supabase = getSupabase();
@@ -91,7 +91,7 @@ export function getCurrentUser(): unknown | null {
   }) ?? null;
 }
 
-export async function getCurrentSession(): Promise<unknown | null> {
+export async function getCurrentSession(): Promise<{ id: string; [key: string]: unknown } | null> {
   const { getSupabase, isSupabaseAvailable } = getAuth();
   if (!isSupabaseAvailable()) return null;
   const supabase = getSupabase();

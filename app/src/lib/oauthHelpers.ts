@@ -22,6 +22,7 @@ export async function signInWithProvider(
   const WebBrowser = require('expo-web-browser');
 
   const supabase = getSupabase();
+  if (!supabase) return { error: 'Auth not available in this environment' };
   const redirectTo = AuthSession.makeRedirectUri({ scheme: 'scripture' });
 
   const { data, error } = await supabase.auth.signInWithOAuth({
