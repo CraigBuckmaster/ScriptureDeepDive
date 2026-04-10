@@ -8,6 +8,8 @@
 
 import * as FileSystem from 'expo-file-system/legacy';
 import * as SQLite from 'expo-sqlite';
+import * as Crypto from 'expo-crypto';
+import { inflate } from 'pako';
 import { logger } from '../utils/logger';
 
 // ── Constants ────────────────────────────────────────────────
@@ -15,6 +17,10 @@ import { logger } from '../utils/logger';
 const TAG = 'ContentUpdater';
 const MANIFEST_URL = 'https://contentcompanionstudy.com/db/manifest.json';
 const CHECK_INTERVAL_MS = 60 * 60 * 1000; // 1 hour
+
+const SQLITE_DIR = `${FileSystem.documentDirectory}SQLite/`;
+const DB_PATH = `${SQLITE_DIR}scripture.db`;
+const BACKUP_PATH = `${SQLITE_DIR}scripture_backup.db`;
 
 // ── Types ────────────────────────────────────────────────────
 
@@ -147,21 +153,200 @@ class ContentUpdaterService {
   }
 
   /**
-   * Apply a delta SQL patch. Stub — implemented in card #1182.
+   * Apply a gzipped delta SQL patch.
+   * Downloads the .sql.gz, verifies checksum, decompresses, executes
+   * inside a transaction, and validates DB integrity afterward.
    */
-  async applyDelta(_delta: ManifestDelta): Promise<UpdateResult> {
-    // TODO: implement in card #1182
-    logger.warn(TAG, 'applyDelta is a stub — falling back to full download');
-    return { status: 'failed', error: 'Delta application not yet implemented' };
+  async applyDelta(delta: ManifestDelta): Promise<UpdateResult> {
+    const tempPath = `${SQLITE_DIR}delta_temp.sql.gz`;
+    try {
+      // Download gzipped delta
+      const download = await FileSystem.downloadAsync(delta.url, tempPath);
+      if (download.status !== 200) {
+        throw new Error(`Delta download failed: HTTP ${download.status}`);
+      }
+
+      // Verify checksum of the compressed file
+      await this.verifyChecksum(tempPath, delta.sha256);
+
+      // Read and decompress
+      const compressed = await FileSystem.readAsStringAsync(tempPath, {
+        encoding: FileSystem.EncodingType.Base64,
+      });
+      const bytes = Uint8Array.from(atob(compressed), (c) => c.charCodeAt(0));
+      const sql = new TextDecoder().decode(inflate(bytes));
+
+      // Backup current DB before modifying
+      await this.backupCurrentDb();
+
+      // Apply the SQL in a transaction
+      let updateDb: SQLite.SQLiteDatabase | null = null;
+      try {
+        updateDb = await SQLite.openDatabaseAsync('scripture.db');
+        await updateDb.execAsync('BEGIN TRANSACTION');
+        await updateDb.execAsync(sql);
+
+        // Update version in db_meta
+        await updateDb.runAsync(
+          "INSERT OR REPLACE INTO db_meta (key, value) VALUES ('version', ?)",
+          delta.to_version,
+        );
+        await updateDb.execAsync('COMMIT');
+
+        // Verify integrity
+        const check = await updateDb.getFirstAsync<{ integrity_check: string }>(
+          'PRAGMA integrity_check',
+        );
+        if (check?.integrity_check !== 'ok') {
+          throw new Error(`Integrity check failed: ${check?.integrity_check}`);
+        }
+      } catch (err) {
+        // Rollback if still in transaction, then restore backup
+        if (updateDb) {
+          try {
+            await updateDb.execAsync('ROLLBACK');
+          } catch {
+            // Transaction may already be rolled back
+          }
+          await updateDb.closeAsync();
+        }
+        await this.restoreFromBackup();
+        throw err;
+      } finally {
+        if (updateDb) {
+          await updateDb.closeAsync();
+        }
+      }
+
+      // Success — remove backup and temp file
+      await FileSystem.deleteAsync(BACKUP_PATH, { idempotent: true });
+      await FileSystem.deleteAsync(tempPath, { idempotent: true });
+
+      logger.info(TAG, `Delta applied: ${delta.from_version} → ${delta.to_version}`);
+      return {
+        status: 'updated',
+        fromVersion: delta.from_version,
+        toVersion: delta.to_version,
+        updateType: 'delta',
+        bytesDownloaded: delta.size_bytes,
+      };
+    } catch (err) {
+      await FileSystem.deleteAsync(tempPath, { idempotent: true });
+      const message = err instanceof Error ? err.message : String(err);
+      logger.error(TAG, 'Delta application failed', err);
+      return { status: 'failed', error: message };
+    }
   }
 
   /**
-   * Download and replace the full database. Stub — implemented in card #1182.
+   * Download a complete replacement database from R2.
+   * Downloads to a temp file, verifies checksum, then swaps in place.
    */
-  async downloadFullDb(_manifest: Manifest): Promise<UpdateResult> {
-    // TODO: implement in card #1182
-    logger.warn(TAG, 'downloadFullDb is a stub — not yet implemented');
-    return { status: 'failed', error: 'Full DB download not yet implemented' };
+  async downloadFullDb(manifest: Manifest): Promise<UpdateResult> {
+    const tempPath = `${SQLITE_DIR}scripture_download.db`;
+    try {
+      const fromVersion = await this.getInstalledVersion();
+
+      // Download the full DB
+      const download = await FileSystem.downloadAsync(manifest.full_db_url, tempPath);
+      if (download.status !== 200) {
+        throw new Error(`Full DB download failed: HTTP ${download.status}`);
+      }
+
+      // Verify checksum
+      await this.verifyChecksum(tempPath, manifest.full_db_sha256);
+
+      // Backup current DB, then swap
+      await this.backupCurrentDb();
+
+      await FileSystem.deleteAsync(DB_PATH, { idempotent: true });
+      await FileSystem.moveAsync({ from: tempPath, to: DB_PATH });
+
+      // Verify the new DB can be opened and has the expected version
+      let verifyDb: SQLite.SQLiteDatabase | null = null;
+      try {
+        verifyDb = await SQLite.openDatabaseAsync('scripture.db');
+        const row = await verifyDb.getFirstAsync<{ value: string }>(
+          "SELECT value FROM db_meta WHERE key = 'version'",
+        );
+        if (row?.value !== manifest.current_version) {
+          throw new Error(
+            `Version mismatch after download: expected ${manifest.current_version}, got ${row?.value}`,
+          );
+        }
+      } catch (err) {
+        if (verifyDb) await verifyDb.closeAsync();
+        await this.restoreFromBackup();
+        throw err;
+      } finally {
+        if (verifyDb) await verifyDb.closeAsync();
+      }
+
+      // Success — remove backup
+      await FileSystem.deleteAsync(BACKUP_PATH, { idempotent: true });
+
+      logger.info(TAG, `Full DB downloaded: v${manifest.current_version}`);
+      return {
+        status: 'updated',
+        fromVersion: fromVersion ?? undefined,
+        toVersion: manifest.current_version,
+        updateType: 'full',
+        bytesDownloaded: manifest.full_db_size_bytes,
+      };
+    } catch (err) {
+      await FileSystem.deleteAsync(tempPath, { idempotent: true });
+      const message = err instanceof Error ? err.message : String(err);
+      logger.error(TAG, 'Full DB download failed', err);
+      return { status: 'failed', error: message };
+    }
+  }
+
+  // ── Helpers ──────────────────────────────────────────────
+
+  /**
+   * Copy the current scripture.db to a backup location.
+   */
+  private async backupCurrentDb(): Promise<void> {
+    const info = await FileSystem.getInfoAsync(DB_PATH);
+    if (info.exists) {
+      await FileSystem.copyAsync({ from: DB_PATH, to: BACKUP_PATH });
+      logger.info(TAG, 'Database backed up');
+    }
+  }
+
+  /**
+   * Restore scripture.db from the backup copy after a failed update.
+   */
+  private async restoreFromBackup(): Promise<void> {
+    const info = await FileSystem.getInfoAsync(BACKUP_PATH);
+    if (info.exists) {
+      await FileSystem.deleteAsync(DB_PATH, { idempotent: true });
+      await FileSystem.moveAsync({ from: BACKUP_PATH, to: DB_PATH });
+      logger.warn(TAG, 'Database restored from backup');
+    }
+  }
+
+  /**
+   * Validate that a downloaded file matches the expected SHA-256 hash.
+   */
+  private async verifyChecksum(filePath: string, expectedSha256: string): Promise<void> {
+    const content = await FileSystem.readAsStringAsync(filePath, {
+      encoding: FileSystem.EncodingType.Base64,
+    });
+    const hash = await Crypto.digestStringAsync(
+      Crypto.CryptoDigestAlgorithm.SHA256,
+      content,
+      { encoding: Crypto.CryptoEncoding.BASE64 },
+    );
+    // Convert base64 hash to hex for comparison with manifest
+    const hashHex = Array.from(atob(hash), (c) =>
+      c.charCodeAt(0).toString(16).padStart(2, '0'),
+    ).join('');
+    if (hashHex !== expectedSha256) {
+      throw new Error(
+        `Checksum mismatch: expected ${expectedSha256.slice(0, 16)}..., got ${hashHex.slice(0, 16)}...`,
+      );
+    }
   }
 }
 
