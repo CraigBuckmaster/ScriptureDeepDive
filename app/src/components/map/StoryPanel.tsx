@@ -9,7 +9,7 @@ import { X } from 'lucide-react-native';
 import { BadgeChip } from '../BadgeChip';
 import { useTheme, spacing, radii, eras, eraNames, fontFamily, MIN_TOUCH_TARGET } from '../../theme';
 import type { MapStory, Place } from '../../types';
-import { parseJSON } from '../../utils/parseJSON';
+import { safeParse } from '../../utils/logger';
 
 interface Props {
   story: MapStory;
@@ -26,7 +26,7 @@ export function StoryPanel({ story, places, showModern, onPlaceTap, onChapterPre
   const eraLabel = eraNames[story.era] ?? story.era;
 
   const storyPlaces = useMemo(() => {
-    const ids = parseJSON<string[]>(story.places_json, []);
+    const ids = safeParse<string[]>(story.places_json, []);
     return ids.map((id) => places.find((p) => p.id === id)).filter(Boolean) as Place[];
   }, [story.places_json, places]);
 

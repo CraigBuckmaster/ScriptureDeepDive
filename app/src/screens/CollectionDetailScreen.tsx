@@ -28,7 +28,7 @@ import {
 } from '../db/user';
 import { displayRef, parseVerseRef } from '../utils/verseRef';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
-import { parseJSON } from '../utils/parseJSON';
+import { safeParse } from '../utils/logger';
 import type { StudyCollection, UserNote } from '../types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
@@ -110,7 +110,7 @@ function CollectionDetailScreen() {
     }
   };
 
-  const parseTags = (json: string): string[] => parseJSON<string[]>(json, []);
+  const parseTags = (json: string): string[] => safeParse<string[]>(json, []);
 
   if (loading) return <View style={[styles.container, { backgroundColor: base.bg, justifyContent: 'center', alignItems: 'center' }]}><ActivityIndicator color={base.gold} /></View>;
 
@@ -148,7 +148,7 @@ function CollectionDetailScreen() {
             <ShareIcon size={18} color={base.gold} />
           </TouchableOpacity>
           <TouchableOpacity onPress={handleDelete} style={styles.actionButton}>
-            <Trash2 size={18} color="#e05a6a" />
+            <Trash2 size={18} color={base.danger} />
           </TouchableOpacity>
         </View>
       </View>

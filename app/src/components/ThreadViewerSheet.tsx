@@ -8,8 +8,8 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Modal, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getCrossRefThread } from '../db/content';
-import { parseJSON } from '../utils/parseJSON';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { safeParse } from '../utils/logger';
+import { useTheme, spacing, radii, fontFamily, panels } from '../theme';
 import type { CrossRefThread } from '../types';
 
 interface CrossRefStep {
@@ -36,7 +36,7 @@ export function ThreadViewerSheet({ visible, onClose, threadId, currentBookId, c
     getCrossRefThread(threadId).then((t) => {
       setThread(t);
       if (t?.steps_json) {
-        setSteps(parseJSON<CrossRefStep[]>(t.steps_json, []));
+        setSteps(safeParse<CrossRefStep[]>(t.steps_json, []));
       }
     });
   }, [threadId, visible]);
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     marginBottom: spacing.md,
   },
   theme: {
-    color: '#9090e0',
+    color: panels.thread.accent,
     fontFamily: fontFamily.displayMedium,
     fontSize: 16,
     marginBottom: spacing.md,
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   stepRef: {
-    color: '#9090e0',
+    color: panels.thread.accent,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 13,
   },
