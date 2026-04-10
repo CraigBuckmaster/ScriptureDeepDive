@@ -36,7 +36,7 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
 
 ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = ROOT / 'scripture.db'
-VERSION_FILE = ROOT / '_tools' / 'db_version.json'
+DB_MANIFEST_PATH = ROOT / 'app' / 'assets' / 'db-manifest.json'
 ENV_FILE = ROOT / '.env'
 
 
@@ -72,11 +72,11 @@ def sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 
-def get_version() -> str:
-    """Read current DB version from db_version.json."""
-    with open(VERSION_FILE) as f:
+def get_content_hash() -> str:
+    """Read current content hash from db-manifest.json."""
+    with open(DB_MANIFEST_PATH) as f:
         data = json.load(f)
-    return data['version']
+    return data['content_hash']
 
 
 def get_s3_client():
@@ -126,11 +126,16 @@ def main():
         print("   Run build_sqlite.py first")
         sys.exit(1)
     
-    version = get_version()
+    if not DB_MANIFEST_PATH.exists():
+        print(f"❌ Manifest not found: {DB_MANIFEST_PATH}")
+        print("   Run build_sqlite.py first")
+        sys.exit(1)
+    
+    content_hash = get_content_hash()
     bucket = get_env('R2_BUCKET_NAME')
     public_url = get_env('R2_PUBLIC_URL').rstrip('/')
     
-    print(f"📦 Version: {version}")
+    print(f"📦 Version: {content_hash}")
     print(f"📁 Database: {DB_PATH}")
     print(f"   Size: {DB_PATH.stat().st_size / 1024 / 1024:.1f} MB")
     print(f"🪣 Bucket: {bucket}")
@@ -146,7 +151,7 @@ def main():
     s3 = get_s3_client()
     
     # Upload database
-    db_key = f"db/scripture-{version}.db"
+    db_key = f"db/scripture-{content_hash}.db"
     print(f"\n📤 Uploading {db_key}...")
     
     s3.upload_file(
@@ -166,8 +171,8 @@ def main():
     
     # Build manifest
     manifest = {
-        "current_version": version,
-        "min_supported_version": version,  # Will be updated when we have deltas
+        "current_version": content_hash,
+        "min_supported_version": content_hash,  # Will be updated when we have deltas
         "full_db_url": f"{public_url}/{db_key}",
         "full_db_sha256": db_sha256,
         "full_db_size_bytes": DB_PATH.stat().st_size,
@@ -200,7 +205,7 @@ def main():
     print("=" * 60)
     print(f"   Manifest: {public_url}/{manifest_key}")
     print(f"   Database: {public_url}/{db_key}")
-    print(f"   Version:  {version}")
+    print(f"   Version:  {content_hash}")
     print(f"   Deltas:   {len(existing_deltas)}")
     print()
 
