@@ -106,6 +106,7 @@ export function ContinueReadingHero({ mostRecent, onPress }: Props) {
             source={{ uri: currentImage.url }}
             style={styles.image}
             contentFit="cover"
+            cachePolicy="disk"
             transition={500}
             onError={() => setFailedUrls((prev) => new Set(prev).add(currentImage.url))}
             recyclingKey={currentImage.url}
