@@ -12,7 +12,7 @@
 function getAuth() {
   const { getSupabase, isSupabaseAvailable } = require('../lib/supabase');
   return { getSupabase, isSupabaseAvailable } as {
-    getSupabase: () => Record<string, unknown> | null;
+    getSupabase: () => import('../lib/supabase').SupabaseClient | null;
     isSupabaseAvailable: () => boolean;
   };
 }

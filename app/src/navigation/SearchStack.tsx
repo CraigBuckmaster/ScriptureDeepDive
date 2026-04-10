@@ -10,7 +10,7 @@ export function SearchStack() {
   const { base } = useTheme();
 
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: base.bg }, lazy: true }}>
+    <Stack.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: base.bg } }}>
       <Stack.Screen name="SearchMain" component={SearchScreen} />
     </Stack.Navigator>
   );

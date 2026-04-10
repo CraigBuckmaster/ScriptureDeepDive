@@ -42,7 +42,7 @@ export function MoreStack() {
 
   return (
     <Suspense fallback={<SuspenseFallback />}>
-      <Stack.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: base.bg }, lazy: true }}>
+      <Stack.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: base.bg } }}>
         <Stack.Screen name="MoreMenu" component={MoreMenuScreen} />
         <Stack.Screen name="Settings" component={SettingsScreen} />
         <Stack.Screen name="Bookmarks" component={BookmarkListScreen} />

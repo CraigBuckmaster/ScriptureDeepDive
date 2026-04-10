@@ -20,7 +20,8 @@ const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY ?? '';
 // ───────────────────────────────────────────────────────────────
 
 // TODO(phase-14): Replace with actual SupabaseClient from @supabase/supabase-js
-export type SupabaseClient = Record<string, unknown>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export interface SupabaseClient { auth: any; from: any; rpc: any; functions: any; [key: string]: any; }
 
 let _client: SupabaseClient | null = null;
 

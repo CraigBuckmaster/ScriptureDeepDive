@@ -39,7 +39,7 @@ export function HomeStack() {
 
   return (
     <Suspense fallback={<SuspenseFallback />}>
-      <Stack.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: base.bg }, lazy: true }}>
+      <Stack.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: base.bg } }}>
         <Stack.Screen name="HomeMain" component={HomeScreen} />
         <Stack.Screen name="Chapter" component={ChapterScreen} />
         <Stack.Screen name="ChapterList" component={ChapterListScreen} />

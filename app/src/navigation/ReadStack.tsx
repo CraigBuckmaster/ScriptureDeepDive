@@ -42,7 +42,6 @@ export function ReadStack() {
           headerShown: false,
           cardStyle: { backgroundColor: base.bg },
           gestureEnabled: true,
-          lazy: true,
         }}
       >
         <Stack.Screen name="BookList" component={BookListScreen} />

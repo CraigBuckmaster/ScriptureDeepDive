@@ -75,7 +75,6 @@ export function ExploreStack() {
           headerShown: false,
           cardStyle: { backgroundColor: base.bg },
           gestureEnabled: true,
-          lazy: true,
         }}
       >
         <Stack.Screen name="ExploreMenu" component={ExploreMenuScreen} />
