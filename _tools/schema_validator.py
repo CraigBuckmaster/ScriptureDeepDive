@@ -445,25 +445,25 @@ def main():
                           cid in valid_chain_ids,
                           f"'{cid}' not in prophecy-chains.json")
 
-        # Validate chapter_map
+        # Validate chapter_map (nested: book_id -> {chapter_num: act_id})
         chapter_map = ra_data.get('chapter_map', {})
+        total_mappings = 0
         if chapter_map:
             check("redemptive-arc chapter_map is object", isinstance(chapter_map, dict))
             act_ids = {a.get('id') for a in acts}
             all_book_ids_ra = {b['id'] for b in books}
-            for chap_key, act_id in chapter_map.items():
-                check(f"chapter_map {chap_key} references valid act",
-                      act_id in act_ids,
-                      f"'{act_id}' not in acts")
-                # chap_key should be book_chapter format
-                parts = chap_key.rsplit('_', 1)
-                if len(parts) == 2:
-                    book_part = parts[0]
-                    check(f"chapter_map {chap_key} book valid",
-                          book_part in all_book_ids_ra,
-                          f"'{book_part}' not in books.json")
+            for book_id, chapters in chapter_map.items():
+                check(f"chapter_map {book_id} is valid book",
+                      book_id in all_book_ids_ra,
+                      f"'{book_id}' not in books.json")
+                if isinstance(chapters, dict):
+                    for ch_num, act_id in chapters.items():
+                        total_mappings += 1
+                        check(f"chapter_map {book_id}:{ch_num} references valid act",
+                              act_id in act_ids,
+                              f"'{act_id}' not in acts")
 
-        print(f"  redemptive arc: {len(acts)} acts, {len(chapter_map)} chapter mappings")
+        print(f"  redemptive arc: {len(acts)} acts, {total_mappings} chapter mappings")
 
     # Prophecy chains
     pc_path = META / 'prophecy-chains.json'
