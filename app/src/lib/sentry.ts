@@ -20,7 +20,9 @@ let _sentry: {
 
 try {
   if (DSN) {
-    _sentry = require('@sentry/react-native');
+    // Indirect require so Metro doesn't resolve the module at bundle time
+    const pkg = '@sentry/react-native';
+    _sentry = require(pkg);
     _sentry!.init({
       dsn: DSN,
       enableAutoSessionTracking: true,
