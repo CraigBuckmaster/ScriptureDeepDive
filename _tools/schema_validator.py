@@ -83,11 +83,23 @@ def main():
     print("=" * 60)
 
     # ── Load reference data ──
-    books = json.loads((META / 'books.json').read_text(encoding='utf-8')) if (META / 'books.json').exists() else []
+    books_raw = json.loads((META / 'books.json').read_text(encoding='utf-8')) if (META / 'books.json').exists() else []
+    books = books_raw if isinstance(books_raw, list) else books_raw.get('books', []) if isinstance(books_raw, dict) else []
     live_books = {b['id']: b for b in books if b.get('is_live')}
-    people_data = json.loads((META / 'people.json').read_text(encoding='utf-8')) if (META / 'people.json').exists() else {}
-    people_ids = {p['id'] for p in people_data.get('people', [])}
-    scholars = json.loads((META / 'scholars.json').read_text(encoding='utf-8')) if (META / 'scholars.json').exists() else []
+
+    people_raw = json.loads((META / 'people.json').read_text(encoding='utf-8')) if (META / 'people.json').exists() else {}
+    # people.json may be {people: [...]} (object) or [...] (array)
+    if isinstance(people_raw, list):
+        people_list_ref = people_raw
+    elif isinstance(people_raw, dict):
+        people_list_ref = people_raw.get('people', [])
+    else:
+        people_list_ref = []
+    people_data = {'people': people_list_ref}  # normalize for downstream code
+    people_ids = {p['id'] for p in people_list_ref}
+
+    scholars_raw = json.loads((META / 'scholars.json').read_text(encoding='utf-8')) if (META / 'scholars.json').exists() else []
+    scholars = scholars_raw if isinstance(scholars_raw, list) else list(scholars_raw.values()) if isinstance(scholars_raw, dict) else []
     scholar_ids = {s['id'] for s in scholars}
 
     known_chapter_types = {
