@@ -158,6 +158,12 @@ CREATE TABLE chapter_panels (
   content_json TEXT NOT NULL
 );
 
+CREATE INDEX idx_sections_chapter ON sections(chapter_id);
+CREATE INDEX idx_section_panels_section ON section_panels(section_id);
+CREATE INDEX idx_section_panels_type ON section_panels(section_id, panel_type);
+CREATE INDEX idx_chapter_panels_chapter ON chapter_panels(chapter_id);
+CREATE INDEX idx_chapter_panels_type ON chapter_panels(chapter_id, panel_type);
+
 CREATE TABLE verses (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   book_id TEXT NOT NULL REFERENCES books(id),
@@ -321,6 +327,7 @@ CREATE TABLE vhl_groups (
   words_json TEXT NOT NULL,
   btn_types_json TEXT NOT NULL
 );
+CREATE INDEX idx_vhl_groups_chapter ON vhl_groups(chapter_id);
 
 CREATE TABLE genealogy_config (
   key TEXT PRIMARY KEY,
