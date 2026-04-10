@@ -7,9 +7,9 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 const LEVEL_COLORS: Record<0 | 1 | 2, string> = {
-  0: '#888888',
-  1: '#bfa050',
-  2: '#50b060',
+  0: '#888888', // data-color: intentional
+  1: '#bfa050', // data-color: intentional
+  2: '#50b060', // data-color: intentional
 };
 
 const LEVEL_LABELS: Record<0 | 1 | 2, string> = {

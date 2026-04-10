@@ -21,12 +21,12 @@ import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { StudyCollection } from '../types';
 
 const PRESET_COLORS = [
-  '#bfa050', // gold
-  '#70b8e8', // blue
-  '#70d098', // green
-  '#e890b8', // pink
-  '#c090e0', // purple
-  '#e8a070', // orange
+  '#bfa050', // data-color: intentional (gold)
+  '#70b8e8', // data-color: intentional (blue)
+  '#70d098', // data-color: intentional (green)
+  '#e890b8', // data-color: intentional (pink)
+  '#c090e0', // data-color: intentional (purple)
+  '#e8a070', // data-color: intentional (orange)
 ];
 
 interface Props {
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
   },
   backdrop: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: 'rgba(0,0,0,0.5)', // overlay-color: intentional
   },
   sheet: {
     borderTopLeftRadius: radii.lg,

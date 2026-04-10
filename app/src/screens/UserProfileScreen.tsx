@@ -39,9 +39,9 @@ import { logger } from '../utils/logger';
 /* ── Trust level helpers ──────────────────────────────────────────── */
 
 const TRUST_LEVELS: Record<number, { label: string; color: string }> = {
-  0: { label: 'New Member', color: '#888' },
-  1: { label: 'Contributor', color: '#bfa050' },
-  2: { label: 'Trusted', color: '#50b060' },
+  0: { label: 'New Member', color: '#888' }, // data-color: intentional
+  1: { label: 'Contributor', color: '#bfa050' }, // data-color: intentional
+  2: { label: 'Trusted', color: '#50b060' }, // data-color: intentional
 };
 
 function getTrustLevel(_user: { app_metadata?: Record<string, any> }): number {
@@ -256,11 +256,11 @@ function getInitials(name: string): string {
 /* ── Sub-components ───────────────────────────────────────────────── */
 
 const STATUS_COLORS: Record<SubmissionStatus, string> = {
-  draft: '#888',
-  pending: '#d4a843',
-  approved: '#50b060',
-  rejected: '#cc4444',
-  flagged: '#cc6633',
+  draft: '#888', // data-color: intentional
+  pending: '#d4a843', // data-color: intentional
+  approved: '#50b060', // data-color: intentional
+  rejected: '#cc4444', // data-color: intentional
+  flagged: '#cc6633', // data-color: intentional
 };
 
 function StatusBadge({
@@ -270,7 +270,7 @@ function StatusBadge({
   status: SubmissionStatus;
   base: ReturnType<typeof useTheme>['base'];
 }) {
-  const color = STATUS_COLORS[status] ?? '#888';
+  const color = STATUS_COLORS[status] ?? '#888'; // data-color: intentional (fallback)
   return (
     <View style={[styles.statusBadge, { backgroundColor: color + '20' }]}>
       <Text style={[styles.statusText, { color }]}>

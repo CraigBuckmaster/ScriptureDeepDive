@@ -23,6 +23,7 @@ import { useDictionaryDetail } from '../hooks/useDictionary';
 import { DictionaryCrossLink } from '../components/DictionaryCrossLink';
 import { TappableRefs } from '../components/TappableRefs';
 import { splitTextWithRefs } from '../utils/refDetector';
+import { parseVerseRef } from '../utils/verseRef';
 import { CATEGORY_LABELS, type DictionaryCategory } from '../types/dictionary';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
@@ -38,11 +39,13 @@ function DictionaryDetailScreen() {
   const { entry, isLoading } = useDictionaryDetail(entryId);
 
   const handleRefPress = useCallback(
-    (_ref: string) => {
-      // TODO: Parse ref to bookId/chapterNum and navigate to Chapter screen
-      // For now, this is a placeholder — ref detection will be wired in a future pass
+    (ref: string) => {
+      const parsed = parseVerseRef(ref);
+      if (parsed) {
+        (navigation as any).navigate('Chapter', { bookId: parsed.bookId, chapterNum: parsed.ch });
+      }
     },
-    []
+    [navigation]
   );
 
   const handleRelatedPress = useCallback(

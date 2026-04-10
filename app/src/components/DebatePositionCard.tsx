@@ -75,7 +75,7 @@ function DebatePositionCard({
       {/* Expanded analysis */}
       {expanded && (
         <View style={styles.analysis}>
-          {/* Strengths */}
+          {/* Strengths — data-color: intentional (analysis colors) */}
           {position.strengths ? (
             <View style={[styles.analysisCard, { backgroundColor: '#4CAF5010' }]}>
               <Text style={[styles.analysisLabel, { color: '#4CAF50' }]}>Strengths</Text>
@@ -85,7 +85,7 @@ function DebatePositionCard({
             </View>
           ) : null}
 
-          {/* Weaknesses */}
+          {/* Weaknesses — data-color: intentional (analysis colors) */}
           {position.weaknesses ? (
             <View style={[styles.analysisCard, { backgroundColor: '#F4433610' }]}>
               <Text style={[styles.analysisLabel, { color: '#F44336' }]}>Weaknesses</Text>

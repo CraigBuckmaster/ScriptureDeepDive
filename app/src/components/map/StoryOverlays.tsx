@@ -11,7 +11,7 @@ import { Polygon, Polyline, Marker } from 'react-native-maps';
 import { toLatLng, computeBearing } from '../../utils/geoMath';
 import { eras } from '../../theme';
 import type { MapStory } from '../../types';
-import { parseJSON } from '../../utils/parseJSON';
+import { safeParse } from '../../utils/logger';
 
 interface Props {
   story: MapStory;
@@ -19,18 +19,18 @@ interface Props {
 }
 
 export const StoryOverlays = memo(function StoryOverlays({ story, zoomLevel }: Props) {
-  const eraColor = eras[story.era] ?? '#bfa050';
+  const eraColor = eras[story.era] ?? '#bfa050'; // data-color: intentional (fallback)
 
   // Parse regions
   const regions = useMemo(() => {
     if (!story.regions_json) return [];
-    return parseJSON<{ coords: number[][]; color: string; label: string }[]>(story.regions_json, []);
+    return safeParse<{ coords: number[][]; color: string; label: string }[]>(story.regions_json, []);
   }, [story.regions_json]);
 
   // Parse paths
   const paths = useMemo(() => {
     if (!story.paths_json) return [];
-    return parseJSON<{ coords: number[][]; dashed?: boolean; label?: string }[]>(story.paths_json, []);
+    return safeParse<{ coords: number[][]; dashed?: boolean; label?: string }[]>(story.paths_json, []);
   }, [story.paths_json]);
 
   const borderWidth = Math.max(1, Math.min(4, (zoomLevel - 3) * 0.4));

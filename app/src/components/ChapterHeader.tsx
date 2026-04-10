@@ -9,7 +9,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { BadgeChip } from './BadgeChip';
-import { useTheme, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily, panels, testament } from '../theme';
 import type { Chapter } from '../types';
 
 interface Props {
@@ -49,19 +49,19 @@ export function ChapterHeader({
 
           {chapter.timeline_link_text && onTimelinePress && (
             <TouchableOpacity onPress={onTimelinePress}>
-              <BadgeChip label={chapter.timeline_link_text} color="#70b8e8" />
+              <BadgeChip label={chapter.timeline_link_text} color={panels.hist.accent} />
             </TouchableOpacity>
           )}
 
           {chapter.map_story_link_text && onMapPress && (
             <TouchableOpacity onPress={onMapPress}>
-              <BadgeChip label={chapter.map_story_link_text} color="#30a848" />
+              <BadgeChip label={chapter.map_story_link_text} color={panels.poi.accent} />
             </TouchableOpacity>
           )}
 
           {storyActName && onStoryPress && (
             <TouchableOpacity onPress={onStoryPress}>
-              <BadgeChip label={storyActName} color="#c8a040" />
+              <BadgeChip label={storyActName} color={testament.ot} />
             </TouchableOpacity>
           )}
 

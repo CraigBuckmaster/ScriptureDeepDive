@@ -8,7 +8,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { View, Text, Animated, StyleSheet } from 'react-native';
-import { fontFamily } from '../theme';
+import { useTheme, fontFamily } from '../theme';
 
 export type UpdateStatus = 'downloading' | 'applying' | 'success' | 'error';
 
@@ -27,6 +27,7 @@ const STATUS_LABELS: Record<UpdateStatus, string> = {
 };
 
 function ContentUpdateBanner({ visible, progress, status, onDismiss }: Props) {
+  const { base } = useTheme();
   const translateY = useRef(new Animated.Value(-80)).current;
 
   useEffect(() => {
@@ -52,13 +53,13 @@ function ContentUpdateBanner({ visible, progress, status, onDismiss }: Props) {
       style={[styles.container, { transform: [{ translateY }] }]}
       pointerEvents={visible ? 'auto' : 'none'}
     >
-      <View style={styles.inner}>
-        <Text style={[styles.label, isError && styles.errorLabel]}>
+      <View style={[styles.inner, { backgroundColor: base.bg3 }]}>
+        <Text style={[styles.label, { color: base.text }, isError && { color: base.danger }]}>
           {STATUS_LABELS[status]}
         </Text>
         {(status === 'downloading' || status === 'applying') && (
-          <View style={styles.track}>
-            <View style={[styles.fill, { width: `${Math.min(progress, 100)}%` }]} />
+          <View style={[styles.track, { backgroundColor: base.borderLight }]}>
+            <View style={[styles.fill, { width: `${Math.min(progress, 100)}%`, backgroundColor: base.gold }]} />
           </View>
         )}
       </View>
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
     zIndex: 1000,
   },
   inner: {
-    backgroundColor: '#1a1710',
+    // backgroundColor set inline via base.bg3
     paddingHorizontal: 16,
     paddingTop: 48,
     paddingBottom: 12,
@@ -88,20 +89,17 @@ const styles = StyleSheet.create({
   label: {
     fontFamily: fontFamily.ui,
     fontSize: 13,
-    color: '#e8dcc8',
-  },
-  errorLabel: {
-    color: '#e05a6a',
+    // color set inline via base.text
   },
   track: {
     height: 4,
-    backgroundColor: '#2a2010',
+    // backgroundColor set inline via base.borderLight
     borderRadius: 2,
     overflow: 'hidden',
   },
   fill: {
     height: 4,
-    backgroundColor: '#bfa050',
+    // backgroundColor set inline via base.gold
     borderRadius: 2,
   },
 });

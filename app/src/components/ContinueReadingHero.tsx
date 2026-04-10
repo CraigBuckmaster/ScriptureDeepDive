@@ -126,7 +126,7 @@ export function ContinueReadingHero({ mostRecent, onPress }: Props) {
                 <View
                   key={i}
                   style={[styles.dot, {
-                    backgroundColor: i === activeIndex ? '#fff' : 'rgba(255,255,255,0.4)',
+                    backgroundColor: i === activeIndex ? '#fff' : 'rgba(255,255,255,0.4)', // overlay-color: intentional
                   }]}
                 />
               ))}
@@ -190,10 +190,10 @@ const styles = StyleSheet.create({
     bottom: 6,
     left: 10,
     right: 30,
-    color: '#fff',
+    color: '#fff', // overlay-color: intentional (caption on image)
     fontFamily: fontFamily.ui,
     fontSize: 11,
-    textShadowColor: 'rgba(0,0,0,0.8)',
+    textShadowColor: 'rgba(0,0,0,0.8)', // overlay-color: intentional
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 3,
   },

@@ -225,6 +225,7 @@ function ZoomViewer({ image, visible, onClose }: ZoomViewerProps) {
       onRequestClose={handleClose}
     >
       <GestureHandlerRootView style={styles.modalRoot}>
+        {/* overlay-color: intentional — fullscreen image viewer backdrop */}
         <View style={[styles.modalBg, { backgroundColor: 'rgba(0,0,0,0.95)' }]}>
           {/* Close button */}
           <TouchableOpacity
@@ -415,12 +416,12 @@ const styles = StyleSheet.create({
     width: 36,
     height: 36,
     borderRadius: 18,
-    backgroundColor: 'rgba(255,255,255,0.15)',
+    backgroundColor: 'rgba(255,255,255,0.15)', // overlay-color: intentional
     justifyContent: 'center',
     alignItems: 'center',
   },
   closeText: {
-    color: '#fff',
+    color: '#fff', // overlay-color: intentional (white text on dark modal)
     fontSize: 18,
     fontWeight: '600',
   },
@@ -444,13 +445,13 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.body,
     fontSize: 13,
     lineHeight: 19,
-    color: 'rgba(255,255,255,0.85)',
+    color: 'rgba(255,255,255,0.85)', // overlay-color: intentional
     textAlign: 'center',
   },
   creditOverlayText: {
     fontFamily: fontFamily.ui,
     fontSize: 10,
-    color: 'rgba(255,255,255,0.5)',
+    color: 'rgba(255,255,255,0.5)', // overlay-color: intentional
     textAlign: 'center',
     marginTop: 4,
   },

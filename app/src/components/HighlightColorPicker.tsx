@@ -9,12 +9,12 @@ import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { selectionFeedback } from '../utils/haptics';
 
 export const HIGHLIGHT_COLORS = [
-  { name: 'gold', hex: '#bfa050', label: 'Key verses' },
-  { name: 'blue', hex: '#5b8fb9', label: 'Commands' },
-  { name: 'green', hex: '#5fa87a', label: 'Prayers' },
-  { name: 'purple', hex: '#8b7cb8', label: 'Study later' },
-  { name: 'coral', hex: '#c47a6a', label: 'Prophecy' },
-  { name: 'teal', hex: '#5ba8a0', label: 'Themes' },
+  { name: 'gold', hex: '#bfa050', label: 'Key verses' }, // data-color: intentional
+  { name: 'blue', hex: '#5b8fb9', label: 'Commands' }, // data-color: intentional
+  { name: 'green', hex: '#5fa87a', label: 'Prayers' }, // data-color: intentional
+  { name: 'purple', hex: '#8b7cb8', label: 'Study later' }, // data-color: intentional
+  { name: 'coral', hex: '#c47a6a', label: 'Prophecy' }, // data-color: intentional
+  { name: 'teal', hex: '#5ba8a0', label: 'Themes' }, // data-color: intentional
 ];
 
 interface Props {
@@ -75,7 +75,7 @@ export function HighlightColorPicker({ visible, currentColor, onSelect, onClose 
 const styles = StyleSheet.create({
   backdrop: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.4)',
+    backgroundColor: 'rgba(0,0,0,0.4)', // overlay-color: intentional
     justifyContent: 'center',
     alignItems: 'center',
   },

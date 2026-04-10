@@ -12,7 +12,7 @@
 function getAuth() {
   const { getSupabase, isSupabaseAvailable } = require('../lib/supabase');
   return { getSupabase, isSupabaseAvailable } as {
-    getSupabase: () => any | null;
+    getSupabase: () => import('../lib/supabase').SupabaseClient | null;
     isSupabaseAvailable: () => boolean;
   };
 }
@@ -43,7 +43,7 @@ export async function signUpWithEmail(
   const supabase = getSupabase();
   if (!supabase) return { error: NOT_AVAILABLE_ERROR };
 
-  const options: any = {};
+  const options: Record<string, unknown> = {};
   if (displayName) {
     options.data = { full_name: displayName };
   }
@@ -77,7 +77,7 @@ export async function signOut(): Promise<{ error?: string }> {
   return {};
 }
 
-export function getCurrentUser(): any | null {
+export function getCurrentUser(): { id: string; [key: string]: unknown } | null {
   const { getSupabase, isSupabaseAvailable } = getAuth();
   if (!isSupabaseAvailable()) return null;
   const supabase = getSupabase();
@@ -85,10 +85,13 @@ export function getCurrentUser(): any | null {
 
   // getSession() is async but getUser() returns cached data synchronously
   // via supabase-js internals. We return the user from the current session.
-  return supabase.auth.getUser?.()?.then?.((r: any) => r.data?.user ?? null) ?? null;
+  return supabase.auth.getUser?.()?.then?.((r: unknown) => {
+    const result = r as { data?: { user?: unknown } };
+    return result?.data?.user ?? null;
+  }) ?? null;
 }
 
-export async function getCurrentSession(): Promise<any | null> {
+export async function getCurrentSession(): Promise<{ id: string; [key: string]: unknown } | null> {
   const { getSupabase, isSupabaseAvailable } = getAuth();
   if (!isSupabaseAvailable()) return null;
   const supabase = getSupabase();
@@ -99,7 +102,7 @@ export async function getCurrentSession(): Promise<any | null> {
 }
 
 export function onAuthStateChange(
-  callback: (event: string, session: any) => void,
+  callback: (event: string, session: unknown) => void,
 ): { unsubscribe: () => void } | null {
   const { getSupabase, isSupabaseAvailable } = getAuth();
   if (!isSupabaseAvailable()) return null;

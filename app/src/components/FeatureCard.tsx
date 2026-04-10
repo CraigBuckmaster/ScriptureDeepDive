@@ -124,7 +124,7 @@ export function FeatureCard({
                   <View
                     key={i}
                     style={[styles.dot, {
-                      backgroundColor: i === activeIndex ? '#fff' : 'rgba(255,255,255,0.4)',
+                      backgroundColor: i === activeIndex ? '#fff' : 'rgba(255,255,255,0.4)', // overlay-color: intentional
                     }]}
                   />
                 ))}
@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
     height: 32,
     backgroundColor: 'transparent',
     // Simulated gradient via layered shadow
-    shadowColor: '#000',
+    shadowColor: '#000', // overlay-color: intentional
     shadowOffset: { width: 0, height: -8 },
     shadowOpacity: 0.5,
     shadowRadius: 8,
@@ -199,10 +199,10 @@ const styles = StyleSheet.create({
     bottom: 4,
     left: 6,
     right: 24,
-    color: '#fff',
+    color: '#fff', // overlay-color: intentional (caption on image)
     fontFamily: fontFamily.ui,
     fontSize: 11,
-    textShadowColor: 'rgba(0,0,0,0.8)',
+    textShadowColor: 'rgba(0,0,0,0.8)', // overlay-color: intentional
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 3,
   },

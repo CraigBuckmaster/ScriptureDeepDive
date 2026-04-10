@@ -15,7 +15,7 @@ import { useLexicon } from '../hooks/useLexicon';
 import { LexiconDefinition } from './LexiconDefinition';
 import { RelatedWordCard } from './RelatedWordCard';
 import { LoadingSkeleton } from './LoadingSkeleton';
-import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET, panels } from '../theme';
 import type { DefinitionJSON } from '../types/lexicon';
 
 interface ConcordanceParams {
@@ -90,7 +90,7 @@ export function LexiconSheet({
   }, [related]);
 
   const isHebrew = entry?.language === 'hebrew';
-  const accentColor = isHebrew ? '#e890b8' : '#70b8e8';
+  const accentColor = isHebrew ? panels.heb.accent : panels.hist.accent;
 
   if (!visible) return null;
 
@@ -227,7 +227,7 @@ export function LexiconSheet({
 const styles = StyleSheet.create({
   backdrop: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.6)',
+    backgroundColor: 'rgba(0,0,0,0.6)', // overlay-color: intentional
     justifyContent: 'flex-end',
   },
   sheet: {

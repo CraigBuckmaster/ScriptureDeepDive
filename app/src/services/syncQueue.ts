@@ -109,7 +109,7 @@ export async function flushQueue(): Promise<number> {
  * Execute a single sync operation against Supabase.
  */
 async function executeSyncOperation(
-  supabase: any,
+  supabase: import('../lib/supabase').SupabaseClient,
   operation: SyncOperation,
   payload: Record<string, unknown>,
 ): Promise<boolean> {

@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   ctaText: {
-    color: '#1a1a1a',
+    color: '#1a1a1a', // data-color: intentional (dark text on gold CTA button)
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 15,
   },

@@ -330,17 +330,18 @@ class ContentUpdaterService {
    * Validate that a downloaded file matches the expected SHA-256 hash.
    */
   private async verifyChecksum(filePath: string, expectedSha256: string): Promise<void> {
-    const content = await FileSystem.readAsStringAsync(filePath, {
+    const base64 = await FileSystem.readAsStringAsync(filePath, {
       encoding: FileSystem.EncodingType.Base64,
     });
-    const hash = await Crypto.digestStringAsync(
-      Crypto.CryptoDigestAlgorithm.SHA256,
-      content,
-      { encoding: Crypto.CryptoEncoding.BASE64 },
-    );
-    // Convert base64 hash to hex for comparison with manifest
-    const hashHex = Array.from(atob(hash), (c) =>
-      c.charCodeAt(0).toString(16).padStart(2, '0'),
+    // Decode base64 to raw bytes, then SHA-256 the binary content
+    const binaryStr = atob(base64);
+    const bytes = new Uint8Array(binaryStr.length);
+    for (let i = 0; i < binaryStr.length; i++) {
+      bytes[i] = binaryStr.charCodeAt(i);
+    }
+    const hashBuffer = await Crypto.digest(Crypto.CryptoDigestAlgorithm.SHA256, bytes);
+    const hashHex = Array.from(new Uint8Array(hashBuffer), (b) =>
+      b.toString(16).padStart(2, '0'),
     ).join('');
     if (hashHex !== expectedSha256) {
       throw new Error(

@@ -9,7 +9,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, panels } from '../theme';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { UpgradePrompt } from '../components/UpgradePrompt';
@@ -52,7 +52,7 @@ function GrammarArticleScreen() {
     catch { return []; }
   }, [article?.related_articles_json]);
 
-  const accentColor = article?.language === 'hebrew' ? '#e890b8' : '#70b8e8';
+  const accentColor = article?.language === 'hebrew' ? panels.heb.accent : panels.hist.accent;
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>

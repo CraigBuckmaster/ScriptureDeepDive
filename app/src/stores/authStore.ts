@@ -14,12 +14,13 @@
 import { create } from 'zustand';
 import { upsertAuthProfile, clearAuthProfile } from '../db/user';
 import { logger } from '../utils/logger';
+import { Sentry, DSN } from '../lib/sentry';
 
 interface AuthUser {
   id: string;
   email?: string;
-  user_metadata?: Record<string, any>;
-  app_metadata?: Record<string, any>;
+  user_metadata?: Record<string, string>;
+  app_metadata?: Record<string, string>;
 }
 
 interface AuthState {
@@ -68,9 +69,10 @@ export const useAuthStore = create<AuthState>((set) => ({
       }
 
       authSub?.unsubscribe();
-      const { data } = supabase.auth.onAuthStateChange((_event: string, newSession: any) => {
-        set({ user: newSession?.user ?? null });
-        if (newSession?.user) syncProfile(newSession.user);
+      const { data } = supabase.auth.onAuthStateChange((_event: string, newSession: unknown) => {
+        const session = newSession as { user?: AuthUser } | null;
+        set({ user: session?.user ?? null });
+        if (session?.user) syncProfile(session.user);
       });
       authSub = data.subscription;
     } catch (err) {
@@ -136,6 +138,7 @@ export const useAuthStore = create<AuthState>((set) => ({
       const supabase = getAuth().getSupabase();
       if (supabase) await supabase.auth.signOut();
       await clearAuthProfile();
+      if (DSN) Sentry.setUser(null);
       set({ user: null });
     } catch (err) {
       logger.error('authStore', 'Sign out failed', err);
@@ -158,8 +161,9 @@ export const useAuthStore = create<AuthState>((set) => ({
   },
 }));
 
-/** Sync Supabase user info to local SQLite profile. */
+/** Sync Supabase user info to local SQLite profile + Sentry context. */
 async function syncProfile(user: AuthUser) {
+  if (DSN) Sentry.setUser({ id: user.id });
   try {
     await upsertAuthProfile(
       user.id,

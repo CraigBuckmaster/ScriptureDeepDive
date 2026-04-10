@@ -82,7 +82,7 @@ export const InterpretationCard = React.memo(function InterpretationCard({
       ) : null}
 
       {/* Source line */}
-      <View style={styles.sourceRow}>
+      <View style={[styles.sourceRow, { borderTopColor: base.border + '40' }]}>
         <Text style={[styles.source, { color: base.textMuted }]}>
           {interpretation.source_title}
           {interpretation.source_date ? ` (${interpretation.source_date})` : ''}
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   },
   sourceRow: {
     borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: '#3a2e1840',
+    // borderTopColor set inline via base.border + '40'
     paddingTop: spacing.xs,
   },
   source: {

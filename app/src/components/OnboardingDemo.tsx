@@ -13,7 +13,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Animated, StyleSheet } from 'react-native';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, panels, scholars } from '../theme';
 import { logEvent } from '../services/analytics';
 
 // ── Static demo content (from Genesis 1, section 1) ────────────
@@ -38,14 +38,14 @@ const DEMO_PANELS: DemoPanel[] = [
     key: 'heb',
     label: 'Hebrew',
     title: 'Hebrew Word Study',
-    color: '#e890b8',
+    color: panels.heb.accent,
     content: 'בְּרֵאשִׁית (bereshit) — "In the beginning." This can be read as an absolute state ("In the beginning, God created") or a construct ("When God began to create"). The ambiguity is intentional — the Hebrew opens the text to both valid readings.',
   },
   {
     key: 'hist',
     label: 'History',
     title: 'Historical Context',
-    color: '#70b8e8',
+    color: panels.hist.accent,
     content: 'Genesis 1 was composed against the backdrop of Babylonian and Egyptian creation myths. Unlike Enuma Elish, where creation emerges from divine conflict, Genesis presents a sovereign God who creates by speech alone — a pointed theological contrast.',
   },
   {
@@ -53,7 +53,7 @@ const DEMO_PANELS: DemoPanel[] = [
     label: 'Sarna',
     title: 'Nahum Sarna',
     tradition: 'Jewish Academic',
-    color: '#4ec9b0',
+    color: scholars.sarna,
     pill: true,
     content: "The Hebrew stem b-r-ʾ is used in the Bible exclusively of divine activity, never of human making. This verb choice emphasizes the effortless, unparalleled nature of God's creative act — something only God can do.",
   },

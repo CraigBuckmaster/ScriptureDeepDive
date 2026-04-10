@@ -24,6 +24,7 @@ import { usePremium } from '../hooks/usePremium';
 import { UpgradePrompt } from '../components/UpgradePrompt';
 import { DebatePositionCard } from '../components/DebatePositionCard';
 import { DebateTraditionFilter } from '../components/DebateTraditionFilter';
+import { parseVerseRef } from '../utils/verseRef';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
@@ -67,10 +68,13 @@ function DebateDetailScreen() {
   );
 
   const handleVersePress = useCallback(
-    (_ref: string) => {
-      // TODO: Parse ref to bookId/chapterNum and navigate
+    (ref: string) => {
+      const parsed = parseVerseRef(ref);
+      if (parsed) {
+        (navigation as any).navigate('Chapter', { bookId: parsed.bookId, chapterNum: parsed.ch });
+      }
     },
-    []
+    [navigation]
   );
 
   if (loading) {

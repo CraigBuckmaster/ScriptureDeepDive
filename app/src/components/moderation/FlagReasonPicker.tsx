@@ -145,6 +145,7 @@ export const FlagReasonPicker = memo(function FlagReasonPicker({
               accessibilityRole="button"
               accessibilityLabel="Submit report"
             >
+              {/* overlay-color: intentional — white text on gold submit button */}
               <Text style={[styles.actionText, { color: '#fff' }]}>
                 {submitting ? 'Submitting...' : 'Submit'}
               </Text>
@@ -160,7 +161,7 @@ const styles = StyleSheet.create({
   overlay: {
     flex: 1,
     justifyContent: 'flex-end',
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: 'rgba(0,0,0,0.5)', // overlay-color: intentional
   },
   sheet: {
     borderTopLeftRadius: 16,

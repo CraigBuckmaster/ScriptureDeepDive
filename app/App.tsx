@@ -22,6 +22,7 @@ import { RootNavigator } from './src/navigation';
 import { ErrorBoundary } from './src/components/ErrorBoundary';
 import { closeAllTranslationDbs } from './src/db/translationManager';
 import { ContentUpdateProvider } from './src/providers/ContentUpdateProvider';
+import { Sentry, DSN } from './src/lib/sentry';
 
 // Keep splash visible while we load
 SplashScreen.preventAutoHideAsync();
@@ -111,7 +112,7 @@ function AppShell() {
   );
 }
 
-export default function App() {
+function App() {
   const [fontsLoaded] = useFonts(FONT_MAP);
   const [dbReady, setDbReady] = useState(false);
 
@@ -183,6 +184,8 @@ export default function App() {
     </GestureHandlerRootView>
   );
 }
+
+export default DSN ? Sentry.wrap(App) : App;
 
 const appStyles = StyleSheet.create({
   splashContainer: {

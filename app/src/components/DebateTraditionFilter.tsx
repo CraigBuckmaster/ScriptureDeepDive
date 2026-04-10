@@ -73,7 +73,7 @@ function DebateTraditionFilter({ traditions, activeFilter, onSelect }: Props) {
             <Text
               style={[
                 styles.pillText,
-                { color: isActive ? '#fff' : color },
+                { color: isActive ? '#fff' : color }, // data-color: intentional (white text on colored pill)
               ]}
             >
               {TRADITION_LABELS[t] || t}

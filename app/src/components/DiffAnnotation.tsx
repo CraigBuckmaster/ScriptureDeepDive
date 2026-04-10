@@ -52,19 +52,19 @@ const DIFF_TYPE_LABELS: Record<string, string> = {
 };
 
 const DIFF_TYPE_COLORS: Record<string, string> = {
-  addition: '#4a8c5c',
-  omission: '#8c4a4a',
-  reordering: '#8a6e1a',
-  wording: '#8a6e1a',
-  theological_emphasis: '#8a6e1a',
+  addition: '#4a8c5c', // data-color: intentional
+  omission: '#8c4a4a', // data-color: intentional
+  reordering: '#8a6e1a', // data-color: intentional
+  wording: '#8a6e1a', // data-color: intentional
+  theological_emphasis: '#8a6e1a', // data-color: intentional
 };
 
 const DIFF_TYPE_BG: Record<string, string> = {
-  addition: '#4a8c5c22',
-  omission: '#8c4a4a22',
-  reordering: '#bfa05022',
-  wording: '#bfa05022',
-  theological_emphasis: '#bfa05022',
+  addition: '#4a8c5c22', // data-color: intentional
+  omission: '#8c4a4a22', // data-color: intentional
+  reordering: '#bfa05022', // data-color: intentional
+  wording: '#bfa05022', // data-color: intentional
+  theological_emphasis: '#bfa05022', // data-color: intentional
 };
 
 interface Props {

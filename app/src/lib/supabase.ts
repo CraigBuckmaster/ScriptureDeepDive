@@ -19,7 +19,11 @@ const SUPABASE_URL = process.env.SUPABASE_URL ?? '';
 const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY ?? '';
 // ───────────────────────────────────────────────────────────────
 
-let _client: any = null;
+// TODO(phase-14): Replace with actual SupabaseClient from @supabase/supabase-js
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export interface SupabaseClient { auth: any; from: any; rpc: any; functions: any; [key: string]: any; }
+
+let _client: SupabaseClient | null = null;
 
 /**
  * Check if Supabase is configured and native modules are available.
@@ -39,7 +43,7 @@ export function isSupabaseAvailable(): boolean {
  * Get the Supabase client. Returns null if not configured or
  * native modules are unavailable.
  */
-export function getSupabase(): any | null {
+export function getSupabase(): SupabaseClient | null {
   if (!CONFIGURED) return null;
   if (_client) return _client;
   if (!isSupabaseAvailable()) return null;

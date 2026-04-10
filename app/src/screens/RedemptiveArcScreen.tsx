@@ -100,7 +100,7 @@ function RedemptiveArcScreen() {
 
             {/* Expanded: threads and prophecy chains */}
             {expandedId === act.id && (
-              <View style={styles.expandedSection}>
+              <View style={[styles.expandedSection, { borderTopColor: base.gold + '26' }]}>
                 {act.threads.length > 0 && (
                   <View style={styles.linkedSection}>
                     <Text style={[styles.linkedLabel, { color: base.gold }]}>THREADS</Text>
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
   actNumText: {
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 14,
-    color: '#1a1a1a',
+    color: '#1a1a1a', // data-color: intentional (dark text on gold badge)
   },
   actName: {
     fontFamily: fontFamily.displayMedium,
@@ -233,7 +233,7 @@ const styles = StyleSheet.create({
     marginTop: spacing.md,
     paddingTop: spacing.sm,
     borderTopWidth: 1,
-    borderTopColor: 'rgba(191,160,80,0.15)',
+    borderTopColor: 'transparent', // overridden inline with base.gold + '26'
   },
   linkedSection: {
     marginBottom: spacing.sm,

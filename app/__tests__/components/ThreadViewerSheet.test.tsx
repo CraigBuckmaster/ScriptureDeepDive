@@ -17,9 +17,13 @@ jest.mock('@/db/content', () => ({
   getCrossRefThread: jest.fn().mockResolvedValue(null),
 }));
 
-jest.mock('@/utils/logger', () => ({
-  logger: { error: jest.fn(), warn: jest.fn(), info: jest.fn() },
-}));
+jest.mock('@/utils/logger', () => {
+  const actual = jest.requireActual('@/utils/logger');
+  return {
+    ...actual,
+    logger: { error: jest.fn(), warn: jest.fn(), info: jest.fn() },
+  };
+});
 
 jest.mock('@/components/BadgeChip', () => ({
   BadgeChip: () => null,

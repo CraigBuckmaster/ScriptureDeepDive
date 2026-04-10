@@ -18,7 +18,7 @@ import { getPersonChildren, getSpousesOf, getPerson } from '../db/content';
 import { useContentImages } from '../hooks/useContentImages';
 import { useTheme, spacing, radii, eras, eraNames, fontFamily } from '../theme';
 import type { Person } from '../types';
-import { parseJSON } from '../utils/parseJSON';
+import { safeParse } from '../utils/logger';
 
 interface Props {
   visible: boolean;
@@ -51,7 +51,7 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
 
   const eraColor = person.era ? (eras[person.era] ?? base.gold) : base.gold;
   const eraLabel = person.era ? (eraNames[person.era] ?? person.era) : '';
-  const refs = parseJSON<string[]>(person.refs_json, []);
+  const refs = safeParse<string[]>(person.refs_json, []);
 
   const FamilyLink = ({ p }: { p: Person }) => {
     const linkColor = p.era ? (eras[p.era] ?? base.gold) : base.gold;
