@@ -195,9 +195,9 @@ function EraCard({ era, isLast, nextEra, base, onPersonPress, onBookPress }: Era
           )}
 
           {/* Geographic region */}
-          {era.geographic_center && (
+          {era.geographic_center?.region && (
             <View style={styles.eraRow}>
-              <BadgeChip label={era.geographic_center} color={base.textDim} />
+              <BadgeChip label={era.geographic_center.region} color={base.textDim} />
             </View>
           )}
         </View>
