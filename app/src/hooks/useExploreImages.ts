@@ -20,7 +20,7 @@ import rawManifest from '../../assets/explore-images.json';
 // ── Deep-link resolver: content_type + content_id → screen + params ──
 
 const CONTENT_TYPE_TO_SCREEN: Record<string, { screen: string; paramKey: string }> = {
-  people: { screen: 'PersonDetail', paramKey: 'personId' },
+  people: { screen: 'GenealogyTree', paramKey: 'personId' },
   timeline: { screen: 'Timeline', paramKey: 'eventId' },
   map_story: { screen: 'Map', paramKey: 'storyId' },
   concept: { screen: 'ConceptDetail', paramKey: 'conceptId' },

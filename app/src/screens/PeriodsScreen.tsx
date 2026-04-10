@@ -122,86 +122,88 @@ function EraCard({ era, isLast, nextEra, base, onPersonPress, onBookPress }: Era
   const accentColor = era.hex ?? base.gold;
 
   return (
-    <View style={styles.eraCardWrapper}>
-      {/* Timeline dot + line */}
-      <View style={styles.timelineTrack}>
-        <View style={[styles.timelineDot, { backgroundColor: accentColor }]} />
-        {!isLast && <View style={[styles.timelineLine, { backgroundColor: base.border }]} />}
-      </View>
+    <>
+      <View style={styles.eraCardWrapper}>
+        {/* Timeline dot + line */}
+        <View style={styles.timelineTrack}>
+          <View style={[styles.timelineDot, { backgroundColor: accentColor }]} />
+          {!isLast && <View style={[styles.timelineLine, { backgroundColor: base.border }]} />}
+        </View>
 
-      {/* Card body */}
-      <View style={[styles.eraCard, { backgroundColor: base.bgElevated, borderColor: accentColor + '40' }]}>
-        {/* Header: name + date range + pill */}
-        <View style={styles.eraHeader}>
-          <View style={styles.eraHeaderLeft}>
-            <Text style={[styles.eraName, { color: base.text }]}>{era.name}</Text>
-            <Text style={[styles.eraRange, { color: base.textDim }]}>
-              {formatYear(era.range_start)} – {formatYear(era.range_end)}
-            </Text>
+        {/* Card body */}
+        <View style={[styles.eraCard, { backgroundColor: base.bgElevated, borderColor: accentColor + '40' }]}>
+          {/* Header: name + date range + pill */}
+          <View style={styles.eraHeader}>
+            <View style={styles.eraHeaderLeft}>
+              <Text style={[styles.eraName, { color: base.text }]}>{era.name}</Text>
+              <Text style={[styles.eraRange, { color: base.textDim }]}>
+                {formatYear(era.range_start)} – {formatYear(era.range_end)}
+              </Text>
+            </View>
+            {era.pill && (
+              <View style={[styles.eraPill, { backgroundColor: accentColor + '25' }]}>
+                <Text style={[styles.eraPillText, { color: accentColor }]}>{era.pill}</Text>
+              </View>
+            )}
           </View>
-          {era.pill && (
-            <View style={[styles.eraPill, { backgroundColor: accentColor + '25' }]}>
-              <Text style={[styles.eraPillText, { color: accentColor }]}>{era.pill}</Text>
+
+          {/* Summary */}
+          {era.summary && (
+            <Text style={[styles.eraSummary, { color: base.textDim }]}>{era.summary}</Text>
+          )}
+
+          {/* Key People */}
+          {era.key_people.length > 0 && (
+            <View style={styles.eraRow}>
+              <Text style={[styles.eraRowLabel, { color: base.gold }]}>KEY PEOPLE</Text>
+              <View style={styles.chipRow}>
+                {era.key_people.map((pid) => (
+                  <TouchableOpacity
+                    key={pid}
+                    onPress={() => onPersonPress(pid)}
+                    style={[styles.personChip, { backgroundColor: base.gold + '15' }]}
+                    accessibilityRole="button"
+                  >
+                    <Text style={[styles.personChipText, { color: base.gold }]}>
+                      {pid.replace(/_/g, ' ')}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </View>
+          )}
+
+          {/* Books */}
+          {era.books.length > 0 && (
+            <View style={styles.eraRow}>
+              <Text style={[styles.eraRowLabel, { color: base.gold }]}>BOOKS</Text>
+              <View style={styles.chipRow}>
+                {era.books.map((bk) => (
+                  <TouchableOpacity
+                    key={bk}
+                    onPress={() => onBookPress(bk)}
+                    style={[styles.bookChip, { backgroundColor: base.bgSurface ?? base.bg }]}
+                    accessibilityRole="button"
+                  >
+                    <Text style={[styles.bookChipText, { color: base.text }]}>
+                      {bk.replace(/_/g, ' ')}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </View>
+          )}
+
+          {/* Geographic region */}
+          {era.geographic_center && (
+            <View style={styles.eraRow}>
+              <BadgeChip label={era.geographic_center} color={base.textDim} />
             </View>
           )}
         </View>
-
-        {/* Summary */}
-        {era.summary && (
-          <Text style={[styles.eraSummary, { color: base.textDim }]}>{era.summary}</Text>
-        )}
-
-        {/* Key People */}
-        {era.key_people.length > 0 && (
-          <View style={styles.eraRow}>
-            <Text style={[styles.eraRowLabel, { color: base.gold }]}>KEY PEOPLE</Text>
-            <View style={styles.chipRow}>
-              {era.key_people.map((pid) => (
-                <TouchableOpacity
-                  key={pid}
-                  onPress={() => onPersonPress(pid)}
-                  style={[styles.personChip, { backgroundColor: base.gold + '15' }]}
-                  accessibilityRole="button"
-                >
-                  <Text style={[styles.personChipText, { color: base.gold }]}>
-                    {pid.replace(/_/g, ' ')}
-                  </Text>
-                </TouchableOpacity>
-              ))}
-            </View>
-          </View>
-        )}
-
-        {/* Books */}
-        {era.books.length > 0 && (
-          <View style={styles.eraRow}>
-            <Text style={[styles.eraRowLabel, { color: base.gold }]}>BOOKS</Text>
-            <View style={styles.chipRow}>
-              {era.books.map((bk) => (
-                <TouchableOpacity
-                  key={bk}
-                  onPress={() => onBookPress(bk)}
-                  style={[styles.bookChip, { backgroundColor: base.bgSurface ?? base.bg }]}
-                  accessibilityRole="button"
-                >
-                  <Text style={[styles.bookChipText, { color: base.text }]}>
-                    {bk.replace(/_/g, ' ')}
-                  </Text>
-                </TouchableOpacity>
-              ))}
-            </View>
-          </View>
-        )}
-
-        {/* Geographic region */}
-        {era.geographic_center && (
-          <View style={styles.eraRow}>
-            <BadgeChip label={era.geographic_center} color={base.textDim} />
-          </View>
-        )}
       </View>
 
-      {/* Transition arrow to next era */}
+      {/* Transition arrow to next era — outside the row for proper flow */}
       {!isLast && era.transition_to_next && nextEra && (
         <View style={[styles.transitionBlock, { borderColor: base.border }]}>
           <Text style={[styles.transitionText, { color: base.textMuted }]}>
@@ -209,7 +211,7 @@ function EraCard({ era, isLast, nextEra, base, onPersonPress, onBookPress }: Era
           </Text>
         </View>
       )}
-    </View>
+    </>
   );
 }
 
@@ -327,14 +329,13 @@ const styles = StyleSheet.create({
   },
   /* Transition arrow */
   transitionBlock: {
-    position: 'absolute',
-    left: 36,
-    right: 0,
-    bottom: -2,
+    marginLeft: 36,
     borderTopWidth: 1,
     borderStyle: 'dashed',
     paddingTop: spacing.xs,
     paddingLeft: spacing.sm,
+    paddingBottom: spacing.sm,
+    marginBottom: spacing.xs,
   },
   transitionText: {
     fontFamily: fontFamily.bodyItalic,

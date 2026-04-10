@@ -10,7 +10,7 @@ export interface ParsedRedemptiveAct {
   name: string;
   tagline: string | null;
   summary: string | null;
-  key_verse: string | null;
+  key_verse: { ref: string; text: string } | null;
   era_ids: string[];
   book_range: string | null;
   threads: string[];
@@ -20,6 +20,7 @@ export interface ParsedRedemptiveAct {
 function parseAct(row: RedemptiveAct): ParsedRedemptiveAct {
   return {
     ...row,
+    key_verse: safeParse<{ ref: string; text: string } | null>(row.key_verse, null, 'useRedemptiveArc.key_verse'),
     era_ids: safeParse<string[]>(row.era_ids, [], 'useRedemptiveArc.era_ids'),
     threads: safeParse<string[]>(row.threads, [], 'useRedemptiveArc.threads'),
     prophecy_chains: safeParse<string[]>(row.prophecy_chains, [], 'useRedemptiveArc.chains'),

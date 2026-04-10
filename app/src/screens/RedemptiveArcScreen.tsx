@@ -83,7 +83,8 @@ function RedemptiveArcScreen() {
             {/* Key verse */}
             {act.key_verse && (
               <View style={[styles.keyVerseRow, { borderColor: base.gold + '20' }]}>
-                <Text style={[styles.keyVerseText, { color: base.text }]}>{act.key_verse}</Text>
+                <Text style={[styles.keyVerseText, { color: base.text }]}>{act.key_verse.text}</Text>
+                <Text style={[styles.keyVerseRef, { color: base.goldDim }]}>{act.key_verse.ref}</Text>
               </View>
             )}
 
@@ -217,6 +218,11 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.bodyItalic ?? fontFamily.body,
     fontSize: 13,
     lineHeight: 20,
+  },
+  keyVerseRef: {
+    fontFamily: fontFamily.ui,
+    fontSize: 11,
+    marginTop: 3,
   },
   metaRow: {
     flexDirection: 'row',
