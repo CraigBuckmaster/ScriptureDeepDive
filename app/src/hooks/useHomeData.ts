@@ -11,7 +11,9 @@ import { getContentStats, type ContentStats } from '../db/content';
 import { getRecentChapters, getReadingStats, type ReadingStats } from '../db/user';
 import type { RecentChapter } from '../types';
 import { logger } from '../utils/logger';
+import { computeMovableHolidays } from '../utils/computeMovableHolidays';
 import dailyEncouragements from '../data/dailyEncouragements';
+import { fixedHolidays, movableHolidays, type HolidayContent } from '../data/holidayOverrides';
 
 // ── Verse of the Day ───────────────────────────────────────────────
 
@@ -67,7 +69,36 @@ function getDayOfYear(): number {
   return Math.floor(diff / (1000 * 60 * 60 * 24));
 }
 
+// ── Holiday detection ─────────────────────────────────────────────
+
+/** Cache movable holidays for the current year to avoid recomputing. */
+let _movableCache: { year: number; map: Map<string, string> } | null = null;
+
+function getTodayHoliday(): HolidayContent | null {
+  const now = new Date();
+  const mm = String(now.getMonth() + 1).padStart(2, '0');
+  const dd = String(now.getDate()).padStart(2, '0');
+  const key = `${mm}-${dd}`;
+
+  // Check fixed holidays first
+  if (fixedHolidays[key]) return fixedHolidays[key];
+
+  // Check movable holidays (compute once per year)
+  const year = now.getFullYear();
+  if (!_movableCache || _movableCache.year !== year) {
+    _movableCache = { year, map: computeMovableHolidays(year) };
+  }
+  const holidayId = _movableCache.map.get(key);
+  if (holidayId && movableHolidays[holidayId]) {
+    return movableHolidays[holidayId];
+  }
+
+  return null;
+}
+
 function getVerseOfDay(): VerseOfDay {
+  const holiday = getTodayHoliday();
+  if (holiday) return holiday.verse;
   return FEATURED_VERSES[getDayOfYear() % FEATURED_VERSES.length];
 }
 
@@ -86,6 +117,8 @@ function getSubtitle(readingStats: ReadingStats | null): string {
   if (!readingStats || readingStats.totalChapters === 0) {
     return 'Learn to read the Bible the way it was written';
   }
+  const holiday = getTodayHoliday();
+  if (holiday) return holiday.encouragement;
   return dailyEncouragements[getDayOfYear() % dailyEncouragements.length];
 }
 
