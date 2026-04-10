@@ -144,9 +144,16 @@ function TimelineScreen() {
         e.id === `evt_${initialEventId}` ||
         e.id === `bk_${initialEventId}`
       );
-      if (evt) handleSelectEvent(evt);
+      if (evt) {
+        // Scroll to centre the event horizontally
+        const scrollTarget = Math.max(0, evt.x - screenWidth / 2);
+        setTimeout(() => {
+          timelineScrollRef.current?.scrollTo({ x: scrollTarget, animated: true });
+        }, 100);
+        handleSelectEvent(evt);
+      }
     }
-  }, [initialEventId, positioned.length, handleSelectEvent]);
+  }, [initialEventId, positioned.length, handleSelectEvent, screenWidth]);
 
   if (isLoading) {
     return (
