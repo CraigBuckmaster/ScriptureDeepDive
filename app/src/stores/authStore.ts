@@ -19,8 +19,8 @@ import { Sentry, DSN } from '../lib/sentry';
 interface AuthUser {
   id: string;
   email?: string;
-  user_metadata?: Record<string, any>;
-  app_metadata?: Record<string, any>;
+  user_metadata?: Record<string, string>;
+  app_metadata?: Record<string, string>;
 }
 
 interface AuthState {
@@ -69,9 +69,10 @@ export const useAuthStore = create<AuthState>((set) => ({
       }
 
       authSub?.unsubscribe();
-      const { data } = supabase.auth.onAuthStateChange((_event: string, newSession: any) => {
-        set({ user: newSession?.user ?? null });
-        if (newSession?.user) syncProfile(newSession.user);
+      const { data } = supabase.auth.onAuthStateChange((_event: string, newSession: unknown) => {
+        const session = newSession as { user?: AuthUser } | null;
+        set({ user: session?.user ?? null });
+        if (session?.user) syncProfile(session.user);
       });
       authSub = data.subscription;
     } catch (err) {
