@@ -20,14 +20,16 @@ let _sentry: {
 
 try {
   if (DSN) {
-    // Indirect require so Metro doesn't resolve the module at bundle time
-    const pkg = '@sentry/react-native';
-    _sentry = require(pkg);
-    _sentry!.init({
-      dsn: DSN,
-      enableAutoSessionTracking: true,
-      tracesSampleRate: 0.2,
-    });
+    const mod = require('@sentry/react-native');
+    // Metro resolves to an empty module when the package isn't installed
+    if (typeof mod?.init === 'function') {
+      _sentry = mod;
+      _sentry!.init({
+        dsn: DSN,
+        enableAutoSessionTracking: true,
+        tracesSampleRate: 0.2,
+      });
+    }
   }
 } catch {
   // @sentry/react-native not installed — Sentry disabled
