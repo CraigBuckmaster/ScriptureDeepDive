@@ -118,7 +118,7 @@ class ContentUpdaterService {
   }
 
   /**
-   * Read the installed DB version from the db_meta table.
+   * Read the installed DB content hash from the db_meta table.
    * Returns null if the table doesn't exist or the DB isn't present.
    */
   async getInstalledVersion(): Promise<string | null> {
@@ -126,7 +126,7 @@ class ContentUpdaterService {
     try {
       tempDb = await SQLite.openDatabaseAsync('scripture.db');
       const row = await tempDb.getFirstAsync<{ value: string }>(
-        "SELECT value FROM db_meta WHERE key = 'version'",
+        "SELECT value FROM db_meta WHERE key = 'content_hash'",
       );
       return row?.value ?? null;
     } catch {
@@ -186,9 +186,9 @@ class ContentUpdaterService {
         await updateDb.execAsync('BEGIN TRANSACTION');
         await updateDb.execAsync(sql);
 
-        // Update version in db_meta
+        // Update content_hash in db_meta
         await updateDb.runAsync(
-          "INSERT OR REPLACE INTO db_meta (key, value) VALUES ('version', ?)",
+          "INSERT OR REPLACE INTO db_meta (key, value) VALUES ('content_hash', ?)",
           delta.to_version,
         );
         await updateDb.execAsync('COMMIT');
@@ -262,16 +262,16 @@ class ContentUpdaterService {
       await FileSystem.deleteAsync(DB_PATH, { idempotent: true });
       await FileSystem.moveAsync({ from: tempPath, to: DB_PATH });
 
-      // Verify the new DB can be opened and has the expected version
+      // Verify the new DB can be opened and has the expected content_hash
       let verifyDb: SQLite.SQLiteDatabase | null = null;
       try {
         verifyDb = await SQLite.openDatabaseAsync('scripture.db');
         const row = await verifyDb.getFirstAsync<{ value: string }>(
-          "SELECT value FROM db_meta WHERE key = 'version'",
+          "SELECT value FROM db_meta WHERE key = 'content_hash'",
         );
         if (row?.value !== manifest.current_version) {
           throw new Error(
-            `Version mismatch after download: expected ${manifest.current_version}, got ${row?.value}`,
+            `Content hash mismatch after download: expected ${manifest.current_version}, got ${row?.value}`,
           );
         }
       } catch (err) {
