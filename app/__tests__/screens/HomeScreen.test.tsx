@@ -24,7 +24,7 @@ jest.mock('@react-navigation/native', () => {
 
 const mockHomeData = {
   greeting: 'Good morning',
-  subtitle: '5-day reading streak',
+  subtitle: 'His mercies are new every morning',
   verse: {
     ref: 'John 3:16',
     bookId: 'john',
@@ -159,7 +159,7 @@ describe('HomeScreen', () => {
 
   it('displays subtitle text', () => {
     const { getByText } = renderWithProviders(<HomeScreen />);
-    expect(getByText('5-day reading streak')).toBeTruthy();
+    expect(getByText('His mercies are new every morning')).toBeTruthy();
   });
 
   it('displays "Begin Your Journey" when no recent chapters', () => {

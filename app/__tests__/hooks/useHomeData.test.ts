@@ -41,9 +41,10 @@ describe('useHomeData', () => {
     expect(result.current.stats?.liveBooks).toBe(10);
   });
 
-  it('returns subtitle based on reading stats', async () => {
+  it('returns a daily encouragement as subtitle', async () => {
     const { result } = renderHook(() => useHomeData());
     await waitFor(() => expect(result.current.isLoading).toBe(false));
-    expect(result.current.subtitle).toBe('5 chapters studied');
+    expect(result.current.subtitle).toBeTruthy();
+    expect(result.current.subtitle).not.toBe('Learn to read the Bible the way it was written');
   });
 });
