@@ -50,7 +50,9 @@ if [ -f "$ROOT/scripture.db" ]; then
       || echo "$MANIFEST_JSON" | python -c "import sys,json; print(json.load(sys.stdin).get('full_db_sha256',''))" 2>/dev/null)
     if [ -n "$REMOTE_SHA" ]; then
       LOCAL_SHA=$(sha256sum "$ROOT/scripture.db" 2>/dev/null | cut -d' ' -f1 \
-        || shasum -a 256 "$ROOT/scripture.db" 2>/dev/null | cut -d' ' -f1)
+        || shasum -a 256 "$ROOT/scripture.db" 2>/dev/null | cut -d' ' -f1 \
+        || python3 -c "import hashlib;print(hashlib.sha256(open('$ROOT/scripture.db','rb').read()).hexdigest())" 2>/dev/null \
+        || python -c "import hashlib;print(hashlib.sha256(open('$ROOT/scripture.db','rb').read()).hexdigest())" 2>/dev/null)
       if [ -n "$LOCAL_SHA" ] && [ "$LOCAL_SHA" != "$REMOTE_SHA" ]; then
         echo ""
         echo "⚠️  R2 is out of sync with local DB"
