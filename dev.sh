@@ -42,6 +42,27 @@ else
   echo "✓  scripture.db is up to date"
 fi
 
+# ── 2b. Check if R2 manifest is in sync with local DB ──────────
+if [ -f "$ROOT/scripture.db" ]; then
+  MANIFEST_JSON=$(curl -s --max-time 5 "https://contentcompanionstudy.com/db/manifest.json" 2>/dev/null || echo "")
+  if [ -n "$MANIFEST_JSON" ]; then
+    REMOTE_SHA=$(echo "$MANIFEST_JSON" | python3 -c "import sys,json; print(json.load(sys.stdin).get('full_db_sha256',''))" 2>/dev/null \
+      || echo "$MANIFEST_JSON" | python -c "import sys,json; print(json.load(sys.stdin).get('full_db_sha256',''))" 2>/dev/null)
+    if [ -n "$REMOTE_SHA" ]; then
+      LOCAL_SHA=$(sha256sum "$ROOT/scripture.db" 2>/dev/null | cut -d' ' -f1 \
+        || shasum -a 256 "$ROOT/scripture.db" 2>/dev/null | cut -d' ' -f1)
+      if [ -n "$LOCAL_SHA" ] && [ "$LOCAL_SHA" != "$REMOTE_SHA" ]; then
+        echo ""
+        echo "⚠️  R2 is out of sync with local DB"
+        echo "   Local:  ${LOCAL_SHA:0:16}..."
+        echo "   Remote: ${REMOTE_SHA:0:16}..."
+        echo "   Run:    python _tools/upload_to_r2.py"
+        echo ""
+      fi
+    fi
+  fi
+fi
+
 # ── 3. Launch Expo ──────────────────────────────────────────────
 cd "$ROOT/app"
 
