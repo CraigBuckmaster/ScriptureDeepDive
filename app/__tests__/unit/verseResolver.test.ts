@@ -1,4 +1,4 @@
-import { parseReference, splitMultiRef, getBookByName } from '../../src/utils/verseResolver';
+import { parseReference, parseDotReference, splitMultiRef, getBookByName } from '../../src/utils/verseResolver';
 
 describe('parseReference', () => {
   it('parses simple reference', () => {
@@ -79,5 +79,91 @@ describe('getBookByName', () => {
   });
   it('returns null for unknown', () => {
     expect(getBookByName('Narnia')).toBeNull();
+  });
+  it('case-insensitive lookup for mixed case', () => {
+    expect(getBookByName('gEnEsIs')?.id).toBe('genesis');
+    expect(getBookByName('EXODUS')?.id).toBe('exodus');
+    expect(getBookByName('revelation')?.id).toBe('revelation');
+  });
+  it('resolves common abbreviations', () => {
+    expect(getBookByName('Gen')?.id).toBe('genesis');
+    expect(getBookByName('Ex')?.id).toBe('exodus');
+    expect(getBookByName('Lev')?.id).toBe('leviticus');
+    expect(getBookByName('Num')?.id).toBe('numbers');
+    expect(getBookByName('Deut')?.id).toBe('deuteronomy');
+    expect(getBookByName('Josh')?.id).toBe('joshua');
+    expect(getBookByName('Judg')?.id).toBe('judges');
+    expect(getBookByName('Isa')?.id).toBe('isaiah');
+    expect(getBookByName('Jer')?.id).toBe('jeremiah');
+    expect(getBookByName('Matt')?.id).toBe('matthew');
+    expect(getBookByName('Rom')?.id).toBe('romans');
+    expect(getBookByName('Rev')?.id).toBe('revelation');
+  });
+  it('returns null for empty string', () => {
+    expect(getBookByName('')).toBeNull();
+  });
+  it('returns null for whitespace-only', () => {
+    expect(getBookByName('   ')).toBeNull();
+  });
+});
+
+describe('parseDotReference', () => {
+  it('parses "rom.7.15" format', () => {
+    const { parseDotReference } = require('../../src/utils/verseResolver');
+    const r = parseDotReference('rom.7.15');
+    expect(r).not.toBeNull();
+    expect(r?.bookId).toBe('romans');
+    expect(r?.chapter).toBe(7);
+    expect(r?.verseStart).toBe(15);
+    expect(r?.verseEnd).toBe(15);
+  });
+  it('parses dot reference with verse range', () => {
+    const { parseDotReference } = require('../../src/utils/verseResolver');
+    const r = parseDotReference('john.3.16-18');
+    expect(r?.bookId).toBe('john');
+    expect(r?.chapter).toBe(3);
+    expect(r?.verseStart).toBe(16);
+    expect(r?.verseEnd).toBe(18);
+  });
+  it('parses dot reference chapter-only', () => {
+    const { parseDotReference } = require('../../src/utils/verseResolver');
+    const r = parseDotReference('ps.23');
+    expect(r?.bookId).toBe('psalms');
+    expect(r?.chapter).toBe(23);
+    expect(r?.verseStart).toBeUndefined();
+  });
+  it('returns null for invalid dot reference', () => {
+    const { parseDotReference } = require('../../src/utils/verseResolver');
+    expect(parseDotReference('')).toBeNull();
+    expect(parseDotReference('notabook.1.1')).toBeNull();
+  });
+});
+
+describe('parseReference – additional edge cases', () => {
+  it('parses verse range "Gen 1:1-3"', () => {
+    const r = parseReference('Gen 1:1-3');
+    expect(r).not.toBeNull();
+    expect(r?.bookId).toBe('genesis');
+    expect(r?.chapter).toBe(1);
+    expect(r?.verseStart).toBe(1);
+    expect(r?.verseEnd).toBe(3);
+  });
+  it('parses single-chapter book "Obadiah 1" as chapter-only', () => {
+    const r = parseReference('Obadiah 1');
+    expect(r).not.toBeNull();
+    expect(r?.bookId).toBe('obadiah');
+    expect(r?.chapter).toBe(1);
+  });
+  it('parses single-chapter book "Philemon 1" as chapter-only', () => {
+    const r = parseReference('Philemon 1');
+    expect(r).not.toBeNull();
+    expect(r?.bookId).toBe('philemon');
+    expect(r?.chapter).toBe(1);
+  });
+  it('parses "Jude 1" as chapter-only', () => {
+    const r = parseReference('Jude 1');
+    expect(r).not.toBeNull();
+    expect(r?.bookId).toBe('jude');
+    expect(r?.chapter).toBe(1);
   });
 });
