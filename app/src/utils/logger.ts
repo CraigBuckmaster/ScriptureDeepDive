@@ -20,7 +20,7 @@ export const logger = {
   /** Recoverable issue — always logged. */
   warn(tag: string, msg: string, data?: unknown): void {
     console.warn(`[${tag}] ${msg}`, data ?? '');
-    if (DSN) {
+    if (DSN && Sentry) {
       Sentry.captureMessage(`[${tag}] ${msg}`, 'warning');
     }
   },
@@ -28,7 +28,7 @@ export const logger = {
   /** Unrecoverable error — always logged. */
   error(tag: string, msg: string, err?: unknown): void {
     console.error(`[${tag}] ${msg}`, err ?? '');
-    if (DSN) {
+    if (DSN && Sentry) {
       Sentry.captureException(err instanceof Error ? err : new Error(`[${tag}] ${msg}`));
     }
   },

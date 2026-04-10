@@ -185,7 +185,7 @@ function App() {
   );
 }
 
-export default DSN ? Sentry.wrap(App) : App;
+export default DSN && Sentry ? Sentry.wrap(App) : App;
 
 const appStyles = StyleSheet.create({
   splashContainer: {

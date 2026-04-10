@@ -138,7 +138,7 @@ export const useAuthStore = create<AuthState>((set) => ({
       const supabase = getAuth().getSupabase();
       if (supabase) await supabase.auth.signOut();
       await clearAuthProfile();
-      if (DSN) Sentry.setUser(null);
+      if (DSN && Sentry) Sentry.setUser(null);
       set({ user: null });
     } catch (err) {
       logger.error('authStore', 'Sign out failed', err);
@@ -163,7 +163,7 @@ export const useAuthStore = create<AuthState>((set) => ({
 
 /** Sync Supabase user info to local SQLite profile + Sentry context. */
 async function syncProfile(user: AuthUser) {
-  if (DSN) Sentry.setUser({ id: user.id });
+  if (DSN && Sentry) Sentry.setUser({ id: user.id });
   try {
     await upsertAuthProfile(
       user.id,
