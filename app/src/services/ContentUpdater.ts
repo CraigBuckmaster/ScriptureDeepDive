@@ -240,10 +240,12 @@ class ContentUpdaterService {
 
   /**
    * Download a complete replacement database from R2.
-   * Downloads to a temp file, verifies checksum, then swaps in place.
+   * Downloads to a temp file, verifies checksum AND content hash
+   * BEFORE touching the live database, then swaps in place.
    */
   async downloadFullDb(manifest: Manifest): Promise<UpdateResult> {
     const tempPath = `${SQLITE_DIR}scripture_download.db`;
+    const tempDbName = 'scripture_download.db';
     try {
       const fromVersion = await this.getInstalledVersion();
 
@@ -253,19 +255,14 @@ class ContentUpdaterService {
         throw new Error(`Full DB download failed: HTTP ${download.status}`);
       }
 
-      // Verify checksum
+      // Verify file checksum
       await this.verifyChecksum(tempPath, manifest.full_db_sha256);
 
-      // Backup current DB, then swap
-      await this.backupCurrentDb();
-
-      await FileSystem.deleteAsync(DB_PATH, { idempotent: true });
-      await FileSystem.moveAsync({ from: tempPath, to: DB_PATH });
-
-      // Verify the new DB can be opened and has the expected content_hash
+      // Verify content hash in the downloaded DB BEFORE swapping.
+      // Open by its temp filename so we never touch the live connection.
       let verifyDb: SQLite.SQLiteDatabase | null = null;
       try {
-        verifyDb = await SQLite.openDatabaseAsync('scripture.db');
+        verifyDb = await SQLite.openDatabaseAsync(tempDbName);
         const row = await verifyDb.getFirstAsync<{ value: string }>(
           "SELECT value FROM db_meta WHERE key = 'content_hash'",
         );
@@ -274,13 +271,14 @@ class ContentUpdaterService {
             `Content hash mismatch after download: expected ${manifest.current_version}, got ${row?.value}`,
           );
         }
-      } catch (err) {
-        if (verifyDb) await verifyDb.closeAsync();
-        await this.restoreFromBackup();
-        throw err;
       } finally {
         if (verifyDb) await verifyDb.closeAsync();
       }
+
+      // Verification passed — now swap the live DB
+      await this.backupCurrentDb();
+      await FileSystem.deleteAsync(DB_PATH, { idempotent: true });
+      await FileSystem.moveAsync({ from: tempPath, to: DB_PATH });
 
       // Success — remove backup
       await FileSystem.deleteAsync(BACKUP_PATH, { idempotent: true });
