@@ -15,9 +15,7 @@ import { useSettingsStore, useAuthStore, usePremiumStore } from './src/stores';
 import { pruneEvents } from './src/services/analytics';
 import { checkAndScheduleReengagement } from './src/services/reengagement';
 import { syncPremiumStatus } from './src/services/purchases';
-import { startMonitoring } from './src/services/connectivity';
 import { flushQueue } from './src/services/syncQueue';
-import ConnectivityBanner from './src/components/ConnectivityBanner';
 import { RootNavigator } from './src/navigation';
 import { ErrorBoundary } from './src/components/ErrorBoundary';
 import { closeAllTranslationDbs } from './src/db/translationManager';
@@ -106,7 +104,6 @@ function AppShell() {
           <RootNavigator />
         </ErrorBoundary>
       </NavigationContainer>
-      <ConnectivityBanner />
       <StatusBar style={statusBarStyle === 'light-content' ? 'light' : 'dark'} />
     </>
   );
@@ -127,7 +124,6 @@ function App() {
         await useAuthStore.getState().hydrate();
         await usePremiumStore.getState().hydrate();
         pruneEvents(90); // Clean up old analytics (fire-and-forget)
-        startMonitoring(); // Begin network connectivity monitoring
       } catch (e) {
         console.error('Init error:', e);
       } finally {
