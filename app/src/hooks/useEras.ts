@@ -17,7 +17,7 @@ export interface ParsedEra {
   key_people: string[];
   books: string[];
   chapter_range: string | null;
-  geographic_center: string | null;
+  geographic_center: { region: string; place_ids: string[] } | null;
   redemptive_thread: string | null;
   transition_to_next: string | null;
 }
@@ -28,6 +28,7 @@ function parseEra(row: EraRow): ParsedEra {
     key_themes: safeParse<string[]>(row.key_themes, [], 'useEras.key_themes'),
     key_people: safeParse<string[]>(row.key_people, [], 'useEras.key_people'),
     books: safeParse<string[]>(row.books, [], 'useEras.books'),
+    geographic_center: safeParse<{ region: string; place_ids: string[] } | null>(row.geographic_center, null, 'useEras.geographic_center'),
   };
 }
 

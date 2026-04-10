@@ -3,14 +3,6 @@ import { fireEvent, waitFor } from '@testing-library/react-native';
 import { renderWithProviders } from '../helpers/renderWithProviders';
 import PersonDetailScreen from '@/screens/PersonDetailScreen';
 
-// ── Modal mock (renders children inline so testing-library can query them) ──
-jest.mock('react-native/Libraries/Modal/Modal', () => {
-  const { createElement } = require('react');
-  const { View } = jest.requireActual('react-native');
-  const MockModal = (props: any) => props.visible ? createElement(View, null, props.children) : null;
-  return { __esModule: true, default: MockModal };
-});
-
 // ── Navigation mocks ────────────────────────────────────────
 const mockNavigate = jest.fn();
 const mockGoBack = jest.fn();
@@ -58,24 +50,26 @@ jest.mock('@/db/content', () => ({
   ]),
 }));
 
-jest.mock('@/hooks/useContentImages', () => ({
-  useContentImages: () => ({ images: [], isLoading: false }),
-}));
-
-jest.mock('@/components/ContentImageGallery', () => ({
-  ContentImageGallery: () => null,
-}));
-
-jest.mock('@/components/BadgeChip', () => ({
-  BadgeChip: ({ label }: { label: string }) => {
+// ── Mock PersonSidebar to bypass Modal portal entirely ──────
+jest.mock('@/components/PersonSidebar', () => ({
+  PersonSidebar: (props: any) => {
+    if (!props.visible || !props.person) return null;
     const React = require('react');
-    const { Text } = require('react-native');
-    return React.createElement(Text, {}, label);
+    const { View, Text, TouchableOpacity } = require('react-native');
+    return React.createElement(View, { testID: 'person-sidebar' },
+      React.createElement(Text, {}, props.person.name),
+      React.createElement(Text, {}, props.person.role),
+      React.createElement(Text, {}, props.person.bio),
+      React.createElement(TouchableOpacity, {
+        accessibilityLabel: 'See on family tree',
+        onPress: () => props.onTreePress(props.person.id),
+      }, React.createElement(Text, {}, 'See on Family Tree')),
+      React.createElement(TouchableOpacity, {
+        accessibilityLabel: 'Close bio panel',
+        onPress: props.onClose,
+      }, React.createElement(Text, {}, 'Close')),
+    );
   },
-}));
-
-jest.mock('lucide-react-native', () => ({
-  ArrowRight: () => null,
 }));
 
 beforeEach(() => {
@@ -83,9 +77,9 @@ beforeEach(() => {
 });
 
 describe('PersonDetailScreen', () => {
-  it('renders person bio via PersonSidebar', async () => {
-    const { getByText } = renderWithProviders(<PersonDetailScreen />);
-    await waitFor(() => expect(getByText('Abraham')).toBeTruthy(), { timeout: 3000 });
+  it('renders person name', async () => {
+    const { findByText } = renderWithProviders(<PersonDetailScreen />);
+    expect(await findByText('Abraham')).toBeTruthy();
   });
 
   it('displays person role', async () => {
