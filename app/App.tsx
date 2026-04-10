@@ -21,6 +21,7 @@ import ConnectivityBanner from './src/components/ConnectivityBanner';
 import { RootNavigator } from './src/navigation';
 import { ErrorBoundary } from './src/components/ErrorBoundary';
 import { closeAllTranslationDbs } from './src/db/translationManager';
+import { ContentUpdateProvider } from './src/providers/ContentUpdateProvider';
 
 // Keep splash visible while we load
 SplashScreen.preventAutoHideAsync();
@@ -174,7 +175,9 @@ export default function App() {
     <GestureHandlerRootView style={appStyles.rootView} onLayout={onLayoutReady}>
       <SafeAreaProvider>
         <ThemeProvider>
-          <AppShell />
+          <ContentUpdateProvider>
+            <AppShell />
+          </ContentUpdateProvider>
         </ThemeProvider>
       </SafeAreaProvider>
     </GestureHandlerRootView>
