@@ -43,7 +43,7 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
 
 ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = ROOT / 'scripture.db'
-VERSION_FILE = ROOT / '_tools' / 'db_version.json'
+DB_MANIFEST_PATH = ROOT / 'app' / 'assets' / 'db-manifest.json'
 ENV_FILE = ROOT / '.env'
 
 # Tables to skip during diff (virtual tables, internal SQLite tables)
@@ -100,10 +100,10 @@ def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
-def get_version() -> str:
-    """Read current DB version from db_version.json."""
-    with open(VERSION_FILE) as f:
-        return json.load(f)['version']
+def get_content_hash() -> str:
+    """Read current content hash from db-manifest.json."""
+    with open(DB_MANIFEST_PATH) as f:
+        return json.load(f)['content_hash']
 
 
 def get_s3_client():
@@ -503,7 +503,7 @@ def main():
         print(f"❌ Database not found: {DB_PATH}")
         sys.exit(1)
     
-    new_version = get_version()
+    new_version = get_content_hash()
     bucket = get_env('R2_BUCKET_NAME')
     public_url = get_env('R2_PUBLIC_URL').rstrip('/')
     

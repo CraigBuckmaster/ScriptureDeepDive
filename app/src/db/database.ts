@@ -3,7 +3,7 @@
  *
  * This database is READ-ONLY content: books, chapters, sections, panels,
  * verses, scholars, people, places, timelines, etc. It is replaced in
- * full on every content update (version mismatch → delete + recopy).
+ * full on every content update (hash mismatch → delete + recopy).
  *
  * User data (notes, bookmarks, highlights, preferences, plans) lives
  * in a separate user.db managed by userDatabase.ts, which is NEVER
@@ -19,10 +19,13 @@ import { openTranslationDb } from './translationManager';
 import { logger } from '../utils/logger';
 
 /**
- * Bump this when build_sqlite.py's DB_VERSION changes.
- * Must match the value written into db_meta by the build script.
+ * Load the expected content hash from the bundled db-manifest.json.
+ * This hash is computed by build_sqlite.py from all content JSON files.
+ * Any content change → new hash → app replaces cached DB automatically.
  */
-const EXPECTED_DB_VERSION = '0.235';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const dbManifest = require('../../assets/db-manifest.json') as { content_hash: string; build_time: string };
+const EXPECTED_CONTENT_HASH = dbManifest.content_hash;
 
 let db: SQLite.SQLiteDatabase | null = null;
 
@@ -57,15 +60,15 @@ export async function initDatabase(): Promise<SQLite.SQLiteDatabase> {
 }
 
 /**
- * Read the installed DB version. Returns null if the db_meta table
- * doesn't exist (pre-versioning DB) or on any error.
+ * Read the installed DB content hash. Returns null if the db_meta table
+ * doesn't exist (pre-hash DB) or on any error.
  */
-async function getInstalledDbVersion(dbPath: string): Promise<string | null> {
+async function getInstalledContentHash(dbPath: string): Promise<string | null> {
   let tempDb: SQLite.SQLiteDatabase | null = null;
   try {
     tempDb = await SQLite.openDatabaseAsync('scripture.db');
     const row = await tempDb.getFirstAsync<{ value: string }>(
-      "SELECT value FROM db_meta WHERE key = 'version'"
+      "SELECT value FROM db_meta WHERE key = 'content_hash'"
     );
     return row?.value ?? null;
   } catch (err) {
@@ -80,8 +83,8 @@ async function getInstalledDbVersion(dbPath: string): Promise<string | null> {
 
 /**
  * Copy the bundled scripture.db asset to the SQLite directory.
- * Compares the installed DB version against EXPECTED_DB_VERSION.
- * Replaces the DB if versions don't match or DB is missing.
+ * Compares the installed DB content hash against EXPECTED_CONTENT_HASH.
+ * Replaces the DB if hashes don't match or DB is missing.
  */
 async function copyAssetDatabaseIfNeeded(): Promise<void> {
   const sqliteDir = `${FileSystem.documentDirectory}SQLite/`;
@@ -90,15 +93,15 @@ async function copyAssetDatabaseIfNeeded(): Promise<void> {
   // Check if DB already exists in documents
   const fileInfo = await FileSystem.getInfoAsync(dbPath);
   if (fileInfo.exists && fileInfo.size && fileInfo.size > 1000) {
-    // DB exists — check its version
-    const installedVersion = await getInstalledDbVersion(dbPath);
-    if (installedVersion === EXPECTED_DB_VERSION) {
-      logger.info('DB', `scripture.db v${installedVersion} is current — skipping copy`);
+    // DB exists — check its content hash
+    const installedHash = await getInstalledContentHash(dbPath);
+    if (installedHash === EXPECTED_CONTENT_HASH) {
+      logger.info('DB', `scripture.db [${installedHash}] is current — skipping copy`);
       return;
     }
     logger.info('DB',
-      `scripture.db version mismatch (installed: ${installedVersion ?? 'none'}, ` +
-      `expected: ${EXPECTED_DB_VERSION}) — replacing`
+      `scripture.db hash mismatch (installed: ${installedHash ?? 'none'}, ` +
+      `expected: ${EXPECTED_CONTENT_HASH}) — replacing`
     );
     // Delete the stale DB so the copy succeeds cleanly
     await FileSystem.deleteAsync(dbPath, { idempotent: true });
@@ -126,7 +129,7 @@ async function copyAssetDatabaseIfNeeded(): Promise<void> {
 
   const copied = await FileSystem.getInfoAsync(dbPath);
   logger.info('DB',
-    `Copied scripture.db v${EXPECTED_DB_VERSION} (${(((copied.exists && copied.size) || 0) / 1024 / 1024).toFixed(1)} MB)`
+    `Copied scripture.db [${EXPECTED_CONTENT_HASH}] (${(((copied.exists && copied.size) || 0) / 1024 / 1024).toFixed(1)} MB)`
   );
 }
 

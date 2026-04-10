@@ -27,7 +27,7 @@ TOOLS = ROOT / "_tools"
 CONTENT = ROOT / "content"
 APP_ASSETS = ROOT / "app" / "assets"
 DB_PATH = APP_ASSETS / "scripture.db"
-DB_VERSION_PATH = TOOLS / "db_version.json"
+DB_MANIFEST_PATH = APP_ASSETS / "db-manifest.json"
 DATABASE_TS = ROOT / "app" / "src" / "db" / "database.ts"
 MATRIX_PATH = TOOLS / "audit" / "reference_matrix.json"
 
@@ -76,10 +76,10 @@ def _matrix_refuted_count() -> int:
         return -1
 
 
-def _db_version() -> str:
-    """Current DB version from db_version.json."""
+def _content_hash() -> str:
+    """Current content hash from db-manifest.json."""
     try:
-        return json.loads(DB_VERSION_PATH.read_text(encoding="utf-8"))["version"]
+        return json.loads(DB_MANIFEST_PATH.read_text(encoding="utf-8"))["content_hash"]
     except Exception:
         return "unknown"
 
@@ -202,7 +202,7 @@ def workflow_status():
 
     # scripture.db
     db_stale = _db_is_stale()
-    db_ver = _db_version()
+    db_ver = _content_hash()
     db_mb = _db_size_mb()
     db_age = _fmt_age(_mtime(DB_PATH))
     status = "STALE" if db_stale else "OK"
@@ -252,7 +252,7 @@ def workflow_build(book: str | None = None):
 
     step_validate_db()
 
-    print(f"\n  Done. scripture.db v{_db_version()} ({_db_size_mb():.1f}MB)")
+    print(f"\n  Done. scripture.db v{_content_hash()} ({_db_size_mb():.1f}MB)")
 
 
 def workflow_verify(tier: int = 1):
@@ -324,7 +324,7 @@ def workflow_full(tier: int = 1):
     step_audit(tier=tier)
 
     refuted = _matrix_refuted_count()
-    print(f"\n  Done. DB v{_db_version()} ({_db_size_mb():.1f}MB)")
+    print(f"\n  Done. DB v{_content_hash()} ({_db_size_mb():.1f}MB)")
     print(f"  {refuted} REFUTED claims in reference matrix.")
 
 

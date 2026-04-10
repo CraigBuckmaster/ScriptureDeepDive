@@ -11,14 +11,15 @@ timeline updates, etc.) as part of the standard pipeline:
     python3 _tools/build_sqlite.py   # ← This script
     python3 _tools/validate_sqlite.py  # Verify DB integrity
 
-The DB version lives in _tools/db_version.json (single source of truth).
-It is auto-incremented on each build and synced to the app's database.ts
-so the app knows to replace the old DB on device.
+A content hash is computed from all content JSON files and written to both
+db_meta in the SQLite database and app/assets/db-manifest.json. The app
+compares hashes to detect when the bundled DB has new content — any content
+change automatically triggers a DB replacement on user devices.
 
 Usage:
     python3 _tools/build_sqlite.py
 """
-import os, sys, json, sqlite3, glob, re
+import os, sys, json, sqlite3, glob, re, hashlib
 from pathlib import Path
 
 # Ensure stdout can handle UTF-8 (needed on Windows where cp1252 is default)
@@ -35,8 +36,7 @@ DB_PATH = ROOT / 'scripture.db'
 AUDIT_DIR = ROOT / '_tools' / 'audit'
 REFERENCE_MATRIX_PATH = AUDIT_DIR / 'reference_matrix.json'
 TRANSLATIONS_DIR = ROOT / 'app' / 'assets' / 'translations'
-APP_DB_TS = ROOT / 'app' / 'src' / 'db' / 'database.ts'
-VERSION_FILE = ROOT / '_tools' / 'db_version.json'
+DB_MANIFEST_PATH = ROOT / 'app' / 'assets' / 'db-manifest.json'
 
 # Translations bundled directly into scripture.db (shipped with the app binary).
 # All other translations in content/verses/ are built as separate downloadable
@@ -49,52 +49,52 @@ AVAILABLE_TRANSLATIONS = {'kjv', 'asv'}
 # Of those, which are baked into scripture.db (the rest are separate .db files).
 BUNDLED_TRANSLATIONS = {'kjv', 'asv'}
 
-# Read from db_version.json — the single source of truth for the DB version.
-# Auto-incremented on every build by bump_db_version(). Triggers a full DB
-# replacement on user devices when the app detects a version mismatch.
-DB_VERSION = json.loads(VERSION_FILE.read_text(encoding='utf-8'))['version']
 
-
-def bump_db_version():
-    """Auto-increment DB_VERSION and sync to database.ts.
-
-    How it works:
-      1. Reads current version from _tools/db_version.json (e.g. '0.14')
-      2. Increments minor (-> '0.15')
-      3. Writes the new version back to db_version.json
-      4. Rewrites the EXPECTED_DB_VERSION line in database.ts to match
-      5. Updates the global DB_VERSION so the current build uses the new value
+def compute_content_hash():
+    """Compute SHA256 hash of all content source files.
+    
+    Hashes all JSON files in content/ (excluding verses/ for speed since those
+    rarely change and are large). The hash changes whenever any content file
+    is modified, triggering a DB replacement on user devices.
+    
+    Returns: First 16 chars of the SHA256 hex digest (enough to be unique).
     """
-    global DB_VERSION
+    hasher = hashlib.sha256()
+    content_dir = ROOT / 'content'
+    
+    # Get all JSON files, sorted for deterministic ordering
+    json_files = sorted(content_dir.rglob('*.json'))
+    
+    # Exclude verses/ directory (large, rarely changes, would slow down hash)
+    # and any other directories we don't want to trigger rebuilds
+    json_files = [f for f in json_files if 'verses' not in f.parts]
+    
+    for filepath in json_files:
+        # Hash the relative path (so it's machine-independent)
+        rel_path = filepath.relative_to(content_dir)
+        hasher.update(str(rel_path).encode('utf-8'))
+        # Hash the file contents
+        hasher.update(filepath.read_bytes())
+    
+    full_hash = hasher.hexdigest()
+    # Return first 16 chars — enough for uniqueness, easier to read
+    return full_hash[:16]
 
-    # Parse current version: "0.14" -> major=0, minor=14
-    parts = DB_VERSION.split('.')
-    if len(parts) == 2:
-        major, minor = int(parts[0]), int(parts[1])
-        new_version = f"{major}.{minor + 1}"
-    else:
-        new_version = DB_VERSION + ".1"
 
-    old_version = DB_VERSION
-
-    # Write new version to db_version.json (single source of truth)
-    VERSION_FILE.write_text(json.dumps({"version": new_version}, indent=2) + '\n', encoding='utf-8')
-
-    # Sync to app/src/db/database.ts so the app knows to replace the old DB
-    if APP_DB_TS.exists():
-        ts_content = APP_DB_TS.read_text(encoding='utf-8')
-        ts_content = re.sub(
-            r"const EXPECTED_DB_VERSION = '[^']+';",
-            f"const EXPECTED_DB_VERSION = '{new_version}';",
-            ts_content
-        )
-        APP_DB_TS.write_text(ts_content, encoding='utf-8')
-        print(f"  DB version: {old_version} -> {new_version} (synced to database.ts)")
-    else:
-        print(f"  DB version: {old_version} -> {new_version} (database.ts not found)")
-
-    DB_VERSION = new_version
-    return new_version
+def write_db_manifest(content_hash: str):
+    """Write the content hash to app/assets/db-manifest.json.
+    
+    The app loads this bundled JSON to know what hash it should expect
+    from the installed DB. If the installed DB has a different hash,
+    the app replaces it with the bundled asset.
+    """
+    manifest = {
+        "content_hash": content_hash,
+        "build_time": __import__('datetime').datetime.utcnow().isoformat() + 'Z'
+    }
+    DB_MANIFEST_PATH.parent.mkdir(parents=True, exist_ok=True)
+    DB_MANIFEST_PATH.write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
+    print(f"  [OK] db-manifest.json: {content_hash}")
 
 
 
@@ -2435,8 +2435,9 @@ def compute_difficulty(cur):
 # Main
 # ---------------------------------------------------------------------------
 def main():
-    # Auto-increment version on every build
-    bump_db_version()
+    # Compute content hash for cache invalidation
+    content_hash = compute_content_hash()
+    print(f"  Content hash: {content_hash}")
     
     # Remove existing DB
     if DB_PATH.exists():
@@ -2588,9 +2589,9 @@ def main():
     build_fts(cur)
     print(f"  [OK] FTS5 indexes built")
 
-    # Write DB version
-    cur.execute("INSERT INTO db_meta (key, value) VALUES ('version', ?)", (DB_VERSION,))
-    print(f"  [OK] db_meta: version {DB_VERSION}")
+    # Write content hash to db_meta
+    cur.execute("INSERT INTO db_meta (key, value) VALUES ('content_hash', ?)", (content_hash,))
+    print(f"  [OK] db_meta: content_hash {content_hash}")
 
     # Re-enable FK enforcement
     cur.execute('PRAGMA foreign_keys=ON')
@@ -2604,6 +2605,9 @@ def main():
     assets_db = ROOT / 'app' / 'assets' / 'scripture.db'
     assets_db.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(DB_PATH, assets_db)
+
+    # Write db-manifest.json for app to detect content changes
+    write_db_manifest(content_hash)
 
     # Sync explore-images manifest into app/assets (Metro can't resolve outside app/)
     explore_src = META / 'explore-images.json'
