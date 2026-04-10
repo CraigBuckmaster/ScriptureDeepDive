@@ -1,0 +1,79 @@
+{
+  "id": "same_sex_marriage",
+  "category_id": "relationships",
+  "title": "Same-Sex Marriage",
+  "subtitle": "What the Bible Says About Same-Sex Marriage",
+  "summary": "Scripture consistently presents marriage as a covenant union between one man and one woman, rooted in creation's design and reaffirmed by Jesus himself as the exclusive context for sexual union.",
+  "body": "The biblical teaching on marriage begins not with prohibitions but with design. Genesis presents God creating humanity as male and female, then declaring that a man will leave his parents and be united to his wife, becoming one flesh [verse:gen.2.24]. This anatomical and relational complementarity is not incidental — it is presented as the foundation of marriage itself.\n\nWhen Jesus was asked about divorce, he did not simply cite the Law but reached back to creation. He quoted Genesis directly: 'Have you not read that from the beginning the Creator made them male and female?' [verse:matt.19.4-6]. For Jesus, the male-female structure of marriage was not a cultural accommodation but an original design that human traditions should not override.\n\nThe Levitical code explicitly prohibits same-sex sexual activity, calling it an abomination in the context of holiness laws that set Israel apart [verse:lev.18.22]. Some argue these laws are obsolete, but the New Testament reaffirms the sexual ethic while setting aside ceremonial requirements. Paul addresses same-sex relations directly in Romans 1, describing them as 'contrary to nature' — language that echoes the creation order rather than mere cultural convention [verse:rom.1.26-27].\n\nPaul's vice list in 1 Corinthians includes the Greek term arsenokoitai, a compound word he likely coined from the Septuagint's rendering of Leviticus 18 and 20 [verse:1cor.6.9-10]. The term refers to men who engage in sexual activity with other men. Significantly, the passage does not end with condemnation but with redemption: 'And that is what some of you were. But you were washed, you were sanctified' [verse:1cor.6.11].\n\nThe consistent biblical witness — from Genesis through the Gospels to Paul — presents marriage as a male-female covenant. This is not arbitrary restriction but purposeful design, meant to reflect something larger than human preference.",
+  "display_order": 3,
+  "verses": [
+    {
+      "verse_ref": "gen.2.24",
+      "verse_order": 1,
+      "annotation": "The foundational definition: a man leaves his parents and is united to his wife, becoming one flesh.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "matt.19.4-6",
+      "verse_order": 2,
+      "annotation": "Jesus grounds marriage in creation's male-female design, not cultural convention.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "lev.18.22",
+      "verse_order": 3,
+      "annotation": "The Levitical prohibition on same-sex sexual activity within the holiness code.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "rom.1.26-27",
+      "verse_order": 4,
+      "annotation": "Paul describes same-sex relations as 'contrary to nature,' echoing creation order.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "1cor.6.9-11",
+      "verse_order": 5,
+      "annotation": "Vice list including arsenokoitai, followed immediately by the hope of redemption.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "gen.1.27",
+      "verse_order": 6,
+      "annotation": "God created humanity male and female — sexual differentiation as part of the original design.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "eph.5.31-32",
+      "verse_order": 7,
+      "annotation": "Paul reveals that marriage images Christ and the church — a mystery requiring the male-female structure.",
+      "is_primary": false
+    }
+  ],
+  "scholars": [
+    {
+      "scholar_id": "moo",
+      "quote": "Moo argues that Paul's language in Romans 1:26-27 is grounded in creation theology, not cultural convention. The phrase 'contrary to nature' (para physin) refers to the created order established in Genesis, making the prohibition transcultural rather than situational.",
+      "source": "The Epistle to the Romans (Moo, NICNT, 1996)",
+      "display_order": 1
+    },
+    {
+      "scholar_id": "fee",
+      "quote": "Fee explains that arsenokoitai in 1 Corinthians 6:9 is almost certainly a Pauline coinage derived from Leviticus 18:22 and 20:13 in the Septuagint, where 'lying with a male' (arsenos koiten) is prohibited. The term refers to the active partner in male same-sex intercourse.",
+      "source": "The First Epistle to the Corinthians (Fee, NICNT, 1987)",
+      "display_order": 2
+    },
+    {
+      "scholar_id": "keener",
+      "quote": "Keener notes that Jesus' appeal to Genesis 1-2 in Matthew 19 was not merely about divorce but about the essential nature of marriage itself. By grounding his teaching in creation rather than Mosaic concession, Jesus established male-female union as the normative and permanent structure.",
+      "source": "A Commentary on the Gospel of Matthew (Keener, 1999)",
+      "display_order": 3
+    }
+  ],
+  "related": [
+    "marriage",
+    "lgbtq_and_the_bible",
+    "sexual_temptation",
+    "singleness"
+  ]
+}
