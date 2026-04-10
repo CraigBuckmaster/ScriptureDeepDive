@@ -9,8 +9,9 @@
 
 import React, { useState } from 'react';
 import {
-  View, Text, TouchableOpacity, Image, StyleSheet,
+  View, Text, TouchableOpacity, StyleSheet,
 } from 'react-native';
+import { Image } from 'expo-image';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 export interface RelatedContentItem {
@@ -51,7 +52,8 @@ export function RelatedContentCard({ item, onPress }: Props) {
           source={{ uri: item.imageUrl! }}
           style={styles.image}
           onError={() => setImgError(true)}
-          resizeMode="cover"
+          contentFit="cover"
+          cachePolicy="disk"
         />
       ) : (
         <View style={[styles.image, { backgroundColor: item.color + '20' }]}>

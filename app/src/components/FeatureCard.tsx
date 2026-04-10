@@ -104,6 +104,7 @@ export function FeatureCard({
               source={{ uri: currentImage.url }}
               style={styles.image}
               contentFit="cover"
+              cachePolicy="disk"
               transition={400}
               onError={() => setFailedUrls((prev) => new Set(prev).add(currentImage.url))}
               recyclingKey={currentImage.url}

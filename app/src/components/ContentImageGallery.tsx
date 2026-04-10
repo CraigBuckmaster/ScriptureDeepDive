@@ -3,7 +3,7 @@
  *
  * Features:
  * - Snap-to-item horizontal scroll with page indicator dots
- * - Cached remote images via React Native Image
+ * - Cached remote images via expo-image with disk caching
  * - Loading skeleton per image
  * - Graceful fallback on load failure (hides broken image)
  * - Caption and credit text below each image
@@ -18,7 +18,6 @@
 import React, { useState, useCallback, useRef } from 'react';
 import {
   View,
-  Image,
   Text,
   ScrollView,
   Modal,
@@ -30,6 +29,7 @@ import {
   type NativeSyntheticEvent,
   type NativeScrollEvent,
 } from 'react-native';
+import { Image } from 'expo-image';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -111,7 +111,8 @@ function GalleryImageItem({ image, width, height, onPress }: ImageItemProps) {
           <Image
             source={{ uri: image.url, headers: IMAGE_HEADERS }}
             style={styles.image}
-            resizeMode="contain"
+            contentFit="contain"
+            cachePolicy="disk"
             onLoad={handleLoad}
             onError={handleError}
           />
@@ -241,7 +242,8 @@ function ZoomViewer({ image, visible, onClose }: ZoomViewerProps) {
               <Image
                 source={{ uri: image.url, headers: IMAGE_HEADERS }}
                 style={styles.zoomImage}
-                resizeMode="contain"
+                contentFit="contain"
+                cachePolicy="disk"
               />
             </Animated.View>
           </GestureDetector>
