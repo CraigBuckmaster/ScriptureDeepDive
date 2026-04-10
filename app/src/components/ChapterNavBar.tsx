@@ -119,6 +119,7 @@ export function ChapterNavBar({
             onPress={() => { if (hasPrev) { lightImpact(); onPrev(); } }}
             disabled={!hasPrev}
             accessibilityLabel="Previous chapter"
+            hitSlop={{ top: 8, bottom: 8, left: 8, right: 4 }}
             style={styles.arrowButton}
           >
             <ChevronLeft size={22} color={hasPrev ? base.gold : base.textMuted} />
@@ -140,6 +141,7 @@ export function ChapterNavBar({
             onPress={() => { if (hasNext) { lightImpact(); onNext(); } }}
             disabled={!hasNext}
             accessibilityLabel="Next chapter"
+            hitSlop={{ top: 8, bottom: 8, left: 4, right: 8 }}
             style={styles.arrowButton}
           >
             <ChevronRight size={22} color={hasNext ? base.gold : base.textMuted} />
@@ -234,15 +236,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
     justifyContent: 'center',
+    overflow: 'hidden',
   },
   arrowButton: {
-    minWidth: MIN_TOUCH_TARGET,
+    minWidth: 28,
     minHeight: MIN_TOUCH_TARGET,
     justifyContent: 'center',
     alignItems: 'center',
   },
   chapterButton: {
-    paddingHorizontal: spacing.xs,
+    paddingHorizontal: 2,
     minHeight: MIN_TOUCH_TARGET,
     justifyContent: 'center',
     flexShrink: 1,
