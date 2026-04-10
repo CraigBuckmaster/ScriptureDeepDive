@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-update_image_urls.py — Replace Wikimedia URLs with R2 URLs in content JSON files.
+update_image_urls.py - Replace Wikimedia URLs with R2 URLs in content JSON files.
 
 Uses the URL mapping from upload_images_to_r2.py to update all references
 in content/meta/*.json and app/assets/explore-images.json.
@@ -123,7 +123,7 @@ def update_images_in_obj(obj: Any, r2_base: str, parent_id: str = None,
             if new_filename:
                 new_url = f"{r2_base}{new_filename}"
                 obj['url'] = new_url
-                obj['credit'] = 'Gustave Doré · Public domain'
+                obj['credit'] = 'Gustave Doré - Public domain'
                 changes.append({
                     'path': path,
                     'old_url': old_url[:60] + '...',
@@ -166,7 +166,7 @@ def main():
     if not UPLOAD_MANIFEST.exists():
         # Use expected URL format
         r2_base = "https://contentcompanionstudy.com/art/"
-        print(f"⚠️  Upload manifest not found, using default R2 URL: {r2_base}")
+        print(f"[!]  Upload manifest not found, using default R2 URL: {r2_base}")
     else:
         with open(UPLOAD_MANIFEST) as f:
             manifest = json.load(f)
@@ -194,7 +194,7 @@ def main():
             with open(fpath) as f:
                 data = json.load(f)
         except Exception as e:
-            print(f"  ❌ Error reading: {e}")
+            print(f"  [X] Error reading: {e}")
             continue
         
         changes = []
@@ -204,12 +204,12 @@ def main():
             all_changes[fname] = changes
             replaced = sum(1 for c in changes if c.get('new_url'))
             unmatched = sum(1 for c in changes if not c.get('new_url'))
-            print(f"  ✓ {replaced} URLs replaced, {unmatched} unmatched")
+            print(f"  [OK] {replaced} URLs replaced, {unmatched} unmatched")
             
             if not dry_run:
                 with open(fpath, 'w') as f:
                     json.dump(updated_data, f, indent=2, ensure_ascii=False)
-                print(f"  💾 File saved")
+                print(f"  -- File saved")
         else:
             print(f"  - No Wikimedia URLs found")
     
@@ -239,7 +239,7 @@ def main():
                     print(f"  [{fname}] {c.get('reason', 'Unknown')}")
     
     if dry_run:
-        print("\n⚠️  DRY RUN - No files were modified")
+        print("\n[!]  DRY RUN - No files were modified")
         print("   Run without --dry-run to apply changes")
     else:
         print("\n✅ All files updated!")

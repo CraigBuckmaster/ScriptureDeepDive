@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-upload_images_to_r2.py — Upload images to CloudFlare R2.
+upload_images_to_r2.py - Upload images to CloudFlare R2.
 
 Uploads images from _tools/art_staging/priority/ to R2 under the art/ prefix.
 Generates a URL mapping file for updating JSON references.
@@ -13,11 +13,11 @@ Options:
     --all       Upload all staged images
 
 Environment Variables (required):
-    R2_ACCOUNT_ID       — CloudFlare account ID
-    R2_ACCESS_KEY_ID    — R2 API token access key
-    R2_SECRET_ACCESS_KEY — R2 API token secret
-    R2_BUCKET_NAME      — R2 bucket name
-    R2_PUBLIC_URL       — Public URL base
+    R2_ACCOUNT_ID       - CloudFlare account ID
+    R2_ACCESS_KEY_ID    - R2 API token access key
+    R2_SECRET_ACCESS_KEY - R2 API token secret
+    R2_BUCKET_NAME      - R2 bucket name
+    R2_PUBLIC_URL       - Public URL base
 
 The script can also read from a .env file in the repo root.
 """
@@ -51,7 +51,7 @@ def get_env(key: str) -> str:
     """Get required environment variable or exit with error."""
     value = os.environ.get(key)
     if not value:
-        print(f"❌ Missing required environment variable: {key}")
+        print(f"[X] Missing required environment variable: {key}")
         print("   Set it in your environment or in .env file")
         sys.exit(1)
     return value
@@ -71,7 +71,7 @@ def get_s3_client():
     try:
         import boto3
     except ImportError:
-        print("❌ boto3 not installed. Run: pip install boto3")
+        print("[X] boto3 not installed. Run: pip install boto3")
         sys.exit(1)
     
     account_id = get_env('R2_ACCOUNT_ID')
@@ -113,23 +113,23 @@ def main():
         print("Mode: All staged images")
     
     if not source_dir.exists():
-        print(f"❌ Source directory not found: {source_dir}")
+        print(f"[X] Source directory not found: {source_dir}")
         print("   Run download_priority_images.py first")
         sys.exit(1)
     
     # Get image files
     image_files = list(source_dir.glob('*.jpg')) + list(source_dir.glob('*.png'))
     if not image_files:
-        print(f"❌ No images found in {source_dir}")
+        print(f"[X] No images found in {source_dir}")
         sys.exit(1)
     
     bucket = get_env('R2_BUCKET_NAME')
     public_url = get_env('R2_PUBLIC_URL').rstrip('/')
     
-    print(f"\n📁 Source: {source_dir}")
-    print(f"🖼️  Images: {len(image_files)}")
-    print(f"🪣 Bucket: {bucket}")
-    print(f"🌐 Public URL: {public_url}")
+    print(f"\n-- Source: {source_dir}")
+    print(f"--  Images: {len(image_files)}")
+    print(f"-- Bucket: {bucket}")
+    print(f"-- Public URL: {public_url}")
     print()
     
     # Create S3 client
@@ -160,7 +160,7 @@ def main():
             )
             
             r2_url = f"{public_url}/{r2_key}"
-            print(f"      ✓ Uploaded to {r2_url}")
+            print(f"      [OK] Uploaded to {r2_url}")
             
             uploaded.append({
                 'filename': filename,
@@ -171,7 +171,7 @@ def main():
             })
             
         except Exception as e:
-            print(f"      ❌ Error: {e}")
+            print(f"      [X] Error: {e}")
             failed.append({'filename': filename, 'error': str(e)})
     
     # Save upload manifest
@@ -190,9 +190,9 @@ def main():
     print("\n" + "=" * 60)
     print("SUMMARY")
     print("=" * 60)
-    print(f"  ✓ Uploaded: {len(uploaded)}")
-    print(f"  ❌ Failed:   {len(failed)}")
-    print(f"\n📋 Upload manifest: {upload_manifest_path}")
+    print(f"  [OK] Uploaded: {len(uploaded)}")
+    print(f"  [X] Failed:   {len(failed)}")
+    print(f"\n-- Upload manifest: {upload_manifest_path}")
     
     if failed:
         print("\n=== FAILED ===")
@@ -229,7 +229,7 @@ def main():
     with open(mapping_path, 'w') as f:
         json.dump(url_mapping, f, indent=2)
     
-    print(f"📋 URL mapping: {mapping_path}")
+    print(f"-- URL mapping: {mapping_path}")
     print("\nNext: python3 _tools/update_image_urls.py")
 
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-download_images.py — Download all inventoried Wikimedia images.
+download_images.py - Download all inventoried Wikimedia images.
 
 Downloads images from Wikimedia Commons with proper User-Agent,
 converts to JPG if needed, saves to _tools/art_staging/.
@@ -42,7 +42,7 @@ def download_image(url: str, dest_path: Path) -> bool:
         
         # Check if we got actual image data
         if len(data) < 1000:
-            print(f"      ⚠️  Response too small ({len(data)} bytes)")
+            print(f"      [!]  Response too small ({len(data)} bytes)")
             return False
         
         # Save the file
@@ -52,13 +52,13 @@ def download_image(url: str, dest_path: Path) -> bool:
         return True
         
     except HTTPError as e:
-        print(f"      ❌ HTTP {e.code}: {e.reason}")
+        print(f"      [X] HTTP {e.code}: {e.reason}")
         return False
     except URLError as e:
-        print(f"      ❌ URL Error: {e.reason}")
+        print(f"      [X] URL Error: {e.reason}")
         return False
     except Exception as e:
-        print(f"      ❌ Error: {e}")
+        print(f"      [X] Error: {e}")
         return False
 
 
@@ -84,10 +84,10 @@ def convert_to_jpg(src_path: Path, dest_path: Path) -> bool:
         return True
         
     except ImportError:
-        print("      ⚠️  PIL not installed, keeping original format")
+        print("      [!]  PIL not installed, keeping original format")
         return False
     except Exception as e:
-        print(f"      ⚠️  Conversion error: {e}")
+        print(f"      [!]  Conversion error: {e}")
         return False
 
 
@@ -95,18 +95,18 @@ def main():
     force = '--force' in sys.argv
     
     print("=" * 60)
-    print("Image Downloader — Wikimedia → Local")
+    print("Image Downloader - Wikimedia -> Local")
     print("=" * 60)
     
     if not INVENTORY_PATH.exists():
-        print(f"❌ Inventory not found: {INVENTORY_PATH}")
+        print(f"[X] Inventory not found: {INVENTORY_PATH}")
         print("   Run image_inventory.py first")
         sys.exit(1)
     
     with open(INVENTORY_PATH) as f:
         inventory = json.load(f)
     
-    print(f"\n📋 {len(inventory)} images in inventory")
+    print(f"\n-- {len(inventory)} images in inventory")
     if force:
         print("   --force: Re-downloading all")
     
@@ -125,7 +125,7 @@ def main():
         # Skip if exists (unless force)
         if dest_path.exists() and not force:
             size_kb = dest_path.stat().st_size / 1024
-            print(f"      ✓ Exists ({size_kb:.1f} KB)")
+            print(f"      [OK] Exists ({size_kb:.1f} KB)")
             skipped.append(filename)
             continue
         
@@ -148,7 +148,7 @@ def main():
         
         if success_download:
             size_kb = dest_path.stat().st_size / 1024
-            print(f"      ✓ Downloaded ({size_kb:.1f} KB)")
+            print(f"      [OK] Downloaded ({size_kb:.1f} KB)")
             
             # Convert to JPG if needed
             if not filename.endswith('.jpg') or dest_path.suffix.lower() in ('.png', '.tif', '.tiff', '.gif'):
@@ -156,7 +156,7 @@ def main():
                 if convert_to_jpg(dest_path, jpg_path):
                     if dest_path != jpg_path:
                         os.remove(dest_path)
-                    print(f"      ✓ Converted to JPG")
+                    print(f"      [OK] Converted to JPG")
             
             success.append(filename)
         else:
@@ -169,9 +169,9 @@ def main():
     print("\n" + "=" * 60)
     print("SUMMARY")
     print("=" * 60)
-    print(f"  ✓ Downloaded: {len(success)}")
-    print(f"  ⏭ Skipped:    {len(skipped)}")
-    print(f"  ❌ Failed:     {len(failed)}")
+    print(f"  [OK] Downloaded: {len(success)}")
+    print(f"  >> Skipped:    {len(skipped)}")
+    print(f"  [X] Failed:     {len(failed)}")
     
     if failed:
         print("\n=== FAILED DOWNLOADS ===")
@@ -198,7 +198,7 @@ def main():
     with open(INVENTORY_PATH, 'w') as f:
         json.dump(inventory, f, indent=2)
     
-    print(f"\n📋 Inventory updated: {INVENTORY_PATH}")
+    print(f"\n-- Inventory updated: {INVENTORY_PATH}")
     
     if failed:
         print("\nNext: Fix failed downloads, then run upload_images_to_r2.py")
