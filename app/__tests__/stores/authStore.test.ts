@@ -188,4 +188,149 @@ describe('authStore', () => {
 
     expect(useAuthStore.getState().user).toBeNull();
   });
+
+  it('signUpWithEmail delegates to supabase and returns empty on success', async () => {
+    const mockSignUp = jest.fn().mockResolvedValue({ error: null });
+    mockGetSupabase.mockReturnValue({
+      auth: {
+        getSession: mockGetSession,
+        onAuthStateChange: mockOnAuthStateChange,
+        signUp: mockSignUp,
+        signOut: mockSignOut,
+      },
+    });
+
+    const result = await useAuthStore.getState().signUpWithEmail('test@test.com', 'password123');
+    expect(mockSignUp).toHaveBeenCalledWith({ email: 'test@test.com', password: 'password123' });
+    expect(result).toEqual({});
+    expect(useAuthStore.getState().isLoading).toBe(false);
+  });
+
+  it('signUpWithEmail returns error message on failure', async () => {
+    const mockSignUp = jest.fn().mockResolvedValue({ error: { message: 'Email taken' } });
+    mockGetSupabase.mockReturnValue({
+      auth: {
+        getSession: mockGetSession,
+        onAuthStateChange: mockOnAuthStateChange,
+        signUp: mockSignUp,
+        signOut: mockSignOut,
+      },
+    });
+
+    const result = await useAuthStore.getState().signUpWithEmail('taken@test.com', 'pass');
+    expect(result).toEqual({ error: 'Email taken' });
+  });
+
+  it('signUpWithEmail returns error when supabase not available', async () => {
+    mockGetSupabase.mockReturnValue(null);
+    const result = await useAuthStore.getState().signUpWithEmail('test@test.com', 'pass');
+    expect(result).toEqual({ error: 'Auth not available in this environment' });
+  });
+
+  it('signInWithGoogle returns error when supabase not available', async () => {
+    mockIsSupabaseAvailable.mockReturnValue(false);
+    const result = await useAuthStore.getState().signInWithGoogle();
+    expect(result).toEqual({ error: expect.stringContaining('development build') });
+    expect(useAuthStore.getState().isLoading).toBe(false);
+  });
+
+  it('signInWithGoogle delegates to oauthHelpers when available', async () => {
+    mockIsSupabaseAvailable.mockReturnValue(true);
+    const { signInWithProvider } = require('@/lib/oauthHelpers');
+    signInWithProvider.mockResolvedValue({});
+
+    const result = await useAuthStore.getState().signInWithGoogle();
+    expect(signInWithProvider).toHaveBeenCalledWith('google');
+    expect(result).toEqual({});
+    expect(useAuthStore.getState().isLoading).toBe(false);
+  });
+
+  it('signInWithFacebook returns error when supabase not available', async () => {
+    mockIsSupabaseAvailable.mockReturnValue(false);
+    const result = await useAuthStore.getState().signInWithFacebook();
+    expect(result).toEqual({ error: expect.stringContaining('development build') });
+  });
+
+  it('signInWithFacebook delegates to oauthHelpers', async () => {
+    mockIsSupabaseAvailable.mockReturnValue(true);
+    const { signInWithProvider } = require('@/lib/oauthHelpers');
+    signInWithProvider.mockResolvedValue({});
+
+    const result = await useAuthStore.getState().signInWithFacebook();
+    expect(signInWithProvider).toHaveBeenCalledWith('facebook');
+    expect(result).toEqual({});
+  });
+
+  it('resetPassword delegates to supabase and returns empty on success', async () => {
+    const mockResetPw = jest.fn().mockResolvedValue({ error: null });
+    mockGetSupabase.mockReturnValue({
+      auth: {
+        getSession: mockGetSession,
+        onAuthStateChange: mockOnAuthStateChange,
+        signOut: mockSignOut,
+        resetPasswordForEmail: mockResetPw,
+      },
+    });
+
+    const result = await useAuthStore.getState().resetPassword('test@test.com');
+    expect(mockResetPw).toHaveBeenCalledWith('test@test.com');
+    expect(result).toEqual({});
+    expect(useAuthStore.getState().isLoading).toBe(false);
+  });
+
+  it('resetPassword returns error message on failure', async () => {
+    const mockResetPw = jest.fn().mockResolvedValue({ error: { message: 'Rate limited' } });
+    mockGetSupabase.mockReturnValue({
+      auth: {
+        getSession: mockGetSession,
+        onAuthStateChange: mockOnAuthStateChange,
+        signOut: mockSignOut,
+        resetPasswordForEmail: mockResetPw,
+      },
+    });
+
+    const result = await useAuthStore.getState().resetPassword('test@test.com');
+    expect(result).toEqual({ error: 'Rate limited' });
+  });
+
+  it('resetPassword returns error when supabase not available', async () => {
+    mockGetSupabase.mockReturnValue(null);
+    const result = await useAuthStore.getState().resetPassword('test@test.com');
+    expect(result).toEqual({ error: 'Auth not available in this environment' });
+  });
+
+  it('hydrate returns early when getSupabase returns null', async () => {
+    mockIsSupabaseAvailable.mockReturnValue(true);
+    mockGetSupabase.mockReturnValue(null);
+
+    await useAuthStore.getState().hydrate();
+    expect(mockGetSession).not.toHaveBeenCalled();
+    expect(useAuthStore.getState().isHydrated).toBe(true);
+  });
+
+  it('hydrate syncs profile on existing session', async () => {
+    const mockUser = {
+      id: 'user-123',
+      email: 'test@example.com',
+      user_metadata: { full_name: 'Test User', avatar_url: 'http://avatar.url' },
+      app_metadata: { provider: 'google' },
+    };
+    mockGetSession.mockResolvedValue({ data: { session: { user: mockUser } } });
+
+    await useAuthStore.getState().hydrate();
+    expect(mockUpsertAuthProfile).toHaveBeenCalledWith(
+      'user-123',
+      'test@example.com',
+      'Test User',
+      'http://avatar.url',
+      'google',
+    );
+  });
+
+  it('signOut handles missing supabase gracefully', async () => {
+    mockGetSupabase.mockReturnValue(null);
+    await useAuthStore.getState().signOut();
+    expect(mockClearAuthProfile).toHaveBeenCalled();
+    expect(useAuthStore.getState().user).toBeNull();
+  });
 });

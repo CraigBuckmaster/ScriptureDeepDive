@@ -193,4 +193,83 @@ describe('useConceptData', () => {
     expect(result.current.topChapters[0].score).toBe(15);
     expect(result.current.topChapters[9].score).toBe(6);
   });
+
+  it('skips chapters with zero score in theme matching', async () => {
+    getMockDb().getFirstAsync.mockResolvedValueOnce({
+      ...mockConceptRow,
+      word_study_ids_json: '[]',
+      thread_ids_json: '[]',
+      prophecy_chain_ids_json: '[]',
+      people_tags_json: '[]',
+    });
+    getMockDb().getAllAsync.mockResolvedValueOnce([
+      { chapter_id: 'genesis_1', content_json: JSON.stringify({ scores: [{ label: 'grace_theme', score: 0 }] }) },
+      { chapter_id: 'genesis_2', content_json: JSON.stringify({ scores: [{ label: 'grace_theme', score: 5 }] }) },
+    ]);
+    getMockDb().getFirstAsync.mockResolvedValue({ name: 'Genesis' });
+
+    const { result } = renderHook(() => useConceptData('grace'));
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    expect(result.current.topChapters).toHaveLength(1);
+    expect(result.current.topChapters[0].chapter_id).toBe('genesis_2');
+  });
+
+  it('handles concept with null journey_stops_json', async () => {
+    getMockDb().getFirstAsync.mockResolvedValueOnce({
+      ...mockConceptRow,
+      journey_stops_json: null,
+      word_study_ids_json: '[]',
+      thread_ids_json: '[]',
+      prophecy_chain_ids_json: '[]',
+      people_tags_json: '[]',
+      theme_key: null,
+    });
+
+    const { result } = renderHook(() => useConceptData('grace'));
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    expect(result.current.concept?.journey_stops).toEqual([]);
+  });
+});
+
+describe('useConcepts', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    resetMockDb();
+  });
+
+  it('loads all concepts', async () => {
+    const { useConcepts } = require('@/hooks/useConceptData');
+    getMockDb().getAllAsync.mockResolvedValueOnce([
+      {
+        id: 'grace',
+        title: 'Grace',
+        description: 'Unmerited favor',
+        theme_key: null,
+        word_study_ids_json: '[]',
+        thread_ids_json: '[]',
+        prophecy_chain_ids_json: '[]',
+        people_tags_json: '[]',
+        tags_json: '[]',
+        journey_stops_json: null,
+      },
+    ]);
+
+    const { result } = renderHook(() => useConcepts());
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    expect(result.current.concepts).toHaveLength(1);
+    expect(result.current.concepts[0].title).toBe('Grace');
+  });
+
+  it('handles error gracefully', async () => {
+    const { useConcepts } = require('@/hooks/useConceptData');
+    getMockDb().getAllAsync.mockRejectedValueOnce(new Error('DB fail'));
+
+    const { result } = renderHook(() => useConcepts());
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    expect(result.current.concepts).toEqual([]);
+  });
 });

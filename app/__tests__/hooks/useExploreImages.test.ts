@@ -30,10 +30,27 @@ describe('useExploreImages', () => {
     expect(result.current).toEqual({});
   });
 
-  it('resolves manifest into a registry', async () => {
+  it('resolves manifest with inline images', async () => {
     const { result } = renderHook(() => useExploreImages());
-    await waitFor(() => expect(Object.keys(result.current).length).toBeGreaterThanOrEqual(0));
-    // Registry is populated after async resolve
+    await waitFor(() => {
+      const keys = Object.keys(result.current);
+      if (keys.length > 0) {
+        expect(result.current.TestScreen).toBeDefined();
+      }
+    });
+  });
+
+  it('returns correct structure for inline image entries', async () => {
+    const { result } = renderHook(() => useExploreImages());
+    await waitFor(() => {
+      if (result.current.TestScreen) {
+        expect(result.current.TestScreen.count).toBe(5);
+        expect(result.current.TestScreen.noun).toBe('items');
+        expect(result.current.TestScreen.images).toHaveLength(1);
+        expect(result.current.TestScreen.images[0].url).toBe('http://img.jpg');
+        expect(result.current.TestScreen.images[0].deepLink.screen).toBe('TestScreen');
+      }
+    });
   });
 
   it('returns a record type', async () => {

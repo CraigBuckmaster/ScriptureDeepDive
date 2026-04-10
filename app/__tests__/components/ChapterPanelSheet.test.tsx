@@ -61,4 +61,50 @@ describe('ChapterPanelSheet', () => {
     );
     expect(getByText('Interlinear Hebrew & Greek')).toBeTruthy();
   });
+
+  it('renders with longPress verse set', () => {
+    expect(() => {
+      renderWithProviders(
+        <ChapterPanelSheet
+          {...defaultProps}
+          longPress={{ verseNum: 3, text: 'And God said...' }}
+        />,
+      );
+    }).not.toThrow();
+  });
+
+  it('renders with interlinear verse set', () => {
+    expect(() => {
+      renderWithProviders(
+        <ChapterPanelSheet
+          {...defaultProps}
+          interlinearVerse={5}
+        />,
+      );
+    }).not.toThrow();
+  });
+
+  it('renders with highlights', () => {
+    expect(() => {
+      renderWithProviders(
+        <ChapterPanelSheet
+          {...defaultProps}
+          highlights={[{ verse_ref: 'genesis_1:1', color: 'yellow', id: 1, created_at: '' }]}
+          longPress={{ verseNum: 1, text: 'In the beginning...' }}
+        />,
+      );
+    }).not.toThrow();
+  });
+
+  it('renders with bookmarked verse and longPress', () => {
+    expect(() => {
+      renderWithProviders(
+        <ChapterPanelSheet
+          {...defaultProps}
+          bookmarked={new Set([1, 3, 5])}
+          longPress={{ verseNum: 3, text: 'Some verse text' }}
+        />,
+      );
+    }).not.toThrow();
+  });
 });

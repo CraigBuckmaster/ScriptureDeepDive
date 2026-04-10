@@ -45,4 +45,63 @@ describe('TextualPanel', () => {
     );
     expect(toJSON()).toBeTruthy();
   });
+
+  it('omits note when empty string', () => {
+    const { queryByText } = renderWithProviders(
+      <TextualPanel entries={[{ ref: 'v. 3', title: 'Test', content: 'Body', note: '' }]} />,
+    );
+    // Empty note should not render (note is falsy)
+    expect(queryByText('Minor semantic difference.')).toBeNull();
+  });
+});
+
+// ── CompositeTextualPanel tests ──
+
+import { CompositeTextualPanel } from '@/components/panels/TextualPanel';
+
+jest.mock('@/components/panels/ManuscriptStoriesView', () => ({
+  ManuscriptStoriesView: ({ stories }: any) => {
+    const RN = require('react-native');
+    return <RN.Text>Stories: {stories.length}</RN.Text>;
+  },
+}));
+
+describe('CompositeTextualPanel', () => {
+  const notes: TextualEntry[] = [
+    { ref: 'v.1', title: 'Variant A', content: 'Content A' },
+  ];
+  const stories = [
+    { title: 'Story 1', body: 'Body 1' },
+  ];
+
+  it('renders notes-only without tab bar', () => {
+    const { getByText, queryByText } = renderWithProviders(
+      <CompositeTextualPanel data={{ notes, stories: [] }} />,
+    );
+    expect(getByText('Variant A')).toBeTruthy();
+    expect(queryByText('Notes')).toBeNull(); // no tab bar
+  });
+
+  it('renders stories-only without tab bar', () => {
+    const { getByText, queryByText } = renderWithProviders(
+      <CompositeTextualPanel data={{ notes: [], stories }} />,
+    );
+    expect(getByText('Stories: 1')).toBeTruthy();
+    expect(queryByText('Manuscript Stories')).toBeNull(); // no tab bar
+  });
+
+  it('renders tab bar when both notes and stories exist', () => {
+    const { getByText } = renderWithProviders(
+      <CompositeTextualPanel data={{ notes, stories }} />,
+    );
+    expect(getByText('Notes')).toBeTruthy();
+    expect(getByText('Manuscript Stories')).toBeTruthy();
+  });
+
+  it('defaults to stories tab when defaultTab is stories', () => {
+    const { getByText } = renderWithProviders(
+      <CompositeTextualPanel data={{ notes, stories }} defaultTab="stories" />,
+    );
+    expect(getByText('Stories: 1')).toBeTruthy();
+  });
 });
