@@ -57,7 +57,8 @@
         }
       ],
       "expo-asset",
-      "expo-sqlite"
+      "expo-sqlite",
+      "@sentry/react-native/expo"
     ],
     "updates": {
       "url": "https://u.expo.dev/105f31ba-3cfb-4d35-8509-4abbe6ab132d",
@@ -68,6 +69,7 @@
       "policy": "appVersion"
     },
     "extra": {
+      "sentryDsn": "",
       "eas": {
         "projectId": "105f31ba-3cfb-4d35-8509-4abbe6ab132d"
       }

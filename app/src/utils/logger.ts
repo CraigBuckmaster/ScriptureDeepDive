@@ -3,12 +3,11 @@
  *
  * Replaces bare console.log/warn/error calls with tagged, gated output.
  * - info: only in __DEV__ (stripped from production)
- * - warn: always logged (user-facing issues, recoverable errors)
- * - error: always logged (crashes, data corruption, unrecoverable)
- *
- * Future: swap the warn/error implementations for Sentry, Bugsnag, etc.
- * without touching any call sites.
+ * - warn: always logged + sent to Sentry as message
+ * - error: always logged + sent to Sentry as exception
  */
+
+import { Sentry, DSN } from '../lib/sentry';
 
 const IS_DEV = __DEV__;
 
@@ -21,13 +20,17 @@ export const logger = {
   /** Recoverable issue — always logged. */
   warn(tag: string, msg: string, data?: unknown): void {
     console.warn(`[${tag}] ${msg}`, data ?? '');
-    // Future: Sentry.captureMessage(...)
+    if (DSN) {
+      Sentry.captureMessage(`[${tag}] ${msg}`, 'warning');
+    }
   },
 
   /** Unrecoverable error — always logged. */
   error(tag: string, msg: string, err?: unknown): void {
     console.error(`[${tag}] ${msg}`, err ?? '');
-    // Future: Sentry.captureException(...)
+    if (DSN) {
+      Sentry.captureException(err instanceof Error ? err : new Error(`[${tag}] ${msg}`));
+    }
   },
 };
 
