@@ -11,6 +11,7 @@ import { getContentStats, type ContentStats } from '../db/content';
 import { getRecentChapters, getReadingStats, type ReadingStats } from '../db/user';
 import type { RecentChapter } from '../types';
 import { logger } from '../utils/logger';
+import dailyEncouragements from '../data/dailyEncouragements';
 
 // ── Verse of the Day ───────────────────────────────────────────────
 
@@ -85,10 +86,7 @@ function getSubtitle(readingStats: ReadingStats | null): string {
   if (!readingStats || readingStats.totalChapters === 0) {
     return 'Learn to read the Bible the way it was written';
   }
-  if (readingStats.currentStreak > 1) {
-    return `${readingStats.currentStreak}-day reading streak`;
-  }
-  return `${readingStats.totalChapters} chapters studied`;
+  return dailyEncouragements[getDayOfYear() % dailyEncouragements.length];
 }
 
 // ── Hook ───────────────────────────────────────────────────────────
