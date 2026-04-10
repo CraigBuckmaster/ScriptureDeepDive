@@ -135,6 +135,7 @@ function SubscriptionScreen() {
               accessibilityLabel={`Subscribe to ${selectedPlan.label} plan`}
             >
               {purchasing ? (
+                {/* data-color: intentional — dark spinner on gold button */}
                 <ActivityIndicator size="small" color="#1a1a1a" />
               ) : (
                 <Text style={styles.purchaseBtnText}>Subscribe Now</Text>
@@ -263,7 +264,7 @@ const styles = StyleSheet.create({
     marginBottom: spacing.md,
   },
   purchaseBtnText: {
-    color: '#1a1a1a',
+    color: '#1a1a1a', // data-color: intentional (dark text on gold button)
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 16,
   },

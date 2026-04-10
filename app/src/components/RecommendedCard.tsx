@@ -141,7 +141,7 @@ export function RecommendedCard({
                   <View
                     key={i}
                     style={[styles.dot, {
-                      backgroundColor: i === safeIndex ? '#fff' : 'rgba(255,255,255,0.4)',
+                      backgroundColor: i === safeIndex ? '#fff' : 'rgba(255,255,255,0.4)', // overlay-color: intentional
                     }]}
                   />
                 ))}
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
     right: 0,
     height: 40,
     backgroundColor: 'transparent',
-    shadowColor: '#000',
+    shadowColor: '#000', // overlay-color: intentional
     shadowOffset: { width: 0, height: -10 },
     shadowOpacity: 0.5,
     shadowRadius: 10,
@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
     left: 10,
     fontFamily: fontFamily.uiMedium,
     fontSize: 12,
-    textShadowColor: 'rgba(0,0,0,0.8)',
+    textShadowColor: 'rgba(0,0,0,0.8)', // overlay-color: intentional
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 3,
   },

@@ -87,7 +87,7 @@ export function CrossRefPopup({ visible, onClose, reference, onGoToChapter }: Pr
 const styles = StyleSheet.create({
   overlay: {
     flex: 1,
-    backgroundColor: '#00000088',
+    backgroundColor: '#00000088', // overlay-color: intentional
     justifyContent: 'center',
     alignItems: 'center',
   },

@@ -233,6 +233,7 @@ function TimelineScreen() {
                 <Line x1={x1} y1={ERA_BAR_Y + ERA_BAR_H} x2={x2} y2={ERA_BAR_Y + ERA_BAR_H}
                   stroke={lighten(eraColor, 0.4)} strokeWidth={1} opacity={0.5} />
                 {/* Text shadow */}
+                {/* overlay-color: intentional — text shadow for era labels */}
                 <SvgText x={(x1 + x2) / 2 + 1} y={ERA_BAR_Y + 27} textAnchor="middle"
                   fontSize={11} fill="#000" opacity={0.5} fontFamily="Cinzel_400Regular">
                   {(eraNames[era] ?? era).toUpperCase()}

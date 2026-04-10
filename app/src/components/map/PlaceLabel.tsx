@@ -13,11 +13,11 @@ import { fontFamily } from '../../theme';
 
 // Label colors by place type
 const TYPE_COLORS: Record<string, string> = {
-  city: '#d4b483',
-  mountain: '#d4b483',
-  site: '#d4b483',
-  water: '#90c8d8',
-  region: '#b8a070',
+  city: '#d4b483', // data-color: intentional
+  mountain: '#d4b483', // data-color: intentional
+  site: '#d4b483', // data-color: intentional
+  water: '#90c8d8', // data-color: intentional
+  region: '#b8a070', // data-color: intentional
 };
 
 // Type symbols

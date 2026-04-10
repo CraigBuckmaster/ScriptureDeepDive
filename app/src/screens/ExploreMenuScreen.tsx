@@ -45,53 +45,53 @@ const SECTIONS: FeatureSection[] = [
   {
     id: 'biblical-world', label: 'The Biblical World', subtitle: 'Where, when, and who',
     features: [
-      { title: 'People',    subtitle: '282 people on a zoomable family tree with bios',                color: '#e86040', screen: 'GenealogyTree' },
-      { title: 'Timeline',  subtitle: '543 events from creation to revelation',                        color: '#70b8e8', screen: 'Timeline' },
-      { title: 'Periods',   subtitle: '12 eras from creation to the apostolic age',                    color: '#8a6e3a', screen: 'Periods', premium: true },
-      { title: 'Story',     subtitle: '8 acts in God\'s redemptive narrative',                          color: '#c8a040', screen: 'RedemptiveArc', premium: true },
-      { title: 'Map',       subtitle: '28 journeys with route overlays across 73 places',              color: '#81C784', screen: 'Map' },
+      { title: 'People',    subtitle: '282 people on a zoomable family tree with bios',                color: '#e86040', screen: 'GenealogyTree' }, // data-color: intentional
+      { title: 'Timeline',  subtitle: '543 events from creation to revelation',                        color: '#70b8e8', screen: 'Timeline' }, // data-color: intentional
+      { title: 'Periods',   subtitle: '12 eras from creation to the apostolic age',                    color: '#8a6e3a', screen: 'Periods', premium: true }, // data-color: intentional
+      { title: 'Story',     subtitle: '8 acts in God\'s redemptive narrative',                          color: '#c8a040', screen: 'RedemptiveArc', premium: true }, // data-color: intentional
+      { title: 'Map',       subtitle: '28 journeys with route overlays across 73 places',              color: '#81C784', screen: 'Map' }, // data-color: intentional
     ],
   },
   {
     id: 'themes', label: 'Themes & Connections', subtitle: 'Trace ideas across Scripture',
     features: [
-      { title: 'Concepts',           subtitle: 'Covenant, atonement, kingdom & more',                  color: '#bfa050', screen: 'ConceptBrowse' },
-      { title: 'Topical Index',      subtitle: 'What does the Bible say about...?',                    color: '#c8a040', screen: 'TopicBrowse' },
-      { title: 'Prophecy',           subtitle: '50 chains \u2014 OT to NT fulfillment',                color: '#e8a070', screen: 'ProphecyBrowse' },
-      { title: 'Threads',            subtitle: 'One idea across 31 chains',                            color: '#9090e0', screen: 'ThreadBrowse', premium: true },
-      { title: 'Gospel Harmony',     subtitle: 'Parallel accounts across four Gospels',                color: '#70d098', screen: 'HarmonyBrowse' },
+      { title: 'Concepts',           subtitle: 'Covenant, atonement, kingdom & more',                  color: '#bfa050', screen: 'ConceptBrowse' }, // data-color: intentional
+      { title: 'Topical Index',      subtitle: 'What does the Bible say about...?',                    color: '#c8a040', screen: 'TopicBrowse' }, // data-color: intentional
+      { title: 'Prophecy',           subtitle: '50 chains \u2014 OT to NT fulfillment',                color: '#e8a070', screen: 'ProphecyBrowse' }, // data-color: intentional
+      { title: 'Threads',            subtitle: 'One idea across 31 chains',                            color: '#9090e0', screen: 'ThreadBrowse', premium: true }, // data-color: intentional
+      { title: 'Gospel Harmony',     subtitle: 'Parallel accounts across four Gospels',                color: '#70d098', screen: 'HarmonyBrowse' }, // data-color: intentional
     ],
   },
   {
     id: 'language', label: 'Language & Reference', subtitle: 'Original words and definitions',
     features: [
-      { title: 'Word Studies', subtitle: 'Hebrew & Greek deep dives',                                  color: '#e890b8', screen: 'WordStudyBrowse' },
-      { title: 'Concordance',  subtitle: 'Every occurrence of a word',                                 color: '#70b8e8', screen: 'Concordance', premium: true },
-      { title: 'Dictionary',   subtitle: 'Definitions for every biblical term',                         color: '#c090e0', screen: 'DictionaryBrowse' },
+      { title: 'Word Studies', subtitle: 'Hebrew & Greek deep dives',                                  color: '#e890b8', screen: 'WordStudyBrowse' }, // data-color: intentional
+      { title: 'Concordance',  subtitle: 'Every occurrence of a word',                                 color: '#70b8e8', screen: 'Concordance', premium: true }, // data-color: intentional
+      { title: 'Dictionary',   subtitle: 'Definitions for every biblical term',                         color: '#c090e0', screen: 'DictionaryBrowse' }, // data-color: intentional
     ],
   },
   {
     id: 'scholarly', label: 'Scholarly Analysis', subtitle: 'Academic perspectives & debate',
     features: [
-      { title: 'Scholars',           subtitle: 'Browse all 54 by tradition',                            color: '#a0b8d0', screen: 'ScholarBrowse' },
-      { title: 'Debates',            subtitle: '303 topics where scholars disagree',                    color: '#d08080', screen: 'DebateBrowse' },
-      { title: 'Difficult Passages', subtitle: '53 hard texts with multi-view responses',               color: '#FFB74D', screen: 'DifficultPassagesBrowse' },
-      { title: 'Content Library',    subtitle: 'Discourse, manuscripts & more',                          color: '#b8a0d0', screen: 'ContentLibrary', premium: true },
+      { title: 'Scholars',           subtitle: 'Browse all 54 by tradition',                            color: '#a0b8d0', screen: 'ScholarBrowse' }, // data-color: intentional
+      { title: 'Debates',            subtitle: '303 topics where scholars disagree',                    color: '#d08080', screen: 'DebateBrowse' }, // data-color: intentional
+      { title: 'Difficult Passages', subtitle: '53 hard texts with multi-view responses',               color: '#FFB74D', screen: 'DifficultPassagesBrowse' }, // data-color: intentional
+      { title: 'Content Library',    subtitle: 'Discourse, manuscripts & more',                          color: '#b8a0d0', screen: 'ContentLibrary', premium: true }, // data-color: intentional
     ],
   },
   {
     id: 'life', label: 'Life & Faith', subtitle: 'Biblical guidance for everyday life',
     features: [
-      { title: 'Life Topics', subtitle: 'Practical guidance from Scripture',                             color: '#81C784', screen: 'LifeTopics' },
+      { title: 'Life Topics', subtitle: 'Practical guidance from Scripture',                             color: '#81C784', screen: 'LifeTopics' }, // data-color: intentional
     ],
   },
   {
     id: 'deep-dive', label: 'Deep Dive', subtitle: 'Advanced study tools',
     features: [
-      { title: 'Hermeneutic Lenses', subtitle: 'Feminist, liberation, canonical & more',                color: '#BA68C8', screen: 'LensBrowse' },
-      { title: 'Archaeology',        subtitle: 'Real artifacts that illuminate the text',                color: '#b07d4f', screen: 'ArchaeologyBrowse' },
-      { title: 'Time-Travel Reader', subtitle: 'Augustine, Luther & modern scholars',                   color: '#8a6a3a', screen: 'TimeTravelBrowse' },
-      { title: 'Grammar',            subtitle: 'Verb forms & syntax in plain English',                  color: '#7a9ab0', screen: 'GrammarBrowse' },
+      { title: 'Hermeneutic Lenses', subtitle: 'Feminist, liberation, canonical & more',                color: '#BA68C8', screen: 'LensBrowse' }, // data-color: intentional
+      { title: 'Archaeology',        subtitle: 'Real artifacts that illuminate the text',                color: '#b07d4f', screen: 'ArchaeologyBrowse' }, // data-color: intentional
+      { title: 'Time-Travel Reader', subtitle: 'Augustine, Luther & modern scholars',                   color: '#8a6a3a', screen: 'TimeTravelBrowse' }, // data-color: intentional
+      { title: 'Grammar',            subtitle: 'Verb forms & syntax in plain English',                  color: '#7a9ab0', screen: 'GrammarBrowse' }, // data-color: intentional
     ],
   },
 ];

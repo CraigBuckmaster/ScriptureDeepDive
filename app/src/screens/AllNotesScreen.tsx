@@ -431,7 +431,7 @@ function AllNotesScreen() {
                           <Text style={[styles.doneText, { color: base.gold }]}>Done</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => handleDelete(note.id)} accessibilityRole="button" accessibilityLabel="Delete note">
-                          <Text style={styles.deleteText}>Delete</Text>
+                          <Text style={[styles.deleteText, { color: base.danger }]}>Delete</Text>
                         </TouchableOpacity>
                       </View>
                     </>
@@ -452,7 +452,7 @@ function AllNotesScreen() {
                       <View style={styles.noteFooter}>
                         <Text style={[styles.noteDate, { color: base.textMuted }]}>{note.updated_at?.slice(0, 10)}</Text>
                         <TouchableOpacity onPress={() => handleDelete(note.id)}>
-                          <Text style={styles.deleteText}>Delete</Text>
+                          <Text style={[styles.deleteText, { color: base.danger }]}>Delete</Text>
                         </TouchableOpacity>
                       </View>
                     </>
@@ -677,7 +677,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
   },
   deleteText: {
-    color: '#e05a6a',
+    // color set inline via base.danger
     fontSize: 11,
   },
   doneText: {

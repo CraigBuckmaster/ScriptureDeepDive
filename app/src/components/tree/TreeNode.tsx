@@ -14,10 +14,10 @@ import { TREE_CONSTANTS, type LayoutNode, type TreePerson } from '../../utils/tr
 
 /** Gender-based tint for node card backgrounds. */
 const GENDER_TINT: Record<string, string> = {
-  m: '#1a2030',   // cool blue-slate
-  f: '#2a1824',   // warm rose-plum
+  m: '#1a2030',   // data-color: intentional (cool blue-slate)
+  f: '#2a1824',   // data-color: intentional (warm rose-plum)
 };
-const GENDER_TINT_DEFAULT = '#1a1810'; // neutral warm dark
+const GENDER_TINT_DEFAULT = '#1a1810'; // data-color: intentional (neutral warm dark)
 
 // Card height and corner radius by node type
 const SPINE_H = 42;
@@ -170,7 +170,7 @@ export const TreeNode = memo(function TreeNode({ node, dimmed, selected, filterE
         y={y + 2}
         textAnchor="middle"
         fontSize={fontSize}
-        fill={isSpine ? '#f0e8d8' : base.textDim}
+        fill={isSpine ? '#f0e8d8' : base.textDim} // data-color: intentional (light text on SVG spine node)
         fontFamily="SourceSans3_400Regular"
         fontWeight={isSpine ? '600' : '400'}
       >

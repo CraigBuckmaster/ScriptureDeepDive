@@ -19,11 +19,11 @@ import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 type Nav = ScreenNavProp<'Explore', 'DebateBrowse'>;
 
 const CATEGORY_COLORS: Record<string, string> = {
-  theological: '#64B5F6',
-  ethical: '#81C784',
-  historical: '#FFB74D',
-  textual: '#BA68C8',
-  interpretive: '#4FC3F7',
+  theological: '#64B5F6', // data-color: intentional
+  ethical: '#81C784', // data-color: intentional
+  historical: '#FFB74D', // data-color: intentional
+  textual: '#BA68C8', // data-color: intentional
+  interpretive: '#4FC3F7', // data-color: intentional
 };
 
 function getPositionTraditions(topic: DebateTopicSummary): string[] {
@@ -139,6 +139,7 @@ function DebateBrowseScreen() {
               },
             ]}
           >
+            {/* data-color: intentional — '#fff' is white text on colored chip */}
             <Text style={[styles.chipText, { color: active ? '#fff' : color }]}>
               {DEBATE_CATEGORY_LABELS[cat] || cat}
             </Text>

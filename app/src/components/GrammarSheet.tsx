@@ -14,7 +14,7 @@ import {
 import { X, BookOpen } from 'lucide-react-native';
 import { useMorphologyDecode, useGrammarArticle } from '../hooks/useGrammar';
 import { LoadingSkeleton } from './LoadingSkeleton';
-import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET, panels } from '../theme';
 
 interface Props {
   visible: boolean;
@@ -30,7 +30,7 @@ export function GrammarSheet({ visible, morphologyCode, onClose, onArticlePress 
 
   const accentColor = useMemo(() => {
     if (!decoded) return base.gold;
-    return decoded.language === 'hebrew' ? '#e890b8' : '#70b8e8';
+    return decoded.language === 'hebrew' ? panels.heb.accent : panels.hist.accent;
   }, [decoded, base.gold]);
 
   if (!visible || !morphologyCode) return null;
@@ -138,7 +138,7 @@ export function GrammarSheet({ visible, morphologyCode, onClose, onArticlePress 
 const styles = StyleSheet.create({
   backdrop: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.6)',
+    backgroundColor: 'rgba(0,0,0,0.6)', // overlay-color: intentional
     justifyContent: 'flex-end',
   },
   sheet: {

@@ -105,18 +105,18 @@ function LoginScreen() {
         {/* Social buttons */}
         <TouchableOpacity
           onPress={handleGoogle}
-          style={[styles.socialButton, { backgroundColor: '#fff' }]}
+          style={[styles.socialButton, { backgroundColor: '#fff' }]} // brand-color: intentional (Google white)
           activeOpacity={0.7}
         >
-          <Text style={[styles.socialButtonText, { color: '#1f1f1f' }]}>Continue with Google</Text>
+          <Text style={[styles.socialButtonText, { color: '#1f1f1f' }]}>{/* brand-color: intentional (Google dark) */}Continue with Google</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           onPress={handleFacebook}
-          style={[styles.socialButton, { backgroundColor: '#1877F2', marginTop: spacing.sm }]}
+          style={[styles.socialButton, { backgroundColor: '#1877F2', marginTop: spacing.sm }]} // brand-color: intentional (Facebook blue)
           activeOpacity={0.7}
         >
-          <Text style={[styles.socialButtonText, { color: '#fff' }]}>Continue with Facebook</Text>
+          <Text style={[styles.socialButtonText, { color: '#fff' }]}>{/* brand-color: intentional (Facebook white) */}Continue with Facebook</Text>
         </TouchableOpacity>
 
         {/* Divider */}
@@ -202,7 +202,7 @@ function LoginScreen() {
 
         {/* Error */}
         {authError ? (
-          <Text style={styles.errorText}>{authError}</Text>
+          <Text style={[styles.errorText, { color: base.danger }]}>{authError}</Text>
         ) : null}
 
         {/* Bottom link */}
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
   },
   loadingOverlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: 'rgba(0,0,0,0.5)', // overlay-color: intentional
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: 10,
@@ -293,7 +293,7 @@ const styles = StyleSheet.create({
   primaryButtonText: {
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 16,
-    color: '#1a1a1a',
+    color: '#1a1a1a', // data-color: intentional (dark text on gold button)
   },
   magicLinkButton: {
     height: 48,
@@ -316,7 +316,7 @@ const styles = StyleSheet.create({
   errorText: {
     fontFamily: fontFamily.ui,
     fontSize: 13,
-    color: '#e05a6a',
+    // color set inline via base.danger
     textAlign: 'center',
     marginTop: spacing.md,
   },

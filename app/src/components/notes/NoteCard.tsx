@@ -118,7 +118,7 @@ export function NoteCard({
               <Text style={[styles.doneText, { color: base.gold }]}>Done</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => onDelete(note.id)}>
-              <Text style={styles.deleteText}>Delete</Text>
+              <Text style={[styles.deleteText, { color: base.danger }]}>Delete</Text>
             </TouchableOpacity>
           </View>
         </>
@@ -263,7 +263,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
   deleteText: {
-    color: '#e05a6a',
+    // color set inline via base.danger
     fontSize: 11,
   },
 });

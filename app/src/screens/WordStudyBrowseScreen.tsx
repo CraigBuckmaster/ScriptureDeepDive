@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useWordStudies } from '../hooks/useWordStudies';
 import { BrowseScreenTemplate } from '../components/BrowseScreenTemplate';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, panels } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 function WordStudyBrowseScreen() {
@@ -34,7 +34,7 @@ function WordStudyBrowseScreen() {
 
   const renderItem = useCallback(
     ({ item: w }: { item: any }) => {
-      const accentColor = w.language === 'hebrew' ? '#e890b8' : '#70b8e8';
+      const accentColor = w.language === 'hebrew' ? panels.heb.accent : panels.hist.accent;
       let glosses = '';
       try { glosses = JSON.parse(w.glosses_json).join(', '); } catch { glosses = w.glosses_json; }
 

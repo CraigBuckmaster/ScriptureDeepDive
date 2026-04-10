@@ -49,18 +49,18 @@ interface Props {
 // ── Color mapping by node type ───────────────────────────────────────
 
 const NODE_TYPE_COLORS: Record<NodeType, string> = {
-  thesis: '#bfa050',       // gold
-  premise: '#70b8e8',      // blue
-  ground: '#70d098',       // green
-  inference: '#c090e0',    // purple
-  conclusion: '#e8a070',   // orange
-  contrast: '#e07070',     // red
-  concession: '#a0a0c0',   // gray-blue
-  purpose: '#80c8c0',      // teal
-  result: '#d8b870',       // warm gold
-  illustration: '#b8a090', // taupe
-  exhortation: '#e890b8',  // pink
-  doxology: '#c8c080',     // olive gold
+  thesis: '#bfa050',       // data-color: intentional (gold)
+  premise: '#70b8e8',      // data-color: intentional (blue)
+  ground: '#70d098',       // data-color: intentional (green)
+  inference: '#c090e0',    // data-color: intentional (purple)
+  conclusion: '#e8a070',   // data-color: intentional (orange)
+  contrast: '#e07070',     // data-color: intentional (red)
+  concession: '#a0a0c0',   // data-color: intentional (gray-blue)
+  purpose: '#80c8c0',      // data-color: intentional (teal)
+  result: '#d8b870',       // data-color: intentional (warm gold)
+  illustration: '#b8a090', // data-color: intentional (taupe)
+  exhortation: '#e890b8',  // data-color: intentional (pink)
+  doxology: '#c8c080',     // data-color: intentional (olive gold)
 };
 
 const NODE_TYPE_LABELS: Record<NodeType, string> = {

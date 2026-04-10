@@ -69,7 +69,7 @@ function PlanDetailScreen() {
           <View style={styles.progressBlock}>
             <PlanProgressBar completed={completed} total={progress.length} />
             <TouchableOpacity onPress={handleAbandon} style={styles.abandonLink}>
-              <Text style={styles.abandonText}>Abandon plan</Text>
+              <Text style={[styles.abandonText, { color: base.danger }]}>Abandon plan</Text>
             </TouchableOpacity>
           </View>
         ) : (
@@ -89,7 +89,7 @@ function PlanDetailScreen() {
 
           return (
             <View style={[styles.dayRow, { borderBottomColor: base.border + '40' }]} accessibilityLabel={`Day ${dayData.day}${isDone ? ", completed" : ""}`}>
-              <Text style={[styles.dayNum, { color: base.textMuted }, isDone && styles.dayDone]}>
+              <Text style={[styles.dayNum, { color: base.textMuted }, isDone && { color: base.success }]}>
                 {isDone ? '✓' : dayData.day}
               </Text>
               <View style={styles.dayChapters}>
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     marginTop: spacing.sm,
   },
   abandonText: {
-    color: '#e05a6a',
+    // color set inline via base.danger
     fontSize: 12,
   },
   startButton: {
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     width: 20,
   },
   dayDone: {
-    color: '#4a8a5a',
+    // color set inline via base.success
   },
   dayChapters: {
     flex: 1,

@@ -8,10 +8,10 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useTheme, fontFamily } from '../theme';
 
 export const GOSPEL_CONFIG: Record<string, { abbrev: string; color: string; name: string }> = {
-  matthew: { abbrev: 'M', color: '#70b8e8', name: 'Matthew' },
-  mark:    { abbrev: 'Mk', color: '#e86040', name: 'Mark' },
-  luke:    { abbrev: 'L', color: '#81C784', name: 'Luke' },
-  john:    { abbrev: 'J', color: '#b090d0', name: 'John' },
+  matthew: { abbrev: 'M', color: '#70b8e8', name: 'Matthew' }, // data-color: intentional
+  mark:    { abbrev: 'Mk', color: '#e86040', name: 'Mark' }, // data-color: intentional
+  luke:    { abbrev: 'L', color: '#81C784', name: 'Luke' }, // data-color: intentional
+  john:    { abbrev: 'J', color: '#b090d0', name: 'John' }, // data-color: intentional
 };
 
 const GOSPEL_ORDER = ['matthew', 'mark', 'luke', 'john'];

@@ -25,10 +25,10 @@ const TYPE_LABELS: Record<EchoType, string> = {
 };
 
 const TYPE_COLORS: Record<EchoType, string> = {
-  direct_quote: '#64B5F6',
-  allusion: '#81C784',
-  echo: '#FFB74D',
-  typological: '#BA68C8',
+  direct_quote: '#64B5F6', // data-color: intentional
+  allusion: '#81C784', // data-color: intentional
+  echo: '#FFB74D', // data-color: intentional
+  typological: '#BA68C8', // data-color: intentional
 };
 
 export function EchoesView({ entries, onRefPress }: Props) {

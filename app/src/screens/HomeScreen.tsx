@@ -36,10 +36,10 @@ import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 // ── Static cards for new users ────────────────────────────────
 const NEW_USER_CARDS: FeatureCardData[] = [
-  { title: 'People',       subtitle: 'Lives that shaped sacred history',        color: '#e86040', screen: 'GenealogyTree' },
-  { title: 'Timeline',     subtitle: 'The arc of redemption',                   color: '#70b8e8', screen: 'Timeline' },
-  { title: 'Scholars',     subtitle: 'Centuries of scholarship',                color: '#a0b8d0', screen: 'ScholarBrowse' },
-  { title: 'Word Studies', subtitle: 'Meaning in the original languages',       color: '#e890b8', screen: 'WordStudyBrowse' },
+  { title: 'People',       subtitle: 'Lives that shaped sacred history',        color: '#e86040', screen: 'GenealogyTree' }, // data-color: intentional
+  { title: 'Timeline',     subtitle: 'The arc of redemption',                   color: '#70b8e8', screen: 'Timeline' }, // data-color: intentional
+  { title: 'Scholars',     subtitle: 'Centuries of scholarship',                color: '#a0b8d0', screen: 'ScholarBrowse' }, // data-color: intentional
+  { title: 'Word Studies', subtitle: 'Meaning in the original languages',       color: '#e890b8', screen: 'WordStudyBrowse' }, // data-color: intentional
 ];
 
 function HomeScreen() {
@@ -94,7 +94,7 @@ function HomeScreen() {
   const recCards: FeatureCardData[] = recommendations.map((r: Recommendation) => ({
     title: r.title,
     subtitle: r.subtitle,
-    color: '#bfa050',
+    color: base.gold,
     screen: r.screen,
     params: r.params as Record<string, string> | undefined,
   }));
@@ -143,7 +143,7 @@ function HomeScreen() {
         <TouchableOpacity
           activeOpacity={0.7}
           onPress={handleVersePress}
-          style={[styles.verseCard, { backgroundColor: '#1a1508', borderColor: base.gold + '14' }]}
+          style={[styles.verseCard, { backgroundColor: base.bg3, borderColor: base.gold + '14' }]}
           accessibilityRole="button"
           accessibilityLabel={`Verse of the day: ${verse.ref}. ${verse.text}. Tap to read in context`}
         >
@@ -155,7 +155,7 @@ function HomeScreen() {
               accessibilityRole="button"
               accessibilityLabel="Share verse of the day"
             >
-              <Share2 size={15} color="#706858" />
+              <Share2 size={15} color={base.textMuted} />
             </TouchableOpacity>
           </View>
           <Text style={[styles.verseCardRef, { color: base.gold }]}>{verse.ref}</Text>

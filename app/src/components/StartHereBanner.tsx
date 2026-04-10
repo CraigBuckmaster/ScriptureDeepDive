@@ -22,10 +22,10 @@ interface StartHereTool {
 }
 
 const START_HERE_TOOLS: StartHereTool[] = [
-  { title: 'People',        subtitle: "See who's in the story",              icon: '', screen: 'GenealogyTree',  color: '#e86040' },
-  { title: 'Timeline',      subtitle: 'When did this happen?',               icon: '', screen: 'Timeline',       color: '#70b8e8' },
-  { title: 'Word Studies',  subtitle: 'What does this word mean?',           icon: '', screen: 'WordStudyBrowse',color: '#e890b8' },
-  { title: 'Topical Index', subtitle: 'What does the Bible say about...?',   icon: '', screen: 'TopicBrowse',    color: '#c8a040' },
+  { title: 'People',        subtitle: "See who's in the story",              icon: '', screen: 'GenealogyTree',  color: '#e86040' }, // data-color: intentional
+  { title: 'Timeline',      subtitle: 'When did this happen?',               icon: '', screen: 'Timeline',       color: '#70b8e8' }, // data-color: intentional
+  { title: 'Word Studies',  subtitle: 'What does this word mean?',           icon: '', screen: 'WordStudyBrowse',color: '#e890b8' }, // data-color: intentional
+  { title: 'Topical Index', subtitle: 'What does the Bible say about...?',   icon: '', screen: 'TopicBrowse',    color: '#c8a040' }, // data-color: intentional
 ];
 
 interface Props {

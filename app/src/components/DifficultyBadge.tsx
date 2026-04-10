@@ -20,7 +20,7 @@ function getDifficultyColor(level: number, base: { gold: string; textMuted: stri
     case 1: return base.textMuted;
     case 2: return base.gold + '90';
     case 3: return base.gold;
-    case 4: return '#e8a040';
+    case 4: return '#e8a040'; // data-color: intentional
     case 5: return base.danger;
     default: return base.textMuted;
   }

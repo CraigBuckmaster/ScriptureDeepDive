@@ -18,7 +18,7 @@ import { Search as SearchIcon } from 'lucide-react-native';
 import { useSearch } from '../hooks/useSearch';
 import { SearchInput } from '../components/SearchInput';
 import { SearchFilterChips, type SearchFilter } from '../components/SearchFilterChips';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, panels } from '../theme';
 import type { Person, WordStudy, Verse, ArchaeologicalDiscovery } from '../types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
@@ -282,7 +282,7 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm,
   },
   wordOriginal: {
-    color: '#e890b8',
+    color: panels.heb.accent,
     fontFamily: fontFamily.bodyMedium,
     fontSize: 16,
   },

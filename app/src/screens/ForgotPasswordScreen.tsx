@@ -98,7 +98,7 @@ function ForgotPasswordScreen() {
 
         {/* Error */}
         {authError ? (
-          <Text style={styles.errorText}>{authError}</Text>
+          <Text style={[styles.errorText, { color: base.danger }]}>{authError}</Text>
         ) : null}
 
         {/* Back to Sign In link */}
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
   primaryButtonText: {
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 16,
-    color: '#1a1a1a',
+    color: '#1a1a1a', // data-color: intentional
   },
   successText: {
     fontFamily: fontFamily.ui,
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
   errorText: {
     fontFamily: fontFamily.ui,
     fontSize: 13,
-    color: '#e05a6a',
+    // color set inline via base.danger
     textAlign: 'center',
     marginTop: spacing.md,
   },

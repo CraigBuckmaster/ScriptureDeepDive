@@ -10,7 +10,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Modal, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getAllWordStudies } from '../db/content';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, panels } from '../theme';
 import type { WordStudy } from '../types';
 import { logger } from '../utils/logger';
 
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     marginBottom: spacing.md,
   },
   original: {
-    color: '#e890b8',
+    color: panels.heb.accent,
     fontSize: 28,
     fontFamily: fontFamily.bodyMedium,
     textAlign: 'center',

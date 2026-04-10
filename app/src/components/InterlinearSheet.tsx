@@ -203,7 +203,7 @@ export function InterlinearSheet({
 const styles = StyleSheet.create({
   backdrop: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.6)',
+    backgroundColor: 'rgba(0,0,0,0.6)', // overlay-color: intentional
     justifyContent: 'flex-end',
   },
   sheet: {
