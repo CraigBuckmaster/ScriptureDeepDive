@@ -106,18 +106,27 @@ function MapScreen({ route, navigation }: {
     }, 500);
   }, []);
 
-  // Deep-link handling — process once after data loads
-  const deepLinkProcessed = useRef(false);
+  // Deep-link handling — auto-select story/place from route params
+  const lastProcessedStory = useRef<string | null>(null);
+  const lastProcessedPlace = useRef<string | null>(null);
   useEffect(() => {
-    if (deepLinkProcessed.current) return;
-    if (initialStoryId && stories.length) {
+    if (initialStoryId && stories.length && places.length) {
+      if (lastProcessedStory.current === initialStoryId) return;
       const story = stories.find((s) => s.id === initialStoryId);
-      if (story) { selectStory(story); deepLinkProcessed.current = true; }
+      if (story) {
+        selectStory(story);
+        if (story.era) setActiveEra(story.era);
+        lastProcessedStory.current = initialStoryId;
+      }
     } else if (initialPlaceId && places.length) {
+      if (lastProcessedPlace.current === initialPlaceId) return;
       const place = places.find((p) => p.id === initialPlaceId);
-      if (place) { panToPlace(place); deepLinkProcessed.current = true; }
+      if (place) {
+        panToPlace(place);
+        lastProcessedPlace.current = initialPlaceId;
+      }
     }
-  }, [initialStoryId, initialPlaceId, stories.length, places.length]);
+  }, [initialStoryId, initialPlaceId, stories.length, places.length, selectStory, panToPlace]);
 
   // Handle chapter link navigation
   const handleChapterPress = useCallback((story: MapStory) => {
