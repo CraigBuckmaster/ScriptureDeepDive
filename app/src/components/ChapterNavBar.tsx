@@ -245,6 +245,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.xs,
     minHeight: MIN_TOUCH_TARGET,
     justifyContent: 'center',
+    flexShrink: 1,
   },
   chapterLabel: {
     fontFamily: fontFamily.displayMedium,
