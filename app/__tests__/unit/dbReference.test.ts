@@ -287,9 +287,9 @@ describe('getRedemptiveAct', () => {
 
 describe('getLexiconEntry', () => {
   it('returns entry by strongs number', async () => {
-    getMockDb().getFirstAsync.mockResolvedValue({ strongs: 'H1', gloss: 'father' });
+    getMockDb().getFirstAsync.mockResolvedValue({ strongs: 'H1', lemma: 'ab', language: 'hebrew', transliteration: 'ab', pronunciation: null, pos: 'noun', definition_json: '{}', etymology: null, related_strongs_json: null, source: 'bdb' });
     const result = await getLexiconEntry('H1');
-    expect(result?.gloss).toBe('father');
+    expect(result?.lemma).toBe('ab');
   });
 });
 
