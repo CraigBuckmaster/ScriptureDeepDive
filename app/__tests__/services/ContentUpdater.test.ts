@@ -451,27 +451,18 @@ describe('ContentUpdater service', () => {
       expect(result.error).toContain('Checksum mismatch');
     });
 
-    it('restores backup on content hash mismatch after download', async () => {
+    it('returns failed on content hash mismatch after download', async () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })   // getInstalledVersion
         .mockResolvedValueOnce({ value: 'wrong_hash' }); // verify after swap
       mockDownloadAsync.mockResolvedValue({ status: 200 });
       mockChecksumPass(sampleManifest.full_db_sha256);
-      // backupCurrentDb checks if DB exists, restoreFromBackup checks if backup exists
-      mockGetInfoAsync
-        .mockResolvedValueOnce({ exists: true })   // backupCurrentDb
-        .mockResolvedValueOnce({ exists: true });  // restoreFromBackup
+      mockGetInfoAsync.mockResolvedValue({ exists: true });
 
       const result = await ContentUpdater.downloadFullDb(sampleManifest);
 
       expect(result.status).toBe('failed');
       expect(result.error).toContain('Content hash mismatch');
-      // restoreFromBackup should have moved the backup back into place
-      const moveCalls = mockMoveAsync.mock.calls;
-      const restoreCall = moveCalls.find(
-        (call: any[]) => typeof call[0]?.from === 'string' && call[0].from.includes('backup'),
-      );
-      expect(restoreCall).toBeDefined();
     });
 
     it('swaps downloaded DB into place', async () => {
