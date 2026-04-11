@@ -1,109 +1,307 @@
 /**
- * SearchScreen — Full FTS5 search across verses, people, word studies,
- * and archaeological evidence.
+ * SearchScreen — Universal search across all content types.
  *
- * Fixes from Phase 4A:
- *   - Verse results show book display name (via joined book_name)
- *   - Empty state when no results match
- *   - "Load more" button when verses are sliced at 20
+ * Searches: verses, people, books, concepts, map stories,
+ * timeline events, life topics, and difficult passages.
+ * Includes reference parsing for direct chapter/verse navigation.
+ * Groups ordered by relevance — best name matches first.
  */
 
-import React, { useState, useRef, useMemo } from 'react';
-import { View, Text, TextInput, TouchableOpacity, SectionList, StyleSheet } from 'react-native';
+import React, { useState, useRef, useMemo, useCallback } from 'react';
+import { View, Text, TouchableOpacity, SectionList, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useNavigation } from '@react-navigation/native';
-// Navigation types imported from types but using any for cross-tab navigation
-import { useScrollToTop } from '@react-navigation/native';
-import { Search as SearchIcon } from 'lucide-react-native';
-import { useSearch } from '../hooks/useSearch';
+import { useNavigation, useScrollToTop } from '@react-navigation/native';
+import {
+  Search as SearchIcon, BookOpen, Users, Compass, MapPin,
+  Clock, Heart, HelpCircle, ArrowRight,
+} from 'lucide-react-native';
+import { useSearch, buildOrderedGroups } from '../hooks/useSearch';
+import type { SearchResultGroup, ParsedReference } from '../hooks/useSearch';
 import { SearchInput } from '../components/SearchInput';
-import { SearchFilterChips, type SearchFilter } from '../components/SearchFilterChips';
 import { useTheme, spacing, radii, fontFamily, panels } from '../theme';
-import type { Person, WordStudy, Verse, ArchaeologicalDiscovery } from '../types';
+import type { Person, Book, MapStory, TimelineEntry, Verse, DifficultPassage, Concept, LifeTopic } from '../types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const INITIAL_VERSE_LIMIT = 20;
 const LOAD_MORE_INCREMENT = 30;
+
+// ── Section icons & colors by group key ─────────────────────────────
+
+const GROUP_META: Record<string, { Icon: any; colorKey: string }> = {
+  books:              { Icon: BookOpen,   colorKey: 'gold' },
+  people:             { Icon: Users,      colorKey: 'gold' },
+  concepts:           { Icon: Compass,    colorKey: 'gold' },
+  difficultPassages:  { Icon: HelpCircle, colorKey: 'gold' },
+  mapStories:         { Icon: MapPin,     colorKey: 'gold' },
+  timelineEvents:     { Icon: Clock,      colorKey: 'gold' },
+  lifeTopics:         { Icon: Heart,      colorKey: 'gold' },
+  verses:             { Icon: BookOpen,   colorKey: 'gold' },
+};
 
 function SearchScreen() {
   const { base, eras } = useTheme();
   const navigation = useNavigation<any>();
   const [query, setQuery] = useState('');
   const [verseLimit, setVerseLimit] = useState(INITIAL_VERSE_LIMIT);
-  const [filter, setFilter] = useState<SearchFilter>({ testament: 'all', bookId: null, bookName: null });
-  const testament = filter.testament === 'all' ? null : filter.testament;
-  const { results, isLoading } = useSearch(query, testament, filter.bookId);
+  const { results, isLoading } = useSearch(query);
   const listRef = useRef<SectionList>(null);
   useScrollToTop(listRef);
 
-  // Reset limit when query changes
-  const handleQueryChange = (text: string) => {
+  const handleQueryChange = useCallback((text: string) => {
     setQuery(text);
     setVerseLimit(INITIAL_VERSE_LIMIT);
-  };
-
-  const displayedVerses = results.verses.slice(0, verseLimit);
-  const hasMoreVerses = results.verses.length > verseLimit;
-
-  const sections = useMemo(() => [
-    ...(results.people.length ? [{
-      title: 'People',
-      data: results.people.map((p) => ({ type: 'person' as const, item: p })),
-    }] : []),
-    ...(results.discoveries.length ? [{
-      title: 'Archaeological Evidence',
-      data: results.discoveries.map((d) => ({ type: 'discovery' as const, item: d })),
-    }] : []),
-    ...(results.wordStudies.length ? [{
-      title: 'Word Studies',
-      data: results.wordStudies.map((w) => ({ type: 'word' as const, item: w })),
-    }] : []),
-    ...(displayedVerses.length ? [{
-      title: 'Verses',
-      data: [
-        ...displayedVerses.map((v) => ({ type: 'verse' as const, item: v })),
-        ...(hasMoreVerses ? [{ type: 'loadMore' as const, item: null }] : []),
-      ],
-    }] : []),
-  ], [results.people, results.discoveries, results.wordStudies, displayedVerses, hasMoreVerses]);
+  }, []);
 
   const trimmed = query.trim();
-  const hasResults = results.people.length > 0 || results.wordStudies.length > 0 || results.verses.length > 0 || results.discoveries.length > 0;
+
+  // Build ordered groups, cap verses at verseLimit
+  const groups = useMemo(() => {
+    const ordered = buildOrderedGroups(results, trimmed);
+    return ordered.map((g) => {
+      if (g.key === 'verses') {
+        const sliced = g.data.slice(0, verseLimit);
+        const hasMore = g.data.length > verseLimit;
+        return {
+          ...g,
+          data: [
+            ...sliced.map((v: Verse) => ({ type: g.key, item: v })),
+            ...(hasMore ? [{ type: 'loadMore', item: null }] : []),
+          ],
+        };
+      }
+      return { ...g, data: g.data.map((item: any) => ({ type: g.key, item })) };
+    });
+  }, [results, trimmed, verseLimit]);
+
+  // Prepend reference result as its own section
+  const sections = useMemo(() => {
+    const s: { title: string; key: string; data: any[] }[] = [];
+    if (results.reference) {
+      s.push({
+        title: 'Go To',
+        key: 'reference',
+        data: [{ type: 'reference', item: results.reference }],
+      });
+    }
+    for (const g of groups) {
+      s.push({ title: g.label, key: g.key, data: g.data });
+    }
+    return s;
+  }, [results.reference, groups]);
+
+  const hasResults = sections.length > 0;
+
+  // ── Navigation handlers ─────────────────────────────────────────
+
+  const goToChapter = useCallback((bookId: string, chapterNum: number, verseNum?: number) => {
+    navigation.navigate('ReadTab', {
+      screen: 'Chapter',
+      params: { bookId, chapterNum, verseNum },
+    });
+  }, [navigation]);
+
+  const goToExplore = useCallback((screen: string, params: Record<string, any>) => {
+    navigation.navigate('ExploreTab', { screen, params });
+  }, [navigation]);
+
+  // ── Render items ────────────────────────────────────────────────
+
+  const renderItem = useCallback(({ item: { type, item } }: { item: { type: string; item: any } }) => {
+    if (type === 'loadMore') {
+      return (
+        <TouchableOpacity
+          onPress={() => setVerseLimit((prev) => prev + LOAD_MORE_INCREMENT)}
+          style={styles.loadMoreButton}
+          accessibilityRole="button"
+          accessibilityLabel="Load more verses"
+        >
+          <Text style={[styles.loadMoreText, { color: base.gold }]}>Load more verses</Text>
+        </TouchableOpacity>
+      );
+    }
+
+    if (type === 'reference') {
+      const ref = item as ParsedReference;
+      return (
+        <TouchableOpacity
+          onPress={() => goToChapter(ref.bookId, ref.chapter, ref.verse)}
+          style={[styles.refRow, { backgroundColor: base.gold + '12', borderColor: base.gold + '30' }]}
+          accessibilityRole="button"
+          accessibilityLabel={`Go to ${ref.display}`}
+        >
+          <ArrowRight size={16} color={base.gold} />
+          <Text style={[styles.refText, { color: base.gold }]}>{ref.display}</Text>
+        </TouchableOpacity>
+      );
+    }
+
+    if (type === 'books') {
+      const b = item as Book;
+      return (
+        <TouchableOpacity
+          onPress={() => navigation.navigate('ReadTab', { screen: 'ChapterList', params: { bookId: b.id } })}
+          style={styles.row}
+          accessibilityRole="button"
+          accessibilityLabel={`Open ${b.name}`}
+        >
+          <BookOpen size={14} color={base.textMuted} />
+          <View style={styles.rowText}>
+            <Text style={[styles.rowTitle, { color: base.text }]}>{b.name}</Text>
+            <Text style={[styles.rowSub, { color: base.textMuted }]}>
+              {b.total_chapters} chapters · {b.testament === 'ot' ? 'Old Testament' : 'New Testament'}
+            </Text>
+          </View>
+        </TouchableOpacity>
+      );
+    }
+
+    if (type === 'people') {
+      const p = item as Person;
+      return (
+        <TouchableOpacity
+          onPress={() => goToExplore('PersonDetail', { personId: p.id })}
+          style={styles.row}
+          accessibilityRole="button"
+          accessibilityLabel={`View ${p.name}`}
+        >
+          <View style={[styles.eraDot, { backgroundColor: p.era ? (eras[p.era] ?? base.textMuted) : base.textMuted }]} />
+          <View style={styles.rowText}>
+            <Text style={[styles.rowTitle, { color: base.text }]}>{p.name}</Text>
+            {p.role ? <Text style={[styles.rowSub, { color: base.textMuted }]} numberOfLines={1}>{p.role}</Text> : null}
+          </View>
+        </TouchableOpacity>
+      );
+    }
+
+    if (type === 'concepts') {
+      const c = item as Concept;
+      return (
+        <TouchableOpacity
+          onPress={() => goToExplore('ConceptDetail', { conceptId: c.id })}
+          style={styles.row}
+          accessibilityRole="button"
+          accessibilityLabel={`Concept: ${c.name}`}
+        >
+          <Compass size={14} color={base.textMuted} />
+          <View style={styles.rowText}>
+            <Text style={[styles.rowTitle, { color: base.text }]}>{c.name}</Text>
+            {c.description ? <Text style={[styles.rowSub, { color: base.textMuted }]} numberOfLines={1}>{c.description}</Text> : null}
+          </View>
+        </TouchableOpacity>
+      );
+    }
+
+    if (type === 'difficultPassages') {
+      const d = item as DifficultPassage;
+      return (
+        <TouchableOpacity
+          onPress={() => goToExplore('DifficultPassageDetail', { passageId: d.id })}
+          style={styles.row}
+          accessibilityRole="button"
+          accessibilityLabel={`Difficult passage: ${d.title}`}
+        >
+          <HelpCircle size={14} color={base.textMuted} />
+          <View style={styles.rowText}>
+            <Text style={[styles.rowTitle, { color: base.text }]}>{d.title}</Text>
+            <Text style={[styles.rowSub, { color: base.textMuted }]} numberOfLines={1}>{d.passage}</Text>
+          </View>
+        </TouchableOpacity>
+      );
+    }
+
+    if (type === 'mapStories') {
+      const ms = item as MapStory;
+      return (
+        <TouchableOpacity
+          onPress={() => goToExplore('Map', { storyId: ms.id })}
+          style={styles.row}
+          accessibilityRole="button"
+          accessibilityLabel={`Map story: ${ms.name}`}
+        >
+          <MapPin size={14} color={base.textMuted} />
+          <View style={styles.rowText}>
+            <Text style={[styles.rowTitle, { color: base.text }]}>{ms.name}</Text>
+            {ms.summary ? <Text style={[styles.rowSub, { color: base.textMuted }]} numberOfLines={1}>{ms.summary}</Text> : null}
+          </View>
+        </TouchableOpacity>
+      );
+    }
+
+    if (type === 'timelineEvents') {
+      const t = item as TimelineEntry;
+      return (
+        <TouchableOpacity
+          onPress={() => goToExplore('Timeline', { eventId: t.id })}
+          style={styles.row}
+          accessibilityRole="button"
+          accessibilityLabel={`Timeline: ${t.name}`}
+        >
+          <Clock size={14} color={base.textMuted} />
+          <View style={styles.rowText}>
+            <Text style={[styles.rowTitle, { color: base.text }]}>{t.name}</Text>
+            <Text style={[styles.rowSub, { color: base.textMuted }]} numberOfLines={1}>
+              {t.year != null ? `${Math.abs(t.year)} ${t.year < 0 ? 'BC' : 'AD'}` : ''}{t.summary ? ` · ${t.summary}` : ''}
+            </Text>
+          </View>
+        </TouchableOpacity>
+      );
+    }
+
+    if (type === 'lifeTopics') {
+      const lt = item as LifeTopic;
+      return (
+        <TouchableOpacity
+          onPress={() => goToExplore('LifeTopicDetail', { topicId: lt.id })}
+          style={styles.row}
+          accessibilityRole="button"
+          accessibilityLabel={`Life topic: ${lt.title}`}
+        >
+          <Heart size={14} color={base.textMuted} />
+          <View style={styles.rowText}>
+            <Text style={[styles.rowTitle, { color: base.text }]}>{lt.title}</Text>
+            {lt.subtitle ? <Text style={[styles.rowSub, { color: base.textMuted }]} numberOfLines={1}>{lt.subtitle}</Text> : null}
+          </View>
+        </TouchableOpacity>
+      );
+    }
+
+    // Verses (default)
+    const v = item as Verse;
+    const displayName = (v as any).book_name ?? v.book_id;
+    return (
+      <TouchableOpacity
+        onPress={() => goToChapter(v.book_id, v.chapter_num, v.verse_num)}
+        style={styles.verseRow}
+        accessibilityRole="button"
+        accessibilityLabel={`Go to ${displayName} ${v.chapter_num}:${v.verse_num}`}
+      >
+        <Text style={[styles.verseRef, { color: base.gold }]}>
+          {displayName} {v.chapter_num}:{v.verse_num}
+        </Text>
+        <Text style={[styles.verseText, { color: base.textDim }]} numberOfLines={2}>{v.text}</Text>
+      </TouchableOpacity>
+    );
+  }, [base, eras, goToChapter, goToExplore, navigation]);
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      {/* Search input */}
       <View style={styles.inputWrapper}>
         <SearchInput
           value={query}
           onChangeText={handleQueryChange}
-          placeholder="Search verses, people, evidence..."
+          placeholder="Search anything — or type a reference like Gen 3:15"
           autoFocus
         />
       </View>
 
-      {/* Filter chips (show when query is active) */}
-      {query.trim().length >= 2 && (
-        <SearchFilterChips
-          filter={filter}
-          onFilterChange={(f) => { setFilter(f); setVerseLimit(INITIAL_VERSE_LIMIT); }}
-          onBookPickerOpen={() => {
-            // For now, cycle through a simple book picker approach
-            // A full book picker modal can be added in a future iteration
-          }}
-        />
-      )}
-
       {trimmed.length < 2 ? (
-        /* Idle state */
         <View style={styles.emptyCenter}>
           <SearchIcon size={28} color={base.textMuted + '60'} />
           <Text style={[styles.emptyText, { color: base.textMuted }]}>
-            Search verses, people, evidence, and more
+            Search books, people, concepts, verses, and more
           </Text>
         </View>
       ) : !hasResults && !isLoading ? (
-        /* No results */
         <View style={styles.emptyCenter}>
           <Text style={[styles.emptyText, { color: base.textMuted }]}>
             No results found for "{trimmed}"
@@ -115,6 +313,7 @@ function SearchScreen() {
           sections={sections}
           keyExtractor={(item, i) => `${item.type}-${i}`}
           contentContainerStyle={styles.listContent}
+          stickySectionHeadersEnabled={false}
           renderSectionHeader={({ section }) => (
             <View style={[styles.sectionHeader, { backgroundColor: base.bg }]}>
               <Text style={[styles.sectionTitle, { color: base.textMuted }]}>
@@ -122,101 +321,7 @@ function SearchScreen() {
               </Text>
             </View>
           )}
-          renderItem={({ item: { type, item } }) => {
-            if (type === 'loadMore') {
-              return (
-                <TouchableOpacity
-                  onPress={() => setVerseLimit((prev) => prev + LOAD_MORE_INCREMENT)}
-                  style={styles.loadMoreButton}
-                  accessibilityRole="button"
-                  accessibilityLabel="Load more verses"
-                >
-                  <Text style={[styles.loadMoreText, { color: base.gold }]}>Load more verses</Text>
-                </TouchableOpacity>
-              );
-            }
-            if (type === 'person') {
-              const p = item as Person;
-              return (
-                <TouchableOpacity
-                  onPress={() => navigation.navigate('ExploreTab', {
-                    screen: 'PersonDetail',
-                    params: { personId: p.id },
-                  })}
-                  style={styles.personRow}
-                  accessibilityRole="button"
-                  accessibilityLabel={`View person: ${p.name}`}
-                >
-                  <View style={[
-                    styles.eraDot,
-                    { backgroundColor: p.era ? (eras[p.era] ?? base.textMuted) : base.textMuted },
-                  ]} />
-                  <View style={styles.personText}>
-                    <Text style={[styles.personName, { color: base.text }]}>{p.name}</Text>
-                    <Text style={[styles.personRole, { color: base.textMuted }]} numberOfLines={1}>{p.role}</Text>
-                  </View>
-                </TouchableOpacity>
-              );
-            }
-            if (type === 'discovery') {
-              const d = item as ArchaeologicalDiscovery;
-              return (
-                <TouchableOpacity
-                  onPress={() => navigation.navigate('ExploreTab', {
-                    screen: 'ArchaeologyDetail',
-                    params: { discoveryId: d.id },
-                  })}
-                  style={styles.discoveryRow}
-                  accessibilityRole="button"
-                  accessibilityLabel={`View evidence: ${d.name}`}
-                >
-                  <Text style={styles.discoveryEmoji}>🏛</Text>
-                  <View style={styles.discoveryText}>
-                    <Text style={[styles.discoveryName, { color: base.text }]} numberOfLines={1}>{d.name}</Text>
-                    <Text style={[styles.discoveryMeta, { color: base.textMuted }]} numberOfLines={1}>
-                      {[d.category, d.location].filter(Boolean).join(' · ')}
-                    </Text>
-                  </View>
-                </TouchableOpacity>
-              );
-            }
-            if (type === 'word') {
-              const w = item as WordStudy;
-              return (
-                <TouchableOpacity
-                  onPress={() => navigation.navigate('ExploreTab', {
-                    screen: 'WordStudyDetail',
-                    params: { wordId: w.id },
-                  })}
-                  style={styles.wordRow}
-                  accessibilityRole="button"
-                  accessibilityLabel={`Word study: ${w.transliteration}`}
-                >
-                  <Text style={styles.wordOriginal}>{w.original}</Text>
-                  <Text style={[styles.wordTranslit, { color: base.goldDim }]}>{w.transliteration}</Text>
-                </TouchableOpacity>
-              );
-            }
-            // Verse
-            const v = item as Verse;
-            const displayName = (v as any).book_name ?? v.book_id;
-            return (
-              <TouchableOpacity
-                onPress={() => navigation.navigate('ReadTab', {
-                  screen: 'Chapter',
-                  params: { bookId: v.book_id, chapterNum: v.chapter_num, verseNum: v.verse_num },
-                })}
-                style={styles.verseRow}
-                accessibilityRole="button"
-                accessibilityLabel={`Go to ${displayName} ${v.chapter_num}:${v.verse_num}`}
-              >
-                <Text style={[styles.verseRef, { color: base.gold }]}>
-                  {displayName} {v.chapter_num}:{v.verse_num}
-                </Text>
-                <Text style={[styles.verseText, { color: base.textDim }]} numberOfLines={2}>{v.text}</Text>
-              </TouchableOpacity>
-            );
-          }}
+          renderItem={renderItem}
         />
       )}
     </SafeAreaView>
@@ -254,8 +359,22 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.bodyItalic,
     fontSize: 15,
   },
-  // Person
-  personRow: {
+  // Reference row
+  refRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+    paddingVertical: spacing.sm + 2,
+    paddingHorizontal: spacing.sm,
+    borderRadius: radii.md,
+    borderWidth: 1,
+  },
+  refText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 15,
+  },
+  // Generic content row
+  row: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: spacing.sm,
@@ -266,52 +385,19 @@ const styles = StyleSheet.create({
     height: 8,
     borderRadius: 4,
   },
-  personText: {
+  rowText: {
     flex: 1,
   },
-  personName: {
+  rowTitle: {
     fontFamily: fontFamily.uiMedium,
     fontSize: 14,
   },
-  personRole: {
+  rowSub: {
     fontFamily: fontFamily.ui,
     fontSize: 11,
+    marginTop: 1,
   },
-  // Word study
-  wordRow: {
-    paddingVertical: spacing.sm,
-  },
-  wordOriginal: {
-    color: panels.heb.accent,
-    fontFamily: fontFamily.bodyMedium,
-    fontSize: 16,
-  },
-  wordTranslit: {
-    fontFamily: fontFamily.bodyItalic,
-    fontSize: 12,
-  },
-  // Discovery
-  discoveryRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.sm,
-    paddingVertical: spacing.sm,
-  },
-  discoveryEmoji: {
-    fontSize: 18,
-  },
-  discoveryText: {
-    flex: 1,
-  },
-  discoveryName: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 14,
-  },
-  discoveryMeta: {
-    fontFamily: fontFamily.ui,
-    fontSize: 11,
-  },
-  // Verse
+  // Verse row
   verseRow: {
     paddingVertical: spacing.xs,
   },
