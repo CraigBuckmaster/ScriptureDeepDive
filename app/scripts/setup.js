@@ -22,23 +22,45 @@ const DST = path.resolve(__dirname, '..', 'assets', 'scripture.db');
 const BUILD_SCRIPT = path.join(ROOT, '_tools', 'build_sqlite.py');
 
 /**
- * Check if any file under `dir` is newer than `refPath`.
- * Returns true if the DB should be rebuilt.
+ * Compute content hash from source files (same algorithm as build_sqlite.py).
+ * Returns null on failure.
  */
-function hasNewerContent(dir, refPath) {
-  const refMtime = fs.statSync(refPath).mtimeMs;
+function computeContentHash() {
   try {
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-    for (const entry of entries) {
-      const full = path.join(dir, entry.name);
-      if (entry.isDirectory()) {
-        if (hasNewerContent(full, refPath)) return true;
-      } else {
-        if (fs.statSync(full).mtimeMs > refMtime) return true;
-      }
-    }
-  } catch { /* dir doesn't exist — not stale */ }
-  return false;
+    const result = execSync(`python3 -c "
+import hashlib
+from pathlib import Path
+content_dir = Path('content')
+json_files = sorted(content_dir.rglob('*.json'))
+json_files = [f for f in json_files if 'verses' not in f.parts]
+h = hashlib.sha256()
+for f in json_files:
+    h.update(str(f.relative_to(content_dir)).encode())
+    h.update(f.read_bytes())
+print(h.hexdigest()[:16])
+"`, { cwd: ROOT, encoding: 'utf8' }).trim();
+    return result || null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Read the content hash from the DB's db_meta table. Returns null on failure.
+ */
+function getDbHash() {
+  try {
+    const result = execSync(`python3 -c "
+import sqlite3
+db = sqlite3.connect('scripture.db')
+row = db.execute(\\"SELECT value FROM db_meta WHERE key='content_hash'\\").fetchone()
+print(row[0] if row else '')
+db.close()
+"`, { cwd: ROOT, encoding: 'utf8' }).trim();
+    return result || null;
+  } catch {
+    return null;
+  }
 }
 
 function buildDb() {
@@ -54,16 +76,17 @@ function buildDb() {
   }
 }
 
-// Build DB if it doesn't exist
+// Build DB if it doesn't exist or content has changed
 if (!fs.existsSync(SRC)) {
   console.log('📦 scripture.db not found — building from content...');
   buildDb();
-} else if (
-  hasNewerContent(path.join(ROOT, 'content'), SRC) ||
-  fs.statSync(path.join(ROOT, '_tools', 'build_sqlite.py')).mtimeMs > fs.statSync(SRC).mtimeMs
-) {
-  console.log('📦 Content changed since last build — rebuilding scripture.db...');
-  buildDb();
+} else {
+  const contentHash = computeContentHash();
+  const dbHash = getDbHash();
+  if (contentHash && contentHash !== dbHash) {
+    console.log(`📦 Content changed (${dbHash || 'none'} → ${contentHash}) — rebuilding scripture.db...`);
+    buildDb();
+  }
 }
 
 if (!fs.existsSync(SRC)) {

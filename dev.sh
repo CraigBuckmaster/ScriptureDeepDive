@@ -57,12 +57,17 @@ fi
 
 if [ "$NEED_BUILD" = true ]; then
   echo "📦 Building scripture.db..."
-  python3 "$ROOT/_tools/build_sqlite.py" 2>/dev/null \
+  python3 "$ROOT/_tools/build_sqlite.py" \
     || python "$ROOT/_tools/build_sqlite.py"
   # Re-read hash after build
   DB_HASH=$CONTENT_HASH
 else
   echo "✓  scripture.db is up to date ($DB_HASH)"
+  # Ensure the asset copy exists even when build is skipped
+  if [ ! -f "$ROOT/app/assets/scripture.db" ]; then
+    cp "$ROOT/scripture.db" "$ROOT/app/assets/scripture.db"
+    echo "✓  Copied scripture.db → app/assets/"
+  fi
 fi
 
 # ── 2b. Check if R2 manifest is in sync with local DB ──────────
@@ -86,8 +91,15 @@ if [ -n "$DB_HASH" ]; then
   fi
 fi
 
-# ── 3. Launch Expo ──────────────────────────────────────────────
+# ── 3. Install dependencies if needed ──────────────────────────
 cd "$ROOT/app"
+
+if [ ! -d "node_modules" ]; then
+  echo "📥 Installing dependencies..."
+  npm install
+fi
+
+# ── 4. Launch Expo ──────────────────────────────────────────────
 
 EXPO_ARGS=""
 if [[ "$*" == *"--clear"* ]]; then
