@@ -12,12 +12,17 @@ import { Circle, Rect, Line, Text as SvgText, G } from 'react-native-svg';
 import { useTheme, eras } from '../../theme';
 import { TREE_CONSTANTS, type LayoutNode, type TreePerson } from '../../utils/treeBuilder';
 
-/** Gender-based tint for node card backgrounds. */
-const GENDER_TINT: Record<string, string> = {
-  m: '#1a2030',   // data-color: intentional (cool blue-slate)
-  f: '#2a1824',   // data-color: intentional (warm rose-plum)
-};
-const GENDER_TINT_DEFAULT = '#1a1810'; // data-color: intentional (neutral warm dark)
+/**
+ * Gender-based tint for node card backgrounds.
+ * Returns theme-aware values: dark tints on dark bg, light tints on light/sepia bg.
+ */
+function getGenderTint(gender: string | null, bgBase: string): string {
+  const isDark = bgBase.charAt(1) <= '3'; // quick luminance check on hex bg
+  const g = (gender ?? '').toLowerCase();
+  if (g === 'm') return isDark ? '#1a2030' : '#dde4f0'; // cool blue-slate
+  if (g === 'f') return isDark ? '#2a1824' : '#f0dde4'; // warm rose-plum
+  return isDark ? '#1a1810' : '#e8e4dc';                // neutral warm
+}
 
 // Card height and corner radius by node type
 const SPINE_H = 42;
@@ -64,7 +69,7 @@ export const TreeNode = memo(function TreeNode({ node, dimmed, selected, filterE
   const fontSize = isSpine ? TREE_CONSTANTS.spineFontSize : TREE_CONSTANTS.satelliteFontSize;
   const accentColor = isSpine ? base.gold : (data.era ? (eras[data.era] ?? base.textMuted) : base.textMuted);
   const opacity = dimmed ? 0.25 : 1;
-  const genderTint = GENDER_TINT[(data.gender ?? '').toLowerCase()] ?? GENDER_TINT_DEFAULT;
+  const genderTint = getGenderTint(data.gender, base.bg);
 
   const h = isSpine ? SPINE_H : SAT_H;
   const rx = isSpine ? SPINE_RX : SAT_RX;
@@ -170,7 +175,7 @@ export const TreeNode = memo(function TreeNode({ node, dimmed, selected, filterE
         y={y + 2}
         textAnchor="middle"
         fontSize={fontSize}
-        fill={isSpine ? '#f0e8d8' : base.textDim} // data-color: intentional (light text on SVG spine node)
+        fill={isSpine ? base.text : base.textDim}
         fontFamily="SourceSans3_400Regular"
         fontWeight={isSpine ? '600' : '400'}
       >

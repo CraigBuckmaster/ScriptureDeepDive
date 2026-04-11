@@ -8,6 +8,8 @@ jest.mock('react-native-svg', () => {
 jest.mock('@/theme', () => ({
   useTheme: () => ({
     base: {
+      bg: '#0c0a07',
+      text: '#f0e8d8',
       gold: '#FFD700',
       goldBright: '#FFE44D',
       goldDim: '#B8960C',
