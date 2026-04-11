@@ -71,9 +71,9 @@ jest.mock('@/hooks/usePremium', () => ({
 }));
 
 jest.mock('@/components/ScreenHeader', () => ({
-  ScreenHeader: ({ title }: { title: string }) => {
+  ScreenHeader: ({ title, subtitle }: { title: string; subtitle?: string }) => {
     const RN = require('react-native');
-    return <RN.Text>{title}</RN.Text>;
+    return <RN.View><RN.Text>{title}</RN.Text>{subtitle && <RN.Text>{subtitle}</RN.Text>}</RN.View>;
   },
 }));
 
@@ -118,12 +118,16 @@ describe('PeriodsScreen', () => {
     expect(getByText('The Periods of the Bible')).toBeTruthy();
   });
 
+  it('shows era subtitle with count', () => {
+    const { getByText } = renderWithProviders(<PeriodsScreen />);
+    expect(getByText(/4 eras from/)).toBeTruthy();
+  });
+
   it('shows first 3 eras for non-premium users', () => {
     const { getByText, queryByText } = renderWithProviders(<PeriodsScreen />);
     expect(getByText('Creation')).toBeTruthy();
     expect(getByText('Patriarchs')).toBeTruthy();
     expect(getByText('Exodus')).toBeTruthy();
-    // Fourth era should not be visible
     expect(queryByText('Conquest')).toBeNull();
   });
 
@@ -136,11 +140,95 @@ describe('PeriodsScreen', () => {
     const { getByText } = renderWithProviders(<PeriodsScreen />);
     expect(getByText('? – 2000 BC')).toBeTruthy();
     expect(getByText('2000 BC – 1500 BC')).toBeTruthy();
+    expect(getByText('1500 BC – 1400 BC')).toBeTruthy();
   });
 
   it('shows key people chips', () => {
     const { getByText } = renderWithProviders(<PeriodsScreen />);
     expect(getByText('adam')).toBeTruthy();
     expect(getByText('noah')).toBeTruthy();
+    expect(getByText('abraham')).toBeTruthy();
+  });
+
+  it('shows book chips', () => {
+    const { getAllByText } = renderWithProviders(<PeriodsScreen />);
+    expect(getAllByText('genesis').length).toBeGreaterThan(0);
+    expect(getAllByText('exodus').length).toBeGreaterThan(0);
+  });
+
+  it('shows pill badge when era has one', () => {
+    const { getByText } = renderWithProviders(<PeriodsScreen />);
+    expect(getByText('ORIGINS')).toBeTruthy();
+    expect(getByText('LIBERATION')).toBeTruthy();
+  });
+
+  it('shows era summaries', () => {
+    const { getByText } = renderWithProviders(<PeriodsScreen />);
+    expect(getByText('The beginning of all things.')).toBeTruthy();
+    expect(getByText('The founding fathers of Israel.')).toBeTruthy();
+  });
+
+  it('shows geographic region badges', () => {
+    const { getByText } = renderWithProviders(<PeriodsScreen />);
+    expect(getByText('Mesopotamia')).toBeTruthy();
+    expect(getByText('Egypt')).toBeTruthy();
+  });
+
+  it('shows transition text between eras', () => {
+    const { getByText } = renderWithProviders(<PeriodsScreen />);
+    expect(getByText('From creation to the patriarchs...')).toBeTruthy();
+  });
+
+  it('shows loading skeleton when isLoading', () => {
+    const useErasMock = require('@/hooks/useEras').useEras;
+    useErasMock.mockReturnValueOnce({ eras: [], isLoading: true });
+
+    expect(() => {
+      renderWithProviders(<PeriodsScreen />);
+    }).not.toThrow();
+  });
+
+  it('shows all eras for premium users', () => {
+    const usePremiumMock = require('@/hooks/usePremium').usePremium;
+    usePremiumMock.mockReturnValueOnce({
+      isPremium: true,
+      upgradeRequest: null,
+      showUpgrade: jest.fn(),
+      dismissUpgrade: jest.fn(),
+    });
+
+    const { getByText, queryByText } = renderWithProviders(<PeriodsScreen />);
+    expect(getByText('Conquest')).toBeTruthy();
+    expect(queryByText(/more eras/)).toBeNull();
+  });
+
+  it('navigates to PersonDetail when person chip pressed', () => {
+    const { fireEvent } = require('@testing-library/react-native');
+    const { getByText } = renderWithProviders(<PeriodsScreen />);
+    fireEvent.press(getByText('adam'));
+    expect(mockNavigate).toHaveBeenCalledWith('PersonDetail', { personId: 'adam' });
+  });
+
+  it('navigates to BookIntro when book chip pressed', () => {
+    const { fireEvent } = require('@testing-library/react-native');
+    const { getAllByText } = renderWithProviders(<PeriodsScreen />);
+    fireEvent.press(getAllByText('genesis')[0]);
+    expect(mockNavigate).toHaveBeenCalledWith('BookIntro', { bookId: 'genesis' });
+  });
+
+  it('shows upgrade prompt when unlock card pressed', () => {
+    const { fireEvent } = require('@testing-library/react-native');
+    const showUpgrade = jest.fn();
+    const usePremiumMock = require('@/hooks/usePremium').usePremium;
+    usePremiumMock.mockReturnValueOnce({
+      isPremium: false,
+      upgradeRequest: null,
+      showUpgrade,
+      dismissUpgrade: jest.fn(),
+    });
+
+    const { getByLabelText } = renderWithProviders(<PeriodsScreen />);
+    fireEvent.press(getByLabelText('Unlock remaining eras'));
+    expect(showUpgrade).toHaveBeenCalledWith('explore', 'Bible Periods');
   });
 });

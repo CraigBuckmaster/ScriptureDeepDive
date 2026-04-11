@@ -1,4 +1,5 @@
 import React from 'react';
+import { fireEvent } from '@testing-library/react-native';
 import { renderWithProviders } from '../helpers/renderWithProviders';
 
 jest.mock('@/hooks/useSubmissionFeed', () => ({
@@ -62,5 +63,34 @@ describe('SubmissionFeedScreen', () => {
     const { getByText } = renderWithProviders(<SubmissionFeedScreen />);
     expect(getByText('Newest')).toBeTruthy();
     expect(getByText('Top Rated')).toBeTruthy();
+  });
+
+  it('displays submission cards', () => {
+    const { getByText } = renderWithProviders(<SubmissionFeedScreen />);
+    expect(getByText('On Grace')).toBeTruthy();
+  });
+
+  it('switches sort mode to top_rated', () => {
+    const { getByText } = renderWithProviders(<SubmissionFeedScreen />);
+    fireEvent.press(getByText('Top Rated'));
+    // The hook should be re-called with 'top_rated'
+    const { useSubmissionFeed } = require('@/hooks/useSubmissionFeed');
+    expect(useSubmissionFeed).toHaveBeenCalledWith('top_rated');
+  });
+
+  it('shows empty state when no submissions and not loading', () => {
+    const { useSubmissionFeed } = require('@/hooks/useSubmissionFeed');
+    useSubmissionFeed.mockReturnValue({ submissions: [], loading: false, loadMore: jest.fn() });
+
+    const { getByText } = renderWithProviders(<SubmissionFeedScreen />);
+    expect(getByText(/No submissions yet/)).toBeTruthy();
+  });
+
+  it('does not show empty state when loading', () => {
+    const { useSubmissionFeed } = require('@/hooks/useSubmissionFeed');
+    useSubmissionFeed.mockReturnValue({ submissions: [], loading: true, loadMore: jest.fn() });
+
+    const { queryByText } = renderWithProviders(<SubmissionFeedScreen />);
+    expect(queryByText(/No submissions yet/)).toBeNull();
   });
 });

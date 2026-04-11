@@ -80,7 +80,6 @@ describe('ParallelDetailScreen', () => {
 
   it('shows loading skeleton initially', () => {
     const { getByText } = renderWithProviders(<ParallelDetailScreen />);
-    // Initially shows "Parallel Passage" header while loading
     expect(getByText('Parallel Passage')).toBeTruthy();
   });
 
@@ -88,5 +87,67 @@ describe('ParallelDetailScreen', () => {
     const { findByText } = renderWithProviders(<ParallelDetailScreen />);
     const title = await findByText('The Baptism of Jesus');
     expect(title).toBeTruthy();
+  });
+
+  it('renders gospel passage cards after loading', async () => {
+    const { findByText } = renderWithProviders(<ParallelDetailScreen />);
+    const matthew = await findByText('Matthew');
+    expect(matthew).toBeTruthy();
+    const mark = await findByText('Mark');
+    expect(mark).toBeTruthy();
+  });
+
+  it('shows not found when entry is null', async () => {
+    const { getSynopticEntry } = require('@/db/content');
+    getSynopticEntry.mockResolvedValueOnce(null);
+
+    const { findByText } = renderWithProviders(<ParallelDetailScreen />);
+    const notFound = await findByText('Passage not found');
+    expect(notFound).toBeTruthy();
+  });
+
+  it('renders diff annotations when present', async () => {
+    const { getSynopticEntry } = require('@/db/content');
+    getSynopticEntry.mockResolvedValueOnce({
+      id: 'entry1',
+      title: 'The Baptism of Jesus',
+      passages_json: JSON.stringify([
+        { book: 'matthew', ref: 'Matthew 3:13-17' },
+      ]),
+      diff_annotations_json: JSON.stringify([{ type: 'addition', text: 'only in Matthew' }]),
+    });
+
+    const { findByText } = renderWithProviders(<ParallelDetailScreen />);
+    const title = await findByText('The Baptism of Jesus');
+    expect(title).toBeTruthy();
+  });
+
+  it('handles malformed passages JSON gracefully', async () => {
+    const { getSynopticEntry } = require('@/db/content');
+    getSynopticEntry.mockResolvedValueOnce({
+      id: 'entry1',
+      title: 'Bad Data',
+      passages_json: 'not json',
+      diff_annotations_json: null,
+    });
+
+    const { findByText } = renderWithProviders(<ParallelDetailScreen />);
+    const title = await findByText('Bad Data');
+    expect(title).toBeTruthy();
+  });
+
+  it('handles unknown gospel in GOSPEL_CONFIG', async () => {
+    const { getSynopticEntry } = require('@/db/content');
+    getSynopticEntry.mockResolvedValueOnce({
+      id: 'entry1',
+      title: 'Test',
+      passages_json: JSON.stringify([{ book: 'unknown_gospel', ref: 'Unknown 1:1' }]),
+      diff_annotations_json: '[]',
+    });
+
+    const { findByText } = renderWithProviders(<ParallelDetailScreen />);
+    // Should capitalize first letter of unknown book
+    const unknownGospel = await findByText('Unknown_gospel');
+    expect(unknownGospel).toBeTruthy();
   });
 });

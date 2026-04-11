@@ -53,9 +53,9 @@ jest.mock('@/hooks/usePremium', () => ({
 }));
 
 jest.mock('@/components/ScreenHeader', () => ({
-  ScreenHeader: ({ title }: { title: string }) => {
+  ScreenHeader: ({ title, subtitle }: { title: string; subtitle?: string }) => {
     const RN = require('react-native');
-    return <RN.Text>{title}</RN.Text>;
+    return <RN.View><RN.Text>{title}</RN.Text>{subtitle && <RN.Text>{subtitle}</RN.Text>}</RN.View>;
   },
 }));
 
@@ -99,6 +99,11 @@ describe('RedemptiveArcScreen', () => {
     expect(getByText('The Story of the Bible')).toBeTruthy();
   });
 
+  it('shows subtitle with act count', () => {
+    const { getByText } = renderWithProviders(<RedemptiveArcScreen />);
+    expect(getByText(/3 acts in God/)).toBeTruthy();
+  });
+
   it('shows first 2 acts for non-premium users (FREE_ACT_COUNT=2)', () => {
     const { getByText, queryByText } = renderWithProviders(<RedemptiveArcScreen />);
     expect(getByText('Creation')).toBeTruthy();
@@ -111,16 +116,79 @@ describe('RedemptiveArcScreen', () => {
     expect(getByText('1 more acts')).toBeTruthy();
   });
 
+  it('shows act tagline', () => {
+    const { getByText } = renderWithProviders(<RedemptiveArcScreen />);
+    expect(getByText('God creates everything good')).toBeTruthy();
+    expect(getByText('Humanity chooses rebellion')).toBeTruthy();
+  });
+
+  it('shows act summary', () => {
+    const { getByText } = renderWithProviders(<RedemptiveArcScreen />);
+    expect(getByText('God creates the heavens and the earth.')).toBeTruthy();
+    expect(getByText('Sin enters the world.')).toBeTruthy();
+  });
+
+  it('shows act key verse when present', () => {
+    const { getByText } = renderWithProviders(<RedemptiveArcScreen />);
+    expect(getByText('In the beginning God created...')).toBeTruthy();
+    expect(getByText('Genesis 1:1')).toBeTruthy();
+  });
+
+  it('shows era badges and book range', () => {
+    const { getByText } = renderWithProviders(<RedemptiveArcScreen />);
+    expect(getByText('creation era')).toBeTruthy();
+    expect(getByText('Genesis 1-2')).toBeTruthy();
+    expect(getByText('Genesis 3')).toBeTruthy();
+  });
+
+  it('shows act number badges', () => {
+    const { getByText } = renderWithProviders(<RedemptiveArcScreen />);
+    expect(getByText('1')).toBeTruthy();
+    expect(getByText('2')).toBeTruthy();
+  });
+
   it('expands act on tap to show threads', () => {
     const { getByText, queryByText } = renderWithProviders(<RedemptiveArcScreen />);
-
-    // Threads should not be visible initially
     expect(queryByText('THREADS')).toBeNull();
-
-    // Tap the Creation act card
     fireEvent.press(getByText('Creation'));
-
-    // Now threads section should appear
     expect(getByText('THREADS')).toBeTruthy();
+    expect(getByText('thread creation')).toBeTruthy();
+  });
+
+  it('shows prophecy chains when expanded', () => {
+    const { getByText } = renderWithProviders(<RedemptiveArcScreen />);
+    fireEvent.press(getByText('Creation'));
+    expect(getByText('PROPHECY CHAINS')).toBeTruthy();
+    expect(getByText('chain seed')).toBeTruthy();
+  });
+
+  it('collapses act on second tap', () => {
+    const { getByText, queryByText } = renderWithProviders(<RedemptiveArcScreen />);
+    fireEvent.press(getByText('Creation'));
+    expect(getByText('THREADS')).toBeTruthy();
+    fireEvent.press(getByText('Creation'));
+    expect(queryByText('THREADS')).toBeNull();
+  });
+
+  it('shows all acts for premium users', () => {
+    const { usePremium } = require('@/hooks/usePremium');
+    usePremium.mockReturnValue({
+      isPremium: true,
+      upgradeRequest: null,
+      showUpgrade: jest.fn(),
+      dismissUpgrade: jest.fn(),
+    });
+
+    const { getByText, queryByText } = renderWithProviders(<RedemptiveArcScreen />);
+    expect(getByText('Redemption Initiated')).toBeTruthy();
+    expect(queryByText(/more acts/)).toBeNull();
+  });
+
+  it('shows loading skeleton when isLoading', () => {
+    const { useRedemptiveArc } = require('@/hooks/useRedemptiveArc');
+    useRedemptiveArc.mockReturnValue({ acts: [], isLoading: true });
+    expect(() => {
+      renderWithProviders(<RedemptiveArcScreen />);
+    }).not.toThrow();
   });
 });

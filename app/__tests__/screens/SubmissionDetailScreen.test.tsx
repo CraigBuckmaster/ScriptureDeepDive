@@ -81,6 +81,16 @@ describe('SubmissionDetailScreen', () => {
     expect(getByText('by John Doe')).toBeTruthy();
   });
 
+  it('shows body text', () => {
+    const { getByText } = renderWithProviders(<SubmissionDetailScreen />);
+    expect(getByText(/concept of grace pervades/)).toBeTruthy();
+  });
+
+  it('shows trust badge', () => {
+    const { getByText } = renderWithProviders(<SubmissionDetailScreen />);
+    expect(getByText('Trust')).toBeTruthy();
+  });
+
   it('shows verse references', () => {
     const { getByText } = renderWithProviders(<SubmissionDetailScreen />);
     expect(getByText('Romans 3:23')).toBeTruthy();
@@ -90,5 +100,64 @@ describe('SubmissionDetailScreen', () => {
   it('shows VERSES section label', () => {
     const { getByText } = renderWithProviders(<SubmissionDetailScreen />);
     expect(getByText('VERSES')).toBeTruthy();
+  });
+
+  it('shows header title', () => {
+    const { getByText } = renderWithProviders(<SubmissionDetailScreen />);
+    expect(getByText('Submission')).toBeTruthy();
+  });
+
+  it('shows loading state', () => {
+    const { useAsyncData } = require('@/hooks/useAsyncData');
+    useAsyncData.mockReturnValue({ data: null, loading: true });
+
+    const { getByText } = renderWithProviders(<SubmissionDetailScreen />);
+    expect(getByText('Submission')).toBeTruthy();
+  });
+
+  it('shows not found when data is null and not loading', () => {
+    const { useAsyncData } = require('@/hooks/useAsyncData');
+    useAsyncData.mockReturnValue({ data: null, loading: false });
+
+    const { getByText } = renderWithProviders(<SubmissionDetailScreen />);
+    expect(getByText('Submission not found')).toBeTruthy();
+  });
+
+  it('handles submission with no verses', () => {
+    const { useAsyncData } = require('@/hooks/useAsyncData');
+    useAsyncData.mockReturnValue({
+      data: {
+        id: 'sub2',
+        title: 'No Verses',
+        author_name: 'Jane',
+        body: 'Short body',
+        upvote_count: 0,
+        star_avg: 0,
+        verses_json: null,
+      },
+      loading: false,
+    });
+
+    const { queryByText } = renderWithProviders(<SubmissionDetailScreen />);
+    expect(queryByText('VERSES')).toBeNull();
+  });
+
+  it('handles submission with invalid verses JSON', () => {
+    const { useAsyncData } = require('@/hooks/useAsyncData');
+    useAsyncData.mockReturnValue({
+      data: {
+        id: 'sub3',
+        title: 'Bad JSON',
+        author_name: 'Jane',
+        body: 'Body',
+        upvote_count: 0,
+        star_avg: 0,
+        verses_json: 'not json',
+      },
+      loading: false,
+    });
+
+    const { queryByText } = renderWithProviders(<SubmissionDetailScreen />);
+    expect(queryByText('VERSES')).toBeNull();
   });
 });
