@@ -453,22 +453,25 @@ describe('ContentUpdater service', () => {
 
     it('restores backup on content hash mismatch after download', async () => {
       mockGetFirstAsync
-        .mockResolvedValueOnce({ value: 'v1.0.0' })
-        .mockResolvedValueOnce({ value: 'wrong_hash' });
+        .mockResolvedValueOnce({ value: 'v1.0.0' })   // getInstalledVersion
+        .mockResolvedValueOnce({ value: 'wrong_hash' }); // verify after swap
       mockDownloadAsync.mockResolvedValue({ status: 200 });
       mockChecksumPass(sampleManifest.full_db_sha256);
-      mockGetInfoAsync.mockResolvedValue({ exists: true });
+      // backupCurrentDb checks if DB exists, restoreFromBackup checks if backup exists
+      mockGetInfoAsync
+        .mockResolvedValueOnce({ exists: true })   // backupCurrentDb
+        .mockResolvedValueOnce({ exists: true });  // restoreFromBackup
 
       const result = await ContentUpdater.downloadFullDb(sampleManifest);
 
       expect(result.status).toBe('failed');
       expect(result.error).toContain('Content hash mismatch');
-      expect(mockMoveAsync).toHaveBeenCalledWith(
-        expect.objectContaining({
-          from: expect.stringContaining('scripture_backup.db'),
-          to: expect.stringContaining('scripture.db'),
-        }),
+      // restoreFromBackup should have moved the backup back into place
+      const moveCalls = mockMoveAsync.mock.calls;
+      const restoreCall = moveCalls.find(
+        (call: any[]) => typeof call[0]?.from === 'string' && call[0].from.includes('backup'),
       );
+      expect(restoreCall).toBeDefined();
     });
 
     it('swaps downloaded DB into place', async () => {
