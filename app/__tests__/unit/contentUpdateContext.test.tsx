@@ -25,9 +25,9 @@ function TestConsumer() {
 }
 
 // Separate component to access actions
-let contextActions: ReturnType<typeof useContentUpdate>;
+const contextActions: { current: ReturnType<typeof useContentUpdate> | null } = { current: null };
 function ActionCapture() {
-  contextActions = useContentUpdate();
+  contextActions.current = useContentUpdate();
   return null;
 }
 
@@ -62,7 +62,7 @@ describe('ContentUpdateContext', () => {
     );
 
     act(() => {
-      contextActions.showUpdate();
+      contextActions.current!.showUpdate();
     });
 
     expect(getByTestId('visible').props.children).toBe('true');
@@ -79,10 +79,10 @@ describe('ContentUpdateContext', () => {
     );
 
     act(() => {
-      contextActions.showUpdate();
+      contextActions.current!.showUpdate();
     });
     act(() => {
-      contextActions.updateProgress(50);
+      contextActions.current!.updateProgress(50);
     });
 
     expect(getByTestId('progress').props.children).toBe(50);
@@ -97,7 +97,7 @@ describe('ContentUpdateContext', () => {
     );
 
     act(() => {
-      contextActions.setStatus('error', 'Network failed');
+      contextActions.current!.setStatus('error', 'Network failed');
     });
 
     expect(getByTestId('status').props.children).toBe('error');
@@ -113,12 +113,12 @@ describe('ContentUpdateContext', () => {
     );
 
     act(() => {
-      contextActions.showUpdate();
+      contextActions.current!.showUpdate();
     });
     expect(getByTestId('visible').props.children).toBe('true');
 
     act(() => {
-      contextActions.hideUpdate();
+      contextActions.current!.hideUpdate();
     });
     expect(getByTestId('visible').props.children).toBe('false');
   });

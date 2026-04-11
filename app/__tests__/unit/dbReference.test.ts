@@ -8,6 +8,10 @@ import {
   getAllWordStudies,
   getWordStudy,
   getSynopticEntries,
+  getSynopticEntry,
+  getHarmonyEntries,
+  getHarmonyEntry,
+  getOTParallelEntries,
   getCrossRefThreads,
   getCrossRefThread,
   getCrossRefPairsForVerse,
@@ -16,6 +20,15 @@ import {
   getAllTimelineEntries,
   getGenealogyConfig,
   getTimelineEraConfig,
+  getEras,
+  getEra,
+  getRedemptiveActs,
+  getRedemptiveAct,
+  getLexiconEntry,
+  getLexiconEntries,
+  getTopics,
+  getTopic,
+  searchTopics,
 } from '@/db/content/reference';
 
 beforeEach(() => {
@@ -197,5 +210,129 @@ describe('getTimelineEraConfig', () => {
     getMockDb().getFirstAsync.mockResolvedValue({ key: 'timeline_era_config', value_json: '{bad json' });
     const result = await getTimelineEraConfig();
     expect(result).toBeNull();
+  });
+});
+
+// ── Synoptic entries (extended) ─────────────────────────────────
+
+describe('getSynopticEntry', () => {
+  it('returns entry by id', async () => {
+    getMockDb().getFirstAsync.mockResolvedValue({ id: 'entry1', title: 'Baptism' });
+    const result = await getSynopticEntry('entry1');
+    expect(result?.title).toBe('Baptism');
+  });
+});
+
+describe('getHarmonyEntries', () => {
+  it('returns gospel harmony entries', async () => {
+    getMockDb().getAllAsync.mockResolvedValue([{ id: 'h1' }]);
+    const result = await getHarmonyEntries();
+    expect(result).toHaveLength(1);
+  });
+});
+
+describe('getHarmonyEntry', () => {
+  it('returns single harmony entry', async () => {
+    getMockDb().getFirstAsync.mockResolvedValue({ id: 'h1' });
+    const result = await getHarmonyEntry('h1');
+    expect(result?.id).toBe('h1');
+  });
+});
+
+describe('getOTParallelEntries', () => {
+  it('returns OT parallel entries', async () => {
+    getMockDb().getAllAsync.mockResolvedValue([{ id: 'ot1' }]);
+    const result = await getOTParallelEntries();
+    expect(result).toHaveLength(1);
+  });
+});
+
+// ── Eras ─────────────────────────────────────────────────────────
+
+describe('getEras', () => {
+  it('returns all eras ordered by range_start', async () => {
+    getMockDb().getAllAsync.mockResolvedValue([{ id: 'patriarchs' }]);
+    const result = await getEras();
+    expect(result).toHaveLength(1);
+  });
+});
+
+describe('getEra', () => {
+  it('returns era by id', async () => {
+    getMockDb().getFirstAsync.mockResolvedValue({ id: 'patriarchs', name: 'Patriarchs' });
+    const result = await getEra('patriarchs');
+    expect(result?.name).toBe('Patriarchs');
+  });
+});
+
+// ── Redemptive Acts ─────────────────────────────────────────────
+
+describe('getRedemptiveActs', () => {
+  it('returns all redemptive acts', async () => {
+    getMockDb().getAllAsync.mockResolvedValue([{ id: 'creation' }]);
+    const result = await getRedemptiveActs();
+    expect(result).toHaveLength(1);
+  });
+});
+
+describe('getRedemptiveAct', () => {
+  it('returns act by id', async () => {
+    getMockDb().getFirstAsync.mockResolvedValue({ id: 'creation' });
+    const result = await getRedemptiveAct('creation');
+    expect(result?.id).toBe('creation');
+  });
+});
+
+// ── Lexicon ─────────────────────────────────────────────────────
+
+describe('getLexiconEntry', () => {
+  it('returns entry by strongs number', async () => {
+    getMockDb().getFirstAsync.mockResolvedValue({ strongs: 'H1', gloss: 'father' });
+    const result = await getLexiconEntry('H1');
+    expect(result?.gloss).toBe('father');
+  });
+});
+
+describe('getLexiconEntries', () => {
+  it('returns entries for multiple strongs', async () => {
+    getMockDb().getAllAsync.mockResolvedValue([{ strongs: 'H1' }, { strongs: 'H2' }]);
+    const result = await getLexiconEntries(['H1', 'H2']);
+    expect(result).toHaveLength(2);
+  });
+
+  it('returns empty for empty list', async () => {
+    const result = await getLexiconEntries([]);
+    expect(result).toEqual([]);
+    expect(getMockDb().getAllAsync).not.toHaveBeenCalled();
+  });
+});
+
+// ── Topics ─────────────────────────────────────────────────────
+
+describe('getTopics', () => {
+  it('returns all topics', async () => {
+    getMockDb().getAllAsync.mockResolvedValue([{ id: 't1' }]);
+    const result = await getTopics();
+    expect(result).toHaveLength(1);
+  });
+});
+
+describe('getTopic', () => {
+  it('returns topic by id', async () => {
+    getMockDb().getFirstAsync.mockResolvedValue({ id: 't1', title: 'Grace' });
+    const result = await getTopic('t1');
+    expect(result?.title).toBe('Grace');
+  });
+});
+
+describe('searchTopics', () => {
+  it('searches topics with FTS', async () => {
+    getMockDb().getAllAsync.mockResolvedValue([{ id: 't1' }]);
+    const result = await searchTopics('grace');
+    expect(result).toHaveLength(1);
+    expect(getMockDb().getAllAsync).toHaveBeenCalledWith(
+      expect.stringContaining('MATCH'),
+      ['grace*'],
+    );
   });
 });

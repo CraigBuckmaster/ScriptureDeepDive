@@ -59,6 +59,7 @@ describe('TranslationPanel', () => {
 
   it('renders verse_ref headers', () => {
     const data: TransPanel = {
+      title: 'Translations',
       rows: [
         {
           verse_ref: 'Gen 1:1',
@@ -72,10 +73,12 @@ describe('TranslationPanel', () => {
     expect(getByText('Gen 1:1')).toBeTruthy();
   });
 
-  it('renders without title when title is undefined', () => {
+  it('renders without verse_ref when verse_ref is empty', () => {
     const data: TransPanel = {
+      title: 'Translations',
       rows: [
         {
+          verse_ref: '',
           translations: [
             { version: 'KJV', text: 'In the beginning God created...' },
           ],

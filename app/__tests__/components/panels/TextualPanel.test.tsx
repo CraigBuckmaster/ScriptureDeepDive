@@ -6,6 +6,7 @@ import React from 'react';
 import { renderWithProviders } from '../../helpers/renderWithProviders';
 import { TextualPanel } from '@/components/panels/TextualPanel';
 import type { TextualEntry } from '@/types';
+import type { ManuscriptStory } from '@/components/panels/ManuscriptStoriesView';
 
 const entries: TextualEntry[] = [
   { ref: 'v. 1', title: 'Masoretic vs LXX', content: 'The MT reads bereshit while LXX has en arche.', note: 'Minor semantic difference.' },
@@ -68,10 +69,10 @@ jest.mock('@/components/panels/ManuscriptStoriesView', () => ({
 
 describe('CompositeTextualPanel', () => {
   const notes: TextualEntry[] = [
-    { ref: 'v.1', title: 'Variant A', content: 'Content A' },
+    { ref: 'v.1', title: 'Variant A', content: 'Content A', note: '' },
   ];
-  const stories = [
-    { title: 'Story 1', body: 'Body 1' },
+  const stories: ManuscriptStory[] = [
+    { title: 'Story 1', passage: 'John 7:53-8:11', summary: 'Summary', evidence: [], consensus: 'Consensus', significance: 'High' },
   ];
 
   it('renders notes-only without tab bar', () => {

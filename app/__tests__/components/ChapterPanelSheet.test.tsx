@@ -89,7 +89,7 @@ describe('ChapterPanelSheet', () => {
       renderWithProviders(
         <ChapterPanelSheet
           {...defaultProps}
-          highlights={[{ verse_ref: 'genesis_1:1', color: 'yellow', id: 1, created_at: '' }]}
+          highlights={[{ verse_ref: 'genesis_1:1', color: 'yellow', id: 1, created_at: '', collection_id: null, note: null }]}
           longPress={{ verseNum: 1, text: 'In the beginning...' }}
         />,
       );

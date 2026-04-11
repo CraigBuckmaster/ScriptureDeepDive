@@ -8,6 +8,7 @@ describe('EraCard', () => {
     name: 'Patristic Era',
     date_range: '100-500 AD',
     description: 'The period of the Church Fathers who shaped early Christian theology.',
+    display_order: 1,
   };
 
   it('renders without crashing', () => {

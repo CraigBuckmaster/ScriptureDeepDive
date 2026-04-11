@@ -24,7 +24,7 @@ function GoodChild() {
   return <Text>Everything is fine</Text>;
 }
 
-function BrokenChild(): JSX.Element {
+function BrokenChild(): React.ReactElement {
   throw new Error('Test error');
 }
 
@@ -94,8 +94,9 @@ describe('withErrorBoundary', () => {
   });
 
   it('sets displayName on the wrapped component', () => {
-    GoodChild.displayName = 'GoodChild';
-    const Wrapped = withErrorBoundary(GoodChild);
-    expect(Wrapped.displayName).toBe('withErrorBoundary(GoodChild)');
+    const NamedComponent = () => <Text>Named</Text>;
+    NamedComponent.displayName = 'NamedComponent';
+    const Wrapped = withErrorBoundary(NamedComponent);
+    expect((Wrapped as any).displayName).toBe('withErrorBoundary(NamedComponent)');
   });
 });

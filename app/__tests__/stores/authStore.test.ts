@@ -104,8 +104,8 @@ describe('authStore', () => {
 
   it('hydrate subscribes to auth state changes and updates user on SIGNED_IN', async () => {
     const mockUser = { id: 'user-456', email: 'new@example.com', user_metadata: {}, app_metadata: {} };
-    let authCallback: Function | null = null;
-    mockOnAuthStateChange.mockImplementation((cb: Function) => {
+    let authCallback: ((...args: unknown[]) => void) | null = null;
+    mockOnAuthStateChange.mockImplementation((cb: (...args: unknown[]) => void) => {
       authCallback = cb;
       return { data: { subscription: { unsubscribe: jest.fn() } } };
     });
@@ -174,8 +174,8 @@ describe('authStore', () => {
   });
 
   it('auth state change with null session clears user', async () => {
-    let authCallback: Function | null = null;
-    mockOnAuthStateChange.mockImplementation((cb: Function) => {
+    let authCallback: ((...args: unknown[]) => void) | null = null;
+    mockOnAuthStateChange.mockImplementation((cb: (...args: unknown[]) => void) => {
       authCallback = cb;
       return { data: { subscription: { unsubscribe: jest.fn() } } };
     });
@@ -341,8 +341,8 @@ describe('authStore', () => {
       user_metadata: { name: 'New User' },
       app_metadata: { provider: 'email' },
     };
-    let authCallback: Function | null = null;
-    mockOnAuthStateChange.mockImplementation((cb: Function) => {
+    let authCallback: ((...args: unknown[]) => void) | null = null;
+    mockOnAuthStateChange.mockImplementation((cb: (...args: unknown[]) => void) => {
       authCallback = cb;
       return { data: { subscription: { unsubscribe: jest.fn() } } };
     });
