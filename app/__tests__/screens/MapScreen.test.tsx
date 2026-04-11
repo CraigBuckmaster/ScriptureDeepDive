@@ -289,4 +289,83 @@ describe('MapScreen', () => {
     const mapView = getByTestId('map-view');
     expect(mapView.props.accessibilityLabel).toBe('Biblical world map');
   });
+
+  it('filters stories by era when era filter is used', () => {
+    const { getByTestId, queryByTestId } = renderWithProviders(
+      <MapScreen route={mockRoute as any} navigation={{ navigate: mockNavigate, goBack: mockGoBack } as any} />,
+    );
+    // Select 'exodus' era filter
+    fireEvent.press(getByTestId('era-filter-exodus'));
+
+    // Story picker should show the exodus story, panel should open
+    expect(getByTestId('story-panel')).toBeTruthy();
+  });
+
+  it('resets to initial region when "all" era is selected', () => {
+    const { getByTestId, queryByTestId } = renderWithProviders(
+      <MapScreen route={mockRoute as any} navigation={{ navigate: mockNavigate, goBack: mockGoBack } as any} />,
+    );
+    // Select a specific era first
+    fireEvent.press(getByTestId('era-filter-exodus'));
+    expect(getByTestId('story-panel')).toBeTruthy();
+
+    // Select "all" era
+    fireEvent.press(getByTestId('era-filter-all'));
+    expect(queryByTestId('story-panel')).toBeNull();
+  });
+
+  it('toggles modern/ancient names with toggle button', () => {
+    const { getByTestId } = renderWithProviders(
+      <MapScreen route={mockRoute as any} navigation={{ navigate: mockNavigate, goBack: mockGoBack } as any} />,
+    );
+    fireEvent.press(getByTestId('toggle-names'));
+    // Should not crash, toggle is handled internally
+    expect(getByTestId('map-view')).toBeTruthy();
+  });
+
+  it('renders centre button that recentres map', () => {
+    const { getByTestId } = renderWithProviders(
+      <MapScreen route={mockRoute as any} navigation={{ navigate: mockNavigate, goBack: mockGoBack } as any} />,
+    );
+    fireEvent.press(getByTestId('centre-button'));
+    // Should not crash
+    expect(getByTestId('map-view')).toBeTruthy();
+  });
+
+  it('navigates to chapter when chapter press is triggered from story panel', () => {
+    const { getByTestId } = renderWithProviders(
+      <MapScreen route={mockRoute as any} navigation={{ navigate: mockNavigate, goBack: mockGoBack } as any} />,
+    );
+    // Open a story panel
+    fireEvent.press(getByTestId('story-chip-exodus-journey'));
+    expect(getByTestId('story-panel')).toBeTruthy();
+
+    // Press the chapter link
+    fireEvent.press(getByTestId('story-panel-chapter'));
+    expect(mockNavigate).toHaveBeenCalledWith('ReadTab', {
+      screen: 'Chapter',
+      params: { bookId: 'exodus', chapterNum: 12 },
+    });
+  });
+
+  it('re-centres on active story when centre button is pressed with active story', () => {
+    const { getByTestId } = renderWithProviders(
+      <MapScreen route={mockRoute as any} navigation={{ navigate: mockNavigate, goBack: mockGoBack } as any} />,
+    );
+    // Select a story first
+    fireEvent.press(getByTestId('story-chip-nativity'));
+    expect(getByTestId('story-panel')).toBeTruthy();
+
+    // Press centre button - should recentre on active story
+    fireEvent.press(getByTestId('centre-button'));
+    expect(getByTestId('map-view')).toBeTruthy();
+  });
+
+  it('shows story overlays when a story is active', () => {
+    const { getByTestId } = renderWithProviders(
+      <MapScreen route={mockRoute as any} navigation={{ navigate: mockNavigate, goBack: mockGoBack } as any} />,
+    );
+    fireEvent.press(getByTestId('story-chip-exodus-journey'));
+    expect(getByTestId('story-overlays')).toBeTruthy();
+  });
 });

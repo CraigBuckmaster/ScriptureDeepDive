@@ -333,4 +333,91 @@ describe('authStore', () => {
     expect(mockClearAuthProfile).toHaveBeenCalled();
     expect(useAuthStore.getState().user).toBeNull();
   });
+
+  it('auth state change callback syncs profile when user signs in', async () => {
+    const mockUser = {
+      id: 'user-789',
+      email: 'newuser@example.com',
+      user_metadata: { name: 'New User' },
+      app_metadata: { provider: 'email' },
+    };
+    let authCallback: Function | null = null;
+    mockOnAuthStateChange.mockImplementation((cb: Function) => {
+      authCallback = cb;
+      return { data: { subscription: { unsubscribe: jest.fn() } } };
+    });
+
+    await useAuthStore.getState().hydrate();
+    expect(authCallback).not.toBeNull();
+
+    // Simulate sign-in event
+    authCallback!('SIGNED_IN', { user: mockUser });
+
+    // syncProfile should have been called
+    await new Promise((r) => setTimeout(r, 10));
+    expect(mockUpsertAuthProfile).toHaveBeenCalledWith(
+      'user-789',
+      'newuser@example.com',
+      'New User',
+      '',
+      'email',
+    );
+  });
+
+  it('hydrate syncs profile with fallback fields when metadata is sparse', async () => {
+    const mockUser = {
+      id: 'user-sparse',
+      email: undefined,
+      user_metadata: {},
+      app_metadata: {},
+    };
+    mockGetSession.mockResolvedValue({
+      data: { session: { user: mockUser } },
+    });
+
+    await useAuthStore.getState().hydrate();
+
+    // Should use fallback empty strings
+    expect(mockUpsertAuthProfile).toHaveBeenCalledWith(
+      'user-sparse',
+      '',
+      '',
+      '',
+      'email',
+    );
+  });
+
+  it('hydrate handles upsertAuthProfile failure gracefully', async () => {
+    const mockUser = {
+      id: 'user-err',
+      email: 'err@test.com',
+      user_metadata: {},
+      app_metadata: {},
+    };
+    mockGetSession.mockResolvedValue({
+      data: { session: { user: mockUser } },
+    });
+    mockUpsertAuthProfile.mockRejectedValueOnce(new Error('DB error'));
+
+    await useAuthStore.getState().hydrate();
+    // Should not crash - user is still set
+    expect(useAuthStore.getState().user).toEqual(mockUser);
+    expect(useAuthStore.getState().isHydrated).toBe(true);
+  });
+
+  it('hydrate unsubscribes previous auth subscription', async () => {
+    const unsub1 = jest.fn();
+    const unsub2 = jest.fn();
+    mockOnAuthStateChange
+      .mockReturnValueOnce({ data: { subscription: { unsubscribe: unsub1 } } })
+      .mockReturnValueOnce({ data: { subscription: { unsubscribe: unsub2 } } });
+
+    await useAuthStore.getState().hydrate();
+    // Reset hydrated state to allow second hydrate
+    useAuthStore.setState({ isHydrated: false });
+    await useAuthStore.getState().hydrate();
+
+    // First subscription should have been unsubscribed before second hydrate
+    expect(unsub1).toHaveBeenCalled();
+  });
 });

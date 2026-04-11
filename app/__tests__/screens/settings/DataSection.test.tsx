@@ -104,4 +104,98 @@ describe('DataSection', () => {
     expect(alertSpy).toHaveBeenCalledWith('Reset to New User?', expect.any(String), expect.any(Array));
     alertSpy.mockRestore();
   });
+
+  it('shows Alert when Clear All Bookmarks is pressed', () => {
+    const alertSpy = jest.spyOn(Alert, 'alert');
+    const { getByText } = renderWithProviders(<DataSection base={base} />);
+
+    fireEvent.press(getByText('Clear All Bookmarks'));
+    expect(alertSpy).toHaveBeenCalledWith('Clear All Bookmarks', expect.any(String), expect.any(Array));
+    alertSpy.mockRestore();
+  });
+
+  it('executes destructive delete on confirmation', async () => {
+    const alertSpy = jest.spyOn(Alert, 'alert');
+    const { getByText } = renderWithProviders(<DataSection base={base} />);
+
+    fireEvent.press(getByText('Clear All Bookmarks'));
+
+    // Get the Alert buttons and simulate pressing Delete
+    const alertArgs = alertSpy.mock.calls[0];
+    const buttons = alertArgs[2] as any[];
+    const deleteBtn = buttons.find((b: any) => b.text === 'Delete');
+    expect(deleteBtn).toBeDefined();
+
+    // Press the Delete button
+    await deleteBtn.onPress();
+
+    // Should have executed the SQL
+    const { getMockUserDb } = require('../../helpers/mockUserDb');
+    expect(getMockUserDb().runAsync).toHaveBeenCalledWith('DELETE FROM bookmarks');
+
+    alertSpy.mockRestore();
+  });
+
+  it('handles export error with ExportError', async () => {
+    const alertSpy = jest.spyOn(Alert, 'alert');
+    const { exportStudyData, ExportError } = require('@/utils/exportData');
+    exportStudyData.mockRejectedValueOnce(new ExportError('No data to export'));
+
+    const { getByText } = renderWithProviders(<DataSection base={base} />);
+
+    fireEvent.press(getByText('Export Study Data'));
+    await new Promise((r) => setTimeout(r, 50));
+
+    expect(alertSpy).toHaveBeenCalledWith('Export', 'No data to export');
+    alertSpy.mockRestore();
+  });
+
+  it('handles generic export error', async () => {
+    const alertSpy = jest.spyOn(Alert, 'alert');
+    const { exportStudyData } = require('@/utils/exportData');
+    exportStudyData.mockRejectedValueOnce(new Error('Unknown error'));
+
+    const { getByText } = renderWithProviders(<DataSection base={base} />);
+
+    fireEvent.press(getByText('Export Study Data'));
+    await new Promise((r) => setTimeout(r, 50));
+
+    expect(alertSpy).toHaveBeenCalledWith('Export', expect.stringContaining('Something went wrong'));
+    alertSpy.mockRestore();
+  });
+
+  it('shows Preparing export text while exporting', async () => {
+    const { exportStudyData } = require('@/utils/exportData');
+    let resolveExport: () => void;
+    exportStudyData.mockImplementation(() => new Promise<void>((r) => { resolveExport = r; }));
+
+    const { getByText } = renderWithProviders(<DataSection base={base} />);
+
+    fireEvent.press(getByText('Export Study Data'));
+    await new Promise((r) => setTimeout(r, 10));
+
+    // Should show preparing text
+    expect(getByText(/Preparing export/)).toBeTruthy();
+
+    resolveExport!();
+    await new Promise((r) => setTimeout(r, 10));
+  });
+
+  it('executes reset to new user on confirmation', async () => {
+    const alertSpy = jest.spyOn(Alert, 'alert');
+    const { resetToNewUser } = require('@/db/userMutations');
+    const { getByText } = renderWithProviders(<DataSection base={base} />);
+
+    fireEvent.press(getByText('Reset to New User (Dev)'));
+
+    const alertArgs = alertSpy.mock.calls[0];
+    const buttons = alertArgs[2] as any[];
+    const resetBtn = buttons.find((b: any) => b.text === 'Reset');
+    expect(resetBtn).toBeDefined();
+
+    await resetBtn.onPress();
+    expect(resetToNewUser).toHaveBeenCalled();
+
+    alertSpy.mockRestore();
+  });
 });

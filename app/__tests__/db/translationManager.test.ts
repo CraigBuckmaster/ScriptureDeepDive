@@ -207,4 +207,19 @@ describe('translationManager', () => {
       // Should not throw even if map is empty
     });
   });
+
+  describe('downloadTranslation - web platform', () => {
+    it('no-ops for unknown translations', async () => {
+      await downloadTranslation('unknown_id');
+      expect(mockCopyAsync).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('getInstalledSize edge cases', () => {
+    it('returns 0 when size property is missing', async () => {
+      mockGetInfoAsync.mockResolvedValue({ exists: true });
+      const size = await getInstalledSize('esv');
+      expect(size).toBe(0);
+    });
+  });
 });

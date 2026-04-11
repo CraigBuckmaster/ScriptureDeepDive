@@ -162,15 +162,22 @@ jest.mock('react-native-reanimated', () => {
 });
 
 // Mock react-native-gesture-handler
-jest.mock('react-native-gesture-handler', () => ({
-  GestureHandlerRootView: ({ children }) => children,
-  GestureDetector: ({ children }) => children,
-  Gesture: {
-    Pinch: () => ({ onBegin: () => ({}), onUpdate: () => ({}), onEnd: () => ({}) }),
-    Pan: () => ({ minDistance: () => ({}), onBegin: () => ({}), onUpdate: () => ({}), onEnd: () => ({}) }),
-    Simultaneous: (...args) => ({}),
-  },
-}));
+jest.mock('react-native-gesture-handler', () => {
+  const gestureChain = () => new Proxy({}, {
+    get: () => (...args) => gestureChain(),
+  });
+  return {
+    GestureHandlerRootView: ({ children }) => children,
+    GestureDetector: ({ children }) => children,
+    Gesture: {
+      Pinch: gestureChain,
+      Pan: gestureChain,
+      Tap: gestureChain,
+      Simultaneous: gestureChain,
+      Race: gestureChain,
+    },
+  };
+});
 
 // Mock react-native-maps
 jest.mock('react-native-maps', () => ({

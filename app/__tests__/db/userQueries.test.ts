@@ -588,4 +588,67 @@ describe('userQueries', () => {
       expect(await isTopicBookmarked('topic-1')).toBe(false);
     });
   });
+
+  // ── Additional coverage ──────────────────────────────────────
+  describe('searchNotes', () => {
+    it('returns matching notes', async () => {
+      const notes = [{ id: 1, verse_ref: 'genesis 1:1', note_text: 'Test' }];
+      mockGetAllAsync.mockResolvedValue(notes);
+      const result = await searchNotes('test');
+      expect(result).toEqual(notes);
+    });
+  });
+
+  describe('getReadingStats - streak edge cases', () => {
+    it('handles streak that starts in past (not today)', async () => {
+      mockGetFirstAsync
+        .mockResolvedValueOnce({ count: 3 })
+        .mockResolvedValueOnce({ book_id: 'psalms' });
+
+      // No reading today, so streak should be 0
+      const twoDaysAgo = new Date(Date.now() - 2 * 86400000).toISOString().slice(0, 10);
+      const threeDaysAgo = new Date(Date.now() - 3 * 86400000).toISOString().slice(0, 10);
+      mockGetAllAsync.mockResolvedValueOnce([
+        { day: twoDaysAgo },
+        { day: threeDaysAgo },
+      ]);
+
+      const stats = await getReadingStats();
+      expect(stats.currentStreak).toBe(0);
+    });
+  });
+
+  describe('getStudySessions without limit', () => {
+    it('returns all sessions', async () => {
+      const sessions = [{ id: 1 }, { id: 2 }];
+      mockGetAllAsync.mockResolvedValue(sessions);
+      const result = await getStudySessions();
+      expect(result).toHaveLength(2);
+    });
+  });
+
+  describe('searchNotesFTS edge cases', () => {
+    it('handles mixed valid and short words', async () => {
+      mockGetAllAsync.mockResolvedValue([]);
+      const result = await searchNotesFTS('a the grace');
+      // "a" and "the" are >= 2 chars, "the" passes, "a" is filtered
+      expect(mockGetAllAsync).toHaveBeenCalledWith(
+        expect.stringContaining('MATCH'),
+        ['"the" "grace"'],
+      );
+    });
+  });
+
+  describe('getCollectionNoteCounts edge cases', () => {
+    it('handles large number of collections', async () => {
+      const rows = Array.from({ length: 50 }, (_, i) => ({
+        collection_id: i + 1,
+        count: (i + 1) * 2,
+      }));
+      mockGetAllAsync.mockResolvedValue(rows);
+      const result = await getCollectionNoteCounts();
+      expect(Object.keys(result)).toHaveLength(50);
+      expect(result[25]).toBe(50);
+    });
+  });
 });

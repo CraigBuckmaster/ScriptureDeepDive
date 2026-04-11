@@ -254,4 +254,81 @@ describe('AllNotesScreen', () => {
       expect(getByText('#theology')).toBeTruthy();
     });
   });
+
+  it('shows search empty state when search has no results', async () => {
+    mockGetAllNotes.mockResolvedValue([]);
+    mockSearchNotesFTS.mockResolvedValue([]);
+    const { getByText, getByPlaceholderText } = renderWithProviders(<AllNotesScreen />);
+
+    await waitFor(() => {
+      expect(getByText(/No notes yet/)).toBeTruthy();
+    });
+
+    // Type a search query
+    fireEvent.changeText(getByPlaceholderText('Search notes...'), 'nonexistent term');
+
+    await waitFor(() => {
+      expect(getByText(/No notes match your search/)).toBeTruthy();
+    });
+  });
+
+  it('uses searchNotesFTS when query is >= 2 characters', async () => {
+    mockSearchNotesFTS.mockResolvedValue([sampleNotes[0]]);
+    const { getByPlaceholderText } = renderWithProviders(<AllNotesScreen />);
+
+    fireEvent.changeText(getByPlaceholderText('Search notes...'), 'beginning');
+
+    await waitFor(() => {
+      expect(mockSearchNotesFTS).toHaveBeenCalledWith('beginning');
+    });
+  });
+
+  it('enters edit mode when a note is tapped', async () => {
+    mockGetAllNotes.mockResolvedValue([sampleNotes[0]]);
+    const { getByText, findByDisplayValue } = renderWithProviders(<AllNotesScreen />);
+
+    await waitFor(() => {
+      expect(getByText('In the beginning note')).toBeTruthy();
+    });
+
+    fireEvent.press(getByText('In the beginning note'));
+
+    // Should show the edit text input with the note text
+    const input = await findByDisplayValue('In the beginning note');
+    expect(input).toBeTruthy();
+  });
+
+  it('shows "Back to all tags" link when a tag is selected', async () => {
+    mockGetAllTags.mockResolvedValue(['creation']);
+    mockGetNotesByTag.mockResolvedValue([sampleNotes[0]]);
+    const { getByText, findByText } = renderWithProviders(<AllNotesScreen />);
+
+    fireEvent.press(getByText('Tags'));
+
+    await waitFor(() => {
+      expect(getByText('#creation')).toBeTruthy();
+    });
+
+    fireEvent.press(getByText('#creation'));
+
+    const backLink = await findByText(/All Tags/);
+    expect(backLink).toBeTruthy();
+  });
+
+  it('clears search when X button is pressed', async () => {
+    mockGetAllNotes.mockResolvedValue(sampleNotes);
+    const { getByPlaceholderText, getByLabelText } = renderWithProviders(<AllNotesScreen />);
+
+    fireEvent.changeText(getByPlaceholderText('Search notes...'), 'test');
+
+    await waitFor(() => {
+      expect(getByLabelText('Clear search')).toBeTruthy();
+    });
+
+    fireEvent.press(getByLabelText('Clear search'));
+
+    await waitFor(() => {
+      expect(mockGetAllNotes).toHaveBeenCalled();
+    });
+  });
 });

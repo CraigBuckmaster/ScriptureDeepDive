@@ -125,4 +125,60 @@ describe('database', () => {
       expect(openTranslationDb).toHaveBeenCalledWith('esv');
     });
   });
+
+  describe('initDatabase on native platform', () => {
+    it('copies asset database when file does not exist', async () => {
+      jest.doMock('react-native', () => ({
+        Platform: { OS: 'ios' },
+      }));
+      jest.resetModules();
+      // DB file doesn't exist => needs copy
+      mockGetInfoAsync
+        .mockResolvedValueOnce({ exists: false }) // copyAssetDatabaseIfNeeded check
+        .mockResolvedValueOnce({ exists: true, size: 5000000 }); // post-copy info check
+
+      databaseModule = require('@/db/database');
+      const db = await databaseModule.initDatabase();
+      expect(db).toBeDefined();
+      expect(mockMakeDirectoryAsync).toHaveBeenCalled();
+      expect(mockCopyAsync).toHaveBeenCalled();
+      expect(mockExecAsync).toHaveBeenCalledWith('PRAGMA journal_mode=WAL');
+    });
+
+    it('skips copy when installed hash matches expected', async () => {
+      jest.doMock('react-native', () => ({
+        Platform: { OS: 'android' },
+      }));
+      jest.resetModules();
+      // DB exists with correct hash
+      mockGetInfoAsync.mockResolvedValue({ exists: true, size: 5000000 });
+      mockGetFirstAsync.mockResolvedValueOnce({ value: 'abc123' });
+
+      databaseModule = require('@/db/database');
+      const db = await databaseModule.initDatabase();
+      expect(db).toBeDefined();
+      // Should not copy since hash matches
+      expect(mockCopyAsync).not.toHaveBeenCalled();
+    });
+
+    it('replaces DB when hash does not match', async () => {
+      jest.doMock('react-native', () => ({
+        Platform: { OS: 'ios' },
+      }));
+      jest.resetModules();
+      // DB exists but wrong hash
+      mockGetInfoAsync
+        .mockResolvedValueOnce({ exists: true, size: 5000000 }) // exists check
+        .mockResolvedValueOnce({ exists: true, size: 5000000 }); // post-copy
+      // getInstalledContentHash opens db, reads hash, closes
+      mockGetFirstAsync.mockResolvedValueOnce({ value: 'old_hash' });
+
+      databaseModule = require('@/db/database');
+      const db = await databaseModule.initDatabase();
+      expect(db).toBeDefined();
+      // Should delete old and copy new
+      expect(mockDeleteAsync).toHaveBeenCalled();
+      expect(mockCopyAsync).toHaveBeenCalled();
+    });
+  });
 });
