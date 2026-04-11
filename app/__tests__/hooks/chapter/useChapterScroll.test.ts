@@ -191,4 +191,88 @@ describe('useChapterScroll', () => {
     // handleBtnRowLayout ignores the _sectionY param and reads from sectionYMap
     // So it's sectionYMap['sec1'] (300) + rowY (150) = 450
   });
+
+  it('does not complete plan day when already completed for that chapter', () => {
+    const { result } = renderHook(() =>
+      useChapterScroll(createOptions({ planId: 'plan-1', planDayNum: 3 })),
+    );
+
+    const scrollEvent = {
+      nativeEvent: {
+        contentOffset: { y: 1000 },
+        contentSize: { height: 2000 },
+        layoutMeasurement: { height: 800 },
+      },
+    } as any;
+
+    act(() => {
+      result.current.handleScroll(scrollEvent);
+    });
+    expect(mockCompletePlanDay).toHaveBeenCalledTimes(1);
+
+    // Scroll more — should NOT call completePlanDay again
+    const scrollEvent2 = {
+      nativeEvent: {
+        contentOffset: { y: 1200 },
+        contentSize: { height: 2000 },
+        layoutMeasurement: { height: 800 },
+      },
+    } as any;
+
+    act(() => {
+      result.current.handleScroll(scrollEvent2);
+    });
+    expect(mockCompletePlanDay).toHaveBeenCalledTimes(1);
+  });
+
+  it('scrollProgress stays at 0 when maxScroll is 0', () => {
+    const { result } = renderHook(() => useChapterScroll(createOptions()));
+
+    // Content fits within layout = maxScroll is 0
+    const scrollEvent = {
+      nativeEvent: {
+        contentOffset: { y: 0 },
+        contentSize: { height: 800 },
+        layoutMeasurement: { height: 800 },
+      },
+    } as any;
+
+    act(() => {
+      result.current.handleScroll(scrollEvent);
+    });
+
+    expect(result.current.scrollProgress).toBe(0);
+  });
+
+  it('clearActivePanel is called on chapter change', () => {
+    const { rerender } = renderHook(
+      ({ bookId, chapterNum }: { bookId: string; chapterNum: number }) =>
+        useChapterScroll(createOptions({ bookId, chapterNum })),
+      { initialProps: { bookId: 'genesis', chapterNum: 1 } },
+    );
+
+    rerender({ bookId: 'genesis', chapterNum: 2 });
+    expect(mockClearActivePanel).toHaveBeenCalled();
+  });
+
+  it('handleVerseLayout uses 0 when section not found', () => {
+    const { result } = renderHook(() => useChapterScroll(createOptions()));
+
+    // Don't set section layout, then set verse layout
+    act(() => {
+      result.current.handleVerseLayout(1, 50, 'unknown_section');
+    });
+
+    // Should use 0 + 50 = 50
+    expect(result.current.verseYMap.current[1]).toBe(50);
+  });
+
+  it('handleBtnRowLayout uses 0 when section not found', () => {
+    const { result } = renderHook(() => useChapterScroll(createOptions()));
+
+    act(() => {
+      result.current.handleBtnRowLayout('unknown_section', 0, 100);
+    });
+    // Should use 0 (no section in sectionYMap) + 100 = 100
+  });
 });

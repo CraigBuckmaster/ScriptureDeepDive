@@ -104,5 +104,46 @@ describe('readerStore', () => {
       useReaderStore.getState().toggleNotesOverlay();
       expect(useReaderStore.getState().notesOverlayOpen).toBe(true);
     });
+
+    it('toggles back to false', () => {
+      useReaderStore.getState().toggleNotesOverlay(); // true
+      useReaderStore.getState().toggleNotesOverlay(); // false
+      expect(useReaderStore.getState().notesOverlayOpen).toBe(false);
+    });
+  });
+
+  describe('setCurrentBook with null', () => {
+    it('clears book and resets chapter', () => {
+      useReaderStore.getState().setCurrentBook(MOCK_BOOK);
+      useReaderStore.getState().setCurrentChapter(5);
+      useReaderStore.getState().setCurrentBook(null);
+      const state = useReaderStore.getState();
+      expect(state.currentBook).toBeNull();
+      expect(state.currentChapter).toBe(1);
+    });
+  });
+
+  describe('panel interactions with overlays', () => {
+    it('qnav toggle is independent of active panel', () => {
+      useReaderStore.getState().setActivePanel('s1', 'heb');
+      useReaderStore.getState().toggleQnav();
+      expect(useReaderStore.getState().qnavOpen).toBe(true);
+      // Active panel should still be set
+      expect(useReaderStore.getState().activePanel).toEqual({ sectionId: 's1', panelType: 'heb' });
+    });
+
+    it('notes overlay is independent of active panel', () => {
+      useReaderStore.getState().setActivePanel('s1', 'heb');
+      useReaderStore.getState().toggleNotesOverlay();
+      expect(useReaderStore.getState().notesOverlayOpen).toBe(true);
+      expect(useReaderStore.getState().activePanel).toEqual({ sectionId: 's1', panelType: 'heb' });
+    });
+  });
+
+  describe('clearActivePanel when no panel is active', () => {
+    it('stays null after clear', () => {
+      useReaderStore.getState().clearActivePanel();
+      expect(useReaderStore.getState().activePanel).toBeNull();
+    });
   });
 });

@@ -88,4 +88,62 @@ describe('useTreeGestures', () => {
     expect(txT.translateX).not.toBe(0);
     expect(tyT.translateY).not.toBe(0);
   });
+
+  it('centreOnNodeTop updates base style with top offset', () => {
+    const { result } = renderHook(() => useTreeGestures());
+    act(() => {
+      result.current.centreOnNodeTop(100, 200);
+    });
+    const transforms = result.current.baseStyle.transform as any[];
+    const txT = transforms.find((t: any) => 'translateX' in t);
+    const tyT = transforms.find((t: any) => 'translateY' in t);
+    expect(txT.translateX).not.toBe(0);
+    expect(tyT.translateY).not.toBe(0);
+  });
+
+  it('centreOnNodeAbovePanel updates base style with panel offset', () => {
+    const { result } = renderHook(() => useTreeGestures());
+    act(() => {
+      result.current.centreOnNodeAbovePanel(100, 200);
+    });
+    const transforms = result.current.baseStyle.transform as any[];
+    const txT = transforms.find((t: any) => 'translateX' in t);
+    const tyT = transforms.find((t: any) => 'translateY' in t);
+    expect(txT.translateX).not.toBe(0);
+    expect(tyT.translateY).not.toBe(0);
+  });
+
+  it('centreOnNode and centreOnNodeTop produce different Y offsets', () => {
+    const { result } = renderHook(() => useTreeGestures());
+
+    act(() => { result.current.centreOnNode(100, 200); });
+    const centerY = (result.current.baseStyle.transform as any[]).find((t: any) => 'translateY' in t).translateY;
+
+    act(() => { result.current.centreOnNodeTop(100, 200); });
+    const topY = (result.current.baseStyle.transform as any[]).find((t: any) => 'translateY' in t).translateY;
+
+    expect(centerY).not.toBe(topY);
+  });
+
+  it('baseStyle scale is clamped within minZoom and maxZoom bounds', () => {
+    const { result } = renderHook(() => useTreeGestures());
+    const transforms = result.current.baseStyle.transform as any[];
+    const scale = transforms.find((t: any) => 'scale' in t).scale;
+    expect(scale).toBeGreaterThanOrEqual(0.15);
+    expect(scale).toBeLessThanOrEqual(3);
+  });
+
+  it('multiple centreOnNode calls update base style correctly', () => {
+    const { result } = renderHook(() => useTreeGestures());
+
+    act(() => { result.current.centreOnNode(50, 50); });
+    const transforms1 = result.current.baseStyle.transform as any[];
+    const tx1 = transforms1.find((t: any) => 'translateX' in t).translateX;
+
+    act(() => { result.current.centreOnNode(200, 300); });
+    const transforms2 = result.current.baseStyle.transform as any[];
+    const tx2 = transforms2.find((t: any) => 'translateX' in t).translateX;
+
+    expect(tx1).not.toBe(tx2);
+  });
 });

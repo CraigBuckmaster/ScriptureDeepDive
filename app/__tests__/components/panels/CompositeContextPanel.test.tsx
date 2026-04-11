@@ -53,4 +53,39 @@ describe('CompositeContextPanel', () => {
     // No tabs have data, should render null
     expect(toJSON()).toBeNull();
   });
+
+  it('can default to historical tab', () => {
+    const { toJSON } = renderWithProviders(
+      <CompositeContextPanel data={data} defaultTab="historical" />,
+    );
+    expect(toJSON()).toBeTruthy();
+  });
+
+  it('renders ANE parallels tab content with parallel details', () => {
+    const aneOnlyData: CompositeContextData = {
+      ane: [
+        {
+          parallel: 'Gilgamesh',
+          similarity: 'Flood narrative',
+          difference: 'Monotheistic vs polytheistic',
+          significance: 'Shared ANE tradition',
+        },
+      ],
+    };
+    const { getByText } = renderWithProviders(
+      <CompositeContextPanel data={aneOnlyData} />,
+    );
+    expect(getByText('Gilgamesh')).toBeTruthy();
+    expect(getByText('Similarity')).toBeTruthy();
+    expect(getByText('Difference')).toBeTruthy();
+    expect(getByText('Significance')).toBeTruthy();
+  });
+
+  it('renders audience-only data without tab bar', () => {
+    const audienceData: CompositeContextData = { audience: 'First-century Jews' };
+    const { toJSON } = renderWithProviders(
+      <CompositeContextPanel data={audienceData} />,
+    );
+    expect(toJSON()).toBeTruthy();
+  });
 });

@@ -44,10 +44,14 @@ jest.mock('expo-speech', () => ({
 // Mock expo-notifications
 jest.mock('expo-notifications', () => ({
   requestPermissionsAsync: jest.fn().mockResolvedValue({ status: 'granted' }),
+  getPermissionsAsync: jest.fn().mockResolvedValue({ status: 'granted' }),
+  getExpoPushTokenAsync: jest.fn().mockResolvedValue({ data: 'ExponentPushToken[xxx]' }),
   scheduleNotificationAsync: jest.fn(),
   cancelAllScheduledNotificationsAsync: jest.fn(),
   setNotificationHandler: jest.fn(),
   setNotificationChannelAsync: jest.fn(),
+  AndroidImportance: { DEFAULT: 3, HIGH: 4, LOW: 2 },
+  SchedulableTriggerInputTypes: { DAILY: 'daily', TIME_INTERVAL: 'timeInterval' },
 }));
 
 // Mock expo-sqlite — used by db/database.ts and db/userDatabase.ts
@@ -70,10 +74,14 @@ jest.mock('expo-asset', () => ({
 // Mock expo-file-system
 jest.mock('expo-file-system/legacy', () => ({
   documentDirectory: '/fake/docs/',
+  cacheDirectory: '/fake/cache/',
   getInfoAsync: jest.fn().mockResolvedValue({ exists: false }),
   makeDirectoryAsync: jest.fn(),
   copyAsync: jest.fn(),
   deleteAsync: jest.fn(),
+  writeAsStringAsync: jest.fn().mockResolvedValue(undefined),
+  readAsStringAsync: jest.fn().mockResolvedValue(''),
+  downloadAsync: jest.fn().mockResolvedValue({ uri: '/fake/download' }),
 }));
 
 // Mock expo-clipboard
@@ -154,15 +162,22 @@ jest.mock('react-native-reanimated', () => {
 });
 
 // Mock react-native-gesture-handler
-jest.mock('react-native-gesture-handler', () => ({
-  GestureHandlerRootView: ({ children }) => children,
-  GestureDetector: ({ children }) => children,
-  Gesture: {
-    Pinch: () => ({ onBegin: () => ({}), onUpdate: () => ({}), onEnd: () => ({}) }),
-    Pan: () => ({ minDistance: () => ({}), onBegin: () => ({}), onUpdate: () => ({}), onEnd: () => ({}) }),
-    Simultaneous: (...args) => ({}),
-  },
-}));
+jest.mock('react-native-gesture-handler', () => {
+  const gestureChain = () => new Proxy({}, {
+    get: () => (...args) => gestureChain(),
+  });
+  return {
+    GestureHandlerRootView: ({ children }) => children,
+    GestureDetector: ({ children }) => children,
+    Gesture: {
+      Pinch: gestureChain,
+      Pan: gestureChain,
+      Tap: gestureChain,
+      Simultaneous: gestureChain,
+      Race: gestureChain,
+    },
+  };
+});
 
 // Mock react-native-maps
 jest.mock('react-native-maps', () => ({

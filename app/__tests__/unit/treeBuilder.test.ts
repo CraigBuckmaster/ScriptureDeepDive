@@ -35,4 +35,101 @@ describe('positionSpouses', () => {
     expect(TREE_CONSTANTS.spouseXOffset).toBe(88);
     expect(TREE_CONSTANTS.spouseYSpread).toBe(58);
   });
+
+  it('offsets spouse nodes from the primary node', () => {
+    const people: Person[] = [
+      makePerson('adam'),
+      { ...makePerson('eve'), gender: 'f', spouse_of: 'adam' },
+    ];
+    const spineIds = new Set(['adam']);
+    const primaryNode = {
+      data: { ...people[0], nodeType: 'spine' as const },
+      x: 100, y: 200, parent: null, children: [], depth: 0, isSpouse: false,
+    };
+    const result = positionSpouses([primaryNode], people, spineIds);
+    expect(result.length).toBe(2);
+    const spouse = result.find(n => n.data.id === 'eve');
+    expect(spouse).toBeDefined();
+    expect(spouse!.isSpouse).toBe(true);
+    expect(spouse!.x).toBe(100 + TREE_CONSTANTS.spouseXOffset);
+    // Single spouse => offset is 0, so same y
+    expect(spouse!.y).toBe(200);
+  });
+
+  it('spreads multiple spouses vertically around partner', () => {
+    const people: Person[] = [
+      makePerson('jacob'),
+      { ...makePerson('leah'), gender: 'f', spouse_of: 'jacob' },
+      { ...makePerson('rachel'), gender: 'f', spouse_of: 'jacob' },
+    ];
+    const spineIds = new Set(['jacob']);
+    const primaryNode = {
+      data: { ...people[0], nodeType: 'spine' as const },
+      x: 0, y: 0, parent: null, children: [], depth: 0, isSpouse: false,
+    };
+    const result = positionSpouses([primaryNode], people, spineIds);
+    const spouses = result.filter(n => n.isSpouse);
+    expect(spouses.length).toBe(2);
+    // Two spouses should be spread by spouseYSpread
+    const ys = spouses.map(s => s.y).sort((a, b) => a - b);
+    expect(ys[1] - ys[0]).toBe(TREE_CONSTANTS.spouseYSpread);
+  });
+});
+
+describe('computeSpineIds – extra edge cases', () => {
+  it('returns empty set if rootPersonId (jesus) not found in people', () => {
+    const people = [
+      makePerson('adam'),
+      makePerson('seth', 'adam'),
+      makePerson('enosh', 'seth'),
+    ];
+    const spine = computeSpineIds(people);
+    expect(spine.size).toBe(0);
+  });
+});
+
+describe('computeMarriageBars', () => {
+  it('returns connectors for married couples', () => {
+    const { computeMarriageBars } = require('../../src/utils/treeBuilder');
+    const partner = {
+      data: { id: 'abraham', name: 'Abraham', nodeType: 'spine' },
+      x: 0, y: 0, parent: null, children: [], depth: 0, isSpouse: false,
+    };
+    const spouse = {
+      data: { id: 'sarah', name: 'Sarah', nodeType: 'satellite', spouse_of: 'abraham' },
+      x: TREE_CONSTANTS.spouseXOffset, y: 0, parent: null, children: [], depth: 0, isSpouse: true,
+    };
+    const bars = computeMarriageBars([partner, spouse], new Set(['abraham']), null);
+    expect(bars.length).toBe(1);
+    expect(bars[0].partnerId).toBe('abraham');
+    expect(bars[0].spouseId).toBe('sarah');
+    expect(bars[0].x1).toBeLessThan(bars[0].x2);
+    expect(bars[0].dimmed).toBe(false);
+  });
+});
+
+describe('computeFullLayout', () => {
+  it('returns empty/minimal result for empty input array', () => {
+    const { computeFullLayout } = require('../../src/utils/treeBuilder');
+    const result = computeFullLayout([], null);
+    expect(result.nodes).toEqual([]);
+    expect(result.links).toEqual([]);
+    expect(result.marriageBars).toEqual([]);
+    expect(result.spouseConnectors).toEqual([]);
+    expect(result.spineIds.size).toBe(0);
+    expect(result.bounds).toBeDefined();
+    expect(result.bounds.width).toBeGreaterThan(0);
+    expect(result.bounds.height).toBeGreaterThan(0);
+  });
+
+  it('handles a single person with no parents or spouses', () => {
+    const { computeFullLayout } = require('../../src/utils/treeBuilder');
+    const people = [makePerson('adam')];
+    const result = computeFullLayout(people, null);
+    // adam is the root, so we get one node
+    expect(result.nodes.length).toBe(1);
+    expect(result.nodes[0].data.id).toBe('adam');
+    expect(result.links).toEqual([]);
+    expect(result.marriageBars).toEqual([]);
+  });
 });

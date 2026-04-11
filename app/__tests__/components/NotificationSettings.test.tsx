@@ -30,6 +30,8 @@ jest.mock('@/db/user', () => ({
 import { NotificationSettings } from '@/components/NotificationSettings';
 
 describe('NotificationSettings', () => {
+  beforeEach(() => jest.clearAllMocks());
+
   it('renders without crash', () => {
     expect(() => {
       renderWithProviders(<NotificationSettings />);
@@ -44,7 +46,36 @@ describe('NotificationSettings', () => {
 
   it('displays AM/PM indicator', async () => {
     const { findByText } = renderWithProviders(<NotificationSettings />);
-    // 7 AM
     expect(await findByText('AM')).toBeTruthy();
+  });
+
+  it('displays time in correct format', async () => {
+    const { findByText } = renderWithProviders(<NotificationSettings />);
+    expect(await findByText(/7:30/)).toBeTruthy();
+  });
+
+  it('shows enable notifications button when not granted', async () => {
+    const { getPreference } = require('@/db/user');
+    getPreference.mockImplementation((key: string) => {
+      if (key === 'notifications_granted') return Promise.resolve('0');
+      return Promise.resolve(null);
+    });
+
+    const { findByText } = renderWithProviders(<NotificationSettings />);
+    expect(await findByText('Enable Notifications')).toBeTruthy();
+  });
+
+  it('renders notifications heading', async () => {
+    const { findByText } = renderWithProviders(<NotificationSettings />);
+    expect(await findByText('NOTIFICATIONS')).toBeTruthy();
+  });
+
+  it('handles missing preferences gracefully', async () => {
+    const { getPreference } = require('@/db/user');
+    getPreference.mockResolvedValue(null);
+
+    expect(() => {
+      renderWithProviders(<NotificationSettings />);
+    }).not.toThrow();
   });
 });

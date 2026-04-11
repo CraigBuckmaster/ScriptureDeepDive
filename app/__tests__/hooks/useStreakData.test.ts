@@ -1,4 +1,4 @@
-import { renderHook, waitFor } from '@testing-library/react-native';
+import { renderHook, waitFor, act } from '@testing-library/react-native';
 
 const mockGetAllAsync = jest.fn();
 const mockGetFirstAsync = jest.fn();
@@ -85,5 +85,123 @@ describe('useStreakData', () => {
     });
 
     expect(result.current.weeklyBookNames).toEqual(['Genesis', 'Exodus']);
+  });
+
+  it('formats multi-word book IDs correctly', async () => {
+    mockGetReadingStats.mockResolvedValue({
+      totalChapters: 10,
+      currentStreak: 1,
+      longestStreak: 1,
+      favouriteBook: '1_samuel',
+    });
+
+    mockGetAllAsync.mockResolvedValue([
+      { book_id: '1_samuel', chapters: 2 },
+    ]);
+
+    const { result } = renderHook(() => useStreakData());
+    await waitFor(() => {
+      expect(result.current.weeklyChapters).toBe(2);
+    });
+    expect(result.current.weeklyBookNames).toEqual(['1 Samuel']);
+  });
+
+  it('shows chapter milestone when threshold reached', async () => {
+    mockGetReadingStats.mockResolvedValue({
+      totalChapters: 12,
+      currentStreak: 2,
+      longestStreak: 5,
+      favouriteBook: 'genesis',
+    });
+    mockGetAllAsync.mockResolvedValue([]);
+    mockGetPreference.mockResolvedValue(null); // no seen milestones
+
+    const { result } = renderHook(() => useStreakData());
+    await waitFor(() => {
+      expect(result.current.pendingMilestone).toBeTruthy();
+    });
+    expect(result.current.pendingMilestone).toContain('10 chapters');
+  });
+
+  it('shows streak milestone when threshold reached', async () => {
+    mockGetReadingStats.mockResolvedValue({
+      totalChapters: 3,
+      currentStreak: 7,
+      longestStreak: 7,
+      favouriteBook: 'genesis',
+    });
+    mockGetAllAsync.mockResolvedValue([]);
+    mockGetPreference.mockResolvedValue(null);
+
+    const { result } = renderHook(() => useStreakData());
+    await waitFor(() => {
+      expect(result.current.pendingMilestone).toBeTruthy();
+    });
+    expect(result.current.pendingMilestone).toContain('Seven days');
+  });
+
+  it('does not show already-seen milestones', async () => {
+    mockGetReadingStats.mockResolvedValue({
+      totalChapters: 12,
+      currentStreak: 2,
+      longestStreak: 5,
+      favouriteBook: 'genesis',
+    });
+    mockGetAllAsync.mockResolvedValue([]);
+    mockGetPreference.mockResolvedValue('["ch_10"]'); // ch_10 already seen
+
+    const { result } = renderHook(() => useStreakData());
+    await waitFor(() => {
+      // Should have loaded
+      expect(mockGetReadingStats).toHaveBeenCalled();
+    });
+    // No pending milestone since ch_10 is seen and threshold for ch_50 (50) not met
+    expect(result.current.pendingMilestone).toBeNull();
+  });
+
+  it('markMilestoneSeen persists and clears milestone', async () => {
+    mockGetReadingStats.mockResolvedValue({
+      totalChapters: 12,
+      currentStreak: 2,
+      longestStreak: 5,
+      favouriteBook: 'genesis',
+    });
+    mockGetAllAsync.mockResolvedValue([]);
+    mockGetPreference.mockResolvedValue(null);
+    mockSetPreference.mockResolvedValue(undefined);
+
+    const { result } = renderHook(() => useStreakData());
+    await waitFor(() => {
+      expect(result.current.pendingMilestone).toBeTruthy();
+    });
+
+    await act(async () => {
+      await result.current.markMilestoneSeen();
+    });
+
+    expect(mockSetPreference).toHaveBeenCalledWith(
+      'seen_milestones',
+      expect.stringContaining('ch_10'),
+    );
+    expect(result.current.pendingMilestone).toBeNull();
+  });
+
+  it('markMilestoneSeen is no-op when no pending milestone', async () => {
+    mockGetReadingStats.mockResolvedValue({
+      totalChapters: 2,
+      currentStreak: 1,
+      longestStreak: 1,
+      favouriteBook: null,
+    });
+    mockGetAllAsync.mockResolvedValue([]);
+
+    const { result } = renderHook(() => useStreakData());
+    await waitFor(() => expect(mockGetReadingStats).toHaveBeenCalled());
+
+    await act(async () => {
+      await result.current.markMilestoneSeen();
+    });
+
+    expect(mockSetPreference).not.toHaveBeenCalled();
   });
 });
