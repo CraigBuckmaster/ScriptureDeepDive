@@ -11,7 +11,7 @@ jest.mock('@/utils/verseRef', () => ({
 }));
 
 jest.mock('@/utils/escapeLike', () => ({
-  escapeLike: (s: string) => s.replace(/%/g, '\\%').replace(/_/g, '\\_'),
+  escapeLike: (s: string) => s.replace(/\\/g, '\\\\').replace(/%/g, '\\%').replace(/_/g, '\\_'),
 }));
 
 import { getMockUserDb, resetMockUserDb } from '../helpers/mockUserDb';
