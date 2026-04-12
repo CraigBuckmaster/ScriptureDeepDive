@@ -59,13 +59,19 @@ describe('getLifeTopic', () => {
 });
 
 describe('searchLifeTopics', () => {
-  it('searches via FTS MATCH', async () => {
+  it('searches via FTS MATCH with sanitized query', async () => {
     getMockDb().getAllAsync.mockResolvedValue([]);
     await searchLifeTopics('forgive');
     expect(getMockDb().getAllAsync).toHaveBeenCalledWith(
       expect.stringContaining('life_topics_fts'),
-      ['forgive'],
+      ['"forgive"'],
     );
+  });
+
+  it('returns empty for single-char query', async () => {
+    const result = await searchLifeTopics('a');
+    expect(result).toEqual([]);
+    expect(getMockDb().getAllAsync).not.toHaveBeenCalled();
   });
 });
 

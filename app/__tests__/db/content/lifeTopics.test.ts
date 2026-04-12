@@ -55,12 +55,17 @@ describe('db/content/lifeTopics', () => {
   });
 
   describe('searchLifeTopics', () => {
-    it('uses FTS MATCH', async () => {
+    it('uses FTS MATCH with sanitized query', async () => {
       await searchLifeTopics('prayer');
       expect(getMockDb().getAllAsync).toHaveBeenCalledWith(
         expect.stringContaining('MATCH'),
-        ['prayer'],
+        ['"prayer"'],
       );
+    });
+
+    it('returns empty for short query', async () => {
+      const result = await searchLifeTopics('x');
+      expect(result).toEqual([]);
     });
   });
 
