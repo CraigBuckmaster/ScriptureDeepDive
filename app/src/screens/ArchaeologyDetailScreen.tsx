@@ -66,10 +66,12 @@ function ArchaeologyDetailScreen() {
         <ScreenHeader title={discovery.name} onBack={() => navigation.goBack()} />
         <View style={styles.badgeRow}>
           <BadgeChip label={discovery.category} />
-          {discovery.location && (
-            <BadgeChip label={discovery.location} />
-          )}
         </View>
+        {discovery.location && (
+          <Text style={[styles.locationText, { color: base.textDim }]}>
+            {discovery.location}
+          </Text>
+        )}
       </View>
 
       <ScrollView style={styles.scroll} contentContainerStyle={styles.scrollContent}>
@@ -171,6 +173,12 @@ const styles = StyleSheet.create({
   badgeRow: {
     flexDirection: 'row',
     gap: spacing.xs,
+    marginTop: spacing.xs,
+  },
+  locationText: {
+    fontFamily: fontFamily.ui,
+    fontSize: 12,
+    lineHeight: 18,
     marginTop: spacing.xs,
     marginBottom: spacing.sm,
   },
