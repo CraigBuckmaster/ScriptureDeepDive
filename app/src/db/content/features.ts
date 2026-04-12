@@ -47,13 +47,13 @@ export async function getProphecyChainsForChapter(
 
 export async function getAllConcepts(): Promise<Concept[]> {
   return getDb().getAllAsync<Concept>(
-    'SELECT * FROM concepts ORDER BY name'
+    'SELECT *, title AS name FROM concepts ORDER BY title'
   );
 }
 
 export async function getConcept(id: string): Promise<Concept | null> {
   return getDb().getFirstAsync<Concept>(
-    'SELECT * FROM concepts WHERE id = ?',
+    'SELECT *, title AS name FROM concepts WHERE id = ?',
     [id]
   );
 }
