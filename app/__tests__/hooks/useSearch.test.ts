@@ -8,6 +8,7 @@ const mockGetMapStories = jest.fn().mockResolvedValue([]);
 const mockGetAllTimelineEntries = jest.fn().mockResolvedValue([]);
 const mockGetAllDifficultPassages = jest.fn().mockResolvedValue([]);
 const mockSearchLifeTopics = jest.fn().mockResolvedValue([]);
+const mockSearchDiscoveries = jest.fn().mockResolvedValue([]);
 
 jest.mock('@/db/content', () => ({
   searchVerses: (...args: any[]) => mockSearchVerses(...args),
@@ -18,6 +19,7 @@ jest.mock('@/db/content', () => ({
   getAllTimelineEntries: (...args: any[]) => mockGetAllTimelineEntries(...args),
   getAllDifficultPassages: (...args: any[]) => mockGetAllDifficultPassages(...args),
   searchLifeTopics: (...args: any[]) => mockSearchLifeTopics(...args),
+  searchDiscoveries: (...args: any[]) => mockSearchDiscoveries(...args),
 }));
 
 jest.mock('@/utils/verseResolver', () => ({
@@ -53,6 +55,7 @@ describe('useSearch', () => {
     mockGetAllTimelineEntries.mockResolvedValue([]);
     mockGetAllDifficultPassages.mockResolvedValue([]);
     mockSearchLifeTopics.mockResolvedValue([]);
+    mockSearchDiscoveries.mockResolvedValue([]);
   });
 
   afterEach(() => jest.useRealTimers());
@@ -233,6 +236,7 @@ describe('buildOrderedGroups', () => {
     reference: null,
     verses: [], people: [], books: [], concepts: [],
     mapStories: [], timelineEvents: [], lifeTopics: [], difficultPassages: [],
+    archaeology: [],
   };
 
   it('returns empty array when no results', () => {
