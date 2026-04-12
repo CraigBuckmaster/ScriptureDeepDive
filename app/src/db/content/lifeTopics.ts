@@ -31,14 +31,29 @@ export async function getLifeTopic(id: string): Promise<LifeTopic | null> {
   );
 }
 
+/**
+ * Sanitize user input for FTS5 MATCH queries.
+ * Strips special characters, wraps each term in quotes, drops single-char terms.
+ */
+function sanitizeFtsQuery(query: string): string {
+  return query
+    .replace(/["*(){}[\]^~:]/g, '')
+    .split(/\s+/)
+    .filter((w) => w.length >= 2)
+    .map((w) => `"${w}"`)
+    .join(' ');
+}
+
 export async function searchLifeTopics(query: string): Promise<LifeTopic[]> {
+  const ftsQuery = sanitizeFtsQuery(query);
+  if (!ftsQuery) return [];
   return getDb().getAllAsync<LifeTopic>(
-    `SELECT lt.* FROM life_topics_fts fts
-     JOIN life_topics_official lt ON lt.id = fts.rowid
-     WHERE fts MATCH ?
+    `SELECT lt.* FROM life_topics_fts
+     JOIN life_topics_official lt ON lt.rowid = life_topics_fts.rowid
+     WHERE life_topics_fts MATCH ?
      ORDER BY rank
      LIMIT 30`,
-    [query]
+    [ftsQuery]
   );
 }
 

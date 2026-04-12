@@ -51,7 +51,7 @@ export interface Concept {
   thread_ids_json: string | null;
   prophecy_chain_ids_json: string | null;
   people_tags_json: string | null;
-  search_terms_json: string | null;
+  tags_json: string | null;
 }
 
 /** Parsed from DifficultPassage.responses_json */
