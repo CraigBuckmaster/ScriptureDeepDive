@@ -59,9 +59,9 @@ export async function searchDiscoveries(
   const ftsQuery = sanitizeFtsQuery(query);
   if (!ftsQuery) return [];
   return getDb().getAllAsync<ArchaeologicalDiscovery>(
-    `SELECT d.* FROM archaeology_fts fts
-     JOIN archaeological_discoveries d ON d.rowid = fts.rowid
-     WHERE fts MATCH ?
+    `SELECT d.* FROM archaeology_fts
+     JOIN archaeological_discoveries d ON d.rowid = archaeology_fts.rowid
+     WHERE archaeology_fts MATCH ?
      ORDER BY rank
      LIMIT 30`,
     [ftsQuery]

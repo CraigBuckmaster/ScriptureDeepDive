@@ -14,10 +14,10 @@ import { useState, useEffect, useRef } from 'react';
 import {
   searchVerses, searchPeople, getLiveBooks, getAllConcepts,
   getMapStories, getAllTimelineEntries, getAllDifficultPassages,
-  searchLifeTopics,
+  searchLifeTopics, searchDiscoveries,
 } from '../db/content';
 import { getBookByName } from '../utils/verseResolver';
-import type { Verse, Person, Book, MapStory, TimelineEntry, DifficultPassage, Concept, LifeTopic } from '../types';
+import type { Verse, Person, Book, MapStory, TimelineEntry, DifficultPassage, Concept, LifeTopic, ArchaeologicalDiscovery } from '../types';
 import { logger } from '../utils/logger';
 
 // ── Result types ────────────────────────────────────────────────────
@@ -40,12 +40,14 @@ export interface UniversalSearchResults {
   timelineEvents: TimelineEntry[];
   lifeTopics: LifeTopic[];
   difficultPassages: DifficultPassage[];
+  archaeology: ArchaeologicalDiscovery[];
 }
 
 const EMPTY: UniversalSearchResults = {
   reference: null,
   verses: [], people: [], books: [], concepts: [],
   mapStories: [], timelineEvents: [], lifeTopics: [], difficultPassages: [],
+  archaeology: [],
 };
 
 // ── Reference parsing ───────────────────────────────────────────────
@@ -80,7 +82,7 @@ function parseSearchReference(query: string): ParsedReference | null {
 
 /** Default section order when relevance scores tie. */
 const DEFAULT_ORDER: (keyof Omit<UniversalSearchResults, 'reference'>)[] = [
-  'books', 'people', 'concepts', 'difficultPassages',
+  'books', 'people', 'concepts', 'archaeology', 'difficultPassages',
   'mapStories', 'timelineEvents', 'lifeTopics', 'verses',
 ];
 
@@ -88,6 +90,7 @@ const GROUP_LABELS: Record<string, string> = {
   books: 'Books',
   people: 'People',
   concepts: 'Concepts',
+  archaeology: 'Archaeological Evidence',
   difficultPassages: 'Difficult Passages',
   mapStories: 'Map Stories',
   timelineEvents: 'Timeline',
@@ -208,10 +211,11 @@ export function useSearch(query: string) {
         const caches = await loadCaches(cacheRef);
 
         // FTS queries + client-side filters in parallel
-        const [verses, rawPeople, lifeTopics] = await Promise.all([
+        const [verses, rawPeople, lifeTopics, archaeology] = await Promise.all([
           searchVerses(trimmed, 50),
           searchPeople(trimmed),
           searchLifeTopics(trimmed).catch(() => [] as LifeTopic[]),
+          searchDiscoveries(trimmed).catch(() => [] as ArchaeologicalDiscovery[]),
         ]);
 
         // Sort people by relevance
@@ -232,6 +236,7 @@ export function useSearch(query: string) {
           reference,
           verses, people, books, concepts,
           mapStories, timelineEvents, lifeTopics, difficultPassages,
+          archaeology,
         });
       } catch (err) {
         logger.error('Search', 'Universal search failed', err);
