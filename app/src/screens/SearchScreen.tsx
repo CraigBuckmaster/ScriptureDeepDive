@@ -333,6 +333,7 @@ function SearchScreen() {
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
+          style={styles.chipScroll}
           contentContainerStyle={styles.chipRow}
           keyboardShouldPersistTaps="handled"
         >
@@ -444,6 +445,9 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   // Filter chips
+  chipScroll: {
+    flexGrow: 0,
+  },
   chipRow: {
     paddingHorizontal: spacing.md,
     paddingBottom: spacing.sm,
