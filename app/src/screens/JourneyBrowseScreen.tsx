@@ -99,7 +99,7 @@ function JourneyBrowseScreen() {
   if (isLoading) {
     return (
       <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-        <ScreenHeader title="Journeys" />
+        <ScreenHeader title="Journeys" onBack={() => navigation.goBack()} />
         <View style={styles.loadingPad}>
           <LoadingSkeleton lines={8} />
         </View>
@@ -109,7 +109,7 @@ function JourneyBrowseScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <ScreenHeader title="Journeys" />
+      <ScreenHeader title="Journeys" onBack={() => navigation.goBack()} />
 
       {/* Tab bar */}
       <View style={[styles.tabBar, { borderBottomColor: base.border }]}>
