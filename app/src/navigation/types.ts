@@ -69,7 +69,7 @@ export type ExploreStackParamList = {
   ProphecyBrowse: undefined;
   ProphecyDetail: { chainId: string };
   ConceptBrowse: undefined;
-  ConceptDetail: { conceptId: string };
+  ConceptDetail: { conceptId: string; initialTab?: 'overview' | 'journey' };
   DifficultPassagesBrowse: undefined;
   DifficultPassageDetail: { passageId: string };
   DictionaryBrowse: undefined;
@@ -94,6 +94,7 @@ export type ExploreStackParamList = {
   Periods: undefined;
   RedemptiveArc: undefined;
   PersonJourney: { personId: string };
+  JourneyBrowse: { tab?: 'people' | 'concepts' } | undefined;
   Concordance: {
     strongs?: string;
     original?: string;

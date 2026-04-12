@@ -36,7 +36,7 @@ function ConceptDetailScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<Nav>();
   const route = useRoute<Route>();
-  const { conceptId } = route.params;
+  const { conceptId, initialTab: paramInitialTab } = route.params;
 
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
 
@@ -61,7 +61,9 @@ function ConceptDetailScreen() {
   };
 
   const hasJourney = (concept?.journey_stops?.length ?? 0) > 0;
-  const [activeTab, setActiveTab] = useState<'overview' | 'journey'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'journey'>(
+    paramInitialTab === 'journey' ? 'journey' : 'overview',
+  );
 
   if (loading) {
     return (

@@ -13,6 +13,7 @@ const TimelineScreen = React.lazy(() => import('../screens/TimelineScreen'));
 const PeriodsScreen = React.lazy(() => import('../screens/PeriodsScreen'));
 const RedemptiveArcScreen = React.lazy(() => import('../screens/RedemptiveArcScreen'));
 const PersonJourneyScreen = React.lazy(() => import('../screens/PersonJourneyScreen'));
+const JourneyBrowseScreen = React.lazy(() => import('../screens/JourneyBrowseScreen'));
 const WordStudyBrowseScreen = React.lazy(() => import('../screens/WordStudyBrowseScreen'));
 const WordStudyDetailScreen = React.lazy(() => import('../screens/WordStudyDetailScreen'));
 const ScholarBrowseScreen = React.lazy(() => import('../screens/ScholarBrowseScreen'));
@@ -85,6 +86,7 @@ export function ExploreStack() {
         <Stack.Screen name="Periods" component={PeriodsScreen} />
         <Stack.Screen name="RedemptiveArc" component={RedemptiveArcScreen} />
         <Stack.Screen name="PersonJourney" component={PersonJourneyScreen} />
+        <Stack.Screen name="JourneyBrowse" component={JourneyBrowseScreen} />
         <Stack.Screen name="WordStudyBrowse" component={WordStudyBrowseScreen} />
         <Stack.Screen name="WordStudyDetail" component={WordStudyDetailScreen} />
         <Stack.Screen name="ScholarBrowse" component={ScholarBrowseScreen} />

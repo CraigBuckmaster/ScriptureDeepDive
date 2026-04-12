@@ -47,6 +47,20 @@ export async function getPersonLegacyRefs(personId: string): Promise<PersonLegac
   );
 }
 
+/** Get all people who have journey data (for Explore browse). */
+export async function getPeopleWithJourneys(): Promise<
+  { person_id: string; name: string; era: string | null; role: string | null; stage_count: number }[]
+> {
+  return getDb().getAllAsync(
+    `SELECT p.id as person_id, p.name, p.era, p.role,
+            COUNT(pj.id) as stage_count
+     FROM people p
+     JOIN people_journeys pj ON pj.person_id = p.id
+     GROUP BY p.id
+     ORDER BY stage_count DESC`,
+  );
+}
+
 /** Check if a person has a journey (fast count query). */
 export async function hasPersonJourney(personId: string): Promise<boolean> {
   const row = await getDb().getFirstAsync<{ c: number }>(
