@@ -8,18 +8,18 @@
  */
 
 import React, { useState, useRef, useMemo, useCallback } from 'react';
-import { View, Text, TouchableOpacity, SectionList, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, SectionList, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useScrollToTop } from '@react-navigation/native';
 import {
   Search as SearchIcon, BookOpen, Users, Compass, MapPin,
-  Clock, Heart, HelpCircle, ArrowRight,
+  Clock, Heart, HelpCircle, ArrowRight, Landmark,
 } from 'lucide-react-native';
 import { useSearch, buildOrderedGroups } from '../hooks/useSearch';
 import type { SearchResultGroup, ParsedReference } from '../hooks/useSearch';
 import { SearchInput } from '../components/SearchInput';
 import { useTheme, spacing, radii, fontFamily, panels } from '../theme';
-import type { Person, Book, MapStory, TimelineEntry, Verse, DifficultPassage, Concept, LifeTopic } from '../types';
+import type { Person, Book, MapStory, TimelineEntry, Verse, DifficultPassage, Concept, LifeTopic, ArchaeologicalDiscovery } from '../types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const INITIAL_VERSE_LIMIT = 20;
@@ -31,6 +31,7 @@ const GROUP_META: Record<string, { Icon: any; colorKey: string }> = {
   books:              { Icon: BookOpen,   colorKey: 'gold' },
   people:             { Icon: Users,      colorKey: 'gold' },
   concepts:           { Icon: Compass,    colorKey: 'gold' },
+  archaeology:        { Icon: Landmark,   colorKey: 'gold' },
   difficultPassages:  { Icon: HelpCircle, colorKey: 'gold' },
   mapStories:         { Icon: MapPin,     colorKey: 'gold' },
   timelineEvents:     { Icon: Clock,      colorKey: 'gold' },
@@ -43,6 +44,7 @@ function SearchScreen() {
   const navigation = useNavigation<any>();
   const [query, setQuery] = useState('');
   const [verseLimit, setVerseLimit] = useState(INITIAL_VERSE_LIMIT);
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const { results, isLoading } = useSearch(query);
   const listRef = useRef<SectionList>(null);
   useScrollToTop(listRef);
@@ -50,6 +52,7 @@ function SearchScreen() {
   const handleQueryChange = useCallback((text: string) => {
     setQuery(text);
     setVerseLimit(INITIAL_VERSE_LIMIT);
+    setActiveFilter(null);
   }, []);
 
   const trimmed = query.trim();
@@ -76,7 +79,7 @@ function SearchScreen() {
   // Prepend reference result as its own section
   const sections = useMemo(() => {
     const s: { title: string; key: string; data: any[] }[] = [];
-    if (results.reference) {
+    if (results.reference && !activeFilter) {
       s.push({
         title: 'Go To',
         key: 'reference',
@@ -84,10 +87,23 @@ function SearchScreen() {
       });
     }
     for (const g of groups) {
+      if (activeFilter && g.key !== activeFilter) continue;
       s.push({ title: g.label, key: g.key, data: g.data });
     }
     return s;
-  }, [results.reference, groups]);
+  }, [results.reference, groups, activeFilter]);
+
+  // Build chip data from groups (only categories with results)
+  const chips = useMemo(() => {
+    if (groups.length === 0) return [];
+    return groups.map((g) => ({
+      key: g.key,
+      label: g.label,
+      count: g.key === 'verses'
+        ? (results as any).verses?.length ?? g.data.length
+        : g.data.filter((d: any) => d.type !== 'loadMore').length,
+    }));
+  }, [groups, results]);
 
   const hasResults = sections.length > 0;
 
@@ -186,6 +202,24 @@ function SearchScreen() {
           <View style={styles.rowText}>
             <Text style={[styles.rowTitle, { color: base.text }]}>{c.name}</Text>
             {c.description ? <Text style={[styles.rowSub, { color: base.textMuted }]} numberOfLines={1}>{c.description}</Text> : null}
+          </View>
+        </TouchableOpacity>
+      );
+    }
+
+    if (type === 'archaeology') {
+      const a = item as ArchaeologicalDiscovery;
+      return (
+        <TouchableOpacity
+          onPress={() => goToExplore('ArchaeologyDetail', { discoveryId: a.id })}
+          style={styles.row}
+          accessibilityRole="button"
+          accessibilityLabel={`Archaeological evidence: ${a.name}`}
+        >
+          <Landmark size={14} color={base.textMuted} />
+          <View style={styles.rowText}>
+            <Text style={[styles.rowTitle, { color: base.text }]}>{a.name}</Text>
+            <Text style={[styles.rowSub, { color: base.textMuted }]} numberOfLines={1}>{a.category} · {a.date_range}</Text>
           </View>
         </TouchableOpacity>
       );
@@ -294,6 +328,56 @@ function SearchScreen() {
         />
       </View>
 
+      {/* ── Category filter chips ──────────────────────────────── */}
+      {trimmed.length >= 2 && chips.length > 1 && (
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.chipRow}
+          keyboardShouldPersistTaps="handled"
+        >
+          <TouchableOpacity
+            onPress={() => setActiveFilter(null)}
+            style={[
+              styles.chip,
+              !activeFilter
+                ? { backgroundColor: base.gold + '20', borderColor: base.gold }
+                : { backgroundColor: 'transparent', borderColor: base.textMuted + '30' },
+            ]}
+            accessibilityRole="button"
+            accessibilityLabel="Show all results"
+            accessibilityState={{ selected: !activeFilter }}
+          >
+            <Text style={[styles.chipLabel, { color: !activeFilter ? base.gold : base.textMuted }]}>All</Text>
+          </TouchableOpacity>
+          {chips.map((c) => {
+            const active = activeFilter === c.key;
+            return (
+              <TouchableOpacity
+                key={c.key}
+                onPress={() => setActiveFilter(active ? null : c.key)}
+                style={[
+                  styles.chip,
+                  active
+                    ? { backgroundColor: base.gold + '20', borderColor: base.gold }
+                    : { backgroundColor: 'transparent', borderColor: base.textMuted + '30' },
+                ]}
+                accessibilityRole="button"
+                accessibilityLabel={`Filter by ${c.label}`}
+                accessibilityState={{ selected: active }}
+              >
+                <Text style={[styles.chipLabel, { color: active ? base.gold : base.textMuted }]}>
+                  {c.label}
+                </Text>
+                <Text style={[styles.chipCount, { color: active ? base.gold + 'BB' : base.textMuted + '80' }]}>
+                  {c.count}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
+      )}
+
       {trimmed.length < 2 ? (
         <View style={styles.emptyCenter}>
           <SearchIcon size={28} color={base.textMuted + '60'} />
@@ -358,6 +442,30 @@ const styles = StyleSheet.create({
   emptyText: {
     fontFamily: fontFamily.bodyItalic,
     fontSize: 15,
+  },
+  // Filter chips
+  chipRow: {
+    paddingHorizontal: spacing.md,
+    paddingBottom: spacing.sm,
+    gap: spacing.xs,
+    flexDirection: 'row',
+  },
+  chip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    paddingHorizontal: spacing.sm + 2,
+    paddingVertical: 6,
+    borderRadius: 16,
+    borderWidth: 1,
+  },
+  chipLabel: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 11,
+  },
+  chipCount: {
+    fontFamily: fontFamily.ui,
+    fontSize: 10,
   },
   // Reference row
   refRow: {
