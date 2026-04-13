@@ -181,4 +181,69 @@ describe('TreeNode', () => {
     );
     expect(toJSON()).toBeTruthy();
   });
+
+  // ── Card #1290: associate variant ──────────────────────────────────
+
+  it('renders associate nodes with a dashed stroke', () => {
+    const node = makeNode({
+      name: 'Peter',
+      nodeType: 'satellite',
+      isAssociate: true,
+      role: 'apostle',
+    });
+    const { toJSON } = renderWithProviders(
+      <TreeNode node={node} dimmed={false} filterEra={null} selected={false} onPress={jest.fn()} />,
+    );
+    expect(JSON.stringify(toJSON())).toContain('"strokeDasharray":"2,2"');
+  });
+
+  it('does NOT add a dashed stroke to genealogical satellites', () => {
+    const node = makeNode({ name: 'Hagar', nodeType: 'satellite', isAssociate: false });
+    const { toJSON } = renderWithProviders(
+      <TreeNode node={node} dimmed={false} filterEra={null} selected={false} onPress={jest.fn()} />,
+    );
+    expect(JSON.stringify(toJSON())).not.toContain('"strokeDasharray":"2,2"');
+  });
+
+  // ── Card #1291: zoom-semantic tier visibility ──────────────────────
+
+  it('renders null for a tier-3 person when zoomed out', () => {
+    // Tier 3 = no role, no bio, not messianic.
+    const minor = makeNode({
+      id: 'some-minor-figure',
+      name: 'Minor',
+      nodeType: 'satellite',
+      role: null,
+      bio: null,
+    });
+    const { queryByText } = renderWithProviders(
+      <TreeNode node={minor} dimmed={false} filterEra={null} selected={false}
+        zoom={0.3} onPress={jest.fn()} />,
+    );
+    expect(queryByText('Minor')).toBeNull();
+  });
+
+  it('renders a tier-3 person at full zoom', () => {
+    const minor = makeNode({
+      id: 'some-minor-figure-2',
+      name: 'Minor2',
+      nodeType: 'satellite',
+      role: null,
+      bio: null,
+    });
+    const { getByText } = renderWithProviders(
+      <TreeNode node={minor} dimmed={false} filterEra={null} selected={false}
+        zoom={1.0} onPress={jest.fn()} />,
+    );
+    expect(getByText('Minor2')).toBeTruthy();
+  });
+
+  it('renders a messianic (tier-1) person even at very low zoom', () => {
+    const david = makeNode({ id: 'david', name: 'David' });
+    const { getByText } = renderWithProviders(
+      <TreeNode node={david} dimmed={false} filterEra={null} selected={false}
+        zoom={0.2} onPress={jest.fn()} />,
+    );
+    expect(getByText('David')).toBeTruthy();
+  });
 });

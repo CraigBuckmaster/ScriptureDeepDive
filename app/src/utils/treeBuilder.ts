@@ -13,6 +13,7 @@
 import { hierarchy, tree, type HierarchyPointNode } from 'd3-hierarchy';
 import type { AssociationType, Person } from '../types';
 import { isMessianic as checkMessianic } from './messianicLine';
+import { applyTribalBloom } from './genealogyOrganic';
 
 // ── Constants ───────────────────────────────────────────────────────
 
@@ -41,6 +42,8 @@ export const TREE_CONSTANTS = {
 
 export interface TreePerson extends Person {
   nodeType: 'spine' | 'satellite';
+  /** Satellite positioned around an anchor via associated_with (#1290). */
+  isAssociate?: boolean;
 }
 
 export interface LayoutNode {
@@ -371,6 +374,89 @@ export interface TreeLayoutResult {
   bounds: TreeBounds;
 }
 
+// ── Organic layout post-processors (#1291) ────────────────────────────
+
+/** Walk the genealogical subtree rooted at `rootId`, shifting every
+ *  descendant by (dx, dy). Traversal is done via father links, which
+ *  mirrors how `buildHierarchy` composed the tree. */
+function shiftSubtree(nodes: LayoutNode[], rootId: string, dx: number, dy: number): void {
+  if (dx === 0 && dy === 0) return;
+  const byFather = new Map<string, LayoutNode[]>();
+  for (const n of nodes) {
+    const f = n.data.father;
+    if (!f) continue;
+    const list = byFather.get(f) ?? [];
+    list.push(n);
+    byFather.set(f, list);
+  }
+  const queue = [rootId];
+  const visited = new Set<string>([rootId]);
+  while (queue.length > 0) {
+    const parentId = queue.shift()!;
+    const children = byFather.get(parentId) ?? [];
+    for (const child of children) {
+      if (visited.has(child.data.id)) continue;
+      visited.add(child.data.id);
+      child.x += dx;
+      child.y += dy;
+      queue.push(child.data.id);
+    }
+  }
+}
+
+/** Fan Jacob's sons in a tribal bloom arc beneath Jacob. Each son's whole
+ *  subtree is translated by the same delta so sub-lineages stay attached. */
+function applyJacobBloom(nodes: LayoutNode[]): void {
+  const jacobNode = nodes.find((n) => n.data.id === 'jacob' && !n.isSpouse);
+  if (!jacobNode) return;
+  const sons = nodes.filter((n) => n.data.father === 'jacob' && !n.isSpouse);
+  if (sons.length < 3) return;
+  const placed = applyTribalBloom(
+    { x: jacobNode.x, y: jacobNode.y },
+    sons.map((s) => ({ id: s.data.id, x: s.x, y: s.y })),
+    { radius: 180, startAngleDegrees: -75, endAngleDegrees: 75 },
+  );
+  for (let i = 0; i < sons.length; i++) {
+    const dx = placed[i].x - sons[i].x;
+    const dy = placed[i].y - sons[i].y;
+    sons[i].x += dx;
+    sons[i].y += dy;
+    shiftSubtree(nodes, sons[i].data.id, dx, dy);
+  }
+}
+
+/** Amplify horizontal spread for the subtrees of biblically-central figures
+ *  so the tree breathes around them rather than packing uniformly. */
+function applyImportantFigureSpread(nodes: LayoutNode[]): void {
+  const IMPORTANT = ['jacob', 'david', 'abraham'];
+  const SPREAD = 1.18;
+  const byFather = new Map<string, LayoutNode[]>();
+  for (const n of nodes) {
+    const f = n.data.father;
+    if (!f) continue;
+    const list = byFather.get(f) ?? [];
+    list.push(n);
+    byFather.set(f, list);
+  }
+  for (const id of IMPORTANT) {
+    const root = nodes.find((n) => n.data.id === id && !n.isSpouse);
+    if (!root) continue;
+    const anchorX = root.x;
+    const queue = [id];
+    const visited = new Set<string>([id]);
+    while (queue.length > 0) {
+      const parentId = queue.shift()!;
+      const children = byFather.get(parentId) ?? [];
+      for (const child of children) {
+        if (visited.has(child.data.id)) continue;
+        visited.add(child.data.id);
+        child.x = anchorX + (child.x - anchorX) * SPREAD;
+        queue.push(child.data.id);
+      }
+    }
+  }
+}
+
 export function computeFullLayout(
   people: Person[],
   filterEra: string | null
@@ -388,6 +474,12 @@ export function computeFullLayout(
 
   const treeNodes = layoutTree(root);
   const allTreeNodes = positionSpouses(treeNodes, people, spineIds);
+
+  // Organic layout overrides (#1291):
+  //   1. Fan Jacob's 12 sons in a tribal bloom arc beneath him
+  //   2. Amplify subtree spread for key figures (Jacob / David / Abraham)
+  applyJacobBloom(allTreeNodes);
+  applyImportantFigureSpread(allTreeNodes);
 
   // Find the bounding box of the main tree
   const treeNodeIds = new Set(allTreeNodes.map((n) => n.data.id));
@@ -483,13 +575,8 @@ export function computeFullLayout(
     clusterY += rows * ROW_SPACING_Y + 80; // gap before next era group
   }
 
-  // Layout association clusters around their anchor (#1288).
-  // Members fan out to the right of the anchor in stacked columns of 6.
-  const ANCHOR_CLUSTER_X_OFFSET = 110;
-  const ANCHOR_CLUSTER_X_STRIDE = 90;
-  const ANCHOR_CLUSTER_Y_STRIDE = 38;
-  const ANCHOR_CLUSTER_PER_COL = 6;
-
+  // Layout association clusters radially around their anchor via tribal
+  // bloom (#1290). Sweep widens with cluster size so large groups fan more.
   const positionById = new Map<string, { x: number; y: number }>();
   for (const n of allTreeNodes) positionById.set(n.data.id, { x: n.x, y: n.y });
   for (const n of disconnectedNodes) positionById.set(n.data.id, { x: n.x, y: n.y });
@@ -499,18 +586,22 @@ export function computeFullLayout(
     const anchorPos = positionById.get(anchorId);
     if (!anchorPos) continue; // anchor wasn't placed (orphaned anchor) — drop silently
 
-    members.forEach((p, i) => {
-      const col = Math.floor(i / ANCHOR_CLUSTER_PER_COL);
-      const row = i % ANCHOR_CLUSTER_PER_COL;
-      const colSize = Math.min(
-        members.length - col * ANCHOR_CLUSTER_PER_COL,
-        ANCHOR_CLUSTER_PER_COL,
-      );
-      const x = anchorPos.x + ANCHOR_CLUSTER_X_OFFSET + col * ANCHOR_CLUSTER_X_STRIDE;
-      const y = anchorPos.y + (row - (colSize - 1) / 2) * ANCHOR_CLUSTER_Y_STRIDE;
+    const radius = 90 + Math.min(members.length, 8) * 8; // 98 → 154 px
+    const sweep = Math.min(160, 60 + members.length * 14); // degrees
+    const placed = applyTribalBloom(
+      { x: anchorPos.x, y: anchorPos.y },
+      members.map((m) => ({ id: m.id, x: 0, y: 0 })),
+      {
+        radius,
+        startAngleDegrees: -sweep / 2, // fan below the anchor, centred straight down
+        endAngleDegrees: sweep / 2,
+      },
+    );
 
+    members.forEach((p, i) => {
+      const { x, y } = placed[i];
       disconnectedNodes.push({
-        data: { ...p, nodeType: 'satellite' },
+        data: { ...p, nodeType: 'satellite', isAssociate: true },
         x,
         y,
         parent: null,

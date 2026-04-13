@@ -72,7 +72,7 @@ function GenealogyTreeScreen({ route, navigation }: {
     }
   }, [isLoading, people.length, nodes.length]);
 
-  const { gesture, baseStyle, gestureStyle, centreOnNode, centreOnNodeTop, centreOnNodeAbovePanel } = useTreeGestures();
+  const { gesture, baseStyle, gestureStyle, centreOnNode, centreOnNodeTop, centreOnNodeAbovePanel, zoom } = useTreeGestures();
 
   const offX = -bounds.minX;
   const offY = -bounds.minY;
@@ -228,6 +228,7 @@ function GenealogyTreeScreen({ route, navigation }: {
                   offsetY={-bounds.minY}
                   canvasWidth={Math.max(bounds.width, 2000)}
                   canvasHeight={Math.max(bounds.height, 2000)}
+                  zoom={zoom}
                 />
               </Svg>
             </View>
