@@ -78,4 +78,36 @@ describe('PlaceMarkerList', () => {
     // At least the high-priority place should be visible at zoom 5
     expect(getAllByText(/Place \d+/).length).toBeGreaterThanOrEqual(1);
   });
+
+  it('forwards taps to onPlacePress with the matching place', () => {
+    const onPlacePress = jest.fn();
+    const ReactNativeMaps = require('react-native-maps');
+    const Marker = ReactNativeMaps.Marker;
+    const { UNSAFE_getAllByType } = renderWithProviders(
+      <PlaceMarkerList
+        places={places}
+        showModern={false}
+        zoomLevel={7}
+        onPlacePress={onPlacePress}
+      />,
+    );
+    const markers = UNSAFE_getAllByType(Marker);
+    expect(markers.length).toBe(3);
+    // Fire the first marker's onPress directly — react-native-maps mocks Marker
+    // as a string element so fireEvent.press doesn't recognise it.
+    markers[0].props.onPress();
+    expect(onPlacePress).toHaveBeenCalledWith(places[0]);
+  });
+
+  it('omits onPress on the marker when no handler is provided', () => {
+    const ReactNativeMaps = require('react-native-maps');
+    const Marker = ReactNativeMaps.Marker;
+    const { UNSAFE_getAllByType } = renderWithProviders(
+      <PlaceMarkerList places={places} showModern={false} zoomLevel={7} />,
+    );
+    const markers = UNSAFE_getAllByType(Marker);
+    for (const m of markers) {
+      expect(m.props.onPress).toBeUndefined();
+    }
+  });
 });

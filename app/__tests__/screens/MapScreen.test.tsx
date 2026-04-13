@@ -25,9 +25,18 @@ jest.mock('@/stores', () => ({
 
 const mockPlacesData = {
   places: [
-    { id: 'jerusalem', name: 'Jerusalem', modern_name: 'Jerusalem', latitude: 31.77, longitude: 35.23, era: 'monarchy' },
-    { id: 'bethlehem', name: 'Bethlehem', modern_name: 'Bethlehem', latitude: 31.70, longitude: 35.20, era: 'monarchy' },
-    { id: 'nazareth', name: 'Nazareth', modern_name: 'Nazareth', latitude: 32.70, longitude: 35.30, era: 'gospels' },
+    {
+      id: 'jerusalem', ancient_name: 'Jerusalem', modern_name: 'Yerushalayim',
+      latitude: 31.77, longitude: 35.23, type: 'city', priority: 1, label_dir: 'n',
+    },
+    {
+      id: 'bethlehem', ancient_name: 'Bethlehem', modern_name: 'Beit Lehem',
+      latitude: 31.70, longitude: 35.20, type: 'city', priority: 1, label_dir: 'n',
+    },
+    {
+      id: 'nazareth', ancient_name: 'Nazareth', modern_name: 'Nazaret',
+      latitude: 32.70, longitude: 35.30, type: 'city', priority: 1, label_dir: 'n',
+    },
   ],
   isLoading: false,
 };
@@ -119,10 +128,18 @@ jest.mock('@/components/tree/EraFilterBar', () => ({
 jest.mock('@/components/map/PlaceMarkerList', () => ({
   PlaceMarkerList: (props: any) => {
     const React = require('react');
-    const { View, Text } = require('react-native');
+    const { View, TouchableOpacity, Text } = require('react-native');
     return React.createElement(View, { testID: 'place-marker-list' },
       (props.places ?? []).map((p: any) =>
-        React.createElement(Text, { key: p.id, testID: `marker-${p.id}` }, p.name),
+        React.createElement(
+          TouchableOpacity,
+          {
+            key: p.id,
+            testID: `marker-${p.id}`,
+            onPress: () => props.onPlacePress?.(p),
+          },
+          React.createElement(Text, null, p.ancient_name ?? p.name),
+        ),
       ),
     );
   },
@@ -189,6 +206,14 @@ jest.mock('react-native-safe-area-context', () => ({
 
 jest.mock('@/utils/logger', () => ({
   logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
+  safeParse: <T,>(json: string | null | undefined, fallback: T): T => {
+    if (!json) return fallback;
+    try {
+      return JSON.parse(json) as T;
+    } catch {
+      return fallback;
+    }
+  },
 }));
 
 // ── Tests ─────────────────────────────────────────────────────────
@@ -367,5 +392,60 @@ describe('MapScreen', () => {
     );
     fireEvent.press(getByTestId('story-chip-exodus-journey'));
     expect(getByTestId('story-overlays')).toBeTruthy();
+  });
+
+  it('opens the place detail card when a marker is tapped', () => {
+    const { getByTestId, getByText } = renderWithProviders(
+      <MapScreen route={mockRoute as any} navigation={{ navigate: mockNavigate, goBack: mockGoBack } as any} />,
+    );
+    fireEvent.press(getByTestId('marker-jerusalem'));
+    // Modern name only appears in the PlaceDetailCard, so it's a unique signal.
+    expect(getByText('Yerushalayim')).toBeTruthy();
+    // Coordinate footer is also unique to the card.
+    expect(getByText(/31\.77° N · 35\.23° E/)).toBeTruthy();
+  });
+
+  it('lists related stories on the place detail card', () => {
+    const { getByTestId, getByLabelText } = renderWithProviders(
+      <MapScreen route={mockRoute as any} navigation={{ navigate: mockNavigate, goBack: mockGoBack } as any} />,
+    );
+    fireEvent.press(getByTestId('marker-bethlehem'));
+    // Bethlehem appears in the 'nativity' story per mockStoriesData. The
+    // PlaceDetailCard's chip uses an "Open story ..." accessibility label
+    // which is unique versus the chip in the StoryPicker.
+    expect(getByLabelText(/Open story Birth of Jesus/)).toBeTruthy();
+  });
+
+  it('switches from the place card to a story when a related story chip is tapped', () => {
+    const { getByTestId, getByLabelText } = renderWithProviders(
+      <MapScreen route={mockRoute as any} navigation={{ navigate: mockNavigate, goBack: mockGoBack } as any} />,
+    );
+    fireEvent.press(getByTestId('marker-bethlehem'));
+    fireEvent.press(getByLabelText(/Open story Birth of Jesus/));
+    // Story panel opens; the place card unmounts (so its labelled chip vanishes).
+    expect(getByTestId('story-panel')).toBeTruthy();
+  });
+
+  it('closes the place detail card when its close button is pressed', () => {
+    const { getByTestId, getByLabelText, queryByText } = renderWithProviders(
+      <MapScreen route={mockRoute as any} navigation={{ navigate: mockNavigate, goBack: mockGoBack } as any} />,
+    );
+    fireEvent.press(getByTestId('marker-jerusalem'));
+    expect(queryByText('Yerushalayim')).toBeTruthy();
+    fireEvent.press(getByLabelText('Close place details'));
+    expect(queryByText('Yerushalayim')).toBeNull();
+  });
+
+  it('closes the story panel when a marker is tapped', () => {
+    const { getByTestId, queryByTestId, queryByText } = renderWithProviders(
+      <MapScreen route={mockRoute as any} navigation={{ navigate: mockNavigate, goBack: mockGoBack } as any} />,
+    );
+    // Open story panel first
+    fireEvent.press(getByTestId('story-chip-nativity'));
+    expect(getByTestId('story-panel')).toBeTruthy();
+    // Tap a marker — story panel closes, place card opens
+    fireEvent.press(getByTestId('marker-jerusalem'));
+    expect(queryByTestId('story-panel')).toBeNull();
+    expect(queryByText('Yerushalayim')).toBeTruthy();
   });
 });

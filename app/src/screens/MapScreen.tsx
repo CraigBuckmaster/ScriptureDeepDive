@@ -30,14 +30,30 @@ import { PlaceMarkerList } from '../components/map/PlaceMarkerList';
 import { StoryOverlays } from '../components/map/StoryOverlays';
 import { StoryPicker } from '../components/map/StoryPicker';
 import { StoryPanel } from '../components/map/StoryPanel';
+import { PlaceDetailCard } from '../components/map/PlaceDetailCard';
 import { FloatingControls } from '../components/map/FloatingControls';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 
 import { useTheme, spacing } from '../theme';
 import type { MapStory, Place } from '../types';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
-import { logger } from '../utils/logger';
+import { logger, safeParse } from '../utils/logger';
+import { lightImpact } from '../utils/haptics';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+
+/** Build a place-id → stories[] index. Pure helper so it's unit-testable. */
+export function buildPlaceToStoriesMap(stories: MapStory[]): Map<string, MapStory[]> {
+  const map = new Map<string, MapStory[]>();
+  for (const story of stories) {
+    const ids = safeParse<string[]>(story.places_json, []);
+    for (const id of ids) {
+      const list = map.get(id);
+      if (list) list.push(story);
+      else map.set(id, [story]);
+    }
+  }
+  return map;
+}
 
 const INITIAL_REGION = {
   latitude: 30,
@@ -66,6 +82,7 @@ function MapScreen({ route, navigation }: {
   const [activeStory, setActiveStory] = useState<MapStory | null>(null);
   const [showModern, setShowModern] = useState(false);
   const [showPanel, setShowPanel] = useState(false);
+  const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
 
   // Filter stories by era
   const filteredStories = useMemo(() =>
@@ -73,10 +90,14 @@ function MapScreen({ route, navigation }: {
     [stories, activeEra]
   );
 
+  // Map of placeId → stories that include it (computed once per stories change)
+  const placeToStories = useMemo(() => buildPlaceToStoriesMap(stories), [stories]);
+
   // Select a story → show overlays, fit map bounds, open panel
   const selectStory = useCallback((story: MapStory) => {
     setActiveStory(story);
     setShowPanel(true);
+    setSelectedPlace(null); // story panel and place card share the bottom slot
 
     try {
       const placeIds: string[] = JSON.parse(story.places_json ?? '[]');
@@ -105,6 +126,15 @@ function MapScreen({ route, navigation }: {
       longitudeDelta: 2,
     }, 500);
   }, []);
+
+  // Tap a marker → open detail card + recentre
+  const handlePlacePress = useCallback((place: Place) => {
+    lightImpact();
+    setActiveStory(null);
+    setShowPanel(false);
+    setSelectedPlace(place);
+    panToPlace(place);
+  }, [panToPlace]);
 
   // Deep-link handling — auto-select story/place from route params
   const lastProcessedStory = useRef<string | null>(null);
@@ -143,6 +173,7 @@ function MapScreen({ route, navigation }: {
   // Era filter change — auto-select the first matching story to jump the map
   const handleEraChange = useCallback((era: string) => {
     setActiveEra(era);
+    setSelectedPlace(null); // close any open place detail card
     if (era === 'all') {
       setActiveStory(null);
       setShowPanel(false);
@@ -194,6 +225,7 @@ function MapScreen({ route, navigation }: {
           showModern={showModern}
           zoomLevel={zoomLevel}
           activeStory={activeStory}
+          onPlacePress={handlePlacePress}
         />
         {activeStory && (
           <StoryOverlays story={activeStory} zoomLevel={zoomLevel} />
@@ -252,6 +284,18 @@ function MapScreen({ route, navigation }: {
           />
         </View>
       )}
+
+      {/* Place detail card — shares the bottom slot with the story panel */}
+      {selectedPlace && !showPanel && (
+        <View style={[styles.placeDetailWrap, { backgroundColor: base.bgElevated, borderTopColor: base.border }]}>
+          <PlaceDetailCard
+            place={selectedPlace}
+            stories={placeToStories.get(selectedPlace.id)}
+            onClose={() => setSelectedPlace(null)}
+            onStoryPress={(s) => selectStory(s)}
+          />
+        </View>
+      )}
     </View>
   );
 }
@@ -289,6 +333,15 @@ const styles = StyleSheet.create({
     right: 0,
     borderTopWidth: 1,
     maxHeight: '40%',
+    zIndex: 20,
+  },
+  placeDetailWrap: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    borderTopWidth: 1,
+    maxHeight: '30%',
     zIndex: 20,
   },
 });

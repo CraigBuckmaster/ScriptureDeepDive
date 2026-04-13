@@ -4,3 +4,5 @@ export { StoryOverlays } from './StoryOverlays';
 export { StoryPanel } from './StoryPanel';
 export { StoryPicker } from './StoryPicker';
 export { FloatingControls } from './FloatingControls';
+export { PlaceDetailCard, formatCoord } from './PlaceDetailCard';
+export type { PlaceDetailCardProps } from './PlaceDetailCard';

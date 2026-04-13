@@ -16,10 +16,11 @@ interface Props {
   showModern: boolean;
   zoomLevel: number;
   activeStory?: MapStory | null;
+  onPlacePress?: (place: Place) => void;
 }
 
 export const PlaceMarkerList = memo(function PlaceMarkerList({
-  places, showModern, zoomLevel, activeStory,
+  places, showModern, zoomLevel, activeStory, onPlacePress,
 }: Props) {
   const visiblePlaces = useMemo(() => {
     const maxPriority = maxPriorityForZoom(zoomLevel);
@@ -45,6 +46,7 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
           coordinate={{ latitude: place.latitude, longitude: place.longitude }}
           tracksViewChanges={false}
           anchor={{ x: 0.5, y: 0.5 }}
+          onPress={onPlacePress ? () => onPlacePress(place) : undefined}
         >
           <PlaceLabel place={place} showModern={showModern} zoomLevel={zoomLevel} />
         </Marker>
