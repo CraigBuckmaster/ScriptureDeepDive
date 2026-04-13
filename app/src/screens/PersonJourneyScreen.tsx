@@ -87,9 +87,14 @@ function PersonJourneyScreen() {
                 onPress={() => {
                   if (stage.book_dir) {
                     const ch = stage.chapters ? JSON.parse(stage.chapters)[0] : 1;
-                    (navigation as any).navigate('ReadTab', {
-                      screen: 'Chapter',
-                      params: { bookId: stage.book_dir, chapterNum: ch },
+                    // Parse starting verse from verse_ref (e.g., "Gen 12:1-9" → 1)
+                    const verseMatch = stage.verse_ref?.match(/:(\d+)/);
+                    const verseNum = verseMatch ? parseInt(verseMatch[1], 10) : undefined;
+                    // Navigate within ExploreStack so Back returns here
+                    navigation.navigate('Chapter', {
+                      bookId: stage.book_dir,
+                      chapterNum: ch,
+                      ...(verseNum ? { verseNum } : {}),
                     });
                   }
                 }}
