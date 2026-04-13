@@ -977,5 +977,5446 @@
     "priority": 3,
     "labelDir": "w",
     "stories": []
+  },
+  {
+    "id": "jordan",
+    "ancient": "Jordan",
+    "modern": "Jordan River",
+    "lon": 35.5583,
+    "lat": 31.7614,
+    "type": "water",
+    "priority": 1,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Genesis 32:10",
+      "Genesis 50:10",
+      "Genesis 50:11",
+      "Numbers 13:29",
+      "Numbers 22:1"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "galilee_1",
+    "ancient": "Galilee 1",
+    "modern": "Galilee",
+    "lon": 35.527,
+    "lat": 32.76,
+    "type": "city",
+    "priority": 1,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Joshua 20:7",
+      "Joshua 21:32",
+      "1 Kings 9:11",
+      "2 Kings 15:29",
+      "1 Chronicles 6:76"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "tyre",
+    "ancient": "Tyre",
+    "modern": "Tyre",
+    "lon": 35.1961,
+    "lat": 33.2708,
+    "type": "city",
+    "priority": 1,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Joshua 19:29",
+      "2 Samuel 5:11",
+      "2 Samuel 24:7",
+      "1 Kings 5:1",
+      "1 Kings 7:13"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "damascus",
+    "ancient": "Damascus",
+    "modern": "Damascus",
+    "lon": 36.3064,
+    "lat": 33.5111,
+    "type": "city",
+    "priority": 1,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Genesis 14:15",
+      "Genesis 15:2",
+      "2 Samuel 8:5",
+      "2 Samuel 8:6",
+      "1 Kings 11:24"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "lebanon",
+    "ancient": "Lebanon",
+    "modern": "Jezzine",
+    "lon": 35.5836,
+    "lat": 33.54,
+    "type": "city",
+    "priority": 1,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Deuteronomy 1:7",
+      "Deuteronomy 3:25",
+      "Deuteronomy 11:24",
+      "Joshua 1:4",
+      "Joshua 9:1"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "city_of_david",
+    "ancient": "City of David",
+    "modern": "City of David",
+    "lon": 35.2356,
+    "lat": 31.7736,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "2 Samuel 5:7",
+      "2 Samuel 5:9",
+      "2 Samuel 6:10",
+      "2 Samuel 6:12",
+      "2 Samuel 6:16"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "gibeah_1",
+    "ancient": "Gibeah 1",
+    "modern": "Tel el Ful",
+    "lon": 35.2307,
+    "lat": 31.8231,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Judges 19:12",
+      "Judges 19:13",
+      "Judges 19:14",
+      "Judges 19:15",
+      "Judges 19:16"
+    ],
+    "confidence": 669
+  },
+  {
+    "id": "nile",
+    "ancient": "Nile",
+    "modern": "Nile River",
+    "lon": 30.3667,
+    "lat": 31.4653,
+    "type": "water",
+    "priority": 2,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Genesis 41:1",
+      "Genesis 41:2",
+      "Genesis 41:3",
+      "Genesis 41:17",
+      "Genesis 41:18"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "euphrates",
+    "ancient": "Euphrates",
+    "modern": "Euphrates River",
+    "lon": 47.442,
+    "lat": 31.0043,
+    "type": "water",
+    "priority": 2,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Genesis 2:14",
+      "Genesis 15:18",
+      "Genesis 31:21",
+      "Exodus 23:31",
+      "Deuteronomy 1:7"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "gath_1",
+    "ancient": "Gath 1",
+    "modern": "Tell es Safi",
+    "lon": 34.8469,
+    "lat": 31.6997,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Joshua 11:22",
+      "Joshua 13:3",
+      "1 Samuel 5:8",
+      "1 Samuel 5:9",
+      "1 Samuel 5:10"
+    ],
+    "confidence": 850
+  },
+  {
+    "id": "heshbon",
+    "ancient": "Heshbon",
+    "modern": "Tell Hesban",
+    "lon": 35.8091,
+    "lat": 31.8008,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Numbers 21:25",
+      "Numbers 21:26",
+      "Numbers 21:27",
+      "Numbers 21:28",
+      "Numbers 21:30"
+    ],
+    "confidence": 433
+  },
+  {
+    "id": "shiloh",
+    "ancient": "Shiloh",
+    "modern": "Khirbet Seilun",
+    "lon": 35.2895,
+    "lat": 32.0557,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Genesis 49:10",
+      "Joshua 18:1",
+      "Joshua 18:8",
+      "Joshua 18:9",
+      "Joshua 18:10"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "sidon",
+    "ancient": "Sidon",
+    "modern": "Sandikli archaeological site in Sidon",
+    "lon": 35.3719,
+    "lat": 33.561,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Genesis 10:19",
+      "Genesis 49:13",
+      "Joshua 11:8",
+      "Joshua 13:4",
+      "Joshua 19:28"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "great_sea",
+    "ancient": "Great Sea",
+    "modern": "Mediterranean Sea",
+    "lon": 34.1703,
+    "lat": 31.8048,
+    "type": "water",
+    "priority": 2,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Exodus 23:31",
+      "Numbers 13:29",
+      "Numbers 34:5",
+      "Numbers 34:6",
+      "Numbers 34:7"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "mount_seir_1",
+    "ancient": "Mount Seir 1",
+    "modern": "Jebel esh Shera",
+    "lon": 35.3166,
+    "lat": 30.1843,
+    "type": "mountain",
+    "priority": 2,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Genesis 14:6",
+      "Genesis 32:3",
+      "Genesis 33:14",
+      "Genesis 33:16",
+      "Genesis 36:8"
+    ],
+    "confidence": 775
+  },
+  {
+    "id": "gilgal_1",
+    "ancient": "Gilgal 1",
+    "modern": "Khirbet el Mefjir",
+    "lon": 35.46,
+    "lat": 31.8819,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Joshua 4:19",
+      "Joshua 4:20",
+      "Joshua 5:9",
+      "Joshua 5:10",
+      "Joshua 9:6"
+    ],
+    "confidence": 556
+  },
+  {
+    "id": "mizpah_3",
+    "ancient": "Mizpah 3",
+    "modern": "Tell en Nasbeh",
+    "lon": 35.2164,
+    "lat": 31.8851,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Judges 20:1",
+      "Judges 20:3",
+      "Judges 21:1",
+      "Judges 21:5",
+      "Judges 21:8"
+    ],
+    "confidence": 781
+  },
+  {
+    "id": "mount_sinai",
+    "ancient": "Mount Sinai",
+    "modern": "Jebel Musa",
+    "lon": 33.9733,
+    "lat": 28.5397,
+    "type": "mountain",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Exodus 16:1",
+      "Exodus 19:2",
+      "Exodus 19:11",
+      "Exodus 19:18",
+      "Exodus 19:20"
+    ],
+    "confidence": 465
+  },
+  {
+    "id": "jezreel_2",
+    "ancient": "Jezreel 2",
+    "modern": "Tel Yizre’el",
+    "lon": 35.328,
+    "lat": 32.5579,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Joshua 19:18",
+      "1 Samuel 29:1",
+      "1 Samuel 29:11",
+      "2 Samuel 2:9",
+      "2 Samuel 4:4"
+    ],
+    "confidence": 806
+  },
+  {
+    "id": "arabah",
+    "ancient": "Arabah",
+    "modern": "Arabah",
+    "lon": 35.1514,
+    "lat": 30.4169,
+    "type": "site",
+    "priority": 2,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Deuteronomy 1:1",
+      "Deuteronomy 1:7",
+      "Deuteronomy 2:8",
+      "Deuteronomy 3:17",
+      "Deuteronomy 4:49"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "dan",
+    "ancient": "Dan",
+    "modern": "Tel Dan",
+    "lon": 35.652,
+    "lat": 33.249,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Genesis 14:14",
+      "Joshua 19:47",
+      "Judges 18:7",
+      "Judges 18:14",
+      "Judges 18:27"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "mount_zion",
+    "ancient": "Mount Zion",
+    "modern": "Mount Zion",
+    "lon": 35.2286,
+    "lat": 31.7717,
+    "type": "mountain",
+    "priority": 2,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "2 Kings 19:31",
+      "Psalms 48:2",
+      "Psalms 48:11",
+      "Psalms 68:16",
+      "Psalms 74:2"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "macedonia",
+    "ancient": "Macedonia",
+    "modern": "Macedonia",
+    "lon": 22.54,
+    "lat": 41.6,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Acts 16:9",
+      "Acts 16:10",
+      "Acts 16:12",
+      "Acts 18:5",
+      "Acts 19:21"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "gaza",
+    "ancient": "Gaza",
+    "modern": "Tell Harube",
+    "lon": 34.4644,
+    "lat": 31.504,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Genesis 10:19",
+      "Deuteronomy 2:23",
+      "Joshua 10:41",
+      "Joshua 11:22",
+      "Joshua 13:3"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "ashdod",
+    "ancient": "Ashdod",
+    "modern": "Tel Ashdod",
+    "lon": 34.6578,
+    "lat": 31.7572,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Joshua 11:22",
+      "Joshua 13:3",
+      "Joshua 15:46",
+      "Joshua 15:47",
+      "1 Samuel 5:1"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "asia",
+    "ancient": "Asia",
+    "modern": "Asia",
+    "lon": 28.3,
+    "lat": 38.4,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Acts 2:9",
+      "Acts 6:9",
+      "Acts 16:6",
+      "Acts 19:10",
+      "Acts 19:22"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "hamath_1",
+    "ancient": "Hamath 1",
+    "modern": "Hama",
+    "lon": 36.75,
+    "lat": 35.1365,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "2 Samuel 8:9",
+      "2 Kings 14:28",
+      "2 Kings 18:34",
+      "2 Kings 19:13",
+      "2 Kings 23:33"
+    ],
+    "confidence": 957
+  },
+  {
+    "id": "red_sea_1",
+    "ancient": "Red Sea 1",
+    "modern": "Gulf of Suez",
+    "lon": 33.0,
+    "lat": 28.75,
+    "type": "water",
+    "priority": 2,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Exodus 13:18",
+      "Exodus 15:4",
+      "Exodus 15:22",
+      "Numbers 33:8",
+      "Deuteronomy 11:4"
+    ],
+    "confidence": 369
+  },
+  {
+    "id": "ekron",
+    "ancient": "Ekron",
+    "modern": "Tel Miqne",
+    "lon": 34.8519,
+    "lat": 31.7775,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 13:3",
+      "Joshua 15:11",
+      "Joshua 15:45",
+      "Joshua 15:46",
+      "Joshua 19:43"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "jabesh_gilead",
+    "ancient": "Jabesh-gilead",
+    "modern": "Tell el Maqlub",
+    "lon": 35.6823,
+    "lat": 32.4024,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Judges 21:8",
+      "Judges 21:9",
+      "Judges 21:10",
+      "Judges 21:12",
+      "Judges 21:14"
+    ],
+    "confidence": 698
+  },
+  {
+    "id": "ramoth_gilead",
+    "ancient": "Ramoth-gilead",
+    "modern": "Tall er Rumeith",
+    "lon": 36.015,
+    "lat": 32.4999,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "1 Kings 4:13",
+      "1 Kings 22:3",
+      "1 Kings 22:4",
+      "1 Kings 22:6",
+      "1 Kings 22:12"
+    ],
+    "confidence": 808
+  },
+  {
+    "id": "cush_1",
+    "ancient": "Cush 1",
+    "modern": "Meroe",
+    "lon": 33.7507,
+    "lat": 16.9351,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "2 Kings 19:9",
+      "Psalms 68:31",
+      "Psalms 87:4",
+      "Isaiah 11:11",
+      "Isaiah 18:1"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "kiriath_jearim",
+    "ancient": "Kiriath-jearim",
+    "modern": "Deir el Azar",
+    "lon": 35.1038,
+    "lat": 31.809,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Joshua 9:17",
+      "Joshua 15:9",
+      "Joshua 15:60",
+      "Joshua 18:14",
+      "Joshua 18:15"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "shephelah",
+    "ancient": "Shephelah",
+    "modern": "Shephelah",
+    "lon": 34.875,
+    "lat": 31.6917,
+    "type": "site",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Deuteronomy 1:7",
+      "Joshua 9:1",
+      "Joshua 10:40",
+      "Joshua 11:2",
+      "Joshua 11:16"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "anathoth",
+    "ancient": "Anathoth",
+    "modern": "Ras el Kharruba",
+    "lon": 35.2576,
+    "lat": 31.8075,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Joshua 21:18",
+      "2 Samuel 23:27",
+      "1 Kings 2:26",
+      "1 Chronicles 6:60",
+      "1 Chronicles 11:28"
+    ],
+    "confidence": 420
+  },
+  {
+    "id": "antioch_1",
+    "ancient": "Antioch 1",
+    "modern": "Antioch on the Orontes",
+    "lon": 36.1717,
+    "lat": 36.2267,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Acts 6:5",
+      "Acts 11:19",
+      "Acts 11:20",
+      "Acts 11:22",
+      "Acts 11:26"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "mount_carmel",
+    "ancient": "Mount Carmel",
+    "modern": "Mount Carmel",
+    "lon": 35.0233,
+    "lat": 32.6725,
+    "type": "mountain",
+    "priority": 2,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 12:22",
+      "Joshua 19:26",
+      "1 Kings 18:19",
+      "1 Kings 18:20",
+      "1 Kings 18:42"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "mount_of_olives",
+    "ancient": "Mount of Olives",
+    "modern": "Mount of Olives",
+    "lon": 35.2457,
+    "lat": 31.7779,
+    "type": "mountain",
+    "priority": 2,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "2 Samuel 15:30",
+      "2 Samuel 15:32",
+      "2 Samuel 16:1",
+      "1 Kings 11:7",
+      "2 Kings 23:13"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "sheba_1",
+    "ancient": "Sheba 1",
+    "modern": "Sheba",
+    "lon": 44.2064,
+    "lat": 15.3483,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "1 Kings 10:1",
+      "1 Kings 10:4",
+      "1 Kings 10:10",
+      "1 Kings 10:13",
+      "2 Chronicles 9:1"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "beth_shemesh_1",
+    "ancient": "Beth-shemesh 1",
+    "modern": "Tel Bet Shemesh",
+    "lon": 34.9747,
+    "lat": 31.7506,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Joshua 15:10",
+      "Joshua 21:16",
+      "1 Samuel 6:9",
+      "1 Samuel 6:12",
+      "1 Samuel 6:13"
+    ],
+    "confidence": 864
+  },
+  {
+    "id": "rabbah_1",
+    "ancient": "Rabbah 1",
+    "modern": "Amman",
+    "lon": 35.9343,
+    "lat": 31.9547,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Deuteronomy 3:11",
+      "Joshua 13:25",
+      "2 Samuel 11:1",
+      "2 Samuel 12:26",
+      "2 Samuel 12:27"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "libnah_1",
+    "ancient": "Libnah 1",
+    "modern": "Tell Bornat",
+    "lon": 34.8735,
+    "lat": 31.6299,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Joshua 10:29",
+      "Joshua 10:30",
+      "Joshua 10:31",
+      "Joshua 10:32",
+      "Joshua 10:39"
+    ],
+    "confidence": 381
+  },
+  {
+    "id": "mahanaim",
+    "ancient": "Mahanaim",
+    "modern": "Tell edh Dhahab el Gharbi",
+    "lon": 35.6867,
+    "lat": 32.1857,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Genesis 32:2",
+      "Joshua 13:26",
+      "Joshua 13:30",
+      "Joshua 21:38",
+      "2 Samuel 2:8"
+    ],
+    "confidence": 654
+  },
+  {
+    "id": "mount_hermon",
+    "ancient": "Mount Hermon",
+    "modern": "Mount Hermon",
+    "lon": 35.85,
+    "lat": 33.4,
+    "type": "mountain",
+    "priority": 2,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Deuteronomy 3:8",
+      "Deuteronomy 3:9",
+      "Deuteronomy 4:48",
+      "Joshua 11:3",
+      "Joshua 11:17"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "ramah_1",
+    "ancient": "Ramah 1",
+    "modern": "Al Ram",
+    "lon": 35.2316,
+    "lat": 31.8543,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 18:25",
+      "Judges 4:5",
+      "Judges 19:13",
+      "1 Kings 15:17",
+      "1 Kings 15:21"
+    ],
+    "confidence": 723
+  },
+  {
+    "id": "keilah",
+    "ancient": "Keilah",
+    "modern": "Khirbet Qila",
+    "lon": 35.0036,
+    "lat": 31.6137,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Joshua 15:44",
+      "1 Samuel 23:1",
+      "1 Samuel 23:2",
+      "1 Samuel 23:3",
+      "1 Samuel 23:4"
+    ],
+    "confidence": 815
+  },
+  {
+    "id": "carmel_1",
+    "ancient": "Carmel 1",
+    "modern": "Khirbet el Kirmil",
+    "lon": 35.133,
+    "lat": 31.4229,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Joshua 15:55",
+      "1 Samuel 15:12",
+      "1 Samuel 25:2",
+      "1 Samuel 25:5",
+      "1 Samuel 25:7"
+    ],
+    "confidence": 842
+  },
+  {
+    "id": "geba_1",
+    "ancient": "Geba 1",
+    "modern": "Jaba",
+    "lon": 35.2611,
+    "lat": 31.8575,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Joshua 21:17",
+      "1 Samuel 13:3",
+      "1 Samuel 13:4",
+      "1 Samuel 13:16",
+      "1 Samuel 14:5"
+    ],
+    "confidence": 740
+  },
+  {
+    "id": "gezer",
+    "ancient": "Gezer",
+    "modern": "Tel Gezer",
+    "lon": 34.9192,
+    "lat": 31.8592,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Joshua 10:33",
+      "Joshua 12:12",
+      "Joshua 16:3",
+      "Joshua 16:10",
+      "Joshua 21:21"
+    ],
+    "confidence": 942
+  },
+  {
+    "id": "kidron",
+    "ancient": "Kidron",
+    "modern": "Kidron River",
+    "lon": 35.24,
+    "lat": 31.7803,
+    "type": "water",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "2 Samuel 15:22",
+      "2 Samuel 15:23",
+      "1 Kings 2:37",
+      "1 Kings 15:13",
+      "2 Kings 23:4"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "tekoa",
+    "ancient": "Tekoa",
+    "modern": "Khirbet Teku’a",
+    "lon": 35.2105,
+    "lat": 31.6325,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "2 Samuel 14:2",
+      "2 Samuel 14:4",
+      "2 Samuel 14:9",
+      "2 Samuel 23:26",
+      "1 Chronicles 2:24"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "aroer_1",
+    "ancient": "Aroer 1",
+    "modern": "Arair",
+    "lon": 35.8194,
+    "lat": 31.4708,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Numbers 32:34",
+      "Deuteronomy 2:36",
+      "Deuteronomy 3:12",
+      "Deuteronomy 4:48",
+      "Joshua 12:2"
+    ],
+    "confidence": 872
+  },
+  {
+    "id": "jazer",
+    "ancient": "Jazer",
+    "modern": "Khirbet Sara",
+    "lon": 35.8301,
+    "lat": 31.9445,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Numbers 21:24",
+      "Numbers 21:32",
+      "Numbers 32:1",
+      "Numbers 32:3",
+      "Numbers 32:35"
+    ],
+    "confidence": 281
+  },
+  {
+    "id": "tirzah",
+    "ancient": "Tirzah",
+    "modern": "Tell el Farah",
+    "lon": 35.3378,
+    "lat": 32.2874,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Joshua 12:24",
+      "1 Kings 14:17",
+      "1 Kings 15:21",
+      "1 Kings 15:33",
+      "1 Kings 16:6"
+    ],
+    "confidence": 834
+  },
+  {
+    "id": "arnon",
+    "ancient": "Arnon",
+    "modern": "Wadi Mujib",
+    "lon": 35.5733,
+    "lat": 31.4658,
+    "type": "water",
+    "priority": 2,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Numbers 21:13",
+      "Numbers 21:14",
+      "Numbers 21:24",
+      "Numbers 21:26",
+      "Numbers 21:28"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "ashkelon",
+    "ancient": "Ashkelon",
+    "modern": "Tel Ashkelon",
+    "lon": 34.5458,
+    "lat": 31.6639,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Joshua 13:3",
+      "Judges 1:18",
+      "Judges 14:19",
+      "1 Samuel 6:17",
+      "2 Samuel 1:20"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "bethany_1",
+    "ancient": "Bethany 1",
+    "modern": "Al Eizariya",
+    "lon": 35.2559,
+    "lat": 31.7717,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Matthew 21:17",
+      "Matthew 26:6",
+      "Mark 11:1",
+      "Mark 11:11",
+      "Mark 11:12"
+    ],
+    "confidence": 889
+  },
+  {
+    "id": "lebo_hamath",
+    "ancient": "Lebo-hamath",
+    "modern": "Labweh",
+    "lon": 36.3496,
+    "lat": 34.1949,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Numbers 13:21",
+      "Numbers 34:8",
+      "Joshua 13:5",
+      "Judges 3:3",
+      "1 Kings 8:65"
+    ],
+    "confidence": 738
+  },
+  {
+    "id": "valley_of_hinnom",
+    "ancient": "Valley of Hinnom",
+    "modern": "Hinnom Valley",
+    "lon": 35.2281,
+    "lat": 31.7692,
+    "type": "region",
+    "priority": 2,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Joshua 15:8",
+      "Joshua 18:16",
+      "2 Kings 23:10",
+      "2 Chronicles 28:3",
+      "2 Chronicles 33:6"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "debir_1",
+    "ancient": "Debir 1",
+    "modern": "Khirbet Rabud",
+    "lon": 35.0149,
+    "lat": 31.4321,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Joshua 10:38",
+      "Joshua 10:39",
+      "Joshua 11:21",
+      "Joshua 12:13",
+      "Joshua 15:15"
+    ],
+    "confidence": 775
+  },
+  {
+    "id": "michmash",
+    "ancient": "Michmash",
+    "modern": "Mukhmas",
+    "lon": 35.2769,
+    "lat": 31.8728,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "1 Samuel 13:2",
+      "1 Samuel 13:5",
+      "1 Samuel 13:11",
+      "1 Samuel 13:16",
+      "1 Samuel 13:23"
+    ],
+    "confidence": 601
+  },
+  {
+    "id": "riblah_1",
+    "ancient": "Riblah 1",
+    "modern": "Rableh",
+    "lon": 36.5726,
+    "lat": 34.4595,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "2 Kings 23:33",
+      "2 Kings 25:6",
+      "2 Kings 25:20",
+      "2 Kings 25:21",
+      "Jeremiah 39:5"
+    ],
+    "confidence": 948
+  },
+  {
+    "id": "zorah",
+    "ancient": "Zorah",
+    "modern": "Tel Tzora",
+    "lon": 34.9853,
+    "lat": 31.774,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Joshua 15:33",
+      "Joshua 19:41",
+      "Judges 13:2",
+      "Judges 13:25",
+      "Judges 16:31"
+    ],
+    "confidence": 832
+  },
+  {
+    "id": "achaia",
+    "ancient": "Achaia",
+    "modern": "Achaia",
+    "lon": 22.54,
+    "lat": 38.72,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Acts 18:12",
+      "Acts 18:27",
+      "Acts 19:21",
+      "Romans 15:26",
+      "1 Corinthians 16:15"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "dibon_1",
+    "ancient": "Dibon 1",
+    "modern": "Tall Dhiban",
+    "lon": 35.7766,
+    "lat": 31.5022,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Numbers 21:30",
+      "Numbers 32:3",
+      "Numbers 32:34",
+      "Numbers 33:45",
+      "Numbers 33:46"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "mount_hor_1",
+    "ancient": "Mount Hor 1",
+    "modern": "Har Zin",
+    "lon": 35.0569,
+    "lat": 30.8321,
+    "type": "mountain",
+    "priority": 2,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Numbers 20:22",
+      "Numbers 20:23",
+      "Numbers 20:25",
+      "Numbers 20:27",
+      "Numbers 21:4"
+    ],
+    "confidence": 336
+  },
+  {
+    "id": "ophir",
+    "ancient": "Ophir",
+    "modern": "southwestern Arabia",
+    "lon": 42.5,
+    "lat": 18.2167,
+    "type": "site",
+    "priority": 2,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "1 Kings 9:28",
+      "1 Kings 10:11",
+      "1 Kings 22:48",
+      "1 Chronicles 29:4",
+      "2 Chronicles 8:18"
+    ],
+    "confidence": 283
+  },
+  {
+    "id": "succoth_1",
+    "ancient": "Succoth 1",
+    "modern": "Tell Deir Alla",
+    "lon": 35.6212,
+    "lat": 32.1966,
+    "type": "city",
+    "priority": 2,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Genesis 33:17",
+      "Joshua 13:27",
+      "Judges 8:5",
+      "Judges 8:6",
+      "Judges 8:8"
+    ],
+    "confidence": 600
+  },
+  {
+    "id": "adullam",
+    "ancient": "Adullam",
+    "modern": "Khirbet esh Sheikh Madhkur",
+    "lon": 35.0017,
+    "lat": 31.6517,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Genesis 38:1",
+      "Joshua 12:15",
+      "Joshua 15:35",
+      "1 Samuel 22:1",
+      "2 Samuel 23:13"
+    ],
+    "confidence": 737
+  },
+  {
+    "id": "beeroth",
+    "ancient": "Beeroth",
+    "modern": "Khirbet el Burj",
+    "lon": 35.1872,
+    "lat": 31.8238,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Joshua 9:17",
+      "Joshua 18:25",
+      "2 Samuel 4:2",
+      "2 Samuel 4:3",
+      "2 Samuel 4:5"
+    ],
+    "confidence": 252
+  },
+  {
+    "id": "brook_of_egypt",
+    "ancient": "Brook of Egypt",
+    "modern": "Wadi al Arish",
+    "lon": 33.8065,
+    "lat": 31.1457,
+    "type": "water",
+    "priority": 3,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Numbers 34:5",
+      "Joshua 15:4",
+      "Joshua 15:47",
+      "1 Kings 8:65",
+      "2 Kings 24:7"
+    ],
+    "confidence": 610
+  },
+  {
+    "id": "crete",
+    "ancient": "Crete",
+    "modern": "Crete",
+    "lon": 24.8933,
+    "lat": 35.3097,
+    "type": "site",
+    "priority": 3,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Zephaniah 2:5",
+      "Acts 27:7",
+      "Acts 27:8",
+      "Acts 27:12",
+      "Acts 27:13"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "gerar",
+    "ancient": "Gerar",
+    "modern": "Tel Haror",
+    "lon": 34.6065,
+    "lat": 31.3821,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Genesis 10:19",
+      "Genesis 20:1",
+      "Genesis 20:2",
+      "Genesis 26:1",
+      "Genesis 26:6"
+    ],
+    "confidence": 694
+  },
+  {
+    "id": "hormah",
+    "ancient": "Hormah",
+    "modern": "Tel Masos",
+    "lon": 34.9583,
+    "lat": 31.2123,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Numbers 14:45",
+      "Numbers 21:3",
+      "Deuteronomy 1:44",
+      "Joshua 12:14",
+      "Joshua 15:30"
+    ],
+    "confidence": 449
+  },
+  {
+    "id": "jahaz",
+    "ancient": "Jahaz",
+    "modern": "Khirbet el Medeiyineh",
+    "lon": 35.9079,
+    "lat": 31.5883,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Numbers 21:23",
+      "Deuteronomy 2:32",
+      "Joshua 13:18",
+      "Joshua 21:36",
+      "Judges 11:20"
+    ],
+    "confidence": 444
+  },
+  {
+    "id": "kedar",
+    "ancient": "Kedar",
+    "modern": "Dumat al Jandal",
+    "lon": 39.8683,
+    "lat": 29.8114,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Psalms 120:5",
+      "Song of Solomon 1:5",
+      "Isaiah 21:16",
+      "Isaiah 21:17",
+      "Isaiah 42:11"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "mount_tabor",
+    "ancient": "Mount Tabor",
+    "modern": "Jebel et Tur",
+    "lon": 35.3929,
+    "lat": 32.6863,
+    "type": "mountain",
+    "priority": 3,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 19:22",
+      "Judges 4:6",
+      "Judges 4:12",
+      "Judges 4:14",
+      "Judges 5:13"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "shunem",
+    "ancient": "Shunem",
+    "modern": "Sulam",
+    "lon": 35.3343,
+    "lat": 32.6056,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Joshua 19:18",
+      "1 Samuel 28:4",
+      "1 Kings 1:3",
+      "1 Kings 2:17",
+      "1 Kings 2:21"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "timnah_1",
+    "ancient": "Timnah 1",
+    "modern": "Tel Batash",
+    "lon": 34.9103,
+    "lat": 31.7848,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Joshua 15:10",
+      "Joshua 19:43",
+      "Judges 14:1",
+      "Judges 14:2",
+      "Judges 14:5"
+    ],
+    "confidence": 836
+  },
+  {
+    "id": "zoar",
+    "ancient": "Zoar",
+    "modern": "Al Safi",
+    "lon": 35.4877,
+    "lat": 31.0369,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Genesis 13:10",
+      "Genesis 14:2",
+      "Genesis 14:8",
+      "Genesis 19:22",
+      "Genesis 19:23"
+    ],
+    "confidence": 347
+  },
+  {
+    "id": "aijalon_1",
+    "ancient": "Aijalon 1",
+    "modern": "Yalo",
+    "lon": 35.0236,
+    "lat": 31.8411,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Joshua 19:42",
+      "Joshua 21:24",
+      "Judges 1:35",
+      "1 Samuel 14:31",
+      "1 Chronicles 6:69"
+    ],
+    "confidence": 665
+  },
+  {
+    "id": "beth_shan",
+    "ancient": "Beth-shan",
+    "modern": "Tel Bet Shean",
+    "lon": 35.5031,
+    "lat": 32.5036,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Joshua 17:11",
+      "Joshua 17:16",
+      "Judges 1:27",
+      "1 Samuel 31:10",
+      "1 Samuel 31:12"
+    ],
+    "confidence": 889
+  },
+  {
+    "id": "bozrah_1",
+    "ancient": "Bozrah 1",
+    "modern": "Buseira",
+    "lon": 35.6039,
+    "lat": 30.7458,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Genesis 36:33",
+      "1 Chronicles 1:44",
+      "Isaiah 34:6",
+      "Isaiah 63:1",
+      "Jeremiah 49:13"
+    ],
+    "confidence": 880
+  },
+  {
+    "id": "chebar",
+    "ancient": "Chebar",
+    "modern": "Shatt en Nil",
+    "lon": 45.2308,
+    "lat": 32.1269,
+    "type": "water",
+    "priority": 3,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Ezekiel 1:1",
+      "Ezekiel 1:3",
+      "Ezekiel 3:15",
+      "Ezekiel 3:23",
+      "Ezekiel 10:15"
+    ],
+    "confidence": 696
+  },
+  {
+    "id": "eglon",
+    "ancient": "Eglon",
+    "modern": "Tell Eton",
+    "lon": 34.9281,
+    "lat": 31.4918,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 10:3",
+      "Joshua 10:5",
+      "Joshua 10:23",
+      "Joshua 10:34",
+      "Joshua 10:36"
+    ],
+    "confidence": 574
+  },
+  {
+    "id": "eshtaol",
+    "ancient": "Eshtaol",
+    "modern": "Khirbet Deir Shubeib",
+    "lon": 34.986,
+    "lat": 31.7977,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Joshua 15:33",
+      "Joshua 19:41",
+      "Judges 13:25",
+      "Judges 16:31",
+      "Judges 18:2"
+    ],
+    "confidence": 337
+  },
+  {
+    "id": "jordan_valley",
+    "ancient": "Jordan Valley",
+    "modern": "Jordan Valley",
+    "lon": 35.57,
+    "lat": 32.3172,
+    "type": "region",
+    "priority": 3,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Genesis 13:10",
+      "Genesis 13:11",
+      "Genesis 13:12",
+      "Genesis 19:17",
+      "Genesis 19:25"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "makkedah",
+    "ancient": "Makkedah",
+    "modern": "Khirbet el Qom",
+    "lon": 34.9666,
+    "lat": 31.5347,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Joshua 10:10",
+      "Joshua 10:16",
+      "Joshua 10:17",
+      "Joshua 10:21",
+      "Joshua 10:28"
+    ],
+    "confidence": 440
+  },
+  {
+    "id": "mount_gilboa",
+    "ancient": "Mount Gilboa",
+    "modern": "Mount Gilboa",
+    "lon": 35.4144,
+    "lat": 32.4339,
+    "type": "mountain",
+    "priority": 3,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "1 Samuel 28:4",
+      "1 Samuel 31:1",
+      "1 Samuel 31:8",
+      "2 Samuel 1:6",
+      "2 Samuel 1:21"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "netophah",
+    "ancient": "Netophah",
+    "modern": "Khirbet Badd Faluh",
+    "lon": 35.221,
+    "lat": 31.6676,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "2 Samuel 23:28",
+      "2 Samuel 23:29",
+      "1 Chronicles 9:16",
+      "1 Chronicles 11:30",
+      "1 Chronicles 27:13"
+    ],
+    "confidence": 557
+  },
+  {
+    "id": "paran",
+    "ancient": "Paran",
+    "modern": "Paran",
+    "lon": 34.7767,
+    "lat": 30.3032,
+    "type": "site",
+    "priority": 3,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Genesis 21:21",
+      "Numbers 10:12",
+      "Numbers 12:16",
+      "Numbers 13:3",
+      "Numbers 13:26"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "pisgah",
+    "ancient": "Pisgah",
+    "modern": "Rujm Siyaghah",
+    "lon": 35.7256,
+    "lat": 31.7678,
+    "type": "site",
+    "priority": 3,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Numbers 21:20",
+      "Numbers 23:14",
+      "Deuteronomy 3:17",
+      "Deuteronomy 3:27",
+      "Deuteronomy 4:49"
+    ],
+    "confidence": 453
+  },
+  {
+    "id": "valley_of_rephaim",
+    "ancient": "Valley of Rephaim",
+    "modern": "Valley of Rephaim",
+    "lon": 35.2191,
+    "lat": 31.7632,
+    "type": "region",
+    "priority": 3,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 15:8",
+      "Joshua 18:16",
+      "2 Samuel 5:18",
+      "2 Samuel 5:22",
+      "2 Samuel 23:13"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "zin_1",
+    "ancient": "Zin 1",
+    "modern": "Zin Desert",
+    "lon": 35.325,
+    "lat": 30.971,
+    "type": "site",
+    "priority": 3,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Numbers 13:21",
+      "Numbers 20:1",
+      "Numbers 27:14",
+      "Numbers 33:36",
+      "Numbers 34:3"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "ar",
+    "ancient": "Ar",
+    "modern": "Khirbet al Balua",
+    "lon": 35.7828,
+    "lat": 31.3599,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Numbers 21:15",
+      "Numbers 21:28",
+      "Deuteronomy 2:9",
+      "Deuteronomy 2:10",
+      "Deuteronomy 2:18"
+    ],
+    "confidence": 359
+  },
+  {
+    "id": "ashtaroth",
+    "ancient": "Ashtaroth",
+    "modern": "Tell Ashtara",
+    "lon": 36.0158,
+    "lat": 32.8042,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Deuteronomy 1:4",
+      "Joshua 9:10",
+      "Joshua 12:4",
+      "Joshua 13:12",
+      "Joshua 13:31"
+    ],
+    "confidence": 797
+  },
+  {
+    "id": "azekah",
+    "ancient": "Azekah",
+    "modern": "Tel Azekah",
+    "lon": 34.9357,
+    "lat": 31.7002,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Joshua 10:10",
+      "Joshua 10:11",
+      "Joshua 15:35",
+      "1 Samuel 17:1",
+      "2 Chronicles 11:9"
+    ],
+    "confidence": 772
+  },
+  {
+    "id": "bahurim",
+    "ancient": "Bahurim",
+    "modern": "Ras Tumeim",
+    "lon": 35.2569,
+    "lat": 31.7912,
+    "type": "site",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "2 Samuel 3:16",
+      "2 Samuel 16:5",
+      "2 Samuel 17:18",
+      "2 Samuel 19:16",
+      "2 Samuel 23:31"
+    ],
+    "confidence": 475
+  },
+  {
+    "id": "cyrene",
+    "ancient": "Cyrene",
+    "modern": "Cyrene",
+    "lon": 21.8512,
+    "lat": 32.8209,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Matthew 27:32",
+      "Mark 15:21",
+      "Luke 23:26",
+      "Acts 2:10",
+      "Acts 6:9"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "dedan",
+    "ancient": "Dedan",
+    "modern": "Al Khuraybah",
+    "lon": 37.9167,
+    "lat": 26.65,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Isaiah 21:13",
+      "Jeremiah 25:23",
+      "Jeremiah 49:8",
+      "Ezekiel 25:13",
+      "Ezekiel 27:15"
+    ],
+    "confidence": 845
+  },
+  {
+    "id": "edrei_1",
+    "ancient": "Edrei 1",
+    "modern": "Daraa",
+    "lon": 36.1061,
+    "lat": 32.6253,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Numbers 21:33",
+      "Deuteronomy 1:4",
+      "Deuteronomy 3:1",
+      "Deuteronomy 3:10",
+      "Joshua 12:4"
+    ],
+    "confidence": 821
+  },
+  {
+    "id": "ethiopia",
+    "ancient": "Ethiopia",
+    "modern": "Meroe",
+    "lon": 33.7507,
+    "lat": 16.9351,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "2 Samuel 18:21",
+      "2 Samuel 18:31",
+      "Esther 1:1",
+      "Esther 8:9",
+      "Job 28:19"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "ezion_geber",
+    "ancient": "Ezion-geber",
+    "modern": "Jezirat Faraun",
+    "lon": 34.8601,
+    "lat": 29.4628,
+    "type": "site",
+    "priority": 3,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Numbers 33:35",
+      "Numbers 33:36",
+      "Deuteronomy 2:8",
+      "1 Kings 9:26",
+      "1 Kings 22:48"
+    ],
+    "confidence": 360
+  },
+  {
+    "id": "jabbok",
+    "ancient": "Jabbok",
+    "modern": "Zarqa River",
+    "lon": 35.5431,
+    "lat": 32.1153,
+    "type": "water",
+    "priority": 3,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Genesis 32:22",
+      "Numbers 21:24",
+      "Deuteronomy 2:37",
+      "Deuteronomy 3:16",
+      "Joshua 12:2"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "lod",
+    "ancient": "Lod",
+    "modern": "Lod",
+    "lon": 34.9,
+    "lat": 31.95,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "1 Chronicles 8:12",
+      "Ezra 2:33",
+      "Nehemiah 7:37",
+      "Nehemiah 11:35",
+      "Acts 9:32"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "meshech",
+    "ancient": "Meshech",
+    "modern": "Gordion",
+    "lon": 31.9942,
+    "lat": 39.655,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Psalms 120:5",
+      "Isaiah 66:19",
+      "Ezekiel 27:13",
+      "Ezekiel 32:26",
+      "Ezekiel 38:2"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "nebo_1",
+    "ancient": "Nebo 1",
+    "modern": "Khirbet al Mukhayyat",
+    "lon": 35.7439,
+    "lat": 31.7491,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Numbers 32:3",
+      "Numbers 32:38",
+      "Numbers 33:47",
+      "1 Chronicles 5:8",
+      "Isaiah 15:2"
+    ],
+    "confidence": 566
+  },
+  {
+    "id": "nob",
+    "ancient": "Nob",
+    "modern": "Ras el Mesharif",
+    "lon": 35.2442,
+    "lat": 31.7925,
+    "type": "site",
+    "priority": 3,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "1 Samuel 21:1",
+      "1 Samuel 22:9",
+      "1 Samuel 22:11",
+      "1 Samuel 22:19",
+      "2 Samuel 21:16"
+    ],
+    "confidence": 197
+  },
+  {
+    "id": "taanach",
+    "ancient": "Taanach",
+    "modern": "Tell Ta’anakh",
+    "lon": 35.2191,
+    "lat": 32.5215,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 12:21",
+      "Joshua 17:11",
+      "Joshua 21:25",
+      "Judges 1:27",
+      "Judges 5:19"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "tahpanhes",
+    "ancient": "Tahpanhes",
+    "modern": "Tell Defenneh",
+    "lon": 32.1714,
+    "lat": 30.8606,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Jeremiah 2:16",
+      "Jeremiah 43:7",
+      "Jeremiah 43:8",
+      "Jeremiah 43:9",
+      "Jeremiah 44:1"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "zoan",
+    "ancient": "Zoan",
+    "modern": "Tanis",
+    "lon": 31.88,
+    "lat": 30.9769,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Numbers 13:22",
+      "Psalms 78:12",
+      "Psalms 78:43",
+      "Isaiah 19:11",
+      "Isaiah 19:13"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "abel_beth_maacah",
+    "ancient": "Abel-beth-maacah",
+    "modern": "Tel Abel Beth Maacah",
+    "lon": 35.581,
+    "lat": 33.2581,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "2 Samuel 20:14",
+      "2 Samuel 20:15",
+      "2 Samuel 20:18",
+      "1 Kings 15:20",
+      "2 Kings 15:29"
+    ],
+    "confidence": 756
+  },
+  {
+    "id": "arabia_1",
+    "ancient": "Arabia 1",
+    "modern": "Arabian Peninsula",
+    "lon": 46.0,
+    "lat": 23.0,
+    "type": "site",
+    "priority": 3,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "1 Kings 10:15",
+      "2 Chronicles 9:14",
+      "Isaiah 21:13",
+      "Jeremiah 25:24",
+      "Ezekiel 27:21"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "arpad",
+    "ancient": "Arpad",
+    "modern": "Tell Rifat",
+    "lon": 37.0947,
+    "lat": 36.4725,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "2 Kings 18:34",
+      "2 Kings 19:13",
+      "Isaiah 10:9",
+      "Isaiah 36:19",
+      "Isaiah 37:13"
+    ],
+    "confidence": 765
+  },
+  {
+    "id": "berea",
+    "ancient": "Berea",
+    "modern": "Veria",
+    "lon": 22.2,
+    "lat": 40.5183,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Acts 17:10",
+      "Acts 17:11",
+      "Acts 17:13",
+      "Acts 17:14",
+      "Acts 17:15"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "elath",
+    "ancient": "Elath",
+    "modern": "Aqaba",
+    "lon": 35.0,
+    "lat": 29.5307,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Deuteronomy 2:8",
+      "1 Kings 9:26",
+      "2 Kings 14:22",
+      "2 Kings 16:6",
+      "2 Chronicles 8:17"
+    ],
+    "confidence": 527
+  },
+  {
+    "id": "engedi",
+    "ancient": "Engedi",
+    "modern": "Ein Gedi",
+    "lon": 35.3833,
+    "lat": 31.45,
+    "type": "site",
+    "priority": 3,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 15:62",
+      "1 Samuel 23:29",
+      "1 Samuel 24:1",
+      "2 Chronicles 20:2",
+      "Song of Solomon 1:14"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "en_rogel",
+    "ancient": "En-rogel",
+    "modern": "Bir Ayub",
+    "lon": 35.236,
+    "lat": 31.7672,
+    "type": "water",
+    "priority": 3,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Joshua 15:7",
+      "Joshua 18:16",
+      "Joshua 18:17",
+      "2 Samuel 17:17",
+      "2 Samuel 17:18"
+    ],
+    "confidence": 793
+  },
+  {
+    "id": "galatia",
+    "ancient": "Galatia",
+    "modern": "Galatia",
+    "lon": 32.9833,
+    "lat": 39.2667,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Acts 16:6",
+      "Acts 18:23",
+      "1 Corinthians 16:1",
+      "Galatians 1:2",
+      "2 Timothy 4:10"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "gihon_2",
+    "ancient": "Gihon 2",
+    "modern": "Gihon Spring",
+    "lon": 35.2364,
+    "lat": 31.7729,
+    "type": "water",
+    "priority": 3,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "1 Kings 1:33",
+      "1 Kings 1:38",
+      "1 Kings 1:44",
+      "1 Kings 1:45",
+      "2 Chronicles 32:30"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "hazeroth",
+    "ancient": "Hazeroth",
+    "modern": "Ain el Khadra",
+    "lon": 34.4217,
+    "lat": 28.8969,
+    "type": "water",
+    "priority": 3,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Numbers 11:35",
+      "Numbers 12:1",
+      "Numbers 12:16",
+      "Numbers 33:17",
+      "Numbers 33:18"
+    ],
+    "confidence": 481
+  },
+  {
+    "id": "hushah",
+    "ancient": "Hushah",
+    "modern": "Husan",
+    "lon": 35.1324,
+    "lat": 31.7118,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "2 Samuel 21:18",
+      "2 Samuel 23:27",
+      "1 Chronicles 4:4",
+      "1 Chronicles 11:29",
+      "1 Chronicles 20:4"
+    ],
+    "confidence": 409
+  },
+  {
+    "id": "jarmuth_1",
+    "ancient": "Jarmuth 1",
+    "modern": "Tel Yarmuth",
+    "lon": 34.975,
+    "lat": 31.7083,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Joshua 10:3",
+      "Joshua 10:5",
+      "Joshua 10:23",
+      "Joshua 12:11",
+      "Joshua 15:35"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "jattir",
+    "ancient": "Jattir",
+    "modern": "Khirbet Attir",
+    "lon": 35.0161,
+    "lat": 31.3525,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Joshua 15:48",
+      "Joshua 21:14",
+      "1 Samuel 30:27",
+      "2 Samuel 23:38",
+      "1 Chronicles 6:57"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "laodicea",
+    "ancient": "Laodicea",
+    "modern": "Laodicea on the Lycus",
+    "lon": 29.1075,
+    "lat": 37.8358,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Colossians 2:1",
+      "Colossians 4:13",
+      "Colossians 4:15",
+      "Colossians 4:16",
+      "Revelation 1:11"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "machpelah",
+    "ancient": "Machpelah",
+    "modern": "Cave of the Patriarchs",
+    "lon": 35.1108,
+    "lat": 31.5247,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Genesis 23:9",
+      "Genesis 23:17",
+      "Genesis 23:19",
+      "Genesis 25:9",
+      "Genesis 49:30"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "mamre",
+    "ancient": "Mamre",
+    "modern": "Ramat el Khalil",
+    "lon": 35.1053,
+    "lat": 31.5565,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Genesis 23:17",
+      "Genesis 23:19",
+      "Genesis 25:9",
+      "Genesis 35:27",
+      "Genesis 49:30"
+    ],
+    "confidence": 667
+  },
+  {
+    "id": "mareshah",
+    "ancient": "Mareshah",
+    "modern": "Tel Maresha",
+    "lon": 34.8982,
+    "lat": 31.593,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Joshua 15:44",
+      "2 Chronicles 11:8",
+      "2 Chronicles 14:9",
+      "2 Chronicles 14:10",
+      "2 Chronicles 20:37"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "penuel",
+    "ancient": "Penuel",
+    "modern": "Tell edh Dhahab esh Sherqiyeh",
+    "lon": 35.6921,
+    "lat": 32.187,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Genesis 32:30",
+      "Genesis 32:31",
+      "Judges 8:8",
+      "Judges 8:9",
+      "Judges 8:17"
+    ],
+    "confidence": 694
+  },
+  {
+    "id": "sharon_1",
+    "ancient": "Sharon 1",
+    "modern": "Sharon Plain",
+    "lon": 34.883,
+    "lat": 32.4,
+    "type": "site",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "1 Chronicles 27:29",
+      "Song of Solomon 2:1",
+      "Isaiah 33:9",
+      "Isaiah 35:2",
+      "Isaiah 65:10"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "shur",
+    "ancient": "Shur",
+    "modern": "Ar Ruwaysat",
+    "lon": 32.9567,
+    "lat": 30.4933,
+    "type": "site",
+    "priority": 3,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Genesis 16:7",
+      "Genesis 20:1",
+      "Genesis 25:18",
+      "Exodus 15:22",
+      "1 Samuel 15:7"
+    ],
+    "confidence": 554
+  },
+  {
+    "id": "sibmah",
+    "ancient": "Sibmah",
+    "modern": "Qarn al Qubish",
+    "lon": 35.7613,
+    "lat": 31.7824,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Numbers 32:3",
+      "Numbers 32:38",
+      "Joshua 13:19",
+      "Isaiah 16:8",
+      "Isaiah 16:9"
+    ],
+    "confidence": 479
+  },
+  {
+    "id": "thebes",
+    "ancient": "Thebes",
+    "modern": "Thebes",
+    "lon": 32.6103,
+    "lat": 25.7206,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Jeremiah 46:25",
+      "Ezekiel 30:14",
+      "Ezekiel 30:15",
+      "Ezekiel 30:16",
+      "Nahum 3:8"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "abarim",
+    "ancient": "Abarim",
+    "modern": "Abarim",
+    "lon": 35.7152,
+    "lat": 31.7539,
+    "type": "site",
+    "priority": 3,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Numbers 27:12",
+      "Numbers 33:47",
+      "Numbers 33:48",
+      "Deuteronomy 32:49",
+      "Jeremiah 22:20"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "elealeh",
+    "ancient": "Elealeh",
+    "modern": "Al ‘Al",
+    "lon": 35.8283,
+    "lat": 31.8193,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Numbers 32:3",
+      "Numbers 32:37",
+      "Isaiah 15:4",
+      "Isaiah 16:9",
+      "Jeremiah 48:34"
+    ],
+    "confidence": 774
+  },
+  {
+    "id": "gibbethon",
+    "ancient": "Gibbethon",
+    "modern": "Tell Melat",
+    "lon": 34.8656,
+    "lat": 31.8564,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Joshua 19:44",
+      "Joshua 21:23",
+      "1 Kings 15:27",
+      "1 Kings 16:15",
+      "1 Kings 16:17"
+    ],
+    "confidence": 530
+  },
+  {
+    "id": "gozan",
+    "ancient": "Gozan",
+    "modern": "Tell Halaf",
+    "lon": 40.0397,
+    "lat": 36.8268,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "2 Kings 17:6",
+      "2 Kings 18:11",
+      "2 Kings 19:12",
+      "1 Chronicles 5:26",
+      "Isaiah 37:12"
+    ],
+    "confidence": 829
+  },
+  {
+    "id": "kibroth_hattaavah",
+    "ancient": "Kibroth-hattaavah",
+    "modern": "Erweis el Ebeirig",
+    "lon": 34.2754,
+    "lat": 28.7887,
+    "type": "water",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Numbers 11:34",
+      "Numbers 11:35",
+      "Numbers 33:16",
+      "Numbers 33:17",
+      "Deuteronomy 9:22"
+    ],
+    "confidence": 405
+  },
+  {
+    "id": "kir_hareseth",
+    "ancient": "Kir-hareseth",
+    "modern": "Kerak",
+    "lon": 35.7014,
+    "lat": 31.1806,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "2 Kings 3:25",
+      "Isaiah 16:7",
+      "Isaiah 16:11",
+      "Jeremiah 48:31",
+      "Jeremiah 48:36"
+    ],
+    "confidence": 805
+  },
+  {
+    "id": "kiriathaim_1",
+    "ancient": "Kiriathaim 1",
+    "modern": "Khirbet al Mukhayyat",
+    "lon": 35.7439,
+    "lat": 31.7491,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Numbers 32:37",
+      "Joshua 13:19",
+      "Jeremiah 48:1",
+      "Jeremiah 48:23",
+      "Ezekiel 25:9"
+    ],
+    "confidence": 306
+  },
+  {
+    "id": "kishon",
+    "ancient": "Kishon",
+    "modern": "Kishon River",
+    "lon": 35.0333,
+    "lat": 32.8167,
+    "type": "water",
+    "priority": 3,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Judges 4:7",
+      "Judges 4:13",
+      "Judges 5:21",
+      "1 Kings 18:40",
+      "Psalms 83:9"
+    ],
+    "confidence": 854
+  },
+  {
+    "id": "lower_beth_horon",
+    "ancient": "Lower Beth-horon",
+    "modern": "Beit Ur al Tahta",
+    "lon": 35.0836,
+    "lat": 31.895,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Joshua 16:3",
+      "Joshua 18:13",
+      "1 Kings 9:17",
+      "1 Chronicles 7:24",
+      "2 Chronicles 8:5"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "marah",
+    "ancient": "Marah",
+    "modern": "Ain Hawarah",
+    "lon": 32.9428,
+    "lat": 29.346,
+    "type": "water",
+    "priority": 3,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Exodus 15:23",
+      "Exodus 15:25",
+      "Exodus 15:27",
+      "Numbers 33:8",
+      "Numbers 33:9"
+    ],
+    "confidence": 384
+  },
+  {
+    "id": "medeba",
+    "ancient": "Medeba",
+    "modern": "Madaba",
+    "lon": 35.7955,
+    "lat": 31.7161,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Numbers 21:30",
+      "Joshua 13:9",
+      "Joshua 13:16",
+      "1 Chronicles 19:7",
+      "Isaiah 15:2"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "mizpah_1",
+    "ancient": "Mizpah 1",
+    "modern": "Jel‘ad",
+    "lon": 35.777,
+    "lat": 32.1185,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Judges 10:17",
+      "Judges 11:11",
+      "Judges 11:29",
+      "Judges 11:34",
+      "Hosea 5:1"
+    ],
+    "confidence": 171
+  },
+  {
+    "id": "mount_ebal",
+    "ancient": "Mount Ebal",
+    "modern": "Mount Ebal",
+    "lon": 35.2733,
+    "lat": 32.234,
+    "type": "mountain",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Deuteronomy 11:29",
+      "Deuteronomy 27:4",
+      "Deuteronomy 27:13",
+      "Joshua 8:30",
+      "Joshua 8:33"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "mount_gerizim",
+    "ancient": "Mount Gerizim",
+    "modern": "Mount Gerizim",
+    "lon": 35.2728,
+    "lat": 32.1994,
+    "type": "mountain",
+    "priority": 3,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Deuteronomy 11:29",
+      "Deuteronomy 27:12",
+      "Joshua 8:33",
+      "Judges 9:7",
+      "John 4:20"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "ono",
+    "ancient": "Ono",
+    "modern": "Kafr Ana",
+    "lon": 34.8681,
+    "lat": 32.0272,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "1 Chronicles 8:12",
+      "Ezra 2:33",
+      "Nehemiah 6:2",
+      "Nehemiah 7:37",
+      "Nehemiah 11:35"
+    ],
+    "confidence": 758
+  },
+  {
+    "id": "ophel",
+    "ancient": "Ophel",
+    "modern": "Ophel",
+    "lon": 35.2362,
+    "lat": 31.7753,
+    "type": "site",
+    "priority": 3,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "2 Chronicles 27:3",
+      "2 Chronicles 33:14",
+      "Nehemiah 3:26",
+      "Nehemiah 3:27",
+      "Nehemiah 11:21"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "ophrah_2",
+    "ancient": "Ophrah 2",
+    "modern": "Afula",
+    "lon": 35.29,
+    "lat": 32.6057,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Judges 6:11",
+      "Judges 6:24",
+      "Judges 8:27",
+      "Judges 8:32",
+      "Judges 9:5"
+    ],
+    "confidence": 506
+  },
+  {
+    "id": "pamphylia",
+    "ancient": "Pamphylia",
+    "modern": "Pamphylia",
+    "lon": 31.0,
+    "lat": 37.0,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Acts 2:10",
+      "Acts 13:13",
+      "Acts 14:24",
+      "Acts 15:38",
+      "Acts 27:5"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "pathros",
+    "ancient": "Pathros",
+    "modern": "Upper Egypt",
+    "lon": 32.7,
+    "lat": 24.1,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Isaiah 11:11",
+      "Jeremiah 44:1",
+      "Jeremiah 44:15",
+      "Ezekiel 29:14",
+      "Ezekiel 30:14"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "pirathon",
+    "ancient": "Pirathon",
+    "modern": "Farata",
+    "lon": 35.1658,
+    "lat": 32.1906,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Judges 12:13",
+      "Judges 12:15",
+      "2 Samuel 23:30",
+      "1 Chronicles 11:31",
+      "1 Chronicles 27:14"
+    ],
+    "confidence": 726
+  },
+  {
+    "id": "red_sea_2",
+    "ancient": "Red Sea 2",
+    "modern": "Gulf of Aqaba",
+    "lon": 34.75,
+    "lat": 28.75,
+    "type": "water",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Exodus 23:31",
+      "Judges 11:16",
+      "1 Kings 9:26",
+      "2 Chronicles 8:17",
+      "Jeremiah 49:21"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "rephidim",
+    "ancient": "Rephidim",
+    "modern": "Wadi Rufaiyil",
+    "lon": 33.8803,
+    "lat": 28.6231,
+    "type": "water",
+    "priority": 3,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Exodus 17:1",
+      "Exodus 17:8",
+      "Exodus 19:2",
+      "Numbers 33:14",
+      "Numbers 33:15"
+    ],
+    "confidence": 379
+  },
+  {
+    "id": "shittim",
+    "ancient": "Shittim",
+    "modern": "Tall el Hammam",
+    "lon": 35.6737,
+    "lat": 31.8402,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Numbers 25:1",
+      "Joshua 2:1",
+      "Joshua 3:1",
+      "Hosea 5:2",
+      "Micah 6:5"
+    ],
+    "confidence": 671
+  },
+  {
+    "id": "siloam",
+    "ancient": "Siloam",
+    "modern": "Pool of Siloam",
+    "lon": 35.235,
+    "lat": 31.7706,
+    "type": "water",
+    "priority": 3,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Nehemiah 2:14",
+      "Nehemiah 3:15",
+      "Luke 13:4",
+      "John 9:7",
+      "John 9:11"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "tarsus",
+    "ancient": "Tarsus",
+    "modern": "Tarsus",
+    "lon": 34.8921,
+    "lat": 36.913,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Acts 9:11",
+      "Acts 9:30",
+      "Acts 11:25",
+      "Acts 21:39",
+      "Acts 22:3"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "tubal",
+    "ancient": "Tubal",
+    "modern": "Tabal",
+    "lon": 36.2536,
+    "lat": 37.2956,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Isaiah 66:19",
+      "Ezekiel 27:13",
+      "Ezekiel 38:2",
+      "Ezekiel 38:3",
+      "Ezekiel 39:1"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "valley_of_achor",
+    "ancient": "Valley of Achor",
+    "modern": "Al Buqay’ah",
+    "lon": 35.3833,
+    "lat": 31.7167,
+    "type": "region",
+    "priority": 3,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Joshua 7:24",
+      "Joshua 7:26",
+      "Joshua 15:7",
+      "Isaiah 65:10",
+      "Hosea 2:15"
+    ],
+    "confidence": 604
+  },
+  {
+    "id": "valley_of_salt",
+    "ancient": "Valley of Salt",
+    "modern": "Es Sebkha",
+    "lon": 35.4063,
+    "lat": 31.0505,
+    "type": "region",
+    "priority": 3,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "2 Samuel 8:13",
+      "2 Kings 14:7",
+      "1 Chronicles 18:12",
+      "2 Chronicles 25:11",
+      "Psalms 60:1"
+    ],
+    "confidence": 451
+  },
+  {
+    "id": "ziph_1",
+    "ancient": "Ziph 1",
+    "modern": "Tell Zif",
+    "lon": 35.1351,
+    "lat": 31.4748,
+    "type": "city",
+    "priority": 3,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Joshua 15:55",
+      "1 Samuel 23:19",
+      "1 Samuel 23:24",
+      "1 Samuel 26:1",
+      "2 Chronicles 11:8"
+    ],
+    "confidence": 760
+  },
+  {
+    "id": "alexandria",
+    "ancient": "Alexandria",
+    "modern": "Alexandria",
+    "lon": 29.8965,
+    "lat": 31.1825,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Acts 6:9",
+      "Acts 18:24",
+      "Acts 27:6",
+      "Acts 28:11"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "antioch_2",
+    "ancient": "Antioch 2",
+    "modern": "Antioch in Pisidia",
+    "lon": 31.1892,
+    "lat": 38.3061,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Acts 13:14",
+      "Acts 14:19",
+      "Acts 14:21",
+      "2 Timothy 3:11"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "aphek_2",
+    "ancient": "Aphek 2",
+    "modern": "Tell Ras el Ain",
+    "lon": 34.9304,
+    "lat": 32.105,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 12:18",
+      "1 Samuel 4:1",
+      "1 Samuel 29:1",
+      "Acts 23:31"
+    ],
+    "confidence": 901
+  },
+  {
+    "id": "ararat_2",
+    "ancient": "Ararat",
+    "modern": "Urartu",
+    "lon": 44.3004,
+    "lat": 39.7028,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Genesis 8:4",
+      "2 Kings 19:37",
+      "Isaiah 37:38",
+      "Jeremiah 51:27"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "argob",
+    "ancient": "Argob",
+    "modern": "Argob",
+    "lon": 36.4554,
+    "lat": 32.9695,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Deuteronomy 3:4",
+      "Deuteronomy 3:13",
+      "Deuteronomy 3:14",
+      "1 Kings 4:13"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "arimathea",
+    "ancient": "Arimathea",
+    "modern": "Rantis",
+    "lon": 35.0194,
+    "lat": 32.0281,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Matthew 27:57",
+      "Mark 15:43",
+      "Luke 23:50",
+      "John 19:38"
+    ],
+    "confidence": 228
+  },
+  {
+    "id": "ashan",
+    "ancient": "Ashan",
+    "modern": "Khirbet Asan",
+    "lon": 34.7974,
+    "lat": 31.2814,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Joshua 15:42",
+      "Joshua 19:7",
+      "1 Chronicles 4:32",
+      "1 Chronicles 6:59"
+    ],
+    "confidence": 442
+  },
+  {
+    "id": "asshur",
+    "ancient": "Asshur",
+    "modern": "Assur",
+    "lon": 43.2625,
+    "lat": 35.4567,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Numbers 24:22",
+      "Numbers 24:24",
+      "Psalms 83:8",
+      "Ezekiel 27:23"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "baal_meon",
+    "ancient": "Baal-meon",
+    "modern": "Ma‘in",
+    "lon": 35.7353,
+    "lat": 31.6795,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Numbers 32:38",
+      "Joshua 13:17",
+      "1 Chronicles 5:8",
+      "Ezekiel 25:9"
+    ],
+    "confidence": 797
+  },
+  {
+    "id": "beth_arabah",
+    "ancient": "Beth-arabah",
+    "modern": "Ain el Gharabeh",
+    "lon": 35.5017,
+    "lat": 31.8458,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Joshua 15:6",
+      "Joshua 15:61",
+      "Joshua 18:18",
+      "Joshua 18:22"
+    ],
+    "confidence": 404
+  },
+  {
+    "id": "beth_aven_1",
+    "ancient": "Beth-aven 1",
+    "modern": "Tell Maryam",
+    "lon": 35.2681,
+    "lat": 31.8692,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 7:2",
+      "Joshua 18:12",
+      "1 Samuel 13:5",
+      "1 Samuel 14:23"
+    ],
+    "confidence": 222
+  },
+  {
+    "id": "beth_jeshimoth",
+    "ancient": "Beth-jeshimoth",
+    "modern": "Tell Azeimeh",
+    "lon": 35.6213,
+    "lat": 31.7826,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Numbers 33:49",
+      "Joshua 12:3",
+      "Joshua 13:20",
+      "Ezekiel 25:9"
+    ],
+    "confidence": 799
+  },
+  {
+    "id": "beth_peor",
+    "ancient": "Beth-peor",
+    "modern": "Khirbet Ayun Musa",
+    "lon": 35.7385,
+    "lat": 31.777,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Deuteronomy 3:29",
+      "Deuteronomy 4:46",
+      "Deuteronomy 34:6",
+      "Joshua 13:20"
+    ],
+    "confidence": 245
+  },
+  {
+    "id": "bethsaida_1",
+    "ancient": "Bethsaida 1",
+    "modern": "At Tell",
+    "lon": 35.631,
+    "lat": 32.9104,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Matthew 11:21",
+      "Luke 10:13",
+      "John 1:44",
+      "John 12:21"
+    ],
+    "confidence": 466
+  },
+  {
+    "id": "beth_zur",
+    "ancient": "Beth-zur",
+    "modern": "Khirbet et Tubeiqa",
+    "lon": 35.0942,
+    "lat": 31.5894,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Joshua 15:58",
+      "1 Chronicles 2:45",
+      "2 Chronicles 11:7",
+      "Nehemiah 3:16"
+    ],
+    "confidence": 842
+  },
+  {
+    "id": "bezer",
+    "ancient": "Bezer",
+    "modern": "Umm el Amad",
+    "lon": 35.9017,
+    "lat": 31.786,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Deuteronomy 4:43",
+      "Joshua 20:8",
+      "Joshua 21:36",
+      "1 Chronicles 6:78"
+    ],
+    "confidence": 442
+  },
+  {
+    "id": "chephirah",
+    "ancient": "Chephirah",
+    "modern": "Khirbet el Kefireh",
+    "lon": 35.1068,
+    "lat": 31.8309,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Joshua 9:17",
+      "Joshua 18:26",
+      "Ezra 2:25",
+      "Nehemiah 7:29"
+    ],
+    "confidence": 838
+  },
+  {
+    "id": "chinnereth",
+    "ancient": "Chinnereth",
+    "modern": "Tel Kinrot",
+    "lon": 35.5383,
+    "lat": 32.8694,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Deuteronomy 3:17",
+      "Joshua 11:2",
+      "Joshua 19:35",
+      "1 Kings 15:20"
+    ],
+    "confidence": 756
+  },
+  {
+    "id": "dor",
+    "ancient": "Dor",
+    "modern": "Tel Dor",
+    "lon": 34.9164,
+    "lat": 32.6174,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 12:23",
+      "Joshua 17:11",
+      "Judges 1:27",
+      "1 Chronicles 7:29"
+    ],
+    "confidence": 864
+  },
+  {
+    "id": "elim",
+    "ancient": "Elim",
+    "modern": "Wadi Gharandal",
+    "lon": 32.9158,
+    "lat": 29.2547,
+    "type": "water",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Exodus 15:27",
+      "Exodus 16:1",
+      "Numbers 33:9",
+      "Numbers 33:10"
+    ],
+    "confidence": 533
+  },
+  {
+    "id": "eshtemoa",
+    "ancient": "Eshtemoa",
+    "modern": "As Samu",
+    "lon": 35.0671,
+    "lat": 31.4008,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Joshua 15:50",
+      "Joshua 21:14",
+      "1 Samuel 30:28",
+      "1 Chronicles 6:57"
+    ],
+    "confidence": 722
+  },
+  {
+    "id": "golan",
+    "ancient": "Golan",
+    "modern": "Saham al Jawlan",
+    "lon": 35.9347,
+    "lat": 32.7811,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Deuteronomy 4:43",
+      "Joshua 20:8",
+      "Joshua 21:27",
+      "1 Chronicles 6:71"
+    ],
+    "confidence": 680
+  },
+  {
+    "id": "hazar_enan",
+    "ancient": "Hazar-enan",
+    "modern": "Al Qaryatayn",
+    "lon": 37.2406,
+    "lat": 34.2294,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Numbers 34:9",
+      "Numbers 34:10",
+      "Ezekiel 47:17",
+      "Ezekiel 48:1"
+    ],
+    "confidence": 576
+  },
+  {
+    "id": "horesh",
+    "ancient": "Horesh",
+    "modern": "Khirbet Khureise",
+    "lon": 35.1274,
+    "lat": 31.4503,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "1 Samuel 23:15",
+      "1 Samuel 23:16",
+      "1 Samuel 23:18",
+      "1 Samuel 23:19"
+    ],
+    "confidence": 327
+  },
+  {
+    "id": "horonaim_1",
+    "ancient": "Horonaim 1",
+    "modern": "El Iraq",
+    "lon": 35.6419,
+    "lat": 31.09,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Isaiah 15:5",
+      "Jeremiah 48:3",
+      "Jeremiah 48:5",
+      "Jeremiah 48:34"
+    ],
+    "confidence": 273
+  },
+  {
+    "id": "ibleam",
+    "ancient": "Ibleam",
+    "modern": "Khirbet Belameh",
+    "lon": 35.292,
+    "lat": 32.4462,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Joshua 17:11",
+      "Judges 1:27",
+      "2 Kings 9:27",
+      "2 Kings 15:10"
+    ],
+    "confidence": 860
+  },
+  {
+    "id": "jokneam",
+    "ancient": "Jokneam",
+    "modern": "Tel Yokneam",
+    "lon": 35.1083,
+    "lat": 32.6641,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 12:22",
+      "Joshua 19:11",
+      "Joshua 21:34",
+      "1 Chronicles 6:77"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "kabzeel",
+    "ancient": "Kabzeel",
+    "modern": "Khirbet Hora",
+    "lon": 34.9323,
+    "lat": 31.2862,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Joshua 15:21",
+      "2 Samuel 23:20",
+      "1 Chronicles 11:22",
+      "Nehemiah 11:25"
+    ],
+    "confidence": 162
+  },
+  {
+    "id": "kedemoth",
+    "ancient": "Kedemoth",
+    "modern": "Aleiyan",
+    "lon": 35.8803,
+    "lat": 31.5318,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Deuteronomy 2:26",
+      "Joshua 13:18",
+      "Joshua 21:37",
+      "1 Chronicles 6:79"
+    ],
+    "confidence": 251
+  },
+  {
+    "id": "kedesh_1",
+    "ancient": "Kedesh 1",
+    "modern": "Tel Kedesh",
+    "lon": 35.5295,
+    "lat": 33.1116,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Joshua 12:22",
+      "Joshua 21:32",
+      "2 Kings 15:29",
+      "1 Chronicles 6:76"
+    ],
+    "confidence": 599
+  },
+  {
+    "id": "kir_1",
+    "ancient": "Kir 1",
+    "modern": "Der",
+    "lon": 45.9314,
+    "lat": 33.1236,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "2 Kings 16:9",
+      "Isaiah 22:6",
+      "Amos 1:5",
+      "Amos 9:7"
+    ],
+    "confidence": 465
+  },
+  {
+    "id": "lehi",
+    "ancient": "Lehi",
+    "modern": "Khirbet es Siyyagh",
+    "lon": 35.001,
+    "lat": 31.7488,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Judges 15:9",
+      "Judges 15:14",
+      "Judges 15:19",
+      "2 Samuel 23:11"
+    ],
+    "confidence": 470
+  },
+  {
+    "id": "lo_debar",
+    "ancient": "Lo-debar",
+    "modern": "Tel Dover",
+    "lon": 35.6299,
+    "lat": 32.6839,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "2 Samuel 9:4",
+      "2 Samuel 9:5",
+      "2 Samuel 17:27",
+      "Amos 6:13"
+    ],
+    "confidence": 172
+  },
+  {
+    "id": "mephaath",
+    "ancient": "Mephaath",
+    "modern": "Umm ar Rasas",
+    "lon": 35.9197,
+    "lat": 31.4997,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Joshua 13:18",
+      "Joshua 21:37",
+      "1 Chronicles 6:79",
+      "Jeremiah 48:21"
+    ],
+    "confidence": 465
+  },
+  {
+    "id": "moladah",
+    "ancient": "Moladah",
+    "modern": "Khirbet el Waten",
+    "lon": 34.9214,
+    "lat": 31.2573,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 15:26",
+      "Joshua 19:2",
+      "1 Chronicles 4:28",
+      "Nehemiah 11:26"
+    ],
+    "confidence": 416
+  },
+  {
+    "id": "oboth",
+    "ancient": "Oboth",
+    "modern": "Ein Weibeh",
+    "lon": 35.19,
+    "lat": 30.6167,
+    "type": "water",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Numbers 21:10",
+      "Numbers 21:11",
+      "Numbers 33:43",
+      "Numbers 33:44"
+    ],
+    "confidence": 361
+  },
+  {
+    "id": "rehob_3",
+    "ancient": "Rehob 3",
+    "modern": "Tell Bir el Gharbi",
+    "lon": 35.1694,
+    "lat": 32.9014,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Joshua 19:30",
+      "Joshua 21:31",
+      "Judges 1:31",
+      "1 Chronicles 6:75"
+    ],
+    "confidence": 428
+  },
+  {
+    "id": "rimmon_1",
+    "ancient": "Rimmon 1",
+    "modern": "El Jai Cave",
+    "lon": 35.3051,
+    "lat": 31.8476,
+    "type": "site",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Judges 20:45",
+      "Judges 20:47",
+      "Judges 21:13",
+      "Isaiah 10:27"
+    ],
+    "confidence": 290
+  },
+  {
+    "id": "rimmon_2",
+    "ancient": "Rimmon 2",
+    "modern": "Tel Halif",
+    "lon": 34.8656,
+    "lat": 31.3833,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Joshua 15:32",
+      "Joshua 19:7",
+      "1 Chronicles 4:32",
+      "Zechariah 14:10"
+    ],
+    "confidence": 404
+  },
+  {
+    "id": "salecah",
+    "ancient": "Salecah",
+    "modern": "Salkhad",
+    "lon": 36.7105,
+    "lat": 32.4939,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Deuteronomy 3:10",
+      "Joshua 12:5",
+      "Joshua 13:11",
+      "1 Chronicles 5:11"
+    ],
+    "confidence": 716
+  },
+  {
+    "id": "sin",
+    "ancient": "Sin",
+    "modern": "Debbet er Ramleh",
+    "lon": 33.5367,
+    "lat": 29.1478,
+    "type": "site",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Exodus 16:1",
+      "Exodus 17:1",
+      "Numbers 33:11",
+      "Numbers 33:12"
+    ],
+    "confidence": 311
+  },
+  {
+    "id": "socoh_1",
+    "ancient": "Socoh 1",
+    "modern": "Tel Socho",
+    "lon": 34.9749,
+    "lat": 31.6822,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Joshua 15:35",
+      "1 Samuel 17:1",
+      "2 Chronicles 11:7",
+      "2 Chronicles 28:18"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "succoth_2",
+    "ancient": "Succoth 2",
+    "modern": "Tell el Maskhuta",
+    "lon": 32.099,
+    "lat": 30.5527,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Exodus 12:37",
+      "Exodus 13:20",
+      "Numbers 33:5",
+      "Numbers 33:6"
+    ],
+    "confidence": 206
+  },
+  {
+    "id": "thyatira",
+    "ancient": "Thyatira",
+    "modern": "Akhisar",
+    "lon": 27.8365,
+    "lat": 38.9202,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Acts 16:14",
+      "Revelation 1:11",
+      "Revelation 2:18",
+      "Revelation 2:24"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "tob",
+    "ancient": "Tob",
+    "modern": "Et Tayibeh",
+    "lon": 36.2439,
+    "lat": 32.5633,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Judges 11:3",
+      "Judges 11:5",
+      "2 Samuel 10:6",
+      "2 Samuel 10:8"
+    ],
+    "confidence": 651
+  },
+  {
+    "id": "tower_of_hananel",
+    "ancient": "Tower of Hananel",
+    "modern": "Antonia Fortress",
+    "lon": 35.2343,
+    "lat": 31.7801,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Nehemiah 3:1",
+      "Nehemiah 12:39",
+      "Jeremiah 31:38",
+      "Zechariah 14:10"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "way_of_the_red_sea",
+    "ancient": "Way of the Red Sea",
+    "modern": "road between the Dead Sea and the Gulf of Aqaba",
+    "lon": 34.9983,
+    "lat": 29.7272,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Numbers 14:25",
+      "Numbers 21:4",
+      "Deuteronomy 1:40",
+      "Deuteronomy 2:1"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "abel_meholah",
+    "ancient": "Abel-meholah",
+    "modern": "Tell Abu Sus",
+    "lon": 35.5609,
+    "lat": 32.3743,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Judges 7:22",
+      "1 Kings 4:12",
+      "1 Kings 19:16"
+    ],
+    "confidence": 656
+  },
+  {
+    "id": "achshaph",
+    "ancient": "Achshaph",
+    "modern": "Tel Regev",
+    "lon": 35.0903,
+    "lat": 32.7589,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Joshua 11:1",
+      "Joshua 12:20",
+      "Joshua 19:25"
+    ],
+    "confidence": 332
+  },
+  {
+    "id": "akrabbim",
+    "ancient": "Akrabbim",
+    "modern": "Ma’ale Akrabbim",
+    "lon": 35.1313,
+    "lat": 30.9066,
+    "type": "site",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Numbers 34:4",
+      "Joshua 15:3",
+      "Judges 1:36"
+    ],
+    "confidence": 727
+  },
+  {
+    "id": "aphek_3",
+    "ancient": "Aphek 3",
+    "modern": "Tel Ein Gev",
+    "lon": 35.6373,
+    "lat": 32.7837,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "1 Kings 20:26",
+      "1 Kings 20:30",
+      "2 Kings 13:17"
+    ],
+    "confidence": 435
+  },
+  {
+    "id": "arad_1",
+    "ancient": "Arad 1",
+    "modern": "Tel Arad",
+    "lon": 35.125,
+    "lat": 31.2808,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Numbers 21:1",
+      "Numbers 33:40",
+      "Joshua 12:14"
+    ],
+    "confidence": 370
+  },
+  {
+    "id": "areopagus",
+    "ancient": "Areopagus",
+    "modern": "Areopagus",
+    "lon": 23.7236,
+    "lat": 37.9722,
+    "type": "site",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Acts 17:19",
+      "Acts 17:22",
+      "Acts 17:33"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "azmaveth",
+    "ancient": "Azmaveth",
+    "modern": "Hizma",
+    "lon": 35.2619,
+    "lat": 31.835,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Ezra 2:24",
+      "Nehemiah 7:28",
+      "Nehemiah 12:29"
+    ],
+    "confidence": 509
+  },
+  {
+    "id": "azmon",
+    "ancient": "Azmon",
+    "modern": "Ain Muweileh",
+    "lon": 34.3333,
+    "lat": 30.6875,
+    "type": "water",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Numbers 34:4",
+      "Numbers 34:5",
+      "Joshua 15:4"
+    ],
+    "confidence": 545
+  },
+  {
+    "id": "baal_zephon",
+    "ancient": "Baal-zephon",
+    "modern": "Tell Defenneh",
+    "lon": 32.1714,
+    "lat": 30.8606,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Exodus 14:2",
+      "Exodus 14:9",
+      "Numbers 33:7"
+    ],
+    "confidence": 339
+  },
+  {
+    "id": "beer_lahai_roi",
+    "ancient": "Beer-lahai-roi",
+    "modern": "Ain Muweileh",
+    "lon": 34.3333,
+    "lat": 30.6875,
+    "type": "water",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Genesis 16:14",
+      "Genesis 24:62",
+      "Genesis 25:11"
+    ],
+    "confidence": 258
+  },
+  {
+    "id": "besor",
+    "ancient": "Besor",
+    "modern": "Nahal HaBesor",
+    "lon": 34.3757,
+    "lat": 31.4642,
+    "type": "water",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "1 Samuel 30:9",
+      "1 Samuel 30:10",
+      "1 Samuel 30:21"
+    ],
+    "confidence": 882
+  },
+  {
+    "id": "beth_hoglah",
+    "ancient": "Beth-hoglah",
+    "modern": "Deir Hajla",
+    "lon": 35.5012,
+    "lat": 31.8204,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 15:6",
+      "Joshua 18:19",
+      "Joshua 18:21"
+    ],
+    "confidence": 559
+  },
+  {
+    "id": "bethphage",
+    "ancient": "Bethphage",
+    "modern": "Et Tur",
+    "lon": 35.2508,
+    "lat": 31.7776,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Matthew 21:1",
+      "Mark 11:1",
+      "Luke 19:29"
+    ],
+    "confidence": 698
+  },
+  {
+    "id": "carchemish",
+    "ancient": "Carchemish",
+    "modern": "Jerabis",
+    "lon": 38.015,
+    "lat": 36.8297,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "2 Chronicles 35:20",
+      "Isaiah 10:9",
+      "Jeremiah 46:2"
+    ],
+    "confidence": 880
+  },
+  {
+    "id": "daberath",
+    "ancient": "Daberath",
+    "modern": "Horvat Devora",
+    "lon": 35.3775,
+    "lat": 32.6973,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Joshua 19:12",
+      "Joshua 21:28",
+      "1 Chronicles 6:72"
+    ],
+    "confidence": 673
+  },
+  {
+    "id": "decapolis",
+    "ancient": "Decapolis",
+    "modern": "Decapolis",
+    "lon": 35.8,
+    "lat": 32.7167,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Matthew 4:25",
+      "Mark 5:20",
+      "Mark 7:31"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "emmaus",
+    "ancient": "Emmaus",
+    "modern": "Qalunya",
+    "lon": 35.1642,
+    "lat": 31.7929,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Luke 24:13",
+      "Luke 24:28",
+      "Luke 24:35"
+    ],
+    "confidence": 338
+  },
+  {
+    "id": "en_dor",
+    "ancient": "En-dor",
+    "modern": "Khirbet es Safsafa",
+    "lon": 35.3902,
+    "lat": 32.6436,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Joshua 17:11",
+      "1 Samuel 28:7",
+      "Psalms 83:10"
+    ],
+    "confidence": 757
+  },
+  {
+    "id": "ephes_dammim",
+    "ancient": "Ephes-dammim",
+    "modern": "Khirbet Damun",
+    "lon": 35.0522,
+    "lat": 31.6845,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "1 Samuel 17:1",
+      "2 Samuel 23:9",
+      "1 Chronicles 11:13"
+    ],
+    "confidence": 577
+  },
+  {
+    "id": "ezem",
+    "ancient": "Ezem",
+    "modern": "Khirbet Asan",
+    "lon": 34.7974,
+    "lat": 31.2814,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 15:29",
+      "Joshua 19:3",
+      "1 Chronicles 4:29"
+    ],
+    "confidence": 616
+  },
+  {
+    "id": "gath_rimmon_1",
+    "ancient": "Gath-rimmon 1",
+    "modern": "Tel Gerisa",
+    "lon": 34.8075,
+    "lat": 32.0917,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Joshua 19:45",
+      "Joshua 21:24",
+      "1 Chronicles 6:69"
+    ],
+    "confidence": 338
+  },
+  {
+    "id": "gebal_1",
+    "ancient": "Gebal 1",
+    "modern": "Byblos",
+    "lon": 35.6458,
+    "lat": 34.1192,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Joshua 13:5",
+      "1 Kings 5:18",
+      "Ezekiel 27:9"
+    ],
+    "confidence": 939
+  },
+  {
+    "id": "geliloth",
+    "ancient": "Geliloth",
+    "modern": "Araq ed Deir",
+    "lon": 35.3226,
+    "lat": 31.7905,
+    "type": "site",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Joshua 18:17",
+      "Joshua 22:10",
+      "Joshua 22:11"
+    ],
+    "confidence": 352
+  },
+  {
+    "id": "gennesaret",
+    "ancient": "Gennesaret",
+    "modern": "El Ghuweir",
+    "lon": 35.5072,
+    "lat": 32.8606,
+    "type": "site",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Matthew 14:34",
+      "Mark 6:53",
+      "Luke 5:1"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "gerasa",
+    "ancient": "Gerasa",
+    "modern": "Jerash",
+    "lon": 35.8914,
+    "lat": 32.2723,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Mark 5:1",
+      "Luke 8:26",
+      "Luke 8:37"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "giloh",
+    "ancient": "Giloh",
+    "modern": "Khirbet Rabud",
+    "lon": 35.0149,
+    "lat": 31.4321,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Joshua 15:51",
+      "2 Samuel 15:12",
+      "2 Samuel 23:34"
+    ],
+    "confidence": 427
+  },
+  {
+    "id": "habor",
+    "ancient": "Habor",
+    "modern": "Khabur River",
+    "lon": 40.4273,
+    "lat": 35.1303,
+    "type": "water",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "2 Kings 17:6",
+      "2 Kings 18:11",
+      "1 Chronicles 5:26"
+    ],
+    "confidence": 879
+  },
+  {
+    "id": "hachilah",
+    "ancient": "Hachilah",
+    "modern": "Zahrat al Kula",
+    "lon": 35.2228,
+    "lat": 31.4703,
+    "type": "site",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "1 Samuel 23:19",
+      "1 Samuel 26:1",
+      "1 Samuel 26:3"
+    ],
+    "confidence": 463
+  },
+  {
+    "id": "hadid",
+    "ancient": "Hadid",
+    "modern": "Al Haditha",
+    "lon": 34.9518,
+    "lat": 31.9633,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Ezra 2:33",
+      "Nehemiah 7:37",
+      "Nehemiah 11:34"
+    ],
+    "confidence": 838
+  },
+  {
+    "id": "hazor_5",
+    "ancient": "Hazor 5",
+    "modern": "Dumat al Jandal",
+    "lon": 39.8683,
+    "lat": 29.8114,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Jeremiah 49:28",
+      "Jeremiah 49:30",
+      "Jeremiah 49:33"
+    ],
+    "confidence": 600
+  },
+  {
+    "id": "hena",
+    "ancient": "Hena",
+    "modern": "Anah",
+    "lon": 41.9819,
+    "lat": 34.3686,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "2 Kings 18:34",
+      "2 Kings 19:13",
+      "Isaiah 37:13"
+    ],
+    "confidence": 318
+  },
+  {
+    "id": "holon_1",
+    "ancient": "Holon 1",
+    "modern": "Khirbet Alin",
+    "lon": 35.0305,
+    "lat": 31.6622,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Joshua 15:51",
+      "Joshua 21:15",
+      "1 Chronicles 6:58"
+    ],
+    "confidence": 153
+  },
+  {
+    "id": "hor_haggidgad",
+    "ancient": "Hor-haggidgad",
+    "modern": "Wadi Khadakhid",
+    "lon": 34.7115,
+    "lat": 30.1142,
+    "type": "water",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Numbers 33:32",
+      "Numbers 33:33",
+      "Deuteronomy 10:7"
+    ],
+    "confidence": 317
+  },
+  {
+    "id": "ijon",
+    "ancient": "Ijon",
+    "modern": "Tell Dibbine",
+    "lon": 35.59,
+    "lat": 33.3453,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "1 Kings 15:20",
+      "2 Kings 15:29",
+      "2 Chronicles 16:4"
+    ],
+    "confidence": 661
+  },
+  {
+    "id": "ivvah",
+    "ancient": "Ivvah",
+    "modern": "Kafr Aya",
+    "lon": 36.6906,
+    "lat": 34.6847,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "2 Kings 18:34",
+      "2 Kings 19:13",
+      "Isaiah 37:13"
+    ],
+    "confidence": 110
+  },
+  {
+    "id": "iye_abarim",
+    "ancient": "Iye-abarim",
+    "modern": "Medeineh",
+    "lon": 35.7795,
+    "lat": 30.956,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Numbers 21:11",
+      "Numbers 33:44",
+      "Numbers 33:45"
+    ],
+    "confidence": 403
+  },
+  {
+    "id": "jotbathah",
+    "ancient": "Jotbathah",
+    "modern": "Taba",
+    "lon": 34.8969,
+    "lat": 29.4925,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Numbers 33:33",
+      "Numbers 33:34",
+      "Deuteronomy 10:7"
+    ],
+    "confidence": 352
+  },
+  {
+    "id": "juttah",
+    "ancient": "Juttah",
+    "modern": "Yatta",
+    "lon": 35.09,
+    "lat": 31.4478,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Joshua 15:55",
+      "Joshua 21:16",
+      "1 Chronicles 6:59"
+    ],
+    "confidence": 771
+  },
+  {
+    "id": "kerioth",
+    "ancient": "Kerioth",
+    "modern": "Al Qurayyat",
+    "lon": 35.6861,
+    "lat": 31.5406,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Jeremiah 48:24",
+      "Jeremiah 48:41",
+      "Amos 2:2"
+    ],
+    "confidence": 557
+  },
+  {
+    "id": "maon",
+    "ancient": "Maon",
+    "modern": "Tel Main",
+    "lon": 35.1338,
+    "lat": 31.4094,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Joshua 15:55",
+      "Judges 10:12",
+      "1 Samuel 25:2"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "miletus",
+    "ancient": "Miletus",
+    "modern": "Miletus",
+    "lon": 27.2756,
+    "lat": 37.5311,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Acts 20:15",
+      "Acts 20:17",
+      "2 Timothy 4:20"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "mishal",
+    "ancient": "Mishal",
+    "modern": "Tell Keisan",
+    "lon": 35.1513,
+    "lat": 32.8728,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Joshua 19:26",
+      "Joshua 21:30",
+      "1 Chronicles 6:74"
+    ],
+    "confidence": 466
+  },
+  {
+    "id": "moresheth_gath",
+    "ancient": "Moresheth-gath",
+    "modern": "Tel Goded",
+    "lon": 34.9166,
+    "lat": 31.6334,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Jeremiah 26:18",
+      "Micah 1:1",
+      "Micah 1:14"
+    ],
+    "confidence": 467
+  },
+  {
+    "id": "nahalal",
+    "ancient": "Nahalal",
+    "modern": "Horbat Sefan",
+    "lon": 35.197,
+    "lat": 32.6791,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 19:15",
+      "Joshua 21:35",
+      "Judges 1:30"
+    ],
+    "confidence": 226
+  },
+  {
+    "id": "perga",
+    "ancient": "Perga",
+    "modern": "Perga",
+    "lon": 30.8537,
+    "lat": 36.9604,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Acts 13:13",
+      "Acts 13:14",
+      "Acts 14:25"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "phrygia",
+    "ancient": "Phrygia",
+    "modern": "Phrygia",
+    "lon": 31.0,
+    "lat": 39.0,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Acts 2:10",
+      "Acts 16:6",
+      "Acts 18:23"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "pontus",
+    "ancient": "Pontus",
+    "modern": "Pontus",
+    "lon": 37.83,
+    "lat": 40.68,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Acts 2:9",
+      "Acts 18:2",
+      "1 Peter 1:1"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "red_sea_3",
+    "ancient": "Red Sea 3",
+    "modern": "Gulf of Suez",
+    "lon": 33.0,
+    "lat": 28.75,
+    "type": "water",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Exodus 10:19",
+      "Numbers 33:10",
+      "Numbers 33:11"
+    ],
+    "confidence": 776
+  },
+  {
+    "id": "sardis",
+    "ancient": "Sardis",
+    "modern": "Sardis",
+    "lon": 28.0403,
+    "lat": 38.4883,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Revelation 1:11",
+      "Revelation 3:1",
+      "Revelation 3:4"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "shaalbim",
+    "ancient": "Shaalbim",
+    "modern": "Salbit",
+    "lon": 34.9871,
+    "lat": 31.8698,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Joshua 19:42",
+      "Judges 1:35",
+      "1 Kings 4:9"
+    ],
+    "confidence": 791
+  },
+  {
+    "id": "syene",
+    "ancient": "Syene",
+    "modern": "Aswan",
+    "lon": 32.8997,
+    "lat": 24.0889,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Isaiah 49:12",
+      "Ezekiel 29:10",
+      "Ezekiel 30:6"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "tamar_2",
+    "ancient": "Tamar 2",
+    "modern": "En Hazeva",
+    "lon": 35.2459,
+    "lat": 30.8087,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Ezekiel 47:18",
+      "Ezekiel 47:19",
+      "Ezekiel 48:28"
+    ],
+    "confidence": 757
+  },
+  {
+    "id": "tappuah_1",
+    "ancient": "Tappuah 1",
+    "modern": "Tell Abu Zarad",
+    "lon": 35.2301,
+    "lat": 32.1041,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Joshua 12:17",
+      "Joshua 16:8",
+      "Joshua 17:8"
+    ],
+    "confidence": 690
+  },
+  {
+    "id": "tema",
+    "ancient": "Tema",
+    "modern": "Tayma",
+    "lon": 38.5516,
+    "lat": 27.6297,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Job 6:19",
+      "Isaiah 21:14",
+      "Jeremiah 25:23"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "timnath_heres",
+    "ancient": "Timnath-heres",
+    "modern": "Khirbet Tibnah",
+    "lon": 35.1073,
+    "lat": 32.0081,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Joshua 19:50",
+      "Joshua 24:30",
+      "Judges 2:9"
+    ],
+    "confidence": 809
+  },
+  {
+    "id": "upper_beth_horon",
+    "ancient": "Upper Beth-horon",
+    "modern": "Beit Ur al Fauqa",
+    "lon": 35.1142,
+    "lat": 31.8858,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Joshua 16:5",
+      "1 Chronicles 7:24",
+      "2 Chronicles 8:5"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "valley_of_elah",
+    "ancient": "Valley of Elah",
+    "modern": "Valley of Elah",
+    "lon": 34.998,
+    "lat": 31.6754,
+    "type": "region",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "1 Samuel 17:2",
+      "1 Samuel 17:19",
+      "1 Samuel 21:9"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "valley_of_siddim",
+    "ancient": "Valley of Siddim",
+    "modern": "south of the Lisan",
+    "lon": 35.4492,
+    "lat": 31.2085,
+    "type": "region",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Genesis 14:3",
+      "Genesis 14:8",
+      "Genesis 14:10"
+    ],
+    "confidence": 647
+  },
+  {
+    "id": "zanoah_1",
+    "ancient": "Zanoah 1",
+    "modern": "Khirbet Zanu",
+    "lon": 35.0013,
+    "lat": 31.7194,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Joshua 15:34",
+      "Nehemiah 3:13",
+      "Nehemiah 11:30"
+    ],
+    "confidence": 730
+  },
+  {
+    "id": "zaphon_2",
+    "ancient": "Zaphon 2",
+    "modern": "Jebel Aqra",
+    "lon": 35.9693,
+    "lat": 35.9525,
+    "type": "site",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Job 26:7",
+      "Psalms 48:2",
+      "Isaiah 14:13"
+    ],
+    "confidence": 1041
+  },
+  {
+    "id": "zarethan",
+    "ancient": "Zarethan",
+    "modern": "Tell es Sa’idiyeh",
+    "lon": 35.5772,
+    "lat": 32.2677,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Joshua 3:16",
+      "1 Kings 4:12",
+      "1 Kings 7:46"
+    ],
+    "confidence": 349
+  },
+  {
+    "id": "abdon",
+    "ancient": "Abdon",
+    "modern": "Tel Avdon",
+    "lon": 35.1619,
+    "lat": 33.0477,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Joshua 21:30",
+      "1 Chronicles 6:74"
+    ],
+    "confidence": 826
+  },
+  {
+    "id": "achzib_1",
+    "ancient": "Achzib 1",
+    "modern": "Tel el Beida",
+    "lon": 34.953,
+    "lat": 31.6421,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Joshua 15:44",
+      "Micah 1:14"
+    ],
+    "confidence": 536
+  },
+  {
+    "id": "achzib_2",
+    "ancient": "Achzib 2",
+    "modern": "Tel Achziv",
+    "lon": 35.1027,
+    "lat": 33.0483,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Joshua 19:29",
+      "Judges 1:31"
+    ],
+    "confidence": 794
+  },
+  {
+    "id": "adummim",
+    "ancient": "Adummim",
+    "modern": "Adummim",
+    "lon": 35.3615,
+    "lat": 31.8175,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Joshua 15:7",
+      "Joshua 18:17"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "akeldama",
+    "ancient": "Akeldama",
+    "modern": "Akeldama",
+    "lon": 35.2329,
+    "lat": 31.7684,
+    "type": "site",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Matthew 27:8",
+      "Acts 1:19"
+    ],
+    "confidence": 456
+  },
+  {
+    "id": "alush",
+    "ancient": "Alush",
+    "modern": "Wadi el Esh",
+    "lon": 33.7675,
+    "lat": 28.7703,
+    "type": "water",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Numbers 33:13",
+      "Numbers 33:14"
+    ],
+    "confidence": 302
+  },
+  {
+    "id": "anab",
+    "ancient": "Anab",
+    "modern": "Khirbet Anab es Seghireh",
+    "lon": 34.9549,
+    "lat": 31.4121,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Joshua 11:21",
+      "Joshua 15:50"
+    ],
+    "confidence": 777
+  },
+  {
+    "id": "arabia_2",
+    "ancient": "Arabia 2",
+    "modern": "Arabia Petraea",
+    "lon": 35.35,
+    "lat": 30.07,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Galatians 1:17",
+      "Galatians 4:25"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "aroer_2",
+    "ancient": "Aroer 2",
+    "modern": "Khirbet Udena",
+    "lon": 35.8713,
+    "lat": 31.9702,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Joshua 13:25",
+      "Judges 11:33"
+    ],
+    "confidence": 219
+  },
+  {
+    "id": "arumah",
+    "ancient": "Arumah",
+    "modern": "Khirbet Urmah",
+    "lon": 35.3216,
+    "lat": 32.1476,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Judges 9:31",
+      "Judges 9:41"
+    ],
+    "confidence": 699
+  },
+  {
+    "id": "arvad",
+    "ancient": "Arvad",
+    "modern": "Arwad",
+    "lon": 35.8583,
+    "lat": 34.8561,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Ezekiel 27:8",
+      "Ezekiel 27:11"
+    ],
+    "confidence": 895
+  },
+  {
+    "id": "assos",
+    "ancient": "Assos",
+    "modern": "Assos",
+    "lon": 26.3367,
+    "lat": 39.4906,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Acts 20:13",
+      "Acts 20:14"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "ataroth_1",
+    "ancient": "Ataroth 1",
+    "modern": "Khirbet Ataruz",
+    "lon": 35.6659,
+    "lat": 31.5753,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Numbers 32:3",
+      "Numbers 32:34"
+    ],
+    "confidence": 778
+  },
+  {
+    "id": "ataroth_addar",
+    "ancient": "Ataroth-addar",
+    "modern": "Khirbet Atara",
+    "lon": 35.2175,
+    "lat": 31.8799,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Joshua 16:5",
+      "Joshua 18:13"
+    ],
+    "confidence": 190
+  },
+  {
+    "id": "attalia",
+    "ancient": "Attalia",
+    "modern": "Antalya",
+    "lon": 30.7036,
+    "lat": 36.8813,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Acts 14:25",
+      "Acts 14:26"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "avith",
+    "ancient": "Avith",
+    "modern": "Rujum al Juththa",
+    "lon": 35.6019,
+    "lat": 30.206,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Genesis 36:35",
+      "1 Chronicles 1:46"
+    ],
+    "confidence": 277
+  },
+  {
+    "id": "baal_perazim",
+    "ancient": "Baal-perazim",
+    "modern": "Ez Zuhur",
+    "lon": 35.1833,
+    "lat": 31.7419,
+    "type": "site",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "2 Samuel 5:20",
+      "1 Chronicles 14:11"
+    ],
+    "confidence": 240
+  },
+  {
+    "id": "bamoth",
+    "ancient": "Bamoth",
+    "modern": "Khirbet el Quweiqiyeh",
+    "lon": 35.7409,
+    "lat": 31.7318,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Numbers 21:19",
+      "Numbers 21:20"
+    ],
+    "confidence": 430
+  },
+  {
+    "id": "bene_jaakan",
+    "ancient": "Bene-jaakan",
+    "modern": "Birein",
+    "lon": 34.4725,
+    "lat": 30.7918,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Numbers 33:31",
+      "Numbers 33:32"
+    ],
+    "confidence": 385
+  },
+  {
+    "id": "beth_anath",
+    "ancient": "Beth-anath",
+    "modern": "Safad el Battikh",
+    "lon": 35.4331,
+    "lat": 33.2003,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Joshua 19:38",
+      "Judges 1:33"
+    ],
+    "confidence": 372
+  },
+  {
+    "id": "beth_eked",
+    "ancient": "Beth-eked",
+    "modern": "Beit Qad",
+    "lon": 35.3563,
+    "lat": 32.4697,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "2 Kings 10:12",
+      "2 Kings 10:14"
+    ],
+    "confidence": 380
+  },
+  {
+    "id": "beth_haccherem",
+    "ancient": "Beth-haccherem",
+    "modern": "Ramat Rahel",
+    "lon": 35.2169,
+    "lat": 31.7399,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Nehemiah 3:14",
+      "Jeremiah 6:1"
+    ],
+    "confidence": 747
+  },
+  {
+    "id": "beth_haram",
+    "ancient": "Beth-haram",
+    "modern": "Tall Iktanu",
+    "lon": 35.6719,
+    "lat": 31.8193,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "ne",
+    "stories": [],
+    "refs": [
+      "Numbers 32:36",
+      "Joshua 13:27"
+    ],
+    "confidence": 589
+  },
+  {
+    "id": "beth_nimrah",
+    "ancient": "Beth-nimrah",
+    "modern": "Tall Bleibel",
+    "lon": 35.6387,
+    "lat": 31.9091,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "nw",
+    "stories": [],
+    "refs": [
+      "Numbers 32:36",
+      "Joshua 13:27"
+    ],
+    "confidence": 578
+  },
+  {
+    "id": "beth_pelet",
+    "ancient": "Beth-pelet",
+    "modern": "Tell es Saqati",
+    "lon": 34.9078,
+    "lat": 31.3099,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "se",
+    "stories": [],
+    "refs": [
+      "Joshua 15:27",
+      "Nehemiah 11:26"
+    ],
+    "confidence": 444
+  },
+  {
+    "id": "beth_rehob",
+    "ancient": "Beth-rehob",
+    "modern": "Beqaa Valley",
+    "lon": 36.1453,
+    "lat": 34.0089,
+    "type": "site",
+    "priority": 4,
+    "labelDir": "sw",
+    "stories": [],
+    "refs": [
+      "Judges 18:28",
+      "2 Samuel 10:6"
+    ],
+    "confidence": 228
+  },
+  {
+    "id": "beth_shemesh_3",
+    "ancient": "Beth-shemesh 3",
+    "modern": "Tel Rosh",
+    "lon": 35.3327,
+    "lat": 33.0413,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "e",
+    "stories": [],
+    "refs": [
+      "Joshua 19:38",
+      "Judges 1:33"
+    ],
+    "confidence": 528
+  },
+  {
+    "id": "bithynia",
+    "ancient": "Bithynia",
+    "modern": "Bithynia",
+    "lon": 31.0,
+    "lat": 40.5,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "n",
+    "stories": [],
+    "refs": [
+      "Acts 16:7",
+      "1 Peter 1:1"
+    ],
+    "confidence": 1000
+  },
+  {
+    "id": "bozkath",
+    "ancient": "Bozkath",
+    "modern": "Ed Dawaimeh",
+    "lon": 34.9132,
+    "lat": 31.5369,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "w",
+    "stories": [],
+    "refs": [
+      "Joshua 15:39",
+      "2 Kings 22:1"
+    ],
+    "confidence": 479
+  },
+  {
+    "id": "broad_wall",
+    "ancient": "Broad Wall",
+    "modern": "Broad Wall",
+    "lon": 35.2319,
+    "lat": 31.7761,
+    "type": "city",
+    "priority": 4,
+    "labelDir": "s",
+    "stories": [],
+    "refs": [
+      "Nehemiah 3:8",
+      "Nehemiah 12:38"
+    ],
+    "confidence": 1000
   }
 ]
