@@ -16,8 +16,8 @@ import { MarriageBarSvg } from './MarriageBarSvg';
 import { SpouseConnectorSvg } from './SpouseConnectorSvg';
 import { TreeNode } from './TreeNode';
 import { AssociationLinkSvg } from './AssociationLinkSvg';
-import { TIER_2_ZOOM, TIER_3_ZOOM } from '../../utils/genealogyOrganic';
-import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson, AssociationLink, AssociateBloomLabel, AssociateTrail } from '../../utils/treeBuilder';
+import { TIER_2_ZOOM } from '../../utils/genealogyOrganic';
+import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson, AssociationLink } from '../../utils/treeBuilder';
 
 interface Props {
   nodes: LayoutNode[];
@@ -26,11 +26,6 @@ interface Props {
   spouseConnectors: SpouseConnector[];
   /** Dotted connectors from anchors to associated_with satellites (#1288). */
   associationLinks?: AssociationLink[];
-  /** Type-sector labels ("disciples", "contemporaries"…) emitted by
-   *  the associate bloom layout. Shown at mid-zoom+. */
-  associateBloomLabels?: AssociateBloomLabel[];
-  /** Thick trail connectors from anchors to offset associate blooms. */
-  associateTrails?: AssociateTrail[];
   filterEra: string | null;
   spineIds: Set<string>;
   selectedPersonId: string | null;
@@ -49,8 +44,6 @@ interface Props {
 export const TreeCanvas = memo(function TreeCanvas({
   nodes, links, marriageBars, spouseConnectors,
   associationLinks = [],
-  associateBloomLabels = [],
-  associateTrails = [],
   filterEra, spineIds, selectedPersonId, onNodePress,
   offsetX = 0, offsetY = 0,
   canvasWidth = 4000, canvasHeight = 4000,
@@ -157,40 +150,6 @@ export const TreeCanvas = memo(function TreeCanvas({
               +{b.count}
             </SvgText>
           </G>
-        ))}
-
-        {/* 1d. Associate-bloom trails — thick gold line from anchor to the
-               apex of a bloom that had to be shifted sideways. */}
-        {!clustersCollapsed && associateTrails.map((t) => (
-          <Line
-            key={`at-${t.anchorId}`}
-            x1={t.source.x}
-            y1={t.source.y}
-            x2={t.target.x}
-            y2={t.target.y}
-            stroke={base.gold}
-            strokeWidth={1.5}
-            opacity={0.35}
-            strokeLinecap="round"
-          />
-        ))}
-
-        {/* 1e. Type-sector labels ("disciples", "contemporaries"…) at the
-               apex of each sub-bloom. Visible at mid-zoom+ so the overview
-               stays clean. */}
-        {!clustersCollapsed && zoom >= TIER_3_ZOOM && associateBloomLabels.map((lbl) => (
-          <SvgText
-            key={`abl-${lbl.anchorId}-${lbl.type}`}
-            x={lbl.x}
-            y={lbl.y}
-            fill={base.gold}
-            fontSize={11}
-            fontFamily="Cinzel_500Medium"
-            textAnchor="middle"
-            opacity={0.65}
-          >
-            {lbl.text}
-          </SvgText>
         ))}
 
         {/* 2. Marriage bars */}

@@ -91,24 +91,6 @@ export interface AssociationLink {
   type: AssociationType | null;
 }
 
-/** Text label placed at the apex of a type sub-bloom — "disciples",
- *  "contemporaries", etc. Rendered at mid-zoom+ so overview stays clean. */
-export interface AssociateBloomLabel {
-  anchorId: string;
-  type: AssociationType;
-  text: string;
-  x: number;
-  y: number;
-}
-
-/** Thick trail line from the anchor to an offset bloom's apex. Only
- *  emitted when the bloom had to be shifted sideways to avoid overlap. */
-export interface AssociateTrail {
-  anchorId: string;
-  source: { x: number; y: number };
-  target: { x: number; y: number };
-}
-
 // ── Spine computation ───────────────────────────────────────────────
 
 export function computeSpineIds(people: Person[]): Set<string> {
@@ -388,11 +370,6 @@ export interface TreeLayoutResult {
   spouseConnectors: SpouseConnector[];
   /** Dotted connectors from anchors to associated_with satellites (#1288). */
   associationLinks: AssociationLink[];
-  /** Type labels placed at each sub-bloom's apex ("disciples", "contemporaries"…). */
-  associateBloomLabels: AssociateBloomLabel[];
-  /** Thick trail from the anchor to an offset bloom's apex — only when
-   *  the bloom had to be shifted to avoid overlapping other nodes. */
-  associateTrails: AssociateTrail[];
   spineIds: Set<string>;
   bounds: TreeBounds;
 }
@@ -480,88 +457,6 @@ function applyImportantFigureSpread(nodes: LayoutNode[]): void {
   }
 }
 
-// ── Associate clustering (#1290, type-sector redesign) ────────────────
-
-/** One of the four biblical association categories, rendered in its
- *  own angular sector around the anchor. */
-interface AssociateSectorSpec {
-  /** Centre angle in degrees — 0 = straight down. */
-  center: number;
-  /** Max half-sweep in degrees; actual sweep may be narrower. */
-  halfSweepMax: number;
-  /** Label text placed at the sub-bloom's apex. */
-  labelText: string;
-}
-
-const ASSOCIATE_TYPE_ORDER = ['disciple', 'servant', 'contemporary', 'adversary'] as const;
-
-const ASSOCIATE_SECTORS: Record<string, AssociateSectorSpec> = {
-  // Main group fans straight down in a wide arc.
-  disciple:     { center:   0, halfSweepMax: 80, labelText: 'disciples' },
-  // Servants share the disciple sector but sit inside, closer to the anchor.
-  servant:      { center:   0, halfSweepMax: 35, labelText: 'servants' },
-  // Neutral and opposition fan to the right and left respectively.
-  contemporary: { center:  70, halfSweepMax: 25, labelText: 'contemporaries' },
-  adversary:    { center: -70, halfSweepMax: 25, labelText: 'adversaries' },
-};
-
-const ASSOCIATE_BLOOM_GAP = 80;         // target centre-to-centre between circles
-const ASSOCIATE_MIN_RADIUS = 120;
-const ASSOCIATE_MAX_PER_RING = 12;      // above this, split into concentric rings
-const ASSOCIATE_LABEL_GAP = 28;
-const ASSOCIATE_COLLISION_PAD = 60;     // halo around other nodes to treat as occupied
-const ASSOCIATE_SHIFT_STEP_X = 180;     // px to offset the bloom when a placement collides
-
-/** Lay out one type group, returning member positions RELATIVE to the
- *  bloom centre (0,0) plus a label position and outermost radius. */
-function layOutAssociateType(
-  members: Person[],
-  sector: AssociateSectorSpec,
-  innerRadius: number,
-): { placed: Array<{ id: string; x: number; y: number }>; labelX: number; labelY: number; outerRadius: number } {
-  // Split very large groups into 2 concentric half-rings so the radius
-  // doesn't have to blow past 800 px.
-  const rings = members.length > ASSOCIATE_MAX_PER_RING
-    ? [
-        members.slice(0, Math.ceil(members.length / 2)),
-        members.slice(Math.ceil(members.length / 2)),
-      ]
-    : [members];
-
-  const all: Array<{ id: string; x: number; y: number }> = [];
-  let outer = innerRadius;
-  rings.forEach((ring, ringIdx) => {
-    const desiredSweep = Math.min(sector.halfSweepMax * 2, 60 + ring.length * 10);
-    const sweepRad = (desiredSweep * Math.PI) / 180;
-    const radius = Math.max(
-      innerRadius + ringIdx * 110,
-      (ASSOCIATE_BLOOM_GAP * Math.max(ring.length - 1, 1)) / sweepRad,
-    );
-    outer = Math.max(outer, radius);
-    const half = desiredSweep / 2;
-    const placed = applyTribalBloom(
-      { x: 0, y: 0 },
-      ring.map((m) => ({ id: m.id, x: 0, y: 0 })),
-      {
-        radius,
-        startAngleDegrees: sector.center - half,
-        endAngleDegrees: sector.center + half,
-      },
-    );
-    all.push(...placed);
-  });
-
-  // Label sits just beyond the outermost ring at the sector's centre angle.
-  const labelRadius = outer + ASSOCIATE_LABEL_GAP;
-  const labelAngle = (sector.center * Math.PI) / 180;
-  return {
-    placed: all,
-    labelX: labelRadius * Math.sin(labelAngle),
-    labelY: labelRadius * Math.cos(labelAngle),
-    outerRadius: outer,
-  };
-}
-
 export function computeFullLayout(
   people: Person[],
   filterEra: string | null
@@ -572,8 +467,7 @@ export function computeFullLayout(
   if (!root) {
     return {
       nodes: [], links: [], marriageBars: [], spouseConnectors: [],
-      associationLinks: [], associateBloomLabels: [], associateTrails: [],
-      spineIds,
+      associationLinks: [], spineIds,
       bounds: { minX: 0, maxX: 100, minY: 0, maxY: 100, width: 100, height: 100 },
     };
   }
@@ -681,141 +575,48 @@ export function computeFullLayout(
     clusterY += rows * ROW_SPACING_Y + 80; // gap before next era group
   }
 
-  // Lay out association clusters by type with collision avoidance (#1290).
-  // Members are grouped by association_type; each type gets its own angular
-  // sector around the anchor. Very large groups split into concentric rings.
-  // If the resulting bloom would overlap existing nodes, the whole bloom
-  // shifts sideways and a thick trail connects the anchor to its apex.
+  // Layout association clusters radially around their anchor via tribal
+  // bloom (#1290). Sweep widens with cluster size so large groups fan more.
   const positionById = new Map<string, { x: number; y: number }>();
   for (const n of allTreeNodes) positionById.set(n.data.id, { x: n.x, y: n.y });
   for (const n of disconnectedNodes) positionById.set(n.data.id, { x: n.x, y: n.y });
 
   const associationLinks: AssociationLink[] = [];
-  const associateBloomLabels: AssociateBloomLabel[] = [];
-  const associateTrails: AssociateTrail[] = [];
-
   for (const [anchorId, members] of clusterByAnchor) {
     const anchorPos = positionById.get(anchorId);
-    if (!anchorPos) continue; // anchor wasn't placed — drop silently
+    if (!anchorPos) continue; // anchor wasn't placed (orphaned anchor) — drop silently
 
-    // Group this anchor's members by association_type (null → 'disciple')
-    const byType = new Map<string, Person[]>();
-    for (const m of members) {
-      const t = (m.association_type ?? 'disciple') as string;
-      const list = byType.get(t) ?? [];
-      list.push(m);
-      byType.set(t, list);
-    }
+    const radius = 90 + Math.min(members.length, 8) * 8; // 98 → 154 px
+    const sweep = Math.min(160, 60 + members.length * 14); // degrees
+    const placed = applyTribalBloom(
+      { x: anchorPos.x, y: anchorPos.y },
+      members.map((m) => ({ id: m.id, x: 0, y: 0 })),
+      {
+        radius,
+        startAngleDegrees: -sweep / 2, // fan below the anchor, centred straight down
+        endAngleDegrees: sweep / 2,
+      },
+    );
 
-    // Servants (if present) sit inside the disciple sector, closer to the
-    // anchor. Disciples then start at a larger inner radius.
-    const servantCount = byType.get('servant')?.length ?? 0;
-    const discipleStart = servantCount > 0 ? 230 : ASSOCIATE_MIN_RADIUS;
-
-    // Lay out each type (positions relative to 0,0)
-    const sub: Record<string, ReturnType<typeof layOutAssociateType> | null> = {
-      disciple: null, servant: null, contemporary: null, adversary: null,
-    };
-    for (const type of ASSOCIATE_TYPE_ORDER) {
-      const list = byType.get(type);
-      if (!list || list.length === 0) continue;
-      const sector = ASSOCIATE_SECTORS[type];
-      const start = type === 'disciple' ? discipleStart : ASSOCIATE_MIN_RADIUS;
-      sub[type] = layOutAssociateType(list, sector, start);
-    }
-
-    // Aggregate bbox across all sub-blooms (relative to bloom centre 0,0)
-    let bbMinX = 0, bbMaxX = 0, bbMinY = 0, bbMaxY = 0;
-    for (const type of ASSOCIATE_TYPE_ORDER) {
-      const s = sub[type];
-      if (!s) continue;
-      for (const p of s.placed) {
-        if (p.x < bbMinX) bbMinX = p.x;
-        if (p.x > bbMaxX) bbMaxX = p.x;
-        if (p.y < bbMinY) bbMinY = p.y;
-        if (p.y > bbMaxY) bbMaxY = p.y;
-      }
-    }
-
-    // Collision check: does placing the bloom at anchor + (offsetX, 0)
-    // overlap any non-member existing node?
-    const memberIdSet = new Set(members.map((m) => m.id));
-    const checkCollision = (offsetX: number): boolean => {
-      const minX = anchorPos.x + offsetX + bbMinX - ASSOCIATE_COLLISION_PAD;
-      const maxX = anchorPos.x + offsetX + bbMaxX + ASSOCIATE_COLLISION_PAD;
-      const minY = anchorPos.y + bbMinY - ASSOCIATE_COLLISION_PAD;
-      const maxY = anchorPos.y + bbMaxY + ASSOCIATE_COLLISION_PAD;
-      for (const [id, pos] of positionById) {
-        if (id === anchorId || memberIdSet.has(id)) continue;
-        if (pos.x >= minX && pos.x <= maxX && pos.y >= minY && pos.y <= maxY) {
-          return true;
-        }
-      }
-      return false;
-    };
-
-    let offsetX = 0;
-    if (checkCollision(0)) {
-      let found = false;
-      for (let step = 1; step <= 8 && !found; step++) {
-        for (const sign of [1, -1]) {
-          const dx = sign * step * ASSOCIATE_SHIFT_STEP_X;
-          if (!checkCollision(dx)) {
-            offsetX = dx;
-            found = true;
-            break;
-          }
-        }
-      }
-      if (!found) offsetX = 9 * ASSOCIATE_SHIFT_STEP_X; // forced far-right
-    }
-
-    // Emit member nodes + anchor→member links + type labels
-    for (const type of ASSOCIATE_TYPE_ORDER) {
-      const s = sub[type];
-      if (!s) continue;
-      const memberIndex = new Map(members.map((m) => [m.id, m]));
-      for (const placed of s.placed) {
-        const person = memberIndex.get(placed.id);
-        if (!person) continue;
-        const absX = anchorPos.x + offsetX + placed.x;
-        const absY = anchorPos.y + placed.y;
-        disconnectedNodes.push({
-          data: { ...person, nodeType: 'satellite', isAssociate: true },
-          x: absX,
-          y: absY,
-          parent: null,
-          children: [],
-          depth: 0,
-          isSpouse: false,
-        });
-        positionById.set(person.id, { x: absX, y: absY });
-        associationLinks.push({
-          anchorId,
-          memberId: person.id,
-          source: { x: anchorPos.x, y: anchorPos.y },
-          target: { x: absX, y: absY },
-          type: person.association_type,
-        });
-      }
-      associateBloomLabels.push({
-        anchorId,
-        type: type as AssociationType,
-        text: ASSOCIATE_SECTORS[type].labelText,
-        x: anchorPos.x + offsetX + s.labelX,
-        y: anchorPos.y + s.labelY,
+    members.forEach((p, i) => {
+      const { x, y } = placed[i];
+      disconnectedNodes.push({
+        data: { ...p, nodeType: 'satellite', isAssociate: true },
+        x,
+        y,
+        parent: null,
+        children: [],
+        depth: 0,
+        isSpouse: false,
       });
-    }
-
-    // If we had to shift, draw a thick trail from the anchor to the
-    // bloom's apex (top of its bbox).
-    if (offsetX !== 0) {
-      associateTrails.push({
+      associationLinks.push({
         anchorId,
+        memberId: p.id,
         source: { x: anchorPos.x, y: anchorPos.y },
-        target: { x: anchorPos.x + offsetX, y: anchorPos.y + bbMinY },
+        target: { x, y },
+        type: p.association_type,
       });
-    }
+    });
   }
 
   const allNodes = [...allTreeNodes, ...disconnectedNodes];
@@ -846,7 +647,6 @@ export function computeFullLayout(
 
   return {
     nodes: allNodes, links, marriageBars, spouseConnectors,
-    associationLinks, associateBloomLabels, associateTrails,
-    spineIds, bounds,
+    associationLinks, spineIds, bounds,
   };
 }

@@ -21,8 +21,6 @@ export function useTreeLayout(
         marriageBars: [],
         spouseConnectors: [],
         associationLinks: [],
-        associateBloomLabels: [],
-        associateTrails: [],
         spineIds: new Set<string>(),
         bounds: { minX: 0, maxX: 100, minY: 0, maxY: 100, width: 100, height: 100 },
       };
