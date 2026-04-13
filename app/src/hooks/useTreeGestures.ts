@@ -131,6 +131,16 @@ export function useTreeGestures(): TreeGestureResult {
   const savedTy = useSharedValue(0);
   const savedScale = useSharedValue(1);
 
+  // Pinch focal-point state. All numbers — deliberately no boolean
+  // SharedValue (Reanimated worklet transformer has had intermittent
+  // issues with boolean SharedValues). Captured at pinch onBegin and
+  // read from onUpdate to keep the world point under the finger
+  // centroid stationary on screen (iOS-Maps-style zoom).
+  const pinchStartFocalX = useSharedValue(0);
+  const pinchStartFocalY = useSharedValue(0);
+  const pinchStartTx = useSharedValue(0);
+  const pinchStartTy = useSharedValue(0);
+
   /**
    * Merge current gesture transform into base state, reset gesture to identity.
    * Combined transform: screen = (x * baseS + baseTx) * gestScale + gestTx
@@ -156,11 +166,28 @@ export function useTreeGestures(): TreeGestureResult {
   }, []);
 
   const pinchGesture = Gesture.Pinch()
-    .onBegin(() => {
+    .onBegin((e) => {
       savedScale.value = gestScale.value;
+      pinchStartFocalX.value = e.focalX;
+      pinchStartFocalY.value = e.focalY;
+      pinchStartTx.value = gestTx.value;
+      pinchStartTy.value = gestTy.value;
     })
     .onUpdate((e) => {
+      // Focal-point zoom — keep the world point under the finger centroid
+      // stationary on screen instead of zooming from the outer view's
+      // top-left corner.
+      //   At onBegin: the world point P under fingers satisfies
+      //     focalX₀ = P * savedScale + startTx
+      //   During pinch we want the SAME world point P to stay under
+      //   the (possibly drifting) current focal:
+      //     focalX = P * gestScale + gestTx
+      //   With gestScale = savedScale * e.scale, solving for gestTx:
+      //     gestTx = focalX − (focalX₀ − startTx) * e.scale
+      // Using live e.focalX/e.focalY lets the view follow centroid drift.
       gestScale.value = savedScale.value * e.scale;
+      gestTx.value = e.focalX - (pinchStartFocalX.value - pinchStartTx.value) * e.scale;
+      gestTy.value = e.focalY - (pinchStartFocalY.value - pinchStartTy.value) * e.scale;
     })
     .onEnd(() => {
       // Commit scale to base so SVG re-rasterizes at the new zoom level
