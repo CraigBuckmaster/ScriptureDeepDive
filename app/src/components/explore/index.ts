@@ -34,3 +34,5 @@ export type { FullWidthImageCardProps } from './FullWidthImageCard';
 
 export { GoldSeparator } from './GoldSeparator';
 export type { GoldSeparatorProps } from './GoldSeparator';
+
+export { GlossySectionWrapper } from './GlossySectionWrapper';

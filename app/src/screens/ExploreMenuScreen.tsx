@@ -31,6 +31,7 @@ import {
   LifeTopicGrid,
   FullWidthImageCard,
   GoldSeparator,
+  GlossySectionWrapper,
   PROPHECY_CHAIN_CARD_WIDTH,
 } from '../components/explore';
 import { useProphecyChains } from '../hooks/useProphecyChains';
@@ -465,11 +466,13 @@ function ExploreMenuScreen() {
         {filteredSections.map((section, sectionIndex) => (
           <View key={section.id}>
             {sectionIndex > 0 && <GoldSeparator />}
-            <View style={styles.section}>
-              <Text style={[styles.sectionLabel, { color: base.gold }]}>{section.label}</Text>
-              <Text style={[styles.sectionSubtitle, { color: base.textMuted }]}>{section.subtitle}</Text>
-              {renderSectionContent(section)}
-            </View>
+            <GlossySectionWrapper sectionIndex={sectionIndex}>
+              <View style={styles.section}>
+                <Text style={[styles.sectionLabel, { color: base.gold }]}>{section.label}</Text>
+                <Text style={[styles.sectionSubtitle, { color: base.textMuted }]}>{section.subtitle}</Text>
+                {renderSectionContent(section)}
+              </View>
+            </GlossySectionWrapper>
           </View>
         ))}
 
