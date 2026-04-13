@@ -100,6 +100,16 @@ export function FeatureCard({
       backgroundColor: base.bgElevated,
       borderColor: base.gold + '12',
     }]}>
+      {/* ── Specular highlight at top (glossy treatment) ─── */}
+      <View style={styles.specularLine} pointerEvents="none">
+        <View style={styles.specularLeft} />
+        <View style={styles.specularMid} />
+        <View style={styles.specularRight} />
+      </View>
+      
+      {/* ── Ambient glow in image area (glossy treatment) ─── */}
+      <View style={styles.ambientGlow} pointerEvents="none" />
+      
       {/* ── Image header ─── */}
       {currentImage ? (
         <TouchableOpacity
@@ -142,8 +152,10 @@ export function FeatureCard({
           </View>
         </TouchableOpacity>
       ) : (
-        /* Fallback: accent-colored strip */
-        <View style={[styles.fallbackStrip, { width: cardWidth, backgroundColor: base.gold + '20' }]} />
+        /* Fallback: accent-colored strip with glossy gradient */
+        <View style={[styles.fallbackStrip, { width: cardWidth }]}>
+          <View style={styles.fallbackGradient} />
+        </View>
       )}
 
       {/* ── Text area (tappable → feature browse) ─── */}
@@ -176,6 +188,45 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: radii.lg,
     overflow: 'hidden',
+    position: 'relative',
+  },
+  // ── Glossy treatment ───
+  specularLine: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 1.5,
+    flexDirection: 'row',
+    zIndex: 10,
+    borderTopLeftRadius: radii.lg,
+    borderTopRightRadius: radii.lg,
+    overflow: 'hidden',
+  },
+  specularLeft: {
+    flex: 1,
+    height: 1.5,
+    backgroundColor: 'rgba(255, 235, 180, 0)', // specular-color: glossy fade
+  },
+  specularMid: {
+    flex: 3,
+    height: 1.5,
+    backgroundColor: 'rgba(255, 235, 180, 0.35)', // specular-color: glossy bright
+  },
+  specularRight: {
+    flex: 1,
+    height: 1.5,
+    backgroundColor: 'rgba(255, 235, 180, 0)', // specular-color: glossy fade
+  },
+  ambientGlow: {
+    position: 'absolute',
+    top: 0,
+    left: '20%',
+    width: '60%',
+    height: 45,
+    backgroundColor: 'rgba(255, 235, 180, 0.12)', // specular-color: glossy ambient
+    borderRadius: 100,
+    zIndex: 5,
   },
   // Image section
   imageContainer: {
@@ -222,9 +273,19 @@ const styles = StyleSheet.create({
     height: 4,
     borderRadius: 2,
   },
-  // Fallback
+  // Fallback (glossy gradient strip)
   fallbackStrip: {
-    height: 6,
+    height: 70,
+    position: 'relative',
+    overflow: 'hidden',
+  },
+  fallbackGradient: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(191, 160, 80, 0.15)', // gold fallback base
   },
   // Text area
   textArea: {
