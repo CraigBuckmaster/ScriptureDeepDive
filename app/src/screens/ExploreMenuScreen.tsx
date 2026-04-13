@@ -30,7 +30,6 @@ import {
   WordStudyPreviewList,
   LifeTopicGrid,
   FullWidthImageCard,
-  GoldSeparator,
   GlossySectionWrapper,
   PROPHECY_CHAIN_CARD_WIDTH,
 } from '../components/explore';
@@ -465,7 +464,6 @@ function ExploreMenuScreen() {
         {/* ── Sections with varied layouts ─── */}
         {filteredSections.map((section, sectionIndex) => (
           <View key={section.id}>
-            {sectionIndex > 0 && <GoldSeparator />}
             <GlossySectionWrapper sectionIndex={sectionIndex}>
               <View style={styles.section}>
                 <Text style={[styles.sectionLabel, { color: base.gold }]}>{section.label}</Text>
