@@ -100,15 +100,17 @@ export function FeatureCard({
       backgroundColor: base.bgElevated,
       borderColor: base.gold + '12',
     }]}>
-      {/* ── Specular highlight at top (glossy treatment) ─── */}
-      <View style={styles.specularLine} pointerEvents="none">
-        <View style={styles.specularLeft} />
-        <View style={styles.specularMid} />
-        <View style={styles.specularRight} />
-      </View>
+      {/* ── Subtle underglow halo (glossy treatment) ─── */}
+      <View style={styles.specularHalo} pointerEvents="none" />
       
-      {/* ── Ambient glow in image area (glossy treatment) ─── */}
-      <View style={styles.ambientGlow} pointerEvents="none" />
+      {/* ── Specular highlight at top (center-bright, glossy treatment) ─── */}
+      <View style={styles.specularLine} pointerEvents="none">
+        <View style={styles.specularEdge} />
+        <View style={styles.specularMid} />
+        <View style={styles.specularCenter} />
+        <View style={styles.specularMid} />
+        <View style={styles.specularEdge} />
+      </View>
       
       {/* ── Image header ─── */}
       {currentImage ? (
@@ -196,36 +198,36 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    height: 1.5,
+    height: 2,
     flexDirection: 'row',
     zIndex: 10,
     borderTopLeftRadius: radii.lg,
     borderTopRightRadius: radii.lg,
     overflow: 'hidden',
   },
-  specularLeft: {
+  specularEdge: {
     flex: 1,
-    height: 1.5,
-    backgroundColor: 'rgba(255, 235, 180, 0)', // specular-color: glossy fade
+    height: 2,
+    backgroundColor: 'rgba(255, 235, 180, 0.1)',
   },
   specularMid: {
-    flex: 3,
-    height: 1.5,
-    backgroundColor: 'rgba(255, 235, 180, 0.35)', // specular-color: glossy bright
+    flex: 1.5,
+    height: 2,
+    backgroundColor: 'rgba(255, 235, 180, 0.3)',
   },
-  specularRight: {
-    flex: 1,
-    height: 1.5,
-    backgroundColor: 'rgba(255, 235, 180, 0)', // specular-color: glossy fade
+  specularCenter: {
+    flex: 2,
+    height: 2,
+    backgroundColor: 'rgba(255, 235, 180, 0.65)',
   },
-  ambientGlow: {
+  specularHalo: {
     position: 'absolute',
-    top: 0,
+    top: 2,
     left: '20%',
     width: '60%',
-    height: 45,
-    backgroundColor: 'rgba(255, 235, 180, 0.12)', // specular-color: glossy ambient
-    borderRadius: 100,
+    height: 6,
+    backgroundColor: 'rgba(255, 235, 180, 0.04)',
+    borderRadius: 3,
     zIndex: 5,
   },
   // Image section
