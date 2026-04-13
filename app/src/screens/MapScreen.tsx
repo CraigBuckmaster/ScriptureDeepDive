@@ -11,6 +11,7 @@ import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react'
 import { View, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import MapView, { PROVIDER_GOOGLE, PROVIDER_DEFAULT } from 'react-native-maps';
+import Constants from 'expo-constants';
 
 import { usePlaces } from '../hooks/usePlaces';
 import { useMapStories } from '../hooks/useMapStories';
@@ -19,11 +20,25 @@ import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
 import { ancientMapStyle, modernMapStyle } from '../utils/mapStyles';
 
 /**
- * Google Maps is only available in custom dev builds, never in Expo Go.
- * Set this to true once you have a working dev build with react-native-maps
- * linked to the Google Maps SDK. Until then, Apple Maps + POI suppression.
+ * Google Maps key auto-detection. The iOS / Android keys are injected by
+ * `app.config.js` when GOOGLE_MAPS_API_KEY is present in the build env.
+ * We use the presence of either platform key as the signal that this build
+ * has the Google Maps SDK linked. In Expo Go (no key), we fall back to the
+ * default provider (Apple Maps on iOS, OSM-backed terrain elsewhere).
+ *
+ * Exported so unit tests can verify the detection logic.
  */
-const USE_GOOGLE_MAPS = false;
+export function detectGoogleMapsKey(constants: typeof Constants): string | null {
+  const cfg: any = constants?.expoConfig ?? {};
+  return (
+    cfg?.ios?.config?.googleMapsApiKey ??
+    cfg?.android?.config?.googleMaps?.apiKey ??
+    null
+  );
+}
+
+const GOOGLE_MAPS_KEY = detectGoogleMapsKey(Constants);
+const USE_GOOGLE_MAPS = !!GOOGLE_MAPS_KEY;
 
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { PlaceMarkerList } from '../components/map/PlaceMarkerList';

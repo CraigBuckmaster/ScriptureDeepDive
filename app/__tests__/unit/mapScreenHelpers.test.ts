@@ -30,7 +30,7 @@ jest.mock('react-native-maps', () => {
   };
 });
 
-import { buildPlaceToStoriesMap } from '@/screens/MapScreen';
+import { buildPlaceToStoriesMap, detectGoogleMapsKey } from '@/screens/MapScreen';
 import type { MapStory } from '@/types';
 
 function story(id: string, places: string[]): MapStory {
@@ -74,5 +74,40 @@ describe('buildPlaceToStoriesMap', () => {
     const s3 = story('s3', ['p']);
     const out = buildPlaceToStoriesMap([s1, s2, s3]);
     expect(out.get('p')).toEqual([s1, s2, s3]);
+  });
+});
+
+describe('detectGoogleMapsKey', () => {
+  it('returns null when no key is configured (e.g. Expo Go)', () => {
+    expect(detectGoogleMapsKey({ expoConfig: { version: '1.0.0' } } as any)).toBeNull();
+  });
+
+  it('returns the iOS key when present', () => {
+    const out = detectGoogleMapsKey({
+      expoConfig: { ios: { config: { googleMapsApiKey: 'ios-key' } } },
+    } as any);
+    expect(out).toBe('ios-key');
+  });
+
+  it('falls back to the Android key when iOS key is absent', () => {
+    const out = detectGoogleMapsKey({
+      expoConfig: { android: { config: { googleMaps: { apiKey: 'android-key' } } } },
+    } as any);
+    expect(out).toBe('android-key');
+  });
+
+  it('prefers the iOS key when both are set', () => {
+    const out = detectGoogleMapsKey({
+      expoConfig: {
+        ios: { config: { googleMapsApiKey: 'ios-key' } },
+        android: { config: { googleMaps: { apiKey: 'android-key' } } },
+      },
+    } as any);
+    expect(out).toBe('ios-key');
+  });
+
+  it('returns null when expoConfig is missing entirely', () => {
+    expect(detectGoogleMapsKey({} as any)).toBeNull();
+    expect(detectGoogleMapsKey(null as any)).toBeNull();
   });
 });
