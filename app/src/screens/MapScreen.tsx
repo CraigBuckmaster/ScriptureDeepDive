@@ -256,6 +256,7 @@ function MapScreen({ route, navigation }: {
         <StoryPicker
           stories={filteredStories}
           activeStoryId={activeStory?.id ?? null}
+          places={places}
           onSelect={(id) => {
             const story = stories.find((s) => s.id === id);
             if (story) {

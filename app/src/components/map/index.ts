@@ -2,7 +2,7 @@ export { PlaceLabel } from './PlaceLabel';
 export { PlaceMarkerList } from './PlaceMarkerList';
 export { StoryOverlays } from './StoryOverlays';
 export { StoryPanel } from './StoryPanel';
-export { StoryPicker } from './StoryPicker';
+export { StoryPicker, placeCount } from './StoryPicker';
 export { FloatingControls } from './FloatingControls';
 export { PlaceDetailCard, formatCoord } from './PlaceDetailCard';
 export type { PlaceDetailCardProps } from './PlaceDetailCard';
