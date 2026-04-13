@@ -142,6 +142,28 @@ export function getDb(): SQLite.SQLiteDatabase {
 }
 
 /**
+ * Close the current DB connection and reopen from the (updated) file.
+ * Called after ContentUpdater swaps the DB file on disk so all
+ * subsequent getDb() calls return a connection to the new content.
+ */
+export async function reloadDatabase(): Promise<SQLite.SQLiteDatabase> {
+  if (db) {
+    try {
+      await db.closeAsync();
+    } catch {
+      // Connection may already be invalid if the file was swapped — safe to ignore
+    }
+    db = null;
+  }
+  db = await SQLite.openDatabaseAsync('scripture.db');
+  if (Platform.OS !== 'web') {
+    await db.execAsync('PRAGMA journal_mode=WAL');
+  }
+  logger.info('DB', 'Database connection reloaded after content update');
+  return db;
+}
+
+/**
  * Get the database that contains verses for the given translation.
  * - Bundled translations (NIV, KJV) → core scripture.db
  * - Downloaded translations (ESV, ASV, etc.) → separate translation_*.db
