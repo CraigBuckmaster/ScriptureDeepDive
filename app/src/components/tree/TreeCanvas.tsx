@@ -16,7 +16,7 @@ import { MarriageBarSvg } from './MarriageBarSvg';
 import { SpouseConnectorSvg } from './SpouseConnectorSvg';
 import { TreeNode } from './TreeNode';
 import { AssociationLinkSvg } from './AssociationLinkSvg';
-import { TIER_2_ZOOM, TIER_3_ZOOM } from '../../utils/genealogyOrganic';
+import { TIER_2_ZOOM, TIER_3_ZOOM, getVisibleTier } from '../../utils/genealogyOrganic';
 import { logger } from '../../utils/logger';
 import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson, AssociationLink, AssociateBloomLabel, AssociateTrail } from '../../utils/treeBuilder';
 
@@ -74,9 +74,11 @@ export const TreeCanvas = memo(function TreeCanvas({
   // Render-entry diagnostic — the LAST line before the SVG tree commits.
   // If the crash happens after this log but before the post-commit effect
   // log, the failure is inside the SVG render tree.
+  const visibleTier = getVisibleTier(zoom);
   logger.info(
     'Canvas',
-    `render z=${zoom.toFixed(2)} collapsed=${clustersCollapsed} `
+    `render z=${zoom.toFixed(2)} visibleTier=${visibleTier} `
+    + `collapsed=${clustersCollapsed} `
     + `nodes=${nodes.length} links=${links.length} al=${associationLinks.length} `
     + `labels=${associateBloomLabels.length} trails=${associateTrails.length} `
     + `canvas=${canvasWidth}x${canvasHeight}`,
