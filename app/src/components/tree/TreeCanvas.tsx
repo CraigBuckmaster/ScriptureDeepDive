@@ -1,22 +1,32 @@
 /**
  * TreeCanvas — SVG container rendering all tree elements.
  *
+ * Constant render structure: every zoom level mounts the same set of
+ * native views. Visibility transitions are driven by opacity changes
+ * (and a single combined path `d` attribute for association links /
+ * trails). iOS's compositor crashes on batch mid-session mounts of
+ * many native subviews on a tall (~10 000 px) Svg canvas; keeping
+ * the structure constant eliminates that failure mode.
+ *
  * Render order (back to front):
- *   background defs → bg rect → links → marriage bars → spouse connectors → nodes.
+ *   background defs → bg rect → links → marriage bars →
+ *   spouse connectors → association links (consolidated) →
+ *   associate trails (consolidated) → collapse badges → nodes →
+ *   bloom apex labels.
  */
 
 import React, { memo, useMemo } from 'react';
 import {
   Defs, RadialGradient, Stop, Pattern,
-  Rect, Line, G, Circle, Text as SvgText,
+  Rect, Line, G, Circle, Text as SvgText, Path,
 } from 'react-native-svg';
 import { useTheme } from '../../theme';
 import { TreeLink } from './TreeLink';
 import { MarriageBarSvg } from './MarriageBarSvg';
 import { SpouseConnectorSvg } from './SpouseConnectorSvg';
 import { TreeNode } from './TreeNode';
-import { AssociationLinkSvg } from './AssociationLinkSvg';
-import { TIER_2_ZOOM, TIER_3_ZOOM, getVisibleTier } from '../../utils/genealogyOrganic';
+import { TIER_3_ZOOM, getVisibleTier } from '../../utils/genealogyOrganic';
+import { bezierPath } from '../../utils/genealogyOrganic';
 import { logger } from '../../utils/logger';
 import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson, AssociationLink, AssociateBloomLabel, AssociateTrail } from '../../utils/treeBuilder';
 
@@ -43,7 +53,7 @@ interface Props {
   /** Full SVG height — needed for background sizing. */
   canvasHeight?: number;
   /** Current committed zoom scale (#1291). Controls per-tier visibility
-   *  and associate-cluster collapse-to-badge below {@link TIER_2_ZOOM}. */
+   *  and associate-cluster collapse-to-badge below {@link TIER_3_ZOOM}. */
   zoom?: number;
 }
 
@@ -59,21 +69,10 @@ export const TreeCanvas = memo(function TreeCanvas({
 }: Props) {
   const { base } = useTheme();
 
-  // Below TIER_3_ZOOM, collapse each associate cluster into a single "+N"
-  // badge at the anchor and hide the individual associate nodes + links.
-  //
-  // WHY TIER_3_ZOOM and not TIER_2_ZOOM? Associates are tier-3 figures
-  // (no role, no bio) — TreeNode already returns null for them below 0.8.
-  // If we un-collapse at 0.5, the 89 association-link bezier paths render
-  // but point to invisible targets, AND the combined render load crashes
-  // iOS's native paint on a 2748×10017 canvas. Collapsing until 0.8 keeps
-  // cluster links and nodes in sync and dramatically reduces the render
-  // footprint at the initial centre-on-Adam zoom of 0.65.
   const clustersCollapsed = zoom < TIER_3_ZOOM;
+  const labelsVisible = zoom >= TIER_3_ZOOM;
 
-  // Render-entry diagnostic — the LAST line before the SVG tree commits.
-  // If the crash happens after this log but before the post-commit effect
-  // log, the failure is inside the SVG render tree.
+  // Render-entry diagnostic.
   const visibleTier = getVisibleTier(zoom);
   logger.info(
     'Canvas',
@@ -86,12 +85,28 @@ export const TreeCanvas = memo(function TreeCanvas({
   React.useEffect(() => {
     logger.info('Canvas', `render COMMITTED z=${zoom.toFixed(2)}`);
   });
-  const associateIds = useMemo(
-    () => new Set(associationLinks.map((al) => al.memberId)),
+
+  // Consolidate all dashed-bezier association connectors into ONE Path
+  // string so a cluster-uncollapse transition changes one `d` attribute
+  // instead of mounting 89 new CAShapeLayers. Styling is uniform across
+  // connectors so single-path rendering is safe.
+  const associationPathD = useMemo(
+    () => associationLinks.map((al) => bezierPath(al.source, al.target)).join(' '),
     [associationLinks],
   );
+
+  // Same consolidation for trail lines. Straight segments concatenated
+  // as `M x1 y1 L x2 y2` with a space between each pair.
+  const trailsPathD = useMemo(
+    () => associateTrails
+      .map((t) => `M ${t.source.x} ${t.source.y} L ${t.target.x} ${t.target.y}`)
+      .join(' '),
+    [associateTrails],
+  );
+
+  // Badge positions are derived from association links by anchor — constant
+  // for a given tree layout, so compute them once.
   const anchorBadges = useMemo(() => {
-    if (!clustersCollapsed) return [];
     const byAnchor = new Map<string, { x: number; y: number; count: number }>();
     for (const al of associationLinks) {
       const existing = byAnchor.get(al.anchorId);
@@ -102,7 +117,7 @@ export const TreeCanvas = memo(function TreeCanvas({
       }
     }
     return Array.from(byAnchor, ([anchorId, v]) => ({ anchorId, ...v }));
-  }, [clustersCollapsed, associationLinks]);
+  }, [associationLinks]);
 
   return (
     <>
@@ -122,15 +137,8 @@ export const TreeCanvas = memo(function TreeCanvas({
             stroke={base.border} strokeWidth={0.3} opacity={0.3} />
         </Pattern>
 
-        {/* Warm radial glow used to fill messianic-line nodes (Card #1281).
-            gradientUnits defaults to objectBoundingBox so the same def
-            scales to every messianic circle. */}
-        <RadialGradient
-          id="messianic-node-fill"
-          cx="30%"
-          cy="30%"
-          r="70%"
-        >
+        {/* Warm radial glow used to fill messianic-line nodes (Card #1281). */}
+        <RadialGradient id="messianic-node-fill" cx="30%" cy="30%" r="70%">
           <Stop offset="0%" stopColor={base.gold} stopOpacity={0.25} />
           <Stop offset="100%" stopColor={base.gold} stopOpacity={0.08} />
         </RadialGradient>
@@ -144,7 +152,7 @@ export const TreeCanvas = memo(function TreeCanvas({
 
       {/* ── Tree content ───────────────────────────── */}
       <G transform={`translate(${offsetX}, ${offsetY})`}>
-        {/* 1. Links (back) */}
+        {/* 1. Genealogical links (back) */}
         {links.map((link, i) => (
           <TreeLink
             key={`l-${i}`}
@@ -156,66 +164,45 @@ export const TreeCanvas = memo(function TreeCanvas({
           />
         ))}
 
-        {/* 1b. Association links — dashed bezier to associate satellites
-               (#1288, #1290). Hidden when clusters collapse to a badge. */}
-        {!clustersCollapsed && associationLinks.map((al) => {
-          const dimmed = filterEra !== null && !spineIds.has(al.anchorId);
-          return (
-            <AssociationLinkSvg
-              key={`al-${al.anchorId}-${al.memberId}`}
-              source={al.source}
-              target={al.target}
-              type={al.type}
-              dimmed={dimmed}
-            />
-          );
-        })}
+        {/* 1b. Association links — ALL dashed bezier connectors consolidated
+               into a single Path. Opacity toggles with cluster collapse state;
+               no native views mount or unmount across zoom transitions. */}
+        {associationPathD.length > 0 && (
+          <Path
+            d={associationPathD}
+            stroke={base.border}
+            strokeWidth={0.9}
+            strokeDasharray="4,4"
+            fill="none"
+            opacity={clustersCollapsed ? 0 : 0.55}
+            strokeLinecap="round"
+          />
+        )}
 
-        {/* 1c. Collapsed-cluster badge — at low zoom (#1291), each anchor
-               with associates shows a "+N" chip instead of individual nodes. */}
-        {clustersCollapsed && anchorBadges.map((b) => (
-          <G key={`ab-${b.anchorId}`}>
+        {/* 1c. Associate-bloom trails — all consolidated into one Path. */}
+        {trailsPathD.length > 0 && (
+          <Path
+            d={trailsPathD}
+            stroke={base.gold}
+            strokeWidth={1.5}
+            fill="none"
+            opacity={clustersCollapsed ? 0 : 0.35}
+            strokeLinecap="round"
+          />
+        )}
+
+        {/* 1d. Collapsed-cluster "+N" badges. Always rendered; opacity gated
+               so a cluster-expand transition just flips a number, never
+               mounts or unmounts a view. */}
+        {anchorBadges.map((b) => (
+          <G key={`ab-${b.anchorId}`} opacity={clustersCollapsed ? 0.85 : 0}>
             <Circle cx={b.x + 30} cy={b.y + 30} r={14}
-              fill={base.bgSurface} stroke={base.gold} strokeWidth={1} opacity={0.85} />
+              fill={base.bgSurface} stroke={base.gold} strokeWidth={1} />
             <SvgText x={b.x + 30} y={b.y + 33}
               fill={base.gold} fontSize={11} textAnchor="middle" fontWeight="600">
               +{b.count}
             </SvgText>
           </G>
-        ))}
-
-        {/* 1d. Associate-bloom trails — thick gold line from anchor to the
-               apex of a bloom that had to be shifted sideways. */}
-        {!clustersCollapsed && associateTrails.map((t) => (
-          <Line
-            key={`at-${t.anchorId}`}
-            x1={t.source.x}
-            y1={t.source.y}
-            x2={t.target.x}
-            y2={t.target.y}
-            stroke={base.gold}
-            strokeWidth={1.5}
-            opacity={0.35}
-            strokeLinecap="round"
-          />
-        ))}
-
-        {/* 1e. Type-sector labels ("disciples", "contemporaries"…) at the
-               apex of each sub-bloom. Visible at mid-zoom+ so the overview
-               stays clean. */}
-        {!clustersCollapsed && zoom >= TIER_3_ZOOM && associateBloomLabels.map((lbl) => (
-          <SvgText
-            key={`abl-${lbl.anchorId}-${lbl.type}`}
-            x={lbl.x}
-            y={lbl.y}
-            fill={base.gold}
-            fontSize={11}
-            fontFamily="Cinzel_600SemiBold"
-            textAnchor="middle"
-            opacity={0.65}
-          >
-            {lbl.text}
-          </SvgText>
         ))}
 
         {/* 2. Marriage bars */}
@@ -228,10 +215,10 @@ export const TreeCanvas = memo(function TreeCanvas({
           <SpouseConnectorSvg key={`sc-${i}`} connector={conn} />
         ))}
 
-        {/* 4. Nodes (front) */}
+        {/* 4. Nodes (front). Every node — including associates — is always
+               rendered. TreeNode itself handles visibility via opacity so
+               there's no mount / unmount churn at tier transitions. */}
         {nodes.map((node) => {
-          // Skip individual associate nodes when clusters are collapsed
-          if (clustersCollapsed && associateIds.has(node.data.id)) return null;
           const dimmed = filterEra !== null
             && node.data.era !== filterEra
             && !spineIds.has(node.data.id);
@@ -243,10 +230,28 @@ export const TreeCanvas = memo(function TreeCanvas({
               selected={node.data.id === selectedPersonId}
               filterEra={filterEra}
               zoom={zoom}
+              clustersCollapsed={clustersCollapsed}
               onPress={onNodePress}
             />
           );
         })}
+
+        {/* 5. Bloom-apex labels ("disciples", "contemporaries"…). Always
+               rendered; opacity gated. */}
+        {associateBloomLabels.map((lbl) => (
+          <SvgText
+            key={`abl-${lbl.anchorId}-${lbl.type}`}
+            x={lbl.x}
+            y={lbl.y}
+            fill={base.gold}
+            fontSize={11}
+            fontFamily="Cinzel_600SemiBold"
+            textAnchor="middle"
+            opacity={labelsVisible ? 0.65 : 0}
+          >
+            {lbl.text}
+          </SvgText>
+        ))}
       </G>
     </>
   );
