@@ -148,6 +148,17 @@ def main():
     build_fts(cur)
     print("  [OK] FTS5 indexes built")
 
+    # Performance indexes for hot-path queries (Card #1175)
+    cur.executescript("""
+        CREATE INDEX IF NOT EXISTS idx_sections_chapter ON sections(chapter_id);
+        CREATE INDEX IF NOT EXISTS idx_section_panels_section ON section_panels(section_id);
+        CREATE INDEX IF NOT EXISTS idx_chapter_panels_chapter ON chapter_panels(chapter_id);
+        CREATE INDEX IF NOT EXISTS idx_vhl_groups_chapter ON vhl_groups(chapter_id);
+        CREATE INDEX IF NOT EXISTS idx_chapters_book ON chapters(book_id);
+        CREATE INDEX IF NOT EXISTS idx_people_journeys_person ON people_journeys(person_id);
+    """)
+    print("  [OK] Performance indexes created")
+
     # Write content hash to db_meta
     cur.execute("INSERT INTO db_meta (key, value) VALUES ('content_hash', ?)", (content_hash,))
     cur.execute('PRAGMA foreign_keys=ON')
