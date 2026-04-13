@@ -28,6 +28,11 @@ import {
   TimelineEventCard,
   TimelineSpine,
   SPINE_GUTTER_WIDTH,
+  PersonFilterBar,
+  ContemporaryRow,
+  computeContemporaries,
+  EraContextPanel,
+  type Contemporary,
 } from '../components/timeline';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { useTheme, spacing, fontFamily } from '../theme';
@@ -81,6 +86,20 @@ export function filterTimeline(
     if (eraId && e.era !== eraId) return false;
     return true;
   });
+}
+
+/** Whether a given event mentions `personId` in its people_json field. */
+export function eventMatchesPerson(
+  entry: TimelineEntry,
+  personId: string | null,
+): boolean {
+  if (!personId || !entry.people_json) return false;
+  try {
+    const arr = JSON.parse(entry.people_json);
+    return Array.isArray(arr) && arr.includes(personId);
+  } catch {
+    return false;
+  }
 }
 
 function TimelineRow({
@@ -138,8 +157,12 @@ function TimelineScreen() {
   const [isLoading, setIsLoading] = useState(true);
   const [eras, setEras] = useState<EraRow[]>([]);
   const [filterEra, setFilterEra] = useState<string | null>(null);
+  const [expandedEraContext, setExpandedEraContext] = useState<string | null>(null);
   const [filters, dispatchFilter] = useReducer(filterReducer, INITIAL_FILTERS);
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [personFilter, setPersonFilter] = useState<{ id: string; name: string } | null>(
+    null,
+  );
 
   useEffect(() => {
     let cancelled = false;
@@ -173,6 +196,23 @@ function TimelineScreen() {
     [events, filters, filterEra],
   );
 
+  const personMatches = useMemo(() => {
+    if (!personFilter) return new Set<string>();
+    return new Set(
+      visible.filter((e) => eventMatchesPerson(e, personFilter.id)).map((e) => e.id),
+    );
+  }, [visible, personFilter]);
+
+  const contemporaries: Contemporary[] = useMemo(() => {
+    if (!personFilter) return [];
+    return computeContemporaries(events, personFilter.id);
+  }, [events, personFilter]);
+
+  const expandedEra = useMemo(
+    () => eras.find((e) => e.id === expandedEraContext) ?? null,
+    [eras, expandedEraContext],
+  );
+
   const eraColorFor = useCallback(
     (eraId: string | null): string => {
       if (!eraId) return base.gold;
@@ -186,10 +226,28 @@ function TimelineScreen() {
     setExpandedId((prev) => (prev === id ? null : id));
   }, []);
 
-  const handlePersonPress = useCallback(
-    (personId: string) => {
+  const handlePersonPress = useCallback((personId: string) => {
+    setPersonFilter({ id: personId, name: personId });
+  }, []);
+
+  const handleEraStripSelect = useCallback((eraId: string | null) => {
+    setFilterEra(eraId);
+    // Toggle the context panel: opening an era shows its narrative,
+    // re-tapping closes it.
+    setExpandedEraContext((prev) => (prev === eraId || eraId == null ? null : eraId));
+  }, []);
+
+  const handleContextPersonPress = useCallback((personName: string) => {
+    setPersonFilter({ id: personName, name: personName });
+  }, []);
+
+  const handleContextBookPress = useCallback(
+    (book: string) => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      navigation.navigate('PersonDetail' as any, { personId } as any);
+      (navigation as any).navigate('ReadTab', {
+        screen: 'ChapterList',
+        params: { bookId: book.toLowerCase().replace(/\s+/g, '_') },
+      });
     },
     [navigation],
   );
@@ -235,8 +293,34 @@ function TimelineScreen() {
         eras={eras}
         eventCounts={eraCounts}
         activeEraId={filterEra}
-        onSelectEra={(eraId) => setFilterEra(eraId)}
+        onSelectEra={handleEraStripSelect}
       />
+
+      {expandedEra ? (
+        <View style={styles.contextWrap}>
+          <EraContextPanel
+            era={expandedEra}
+            onPersonPress={handleContextPersonPress}
+            onBookPress={handleContextBookPress}
+          />
+        </View>
+      ) : null}
+
+      {personFilter ? (
+        <View style={styles.personFilterWrap}>
+          <PersonFilterBar
+            personName={personFilter.name}
+            matchCount={personMatches.size}
+            onDismiss={() => setPersonFilter(null)}
+          />
+          {contemporaries.length > 0 ? (
+            <ContemporaryRow
+              contemporaries={contemporaries}
+              onPress={(id) => setPersonFilter({ id, name: id })}
+            />
+          ) : null}
+        </View>
+      ) : null}
 
       {/* Category toggles */}
       <View style={styles.categoryRow}>
@@ -274,17 +358,20 @@ function TimelineScreen() {
         contentContainerStyle={styles.listContent}
         renderItem={({ item, index }) => {
           const eraColor = eraColorFor(item.era);
+          const dim = personFilter ? !personMatches.has(item.id) : false;
           return (
-            <TimelineRow
-              event={item}
-              eraColor={eraColor}
-              isFirst={index === 0}
-              isLast={index === lastIndex}
-              isExpanded={expandedId === item.id}
-              onToggleExpand={() => handleToggleExpand(item.id)}
-              onPersonPress={handlePersonPress}
-              onChapterPress={handleChapterPress}
-            />
+            <View style={dim ? styles.dimmedRow : null}>
+              <TimelineRow
+                event={item}
+                eraColor={eraColor}
+                isFirst={index === 0}
+                isLast={index === lastIndex}
+                isExpanded={expandedId === item.id}
+                onToggleExpand={() => handleToggleExpand(item.id)}
+                onPersonPress={handlePersonPress}
+                onChapterPress={handleChapterPress}
+              />
+            </View>
           );
         }}
         ListEmptyComponent={
@@ -360,6 +447,18 @@ const styles = StyleSheet.create({
   emptyText: {
     fontFamily: fontFamily.ui,
     fontSize: 12,
+  },
+  contextWrap: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.xs,
+  },
+  personFilterWrap: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.xs,
+    gap: spacing.xs,
+  },
+  dimmedRow: {
+    opacity: 0.15,
   },
 });
 

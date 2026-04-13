@@ -22,7 +22,11 @@ jest.mock('@/hooks/useContentImages', () => ({
   useContentImages: jest.fn().mockReturnValue({ images: [], isLoading: false }),
 }));
 
-import { computeEraCounts, filterTimeline } from '@/screens/TimelineScreen';
+import {
+  computeEraCounts,
+  filterTimeline,
+  eventMatchesPerson,
+} from '@/screens/TimelineScreen';
 import type { TimelineEntry } from '@/types';
 
 function entry(overrides: Partial<TimelineEntry>): TimelineEntry {
@@ -108,5 +112,33 @@ describe('filterTimeline', () => {
     expect(
       filterTimeline(null, { event: true, book: true, person: true, world: true }, null),
     ).toEqual([]);
+  });
+});
+
+describe('eventMatchesPerson', () => {
+  it('returns false for null/empty person id', () => {
+    const e = entry({ people_json: '["abraham"]' });
+    expect(eventMatchesPerson(e, null)).toBe(false);
+    expect(eventMatchesPerson(e, '')).toBe(false);
+  });
+
+  it('returns false for events without people_json', () => {
+    const e = entry({ people_json: null });
+    expect(eventMatchesPerson(e, 'abraham')).toBe(false);
+  });
+
+  it('returns false for malformed people_json', () => {
+    const e = entry({ people_json: 'not-json' });
+    expect(eventMatchesPerson(e, 'abraham')).toBe(false);
+  });
+
+  it('returns true when the person id is in the array', () => {
+    const e = entry({ people_json: '["sarah","abraham"]' });
+    expect(eventMatchesPerson(e, 'abraham')).toBe(true);
+  });
+
+  it('returns false when the person id is not in the array', () => {
+    const e = entry({ people_json: '["sarah"]' });
+    expect(eventMatchesPerson(e, 'abraham')).toBe(false);
   });
 });

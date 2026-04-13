@@ -167,4 +167,35 @@ describe('TimelineScreen', () => {
     const { findByLabelText } = renderWithProviders(<TimelineScreen />);
     expect(await findByLabelText('Timeline')).toBeTruthy();
   });
+
+  it('enters person-filter mode when a person pill is tapped on an expanded card', async () => {
+    const { findByLabelText, findByText, getByText } = renderWithProviders(<TimelineScreen />);
+    // Expand Abraham's card (it has people_json = ["abraham"])
+    const card = await findByLabelText(/Abraham,/);
+    fireEvent.press(card);
+    const pill = await findByText('abraham');
+    fireEvent.press(pill);
+    // Person filter bar now renders.
+    expect(getByText(/Showing \d+ event/)).toBeTruthy();
+  });
+
+  it('dismisses the person filter when the close pill is pressed', async () => {
+    const { findByLabelText, findByText, queryByText, getByLabelText } = renderWithProviders(
+      <TimelineScreen />,
+    );
+    const card = await findByLabelText(/Abraham,/);
+    fireEvent.press(card);
+    fireEvent.press(await findByText('abraham'));
+    await findByText(/Showing \d+ event/);
+    fireEvent.press(getByLabelText('Clear person filter'));
+    expect(queryByText(/Showing \d+ event/)).toBeNull();
+  });
+
+  it('shows an era context panel when an era segment is tapped', async () => {
+    const { findByLabelText } = renderWithProviders(<TimelineScreen />);
+    const primeval = await findByLabelText(/Primeval era/);
+    fireEvent.press(primeval);
+    // EraContextPanel renders its own accessibility label scoped to the era.
+    expect(await findByLabelText(/Primeval era context/)).toBeTruthy();
+  });
 });
