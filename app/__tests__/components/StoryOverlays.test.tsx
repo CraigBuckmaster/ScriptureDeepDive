@@ -6,6 +6,16 @@ import type { MapStory } from '@/types';
 jest.mock('@/utils/geoMath', () => ({
   toLatLng: ([lon, lat]: number[]) => ({ latitude: lat, longitude: lon }),
   computeBearing: () => 45,
+  midpoint: (
+    a: { latitude: number; longitude: number },
+    b: { latitude: number; longitude: number },
+  ) => ({
+    latitude: (a.latitude + b.latitude) / 2,
+    longitude: (a.longitude + b.longitude) / 2,
+  }),
+  pathDistance: (coords: { latitude: number; longitude: number }[]) =>
+    // Simple stub: 100 miles per leg so the label renders deterministically.
+    Math.max(0, coords.length - 1) * 100,
 }));
 
 beforeEach(() => jest.clearAllMocks());
@@ -86,5 +96,32 @@ describe('StoryOverlays', () => {
       <StoryOverlays story={story} zoomLevel={7} />,
     );
     expect(toJSON()).toBeNull();
+  });
+
+  it('renders a distance label at zoom >= 5 for paths with >= 2 points', () => {
+    const story: MapStory = {
+      ...baseStory,
+      paths_json: JSON.stringify([
+        { coords: [[35, 31], [36, 32]], dashed: false },
+      ]),
+    };
+    const { getByLabelText } = renderWithProviders(
+      <StoryOverlays story={story} zoomLevel={6} />,
+    );
+    // Stub returns 100 miles per leg (1 leg → 100 mi).
+    expect(getByLabelText('Distance: about 100 miles')).toBeTruthy();
+  });
+
+  it('does not render a distance label below the min zoom', () => {
+    const story: MapStory = {
+      ...baseStory,
+      paths_json: JSON.stringify([
+        { coords: [[35, 31], [36, 32]], dashed: false },
+      ]),
+    };
+    const { queryByLabelText } = renderWithProviders(
+      <StoryOverlays story={story} zoomLevel={4} />,
+    );
+    expect(queryByLabelText(/Distance: about/)).toBeNull();
   });
 });

@@ -1,4 +1,15 @@
-import { toLatLng, computeBearing, computeBounds, midpoint, zoomFromDelta, maxPriorityForZoom, labelScale, labelOffset } from '../../src/utils/geoMath';
+import {
+  toLatLng,
+  computeBearing,
+  computeBounds,
+  midpoint,
+  zoomFromDelta,
+  maxPriorityForZoom,
+  labelScale,
+  labelOffset,
+  haversineDistance,
+  pathDistance,
+} from '../../src/utils/geoMath';
 
 describe('toLatLng', () => {
   it('flips lon,lat to latitude,longitude', () => {
@@ -108,6 +119,61 @@ describe('zoomFromDelta', () => {
   });
   it('larger delta yields lower zoom', () => {
     expect(zoomFromDelta(10)).toBeLessThan(zoomFromDelta(1));
+  });
+});
+
+describe('haversineDistance', () => {
+  it('returns 0 for identical coordinates', () => {
+    const d = haversineDistance(
+      { latitude: 31.77, longitude: 35.23 },
+      { latitude: 31.77, longitude: 35.23 },
+    );
+    expect(d).toBeCloseTo(0, 5);
+  });
+
+  it('matches the known Jerusalem → Babylon distance (~530–560 mi)', () => {
+    // Jerusalem (31.77, 35.23) → Babylon ruins (32.54, 44.42)
+    const d = haversineDistance(
+      { latitude: 31.77, longitude: 35.23 },
+      { latitude: 32.54, longitude: 44.42 },
+    );
+    expect(d).toBeGreaterThan(530);
+    expect(d).toBeLessThan(580);
+  });
+
+  it('matches the known Jerusalem → Bethlehem distance (~5 mi)', () => {
+    const d = haversineDistance(
+      { latitude: 31.77, longitude: 35.23 },
+      { latitude: 31.70, longitude: 35.20 },
+    );
+    expect(d).toBeGreaterThan(4);
+    expect(d).toBeLessThan(7);
+  });
+
+  it('is symmetric', () => {
+    const a = { latitude: 0, longitude: 0 };
+    const b = { latitude: 5, longitude: 5 };
+    expect(haversineDistance(a, b)).toBeCloseTo(haversineDistance(b, a), 5);
+  });
+});
+
+describe('pathDistance', () => {
+  it('returns 0 for an empty or single-point path', () => {
+    expect(pathDistance([])).toBe(0);
+    expect(pathDistance([{ latitude: 31, longitude: 35 }])).toBe(0);
+  });
+
+  it('sums leg distances along a polyline', () => {
+    const single = haversineDistance(
+      { latitude: 31.77, longitude: 35.23 },
+      { latitude: 31.70, longitude: 35.20 },
+    );
+    const looped = pathDistance([
+      { latitude: 31.77, longitude: 35.23 },
+      { latitude: 31.70, longitude: 35.20 },
+      { latitude: 31.77, longitude: 35.23 },
+    ]);
+    expect(looped).toBeCloseTo(single * 2, 5);
   });
 });
 

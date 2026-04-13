@@ -6,12 +6,20 @@
  */
 
 import React, { memo, useMemo } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { Polygon, Polyline, Marker } from 'react-native-maps';
-import { toLatLng, computeBearing } from '../../utils/geoMath';
-import { eras } from '../../theme';
+import {
+  toLatLng,
+  computeBearing,
+  midpoint,
+  pathDistance,
+} from '../../utils/geoMath';
+import { useTheme, eras, fontFamily, radii } from '../../theme';
 import type { MapStory } from '../../types';
 import { safeParse } from '../../utils/logger';
+
+/** Min zoom at which path-distance labels render to avoid clutter. */
+export const DISTANCE_LABEL_MIN_ZOOM = 5;
 
 interface Props {
   story: MapStory;
@@ -19,6 +27,7 @@ interface Props {
 }
 
 export const StoryOverlays = memo(function StoryOverlays({ story, zoomLevel }: Props) {
+  const { base } = useTheme();
   const eraColor = eras[story.era] ?? '#bfa050'; // data-color: intentional (fallback)
 
   // Parse regions
@@ -54,6 +63,12 @@ export const StoryOverlays = memo(function StoryOverlays({ story, zoomLevel }: P
       {paths.map((path, i) => {
         const coords = path.coords.map(toLatLng);
         const dashLen = Math.max(3, Math.min(12, zoomLevel));
+        const showDistance =
+          coords.length >= 2 && zoomLevel >= DISTANCE_LABEL_MIN_ZOOM;
+        const distanceMiles = showDistance ? Math.round(pathDistance(coords)) : 0;
+        const labelCoord = showDistance
+          ? midpoint(coords[0], coords[coords.length - 1])
+          : null;
 
         return (
           <React.Fragment key={`p-${i}`}>
@@ -79,6 +94,26 @@ export const StoryOverlays = memo(function StoryOverlays({ story, zoomLevel }: P
                     coords[coords.length - 1]
                   )}
                 />
+              </Marker>
+            )}
+            {/* Distance label at the path midpoint — only shown above min zoom */}
+            {labelCoord && distanceMiles > 0 && (
+              <Marker
+                coordinate={labelCoord}
+                anchor={{ x: 0.5, y: 0.5 }}
+                tracksViewChanges={false}
+              >
+                <View
+                  style={[
+                    styles.distanceBadge,
+                    { backgroundColor: base.bg + 'CC', borderColor: base.border },
+                  ]}
+                  accessibilityLabel={`Distance: about ${distanceMiles} miles`}
+                >
+                  <Text style={[styles.distanceLabel, { color: base.textDim }]}>
+                    ~{distanceMiles} mi
+                  </Text>
+                </View>
               </Marker>
             )}
           </React.Fragment>
@@ -110,5 +145,15 @@ const styles = StyleSheet.create({
     borderBottomWidth: 10,
     borderLeftColor: 'transparent',
     borderRightColor: 'transparent',
+  },
+  distanceBadge: {
+    borderRadius: radii.pill,
+    borderWidth: 1,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+  },
+  distanceLabel: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 9,
   },
 });
