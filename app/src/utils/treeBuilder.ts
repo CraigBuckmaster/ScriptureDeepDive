@@ -11,7 +11,7 @@
  */
 
 import { hierarchy, tree, type HierarchyPointNode } from 'd3-hierarchy';
-import type { Person } from '../types';
+import type { AssociationType, Person } from '../types';
 import { isMessianic as checkMessianic } from './messianicLine';
 
 // ── Constants ───────────────────────────────────────────────────────
@@ -77,6 +77,15 @@ export interface TreeLink {
   /** Both source and target are on the messianic line (Matthew 1 lineage). */
   isMessianic: boolean;
   dimmed: boolean;
+}
+
+/** Dotted connector from an anchor to one of its associated_with satellites (#1288). */
+export interface AssociationLink {
+  anchorId: string;
+  memberId: string;
+  source: { x: number; y: number };
+  target: { x: number; y: number };
+  type: AssociationType | null;
 }
 
 // ── Spine computation ───────────────────────────────────────────────
@@ -356,6 +365,8 @@ export interface TreeLayoutResult {
   links: TreeLink[];
   marriageBars: MarriageBar[];
   spouseConnectors: SpouseConnector[];
+  /** Dotted connectors from anchors to associated_with satellites (#1288). */
+  associationLinks: AssociationLink[];
   spineIds: Set<string>;
   bounds: TreeBounds;
 }
@@ -369,7 +380,8 @@ export function computeFullLayout(
 
   if (!root) {
     return {
-      nodes: [], links: [], marriageBars: [], spouseConnectors: [], spineIds,
+      nodes: [], links: [], marriageBars: [], spouseConnectors: [],
+      associationLinks: [], spineIds,
       bounds: { minX: 0, maxX: 100, minY: 0, maxY: 100, width: 100, height: 100 },
     };
   }
@@ -384,17 +396,36 @@ export function computeFullLayout(
     if (n.y > maxTreeY) maxTreeY = n.y;
   }
 
-  // Position disconnected people below the main tree in era-grouped rows
+  // Position disconnected people below the main tree.
+  // Partition into:
+  //   - associated members: people with valid `associated_with` → cluster near anchor
+  //   - unanchored: everyone else → era-grouped grid (legacy behavior)
   const disconnected = findDisconnectedPeople(people, treeNodeIds);
+  const peopleById = new Map(people.map((p) => [p.id, p]));
 
-  // Group by era, maintain a consistent era order
+  // associated_with is "valid" when the anchor exists in people.json. The anchor
+  // itself can be on the main tree OR in the disconnected era-grid — either way,
+  // it'll have a position by the time we lay out the cluster.
+  const clusterByAnchor = new Map<string, Person[]>();
+  const associatedMemberIds = new Set<string>();
+  for (const p of disconnected) {
+    if (p.associated_with && peopleById.has(p.associated_with)) {
+      const list = clusterByAnchor.get(p.associated_with) ?? [];
+      list.push(p);
+      clusterByAnchor.set(p.associated_with, list);
+      associatedMemberIds.add(p.id);
+    }
+  }
+  const unanchored = disconnected.filter((p) => !associatedMemberIds.has(p.id));
+
+  // Group unanchored by era, maintain a consistent era order
   const ERA_ORDER = [
     'primeval', 'patriarch', 'exodus', 'judges',
     'kingdom', 'prophets', 'exile',
     'intertestamental', 'nt',
   ];
   const byEra = new Map<string, Person[]>();
-  for (const p of disconnected) {
+  for (const p of unanchored) {
     const era = p.era ?? 'unknown';
     const existing = byEra.get(era) ?? [];
     existing.push(p);
@@ -434,7 +465,7 @@ export function computeFullLayout(
     for (const p of people) {
       if (p.spouse_of && group.some((g) => g.id === p.spouse_of)) {
         const partner = disconnectedNodes.find((n) => n.data.id === p.spouse_of);
-        if (partner && !treeNodeIds.has(p.id)) {
+        if (partner && !treeNodeIds.has(p.id) && !associatedMemberIds.has(p.id)) {
           disconnectedNodes.push({
             data: { ...p, nodeType: 'satellite' },
             x: partner.x + TREE_CONSTANTS.spouseXOffset,
@@ -450,6 +481,51 @@ export function computeFullLayout(
 
     const rows = Math.ceil(group.length / COLS_PER_ROW);
     clusterY += rows * ROW_SPACING_Y + 80; // gap before next era group
+  }
+
+  // Layout association clusters around their anchor (#1288).
+  // Members fan out to the right of the anchor in stacked columns of 6.
+  const ANCHOR_CLUSTER_X_OFFSET = 110;
+  const ANCHOR_CLUSTER_X_STRIDE = 90;
+  const ANCHOR_CLUSTER_Y_STRIDE = 38;
+  const ANCHOR_CLUSTER_PER_COL = 6;
+
+  const positionById = new Map<string, { x: number; y: number }>();
+  for (const n of allTreeNodes) positionById.set(n.data.id, { x: n.x, y: n.y });
+  for (const n of disconnectedNodes) positionById.set(n.data.id, { x: n.x, y: n.y });
+
+  const associationLinks: AssociationLink[] = [];
+  for (const [anchorId, members] of clusterByAnchor) {
+    const anchorPos = positionById.get(anchorId);
+    if (!anchorPos) continue; // anchor wasn't placed (orphaned anchor) — drop silently
+
+    members.forEach((p, i) => {
+      const col = Math.floor(i / ANCHOR_CLUSTER_PER_COL);
+      const row = i % ANCHOR_CLUSTER_PER_COL;
+      const colSize = Math.min(
+        members.length - col * ANCHOR_CLUSTER_PER_COL,
+        ANCHOR_CLUSTER_PER_COL,
+      );
+      const x = anchorPos.x + ANCHOR_CLUSTER_X_OFFSET + col * ANCHOR_CLUSTER_X_STRIDE;
+      const y = anchorPos.y + (row - (colSize - 1) / 2) * ANCHOR_CLUSTER_Y_STRIDE;
+
+      disconnectedNodes.push({
+        data: { ...p, nodeType: 'satellite' },
+        x,
+        y,
+        parent: null,
+        children: [],
+        depth: 0,
+        isSpouse: false,
+      });
+      associationLinks.push({
+        anchorId,
+        memberId: p.id,
+        source: { x: anchorPos.x, y: anchorPos.y },
+        target: { x, y },
+        type: p.association_type,
+      });
+    });
   }
 
   const allNodes = [...allTreeNodes, ...disconnectedNodes];
@@ -478,5 +554,8 @@ export function computeFullLayout(
     height: maxY - minY,
   };
 
-  return { nodes: allNodes, links, marriageBars, spouseConnectors, spineIds, bounds };
+  return {
+    nodes: allNodes, links, marriageBars, spouseConnectors,
+    associationLinks, spineIds, bounds,
+  };
 }

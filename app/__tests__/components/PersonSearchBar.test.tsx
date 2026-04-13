@@ -23,6 +23,8 @@ const makePerson = (overrides?: Partial<Person>): Person => ({
   spouse_of: null,
   type: null,
   chapter_link: null,
+  associated_with: null,
+  association_type: null,
   ...overrides,
 });
 

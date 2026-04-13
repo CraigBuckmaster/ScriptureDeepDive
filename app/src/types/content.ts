@@ -104,6 +104,13 @@ export interface BookIntro {
   intro_json: string;
 }
 
+/** Non-genealogical link types from #1288. */
+export type AssociationType =
+  | 'disciple'
+  | 'contemporary'
+  | 'adversary'
+  | 'servant';
+
 export interface Person {
   id: string;
   name: string;
@@ -119,6 +126,10 @@ export interface Person {
   scripture_role: string | null;
   refs_json: string | null;
   chapter_link: string | null;
+  /** Anchor person for satellite figures with no biblical genealogy (#1288). */
+  associated_with: string | null;
+  /** Nature of the association (#1288). */
+  association_type: AssociationType | null;
 }
 
 /** Row from people_journeys table (#1125). */

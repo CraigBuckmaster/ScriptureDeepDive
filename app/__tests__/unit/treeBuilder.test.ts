@@ -5,6 +5,7 @@ const makePerson = (id: string, father?: string): Person => ({
   id, name: id, gender: 'm', father: father ?? null, mother: null,
   spouse_of: null, era: 'patriarch', dates: null, role: '', type: null,
   bio: null, scripture_role: null, refs_json: null, chapter_link: null,
+  associated_with: null, association_type: null,
 });
 
 describe('computeSpineIds', () => {

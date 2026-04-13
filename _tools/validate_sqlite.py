@@ -601,6 +601,29 @@ def main():
     check("All mother refs valid", len(bad_mothers) == 0,
           f"{len(bad_mothers)} broken: {[r[0]+' → '+r[1] for r in bad_mothers[:5]]}")
 
+    # People: associated_with references point to existing people (#1288)
+    bad_assoc = q(cur,
+        "SELECT p.id, p.associated_with FROM people p "
+        "WHERE p.associated_with IS NOT NULL AND p.associated_with != '' "
+        "AND NOT EXISTS (SELECT 1 FROM people p2 WHERE p2.id = p.associated_with)")
+    check("All associated_with refs valid", len(bad_assoc) == 0,
+          f"{len(bad_assoc)} broken: {[r[0]+' → '+r[1] for r in bad_assoc[:5]]}")
+
+    # association_type is one of the four enumerated values (#1288)
+    bad_assoc_type = q(cur,
+        "SELECT id, association_type FROM people "
+        "WHERE association_type IS NOT NULL "
+        "AND association_type NOT IN ('disciple','contemporary','adversary','servant')")
+    check("All association_type values valid", len(bad_assoc_type) == 0,
+          f"{len(bad_assoc_type)} invalid: {bad_assoc_type[:5]}")
+
+    # association_type only set when associated_with is set, and vice versa (#1288)
+    assoc_inconsistent = q(cur,
+        "SELECT id, associated_with, association_type FROM people "
+        "WHERE (associated_with IS NULL) != (association_type IS NULL)")
+    check("associated_with and association_type set together", len(assoc_inconsistent) == 0,
+          f"{len(assoc_inconsistent)} mismatched: {assoc_inconsistent[:5]}")
+
     # VHL btn_types_json non-empty
     empty_btn = q1(cur,
         "SELECT COUNT(*) FROM vhl_groups "
