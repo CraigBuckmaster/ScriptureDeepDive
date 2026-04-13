@@ -31,6 +31,11 @@ export interface BaseColors {
   danger: string;
   success: string;
   redLetter: string;
+  // ── Subtle section tints (Explore redesign) ───────────────────────
+  tintWarm: string;
+  tintEmber: string;
+  tintParchment: string;
+  tintDusk: string;
 }
 
 export interface ThemePalette {
@@ -71,6 +76,10 @@ const darkBase: BaseColors = {
   danger: '#e05a6a',
   success: '#81C784',
   redLetter: '#d4847a',
+  tintWarm: 'rgba(191,160,80,0.04)',
+  tintEmber: 'rgba(160,100,50,0.05)',
+  tintParchment: 'rgba(180,160,120,0.04)',
+  tintDusk: 'rgba(120,100,80,0.06)',
 };
 
 const sepiaBase: BaseColors = {
@@ -91,6 +100,10 @@ const sepiaBase: BaseColors = {
   danger: '#c04848',
   success: '#4a8a4a',
   redLetter: '#9a3a2a',        // WCAG AA: 5.7:1 on bg
+  tintWarm: 'rgba(136,104,24,0.04)',
+  tintEmber: 'rgba(120,80,40,0.05)',
+  tintParchment: 'rgba(140,120,80,0.04)',
+  tintDusk: 'rgba(100,80,60,0.06)',
 };
 
 const lightBase: BaseColors = {
@@ -111,6 +124,10 @@ const lightBase: BaseColors = {
   danger: '#d04040',
   success: '#388e38',
   redLetter: '#9e3a30',
+  tintWarm: 'rgba(138,106,24,0.03)',
+  tintEmber: 'rgba(120,80,40,0.04)',
+  tintParchment: 'rgba(140,120,80,0.03)',
+  tintDusk: 'rgba(100,80,60,0.04)',
 };
 
 // ── Palette builder ───────────────────────────────────────────────────

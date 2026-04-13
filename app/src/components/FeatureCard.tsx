@@ -33,10 +33,15 @@ interface Props {
   onImagePress?: (deepLink: { screen: string; params?: Record<string, string> }) => void;
   /** Stagger offset in ms to prevent synchronised cycling across cards */
   staggerMs?: number;
+  /** Compact variant — 130px wide with a 72px image header (used in split-row layouts). */
+  compact?: boolean;
 }
 
 const IMAGE_HEIGHT = 88;
+const COMPACT_IMAGE_HEIGHT = 72;
 const CYCLE_INTERVAL = 6000;
+const CARD_WIDTH = 174;
+const COMPACT_CARD_WIDTH = 130;
 
 export function FeatureCard({
   feature,
@@ -47,10 +52,13 @@ export function FeatureCard({
   noun,
   onImagePress,
   staggerMs = 0,
+  compact = false,
 }: Props) {
   const { base } = useTheme();
   const isLocked = feature.premium && !isPremium;
   const hasImages = images && images.length > 0;
+  const cardWidth = compact ? COMPACT_CARD_WIDTH : CARD_WIDTH;
+  const imageHeight = compact ? COMPACT_IMAGE_HEIGHT : IMAGE_HEIGHT;
 
   // ── Image cycling ────────────────────────────────────────
   const [activeIndex, setActiveIndex] = useState(0);
@@ -88,6 +96,7 @@ export function FeatureCard({
 
   return (
     <View style={[styles.card, {
+      width: cardWidth,
       backgroundColor: base.bgElevated,
       borderColor: base.gold + '12',
     }]}>
@@ -99,7 +108,7 @@ export function FeatureCard({
           accessibilityRole="button"
           accessibilityLabel={currentImage.caption ?? `${feature.title} image`}
         >
-          <View style={styles.imageContainer}>
+          <View style={[styles.imageContainer, { width: cardWidth, height: imageHeight }]}>
             <Image
               source={{ uri: currentImage.url }}
               style={styles.image}
@@ -134,7 +143,7 @@ export function FeatureCard({
         </TouchableOpacity>
       ) : (
         /* Fallback: accent-colored strip */
-        <View style={[styles.fallbackStrip, { backgroundColor: base.gold + '20' }]} />
+        <View style={[styles.fallbackStrip, { width: cardWidth, backgroundColor: base.gold + '20' }]} />
       )}
 
       {/* ── Text area (tappable → feature browse) ─── */}
@@ -162,19 +171,14 @@ export function FeatureCard({
   );
 }
 
-const CARD_WIDTH = 174;
-
 const styles = StyleSheet.create({
   card: {
-    width: CARD_WIDTH,
     borderWidth: 1,
     borderRadius: radii.lg,
     overflow: 'hidden',
   },
   // Image section
   imageContainer: {
-    width: CARD_WIDTH,
-    height: IMAGE_HEIGHT,
     position: 'relative',
   },
   image: {
@@ -220,7 +224,6 @@ const styles = StyleSheet.create({
   },
   // Fallback
   fallbackStrip: {
-    width: CARD_WIDTH,
     height: 6,
   },
   // Text area
@@ -253,4 +256,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export { CARD_WIDTH };
+export { CARD_WIDTH, COMPACT_CARD_WIDTH };

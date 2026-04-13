@@ -24,6 +24,16 @@ import { RecommendedCard } from '../components/RecommendedCard';
 import { StartHereBanner } from '../components/StartHereBanner';
 import { UpgradePrompt } from '../components/UpgradePrompt';
 import { JourneyBrowseSection } from '../components/JourneyBrowseSection';
+import {
+  ProphecyChainCard,
+  DebatePreviewList,
+  WordStudyPreviewList,
+  LifeTopicGrid,
+  FullWidthImageCard,
+  GoldSeparator,
+  PROPHECY_CHAIN_CARD_WIDTH,
+} from '../components/explore';
+import { useProphecyChains } from '../hooks/useProphecyChains';
 import { getReadingStats, getPreference, setPreference } from '../db/user';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
@@ -111,6 +121,7 @@ function ExploreMenuScreen() {
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
   const { recommendations, bookName } = useExploreRecommendations();
   const imageRegistry = useExploreImages();
+  const { chains: prophecyChains } = useProphecyChains();
 
   const [activeJump, setActiveJump] = useState<string | null>(null);
   const [chaptersRead, setChaptersRead] = useState<number | null>(null);
@@ -163,9 +174,220 @@ function ExploreMenuScreen() {
     return imageRegistry[screenName];
   }, [imageRegistry]);
 
+  const handleProphecyPress = useCallback((chainId: string) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    navigation.navigate('ProphecyDetail' as any, { chainId } as any);
+  }, [navigation]);
+
+  const handleDebatePress = useCallback((debateId: string) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    navigation.navigate('DebateDetail' as any, { topicId: debateId } as any);
+  }, [navigation]);
+
+  const handleWordStudyPress = useCallback((id: string) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    navigation.navigate('WordStudyDetail' as any, { wordId: id } as any);
+  }, [navigation]);
+
+  const handleLifeCategoryPress = useCallback((categoryId: string) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    navigation.navigate('LifeTopics' as any, { categoryId } as any);
+  }, [navigation]);
+
   const showStartHere = chaptersRead !== null && chaptersRead < 5 && !startHereDismissed;
   const showRecommendations = !showStartHere && recommendations.length > 0;
   const filteredSections = activeJump ? SECTIONS.filter((s) => s.id === activeJump) : SECTIONS;
+
+  // ── Per-section content renderer ────────────────────────────
+  const renderSectionContent = (section: FeatureSection) => {
+    switch (section.id) {
+      case 'journeys':
+        return <JourneyBrowseSection />;
+      case 'themes':
+        return (
+          <View style={styles.sectionGap}>
+            {prophecyChains.length > 0 && (
+              <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={styles.carouselContent}
+                decelerationRate="fast"
+                snapToInterval={PROPHECY_CHAIN_CARD_WIDTH + spacing.sm}
+              >
+                {prophecyChains.slice(0, 4).map((chain) => (
+                  <ProphecyChainCard
+                    key={chain.id}
+                    chain={chain}
+                    onPress={() => handleProphecyPress(chain.id)}
+                  />
+                ))}
+              </ScrollView>
+            )}
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.carouselContent}
+              decelerationRate="fast"
+            >
+              {section.features.map((f, cardIndex) => {
+                const imgData = getScreenImages(f.screen);
+                return (
+                  <FeatureCard
+                    key={f.screen}
+                    feature={f}
+                    onPress={() => handleNavigate(f.screen)}
+                    isPremium={isPremium}
+                    images={imgData?.images}
+                    count={imgData?.count}
+                    noun={imgData?.noun}
+                    onImagePress={handleDeepLink}
+                    staggerMs={cardIndex * 1200}
+                    compact
+                  />
+                );
+              })}
+            </ScrollView>
+          </View>
+        );
+      case 'scholarly': {
+        const splitFeatures = section.features.filter(
+          (f) => f.screen === 'ScholarBrowse' || f.screen === 'DifficultPassagesBrowse',
+        );
+        const totalDebates = getScreenImages('DebateBrowse')?.count ?? undefined;
+        return (
+          <View style={styles.sectionGap}>
+            <DebatePreviewList
+              onDebatePress={handleDebatePress}
+              onSeeAll={() => handleNavigate('DebateBrowse')}
+              totalCount={totalDebates ?? undefined}
+            />
+            <View style={styles.row2}>
+              {splitFeatures.map((f, i) => {
+                const imgData = getScreenImages(f.screen);
+                return (
+                  <View key={f.screen} style={styles.rowCell}>
+                    <FeatureCard
+                      feature={f}
+                      onPress={() => handleNavigate(f.screen)}
+                      isPremium={isPremium}
+                      images={imgData?.images}
+                      count={imgData?.count}
+                      noun={imgData?.noun}
+                      onImagePress={handleDeepLink}
+                      staggerMs={i * 1200}
+                      compact
+                    />
+                  </View>
+                );
+              })}
+            </View>
+          </View>
+        );
+      }
+      case 'language': {
+        const splitFeatures = section.features.filter(
+          (f) => f.screen !== 'WordStudyBrowse',
+        );
+        const totalWords = getScreenImages('WordStudyBrowse')?.count ?? undefined;
+        return (
+          <View style={styles.sectionGap}>
+            <WordStudyPreviewList
+              onWordPress={handleWordStudyPress}
+              onSeeAll={() => handleNavigate('WordStudyBrowse')}
+              totalCount={totalWords ?? undefined}
+            />
+            <View style={styles.row3}>
+              {splitFeatures.map((f, i) => {
+                const imgData = getScreenImages(f.screen);
+                return (
+                  <View key={f.screen} style={styles.rowCell}>
+                    <FeatureCard
+                      feature={f}
+                      onPress={() => handleNavigate(f.screen)}
+                      isPremium={isPremium}
+                      images={imgData?.images}
+                      count={imgData?.count}
+                      noun={imgData?.noun}
+                      onImagePress={handleDeepLink}
+                      staggerMs={i * 1200}
+                      compact
+                    />
+                  </View>
+                );
+              })}
+            </View>
+          </View>
+        );
+      }
+      case 'life': {
+        const lifeImage = getScreenImages('LifeTopics');
+        return (
+          <View style={styles.sectionGap}>
+            <FullWidthImageCard
+              title="Life Topics"
+              subtitle="Practical guidance from Scripture"
+              image={lifeImage?.images?.[0] ?? null}
+              count={lifeImage?.count ?? null}
+              noun={lifeImage?.noun}
+              onPress={() => handleNavigate('LifeTopics')}
+            />
+            <LifeTopicGrid onCategoryPress={handleLifeCategoryPress} />
+          </View>
+        );
+      }
+      case 'deep-dive':
+        return (
+          <View style={styles.row3}>
+            {section.features.map((f, i) => {
+              const imgData = getScreenImages(f.screen);
+              return (
+                <View key={f.screen} style={styles.rowCell}>
+                  <FeatureCard
+                    feature={f}
+                    onPress={() => handleNavigate(f.screen)}
+                    isPremium={isPremium}
+                    images={imgData?.images}
+                    count={imgData?.count}
+                    noun={imgData?.noun}
+                    onImagePress={handleDeepLink}
+                    staggerMs={i * 1200}
+                    compact
+                  />
+                </View>
+              );
+            })}
+          </View>
+        );
+      case 'biblical-world':
+      default:
+        return (
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.carouselContent}
+            decelerationRate="fast"
+            snapToInterval={CARD_WIDTH + spacing.sm}
+          >
+            {section.features.map((f, cardIndex) => {
+              const imgData = getScreenImages(f.screen);
+              return (
+                <FeatureCard
+                  key={f.screen}
+                  feature={f}
+                  onPress={() => handleNavigate(f.screen)}
+                  isPremium={isPremium}
+                  images={imgData?.images}
+                  count={imgData?.count}
+                  noun={imgData?.noun}
+                  onImagePress={handleDeepLink}
+                  staggerMs={cardIndex * 1200}
+                />
+              );
+            })}
+          </ScrollView>
+        );
+    }
+  };
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
@@ -235,47 +457,14 @@ function ExploreMenuScreen() {
           </View>
         )}
 
-        {/* ── Sections with carousels ─── */}
+        {/* ── Sections with varied layouts ─── */}
         {filteredSections.map((section, sectionIndex) => (
           <View key={section.id}>
-            {/* Gold separator between sections */}
-            {sectionIndex > 0 && (
-              <View style={[styles.separator, { backgroundColor: base.gold + '1A' }]} />
-            )}
-
+            {sectionIndex > 0 && <GoldSeparator />}
             <View style={styles.section}>
               <Text style={[styles.sectionLabel, { color: base.gold }]}>{section.label}</Text>
               <Text style={[styles.sectionSubtitle, { color: base.textMuted }]}>{section.subtitle}</Text>
-
-              {/* Journeys section uses a custom component instead of FeatureCards */}
-              {section.id === 'journeys' ? (
-                <JourneyBrowseSection />
-              ) : (
-              <ScrollView
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                contentContainerStyle={styles.carouselContent}
-                decelerationRate="fast"
-                snapToInterval={CARD_WIDTH + spacing.sm}
-              >
-                {section.features.map((f, cardIndex) => {
-                  const imgData = getScreenImages(f.screen);
-                  return (
-                    <FeatureCard
-                      key={f.screen}
-                      feature={f}
-                      onPress={() => handleNavigate(f.screen)}
-                      isPremium={isPremium}
-                      images={imgData?.images}
-                      count={imgData?.count}
-                      noun={imgData?.noun}
-                      onImagePress={handleDeepLink}
-                      staggerMs={cardIndex * 1200}
-                    />
-                  );
-                })}
-              </ScrollView>
-              )}
+              {renderSectionContent(section)}
             </View>
           </View>
         ))}
@@ -325,9 +514,6 @@ const styles = StyleSheet.create({
   recsLabel: { fontFamily: fontFamily.uiMedium, fontSize: 10, letterSpacing: 1, marginBottom: 2 },
   recsSubtitle: { fontFamily: fontFamily.ui, fontSize: 10, marginBottom: spacing.sm },
 
-  // Gold separator
-  separator: { height: 1, marginBottom: spacing.md },
-
   // Sections
   section: { marginBottom: spacing.md },
   sectionLabel: { fontFamily: fontFamily.displayMedium, fontSize: 13, letterSpacing: 0.5, marginBottom: 2 },
@@ -335,6 +521,12 @@ const styles = StyleSheet.create({
 
   // Carousels
   carouselContent: { gap: spacing.sm },
+
+  // Split/grid rows
+  sectionGap: { gap: spacing.md },
+  row2: { flexDirection: 'row', gap: spacing.sm },
+  row3: { flexDirection: 'row', gap: spacing.sm },
+  rowCell: { flex: 1 },
 
   // Show all
   showAllBtn: {
