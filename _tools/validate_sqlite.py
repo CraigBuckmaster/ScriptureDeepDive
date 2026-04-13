@@ -712,13 +712,14 @@ def main():
         "WHERE s.chapter_id = 'matthew_1'")
     check("Matthew 1 has section panels", mt1_sp and mt1_sp > 5, f"got {mt1_sp}")
 
-    # Spine = people in the main genealogy tree (Adam→Jesus), satellite = everyone else.
-    # The spine count (37) is fixed by the genealogy tree structure.
+    # Spine = people in the main genealogy tree (Adam→Jesus + tribal-head bridges),
+    # satellite = everyone else.
+    # The spine count grows as Tier 2+ tribal-head bridges are promoted (#1287).
     # The satellite count drifts as people are added during enrichment — update as needed.
     spine = q1(cur, "SELECT COUNT(*) FROM people WHERE type='spine'")
     sat = q1(cur, "SELECT COUNT(*) FROM people WHERE type='satellite'")
-    check("60 spine people", spine == 60, f"got {spine}")
-    check("242 satellite people", sat == 242, f"got {sat}")
+    check("62 spine people", spine == 62, f"got {spine}")
+    check("251 satellite people", sat == 251, f"got {sat}")
 
     # Sanity: the two endpoints of the genealogy tree must always be spine
     adam_type = q1(cur, "SELECT type FROM people WHERE id='adam'")

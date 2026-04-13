@@ -70,6 +70,10 @@ export const MESSIANIC_LINE: readonly string[] = [
   'jacob_nt',
   'joseph-nt',
   'jesus',
+  // Tier 2 tribal-head bridges (#1287) — not on the Matthew 1 line but
+  // emphasized on the visual spine because they anchor major OT clusters.
+  'kish',
+  'elkanah',
 ] as const;
 
 /** Fast membership check. */
