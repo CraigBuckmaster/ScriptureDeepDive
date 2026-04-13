@@ -601,6 +601,29 @@ def main():
     check("All mother refs valid", len(bad_mothers) == 0,
           f"{len(bad_mothers)} broken: {[r[0]+' → '+r[1] for r in bad_mothers[:5]]}")
 
+    # People: associated_with references point to existing people (#1288)
+    bad_assoc = q(cur,
+        "SELECT p.id, p.associated_with FROM people p "
+        "WHERE p.associated_with IS NOT NULL AND p.associated_with != '' "
+        "AND NOT EXISTS (SELECT 1 FROM people p2 WHERE p2.id = p.associated_with)")
+    check("All associated_with refs valid", len(bad_assoc) == 0,
+          f"{len(bad_assoc)} broken: {[r[0]+' → '+r[1] for r in bad_assoc[:5]]}")
+
+    # association_type is one of the four enumerated values (#1288)
+    bad_assoc_type = q(cur,
+        "SELECT id, association_type FROM people "
+        "WHERE association_type IS NOT NULL "
+        "AND association_type NOT IN ('disciple','contemporary','adversary','servant')")
+    check("All association_type values valid", len(bad_assoc_type) == 0,
+          f"{len(bad_assoc_type)} invalid: {bad_assoc_type[:5]}")
+
+    # association_type only set when associated_with is set, and vice versa (#1288)
+    assoc_inconsistent = q(cur,
+        "SELECT id, associated_with, association_type FROM people "
+        "WHERE (associated_with IS NULL) != (association_type IS NULL)")
+    check("associated_with and association_type set together", len(assoc_inconsistent) == 0,
+          f"{len(assoc_inconsistent)} mismatched: {assoc_inconsistent[:5]}")
+
     # VHL btn_types_json non-empty
     empty_btn = q1(cur,
         "SELECT COUNT(*) FROM vhl_groups "
@@ -712,13 +735,14 @@ def main():
         "WHERE s.chapter_id = 'matthew_1'")
     check("Matthew 1 has section panels", mt1_sp and mt1_sp > 5, f"got {mt1_sp}")
 
-    # Spine = people in the main genealogy tree (Adam→Jesus), satellite = everyone else.
-    # The spine count (37) is fixed by the genealogy tree structure.
+    # Spine = people in the main genealogy tree (Adam→Jesus + tribal-head bridges),
+    # satellite = everyone else.
+    # The spine count grows as Tier 2+ tribal-head bridges are promoted (#1287).
     # The satellite count drifts as people are added during enrichment — update as needed.
     spine = q1(cur, "SELECT COUNT(*) FROM people WHERE type='spine'")
     sat = q1(cur, "SELECT COUNT(*) FROM people WHERE type='satellite'")
-    check("60 spine people", spine == 60, f"got {spine}")
-    check("242 satellite people", sat == 242, f"got {sat}")
+    check("62 spine people", spine == 62, f"got {spine}")
+    check("251 satellite people", sat == 251, f"got {sat}")
 
     # Sanity: the two endpoints of the genealogy tree must always be spine
     adam_type = q1(cur, "SELECT type FROM people WHERE id='adam'")

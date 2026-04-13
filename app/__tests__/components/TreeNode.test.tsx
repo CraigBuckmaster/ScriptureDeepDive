@@ -82,6 +82,8 @@ const makeNode = (overrides: Partial<LayoutNode['data']> = {}): LayoutNode => ({
     scripture_role: null,
     refs_json: null,
     chapter_link: null,
+    associated_with: null,
+    association_type: null,
     nodeType: 'spine',
     ...overrides,
   },

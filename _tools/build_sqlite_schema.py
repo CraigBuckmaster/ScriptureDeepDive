@@ -106,7 +106,11 @@ CREATE TABLE people (
   bio TEXT,
   scripture_role TEXT,
   refs_json TEXT,
-  chapter_link TEXT
+  chapter_link TEXT,
+  -- Non-genealogical relationship to anchor disconnected figures (#1288).
+  -- association_type ∈ {disciple, contemporary, adversary, servant}.
+  associated_with TEXT,
+  association_type TEXT
 );
 
 CREATE TABLE people_journeys (

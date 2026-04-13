@@ -63,7 +63,7 @@ function GenealogyTreeScreen({ route, navigation }: {
   const [filterEra, setFilterEra] = useState<string>('all');
   const [selectedPerson, setSelectedPerson] = useState<Person | null>(null);
 
-  const { nodes, links, marriageBars, spouseConnectors, spineIds, bounds } =
+  const { nodes, links, marriageBars, spouseConnectors, associationLinks, spineIds, bounds } =
     useTreeLayout(people, filterEra);
 
   useEffect(() => {
@@ -219,6 +219,7 @@ function GenealogyTreeScreen({ route, navigation }: {
                   links={links}
                   marriageBars={marriageBars}
                   spouseConnectors={spouseConnectors}
+                  associationLinks={associationLinks}
                   filterEra={filterEra === 'all' ? null : filterEra}
                   spineIds={spineIds}
                   selectedPersonId={selectedPerson?.id ?? null}

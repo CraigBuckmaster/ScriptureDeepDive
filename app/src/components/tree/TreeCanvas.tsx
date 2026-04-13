@@ -15,13 +15,15 @@ import { TreeLink } from './TreeLink';
 import { MarriageBarSvg } from './MarriageBarSvg';
 import { SpouseConnectorSvg } from './SpouseConnectorSvg';
 import { TreeNode } from './TreeNode';
-import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson } from '../../utils/treeBuilder';
+import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson, AssociationLink } from '../../utils/treeBuilder';
 
 interface Props {
   nodes: LayoutNode[];
   links: TreeLinkType[];
   marriageBars: MarriageBar[];
   spouseConnectors: SpouseConnector[];
+  /** Dotted connectors from anchors to associated_with satellites (#1288). */
+  associationLinks?: AssociationLink[];
   filterEra: string | null;
   spineIds: Set<string>;
   selectedPersonId: string | null;
@@ -36,6 +38,7 @@ interface Props {
 
 export const TreeCanvas = memo(function TreeCanvas({
   nodes, links, marriageBars, spouseConnectors,
+  associationLinks = [],
   filterEra, spineIds, selectedPersonId, onNodePress,
   offsetX = 0, offsetY = 0,
   canvasWidth = 4000, canvasHeight = 4000,
@@ -91,6 +94,22 @@ export const TreeCanvas = memo(function TreeCanvas({
             isSpine={link.isSpine}
             isMessianic={link.isMessianic}
             dimmed={link.dimmed}
+          />
+        ))}
+
+        {/* 1b. Association links — dotted connector to satellite clusters (#1288).
+               Distinguished from solid genealogy links by stroke-dasharray. */}
+        {associationLinks.map((al) => (
+          <Line
+            key={`al-${al.anchorId}-${al.memberId}`}
+            x1={al.source.x}
+            y1={al.source.y}
+            x2={al.target.x}
+            y2={al.target.y}
+            stroke={base.border}
+            strokeWidth={0.8}
+            strokeDasharray="3,3"
+            opacity={0.55}
           />
         ))}
 

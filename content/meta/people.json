@@ -2511,7 +2511,9 @@
           "ref": "Acts 7:45",
           "note": "Stephen mentions Joshua bringing the tabernacle into the land — the continuity of God's dwelling among his people."
         }
-      ]
+      ],
+      "associated_with": "moses",
+      "association_type": "disciple"
     },
     {
       "id": "caleb",
@@ -2528,7 +2530,9 @@
         "Num 13-14",
         "Josh 14:6-15"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "moses",
+      "association_type": "disciple"
     },
     {
       "id": "deborah",
@@ -2923,7 +2927,7 @@
       "id": "samuel",
       "name": "Samuel",
       "gender": "m",
-      "father": null,
+      "father": "elkanah",
       "mother": null,
       "spouseOf": null,
       "era": "kingdom",
@@ -3036,13 +3040,15 @@
         "1 Sam 1-2",
         "Luke 1:46-55"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "samuel",
+      "association_type": "contemporary"
     },
     {
       "id": "saul",
       "name": "Saul",
       "gender": "m",
-      "father": null,
+      "father": "kish",
       "mother": null,
       "spouseOf": null,
       "era": "kingdom",
@@ -3620,7 +3626,9 @@
       "refs": [
         "1 Kgs 16:29-22:40"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "elijah",
+      "association_type": "adversary"
     },
     {
       "id": "jezebel",
@@ -3641,7 +3649,9 @@
         "2 Kgs 9:30-37",
         "Rev 2:20"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "elijah",
+      "association_type": "adversary"
     },
     {
       "id": "hezekiah",
@@ -3876,13 +3886,15 @@
           "ref": "Luke 4:27",
           "note": "Jesus cites Naaman's cleansing as evidence that God's grace reaches Gentiles — provoking his hometown to fury."
         }
-      ]
+      ],
+      "associated_with": "elijah",
+      "association_type": "disciple"
     },
     {
       "id": "isaiah",
       "name": "Isaiah",
       "gender": "m",
-      "father": null,
+      "father": "amoz",
       "mother": null,
       "spouseOf": null,
       "era": "prophets",
@@ -4574,7 +4586,9 @@
       "refs": [
         "Luke 1:5-25,57-80"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "contemporary"
     },
     {
       "id": "elizabeth",
@@ -4591,7 +4605,9 @@
       "refs": [
         "Luke 1:5-25,39-45,57-60"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "contemporary"
     },
     {
       "id": "john-baptist",
@@ -4611,7 +4627,9 @@
         "Luke 1:5-25,57-80",
         "John 1:19-34"
       ],
-      "chapter": "nt/luke/Luke_1.html"
+      "chapter": "nt/luke/Luke_1.html",
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "joseph-nt",
@@ -5058,7 +5076,9 @@
           "ref": "John 1:42",
           "note": "Jesus names Simon 'Cephas' (Peter/Rock) at their first meeting — seeing the leader he will become."
         }
-      ]
+      ],
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "andrew",
@@ -5077,7 +5097,9 @@
         "Mark 1:16-18",
         "Acts 1:13"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "james-z",
@@ -5097,7 +5119,9 @@
         "Mark 10:35-41",
         "Acts 12:1-2"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "john-ap",
@@ -5186,7 +5210,9 @@
           "ref": "John 21:20-24",
           "note": "The beloved disciple whose testimony is written in the Fourth Gospel — 'we know that his testimony is true.'"
         }
-      ]
+      ],
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "philip",
@@ -5206,7 +5232,9 @@
         "John 14:8-9",
         "Acts 1:13"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "matthew-ap",
@@ -5226,7 +5254,9 @@
         "Mark 2:14-17",
         "Acts 1:13"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "thomas",
@@ -5245,7 +5275,9 @@
         "John 14:5",
         "John 20:24-29"
       ],
-      "chapter": "nt/john/John_20.html"
+      "chapter": "nt/john/John_20.html",
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "judas",
@@ -5265,7 +5297,9 @@
         "John 13:21-30",
         "Acts 1:16-20"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "nicodemus",
@@ -5284,7 +5318,9 @@
         "John 7:50-51",
         "John 19:39"
       ],
-      "chapter": "nt/john/John_3.html"
+      "chapter": "nt/john/John_3.html",
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "mary-magdalene",
@@ -5304,7 +5340,9 @@
         "John 19:25",
         "John 20:11-18"
       ],
-      "chapter": "nt/luke/Luke_8.html"
+      "chapter": "nt/luke/Luke_8.html",
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "paul",
@@ -5526,7 +5564,9 @@
           "ref": "Acts 22:20",
           "note": "Paul later recalls standing at Stephen's death — the martyr's witness haunts the persecutor's conscience."
         }
-      ]
+      ],
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "barnabas",
@@ -5605,7 +5645,9 @@
           "ref": "2 Tim 4:11",
           "note": "Paul's final letter asks for Mark: 'He is helpful to me in my ministry' — Barnabas was right about Mark all along."
         }
-      ]
+      ],
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "philip-nt",
@@ -5624,7 +5666,9 @@
         "Acts 8:4-40",
         "Acts 21:8"
       ],
-      "chapter": "nt/acts/Acts_8.html"
+      "chapter": "nt/acts/Acts_8.html",
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "herod-great",
@@ -5642,7 +5686,9 @@
         "Matt 2:1-18",
         "Luke 1:5"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "contemporary"
     },
     {
       "id": "herod-antipas",
@@ -5661,7 +5707,9 @@
         "Luke 13:31-32",
         "Luke 23:7-12"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "contemporary"
     },
     {
       "id": "herodias",
@@ -5679,7 +5727,9 @@
         "Mark 6:17-29",
         "Matt 14:3-12"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "adversary"
     },
     {
       "id": "caiaphas",
@@ -5700,7 +5750,9 @@
         "John 18:13-28",
         "Acts 4:6"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "contemporary"
     },
     {
       "id": "annas",
@@ -5719,7 +5771,9 @@
         "John 18:12-24",
         "Acts 4:6"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "contemporary"
     },
     {
       "id": "gamaliel",
@@ -5737,7 +5791,9 @@
         "Acts 5:34-39",
         "Acts 22:3"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "contemporary"
     },
     {
       "id": "lazarus",
@@ -5756,7 +5812,9 @@
         "John 11:1-44",
         "John 12:1-11"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "martha",
@@ -5775,7 +5833,9 @@
         "John 11:17-37",
         "John 12:2"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "mary-bethany",
@@ -5794,7 +5854,9 @@
         "John 11:1-45",
         "John 12:1-8"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "zacchaeus",
@@ -5811,7 +5873,9 @@
       "refs": [
         "Luke 19:1-10"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "nathanael",
@@ -5830,7 +5894,9 @@
         "John 21:2",
         "Acts 1:13"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "joseph-arimathea",
@@ -5850,7 +5916,9 @@
         "Luke 23:50-53",
         "John 19:38-42"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "pilate",
@@ -5870,7 +5938,9 @@
         "John 18:28-19:22",
         "Acts 4:27"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "contemporary"
     },
     {
       "id": "cornelius",
@@ -5889,7 +5959,9 @@
         "Acts 10:1-48",
         "Acts 11:1-18"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "lydia",
@@ -5906,7 +5978,9 @@
       "refs": [
         "Acts 16:11-15,40"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "aquila",
@@ -5925,7 +5999,9 @@
         "Rom 16:3-4",
         "1 Cor 16:19"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "priscilla",
@@ -5944,7 +6020,9 @@
         "Rom 16:3-4",
         "1 Cor 16:19"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "apollos",
@@ -5964,7 +6042,9 @@
         "1 Cor 1:12",
         "1 Cor 3:4-6"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "matthias",
@@ -5981,7 +6061,9 @@
       "refs": [
         "Acts 1:23-26"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "joanna",
@@ -5999,7 +6081,9 @@
         "Luke 8:3",
         "Luke 24:10"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "simon-magus",
@@ -6016,7 +6100,9 @@
       "refs": [
         "Acts 8:9-24"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "adversary"
     },
     {
       "id": "anna",
@@ -6033,7 +6119,9 @@
       "refs": [
         "Luke 2:36-38"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "korah",
@@ -6140,7 +6228,9 @@
         "2 Pet 2:15",
         "Rev 2:14"
       ],
-      "chapter": "ot/numbers/Numbers_22.html"
+      "chapter": "ot/numbers/Numbers_22.html",
+      "associated_with": "moses",
+      "association_type": "adversary"
     },
     {
       "id": "balak",
@@ -6158,7 +6248,9 @@
         "Josh 24:9-10",
         "Mic 6:5"
       ],
-      "chapter": "ot/numbers/Numbers_22.html"
+      "chapter": "ot/numbers/Numbers_22.html",
+      "associated_with": "moses",
+      "association_type": "adversary"
     },
     {
       "id": "james-brother",
@@ -6195,7 +6287,9 @@
         "Acts 8:4-40",
         "Acts 21:8-9"
       ],
-      "chapter": "nt/acts/Acts_8.html"
+      "chapter": "nt/acts/Acts_8.html",
+      "associated_with": "jesus",
+      "association_type": "disciple"
     },
     {
       "id": "silas",
@@ -6214,7 +6308,9 @@
         "1 Thess 1:1",
         "1 Pet 5:12"
       ],
-      "chapter": "nt/acts/Acts_16.html"
+      "chapter": "nt/acts/Acts_16.html",
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "agrippa",
@@ -6230,7 +6326,9 @@
       "refs": [
         "Acts 25:13-26:32"
       ],
-      "chapter": "nt/acts/Acts_26.html"
+      "chapter": "nt/acts/Acts_26.html",
+      "associated_with": "paul",
+      "association_type": "contemporary"
     },
     {
       "id": "felix",
@@ -6246,7 +6344,9 @@
       "refs": [
         "Acts 23:24-24:27"
       ],
-      "chapter": "nt/acts/Acts_24.html"
+      "chapter": "nt/acts/Acts_24.html",
+      "associated_with": "paul",
+      "association_type": "contemporary"
     },
     {
       "id": "festus",
@@ -6262,7 +6362,9 @@
       "refs": [
         "Acts 24:27-26:32"
       ],
-      "chapter": "nt/acts/Acts_25.html"
+      "chapter": "nt/acts/Acts_25.html",
+      "associated_with": "paul",
+      "association_type": "contemporary"
     },
     {
       "id": "sihon",
@@ -6332,7 +6434,9 @@
         "Josh 1:1",
         "1 Chr 7:27"
       ],
-      "chapter": ""
+      "chapter": "",
+      "associated_with": "moses",
+      "association_type": "servant"
     },
     {
       "id": "jephthah",
@@ -6431,7 +6535,9 @@
         "2 Sam 18:14"
       ],
       "chapter": "ot/2_samuel/2_Samuel_2.html",
-      "dates": "c. 1040–970 BC"
+      "dates": "c. 1040–970 BC",
+      "associated_with": "david",
+      "association_type": "servant"
     },
     {
       "id": "nathan-prophet",
@@ -6445,7 +6551,9 @@
         "2 Sam 12:1-15"
       ],
       "chapter": "ot/2_samuel/2_Samuel_7.html",
-      "dates": "c. 1040–970 BC"
+      "dates": "c. 1040–970 BC",
+      "associated_with": "david",
+      "association_type": "servant"
     },
     {
       "id": "uriah",
@@ -6462,7 +6570,9 @@
         "Matt 1:6"
       ],
       "chapter": "ot/2_samuel/2_Samuel_11.html",
-      "dates": "d. c. 1000 BC"
+      "dates": "d. c. 1000 BC",
+      "associated_with": "david",
+      "association_type": "servant"
     },
     {
       "id": "abner",
@@ -6477,7 +6587,9 @@
         "2 Sam 3:6-39"
       ],
       "chapter": "ot/2_samuel/2_Samuel_3.html",
-      "dates": "c. 1060–1005 BC"
+      "dates": "c. 1060–1005 BC",
+      "associated_with": "david",
+      "association_type": "servant"
     },
     {
       "id": "hilkiah_priest",
@@ -6514,7 +6626,9 @@
         "Jer 43:3",
         "Jer 45:1-5"
       ],
-      "chapter": "ot/jeremiah/Jeremiah_1.html"
+      "chapter": "ot/jeremiah/Jeremiah_1.html",
+      "associated_with": "jeremiah",
+      "association_type": "servant"
     },
     {
       "id": "jehoiakim",
@@ -6574,7 +6688,9 @@
         "Jer 39:1-14",
         "Dan 1-4"
       ],
-      "chapter": "ot/jeremiah/Jeremiah_1.html"
+      "chapter": "ot/jeremiah/Jeremiah_1.html",
+      "associated_with": "daniel",
+      "association_type": "contemporary"
     },
     {
       "id": "pashhur_immer",
@@ -6591,7 +6707,9 @@
       "refs": [
         "Jer 20:1-6"
       ],
-      "chapter": "ot/jeremiah/Jeremiah_20.html"
+      "chapter": "ot/jeremiah/Jeremiah_20.html",
+      "associated_with": "jeremiah",
+      "association_type": "adversary"
     },
     {
       "id": "coniah",
@@ -6627,7 +6745,9 @@
       "refs": [
         "Jer 28:1-17"
       ],
-      "chapter": "ot/jeremiah/Jeremiah_28.html"
+      "chapter": "ot/jeremiah/Jeremiah_28.html",
+      "associated_with": "jeremiah",
+      "association_type": "adversary"
     },
     {
       "id": "ebed_melech",
@@ -6645,7 +6765,9 @@
         "Jer 38:7-13",
         "Jer 39:15-18"
       ],
-      "chapter": "ot/jeremiah/Jeremiah_38.html"
+      "chapter": "ot/jeremiah/Jeremiah_38.html",
+      "associated_with": "jeremiah",
+      "association_type": "servant"
     },
     {
       "id": "gedaliah",
@@ -6830,7 +6952,9 @@
       ],
       "chapter": null,
       "scriptureRole": "Allied king who supplied materials and craftsmen for Solomon's Temple construction.",
-      "spouseOf": null
+      "spouseOf": null,
+      "associated_with": "david",
+      "association_type": "contemporary"
     },
     {
       "id": "pharaoh_hophra",
@@ -6849,7 +6973,9 @@
         "Ezek 30:21-22",
         "Jer 44:30"
       ],
-      "chapter": "ot/ezekiel/Ezekiel_29.html"
+      "chapter": "ot/ezekiel/Ezekiel_29.html",
+      "associated_with": "jeremiah",
+      "association_type": "adversary"
     },
     {
       "id": "gog",
@@ -6894,7 +7020,9 @@
         "Ezek 44:15",
         "Ezek 48:11"
       ],
-      "chapter": "ezekiel/44"
+      "chapter": "ezekiel/44",
+      "associated_with": "david",
+      "association_type": "servant"
     },
     {
       "id": "jonah",
@@ -6976,7 +7104,9 @@
       "refs": [
         "Amos 7:10-17"
       ],
-      "chapter": "ot/amos/7"
+      "chapter": "ot/amos/7",
+      "associated_with": "amos",
+      "association_type": "adversary"
     },
     {
       "id": "hosea",
@@ -7014,7 +7144,9 @@
         "Hos 1:3",
         "Hos 3:1-3"
       ],
-      "chapter": "ot/hosea/1"
+      "chapter": "ot/hosea/1",
+      "associated_with": "hosea",
+      "association_type": "contemporary"
     },
     {
       "id": "beeri_hosea",
@@ -7288,7 +7420,9 @@
       "refs": [
         "Rom 16:1-2"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "timothy",
@@ -7310,7 +7444,9 @@
         "1 Tim 1:2",
         "2 Tim 1:5"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "sosthenes",
@@ -7329,7 +7465,9 @@
         "1 Cor 1:1",
         "Acts 18:17"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "stephanas",
@@ -7348,7 +7486,9 @@
         "1 Cor 1:16",
         "1 Cor 16:15-18"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "crispus",
@@ -7367,7 +7507,9 @@
         "Acts 18:8",
         "1 Cor 1:14"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "gaius_corinth",
@@ -7387,7 +7529,9 @@
         "Rom 16:23",
         "Acts 18:7"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "chloe",
@@ -7405,7 +7549,9 @@
       "refs": [
         "1 Cor 1:11"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "titus_companion",
@@ -7426,7 +7572,9 @@
         "2 Cor 8:23",
         "Titus 1:4-5"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "fortunatus",
@@ -7444,7 +7592,9 @@
       "refs": [
         "1 Cor 16:17-18"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "achaicus",
@@ -7462,7 +7612,9 @@
       "refs": [
         "1 Cor 16:17-18"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "tychicus",
@@ -7483,7 +7635,9 @@
         "2 Tim 4:12",
         "Tit 3:12"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "epaphroditus",
@@ -7501,7 +7655,9 @@
         "Phil 2:25-30",
         "Phil 4:18"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "epaphras",
@@ -7520,7 +7676,9 @@
         "Col 4:12-13",
         "Phlm 23"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "onesimus",
@@ -7538,7 +7696,9 @@
         "Phlm 10-18",
         "Col 4:9"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "philemon",
@@ -7557,7 +7717,9 @@
         "Phlm 4-7",
         "Phlm 17-22"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "apphia",
@@ -7574,7 +7736,9 @@
       "refs": [
         "Phlm 2"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "archippus",
@@ -7592,7 +7756,9 @@
         "Phlm 2",
         "Col 4:17"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "luke_evangelist",
@@ -7611,7 +7777,9 @@
         "2 Tim 4:11",
         "Phlm 24"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "john_mark",
@@ -7635,7 +7803,9 @@
         "Phlm 24",
         "1 Pet 5:13"
       ],
-      "chapter": null
+      "chapter": null,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "jason_thessalonica",
@@ -7653,7 +7823,9 @@
         "Acts 17:5-9",
         "Rom 16:21"
       ],
-      "chapter": "nt/acts/Acts_17.html"
+      "chapter": "nt/acts/Acts_17.html",
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "lois",
@@ -7671,7 +7843,9 @@
       "refs": [
         "2 Tim 1:5"
       ],
-      "spine": false
+      "spine": false,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "eunice",
@@ -7690,7 +7864,9 @@
         "Acts 16:1",
         "2 Tim 1:5"
       ],
-      "spine": false
+      "spine": false,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "hymenaeus",
@@ -7709,7 +7885,9 @@
         "1 Tim 1:20",
         "2 Tim 2:17"
       ],
-      "spine": false
+      "spine": false,
+      "associated_with": "paul",
+      "association_type": "adversary"
     },
     {
       "id": "alexander_coppersmith",
@@ -7728,7 +7906,9 @@
         "1 Tim 1:20",
         "2 Tim 4:14-15"
       ],
-      "spine": false
+      "spine": false,
+      "associated_with": "paul",
+      "association_type": "adversary"
     },
     {
       "id": "philetus",
@@ -7746,7 +7926,9 @@
       "refs": [
         "2 Tim 2:17"
       ],
-      "spine": false
+      "spine": false,
+      "associated_with": "paul",
+      "association_type": "adversary"
     },
     {
       "id": "onesiphorus",
@@ -7765,7 +7947,9 @@
         "2 Tim 1:16-18",
         "2 Tim 4:19"
       ],
-      "spine": false
+      "spine": false,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "demas",
@@ -7785,7 +7969,9 @@
         "Phlm 24",
         "2 Tim 4:10"
       ],
-      "spine": false
+      "spine": false,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "artemas",
@@ -7803,7 +7989,9 @@
       "refs": [
         "Tit 3:12"
       ],
-      "spine": false
+      "spine": false,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "zenas",
@@ -7821,7 +8009,9 @@
       "refs": [
         "Tit 3:13"
       ],
-      "spine": false
+      "spine": false,
+      "associated_with": "paul",
+      "association_type": "disciple"
     },
     {
       "id": "antipas_pergamum",
@@ -7838,7 +8028,9 @@
       "scriptureRole": "Revelation martyr",
       "refs": [
         "Rev 2:13"
-      ]
+      ],
+      "associated_with": "jesus",
+      "association_type": "contemporary"
     },
     {
       "id": "abijah",
@@ -8155,6 +8347,182 @@
       "dates": null,
       "role": "Father of Joseph, husband of Mary (Matt 1:15-16)",
       "type": "spine",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "kish",
+      "name": "Kish",
+      "gender": "m",
+      "father": "abiel",
+      "mother": null,
+      "spouse_of": null,
+      "era": "judges",
+      "dates": null,
+      "role": "Father of King Saul; Benjamite (1 Sam 9:1; 14:51)",
+      "type": "spine",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "abiel",
+      "name": "Abiel",
+      "gender": "m",
+      "father": "zeror",
+      "mother": null,
+      "spouse_of": null,
+      "era": "judges",
+      "dates": null,
+      "role": "Grandfather of King Saul (1 Sam 9:1; 14:51)",
+      "type": "satellite",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "zeror",
+      "name": "Zeror",
+      "gender": "m",
+      "father": "bechorath",
+      "mother": null,
+      "spouse_of": null,
+      "era": "judges",
+      "dates": null,
+      "role": "Great-grandfather of Saul; Benjamite (1 Sam 9:1)",
+      "type": "satellite",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "bechorath",
+      "name": "Bechorath",
+      "gender": "m",
+      "father": "aphiah",
+      "mother": null,
+      "spouse_of": null,
+      "era": "judges",
+      "dates": null,
+      "role": "Benjamite ancestor of Saul (1 Sam 9:1)",
+      "type": "satellite",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "aphiah",
+      "name": "Aphiah",
+      "gender": "m",
+      "father": "benjamin",
+      "mother": null,
+      "spouse_of": null,
+      "era": "judges",
+      "dates": null,
+      "role": "Benjamite ancestor of Saul; descendant of Benjamin son of Jacob (1 Sam 9:1)",
+      "type": "satellite",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "elkanah",
+      "name": "Elkanah",
+      "gender": "m",
+      "father": "jeroham",
+      "mother": null,
+      "spouse_of": null,
+      "era": "judges",
+      "dates": null,
+      "role": "Father of Samuel; Levite of the Kohathite line residing in Ephraim (1 Sam 1:1; 1 Chr 6:33-34)",
+      "type": "spine",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "jeroham",
+      "name": "Jeroham",
+      "gender": "m",
+      "father": "elihu_samuel",
+      "mother": null,
+      "spouse_of": null,
+      "era": "judges",
+      "dates": null,
+      "role": "Grandfather of Samuel (1 Sam 1:1; 1 Chr 6:34)",
+      "type": "satellite",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "elihu_samuel",
+      "name": "Elihu (ancestor of Samuel)",
+      "gender": "m",
+      "father": "tohu",
+      "mother": null,
+      "spouse_of": null,
+      "era": "judges",
+      "dates": null,
+      "role": "Great-grandfather of Samuel; called Eliel in 1 Chr 6:34 (1 Sam 1:1)",
+      "type": "satellite",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "tohu",
+      "name": "Tohu",
+      "gender": "m",
+      "father": "zuph",
+      "mother": null,
+      "spouse_of": null,
+      "era": "judges",
+      "dates": null,
+      "role": "Ancestor of Samuel; called Toah in 1 Chr 6:34 (1 Sam 1:1)",
+      "type": "satellite",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "zuph",
+      "name": "Zuph",
+      "gender": "m",
+      "father": "kohath",
+      "mother": null,
+      "spouse_of": null,
+      "era": "judges",
+      "dates": null,
+      "role": "Kohathite Levite; ancestor of Samuel (1 Sam 1:1; 1 Chr 6:35). Bridges to Kohath son of Levi; intermediate generations omitted.",
+      "type": "satellite",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "amoz",
+      "name": "Amoz",
+      "gender": "m",
+      "father": null,
+      "mother": null,
+      "spouse_of": null,
+      "era": "prophets",
+      "dates": null,
+      "role": "Father of the prophet Isaiah (Isa 1:1; 2 Kgs 19:2)",
+      "type": "satellite",
       "bio": null,
       "scripture_role": null,
       "refs_json": null,

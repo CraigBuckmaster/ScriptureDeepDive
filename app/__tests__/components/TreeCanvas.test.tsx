@@ -45,6 +45,8 @@ const makeNode = (id: string, era: string = 'creation'): LayoutNode => ({
     scripture_role: null,
     refs_json: null,
     chapter_link: null,
+    associated_with: null,
+    association_type: null,
     nodeType: 'spine',
   },
   x: 100,

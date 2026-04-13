@@ -23,6 +23,8 @@ function makePerson(overrides: Partial<Person> = {}): Person {
     scripture_role: 'King of united Israel',
     refs_json: '["1 Sam 16:12","Ps 23","2 Sam 7:16"]',
     chapter_link: 'ot/1_samuel_16.html',
+    associated_with: null,
+    association_type: null,
     ...overrides,
   };
 }

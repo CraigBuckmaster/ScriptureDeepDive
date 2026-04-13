@@ -484,16 +484,21 @@ def populate_people(cur):
     legacy_count = 0
     for p in people:
         ptype = 'spine' if p['id'] in spine_ids else 'satellite'
+        # spouseOf and spouse_of are both accepted (legacy + recent style).
+        spouse = p.get('spouseOf') or p.get('spouse_of')
         cur.execute(
             'INSERT INTO people (id, name, gender, father, mother, spouse_of, '
-            'era, dates, role, type, bio, scripture_role, refs_json, chapter_link) '
-            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            'era, dates, role, type, bio, scripture_role, refs_json, chapter_link, '
+            'associated_with, association_type) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (p['id'], p['name'], p.get('gender'), p.get('father'),
-             p.get('mother'), p.get('spouseOf'), p.get('era'),
+             p.get('mother'), spouse, p.get('era'),
              p.get('dates'), p.get('role'), ptype, p.get('bio'),
              p.get('scriptureRole'),
              _json_str(p.get('refs', [])),
-             p.get('chapter'))
+             p.get('chapter'),
+             p.get('associated_with'),
+             p.get('association_type'))
         )
         count += 1
 
