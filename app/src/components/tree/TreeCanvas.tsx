@@ -59,6 +59,19 @@ export const TreeCanvas = memo(function TreeCanvas({
           <Line x1={0} y1={80} x2={80} y2={80}
             stroke={base.border} strokeWidth={0.3} opacity={0.3} />
         </Pattern>
+
+        {/* Warm radial glow used to fill messianic-line nodes (Card #1281).
+            gradientUnits defaults to objectBoundingBox so the same def
+            scales to every messianic circle. */}
+        <RadialGradient
+          id="messianic-node-fill"
+          cx="30%"
+          cy="30%"
+          r="70%"
+        >
+          <Stop offset="0%" stopColor={base.gold} stopOpacity={0.25} />
+          <Stop offset="100%" stopColor={base.gold} stopOpacity={0.08} />
+        </RadialGradient>
       </Defs>
 
       {/* ── Background layers ──────────────────────── */}
