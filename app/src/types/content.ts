@@ -176,6 +176,10 @@ export interface Place {
   type: 'city' | 'water' | 'region' | 'mountain' | 'site';
   priority: number;
   label_dir: string;
+  /** JSON-encoded array of verse-ref strings — added by Card #1271. */
+  refs_json?: string | null;
+  /** 1–1000 identification confidence from OpenBible.info (Card #1271). */
+  confidence?: number | null;
 }
 
 export interface MapStory {

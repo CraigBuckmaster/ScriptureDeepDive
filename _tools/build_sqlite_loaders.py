@@ -555,12 +555,19 @@ def populate_places(cur):
     places = _load_json(META / 'places.json')
     count = 0
     for p in places:
+        refs = p.get('refs')
+        refs_json = _json_str(refs) if isinstance(refs, list) else None
+        confidence = p.get('confidence')
+        if not isinstance(confidence, int):
+            confidence = None
         cur.execute(
             'INSERT INTO places (id, ancient_name, modern_name, latitude, longitude, '
-            'type, priority, label_dir) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+            'type, priority, label_dir, refs_json, confidence) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (p['id'], p.get('ancient', ''), p.get('modern'),
              p['lat'], p['lon'], p['type'],
-             p.get('priority', 2), p.get('labelDir', 'n'))
+             p.get('priority', 2), p.get('labelDir', 'n'),
+             refs_json, confidence)
         )
         count += 1
     return count
