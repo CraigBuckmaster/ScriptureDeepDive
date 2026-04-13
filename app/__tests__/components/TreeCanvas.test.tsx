@@ -25,9 +25,13 @@ jest.mock('@/components/tree/SpouseConnectorSvg', () => ({
   SpouseConnectorSvg: 'SpouseConnectorSvg',
 }));
 
+jest.mock('@/components/tree/AssociationLinkSvg', () => ({
+  AssociationLinkSvg: 'AssociationLinkSvg',
+}));
+
 import { renderWithProviders } from '../helpers/renderWithProviders';
 import { TreeCanvas } from '@/components/tree/TreeCanvas';
-import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson } from '@/utils/treeBuilder';
+import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson, AssociationLink } from '@/utils/treeBuilder';
 
 const makeNode = (id: string, era: string = 'creation'): LayoutNode => ({
   data: {
@@ -137,6 +141,77 @@ describe('TreeCanvas', () => {
     const children = Array.isArray(json) ? json : [json];
     const gWithTransform = children.find((c: any) => c?.props?.transform);
     expect(gWithTransform?.props?.transform).toBe('translate(50, 75)');
+  });
+
+  // ── Card #1290 + #1291: associate clusters + zoom collapse ─────────
+
+  const makeAssocLink = (anchorId: string, memberId: string, i = 0): AssociationLink => ({
+    anchorId, memberId,
+    source: { x: 100, y: 100 },
+    target: { x: 100 + i * 20, y: 180 + i * 10 },
+    type: 'disciple',
+  });
+
+  it('renders an AssociationLinkSvg for each associationLink at normal zoom', () => {
+    const links = [
+      makeAssocLink('jesus', 'peter', 0),
+      makeAssocLink('jesus', 'andrew', 1),
+      makeAssocLink('jesus', 'john', 2),
+    ];
+    const tree = renderWithProviders(
+      <TreeCanvas {...defaultProps} associationLinks={links} zoom={1.0} />,
+    );
+    const json = tree.toJSON() as any;
+    expect(findAllByType(json, 'AssociationLinkSvg')).toHaveLength(3);
+  });
+
+  it('collapses clusters to a "+N" badge and hides connectors at low zoom', () => {
+    const links = [
+      makeAssocLink('jesus', 'peter', 0),
+      makeAssocLink('jesus', 'andrew', 1),
+      makeAssocLink('jesus', 'john', 2),
+    ];
+    const tree = renderWithProviders(
+      <TreeCanvas {...defaultProps} associationLinks={links} zoom={0.3} />,
+    );
+    const json = tree.toJSON() as any;
+    // Connectors hidden
+    expect(findAllByType(json, 'AssociationLinkSvg')).toHaveLength(0);
+    // Badge rendered — one per anchor
+    const texts = findAllByType(json, 'Text');
+    const badgeText = texts.find((t: any) => t.children?.join?.('') === '+3' || (t.children?.[1] === 3));
+    expect(badgeText).toBeTruthy();
+  });
+
+  it('hides associate nodes when clusters are collapsed', () => {
+    const peter = makeNode('peter');
+    peter.data.isAssociate = true;
+    const jesus = makeNode('jesus');
+    const tree = renderWithProviders(
+      <TreeCanvas
+        {...defaultProps}
+        nodes={[jesus, peter]}
+        associationLinks={[makeAssocLink('jesus', 'peter', 0)]}
+        zoom={0.3}
+      />,
+    );
+    const json = tree.toJSON() as any;
+    const treeNodes = findAllByType(json, 'TreeNode');
+    const ids = treeNodes.map((n: any) => n.props?.node?.data?.id);
+    expect(ids).toContain('jesus');
+    expect(ids).not.toContain('peter');
+  });
+
+  it('forwards zoom to each TreeNode', () => {
+    const nodes = [makeNode('adam'), makeNode('seth')];
+    const tree = renderWithProviders(
+      <TreeCanvas {...defaultProps} nodes={nodes} zoom={0.7} />,
+    );
+    const json = tree.toJSON() as any;
+    const treeNodes = findAllByType(json, 'TreeNode');
+    for (const n of treeNodes) {
+      expect(n.props?.zoom).toBe(0.7);
+    }
   });
 
   it('declares the messianic-node-fill radial gradient (Card #1281)', () => {

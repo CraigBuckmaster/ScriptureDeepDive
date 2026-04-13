@@ -5,16 +5,18 @@
  *   background defs → bg rect → links → marriage bars → spouse connectors → nodes.
  */
 
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import {
   Defs, RadialGradient, Stop, Pattern,
-  Rect, Line, G,
+  Rect, Line, G, Circle, Text as SvgText,
 } from 'react-native-svg';
 import { useTheme } from '../../theme';
 import { TreeLink } from './TreeLink';
 import { MarriageBarSvg } from './MarriageBarSvg';
 import { SpouseConnectorSvg } from './SpouseConnectorSvg';
 import { TreeNode } from './TreeNode';
+import { AssociationLinkSvg } from './AssociationLinkSvg';
+import { TIER_2_ZOOM } from '../../utils/genealogyOrganic';
 import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson, AssociationLink } from '../../utils/treeBuilder';
 
 interface Props {
@@ -34,6 +36,9 @@ interface Props {
   canvasWidth?: number;
   /** Full SVG height — needed for background sizing. */
   canvasHeight?: number;
+  /** Current committed zoom scale (#1291). Controls per-tier visibility
+   *  and associate-cluster collapse-to-badge below {@link TIER_2_ZOOM}. */
+  zoom?: number;
 }
 
 export const TreeCanvas = memo(function TreeCanvas({
@@ -42,8 +47,30 @@ export const TreeCanvas = memo(function TreeCanvas({
   filterEra, spineIds, selectedPersonId, onNodePress,
   offsetX = 0, offsetY = 0,
   canvasWidth = 4000, canvasHeight = 4000,
+  zoom = 1,
 }: Props) {
   const { base } = useTheme();
+
+  // Below TIER_2_ZOOM, collapse each associate cluster into a single "+N"
+  // badge at the anchor and hide the individual associate nodes + links.
+  const clustersCollapsed = zoom < TIER_2_ZOOM;
+  const associateIds = useMemo(
+    () => new Set(associationLinks.map((al) => al.memberId)),
+    [associationLinks],
+  );
+  const anchorBadges = useMemo(() => {
+    if (!clustersCollapsed) return [];
+    const byAnchor = new Map<string, { x: number; y: number; count: number }>();
+    for (const al of associationLinks) {
+      const existing = byAnchor.get(al.anchorId);
+      if (existing) {
+        existing.count += 1;
+      } else {
+        byAnchor.set(al.anchorId, { x: al.source.x, y: al.source.y, count: 1 });
+      }
+    }
+    return Array.from(byAnchor, ([anchorId, v]) => ({ anchorId, ...v }));
+  }, [clustersCollapsed, associationLinks]);
 
   return (
     <>
@@ -97,20 +124,32 @@ export const TreeCanvas = memo(function TreeCanvas({
           />
         ))}
 
-        {/* 1b. Association links — dotted connector to satellite clusters (#1288).
-               Distinguished from solid genealogy links by stroke-dasharray. */}
-        {associationLinks.map((al) => (
-          <Line
-            key={`al-${al.anchorId}-${al.memberId}`}
-            x1={al.source.x}
-            y1={al.source.y}
-            x2={al.target.x}
-            y2={al.target.y}
-            stroke={base.border}
-            strokeWidth={0.8}
-            strokeDasharray="3,3"
-            opacity={0.55}
-          />
+        {/* 1b. Association links — dashed bezier to associate satellites
+               (#1288, #1290). Hidden when clusters collapse to a badge. */}
+        {!clustersCollapsed && associationLinks.map((al) => {
+          const dimmed = filterEra !== null && !spineIds.has(al.anchorId);
+          return (
+            <AssociationLinkSvg
+              key={`al-${al.anchorId}-${al.memberId}`}
+              source={al.source}
+              target={al.target}
+              type={al.type}
+              dimmed={dimmed}
+            />
+          );
+        })}
+
+        {/* 1c. Collapsed-cluster badge — at low zoom (#1291), each anchor
+               with associates shows a "+N" chip instead of individual nodes. */}
+        {clustersCollapsed && anchorBadges.map((b) => (
+          <G key={`ab-${b.anchorId}`}>
+            <Circle cx={b.x + 30} cy={b.y + 30} r={14}
+              fill={base.bgSurface} stroke={base.gold} strokeWidth={1} opacity={0.85} />
+            <SvgText x={b.x + 30} y={b.y + 33}
+              fill={base.gold} fontSize={11} textAnchor="middle" fontWeight="600">
+              +{b.count}
+            </SvgText>
+          </G>
         ))}
 
         {/* 2. Marriage bars */}
@@ -125,6 +164,8 @@ export const TreeCanvas = memo(function TreeCanvas({
 
         {/* 4. Nodes (front) */}
         {nodes.map((node) => {
+          // Skip individual associate nodes when clusters are collapsed
+          if (clustersCollapsed && associateIds.has(node.data.id)) return null;
           const dimmed = filterEra !== null
             && node.data.era !== filterEra
             && !spineIds.has(node.data.id);
@@ -135,6 +176,7 @@ export const TreeCanvas = memo(function TreeCanvas({
               dimmed={dimmed}
               selected={node.data.id === selectedPersonId}
               filterEra={filterEra}
+              zoom={zoom}
               onPress={onNodePress}
             />
           );

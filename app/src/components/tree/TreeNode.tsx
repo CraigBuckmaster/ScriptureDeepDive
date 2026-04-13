@@ -19,6 +19,7 @@ import type { LayoutNode, TreePerson } from '../../utils/treeBuilder';
 import { isMessianic } from '../../utils/messianicLine';
 import { getRoleBadgeConfig } from './RoleBadge';
 import { getCovenantWaypoint } from '../../utils/covenantWaypoints';
+import { getPersonTier, isPersonVisibleAtZoom } from '../../utils/genealogyOrganic';
 
 // ── Circle dimensions ─────────────────────────────────────────────────
 const SPINE_R = 24;            // 48 px diameter
@@ -53,24 +54,33 @@ interface Props {
   dimmed: boolean;
   selected: boolean;
   filterEra: string | null;
+  /** Current committed zoom scale. Drives per-tier visibility (#1291). */
+  zoom?: number;
   onPress: (person: TreePerson) => void;
 }
 
 export const TreeNode = memo(function TreeNode({
-  node, dimmed, selected, filterEra: _filterEra, onPress,
+  node, dimmed, selected, filterEra: _filterEra, zoom = 1, onPress,
 }: Props) {
   const { base } = useTheme();
   const { data, x, y } = node;
   const isSpine = data.nodeType === 'spine';
   const onMessianicLine = isMessianic(data.id);
-  const opacity = dimmed ? 0.25 : 1;
+  const handlePress = useCallback(() => onPress(data), [data, onPress]);
 
-  // Geometry
-  const r = isSpine ? SPINE_R : SAT_R;
+  // Zoom-semantic tier filtering (#1291): hide tier-3 nodes when zoomed out.
+  // Must come AFTER all hook calls to respect the rules-of-hooks contract.
+  const tier = getPersonTier(data, onMessianicLine);
+  if (!isPersonVisibleAtZoom(tier, zoom)) return null;
+
+  const isAssociate = data.isAssociate === true;
+  const opacity = (dimmed ? 0.25 : 1) * (isAssociate ? 0.75 : 1);
+
+  // Geometry — associate satellites render slightly smaller to read as
+  // "off-tree" contemporaries rather than genealogical descendants (#1290).
+  const r = isSpine ? SPINE_R : (isAssociate ? SAT_R - 3 : SAT_R);
   const initialFont = isSpine ? SPINE_INITIAL_FONT : SAT_INITIAL_FONT;
   const nameFont = isSpine ? NAME_FONT_SPINE : NAME_FONT_SAT;
-
-  const handlePress = useCallback(() => onPress(data), [data, onPress]);
 
   // Border color logic: selected > messianic > spine > satellite
   let borderColor: string;
@@ -166,6 +176,7 @@ export const TreeNode = memo(function TreeNode({
         fill={nodeFill}
         stroke={borderColor}
         strokeWidth={borderWidth}
+        strokeDasharray={isAssociate ? '2,2' : undefined}
       />
 
       {/* ── Initial letter (Cinzel SemiBold, visually centred) ─── */}

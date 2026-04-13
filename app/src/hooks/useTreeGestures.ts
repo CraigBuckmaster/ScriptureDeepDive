@@ -81,6 +81,9 @@ interface TreeGestureResult {
   centreOnNode: (nodeX: number, nodeY: number) => void;
   centreOnNodeTop: (nodeX: number, nodeY: number) => void;
   centreOnNodeAbovePanel: (nodeX: number, nodeY: number) => void;
+  /** Committed zoom scale (stable between pinch gestures) — used for
+   *  zoom-semantic tier visibility and associate-cluster collapse (#1291). */
+  zoom: number;
 }
 
 export function useTreeGestures(): TreeGestureResult {
@@ -236,5 +239,9 @@ export function useTreeGestures(): TreeGestureResult {
     jumpTo(SCREEN_W / 2 - nodeX * s, SCREEN_H * 0.25 - nodeY * s, s);
   }, [jumpTo, SCREEN_W, SCREEN_H, isMobile]);
 
-  return { gesture, baseStyle, gestureStyle, centreOnNode, centreOnNodeTop, centreOnNodeAbovePanel };
+  return {
+    gesture, baseStyle, gestureStyle, centreOnNode, centreOnNodeTop,
+    centreOnNodeAbovePanel,
+    zoom: base.s,
+  };
 }
