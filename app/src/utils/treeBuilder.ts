@@ -12,6 +12,7 @@
 
 import { hierarchy, tree, type HierarchyPointNode } from 'd3-hierarchy';
 import type { Person } from '../types';
+import { isMessianic as checkMessianic } from './messianicLine';
 
 // ── Constants ───────────────────────────────────────────────────────
 
@@ -72,6 +73,8 @@ export interface TreeLink {
   source: { x: number; y: number };
   target: { x: number; y: number };
   isSpine: boolean;
+  /** Both source and target are on the messianic line (Matthew 1 lineage). */
+  isMessianic: boolean;
   dimmed: boolean;
 }
 
@@ -234,6 +237,7 @@ export function computeLinks(
     if (!parent) continue;
 
     const isSpine = spineIds.has(node.data.id) && spineIds.has(parent.data.id);
+    const messianic = checkMessianic(node.data.id) && checkMessianic(parent.data.id);
     // A link is dimmed only when BOTH endpoints are dimmed
     const dimmed = filterEra !== null
       && isDimmed(node.data, filterEra, spineIds)
@@ -243,6 +247,7 @@ export function computeLinks(
       source: { x: parent.x, y: parent.y },
       target: { x: node.x, y: node.y },
       isSpine,
+      isMessianic: messianic,
       dimmed: !!dimmed,
     });
   }

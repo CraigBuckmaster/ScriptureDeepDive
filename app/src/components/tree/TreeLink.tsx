@@ -1,46 +1,71 @@
 /**
  * TreeLink — Parent→child connection line using cubic bezier.
  *
- * Spine links get a wide, soft gold glow trail behind the main path.
- * Non-spine links are thinner with era-based coloring.
+ * Three visual tiers:
+ *   1. Messianic links — wide gold glow + crisp gold stroke (the "golden thread")
+ *   2. Spine links — medium glow trail + gold-dim stroke
+ *   3. Satellite links — thin, muted stroke
  */
 
 import React, { memo } from 'react';
 import { Path } from 'react-native-svg';
 import { useTheme, eras } from '../../theme';
+import { bezierPath } from '../../utils/genealogyOrganic';
 
 interface Props {
   source: { x: number; y: number };
   target: { x: number; y: number };
   isSpine: boolean;
+  isMessianic: boolean;
   dimmed: boolean;
   era?: string;
 }
 
-export const TreeLink = memo(function TreeLink({ source, target, isSpine, dimmed, era }: Props) {
+export const TreeLink = memo(function TreeLink({ source, target, isSpine, isMessianic, dimmed, era }: Props) {
   const { base } = useTheme();
-  const midY = (source.y + target.y) / 2;
-  const d = `M${source.x},${source.y} C${source.x},${midY} ${target.x},${midY} ${target.x},${target.y}`;
-  const color = isSpine ? base.goldDim : (era ? (eras[era] ?? base.textMuted) : base.textMuted);
+  const d = bezierPath(source, target);
+  const eraColor = era ? (eras[era] ?? base.textMuted) : base.textMuted;
 
   if (dimmed) {
     return (
-      <Path d={d} stroke={color} strokeWidth={1} fill="none" opacity={0.1}
+      <Path d={d} stroke={isMessianic ? base.gold : eraColor}
+        strokeWidth={isMessianic ? 1.5 : 1} fill="none" opacity={0.08}
         strokeLinecap="round" />
     );
   }
 
-  return isSpine ? (
-    <>
-      {/* Wide soft glow trail */}
-      <Path d={d} stroke={base.gold} strokeWidth={5} fill="none" opacity={0.12}
-        strokeLinecap="round" />
-      {/* Crisp spine line */}
-      <Path d={d} stroke={base.goldDim} strokeWidth={1.5} fill="none" opacity={0.7}
-        strokeLinecap="round" />
-    </>
-  ) : (
-    <Path d={d} stroke={color} strokeWidth={1} fill="none" opacity={0.4}
+  // ── Messianic golden thread ───────────────────────────────────
+  if (isMessianic) {
+    return (
+      <>
+        {/* Wide soft outer glow */}
+        <Path d={d} stroke={base.gold} strokeWidth={8} fill="none" opacity={0.08}
+          strokeLinecap="round" />
+        {/* Medium inner glow */}
+        <Path d={d} stroke={base.gold} strokeWidth={4} fill="none" opacity={0.15}
+          strokeLinecap="round" />
+        {/* Crisp golden stroke */}
+        <Path d={d} stroke={base.gold} strokeWidth={2} fill="none" opacity={0.6}
+          strokeLinecap="round" />
+      </>
+    );
+  }
+
+  // ── Spine links (non-messianic) ──────────────────────────────
+  if (isSpine) {
+    return (
+      <>
+        <Path d={d} stroke={base.goldDim} strokeWidth={4} fill="none" opacity={0.08}
+          strokeLinecap="round" />
+        <Path d={d} stroke={base.goldDim} strokeWidth={1.5} fill="none" opacity={0.5}
+          strokeLinecap="round" />
+      </>
+    );
+  }
+
+  // ── Satellite links ──────────────────────────────────────────
+  return (
+    <Path d={d} stroke={eraColor} strokeWidth={0.8} fill="none" opacity={0.3}
       strokeLinecap="round" />
   );
 });
