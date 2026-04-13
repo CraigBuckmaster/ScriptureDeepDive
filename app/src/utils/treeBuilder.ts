@@ -411,21 +411,10 @@ function applyJacobBloom(nodes: LayoutNode[]): void {
   if (!jacobNode) return;
   const sons = nodes.filter((n) => n.data.father === 'jacob' && !n.isSpouse);
   if (sons.length < 3) return;
-  // Gap-driven radius: solve for the radius that gives each son at least
-  // JACOB_GAP px of breathing room on the arc. Spine circles are 48 px
-  // wide and patriarch names run 60–110 px, so 130 px gap keeps them legible.
-  const JACOB_GAP = 130;
-  const MIN_RADIUS_JACOB = 220;
-  const sweepDeg = Math.min(170, 80 + sons.length * 8);
-  const sweepRad = (sweepDeg * Math.PI) / 180;
-  const radius = Math.max(
-    MIN_RADIUS_JACOB,
-    (JACOB_GAP * Math.max(sons.length - 1, 1)) / sweepRad,
-  );
   const placed = applyTribalBloom(
     { x: jacobNode.x, y: jacobNode.y },
     sons.map((s) => ({ id: s.data.id, x: s.x, y: s.y })),
-    { radius, startAngleDegrees: -sweepDeg / 2, endAngleDegrees: sweepDeg / 2 },
+    { radius: 180, startAngleDegrees: -75, endAngleDegrees: 75 },
   );
   for (let i = 0; i < sons.length; i++) {
     const dx = placed[i].x - sons[i].x;
@@ -597,24 +586,15 @@ export function computeFullLayout(
     const anchorPos = positionById.get(anchorId);
     if (!anchorPos) continue; // anchor wasn't placed (orphaned anchor) — drop silently
 
-    // Gap-driven radius: ensure ≥ BLOOM_GAP px centre-to-centre even for
-    // large clusters (e.g. Jesus's 16 disciples). Satellite circles are
-    // 30 px wide so 80 px keeps a comfortable name zone between them.
-    const BLOOM_GAP = 80;
-    const MIN_RADIUS_ASSOCIATE = 120;
-    const sweepDeg = Math.min(180, 80 + members.length * 10);
-    const sweepRad = (sweepDeg * Math.PI) / 180;
-    const radius = Math.max(
-      MIN_RADIUS_ASSOCIATE,
-      (BLOOM_GAP * Math.max(members.length - 1, 1)) / sweepRad,
-    );
+    const radius = 90 + Math.min(members.length, 8) * 8; // 98 → 154 px
+    const sweep = Math.min(160, 60 + members.length * 14); // degrees
     const placed = applyTribalBloom(
       { x: anchorPos.x, y: anchorPos.y },
       members.map((m) => ({ id: m.id, x: 0, y: 0 })),
       {
         radius,
-        startAngleDegrees: -sweepDeg / 2, // fan below the anchor, centred straight down
-        endAngleDegrees: sweepDeg / 2,
+        startAngleDegrees: -sweep / 2, // fan below the anchor, centred straight down
+        endAngleDegrees: sweep / 2,
       },
     );
 
