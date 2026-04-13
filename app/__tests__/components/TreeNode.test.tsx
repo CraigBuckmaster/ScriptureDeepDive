@@ -207,8 +207,10 @@ describe('TreeNode', () => {
 
   // ── Card #1291: zoom-semantic tier visibility ──────────────────────
 
-  it('renders null for a tier-3 person when zoomed out', () => {
-    // Tier 3 = no role, no bio, not messianic.
+  it('hides a tier-3 person at low zoom via opacity=0', () => {
+    // Tier 3 = no role, no bio, not messianic. Post-constant-tree-render
+    // refactor: the node still mounts (so we don't churn the native view
+    // tree during pinch) but is drawn with opacity 0.
     const minor = makeNode({
       id: 'some-minor-figure',
       name: 'Minor',
@@ -216,11 +218,13 @@ describe('TreeNode', () => {
       role: null,
       bio: null,
     });
-    const { queryByText } = renderWithProviders(
+    const { toJSON } = renderWithProviders(
       <TreeNode node={minor} dimmed={false} filterEra={null} selected={false}
         zoom={0.3} onPress={jest.fn()} />,
     );
-    expect(queryByText('Minor')).toBeNull();
+    // Root G should have opacity 0 when the tier is hidden.
+    const json = toJSON() as any;
+    expect(json?.props?.opacity).toBe(0);
   });
 
   it('renders a tier-3 person at full zoom', () => {
