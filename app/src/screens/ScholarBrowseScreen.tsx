@@ -1,5 +1,7 @@
 /**
- * ScholarBrowseScreen — Grid of 43 scholar cards, filterable by tradition.
+ * ScholarBrowseScreen — Grid of 54 scholar cards, filterable by tradition.
+ *
+ * Glorify polish: neutral cards with gold accents, no tradition-based colors.
  */
 
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
@@ -14,7 +16,7 @@ import { logger } from '../utils/logger';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 function ScholarBrowseScreen() {
-  const { base, getScholarColor } = useTheme();
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ScholarBrowse'>>();
   const { scholars, isLoading } = useScholars();
   const [search, setSearch] = useState('');
@@ -50,7 +52,6 @@ function ScholarBrowseScreen() {
 
   const renderItem = useCallback(
     ({ item: s }: { item: any }) => {
-      const color = getScholarColor(s.id);
       let scope = 'All books';
       try {
         const parsed = JSON.parse(s.scope_json);
@@ -60,29 +61,37 @@ function ScholarBrowseScreen() {
       return (
         <TouchableOpacity
           onPress={() => navigation.navigate('ScholarBio', { scholarId: s.id })}
-          style={[styles.card, { backgroundColor: color + '14', borderLeftColor: color }]}
+          style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '15' }]}
           accessibilityLabel={`${s.name}${s.tradition ? ", " + s.tradition : ""}`}
           accessibilityRole="button"
+          activeOpacity={0.7}
         >
-          <Text style={[styles.cardName, { color }]}>{s.name}</Text>
-          {s.tradition && <Text style={[styles.cardTradition, { color: base.textMuted }]}>{s.tradition}</Text>}
-          <Text style={[styles.cardScope, { color: base.textDim }]}>{scope}</Text>
+          <Text style={[styles.cardName, { color: base.text }]}>{s.name}</Text>
+          {s.tradition && <Text style={[styles.cardTradition, { color: base.gold }]}>{s.tradition}</Text>}
+          <Text style={[styles.cardScope, { color: base.textMuted }]}>{scope}</Text>
         </TouchableOpacity>
       );
     },
-    [base, getScholarColor, navigation]
+    [base, navigation]
   );
 
   const filterBar = (
     <ScrollView horizontal showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.filterRow}>
       {traditions.map((t) => (
-        <TouchableOpacity key={t} onPress={() => setTradition(t)}>
+        <TouchableOpacity
+          key={t}
+          onPress={() => setTradition(t)}
+          style={[
+            styles.filterPill,
+            { borderColor: tradition === t ? base.gold : base.border },
+            tradition === t && { backgroundColor: base.gold + '12' },
+          ]}
+          activeOpacity={0.7}
+        >
           <Text style={[
             styles.filterLabel,
-            { color: base.textMuted },
-            tradition === t && { color: base.gold, borderBottomColor: base.gold },
-            tradition === t && styles.filterLabelActive,
+            { color: tradition === t ? base.gold : base.textMuted },
           ]}>
             {t === 'all' ? 'All' : t}
           </Text>
@@ -111,17 +120,18 @@ function ScholarBrowseScreen() {
 
 const styles = StyleSheet.create({
   filterRow: {
-    gap: spacing.xs,
+    gap: 6,
     marginBottom: spacing.md,
+  },
+  filterPill: {
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 14,
+    borderWidth: 1,
   },
   filterLabel: {
     fontFamily: fontFamily.uiMedium,
-    fontSize: 11,
-    paddingBottom: 4,
-    paddingHorizontal: 4,
-  },
-  filterLabelActive: {
-    borderBottomWidth: 2,
+    fontSize: 10,
   },
   gridContent: {
     paddingHorizontal: spacing.md,
@@ -132,7 +142,7 @@ const styles = StyleSheet.create({
   },
   card: {
     flex: 1,
-    borderLeftWidth: 3,
+    borderWidth: 1,
     borderRadius: radii.md,
     padding: spacing.sm,
   },
