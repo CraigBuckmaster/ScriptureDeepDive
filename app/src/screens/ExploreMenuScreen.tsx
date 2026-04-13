@@ -23,6 +23,7 @@ import { FeatureCard, CARD_WIDTH, type FeatureCardData } from '../components/Fea
 import { RecommendedCard } from '../components/RecommendedCard';
 import { StartHereBanner } from '../components/StartHereBanner';
 import { UpgradePrompt } from '../components/UpgradePrompt';
+import { JourneyBrowseSection } from '../components/JourneyBrowseSection';
 import { getReadingStats, getPreference, setPreference } from '../db/user';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
@@ -61,6 +62,10 @@ const SECTIONS: FeatureSection[] = [
       { title: 'Threads',            subtitle: 'One idea across 31 chains',                            color: '#9090e0', screen: 'ThreadBrowse', premium: true }, // data-color: intentional
       { title: 'Gospel Harmony',     subtitle: 'Parallel accounts across four Gospels',                color: '#70d098', screen: 'HarmonyBrowse' }, // data-color: intentional
     ],
+  },
+  {
+    id: 'journeys', label: 'Journeys', subtitle: 'Follow a life or trace an idea across Scripture',
+    features: [], // Custom renderer — uses JourneyBrowseSection instead of FeatureCards
   },
   {
     id: 'language', label: 'Language & Reference', subtitle: 'Original words and definitions',
@@ -242,6 +247,10 @@ function ExploreMenuScreen() {
               <Text style={[styles.sectionLabel, { color: base.gold }]}>{section.label}</Text>
               <Text style={[styles.sectionSubtitle, { color: base.textMuted }]}>{section.subtitle}</Text>
 
+              {/* Journeys section uses a custom component instead of FeatureCards */}
+              {section.id === 'journeys' ? (
+                <JourneyBrowseSection />
+              ) : (
               <ScrollView
                 horizontal
                 showsHorizontalScrollIndicator={false}
@@ -266,6 +275,7 @@ function ExploreMenuScreen() {
                   );
                 })}
               </ScrollView>
+              )}
             </View>
           </View>
         ))}
