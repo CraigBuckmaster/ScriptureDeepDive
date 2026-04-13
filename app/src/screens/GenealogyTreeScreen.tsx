@@ -40,6 +40,7 @@ import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
 import { TreeCanvas } from '../components/tree/TreeCanvas';
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { PersonSearchBar } from '../components/tree/PersonSearchBar';
+import { MessianicLegend } from '../components/tree/MessianicLegend';
 import { PersonSidebar } from '../components/PersonSidebar';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 
@@ -195,6 +196,9 @@ function GenealogyTreeScreen({ route, navigation }: {
       <View style={[styles.topBar, { paddingTop: insets.top }]}>
         <PersonSearchBar people={people} onSelect={handleSearchSelect} />
         <EraFilterBar activeEra={filterEra} onSelect={handleEraChange} />
+        <View style={styles.legendWrap}>
+          <MessianicLegend />
+        </View>
       </View>
 
       <View style={[styles.viewport, { backgroundColor: base.bg }]} accessible accessibilityLabel="Family tree" accessibilityHint="Pinch to zoom, drag to pan">
@@ -258,6 +262,10 @@ const styles = StyleSheet.create({
   },
   topBar: {
     zIndex: 10,
+  },
+  legendWrap: {
+    paddingHorizontal: spacing.sm,
+    paddingBottom: 4,
   },
   viewport: {
     flex: 1,
