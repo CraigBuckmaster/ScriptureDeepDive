@@ -51,6 +51,7 @@ describe('useTreeLayout', () => {
       links: [],
       marriageBars: [],
       spouseConnectors: [],
+      associationLinks: [],
       spineIds: new Set(['adam']),
       bounds: { minX: 0, maxX: 200, minY: 0, maxY: 300, width: 200, height: 300 },
     };
@@ -66,7 +67,7 @@ describe('useTreeLayout', () => {
 
   it('passes filterEra to computeFullLayout', () => {
     mockComputeFullLayout.mockReturnValue({
-      nodes: [], links: [], marriageBars: [], spouseConnectors: [],
+      nodes: [], links: [], marriageBars: [], spouseConnectors: [], associationLinks: [],
       spineIds: new Set(), bounds: { minX: 0, maxX: 100, minY: 0, maxY: 100, width: 100, height: 100 },
     });
 
@@ -78,7 +79,7 @@ describe('useTreeLayout', () => {
 
   it('treats filterEra "all" as null', () => {
     mockComputeFullLayout.mockReturnValue({
-      nodes: [], links: [], marriageBars: [], spouseConnectors: [],
+      nodes: [], links: [], marriageBars: [], spouseConnectors: [], associationLinks: [],
       spineIds: new Set(), bounds: { minX: 0, maxX: 100, minY: 0, maxY: 100, width: 100, height: 100 },
     });
 
@@ -90,7 +91,7 @@ describe('useTreeLayout', () => {
 
   it('memoises result when inputs do not change', () => {
     const fakeResult = {
-      nodes: [], links: [], marriageBars: [], spouseConnectors: [],
+      nodes: [], links: [], marriageBars: [], spouseConnectors: [], associationLinks: [],
       spineIds: new Set(), bounds: { minX: 0, maxX: 100, minY: 0, maxY: 100, width: 100, height: 100 },
     };
     mockComputeFullLayout.mockReturnValue(fakeResult);

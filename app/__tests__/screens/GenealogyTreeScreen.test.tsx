@@ -45,6 +45,7 @@ const mockTreeLayout = {
   links: [],
   marriageBars: [],
   spouseConnectors: [],
+  associationLinks: [],
   spineIds: new Set(['adam', 'seth']),
   bounds: { width: 2000, height: 2000, minX: 0, minY: 0 },
 };
