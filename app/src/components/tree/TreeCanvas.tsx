@@ -16,8 +16,9 @@ import { MarriageBarSvg } from './MarriageBarSvg';
 import { SpouseConnectorSvg } from './SpouseConnectorSvg';
 import { TreeNode } from './TreeNode';
 import { AssociationLinkSvg } from './AssociationLinkSvg';
-import { TIER_2_ZOOM } from '../../utils/genealogyOrganic';
-import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson, AssociationLink } from '../../utils/treeBuilder';
+import { TIER_2_ZOOM, TIER_3_ZOOM } from '../../utils/genealogyOrganic';
+import { logger } from '../../utils/logger';
+import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson, AssociationLink, AssociateBloomLabel, AssociateTrail } from '../../utils/treeBuilder';
 
 interface Props {
   nodes: LayoutNode[];
@@ -26,6 +27,11 @@ interface Props {
   spouseConnectors: SpouseConnector[];
   /** Dotted connectors from anchors to associated_with satellites (#1288). */
   associationLinks?: AssociationLink[];
+  /** Type-sector labels ("disciples", "contemporaries"…) emitted by
+   *  the associate bloom layout. Shown at mid-zoom+. */
+  associateBloomLabels?: AssociateBloomLabel[];
+  /** Thick trail connectors from anchors to offset associate blooms. */
+  associateTrails?: AssociateTrail[];
   filterEra: string | null;
   spineIds: Set<string>;
   selectedPersonId: string | null;
@@ -44,6 +50,8 @@ interface Props {
 export const TreeCanvas = memo(function TreeCanvas({
   nodes, links, marriageBars, spouseConnectors,
   associationLinks = [],
+  associateBloomLabels = [],
+  associateTrails = [],
   filterEra, spineIds, selectedPersonId, onNodePress,
   offsetX = 0, offsetY = 0,
   canvasWidth = 4000, canvasHeight = 4000,
@@ -54,6 +62,20 @@ export const TreeCanvas = memo(function TreeCanvas({
   // Below TIER_2_ZOOM, collapse each associate cluster into a single "+N"
   // badge at the anchor and hide the individual associate nodes + links.
   const clustersCollapsed = zoom < TIER_2_ZOOM;
+
+  // Render-entry diagnostic — the LAST line before the SVG tree commits.
+  // If the crash happens after this log but before the post-commit effect
+  // log, the failure is inside the SVG render tree.
+  logger.info(
+    'Canvas',
+    `render z=${zoom.toFixed(2)} collapsed=${clustersCollapsed} `
+    + `nodes=${nodes.length} links=${links.length} al=${associationLinks.length} `
+    + `labels=${associateBloomLabels.length} trails=${associateTrails.length} `
+    + `canvas=${canvasWidth}x${canvasHeight}`,
+  );
+  React.useEffect(() => {
+    logger.info('Canvas', `render COMMITTED z=${zoom.toFixed(2)}`);
+  });
   const associateIds = useMemo(
     () => new Set(associationLinks.map((al) => al.memberId)),
     [associationLinks],
@@ -150,6 +172,40 @@ export const TreeCanvas = memo(function TreeCanvas({
               +{b.count}
             </SvgText>
           </G>
+        ))}
+
+        {/* 1d. Associate-bloom trails — thick gold line from anchor to the
+               apex of a bloom that had to be shifted sideways. */}
+        {!clustersCollapsed && associateTrails.map((t) => (
+          <Line
+            key={`at-${t.anchorId}`}
+            x1={t.source.x}
+            y1={t.source.y}
+            x2={t.target.x}
+            y2={t.target.y}
+            stroke={base.gold}
+            strokeWidth={1.5}
+            opacity={0.35}
+            strokeLinecap="round"
+          />
+        ))}
+
+        {/* 1e. Type-sector labels ("disciples", "contemporaries"…) at the
+               apex of each sub-bloom. Visible at mid-zoom+ so the overview
+               stays clean. */}
+        {!clustersCollapsed && zoom >= TIER_3_ZOOM && associateBloomLabels.map((lbl) => (
+          <SvgText
+            key={`abl-${lbl.anchorId}-${lbl.type}`}
+            x={lbl.x}
+            y={lbl.y}
+            fill={base.gold}
+            fontSize={11}
+            fontFamily="Cinzel_600SemiBold"
+            textAnchor="middle"
+            opacity={0.65}
+          >
+            {lbl.text}
+          </SvgText>
         ))}
 
         {/* 2. Marriage bars */}
