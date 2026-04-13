@@ -76,7 +76,8 @@
           "caption": "Adam and Eve Driven Out of Eden",
           "credit": "Gustave Dore - Public domain"
         }
-      ]
+      ],
+      "spouse_of": "adam"
     },
     {
       "id": "cain",
@@ -298,7 +299,8 @@
         "Gen 6:18",
         "Gen 7:7"
       ],
-      "chapter": null
+      "chapter": null,
+      "spouse_of": "noah"
     },
     {
       "id": "shem",
@@ -446,7 +448,8 @@
       "refs": [
         "Gen 4:19-20"
       ],
-      "chapter": null
+      "chapter": null,
+      "spouse_of": "lamech-c"
     },
     {
       "id": "zillah",
@@ -462,7 +465,8 @@
       "refs": [
         "Gen 4:19,22"
       ],
-      "chapter": null
+      "chapter": null,
+      "spouse_of": "lamech-c"
     },
     {
       "id": "jabal",
@@ -747,7 +751,8 @@
         "Gen 19:15-26",
         "Luke 17:32"
       ],
-      "chapter": null
+      "chapter": null,
+      "spouse_of": "lot"
     },
     {
       "id": "abraham",
@@ -930,7 +935,8 @@
           "caption": "Abraham and the Three Angels",
           "credit": "Gustave Dore - Public domain"
         }
-      ]
+      ],
+      "spouse_of": "abraham"
     },
     {
       "id": "hagar",
@@ -949,7 +955,8 @@
         "Gen 21:9-21",
         "Gal 4:22-31"
       ],
-      "chapter": "ot/genesis/Genesis_16.html"
+      "chapter": "ot/genesis/Genesis_16.html",
+      "spouse_of": "abraham"
     },
     {
       "id": "keturah",
@@ -965,7 +972,8 @@
       "refs": [
         "Gen 25:1-6"
       ],
-      "chapter": null
+      "chapter": null,
+      "spouse_of": "abraham"
     },
     {
       "id": "ishmael",
@@ -1348,7 +1356,8 @@
         "Gen 29:29",
         "Gen 30:3-8"
       ],
-      "chapter": null
+      "chapter": null,
+      "spouse_of": "jacob"
     },
     {
       "id": "zilpah",
@@ -1365,7 +1374,8 @@
         "Gen 29:24",
         "Gen 30:9-13"
       ],
-      "chapter": null
+      "chapter": null,
+      "spouse_of": "jacob"
     },
     {
       "id": "reuben",
@@ -1889,7 +1899,8 @@
         "Jas 2:25",
         "Matt 1:5"
       ],
-      "chapter": "ot/ruth/Ruth_4.html"
+      "chapter": "ot/ruth/Ruth_4.html",
+      "spouse_of": "salmon"
     },
     {
       "id": "gershon",
@@ -2205,7 +2216,8 @@
         "Exod 4:24-26",
         "Exod 18:2-5"
       ],
-      "chapter": null
+      "chapter": null,
+      "spouse_of": "moses"
     },
     {
       "id": "gershom-m",
@@ -2772,7 +2784,8 @@
       "refs": [
         "Ruth 1-4"
       ],
-      "chapter": "ot/ruth/Ruth_1.html"
+      "chapter": "ot/ruth/Ruth_1.html",
+      "spouse_of": "elimelech"
     },
     {
       "id": "ruth",
@@ -2849,7 +2862,8 @@
           "ref": "Matt 1:5",
           "note": "Ruth appears in Matthew's genealogy of Jesus — a Moabite woman in the messianic line."
         }
-      ]
+      ],
+      "spouse_of": "boaz"
     },
     {
       "id": "boaz",
@@ -3142,7 +3156,8 @@
       "refs": [
         "1 Sam 14:50"
       ],
-      "chapter": null
+      "chapter": null,
+      "spouse_of": "saul"
     },
     {
       "id": "jonathan",
@@ -3366,7 +3381,8 @@
         "1 Kgs 1:11-31",
         "Matt 1:6"
       ],
-      "chapter": null
+      "chapter": null,
+      "spouse_of": "david"
     },
     {
       "id": "ahinoam-d",
@@ -3386,7 +3402,8 @@
         "2 Sam 2:2",
         "2 Sam 3:2"
       ],
-      "chapter": null
+      "chapter": null,
+      "spouse_of": "david"
     },
     {
       "id": "maacah-d",
@@ -3403,7 +3420,8 @@
         "2 Sam 3:3",
         "2 Sam 13:1"
       ],
-      "chapter": null
+      "chapter": null,
+      "spouse_of": "david"
     },
     {
       "id": "amnon",
@@ -3629,7 +3647,7 @@
       "id": "hezekiah",
       "name": "Hezekiah",
       "gender": "m",
-      "father": null,
+      "father": "ahaz_king",
       "mother": null,
       "spouseOf": null,
       "era": "prophets",
@@ -3643,13 +3661,14 @@
         "Isa 36-39",
         "Matt 1:9-10"
       ],
-      "chapter": null
+      "chapter": null,
+      "type": "spine"
     },
     {
       "id": "josiah",
       "name": "Josiah",
       "gender": "m",
-      "father": null,
+      "father": "amon",
       "mother": null,
       "spouseOf": null,
       "era": "prophets",
@@ -4304,7 +4323,7 @@
       "id": "zerubbabel",
       "name": "Zerubbabel",
       "gender": "m",
-      "father": null,
+      "father": "shealtiel",
       "mother": null,
       "spouseOf": null,
       "era": "exile",
@@ -4598,7 +4617,7 @@
       "id": "joseph-nt",
       "name": "Joseph (Mary's husband)",
       "gender": "m",
-      "father": null,
+      "father": "jacob_nt",
       "mother": null,
       "spouseOf": null,
       "parent": "david",
@@ -7820,6 +7839,326 @@
       "refs": [
         "Rev 2:13"
       ]
+    },
+    {
+      "id": "abijah",
+      "name": "Abijah",
+      "gender": "m",
+      "father": "rehoboam",
+      "mother": null,
+      "spouse_of": null,
+      "era": "prophets",
+      "dates": "913-910 BC",
+      "role": "King of Judah; son of Rehoboam",
+      "type": "spine",
+      "bio": "Reigned three years over Judah. Despite his father's failures, he won a decisive victory over Jeroboam's northern army by relying on God.",
+      "scripture_role": "King of Judah",
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "asa",
+      "name": "Asa",
+      "gender": "m",
+      "father": "abijah",
+      "mother": null,
+      "spouse_of": null,
+      "era": "prophets",
+      "dates": "910-869 BC",
+      "role": "King of Judah; great reformer",
+      "type": "spine",
+      "bio": "Reigned forty-one years. Removed idols, deposed his grandmother Maacah for her Asherah pole, and fortified Judah. His heart was fully committed to the LORD, though in later years he relied on Aram rather than God.",
+      "scripture_role": "King of Judah",
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "jehoshaphat_king",
+      "name": "Jehoshaphat",
+      "gender": "m",
+      "father": "asa",
+      "mother": null,
+      "spouse_of": null,
+      "era": "prophets",
+      "dates": "872-848 BC",
+      "role": "King of Judah; sent teachers throughout the land",
+      "type": "spine",
+      "bio": "Reigned twenty-five years. Strengthened Judah against Israel, appointed judges, and sent Levites to teach the Law throughout the cities of Judah. Sought the LORD before battle.",
+      "scripture_role": "King of Judah",
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "jehoram_king",
+      "name": "Jehoram",
+      "gender": "m",
+      "father": "jehoshaphat_king",
+      "mother": null,
+      "spouse_of": null,
+      "era": "prophets",
+      "dates": "848-841 BC",
+      "role": "King of Judah; married Ahab's daughter",
+      "type": "spine",
+      "bio": "Reigned eight years. Married Athaliah, daughter of Ahab, and walked in the ways of the kings of Israel. Killed his own brothers upon taking the throne.",
+      "scripture_role": "King of Judah",
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "uzziah",
+      "name": "Uzziah",
+      "gender": "m",
+      "father": "jehoram_king",
+      "mother": null,
+      "spouse_of": null,
+      "era": "prophets",
+      "dates": "792-740 BC",
+      "role": "King of Judah; struck with leprosy for pride",
+      "type": "spine",
+      "bio": "Reigned fifty-two years. Powerful and prosperous, he fortified Jerusalem and built a great army. But his pride led him to burn incense in the temple — a priestly duty — and God struck him with leprosy.",
+      "scripture_role": "King of Judah",
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "jotham",
+      "name": "Jotham",
+      "gender": "m",
+      "father": "uzziah",
+      "mother": null,
+      "spouse_of": null,
+      "era": "prophets",
+      "dates": "750-735 BC",
+      "role": "King of Judah; did right but did not enter the temple",
+      "type": "spine",
+      "bio": "Reigned sixteen years. Did what was right in the eyes of the LORD, as his father Uzziah had done, but did not enter the temple. Built the Upper Gate of the temple.",
+      "scripture_role": "King of Judah",
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "ahaz_king",
+      "name": "Ahaz",
+      "gender": "m",
+      "father": "jotham",
+      "mother": null,
+      "spouse_of": null,
+      "era": "prophets",
+      "dates": "735-715 BC",
+      "role": "King of Judah; practiced child sacrifice",
+      "type": "spine",
+      "bio": "Reigned sixteen years. One of Judah's worst kings — sacrificed his own sons in fire, made metal images for the Baals, and shut the doors of the temple. Isaiah prophesied during his reign.",
+      "scripture_role": "King of Judah",
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "manasseh_king",
+      "name": "Manasseh",
+      "gender": "m",
+      "father": "hezekiah",
+      "mother": null,
+      "spouse_of": null,
+      "era": "prophets",
+      "dates": "697-642 BC",
+      "role": "King of Judah; longest reign, worst then repentant",
+      "type": "spine",
+      "bio": "Reigned fifty-five years — the longest of any Judean king. Rebuilt the high places, erected altars to Baal, and practiced sorcery. Tradition holds he sawed Isaiah in half. Yet in exile he repented and was restored.",
+      "scripture_role": "King of Judah",
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "amon",
+      "name": "Amon",
+      "gender": "m",
+      "father": "manasseh_king",
+      "mother": null,
+      "spouse_of": null,
+      "era": "prophets",
+      "dates": "642-640 BC",
+      "role": "King of Judah; assassinated by his servants",
+      "type": "spine",
+      "bio": "Reigned two years. Did evil like his father Manasseh but without the repentance. His own officials conspired against him and killed him in his palace.",
+      "scripture_role": "King of Judah",
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "jeconiah",
+      "name": "Jeconiah",
+      "gender": "m",
+      "father": "josiah",
+      "mother": null,
+      "spouse_of": null,
+      "era": "exile",
+      "dates": "598-597 BC",
+      "role": "King of Judah; exiled to Babylon",
+      "type": "spine",
+      "bio": "Also called Jehoiachin and Coniah. Reigned only three months before Nebuchadnezzar took him captive to Babylon. Jeremiah prophesied that none of his descendants would sit on David's throne — yet through him the messianic line continued.",
+      "scripture_role": "King of Judah",
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "shealtiel",
+      "name": "Shealtiel",
+      "gender": "m",
+      "father": "jeconiah",
+      "mother": null,
+      "spouse_of": null,
+      "era": "exile",
+      "dates": null,
+      "role": "Father of Zerubbabel; exilic generation",
+      "type": "spine",
+      "bio": "Son of Jeconiah, born in Babylonian exile. Father of Zerubbabel, who would lead the first return to Jerusalem and rebuild the temple.",
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "abiud",
+      "name": "Abiud",
+      "gender": "m",
+      "father": "zerubbabel",
+      "mother": null,
+      "spouse_of": null,
+      "era": "post-exilic",
+      "dates": null,
+      "role": "Son of Zerubbabel (Matt 1:13)",
+      "type": "spine",
+      "bio": "Named in Matthew's genealogy as son of Zerubbabel. Part of the quiet generations between the return from exile and the birth of Christ.",
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "eliakim_matt",
+      "name": "Eliakim",
+      "gender": "m",
+      "father": "abiud",
+      "mother": null,
+      "spouse_of": null,
+      "era": "post-exilic",
+      "dates": null,
+      "role": "Son of Abiud (Matt 1:13)",
+      "type": "spine",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "azor",
+      "name": "Azor",
+      "gender": "m",
+      "father": "eliakim_matt",
+      "mother": null,
+      "spouse_of": null,
+      "era": "post-exilic",
+      "dates": null,
+      "role": "Son of Eliakim (Matt 1:13-14)",
+      "type": "spine",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "zadok_matt",
+      "name": "Zadok",
+      "gender": "m",
+      "father": "azor",
+      "mother": null,
+      "spouse_of": null,
+      "era": "post-exilic",
+      "dates": null,
+      "role": "Son of Azor (Matt 1:14)",
+      "type": "spine",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "akim",
+      "name": "Akim",
+      "gender": "m",
+      "father": "zadok_matt",
+      "mother": null,
+      "spouse_of": null,
+      "era": "post-exilic",
+      "dates": null,
+      "role": "Son of Zadok (Matt 1:14)",
+      "type": "spine",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "eliud",
+      "name": "Eliud",
+      "gender": "m",
+      "father": "akim",
+      "mother": null,
+      "spouse_of": null,
+      "era": "post-exilic",
+      "dates": null,
+      "role": "Son of Akim (Matt 1:14-15)",
+      "type": "spine",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "eleazar_matt",
+      "name": "Eleazar",
+      "gender": "m",
+      "father": "eliud",
+      "mother": null,
+      "spouse_of": null,
+      "era": "post-exilic",
+      "dates": null,
+      "role": "Son of Eliud (Matt 1:15)",
+      "type": "spine",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "matthan",
+      "name": "Matthan",
+      "gender": "m",
+      "father": "eleazar_matt",
+      "mother": null,
+      "spouse_of": null,
+      "era": "nt",
+      "dates": null,
+      "role": "Son of Eleazar; grandfather of Joseph (Matt 1:15)",
+      "type": "spine",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
+    },
+    {
+      "id": "jacob_nt",
+      "name": "Jacob",
+      "gender": "m",
+      "father": "matthan",
+      "mother": null,
+      "spouse_of": null,
+      "era": "nt",
+      "dates": null,
+      "role": "Father of Joseph, husband of Mary (Matt 1:15-16)",
+      "type": "spine",
+      "bio": null,
+      "scripture_role": null,
+      "refs_json": null,
+      "chapter_link": null
     }
   ]
 }

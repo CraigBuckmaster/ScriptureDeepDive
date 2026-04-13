@@ -717,8 +717,8 @@ def main():
     # The satellite count drifts as people are added during enrichment — update as needed.
     spine = q1(cur, "SELECT COUNT(*) FROM people WHERE type='spine'")
     sat = q1(cur, "SELECT COUNT(*) FROM people WHERE type='satellite'")
-    check("37 spine people", spine == 37, f"got {spine}")
-    check("245 satellite people", sat == 245, f"got {sat}")
+    check("60 spine people", spine == 60, f"got {spine}")
+    check("242 satellite people", sat == 242, f"got {sat}")
 
     # Sanity: the two endpoints of the genealogy tree must always be spine
     adam_type = q1(cur, "SELECT type FROM people WHERE id='adam'")
