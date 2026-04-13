@@ -22,6 +22,20 @@ jest.mock('@/theme', () => ({
     creation: '#55AA55',
     patriarchs: '#AA5555',
   } as Record<string, string>,
+  fontFamily: {
+    display: 'Cinzel_400Regular',
+    displayMedium: 'Cinzel_500Medium',
+    displaySemiBold: 'Cinzel_600SemiBold',
+    body: 'EBGaramond_400Regular',
+    bodyMedium: 'EBGaramond_500Medium',
+    bodySemiBold: 'EBGaramond_600SemiBold',
+    bodyItalic: 'EBGaramond_400Regular_Italic',
+    bodyMediumItalic: 'EBGaramond_500Medium_Italic',
+    ui: 'SourceSans3_400Regular',
+    uiLight: 'SourceSans3_300Light',
+    uiMedium: 'SourceSans3_500Medium',
+    uiSemiBold: 'SourceSans3_600SemiBold',
+  },
 }));
 
 jest.mock('@/utils/treeBuilder', () => ({
