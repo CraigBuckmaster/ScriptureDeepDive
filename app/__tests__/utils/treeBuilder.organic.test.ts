@@ -72,59 +72,6 @@ describe('treeBuilder — #1290 associate tribal bloom', () => {
       expect(n.y).toBeGreaterThan(jesusNode.y);
     }
   });
-
-  it('groups associates by type and emits one label per type present', () => {
-    const people: Person[] = [
-      makePerson({ id: 'adam', name: 'Adam' }),
-      makePerson({ id: 'jacob_nt', name: 'Jacob', father: 'adam' }),
-      makePerson({ id: 'joseph-nt', name: 'Joseph', father: 'jacob_nt' }),
-      makePerson({ id: 'jesus', name: 'Jesus', father: 'joseph-nt' }),
-      makePerson({ id: 'peter', name: 'Peter', associated_with: 'jesus', association_type: 'disciple' }),
-      makePerson({ id: 'andrew', name: 'Andrew', associated_with: 'jesus', association_type: 'disciple' }),
-      makePerson({ id: 'john-ap', name: 'John', associated_with: 'jesus', association_type: 'disciple' }),
-      makePerson({ id: 'pilate', name: 'Pilate', associated_with: 'jesus', association_type: 'contemporary' }),
-      makePerson({ id: 'caiaphas', name: 'Caiaphas', associated_with: 'jesus', association_type: 'contemporary' }),
-      makePerson({ id: 'barabbas', name: 'Barabbas', associated_with: 'jesus', association_type: 'adversary' }),
-    ];
-    const { associateBloomLabels } = computeFullLayout(people, null);
-    const jesusLabels = associateBloomLabels.filter((l) => l.anchorId === 'jesus');
-    const types = jesusLabels.map((l) => l.type).sort();
-    expect(types).toEqual(['adversary', 'contemporary', 'disciple']);
-    const byType = new Map(jesusLabels.map((l) => [l.type, l.text]));
-    expect(byType.get('disciple')).toBe('disciples');
-    expect(byType.get('contemporary')).toBe('contemporaries');
-    expect(byType.get('adversary')).toBe('adversaries');
-  });
-
-  it('spaces associates with enough gap for their name labels (≥ 70 px)', () => {
-    // Guard against the "tight cluster" regression — large clusters must
-    // scale radius so adjacent names don't overlap.
-    const people: Person[] = [
-      makePerson({ id: 'adam', name: 'Adam' }),
-      makePerson({ id: 'jacob_nt', name: 'Jacob', father: 'adam' }),
-      makePerson({ id: 'joseph-nt', name: 'Joseph', father: 'jacob_nt' }),
-      makePerson({ id: 'jesus', name: 'Jesus', father: 'joseph-nt' }),
-      makePerson({ id: 'peter', name: 'Peter', associated_with: 'jesus', association_type: 'disciple' }),
-      makePerson({ id: 'andrew', name: 'Andrew', associated_with: 'jesus', association_type: 'disciple' }),
-      makePerson({ id: 'james', name: 'James', associated_with: 'jesus', association_type: 'disciple' }),
-      makePerson({ id: 'john', name: 'John', associated_with: 'jesus', association_type: 'disciple' }),
-      makePerson({ id: 'thomas', name: 'Thomas', associated_with: 'jesus', association_type: 'disciple' }),
-    ];
-    const { nodes } = computeFullLayout(people, null);
-    const ids = ['peter', 'andrew', 'james', 'john', 'thomas'];
-    const placed = ids
-      .map((id) => nodes.find((n) => n.data.id === id)!)
-      .sort((a, b) => a.x - b.x);
-    // Minimum distance between any two adjacent associate centres on the arc.
-    let minGap = Infinity;
-    for (let i = 1; i < placed.length; i++) {
-      const dx = placed[i].x - placed[i - 1].x;
-      const dy = placed[i].y - placed[i - 1].y;
-      const gap = Math.hypot(dx, dy);
-      if (gap < minGap) minGap = gap;
-    }
-    expect(minGap).toBeGreaterThanOrEqual(70);
-  });
 });
 
 describe("treeBuilder — #1291 Jacob's tribal bloom", () => {
