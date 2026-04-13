@@ -59,9 +59,17 @@ export const TreeCanvas = memo(function TreeCanvas({
 }: Props) {
   const { base } = useTheme();
 
-  // Below TIER_2_ZOOM, collapse each associate cluster into a single "+N"
+  // Below TIER_3_ZOOM, collapse each associate cluster into a single "+N"
   // badge at the anchor and hide the individual associate nodes + links.
-  const clustersCollapsed = zoom < TIER_2_ZOOM;
+  //
+  // WHY TIER_3_ZOOM and not TIER_2_ZOOM? Associates are tier-3 figures
+  // (no role, no bio) — TreeNode already returns null for them below 0.8.
+  // If we un-collapse at 0.5, the 89 association-link bezier paths render
+  // but point to invisible targets, AND the combined render load crashes
+  // iOS's native paint on a 2748×10017 canvas. Collapsing until 0.8 keeps
+  // cluster links and nodes in sync and dramatically reduces the render
+  // footprint at the initial centre-on-Adam zoom of 0.65.
+  const clustersCollapsed = zoom < TIER_3_ZOOM;
 
   // Render-entry diagnostic — the LAST line before the SVG tree commits.
   // If the crash happens after this log but before the post-commit effect
