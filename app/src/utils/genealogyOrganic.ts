@@ -14,8 +14,18 @@ import type { Person } from '../types';
 
 export type PersonTier = 1 | 2 | 3;
 
-/** Visible tier threshold for each zoom level. */
-export const TIER_2_ZOOM = 0.5;
+/** Visible tier threshold for each zoom level.
+ *
+ * TIER_2_ZOOM is set ABOVE the default mobile centre-on-Adam scale (0.65,
+ * from useTreeGestures.centreOnNode). On-device testing showed the jump
+ * from tier-1-only (~100 spine + role-holder nodes) to tier-1+tier-2
+ * (~180 nodes including every bio-holder) across that 0.45→0.65 transition
+ * roughly doubles the rendered SVG element count and causes iOS's
+ * compositor to crash on the re-paint of a tall (~10 000 px) canvas.
+ * Keeping tier 2 behind 0.7 means the initial centred view stays lean
+ * (spine + role-holders only); the user pinches in to reveal bio-holders.
+ */
+export const TIER_2_ZOOM = 0.7;
 export const TIER_3_ZOOM = 0.8;
 
 /** Derive the tier for a single person. */
