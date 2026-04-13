@@ -16,16 +16,14 @@ import { useTheme, spacing, radii, fontFamily } from '../theme';
 interface StartHereTool {
   title: string;
   subtitle: string;
-  icon: string;
   screen: string;
-  color: string;
 }
 
 const START_HERE_TOOLS: StartHereTool[] = [
-  { title: 'People',        subtitle: "See who's in the story",              icon: '', screen: 'GenealogyTree',  color: '#e86040' }, // data-color: intentional
-  { title: 'Timeline',      subtitle: 'When did this happen?',               icon: '', screen: 'Timeline',       color: '#70b8e8' }, // data-color: intentional
-  { title: 'Word Studies',  subtitle: 'What does this word mean?',           icon: '', screen: 'WordStudyBrowse',color: '#e890b8' }, // data-color: intentional
-  { title: 'Topical Index', subtitle: 'What does the Bible say about...?',   icon: '', screen: 'TopicBrowse',    color: '#c8a040' }, // data-color: intentional
+  { title: 'People',        subtitle: "See who's in the story",              screen: 'GenealogyTree' },
+  { title: 'Timeline',      subtitle: 'When did this happen?',               screen: 'Timeline' },
+  { title: 'Word Studies',  subtitle: 'What does this word mean?',           screen: 'WordStudyBrowse' },
+  { title: 'Topical Index', subtitle: 'What does the Bible say about...?',   screen: 'TopicBrowse' },
 ];
 
 interface Props {
@@ -64,9 +62,9 @@ export function StartHereBanner({ onDismiss, onNavigate }: Props) {
             activeOpacity={0.7}
             accessibilityRole="button"
             accessibilityLabel={`${tool.title}: ${tool.subtitle}`}
-            style={[styles.toolCard, { backgroundColor: base.bgElevated, borderColor: tool.color + '25' }]}
+            style={[styles.toolCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '25' }]}
           >
-            <Text style={[styles.toolTitle, { color: tool.color }]}>{tool.title}</Text>
+            <Text style={[styles.toolTitle, { color: base.gold }]}>{tool.title}</Text>
             <Text style={[styles.toolSubtitle, { color: base.textMuted }]}>{tool.subtitle}</Text>
           </TouchableOpacity>
         ))}

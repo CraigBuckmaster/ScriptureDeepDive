@@ -337,26 +337,30 @@ function ExploreMenuScreen() {
       }
       case 'deep-dive':
         return (
-          <View style={styles.row3}>
-            {section.features.map((f, i) => {
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.carouselContent}
+            decelerationRate="fast"
+            snapToInterval={CARD_WIDTH + spacing.sm}
+          >
+            {section.features.map((f, cardIndex) => {
               const imgData = getScreenImages(f.screen);
               return (
-                <View key={f.screen} style={styles.rowCell}>
-                  <FeatureCard
-                    feature={f}
-                    onPress={() => handleNavigate(f.screen)}
-                    isPremium={isPremium}
-                    images={imgData?.images}
-                    count={imgData?.count}
-                    noun={imgData?.noun}
-                    onImagePress={handleDeepLink}
-                    staggerMs={i * 1200}
-                    compact
-                  />
-                </View>
+                <FeatureCard
+                  key={f.screen}
+                  feature={f}
+                  onPress={() => handleNavigate(f.screen)}
+                  isPremium={isPremium}
+                  images={imgData?.images}
+                  count={imgData?.count}
+                  noun={imgData?.noun}
+                  onImagePress={handleDeepLink}
+                  staggerMs={cardIndex * 1200}
+                />
               );
             })}
-          </View>
+          </ScrollView>
         );
       case 'biblical-world':
       default:
