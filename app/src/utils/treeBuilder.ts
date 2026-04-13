@@ -28,7 +28,12 @@ export const TREE_CONSTANTS = {
   satelliteFontSize: 9.5,
   touchTargetRadius: 18,
   minZoom: 0.15,
-  maxZoom: 3,
+  // maxZoom 1.5 picked so canvas_height (~10k) × maxZoom × Retina_2x
+  // (= 30k) stays safely within iOS Metal's 16384 per-dimension texture
+  // budget when combined with the outer transform's implied rasterization.
+  // Higher values crash the iOS compositor. If the canvas gets shorter
+  // (e.g. we drop the era grid) we can raise this.
+  maxZoom: 1.5,
   initialScaleMobile: 0.45,
   initialScaleTablet: 0.75,
   marriageTickHeight: 10,

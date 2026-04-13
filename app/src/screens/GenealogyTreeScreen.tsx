@@ -208,9 +208,22 @@ function GenealogyTreeScreen({ route, navigation }: {
         <GestureDetector gesture={gesture}>
           {/* Two-layer transform — see useTreeGestures.ts header for why.
               DO NOT collapse into a single Animated.View. Reduce Motion breaks it.
-              DO NOT put scale on both layers. Causes blurry SVG text. */}
-          <Animated.View style={[gestureStyle, styles.transformLayer]}>
-            <View style={[baseStyle, styles.transformLayer]}>
+              DO NOT put scale on both layers. Causes blurry SVG text.
+              shouldRasterizeIOS={false}: prevent iOS from trying to cache
+              a full-canvas bitmap of a transformed view with many
+              sublayers — at zoom > ~1.2 the implied Retina texture
+              (~2748*zoom × ~10017*zoom × 2) exceeds Metal's 16384 limit
+              and the allocation crashes the compositor. */}
+          <Animated.View
+            style={[gestureStyle, styles.transformLayer]}
+            shouldRasterizeIOS={false}
+            needsOffscreenAlphaCompositing={false}
+          >
+            <View
+              style={[baseStyle, styles.transformLayer]}
+              shouldRasterizeIOS={false}
+              needsOffscreenAlphaCompositing={false}
+            >
               <Svg
                 width={Math.max(bounds.width, 2000)}
                 height={Math.max(bounds.height, 2000)}
