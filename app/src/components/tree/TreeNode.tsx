@@ -19,7 +19,7 @@ import type { LayoutNode, TreePerson } from '../../utils/treeBuilder';
 import { isMessianic } from '../../utils/messianicLine';
 import { getRoleBadgeConfig } from './RoleBadge';
 import { getCovenantWaypoint } from '../../utils/covenantWaypoints';
-import { getPersonTier, isPersonVisibleAtZoom } from '../../utils/genealogyOrganic';
+import { getPersonTier, isPersonVisibleAtZoom, TIER_3_ZOOM } from '../../utils/genealogyOrganic';
 
 // ── Circle dimensions ─────────────────────────────────────────────────
 const SPINE_R = 24;            // 48 px diameter
@@ -123,6 +123,39 @@ export const TreeNode = memo(function TreeNode({
   const nameFill = onMessianicLine
     ? base.gold
     : (isSpine ? base.text : base.textDim);
+
+  // Lean render for tier-2 at mid zoom (0.7 ≤ zoom < 0.8): just a circle
+  // + name. Avoids adding ~80 multi-layer TreeNode instances when the
+  // user pinches past TIER_2_ZOOM. iOS's compositor crashes on the full
+  // variant at that node count on a ~10 000-px tall canvas. Full variant
+  // (initial letter, role badge, waypoint, glow, touch rect) kicks back
+  // in at TIER_3_ZOOM where the user has pinched far enough to care about
+  // the extra detail.
+  if (tier === 2 && zoom < TIER_3_ZOOM) {
+    return (
+      <G onPress={handlePress} opacity={opacity}>
+        <Circle
+          cx={x}
+          cy={y}
+          r={r}
+          fill={nodeFill}
+          stroke={borderColor}
+          strokeWidth={borderWidth}
+          strokeDasharray={isAssociate ? '2,2' : undefined}
+        />
+        <SvgText
+          x={x}
+          y={y + r + NAME_GAP}
+          textAnchor="middle"
+          fontSize={nameFont}
+          fill={nameFill}
+          fontFamily="SourceSans3_400Regular"
+        >
+          {data.name}
+        </SvgText>
+      </G>
+    );
+  }
 
   // Initial colour — gold inside messianic, light text inside spine, dim text inside satellite
   const initialFill = onMessianicLine
