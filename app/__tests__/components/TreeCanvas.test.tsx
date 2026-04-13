@@ -152,7 +152,10 @@ describe('TreeCanvas', () => {
     type: 'disciple',
   });
 
-  it('renders an AssociationLinkSvg for each associationLink at normal zoom', () => {
+  it('consolidates association links into a single Path at normal zoom', () => {
+    // Post-constant-canvas-render refactor: all 89+ dashed connectors
+    // share a single <Path> with a multi-M `d` attribute, so zoom
+    // transitions never mount new native views.
     const links = [
       makeAssocLink('jesus', 'peter', 0),
       makeAssocLink('jesus', 'andrew', 1),
@@ -162,10 +165,17 @@ describe('TreeCanvas', () => {
       <TreeCanvas {...defaultProps} associationLinks={links} zoom={1.0} />,
     );
     const json = tree.toJSON() as any;
-    expect(findAllByType(json, 'AssociationLinkSvg')).toHaveLength(3);
+    const paths = findAllByType(json, 'Path');
+    const assocPath = paths.find((p: any) =>
+      p.props?.strokeDasharray === '4,4' && p.props?.opacity === 0.55,
+    );
+    expect(assocPath).toBeTruthy();
+    // Should contain three 'M' moveto commands in the `d` attribute.
+    const mCount = (assocPath.props?.d?.match(/M /g) ?? []).length;
+    expect(mCount).toBe(3);
   });
 
-  it('collapses clusters to a "+N" badge and hides connectors at low zoom', () => {
+  it('fades the consolidated association-link Path to opacity 0 when clusters collapsed', () => {
     const links = [
       makeAssocLink('jesus', 'peter', 0),
       makeAssocLink('jesus', 'andrew', 1),
@@ -175,15 +185,20 @@ describe('TreeCanvas', () => {
       <TreeCanvas {...defaultProps} associationLinks={links} zoom={0.3} />,
     );
     const json = tree.toJSON() as any;
-    // Connectors hidden
-    expect(findAllByType(json, 'AssociationLinkSvg')).toHaveLength(0);
-    // Badge rendered — one per anchor
+    const paths = findAllByType(json, 'Path');
+    const assocPath = paths.find((p: any) => p.props?.strokeDasharray === '4,4');
+    expect(assocPath).toBeTruthy();
+    expect(assocPath.props?.opacity).toBe(0);
+    // Badge group still rendered; visible-opacity at 0.85, zero-opacity
+    // when uncollapsed — post-refactor the badge always mounts.
     const texts = findAllByType(json, 'Text');
     const badgeText = texts.find((t: any) => t.children?.join?.('') === '+3' || (t.children?.[1] === 3));
     expect(badgeText).toBeTruthy();
   });
 
-  it('hides associate nodes when clusters are collapsed', () => {
+  it('always renders associate TreeNodes and forwards clustersCollapsed', () => {
+    // Associate nodes are no longer null-skipped when clusters collapse;
+    // they mount at initial render and use opacity inside TreeNode to hide.
     const peter = makeNode('peter');
     peter.data.isAssociate = true;
     const jesus = makeNode('jesus');
@@ -199,7 +214,12 @@ describe('TreeCanvas', () => {
     const treeNodes = findAllByType(json, 'TreeNode');
     const ids = treeNodes.map((n: any) => n.props?.node?.data?.id);
     expect(ids).toContain('jesus');
-    expect(ids).not.toContain('peter');
+    expect(ids).toContain('peter');
+    // Both receive clustersCollapsed=true; TreeNode applies opacity=0
+    // to the associate while leaving jesus visible.
+    for (const n of treeNodes) {
+      expect(n.props?.clustersCollapsed).toBe(true);
+    }
   });
 
   it('forwards zoom to each TreeNode', () => {

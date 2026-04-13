@@ -61,11 +61,16 @@ interface Props {
   filterEra: string | null;
   /** Current committed zoom scale. Drives per-tier visibility (#1291). */
   zoom?: number;
+  /** When true and this node is an associate, render at opacity 0 (so
+   *  the collapse badges can show instead). Kept as a prop rather than
+   *  derived inside TreeNode so TreeCanvas can compute it once. */
+  clustersCollapsed?: boolean;
   onPress: (person: TreePerson) => void;
 }
 
 export const TreeNode = memo(function TreeNode({
-  node, dimmed, selected, filterEra: _filterEra, zoom = 1, onPress,
+  node, dimmed, selected, filterEra: _filterEra, zoom = 1,
+  clustersCollapsed = false, onPress,
 }: Props) {
   const { base } = useTheme();
   const { data, x, y } = node;
@@ -78,8 +83,10 @@ export const TreeNode = memo(function TreeNode({
   const tier = getPersonTier(data, onMessianicLine);
   const visible = isPersonVisibleAtZoom(tier, zoom);
   const isAssociate = data.isAssociate === true;
+  const hiddenAsAssociate = isAssociate && clustersCollapsed;
   const opacity =
     (visible ? 1 : 0)
+    * (hiddenAsAssociate ? 0 : 1)
     * (dimmed ? 0.25 : 1)
     * (isAssociate ? 0.75 : 1);
 
