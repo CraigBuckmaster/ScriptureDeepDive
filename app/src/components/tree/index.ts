@@ -18,3 +18,7 @@ export type { MessianicLegendProps } from './MessianicLegend';
 
 export { PersonDetailCard, parseRefsJson } from './PersonDetailCard';
 export type { PersonDetailCardProps, PersonDetailTab } from './PersonDetailCard';
+
+// ── Card #1267 (Genealogy Phase 2 — organic layer) ───────────────────
+export { CovenantMarker } from './CovenantMarker';
+export type { CovenantMarkerProps } from './CovenantMarker';
