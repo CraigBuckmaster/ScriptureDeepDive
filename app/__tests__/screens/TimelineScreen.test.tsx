@@ -1,7 +1,6 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react-native';
 import { renderWithProviders } from '../helpers/renderWithProviders';
-import TimelineScreen from '@/screens/TimelineScreen';
 
 // ── Navigation mock ───────────────────────────────────────────────
 
@@ -38,49 +37,9 @@ jest.mock('@/stores', () => ({
 }));
 
 // ── DB calls ──────────────────────────────────────────────────────
-
-const mockTimelineEntries = [
-  {
-    id: 'evt_creation',
-    name: 'Creation',
-    category: 'event',
-    era: 'primeval',
-    year: -4000,
-    summary: 'God creates the heavens and the earth.',
-    scripture_ref: 'Genesis 1',
-    chapter_link: 'ot/genesis_1.html',
-  },
-  {
-    id: 'bk_book-genesis',
-    name: 'Genesis',
-    category: 'book',
-    era: 'primeval',
-    year: -3800,
-    summary: 'Book of Genesis covers creation through Joseph.',
-    scripture_ref: null,
-    chapter_link: null,
-  },
-  {
-    id: 'per_abraham',
-    name: 'Abraham',
-    category: 'person',
-    era: 'patriarchs',
-    year: -2000,
-    summary: 'Father of many nations.',
-    scripture_ref: 'Genesis 12',
-    chapter_link: 'ot/genesis_12.html',
-  },
-  {
-    id: 'wld_babel',
-    name: 'Tower of Babel',
-    category: 'world',
-    era: 'primeval',
-    year: -3500,
-    summary: 'Languages confused at Babel.',
-    scripture_ref: 'Genesis 11',
-    chapter_link: null,
-  },
-];
+// Inline the mock data inside the factory — jest hoists jest.mock calls,
+// so any top-level `const` in this file is not yet initialised when the
+// factory runs.
 
 jest.mock('@/db/content', () => ({
   getAllTimelineEntries: jest.fn().mockResolvedValue([
@@ -88,85 +47,41 @@ jest.mock('@/db/content', () => ({
       id: 'evt_creation', name: 'Creation', category: 'event', era: 'primeval',
       year: -4000, summary: 'God creates the heavens and the earth.',
       scripture_ref: 'Genesis 1', chapter_link: 'ot/genesis_1.html',
+      people_json: null, region: null,
     },
     {
       id: 'bk_book-genesis', name: 'Genesis', category: 'book', era: 'primeval',
-      year: -3800, summary: 'Book of Genesis covers creation through Joseph.',
+      year: -3800, summary: 'Book of Genesis.',
       scripture_ref: null, chapter_link: null,
+      people_json: null, region: null,
     },
     {
       id: 'per_abraham', name: 'Abraham', category: 'person', era: 'patriarchs',
       year: -2000, summary: 'Father of many nations.',
       scripture_ref: 'Genesis 12', chapter_link: 'ot/genesis_12.html',
+      people_json: '["abraham"]', region: null,
+    },
+  ]),
+  getEras: jest.fn().mockResolvedValue([
+    {
+      id: 'primeval', name: 'Primeval', pill: 'Primeval', hex: '#8a6e3a',
+      range_start: -4000, range_end: -2100, summary: null, narrative: null,
+      key_themes: null, key_people: null, books: null,
+      chapter_range: null, geographic_center: null,
+      redemptive_thread: null, transition_to_next: null,
     },
     {
-      id: 'wld_babel', name: 'Tower of Babel', category: 'world', era: 'primeval',
-      year: -3500, summary: 'Languages confused at Babel.',
-      scripture_ref: 'Genesis 11', chapter_link: null,
+      id: 'patriarchs', name: 'Patriarchs', pill: 'Patriarchs', hex: '#c8a040',
+      range_start: -2100, range_end: -1800, summary: null, narrative: null,
+      key_themes: null, key_people: null, books: null,
+      chapter_range: null, geographic_center: null,
+      redemptive_thread: null, transition_to_next: null,
     },
   ]),
 }));
 
-// ── Hooks ─────────────────────────────────────────────────────────
-
-jest.mock('@/hooks/useLandscapeUnlock', () => ({
-  useLandscapeUnlock: jest.fn(),
-}));
-
-// ── Layout utils ──────────────────────────────────────────────────
-
-jest.mock('@/utils/timelineLayout', () => ({
-  yearToX: (y: number) => (y + 5000) * 0.5,
-  formatYear: (y: number) => (y < 0 ? `${Math.abs(y)} BC` : `AD ${y}`),
-  assignLanes: (events: any[]) => events.map((e: any, i: number) => ({
-    ...e,
-    x: (e.year + 5000) * 0.5,
-    y: 80 + i * 40,
-    lane: i,
-    labelWidth: 120,
-    significance: e.chapter_link || e.summary || e.category === 'book' ? 'major' : 'minor',
-  })),
-  computeTickMarks: () => [
-    { x: 100, label: '4000 BC', major: true },
-    { x: 200, label: '3000 BC', major: true },
-    { x: 250, label: '2500 BC', major: false },
-  ],
-  computeSvgHeight: () => 500,
-  ERA_RANGES: {
-    primeval: [-4000, -2100],
-    patriarchs: [-2100, -1800],
-    exodus: [-1800, -1400],
-  } as Record<string, [number, number]>,
-  TOTAL_WIDTH: 5000,
-  AXIS_Y: 150,
-  ERA_BAR_Y: 10,
-  ERA_BAR_H: 30,
-}));
-
-// ── Child component stubs ─────────────────────────────────────────
-
-jest.mock('@/components/tree/EraFilterBar', () => ({
-  EraFilterBar: (props: any) => {
-    const React = require('react');
-    const { View, TouchableOpacity, Text } = require('react-native');
-    return React.createElement(View, { testID: 'era-filter-bar' },
-      ['all', 'primeval', 'patriarchs', 'exodus'].map((era: string) =>
-        React.createElement(TouchableOpacity, {
-          key: era,
-          testID: `era-filter-${era}`,
-          onPress: () => props.onSelect(era),
-        }, React.createElement(Text, null, era)),
-      ),
-    );
-  },
-}));
-
-jest.mock('@/components/BadgeChip', () => ({
-  BadgeChip: (props: any) => {
-    const React = require('react');
-    const { Text } = require('react-native');
-    return React.createElement(Text, { testID: 'badge-chip' }, props.label);
-  },
+jest.mock('@/hooks/useContentImages', () => ({
+  useContentImages: jest.fn().mockReturnValue({ images: [], isLoading: false }),
 }));
 
 jest.mock('@/components/LoadingSkeleton', () => ({
@@ -177,70 +92,38 @@ jest.mock('@/components/LoadingSkeleton', () => ({
   },
 }));
 
-// Stub SVG components (including Defs/LinearGradient/Stop for modernized timeline)
-jest.mock('react-native-svg', () => {
-  const React = require('react');
-  const { View, Text } = require('react-native');
-  const createSvgMock = (name: string) => (props: any) =>
-    React.createElement(View, { ...props, testID: props.testID ?? undefined }, props.children);
-  return {
-    __esModule: true,
-    default: createSvgMock('Svg'),
-    Rect: createSvgMock('Rect'),
-    Line: createSvgMock('Line'),
-    Circle: createSvgMock('Circle'),
-    G: (props: any) => React.createElement(View, props, props.children),
-    Text: (props: any) => React.createElement(Text, props, props.children),
-    Defs: (props: any) => React.createElement(View, props, props.children),
-    LinearGradient: (props: any) => React.createElement(View, props, props.children),
-    Stop: (props: any) => React.createElement(View, props),
-  };
-});
+// For the default export (which wraps the screen in an ErrorBoundary), make
+// sure the boundary passes errors through rather than swallowing — but since
+// our rewrite no longer throws on render, no special handling is needed.
 
-jest.mock('react-native-safe-area-context', () => ({
-  useSafeAreaInsets: () => ({ top: 44, bottom: 34, left: 0, right: 0 }),
-}));
-
-// Bottom sheet mock (replaces Modal in modernized timeline)
-jest.mock('@gorhom/bottom-sheet', () => {
-  const React = require('react');
-  const { View } = require('react-native');
-  return {
-    __esModule: true,
-    default: React.forwardRef(({ children }: any, ref: any) => {
-      React.useImperativeHandle(ref, () => ({
-        snapToIndex: jest.fn(),
-        close: jest.fn(),
-        expand: jest.fn(),
-      }));
-      return React.createElement(View, { testID: 'bottom-sheet' }, children);
-    }),
-    BottomSheetScrollView: ({ children }: any) => React.createElement(View, null, children),
-  };
-});
-
-// ── Tests ─────────────────────────────────────────────────────────
+import TimelineScreen from '@/screens/TimelineScreen';
 
 describe('TimelineScreen', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  it('renders without crashing after data loads', async () => {
-    const { findByTestId } = renderWithProviders(<TimelineScreen />);
-    // After the async getAllTimelineEntries resolves, the screen renders content
-    expect(await findByTestId('era-filter-bar')).toBeTruthy();
-  });
-
-  it('shows loading skeleton initially', () => {
-    // On first render, isLoading is true (before the effect resolves)
+  it('shows the loading skeleton initially', () => {
     const { getByTestId } = renderWithProviders(<TimelineScreen />);
     expect(getByTestId('loading-skeleton')).toBeTruthy();
   });
 
-  it('renders era filter bar after loading', async () => {
-    const { findByTestId } = renderWithProviders(<TimelineScreen />);
-    expect(await findByTestId('era-filter-bar')).toBeTruthy();
+  it('renders the Timeline header and event count after loading', async () => {
+    const { findByText } = renderWithProviders(<TimelineScreen />);
+    expect(await findByText('Timeline')).toBeTruthy();
+    expect(await findByText('3 events')).toBeTruthy();
+  });
+
+  it('renders event cards in the list after loading', async () => {
+    const { findByText } = renderWithProviders(<TimelineScreen />);
+    expect(await findByText('Creation')).toBeTruthy();
+    expect(await findByText('Abraham')).toBeTruthy();
+  });
+
+  it('renders era strip segments keyed by era', async () => {
+    const { findByLabelText } = renderWithProviders(<TimelineScreen />);
+    expect(await findByLabelText(/Primeval era/)).toBeTruthy();
+    expect(await findByLabelText(/Patriarchs era/)).toBeTruthy();
   });
 
   it('renders category filter chips after loading', async () => {
@@ -251,50 +134,68 @@ describe('TimelineScreen', () => {
     expect(await findByText('World History')).toBeTruthy();
   });
 
-  it('renders timeline events after loading', async () => {
-    const { findByText } = renderWithProviders(<TimelineScreen />);
-    // Events display name + formatted year
-    expect(await findByText(/Creation/)).toBeTruthy();
-    expect(await findByText(/Abraham/)).toBeTruthy();
-  });
-
-  it('toggles a category filter when chip is pressed', async () => {
-    const { findByText } = renderWithProviders(<TimelineScreen />);
+  it('toggles a category filter when a chip is pressed', async () => {
+    const { findByText, queryByText } = renderWithProviders(<TimelineScreen />);
     const peopleChip = await findByText('People');
-    // Press to toggle off the person category
     fireEvent.press(peopleChip);
-    // Component re-renders — no crash confirms the state update
-    expect(await findByText('Events')).toBeTruthy();
+    // Abraham is a person — should be filtered out after toggling people off.
+    expect(queryByText('Abraham')).toBeNull();
   });
 
-  it('changes era filter when era chip is pressed', async () => {
-    const { findByTestId } = renderWithProviders(<TimelineScreen />);
-    const patriarchsFilter = await findByTestId('era-filter-patriarchs');
-    fireEvent.press(patriarchsFilter);
-    // Screen re-renders with filtered events — no crash
-    expect(await findByTestId('era-filter-bar')).toBeTruthy();
+  it('filters to an era when its segment is pressed', async () => {
+    const { findByText, findByLabelText, queryByText } = renderWithProviders(
+      <TimelineScreen />,
+    );
+    await findByText('Creation');
+    const patriarchs = await findByLabelText(/Patriarchs era/);
+    fireEvent.press(patriarchs);
+    // Creation is in the primeval era — should be hidden after filtering.
+    expect(queryByText('Creation')).toBeNull();
+    expect(await findByText('Abraham')).toBeTruthy();
   });
 
-  it('renders timeline with accessibility label', async () => {
+  it('expands an event card when it is tapped', async () => {
+    const { findByText, getByLabelText } = renderWithProviders(<TimelineScreen />);
+    await findByText('Abraham');
+    const card = getByLabelText(/Abraham,/);
+    fireEvent.press(card);
+    // People pill renders once the card expands.
+    expect(await findByText('abraham')).toBeTruthy();
+  });
+
+  it('exposes an accessibility label on the root container', async () => {
     const { findByLabelText } = renderWithProviders(<TimelineScreen />);
     expect(await findByLabelText('Timeline')).toBeTruthy();
   });
 
-  it('shows event detail modal when an event is pressed', async () => {
-    const { findByText } = renderWithProviders(<TimelineScreen />);
-    // The SVG G elements have onPress handlers. Since we mock G as a View,
-    // the press should propagate. We look for the event in the rendered tree.
-    // Note: With mocked SVG, the G onPress may not fire via fireEvent.
-    // Instead, verify that the events are rendered (interaction tested via
-    // the category filter toggle above).
-    expect(await findByText(/Creation/)).toBeTruthy();
-    expect(await findByText(/Tower of Babel/)).toBeTruthy();
+  it('enters person-filter mode when a person pill is tapped on an expanded card', async () => {
+    const { findByLabelText, findByText, getByText } = renderWithProviders(<TimelineScreen />);
+    // Expand Abraham's card (it has people_json = ["abraham"])
+    const card = await findByLabelText(/Abraham,/);
+    fireEvent.press(card);
+    const pill = await findByText('abraham');
+    fireEvent.press(pill);
+    // Person filter bar now renders.
+    expect(getByText(/Showing \d+ event/)).toBeTruthy();
   });
 
-  it('renders timeline container after loading', async () => {
-    const { findByText, toJSON } = renderWithProviders(<TimelineScreen />);
-    await findByText(/Creation/);
-    // Tree should be non-null after data loads
-    expect(toJSON()).toBeTruthy();
+  it('dismisses the person filter when the close pill is pressed', async () => {
+    const { findByLabelText, findByText, queryByText, getByLabelText } = renderWithProviders(
+      <TimelineScreen />,
+    );
+    const card = await findByLabelText(/Abraham,/);
+    fireEvent.press(card);
+    fireEvent.press(await findByText('abraham'));
+    await findByText(/Showing \d+ event/);
+    fireEvent.press(getByLabelText('Clear person filter'));
+    expect(queryByText(/Showing \d+ event/)).toBeNull();
+  });
+
+  it('shows an era context panel when an era segment is tapped', async () => {
+    const { findByLabelText } = renderWithProviders(<TimelineScreen />);
+    const primeval = await findByLabelText(/Primeval era/);
+    fireEvent.press(primeval);
+    // EraContextPanel renders its own accessibility label scoped to the era.
+    expect(await findByLabelText(/Primeval era context/)).toBeTruthy();
   });
 });

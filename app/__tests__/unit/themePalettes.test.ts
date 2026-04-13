@@ -54,6 +54,28 @@ describe('buildPalette', () => {
     expect(dark.categoryColors.event).toBe(dark.base.gold);
     expect(sepia.categoryColors.event).toBe(sepia.base.gold);
   });
+
+  it('exposes Explore tint tokens for every theme mode', () => {
+    for (const mode of ['dark', 'sepia', 'light'] as const) {
+      const p = buildPalette(mode);
+      expect(typeof p.base.tintWarm).toBe('string');
+      expect(typeof p.base.tintEmber).toBe('string');
+      expect(typeof p.base.tintParchment).toBe('string');
+      expect(typeof p.base.tintDusk).toBe('string');
+      // Each tint should be a low-alpha rgba() value — cheap sanity check.
+      expect(p.base.tintWarm).toMatch(/^rgba\(/);
+      expect(p.base.tintEmber).toMatch(/^rgba\(/);
+      expect(p.base.tintParchment).toMatch(/^rgba\(/);
+      expect(p.base.tintDusk).toMatch(/^rgba\(/);
+    }
+  });
+
+  it('tint tokens differ between modes (not all identical)', () => {
+    const dark = buildPalette('dark');
+    const sepia = buildPalette('sepia');
+    // At least the rgb triplet should change between dark and sepia.
+    expect(dark.base.tintWarm).not.toBe(sepia.base.tintWarm);
+  });
 });
 
 describe('Theme legacy cleanup (#110)', () => {

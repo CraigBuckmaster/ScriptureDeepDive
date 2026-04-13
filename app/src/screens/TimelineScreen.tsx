@@ -1,39 +1,41 @@
 /**
- * TimelineScreen — 203+ events on a horizontally scrollable SVG canvas.
+ * TimelineScreen — Vertical scrolling timeline.
  *
- * Modernized visual design:
- *   - Gradient era bands with depth and bottom accent borders
- *   - Polished axis with edge fade and gold-glow tick marks
- *   - Smart label density (major events labeled, minor markers only)
- *   - Visual marker hierarchy (3 sizes + glow rings for major events)
- *   - Dashed/solid stem lines with category gradient opacity
- *   - Bottom sheet detail panel (replaces Modal)
+ * 543 events on a FlatList of event cards connected by a glowing spine.
+ * Proportional era strip at the top filters by era. Event cards expand
+ * inline (accordion) to show full summary + people + chapter link.
+ *
+ * Part of Card #1264 (Timeline Phase 1).
  */
 
-import React, { useState, useCallback, useMemo, useEffect, useRef, useReducer } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet, useWindowDimensions } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Svg, {
-  Defs, LinearGradient, Stop,
-  Rect, Line, Circle, G, Text as SvgText,
-} from 'react-native-svg';
-import BottomSheet, { BottomSheetScrollView } from '@gorhom/bottom-sheet';
-
-import { useRoute, useNavigation } from '@react-navigation/native';
-import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
-import { getAllTimelineEntries } from '../db/content';
-import { useContentImages } from '../hooks/useContentImages';
-import { ContentImageGallery } from '../components/ContentImageGallery';
-import { EraFilterBar } from '../components/tree/EraFilterBar';
-import { BadgeChip } from '../components/BadgeChip';
-import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
+import React, { useCallback, useEffect, useMemo, useReducer, useState } from 'react';
 import {
-  yearToX, formatYear, assignLanes, computeTickMarks, computeSvgHeight,
-  ERA_RANGES, TOTAL_WIDTH, AXIS_Y, ERA_BAR_Y, ERA_BAR_H,
-  type PositionedEvent,
-} from '../utils/timelineLayout';
-import { useTheme, spacing, radii, eraNames, fontFamily } from '../theme';
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useNavigation, useRoute } from '@react-navigation/native';
+
+import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
+import { getAllTimelineEntries, getEras } from '../db/content';
+import type { EraRow } from '../db/content/reference';
+import { useContentImages } from '../hooks/useContentImages';
+import {
+  TimelineEraStrip,
+  TimelineEventCard,
+  TimelineSpine,
+  SPINE_GUTTER_WIDTH,
+  PersonFilterBar,
+  ContemporaryRow,
+  computeContemporaries,
+  EraContextPanel,
+  type Contemporary,
+} from '../components/timeline';
+import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import { useTheme, spacing, fontFamily } from '../theme';
 import type { TimelineEntry } from '../types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 import { useSettingsStore } from '../stores';
@@ -44,116 +46,222 @@ interface CategoryFilters {
   person: boolean;
   world: boolean;
 }
-
 type FilterAction = { type: 'toggle'; category: keyof CategoryFilters };
-
 function filterReducer(state: CategoryFilters, action: FilterAction): CategoryFilters {
   return { ...state, [action.category]: !state[action.category] };
 }
-
 const INITIAL_FILTERS: CategoryFilters = { event: true, book: true, person: true, world: true };
 
-/** Lighten a hex color by blending toward white. */
-function lighten(hex: string, amount: number = 0.3): string {
-  const r = parseInt(hex.slice(1, 3), 16);
-  const g = parseInt(hex.slice(3, 5), 16);
-  const b = parseInt(hex.slice(5, 7), 16);
-  const lr = Math.round(r + (255 - r) * amount);
-  const lg = Math.round(g + (255 - g) * amount);
-  const lb = Math.round(b + (255 - b) * amount);
-  return `#${lr.toString(16).padStart(2, '0')}${lg.toString(16).padStart(2, '0')}${lb.toString(16).padStart(2, '0')}`;
+/** Build a { eraId → event count } lookup from a timeline entry list. */
+export function computeEraCounts(
+  entries: TimelineEntry[] | null | undefined,
+): Record<string, number> {
+  const out: Record<string, number> = {};
+  if (!entries) return out;
+  for (const e of entries) {
+    if (!e.era) continue;
+    out[e.era] = (out[e.era] ?? 0) + 1;
+  }
+  return out;
+}
+
+/** Apply category + era filters to a timeline entry list. */
+export function filterTimeline(
+  entries: TimelineEntry[] | null | undefined,
+  filters: CategoryFilters,
+  eraId: string | null,
+): TimelineEntry[] {
+  if (!entries) return [];
+  const cats = new Set<string>();
+  if (filters.event) cats.add('event');
+  if (filters.book) cats.add('book');
+  if (filters.person) cats.add('person');
+  if (filters.world) cats.add('world');
+  if (cats.size === 0) {
+    cats.add('event');
+    cats.add('book');
+  }
+  return entries.filter((e) => {
+    if (!cats.has(e.category)) return false;
+    if (eraId && e.era !== eraId) return false;
+    return true;
+  });
+}
+
+/** Whether a given event mentions `personId` in its people_json field. */
+export function eventMatchesPerson(
+  entry: TimelineEntry,
+  personId: string | null,
+): boolean {
+  if (!personId || !entry.people_json) return false;
+  try {
+    const arr = JSON.parse(entry.people_json);
+    return Array.isArray(arr) && arr.includes(personId);
+  } catch {
+    return false;
+  }
+}
+
+function TimelineRow({
+  event,
+  eraColor,
+  isFirst,
+  isLast,
+  isExpanded,
+  onToggleExpand,
+  onPersonPress,
+  onChapterPress,
+}: {
+  event: TimelineEntry;
+  eraColor: string;
+  isFirst: boolean;
+  isLast: boolean;
+  isExpanded: boolean;
+  onToggleExpand: () => void;
+  onPersonPress: (personId: string) => void;
+  onChapterPress: (bookId: string, chapterNum: number) => void;
+}) {
+  const { images } = useContentImages('timeline', event.id);
+  const hasImage = images.length > 0;
+  return (
+    <View style={styles.row}>
+      <TimelineSpine
+        eraColor={eraColor}
+        hasImage={hasImage}
+        isActive={isExpanded}
+        isFirst={isFirst}
+        isLast={isLast}
+      />
+      <View style={styles.rowCard}>
+        <TimelineEventCard
+          event={event}
+          eraColor={eraColor}
+          isExpanded={isExpanded}
+          onToggleExpand={onToggleExpand}
+          onPersonPress={onPersonPress}
+          onChapterPress={onChapterPress}
+        />
+      </View>
+    </View>
+  );
 }
 
 function TimelineScreen() {
-  const { base, eras, categoryColors, timelineSvg } = useTheme();
-  useLandscapeUnlock();
+  const { base, eras: themeEras } = useTheme();
   const route = useRoute<ScreenRouteProp<'Explore', 'Timeline'>>();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'Timeline'>>();
   const initialEventId = route?.params?.eventId;
+  const insets = useSafeAreaInsets();
 
   const [events, setEvents] = useState<TimelineEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [filterEra, setFilterEra] = useState<string>('all');
+  const [eras, setEras] = useState<EraRow[]>([]);
+  const [filterEra, setFilterEra] = useState<string | null>(null);
+  const [expandedEraContext, setExpandedEraContext] = useState<string | null>(null);
   const [filters, dispatchFilter] = useReducer(filterReducer, INITIAL_FILTERS);
-  const [selectedEvent, setSelectedEvent] = useState<PositionedEvent | null>(null);
-  const { images: eventImages } = useContentImages('timeline', selectedEvent?.id);
-  const timelineScrollRef = useRef<ScrollView>(null);
-  const sheetRef = useRef<BottomSheet>(null);
-  const { width: screenWidth } = useWindowDimensions();
-  const insets = useSafeAreaInsets();
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [personFilter, setPersonFilter] = useState<{ id: string; name: string } | null>(
+    null,
+  );
 
   useEffect(() => {
-    getAllTimelineEntries().then((e) => { setEvents(e); setIsLoading(false); });
+    let cancelled = false;
+    Promise.all([getAllTimelineEntries(), getEras()])
+      .then(([entries, eraRows]) => {
+        if (cancelled) return;
+        setEvents(entries ?? []);
+        setEras(eraRows ?? []);
+        setIsLoading(false);
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setIsLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
-  // Mark getting-started checklist item
-  useEffect(() => { useSettingsStore.getState().markGettingStartedDone('explore_timeline'); }, []);
-
-  // Filter by active categories
-  const categoryFiltered = useMemo(() => {
-    const cats = new Set<string>();
-    if (filters.event) cats.add('event');
-    if (filters.book) cats.add('book');
-    if (filters.person) cats.add('person');
-    if (filters.world) cats.add('world');
-    if (cats.size === 0) { cats.add('event'); cats.add('book'); }
-    return events.filter((e) => cats.has(e.category));
-  }, [events, filters]);
-
-  const positioned = useMemo(() => assignLanes(categoryFiltered), [categoryFiltered]);
-
-  const filtered = useMemo(() => {
-    if (filterEra === 'all') return positioned;
-    return positioned.filter((e) => e.era === filterEra);
-  }, [positioned, filterEra]);
-
-  const handleEraChange = useCallback((era: string) => {
-    setFilterEra(era);
-    if (era === 'all') {
-      timelineScrollRef.current?.scrollTo({ x: 0, animated: true });
-      return;
-    }
-    const range = ERA_RANGES[era];
-    if (range) {
-      const x1 = yearToX(range[0]);
-      const x2 = yearToX(range[1]);
-      const centreX = (x1 + x2) / 2;
-      const scrollTarget = Math.max(0, centreX - screenWidth / 2);
-      timelineScrollRef.current?.scrollTo({ x: scrollTarget, animated: true });
-    }
-  }, [screenWidth]);
-
-  const ticks = useMemo(() => computeTickMarks(), []);
-  const snapPoints = useMemo(() => ['35%', '60%'], []);
-
-  // Handle event selection → open bottom sheet
-  const handleSelectEvent = useCallback((evt: PositionedEvent) => {
-    setSelectedEvent(evt);
-    sheetRef.current?.snapToIndex(0);
-  }, []);
-
-  const handleCloseSheet = useCallback(() => {
-    setSelectedEvent(null);
-  }, []);
-
-  // Deep-link
   useEffect(() => {
-    if (initialEventId && positioned.length) {
-      const evt = positioned.find((e) =>
-        e.id === initialEventId ||
-        e.id === `evt_${initialEventId}` ||
-        e.id === `bk_${initialEventId}`
-      );
-      if (evt) {
-        // Scroll to centre the event horizontally
-        const scrollTarget = Math.max(0, evt.x - screenWidth / 2);
-        setTimeout(() => {
-          timelineScrollRef.current?.scrollTo({ x: scrollTarget, animated: true });
-        }, 100);
-        handleSelectEvent(evt);
-      }
-    }
-  }, [initialEventId, positioned.length, handleSelectEvent, screenWidth]);
+    useSettingsStore.getState().markGettingStartedDone('explore_timeline');
+  }, []);
+
+  useEffect(() => {
+    if (initialEventId) setExpandedId(initialEventId);
+  }, [initialEventId]);
+
+  const eraCounts = useMemo(() => computeEraCounts(events), [events]);
+  const visible = useMemo(
+    () => filterTimeline(events, filters, filterEra),
+    [events, filters, filterEra],
+  );
+
+  const personMatches = useMemo(() => {
+    if (!personFilter) return new Set<string>();
+    return new Set(
+      visible.filter((e) => eventMatchesPerson(e, personFilter.id)).map((e) => e.id),
+    );
+  }, [visible, personFilter]);
+
+  const contemporaries: Contemporary[] = useMemo(() => {
+    if (!personFilter) return [];
+    return computeContemporaries(events, personFilter.id);
+  }, [events, personFilter]);
+
+  const expandedEra = useMemo(
+    () => eras.find((e) => e.id === expandedEraContext) ?? null,
+    [eras, expandedEraContext],
+  );
+
+  const eraColorFor = useCallback(
+    (eraId: string | null): string => {
+      if (!eraId) return base.gold;
+      const row = eras.find((e) => e.id === eraId);
+      return row?.hex ?? themeEras[eraId] ?? base.gold;
+    },
+    [base.gold, eras, themeEras],
+  );
+
+  const handleToggleExpand = useCallback((id: string) => {
+    setExpandedId((prev) => (prev === id ? null : id));
+  }, []);
+
+  const handlePersonPress = useCallback((personId: string) => {
+    setPersonFilter({ id: personId, name: personId });
+  }, []);
+
+  const handleEraStripSelect = useCallback((eraId: string | null) => {
+    setFilterEra(eraId);
+    // Toggle the context panel: opening an era shows its narrative,
+    // re-tapping closes it.
+    setExpandedEraContext((prev) => (prev === eraId || eraId == null ? null : eraId));
+  }, []);
+
+  const handleContextPersonPress = useCallback((personName: string) => {
+    setPersonFilter({ id: personName, name: personName });
+  }, []);
+
+  const handleContextBookPress = useCallback(
+    (book: string) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (navigation as any).navigate('ReadTab', {
+        screen: 'ChapterList',
+        params: { bookId: book.toLowerCase().replace(/\s+/g, '_') },
+      });
+    },
+    [navigation],
+  );
+
+  const handleChapterPress = useCallback(
+    (bookId: string, chapterNum: number) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (navigation as any).navigate('ReadTab', {
+        screen: 'Chapter',
+        params: { bookId, chapterNum },
+      });
+    },
+    [navigation],
+  );
 
   if (isLoading) {
     return (
@@ -165,253 +273,115 @@ function TimelineScreen() {
     );
   }
 
-  const hasBelow = filters.person || filters.world;
-  const SVG_HEIGHT = computeSvgHeight(hasBelow);
+  const lastIndex = visible.length - 1;
 
   return (
-    <View style={[styles.container, { backgroundColor: base.bg }]}>
-      <View style={{ paddingTop: insets.top }}>
-        <EraFilterBar activeEra={filterEra} onSelect={handleEraChange} />
-
-        {/* Category toggles */}
-        <View style={styles.categoryRow}>
-          {([
-            { key: 'event' as const, label: 'Events', color: categoryColors.event },
-            { key: 'book' as const, label: 'Books', color: categoryColors.book },
-            { key: 'person' as const, label: 'People', color: categoryColors.person },
-            { key: 'world' as const, label: 'World History', color: categoryColors.world },
-          ]).map(({ key, label, color }) => (
-            <TouchableOpacity
-              key={key}
-              onPress={() => dispatchFilter({ type: 'toggle', category: key })}
-              hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
-              style={[styles.categoryChip, { borderColor: base.border, backgroundColor: base.bg + 'EE' }, filters[key] && [styles.categoryChipActive, { borderColor: base.gold + '55' }]]}
-              accessibilityRole="button"
-              accessibilityLabel={`${label} filter: ${filters[key] ? 'on' : 'off'}`}
-              accessibilityState={{ selected: filters[key] }}
-            >
-              <View style={[styles.categoryDot, { backgroundColor: color }]} />
-              <Text style={[styles.categoryLabel, { color: base.textMuted }, filters[key] && { color }]}>{label}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
+    <View
+      style={[styles.container, { backgroundColor: base.bg, paddingTop: insets.top }]}
+      accessibilityLabel="Timeline"
+    >
+      <View style={styles.header}>
+        <Text style={[styles.headerTitle, { color: base.gold }]} accessibilityRole="header">
+          Timeline
+        </Text>
+        <Text style={[styles.headerCount, { color: base.textMuted }]}>
+          {events.length} events
+        </Text>
       </View>
 
-      <ScrollView ref={timelineScrollRef} horizontal showsHorizontalScrollIndicator style={styles.timelineScroll} accessible accessibilityLabel="Timeline" accessibilityHint="Scroll horizontally to explore events">
-        <Svg width={TOTAL_WIDTH} height={SVG_HEIGHT}>
-          {/* ── Gradient definitions ────────────────────── */}
-          <Defs>
-            {/* Era band gradients — vertical fade for depth */}
-            {Object.keys(ERA_RANGES).map((era) => {
-              const color = eras[era] ?? base.bgSurface;
-              return (
-                <LinearGradient key={`grad-${era}`} id={`grad-${era}`} x1="0" y1="0" x2="0" y2="1">
-                  <Stop offset="0" stopColor={lighten(color, 0.15)} stopOpacity={0.85} />
-                  <Stop offset="1" stopColor={color} stopOpacity={0.4} />
-                </LinearGradient>
-              );
-            })}
-            {/* Axis fade — transparent at edges */}
-            <LinearGradient id="axis-grad" x1="0" y1="0" x2={TOTAL_WIDTH} y2="0" gradientUnits="userSpaceOnUse">
-              <Stop offset="0%" stopColor={timelineSvg.axis} stopOpacity={0} />
-              <Stop offset="3%" stopColor={timelineSvg.axis} stopOpacity={1} />
-              <Stop offset="97%" stopColor={timelineSvg.axis} stopOpacity={1} />
-              <Stop offset="100%" stopColor={timelineSvg.axis} stopOpacity={0} />
-            </LinearGradient>
-          </Defs>
+      <TimelineEraStrip
+        eras={eras}
+        eventCounts={eraCounts}
+        activeEraId={filterEra}
+        onSelectEra={handleEraStripSelect}
+      />
 
-          {/* ── Era bands with gradient depth ──────────── */}
-          {Object.entries(ERA_RANGES).map(([era, [start, end]]) => {
-            const x1 = yearToX(start);
-            const x2 = yearToX(end);
-            const eraColor = eras[era] ?? base.bgSurface;
-            return (
-              <G key={era}>
-                <Rect x={x1} y={ERA_BAR_Y} width={x2 - x1} height={ERA_BAR_H}
-                  fill={`url(#grad-${era})`} />
-                {/* Bottom accent border */}
-                <Line x1={x1} y1={ERA_BAR_Y + ERA_BAR_H} x2={x2} y2={ERA_BAR_Y + ERA_BAR_H}
-                  stroke={lighten(eraColor, 0.4)} strokeWidth={1} opacity={0.5} />
-                {/* Text shadow */}
-                {/* overlay-color: intentional — text shadow for era labels */}
-                <SvgText x={(x1 + x2) / 2 + 1} y={ERA_BAR_Y + 27} textAnchor="middle"
-                  fontSize={11} fill="#000" opacity={0.5} fontFamily="Cinzel_400Regular">
-                  {(eraNames[era] ?? era).toUpperCase()}
-                </SvgText>
-                {/* Era label */}
-                <SvgText x={(x1 + x2) / 2} y={ERA_BAR_Y + 26} textAnchor="middle"
-                  fontSize={11} fill={base.text} fontFamily="Cinzel_400Regular">
-                  {(eraNames[era] ?? era).toUpperCase()}
-                </SvgText>
-              </G>
-            );
-          })}
+      {expandedEra ? (
+        <View style={styles.contextWrap}>
+          <EraContextPanel
+            era={expandedEra}
+            onPersonPress={handleContextPersonPress}
+            onBookPress={handleContextBookPress}
+          />
+        </View>
+      ) : null}
 
-          {/* ── Polished axis line ─────────────────────── */}
-          <Line x1={0} y1={AXIS_Y} x2={TOTAL_WIDTH} y2={AXIS_Y}
-            stroke="url(#axis-grad)" strokeWidth={1.5} />
+      {personFilter ? (
+        <View style={styles.personFilterWrap}>
+          <PersonFilterBar
+            personName={personFilter.name}
+            matchCount={personMatches.size}
+            onDismiss={() => setPersonFilter(null)}
+          />
+          {contemporaries.length > 0 ? (
+            <ContemporaryRow
+              contemporaries={contemporaries}
+              onPress={(id) => setPersonFilter({ id, name: id })}
+            />
+          ) : null}
+        </View>
+      ) : null}
 
-          {/* ── Tick marks with gold glow ──────────────── */}
-          {ticks.map((tick, i) => (
-            <G key={i}>
-              {/* Gold glow behind major ticks */}
-              {tick.major && (
-                <Line x1={tick.x} y1={AXIS_Y - 8} x2={tick.x} y2={AXIS_Y + 8}
-                  stroke={base.gold} strokeWidth={3} opacity={0.12} />
-              )}
-              <Line x1={tick.x} y1={AXIS_Y - (tick.major ? 7 : 4)} x2={tick.x} y2={AXIS_Y + (tick.major ? 7 : 4)}
-                stroke={timelineSvg.tick} strokeWidth={tick.major ? 1.5 : 0.5} />
-              {tick.major && (
-                <SvgText x={tick.x} y={AXIS_Y + 22} textAnchor="middle" fontSize={10} fill={base.gold}
-                  fontFamily="SourceSans3_400Regular">
-                  {tick.label}
-                </SvgText>
-              )}
-            </G>
-          ))}
+      {/* Category toggles */}
+      <View style={styles.categoryRow}>
+        {(
+          [
+            { key: 'event' as const, label: 'Events' },
+            { key: 'book' as const, label: 'Books' },
+            { key: 'person' as const, label: 'People' },
+            { key: 'world' as const, label: 'World History' },
+          ]
+        ).map(({ key, label }) => (
+          <TouchableOpacity
+            key={key}
+            onPress={() => dispatchFilter({ type: 'toggle', category: key })}
+            hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
+            accessibilityRole="button"
+            accessibilityLabel={`${label} filter: ${filters[key] ? 'on' : 'off'}`}
+            accessibilityState={{ selected: filters[key] }}
+            style={[
+              styles.categoryChip,
+              {
+                borderColor: filters[key] ? base.gold + '55' : base.border,
+                opacity: filters[key] ? 1 : 0.5,
+              },
+            ]}
+          >
+            <Text style={[styles.categoryLabel, { color: base.textMuted }]}>{label}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
 
-          {/* ── Events with visual hierarchy ───────────── */}
-          {filtered.map((evt) => {
-            const catColor = evt.category === 'world' ? categoryColors.world
-              : evt.category === 'person' ? categoryColors.person
-              : evt.category === 'book' ? categoryColors.book
-              : evt.era ? (eras[evt.era] ?? categoryColors.event) : categoryColors.event;
-            const isSelected = selectedEvent?.id === evt.id;
-            const isBook = evt.category === 'book';
-            const isMajor = evt.significance === 'major';
-            const markerR = isMajor ? 6 : 3.5;
-
-            return (
-              <G key={evt.id} onPress={() => handleSelectEvent(evt)}>
-                {/* Hit area */}
-                <Rect x={evt.x - 15} y={evt.y - 15} width={isMajor ? evt.labelWidth : 30} height={30}
-                  fill="transparent" />
-
-                {/* Stem — dashed upper, solid lower */}
-                {evt.y < AXIS_Y ? (
-                  <>
-                    <Line x1={evt.x} y1={evt.y + markerR} x2={evt.x} y2={(evt.y + AXIS_Y) / 2}
-                      stroke={catColor} strokeWidth={0.6} opacity={0.25} strokeDasharray="3,2" />
-                    <Line x1={evt.x} y1={(evt.y + AXIS_Y) / 2} x2={evt.x} y2={AXIS_Y}
-                      stroke={catColor} strokeWidth={0.6} opacity={0.5} />
-                  </>
-                ) : (
-                  <>
-                    <Line x1={evt.x} y1={AXIS_Y} x2={evt.x} y2={(evt.y + AXIS_Y) / 2}
-                      stroke={catColor} strokeWidth={0.6} opacity={0.5} />
-                    <Line x1={evt.x} y1={(evt.y + AXIS_Y) / 2} x2={evt.x} y2={evt.y - markerR}
-                      stroke={catColor} strokeWidth={0.6} opacity={0.25} strokeDasharray="3,2" />
-                  </>
-                )}
-
-                {/* Selection glow */}
-                {isSelected && (
-                  <Circle cx={evt.x} cy={evt.y} r={markerR + 6} fill={base.gold} opacity={0.25} />
-                )}
-
-                {/* Outer glow ring for major events */}
-                {isMajor && !isBook && (
-                  <Circle cx={evt.x} cy={evt.y} r={markerR + 3}
-                    stroke={catColor} strokeWidth={1} fill="none" opacity={0.25} />
-                )}
-
-                {/* Marker */}
-                {isBook ? (
-                  <G>
-                    <Rect x={evt.x - 6} y={evt.y - 7} width={12} height={14} rx={2}
-                      fill={catColor} stroke={lighten(catColor, 0.3)} strokeWidth={0.5} />
-                    {/* Book spine */}
-                    <Line x1={evt.x - 4} y1={evt.y - 6} x2={evt.x - 4} y2={evt.y + 6}
-                      stroke={lighten(catColor, 0.5)} strokeWidth={0.5} opacity={0.6} />
-                  </G>
-                ) : (
-                  <Circle cx={evt.x} cy={evt.y} r={markerR}
-                    fill={catColor} stroke={lighten(catColor, 0.3)} strokeWidth={0.5} />
-                )}
-
-                {/* Label — only for major events or selected */}
-                {(isMajor || isSelected) && (
-                  <SvgText x={evt.x + (isBook ? 10 : markerR + 5)} y={evt.y + 4} fontSize={11}
-                    fill={isSelected ? base.gold : catColor}
-                    fontFamily="SourceSans3_400Regular"
-                    fontWeight={isSelected ? '600' : '400'}>
-                    {evt.name} · {formatYear(evt.year)}
-                  </SvgText>
-                )}
-              </G>
-            );
-          })}
-        </Svg>
-      </ScrollView>
-
-      {/* ── Bottom sheet detail panel ──────────────── */}
-      <BottomSheet
-        ref={sheetRef}
-        index={-1}
-        snapPoints={snapPoints}
-        enablePanDownToClose
-        onClose={handleCloseSheet}
-        backgroundStyle={{
-          backgroundColor: base.bgElevated,
-          borderTopLeftRadius: 16,
-          borderTopRightRadius: 16,
-          borderTopWidth: 1,
-          borderColor: base.border,
+      <FlatList
+        data={visible}
+        keyExtractor={(e) => e.id}
+        contentContainerStyle={styles.listContent}
+        renderItem={({ item, index }) => {
+          const eraColor = eraColorFor(item.era);
+          const dim = personFilter ? !personMatches.has(item.id) : false;
+          return (
+            <View style={dim ? styles.dimmedRow : null}>
+              <TimelineRow
+                event={item}
+                eraColor={eraColor}
+                isFirst={index === 0}
+                isLast={index === lastIndex}
+                isExpanded={expandedId === item.id}
+                onToggleExpand={() => handleToggleExpand(item.id)}
+                onPersonPress={handlePersonPress}
+                onChapterPress={handleChapterPress}
+              />
+            </View>
+          );
         }}
-        handleIndicatorStyle={{ backgroundColor: base.textMuted, width: 36 }}
-      >
-        <BottomSheetScrollView contentContainerStyle={styles.detailContent}>
-          {selectedEvent && (
-            <>
-              {/* Era accent bar */}
-              {selectedEvent.era && (
-                <View style={[styles.eraAccentBar, { backgroundColor: eras[selectedEvent.era] ?? base.gold }]} />
-              )}
-              {selectedEvent.era && <BadgeChip label={eraNames[selectedEvent.era] ?? selectedEvent.era} color={eras[selectedEvent.era] ?? base.gold} />}
-              {eventImages.length > 0 && <ContentImageGallery images={eventImages} />}
-              <Text style={[styles.detailTitle, { color: base.text }]}>
-                {selectedEvent.name}
-              </Text>
-              <Text style={[styles.detailYear, { color: base.gold }]}>
-                {formatYear(selectedEvent.year)}
-              </Text>
-              {selectedEvent.scripture_ref && (
-                <Text style={[styles.detailRef, { color: base.goldDim }]}>
-                  {selectedEvent.scripture_ref}
-                </Text>
-              )}
-              {selectedEvent.summary && (
-                <Text style={[styles.detailSummary, { color: base.textDim }]}>
-                  {selectedEvent.summary}
-                </Text>
-              )}
-              {selectedEvent.chapter_link && (() => {
-                const match = selectedEvent.chapter_link!.match(/(\w+)\/(\w+)_(\d+)\.html/);
-                if (!match) return null;
-                const bookId = match[2].toLowerCase();
-                const chapterNum = parseInt(match[3], 10);
-                return (
-                  <TouchableOpacity
-                    style={[styles.chapterButton, { backgroundColor: base.gold + '22', borderColor: base.gold + '55' }]}
-                    onPress={() => {
-                      sheetRef.current?.close();
-                      setSelectedEvent(null);
-                      (navigation as any).navigate('ReadTab', {
-                        screen: 'Chapter',
-                        params: { bookId, chapterNum },
-                      });
-                    }}
-                    accessibilityRole="button"
-                    accessibilityLabel={`Go to chapter ${chapterNum}`}
-                  >
-                    <Text style={[styles.chapterButtonText, { color: base.gold }]}>Go to Chapter →</Text>
-                  </TouchableOpacity>
-                );
-              })()}
-            </>
-          )}
-        </BottomSheetScrollView>
-      </BottomSheet>
+        ListEmptyComponent={
+          <View style={styles.emptyWrap}>
+            <Text style={[styles.emptyText, { color: base.textMuted }]}>
+              No events match the current filters.
+            </Text>
+          </View>
+        }
+      />
     </View>
   );
 }
@@ -423,81 +393,74 @@ const styles = StyleSheet.create({
   loadingPad: {
     padding: spacing.lg,
   },
-  detailContent: {
-    padding: spacing.md,
-  },
-  detailTitle: {
-    fontFamily: fontFamily.displaySemiBold,
-    fontSize: 18,
-    marginTop: spacing.sm,
-  },
-  detailYear: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 13,
-    marginTop: 4,
-  },
-  detailRef: {
-    fontFamily: fontFamily.bodyItalic,
-    fontSize: 13,
-    marginTop: 4,
-  },
-  detailSummary: {
-    fontFamily: fontFamily.body,
-    fontSize: 14,
-    lineHeight: 22,
-    marginTop: spacing.md,
-  },
-  chapterButton: {
-    marginTop: spacing.md,
-    borderWidth: 1,
-    borderRadius: radii.pill,
+  header: {
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    justifyContent: 'space-between',
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-    alignSelf: 'flex-start',
   },
-  chapterButtonText: {
-    fontFamily: fontFamily.uiSemiBold,
-    fontSize: 13,
+  headerTitle: {
+    fontFamily: fontFamily.displaySemiBold,
+    fontSize: 22,
+  },
+  headerCount: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 11,
   },
   categoryRow: {
     flexDirection: 'row',
     paddingHorizontal: spacing.sm,
-    paddingBottom: spacing.xs,
+    paddingVertical: spacing.xs,
     gap: spacing.xs,
   },
   categoryChip: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 4,
     borderWidth: 1,
-    borderRadius: radii.pill,
-    paddingHorizontal: 8,
-    height: 28,
-    opacity: 0.5,
-  },
-  categoryChipActive: {
-    opacity: 1,
-  },
-  categoryDot: {
-    width: 6,
-    height: 6,
-    borderRadius: 3,
+    borderRadius: 14,
+    paddingHorizontal: 10,
+    height: 26,
+    justifyContent: 'center',
   },
   categoryLabel: {
-    fontFamily: fontFamily.display,
+    fontFamily: fontFamily.uiMedium,
     fontSize: 10,
     letterSpacing: 0.3,
   },
-  timelineScroll: {
-    flex: 1,
+  listContent: {
+    paddingHorizontal: spacing.sm,
+    paddingBottom: spacing.xxl,
+    gap: 2,
   },
-  eraAccentBar: {
-    height: 3,
-    borderRadius: 1.5,
-    marginBottom: spacing.md,
-    width: '30%',
-    alignSelf: 'center',
+  row: {
+    flexDirection: 'row',
+    alignItems: 'stretch',
+    gap: spacing.sm,
+  },
+  rowCard: {
+    flex: 1,
+    minWidth: 0,
+  },
+  emptyWrap: {
+    padding: spacing.lg,
+    alignItems: 'center',
+  },
+  emptyText: {
+    fontFamily: fontFamily.ui,
+    fontSize: 12,
+  },
+  contextWrap: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.xs,
+  },
+  personFilterWrap: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.xs,
+    gap: spacing.xs,
+  },
+  dimmedRow: {
+    opacity: 0.15,
   },
 });
 
+export { SPINE_GUTTER_WIDTH };
 export default withErrorBoundary(TimelineScreen);
