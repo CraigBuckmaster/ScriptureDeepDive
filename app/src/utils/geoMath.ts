@@ -41,6 +41,33 @@ export function midpoint(
   return { latitude: (a.latitude + b.latitude) / 2, longitude: (a.longitude + b.longitude) / 2 };
 }
 
+/** Haversine distance in miles between two coordinates. */
+export function haversineDistance(
+  a: { latitude: number; longitude: number },
+  b: { latitude: number; longitude: number }
+): number {
+  const R = 3959; // Earth radius in miles
+  const dLat = ((b.latitude - a.latitude) * Math.PI) / 180;
+  const dLon = ((b.longitude - a.longitude) * Math.PI) / 180;
+  const lat1 = (a.latitude * Math.PI) / 180;
+  const lat2 = (b.latitude * Math.PI) / 180;
+  const aVal =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLon / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(aVal), Math.sqrt(1 - aVal));
+}
+
+/** Sum of haversine distances along a polyline. */
+export function pathDistance(
+  coords: { latitude: number; longitude: number }[]
+): number {
+  let total = 0;
+  for (let i = 1; i < coords.length; i++) {
+    total += haversineDistance(coords[i - 1], coords[i]);
+  }
+  return total;
+}
+
 /** Compute zoom level from latitudeDelta */
 export function zoomFromDelta(latDelta: number): number {
   return Math.max(3, Math.min(16, Math.round(Math.log2(360 / latDelta))));

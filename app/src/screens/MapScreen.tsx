@@ -11,6 +11,7 @@ import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react'
 import { View, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import MapView, { PROVIDER_GOOGLE, PROVIDER_DEFAULT } from 'react-native-maps';
+import Constants from 'expo-constants';
 
 import { usePlaces } from '../hooks/usePlaces';
 import { useMapStories } from '../hooks/useMapStories';
@@ -19,25 +20,56 @@ import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
 import { ancientMapStyle, modernMapStyle } from '../utils/mapStyles';
 
 /**
- * Google Maps is only available in custom dev builds, never in Expo Go.
- * Set this to true once you have a working dev build with react-native-maps
- * linked to the Google Maps SDK. Until then, Apple Maps + POI suppression.
+ * Google Maps key auto-detection. The iOS / Android keys are injected by
+ * `app.config.js` when GOOGLE_MAPS_API_KEY is present in the build env.
+ * We use the presence of either platform key as the signal that this build
+ * has the Google Maps SDK linked. In Expo Go (no key), we fall back to the
+ * default provider (Apple Maps on iOS, OSM-backed terrain elsewhere).
+ *
+ * Exported so unit tests can verify the detection logic.
  */
-const USE_GOOGLE_MAPS = false;
+export function detectGoogleMapsKey(constants: typeof Constants): string | null {
+  const cfg: any = constants?.expoConfig ?? {};
+  return (
+    cfg?.ios?.config?.googleMapsApiKey ??
+    cfg?.android?.config?.googleMaps?.apiKey ??
+    null
+  );
+}
+
+const GOOGLE_MAPS_KEY = detectGoogleMapsKey(Constants);
+const USE_GOOGLE_MAPS = !!GOOGLE_MAPS_KEY;
 
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { PlaceMarkerList } from '../components/map/PlaceMarkerList';
 import { StoryOverlays } from '../components/map/StoryOverlays';
 import { StoryPicker } from '../components/map/StoryPicker';
 import { StoryPanel } from '../components/map/StoryPanel';
+import { PlaceDetailCard } from '../components/map/PlaceDetailCard';
+import { PlaceSearchBar } from '../components/map/PlaceSearchBar';
 import { FloatingControls } from '../components/map/FloatingControls';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 
 import { useTheme, spacing } from '../theme';
 import type { MapStory, Place } from '../types';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
-import { logger } from '../utils/logger';
+import { logger, safeParse } from '../utils/logger';
+import { lightImpact } from '../utils/haptics';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+
+/** Build a place-id → stories[] index. Pure helper so it's unit-testable. */
+export function buildPlaceToStoriesMap(stories: MapStory[]): Map<string, MapStory[]> {
+  const map = new Map<string, MapStory[]>();
+  for (const story of stories) {
+    const ids = safeParse<string[]>(story.places_json, []);
+    for (const id of ids) {
+      const list = map.get(id);
+      if (list) list.push(story);
+      else map.set(id, [story]);
+    }
+  }
+  return map;
+}
 
 const INITIAL_REGION = {
   latitude: 30,
@@ -66,6 +98,7 @@ function MapScreen({ route, navigation }: {
   const [activeStory, setActiveStory] = useState<MapStory | null>(null);
   const [showModern, setShowModern] = useState(false);
   const [showPanel, setShowPanel] = useState(false);
+  const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
 
   // Filter stories by era
   const filteredStories = useMemo(() =>
@@ -73,10 +106,14 @@ function MapScreen({ route, navigation }: {
     [stories, activeEra]
   );
 
+  // Map of placeId → stories that include it (computed once per stories change)
+  const placeToStories = useMemo(() => buildPlaceToStoriesMap(stories), [stories]);
+
   // Select a story → show overlays, fit map bounds, open panel
   const selectStory = useCallback((story: MapStory) => {
     setActiveStory(story);
     setShowPanel(true);
+    setSelectedPlace(null); // story panel and place card share the bottom slot
 
     try {
       const placeIds: string[] = JSON.parse(story.places_json ?? '[]');
@@ -105,6 +142,15 @@ function MapScreen({ route, navigation }: {
       longitudeDelta: 2,
     }, 500);
   }, []);
+
+  // Tap a marker → open detail card + recentre
+  const handlePlacePress = useCallback((place: Place) => {
+    lightImpact();
+    setActiveStory(null);
+    setShowPanel(false);
+    setSelectedPlace(place);
+    panToPlace(place);
+  }, [panToPlace]);
 
   // Deep-link handling — auto-select story/place from route params
   const lastProcessedStory = useRef<string | null>(null);
@@ -143,6 +189,7 @@ function MapScreen({ route, navigation }: {
   // Era filter change — auto-select the first matching story to jump the map
   const handleEraChange = useCallback((era: string) => {
     setActiveEra(era);
+    setSelectedPlace(null); // close any open place detail card
     if (era === 'all') {
       setActiveStory(null);
       setShowPanel(false);
@@ -194,19 +241,21 @@ function MapScreen({ route, navigation }: {
           showModern={showModern}
           zoomLevel={zoomLevel}
           activeStory={activeStory}
+          onPlacePress={handlePlacePress}
         />
         {activeStory && (
           <StoryOverlays story={activeStory} zoomLevel={zoomLevel} />
         )}
       </MapView>
 
-      {/* Era filter — overlaid at top below status bar */}
+      {/* Search bar + era filter — overlaid at top below status bar */}
       <View style={[styles.topControls, { paddingTop: insets.top }]} pointerEvents="box-none">
+        <PlaceSearchBar places={places} onSelect={handlePlacePress} />
         <EraFilterBar activeEra={activeEra} onSelect={handleEraChange} />
       </View>
 
-      {/* Floating controls — offset below era filter */}
-      <View style={[styles.floatingWrap, { top: insets.top + 44 }]} pointerEvents="box-none">
+      {/* Floating controls — offset below the search bar + era filter */}
+      <View style={[styles.floatingWrap, { top: insets.top + 84 }]} pointerEvents="box-none">
         <FloatingControls
           showModern={showModern}
           onToggleNames={() => setShowModern((v) => !v)}
@@ -222,6 +271,7 @@ function MapScreen({ route, navigation }: {
         <StoryPicker
           stories={filteredStories}
           activeStoryId={activeStory?.id ?? null}
+          places={places}
           onSelect={(id) => {
             const story = stories.find((s) => s.id === id);
             if (story) {
@@ -249,6 +299,18 @@ function MapScreen({ route, navigation }: {
             }}
             onChapterPress={() => handleChapterPress(activeStory)}
             onClose={() => { setActiveStory(null); setShowPanel(false); }}
+          />
+        </View>
+      )}
+
+      {/* Place detail card — shares the bottom slot with the story panel */}
+      {selectedPlace && !showPanel && (
+        <View style={[styles.placeDetailWrap, { backgroundColor: base.bgElevated, borderTopColor: base.border }]}>
+          <PlaceDetailCard
+            place={selectedPlace}
+            stories={placeToStories.get(selectedPlace.id)}
+            onClose={() => setSelectedPlace(null)}
+            onStoryPress={(s) => selectStory(s)}
           />
         </View>
       )}
@@ -289,6 +351,15 @@ const styles = StyleSheet.create({
     right: 0,
     borderTopWidth: 1,
     maxHeight: '40%',
+    zIndex: 20,
+  },
+  placeDetailWrap: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    borderTopWidth: 1,
+    maxHeight: '30%',
     zIndex: 20,
   },
 });
