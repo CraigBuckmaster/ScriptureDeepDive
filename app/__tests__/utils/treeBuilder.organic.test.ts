@@ -72,6 +72,36 @@ describe('treeBuilder — #1290 associate tribal bloom', () => {
       expect(n.y).toBeGreaterThan(jesusNode.y);
     }
   });
+
+  it('spaces associates with enough gap for their name labels (≥ 70 px)', () => {
+    // Guard against the "tight cluster" regression — large clusters must
+    // scale radius so adjacent names don't overlap.
+    const people: Person[] = [
+      makePerson({ id: 'adam', name: 'Adam' }),
+      makePerson({ id: 'jacob_nt', name: 'Jacob', father: 'adam' }),
+      makePerson({ id: 'joseph-nt', name: 'Joseph', father: 'jacob_nt' }),
+      makePerson({ id: 'jesus', name: 'Jesus', father: 'joseph-nt' }),
+      makePerson({ id: 'peter', name: 'Peter', associated_with: 'jesus', association_type: 'disciple' }),
+      makePerson({ id: 'andrew', name: 'Andrew', associated_with: 'jesus', association_type: 'disciple' }),
+      makePerson({ id: 'james', name: 'James', associated_with: 'jesus', association_type: 'disciple' }),
+      makePerson({ id: 'john', name: 'John', associated_with: 'jesus', association_type: 'disciple' }),
+      makePerson({ id: 'thomas', name: 'Thomas', associated_with: 'jesus', association_type: 'disciple' }),
+    ];
+    const { nodes } = computeFullLayout(people, null);
+    const ids = ['peter', 'andrew', 'james', 'john', 'thomas'];
+    const placed = ids
+      .map((id) => nodes.find((n) => n.data.id === id)!)
+      .sort((a, b) => a.x - b.x);
+    // Minimum distance between any two adjacent associate centres on the arc.
+    let minGap = Infinity;
+    for (let i = 1; i < placed.length; i++) {
+      const dx = placed[i].x - placed[i - 1].x;
+      const dy = placed[i].y - placed[i - 1].y;
+      const gap = Math.hypot(dx, dy);
+      if (gap < minGap) minGap = gap;
+    }
+    expect(minGap).toBeGreaterThanOrEqual(70);
+  });
 });
 
 describe("treeBuilder — #1291 Jacob's tribal bloom", () => {
@@ -106,5 +136,30 @@ describe("treeBuilder — #1291 Jacob's tribal bloom", () => {
     for (const s of sons) {
       expect(s.y).toBeGreaterThan(jacob.y);
     }
+  });
+
+  it('gives 12 sons a wide-enough X span for readable names (≥ 600 px)', () => {
+    // 12 spine circles with patriarch names ("Issachar", "Zebulun",
+    // "Benjamin" …) need a lot of horizontal room to avoid overlapping.
+    const sonIds = [
+      'reuben', 'simeon', 'levi', 'judah-s', 'dan', 'naphtali',
+      'gad', 'asher', 'issachar', 'zebulun', 'joseph-s', 'benjamin',
+    ];
+    const people: Person[] = [
+      makePerson({ id: 'adam', name: 'Adam' }),
+      makePerson({ id: 'jacob', name: 'Jacob', father: 'adam' }),
+      ...sonIds.map((id) => makePerson({ id, name: id, father: 'jacob' })),
+      // minimal spine path so the tree has a Jesus
+      makePerson({ id: 'perez', name: 'Perez', father: 'judah-s' }),
+      makePerson({ id: 'jesus', name: 'Jesus', father: 'perez' }),
+    ];
+    const { nodes } = computeFullLayout(people, null);
+    const placed = sonIds
+      .map((id) => nodes.find((n) => n.data.id === id))
+      .filter((n): n is NonNullable<typeof n> => Boolean(n));
+    expect(placed).toHaveLength(12);
+    const xs = placed.map((n) => n.x);
+    const span = Math.max(...xs) - Math.min(...xs);
+    expect(span).toBeGreaterThanOrEqual(600);
   });
 });

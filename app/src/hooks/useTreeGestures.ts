@@ -131,6 +131,15 @@ export function useTreeGestures(): TreeGestureResult {
   const savedTy = useSharedValue(0);
   const savedScale = useSharedValue(1);
 
+  // Focal-point pinch state. Captured at pinch onBegin; used by onUpdate
+  // to keep the world point under the finger centroid stationary on
+  // screen (iOS-Maps-style zoom rather than corner-anchored zoom).
+  const pinchActive = useSharedValue(false);
+  const startFocalX = useSharedValue(0);
+  const startFocalY = useSharedValue(0);
+  const pinchStartTx = useSharedValue(0);
+  const pinchStartTy = useSharedValue(0);
+
   /**
    * Merge current gesture transform into base state, reset gesture to identity.
    * Combined transform: screen = (x * baseS + baseTx) * gestScale + gestTx
@@ -156,14 +165,29 @@ export function useTreeGestures(): TreeGestureResult {
   }, []);
 
   const pinchGesture = Gesture.Pinch()
-    .onBegin(() => {
+    .onBegin((e) => {
+      pinchActive.value = true;
       savedScale.value = gestScale.value;
+      startFocalX.value = e.focalX;
+      startFocalY.value = e.focalY;
+      pinchStartTx.value = gestTx.value;
+      pinchStartTy.value = gestTy.value;
     })
     .onUpdate((e) => {
+      // Focal-point zoom: keep the world point under the finger centroid
+      // stationary on screen. Derivation in useTreeGestures.ts plan file.
+      //   screen = world * savedScale + startTx   (at pinch begin)
+      //   screen = world * gestScale + gestTx     (during pinch)
+      //   gestScale = savedScale * e.scale
+      //   ⇒ gestTx = focalX − (startFocalX − startTx) * e.scale
+      // Using the live e.focalX lets the view follow centroid drift too.
       gestScale.value = savedScale.value * e.scale;
+      gestTx.value = e.focalX - (startFocalX.value - pinchStartTx.value) * e.scale;
+      gestTy.value = e.focalY - (startFocalY.value - pinchStartTy.value) * e.scale;
     })
     .onEnd(() => {
       // Commit scale to base so SVG re-rasterizes at the new zoom level
+      pinchActive.value = false;
       runOnJS(commitGesture)();
     });
 
@@ -176,6 +200,14 @@ export function useTreeGestures(): TreeGestureResult {
       savedTy.value = gestTy.value;
     })
     .onUpdate((e) => {
+      if (pinchActive.value) {
+        // Pinch owns the transform while active. Keep pan's baseline in
+        // sync so that when pinch ends the next pan tick picks up from
+        // the current gesture position without a visible jump.
+        savedTx.value = gestTx.value - e.translationX;
+        savedTy.value = gestTy.value - e.translationY;
+        return;
+      }
       gestTx.value = savedTx.value + e.translationX;
       gestTy.value = savedTy.value + e.translationY;
     })
