@@ -1,10 +1,7 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react-native';
 import { renderWithProviders } from '../../helpers/renderWithProviders';
-import {
-  EraContextPanel,
-  splitCommaList,
-} from '@/components/timeline/EraContextPanel';
+import { EraContextPanel } from '@/components/timeline/EraContextPanel';
 import type { EraRow } from '@/db/content/reference';
 
 function makeEra(overrides: Partial<EraRow> = {}): EraRow {
@@ -18,9 +15,12 @@ function makeEra(overrides: Partial<EraRow> = {}): EraRow {
     summary: null,
     narrative:
       'Israel transitions from tribal confederation to monarchy. The united kingdom splits after Solomon.',
-    key_themes: 'covenant kingship, temple theology, prophetic critique',
-    key_people: 'Samuel, Saul, David, Solomon',
-    books: '1-2 Samuel, 1-2 Kings, Psalms',
+    key_themes: JSON.stringify([
+      { theme: 'Covenant Kingship', ref: '2 Sam 7:12-16', note: 'God promises David an eternal throne.' },
+      { theme: 'Temple Theology', ref: '1 Kgs 8:27-30', note: 'Solomon dedicates the temple.' },
+    ]),
+    key_people: JSON.stringify(['samuel', 'saul', 'david', 'solomon']),
+    books: JSON.stringify(['1_samuel', '2_samuel', '1_kings', '2_kings', 'psalms']),
     chapter_range: null,
     geographic_center: null,
     redemptive_thread: null,
@@ -39,29 +39,31 @@ describe('EraContextPanel', () => {
     expect(getByText(/monarchy/)).toBeTruthy();
   });
 
-  it('renders key themes as comma-separated text', () => {
+  it('renders key themes with theme names and refs', () => {
     const { getByText } = renderWithProviders(
       <EraContextPanel era={makeEra()} />,
     );
-    expect(getByText(/covenant kingship, temple theology, prophetic critique/)).toBeTruthy();
+    expect(getByText('Covenant Kingship')).toBeTruthy();
+    expect(getByText('2 Sam 7:12-16')).toBeTruthy();
+    expect(getByText(/eternal throne/)).toBeTruthy();
   });
 
-  it('renders key people as tappable pills', () => {
+  it('renders key people as tappable pills with formatted names', () => {
     const onPerson = jest.fn();
     const { getByText } = renderWithProviders(
       <EraContextPanel era={makeEra()} onPersonPress={onPerson} />,
     );
     fireEvent.press(getByText('David'));
-    expect(onPerson).toHaveBeenCalledWith('David');
+    expect(onPerson).toHaveBeenCalledWith('david');
   });
 
-  it('renders books as tappable pills', () => {
+  it('renders books as tappable pills with formatted names', () => {
     const onBook = jest.fn();
     const { getByText } = renderWithProviders(
       <EraContextPanel era={makeEra()} onBookPress={onBook} />,
     );
     fireEvent.press(getByText('Psalms'));
-    expect(onBook).toHaveBeenCalledWith('Psalms');
+    expect(onBook).toHaveBeenCalledWith('psalms');
   });
 
   it('skips missing sections', () => {
@@ -74,20 +76,15 @@ describe('EraContextPanel', () => {
     expect(queryByText(/Key People/i)).toBeNull();
     expect(queryByText(/Books/i)).toBeNull();
   });
-});
 
-describe('splitCommaList', () => {
-  it('returns [] for null/empty', () => {
-    expect(splitCommaList(null)).toEqual([]);
-    expect(splitCommaList(undefined)).toEqual([]);
-    expect(splitCommaList('')).toEqual([]);
-  });
-
-  it('splits and trims comma-separated values', () => {
-    expect(splitCommaList(' a , b,c ')).toEqual(['a', 'b', 'c']);
-  });
-
-  it('drops empty pieces', () => {
-    expect(splitCommaList('a,,b')).toEqual(['a', 'b']);
+  it('handles legacy comma-separated format gracefully', () => {
+    const { getByText } = renderWithProviders(
+      <EraContextPanel
+        era={makeEra({ key_people: 'samuel, david, solomon' })}
+      />,
+    );
+    // Comma-separated fallback should still work
+    expect(getByText('Samuel')).toBeTruthy();
+    expect(getByText('David')).toBeTruthy();
   });
 });

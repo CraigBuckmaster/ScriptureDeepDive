@@ -20,22 +20,73 @@ export interface EraContextPanelProps {
   onBookPress?: (bookName: string) => void;
 }
 
-/** Split a comma-separated string into trimmed, non-empty pieces. */
-export function splitCommaList(input: string | null | undefined): string[] {
+/** Theme entry from key_themes JSON. */
+interface ThemeEntry {
+  theme: string;
+  ref?: string;
+  note?: string;
+}
+
+/** Parse a JSON array string into string[]. Returns empty array on failure. */
+function parseStringArray(input: string | null | undefined): string[] {
   if (!input) return [];
-  return input
-    .split(',')
-    .map((s) => s.trim())
-    .filter(Boolean);
+  try {
+    const parsed = JSON.parse(input);
+    if (Array.isArray(parsed)) {
+      return parsed.filter((item): item is string => typeof item === 'string');
+    }
+  } catch {
+    // Fall back to comma-separated for legacy data
+    return input.split(',').map((s) => s.trim()).filter(Boolean);
+  }
+  return [];
+}
+
+/** Parse key_themes JSON array into ThemeEntry[]. */
+function parseThemes(input: string | null | undefined): ThemeEntry[] {
+  if (!input) return [];
+  try {
+    const parsed = JSON.parse(input);
+    if (Array.isArray(parsed)) {
+      return parsed.filter(
+        (item): item is ThemeEntry =>
+          typeof item === 'object' && item !== null && typeof item.theme === 'string'
+      );
+    }
+  } catch {
+    // Malformed JSON — return empty
+  }
+  return [];
 }
 
 export function EraContextPanel({ era, onPersonPress, onBookPress }: EraContextPanelProps) {
   const { base } = useTheme();
   const accent = era.hex ?? base.gold;
 
-  const themes = splitCommaList(era.key_themes);
-  const people = splitCommaList(era.key_people);
-  const books = splitCommaList(era.books);
+  const themes = parseThemes(era.key_themes);
+  const people = parseStringArray(era.key_people);
+  const books = parseStringArray(era.books);
+
+  /** Format person ID as display name (snake_case → Title Case). */
+  const formatPersonName = (id: string): string => {
+    return id
+      .split(/[-_]/)
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+
+  /** Format book ID as display name. */
+  const formatBookName = (id: string): string => {
+    // Handle numbered books like "1_kings" → "1 Kings"
+    const formatted = id.replace(/_/g, ' ');
+    return formatted
+      .split(' ')
+      .map((word) => {
+        if (/^\d+$/.test(word)) return word;
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
+      .join(' ');
+  };
 
   return (
     <View
@@ -63,7 +114,21 @@ export function EraContextPanel({ era, onPersonPress, onBookPress }: EraContextP
       {themes.length > 0 ? (
         <View style={styles.section}>
           <Text style={[styles.sectionLabel, { color: base.textMuted }]}>Key Themes</Text>
-          <Text style={[styles.sectionBody, { color: base.textMuted }]}>{themes.join(', ')}</Text>
+          <View style={styles.themesContainer}>
+            {themes.map((t, idx) => (
+              <View key={idx} style={styles.themeItem}>
+                <View style={styles.themeHeader}>
+                  <Text style={[styles.themeName, { color: base.text }]}>{t.theme}</Text>
+                  {t.ref ? (
+                    <Text style={[styles.themeRef, { color: accent }]}>{t.ref}</Text>
+                  ) : null}
+                </View>
+                {t.note ? (
+                  <Text style={[styles.themeNote, { color: base.textMuted }]}>{t.note}</Text>
+                ) : null}
+              </View>
+            ))}
+          </View>
         </View>
       ) : null}
 
@@ -76,10 +141,12 @@ export function EraContextPanel({ era, onPersonPress, onBookPress }: EraContextP
                 key={name}
                 onPress={() => onPersonPress?.(name)}
                 accessibilityRole="button"
-                accessibilityLabel={`Filter timeline to ${name}`}
+                accessibilityLabel={`Filter timeline to ${formatPersonName(name)}`}
                 style={[styles.pill, { borderColor: accent + '40' }]}
               >
-                <Text style={[styles.pillLabel, { color: base.text }]}>{name}</Text>
+                <Text style={[styles.pillLabel, { color: base.text }]}>
+                  {formatPersonName(name)}
+                </Text>
               </TouchableOpacity>
             ))}
           </View>
@@ -95,10 +162,12 @@ export function EraContextPanel({ era, onPersonPress, onBookPress }: EraContextP
                 key={book}
                 onPress={() => onBookPress?.(book)}
                 accessibilityRole="button"
-                accessibilityLabel={`Open ${book}`}
+                accessibilityLabel={`Open ${formatBookName(book)}`}
                 style={[styles.pill, { borderColor: base.gold + '40' }]}
               >
-                <Text style={[styles.pillLabel, { color: base.gold }]}>{book}</Text>
+                <Text style={[styles.pillLabel, { color: base.gold }]}>
+                  {formatBookName(book)}
+                </Text>
               </TouchableOpacity>
             ))}
           </View>
@@ -139,7 +208,27 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
     textTransform: 'uppercase',
   },
-  sectionBody: {
+  themesContainer: {
+    gap: spacing.xs,
+  },
+  themeItem: {
+    gap: 2,
+  },
+  themeHeader: {
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    gap: spacing.xs,
+    flexWrap: 'wrap',
+  },
+  themeName: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 11,
+  },
+  themeRef: {
+    fontFamily: fontFamily.ui,
+    fontSize: 10,
+  },
+  themeNote: {
     fontFamily: fontFamily.ui,
     fontSize: 10,
     lineHeight: 14,
