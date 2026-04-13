@@ -31,6 +31,7 @@ import { StoryOverlays } from '../components/map/StoryOverlays';
 import { StoryPicker } from '../components/map/StoryPicker';
 import { StoryPanel } from '../components/map/StoryPanel';
 import { PlaceDetailCard } from '../components/map/PlaceDetailCard';
+import { PlaceSearchBar } from '../components/map/PlaceSearchBar';
 import { FloatingControls } from '../components/map/FloatingControls';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 
@@ -232,13 +233,14 @@ function MapScreen({ route, navigation }: {
         )}
       </MapView>
 
-      {/* Era filter — overlaid at top below status bar */}
+      {/* Search bar + era filter — overlaid at top below status bar */}
       <View style={[styles.topControls, { paddingTop: insets.top }]} pointerEvents="box-none">
+        <PlaceSearchBar places={places} onSelect={handlePlacePress} />
         <EraFilterBar activeEra={activeEra} onSelect={handleEraChange} />
       </View>
 
-      {/* Floating controls — offset below era filter */}
-      <View style={[styles.floatingWrap, { top: insets.top + 44 }]} pointerEvents="box-none">
+      {/* Floating controls — offset below the search bar + era filter */}
+      <View style={[styles.floatingWrap, { top: insets.top + 84 }]} pointerEvents="box-none">
         <FloatingControls
           showModern={showModern}
           onToggleNames={() => setShowModern((v) => !v)}

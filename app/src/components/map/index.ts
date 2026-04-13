@@ -6,3 +6,5 @@ export { StoryPicker } from './StoryPicker';
 export { FloatingControls } from './FloatingControls';
 export { PlaceDetailCard, formatCoord } from './PlaceDetailCard';
 export type { PlaceDetailCardProps } from './PlaceDetailCard';
+export { PlaceSearchBar, filterPlaces } from './PlaceSearchBar';
+export type { PlaceSearchBarProps } from './PlaceSearchBar';

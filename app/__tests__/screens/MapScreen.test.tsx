@@ -181,6 +181,26 @@ jest.mock('@/components/map/StoryPanel', () => ({
   },
 }));
 
+jest.mock('@/components/map/PlaceSearchBar', () => ({
+  PlaceSearchBar: (props: any) => {
+    const React = require('react');
+    const { View, TouchableOpacity, Text } = require('react-native');
+    return React.createElement(View, { testID: 'place-search-bar' },
+      (props.places ?? []).map((p: any) =>
+        React.createElement(
+          TouchableOpacity,
+          {
+            key: p.id,
+            testID: `search-result-${p.id}`,
+            onPress: () => props.onSelect?.(p),
+          },
+          React.createElement(Text, null, p.ancient_name),
+        ),
+      ),
+    );
+  },
+}));
+
 jest.mock('@/components/map/FloatingControls', () => ({
   FloatingControls: (props: any) => {
     const React = require('react');
@@ -434,6 +454,21 @@ describe('MapScreen', () => {
     expect(queryByText('Yerushalayim')).toBeTruthy();
     fireEvent.press(getByLabelText('Close place details'));
     expect(queryByText('Yerushalayim')).toBeNull();
+  });
+
+  it('renders the place search bar in the top controls', () => {
+    const { getByTestId } = renderWithProviders(
+      <MapScreen route={mockRoute as any} navigation={{ navigate: mockNavigate, goBack: mockGoBack } as any} />,
+    );
+    expect(getByTestId('place-search-bar')).toBeTruthy();
+  });
+
+  it('opens the place detail card when a search result is selected', () => {
+    const { getByTestId, getByText } = renderWithProviders(
+      <MapScreen route={mockRoute as any} navigation={{ navigate: mockNavigate, goBack: mockGoBack } as any} />,
+    );
+    fireEvent.press(getByTestId('search-result-jerusalem'));
+    expect(getByText('Yerushalayim')).toBeTruthy();
   });
 
   it('closes the story panel when a marker is tapped', () => {
