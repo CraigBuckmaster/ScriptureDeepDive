@@ -33,5 +33,5 @@ export type { ContemporaryRowProps, Contemporary } from './ContemporaryRow';
 export { ContemporaryLane, MAX_LANES } from './ContemporaryLane';
 export type { ContemporaryLaneProps } from './ContemporaryLane';
 
-export { EraContextPanel, splitCommaList } from './EraContextPanel';
+export { EraContextPanel } from './EraContextPanel';
 export type { EraContextPanelProps } from './EraContextPanel';
