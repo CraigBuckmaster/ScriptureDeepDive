@@ -150,7 +150,7 @@ export function RecommendedCard({
           </View>
         </TouchableOpacity>
       ) : (
-        <View style={[styles.fallbackStrip, { backgroundColor: recommendation.color + '30' }]} />
+        <View style={[styles.fallbackStrip, { backgroundColor: base.gold + '20' }]} />
       )}
 
       {/* ── Text area with chevron ─── */}
@@ -164,7 +164,7 @@ export function RecommendedCard({
         <View style={styles.textContent}>
           <View style={styles.textLeft}>
             <View style={styles.header}>
-              <Text style={[styles.title, { color: recommendation.color }]} numberOfLines={1}>
+              <Text style={[styles.title, { color: base.text }]} numberOfLines={1}>
                 {recommendation.title}
               </Text>
               {isLocked && <Text style={[styles.lockIcon, { color: base.gold }]}>✦</Text>}

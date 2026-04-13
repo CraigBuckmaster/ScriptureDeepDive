@@ -89,7 +89,7 @@ export function FeatureCard({
   return (
     <View style={[styles.card, {
       backgroundColor: base.bgElevated,
-      borderColor: feature.color + '20',
+      borderColor: base.gold + '12',
     }]}>
       {/* ── Image header ─── */}
       {currentImage ? (
@@ -134,7 +134,7 @@ export function FeatureCard({
         </TouchableOpacity>
       ) : (
         /* Fallback: accent-colored strip */
-        <View style={[styles.fallbackStrip, { backgroundColor: feature.color + '30' }]} />
+        <View style={[styles.fallbackStrip, { backgroundColor: base.gold + '20' }]} />
       )}
 
       {/* ── Text area (tappable → feature browse) ─── */}
@@ -146,7 +146,7 @@ export function FeatureCard({
         style={styles.textArea}
       >
         <View style={styles.header}>
-          <Text style={[styles.title, { color: feature.color }]} numberOfLines={1}>
+          <Text style={[styles.title, { color: base.text }]} numberOfLines={1}>
             {feature.title}
           </Text>
           {isLocked && <Text style={[styles.lockIcon, { color: base.gold }]}>✦</Text>}
