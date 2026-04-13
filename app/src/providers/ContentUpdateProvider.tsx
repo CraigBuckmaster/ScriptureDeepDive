@@ -15,6 +15,7 @@ import {
   useContentUpdate,
 } from '../contexts/ContentUpdateContext';
 import { ContentUpdateBanner } from '../components/ContentUpdateBanner';
+import { reloadDatabase } from '../db/database';
 import { logger } from '../utils/logger';
 
 const TAG = 'ContentUpdateProvider';
@@ -24,7 +25,7 @@ const TAG = 'ContentUpdateProvider';
  * Separated so it can call useContentUpdate() inside the provider.
  */
 function ContentUpdateListener({ children }: { children: ReactNode }) {
-  const { visible, progress, status, showUpdate, updateProgress, setStatus, hideUpdate } =
+  const { visible, progress, status, showUpdate, updateProgress, setStatus, hideUpdate, bumpDbVersion } =
     useContentUpdate();
   const checking = useRef(false);
 
@@ -51,8 +52,14 @@ function ContentUpdateListener({ children }: { children: ReactNode }) {
         const result = await ContentUpdater.checkForUpdates();
 
         if (result.status === 'updated') {
+          // DB file has been swapped on disk — reload the live connection
+          // and bump version so all data hooks re-fetch automatically.
+          setStatus('applying');
+          await reloadDatabase();
+          bumpDbVersion();
           updateProgress(100);
           setStatus('success');
+          logger.info(TAG, `Content hot-swapped: ${result.fromVersion} → ${result.toVersion}`);
         } else if (result.status === 'failed') {
           setStatus('error', result.error);
         }
@@ -80,7 +87,7 @@ function ContentUpdateListener({ children }: { children: ReactNode }) {
     // Check when app comes to foreground
     const sub = AppState.addEventListener('change', handleAppState);
     return () => sub.remove();
-  }, [showUpdate, updateProgress, setStatus, hideUpdate]);
+  }, [showUpdate, updateProgress, setStatus, hideUpdate, bumpDbVersion]);
 
   return (
     <>

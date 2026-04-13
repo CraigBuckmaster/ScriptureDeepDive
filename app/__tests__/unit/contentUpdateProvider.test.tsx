@@ -20,6 +20,11 @@ jest.mock('@/components/ContentUpdateBanner', () => ({
   ContentUpdateBanner: () => null,
 }));
 
+// Mock reloadDatabase
+jest.mock('@/db/database', () => ({
+  reloadDatabase: jest.fn().mockResolvedValue({}),
+}));
+
 // Mock ContentUpdateContext
 jest.mock('@/contexts/ContentUpdateContext', () => {
   const React = require('react');
@@ -28,10 +33,12 @@ jest.mock('@/contexts/ContentUpdateContext', () => {
     progress: 0,
     status: 'downloading',
     error: null,
+    dbVersion: 0,
     showUpdate: jest.fn(),
     updateProgress: jest.fn(),
     setStatus: jest.fn(),
     hideUpdate: jest.fn(),
+    bumpDbVersion: jest.fn(),
   };
   return {
     ContentUpdateProvider: ({ children }: any) => children,
@@ -93,7 +100,13 @@ describe('ContentUpdateProvider', () => {
     await new Promise((r) => setTimeout(r, 50));
     expect(showUpdate).toHaveBeenCalled();
     expect(updateProgress).toHaveBeenCalledWith(10);
-    expect(setStatus).toHaveBeenCalledWith('success');
+    // New flow: setStatus('applying') → reloadDatabase() → bumpDbVersion() → setStatus('success')
+    expect(setStatus).toHaveBeenCalledWith('applying');
+    const { reloadDatabase } = require('@/db/database');
+    expect(reloadDatabase).toHaveBeenCalled();
+    const { bumpDbVersion } = contextMock.useContentUpdate();
+    expect(bumpDbVersion).toHaveBeenCalled();
+    expect(setStatus).toHaveBeenLastCalledWith('success');
   });
 
   it('skips update banner when versions match', async () => {

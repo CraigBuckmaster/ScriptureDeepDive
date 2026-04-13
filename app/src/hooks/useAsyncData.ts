@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef, DependencyList } from 'react';
+import { useDbVersion } from '../contexts/ContentUpdateContext';
 
 export function useAsyncData<T>(
   fetchFn: () => Promise<T>,
@@ -9,6 +10,7 @@ export function useAsyncData<T>(
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
   const mountedRef = useRef(true);
+  const dbVersion = useDbVersion();
 
   useEffect(() => {
     mountedRef.current = true;
@@ -32,7 +34,7 @@ export function useAsyncData<T>(
         }
       });
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, deps);
+  }, [...deps, dbVersion]);
 
   useEffect(() => {
     let cancelled = false;
@@ -47,7 +49,7 @@ export function useAsyncData<T>(
       });
     return () => { cancelled = true; };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, deps);
+  }, [...deps, dbVersion]);
 
   return { data, loading, error, reload: load };
 }
