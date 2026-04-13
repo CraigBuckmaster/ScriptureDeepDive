@@ -136,6 +136,20 @@ describe('TreeCanvas', () => {
     const gWithTransform = children.find((c: any) => c?.props?.transform);
     expect(gWithTransform?.props?.transform).toBe('translate(50, 75)');
   });
+
+  it('declares the messianic-node-fill radial gradient (Card #1281)', () => {
+    const tree = renderWithProviders(<TreeCanvas {...defaultProps} />);
+    const json = tree.toJSON() as any;
+    const gradients = findAllByType(json, 'RadialGradient');
+    const messianic = gradients.find((g: any) => g.props?.id === 'messianic-node-fill');
+    expect(messianic).toBeTruthy();
+    // Stops should reference the gold token from the theme.
+    const stops = findAllByType(messianic, 'Stop');
+    expect(stops.length).toBe(2);
+    expect(stops[0].props?.stopColor).toBe('#bfa050');
+    expect(stops[0].props?.stopOpacity).toBe(0.25);
+    expect(stops[1].props?.stopOpacity).toBe(0.08);
+  });
 });
 
 /** Recursively find all elements with a given type in a rendered JSON tree. */

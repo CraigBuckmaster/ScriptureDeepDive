@@ -106,6 +106,29 @@ describe('computeMarriageBars', () => {
     expect(bars[0].x1).toBeLessThan(bars[0].x2);
     expect(bars[0].dimmed).toBe(false);
   });
+
+  it('uses the new circular-node radii for bar endpoints (Card #1281)', () => {
+    // Constants must match SPINE_R / SAT_R in TreeNode.tsx so the marriage
+    // bar attaches to the actual circle edge (and the +/- 2 px gap defined
+    // in computeMarriageBars).
+    expect(TREE_CONSTANTS.spineCardHalfW).toBe(24);
+    expect(TREE_CONSTANTS.satCardHalfW).toBe(18);
+
+    const { computeMarriageBars } = require('../../src/utils/treeBuilder');
+    const partner = {
+      data: { id: 'abraham', name: 'Abraham', nodeType: 'spine' },
+      x: 0, y: 0, parent: null, children: [], depth: 0, isSpouse: false,
+    };
+    const spouse = {
+      data: { id: 'sarah', name: 'Sarah', nodeType: 'satellite', spouse_of: 'abraham' },
+      x: TREE_CONSTANTS.spouseXOffset, y: 0, parent: null, children: [], depth: 0, isSpouse: true,
+    };
+    const bars = computeMarriageBars([partner, spouse], new Set(['abraham']), null);
+    // Spine partner contributes spineCardHalfW (24) + 2 → x1 = 26
+    expect(bars[0].x1).toBe(TREE_CONSTANTS.spineCardHalfW + 2);
+    // Satellite spouse contributes satCardHalfW (18) + 2 → x2 = 88 - 18 - 2 = 68
+    expect(bars[0].x2).toBe(TREE_CONSTANTS.spouseXOffset - TREE_CONSTANTS.satCardHalfW - 2);
+  });
 });
 
 describe('computeFullLayout', () => {

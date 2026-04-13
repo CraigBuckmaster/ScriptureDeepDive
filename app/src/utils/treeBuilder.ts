@@ -31,9 +31,10 @@ export const TREE_CONSTANTS = {
   initialScaleTablet: 0.75,
   marriageTickHeight: 10,
   marriageTickGap: 6,
-  /** Approximate card half-width for marriage bar endpoint math. */
-  spineCardHalfW: 37,
-  satCardHalfW: 31,
+  /** Spine node radius — matches SPINE_R in TreeNode.tsx (Card #1281). */
+  spineCardHalfW: 24,
+  /** Satellite node radius — matches SAT_R in TreeNode.tsx (Card #1281). */
+  satCardHalfW: 18,
 } as const;
 
 // ── Types ───────────────────────────────────────────────────────────
