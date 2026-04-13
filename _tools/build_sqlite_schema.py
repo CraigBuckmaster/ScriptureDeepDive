@@ -147,7 +147,9 @@ CREATE TABLE places (
   longitude REAL NOT NULL,
   type TEXT NOT NULL,
   priority INTEGER DEFAULT 2,
-  label_dir TEXT DEFAULT 'n'
+  label_dir TEXT DEFAULT 'n',
+  refs_json TEXT,          -- JSON array of verse-ref strings (Card #1271)
+  confidence INTEGER       -- 1–1000 identification confidence (Card #1271)
 );
 
 CREATE TABLE map_stories (

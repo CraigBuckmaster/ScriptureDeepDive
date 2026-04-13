@@ -18,6 +18,9 @@ _tools/audit/.cache/
 _tools/.env
 _tools/audit/ci_results.json
 .env
--e 
+-e
 # Image staging (downloaded but not committed)
 _tools/art_staging/
+
+# Local-only source data (Card #1271) — see _data/README.md
+_data/openbible/*.jsonl
