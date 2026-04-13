@@ -59,6 +59,7 @@ const makeLink = (): TreeLinkType => ({
   source: { x: 100, y: 50 },
   target: { x: 100, y: 200 },
   isSpine: true,
+  isMessianic: false,
   dimmed: false,
 });
 

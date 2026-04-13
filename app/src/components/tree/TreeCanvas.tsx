@@ -76,6 +76,7 @@ export const TreeCanvas = memo(function TreeCanvas({
             source={link.source}
             target={link.target}
             isSpine={link.isSpine}
+            isMessianic={link.isMessianic}
             dimmed={link.dimmed}
           />
         ))}

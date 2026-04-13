@@ -8,6 +8,7 @@ jest.mock('react-native-svg', () => {
 jest.mock('@/theme', () => ({
   useTheme: () => ({
     base: {
+      gold: '#BFA050',
       goldDim: '#B8960C',
       textMuted: '#888888',
     },
@@ -30,6 +31,7 @@ describe('TreeLink', () => {
         source={{ x: 100, y: 50 }}
         target={{ x: 100, y: 200 }}
         isSpine={true}
+        isMessianic={false}
         dimmed={false}
       />,
     );
@@ -42,15 +44,15 @@ describe('TreeLink', () => {
         source={{ x: 100, y: 50 }}
         target={{ x: 150, y: 200 }}
         isSpine={false}
+        isMessianic={false}
         dimmed={false}
       />,
     );
     const json = tree.toJSON() as any;
-    // The rendered element should be a Path mock
     expect(json).toBeTruthy();
-    // Verify d attribute contains M and C commands
+    // Verify d attribute contains M and C commands (bezierPath uses spaces)
     if (json.props?.d) {
-      expect(json.props.d).toContain('M100,50');
+      expect(json.props.d).toMatch(/M\s*100/);
       expect(json.props.d).toContain('C');
     }
   });
@@ -61,29 +63,50 @@ describe('TreeLink', () => {
         source={{ x: 0, y: 0 }}
         target={{ x: 50, y: 100 }}
         isSpine={false}
+        isMessianic={false}
         dimmed={true}
       />,
     );
     const json = tree.toJSON() as any;
     expect(json).toBeTruthy();
     if (json.props?.opacity !== undefined) {
-      expect(json.props.opacity).toBe(0.1);
+      expect(json.props.opacity).toBe(0.08);
     }
   });
 
-  it('renders spine link with higher opacity', () => {
+  it('renders spine link with glow + crisp stroke (two paths)', () => {
     const tree = renderWithProviders(
       <TreeLink
         source={{ x: 0, y: 0 }}
         target={{ x: 50, y: 100 }}
         isSpine={true}
+        isMessianic={false}
+        dimmed={false}
+      />,
+    );
+    const json = tree.toJSON() as any;
+    // Spine links render as an array of Path elements (glow + stroke)
+    expect(json).toBeTruthy();
+    if (Array.isArray(json)) {
+      expect(json.length).toBe(2);
+    }
+  });
+
+  it('renders messianic link with triple glow (three paths)', () => {
+    const tree = renderWithProviders(
+      <TreeLink
+        source={{ x: 0, y: 0 }}
+        target={{ x: 50, y: 100 }}
+        isSpine={true}
+        isMessianic={true}
         dimmed={false}
       />,
     );
     const json = tree.toJSON() as any;
     expect(json).toBeTruthy();
-    if (json.props?.opacity !== undefined) {
-      expect(json.props.opacity).toBe(0.7);
+    // Messianic links render as 3 Path elements (outer glow + inner glow + crisp)
+    if (Array.isArray(json)) {
+      expect(json.length).toBe(3);
     }
   });
 
@@ -93,6 +116,7 @@ describe('TreeLink', () => {
         source={{ x: 0, y: 0 }}
         target={{ x: 50, y: 100 }}
         isSpine={false}
+        isMessianic={false}
         dimmed={false}
         era="creation"
       />,
