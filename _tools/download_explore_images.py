@@ -36,9 +36,22 @@ DOWNLOADS = [
         "https://upload.wikimedia.org/wikipedia/commons/2/2a/Babylonian_cuneiform_tablet_with_a_map_from_Nippur_1550-1450_BCE.jpg",
         "Map tool panel — Babylonian cuneiform map tablet from Nippur",
     ),
-    # Dictionary (Gutenberg Bible) — already referenced, verify on R2
-    # Concordance (Aleppo Codex) — already referenced, verify on R2
-    # Topical Index (Botticelli St Augustine) — already referenced, verify on R2
+    # === TOOL PANEL IMAGES (Wikimedia) ===
+    (
+        "aleppo-codex-joshua.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/4/4d/Aleppo_Codex_Joshua_1_1.jpg",
+        "Concordance tool panel — Aleppo Codex, Joshua 1:1",
+    ),
+    (
+        "gutenberg-bible.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/b/b6/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg",
+        "Dictionary tool panel — Gutenberg Bible, Lenox Copy",
+    ),
+    (
+        "botticelli-augustine.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_-_St_Augustin_dans_son_cabinet_de_travail.jpg",
+        "Topical Index tool panel — Botticelli St. Augustine in His Study",
+    ),
 
     # === DORÉ — Period cards (missing from R2) ===
     (
