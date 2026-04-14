@@ -39,6 +39,15 @@ import { logger } from '../utils/logger';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
+/** Era-filter fallbacks for keys that have no matching people in the
+ *  data. When the user taps "Divided Kingdom" the camera jumps to the
+ *  prophets region, etc. — so the filter never silently no-ops. */
+const ERA_FALLBACKS: Record<string, string[]> = {
+  divided_kingdom: ['prophets', 'kingdom'],
+  intertestamental: ['post-exilic', 'exile'],
+  apostolic: ['nt'],
+};
+
 function GenealogyTreeScreen({ route, navigation }: {
   route: ScreenRouteProp<'Explore', 'GenealogyTree'>;
   navigation: ScreenNavProp<'Explore', 'GenealogyTree'>;
@@ -111,6 +120,9 @@ function GenealogyTreeScreen({ route, navigation }: {
   }, [initialPersonId, nodes, people, centreOnNodeAbovePanel]);
 
   // Era filter change: jump to the first matching person.
+  // Some theme era keys have zero people in the data — the content uses
+  // adjacent era values instead. The fallback chain finds the closest
+  // populated era so the camera always jumps somewhere meaningful.
   useEffect(() => {
     if (!hasCentred.current || nodes.length === 0) return;
     if (filterEra === prevEra.current) return;
@@ -123,10 +135,18 @@ function GenealogyTreeScreen({ route, navigation }: {
         centreOnNodeTop(adam.x, adam.y);
       }
     } else {
-      const firstMatch = nodes.find((n) => n.data.era === filterEra);
+      // Try exact era first, then fallbacks for eras with no people.
+      const erasToTry = [filterEra, ...(ERA_FALLBACKS[filterEra] ?? [])];
+      let firstMatch = null;
+      for (const era of erasToTry) {
+        firstMatch = nodes.find((n) => n.data.era === era);
+        if (firstMatch) break;
+      }
       if (firstMatch) {
         logger.info('Tree', `Era→${filterEra}: centering on ${firstMatch.data.name}`);
         centreOnNode(firstMatch.x, firstMatch.y);
+      } else {
+        logger.info('Tree', `Era→${filterEra}: no matching nodes found`);
       }
     }
   }, [filterEra, nodes, centreOnNode, centreOnNodeTop]);

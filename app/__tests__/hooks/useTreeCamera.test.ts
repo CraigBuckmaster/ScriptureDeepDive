@@ -84,4 +84,100 @@ describe('useTreeCamera', () => {
     });
     expect(result.current.camera.y).toBeCloseTo(600 - vH * 0.25, 3);
   });
+
+  // ── Gesture throttling ───────────────────────────────────────────
+
+  /** Grab the pan gesture's captured onUpdate handler from the mock.
+   *  The Simultaneous() mock wraps [pinch, pan] in that order. */
+  function getPanHandlers(result: any) {
+    const pan = result.current.gesture._simultaneous[1];
+    return pan.__handlers;
+  }
+
+  function getPinchHandlers(result: any) {
+    const pinch = result.current.gesture._simultaneous[0];
+    return pinch.__handlers;
+  }
+
+  it('throttles rapid pan updates to ~35fps', () => {
+    const { result } = renderHook(() => useTreeCamera());
+    const pan = getPanHandlers(result);
+    const nowSpy = jest.spyOn(Date, 'now');
+
+    try {
+      // Simulate gesture begin — resets throttle so the first update fires.
+      nowSpy.mockReturnValue(1000);
+      act(() => { pan.onBegin(); });
+
+      // First update at t=1000 — throttle sees 1000 - 0 = 1000 ≥ 28 → fires.
+      nowSpy.mockReturnValue(1000);
+      act(() => { pan.onUpdate({ translationX: 10, translationY: 0 }); });
+      const afterFirst = result.current.camera.x;
+
+      // Second update 10ms later — throttle sees 10 < 28 → DROPPED.
+      nowSpy.mockReturnValue(1010);
+      act(() => { pan.onUpdate({ translationX: 50, translationY: 0 }); });
+      expect(result.current.camera.x).toBe(afterFirst);
+
+      // Third update 35ms after the first — throttle sees 35 ≥ 28 → fires.
+      nowSpy.mockReturnValue(1035);
+      act(() => { pan.onUpdate({ translationX: 100, translationY: 0 }); });
+      expect(result.current.camera.x).not.toBe(afterFirst);
+    } finally {
+      nowSpy.mockRestore();
+    }
+  });
+
+  it('throttles rapid pinch updates to ~35fps', () => {
+    const { result } = renderHook(() => useTreeCamera());
+    const pinch = getPinchHandlers(result);
+    const nowSpy = jest.spyOn(Date, 'now');
+
+    try {
+      nowSpy.mockReturnValue(1000);
+      act(() => { pinch.onBegin({ focalX: 100, focalY: 100 }); });
+
+      nowSpy.mockReturnValue(1000);
+      act(() => { pinch.onUpdate({ scale: 1.1, focalX: 100, focalY: 100 }); });
+      const afterFirstZoom = result.current.camera.zoom;
+
+      // Within the throttle window → camera zoom unchanged.
+      nowSpy.mockReturnValue(1010);
+      act(() => { pinch.onUpdate({ scale: 1.5, focalX: 100, focalY: 100 }); });
+      expect(result.current.camera.zoom).toBe(afterFirstZoom);
+
+      // Past the throttle window → camera zoom updates.
+      nowSpy.mockReturnValue(1040);
+      act(() => { pinch.onUpdate({ scale: 2.0, focalX: 100, focalY: 100 }); });
+      expect(result.current.camera.zoom).not.toBe(afterFirstZoom);
+    } finally {
+      nowSpy.mockRestore();
+    }
+  });
+
+  it('always fires the first frame of a new pan gesture (throttle reset)', () => {
+    const { result } = renderHook(() => useTreeCamera());
+    const pan = getPanHandlers(result);
+    const nowSpy = jest.spyOn(Date, 'now');
+
+    try {
+      // First gesture: an update fills lastPanTime = 5000.
+      nowSpy.mockReturnValue(5000);
+      act(() => { pan.onBegin(); });
+      nowSpy.mockReturnValue(5000);
+      act(() => { pan.onUpdate({ translationX: 10, translationY: 0 }); });
+
+      // New gesture 10ms later — without the reset, this first update
+      // would be throttled. onBegin resets lastPanTime to 0 so now - 0
+      // is always large enough to pass.
+      nowSpy.mockReturnValue(5010);
+      act(() => { pan.onBegin(); });
+      const beforeFirstUpdate = result.current.camera.x;
+      nowSpy.mockReturnValue(5010);
+      act(() => { pan.onUpdate({ translationX: 100, translationY: 0 }); });
+      expect(result.current.camera.x).not.toBe(beforeFirstUpdate);
+    } finally {
+      nowSpy.mockRestore();
+    }
+  });
 });

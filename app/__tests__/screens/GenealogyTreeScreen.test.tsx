@@ -41,6 +41,9 @@ const mockTreeLayout = {
     { data: { id: 'adam', name: 'Adam', era: 'primeval' }, x: 100, y: 50, tier: 1 },
     { data: { id: 'eve', name: 'Eve', era: 'primeval' }, x: 200, y: 50, tier: 1 },
     { data: { id: 'seth', name: 'Seth', era: 'primeval' }, x: 150, y: 150, tier: 1 },
+    // A prophets-era person so the divided_kingdom → prophets fallback
+    // has somewhere to land in the fixture.
+    { data: { id: 'isaiah', name: 'Isaiah', era: 'prophets' }, x: 500, y: 800, tier: 2 },
   ],
   links: [],
   marriageBars: [],
@@ -100,7 +103,7 @@ jest.mock('@/components/tree/EraFilterBar', () => ({
     const React = require('react');
     const { View, TouchableOpacity, Text } = require('react-native');
     return React.createElement(View, { testID: 'era-filter-bar' },
-      ['all', 'primeval', 'patriarchs', 'exodus'].map((era: string) =>
+      ['all', 'primeval', 'patriarchs', 'exodus', 'divided_kingdom', 'prophets'].map((era: string) =>
         React.createElement(TouchableOpacity, {
           key: era,
           testID: `era-filter-${era}`,
@@ -241,6 +244,28 @@ describe('GenealogyTreeScreen', () => {
     // The component calls setFilterEra('patriarchs') — verified by the tree re-rendering
     // (no crash proves the state update worked)
     expect(getByTestId('era-filter-bar')).toBeTruthy();
+  });
+
+  it('jumps to prophets region when divided_kingdom filter is selected', () => {
+    // The fixture has zero people tagged with `era: 'divided_kingdom'`, so
+    // the fallback chain should land on the first 'prophets' person
+    // (Isaiah in the fixture at x=500, y=800).
+    const { getByTestId } = renderWithProviders(
+      <GenealogyTreeScreen route={mockRoute as any} navigation={{ navigate: mockNavigate, goBack: mockGoBack } as any} />,
+    );
+    mockCentreOnNode.mockClear();
+    fireEvent.press(getByTestId('era-filter-divided_kingdom'));
+    expect(mockCentreOnNode).toHaveBeenCalledWith(500, 800);
+  });
+
+  it('jumps to matching era directly when at least one person tagged with that era exists', () => {
+    const { getByTestId } = renderWithProviders(
+      <GenealogyTreeScreen route={mockRoute as any} navigation={{ navigate: mockNavigate, goBack: mockGoBack } as any} />,
+    );
+    mockCentreOnNode.mockClear();
+    fireEvent.press(getByTestId('era-filter-prophets'));
+    // Direct match on prophets → Isaiah at (500, 800) — no fallback needed.
+    expect(mockCentreOnNode).toHaveBeenCalledWith(500, 800);
   });
 
   it('opens person sidebar when search result is selected', () => {
