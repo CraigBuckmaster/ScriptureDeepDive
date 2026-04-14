@@ -127,9 +127,20 @@ function MapScreen({ route, navigation }: {
     } catch (err) { logger.warn('MapScreen', 'Operation failed', err); }
   }, [places, insets.top, screenHeight]);
 
-  /** Pan to a specific place. */
+  /**
+   * Pan (and zoom in) to a specific place.
+   *
+   * `setCamera` combines centerCoordinate + zoomLevel in one animation so
+   * we recreate the old `animateToRegion({delta: 2})` behaviour — a close
+   * zoom that clearly frames one place.
+   */
   const panToPlace = useCallback((place: Place) => {
-    cameraRef.current?.flyTo([place.longitude, place.latitude], 500);
+    cameraRef.current?.setCamera({
+      centerCoordinate: [place.longitude, place.latitude],
+      zoomLevel: 7.5,
+      animationDuration: 500,
+      animationMode: 'flyTo',
+    });
   }, []);
 
   /** Tap a marker → open detail card + recentre. */
@@ -182,7 +193,12 @@ function MapScreen({ route, navigation }: {
     if (era === 'all') {
       setActiveStory(null);
       setShowPanel(false);
-      cameraRef.current?.flyTo(BIBLICAL_REGION.center, 500);
+      cameraRef.current?.setCamera({
+        centerCoordinate: BIBLICAL_REGION.center,
+        zoomLevel: BIBLICAL_REGION.zoom,
+        animationDuration: 500,
+        animationMode: 'flyTo',
+      });
       return;
     }
     if (activeStory?.era === era) return;
@@ -251,7 +267,12 @@ function MapScreen({ route, navigation }: {
           onToggleNames={() => setShowModern((v) => !v)}
           onCentre={() => {
             if (activeStory) selectStory(activeStory);
-            else cameraRef.current?.flyTo(BIBLICAL_REGION.center, 500);
+            else cameraRef.current?.setCamera({
+              centerCoordinate: BIBLICAL_REGION.center,
+              zoomLevel: BIBLICAL_REGION.zoom,
+              animationDuration: 500,
+              animationMode: 'flyTo',
+            });
           }}
         />
       </View>
