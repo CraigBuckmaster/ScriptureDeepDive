@@ -121,7 +121,12 @@ export interface Person {
   era: string | null;
   dates: string | null;
   role: string | null;
-  type: 'spine' | 'satellite' | null;
+  /** Classification. `'allegorical'` excludes the person from the
+   *  genealogy tree (Card #1289) while keeping the row in the content DB
+   *  so commentary and search can still reference them. `'spine'` /
+   *  `'satellite'` are derived at DB-build time from messianic spine
+   *  membership. */
+  type: 'spine' | 'satellite' | 'allegorical' | null;
   bio: string | null;
   scripture_role: string | null;
   refs_json: string | null;

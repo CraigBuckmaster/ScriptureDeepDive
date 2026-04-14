@@ -483,7 +483,13 @@ def populate_people(cur):
     journey_count = 0
     legacy_count = 0
     for p in people:
-        ptype = 'spine' if p['id'] in spine_ids else 'satellite'
+        # Explicit `type` in people.json wins (lets us mark allegorical
+        # figures per Card #1289). Fall back to the spine/satellite
+        # computation otherwise.
+        explicit_type = p.get('type')
+        ptype = explicit_type if explicit_type else (
+            'spine' if p['id'] in spine_ids else 'satellite'
+        )
         # spouseOf and spouse_of are both accepted (legacy + recent style).
         spouse = p.get('spouseOf') or p.get('spouse_of')
         cur.execute(
