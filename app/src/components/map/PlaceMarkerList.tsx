@@ -6,7 +6,8 @@
  * expressions drive priority-based visibility, active-place highlighting,
  * and ancient/modern name toggling — no React re-renders on map motion.
  *
- * Migrated from a per-marker React component tree in #1315/#1318.
+ * Issues: #1315 (MapLibre dep swap), #1318 (priority visibility +
+ * feature-state selection + click forwarding).
  */
 
 import React, { memo, useMemo, useCallback } from 'react';
@@ -19,6 +20,7 @@ interface Props {
   showModern: boolean;
   zoomLevel?: number;
   activeStory?: MapStory | null;
+  /** ID of the currently-selected place, if any. Highlighted via expressions. */
   activePlaceId?: string | null;
   onPlacePress?: (place: Place) => void;
 }
@@ -45,6 +47,20 @@ export function placesToFeatureCollection(places: Place[]): GeoJSON.FeatureColle
   };
 }
 
+/**
+ * Min-zoom per priority — mirrors the old `maxPriorityForZoom` thresholds
+ * from geoMath.ts but expressed as a MapLibre `match` expression so the
+ * GPU renders/hides per-feature without JS involvement.
+ */
+const PRIORITY_MIN_ZOOM: any = ['match',
+  ['get', 'priority'],
+  1, 3,
+  2, 5,
+  3, 7,
+  4, 8,
+  8, // fallback
+];
+
 export const PlaceMarkerList = memo(function PlaceMarkerList({
   places,
   showModern,
@@ -54,38 +70,55 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
 }: Props) {
   const fc = useMemo(() => placesToFeatureCollection(places), [places]);
 
-  // Set of ids belonging to the active story — used to pin them visible
-  // regardless of zoom-priority gating.
+  // IDs belonging to the active story — pinned visible regardless of priority.
   const storyPlaceIds = useMemo<string[]>(() => {
     if (!activeStory?.places_json) return [];
     return safeParse<string[]>(activeStory.places_json, []);
   }, [activeStory?.places_json]);
 
-  // Priority-gated min-zoom per feature.
-  //  Priority 1 → zoom ≥ 3
-  //  Priority 2 → zoom ≥ 5
-  //  Priority 3 → zoom ≥ 7
-  //  Priority 4 → zoom ≥ 8
-  // Story places always visible (min-zoom 0) regardless of priority.
-  const minZoomExpr: any = [
-    'case',
-    ['in', ['get', 'id'], ['literal', storyPlaceIds]],
-    0,
-    ['match',
-      ['get', 'priority'],
-      1, 3,
-      2, 5,
-      3, 7,
-      4, 8,
-      8, // default fallback
+  // Full visibility expression: story places are always visible (min-zoom 0),
+  // other places hidden below their priority's min-zoom threshold.
+  const minZoomExpr: any = useMemo(
+    () => [
+      'case',
+      ['in', ['get', 'id'], ['literal', storyPlaceIds]],
+      0,
+      PRIORITY_MIN_ZOOM,
     ],
-  ];
+    [storyPlaceIds],
+  );
 
-  // Circle radius — priority gives base size; active place gets a bump.
+  // Radius / color / stroke for the active-place spotlight.
+  // Uses a direct id comparison (effectively a poor-man's feature-state —
+  // MapLibre RN v10 doesn't yet expose setFeatureState imperatively, so
+  // we drive highlight state through the expression instead).
+  const isActive: any = activePlaceId
+    ? ['==', ['get', 'id'], activePlaceId]
+    : false;
+
   const circleRadiusExpr: any = [
     'case',
-    ['==', ['get', 'id'], activePlaceId ?? ''], 6,
+    isActive,
+    ['match', ['get', 'priority'], 1, 7, 2, 6, 3, 5, 4, 4.5, 5],
     ['match', ['get', 'priority'], 1, 5, 2, 4, 3, 3, 4, 2.5, 3],
+  ];
+
+  const circleColorExpr: any = [
+    'case',
+    isActive, '#f5e6b8', // warm highlight gold
+    '#bfa050',           // default gold
+  ];
+
+  const circleStrokeColorExpr: any = [
+    'case',
+    isActive, '#bfa050',
+    '#1a1610',
+  ];
+
+  const circleStrokeWidthExpr: any = [
+    'case',
+    isActive, 2,
+    1,
   ];
 
   const onPress = useCallback(
@@ -104,20 +137,18 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
       id="places-source"
       shape={fc as any}
       onPress={onPress}
-      hitbox={{ width: 20, height: 20 }}
+      hitbox={{ width: 22, height: 22 }}
     >
-      {/* Dot marker */}
       <CircleLayer
         id="places-dot"
         style={{
           circleRadius: circleRadiusExpr,
-          circleColor: '#bfa050',
-          circleStrokeColor: '#1a1610',
-          circleStrokeWidth: 1,
+          circleColor: circleColorExpr,
+          circleStrokeColor: circleStrokeColorExpr,
+          circleStrokeWidth: circleStrokeWidthExpr,
           circleOpacity: ['step', ['zoom'], 0, minZoomExpr, 1] as any,
         }}
       />
-      {/* Gold italic Garamond label */}
       <SymbolLayer
         id="places-label"
         style={{
@@ -126,7 +157,11 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
           // as the parchment aesthetic even though the glyph itself is Noto.
           textFont: ['Noto Sans Italic'],
           textSize: ['match', ['get', 'priority'], 1, 13, 2, 12, 3, 11, 4, 10, 11] as any,
-          textColor: '#bfa050',
+          textColor: [
+            'case',
+            isActive, '#f5e6b8',
+            '#bfa050',
+          ] as any,
           textHaloColor: '#1a1610',
           textHaloWidth: 1.5,
           textOffset: [0, 1.1],
