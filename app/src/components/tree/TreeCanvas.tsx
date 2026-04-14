@@ -1,40 +1,38 @@
 /**
  * TreeCanvas — SVG container rendering all tree elements.
  *
- * *** CRASH BISECT BUILD ***
- * All associate-related rendering (paths, trails, labels, badges,
- * associate nodes) is temporarily hidden to test whether the iOS
- * paint crash at z=0.93 is caused by the associate content. If the
- * tree loads and zooms freely without crashing, the associate
- * rendering is the culprit and we'll add it back as simpler
- * per-anchor straight-line paths. If it still crashes, the cause is
- * elsewhere (e.g., TreeLink messianic glow paths at high zoom).
+ * Associate rendering is fully enabled as of #1329 (staggered TreeNode
+ * reveal) + this PR. The BISECT constants at the top of the file stay
+ * in place as emergency hide-switches: flip one to `true` to disable
+ * that specific component if it regresses on a future iOS version.
  */
 
 import React, { memo, useMemo } from 'react';
 import {
   Defs, RadialGradient, Stop, Pattern,
-  Rect, Line, G,
+  Rect, Line, G, Circle, Text as SvgText, Path,
 } from 'react-native-svg';
 import { useTheme } from '../../theme';
 import { TreeLink } from './TreeLink';
 import { MarriageBarSvg } from './MarriageBarSvg';
 import { SpouseConnectorSvg } from './SpouseConnectorSvg';
 import { TreeNode } from './TreeNode';
-import { TIER_2_ZOOM, TIER_3_ZOOM, getVisibleTier, getPersonTier } from '../../utils/genealogyOrganic';
+import { TIER_2_ZOOM, TIER_3_ZOOM, getVisibleTier, getPersonTier, bezierPath } from '../../utils/genealogyOrganic';
 import { isMessianic } from '../../utils/messianicLine';
 import { logger } from '../../utils/logger';
 import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson, AssociationLink, AssociateBloomLabel, AssociateTrail } from '../../utils/treeBuilder';
 
-// *** BISECT FLAGS — paths/labels/badges still hidden so this PR isolates
-// the staggered-mount fix to associate TreeNodes only. Once that proves
-// stable, follow-up PRs re-enable the rest with similar staggering if
-// needed.
+// BISECT flags now that #1329 proved the staggered TreeNode reveal works
+// across the full zoom range. All four remaining flags flip to `false`
+// so the full associate rendering (paths, trails, labels, badges) comes
+// back online. Kept in place as a pair of emergency switches in case a
+// specific component regresses — flipping one back to `true` hides just
+// that component without touching the others.
 const BISECT = {
-  hideAssociationPath: true,
-  hideTrails: true,
-  hideLabels: true,
-  hideBadges: true,
+  hideAssociationPath: false,
+  hideTrails: false,
+  hideLabels: false,
+  hideBadges: false,
   hideAssociateNodes: false,
 } as const;
 
@@ -110,6 +108,38 @@ export const TreeCanvas = memo(function TreeCanvas({
     () => new Set(associationLinks.map((al) => al.memberId)),
     [associationLinks],
   );
+
+  // All dashed-bezier associate connectors consolidated into ONE Path
+  // string. 89 individual `<AssociationLinkSvg>` components → 1 native
+  // CAShapeLayer. Tier-3 zoom transitions flip one opacity value instead
+  // of mounting 89 layers (see #1308, #1329).
+  const associationPathD = useMemo(
+    () => associationLinks.map((al) => bezierPath(al.source, al.target)).join(' '),
+    [associationLinks],
+  );
+
+  // Same consolidation for trail lines.
+  const trailsPathD = useMemo(
+    () => associateTrails
+      .map((t) => `M ${t.source.x} ${t.source.y} L ${t.target.x} ${t.target.y}`)
+      .join(' '),
+    [associateTrails],
+  );
+
+  // Badge positions derived from association links (stable for a given
+  // tree layout). Always rendered, opacity-gated by clustersCollapsed.
+  const anchorBadges = useMemo(() => {
+    const byAnchor = new Map<string, { x: number; y: number; count: number }>();
+    for (const al of associationLinks) {
+      const existing = byAnchor.get(al.anchorId);
+      if (existing) {
+        existing.count += 1;
+      } else {
+        byAnchor.set(al.anchorId, { x: al.source.x, y: al.source.y, count: 1 });
+      }
+    }
+    return Array.from(byAnchor, ([anchorId, v]) => ({ anchorId, ...v }));
+  }, [associationLinks]);
 
   // Universal staggered-reveal index for every tier-2 and tier-3 node
   // (including associates). Tier 1 is always visible and never counted.
@@ -222,8 +252,44 @@ export const TreeCanvas = memo(function TreeCanvas({
           />
         ))}
 
-        {/* 1b–1d. Association paths / trails / badges — hidden by the
-               BISECT flag. See top of file. */}
+        {/* 1b. Association links — ALL dashed bezier connectors consolidated
+               into a single Path. Opacity toggles with cluster collapse state;
+               no native views mount or unmount across zoom transitions. */}
+        {!BISECT.hideAssociationPath && associationPathD.length > 0 && (
+          <Path
+            d={associationPathD}
+            stroke={base.border}
+            strokeWidth={0.9}
+            strokeDasharray="4,4"
+            fill="none"
+            opacity={clustersCollapsed ? 0 : 0.55}
+            strokeLinecap="round"
+          />
+        )}
+
+        {/* 1c. Associate-bloom trails — all consolidated into one Path. */}
+        {!BISECT.hideTrails && trailsPathD.length > 0 && (
+          <Path
+            d={trailsPathD}
+            stroke={base.gold}
+            strokeWidth={1.5}
+            fill="none"
+            opacity={clustersCollapsed ? 0 : 0.35}
+            strokeLinecap="round"
+          />
+        )}
+
+        {/* 1d. Collapsed-cluster "+N" badges. Always rendered; opacity gated. */}
+        {!BISECT.hideBadges && anchorBadges.map((b) => (
+          <G key={`ab-${b.anchorId}`} opacity={clustersCollapsed ? 0.85 : 0}>
+            <Circle cx={b.x + 30} cy={b.y + 30} r={14}
+              fill={base.bgSurface} stroke={base.gold} strokeWidth={1} />
+            <SvgText x={b.x + 30} y={b.y + 33}
+              fill={base.gold} fontSize={11} textAnchor="middle" fontWeight="600">
+              +{b.count}
+            </SvgText>
+          </G>
+        ))}
 
         {/* 2. Marriage bars */}
         {marriageBars.map((bar) => (
@@ -269,7 +335,22 @@ export const TreeCanvas = memo(function TreeCanvas({
           );
         })}
 
-        {/* 5. Bloom-apex labels — hidden by the BISECT flag. */}
+        {/* 5. Bloom-apex labels ("disciples", "contemporaries"…). Always
+               rendered; opacity gated by TIER_3_ZOOM. */}
+        {!BISECT.hideLabels && associateBloomLabels.map((lbl) => (
+          <SvgText
+            key={`abl-${lbl.anchorId}-${lbl.type}`}
+            x={lbl.x}
+            y={lbl.y}
+            fill={base.gold}
+            fontSize={11}
+            fontFamily="Cinzel_600SemiBold"
+            textAnchor="middle"
+            opacity={zoom >= TIER_3_ZOOM ? 0.65 : 0}
+          >
+            {lbl.text}
+          </SvgText>
+        ))}
       </G>
     </>
   );

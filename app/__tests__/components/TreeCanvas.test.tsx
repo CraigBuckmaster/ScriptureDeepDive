@@ -152,9 +152,7 @@ describe('TreeCanvas', () => {
     type: 'disciple',
   });
 
-  // BISECT: skipped while TreeCanvas has all associate rendering hidden
-  // behind BISECT_HIDE_ASSOCIATES. Re-enable when the flag flips back.
-  it.skip('consolidates association links into a single Path at normal zoom', () => {
+  it('consolidates association links into a single Path at normal zoom', () => {
     // Post-constant-canvas-render refactor: all 89+ dashed connectors
     // share a single <Path> with a multi-M `d` attribute, so zoom
     // transitions never mount new native views.
@@ -177,8 +175,7 @@ describe('TreeCanvas', () => {
     expect(mCount).toBe(3);
   });
 
-  // BISECT: skipped while TreeCanvas has all associate rendering hidden.
-  it.skip('fades the consolidated association-link Path to opacity 0 when clusters collapsed', () => {
+  it('fades the consolidated association-link Path to opacity 0 when clusters collapsed', () => {
     const links = [
       makeAssocLink('jesus', 'peter', 0),
       makeAssocLink('jesus', 'andrew', 1),
@@ -199,10 +196,12 @@ describe('TreeCanvas', () => {
     expect(badgeText).toBeTruthy();
   });
 
-  // BISECT: skipped while associate TreeNodes are filtered out in the canvas.
-  it.skip('always renders associate TreeNodes and forwards clustersCollapsed', () => {
-    // Associate nodes are no longer null-skipped when clusters collapse;
-    // they mount at initial render and use opacity inside TreeNode to hide.
+  it('renders associate TreeNodes once zoom crosses the reveal threshold and forwards clustersCollapsed', () => {
+    // Associate nodes are now mount-staggered: below TIER_2_ZOOM the
+    // reveal counter is 0 so associates are null-skipped to keep the
+    // native-view delta small during tier transitions. Above TIER_3_ZOOM
+    // the counter reaches the full extra count so they mount; they
+    // still receive clustersCollapsed=false at that zoom.
     const peter = makeNode('peter');
     peter.data.isAssociate = true;
     const jesus = makeNode('jesus');
@@ -211,7 +210,7 @@ describe('TreeCanvas', () => {
         {...defaultProps}
         nodes={[jesus, peter]}
         associationLinks={[makeAssocLink('jesus', 'peter', 0)]}
-        zoom={0.3}
+        zoom={1.0}
       />,
     );
     const json = tree.toJSON() as any;
@@ -219,10 +218,10 @@ describe('TreeCanvas', () => {
     const ids = treeNodes.map((n: any) => n.props?.node?.data?.id);
     expect(ids).toContain('jesus');
     expect(ids).toContain('peter');
-    // Both receive clustersCollapsed=true; TreeNode applies opacity=0
-    // to the associate while leaving jesus visible.
+    // At zoom 1.0 clusters are expanded (clustersCollapsed=false); the
+    // prop still flows through to each TreeNode.
     for (const n of treeNodes) {
-      expect(n.props?.clustersCollapsed).toBe(true);
+      expect(n.props?.clustersCollapsed).toBe(false);
     }
   });
 
