@@ -217,7 +217,7 @@ def populate_chapters(cur):
 
     content_dir = ROOT / 'content'
     for book_dir in sorted(content_dir.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
             continue
         book_id = book_dir.name
         for json_file in sorted(book_dir.glob('*.json')):
@@ -598,6 +598,41 @@ def populate_map_stories(cur):
              _json_str(s.get('places', [])),
              _json_str(s.get('regions', [])),
              _json_str(s.get('paths', [])))
+        )
+        count += 1
+    return count
+
+
+def populate_ancient_borders(cur):
+    """
+    Scaffold loader for epic #1314 / issue #1317.
+
+    Reads `content/meta/ancient-borders.json`, which is keyed by the app's
+    8 era IDs (primeval / patriarch / exodus / judges / kingdom / prophets /
+    exile / nt) and whose values are GeoJSON FeatureCollections. Any
+    non-era top-level keys (e.g. `attribution`) are skipped.
+
+    Until the polygon-authoring Chat session runs, every era's feature
+    list is empty — the table still gets populated so the runtime code
+    can load by era without a null check.
+    """
+    path = META / 'ancient-borders.json'
+    if not path.exists():
+        return 0
+    data = _load_json(path)
+    valid_eras = {
+        'primeval', 'patriarch', 'exodus', 'judges',
+        'kingdom', 'prophets', 'exile', 'nt',
+    }
+    count = 0
+    for era, fc in data.items():
+        if era not in valid_eras:
+            continue
+        if not isinstance(fc, dict) or fc.get('type') != 'FeatureCollection':
+            continue
+        cur.execute(
+            'INSERT INTO ancient_borders (era, features_json) VALUES (?, ?)',
+            (era, _json_str(fc)),
         )
         count += 1
     return count
@@ -1415,7 +1450,7 @@ def populate_content_library(cur):
     count = 0
     content_dir = ROOT / 'content'
     for book_dir in sorted(content_dir.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
             continue
         book_id = book_dir.name
         info = book_info.get(book_id)

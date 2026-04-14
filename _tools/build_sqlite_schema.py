@@ -168,6 +168,15 @@ CREATE TABLE map_stories (
   paths_json TEXT
 );
 
+-- Ancient political borders per era (Patriarchal Canaan, Divided Kingdom,
+-- Roman provinces, etc.). One row per era; features_json is a GeoJSON
+-- FeatureCollection the app loads into a ShapeSource. Scaffold for #1317;
+-- real polygons land in a follow-up Chat session.
+CREATE TABLE ancient_borders (
+  era TEXT PRIMARY KEY,
+  features_json TEXT NOT NULL
+);
+
 CREATE TABLE word_studies (
   id TEXT PRIMARY KEY,
   language TEXT NOT NULL,

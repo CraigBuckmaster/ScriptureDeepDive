@@ -19,6 +19,7 @@ import { useMapZoom } from '../hooks/useMapZoom';
 import { useMapTileCache } from '../hooks/useMapTileCache';
 import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
 import { EraFilterBar } from '../components/tree/EraFilterBar';
+import { AncientBorderLayer } from '../components/map/AncientBorderLayer';
 import { PlaceMarkerList } from '../components/map/PlaceMarkerList';
 import { StoryOverlays } from '../components/map/StoryOverlays';
 import { StoryPicker } from '../components/map/StoryPicker';
@@ -95,11 +96,15 @@ function MapScreen({ route, navigation }: {
   // Map of placeId → stories that include it
   const placeToStories = useMemo(() => buildPlaceToStoriesMap(stories), [stories]);
 
-  /** Select a story → overlays, camera fit, panel open. */
+  /** Select a story → overlays, camera fit, panel open, era auto-switch. */
   const selectStory = useCallback((story: MapStory) => {
     setActiveStory(story);
     setShowPanel(true);
     setSelectedPlace(null);
+    // Auto-switch the ancient-border layer to match the story's era
+    // (scaffold for #1317). Preserves the user's 'all' selection only
+    // when no era info is present on the story.
+    if (story.era) setActiveEra(story.era);
 
     try {
       const placeIds: string[] = JSON.parse(story.places_json ?? '[]');
@@ -244,6 +249,8 @@ function MapScreen({ route, navigation }: {
             zoomLevel: BIBLICAL_REGION.zoom,
           }}
         />
+        {/* Ancient political borders for the active era (Biblical mode only) */}
+        <AncientBorderLayer era={activeEra} showModern={showModern} />
         <PlaceMarkerList
           places={places}
           showModern={showModern}
