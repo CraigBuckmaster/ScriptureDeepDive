@@ -67,10 +67,16 @@ interface Props {
   /** Current committed zoom scale (#1291). Controls per-tier visibility
    *  and associate-cluster collapse-to-badge below {@link TIER_3_ZOOM}. */
   zoom?: number;
+  /** Testing hook: skip the requestAnimationFrame-based staggered reveal
+   *  and render the entire target set immediately. Useful for test
+   *  snapshots / synchronous render assertions. Production renders leave
+   *  this undefined so the crash-preventing stagger runs as designed. */
+  skipStagger?: boolean;
 }
 
 export const TreeCanvas = memo(function TreeCanvas({
   nodes, links, marriageBars, spouseConnectors,
+  skipStagger = false,
   associationLinks = [],
   associateBloomLabels = [],
   associateTrails = [],
@@ -174,13 +180,20 @@ export const TreeCanvas = memo(function TreeCanvas({
     return totalExtraCount;
   }, [zoom, tier2Count, totalExtraCount]);
 
-  // Initial state matches the target for the FIRST render's zoom — so
-  // initial mount instantly shows everything the user should see. iOS
-  // handles a single all-at-once mount fine; it's transitions that
-  // crash. Only zoom CHANGES (after first render) animate via the
-  // staggered reveal below.
-  const [revealedExtra, setRevealedExtra] = React.useState(() => targetRevealed);
-  const lastTargetRef = React.useRef(targetRevealed);
+  // Initial state is 0 — the reveal animation fires on the very first
+  // commit and mounts extras in batches of REVEAL_BATCH_PER_FRAME per
+  // animation frame. The earlier shortcut of seeding with `targetRevealed`
+  // to avoid a startup waterfall crashed iOS when the initial zoom put
+  // targetRevealed near its maximum (e.g. z=0.45 with low TIER_3_ZOOM,
+  // post-#1331): that becomes a single-commit mount of ~198 TreeNodes
+  // plus paths/trails/labels/badges — the exact batch the stagger was
+  // meant to prevent. Starting at 0 guarantees the first frame only
+  // mounts tier-1 nodes; the rest animate in over ~0.7 s. Brief startup
+  // waterfall is acceptable; a crash is not.
+  const [revealedExtra, setRevealedExtra] = React.useState(
+    skipStagger ? targetRevealed : 0,
+  );
+  const lastTargetRef = React.useRef(skipStagger ? targetRevealed : 0);
   React.useEffect(() => {
     // Skip the no-op case where target hasn't actually changed.
     if (lastTargetRef.current === targetRevealed) return;
