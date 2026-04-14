@@ -41,6 +41,7 @@ const samplePerson = {
 jest.mock('@/db/content', () => ({
   getPerson: jest.fn().mockResolvedValue(samplePerson),
   hasPersonJourney: jest.fn().mockResolvedValue(false),
+  hasPersonGeography: jest.fn().mockResolvedValue(false),
   getPersonChildren: jest.fn().mockResolvedValue([
     { id: 'isaac', name: 'Isaac', era: 'patriarch' },
     { id: 'ishmael', name: 'Ishmael', era: 'patriarch' },

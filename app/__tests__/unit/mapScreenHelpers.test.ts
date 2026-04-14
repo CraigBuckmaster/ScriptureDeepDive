@@ -17,6 +17,15 @@ jest.mock('@/hooks/useMapStories', () => ({ useMapStories: () => ({ stories: [],
 jest.mock('@/hooks/useMapZoom', () => ({ useMapZoom: () => ({ zoomLevel: 5, onRegionDidChange: jest.fn() }) }));
 jest.mock('@/hooks/useLandscapeUnlock', () => ({ useLandscapeUnlock: jest.fn() }));
 jest.mock('@/hooks/useMapTileCache', () => ({ useMapTileCache: jest.fn() }));
+jest.mock('@/hooks/usePersonArc', () => ({
+  usePersonArc: () => ({ arcData: null, isLoading: false }),
+}));
+jest.mock('@/hooks/useAncientBorders', () => ({
+  useAncientBorders: () => ({
+    borders: { type: 'FeatureCollection', features: [] },
+    isLoading: false,
+  }),
+}));
 
 import { buildPlaceToStoriesMap, STYLE_ANCIENT, STYLE_MODERN } from '@/screens/MapScreen';
 import type { MapStory } from '@/types';

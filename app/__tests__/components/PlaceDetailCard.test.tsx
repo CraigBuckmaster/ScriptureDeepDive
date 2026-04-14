@@ -1,6 +1,11 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react-native';
 import { renderWithProviders } from '../helpers/renderWithProviders';
+
+jest.mock('@/db/content', () => ({
+  getPeopleAtPlace: jest.fn().mockResolvedValue([]),
+}));
+
 import { PlaceDetailCard, formatCoord } from '@/components/map/PlaceDetailCard';
 import type { Place, MapStory } from '@/types';
 

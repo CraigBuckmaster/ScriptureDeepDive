@@ -21,7 +21,9 @@ import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { AncientBorderLayer } from '../components/map/AncientBorderLayer';
 import { PlaceMarkerList } from '../components/map/PlaceMarkerList';
+import { PersonArcLayer } from '../components/map/PersonArcLayer';
 import { StoryOverlays } from '../components/map/StoryOverlays';
+import { usePersonArc } from '../hooks/usePersonArc';
 import { StoryPicker } from '../components/map/StoryPicker';
 import { StoryPanel } from '../components/map/StoryPanel';
 import { PlaceDetailCard } from '../components/map/PlaceDetailCard';
@@ -73,6 +75,7 @@ function MapScreen({ route, navigation }: {
   useMapTileCache(STYLE_ANCIENT);
   const initialStoryId = route?.params?.storyId;
   const initialPlaceId = route?.params?.placeId;
+  const initialPersonId = route?.params?.personId;
 
   const { places, isLoading: placesLoading } = usePlaces();
   const { stories, isLoading: storiesLoading } = useMapStories();
@@ -160,9 +163,14 @@ function MapScreen({ route, navigation }: {
     panToPlace(place);
   }, [panToPlace]);
 
-  // Deep-link handling — auto-select story/place from route params
+  // Person arc (#1324). Resolving the arc is async; when the data lands,
+  // the map fits bounds to the full arc.
+  const { arcData: personArc } = usePersonArc(initialPersonId);
+
+  // Deep-link handling — auto-select story/place/person from route params
   const lastProcessedStory = useRef<string | null>(null);
   const lastProcessedPlace = useRef<string | null>(null);
+  const lastProcessedPerson = useRef<string | null>(null);
   useEffect(() => {
     if (initialStoryId && stories.length && places.length) {
       if (lastProcessedStory.current === initialStoryId) return;
@@ -179,8 +187,40 @@ function MapScreen({ route, navigation }: {
         panToPlace(place);
         lastProcessedPlace.current = initialPlaceId;
       }
+    } else if (
+      initialPersonId &&
+      personArc &&
+      personArc.stops.length > 0 &&
+      lastProcessedPerson.current !== initialPersonId
+    ) {
+      // Fit the camera to the arc's bounding box so the full journey is
+      // visible. Single-stop arcs just recentre on that place.
+      if (personArc.stops.length === 1) {
+        const { place } = personArc.stops[0];
+        panToPlace(place);
+      } else if (cameraRef.current) {
+        let minLon = Infinity, maxLon = -Infinity, minLat = Infinity, maxLat = -Infinity;
+        for (const s of personArc.stops) {
+          const { longitude: lon, latitude: lat } = s.place;
+          if (lon < minLon) minLon = lon;
+          if (lon > maxLon) maxLon = lon;
+          if (lat < minLat) minLat = lat;
+          if (lat > maxLat) maxLat = lat;
+        }
+        cameraRef.current.fitBounds(
+          [maxLon, maxLat],
+          [minLon, minLat],
+          [insets.top + 80, 40, 120, 40],
+          700,
+        );
+      }
+      lastProcessedPerson.current = initialPersonId;
     }
-  }, [initialStoryId, initialPlaceId, stories.length, places.length, selectStory, panToPlace]);
+  }, [
+    initialStoryId, initialPlaceId, initialPersonId,
+    stories.length, places.length, personArc,
+    selectStory, panToPlace, insets.top,
+  ]);
 
   // Handle chapter link navigation
   const handleChapterPress = useCallback((story: MapStory) => {
@@ -262,6 +302,8 @@ function MapScreen({ route, navigation }: {
         {activeStory && (
           <StoryOverlays story={activeStory} zoomLevel={zoomLevel} />
         )}
+        {/* Person geographic arc (#1324) */}
+        {personArc?.stops?.length ? <PersonArcLayer stops={personArc.stops} /> : null}
       </MapView>
 
       {/* Search bar + era filter — overlaid at top below status bar */}

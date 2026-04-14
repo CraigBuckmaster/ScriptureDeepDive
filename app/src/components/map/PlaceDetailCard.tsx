@@ -12,11 +12,12 @@
  * #1323 and #1325.
  */
 
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { X } from 'lucide-react-native';
 import { useNavigation } from '@react-navigation/native';
 import { BadgeChip } from '../BadgeChip';
+import { getPeopleAtPlace } from '../../db/content';
 import {
   useTheme,
   spacing,
@@ -116,6 +117,16 @@ export function PlaceDetailCard({
 
   const [showAllScholarNotes, setShowAllScholarNotes] = useState(false);
   const [showAllHistory, setShowAllHistory] = useState(false);
+
+  // "People who came here" — resolved on demand when the card opens (#1324).
+  const [peopleHere, setPeopleHere] = useState<{ id: string; name: string }[]>([]);
+  useEffect(() => {
+    let cancelled = false;
+    getPeopleAtPlace(place.id).then((rows) => {
+      if (!cancelled) setPeopleHere(rows);
+    });
+    return () => { cancelled = true; };
+  }, [place.id]);
 
   const visibleScholarNotes = showAllScholarNotes ? scholarNotes : scholarNotes.slice(0, 2);
   const visibleHistory = showAllHistory ? testamentHistory : testamentHistory.slice(0, 4);
@@ -250,6 +261,39 @@ export function PlaceDetailCard({
         <Text style={[styles.empty, { color: base.textMuted }]}>
           No stories link to this place yet.
         </Text>
+      )}
+
+      {/* People who came here (#1324) — tap a chip to open their arc */}
+      {peopleHere.length > 0 && (
+        <View style={styles.sectionBlock}>
+          <Text style={[styles.sectionLabel, { color: base.textMuted }]}>
+            PEOPLE WHO CAME HERE
+          </Text>
+          <View style={styles.storiesRow}>
+            {peopleHere.map((p) => (
+              <TouchableOpacity
+                key={p.id}
+                onPress={() => {
+                  lightImpact();
+                  (navigation as any).navigate('Map', { personId: p.id });
+                }}
+                accessibilityRole="button"
+                accessibilityLabel={`Show ${p.name}'s geographic arc`}
+                style={[
+                  styles.storyChip,
+                  { backgroundColor: '#e09050' + '1A', borderColor: '#e09050' + '40' },
+                ]}
+              >
+                <Text
+                  style={[styles.storyChipText, { color: '#e09050' }]}
+                  numberOfLines={1}
+                >
+                  {p.name}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </View>
       )}
 
       {/* Through the Ages — cross-testament history (#1325) */}

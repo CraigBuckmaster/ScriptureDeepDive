@@ -907,6 +907,32 @@
           "ref": "Jas 2:21-23",
           "note": "Faith was made complete by Abraham's actions — belief and obedience inseparable."
         }
+      ],
+      "geography": [
+        {
+          "place_id": "ur",
+          "era": "patriarch",
+          "event": "[placeholder] Born in Ur of the Chaldeans",
+          "order": 1
+        },
+        {
+          "place_id": "haran",
+          "era": "patriarch",
+          "event": "[placeholder] Lived with father Terah until the call of God",
+          "order": 2
+        },
+        {
+          "place_id": "shechem",
+          "era": "patriarch",
+          "event": "[placeholder] First altar built in Canaan at the oak of Moreh",
+          "order": 3
+        },
+        {
+          "place_id": "hebron",
+          "era": "patriarch",
+          "event": "[placeholder] Settled at the oaks of Mamre; bought the cave of Machpelah",
+          "order": 4
+        }
       ]
     },
     {
@@ -5502,6 +5528,38 @@
         {
           "ref": "2 Pet 3:15-16",
           "note": "Peter acknowledges Paul's letters as Scripture — the persecutor's words become the church's canon."
+        }
+      ],
+      "geography": [
+        {
+          "place_id": "tarsus",
+          "era": "nt",
+          "event": "[placeholder] Born in Tarsus, Roman citizen of Cilicia",
+          "order": 1
+        },
+        {
+          "place_id": "jerusalem",
+          "era": "nt",
+          "event": "[placeholder] Studied under Gamaliel",
+          "order": 2
+        },
+        {
+          "place_id": "damascus",
+          "era": "nt",
+          "event": "[placeholder] Conversion on the road to Damascus",
+          "order": 3
+        },
+        {
+          "place_id": "antioch-s",
+          "era": "nt",
+          "event": "[placeholder] Commissioned with Barnabas for the first journey",
+          "order": 4
+        },
+        {
+          "place_id": "rome",
+          "era": "nt",
+          "event": "[placeholder] Arrived in Rome under house arrest",
+          "order": 5
         }
       ]
     },

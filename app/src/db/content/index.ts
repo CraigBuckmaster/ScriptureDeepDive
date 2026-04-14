@@ -16,7 +16,8 @@ export {
 export { getAllScholars, getScholar, getScholarsForBook } from './scholars';
 export {
   getAllPeople, getPerson, getPersonChildren, getSpousesOf,
-  getPersonJourney, getPersonLegacyRefs, hasPersonJourney, getPeopleWithJourneys,
+  getPersonJourney, getPersonLegacyRefs, hasPersonJourney, hasPersonGeography,
+  getPeopleWithJourneys, getPeopleAtPlace,
 } from './people';
 export { getPlaces, getPlace, getMapStories, getMapStory, getAncientBorders } from './places';
 export {

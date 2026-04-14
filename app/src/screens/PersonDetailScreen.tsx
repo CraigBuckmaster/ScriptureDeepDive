@@ -10,7 +10,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
-import { getPerson, hasPersonJourney } from '../db/content';
+import { getPerson, hasPersonJourney, hasPersonGeography } from '../db/content';
 import { PersonSidebar } from '../components/PersonSidebar';
 import { useTheme } from '../theme';
 import type { Person } from '../types';
@@ -23,11 +23,13 @@ function PersonDetailScreen() {
   const { personId } = route.params ?? {};
   const [person, setPerson] = useState<Person | null>(null);
   const [hasJourney, setHasJourney] = useState(false);
+  const [hasGeography, setHasGeography] = useState(false);
 
   useEffect(() => {
     if (personId) {
       getPerson(personId).then(setPerson);
       hasPersonJourney(personId).then(setHasJourney);
+      hasPersonGeography(personId).then(setHasGeography);
     }
   }, [personId]);
 
@@ -57,6 +59,11 @@ function PersonDetailScreen() {
     navigation.navigate('PersonJourney', { personId: pid });
   }, [navigation]);
 
+  // "View on Map" — opens MapScreen with the person arc layer (#1324)
+  const handleMapPress = useCallback((pid: string) => {
+    (navigation as any).navigate('Map', { personId: pid });
+  }, [navigation]);
+
   return (
     <View style={[styles.container, { backgroundColor: base.bg }]}>
       <PersonSidebar
@@ -67,7 +74,9 @@ function PersonDetailScreen() {
         onChapterPress={handleChapterPress}
         onTreePress={handleTreePress}
         onJourneyPress={handleJourneyPress}
+        onMapPress={handleMapPress}
         hasJourney={hasJourney}
+        hasGeography={hasGeography}
       />
     </View>
   );

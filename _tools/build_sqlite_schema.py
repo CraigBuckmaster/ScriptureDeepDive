@@ -110,7 +110,10 @@ CREATE TABLE people (
   -- Non-genealogical relationship to anchor disconnected figures (#1288).
   -- association_type ∈ {disciple, contemporary, adversary, servant}.
   associated_with TEXT,
-  association_type TEXT
+  association_type TEXT,
+  -- Chronological geographic arc — {place_id, era, event, order} objects.
+  -- Feeds the person-arc layer on the map (#1324).
+  geography_json TEXT
 );
 
 CREATE TABLE people_journeys (

@@ -86,6 +86,25 @@ jest.mock('@/hooks/useMapTileCache', () => ({
   useMapTileCache: jest.fn(),
 }));
 
+jest.mock('@/hooks/usePersonArc', () => ({
+  usePersonArc: () => ({ arcData: null, isLoading: false }),
+}));
+
+jest.mock('@/hooks/useAncientBorders', () => ({
+  useAncientBorders: () => ({
+    borders: { type: 'FeatureCollection', features: [] },
+    isLoading: false,
+  }),
+}));
+
+jest.mock('@/db/content', () => ({
+  getPeopleAtPlace: jest.fn().mockResolvedValue([]),
+  getAncientBorders: jest.fn().mockResolvedValue({
+    type: 'FeatureCollection',
+    features: [],
+  }),
+}));
+
 // ── Child component stubs ─────────────────────────────────────────
 // Note: the shared `@maplibre/maplibre-react-native` mock from jest.setup.js
 // already renders MapView/Camera/ShapeSource/Layer primitives as stub Views

@@ -54,7 +54,7 @@ export type ExploreStackParamList = {
   ExploreMenu: undefined;
   GenealogyTree: { personId?: string } | undefined;
   PersonDetail: { personId: string };
-  Map: { storyId?: string; placeId?: string };
+  Map: { storyId?: string; placeId?: string; personId?: string };
   Timeline: { eventId?: string };
   WordStudyBrowse: undefined;
   WordStudyDetail: { wordId: string };

@@ -492,11 +492,15 @@ def populate_people(cur):
         )
         # spouseOf and spouse_of are both accepted (legacy + recent style).
         spouse = p.get('spouseOf') or p.get('spouse_of')
+        geography = p.get('geography')
+        geography_json = (
+            _json_str(geography) if isinstance(geography, list) else None
+        )
         cur.execute(
             'INSERT INTO people (id, name, gender, father, mother, spouse_of, '
             'era, dates, role, type, bio, scripture_role, refs_json, chapter_link, '
-            'associated_with, association_type) '
-            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            'associated_with, association_type, geography_json) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (p['id'], p['name'], p.get('gender'), p.get('father'),
              p.get('mother'), spouse, p.get('era'),
              p.get('dates'), p.get('role'), ptype, p.get('bio'),
@@ -504,7 +508,8 @@ def populate_people(cur):
              _json_str(p.get('refs', [])),
              p.get('chapter'),
              p.get('associated_with'),
-             p.get('association_type'))
+             p.get('association_type'),
+             geography_json)
         )
         count += 1
 

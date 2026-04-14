@@ -135,6 +135,24 @@ export interface Person {
   associated_with: string | null;
   /** Nature of the association (#1288). */
   association_type: AssociationType | null;
+  /**
+   * JSON array of `PersonGeographyStop` — chronological geographic arc
+   * across the person's life. Populated by a Chat session (#1324);
+   * runtime code renders it as a LineLayer + numbered markers.
+   */
+  geography_json?: string | null;
+}
+
+/** One stop on a person's life geographic arc. */
+export interface PersonGeographyStop {
+  /** References a row in places.json / places table. */
+  place_id: string;
+  /** App era id (patriarch / nt / kingdom / …). */
+  era: string;
+  /** 10–15 word description of what happened at this location. */
+  event: string;
+  /** 1-based chronological order within the person's arc. */
+  order: number;
 }
 
 /** Row from people_journeys table (#1125). */

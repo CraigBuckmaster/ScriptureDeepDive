@@ -69,3 +69,44 @@ export async function hasPersonJourney(personId: string): Promise<boolean> {
   );
   return (row?.c ?? 0) > 0;
 }
+
+/**
+ * Quick existence check for #1324's `geography` array — lets the
+ * PersonSidebar decide whether to surface the "View on Map" action
+ * without loading and parsing the full JSON.
+ */
+export async function hasPersonGeography(personId: string): Promise<boolean> {
+  const row = await getDb().getFirstAsync<{ geography_json: string | null }>(
+    'SELECT geography_json FROM people WHERE id = ?',
+    [personId],
+  );
+  const json = row?.geography_json;
+  if (!json) return false;
+  try {
+    const parsed = JSON.parse(json);
+    return Array.isArray(parsed) && parsed.length > 0;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * People whose `geography_json` arc references a given place_id. Powers
+ * the "People who came here" section on the PlaceDetailCard (#1324).
+ *
+ * Uses LIKE with a JSON-quoted place_id — safe enough for the fixed
+ * place-id format (lowercase, alphanumeric + hyphens) and cheaper than
+ * parsing every row's JSON client-side.
+ */
+export async function getPeopleAtPlace(
+  placeId: string,
+): Promise<{ id: string; name: string }[]> {
+  // Guard: reject anything that can't occur in a valid place_id so the
+  // LIKE pattern is always injection-safe.
+  if (!/^[a-z0-9_\-]+$/i.test(placeId)) return [];
+  const pattern = `%"place_id":"${placeId}"%`;
+  return getDb().getAllAsync<{ id: string; name: string }>(
+    'SELECT id, name FROM people WHERE geography_json LIKE ? ORDER BY name',
+    [pattern],
+  );
+}
