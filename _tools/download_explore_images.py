@@ -23,7 +23,7 @@ import sys
 import urllib.request
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 STAGING_DIR = ROOT / "_tools" / "art_staging" / "priority"
 
 # ── Images to download ──────────────────────────────────────────────────
@@ -118,14 +118,21 @@ def download_file(url: str, dest: Path, description: str) -> bool:
                 print(f"  ⚠ Response too small ({len(data)} bytes), likely an error page")
                 return False
             dest.write_bytes(data)
-            print(f"  ✓ {len(data):,} bytes → {dest.name}")
+            print(f"  OK {len(data):,} bytes -> {dest.name}")
             return True
     except Exception as e:
-        print(f"  ✗ Failed: {e}")
+        print(f"  X  Failed: {e}")
         return False
 
 
 def main():
+    # Force UTF-8 stdout on Windows (cp1252 can't handle Unicode symbols)
+    import sys
+    if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
+        try:
+            sys.stdout.reconfigure(encoding='utf-8')
+        except Exception:
+            pass
     STAGING_DIR.mkdir(parents=True, exist_ok=True)
     print(f"Staging directory: {STAGING_DIR}\n")
 
@@ -157,7 +164,7 @@ def main():
     if failed:
         print(f"Failed: {len(failed)}")
         for fn, desc in failed:
-            print(f"  ✗ {fn} — {desc}")
+            print(f"  X  {fn} — {desc}")
         print("\nFor failed downloads, try manually:")
         for fn, desc in failed:
             primary = next(u for f, u, d in DOWNLOADS if f == fn)
