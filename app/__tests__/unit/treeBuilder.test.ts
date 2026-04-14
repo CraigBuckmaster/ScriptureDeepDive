@@ -168,6 +168,42 @@ describe('computeFullLayout', () => {
     expect(result.marriageBars).toEqual([]);
   });
 
+  it('excludes allegorical figures from the tree (Card #1289)', () => {
+    const { computeFullLayout } = require('../../src/utils/treeBuilder');
+    const people: Person[] = [
+      makePerson('adam'),
+      makePerson('seth', 'adam'),
+      makePerson('enosh', 'seth'),
+      makePerson('jesus', 'enosh'),
+      // Three allegorical figures that should NOT appear on the tree.
+      { ...makePerson('oholah'), type: 'allegorical', era: 'prophets' },
+      { ...makePerson('oholibah'), type: 'allegorical', era: 'prophets' },
+      { ...makePerson('gog'), type: 'allegorical', era: 'prophets' },
+    ];
+    const result = computeFullLayout(people);
+    const ids = new Set(result.nodes.map((n: any) => n.data.id));
+    expect(ids.has('oholah')).toBe(false);
+    expect(ids.has('oholibah')).toBe(false);
+    expect(ids.has('gog')).toBe(false);
+    // Real people still render.
+    expect(ids.has('adam')).toBe(true);
+    expect(ids.has('jesus')).toBe(true);
+  });
+
+  it('does not break allegorical filtering when an allegorical person has a spouse_of reference', () => {
+    // Defensive: even if an allegorical entry has spouse_of, it should
+    // still be filtered out and its phantom partner shouldn't be created.
+    const { computeFullLayout } = require('../../src/utils/treeBuilder');
+    const people: Person[] = [
+      makePerson('adam'),
+      { ...makePerson('oholah'), type: 'allegorical', spouse_of: 'adam' },
+    ];
+    const result = computeFullLayout(people);
+    const ids = new Set(result.nodes.map((n: any) => n.data.id));
+    expect(ids.has('oholah')).toBe(false);
+    expect(result.marriageBars).toHaveLength(0);
+  });
+
   it('assigns structural tiers to nodes', () => {
     const { computeFullLayout } = require('../../src/utils/treeBuilder');
     const people: Person[] = [

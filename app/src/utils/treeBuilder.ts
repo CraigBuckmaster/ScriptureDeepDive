@@ -561,8 +561,14 @@ function layOutAssociateType(
 export function computeFullLayout(
   people: Person[],
 ): TreeLayoutResult {
-  const spineIds = computeSpineIds(people);
-  const root = buildHierarchy(people, spineIds);
+  // Card #1289: allegorical figures (e.g. Oholah, Oholibah, Gog) are
+  // kept in the content DB for commentary but must never appear on the
+  // genealogy tree. Strip them before any spine / hierarchy / bloom
+  // computation so downstream code never has to know about them.
+  const realPeople = people.filter((p) => p.type !== 'allegorical');
+
+  const spineIds = computeSpineIds(realPeople);
+  const root = buildHierarchy(realPeople, spineIds);
 
   if (!root) {
     return {
@@ -574,7 +580,7 @@ export function computeFullLayout(
   }
 
   const treeNodes = layoutTree(root);
-  const allTreeNodes = positionSpouses(treeNodes, people, spineIds);
+  const allTreeNodes = positionSpouses(treeNodes, realPeople, spineIds);
 
   // Organic layout overrides (#1291):
   //   1. Fan Jacob's 12 sons in a tribal bloom arc beneath him
@@ -593,8 +599,8 @@ export function computeFullLayout(
   // Partition into:
   //   - associated members: people with valid `associated_with` → cluster near anchor
   //   - unanchored: everyone else → era-grouped grid (legacy behavior)
-  const disconnected = findDisconnectedPeople(people, treeNodeIds);
-  const peopleById = new Map(people.map((p) => [p.id, p]));
+  const disconnected = findDisconnectedPeople(realPeople, treeNodeIds);
+  const peopleById = new Map(realPeople.map((p) => [p.id, p]));
 
   // associated_with is "valid" when the anchor exists in people.json. The anchor
   // itself can be on the main tree OR in the disconnected era-grid — either way,
@@ -656,7 +662,7 @@ export function computeFullLayout(
     });
 
     // Also position spouses of disconnected people
-    for (const p of people) {
+    for (const p of realPeople) {
       if (p.spouse_of && group.some((g) => g.id === p.spouse_of)) {
         const partner = disconnectedNodes.find((n) => n.data.id === p.spouse_of);
         if (partner && !treeNodeIds.has(p.id) && !associatedMemberIds.has(p.id)) {
