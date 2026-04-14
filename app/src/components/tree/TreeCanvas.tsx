@@ -25,20 +25,23 @@ import { TIER_3_ZOOM, getVisibleTier } from '../../utils/genealogyOrganic';
 import { logger } from '../../utils/logger';
 import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson, AssociationLink, AssociateBloomLabel, AssociateTrail } from '../../utils/treeBuilder';
 
-// *** BISECT FLAGS — finer-grained than the previous all-or-nothing flag.
-// PR #1313 confirmed associate rendering is the crash trigger. This build
-// adds the associate TreeNodes back (89 Circle+text instances) but keeps
-// the consolidated dashed-bezier path, trails, labels, and badges hidden.
-// If this build still loads and zooms freely, the crash is in the paths/
-// labels/badges and not the nodes themselves. If it crashes, the 89 node
-// transitions are the cause.
+// *** BISECT FLAGS — paths/labels/badges still hidden so this PR isolates
+// the staggered-mount fix to associate TreeNodes only. Once that proves
+// stable, follow-up PRs re-enable the rest with similar staggering if
+// needed.
 const BISECT = {
   hideAssociationPath: true,
   hideTrails: true,
   hideLabels: true,
   hideBadges: true,
-  hideAssociateNodes: false,    // ← re-enabled this round
+  hideAssociateNodes: false,
 } as const;
+
+/** How many associate TreeNodes to mount per animation frame. Smaller =
+ *  smoother fade-in but slower full reveal; larger = faster reveal but
+ *  bigger per-frame native-view allocation cost. 5/frame ≈ 18 frames
+ *  ≈ 0.3 s for 89 associates. */
+const ASSOCIATE_REVEAL_BATCH = 5;
 
 interface Props {
   nodes: LayoutNode[];
@@ -107,6 +110,46 @@ export const TreeCanvas = memo(function TreeCanvas({
     [associationLinks],
   );
 
+  // Stable index per associate so the staggered reveal can mount them in
+  // a deterministic order (associationLinks order = data order). Switching
+  // anchors mid-cluster would interleave; that's fine, it just means the
+  // reveal sweeps through anchors left-to-right.
+  const associateIndexById = useMemo(() => {
+    const m = new Map<string, number>();
+    associationLinks.forEach((al, i) => m.set(al.memberId, i));
+    return m;
+  }, [associationLinks]);
+
+  // Staggered reveal counter — animates from 0 → associationLinks.length
+  // when clusters un-collapse, and back to 0 when they re-collapse.
+  // Mounting / unmounting in batches of ASSOCIATE_REVEAL_BATCH per frame
+  // keeps each iOS commit's native-view delta small enough that the
+  // compositor doesn't choke.
+  const [revealedAssociates, setRevealedAssociates] = React.useState(0);
+  React.useEffect(() => {
+    const target = clustersCollapsed ? 0 : associationLinks.length;
+    let current = revealedAssociates;
+    if (current === target) return;
+    let cancelled = false;
+    const tick = () => {
+      if (cancelled) return;
+      const direction = target > current ? 1 : -1;
+      current += direction * ASSOCIATE_REVEAL_BATCH;
+      if ((direction > 0 && current >= target)
+          || (direction < 0 && current <= target)) {
+        current = target;
+      }
+      setRevealedAssociates(current);
+      if (current !== target) requestAnimationFrame(tick);
+    };
+    const handle = requestAnimationFrame(tick);
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(handle);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [clustersCollapsed, associationLinks.length]);
+
   return (
     <>
       {/* ── Background definitions ─────────────────── */}
@@ -172,6 +215,16 @@ export const TreeCanvas = memo(function TreeCanvas({
         {nodes.map((node) => {
           if (BISECT.hideAssociateNodes && associateIdSet.has(node.data.id)) {
             return null;
+          }
+          // Staggered reveal: associates only mount once their index has
+          // been reached by the reveal counter. At z<TIER_3 this is 0
+          // (none), so initial mount stays light. Crossing the
+          // threshold animates the counter up over ~0.3 s in batches
+          // of ASSOCIATE_REVEAL_BATCH per frame so iOS's compositor
+          // never has to add too many native subviews in a single commit.
+          if (associateIdSet.has(node.data.id)) {
+            const idx = associateIndexById.get(node.data.id) ?? 0;
+            if (idx >= revealedAssociates) return null;
           }
           const dimmed = filterEra !== null
             && node.data.era !== filterEra
