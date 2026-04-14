@@ -17,7 +17,7 @@ import { TreeLink } from './TreeLink';
 import { MarriageBarSvg } from './MarriageBarSvg';
 import { SpouseConnectorSvg } from './SpouseConnectorSvg';
 import { TreeNode } from './TreeNode';
-import { TIER_2_ZOOM, TIER_3_ZOOM, getVisibleTier, getPersonTier, bezierPath } from '../../utils/genealogyOrganic';
+import { TIER_2_ZOOM, TIER_3_ZOOM, getVisibleTier, getPersonTier } from '../../utils/genealogyOrganic';
 import { isMessianic } from '../../utils/messianicLine';
 import { logger } from '../../utils/logger';
 import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson, AssociationLink, AssociateBloomLabel, AssociateTrail } from '../../utils/treeBuilder';
@@ -115,12 +115,17 @@ export const TreeCanvas = memo(function TreeCanvas({
     [associationLinks],
   );
 
-  // All dashed-bezier associate connectors consolidated into ONE Path
-  // string. 89 individual `<AssociationLinkSvg>` components → 1 native
-  // CAShapeLayer. Tier-3 zoom transitions flip one opacity value instead
-  // of mounting 89 layers (see #1308, #1329).
+  // All associate connectors consolidated into ONE Path string using
+  // STRAIGHT lines (not bezier). 89 individual `<AssociationLinkSvg>`
+  // components → 1 native CAShapeLayer. Straight-line geometry keeps
+  // the consolidated Path cheap enough to first-rasterize at opacity
+  // 0.55 at the default zoom — the bezier version crashed iOS's
+  // compositor when it had to evaluate 89 cubic curves + dash positions
+  // in a single paint (device log, post-#1331 / #1332).
   const associationPathD = useMemo(
-    () => associationLinks.map((al) => bezierPath(al.source, al.target)).join(' '),
+    () => associationLinks
+      .map((al) => `M ${al.source.x} ${al.source.y} L ${al.target.x} ${al.target.y}`)
+      .join(' '),
     [associationLinks],
   );
 
