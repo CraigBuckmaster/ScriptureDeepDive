@@ -152,8 +152,15 @@ CREATE TABLE places (
   type TEXT NOT NULL,
   priority INTEGER DEFAULT 2,
   label_dir TEXT DEFAULT 'n',
-  refs_json TEXT,          -- JSON array of verse-ref strings (Card #1271)
-  confidence INTEGER       -- 1–1000 identification confidence (Card #1271)
+  refs_json TEXT,               -- JSON array of verse-ref strings (Card #1271)
+  confidence INTEGER,           -- 1–1000 identification confidence (Card #1271)
+  -- Enrichment layer (#1323)
+  description TEXT,             -- 50-100 words of geographic + theological context
+  significance TEXT,            -- 1-sentence hook for the card header
+  key_verses_json TEXT,         -- JSON array of verse-ref strings
+  scholar_notes_json TEXT,      -- JSON array of {scholar_id, tradition, note, ref}
+  -- Cross-testament history (#1325)
+  testament_history_json TEXT   -- JSON array of {ref, testament: 'OT'|'NT', event, era}
 );
 
 CREATE TABLE map_stories (

@@ -196,6 +196,34 @@ export interface Place {
   refs_json?: string | null;
   /** 1–1000 identification confidence from OpenBible.info (Card #1271). */
   confidence?: number | null;
+  // ── Enrichment layer (#1323) ───────────────────────────────────
+  /** 50–100 words of geographic + theological context. */
+  description?: string | null;
+  /** 1-sentence hook shown in the detail card header. */
+  significance?: string | null;
+  /** JSON array of verse-ref strings, each a tappable chip. */
+  key_verses_json?: string | null;
+  /** JSON array of `{ scholar_id, tradition, note, ref }` objects. */
+  scholar_notes_json?: string | null;
+  // ── Cross-testament history (#1325) ────────────────────────────
+  /** JSON array of `{ ref, testament, event, era }` objects. */
+  testament_history_json?: string | null;
+}
+
+/** Parsed shape of a `scholar_notes_json` entry. */
+export interface PlaceScholarNote {
+  scholar_id: string;
+  tradition: string;
+  note: string;
+  ref?: string;
+}
+
+/** Parsed shape of a `testament_history_json` entry. */
+export interface PlaceTestamentEvent {
+  ref: string;
+  testament: 'OT' | 'NT';
+  event: string;
+  era: string;
 }
 
 export interface MapStory {

@@ -571,14 +571,37 @@ def populate_places(cur):
         confidence = p.get('confidence')
         if not isinstance(confidence, int):
             confidence = None
+
+        # ── Enrichment layer (#1323 / #1325) ────────────────────────
+        # All four enrichment fields are optional. Missing ones stay
+        # NULL so the UI can hide empty sections without a check per
+        # nested field.
+        key_verses = p.get('key_verses')
+        key_verses_json = (
+            _json_str(key_verses) if isinstance(key_verses, list) else None
+        )
+        scholar_notes = p.get('scholar_notes')
+        scholar_notes_json = (
+            _json_str(scholar_notes) if isinstance(scholar_notes, list) else None
+        )
+        testament_history = p.get('testament_history')
+        testament_history_json = (
+            _json_str(testament_history)
+            if isinstance(testament_history, list) else None
+        )
+
         cur.execute(
             'INSERT INTO places (id, ancient_name, modern_name, latitude, longitude, '
-            'type, priority, label_dir, refs_json, confidence) '
-            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            'type, priority, label_dir, refs_json, confidence, '
+            'description, significance, key_verses_json, scholar_notes_json, '
+            'testament_history_json) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (p['id'], p.get('ancient', ''), p.get('modern'),
              p['lat'], p['lon'], p['type'],
              p.get('priority', 2), p.get('labelDir', 'n'),
-             refs_json, confidence)
+             refs_json, confidence,
+             p.get('description'), p.get('significance'),
+             key_verses_json, scholar_notes_json, testament_history_json)
         )
         count += 1
     return count

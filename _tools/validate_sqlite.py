@@ -209,6 +209,15 @@ def main():
         print(f"  people_legacy_refs: {plr_count}")
 
     check("71+ places", q1(cur, "SELECT COUNT(*) FROM places") >= 60)
+
+    # Enrichment columns land with #1323 / #1325. The columns must exist
+    # even when no rows are populated yet — the UI reads them directly.
+    place_cols = {row[1] for row in cur.execute("PRAGMA table_info(places)").fetchall()}
+    for col in (
+        'description', 'significance', 'key_verses_json',
+        'scholar_notes_json', 'testament_history_json',
+    ):
+        check(f"places.{col} column exists", col in place_cols)
     check("28+ map stories", q1(cur, "SELECT COUNT(*) FROM map_stories") >= 15)
     check("14+ word studies", q1(cur, "SELECT COUNT(*) FROM word_studies") >= 14)
     check("53+ synoptic entries", q1(cur, "SELECT COUNT(*) FROM synoptic_map") >= 53)
