@@ -45,9 +45,9 @@ describe('useTreeLayout', () => {
     expect(mockComputeFullLayout).not.toHaveBeenCalled();
   });
 
-  it('calls computeFullLayout with people and null era', () => {
+  it('calls computeFullLayout with people only (no era param)', () => {
     const fakeResult = {
-      nodes: [{ data: { id: 'adam' }, x: 0, y: 0 }],
+      nodes: [{ data: { id: 'adam' }, x: 0, y: 0, tier: 1 }],
       links: [],
       marriageBars: [],
       spouseConnectors: [],
@@ -60,33 +60,9 @@ describe('useTreeLayout', () => {
     const people = [makePerson()];
     const { result } = renderHook(() => useTreeLayout(people));
 
-    expect(mockComputeFullLayout).toHaveBeenCalledWith(people, null);
+    expect(mockComputeFullLayout).toHaveBeenCalledWith(people);
     expect(result.current.nodes).toHaveLength(1);
     expect(result.current.spineIds.has('adam')).toBe(true);
-  });
-
-  it('passes filterEra to computeFullLayout', () => {
-    mockComputeFullLayout.mockReturnValue({
-      nodes: [], links: [], marriageBars: [], spouseConnectors: [], associationLinks: [],
-      spineIds: new Set(), bounds: { minX: 0, maxX: 100, minY: 0, maxY: 100, width: 100, height: 100 },
-    });
-
-    const people = [makePerson()];
-    renderHook(() => useTreeLayout(people, 'patriarchs'));
-
-    expect(mockComputeFullLayout).toHaveBeenCalledWith(people, 'patriarchs');
-  });
-
-  it('treats filterEra "all" as null', () => {
-    mockComputeFullLayout.mockReturnValue({
-      nodes: [], links: [], marriageBars: [], spouseConnectors: [], associationLinks: [],
-      spineIds: new Set(), bounds: { minX: 0, maxX: 100, minY: 0, maxY: 100, width: 100, height: 100 },
-    });
-
-    const people = [makePerson()];
-    renderHook(() => useTreeLayout(people, 'all'));
-
-    expect(mockComputeFullLayout).toHaveBeenCalledWith(people, null);
   });
 
   it('memoises result when inputs do not change', () => {

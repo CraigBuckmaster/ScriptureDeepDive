@@ -1,38 +1,22 @@
 /**
  * TreeNode — Circular avatar node with initial letter inside, full name below.
  *
- * Visual tiers (expressed via opacity; native layer count is constant):
- *   - Messianic line: warm radial-gradient fill + gold stroke
- *   - Spine:          flat dark fill + gold-tinted stroke
- *   - Satellite:      flat dark fill + dim stroke (smaller circle)
+ * Visibility and culling are handled upstream in useVisibleNodes; by the
+ * time a TreeNode mounts, the parent has already decided it belongs on
+ * screen. All this component does is draw the circle + initial + name
+ * at the right opacity.
  *
- * Constant render tree: every node emits the same 3 SVG layers regardless
- * of tier (Circle + initial SvgText + name SvgText) plus an optional
- * invisible touch-target Rect for satellites. Visibility by tier is
- * controlled via opacity, never via null returns or JSX-structure swaps.
- *
- * WHY constant structure? Previous iterations conditionally mounted role
- * badges, waypoint diamonds, messianic glows, and selection rings —
- * each an extra native view. When a zoom gesture crossed a tier
- * threshold, React would mount ~80 new views (tier 1 → tier 2) or
- * ~200 (tier 2 → tier 3) in a single commit. iOS's compositor crashed
- * on those batch mounts on the tall (~10 000 px) Svg canvas. With a
- * constant structure, a zoom change only toggles opacity on existing
- * layers — no mid-session allocations — and iOS handles it cleanly.
- *
- * Role badges and covenant waypoints aren't rendered here anymore; if
- * we want to surface them per node, we'll wire them to a tap-selection
- * state or a side panel so they can appear without a batch-mount.
- *
- * Card #1281: replaces the previous rectangular-card design.
+ * An entrance fade (opacity 0 → 1 over ~3 animation frames) runs when
+ * `isEntering` is true on the first render. This softens the pop-in
+ * effect that viewport culling would otherwise produce at viewport
+ * edges and tier-threshold crossings.
  */
 
-import React, { memo, useCallback } from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import { Circle, Rect, Text as SvgText, G } from 'react-native-svg';
 import { useTheme } from '../../theme';
 import type { LayoutNode, TreePerson } from '../../utils/treeBuilder';
 import { isMessianic } from '../../utils/messianicLine';
-import { getPersonTier, isPersonVisibleAtZoom } from '../../utils/genealogyOrganic';
 
 // ── Circle dimensions ─────────────────────────────────────────────────
 const SPINE_R = 24;            // 48 px diameter
@@ -51,26 +35,20 @@ const NAME_GAP = 8;            // circle bottom edge → name baseline
 const MIN_TOUCH_H = 44;
 
 // Flat fills — match the wireframe's dark backgrounds
-const SPINE_FILL = '#1a1810';   // intentional — wireframe spec
-const SAT_FILL = '#181612';     // intentional — wireframe spec
+const SPINE_FILL = '#1a1810';
+const SAT_FILL = '#181612';
 
 interface Props {
   node: LayoutNode;
   dimmed: boolean;
   selected: boolean;
-  filterEra: string | null;
-  /** Current committed zoom scale. Drives per-tier visibility (#1291). */
-  zoom?: number;
-  /** When true and this node is an associate, render at opacity 0 (so
-   *  the collapse badges can show instead). Kept as a prop rather than
-   *  derived inside TreeNode so TreeCanvas can compute it once. */
-  clustersCollapsed?: boolean;
+  /** True when the node first entered the visible set — triggers fade-in. */
+  isEntering?: boolean;
   onPress: (person: TreePerson) => void;
 }
 
 export const TreeNode = memo(function TreeNode({
-  node, dimmed, selected, filterEra: _filterEra, zoom = 1,
-  clustersCollapsed = false, onPress,
+  node, dimmed, selected, isEntering = false, onPress,
 }: Props) {
   const { base } = useTheme();
   const { data, x, y } = node;
@@ -78,23 +56,38 @@ export const TreeNode = memo(function TreeNode({
   const onMessianicLine = isMessianic(data.id);
   const handlePress = useCallback(() => onPress(data), [data, onPress]);
 
-  // Tier / opacity model — visibility via opacity, not null returns.
-  // The React tree is always the same size; only opacity varies with zoom.
-  // Associate mount/unmount is staggered by TreeCanvas across frames to
-  // avoid iOS compositor crashes from a batch native-view delta in a
-  // single commit; once mounted, this opacity calc takes over.
-  const tier = getPersonTier(data, onMessianicLine);
-  const visible = isPersonVisibleAtZoom(tier, zoom);
+  // Entrance fade: step through 0 → 0.4 → 0.7 → 1 across a few RAF
+  // ticks. react-native-svg doesn't animate `opacity` natively, but
+  // three discrete jumps over ~50ms are enough to soften pop-in.
+  const [fadeOpacity, setFadeOpacity] = useState(isEntering ? 0 : 1);
+  useEffect(() => {
+    if (!isEntering) return;
+    let cancelled = false;
+    let frame = 0;
+    const tick = () => {
+      if (cancelled) return;
+      frame += 1;
+      if (frame === 1) setFadeOpacity(0.4);
+      else if (frame === 2) setFadeOpacity(0.7);
+      else if (frame === 3) { setFadeOpacity(1); return; }
+      requestAnimationFrame(tick);
+    };
+    const handle = requestAnimationFrame(tick);
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(handle);
+    };
+    // Intentionally only runs on mount — isEntering is a transient flag.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const isAssociate = data.isAssociate === true;
-  const hiddenAsAssociate = isAssociate && clustersCollapsed;
-  const opacity =
-    (visible ? 1 : 0)
-    * (hiddenAsAssociate ? 0 : 1)
+  const opacity = fadeOpacity
     * (dimmed ? 0.25 : 1)
     * (isAssociate ? 0.75 : 1);
 
   // Geometry — associate satellites render slightly smaller to read as
-  // "off-tree" contemporaries rather than genealogical descendants (#1290).
+  // "off-tree" contemporaries rather than genealogical descendants.
   const r = isSpine ? SPINE_R : (isAssociate ? SAT_R - 3 : SAT_R);
   const initialFont = isSpine ? SPINE_INITIAL_FONT : SAT_INITIAL_FONT;
   const nameFont = isSpine ? NAME_FONT_SPINE : NAME_FONT_SAT;

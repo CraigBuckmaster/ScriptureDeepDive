@@ -1,12 +1,7 @@
 import {
   bezierPath,
   getLinkWeight,
-  getPersonTier,
-  getVisibleTier,
-  isPersonVisibleAtZoom,
   applyTribalBloom,
-  TIER_2_ZOOM,
-  TIER_3_ZOOM,
 } from '@/utils/genealogyOrganic';
 import type { Person } from '@/types';
 
@@ -41,54 +36,6 @@ describe('bezierPath', () => {
   it('computes the midpoint symmetrically', () => {
     const path = bezierPath({ x: 10, y: 10 }, { x: 30, y: 50 });
     expect(path).toMatch(/C 10 30, 30 30, 30 50/);
-  });
-});
-
-describe('getPersonTier', () => {
-  it('messianic line members are always tier 1', () => {
-    expect(getPersonTier(person({ bio: null, role: null }), true)).toBe(1);
-  });
-
-  it('privileged roles are tier 1', () => {
-    expect(getPersonTier(person({ role: 'patriarch' }), false)).toBe(1);
-    expect(getPersonTier(person({ role: 'king' }), false)).toBe(1);
-    expect(getPersonTier(person({ role: 'prophet' }), false)).toBe(1);
-    expect(getPersonTier(person({ role: 'judge' }), false)).toBe(1);
-  });
-
-  it('named people with bios are tier 2', () => {
-    expect(getPersonTier(person({ bio: 'A sage.' }), false)).toBe(2);
-  });
-
-  it('everyone else is tier 3', () => {
-    expect(getPersonTier(person(), false)).toBe(3);
-  });
-});
-
-describe('getVisibleTier', () => {
-  it('only tier 1 at very low zoom', () => {
-    expect(getVisibleTier(0.2)).toBe(1);
-    expect(getVisibleTier(TIER_2_ZOOM)).toBe(1);
-  });
-
-  it('tier 2 after passing TIER_2_ZOOM', () => {
-    expect(getVisibleTier(TIER_2_ZOOM + 0.01)).toBe(2);
-  });
-
-  it('tier 3 after passing TIER_3_ZOOM', () => {
-    expect(getVisibleTier(TIER_3_ZOOM + 0.01)).toBe(3);
-  });
-});
-
-describe('isPersonVisibleAtZoom', () => {
-  it('tier 1 people are visible at any zoom', () => {
-    expect(isPersonVisibleAtZoom(1, 0.1)).toBe(true);
-    expect(isPersonVisibleAtZoom(1, 1.0)).toBe(true);
-  });
-
-  it('tier 3 people require high zoom', () => {
-    expect(isPersonVisibleAtZoom(3, 0.4)).toBe(false);
-    expect(isPersonVisibleAtZoom(3, 0.9)).toBe(true);
   });
 });
 

@@ -42,7 +42,7 @@ describe('treeBuilder — #1290 associate tribal bloom', () => {
       makePerson({ id: 'matthew', name: 'Matthew', associated_with: 'jesus', association_type: 'disciple' }),
     ];
 
-    const { nodes, associationLinks } = computeFullLayout(people, null);
+    const { nodes, associationLinks } = computeFullLayout(people);
 
     // All five associates should be placed and linked
     expect(associationLinks).toHaveLength(5);
@@ -86,7 +86,7 @@ describe('treeBuilder — #1290 associate tribal bloom', () => {
       makePerson({ id: 'caiaphas', name: 'Caiaphas', associated_with: 'jesus', association_type: 'contemporary' }),
       makePerson({ id: 'barabbas', name: 'Barabbas', associated_with: 'jesus', association_type: 'adversary' }),
     ];
-    const { associateBloomLabels } = computeFullLayout(people, null);
+    const { associateBloomLabels } = computeFullLayout(people);
     const jesusLabels = associateBloomLabels.filter((l) => l.anchorId === 'jesus');
     const types = jesusLabels.map((l) => l.type).sort();
     expect(types).toEqual(['adversary', 'contemporary', 'disciple']);
@@ -110,7 +110,7 @@ describe('treeBuilder — #1290 associate tribal bloom', () => {
       makePerson({ id: 'john', name: 'John', associated_with: 'jesus', association_type: 'disciple' }),
       makePerson({ id: 'thomas', name: 'Thomas', associated_with: 'jesus', association_type: 'disciple' }),
     ];
-    const { nodes } = computeFullLayout(people, null);
+    const { nodes } = computeFullLayout(people);
     const ids = ['peter', 'andrew', 'james', 'john', 'thomas'];
     const placed = ids
       .map((id) => nodes.find((n) => n.data.id === id)!)
@@ -143,7 +143,7 @@ describe("treeBuilder — #1291 Jacob's tribal bloom", () => {
       makePerson({ id: 'jesus', name: 'Jesus', father: 'perez' }),
     ];
 
-    const { nodes } = computeFullLayout(people, null);
+    const { nodes } = computeFullLayout(people);
     const sonIds = ['reuben', 'simeon', 'levi', 'judah', 'issachar', 'zebulun'];
     const sons = nodes.filter((n) => sonIds.includes(n.data.id));
     expect(sons).toHaveLength(6);

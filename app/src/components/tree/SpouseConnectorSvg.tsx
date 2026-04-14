@@ -7,9 +7,13 @@ import { Line } from 'react-native-svg';
 import { useTheme } from '../../theme';
 import type { SpouseConnector } from '../../utils/treeBuilder';
 
-interface Props { connector: SpouseConnector; }
+interface Props {
+  connector: SpouseConnector;
+  /** Dimmed when the era filter is on and the partner doesn't match. */
+  dimmed?: boolean;
+}
 
-export const SpouseConnectorSvg = memo(function SpouseConnectorSvg({ connector }: Props) {
+export const SpouseConnectorSvg = memo(function SpouseConnectorSvg({ connector, dimmed = false }: Props) {
   const { base } = useTheme();
   return (
     <Line
@@ -18,7 +22,7 @@ export const SpouseConnectorSvg = memo(function SpouseConnectorSvg({ connector }
       stroke={base.goldDim} strokeWidth={1}
       strokeDasharray="4,4"
       strokeLinecap="round"
-      opacity={connector.dimmed ? 0.1 : 0.4}
+      opacity={dimmed ? 0.1 : 0.4}
     />
   );
 });

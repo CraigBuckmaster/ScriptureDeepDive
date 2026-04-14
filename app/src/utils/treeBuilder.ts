@@ -14,6 +14,7 @@ import { hierarchy, tree, type HierarchyPointNode } from 'd3-hierarchy';
 import type { AssociationType, Person } from '../types';
 import { isMessianic as checkMessianic } from './messianicLine';
 import { applyTribalBloom } from './genealogyOrganic';
+import { assignTier, type PersonTier } from './treeTiers';
 import { logger } from './logger';
 
 // ── Constants ───────────────────────────────────────────────────────
@@ -28,12 +29,9 @@ export const TREE_CONSTANTS = {
   satelliteFontSize: 9.5,
   touchTargetRadius: 18,
   minZoom: 0.15,
-  // maxZoom 1.5 picked so canvas_height (~10k) × maxZoom × Retina_2x
-  // (= 30k) stays safely within iOS Metal's 16384 per-dimension texture
-  // budget when combined with the outer transform's implied rasterization.
-  // Higher values crash the iOS compositor. If the canvas gets shorter
-  // (e.g. we drop the era grid) we can raise this.
-  maxZoom: 1.5,
+  // With the viewBox camera architecture the SVG is screen-sized, so
+  // the Metal texture limit that forced a 1.5 cap no longer applies.
+  maxZoom: 3.0,
   initialScaleMobile: 0.45,
   initialScaleTablet: 0.75,
   marriageTickHeight: 10,
@@ -60,6 +58,8 @@ export interface LayoutNode {
   children: LayoutNode[];
   depth: number;
   isSpouse: boolean;
+  /** Structural tier for semantic zoom. Assigned by treeTiers.assignTier(). */
+  tier: PersonTier;
 }
 
 export interface MarriageBar {
@@ -69,23 +69,26 @@ export interface MarriageBar {
   x2: number;
   y: number;
   midX: number;
-  dimmed: boolean;
 }
 
 export interface SpouseConnector {
+  /** Anchor partner ID — used for dimming lookups at render time. */
+  partnerId: string;
   x: number;
   yTop: number;
   yBottom: number;
-  dimmed: boolean;
 }
 
 export interface TreeLink {
+  sourceId: string;
+  targetId: string;
+  sourceEra: string | null;
+  targetEra: string | null;
   source: { x: number; y: number };
   target: { x: number; y: number };
   isSpine: boolean;
   /** Both source and target are on the messianic line (Matthew 1 lineage). */
   isMessianic: boolean;
-  dimmed: boolean;
 }
 
 /** Dotted connector from an anchor to one of its associated_with satellites (#1288). */
@@ -205,6 +208,11 @@ export function layoutTree(root: HierNode): LayoutNode[] {
       children: d.children?.map((c) => ({ data: c.data.data, x: c.x, y: c.y }) as LayoutNode) ?? [],
       depth: d.depth,
       isSpouse: false,
+      // Tier is assigned in a single pass at the end of computeFullLayout
+      // once we know spine membership + structural position for every
+      // node. Initialize to 4 so the type is satisfied if anyone
+      // accidentally inspects a partially-built layout.
+      tier: 4,
     });
   });
 
@@ -248,6 +256,7 @@ export function positionSpouses(
         children: [],
         depth: partner.depth,
         isSpouse: true,
+        tier: 4,
       };
       spouseNodes.push(spouseNode);
     });
@@ -261,7 +270,6 @@ export function positionSpouses(
 export function computeLinks(
   nodes: LayoutNode[],
   spineIds: Set<string>,
-  filterEra: string | null
 ): TreeLink[] {
   const links: TreeLink[] = [];
   const nodeMap = new Map(nodes.map((n) => [n.data.id, n]));
@@ -275,17 +283,16 @@ export function computeLinks(
 
     const isSpine = spineIds.has(node.data.id) && spineIds.has(parent.data.id);
     const messianic = checkMessianic(node.data.id) && checkMessianic(parent.data.id);
-    // A link is dimmed only when BOTH endpoints are dimmed
-    const dimmed = filterEra !== null
-      && isDimmed(node.data, filterEra, spineIds)
-      && isDimmed(parent.data, filterEra, spineIds);
 
     links.push({
+      sourceId: parent.data.id,
+      targetId: node.data.id,
+      sourceEra: parent.data.era ?? null,
+      targetEra: node.data.era ?? null,
       source: { x: parent.x, y: parent.y },
       target: { x: node.x, y: node.y },
       isSpine,
       isMessianic: messianic,
-      dimmed: !!dimmed,
     });
   }
 
@@ -296,8 +303,6 @@ export function computeLinks(
 
 export function computeMarriageBars(
   nodes: LayoutNode[],
-  spineIds: Set<string>,
-  filterEra: string | null
 ): MarriageBar[] {
   const bars: MarriageBar[] = [];
   const nodeMap = new Map(nodes.map((n) => [n.data.id, n]));
@@ -315,15 +320,11 @@ export function computeMarriageBars(
     const x2 = node.x - spouseHalfW - 2;
     const y = (partner.y + node.y) / 2;
     const midX = (x1 + x2) / 2;
-    const dimmed = filterEra !== null
-      && isDimmed(node.data, filterEra, spineIds)
-      && isDimmed(partner.data, filterEra, spineIds);
 
     bars.push({
       partnerId: partner.data.id,
       spouseId: node.data.id,
       x1, x2, y, midX,
-      dimmed,
     });
   }
 
@@ -334,8 +335,6 @@ export function computeMarriageBars(
 
 export function computeSpouseConnectors(
   nodes: LayoutNode[],
-  spineIds: Set<string>,
-  filterEra: string | null
 ): SpouseConnector[] {
   const connectors: SpouseConnector[] = [];
   const nodeMap = new Map(nodes.map((n) => [n.data.id, n]));
@@ -355,25 +354,16 @@ export function computeSpouseConnectors(
     if (!partner) continue;
 
     const ys = spouses.map((s) => s.y).sort((a, b) => a - b);
-    const dimmed = filterEra !== null
-      && isDimmed(partner.data, filterEra, spineIds);
 
     connectors.push({
+      partnerId: partner.data.id,
       x: partner.x + TREE_CONSTANTS.spouseXOffset,
       yTop: ys[0],
       yBottom: ys[ys.length - 1],
-      dimmed,
     });
   }
 
   return connectors;
-}
-
-// ── Dimming logic ───────────────────────────────────────────────────
-
-function isDimmed(person: TreePerson | Person, filterEra: string, spineIds: Set<string>): boolean {
-  if (spineIds.has(person.id)) return false; // spine never dimmed
-  return person.era !== filterEra;
 }
 
 // ── Full layout pipeline ────────────────────────────────────────────
@@ -570,7 +560,6 @@ function layOutAssociateType(
 
 export function computeFullLayout(
   people: Person[],
-  filterEra: string | null
 ): TreeLayoutResult {
   const spineIds = computeSpineIds(people);
   const root = buildHierarchy(people, spineIds);
@@ -662,6 +651,7 @@ export function computeFullLayout(
         children: [],
         depth: 0,
         isSpouse: false,
+        tier: 4,
       });
     });
 
@@ -678,6 +668,7 @@ export function computeFullLayout(
             children: [],
             depth: 0,
             isSpouse: true,
+            tier: 4,
           });
         }
       }
@@ -798,6 +789,7 @@ export function computeFullLayout(
           children: [],
           depth: 0,
           isSpouse: false,
+          tier: 4,
         });
         positionById.set(person.id, { x: absX, y: absY });
         associationLinks.push({
@@ -838,9 +830,25 @@ export function computeFullLayout(
   }
 
   const allNodes = [...allTreeNodes, ...disconnectedNodes];
-  const links = computeLinks(allNodes, spineIds, filterEra);
-  const marriageBars = computeMarriageBars(allNodes, spineIds, filterEra);
-  const spouseConnectors = computeSpouseConnectors(allNodes, spineIds, filterEra);
+
+  // Assign structural tiers (single pass, now that every node has its
+  // final position and membership information). treeNodeIds is the set
+  // of IDs attached to the main biological tree (d3 hierarchy) — anyone
+  // outside that set who isn't a spine member falls through to tier 3/4.
+  for (const node of allNodes) {
+    node.tier = assignTier(
+      node.data.id,
+      spineIds,
+      treeNodeIds,
+      node.data.spouse_of,
+      node.data.isAssociate === true,
+      !!node.data.bio,
+    );
+  }
+
+  const links = computeLinks(allNodes, spineIds);
+  const marriageBars = computeMarriageBars(allNodes);
+  const spouseConnectors = computeSpouseConnectors(allNodes);
 
   // Compute bounding box with padding for labels
   const PAD = 100;

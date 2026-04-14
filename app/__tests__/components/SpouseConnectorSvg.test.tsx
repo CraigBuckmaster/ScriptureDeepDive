@@ -15,11 +15,11 @@ jest.mock('react-native-svg', () => {
   };
 });
 
-const makeConnector = (overrides?: Partial<{ x: number; yTop: number; yBottom: number; dimmed: boolean }>) => ({
+const makeConnector = (overrides?: Partial<{ x: number; yTop: number; yBottom: number; partnerId: string }>) => ({
   x: 150,
   yTop: 50,
   yBottom: 200,
-  dimmed: false,
+  partnerId: 'jacob',
   ...overrides,
 });
 
@@ -43,7 +43,7 @@ describe('SpouseConnectorSvg', () => {
 
   it('applies reduced opacity when dimmed', () => {
     const { UNSAFE_getByType } = renderWithProviders(
-      <SpouseConnectorSvg connector={makeConnector({ dimmed: true })} />,
+      <SpouseConnectorSvg connector={makeConnector()} dimmed />,
     );
     const line = UNSAFE_getByType('Line' as any);
     expect(line.props.opacity).toBe(0.1);
@@ -51,7 +51,7 @@ describe('SpouseConnectorSvg', () => {
 
   it('applies normal opacity when not dimmed', () => {
     const { UNSAFE_getByType } = renderWithProviders(
-      <SpouseConnectorSvg connector={makeConnector({ dimmed: false })} />,
+      <SpouseConnectorSvg connector={makeConnector()} />,
     );
     const line = UNSAFE_getByType('Line' as any);
     expect(line.props.opacity).toBe(0.4);

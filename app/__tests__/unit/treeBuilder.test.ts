@@ -46,6 +46,7 @@ describe('positionSpouses', () => {
     const primaryNode = {
       data: { ...people[0], nodeType: 'spine' as const },
       x: 100, y: 200, parent: null, children: [], depth: 0, isSpouse: false,
+      tier: 1 as const,
     };
     const result = positionSpouses([primaryNode], people, spineIds);
     expect(result.length).toBe(2);
@@ -67,6 +68,7 @@ describe('positionSpouses', () => {
     const primaryNode = {
       data: { ...people[0], nodeType: 'spine' as const },
       x: 0, y: 0, parent: null, children: [], depth: 0, isSpouse: false,
+      tier: 1 as const,
     };
     const result = positionSpouses([primaryNode], people, spineIds);
     const spouses = result.filter(n => n.isSpouse);
@@ -95,17 +97,21 @@ describe('computeMarriageBars', () => {
     const partner = {
       data: { id: 'abraham', name: 'Abraham', nodeType: 'spine' },
       x: 0, y: 0, parent: null, children: [], depth: 0, isSpouse: false,
+      tier: 1,
     };
     const spouse = {
       data: { id: 'sarah', name: 'Sarah', nodeType: 'satellite', spouse_of: 'abraham' },
       x: TREE_CONSTANTS.spouseXOffset, y: 0, parent: null, children: [], depth: 0, isSpouse: true,
+      tier: 1,
     };
-    const bars = computeMarriageBars([partner, spouse], new Set(['abraham']), null);
+    const bars = computeMarriageBars([partner, spouse]);
     expect(bars.length).toBe(1);
     expect(bars[0].partnerId).toBe('abraham');
     expect(bars[0].spouseId).toBe('sarah');
     expect(bars[0].x1).toBeLessThan(bars[0].x2);
-    expect(bars[0].dimmed).toBe(false);
+    // Dimming is no longer a property of the bar — it's computed at render
+    // time. The bar itself should not carry a `dimmed` field.
+    expect('dimmed' in bars[0]).toBe(false);
   });
 
   it('uses the new circular-node radii for bar endpoints (Card #1281)', () => {
@@ -119,12 +125,14 @@ describe('computeMarriageBars', () => {
     const partner = {
       data: { id: 'abraham', name: 'Abraham', nodeType: 'spine' },
       x: 0, y: 0, parent: null, children: [], depth: 0, isSpouse: false,
+      tier: 1,
     };
     const spouse = {
       data: { id: 'sarah', name: 'Sarah', nodeType: 'satellite', spouse_of: 'abraham' },
       x: TREE_CONSTANTS.spouseXOffset, y: 0, parent: null, children: [], depth: 0, isSpouse: true,
+      tier: 1,
     };
-    const bars = computeMarriageBars([partner, spouse], new Set(['abraham']), null);
+    const bars = computeMarriageBars([partner, spouse]);
     // Spine partner contributes spineCardHalfW (24) + 2 → x1 = 26
     expect(bars[0].x1).toBe(TREE_CONSTANTS.spineCardHalfW + 2);
     // Satellite spouse contributes satCardHalfW (18) + 2 → x2 = 88 - 18 - 2 = 68
@@ -135,7 +143,7 @@ describe('computeMarriageBars', () => {
 describe('computeFullLayout', () => {
   it('returns empty/minimal result for empty input array', () => {
     const { computeFullLayout } = require('../../src/utils/treeBuilder');
-    const result = computeFullLayout([], null);
+    const result = computeFullLayout([]);
     expect(result.nodes).toEqual([]);
     expect(result.links).toEqual([]);
     expect(result.marriageBars).toEqual([]);
@@ -149,11 +157,38 @@ describe('computeFullLayout', () => {
   it('handles a single person with no parents or spouses', () => {
     const { computeFullLayout } = require('../../src/utils/treeBuilder');
     const people = [makePerson('adam')];
-    const result = computeFullLayout(people, null);
+    const result = computeFullLayout(people);
     // adam is the root, so we get one node
     expect(result.nodes.length).toBe(1);
     expect(result.nodes[0].data.id).toBe('adam');
+    // Adam is on the biological tree (he's the root) but isn't on the
+    // messianic spine (no jesus in this fixture), so he lands in tier 2.
+    expect(result.nodes[0].tier).toBe(2);
     expect(result.links).toEqual([]);
     expect(result.marriageBars).toEqual([]);
+  });
+
+  it('assigns structural tiers to nodes', () => {
+    const { computeFullLayout } = require('../../src/utils/treeBuilder');
+    const people: Person[] = [
+      makePerson('adam'),
+      makePerson('seth', 'adam'),
+      makePerson('enosh', 'seth'),
+      makePerson('jesus', 'enosh'),
+      { ...makePerson('eve'), gender: 'f', spouse_of: 'adam' },
+      { ...makePerson('cain', 'adam'), bio: 'a bio' },
+      makePerson('unknown', 'adam'),
+    ];
+    const result = computeFullLayout(people);
+    const byId = new Map<string, any>(result.nodes.map((n: any) => [n.data.id as string, n]));
+    // Spine members all land in tier 1.
+    expect(byId.get('adam')!.tier).toBe(1);
+    expect(byId.get('seth')!.tier).toBe(1);
+    expect(byId.get('jesus')!.tier).toBe(1);
+    // Spouse of a spine member → tier 1 too.
+    expect(byId.get('eve')!.tier).toBe(1);
+    // Cain is on the biological tree but not on spine → tier 2.
+    expect(byId.get('cain')!.tier).toBe(2);
+    expect(byId.get('unknown')!.tier).toBe(2);
   });
 });

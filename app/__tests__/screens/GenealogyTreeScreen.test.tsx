@@ -38,14 +38,16 @@ jest.mock('@/hooks/usePeople', () => ({
 
 const mockTreeLayout = {
   nodes: [
-    { data: { id: 'adam', name: 'Adam', era: 'primeval' }, x: 100, y: 50 },
-    { data: { id: 'eve', name: 'Eve', era: 'primeval' }, x: 200, y: 50 },
-    { data: { id: 'seth', name: 'Seth', era: 'primeval' }, x: 150, y: 150 },
+    { data: { id: 'adam', name: 'Adam', era: 'primeval' }, x: 100, y: 50, tier: 1 },
+    { data: { id: 'eve', name: 'Eve', era: 'primeval' }, x: 200, y: 50, tier: 1 },
+    { data: { id: 'seth', name: 'Seth', era: 'primeval' }, x: 150, y: 150, tier: 1 },
   ],
   links: [],
   marriageBars: [],
   spouseConnectors: [],
   associationLinks: [],
+  associateBloomLabels: [],
+  associateTrails: [],
   spineIds: new Set(['adam', 'seth']),
   bounds: { width: 2000, height: 2000, minX: 0, minY: 0 },
 };
@@ -58,14 +60,28 @@ const mockCentreOnNode = jest.fn();
 const mockCentreOnNodeTop = jest.fn();
 const mockCentreOnNodeAbovePanel = jest.fn();
 
-jest.mock('@/hooks/useTreeGestures', () => ({
-  useTreeGestures: () => ({
+jest.mock('@/hooks/useTreeCamera', () => ({
+  useTreeCamera: () => ({
     gesture: { _handlers: {} },
-    baseStyle: {},
-    gestureStyle: {},
+    camera: { x: 0, y: 0, zoom: 0.45 },
+    viewBox: '0 0 500 900',
+    viewW: 500,
+    viewH: 900,
     centreOnNode: mockCentreOnNode,
     centreOnNodeTop: mockCentreOnNodeTop,
     centreOnNodeAbovePanel: mockCentreOnNodeAbovePanel,
+  }),
+}));
+
+jest.mock('@/hooks/useVisibleNodes', () => ({
+  useVisibleNodes: () => ({
+    nodes: [],
+    links: [],
+    marriageBars: [],
+    spouseConnectors: [],
+    associationLinks: [],
+    associateBloomLabels: [],
+    associateTrails: [],
   }),
 }));
 
@@ -157,6 +173,7 @@ jest.mock('react-native-reanimated', () => {
   return {
     __esModule: true,
     default: { View: (props: any) => React.createElement(View, props) },
+    runOnJS: (fn: any) => fn,
   };
 });
 
