@@ -122,7 +122,9 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
         id="places-label"
         style={{
           textField: ['get', showModern ? 'modern' : 'ancient'] as any,
-          textFont: ['EB Garamond Italic', 'Open Sans Italic'],
+          // OpenFreeMap's glyph server ships the Noto family. Italic reads
+          // as the parchment aesthetic even though the glyph itself is Noto.
+          textFont: ['Noto Sans Italic'],
           textSize: ['match', ['get', 'priority'], 1, 13, 2, 12, 3, 11, 4, 10, 11] as any,
           textColor: '#bfa050',
           textHaloColor: '#1a1610',
