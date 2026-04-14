@@ -2,18 +2,19 @@
  * StoryOverlays — Renders a story's region polygons and journey paths
  * as MapLibre GeoJSON layers.
  *
- * Uses a single `ShapeSource` per channel (regions / paths) so the map
- * interpolates smoothly between stories when `story` changes, rather
- * than flickering as React-rendered primitives unmount and remount.
+ * Uses a single `ShapeSource` per channel (regions / paths / path-arrows)
+ * so the map interpolates smoothly between stories when `story` changes,
+ * rather than flickering as React-rendered primitives unmount and remount.
  *
  * Coordinate convention: JSON stores `[lon, lat]` (GeoJSON order); no
  * flip is needed here — MapLibre is natively GeoJSON-based.
  *
- * Migrated from react-native-maps primitives in #1315/#1319.
+ * Issues: #1315 (MapLibre dep swap), #1319 (dashed paths + arrows +
+ * animated transitions).
  */
 
 import React, { memo, useMemo } from 'react';
-import { ShapeSource, FillLayer, LineLayer } from '@maplibre/maplibre-react-native';
+import { ShapeSource, FillLayer, LineLayer, SymbolLayer } from '@maplibre/maplibre-react-native';
 import { eras } from '../../theme';
 import type { MapStory } from '../../types';
 import { safeParse } from '../../utils/logger';
@@ -33,6 +34,16 @@ interface RawPath {
   coords: number[][]; // [[lon,lat], ...]
   dashed?: boolean;
   label?: string;
+}
+
+/** Bearing (0–360°, 0=north, clockwise) from `from` to `to`. */
+export function bearingDeg(from: [number, number], to: [number, number]): number {
+  const [lon1, lat1] = [(from[0] * Math.PI) / 180, (from[1] * Math.PI) / 180];
+  const [lon2, lat2] = [(to[0] * Math.PI) / 180, (to[1] * Math.PI) / 180];
+  const dLon = lon2 - lon1;
+  const y = Math.sin(dLon) * Math.cos(lat2);
+  const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLon);
+  return ((Math.atan2(y, x) * 180) / Math.PI + 360) % 360;
 }
 
 /** Regions → Polygon FeatureCollection. */
@@ -82,6 +93,28 @@ export function pathsToFeatureCollection(
   };
 }
 
+/**
+ * Path endpoints → Point FeatureCollection with a `bearing` property so
+ * a SymbolLayer can render a direction arrow rotated along the final
+ * segment of each journey.
+ */
+export function arrowsFromPaths(paths: RawPath[]): GeoJSON.FeatureCollection {
+  const features: GeoJSON.Feature[] = [];
+  for (let i = 0; i < paths.length; i++) {
+    const coords = paths[i].coords;
+    if (!coords || coords.length < 2) continue;
+    const a = coords[coords.length - 2] as [number, number];
+    const b = coords[coords.length - 1] as [number, number];
+    features.push({
+      type: 'Feature',
+      id: i,
+      geometry: { type: 'Point', coordinates: b },
+      properties: { bearing: bearingDeg(a, b) },
+    });
+  }
+  return { type: 'FeatureCollection', features };
+}
+
 /** Make sure a polygon ring closes on itself. */
 function closeRing(coords: number[][]): number[][] {
   if (coords.length < 2) return coords;
@@ -99,10 +132,13 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
     return regionsToFeatureCollection(regions, eraColor);
   }, [story.regions_json, eraColor]);
 
-  const pathsFC = useMemo(() => {
-    const paths = safeParse<RawPath[]>(story.paths_json, []);
-    return pathsToFeatureCollection(paths);
-  }, [story.paths_json]);
+  const rawPaths = useMemo(
+    () => safeParse<RawPath[]>(story.paths_json, []),
+    [story.paths_json],
+  );
+
+  const pathsFC = useMemo(() => pathsToFeatureCollection(rawPaths), [rawPaths]);
+  const arrowsFC = useMemo(() => arrowsFromPaths(rawPaths), [rawPaths]);
 
   return (
     <>
@@ -125,7 +161,10 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
         />
       </ShapeSource>
 
-      {/* Journey paths — solid + dashed variants driven by a filter */}
+      {/* Journey paths — solid + dashed variants driven by a filter.
+          MapLibre interpolates coordinates between source updates so
+          swapping the active story animates the path draw rather than
+          snapping. */}
       <ShapeSource id="story-paths" shape={pathsFC as any}>
         <LineLayer
           id="story-paths-solid"
@@ -146,6 +185,29 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
             lineCap: 'round',
             lineJoin: 'round',
             lineDasharray: [3, 2],
+          }}
+        />
+      </ShapeSource>
+
+      {/* Directional arrowheads at each path's endpoint, rotated along
+          the final segment's bearing. Uses a unicode ► glyph — no image
+          asset required — kept legible across zoom levels. */}
+      <ShapeSource id="story-path-arrows" shape={arrowsFC as any}>
+        <SymbolLayer
+          id="story-path-arrows-layer"
+          style={{
+            textField: '\u25B6',
+            textFont: ['Noto Sans Regular'],
+            textSize: 14,
+            textRotate: ['get', 'bearing'] as any,
+            textRotationAlignment: 'map',
+            textPitchAlignment: 'map',
+            textColor: '#bfa050',
+            textHaloColor: '#1a1610',
+            textHaloWidth: 1.5,
+            textAllowOverlap: true,
+            textIgnorePlacement: true,
+            textOffset: [0.4, 0],
           }}
         />
       </ShapeSource>
