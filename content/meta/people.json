@@ -912,26 +912,50 @@
         {
           "place_id": "ur",
           "era": "patriarch",
-          "event": "[placeholder] Born in Ur of the Chaldeans",
+          "event": "Born in Ur of the Chaldeans; called to leave ancestral home",
           "order": 1
         },
         {
           "place_id": "haran",
           "era": "patriarch",
-          "event": "[placeholder] Lived with father Terah until the call of God",
+          "event": "Settled in Haran with father Terah until Terah's death at 205",
           "order": 2
         },
         {
           "place_id": "shechem",
           "era": "patriarch",
-          "event": "[placeholder] First altar built in Canaan at the oak of Moreh",
+          "event": "Entered Canaan; built first altar at the oak of Moreh at Shechem",
           "order": 3
+        },
+        {
+          "place_id": "bethel",
+          "era": "patriarch",
+          "event": "Pitched tent between Bethel and Ai; built a second altar and called on the Lord",
+          "order": 4
+        },
+        {
+          "place_id": "egypt",
+          "era": "patriarch",
+          "event": "Sojourned in Egypt during famine; passed off Sarah as his sister",
+          "order": 5
         },
         {
           "place_id": "hebron",
           "era": "patriarch",
-          "event": "[placeholder] Settled at the oaks of Mamre; bought the cave of Machpelah",
-          "order": 4
+          "event": "Settled at the oaks of Mamre near Hebron; received covenant promises",
+          "order": 6
+        },
+        {
+          "place_id": "moriah",
+          "era": "patriarch",
+          "event": "Brought Isaac to Mount Moriah to offer him; God provided a ram instead",
+          "order": 7
+        },
+        {
+          "place_id": "beersheba",
+          "era": "patriarch",
+          "event": "Planted a tamarisk tree in Beersheba and called on God's name",
+          "order": 8
         }
       ]
     },
@@ -5534,32 +5558,50 @@
         {
           "place_id": "tarsus",
           "era": "nt",
-          "event": "[placeholder] Born in Tarsus, Roman citizen of Cilicia",
+          "event": "Born in Tarsus, a Roman citizen from birth in a diaspora Jewish family",
           "order": 1
         },
         {
           "place_id": "jerusalem",
           "era": "nt",
-          "event": "[placeholder] Studied under Gamaliel",
+          "event": "Educated under Gamaliel; zealous Pharisee present at Stephen's stoning",
           "order": 2
         },
         {
           "place_id": "damascus",
           "era": "nt",
-          "event": "[placeholder] Conversion on the road to Damascus",
+          "event": "Struck blind on the road to Damascus; encountered the risen Christ",
           "order": 3
         },
         {
           "place_id": "antioch-s",
           "era": "nt",
-          "event": "[placeholder] Commissioned with Barnabas for the first journey",
+          "event": "Commissioned with Barnabas from Antioch as the first missionary journey launches",
           "order": 4
+        },
+        {
+          "place_id": "corinth",
+          "era": "nt",
+          "event": "Spent 18 months in Corinth on the second journey; founded the church there",
+          "order": 5
+        },
+        {
+          "place_id": "ephesus",
+          "era": "nt",
+          "event": "Based in Ephesus for three years; entire province of Asia heard the gospel",
+          "order": 6
+        },
+        {
+          "place_id": "caesarea",
+          "era": "nt",
+          "event": "Imprisoned in Caesarea for two years under Felix and Festus",
+          "order": 7
         },
         {
           "place_id": "rome",
           "era": "nt",
-          "event": "[placeholder] Arrived in Rome under house arrest",
-          "order": 5
+          "event": "Arrived in Rome under house arrest; preached the kingdom unhindered for two years",
+          "order": 8
         }
       ]
     },

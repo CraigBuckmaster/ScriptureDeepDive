@@ -353,24 +353,77 @@
       "sinai",
       "wilderness"
     ],
-    "description": "[placeholder — awaiting Chat session #1323] Mountain in the Sinai peninsula; traditional site of the giving of the Law.",
-    "significance": "[placeholder] The mountain where Israel received the Law and met God directly.",
+    "description": "Mt. Sinai (also called Horeb in Deuteronomy) is the mountain in the southern Sinai peninsula where God descended in fire, smoke, and earthquake to give the Law to Israel through Moses. Identified by a strong ancient tradition with Jebel Musa, a 7,497-foot granite massif in the south Sinai, the site stood at the theological centre of Israel's national birth: here the covenant was ratified, the Decalogue spoken, and the tabernacle pattern revealed. The mountain was so charged with divine holiness that even touching its foot meant death. Centuries later Elijah fled to this same mountain in despair, and God met him not in earthquake or fire but in a still small voice — reopening the Sinai dialogue in a completely different register.",
+    "significance": "Sinai is the mountain where Israel became a nation before God. The Law given here structured every aspect of Israelite life; the covenant ratified here defined the relationship between YHWH and his people. Paul's typological reading in Galatians 4 frames Sinai as the covenant of slavery in contrast to the freedom of the Jerusalem above, making Sinai a critical marker in the entire Pauline theology of law and grace.",
     "key_verses": [
-      "Exod 19:20",
-      "Exod 20:1"
+      "Exod 19:18-20",
+      "Exod 20:1-17",
+      "1 Kgs 19:11-13",
+      "Gal 4:24-25",
+      "Heb 12:18-21"
     ],
     "testament_history": [
       {
-        "ref": "Exod 19:20",
+        "ref": "Exod 3:1-6",
         "testament": "OT",
-        "event": "[placeholder] Moses receives the Law on Sinai",
+        "event": "Moses encounters the burning bush at Horeb; God reveals his name",
         "era": "exodus"
       },
       {
-        "ref": "Gal 4:25",
+        "ref": "Exod 19:18-20",
+        "testament": "OT",
+        "event": "YHWH descends on Sinai in fire; the mountain quakes violently",
+        "era": "exodus"
+      },
+      {
+        "ref": "Exod 20:1-17",
+        "testament": "OT",
+        "event": "God speaks the Ten Commandments from the mountain",
+        "era": "exodus"
+      },
+      {
+        "ref": "Exod 24:9-11",
+        "testament": "OT",
+        "event": "Moses, Aaron, Nadab, Abihu, and the seventy elders see God and eat",
+        "era": "exodus"
+      },
+      {
+        "ref": "1 Kgs 19:8-13",
+        "testament": "OT",
+        "event": "Elijah flees to Horeb; God speaks in a still small voice",
+        "era": "prophets"
+      },
+      {
+        "ref": "Gal 4:24-25",
         "testament": "NT",
-        "event": "[placeholder] Paul allegorises Sinai as the covenant of slavery",
+        "event": "Paul reads Sinai allegorically as the covenant of slavery versus freedom",
         "era": "nt"
+      },
+      {
+        "ref": "Heb 12:18-21",
+        "testament": "NT",
+        "event": "Hebrews contrasts the terror of Sinai with the joy of Mount Zion",
+        "era": "nt"
+      }
+    ],
+    "scholar_notes": [
+      {
+        "scholar_id": "sarna",
+        "tradition": "Jewish biblical scholarship",
+        "note": "Sarna observes that Sinai is conspicuously absent from the geographic traditions of the patriarchs — it enters Israel's story only at the exodus. This absence is deliberate: Sinai is not a sacred site Israel discovers but a holy mountain God designates for a specific, unrepeatable encounter.",
+        "ref": "Exod 19:1-2"
+      },
+      {
+        "scholar_id": "childs",
+        "tradition": "Canonical criticism",
+        "note": "Childs argues that the Sinai pericope is the canonical centre of the Pentateuch. The narrative slows dramatically here — forty chapters circle the mountain — because Israel's entire identity as a covenant people is constituted at this spot. Everything before leads to it; everything after flows from it.",
+        "ref": "Exod 19-40"
+      },
+      {
+        "scholar_id": "macarthur",
+        "tradition": "Conservative evangelical",
+        "note": "MacArthur notes that the terrifying physical phenomena at Sinai — fire, smoke, trumpet blast, earthquake — were not decorative. They communicated the unmediated holiness of God in a way the people could not misunderstand. Israel's request that Moses speak for God rather than God speaking directly was not unbelief but an appropriate response to genuine theophany.",
+        "ref": "Exod 20:18-19"
       }
     ]
   },
@@ -509,38 +562,64 @@
       "david-rise",
       "nativity"
     ],
-    "description": "[placeholder — awaiting Chat session #1323] Small town ~5 miles south of Jerusalem in the Judean hill country. Hometown of David, birthplace of Jesus.",
-    "significance": "[placeholder] The birthplace of both David and Jesus, fulfilling Micah's prophecy.",
+    "description": "Bethlehem (Hebrew: 'house of bread') sits in the Judean hill country about five miles south of Jerusalem, at roughly 2,500 feet elevation. It commands a fertile ridge flanked by terraced vineyards and grain fields — the 'house of bread' name fits its landscape. The town was home to Boaz and Ruth, whose story of redemption played out in its harvest fields. Jesse, their descendant, raised his sons here, and it was to Bethlehem's sheep pastures that Samuel came to anoint the youngest — David. Micah's prophecy that the ruler of Israel would come from 'you, Bethlehem Ephrathah' made this small town the expected address of the Messiah, which Luke and Matthew deliberately fulfil by placing Jesus's birth here.",
+    "significance": "Bethlehem is the town where David was anointed and Jesus was born — two events the Gospels present as the culmination of a single messianic line. The prophecy of Micah 5:2 is the clearest geographical prediction in the OT, and Matthew cites it immediately when Herod inquires where the Christ would be born. Bethlehem's double identity — City of David and birthplace of Jesus — is central to the NT's argument that Jesus is the Son of David promised throughout the Psalms and prophets.",
     "key_verses": [
+      "Ruth 1:19",
       "1 Sam 16:1",
       "Mic 5:2",
-      "Luke 2:4"
+      "Matt 2:1",
+      "Luke 2:4-7"
     ],
     "scholar_notes": [
       {
         "scholar_id": "ntwright",
-        "tradition": "Historical-critical",
-        "note": "[placeholder — awaiting Chat session] Wright connects Bethlehem's Davidic identity to the Gospels' deliberate framing of Jesus as Israel's true king.",
-        "ref": "Mic 5:2"
+        "tradition": "Historical-critical / Anglican",
+        "note": "N.T. Wright argues that Luke's account of the census journey to Bethlehem is not simply biographical detail but a deliberately Davidic framing. Luke repeatedly calls Bethlehem 'the city of David,' making it impossible for a Jewish reader to hear the birth story without hearing royal-messianic resonance from the first verse.",
+        "ref": "Luke 2:4"
+      },
+      {
+        "scholar_id": "block",
+        "tradition": "Evangelical OT scholarship",
+        "note": "Block notes that the book of Ruth closes with the genealogy anchoring Boaz and Ruth directly to David — making Bethlehem the geographic node where Gentile inclusion, covenant faithfulness, and Davidic lineage converge centuries before Matthew traces the same line to Jesus.",
+        "ref": "Ruth 4:17-22"
+      },
+      {
+        "scholar_id": "keener",
+        "tradition": "New Testament background studies",
+        "note": "Keener points out that Bethlehem would have been overflowing with Davidic-clan registrants during a census, which explains the lack of guest-room space. The irony — the heir of David's throne born in a livestock shelter in David's own town — is a narrative choice the evangelists exploit for its theological resonance.",
+        "ref": "Luke 2:7"
       }
     ],
     "testament_history": [
       {
+        "ref": "Ruth 2:4",
+        "testament": "OT",
+        "event": "Boaz harvests his fields in Bethlehem; Ruth gleans behind his workers",
+        "era": "judges"
+      },
+      {
         "ref": "1 Sam 16:13",
         "testament": "OT",
-        "event": "[placeholder] David anointed king by Samuel",
+        "event": "Samuel anoints David as king in his father Jesse's house in Bethlehem",
         "era": "kingdom"
       },
       {
         "ref": "Mic 5:2",
         "testament": "OT",
-        "event": "[placeholder] Prophecy of the coming ruler from Bethlehem",
+        "event": "Micah prophesies that Israel's ruler will come from Bethlehem Ephrathah",
         "era": "prophets"
       },
       {
         "ref": "Luke 2:7",
         "testament": "NT",
-        "event": "[placeholder] Jesus born in Bethlehem",
+        "event": "Jesus born in Bethlehem; laid in a manger because no guest room was available",
+        "era": "nt"
+      },
+      {
+        "ref": "Matt 2:16",
+        "testament": "NT",
+        "event": "Herod slaughters Bethlehem's infant boys in a failed attempt to kill the Messiah",
         "era": "nt"
       }
     ]
@@ -560,62 +639,96 @@
       "final-week",
       "exile-babylon"
     ],
-    "description": "[placeholder — awaiting Chat session #1323] Elevated city in the Judean hill country, ~2,500 ft above sea level. Capital under David, site of Solomon's Temple, and the geographic focus of Jesus' final week.",
-    "significance": "[placeholder] The city where David established his throne and where Jesus was crucified.",
+    "description": "Jerusalem occupies a naturally defended ridge in the Judean hill country at roughly 2,500 feet above sea level, flanked by the Kidron Valley to the east and the Hinnom Valley to the south and west. The city first appears in Genesis as 'Salem,' where Melchizedek blesses Abraham. The Jebusites held it as a fortress-city until David captured it by sending troops up the water shaft — the tactic that earned it the new name 'City of David.' Solomon built the First Temple on the ridge north of David's original city, on Mount Moriah — the same site where Abraham had nearly sacrificed Isaac. The city was destroyed by Babylon in 586 BC, rebuilt under Ezra and Nehemiah, subjected to Hellenistic and Roman domination, and became the stage for the final week of Jesus's ministry, his crucifixion outside the walls, his resurrection, and the outpouring of the Spirit at Pentecost.",
+    "significance": "Jerusalem is the geographic centre of redemption history. The Temple Mount concentrates multiple layers of theological meaning: the near-sacrifice of Isaac, the ark's resting place, the cloud of glory filling Solomon's Temple, and the site of Jesus's final teaching before his death. The city's repeated destruction and restoration tracks the arc of covenant faithfulness and judgment across the whole OT. The NT closes with the vision of a New Jerusalem descending from heaven — the earthly city's role fulfilled and transcended.",
     "key_verses": [
+      "Gen 14:18",
       "2 Sam 5:7",
-      "Ps 122:1",
-      "Matt 21:10"
+      "Ps 122:1-2",
+      "Isa 2:3",
+      "Matt 21:10",
+      "Luke 19:41",
+      "Rev 21:2"
     ],
     "scholar_notes": [
       {
         "scholar_id": "alter",
-        "tradition": "Jewish literary",
-        "note": "[placeholder — awaiting Chat session] Alter observes that Jerusalem's elevation functions throughout the Psalms as a deliberate theological statement.",
-        "ref": "Psalm 122"
+        "tradition": "Jewish literary criticism",
+        "note": "Alter observes that Jerusalem's topography becomes a theological language in the Psalms of Ascent. The repeated phrase 'going up to Jerusalem' is not just directional; it encodes the city's elevation above all earthly concerns. The mountain of the Lord's house 'raised above all mountains' in Isaiah 2:2 is an extension of this existing poetic geography.",
+        "ref": "Ps 122:1-4"
       },
       {
         "scholar_id": "macarthur",
-        "tradition": "Reformed evangelical",
-        "note": "[placeholder — awaiting Chat session] MacArthur notes that Calvary's location outside the city walls was not incidental — Levitical law required sin offerings to be burned outside the camp.",
+        "tradition": "Conservative evangelical",
+        "note": "MacArthur notes that Calvary's location outside Jerusalem's walls was not incidental geography. Leviticus required that sin offerings be burned outside the camp. Hebrews 13:12 makes the connection explicit: Jesus suffered outside the gate to sanctify the people through his own blood, fulfilling the very ritual the city's own sacrificial system anticipated.",
         "ref": "Heb 13:12"
+      },
+      {
+        "scholar_id": "brueggemann",
+        "tradition": "Post-critical OT theology",
+        "note": "Brueggemann argues that Jerusalem functions in the prophets as both the seat of God's promises and the test case for covenant faithfulness. The city's fall to Babylon is not merely a military defeat but a theological crisis requiring a complete rethinking of election, presence, and land — a crisis the exilic prophets work through with remarkable creativity.",
+        "ref": "2 Kgs 25:9"
+      },
+      {
+        "scholar_id": "beale",
+        "tradition": "Biblical theology / NT eschatology",
+        "note": "Beale traces a temple-city typology from Eden to New Jerusalem: the garden, the tabernacle, Solomon's Temple, Ezekiel's visionary temple, Jesus's body, the church as living temple, and finally the cosmic city of Revelation 21. Jerusalem is the pivot of this whole canonical arc — the place where heaven and earth were meant to meet, and will fully meet.",
+        "ref": "Rev 21:2"
       }
     ],
     "testament_history": [
       {
         "ref": "Gen 14:18",
         "testament": "OT",
-        "event": "[placeholder] Melchizedek, king of Salem, blesses Abram",
+        "event": "Melchizedek, priest-king of Salem, blesses Abram after the battle of the kings",
+        "era": "patriarch"
+      },
+      {
+        "ref": "Gen 22:2",
+        "testament": "OT",
+        "event": "Abraham takes Isaac to Moriah — the hill that will become the Temple Mount",
         "era": "patriarch"
       },
       {
         "ref": "2 Sam 5:7",
         "testament": "OT",
-        "event": "[placeholder] David captures the stronghold of Zion",
+        "event": "David captures the Jebusite stronghold; Jerusalem becomes the City of David",
         "era": "kingdom"
       },
       {
-        "ref": "2 Chr 3:1",
+        "ref": "1 Kgs 8:11",
         "testament": "OT",
-        "event": "[placeholder] Solomon builds the Temple on Mount Moriah",
+        "event": "The cloud of glory fills Solomon's Temple at its dedication",
         "era": "kingdom"
       },
       {
         "ref": "2 Kgs 25:9",
         "testament": "OT",
-        "event": "[placeholder] Babylonian destruction of the Temple",
+        "event": "Nebuchadnezzar burns the Temple and the city; the people are exiled to Babylon",
         "era": "exile"
       },
       {
-        "ref": "Luke 2:22",
+        "ref": "Ezra 6:15",
+        "testament": "OT",
+        "event": "The Second Temple completed under Zerubbabel and dedicated",
+        "era": "exile"
+      },
+      {
+        "ref": "Matt 21:10",
         "testament": "NT",
-        "event": "[placeholder] Jesus presented in the Temple",
+        "event": "Jesus enters Jerusalem on a donkey; the whole city is stirred",
         "era": "nt"
       },
       {
         "ref": "Matt 27:33",
         "testament": "NT",
-        "event": "[placeholder] Crucifixion at Golgotha, outside the walls",
+        "event": "Jesus crucified at Golgotha outside the city walls",
+        "era": "nt"
+      },
+      {
+        "ref": "Acts 2:1-4",
+        "testament": "NT",
+        "event": "The Spirit poured out on the disciples gathered in Jerusalem at Pentecost",
         "era": "nt"
       }
     ]
