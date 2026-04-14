@@ -21,11 +21,26 @@ import {
   Pressable,
 } from 'react-native';
 import { ArrowUpRight } from 'lucide-react-native';
-import {
-  MapView,
-  Camera,
-  type CameraStop,
-} from '@maplibre/maplibre-react-native';
+import { MapView, Camera } from '@maplibre/maplibre-react-native';
+
+/**
+ * Subset of MapLibre's `CameraStop` shape that we actually use. The real
+ * type is internal to `@maplibre/maplibre-react-native` (not re-exported
+ * from the package root), so we declare our own structural alias and
+ * lean on Camera's prop type acceptance at the usage site.
+ */
+type ChipCameraSettings = {
+  centerCoordinate?: [number, number];
+  zoomLevel?: number;
+  bounds?: {
+    ne: [number, number];
+    sw: [number, number];
+    paddingLeft?: number;
+    paddingRight?: number;
+    paddingTop?: number;
+    paddingBottom?: number;
+  };
+};
 import { StoryOverlays } from './StoryOverlays';
 import { STYLE_ANCIENT } from '../../screens/MapScreen';
 import { useTheme, spacing, radii, fontFamily } from '../../theme';
@@ -48,7 +63,7 @@ const CHIP_HEIGHT = 88;
 function defaultCameraForStory(
   story: MapStory,
   places: Place[],
-): CameraStop {
+): ChipCameraSettings {
   const placeIds = safeParse<string[]>(story.places_json, []);
   const storyPlaces = placeIds
     .map((id) => places.find((p) => p.id === id))

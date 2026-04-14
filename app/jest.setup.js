@@ -192,7 +192,7 @@ jest.mock('@maplibre/maplibre-react-native', () => {
     );
 
   const MapView = React.forwardRef((props, ref) =>
-    React.createElement(View, { ...props, ref, testID: props.testID ?? 'map-view' }, props.children),
+    React.createElement(View, { ...props, ref }, props.children),
   );
 
   const Camera = React.forwardRef((props, ref) => {

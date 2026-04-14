@@ -271,16 +271,23 @@ function MapScreen({ route, navigation }: {
 
   return (
     <View style={[styles.container, { backgroundColor: base.bg }]}>
-      <MapView
+      {/* Accessibility props live on a wrapping View — MapLibre's MapView
+          doesn't accept RN accessibility props directly. testID stays on
+          the wrapper so `getByTestId('map-view').props.accessibilityLabel`
+          keeps resolving in tests. */}
+      <View
         testID="map-view"
+        style={StyleSheet.absoluteFill}
+        accessible
+        accessibilityLabel="Biblical world map"
+        accessibilityHint="Pinch to zoom, drag to pan"
+      >
+      <MapView
         style={StyleSheet.absoluteFill}
         mapStyle={showModern ? STYLE_MODERN : STYLE_ANCIENT}
         onRegionDidChange={onRegionDidChange}
         logoEnabled={false}
         attributionEnabled={false}
-        accessible
-        accessibilityLabel="Biblical world map"
-        accessibilityHint="Pinch to zoom, drag to pan"
       >
         <Camera
           ref={cameraRef}
@@ -305,6 +312,7 @@ function MapScreen({ route, navigation }: {
         {/* Person geographic arc (#1324) */}
         {personArc?.stops?.length ? <PersonArcLayer stops={personArc.stops} /> : null}
       </MapView>
+      </View>
 
       {/* Search bar + era filter — overlaid at top below status bar */}
       <View style={[styles.topControls, { paddingTop: insets.top }]} pointerEvents="box-none">
