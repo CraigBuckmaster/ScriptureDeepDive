@@ -254,6 +254,22 @@ export interface MapStory {
   places_json: string | null;
   regions_json: string | null;
   paths_json: string | null;
+  /** JSON-encoded `StoryTerrainAnalysis` — added by #1327. */
+  terrain_analysis_json?: string | null;
+}
+
+/** Parsed shape of `terrain_analysis_json`. */
+export interface StoryTerrainAnalysis {
+  /** 1-sentence hook shown above the body. */
+  headline: string;
+  /** 150–250 word geographic / theological analysis. */
+  body: string;
+  /** Drives the ⚔ military badge on the section header. */
+  military?: boolean;
+  /** Drives the ✝ theological badge on the section header. */
+  theological?: boolean;
+  /** Scholar IDs whose published positions inform the body. */
+  source_scholars?: string[];
 }
 
 export interface WordStudy {

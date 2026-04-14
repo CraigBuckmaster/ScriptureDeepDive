@@ -175,7 +175,10 @@ CREATE TABLE map_stories (
   summary TEXT NOT NULL,
   places_json TEXT,
   regions_json TEXT,
-  paths_json TEXT
+  paths_json TEXT,
+  -- "Why this geography matters" — headline + 150-250 word body with
+  -- military / theological flags and a source_scholars array (#1327).
+  terrain_analysis_json TEXT
 );
 
 -- Ancient political borders per era (Patriarchal Canaan, Divided Kingdom,

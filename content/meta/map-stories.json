@@ -290,7 +290,17 @@
           "caption": "Abraham's call — the journey from Ur to Canaan",
           "credit": "Providence Lithograph Co. · Public domain"
         }
-      ]
+      ],
+      "terrain_analysis": {
+        "headline": "[placeholder] The 600-mile migration that broke with everything Abram had known",
+        "body": "[placeholder — awaiting Chat session #1327] Abram's call required him to leave the cradle of the urban world — Ur of the Chaldeans, a major Mesopotamian city — and traverse the Fertile Crescent to a land he did not yet know. This is the body of terrain analysis (150-250 words in production); for now a clearly marked placeholder so the UI rendering path is testable end to end without misrepresenting the content as real scholarship.",
+        "military": false,
+        "theological": true,
+        "source_scholars": [
+          "brueggemann",
+          "alter"
+        ]
+      }
     },
     {
       "id": "abram-egypt",
@@ -709,6 +719,16 @@
         "url": "https://contentcompanionstudy.com/art/map-egypt-1450bc.jpg",
         "caption": "Egypt 1450 BC",
         "credit": "Smith Bible Atlas - Public domain"
+      },
+      "terrain_analysis": {
+        "headline": "[placeholder] The wilderness route was protection and formation, not punishment",
+        "body": "[placeholder — awaiting Chat session #1327] The direct coastal Way of the Philistines would have brought Israel to Canaan in 11 days, but passed through Philistine military territory. Body of terrain analysis (150-250 words in production); placeholder text so the collapsed/expanded UI path renders.",
+        "military": true,
+        "theological": true,
+        "source_scholars": [
+          "brueggemann",
+          "macarthur"
+        ]
       }
     },
     {
@@ -1493,6 +1513,15 @@
         "url": "https://contentcompanionstudy.com/art/map-palestine-herod.jpg",
         "caption": "Palestine under Herod 30 BC",
         "credit": "Smith Bible Atlas - Public domain"
+      },
+      "terrain_analysis": {
+        "headline": "[placeholder] Why Bethlehem was the theologically loaded birthplace",
+        "body": "[placeholder — awaiting Chat session #1327] Bethlehem sits five miles south of Jerusalem in the Judean hill country, the ancestral village of David. Body of terrain analysis (150-250 words in production); placeholder text so rendering is verifiable.",
+        "military": false,
+        "theological": true,
+        "source_scholars": [
+          "ntwright"
+        ]
       }
     },
     {

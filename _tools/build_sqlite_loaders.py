@@ -617,15 +617,19 @@ def populate_map_stories(cur):
     stories = data.get('stories', [])
     count = 0
     for s in stories:
+        # terrain_analysis is optional; store only when present and well-formed.
+        terrain = s.get('terrain_analysis')
+        terrain_json = _json_str(terrain) if isinstance(terrain, dict) else None
         cur.execute(
             'INSERT INTO map_stories (id, era, name, scripture_ref, chapter_link, '
-            'summary, places_json, regions_json, paths_json) '
-            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            'summary, places_json, regions_json, paths_json, terrain_analysis_json) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (s['id'], s['era'], s['name'], s.get('ref'),
              s.get('chapter'), s.get('summary', ''),
              _json_str(s.get('places', [])),
              _json_str(s.get('regions', [])),
-             _json_str(s.get('paths', [])))
+             _json_str(s.get('paths', [])),
+             terrain_json)
         )
         count += 1
     return count
