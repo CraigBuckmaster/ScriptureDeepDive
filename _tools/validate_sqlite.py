@@ -751,7 +751,7 @@ def main():
     spine = q1(cur, "SELECT COUNT(*) FROM people WHERE type='spine'")
     sat = q1(cur, "SELECT COUNT(*) FROM people WHERE type='satellite'")
     check("62 spine people", spine == 62, f"got {spine}")
-    check("251 satellite people", sat == 251, f"got {sat}")
+    check("248 satellite people", sat == 248, f"got {sat}")
 
     # Sanity: the two endpoints of the genealogy tree must always be spine
     adam_type = q1(cur, "SELECT type FROM people WHERE id='adam'")

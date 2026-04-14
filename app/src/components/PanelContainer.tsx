@@ -45,13 +45,15 @@ export function PanelContainer({
     onPersonPress, onPlacePress, onEventPress,
   }), [onRefPress, onWordStudyPress, onScholarPress, onPersonPress, onPlacePress, onEventPress]);
 
-  if (!isOpen) return null;
-
+  // panelStyle must be computed before any early return so hook call order
+  // stays consistent across renders. getPanelColors() is pure (theme-keyed).
   const colors = getPanelColors(panelType);
   const panelStyle = useMemo(() => ({
     backgroundColor: colors.bg,
     borderLeftColor: colors.accent,
   }), [colors.bg, colors.accent]);
+
+  if (!isOpen) return null;
 
   return (
     <View
