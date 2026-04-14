@@ -1,10 +1,18 @@
 import { renderHook, act } from '@testing-library/react-native';
 
-jest.mock('@/utils/geoMath', () => ({
-  zoomFromDelta: jest.fn((delta: number) => Math.round(Math.log2(360 / delta))),
-}));
-
 import { useMapZoom } from '@/hooks/useMapZoom';
+
+/** Build a synthetic MapLibre onRegionDidChange event. */
+function event(zoom: number) {
+  return {
+    properties: {
+      zoomLevel: zoom,
+      heading: 0,
+      pitch: 0,
+      isUserInteraction: true,
+    },
+  };
+}
 
 describe('useMapZoom', () => {
   beforeEach(() => {
@@ -25,33 +33,49 @@ describe('useMapZoom', () => {
     expect(result.current.zoomLevel).toBe(5);
   });
 
-  it('updates zoom after debounce on region change', () => {
+  it('reads zoom directly from the camera-changed event after debounce', () => {
     const { result } = renderHook(() => useMapZoom(5));
     act(() => {
-      result.current.onRegionChange({
-        latitude: 31,
-        longitude: 35,
-        latitudeDelta: 1.4,
-        longitudeDelta: 1.4,
-      });
+      result.current.onRegionDidChange(event(8.3));
       jest.advanceTimersByTime(200);
     });
-    expect(result.current.zoomLevel).toBeGreaterThan(0);
+    expect(result.current.zoomLevel).toBeCloseTo(8.3, 1);
   });
 
-  it('debounces rapid region changes', () => {
-    const { zoomFromDelta } = require('@/utils/geoMath');
+  it('debounces rapid camera changes to the final value', () => {
     const { result } = renderHook(() => useMapZoom(5));
 
     act(() => {
-      // Fire 3 rapid changes
-      result.current.onRegionChange({ latitude: 0, longitude: 0, latitudeDelta: 10, longitudeDelta: 10 });
-      result.current.onRegionChange({ latitude: 0, longitude: 0, latitudeDelta: 5, longitudeDelta: 5 });
-      result.current.onRegionChange({ latitude: 0, longitude: 0, latitudeDelta: 2, longitudeDelta: 2 });
+      result.current.onRegionDidChange(event(3));
+      result.current.onRegionDidChange(event(5));
+      result.current.onRegionDidChange(event(7));
       jest.advanceTimersByTime(200);
     });
 
-    // Only the last call should have resulted in a state update
-    expect(zoomFromDelta).toHaveBeenLastCalledWith(2);
+    expect(result.current.zoomLevel).toBe(7);
+  });
+
+  it('ignores events missing a zoom property', () => {
+    const { result } = renderHook(() => useMapZoom(5));
+    act(() => {
+      result.current.onRegionDidChange({} as any);
+      jest.advanceTimersByTime(200);
+    });
+    expect(result.current.zoomLevel).toBe(5);
+  });
+
+  it('clamps zoom values to the MapLibre range [0, 22]', () => {
+    const { result } = renderHook(() => useMapZoom(5));
+    act(() => {
+      result.current.onRegionDidChange(event(-3));
+      jest.advanceTimersByTime(200);
+    });
+    expect(result.current.zoomLevel).toBe(0);
+
+    act(() => {
+      result.current.onRegionDidChange(event(99));
+      jest.advanceTimersByTime(200);
+    });
+    expect(result.current.zoomLevel).toBe(22);
   });
 });

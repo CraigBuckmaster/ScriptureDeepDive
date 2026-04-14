@@ -25,9 +25,6 @@
         "UIBackgroundModes": [
           "audio"
         ]
-      },
-      "config": {
-        "googleMapsApiKey": "GOOGLE_MAPS_API_KEY"
       }
     },
     "android": {
@@ -36,12 +33,7 @@
         "backgroundColor": "#0c0a07"
       },
       "package": "com.scripturedeepive.app",
-      "versionCode": 1,
-      "config": {
-        "googleMaps": {
-          "apiKey": "GOOGLE_MAPS_API_KEY"
-        }
-      }
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/images/icon-192.png",
@@ -57,7 +49,8 @@
         }
       ],
       "expo-asset",
-      "expo-sqlite"
+      "expo-sqlite",
+      "@maplibre/maplibre-react-native"
     ],
     "updates": {
       "url": "https://u.expo.dev/105f31ba-3cfb-4d35-8509-4abbe6ab132d",

@@ -1,41 +1,12 @@
 /**
  * app.config.js — Dynamic Expo config.
  *
- * Reads the base config from app.json and injects secrets from
- * environment variables so they never appear in source control.
+ * Currently a thin passthrough over app.json. Kept as a dynamic config so
+ * future environment-based tweaks (Sentry DSN, feature flags, etc.) can be
+ * layered on without editing app.json.
  *
- * Set GOOGLE_MAPS_API_KEY in your .env file or CI environment.
+ * Note: Google Maps API keys are no longer injected — the map now uses
+ * MapLibre with free OpenFreeMap tiles, no API keys required (#1315).
  */
 
-const baseConfig = require('./app.json');
-
-const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY || '';
-
-let _warnedMapsKey = false;
-
-module.exports = ({ config }) => {
-  if (!GOOGLE_MAPS_API_KEY && !_warnedMapsKey) {
-    _warnedMapsKey = true;
-    console.warn('app.config.js: GOOGLE_MAPS_API_KEY env var is not set — maps will not work');
-  }
-
-  return {
-    ...config,
-    ios: {
-      ...config.ios,
-      config: {
-        ...config.ios?.config,
-        googleMapsApiKey: GOOGLE_MAPS_API_KEY,
-      },
-    },
-    android: {
-      ...config.android,
-      config: {
-        ...config.android?.config,
-        googleMaps: {
-          apiKey: GOOGLE_MAPS_API_KEY,
-        },
-      },
-    },
-  };
-};
+module.exports = ({ config }) => config;

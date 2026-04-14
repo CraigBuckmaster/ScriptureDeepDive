@@ -1,7 +1,9 @@
 /**
  * utils/geoMath.ts — Geographic coordinate utilities.
  *
- * CRITICAL: PWA stores [lon, lat] (GeoJSON). react-native-maps uses {latitude, longitude}.
+ * CRITICAL: content JSON stores [lon, lat] (GeoJSON). Legacy helpers here
+ * convert to {latitude, longitude} for callers that still use that shape.
+ * MapLibre itself is GeoJSON-native, so new code should keep [lon, lat].
  */
 
 export function toLatLng([lon, lat]: number[]): { latitude: number; longitude: number } {

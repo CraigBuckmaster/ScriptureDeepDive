@@ -1,45 +1,22 @@
 /**
- * MapScreen — Biblical world map with 71 places, 28 stories.
+ * MapScreen — Biblical world map, MapLibre edition.
  *
- * react-native-maps terrain tiles + custom place labels + story overlays
- * (region polygons, journey polylines, directional arrows).
- * Era filtering, ancient/modern toggle, story panel bottom sheet.
- * Deep-link: storyId or placeId route params.
+ * Sepia/parchment MapLibre style hosted on R2, with 373 biblical places
+ * rendered as GPU SymbolLayers and 28 stories rendered as GeoJSON overlays.
+ * Era filter + ancient/modern name toggle + story bottom panel. Deep-link
+ * via `storyId` or `placeId` route params.
+ *
+ * Migrated from react-native-maps in #1315 (MapLibre migration epic #1314).
  */
 
 import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { View, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import MapView, { PROVIDER_GOOGLE, PROVIDER_DEFAULT } from 'react-native-maps';
-import Constants from 'expo-constants';
-
+import { MapView, Camera, type CameraRef } from '@maplibre/maplibre-react-native';
 import { usePlaces } from '../hooks/usePlaces';
 import { useMapStories } from '../hooks/useMapStories';
 import { useMapZoom } from '../hooks/useMapZoom';
 import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
-import { ancientMapStyle, modernMapStyle } from '../utils/mapStyles';
-
-/**
- * Google Maps key auto-detection. The iOS / Android keys are injected by
- * `app.config.js` when GOOGLE_MAPS_API_KEY is present in the build env.
- * We use the presence of either platform key as the signal that this build
- * has the Google Maps SDK linked. In Expo Go (no key), we fall back to the
- * default provider (Apple Maps on iOS, OSM-backed terrain elsewhere).
- *
- * Exported so unit tests can verify the detection logic.
- */
-export function detectGoogleMapsKey(constants: typeof Constants): string | null {
-  const cfg: any = constants?.expoConfig ?? {};
-  return (
-    cfg?.ios?.config?.googleMapsApiKey ??
-    cfg?.android?.config?.googleMaps?.apiKey ??
-    null
-  );
-}
-
-const GOOGLE_MAPS_KEY = detectGoogleMapsKey(Constants);
-const USE_GOOGLE_MAPS = !!GOOGLE_MAPS_KEY;
-
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { PlaceMarkerList } from '../components/map/PlaceMarkerList';
 import { StoryOverlays } from '../components/map/StoryOverlays';
@@ -49,13 +26,17 @@ import { PlaceDetailCard } from '../components/map/PlaceDetailCard';
 import { PlaceSearchBar } from '../components/map/PlaceSearchBar';
 import { FloatingControls } from '../components/map/FloatingControls';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-
 import { useTheme, spacing } from '../theme';
 import type { MapStory, Place } from '../types';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { logger, safeParse } from '../utils/logger';
 import { lightImpact } from '../utils/haptics';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+
+// ── MapLibre style URLs (hosted on R2; see #1316) ─────────────────────
+// Deploying a new style is an R2 upload — no app release required.
+export const STYLE_ANCIENT = 'https://contentcompanionstudy.com/map-styles/ancient.json';
+export const STYLE_MODERN = 'https://contentcompanionstudy.com/map-styles/modern.json';
 
 /** Build a place-id → stories[] index. Pure helper so it's unit-testable. */
 export function buildPlaceToStoriesMap(stories: MapStory[]): Map<string, MapStory[]> {
@@ -71,11 +52,13 @@ export function buildPlaceToStoriesMap(stories: MapStory[]): Map<string, MapStor
   return map;
 }
 
-const INITIAL_REGION = {
-  latitude: 30,
-  longitude: 38,
-  latitudeDelta: 30,
-  longitudeDelta: 30,
+// Roughly the Fertile Crescent — Israel through Turkey, Egypt, Iraq.
+// Used as default camera and as the pre-cached tile region (#1321).
+export const BIBLICAL_REGION = {
+  center: [38, 30] as [number, number],
+  zoom: 4,
+  ne: [55, 45] as [number, number],
+  sw: [25, 20] as [number, number],
 };
 
 function MapScreen({ route, navigation }: {
@@ -89,8 +72,8 @@ function MapScreen({ route, navigation }: {
 
   const { places, isLoading: placesLoading } = usePlaces();
   const { stories, isLoading: storiesLoading } = useMapStories();
-  const { zoomLevel, onRegionChange } = useMapZoom();
-  const mapRef = useRef<MapView>(null);
+  const { zoomLevel, onRegionDidChange } = useMapZoom();
+  const cameraRef = useRef<CameraRef>(null);
   const insets = useSafeAreaInsets();
   const { height: screenHeight } = useWindowDimensions();
 
@@ -106,14 +89,14 @@ function MapScreen({ route, navigation }: {
     [stories, activeEra]
   );
 
-  // Map of placeId → stories that include it (computed once per stories change)
+  // Map of placeId → stories that include it
   const placeToStories = useMemo(() => buildPlaceToStoriesMap(stories), [stories]);
 
-  // Select a story → show overlays, fit map bounds, open panel
+  /** Select a story → overlays, camera fit, panel open. */
   const selectStory = useCallback((story: MapStory) => {
     setActiveStory(story);
     setShowPanel(true);
-    setSelectedPlace(null); // story panel and place card share the bottom slot
+    setSelectedPlace(null);
 
     try {
       const placeIds: string[] = JSON.parse(story.places_json ?? '[]');
@@ -121,29 +104,35 @@ function MapScreen({ route, navigation }: {
         .map((id) => places.find((p) => p.id === id))
         .filter(Boolean) as Place[];
 
-      if (storyPlaces.length && mapRef.current) {
-        // Story panel takes ~40% of screen; centre places in the visible area above it
+      if (storyPlaces.length && cameraRef.current) {
+        // Story panel takes ~40% of screen; pad the bottom to keep points visible.
         const panelHeight = Math.round(screenHeight * 0.4);
-        const topPad = insets.top + 50; // status bar + era filter
-        mapRef.current.fitToCoordinates(
-          storyPlaces.map((p) => ({ latitude: p.latitude, longitude: p.longitude })),
-          { edgePadding: { top: topPad, right: 40, bottom: panelHeight + 20, left: 40 }, animated: true }
+        const topPad = insets.top + 50;
+
+        // Compute bounding box in [lon, lat] order (MapLibre convention).
+        let minLon = Infinity, maxLon = -Infinity, minLat = Infinity, maxLat = -Infinity;
+        for (const p of storyPlaces) {
+          if (p.longitude < minLon) minLon = p.longitude;
+          if (p.longitude > maxLon) maxLon = p.longitude;
+          if (p.latitude < minLat) minLat = p.latitude;
+          if (p.latitude > maxLat) maxLat = p.latitude;
+        }
+        cameraRef.current.fitBounds(
+          [maxLon, maxLat],
+          [minLon, minLat],
+          [topPad, 40, panelHeight + 20, 40],
+          700,
         );
       }
     } catch (err) { logger.warn('MapScreen', 'Operation failed', err); }
-  }, [places]);
+  }, [places, insets.top, screenHeight]);
 
-  // Pan to a specific place
+  /** Pan to a specific place. */
   const panToPlace = useCallback((place: Place) => {
-    mapRef.current?.animateToRegion({
-      latitude: place.latitude,
-      longitude: place.longitude,
-      latitudeDelta: 2,
-      longitudeDelta: 2,
-    }, 500);
+    cameraRef.current?.flyTo([place.longitude, place.latitude], 500);
   }, []);
 
-  // Tap a marker → open detail card + recentre
+  /** Tap a marker → open detail card + recentre. */
   const handlePlacePress = useCallback((place: Place) => {
     lightImpact();
     setActiveStory(null);
@@ -186,17 +175,16 @@ function MapScreen({ route, navigation }: {
     }
   }, [navigation]);
 
-  // Era filter change — auto-select the first matching story to jump the map
+  /** Era filter change — auto-select the first matching story to jump the map. */
   const handleEraChange = useCallback((era: string) => {
     setActiveEra(era);
-    setSelectedPlace(null); // close any open place detail card
+    setSelectedPlace(null);
     if (era === 'all') {
       setActiveStory(null);
       setShowPanel(false);
-      mapRef.current?.animateToRegion(INITIAL_REGION, 500);
+      cameraRef.current?.flyTo(BIBLICAL_REGION.center, 500);
       return;
     }
-    // If current story doesn't match the new era, jump to the first matching story
     if (activeStory?.era === era) return;
     const firstMatch = stories.find((s) => s.era === era);
     if (firstMatch) {
@@ -219,28 +207,30 @@ function MapScreen({ route, navigation }: {
 
   return (
     <View style={[styles.container, { backgroundColor: base.bg }]}>
-      {/* Map fills the entire screen */}
       <MapView
-        ref={mapRef}
+        testID="map-view"
         style={StyleSheet.absoluteFill}
-        provider={USE_GOOGLE_MAPS ? PROVIDER_GOOGLE : PROVIDER_DEFAULT}
-        mapType="terrain"
-        customMapStyle={USE_GOOGLE_MAPS ? (showModern ? modernMapStyle : ancientMapStyle) : undefined}
-        showsPointsOfInterest={USE_GOOGLE_MAPS ? undefined : showModern}
-        showsBuildings={USE_GOOGLE_MAPS ? undefined : showModern}
-        initialRegion={INITIAL_REGION}
-        onRegionChangeComplete={onRegionChange}
-        showsTraffic={false}
-        showsIndoors={false}
+        mapStyle={showModern ? STYLE_MODERN : STYLE_ANCIENT}
+        onRegionDidChange={onRegionDidChange}
+        logoEnabled={false}
+        attributionEnabled={false}
         accessible
         accessibilityLabel="Biblical world map"
         accessibilityHint="Pinch to zoom, drag to pan"
       >
+        <Camera
+          ref={cameraRef}
+          defaultSettings={{
+            centerCoordinate: BIBLICAL_REGION.center,
+            zoomLevel: BIBLICAL_REGION.zoom,
+          }}
+        />
         <PlaceMarkerList
           places={places}
           showModern={showModern}
           zoomLevel={zoomLevel}
           activeStory={activeStory}
+          activePlaceId={selectedPlace?.id ?? null}
           onPlacePress={handlePlacePress}
         />
         {activeStory && (
@@ -261,7 +251,7 @@ function MapScreen({ route, navigation }: {
           onToggleNames={() => setShowModern((v) => !v)}
           onCentre={() => {
             if (activeStory) selectStory(activeStory);
-            else mapRef.current?.animateToRegion(INITIAL_REGION, 500);
+            else cameraRef.current?.flyTo(BIBLICAL_REGION.center, 500);
           }}
         />
       </View>

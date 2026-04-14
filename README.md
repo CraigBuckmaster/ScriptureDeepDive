@@ -123,7 +123,7 @@ Additional content directories exist for interlinear data (66 book files), archa
 | Auth | Supabase (Google, Facebook, email) |
 | Storage | Cloudflare R2 (DB delivery CDN) |
 | Tree rendering | react-native-svg 15 + d3-hierarchy |
-| Map | react-native-maps 1.20 |
+| Map | @maplibre/maplibre-react-native 10 (OpenFreeMap vector tiles) |
 | Gestures | react-native-gesture-handler 2.28 + react-native-reanimated 4.1 |
 | State | Zustand 5 |
 | Testing | Jest (jest-expo) — 264 test suites |

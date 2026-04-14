@@ -14,23 +14,10 @@ jest.mock('@/stores', () => ({
 
 jest.mock('@/hooks/usePlaces', () => ({ usePlaces: () => ({ places: [], isLoading: false }) }));
 jest.mock('@/hooks/useMapStories', () => ({ useMapStories: () => ({ stories: [], isLoading: false }) }));
-jest.mock('@/hooks/useMapZoom', () => ({ useMapZoom: () => ({ zoomLevel: 5, onRegionChange: jest.fn() }) }));
+jest.mock('@/hooks/useMapZoom', () => ({ useMapZoom: () => ({ zoomLevel: 5, onRegionDidChange: jest.fn() }) }));
 jest.mock('@/hooks/useLandscapeUnlock', () => ({ useLandscapeUnlock: jest.fn() }));
-jest.mock('@/utils/mapStyles', () => ({ ancientMapStyle: [], modernMapStyle: [] }));
-jest.mock('react-native-maps', () => {
-  const React = require('react');
-  const { View } = require('react-native');
-  return {
-    __esModule: true,
-    default: React.forwardRef((props: any, _ref: any) =>
-      React.createElement(View, props, props.children),
-    ),
-    PROVIDER_GOOGLE: 'google',
-    PROVIDER_DEFAULT: undefined,
-  };
-});
 
-import { buildPlaceToStoriesMap, detectGoogleMapsKey } from '@/screens/MapScreen';
+import { buildPlaceToStoriesMap, STYLE_ANCIENT, STYLE_MODERN } from '@/screens/MapScreen';
 import type { MapStory } from '@/types';
 
 function story(id: string, places: string[]): MapStory {
@@ -77,37 +64,12 @@ describe('buildPlaceToStoriesMap', () => {
   });
 });
 
-describe('detectGoogleMapsKey', () => {
-  it('returns null when no key is configured (e.g. Expo Go)', () => {
-    expect(detectGoogleMapsKey({ expoConfig: { version: '1.0.0' } } as any)).toBeNull();
+describe('MapLibre style URLs', () => {
+  it('points ancient.json at the R2-hosted map-styles path', () => {
+    expect(STYLE_ANCIENT).toMatch(/map-styles\/ancient\.json$/);
   });
 
-  it('returns the iOS key when present', () => {
-    const out = detectGoogleMapsKey({
-      expoConfig: { ios: { config: { googleMapsApiKey: 'ios-key' } } },
-    } as any);
-    expect(out).toBe('ios-key');
-  });
-
-  it('falls back to the Android key when iOS key is absent', () => {
-    const out = detectGoogleMapsKey({
-      expoConfig: { android: { config: { googleMaps: { apiKey: 'android-key' } } } },
-    } as any);
-    expect(out).toBe('android-key');
-  });
-
-  it('prefers the iOS key when both are set', () => {
-    const out = detectGoogleMapsKey({
-      expoConfig: {
-        ios: { config: { googleMapsApiKey: 'ios-key' } },
-        android: { config: { googleMaps: { apiKey: 'android-key' } } },
-      },
-    } as any);
-    expect(out).toBe('ios-key');
-  });
-
-  it('returns null when expoConfig is missing entirely', () => {
-    expect(detectGoogleMapsKey({} as any)).toBeNull();
-    expect(detectGoogleMapsKey(null as any)).toBeNull();
+  it('points modern.json at the R2-hosted map-styles path', () => {
+    expect(STYLE_MODERN).toMatch(/map-styles\/modern\.json$/);
   });
 });
