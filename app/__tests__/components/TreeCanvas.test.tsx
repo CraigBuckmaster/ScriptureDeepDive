@@ -81,6 +81,10 @@ describe('TreeCanvas', () => {
     spineIds: new Set<string>(),
     selectedPersonId: null,
     onNodePress: jest.fn(),
+    // Tests render synchronously; skipStagger bypasses the
+    // requestAnimationFrame-based reveal so assertions can see the
+    // fully revealed node set immediately.
+    skipStagger: true,
   };
 
   it('renders without crashing with empty data', () => {
