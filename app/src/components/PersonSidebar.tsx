@@ -28,10 +28,16 @@ interface Props {
   onChapterPress?: (chapterLink: string) => void;
   onTreePress?: (personId: string) => void;
   onJourneyPress?: (personId: string) => void;
+  onMapPress?: (personId: string) => void;
   hasJourney?: boolean;
+  /** Whether the person has a populated `geography` array (#1324). */
+  hasGeography?: boolean;
 }
 
-export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterPress, onTreePress, onJourneyPress, hasJourney }: Props) {
+export function PersonSidebar({
+  visible, onClose, person, onNavigate, onChapterPress,
+  onTreePress, onJourneyPress, onMapPress, hasJourney, hasGeography,
+}: Props) {
   const { base } = useTheme();
   const [children, setChildren] = useState<Person[]>([]);
   const [spouses, setSpouses] = useState<Person[]>([]);
@@ -176,6 +182,18 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
               <Text style={[styles.actionLinkText, { color: base.gold }]}>
                 Follow their journey →
               </Text>
+            </TouchableOpacity>
+          )}
+
+          {hasGeography && onMapPress && (
+            <TouchableOpacity
+              onPress={() => onMapPress(person.id)}
+              style={styles.actionLink}
+              accessibilityLabel="View this person's geographic arc on the map"
+              accessibilityRole="link"
+            >
+              <Text style={[styles.actionLinkText, { color: base.gold }]}>View on Map</Text>
+              <ArrowRight size={14} color={base.gold} />
             </TouchableOpacity>
           )}
 

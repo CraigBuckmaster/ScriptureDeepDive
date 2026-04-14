@@ -179,14 +179,68 @@ jest.mock('react-native-gesture-handler', () => {
   };
 });
 
-// Mock react-native-maps
-jest.mock('react-native-maps', () => ({
-  __esModule: true,
-  default: 'MapView',
-  Marker: 'Marker',
-  Polygon: 'Polygon',
-  Polyline: 'Polyline',
-}));
+// Mock @maplibre/maplibre-react-native — renders children inline as Views
+// and exposes stub CameraRef methods so components under test can call
+// fitBounds / flyTo without crashing.
+jest.mock('@maplibre/maplibre-react-native', () => {
+  const React = require('react');
+  const { View } = require('react-native');
+
+  const pass = (name) =>
+    React.forwardRef((props, ref) =>
+      React.createElement(View, { ...props, ref, testID: props.testID ?? name }, props.children),
+    );
+
+  const MapView = React.forwardRef((props, ref) =>
+    React.createElement(View, { ...props, ref }, props.children),
+  );
+
+  const Camera = React.forwardRef((props, ref) => {
+    React.useImperativeHandle(ref, () => ({
+      fitBounds: jest.fn(),
+      flyTo: jest.fn(),
+      setCamera: jest.fn(),
+      moveTo: jest.fn(),
+      zoomTo: jest.fn(),
+    }));
+    return React.createElement(View, { testID: 'camera' });
+  });
+
+  const ShapeSource = ({ children, onPress }) =>
+    React.createElement(View, { testID: 'shape-source', onPress }, children);
+
+  const offlineManager = {
+    createPack: jest.fn().mockResolvedValue(undefined),
+    getPack: jest.fn().mockResolvedValue(null),
+    getPacks: jest.fn().mockResolvedValue([]),
+    deletePack: jest.fn().mockResolvedValue(undefined),
+    setMaximumAmbientCacheSize: jest.fn().mockResolvedValue(undefined),
+    clearAmbientCache: jest.fn().mockResolvedValue(undefined),
+  };
+
+  const api = {
+    __esModule: true,
+    MapView,
+    Camera,
+    ShapeSource,
+    CircleLayer: pass('CircleLayer'),
+    SymbolLayer: pass('SymbolLayer'),
+    FillLayer: pass('FillLayer'),
+    LineLayer: pass('LineLayer'),
+    Images: pass('Images'),
+    RasterSource: pass('RasterSource'),
+    RasterLayer: pass('RasterLayer'),
+    UserLocation: pass('UserLocation'),
+    Logger: { setLogLevel: jest.fn() },
+    // MapLibre RN exposes both the preferred `OfflineManager` and the
+    // deprecated `offlineManager` alias. Export both so tests can import
+    // either shape.
+    OfflineManager: offlineManager,
+    offlineManager,
+  };
+
+  return { ...api, default: api };
+});
 
 // Mock react-native-svg
 jest.mock('react-native-svg', () => ({

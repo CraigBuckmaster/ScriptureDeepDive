@@ -1,127 +1,125 @@
-import React from 'react';
-import { StoryOverlays } from '@/components/map/StoryOverlays';
-import { renderWithProviders } from '../helpers/renderWithProviders';
-import type { MapStory } from '@/types';
+import {
+  regionsToFeatureCollection,
+  pathsToFeatureCollection,
+  arrowsFromPaths,
+  bearingDeg,
+} from '@/components/map/StoryOverlays';
 
-jest.mock('@/utils/geoMath', () => ({
-  toLatLng: ([lon, lat]: number[]) => ({ latitude: lat, longitude: lon }),
-  computeBearing: () => 45,
-  midpoint: (
-    a: { latitude: number; longitude: number },
-    b: { latitude: number; longitude: number },
-  ) => ({
-    latitude: (a.latitude + b.latitude) / 2,
-    longitude: (a.longitude + b.longitude) / 2,
-  }),
-  pathDistance: (coords: { latitude: number; longitude: number }[]) =>
-    // Simple stub: 100 miles per leg so the label renders deterministically.
-    Math.max(0, coords.length - 1) * 100,
-}));
-
-beforeEach(() => jest.clearAllMocks());
-
-const baseStory: MapStory = {
-  id: 's1',
-  era: 'patriarchs',
-  name: 'Abraham Journey',
-  scripture_ref: 'Genesis 12',
-  chapter_link: null,
-  summary: 'A journey from Ur to Canaan',
-  places_json: null,
-  regions_json: null,
-  paths_json: null,
-};
-
-describe('StoryOverlays', () => {
-  it('renders nothing when story has no regions or paths', () => {
-    const { toJSON } = renderWithProviders(
-      <StoryOverlays story={baseStory} zoomLevel={7} />,
-    );
-    expect(toJSON()).toBeNull();
+describe('regionsToFeatureCollection', () => {
+  it('returns an empty FeatureCollection when no regions exist', () => {
+    const fc = regionsToFeatureCollection([], '#bfa050');
+    expect(fc.type).toBe('FeatureCollection');
+    expect(fc.features).toEqual([]);
   });
 
-  it('renders polygon elements for regions', () => {
-    const story: MapStory = {
-      ...baseStory,
-      regions_json: JSON.stringify([
-        { coords: [[35, 31], [36, 31], [36, 32], [35, 32]], color: '#ff0000', label: 'Canaan' },
-      ]),
-    };
-    const tree = renderWithProviders(
-      <StoryOverlays story={story} zoomLevel={7} />,
+  it('emits Polygon features with ring auto-closed on missing last coord', () => {
+    const fc = regionsToFeatureCollection(
+      [{ coords: [[35, 31], [36, 31], [36, 32], [35, 32]], color: '#ff0000', label: 'Canaan' }],
+      '#bfa050',
     );
-    // The Polygon mock renders as a string tag; check that the tree is non-null
-    expect(tree.toJSON()).not.toBeNull();
+    expect(fc.features).toHaveLength(1);
+    const geom = fc.features[0].geometry as GeoJSON.Polygon;
+    expect(geom.type).toBe('Polygon');
+    // Ring should be closed — last coord equals first
+    const ring = geom.coordinates[0];
+    expect(ring[0]).toEqual(ring[ring.length - 1]);
   });
 
-  it('renders polyline elements for paths', () => {
-    const story: MapStory = {
-      ...baseStory,
-      paths_json: JSON.stringify([
-        { coords: [[35, 31], [36, 32]], dashed: false },
-      ]),
-    };
-    const tree = renderWithProviders(
-      <StoryOverlays story={story} zoomLevel={7} />,
+  it('keeps explicit color and label in properties and falls back to era color', () => {
+    const fc = regionsToFeatureCollection(
+      [
+        { coords: [[0, 0], [1, 0], [1, 1]], color: '#abcdef', label: 'A' },
+        { coords: [[0, 0], [1, 0], [1, 1]] },
+      ],
+      '#bfa050',
     );
-    expect(tree.toJSON()).not.toBeNull();
+    expect(fc.features[0].properties).toMatchObject({ color: '#abcdef', label: 'A' });
+    expect(fc.features[1].properties).toMatchObject({ color: '#bfa050', label: '' });
   });
 
-  it('renders both regions and paths together', () => {
-    const story: MapStory = {
-      ...baseStory,
-      regions_json: JSON.stringify([
-        { coords: [[35, 31], [36, 31], [36, 32], [35, 32]], color: '#ff0000', label: 'Canaan' },
-      ]),
-      paths_json: JSON.stringify([
-        { coords: [[35, 31], [36, 32]], dashed: true },
-      ]),
-    };
-    const tree = renderWithProviders(
-      <StoryOverlays story={story} zoomLevel={7} />,
+  it('drops degenerate rings with fewer than 3 coords', () => {
+    const fc = regionsToFeatureCollection(
+      [
+        { coords: [[0, 0]] },
+        { coords: [[0, 0], [1, 0]] },
+        { coords: [[0, 0], [1, 0], [1, 1]] },
+      ],
+      '#bfa050',
     );
-    const json = tree.toJSON();
-    expect(json).not.toBeNull();
-    // Should have multiple children (polygon + polyline fragment)
-    expect(Array.isArray(json)).toBe(true);
+    expect(fc.features).toHaveLength(1);
+  });
+});
+
+describe('pathsToFeatureCollection', () => {
+  it('returns an empty FeatureCollection when no paths exist', () => {
+    const fc = pathsToFeatureCollection([]);
+    expect(fc.type).toBe('FeatureCollection');
+    expect(fc.features).toEqual([]);
   });
 
-  it('handles invalid JSON gracefully', () => {
-    const story: MapStory = {
-      ...baseStory,
-      regions_json: '{bad json',
-      paths_json: '{bad json',
-    };
-    const { toJSON } = renderWithProviders(
-      <StoryOverlays story={story} zoomLevel={7} />,
-    );
-    expect(toJSON()).toBeNull();
+  it('emits LineString features with dashed + label props', () => {
+    const fc = pathsToFeatureCollection([
+      { coords: [[35, 31], [36, 32]], dashed: false, label: 'Solid' },
+      { coords: [[37, 33], [38, 34]], dashed: true, label: 'Dashed' },
+    ]);
+    expect(fc.features).toHaveLength(2);
+    expect((fc.features[0].geometry as GeoJSON.LineString).type).toBe('LineString');
+    expect(fc.features[0].properties).toMatchObject({ dashed: false, label: 'Solid' });
+    expect(fc.features[1].properties).toMatchObject({ dashed: true, label: 'Dashed' });
   });
 
-  it('renders a distance label at zoom >= 5 for paths with >= 2 points', () => {
-    const story: MapStory = {
-      ...baseStory,
-      paths_json: JSON.stringify([
-        { coords: [[35, 31], [36, 32]], dashed: false },
-      ]),
-    };
-    const { getByLabelText } = renderWithProviders(
-      <StoryOverlays story={story} zoomLevel={6} />,
-    );
-    // Stub returns 100 miles per leg (1 leg → 100 mi).
-    expect(getByLabelText('Distance: about 100 miles')).toBeTruthy();
+  it('drops paths with fewer than 2 coords', () => {
+    const fc = pathsToFeatureCollection([
+      { coords: [[0, 0]] },
+      { coords: [[0, 0], [1, 1]] },
+    ]);
+    expect(fc.features).toHaveLength(1);
   });
 
-  it('does not render a distance label below the min zoom', () => {
-    const story: MapStory = {
-      ...baseStory,
-      paths_json: JSON.stringify([
-        { coords: [[35, 31], [36, 32]], dashed: false },
-      ]),
-    };
-    const { queryByLabelText } = renderWithProviders(
-      <StoryOverlays story={story} zoomLevel={4} />,
-    );
-    expect(queryByLabelText(/Distance: about/)).toBeNull();
+  it('defaults missing dashed/label fields to false and empty string', () => {
+    const fc = pathsToFeatureCollection([{ coords: [[0, 0], [1, 1]] }]);
+    expect(fc.features[0].properties).toMatchObject({ dashed: false, label: '' });
+  });
+});
+
+describe('bearingDeg', () => {
+  it('returns ~0° for due north', () => {
+    expect(bearingDeg([0, 0], [0, 1])).toBeCloseTo(0, 0);
+  });
+
+  it('returns ~90° for due east', () => {
+    expect(bearingDeg([0, 0], [1, 0])).toBeCloseTo(90, 0);
+  });
+
+  it('returns ~180° for due south', () => {
+    expect(bearingDeg([0, 0], [0, -1])).toBeCloseTo(180, 0);
+  });
+
+  it('returns ~270° for due west', () => {
+    expect(bearingDeg([0, 0], [-1, 0])).toBeCloseTo(270, 0);
+  });
+
+  it('wraps into the [0, 360) range', () => {
+    expect(bearingDeg([10, 10], [5, 5])).toBeGreaterThanOrEqual(0);
+    expect(bearingDeg([10, 10], [5, 5])).toBeLessThan(360);
+  });
+});
+
+describe('arrowsFromPaths', () => {
+  it('emits one arrow per path, at its last coord, with a bearing', () => {
+    const fc = arrowsFromPaths([
+      { coords: [[0, 0], [1, 0]] },
+      { coords: [[0, 0], [0, 1], [0, 2]] },
+    ]);
+    expect(fc.features).toHaveLength(2);
+    expect((fc.features[0].geometry as GeoJSON.Point).coordinates).toEqual([1, 0]);
+    expect(fc.features[0].properties?.bearing).toBeCloseTo(90, 0);
+    expect((fc.features[1].geometry as GeoJSON.Point).coordinates).toEqual([0, 2]);
+    expect(fc.features[1].properties?.bearing).toBeCloseTo(0, 0);
+  });
+
+  it('skips paths with fewer than 2 coords', () => {
+    const fc = arrowsFromPaths([{ coords: [[0, 0]] }, { coords: [[1, 1], [2, 2]] }]);
+    expect(fc.features).toHaveLength(1);
   });
 });

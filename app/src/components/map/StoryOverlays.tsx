@@ -1,159 +1,216 @@
 /**
- * StoryOverlays — Renders region polygons, journey polylines, and
- * directional arrows for the active map story.
+ * StoryOverlays — Renders a story's region polygons and journey paths
+ * as MapLibre GeoJSON layers.
  *
- * COORDINATE FLIP: Data stores [lon, lat]. react-native-maps uses {latitude, longitude}.
+ * Uses a single `ShapeSource` per channel (regions / paths / path-arrows)
+ * so the map interpolates smoothly between stories when `story` changes,
+ * rather than flickering as React-rendered primitives unmount and remount.
+ *
+ * Coordinate convention: JSON stores `[lon, lat]` (GeoJSON order); no
+ * flip is needed here — MapLibre is natively GeoJSON-based.
+ *
+ * Issues: #1315 (MapLibre dep swap), #1319 (dashed paths + arrows +
+ * animated transitions).
  */
 
 import React, { memo, useMemo } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { Polygon, Polyline, Marker } from 'react-native-maps';
-import {
-  toLatLng,
-  computeBearing,
-  midpoint,
-  pathDistance,
-} from '../../utils/geoMath';
-import { useTheme, eras, fontFamily, radii } from '../../theme';
+import { ShapeSource, FillLayer, LineLayer, SymbolLayer } from '@maplibre/maplibre-react-native';
+import { eras } from '../../theme';
 import type { MapStory } from '../../types';
 import { safeParse } from '../../utils/logger';
 
-/** Min zoom at which path-distance labels render to avoid clutter. */
-export const DISTANCE_LABEL_MIN_ZOOM = 5;
-
 interface Props {
   story: MapStory;
-  zoomLevel: number;
+  zoomLevel?: number;
 }
 
-export const StoryOverlays = memo(function StoryOverlays({ story, zoomLevel }: Props) {
-  const { base } = useTheme();
-  const eraColor = eras[story.era] ?? '#bfa050'; // data-color: intentional (fallback)
+interface RawRegion {
+  coords: number[][]; // [[lon,lat], ...] closed ring
+  color?: string;
+  label?: string;
+}
 
-  // Parse regions
-  const regions = useMemo(() => {
-    if (!story.regions_json) return [];
-    return safeParse<{ coords: number[][]; color: string; label: string }[]>(story.regions_json, []);
-  }, [story.regions_json]);
+interface RawPath {
+  coords: number[][]; // [[lon,lat], ...]
+  dashed?: boolean;
+  label?: string;
+}
 
-  // Parse paths
-  const paths = useMemo(() => {
-    if (!story.paths_json) return [];
-    return safeParse<{ coords: number[][]; dashed?: boolean; label?: string }[]>(story.paths_json, []);
-  }, [story.paths_json]);
+/** Bearing (0–360°, 0=north, clockwise) from `from` to `to`. */
+export function bearingDeg(from: [number, number], to: [number, number]): number {
+  const [lon1, lat1] = [(from[0] * Math.PI) / 180, (from[1] * Math.PI) / 180];
+  const [lon2, lat2] = [(to[0] * Math.PI) / 180, (to[1] * Math.PI) / 180];
+  const dLon = lon2 - lon1;
+  const y = Math.sin(dLon) * Math.cos(lat2);
+  const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLon);
+  return ((Math.atan2(y, x) * 180) / Math.PI + 360) % 360;
+}
 
-  const borderWidth = Math.max(1, Math.min(4, (zoomLevel - 3) * 0.4));
-  const lineWidth = Math.max(1.5, Math.min(6, 1 + (zoomLevel - 3) * 0.55));
+/** Regions → Polygon FeatureCollection. */
+export function regionsToFeatureCollection(
+  regions: RawRegion[],
+  fallbackColor: string,
+): GeoJSON.FeatureCollection {
+  return {
+    type: 'FeatureCollection',
+    features: regions
+      .filter((r) => r.coords?.length >= 3)
+      .map((r, i) => ({
+        type: 'Feature',
+        id: i,
+        geometry: {
+          type: 'Polygon',
+          coordinates: [closeRing(r.coords)],
+        },
+        properties: {
+          color: r.color ?? fallbackColor,
+          label: r.label ?? '',
+        },
+      })),
+  };
+}
+
+/** Paths → LineString FeatureCollection with `dashed` + `label` props. */
+export function pathsToFeatureCollection(
+  paths: RawPath[],
+): GeoJSON.FeatureCollection {
+  return {
+    type: 'FeatureCollection',
+    features: paths
+      .filter((p) => p.coords?.length >= 2)
+      .map((p, i) => ({
+        type: 'Feature',
+        id: i,
+        geometry: {
+          type: 'LineString',
+          coordinates: p.coords,
+        },
+        properties: {
+          dashed: !!p.dashed,
+          label: p.label ?? '',
+        },
+      })),
+  };
+}
+
+/**
+ * Path endpoints → Point FeatureCollection with a `bearing` property so
+ * a SymbolLayer can render a direction arrow rotated along the final
+ * segment of each journey.
+ */
+export function arrowsFromPaths(paths: RawPath[]): GeoJSON.FeatureCollection {
+  const features: GeoJSON.Feature[] = [];
+  for (let i = 0; i < paths.length; i++) {
+    const coords = paths[i].coords;
+    if (!coords || coords.length < 2) continue;
+    const a = coords[coords.length - 2] as [number, number];
+    const b = coords[coords.length - 1] as [number, number];
+    features.push({
+      type: 'Feature',
+      id: i,
+      geometry: { type: 'Point', coordinates: b },
+      properties: { bearing: bearingDeg(a, b) },
+    });
+  }
+  return { type: 'FeatureCollection', features };
+}
+
+/** Make sure a polygon ring closes on itself. */
+function closeRing(coords: number[][]): number[][] {
+  if (coords.length < 2) return coords;
+  const first = coords[0];
+  const last = coords[coords.length - 1];
+  if (first[0] === last[0] && first[1] === last[1]) return coords;
+  return [...coords, first];
+}
+
+export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
+  const eraColor = eras[story.era] ?? '#bfa050';
+
+  const regionsFC = useMemo(() => {
+    const regions = safeParse<RawRegion[]>(story.regions_json, []);
+    return regionsToFeatureCollection(regions, eraColor);
+  }, [story.regions_json, eraColor]);
+
+  const rawPaths = useMemo(
+    () => safeParse<RawPath[]>(story.paths_json, []),
+    [story.paths_json],
+  );
+
+  const pathsFC = useMemo(() => pathsToFeatureCollection(rawPaths), [rawPaths]);
+  const arrowsFC = useMemo(() => arrowsFromPaths(rawPaths), [rawPaths]);
 
   return (
     <>
-      {/* Region polygons */}
-      {regions.map((region, i) => (
-        <Polygon
-          key={`r-${i}`}
-          coordinates={region.coords.map(toLatLng)}
-          strokeColor={region.color ?? eraColor}
-          strokeWidth={borderWidth}
-          fillColor={(region.color ?? eraColor) + '33'}
-          lineDashPattern={[6, 4]}
+      {/* Region polygons — fill + outline */}
+      <ShapeSource id="story-regions" shape={regionsFC as any}>
+        <FillLayer
+          id="story-regions-fill"
+          style={{
+            fillColor: ['get', 'color'] as any,
+            fillOpacity: 0.15,
+          }}
         />
-      ))}
+        <LineLayer
+          id="story-regions-stroke"
+          style={{
+            lineColor: ['get', 'color'] as any,
+            lineOpacity: 0.7,
+            lineWidth: 1.5,
+          }}
+        />
+      </ShapeSource>
 
-      {/* Journey polylines */}
-      {paths.map((path, i) => {
-        const coords = path.coords.map(toLatLng);
-        const dashLen = Math.max(3, Math.min(12, zoomLevel));
-        const showDistance =
-          coords.length >= 2 && zoomLevel >= DISTANCE_LABEL_MIN_ZOOM;
-        const distanceMiles = showDistance ? Math.round(pathDistance(coords)) : 0;
-        const labelCoord = showDistance
-          ? midpoint(coords[0], coords[coords.length - 1])
-          : null;
+      {/* Journey paths — solid + dashed variants driven by a filter.
+          MapLibre interpolates coordinates between source updates so
+          swapping the active story animates the path draw rather than
+          snapping. */}
+      <ShapeSource id="story-paths" shape={pathsFC as any}>
+        <LineLayer
+          id="story-paths-solid"
+          filter={['!', ['get', 'dashed']] as any}
+          style={{
+            lineColor: '#bfa050',
+            lineWidth: 2,
+            lineCap: 'round',
+            lineJoin: 'round',
+          }}
+        />
+        <LineLayer
+          id="story-paths-dashed"
+          filter={['get', 'dashed'] as any}
+          style={{
+            lineColor: '#bfa050',
+            lineWidth: 2,
+            lineCap: 'round',
+            lineJoin: 'round',
+            lineDasharray: [3, 2],
+          }}
+        />
+      </ShapeSource>
 
-        return (
-          <React.Fragment key={`p-${i}`}>
-            <Polyline
-              coordinates={coords}
-              strokeColor={eraColor}
-              strokeWidth={lineWidth}
-              lineDashPattern={path.dashed ? [dashLen * 3, dashLen * 2] : undefined}
-              lineCap="round"
-              lineJoin="round"
-            />
-            {/* Directional arrow at endpoint */}
-            {coords.length >= 2 && (
-              <Marker
-                coordinate={coords[coords.length - 1]}
-                anchor={{ x: 0.5, y: 0.5 }}
-                tracksViewChanges={false}
-              >
-                <ArrowTriangle
-                  color={eraColor}
-                  angle={computeBearing(
-                    coords[coords.length - 2],
-                    coords[coords.length - 1]
-                  )}
-                />
-              </Marker>
-            )}
-            {/* Distance label at the path midpoint — only shown above min zoom */}
-            {labelCoord && distanceMiles > 0 && (
-              <Marker
-                coordinate={labelCoord}
-                anchor={{ x: 0.5, y: 0.5 }}
-                tracksViewChanges={false}
-              >
-                <View
-                  style={[
-                    styles.distanceBadge,
-                    { backgroundColor: base.bg + 'CC', borderColor: base.border },
-                  ]}
-                  accessibilityLabel={`Distance: about ${distanceMiles} miles`}
-                >
-                  <Text style={[styles.distanceLabel, { color: base.textDim }]}>
-                    ~{distanceMiles} mi
-                  </Text>
-                </View>
-              </Marker>
-            )}
-          </React.Fragment>
-        );
-      })}
+      {/* Directional arrowheads at each path's endpoint, rotated along
+          the final segment's bearing. Uses a unicode ► glyph — no image
+          asset required — kept legible across zoom levels. */}
+      <ShapeSource id="story-path-arrows" shape={arrowsFC as any}>
+        <SymbolLayer
+          id="story-path-arrows-layer"
+          style={{
+            textField: '\u25B6',
+            textFont: ['Noto Sans Regular'],
+            textSize: 14,
+            textRotate: ['get', 'bearing'] as any,
+            textRotationAlignment: 'map',
+            textPitchAlignment: 'map',
+            textColor: '#bfa050',
+            textHaloColor: '#1a1610',
+            textHaloWidth: 1.5,
+            textAllowOverlap: true,
+            textIgnorePlacement: true,
+            textOffset: [0.4, 0],
+          }}
+        />
+      </ShapeSource>
     </>
   );
-});
-
-/** Small directional arrow triangle */
-function ArrowTriangle({ color, angle }: { color: string; angle: number }) {
-  return (
-    <View style={[
-      styles.arrowTriangle,
-      {
-        transform: [{ rotate: `${angle}deg` }],
-        borderBottomColor: color,
-      },
-    ]} />
-  );
-}
-
-const styles = StyleSheet.create({
-  arrowTriangle: {
-    width: 0,
-    height: 0,
-    borderLeftWidth: 5,
-    borderRightWidth: 5,
-    borderBottomWidth: 10,
-    borderLeftColor: 'transparent',
-    borderRightColor: 'transparent',
-  },
-  distanceBadge: {
-    borderRadius: radii.pill,
-    borderWidth: 1,
-    paddingHorizontal: 6,
-    paddingVertical: 2,
-  },
-  distanceLabel: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 9,
-  },
 });

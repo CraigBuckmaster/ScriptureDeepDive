@@ -1,0 +1,11 @@
+{
+  "attribution": "Empty scaffold for ancient political borders, keyed to the app's 8 eras (see map-stories.json era_hex). Populated by scholarly-chat sessions with AWMC data + hand-authored polygons — see epic #1314, issue #1317.",
+  "primeval":  { "type": "FeatureCollection", "features": [] },
+  "patriarch": { "type": "FeatureCollection", "features": [] },
+  "exodus":    { "type": "FeatureCollection", "features": [] },
+  "judges":    { "type": "FeatureCollection", "features": [] },
+  "kingdom":   { "type": "FeatureCollection", "features": [] },
+  "prophets":  { "type": "FeatureCollection", "features": [] },
+  "exile":     { "type": "FeatureCollection", "features": [] },
+  "nt":        { "type": "FeatureCollection", "features": [] }
+}

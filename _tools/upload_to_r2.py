@@ -37,6 +37,8 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
 ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = ROOT / 'scripture.db'
 DB_MANIFEST_PATH = ROOT / 'app' / 'assets' / 'db-manifest.json'
+MAP_STYLES_DIR = ROOT / 'content' / 'map-styles'
+MAP_STYLE_FILES = ('ancient.json', 'modern.json')
 ENV_FILE = ROOT / '.env'
 
 
@@ -112,14 +114,76 @@ def get_existing_manifest(s3, bucket: str, public_url: str) -> dict | None:
         return None
 
 
+def upload_map_styles(s3, bucket: str, public_url: str) -> int:
+    """
+    Upload MapLibre style JSON files (ancient.json / modern.json) to R2
+    under `map-styles/`. Returns the count of files uploaded.
+
+    Styles are fetched by the app at runtime from the R2 public URL, so
+    editing the parchment palette or adjusting a layer is a one-file
+    upload — no app release required. See map epic #1314 / issue #1316.
+    """
+    if not MAP_STYLES_DIR.exists():
+        print(f"⚠️  map-styles directory not found: {MAP_STYLES_DIR} — skipping")
+        return 0
+
+    uploaded = 0
+    for name in MAP_STYLE_FILES:
+        path = MAP_STYLES_DIR / name
+        if not path.exists():
+            print(f"⚠️  Missing {path.relative_to(ROOT)} — skipping")
+            continue
+
+        # Structural sanity check — style files must be MapLibre Style Spec v8.
+        try:
+            data = json.loads(path.read_text(encoding='utf-8'))
+        except json.JSONDecodeError as e:
+            print(f"❌ {path.relative_to(ROOT)}: invalid JSON — {e}")
+            sys.exit(1)
+        if data.get('version') != 8:
+            print(f"❌ {path.relative_to(ROOT)}: style spec version must be 8")
+            sys.exit(1)
+
+        key = f"map-styles/{name}"
+        print(f"📤 Uploading {key}...")
+        s3.upload_file(
+            str(path),
+            bucket,
+            key,
+            ExtraArgs={
+                'ContentType': 'application/json',
+                # Short cache so style tweaks roll out quickly.
+                'CacheControl': 'public, max-age=300, must-revalidate',
+            },
+        )
+        print(f"   ✓ Uploaded to {public_url}/{key}")
+        uploaded += 1
+    return uploaded
+
+
 def main():
     print("=" * 60)
     print("CloudFlare R2 Upload")
     print("=" * 60)
-    
+
     # Load .env if present
     load_env()
-    
+
+    # Allow map-styles-only uploads (restyle without rebuilding the DB).
+    styles_only = '--styles-only' in sys.argv
+
+    bucket_env = get_env('R2_BUCKET_NAME')
+    public_url_env = get_env('R2_PUBLIC_URL').rstrip('/')
+
+    if styles_only:
+        s3 = get_s3_client()
+        n = upload_map_styles(s3, bucket_env, public_url_env)
+        print()
+        print("=" * 60)
+        print(f"✅ Uploaded {n} map style file(s) to {public_url_env}/map-styles/")
+        print("=" * 60)
+        return
+
     # Validate inputs
     if not DB_PATH.exists():
         print(f"❌ Database not found: {DB_PATH}")
@@ -132,9 +196,9 @@ def main():
         sys.exit(1)
     
     content_hash = get_content_hash()
-    bucket = get_env('R2_BUCKET_NAME')
-    public_url = get_env('R2_PUBLIC_URL').rstrip('/')
-    
+    bucket = bucket_env
+    public_url = public_url_env
+
     print(f"📦 Version: {content_hash}")
     print(f"📁 Database: {DB_PATH}")
     print(f"   Size: {DB_PATH.stat().st_size / 1024 / 1024:.1f} MB")
@@ -197,7 +261,11 @@ def main():
         CacheControl='public, max-age=60',  # 1 minute cache for manifest
     )
     print(f"   ✓ Uploaded to {public_url}/{manifest_key}")
-    
+
+    # Map style JSON (ancient.json / modern.json) — see #1316.
+    print()
+    upload_map_styles(s3, bucket, public_url)
+
     # Summary
     print()
     print("=" * 60)

@@ -135,6 +135,24 @@ export interface Person {
   associated_with: string | null;
   /** Nature of the association (#1288). */
   association_type: AssociationType | null;
+  /**
+   * JSON array of `PersonGeographyStop` — chronological geographic arc
+   * across the person's life. Populated by a Chat session (#1324);
+   * runtime code renders it as a LineLayer + numbered markers.
+   */
+  geography_json?: string | null;
+}
+
+/** One stop on a person's life geographic arc. */
+export interface PersonGeographyStop {
+  /** References a row in places.json / places table. */
+  place_id: string;
+  /** App era id (patriarch / nt / kingdom / …). */
+  era: string;
+  /** 10–15 word description of what happened at this location. */
+  event: string;
+  /** 1-based chronological order within the person's arc. */
+  order: number;
 }
 
 /** Row from people_journeys table (#1125). */
@@ -196,6 +214,34 @@ export interface Place {
   refs_json?: string | null;
   /** 1–1000 identification confidence from OpenBible.info (Card #1271). */
   confidence?: number | null;
+  // ── Enrichment layer (#1323) ───────────────────────────────────
+  /** 50–100 words of geographic + theological context. */
+  description?: string | null;
+  /** 1-sentence hook shown in the detail card header. */
+  significance?: string | null;
+  /** JSON array of verse-ref strings, each a tappable chip. */
+  key_verses_json?: string | null;
+  /** JSON array of `{ scholar_id, tradition, note, ref }` objects. */
+  scholar_notes_json?: string | null;
+  // ── Cross-testament history (#1325) ────────────────────────────
+  /** JSON array of `{ ref, testament, event, era }` objects. */
+  testament_history_json?: string | null;
+}
+
+/** Parsed shape of a `scholar_notes_json` entry. */
+export interface PlaceScholarNote {
+  scholar_id: string;
+  tradition: string;
+  note: string;
+  ref?: string;
+}
+
+/** Parsed shape of a `testament_history_json` entry. */
+export interface PlaceTestamentEvent {
+  ref: string;
+  testament: 'OT' | 'NT';
+  event: string;
+  era: string;
 }
 
 export interface MapStory {
@@ -208,6 +254,22 @@ export interface MapStory {
   places_json: string | null;
   regions_json: string | null;
   paths_json: string | null;
+  /** JSON-encoded `StoryTerrainAnalysis` — added by #1327. */
+  terrain_analysis_json?: string | null;
+}
+
+/** Parsed shape of `terrain_analysis_json`. */
+export interface StoryTerrainAnalysis {
+  /** 1-sentence hook shown above the body. */
+  headline: string;
+  /** 150–250 word geographic / theological analysis. */
+  body: string;
+  /** Drives the ⚔ military badge on the section header. */
+  military?: boolean;
+  /** Drives the ✝ theological badge on the section header. */
+  theological?: boolean;
+  /** Scholar IDs whose published positions inform the body. */
+  source_scholars?: string[];
 }
 
 export interface WordStudy {

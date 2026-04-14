@@ -25,7 +25,8 @@ from build_sqlite_schema import create_schema
 from build_sqlite_loaders import (
     populate_books, populate_chapters, populate_verses,
     populate_book_intros, populate_people, populate_scholars,
-    populate_places, populate_map_stories, populate_word_studies,
+    populate_places, populate_map_stories, populate_ancient_borders,
+    populate_word_studies,
     populate_synoptic, populate_topics, populate_debate_topics,
     populate_genealogy_config, populate_cross_refs, populate_timelines,
     populate_eras, populate_redemptive_acts, populate_prophecy_chains,
@@ -95,6 +96,7 @@ def main():
     print(f"  [OK] scholars: {populate_scholars(cur)} rows")
     print(f"  [OK] places: {populate_places(cur)} rows")
     print(f"  [OK] map_stories: {populate_map_stories(cur)} rows")
+    print(f"  [OK] ancient_borders: {populate_ancient_borders(cur)} rows")
     print(f"  [OK] word_studies: {populate_word_studies(cur)} rows")
     print(f"  [OK] synoptic_map: {populate_synoptic(cur)} rows")
     print(f"  [OK] topics: {populate_topics(cur)} rows")

@@ -74,7 +74,7 @@ jest.mock('@/hooks/useMapStories', () => ({
 jest.mock('@/hooks/useMapZoom', () => ({
   useMapZoom: () => ({
     zoomLevel: 5,
-    onRegionChange: jest.fn(),
+    onRegionDidChange: jest.fn(),
   }),
 }));
 
@@ -82,32 +82,33 @@ jest.mock('@/hooks/useLandscapeUnlock', () => ({
   useLandscapeUnlock: jest.fn(),
 }));
 
-jest.mock('@/utils/mapStyles', () => ({
-  ancientMapStyle: [],
-  modernMapStyle: [],
+jest.mock('@/hooks/useMapTileCache', () => ({
+  useMapTileCache: jest.fn(),
+}));
+
+jest.mock('@/hooks/usePersonArc', () => ({
+  usePersonArc: () => ({ arcData: null, isLoading: false }),
+}));
+
+jest.mock('@/hooks/useAncientBorders', () => ({
+  useAncientBorders: () => ({
+    borders: { type: 'FeatureCollection', features: [] },
+    isLoading: false,
+  }),
+}));
+
+jest.mock('@/db/content', () => ({
+  getPeopleAtPlace: jest.fn().mockResolvedValue([]),
+  getAncientBorders: jest.fn().mockResolvedValue({
+    type: 'FeatureCollection',
+    features: [],
+  }),
 }));
 
 // ── Child component stubs ─────────────────────────────────────────
-
-// MapView as simple View
-jest.mock('react-native-maps', () => {
-  const React = require('react');
-  const { View } = require('react-native');
-  const MockMapView = React.forwardRef((props: any, ref: any) => {
-    React.useImperativeHandle(ref, () => ({
-      animateToRegion: jest.fn(),
-      fitToCoordinates: jest.fn(),
-    }));
-    return React.createElement(View, { testID: 'map-view', ...props }, props.children);
-  });
-  MockMapView.displayName = 'MockMapView';
-  return {
-    __esModule: true,
-    default: MockMapView,
-    PROVIDER_GOOGLE: 'google',
-    PROVIDER_DEFAULT: undefined,
-  };
-});
+// Note: the shared `@maplibre/maplibre-react-native` mock from jest.setup.js
+// already renders MapView/Camera/ShapeSource/Layer primitives as stub Views
+// and provides a CameraRef with fitBounds/flyTo jest.fn()s.
 
 jest.mock('@/components/tree/EraFilterBar', () => ({
   EraFilterBar: (props: any) => {

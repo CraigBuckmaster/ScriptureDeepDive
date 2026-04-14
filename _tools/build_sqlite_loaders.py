@@ -217,7 +217,7 @@ def populate_chapters(cur):
 
     content_dir = ROOT / 'content'
     for book_dir in sorted(content_dir.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
             continue
         book_id = book_dir.name
         for json_file in sorted(book_dir.glob('*.json')):
@@ -492,11 +492,15 @@ def populate_people(cur):
         )
         # spouseOf and spouse_of are both accepted (legacy + recent style).
         spouse = p.get('spouseOf') or p.get('spouse_of')
+        geography = p.get('geography')
+        geography_json = (
+            _json_str(geography) if isinstance(geography, list) else None
+        )
         cur.execute(
             'INSERT INTO people (id, name, gender, father, mother, spouse_of, '
             'era, dates, role, type, bio, scripture_role, refs_json, chapter_link, '
-            'associated_with, association_type) '
-            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            'associated_with, association_type, geography_json) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (p['id'], p['name'], p.get('gender'), p.get('father'),
              p.get('mother'), spouse, p.get('era'),
              p.get('dates'), p.get('role'), ptype, p.get('bio'),
@@ -504,7 +508,8 @@ def populate_people(cur):
              _json_str(p.get('refs', [])),
              p.get('chapter'),
              p.get('associated_with'),
-             p.get('association_type'))
+             p.get('association_type'),
+             geography_json)
         )
         count += 1
 
@@ -571,14 +576,37 @@ def populate_places(cur):
         confidence = p.get('confidence')
         if not isinstance(confidence, int):
             confidence = None
+
+        # ── Enrichment layer (#1323 / #1325) ────────────────────────
+        # All four enrichment fields are optional. Missing ones stay
+        # NULL so the UI can hide empty sections without a check per
+        # nested field.
+        key_verses = p.get('key_verses')
+        key_verses_json = (
+            _json_str(key_verses) if isinstance(key_verses, list) else None
+        )
+        scholar_notes = p.get('scholar_notes')
+        scholar_notes_json = (
+            _json_str(scholar_notes) if isinstance(scholar_notes, list) else None
+        )
+        testament_history = p.get('testament_history')
+        testament_history_json = (
+            _json_str(testament_history)
+            if isinstance(testament_history, list) else None
+        )
+
         cur.execute(
             'INSERT INTO places (id, ancient_name, modern_name, latitude, longitude, '
-            'type, priority, label_dir, refs_json, confidence) '
-            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            'type, priority, label_dir, refs_json, confidence, '
+            'description, significance, key_verses_json, scholar_notes_json, '
+            'testament_history_json) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (p['id'], p.get('ancient', ''), p.get('modern'),
              p['lat'], p['lon'], p['type'],
              p.get('priority', 2), p.get('labelDir', 'n'),
-             refs_json, confidence)
+             refs_json, confidence,
+             p.get('description'), p.get('significance'),
+             key_verses_json, scholar_notes_json, testament_history_json)
         )
         count += 1
     return count
@@ -589,15 +617,54 @@ def populate_map_stories(cur):
     stories = data.get('stories', [])
     count = 0
     for s in stories:
+        # terrain_analysis is optional; store only when present and well-formed.
+        terrain = s.get('terrain_analysis')
+        terrain_json = _json_str(terrain) if isinstance(terrain, dict) else None
         cur.execute(
             'INSERT INTO map_stories (id, era, name, scripture_ref, chapter_link, '
-            'summary, places_json, regions_json, paths_json) '
-            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            'summary, places_json, regions_json, paths_json, terrain_analysis_json) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (s['id'], s['era'], s['name'], s.get('ref'),
              s.get('chapter'), s.get('summary', ''),
              _json_str(s.get('places', [])),
              _json_str(s.get('regions', [])),
-             _json_str(s.get('paths', [])))
+             _json_str(s.get('paths', [])),
+             terrain_json)
+        )
+        count += 1
+    return count
+
+
+def populate_ancient_borders(cur):
+    """
+    Scaffold loader for epic #1314 / issue #1317.
+
+    Reads `content/meta/ancient-borders.json`, which is keyed by the app's
+    8 era IDs (primeval / patriarch / exodus / judges / kingdom / prophets /
+    exile / nt) and whose values are GeoJSON FeatureCollections. Any
+    non-era top-level keys (e.g. `attribution`) are skipped.
+
+    Until the polygon-authoring Chat session runs, every era's feature
+    list is empty — the table still gets populated so the runtime code
+    can load by era without a null check.
+    """
+    path = META / 'ancient-borders.json'
+    if not path.exists():
+        return 0
+    data = _load_json(path)
+    valid_eras = {
+        'primeval', 'patriarch', 'exodus', 'judges',
+        'kingdom', 'prophets', 'exile', 'nt',
+    }
+    count = 0
+    for era, fc in data.items():
+        if era not in valid_eras:
+            continue
+        if not isinstance(fc, dict) or fc.get('type') != 'FeatureCollection':
+            continue
+        cur.execute(
+            'INSERT INTO ancient_borders (era, features_json) VALUES (?, ?)',
+            (era, _json_str(fc)),
         )
         count += 1
     return count
@@ -1415,7 +1482,7 @@ def populate_content_library(cur):
     count = 0
     content_dir = ROOT / 'content'
     for book_dir in sorted(content_dir.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
             continue
         book_id = book_dir.name
         info = book_info.get(book_id)

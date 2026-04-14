@@ -21,6 +21,8 @@ import { ChapterCoachingCard } from './ChapterCoachingCard';
 import { PrayerPromptCard } from './PrayerPromptCard';
 import { RelatedContentCarousel } from './RelatedContentCarousel';
 import { useRelatedContent } from '../hooks/useRelatedContent';
+import { MapChip } from './map/MapChip';
+import { useMapChipData } from '../hooks/useMapChipData';
 import { PanelInfoSheet } from './PanelInfoSheet';
 import RelatedLifeTopics from './RelatedLifeTopics';
 import { useTheme, spacing, fontFamily } from '../theme';
@@ -51,6 +53,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
   const { base } = useTheme();
   const { verse, panel, callbacks, layout, coaching, display } = useChapterReader();
   const relatedItems = useRelatedContent(chapterMeta, chapterPanels);
+  const { chipData } = useMapChipData(chapterMeta?.map_story_link_id);
   const navigation = useNavigation();
   const [panelInfoType, setPanelInfoType] = useState<string | null>(null);
 
@@ -187,6 +190,20 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
 
       {/* Prayer prompt card */}
       {prayerPrompt ? <PrayerPromptCard prompt={prayerPrompt} /> : null}
+
+      {/* Inline map chip for chapters with a map_story_link (#1322). */}
+      {!display.focusMode && chipData ? (
+        <MapChip
+          story={chipData.story}
+          places={chipData.places}
+          onExpand={() =>
+            (navigation as any).navigate('ExploreTab', {
+              screen: 'Map',
+              params: { storyId: chipData.story.id },
+            })
+          }
+        />
+      ) : null}
 
       {/* Related Content carousel (hidden in focus mode) */}
       {!display.focusMode && <RelatedContentCarousel items={relatedItems} />}

@@ -139,7 +139,13 @@ export const useSettingsStore = create<SettingsState>((set) => ({
       const gs = await getPreference('getting_started');
 
       let gsDone = new Set<string>();
-      if (gs) { try { gsDone = new Set(JSON.parse(gs)); } catch {} }
+      if (gs) {
+        try {
+          gsDone = new Set(JSON.parse(gs));
+        } catch {
+          // Malformed preference — fall back to an empty set.
+        }
+      }
 
       set({
         translation: (t && TRANSLATION_MAP.has(t) ? t : 'kjv'),

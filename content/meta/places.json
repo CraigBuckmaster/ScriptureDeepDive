@@ -352,6 +352,26 @@
     "stories": [
       "sinai",
       "wilderness"
+    ],
+    "description": "[placeholder — awaiting Chat session #1323] Mountain in the Sinai peninsula; traditional site of the giving of the Law.",
+    "significance": "[placeholder] The mountain where Israel received the Law and met God directly.",
+    "key_verses": [
+      "Exod 19:20",
+      "Exod 20:1"
+    ],
+    "testament_history": [
+      {
+        "ref": "Exod 19:20",
+        "testament": "OT",
+        "event": "[placeholder] Moses receives the Law on Sinai",
+        "era": "exodus"
+      },
+      {
+        "ref": "Gal 4:25",
+        "testament": "NT",
+        "event": "[placeholder] Paul allegorises Sinai as the covenant of slavery",
+        "era": "nt"
+      }
     ]
   },
   {
@@ -488,6 +508,41 @@
     "stories": [
       "david-rise",
       "nativity"
+    ],
+    "description": "[placeholder — awaiting Chat session #1323] Small town ~5 miles south of Jerusalem in the Judean hill country. Hometown of David, birthplace of Jesus.",
+    "significance": "[placeholder] The birthplace of both David and Jesus, fulfilling Micah's prophecy.",
+    "key_verses": [
+      "1 Sam 16:1",
+      "Mic 5:2",
+      "Luke 2:4"
+    ],
+    "scholar_notes": [
+      {
+        "scholar_id": "ntwright",
+        "tradition": "Historical-critical",
+        "note": "[placeholder — awaiting Chat session] Wright connects Bethlehem's Davidic identity to the Gospels' deliberate framing of Jesus as Israel's true king.",
+        "ref": "Mic 5:2"
+      }
+    ],
+    "testament_history": [
+      {
+        "ref": "1 Sam 16:13",
+        "testament": "OT",
+        "event": "[placeholder] David anointed king by Samuel",
+        "era": "kingdom"
+      },
+      {
+        "ref": "Mic 5:2",
+        "testament": "OT",
+        "event": "[placeholder] Prophecy of the coming ruler from Bethlehem",
+        "era": "prophets"
+      },
+      {
+        "ref": "Luke 2:7",
+        "testament": "NT",
+        "event": "[placeholder] Jesus born in Bethlehem",
+        "era": "nt"
+      }
     ]
   },
   {
@@ -504,6 +559,65 @@
       "solomon-temple",
       "final-week",
       "exile-babylon"
+    ],
+    "description": "[placeholder — awaiting Chat session #1323] Elevated city in the Judean hill country, ~2,500 ft above sea level. Capital under David, site of Solomon's Temple, and the geographic focus of Jesus' final week.",
+    "significance": "[placeholder] The city where David established his throne and where Jesus was crucified.",
+    "key_verses": [
+      "2 Sam 5:7",
+      "Ps 122:1",
+      "Matt 21:10"
+    ],
+    "scholar_notes": [
+      {
+        "scholar_id": "alter",
+        "tradition": "Jewish literary",
+        "note": "[placeholder — awaiting Chat session] Alter observes that Jerusalem's elevation functions throughout the Psalms as a deliberate theological statement.",
+        "ref": "Psalm 122"
+      },
+      {
+        "scholar_id": "macarthur",
+        "tradition": "Reformed evangelical",
+        "note": "[placeholder — awaiting Chat session] MacArthur notes that Calvary's location outside the city walls was not incidental — Levitical law required sin offerings to be burned outside the camp.",
+        "ref": "Heb 13:12"
+      }
+    ],
+    "testament_history": [
+      {
+        "ref": "Gen 14:18",
+        "testament": "OT",
+        "event": "[placeholder] Melchizedek, king of Salem, blesses Abram",
+        "era": "patriarch"
+      },
+      {
+        "ref": "2 Sam 5:7",
+        "testament": "OT",
+        "event": "[placeholder] David captures the stronghold of Zion",
+        "era": "kingdom"
+      },
+      {
+        "ref": "2 Chr 3:1",
+        "testament": "OT",
+        "event": "[placeholder] Solomon builds the Temple on Mount Moriah",
+        "era": "kingdom"
+      },
+      {
+        "ref": "2 Kgs 25:9",
+        "testament": "OT",
+        "event": "[placeholder] Babylonian destruction of the Temple",
+        "era": "exile"
+      },
+      {
+        "ref": "Luke 2:22",
+        "testament": "NT",
+        "event": "[placeholder] Jesus presented in the Temple",
+        "era": "nt"
+      },
+      {
+        "ref": "Matt 27:33",
+        "testament": "NT",
+        "event": "[placeholder] Crucifixion at Golgotha, outside the walls",
+        "era": "nt"
+      }
     ]
   },
   {

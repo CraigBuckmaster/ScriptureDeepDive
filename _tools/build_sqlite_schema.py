@@ -110,7 +110,10 @@ CREATE TABLE people (
   -- Non-genealogical relationship to anchor disconnected figures (#1288).
   -- association_type ∈ {disciple, contemporary, adversary, servant}.
   associated_with TEXT,
-  association_type TEXT
+  association_type TEXT,
+  -- Chronological geographic arc — {place_id, era, event, order} objects.
+  -- Feeds the person-arc layer on the map (#1324).
+  geography_json TEXT
 );
 
 CREATE TABLE people_journeys (
@@ -152,8 +155,15 @@ CREATE TABLE places (
   type TEXT NOT NULL,
   priority INTEGER DEFAULT 2,
   label_dir TEXT DEFAULT 'n',
-  refs_json TEXT,          -- JSON array of verse-ref strings (Card #1271)
-  confidence INTEGER       -- 1–1000 identification confidence (Card #1271)
+  refs_json TEXT,               -- JSON array of verse-ref strings (Card #1271)
+  confidence INTEGER,           -- 1–1000 identification confidence (Card #1271)
+  -- Enrichment layer (#1323)
+  description TEXT,             -- 50-100 words of geographic + theological context
+  significance TEXT,            -- 1-sentence hook for the card header
+  key_verses_json TEXT,         -- JSON array of verse-ref strings
+  scholar_notes_json TEXT,      -- JSON array of {scholar_id, tradition, note, ref}
+  -- Cross-testament history (#1325)
+  testament_history_json TEXT   -- JSON array of {ref, testament: 'OT'|'NT', event, era}
 );
 
 CREATE TABLE map_stories (
@@ -165,7 +175,19 @@ CREATE TABLE map_stories (
   summary TEXT NOT NULL,
   places_json TEXT,
   regions_json TEXT,
-  paths_json TEXT
+  paths_json TEXT,
+  -- "Why this geography matters" — headline + 150-250 word body with
+  -- military / theological flags and a source_scholars array (#1327).
+  terrain_analysis_json TEXT
+);
+
+-- Ancient political borders per era (Patriarchal Canaan, Divided Kingdom,
+-- Roman provinces, etc.). One row per era; features_json is a GeoJSON
+-- FeatureCollection the app loads into a ShapeSource. Scaffold for #1317;
+-- real polygons land in a follow-up Chat session.
+CREATE TABLE ancient_borders (
+  era TEXT PRIMARY KEY,
+  features_json TEXT NOT NULL
 );
 
 CREATE TABLE word_studies (

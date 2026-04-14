@@ -13,7 +13,7 @@ All are permissively licensed (MIT, ISC, or Apache 2.0).
 | react-native-svg | MIT | SVG rendering (tree, timeline) |
 | react-native-screens | MIT | Native screen management |
 | react-native-safe-area-context | MIT | Safe area insets |
-| react-native-maps | MIT | Map rendering |
+| @maplibre/maplibre-react-native | BSD-2-Clause | Map rendering |
 | react-native-web | MIT | Web preview |
 | @react-navigation/native | MIT | Navigation framework |
 | @react-navigation/stack | MIT | Stack navigation |
