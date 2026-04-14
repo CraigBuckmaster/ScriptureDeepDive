@@ -82,6 +82,10 @@ jest.mock('@/hooks/useLandscapeUnlock', () => ({
   useLandscapeUnlock: jest.fn(),
 }));
 
+jest.mock('@/hooks/useMapTileCache', () => ({
+  useMapTileCache: jest.fn(),
+}));
+
 // ── Child component stubs ─────────────────────────────────────────
 // Note: the shared `@maplibre/maplibre-react-native` mock from jest.setup.js
 // already renders MapView/Camera/ShapeSource/Layer primitives as stub Views

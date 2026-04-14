@@ -214,6 +214,8 @@ jest.mock('@maplibre/maplibre-react-native', () => {
     getPack: jest.fn().mockResolvedValue(null),
     getPacks: jest.fn().mockResolvedValue([]),
     deletePack: jest.fn().mockResolvedValue(undefined),
+    setMaximumAmbientCacheSize: jest.fn().mockResolvedValue(undefined),
+    clearAmbientCache: jest.fn().mockResolvedValue(undefined),
   };
 
   const api = {
@@ -230,9 +232,11 @@ jest.mock('@maplibre/maplibre-react-native', () => {
     RasterLayer: pass('RasterLayer'),
     UserLocation: pass('UserLocation'),
     Logger: { setLogLevel: jest.fn() },
+    // MapLibre RN exposes both the preferred `OfflineManager` and the
+    // deprecated `offlineManager` alias. Export both so tests can import
+    // either shape.
+    OfflineManager: offlineManager,
     offlineManager,
-    setTileCacheEnabled: jest.fn(),
-    setTileCacheMaxSize: jest.fn(),
   };
 
   return { ...api, default: api };

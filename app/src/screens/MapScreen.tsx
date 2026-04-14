@@ -16,6 +16,7 @@ import { MapView, Camera, type CameraRef } from '@maplibre/maplibre-react-native
 import { usePlaces } from '../hooks/usePlaces';
 import { useMapStories } from '../hooks/useMapStories';
 import { useMapZoom } from '../hooks/useMapZoom';
+import { useMapTileCache } from '../hooks/useMapTileCache';
 import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { PlaceMarkerList } from '../components/map/PlaceMarkerList';
@@ -67,6 +68,8 @@ function MapScreen({ route, navigation }: {
 }) {
   const { base } = useTheme();
   useLandscapeUnlock();
+  // Configure ambient tile cache + pre-cache biblical region on first mount.
+  useMapTileCache(STYLE_ANCIENT);
   const initialStoryId = route?.params?.storyId;
   const initialPlaceId = route?.params?.placeId;
 

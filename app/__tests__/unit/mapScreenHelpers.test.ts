@@ -16,6 +16,7 @@ jest.mock('@/hooks/usePlaces', () => ({ usePlaces: () => ({ places: [], isLoadin
 jest.mock('@/hooks/useMapStories', () => ({ useMapStories: () => ({ stories: [], isLoading: false }) }));
 jest.mock('@/hooks/useMapZoom', () => ({ useMapZoom: () => ({ zoomLevel: 5, onRegionDidChange: jest.fn() }) }));
 jest.mock('@/hooks/useLandscapeUnlock', () => ({ useLandscapeUnlock: jest.fn() }));
+jest.mock('@/hooks/useMapTileCache', () => ({ useMapTileCache: jest.fn() }));
 
 import { buildPlaceToStoriesMap, STYLE_ANCIENT, STYLE_MODERN } from '@/screens/MapScreen';
 import type { MapStory } from '@/types';
