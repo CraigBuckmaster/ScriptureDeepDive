@@ -32,6 +32,13 @@
       "exodus-plagues",
       "paul-journey3",
       "nativity"
+    ],
+    "images": [
+      {
+        "url": "https://contentcompanionstudy.com/art/map-babylonian-tablet.jpg",
+        "caption": "Babylonian cuneiform map tablet from Nippur, 1550–1450 BCE",
+        "credit": "Penn Museum · Public domain"
+      }
     ]
   },
   "ConceptBrowse": {
@@ -49,7 +56,14 @@
     "count": 110,
     "noun": "topics",
     "contentType": "topic",
-    "featured": []
+    "featured": [],
+    "images": [
+      {
+        "url": "https://contentcompanionstudy.com/art/botticelli-augustine.jpg",
+        "caption": "Botticelli's St. Augustine in His Study — a scholar among organized texts",
+        "credit": "Sandro Botticelli · Public domain"
+      }
+    ]
   },
   "ProphecyBrowse": {
     "count": 50,
@@ -109,8 +123,8 @@
     "contentType": null,
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Codex_Sinaiticus_open_full.jpg/400px-Codex_Sinaiticus_open_full.jpg",
-        "caption": "Codex Sinaiticus — one of the oldest complete New Testaments",
+        "url": "https://contentcompanionstudy.com/art/aleppo-codex-joshua.jpg",
+        "caption": "Aleppo Codex — oldest Hebrew Bible manuscript, Joshua 1:1",
         "credit": "Public domain, via Wikimedia Commons"
       }
     ]
@@ -121,8 +135,8 @@
     "contentType": null,
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Aleppo_Codex_%28Deuteronomy%29.jpg/400px-Aleppo_Codex_%28Deuteronomy%29.jpg",
-        "caption": "The Aleppo Codex — the oldest near-complete Hebrew Bible manuscript",
+        "url": "https://contentcompanionstudy.com/art/gutenberg-bible.jpg",
+        "caption": "Gutenberg Bible — the first major book printed with movable type",
         "credit": "Public domain, via Wikimedia Commons"
       }
     ]
@@ -240,6 +254,60 @@
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/P46.jpg/400px-P46.jpg",
         "caption": "Papyrus 46 — Greek verb forms preserved in ancient manuscripts",
         "credit": "Public domain, via Wikimedia Commons"
+      }
+    ]
+  },
+  "Periods": {
+    "count": 12,
+    "noun": "eras",
+    "contentType": null,
+    "images": [
+      {
+        "url": "https://contentcompanionstudy.com/art/dore-creation-light.jpg",
+        "caption": "The Creation of Light — Primeval History",
+        "credit": "Gustave Doré · Public domain"
+      },
+      {
+        "url": "https://contentcompanionstudy.com/art/dore-red-sea.jpg",
+        "caption": "Crossing the Red Sea — Egypt & Exodus",
+        "credit": "Gustave Doré · Public domain"
+      },
+      {
+        "url": "https://contentcompanionstudy.com/art/dore-solomon-judgment.jpg",
+        "caption": "Judgment of Solomon — United Kingdom",
+        "credit": "Gustave Doré · Public domain"
+      },
+      {
+        "url": "https://contentcompanionstudy.com/art/dore-nativity.jpg",
+        "caption": "The Nativity — New Testament",
+        "credit": "Gustave Doré · Public domain"
+      }
+    ]
+  },
+  "RedemptiveArc": {
+    "count": 8,
+    "noun": "acts",
+    "contentType": null,
+    "images": [
+      {
+        "url": "https://contentcompanionstudy.com/art/dore-creation-light.jpg",
+        "caption": "The Creation of Light — Act 1: Creation",
+        "credit": "Gustave Doré · Public domain"
+      },
+      {
+        "url": "https://contentcompanionstudy.com/art/dore-adam-eve.jpg",
+        "caption": "Driven Out of Eden — Act 2: Rebellion",
+        "credit": "Gustave Doré · Public domain"
+      },
+      {
+        "url": "https://contentcompanionstudy.com/art/dore-david-goliath.jpg",
+        "caption": "David and Goliath — Act 4: Kingdom",
+        "credit": "Gustave Doré · Public domain"
+      },
+      {
+        "url": "https://contentcompanionstudy.com/art/dore-new-jerusalem.jpg",
+        "caption": "The New Jerusalem — Act 8: Restoration",
+        "credit": "Gustave Doré · Public domain"
       }
     ]
   }
