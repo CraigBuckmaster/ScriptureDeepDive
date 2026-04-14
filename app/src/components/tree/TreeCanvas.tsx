@@ -21,7 +21,8 @@ import { TreeLink } from './TreeLink';
 import { MarriageBarSvg } from './MarriageBarSvg';
 import { SpouseConnectorSvg } from './SpouseConnectorSvg';
 import { TreeNode } from './TreeNode';
-import { TIER_3_ZOOM, getVisibleTier } from '../../utils/genealogyOrganic';
+import { TIER_2_ZOOM, TIER_3_ZOOM, getVisibleTier, getPersonTier } from '../../utils/genealogyOrganic';
+import { isMessianic } from '../../utils/messianicLine';
 import { logger } from '../../utils/logger';
 import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson, AssociationLink, AssociateBloomLabel, AssociateTrail } from '../../utils/treeBuilder';
 
@@ -37,11 +38,11 @@ const BISECT = {
   hideAssociateNodes: false,
 } as const;
 
-/** How many associate TreeNodes to mount per animation frame. Smaller =
+/** How many hidden-tier TreeNodes to mount per animation frame. Smaller =
  *  smoother fade-in but slower full reveal; larger = faster reveal but
- *  bigger per-frame native-view allocation cost. 5/frame ≈ 18 frames
- *  ≈ 0.3 s for 89 associates. */
-const ASSOCIATE_REVEAL_BATCH = 5;
+ *  bigger per-frame native-view allocation cost. 5/frame ≈ ~18 frames
+ *  ≈ 0.3 s for 89 associates, ~16 frames for 80 tier-2 bio-holders. */
+const REVEAL_BATCH_PER_FRAME = 5;
 
 interface Props {
   nodes: LayoutNode[];
@@ -110,37 +111,63 @@ export const TreeCanvas = memo(function TreeCanvas({
     [associationLinks],
   );
 
-  // Stable index per associate so the staggered reveal can mount them in
-  // a deterministic order (associationLinks order = data order). Switching
-  // anchors mid-cluster would interleave; that's fine, it just means the
-  // reveal sweeps through anchors left-to-right.
-  const associateIndexById = useMemo(() => {
-    const m = new Map<string, number>();
-    associationLinks.forEach((al, i) => m.set(al.memberId, i));
-    return m;
-  }, [associationLinks]);
+  // Universal staggered-reveal index for every tier-2 and tier-3 node
+  // (including associates). Tier 1 is always visible and never counted.
+  // Sort order: tier 2 first, then tier 3, then stable id order within
+  // each tier — so progressive reveal fades bio-holders in before minor
+  // figures. Tier transitions at the zoom threshold become a gradual
+  // mount over ~16 frames instead of a single commit that adds ~240
+  // opacity-property changes (which crashes iOS's compositor).
+  const { revealIndex, tier2Count, totalExtraCount } = useMemo(() => {
+    type Item = { id: string; tier: 1 | 2 | 3 };
+    const items: Item[] = nodes.map((n) => ({
+      id: n.data.id,
+      tier: getPersonTier(n.data, isMessianic(n.data.id)),
+    }));
+    const extras = items
+      .filter((it) => it.tier > 1)
+      .sort((a, b) => a.tier - b.tier || a.id.localeCompare(b.id));
+    const index = new Map<string, number>();
+    extras.forEach((it, i) => index.set(it.id, i));
+    const t2 = extras.filter((it) => it.tier === 2).length;
+    return {
+      revealIndex: index,
+      tier2Count: t2,
+      totalExtraCount: extras.length,
+    };
+  }, [nodes]);
 
-  // Staggered reveal counter — animates from 0 → associationLinks.length
-  // when clusters un-collapse, and back to 0 when they re-collapse.
-  // Mounting / unmounting in batches of ASSOCIATE_REVEAL_BATCH per frame
-  // keeps each iOS commit's native-view delta small enough that the
-  // compositor doesn't choke.
-  const [revealedAssociates, setRevealedAssociates] = React.useState(0);
+  // Target reveal count based on current zoom's tier visibility.
+  const targetRevealed = useMemo(() => {
+    if (zoom < TIER_2_ZOOM) return 0;
+    if (zoom < TIER_3_ZOOM) return tier2Count;
+    return totalExtraCount;
+  }, [zoom, tier2Count, totalExtraCount]);
+
+  // Initial state matches the target for the FIRST render's zoom — so
+  // initial mount instantly shows everything the user should see. iOS
+  // handles a single all-at-once mount fine; it's transitions that
+  // crash. Only zoom CHANGES (after first render) animate via the
+  // staggered reveal below.
+  const [revealedExtra, setRevealedExtra] = React.useState(() => targetRevealed);
+  const lastTargetRef = React.useRef(targetRevealed);
   React.useEffect(() => {
-    const target = clustersCollapsed ? 0 : associationLinks.length;
-    let current = revealedAssociates;
-    if (current === target) return;
+    // Skip the no-op case where target hasn't actually changed.
+    if (lastTargetRef.current === targetRevealed) return;
+    lastTargetRef.current = targetRevealed;
+    let current = revealedExtra;
+    if (current === targetRevealed) return;
     let cancelled = false;
     const tick = () => {
       if (cancelled) return;
-      const direction = target > current ? 1 : -1;
-      current += direction * ASSOCIATE_REVEAL_BATCH;
-      if ((direction > 0 && current >= target)
-          || (direction < 0 && current <= target)) {
-        current = target;
+      const direction = targetRevealed > current ? 1 : -1;
+      current += direction * REVEAL_BATCH_PER_FRAME;
+      if ((direction > 0 && current >= targetRevealed)
+          || (direction < 0 && current <= targetRevealed)) {
+        current = targetRevealed;
       }
-      setRevealedAssociates(current);
-      if (current !== target) requestAnimationFrame(tick);
+      setRevealedExtra(current);
+      if (current !== targetRevealed) requestAnimationFrame(tick);
     };
     const handle = requestAnimationFrame(tick);
     return () => {
@@ -148,7 +175,7 @@ export const TreeCanvas = memo(function TreeCanvas({
       cancelAnimationFrame(handle);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [clustersCollapsed, associationLinks.length]);
+  }, [targetRevealed]);
 
   return (
     <>
@@ -216,16 +243,15 @@ export const TreeCanvas = memo(function TreeCanvas({
           if (BISECT.hideAssociateNodes && associateIdSet.has(node.data.id)) {
             return null;
           }
-          // Staggered reveal: associates only mount once their index has
-          // been reached by the reveal counter. At z<TIER_3 this is 0
-          // (none), so initial mount stays light. Crossing the
-          // threshold animates the counter up over ~0.3 s in batches
-          // of ASSOCIATE_REVEAL_BATCH per frame so iOS's compositor
-          // never has to add too many native subviews in a single commit.
-          if (associateIdSet.has(node.data.id)) {
-            const idx = associateIndexById.get(node.data.id) ?? 0;
-            if (idx >= revealedAssociates) return null;
-          }
+          // Universal staggered reveal: every non-tier-1 node has an index
+          // in revealIndex. A node only mounts once revealedExtra reaches
+          // its index. Tier-1 nodes (no revealIndex entry) always render.
+          // This turns a tier-2 or tier-3 zoom transition from a single
+          // commit that flips opacity on ~240 layers into a sequence of
+          // per-frame mounts of REVEAL_BATCH_PER_FRAME nodes each — which
+          // iOS's compositor handles without crashing.
+          const idx = revealIndex.get(node.data.id);
+          if (idx !== undefined && idx >= revealedExtra) return null;
           const dimmed = filterEra !== null
             && node.data.era !== filterEra
             && !spineIds.has(node.data.id);
