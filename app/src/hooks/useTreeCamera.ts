@@ -99,6 +99,15 @@ export function useTreeCamera(): TreeCameraResult {
     focalScreenY: number;
   } | null>(null);
 
+  /** Timestamp of the last camera update during active pan.
+   *  Skipping intermediate frames reduces React re-renders from ~60/s to
+   *  ~35/s during active gestures. One-shot updates (centering, search,
+   *  era jump) are not throttled. */
+  const lastPanTime = useRef(0);
+
+  /** Same throttle for pinch gestures. */
+  const lastPinchTime = useRef(0);
+
   // RAF handle for pan-decay loop (nullable so we can cancel on new gestures).
   const decayHandleRef = useRef<number | null>(null);
   const cancelDecay = useCallback(() => {
@@ -113,10 +122,16 @@ export function useTreeCamera(): TreeCameraResult {
   // ── Pan gesture ────────────────────────────────────────────────────
   const onPanBegin = useCallback(() => {
     cancelDecay();
+    // Reset throttle so the first frame of a new gesture fires immediately.
+    lastPanTime.current = 0;
     panStartRef.current = { x: cameraRef.current.x, y: cameraRef.current.y };
   }, [cancelDecay]);
 
   const onPanUpdate = useCallback((translationX: number, translationY: number) => {
+    const now = Date.now();
+    if (now - lastPanTime.current < 28) return; // ~35fps during active pan
+    lastPanTime.current = now;
+
     const start = panStartRef.current;
     if (!start) return;
     const zoom = cameraRef.current.zoom;
@@ -150,6 +165,8 @@ export function useTreeCamera(): TreeCameraResult {
   // ── Pinch gesture ──────────────────────────────────────────────────
   const onPinchBegin = useCallback((focalScreenX: number, focalScreenY: number) => {
     cancelDecay();
+    // Reset throttle so the first frame of a new gesture fires immediately.
+    lastPinchTime.current = 0;
     const { x, y, zoom } = cameraRef.current;
     pinchStartRef.current = {
       zoom,
@@ -161,6 +178,10 @@ export function useTreeCamera(): TreeCameraResult {
   }, [cancelDecay]);
 
   const onPinchUpdate = useCallback((scale: number, focalScreenX: number, focalScreenY: number) => {
+    const now = Date.now();
+    if (now - lastPinchTime.current < 28) return; // ~35fps during active pinch
+    lastPinchTime.current = now;
+
     const start = pinchStartRef.current;
     if (!start) return;
     const newZoom = clampZoom(start.zoom * scale);
