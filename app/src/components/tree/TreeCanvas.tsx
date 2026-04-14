@@ -65,7 +65,8 @@ interface Props {
   /** Full SVG height — needed for background sizing. */
   canvasHeight?: number;
   /** Current committed zoom scale (#1291). Controls per-tier visibility
-   *  and associate-cluster collapse-to-badge below {@link TIER_3_ZOOM}. */
+   *  (below TIER_2_ZOOM / TIER_3_ZOOM) AND associate-cluster
+   *  collapse-to-badge (below the local CLUSTER_COLLAPSE_ZOOM). */
   zoom?: number;
   /** Testing hook: skip the requestAnimationFrame-based staggered reveal
    *  and render the entire target set immediately. Useful for test
@@ -87,8 +88,24 @@ export const TreeCanvas = memo(function TreeCanvas({
 }: Props) {
   const { base } = useTheme();
 
-  const clustersCollapsed = zoom < TIER_3_ZOOM;
-  const labelsVisible = zoom >= TIER_3_ZOOM;
+  // Cluster-collapse threshold is deliberately DECOUPLED from tier
+  // visibility thresholds. Rationale from post-#1331 device crashes:
+  // - Tier visibility controls which TreeNodes render (node mount stagger).
+  //   We want this permissive (TIER_3_ZOOM = 0.4) so the user sees most
+  //   people at the default mobile zoom.
+  // - Cluster collapse controls whether the consolidated association
+  //   <Path> (89 dashed-stroke segments in one native CAShapeLayer) is
+  //   rendered at visible opacity. iOS re-rasterizes this Path on every
+  //   scale change, and with 89 dashed segments + the ~10k-tall canvas
+  //   the re-rasterization crashes the compositor.
+  // Keeping CLUSTER_COLLAPSE_ZOOM high (0.8) means the expensive Path
+  // stays at opacity=0 (iOS skips it entirely) at default zooms. Users
+  // see "+N" badges at anchors instead — same information, cheap to paint.
+  // Pinching past 0.8 is a deliberate "I want to see the connectors"
+  // action; iOS is more tolerant when the user expects a slight delay.
+  const CLUSTER_COLLAPSE_ZOOM = 0.8;
+  const clustersCollapsed = zoom < CLUSTER_COLLAPSE_ZOOM;
+  const labelsVisible = zoom >= CLUSTER_COLLAPSE_ZOOM;
 
   // Render-entry diagnostic.
   const visibleTier = getVisibleTier(zoom);
@@ -354,7 +371,8 @@ export const TreeCanvas = memo(function TreeCanvas({
         })}
 
         {/* 5. Bloom-apex labels ("disciples", "contemporaries"…). Always
-               rendered; opacity gated by TIER_3_ZOOM. */}
+               rendered; opacity gated by CLUSTER_COLLAPSE_ZOOM (same
+               threshold as the path + trails + badges). */}
         {!BISECT.hideLabels && associateBloomLabels.map((lbl) => (
           <SvgText
             key={`abl-${lbl.anchorId}-${lbl.type}`}
@@ -364,7 +382,7 @@ export const TreeCanvas = memo(function TreeCanvas({
             fontSize={11}
             fontFamily="Cinzel_600SemiBold"
             textAnchor="middle"
-            opacity={zoom >= TIER_3_ZOOM ? 0.65 : 0}
+            opacity={labelsVisible ? 0.65 : 0}
           >
             {lbl.text}
           </SvgText>
