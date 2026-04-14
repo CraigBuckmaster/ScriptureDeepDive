@@ -25,8 +25,20 @@ import { TIER_3_ZOOM, getVisibleTier } from '../../utils/genealogyOrganic';
 import { logger } from '../../utils/logger';
 import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson, AssociationLink, AssociateBloomLabel, AssociateTrail } from '../../utils/treeBuilder';
 
-// *** BISECT FLAG — set to false to restore full associate rendering. ***
-const BISECT_HIDE_ASSOCIATES = true;
+// *** BISECT FLAGS — finer-grained than the previous all-or-nothing flag.
+// PR #1313 confirmed associate rendering is the crash trigger. This build
+// adds the associate TreeNodes back (89 Circle+text instances) but keeps
+// the consolidated dashed-bezier path, trails, labels, and badges hidden.
+// If this build still loads and zooms freely, the crash is in the paths/
+// labels/badges and not the nodes themselves. If it crashes, the 89 node
+// transitions are the cause.
+const BISECT = {
+  hideAssociationPath: true,
+  hideTrails: true,
+  hideLabels: true,
+  hideBadges: true,
+  hideAssociateNodes: false,    // ← re-enabled this round
+} as const;
 
 interface Props {
   nodes: LayoutNode[];
@@ -79,7 +91,11 @@ export const TreeCanvas = memo(function TreeCanvas({
     + `nodes=${nodes.length} links=${links.length} al=${associationLinks.length} `
     + `labels=${associateBloomLabels.length} trails=${associateTrails.length} `
     + `canvas=${canvasWidth}x${canvasHeight} `
-    + `BISECT=hide-associates:${BISECT_HIDE_ASSOCIATES}`,
+    + `BISECT=path:${BISECT.hideAssociationPath ? 'hide' : 'show'},`
+    + `trails:${BISECT.hideTrails ? 'hide' : 'show'},`
+    + `labels:${BISECT.hideLabels ? 'hide' : 'show'},`
+    + `badges:${BISECT.hideBadges ? 'hide' : 'show'},`
+    + `nodes:${BISECT.hideAssociateNodes ? 'hide' : 'show'}`,
   );
   React.useEffect(() => {
     logger.info('Canvas', `render COMMITTED z=${zoom.toFixed(2)}`);
@@ -154,7 +170,7 @@ export const TreeCanvas = memo(function TreeCanvas({
                tier visibility via opacity so there's no mount / unmount
                churn at tier transitions. */}
         {nodes.map((node) => {
-          if (BISECT_HIDE_ASSOCIATES && associateIdSet.has(node.data.id)) {
+          if (BISECT.hideAssociateNodes && associateIdSet.has(node.data.id)) {
             return null;
           }
           const dimmed = filterEra !== null
