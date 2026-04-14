@@ -1,11 +1,1460 @@
 {
-  "attribution": "Empty scaffold for ancient political borders, keyed to the app's 8 eras (see map-stories.json era_hex). Populated by scholarly-chat sessions with AWMC data + hand-authored polygons — see epic #1314, issue #1317.",
-  "primeval":  { "type": "FeatureCollection", "features": [] },
-  "patriarch": { "type": "FeatureCollection", "features": [] },
-  "exodus":    { "type": "FeatureCollection", "features": [] },
-  "judges":    { "type": "FeatureCollection", "features": [] },
-  "kingdom":   { "type": "FeatureCollection", "features": [] },
-  "prophets":  { "type": "FeatureCollection", "features": [] },
-  "exile":     { "type": "FeatureCollection", "features": [] },
-  "nt":        { "type": "FeatureCollection", "features": [] }
+  "attribution": "Biblical-era border outlines authored for Companion Study based on: Aharoni, 'The Land of the Bible' (2nd ed.); Bimson, 'Chronological Atlas of the Bible'; Kitchen, 'On the Reliability of the Old Testament'; Talbert, 'Barrington Atlas of the Greek and Roman World'. Polygons are simplified scholarly approximations of historical territories, not precise surveyed boundaries. For epic #1314 / issue #1317.",
+  "primeval": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Fertile Crescent — inhabited zone",
+          "era": "primeval",
+          "strokeColor": "#8b6914",
+          "fillColor": "#8b6914",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.12,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                31.5,
+                30.0
+              ],
+              [
+                32.5,
+                31.5
+              ],
+              [
+                34.0,
+                32.0
+              ],
+              [
+                35.5,
+                33.5
+              ],
+              [
+                36.5,
+                34.5
+              ],
+              [
+                37.5,
+                36.5
+              ],
+              [
+                38.5,
+                37.0
+              ],
+              [
+                39.5,
+                37.0
+              ],
+              [
+                40.5,
+                36.5
+              ],
+              [
+                42.0,
+                37.0
+              ],
+              [
+                43.5,
+                36.5
+              ],
+              [
+                44.0,
+                35.0
+              ],
+              [
+                44.5,
+                33.5
+              ],
+              [
+                46.0,
+                32.0
+              ],
+              [
+                47.5,
+                30.5
+              ],
+              [
+                48.5,
+                29.5
+              ],
+              [
+                47.0,
+                28.5
+              ],
+              [
+                44.0,
+                29.0
+              ],
+              [
+                40.0,
+                28.0
+              ],
+              [
+                37.0,
+                27.5
+              ],
+              [
+                34.5,
+                28.0
+              ],
+              [
+                32.5,
+                29.5
+              ],
+              [
+                31.5,
+                30.0
+              ]
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "patriarch": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Egypt — Middle Kingdom",
+          "era": "patriarch",
+          "strokeColor": "#c48a1a",
+          "fillColor": "#c48a1a",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.15,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                24.5,
+                22.0
+              ],
+              [
+                30.0,
+                22.0
+              ],
+              [
+                33.0,
+                24.5
+              ],
+              [
+                33.5,
+                28.5
+              ],
+              [
+                32.5,
+                30.0
+              ],
+              [
+                31.0,
+                31.5
+              ],
+              [
+                29.5,
+                31.5
+              ],
+              [
+                28.0,
+                30.5
+              ],
+              [
+                25.5,
+                28.5
+              ],
+              [
+                24.5,
+                25.0
+              ],
+              [
+                24.5,
+                22.0
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Canaan — City-State Zone",
+          "era": "patriarch",
+          "strokeColor": "#7a5c9a",
+          "fillColor": "#7a5c9a",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.15,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                34.2,
+                29.5
+              ],
+              [
+                35.0,
+                29.5
+              ],
+              [
+                35.7,
+                30.3
+              ],
+              [
+                36.5,
+                31.5
+              ],
+              [
+                36.8,
+                32.5
+              ],
+              [
+                36.5,
+                33.3
+              ],
+              [
+                36.0,
+                33.8
+              ],
+              [
+                35.5,
+                33.9
+              ],
+              [
+                35.0,
+                33.5
+              ],
+              [
+                34.8,
+                33.0
+              ],
+              [
+                34.7,
+                32.5
+              ],
+              [
+                34.5,
+                32.0
+              ],
+              [
+                34.3,
+                31.8
+              ],
+              [
+                34.2,
+                31.3
+              ],
+              [
+                34.2,
+                29.5
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Paddan-Aram / Haran Region",
+          "era": "patriarch",
+          "strokeColor": "#5a7a9a",
+          "fillColor": "#5a7a9a",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.15,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                37.0,
+                35.5
+              ],
+              [
+                39.0,
+                35.5
+              ],
+              [
+                41.0,
+                36.5
+              ],
+              [
+                40.5,
+                37.5
+              ],
+              [
+                38.5,
+                37.5
+              ],
+              [
+                37.0,
+                37.0
+              ],
+              [
+                36.5,
+                36.5
+              ],
+              [
+                37.0,
+                35.5
+              ]
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "exodus": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Egypt — New Kingdom",
+          "era": "exodus",
+          "strokeColor": "#4a8a5a",
+          "fillColor": "#4a8a5a",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.15,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                24.5,
+                22.0
+              ],
+              [
+                32.0,
+                22.0
+              ],
+              [
+                33.5,
+                24.5
+              ],
+              [
+                33.5,
+                29.0
+              ],
+              [
+                32.0,
+                31.5
+              ],
+              [
+                30.0,
+                32.0
+              ],
+              [
+                28.5,
+                31.5
+              ],
+              [
+                27.0,
+                30.0
+              ],
+              [
+                25.0,
+                28.0
+              ],
+              [
+                24.5,
+                25.0
+              ],
+              [
+                24.5,
+                22.0
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Egyptian-vassal Canaan",
+          "era": "exodus",
+          "strokeColor": "#4a8a5a",
+          "fillColor": "#4a8a5a",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.08,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                34.2,
+                29.5
+              ],
+              [
+                35.5,
+                29.5
+              ],
+              [
+                36.5,
+                31.5
+              ],
+              [
+                37.0,
+                33.0
+              ],
+              [
+                36.0,
+                34.0
+              ],
+              [
+                35.5,
+                34.5
+              ],
+              [
+                35.0,
+                34.0
+              ],
+              [
+                34.5,
+                33.5
+              ],
+              [
+                34.3,
+                32.5
+              ],
+              [
+                34.2,
+                31.0
+              ],
+              [
+                34.2,
+                29.5
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Sinai Wilderness — Israelite wandering",
+          "era": "exodus",
+          "strokeColor": "#c9a84c",
+          "fillColor": "#c9a84c",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.2,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                32.0,
+                29.5
+              ],
+              [
+                33.5,
+                29.0
+              ],
+              [
+                33.5,
+                27.5
+              ],
+              [
+                33.0,
+                27.0
+              ],
+              [
+                32.0,
+                27.5
+              ],
+              [
+                32.0,
+                27.0
+              ],
+              [
+                31.0,
+                27.5
+              ],
+              [
+                32.0,
+                29.5
+              ]
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "judges": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Israelite tribal territories (hill country)",
+          "era": "judges",
+          "strokeColor": "#8a6a2a",
+          "fillColor": "#8a6a2a",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.15,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                34.5,
+                29.5
+              ],
+              [
+                35.0,
+                30.0
+              ],
+              [
+                35.3,
+                30.5
+              ],
+              [
+                35.7,
+                31.5
+              ],
+              [
+                36.0,
+                32.0
+              ],
+              [
+                35.8,
+                32.5
+              ],
+              [
+                35.3,
+                32.8
+              ],
+              [
+                35.0,
+                33.0
+              ],
+              [
+                35.2,
+                33.3
+              ],
+              [
+                35.8,
+                33.3
+              ],
+              [
+                36.3,
+                32.8
+              ],
+              [
+                36.5,
+                32.0
+              ],
+              [
+                36.5,
+                31.5
+              ],
+              [
+                36.0,
+                30.5
+              ],
+              [
+                35.5,
+                29.8
+              ],
+              [
+                34.5,
+                29.5
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Philistine pentapolis",
+          "era": "judges",
+          "strokeColor": "#9a4a4a",
+          "fillColor": "#9a4a4a",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.15,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                34.2,
+                31.5
+              ],
+              [
+                34.8,
+                31.5
+              ],
+              [
+                34.8,
+                30.5
+              ],
+              [
+                34.2,
+                30.5
+              ],
+              [
+                34.2,
+                31.5
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Moab",
+          "era": "judges",
+          "strokeColor": "#5a5a8a",
+          "fillColor": "#5a5a8a",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.15,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                35.5,
+                30.5
+              ],
+              [
+                36.5,
+                30.5
+              ],
+              [
+                36.8,
+                31.0
+              ],
+              [
+                36.5,
+                31.5
+              ],
+              [
+                35.8,
+                31.3
+              ],
+              [
+                35.5,
+                30.5
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Ammon",
+          "era": "judges",
+          "strokeColor": "#5a8a7a",
+          "fillColor": "#5a8a7a",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.15,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                36.0,
+                31.5
+              ],
+              [
+                36.8,
+                31.5
+              ],
+              [
+                37.0,
+                32.0
+              ],
+              [
+                36.5,
+                32.5
+              ],
+              [
+                36.0,
+                32.0
+              ],
+              [
+                36.0,
+                31.5
+              ]
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "kingdom": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "United Monarchy — David / Solomon",
+          "era": "kingdom",
+          "strokeColor": "#5a7a9a",
+          "fillColor": "#5a7a9a",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.15,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                34.2,
+                29.5
+              ],
+              [
+                35.0,
+                29.0
+              ],
+              [
+                36.5,
+                29.0
+              ],
+              [
+                37.5,
+                30.0
+              ],
+              [
+                37.0,
+                31.5
+              ],
+              [
+                37.5,
+                32.5
+              ],
+              [
+                37.0,
+                33.0
+              ],
+              [
+                36.5,
+                33.5
+              ],
+              [
+                36.0,
+                33.8
+              ],
+              [
+                35.5,
+                33.8
+              ],
+              [
+                35.0,
+                33.5
+              ],
+              [
+                34.8,
+                33.0
+              ],
+              [
+                34.5,
+                32.5
+              ],
+              [
+                34.3,
+                31.5
+              ],
+              [
+                34.2,
+                30.5
+              ],
+              [
+                34.2,
+                29.5
+              ]
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "prophets": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Northern Kingdom (Israel)",
+          "era": "prophets",
+          "strokeColor": "#5a9a5a",
+          "fillColor": "#5a9a5a",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.15,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                34.5,
+                31.5
+              ],
+              [
+                35.8,
+                31.5
+              ],
+              [
+                36.5,
+                32.0
+              ],
+              [
+                37.0,
+                33.0
+              ],
+              [
+                36.5,
+                33.5
+              ],
+              [
+                36.0,
+                33.8
+              ],
+              [
+                35.5,
+                33.5
+              ],
+              [
+                35.0,
+                33.0
+              ],
+              [
+                34.8,
+                32.5
+              ],
+              [
+                34.5,
+                32.0
+              ],
+              [
+                34.5,
+                31.5
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Southern Kingdom (Judah)",
+          "era": "prophets",
+          "strokeColor": "#9a4a4a",
+          "fillColor": "#9a4a4a",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.15,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                34.2,
+                29.5
+              ],
+              [
+                35.5,
+                29.5
+              ],
+              [
+                35.8,
+                30.5
+              ],
+              [
+                36.0,
+                31.0
+              ],
+              [
+                35.8,
+                31.5
+              ],
+              [
+                34.5,
+                31.5
+              ],
+              [
+                34.3,
+                31.0
+              ],
+              [
+                34.2,
+                30.5
+              ],
+              [
+                34.2,
+                29.5
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Aram-Damascus",
+          "era": "prophets",
+          "strokeColor": "#7a7a9a",
+          "fillColor": "#7a7a9a",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.15,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                35.8,
+                33.0
+              ],
+              [
+                37.5,
+                33.0
+              ],
+              [
+                38.0,
+                34.0
+              ],
+              [
+                37.5,
+                34.5
+              ],
+              [
+                36.5,
+                34.0
+              ],
+              [
+                35.8,
+                33.5
+              ],
+              [
+                35.8,
+                33.0
+              ]
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "exile": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Neo-Babylonian Empire",
+          "era": "exile",
+          "strokeColor": "#4a7a8a",
+          "fillColor": "#4a7a8a",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.15,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                38.0,
+                29.0
+              ],
+              [
+                40.0,
+                29.0
+              ],
+              [
+                48.0,
+                29.5
+              ],
+              [
+                48.5,
+                31.0
+              ],
+              [
+                47.0,
+                32.5
+              ],
+              [
+                46.0,
+                33.0
+              ],
+              [
+                44.5,
+                34.0
+              ],
+              [
+                43.5,
+                36.5
+              ],
+              [
+                41.5,
+                37.0
+              ],
+              [
+                39.5,
+                37.0
+              ],
+              [
+                38.5,
+                37.0
+              ],
+              [
+                37.0,
+                36.5
+              ],
+              [
+                36.5,
+                35.5
+              ],
+              [
+                36.5,
+                33.5
+              ],
+              [
+                36.0,
+                33.0
+              ],
+              [
+                35.5,
+                32.0
+              ],
+              [
+                34.5,
+                31.0
+              ],
+              [
+                34.2,
+                29.5
+              ],
+              [
+                35.0,
+                28.5
+              ],
+              [
+                37.0,
+                28.0
+              ],
+              [
+                38.0,
+                29.0
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Yehud — provincial remnant",
+          "era": "exile",
+          "strokeColor": "#9a4a4a",
+          "fillColor": "#9a4a4a",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.25,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                34.7,
+                31.1
+              ],
+              [
+                35.5,
+                31.1
+              ],
+              [
+                35.8,
+                31.5
+              ],
+              [
+                35.5,
+                31.9
+              ],
+              [
+                35.0,
+                31.9
+              ],
+              [
+                34.7,
+                31.5
+              ],
+              [
+                34.7,
+                31.1
+              ]
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "nt": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Roman Judaea / Galilee",
+          "era": "nt",
+          "strokeColor": "#c9a84c",
+          "fillColor": "#c9a84c",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.15,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                34.2,
+                29.5
+              ],
+              [
+                35.5,
+                29.5
+              ],
+              [
+                36.0,
+                30.5
+              ],
+              [
+                36.5,
+                31.5
+              ],
+              [
+                36.5,
+                32.5
+              ],
+              [
+                36.0,
+                33.0
+              ],
+              [
+                35.5,
+                33.5
+              ],
+              [
+                35.0,
+                33.5
+              ],
+              [
+                34.7,
+                33.0
+              ],
+              [
+                34.5,
+                32.5
+              ],
+              [
+                34.3,
+                31.5
+              ],
+              [
+                34.2,
+                30.5
+              ],
+              [
+                34.2,
+                29.5
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Roman Syria",
+          "era": "nt",
+          "strokeColor": "#c9a84c",
+          "fillColor": "#c9a84c",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.08,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                35.5,
+                33.5
+              ],
+              [
+                37.5,
+                33.5
+              ],
+              [
+                38.5,
+                34.5
+              ],
+              [
+                38.0,
+                36.0
+              ],
+              [
+                37.0,
+                36.5
+              ],
+              [
+                36.0,
+                36.5
+              ],
+              [
+                35.5,
+                36.0
+              ],
+              [
+                35.5,
+                35.0
+              ],
+              [
+                35.5,
+                33.5
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Roman Asia",
+          "era": "nt",
+          "strokeColor": "#c9a84c",
+          "fillColor": "#c9a84c",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.08,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                26.0,
+                36.0
+              ],
+              [
+                30.0,
+                36.0
+              ],
+              [
+                30.5,
+                37.5
+              ],
+              [
+                29.5,
+                39.0
+              ],
+              [
+                28.0,
+                39.5
+              ],
+              [
+                26.5,
+                38.5
+              ],
+              [
+                26.0,
+                37.0
+              ],
+              [
+                26.0,
+                36.0
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Roman Macedonia",
+          "era": "nt",
+          "strokeColor": "#c9a84c",
+          "fillColor": "#c9a84c",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.08,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                20.5,
+                40.0
+              ],
+              [
+                24.0,
+                40.0
+              ],
+              [
+                26.0,
+                41.5
+              ],
+              [
+                24.5,
+                42.0
+              ],
+              [
+                22.0,
+                42.0
+              ],
+              [
+                20.5,
+                41.5
+              ],
+              [
+                20.5,
+                40.0
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Roman Achaia",
+          "era": "nt",
+          "strokeColor": "#c9a84c",
+          "fillColor": "#c9a84c",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.08,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                20.5,
+                36.5
+              ],
+              [
+                24.0,
+                36.5
+              ],
+              [
+                24.5,
+                38.0
+              ],
+              [
+                24.0,
+                40.0
+              ],
+              [
+                20.5,
+                40.0
+              ],
+              [
+                20.5,
+                36.5
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Roman Egypt",
+          "era": "nt",
+          "strokeColor": "#c9a84c",
+          "fillColor": "#c9a84c",
+          "strokeOpacity": 0.6,
+          "fillOpacity": 0.08,
+          "strokeWidth": 1.5
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                24.5,
+                22.0
+              ],
+              [
+                33.0,
+                22.0
+              ],
+              [
+                34.0,
+                25.0
+              ],
+              [
+                33.5,
+                28.5
+              ],
+              [
+                32.0,
+                31.5
+              ],
+              [
+                30.0,
+                32.0
+              ],
+              [
+                28.5,
+                31.5
+              ],
+              [
+                27.0,
+                30.0
+              ],
+              [
+                25.0,
+                28.0
+              ],
+              [
+                24.5,
+                25.0
+              ],
+              [
+                24.5,
+                22.0
+              ]
+            ]
+          ]
+        }
+      }
+    ]
+  }
 }
