@@ -16,17 +16,24 @@ export type PersonTier = 1 | 2 | 3;
 
 /** Visible tier threshold for each zoom level.
  *
- * TIER_2_ZOOM is set ABOVE the default mobile centre-on-Adam scale (0.65,
- * from useTreeGestures.centreOnNode). On-device testing showed the jump
- * from tier-1-only (~100 spine + role-holder nodes) to tier-1+tier-2
- * (~180 nodes including every bio-holder) across that 0.45→0.65 transition
- * roughly doubles the rendered SVG element count and causes iOS's
- * compositor to crash on the re-paint of a tall (~10 000 px) canvas.
- * Keeping tier 2 behind 0.7 means the initial centred view stays lean
- * (spine + role-holders only); the user pinches in to reveal bio-holders.
+ * Thresholds are set LOW (both at 0.4) so the default mobile centre-on-Adam
+ * scale (0.45 initial, 0.65 post-centring) shows the FULL tree including
+ * bio-holders, tier-3 figures, and expanded associate clusters. Higher
+ * thresholds hid too much content by default.
+ *
+ * At zoom ≤ 0.4 (extreme zoom-out) the tree falls back to tier-1 only
+ * (messianic spine + role-holders) and associate clusters collapse to
+ * "+N" badges, giving a readable overview at the bird's-eye scale.
+ *
+ * The original crash that justified higher thresholds (a single commit
+ * that mounted ~240 SVG layers when tier 2 first became visible) is
+ * now prevented by the staggered reveal in TreeCanvas (#1329) — mount
+ * batches of REVEAL_BATCH_PER_FRAME per animation frame instead of a
+ * single commit. So we no longer need the thresholds themselves to
+ * defend against the batch-mount crash.
  */
-export const TIER_2_ZOOM = 0.7;
-export const TIER_3_ZOOM = 0.8;
+export const TIER_2_ZOOM = 0.3;
+export const TIER_3_ZOOM = 0.4;
 
 /** Derive the tier for a single person. */
 export function getPersonTier(person: Person, isMessianic: boolean): PersonTier {
