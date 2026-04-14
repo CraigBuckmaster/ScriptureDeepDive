@@ -80,6 +80,9 @@ export const TreeNode = memo(function TreeNode({
 
   // Tier / opacity model — visibility via opacity, not null returns.
   // The React tree is always the same size; only opacity varies with zoom.
+  // Associate mount/unmount is staggered by TreeCanvas across frames to
+  // avoid iOS compositor crashes from a batch native-view delta in a
+  // single commit; once mounted, this opacity calc takes over.
   const tier = getPersonTier(data, onMessianicLine);
   const visible = isPersonVisibleAtZoom(tier, zoom);
   const isAssociate = data.isAssociate === true;
