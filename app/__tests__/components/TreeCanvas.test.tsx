@@ -1,7 +1,6 @@
 import React from 'react';
 
 jest.mock('react-native-svg', () => {
-  const React = require('react');
   return {
     Svg: 'Svg', G: 'G', Line: 'Line', Path: 'Path', Rect: 'Rect', Text: 'Text', Circle: 'Circle',
     Defs: 'Defs', RadialGradient: 'RadialGradient', Stop: 'Stop', Pattern: 'Pattern',
@@ -25,15 +24,14 @@ jest.mock('@/components/tree/SpouseConnectorSvg', () => ({
   SpouseConnectorSvg: 'SpouseConnectorSvg',
 }));
 
-jest.mock('@/components/tree/AssociationLinkSvg', () => ({
-  AssociationLinkSvg: 'AssociationLinkSvg',
-}));
-
 import { renderWithProviders } from '../helpers/renderWithProviders';
 import { TreeCanvas } from '@/components/tree/TreeCanvas';
-import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson, AssociationLink } from '@/utils/treeBuilder';
+import type {
+  TreeLink as TreeLinkType, MarriageBar, SpouseConnector, AssociationLink,
+} from '@/utils/treeBuilder';
+import type { VisibleLayoutNode } from '@/hooks/useVisibleNodes';
 
-const makeNode = (id: string, era: string = 'creation'): LayoutNode => ({
+const makeNode = (id: string, era: string = 'creation'): VisibleLayoutNode => ({
   data: {
     id,
     name: id.charAt(0).toUpperCase() + id.slice(1),
@@ -59,21 +57,26 @@ const makeNode = (id: string, era: string = 'creation'): LayoutNode => ({
   children: [],
   depth: 0,
   isSpouse: false,
+  tier: 1,
+  isEntering: false,
 });
 
-const makeLink = (): TreeLinkType => ({
+const makeLink = (sourceId = 'a', targetId = 'b', sourceEra: string | null = null, targetEra: string | null = null): TreeLinkType => ({
+  sourceId,
+  targetId,
+  sourceEra,
+  targetEra,
   source: { x: 100, y: 50 },
   target: { x: 100, y: 200 },
   isSpine: true,
   isMessianic: false,
-  dimmed: false,
 });
 
 describe('TreeCanvas', () => {
   beforeEach(() => jest.clearAllMocks());
 
   const defaultProps = {
-    nodes: [] as LayoutNode[],
+    nodes: [] as VisibleLayoutNode[],
     links: [] as TreeLinkType[],
     marriageBars: [] as MarriageBar[],
     spouseConnectors: [] as SpouseConnector[],
@@ -81,10 +84,6 @@ describe('TreeCanvas', () => {
     spineIds: new Set<string>(),
     selectedPersonId: null,
     onNodePress: jest.fn(),
-    // Tests render synchronously; skipStagger bypasses the
-    // requestAnimationFrame-based reveal so assertions can see the
-    // fully revealed node set immediately.
-    skipStagger: true,
   };
 
   it('renders without crashing with empty data', () => {
@@ -98,13 +97,12 @@ describe('TreeCanvas', () => {
       <TreeCanvas {...defaultProps} nodes={nodes} />,
     );
     const json = tree.toJSON() as any;
-    // The G wrapper should contain children including 3 TreeNode mocks
     const treeNodes = findAllByType(json, 'TreeNode');
     expect(treeNodes).toHaveLength(3);
   });
 
   it('renders TreeLink elements for given links', () => {
-    const links = [makeLink(), makeLink()];
+    const links = [makeLink('a', 'b'), makeLink('c', 'd')];
     const tree = renderWithProviders(
       <TreeCanvas {...defaultProps} links={links} />,
     );
@@ -129,25 +127,35 @@ describe('TreeCanvas', () => {
     );
     const json = tree.toJSON() as any;
     const treeNodes = findAllByType(json, 'TreeNode');
-    // adam matches era → dimmed=false; hagar does not match but is not in spine → dimmed=true
     const hagarNode = treeNodes.find((n: any) => n.props?.node?.data?.id === 'hagar');
     expect(hagarNode?.props?.dimmed).toBe(true);
     const adamNode = treeNodes.find((n: any) => n.props?.node?.data?.id === 'adam');
     expect(adamNode?.props?.dimmed).toBe(false);
   });
 
-  it('applies offset transform', () => {
+  it('dims non-spine links whose source and target eras do not match the filter', () => {
+    const spineIds = new Set<string>();
+    const links = [
+      makeLink('a', 'b', 'creation', 'creation'),   // matches filter
+      makeLink('c', 'd', 'patriarchs', 'patriarchs'), // does not match
+    ];
     const tree = renderWithProviders(
-      <TreeCanvas {...defaultProps} offsetX={50} offsetY={75} />,
+      <TreeCanvas
+        {...defaultProps}
+        links={links}
+        spineIds={spineIds}
+        filterEra="creation"
+      />,
     );
     const json = tree.toJSON() as any;
-    // TreeCanvas renders Fragment children: [Defs, Rect, Rect, G(transform)]
-    const children = Array.isArray(json) ? json : [json];
-    const gWithTransform = children.find((c: any) => c?.props?.transform);
-    expect(gWithTransform?.props?.transform).toBe('translate(50, 75)');
+    const rendered = findAllByType(json, 'TreeLink');
+    expect(rendered).toHaveLength(2);
+    // The TreeLink for the mismatched pair is dimmed.
+    const dimmedCount = rendered.filter((l: any) => l.props?.dimmed === true).length;
+    expect(dimmedCount).toBe(1);
   });
 
-  // ── Card #1290 + #1291: associate clusters + zoom collapse ─────────
+  // ── Associate clusters + zoom collapse ─────────────────────────────
 
   const makeAssocLink = (anchorId: string, memberId: string, i = 0): AssociationLink => ({
     anchorId, memberId,
@@ -156,10 +164,7 @@ describe('TreeCanvas', () => {
     type: 'disciple',
   });
 
-  it('consolidates association links into a single Path at normal zoom', () => {
-    // Post-constant-canvas-render refactor: all 89+ dashed connectors
-    // share a single <Path> with a multi-M `d` attribute, so zoom
-    // transitions never mount new native views.
+  it('consolidates association links into a single Path when clusters are expanded', () => {
     const links = [
       makeAssocLink('jesus', 'peter', 0),
       makeAssocLink('jesus', 'andrew', 1),
@@ -174,12 +179,11 @@ describe('TreeCanvas', () => {
       p.props?.strokeDasharray === '4,4' && p.props?.opacity === 0.55,
     );
     expect(assocPath).toBeTruthy();
-    // Should contain three 'M' moveto commands in the `d` attribute.
     const mCount = (assocPath.props?.d?.match(/M /g) ?? []).length;
     expect(mCount).toBe(3);
   });
 
-  it('fades the consolidated association-link Path to opacity 0 when clusters collapsed', () => {
+  it('collapses association Path to opacity 0 below the tier-3 zoom threshold', () => {
     const links = [
       makeAssocLink('jesus', 'peter', 0),
       makeAssocLink('jesus', 'andrew', 1),
@@ -193,61 +197,22 @@ describe('TreeCanvas', () => {
     const assocPath = paths.find((p: any) => p.props?.strokeDasharray === '4,4');
     expect(assocPath).toBeTruthy();
     expect(assocPath.props?.opacity).toBe(0);
-    // Badge group still rendered; visible-opacity at 0.85, zero-opacity
-    // when uncollapsed — post-refactor the badge always mounts.
+    // Collapsed badge "+N" text is rendered.
     const texts = findAllByType(json, 'Text');
-    const badgeText = texts.find((t: any) => t.children?.join?.('') === '+3' || (t.children?.[1] === 3));
+    const badgeText = texts.find((t: any) => {
+      if (!t.children) return false;
+      const text = Array.isArray(t.children) ? t.children.join('') : String(t.children);
+      return text.includes('+3');
+    });
     expect(badgeText).toBeTruthy();
   });
 
-  it('renders associate TreeNodes once zoom crosses the reveal threshold and forwards clustersCollapsed', () => {
-    // Associate nodes are now mount-staggered: below TIER_2_ZOOM the
-    // reveal counter is 0 so associates are null-skipped to keep the
-    // native-view delta small during tier transitions. Above TIER_3_ZOOM
-    // the counter reaches the full extra count so they mount; they
-    // still receive clustersCollapsed=false at that zoom.
-    const peter = makeNode('peter');
-    peter.data.isAssociate = true;
-    const jesus = makeNode('jesus');
-    const tree = renderWithProviders(
-      <TreeCanvas
-        {...defaultProps}
-        nodes={[jesus, peter]}
-        associationLinks={[makeAssocLink('jesus', 'peter', 0)]}
-        zoom={1.0}
-      />,
-    );
-    const json = tree.toJSON() as any;
-    const treeNodes = findAllByType(json, 'TreeNode');
-    const ids = treeNodes.map((n: any) => n.props?.node?.data?.id);
-    expect(ids).toContain('jesus');
-    expect(ids).toContain('peter');
-    // At zoom 1.0 clusters are expanded (clustersCollapsed=false); the
-    // prop still flows through to each TreeNode.
-    for (const n of treeNodes) {
-      expect(n.props?.clustersCollapsed).toBe(false);
-    }
-  });
-
-  it('forwards zoom to each TreeNode', () => {
-    const nodes = [makeNode('adam'), makeNode('seth')];
-    const tree = renderWithProviders(
-      <TreeCanvas {...defaultProps} nodes={nodes} zoom={0.7} />,
-    );
-    const json = tree.toJSON() as any;
-    const treeNodes = findAllByType(json, 'TreeNode');
-    for (const n of treeNodes) {
-      expect(n.props?.zoom).toBe(0.7);
-    }
-  });
-
-  it('declares the messianic-node-fill radial gradient (Card #1281)', () => {
+  it('declares the messianic-node-fill radial gradient', () => {
     const tree = renderWithProviders(<TreeCanvas {...defaultProps} />);
     const json = tree.toJSON() as any;
     const gradients = findAllByType(json, 'RadialGradient');
     const messianic = gradients.find((g: any) => g.props?.id === 'messianic-node-fill');
     expect(messianic).toBeTruthy();
-    // Stops should reference the gold token from the theme.
     const stops = findAllByType(messianic, 'Stop');
     expect(stops.length).toBe(2);
     expect(stops[0].props?.stopColor).toBe('#bfa050');

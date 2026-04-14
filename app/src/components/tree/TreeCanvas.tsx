@@ -1,144 +1,80 @@
 /**
- * TreeCanvas — SVG container rendering all tree elements.
+ * TreeCanvas — SVG container rendering all pre-filtered tree elements.
  *
- * Associate rendering is fully enabled as of #1329 (staggered TreeNode
- * reveal) + this PR. The BISECT constants at the top of the file stay
- * in place as emergency hide-switches: flip one to `true` to disable
- * that specific component if it regresses on a future iOS version.
+ * The parent screen runs viewport culling + semantic-zoom filtering
+ * before this component ever sees data, so every node / link / bar /
+ * label this renders is something we actually want on screen right now.
+ * There is no staggered reveal, no BISECT flag, no reveal batching — the
+ * whole point of the viewBox + culling architecture is that iOS never
+ * sees the giant-canvas render that used to force those workarounds.
  */
 
 import React, { memo, useMemo } from 'react';
 import {
-  Defs, RadialGradient, Stop, Pattern,
-  Rect, Line, G, Circle, Text as SvgText, Path,
+  Defs, RadialGradient, Stop, G, Circle, Text as SvgText, Path,
 } from 'react-native-svg';
 import { useTheme } from '../../theme';
 import { TreeLink } from './TreeLink';
 import { MarriageBarSvg } from './MarriageBarSvg';
 import { SpouseConnectorSvg } from './SpouseConnectorSvg';
 import { TreeNode } from './TreeNode';
-import { TIER_2_ZOOM, TIER_3_ZOOM, getVisibleTier, getPersonTier } from '../../utils/genealogyOrganic';
-import { isMessianic } from '../../utils/messianicLine';
-import { logger } from '../../utils/logger';
-import type { LayoutNode, TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson, AssociationLink, AssociateBloomLabel, AssociateTrail } from '../../utils/treeBuilder';
-
-// BISECT flags now that #1329 proved the staggered TreeNode reveal works
-// across the full zoom range. All four remaining flags flip to `false`
-// so the full associate rendering (paths, trails, labels, badges) comes
-// back online. Kept in place as a pair of emergency switches in case a
-// specific component regresses — flipping one back to `true` hides just
-// that component without touching the others.
-const BISECT = {
-  hideAssociationPath: false,
-  hideTrails: false,
-  hideLabels: false,
-  hideBadges: false,
-  hideAssociateNodes: false,
-} as const;
-
-/** How many hidden-tier TreeNodes to mount per animation frame. Smaller =
- *  smoother fade-in but slower full reveal; larger = faster reveal but
- *  bigger per-frame native-view allocation cost. 5/frame ≈ ~18 frames
- *  ≈ 0.3 s for 89 associates, ~16 frames for 80 tier-2 bio-holders. */
-const REVEAL_BATCH_PER_FRAME = 5;
+import { TIER_THRESHOLDS } from '../../utils/treeTiers';
+import type {
+  TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson,
+  AssociationLink, AssociateBloomLabel, AssociateTrail,
+} from '../../utils/treeBuilder';
+import type { VisibleLayoutNode } from '../../hooks/useVisibleNodes';
 
 interface Props {
-  nodes: LayoutNode[];
+  nodes: VisibleLayoutNode[];
   links: TreeLinkType[];
   marriageBars: MarriageBar[];
   spouseConnectors: SpouseConnector[];
-  /** Dotted connectors from anchors to associated_with satellites (#1288). */
   associationLinks?: AssociationLink[];
-  /** Type-sector labels ("disciples", "contemporaries"…) emitted by
-   *  the associate bloom layout. Shown at mid-zoom+. */
   associateBloomLabels?: AssociateBloomLabel[];
-  /** Thick trail connectors from anchors to offset associate blooms. */
   associateTrails?: AssociateTrail[];
   filterEra: string | null;
   spineIds: Set<string>;
   selectedPersonId: string | null;
   onNodePress: (person: TreePerson) => void;
-  offsetX?: number;
-  offsetY?: number;
-  /** Full SVG width — needed for background sizing. */
-  canvasWidth?: number;
-  /** Full SVG height — needed for background sizing. */
-  canvasHeight?: number;
-  /** Current committed zoom scale (#1291). Controls per-tier visibility
-   *  (below TIER_2_ZOOM / TIER_3_ZOOM) AND associate-cluster
-   *  collapse-to-badge (below the local CLUSTER_COLLAPSE_ZOOM). */
+  /** Current committed zoom scale. Controls bloom-cluster collapse. */
   zoom?: number;
-  /** Testing hook: skip the requestAnimationFrame-based staggered reveal
-   *  and render the entire target set immediately. Useful for test
-   *  snapshots / synchronous render assertions. Production renders leave
-   *  this undefined so the crash-preventing stagger runs as designed. */
-  skipStagger?: boolean;
 }
 
 export const TreeCanvas = memo(function TreeCanvas({
   nodes, links, marriageBars, spouseConnectors,
-  skipStagger = false,
   associationLinks = [],
   associateBloomLabels = [],
   associateTrails = [],
   filterEra, spineIds, selectedPersonId, onNodePress,
-  offsetX = 0, offsetY = 0,
-  canvasWidth = 4000, canvasHeight = 4000,
   zoom = 1,
 }: Props) {
   const { base } = useTheme();
 
-  // Cluster-collapse threshold is deliberately DECOUPLED from tier
-  // visibility thresholds. Rationale from post-#1331 device crashes:
-  // - Tier visibility controls which TreeNodes render (node mount stagger).
-  //   We want this permissive (TIER_3_ZOOM = 0.4) so the user sees most
-  //   people at the default mobile zoom.
-  // - Cluster collapse controls whether the consolidated association
-  //   <Path> (89 dashed-stroke segments in one native CAShapeLayer) is
-  //   rendered at visible opacity. iOS re-rasterizes this Path on every
-  //   scale change, and with 89 dashed segments + the ~10k-tall canvas
-  //   the re-rasterization crashes the compositor.
-  // Keeping CLUSTER_COLLAPSE_ZOOM high (0.8) means the expensive Path
-  // stays at opacity=0 (iOS skips it entirely) at default zooms. Users
-  // see "+N" badges at anchors instead — same information, cheap to paint.
-  // Pinching past 0.8 is a deliberate "I want to see the connectors"
-  // action; iOS is more tolerant when the user expects a slight delay.
-  const CLUSTER_COLLAPSE_ZOOM = 0.8;
-  const clustersCollapsed = zoom < CLUSTER_COLLAPSE_ZOOM;
-  const labelsVisible = zoom >= CLUSTER_COLLAPSE_ZOOM;
+  // Associate clusters collapse to "+N" badges below the tier-3 zoom
+  // threshold. Above it the full association paths, trails, and labels
+  // render. Using the structural tier threshold keeps the two systems
+  // (visibility and visual density) in lockstep.
+  const clustersCollapsed = zoom < TIER_THRESHOLDS[3];
+  const labelsVisible = !clustersCollapsed;
 
-  // Render-entry diagnostic.
-  const visibleTier = getVisibleTier(zoom);
-  logger.info(
-    'Canvas',
-    `render z=${zoom.toFixed(2)} visibleTier=${visibleTier} `
-    + `collapsed=${clustersCollapsed} `
-    + `nodes=${nodes.length} links=${links.length} al=${associationLinks.length} `
-    + `labels=${associateBloomLabels.length} trails=${associateTrails.length} `
-    + `canvas=${canvasWidth}x${canvasHeight} `
-    + `BISECT=path:${BISECT.hideAssociationPath ? 'hide' : 'show'},`
-    + `trails:${BISECT.hideTrails ? 'hide' : 'show'},`
-    + `labels:${BISECT.hideLabels ? 'hide' : 'show'},`
-    + `badges:${BISECT.hideBadges ? 'hide' : 'show'},`
-    + `nodes:${BISECT.hideAssociateNodes ? 'hide' : 'show'}`,
-  );
-  React.useEffect(() => {
-    logger.info('Canvas', `render COMMITTED z=${zoom.toFixed(2)}`);
-  });
+  // Pre-compute an id→era lookup so link / marriage-bar / spouse-connector
+  // dimming can be derived at render time without scanning the full node
+  // list for every entry.
+  const nodeMeta = useMemo(() => {
+    const map = new Map<string, { era: string | null; onSpine: boolean }>();
+    for (const n of nodes) {
+      map.set(n.data.id, {
+        era: n.data.era ?? null,
+        onSpine: spineIds.has(n.data.id),
+      });
+    }
+    return map;
+  }, [nodes, spineIds]);
 
-  // Associate id set so the nodes.map can skip them when bisect flag is on.
-  const associateIdSet = useMemo(
-    () => new Set(associationLinks.map((al) => al.memberId)),
-    [associationLinks],
-  );
-
-  // All associate connectors consolidated into ONE Path string using
-  // STRAIGHT lines (not bezier). 89 individual `<AssociationLinkSvg>`
-  // components → 1 native CAShapeLayer. Straight-line geometry keeps
-  // the consolidated Path cheap enough to first-rasterize at opacity
-  // 0.55 at the default zoom — the bezier version crashed iOS's
-  // compositor when it had to evaluate 89 cubic curves + dash positions
-  // in a single paint (device log, post-#1331 / #1332).
+  // All associate connectors consolidated into ONE straight-line Path.
+  // Keeps the native layer count down regardless of how many blooms are
+  // on screen at once.
   const associationPathD = useMemo(
     () => associationLinks
       .map((al) => `M ${al.source.x} ${al.source.y} L ${al.target.x} ${al.target.y}`)
@@ -146,7 +82,6 @@ export const TreeCanvas = memo(function TreeCanvas({
     [associationLinks],
   );
 
-  // Same consolidation for trail lines.
   const trailsPathD = useMemo(
     () => associateTrails
       .map((t) => `M ${t.source.x} ${t.source.y} L ${t.target.x} ${t.target.y}`)
@@ -154,8 +89,7 @@ export const TreeCanvas = memo(function TreeCanvas({
     [associateTrails],
   );
 
-  // Badge positions derived from association links (stable for a given
-  // tree layout). Always rendered, opacity-gated by clustersCollapsed.
+  // Collapsed-cluster "+N" badges, one per anchor that has visible members.
   const anchorBadges = useMemo(() => {
     const byAnchor = new Map<string, { x: number; y: number; count: number }>();
     for (const al of associationLinks) {
@@ -169,128 +103,46 @@ export const TreeCanvas = memo(function TreeCanvas({
     return Array.from(byAnchor, ([anchorId, v]) => ({ anchorId, ...v }));
   }, [associationLinks]);
 
-  // Universal staggered-reveal index for every tier-2 and tier-3 node
-  // (including associates). Tier 1 is always visible and never counted.
-  // Sort order: tier 2 first, then tier 3, then stable id order within
-  // each tier — so progressive reveal fades bio-holders in before minor
-  // figures. Tier transitions at the zoom threshold become a gradual
-  // mount over ~16 frames instead of a single commit that adds ~240
-  // opacity-property changes (which crashes iOS's compositor).
-  const { revealIndex, tier2Count, totalExtraCount } = useMemo(() => {
-    type Item = { id: string; tier: 1 | 2 | 3 };
-    const items: Item[] = nodes.map((n) => ({
-      id: n.data.id,
-      tier: getPersonTier(n.data, isMessianic(n.data.id)),
-    }));
-    const extras = items
-      .filter((it) => it.tier > 1)
-      .sort((a, b) => a.tier - b.tier || a.id.localeCompare(b.id));
-    const index = new Map<string, number>();
-    extras.forEach((it, i) => index.set(it.id, i));
-    const t2 = extras.filter((it) => it.tier === 2).length;
-    return {
-      revealIndex: index,
-      tier2Count: t2,
-      totalExtraCount: extras.length,
-    };
-  }, [nodes]);
-
-  // Target reveal count based on current zoom's tier visibility.
-  const targetRevealed = useMemo(() => {
-    if (zoom < TIER_2_ZOOM) return 0;
-    if (zoom < TIER_3_ZOOM) return tier2Count;
-    return totalExtraCount;
-  }, [zoom, tier2Count, totalExtraCount]);
-
-  // Initial state is 0 — the reveal animation fires on the very first
-  // commit and mounts extras in batches of REVEAL_BATCH_PER_FRAME per
-  // animation frame. The earlier shortcut of seeding with `targetRevealed`
-  // to avoid a startup waterfall crashed iOS when the initial zoom put
-  // targetRevealed near its maximum (e.g. z=0.45 with low TIER_3_ZOOM,
-  // post-#1331): that becomes a single-commit mount of ~198 TreeNodes
-  // plus paths/trails/labels/badges — the exact batch the stagger was
-  // meant to prevent. Starting at 0 guarantees the first frame only
-  // mounts tier-1 nodes; the rest animate in over ~0.7 s. Brief startup
-  // waterfall is acceptable; a crash is not.
-  const [revealedExtra, setRevealedExtra] = React.useState(
-    skipStagger ? targetRevealed : 0,
-  );
-  const lastTargetRef = React.useRef(skipStagger ? targetRevealed : 0);
-  React.useEffect(() => {
-    // Skip the no-op case where target hasn't actually changed.
-    if (lastTargetRef.current === targetRevealed) return;
-    lastTargetRef.current = targetRevealed;
-    let current = revealedExtra;
-    if (current === targetRevealed) return;
-    let cancelled = false;
-    const tick = () => {
-      if (cancelled) return;
-      const direction = targetRevealed > current ? 1 : -1;
-      current += direction * REVEAL_BATCH_PER_FRAME;
-      if ((direction > 0 && current >= targetRevealed)
-          || (direction < 0 && current <= targetRevealed)) {
-        current = targetRevealed;
-      }
-      setRevealedExtra(current);
-      if (current !== targetRevealed) requestAnimationFrame(tick);
-    };
-    const handle = requestAnimationFrame(tick);
-    return () => {
-      cancelled = true;
-      cancelAnimationFrame(handle);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [targetRevealed]);
+  const isDimmed = (id: string, era: string | null | undefined): boolean => {
+    if (filterEra === null) return false;
+    if (spineIds.has(id)) return false;
+    return era !== filterEra;
+  };
 
   return (
     <>
-      {/* ── Background definitions ─────────────────── */}
       <Defs>
-        {/* Radial vignette — warm center fading to dark edges */}
-        <RadialGradient id="tree-bg-vignette" cx="50%" cy="40%" r="60%">
-          <Stop offset="0%" stopColor={base.bgSurface} stopOpacity={1} />
-          <Stop offset="100%" stopColor={base.bg} stopOpacity={1} />
-        </RadialGradient>
-
-        {/* Subtle grid pattern */}
-        <Pattern id="tree-grid" width={80} height={80} patternUnits="userSpaceOnUse">
-          <Line x1={80} y1={0} x2={80} y2={80}
-            stroke={base.border} strokeWidth={0.3} opacity={0.3} />
-          <Line x1={0} y1={80} x2={80} y2={80}
-            stroke={base.border} strokeWidth={0.3} opacity={0.3} />
-        </Pattern>
-
-        {/* Warm radial glow used to fill messianic-line nodes (Card #1281). */}
+        {/* Warm radial glow used to fill messianic-line nodes. */}
         <RadialGradient id="messianic-node-fill" cx="30%" cy="30%" r="70%">
           <Stop offset="0%" stopColor={base.gold} stopOpacity={0.25} />
           <Stop offset="100%" stopColor={base.gold} stopOpacity={0.08} />
         </RadialGradient>
       </Defs>
 
-      {/* ── Background layers ──────────────────────── */}
-      <Rect x={0} y={0} width={canvasWidth} height={canvasHeight}
-        fill="url(#tree-bg-vignette)" />
-      <Rect x={0} y={0} width={canvasWidth} height={canvasHeight}
-        fill="url(#tree-grid)" />
+      <G>
+        {/* 1. Genealogical links (back). Dimming is computed from the
+               link's source/target era vs. the current filter. A link
+               dims only when BOTH endpoints would dim. */}
+        {links.map((link, i) => {
+          const dimmed = filterEra !== null
+            && !spineIds.has(link.sourceId)
+            && !spineIds.has(link.targetId)
+            && link.sourceEra !== filterEra
+            && link.targetEra !== filterEra;
+          return (
+            <TreeLink
+              key={`l-${link.sourceId}-${link.targetId}-${i}`}
+              source={link.source}
+              target={link.target}
+              isSpine={link.isSpine}
+              isMessianic={link.isMessianic}
+              dimmed={dimmed}
+            />
+          );
+        })}
 
-      {/* ── Tree content ───────────────────────────── */}
-      <G transform={`translate(${offsetX}, ${offsetY})`}>
-        {/* 1. Genealogical links (back) */}
-        {links.map((link, i) => (
-          <TreeLink
-            key={`l-${i}`}
-            source={link.source}
-            target={link.target}
-            isSpine={link.isSpine}
-            isMessianic={link.isMessianic}
-            dimmed={link.dimmed}
-          />
-        ))}
-
-        {/* 1b. Association links — ALL dashed bezier connectors consolidated
-               into a single Path. Opacity toggles with cluster collapse state;
-               no native views mount or unmount across zoom transitions. */}
-        {!BISECT.hideAssociationPath && associationPathD.length > 0 && (
+        {/* 1b. Association connectors consolidated into a single Path. */}
+        {associationPathD.length > 0 && (
           <Path
             d={associationPathD}
             stroke={base.border}
@@ -302,8 +154,8 @@ export const TreeCanvas = memo(function TreeCanvas({
           />
         )}
 
-        {/* 1c. Associate-bloom trails — all consolidated into one Path. */}
-        {!BISECT.hideTrails && trailsPathD.length > 0 && (
+        {/* 1c. Associate-bloom trails consolidated into a single Path. */}
+        {trailsPathD.length > 0 && (
           <Path
             d={trailsPathD}
             stroke={base.gold}
@@ -314,8 +166,8 @@ export const TreeCanvas = memo(function TreeCanvas({
           />
         )}
 
-        {/* 1d. Collapsed-cluster "+N" badges. Always rendered; opacity gated. */}
-        {!BISECT.hideBadges && anchorBadges.map((b) => (
+        {/* 1d. Collapsed-cluster "+N" badges. */}
+        {anchorBadges.map((b) => (
           <G key={`ab-${b.anchorId}`} opacity={clustersCollapsed ? 0.85 : 0}>
             <Circle cx={b.x + 30} cy={b.y + 30} r={14}
               fill={base.bgSurface} stroke={base.gold} strokeWidth={1} />
@@ -326,54 +178,54 @@ export const TreeCanvas = memo(function TreeCanvas({
           </G>
         ))}
 
-        {/* 2. Marriage bars */}
-        {marriageBars.map((bar) => (
-          <MarriageBarSvg key={`mb-${bar.spouseId}`} bar={bar} />
-        ))}
-
-        {/* 3. Spouse connectors */}
-        {spouseConnectors.map((conn, i) => (
-          <SpouseConnectorSvg key={`sc-${i}`} connector={conn} />
-        ))}
-
-        {/* 4. Nodes (front). Associate nodes filtered out by the BISECT
-               flag. Everyone else always renders; TreeNode handles
-               tier visibility via opacity so there's no mount / unmount
-               churn at tier transitions. */}
-        {nodes.map((node) => {
-          if (BISECT.hideAssociateNodes && associateIdSet.has(node.data.id)) {
-            return null;
-          }
-          // Universal staggered reveal: every non-tier-1 node has an index
-          // in revealIndex. A node only mounts once revealedExtra reaches
-          // its index. Tier-1 nodes (no revealIndex entry) always render.
-          // This turns a tier-2 or tier-3 zoom transition from a single
-          // commit that flips opacity on ~240 layers into a sequence of
-          // per-frame mounts of REVEAL_BATCH_PER_FRAME nodes each — which
-          // iOS's compositor handles without crashing.
-          const idx = revealIndex.get(node.data.id);
-          if (idx !== undefined && idx >= revealedExtra) return null;
+        {/* 2. Marriage bars. Dimmed only when neither partner is spine
+               AND the bar's era doesn't match the filter. */}
+        {marriageBars.map((bar) => {
+          const partner = nodeMeta.get(bar.partnerId);
+          const spouse = nodeMeta.get(bar.spouseId);
           const dimmed = filterEra !== null
-            && node.data.era !== filterEra
-            && !spineIds.has(node.data.id);
+            && !(partner?.onSpine || spouse?.onSpine)
+            && (partner?.era !== filterEra)
+            && (spouse?.era !== filterEra);
+          return (
+            <MarriageBarSvg
+              key={`mb-${bar.spouseId}`}
+              bar={bar}
+              dimmed={dimmed}
+            />
+          );
+        })}
+
+        {/* 3. Spouse connectors. */}
+        {spouseConnectors.map((conn, i) => {
+          const partner = nodeMeta.get(conn.partnerId);
+          const dimmed = isDimmed(conn.partnerId, partner?.era);
+          return (
+            <SpouseConnectorSvg
+              key={`sc-${i}`}
+              connector={conn}
+              dimmed={dimmed}
+            />
+          );
+        })}
+
+        {/* 4. Nodes (front). */}
+        {nodes.map((node) => {
+          const dimmed = isDimmed(node.data.id, node.data.era);
           return (
             <TreeNode
               key={node.data.id}
               node={node}
               dimmed={dimmed}
               selected={node.data.id === selectedPersonId}
-              filterEra={filterEra}
-              zoom={zoom}
-              clustersCollapsed={clustersCollapsed}
+              isEntering={node.isEntering}
               onPress={onNodePress}
             />
           );
         })}
 
-        {/* 5. Bloom-apex labels ("disciples", "contemporaries"…). Always
-               rendered; opacity gated by CLUSTER_COLLAPSE_ZOOM (same
-               threshold as the path + trails + badges). */}
-        {!BISECT.hideLabels && associateBloomLabels.map((lbl) => (
+        {/* 5. Bloom-apex labels ("disciples", "contemporaries"…). */}
+        {associateBloomLabels.map((lbl) => (
           <SvgText
             key={`abl-${lbl.anchorId}-${lbl.type}`}
             x={lbl.x}

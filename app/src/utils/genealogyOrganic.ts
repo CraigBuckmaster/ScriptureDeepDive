@@ -1,61 +1,15 @@
 /**
- * genealogyOrganic.ts — Pure helpers for the Phase-2 organic layer.
+ * genealogyOrganic.ts — Pure helpers for the organic layer.
  *
- * Cubic Bezier path generation, zoom-semantic tier computation, tribal
- * bloom layout override, and branch-weight encoding. All helpers are
- * deterministic and easily unit-tested.
+ * Cubic Bezier path generation, tribal bloom layout override, and
+ * branch-weight encoding. All helpers are deterministic and easily
+ * unit-tested.
  *
- * Part of Card #1267 (Genealogy Phase 2).
+ * Tier / semantic-zoom logic lives in `./treeTiers` — this module only
+ * deals with geometry + visual weight.
  */
 
 import type { Person } from '../types';
-
-// ── Zoom-semantic tier ────────────────────────────────────────────────
-
-export type PersonTier = 1 | 2 | 3;
-
-/** Visible tier threshold for each zoom level.
- *
- * Thresholds are set LOW (both at 0.4) so the default mobile centre-on-Adam
- * scale (0.45 initial, 0.65 post-centring) shows the FULL tree including
- * bio-holders, tier-3 figures, and expanded associate clusters. Higher
- * thresholds hid too much content by default.
- *
- * At zoom ≤ 0.4 (extreme zoom-out) the tree falls back to tier-1 only
- * (messianic spine + role-holders) and associate clusters collapse to
- * "+N" badges, giving a readable overview at the bird's-eye scale.
- *
- * The original crash that justified higher thresholds (a single commit
- * that mounted ~240 SVG layers when tier 2 first became visible) is
- * now prevented by the staggered reveal in TreeCanvas (#1329) — mount
- * batches of REVEAL_BATCH_PER_FRAME per animation frame instead of a
- * single commit. So we no longer need the thresholds themselves to
- * defend against the batch-mount crash.
- */
-export const TIER_2_ZOOM = 0.3;
-export const TIER_3_ZOOM = 0.4;
-
-/** Derive the tier for a single person. */
-export function getPersonTier(person: Person, isMessianic: boolean): PersonTier {
-  if (isMessianic) return 1;
-  const role = person.role ?? '';
-  if (['patriarch', 'king', 'prophet', 'judge'].includes(role)) return 1;
-  if (person.bio) return 2;
-  return 3;
-}
-
-/** Map a zoom level to the highest visible tier. */
-export function getVisibleTier(zoom: number): PersonTier {
-  if (zoom > TIER_3_ZOOM) return 3;
-  if (zoom > TIER_2_ZOOM) return 2;
-  return 1;
-}
-
-/** Whether a person at `personTier` should be visible at the current `zoom`. */
-export function isPersonVisibleAtZoom(personTier: PersonTier, zoom: number): boolean {
-  const visible = getVisibleTier(zoom);
-  return personTier <= visible;
-}
 
 // ── Bezier curve path ─────────────────────────────────────────────────
 

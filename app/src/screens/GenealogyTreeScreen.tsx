@@ -1,40 +1,28 @@
 /**
- * GenealogyTreeScreen — Zoomable family tree of 237 biblical people.
+ * GenealogyTreeScreen — Zoomable family tree of biblical people.
  *
- * d3-hierarchy layout + react-native-svg rendering + gesture-handler
- * pinch/pan. Era filtering, person search, bio bottom sheet.
+ * Architecture: screen-sized <Svg> with a dynamic `viewBox` acting as a
+ * camera into world-space. Pan / pinch gestures update the camera; the
+ * camera update re-derives the viewBox string. A separate hook does
+ * viewport culling + semantic-zoom filtering so only the elements on
+ * screen ever mount as native SVG layers.
+ *
+ * There are no Animated.Views, no two-layer transforms, and no iOS
+ * Reduce Motion workarounds. Centering is a plain setCamera call.
+ *
  * Deep-link: initialPersonId param → auto-centre + open bio.
- *
- * ── Transform architecture (iOS Reduce Motion workaround) ───────────
- *
- * View hierarchy:
- *   <GestureDetector>
- *     <Animated.View style={gestureStyle}>     ← gesture deltas (Reanimated)
- *       <View style={baseStyle}>                ← base position (React state)
- *         <Svg>...</Svg>                        ← tree content
- *
- * See useTreeGestures.ts for the full story of why this architecture
- * exists. TL;DR: iOS Reduce Motion breaks Reanimated's ability to
- * update Animated.View transforms programmatically. React state on
- * the inner View is the only reliable way to move the viewport from
- * filter taps / search / deep links. Gestures work on the outer
- * Animated.View because gesture worklets use a different pipeline.
- *
- * Both layers use transformOrigin '0% 0%' (set via styles.transformLayer).
- * Centering functions only modify the inner View (setBase in the hook).
- * Pan/pinch only modify the outer Animated.View (shared values).
  */
 
 import React, { useState, useCallback, useEffect, useRef } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg from 'react-native-svg';
-import Animated from 'react-native-reanimated';
 import { GestureDetector } from 'react-native-gesture-handler';
 
 import { usePeople } from '../hooks/usePeople';
 import { useTreeLayout } from '../hooks/useTreeLayout';
-import { useTreeGestures } from '../hooks/useTreeGestures';
+import { useTreeCamera } from '../hooks/useTreeCamera';
+import { useVisibleNodes } from '../hooks/useVisibleNodes';
 import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
 
 import { TreeCanvas } from '../components/tree/TreeCanvas';
@@ -57,38 +45,38 @@ function GenealogyTreeScreen({ route, navigation }: {
 }) {
   const { base } = useTheme();
   useLandscapeUnlock();
+  const { width: SCREEN_W, height: SCREEN_H } = useWindowDimensions();
   const initialPersonId = route?.params?.personId;
   const { people, isLoading } = usePeople();
   const insets = useSafeAreaInsets();
   const [filterEra, setFilterEra] = useState<string>('all');
   const [selectedPerson, setSelectedPerson] = useState<Person | null>(null);
 
-  const { nodes, links, marriageBars, spouseConnectors, associationLinks,
-    associateBloomLabels, associateTrails, spineIds, bounds } =
-    useTreeLayout(people, filterEra);
+  // 1. Layout: runs once when people data loads. Era filter no longer
+  //    invalidates the memo — dimming is a render-time concern.
+  const {
+    nodes, links, marriageBars, spouseConnectors,
+    associationLinks, associateBloomLabels, associateTrails,
+    spineIds, bounds,
+  } = useTreeLayout(people);
 
   useEffect(() => {
     if (!isLoading) {
       logger.info('Tree', `people=${people.length}, nodes=${nodes.length}, bounds=${JSON.stringify({ w: Math.round(bounds.width), h: Math.round(bounds.height), minX: Math.round(bounds.minX), minY: Math.round(bounds.minY) })}`);
     }
-  }, [isLoading, people.length, nodes.length]);
+  }, [isLoading, people.length, nodes.length, bounds]);
 
-  const { gesture, baseStyle, gestureStyle, centreOnNode, centreOnNodeTop, centreOnNodeAbovePanel, zoom } = useTreeGestures();
+  // 2. Camera: viewBox state, pan/zoom gestures, centering.
+  const {
+    gesture, camera, viewBox,
+    centreOnNode, centreOnNodeTop, centreOnNodeAbovePanel,
+  } = useTreeCamera();
 
-  const offX = -bounds.minX;
-  const offY = -bounds.minY;
-
-  const centreNode = useCallback(
-    (nodeX: number, nodeY: number) => centreOnNode(nodeX + offX, nodeY + offY),
-    [centreOnNode, offX, offY],
-  );
-  const centreNodeTop = useCallback(
-    (nodeX: number, nodeY: number) => centreOnNodeTop(nodeX + offX, nodeY + offY),
-    [centreOnNodeTop, offX, offY],
-  );
-  const centreNodeAbove = useCallback(
-    (nodeX: number, nodeY: number) => centreOnNodeAbovePanel(nodeX + offX, nodeY + offY),
-    [centreOnNodeAbovePanel, offX, offY],
+  // 3. Visibility: semantic zoom + viewport culling + entrance tracking.
+  const visible = useVisibleNodes(
+    nodes, links, marriageBars, spouseConnectors,
+    associationLinks, associateBloomLabels, associateTrails,
+    camera, SCREEN_W, SCREEN_H, spineIds,
   );
 
   const handleEraChange = useCallback(
@@ -97,42 +85,32 @@ function GenealogyTreeScreen({ route, navigation }: {
   );
 
   // ── Centering logic ────────────────────────────────────────────────
-  // All centering uses useEffect (not setTimeout). The original code used
-  // setTimeout(() => centreNode(...), 150) inside handleEraChange, but
-  // setFilterEra triggers a React re-render that creates new nodes/bounds
-  // refs — the setTimeout closure captured stale values. useEffect fires
-  // AFTER re-render with fresh deps, so the centering math is always current.
-  //
-  // prevEra ref prevents spurious re-centering when the component
-  // re-renders for unrelated reasons (sidebar open, etc.).
-
   const hasCentred = useRef(false);
   const prevEra = useRef<string>(filterEra);
 
+  // Initial position on Adam (only when there's no deep link).
   useEffect(() => {
     if (initialPersonId || hasCentred.current || nodes.length === 0) return;
     hasCentred.current = true;
     const adam = nodes.find((n) => n.data.id === 'adam');
     if (adam) {
       logger.info('Tree', 'Initial position on Adam');
-      centreNodeTop(adam.x, adam.y);
+      centreOnNodeTop(adam.x, adam.y);
     }
-  }, [nodes.length, centreNodeTop, initialPersonId, offX, offY]);
+  }, [nodes, centreOnNodeTop, initialPersonId]);
 
+  // Deep link: centre on the target person and open the sidebar.
   useEffect(() => {
     if (!initialPersonId || nodes.length === 0) return;
     const node = nodes.find((n) => n.data.id === initialPersonId);
     if (node) {
       const person = people.find((p) => p.id === initialPersonId);
       if (person) setSelectedPerson(person);
-      centreNodeAbove(node.x, node.y);
+      centreOnNodeAbovePanel(node.x, node.y);
     }
-  }, [initialPersonId, nodes.length, people, centreNodeAbove]);
+  }, [initialPersonId, nodes, people, centreOnNodeAbovePanel]);
 
-  // 3. Era filter change — jump to first node of the selected era.
-  //    All/Primeval both target Adam (tree root). centreNodeTop places him
-  //    near the top of the viewport since there's nothing above him.
-  //    Other eras use centreNode (viewport center) for context in all directions.
+  // Era filter change: jump to the first matching person.
   useEffect(() => {
     if (!hasCentred.current || nodes.length === 0) return;
     if (filterEra === prevEra.current) return;
@@ -142,16 +120,16 @@ function GenealogyTreeScreen({ route, navigation }: {
       const adam = nodes.find((n) => n.data.id === 'adam');
       if (adam) {
         logger.info('Tree', `Era→${filterEra}: top-centering on Adam`);
-        centreNodeTop(adam.x, adam.y);
+        centreOnNodeTop(adam.x, adam.y);
       }
     } else {
       const firstMatch = nodes.find((n) => n.data.era === filterEra);
       if (firstMatch) {
         logger.info('Tree', `Era→${filterEra}: centering on ${firstMatch.data.name}`);
-        centreNode(firstMatch.x, firstMatch.y);
+        centreOnNode(firstMatch.x, firstMatch.y);
       }
     }
-  }, [filterEra, nodes, centreNode, centreNodeTop]);
+  }, [filterEra, nodes, centreOnNode, centreOnNodeTop]);
 
   const handleNodePress = useCallback(
     (treePerson: TreePerson) => {
@@ -159,10 +137,10 @@ function GenealogyTreeScreen({ route, navigation }: {
       if (person) {
         setSelectedPerson(person);
         const node = nodes.find((n) => n.data.id === person.id);
-        if (node) centreNodeAbove(node.x, node.y);
+        if (node) centreOnNodeAbovePanel(node.x, node.y);
       }
     },
-    [people, nodes, centreNodeAbove]
+    [people, nodes, centreOnNodeAbovePanel],
   );
 
   const handleFamilyNavigate = useCallback(
@@ -171,15 +149,15 @@ function GenealogyTreeScreen({ route, navigation }: {
       if (person) {
         setSelectedPerson(person);
         const node = nodes.find((n) => n.data.id === personId);
-        if (node) centreNodeAbove(node.x, node.y);
+        if (node) centreOnNodeAbovePanel(node.x, node.y);
       }
     },
-    [people, nodes, centreNodeAbove]
+    [people, nodes, centreOnNodeAbovePanel],
   );
 
   const handleSearchSelect = useCallback(
     (personId: string) => handleFamilyNavigate(personId),
-    [handleFamilyNavigate]
+    [handleFamilyNavigate],
   );
 
   if (isLoading) {
@@ -202,53 +180,37 @@ function GenealogyTreeScreen({ route, navigation }: {
         </View>
       </View>
 
-      <View style={[styles.viewport, { backgroundColor: base.bg }]} accessible accessibilityLabel="Family tree" accessibilityHint="Pinch to zoom, drag to pan">
+      <View
+        style={[styles.viewport, { backgroundColor: base.bg }]}
+        accessible
+        accessibilityLabel="Family tree"
+        accessibilityHint="Pinch to zoom, drag to pan"
+      >
         {/* Top edge fade overlay */}
         <View style={[styles.edgeFadeTop, { backgroundColor: base.bg }]} pointerEvents="none" />
         <GestureDetector gesture={gesture}>
-          {/* Two-layer transform — see useTreeGestures.ts header for why.
-              DO NOT collapse into a single Animated.View. Reduce Motion breaks it.
-              DO NOT put scale on both layers. Causes blurry SVG text.
-              shouldRasterizeIOS={false}: prevent iOS from trying to cache
-              a full-canvas bitmap of a transformed view with many
-              sublayers — at zoom > ~1.2 the implied Retina texture
-              (~2748*zoom × ~10017*zoom × 2) exceeds Metal's 16384 limit
-              and the allocation crashes the compositor. */}
-          <Animated.View
-            style={[gestureStyle, styles.transformLayer]}
-            shouldRasterizeIOS={false}
-            needsOffscreenAlphaCompositing={false}
-          >
-            <View
-              style={[baseStyle, styles.transformLayer]}
-              shouldRasterizeIOS={false}
-              needsOffscreenAlphaCompositing={false}
+          <View style={styles.gestureTarget}>
+            <Svg
+              width={SCREEN_W}
+              height={SCREEN_H}
+              viewBox={viewBox}
             >
-              <Svg
-                width={Math.max(bounds.width, 2000)}
-                height={Math.max(bounds.height, 2000)}
-              >
-                <TreeCanvas
-                  nodes={nodes}
-                  links={links}
-                  marriageBars={marriageBars}
-                  spouseConnectors={spouseConnectors}
-                  associationLinks={associationLinks}
-                  associateBloomLabels={associateBloomLabels}
-                  associateTrails={associateTrails}
-                  filterEra={filterEra === 'all' ? null : filterEra}
-                  spineIds={spineIds}
-                  selectedPersonId={selectedPerson?.id ?? null}
-                  onNodePress={handleNodePress}
-                  offsetX={-bounds.minX}
-                  offsetY={-bounds.minY}
-                  canvasWidth={Math.max(bounds.width, 2000)}
-                  canvasHeight={Math.max(bounds.height, 2000)}
-                  zoom={zoom}
-                />
-              </Svg>
-            </View>
-          </Animated.View>
+              <TreeCanvas
+                nodes={visible.nodes}
+                links={visible.links}
+                marriageBars={visible.marriageBars}
+                spouseConnectors={visible.spouseConnectors}
+                associationLinks={visible.associationLinks}
+                associateBloomLabels={visible.associateBloomLabels}
+                associateTrails={visible.associateTrails}
+                filterEra={filterEra === 'all' ? null : filterEra}
+                spineIds={spineIds}
+                selectedPersonId={selectedPerson?.id ?? null}
+                onNodePress={handleNodePress}
+                zoom={camera.zoom}
+              />
+            </Svg>
+          </View>
         </GestureDetector>
       </View>
 
@@ -298,9 +260,8 @@ const styles = StyleSheet.create({
     opacity: 0.6,
     zIndex: 5,
   },
-  transformLayer: {
-    overflow: 'visible' as const,
-    transformOrigin: '0% 0%',
+  gestureTarget: {
+    flex: 1,
   },
 });
 

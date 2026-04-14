@@ -8,14 +8,18 @@ import { G, Line, Circle } from 'react-native-svg';
 import { useTheme } from '../../theme';
 import type { MarriageBar } from '../../utils/treeBuilder';
 
-interface Props { bar: MarriageBar; }
+interface Props {
+  bar: MarriageBar;
+  /** Dimmed when the era filter is on and neither partner matches. */
+  dimmed?: boolean;
+}
 
 const RING_R = 4;
 const RING_GAP = 2.5;
 
-export const MarriageBarSvg = memo(function MarriageBarSvg({ bar }: Props) {
+export const MarriageBarSvg = memo(function MarriageBarSvg({ bar, dimmed = false }: Props) {
   const { base } = useTheme();
-  const opacity = bar.dimmed ? 0.1 : 0.5;
+  const opacity = dimmed ? 0.1 : 0.5;
   const color = base.goldDim;
   const { x1, x2, y, midX } = bar;
 
