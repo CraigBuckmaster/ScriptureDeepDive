@@ -4,6 +4,10 @@
  * Compact layout: title on its own line, subtitle + tappable pills
  * (timeline, map, notes, story context) flow together on the next line.
  * "About This Book" moved to ⓘ icon in ChapterNavBar.
+ *
+ * Card #1362 (UI polish phase 5): pill TouchableOpacities now carry a
+ * hitSlop for a larger effective touch target without changing the
+ * BadgeChip visuals (which are shared with other screens).
  */
 
 import React from 'react';
@@ -21,6 +25,9 @@ interface Props {
   onStoryPress?: () => void;
   storyActName?: string | null;
 }
+
+/** Shared hitSlop for header pills — effectively grows touch area to ~44px. */
+const PILL_HIT_SLOP = { top: 8, bottom: 8, left: 6, right: 6 };
 
 export function ChapterHeader({
   chapter, noteCount, onNotesPress,
@@ -48,19 +55,19 @@ export function ChapterHeader({
           ) : null}
 
           {chapter.timeline_link_text && onTimelinePress && (
-            <TouchableOpacity onPress={onTimelinePress}>
+            <TouchableOpacity onPress={onTimelinePress} hitSlop={PILL_HIT_SLOP}>
               <BadgeChip label={chapter.timeline_link_text} color={panels.hist.accent} />
             </TouchableOpacity>
           )}
 
           {chapter.map_story_link_text && onMapPress && (
-            <TouchableOpacity onPress={onMapPress}>
+            <TouchableOpacity onPress={onMapPress} hitSlop={PILL_HIT_SLOP}>
               <BadgeChip label={chapter.map_story_link_text} color={panels.poi.accent} />
             </TouchableOpacity>
           )}
 
           {storyActName && onStoryPress && (
-            <TouchableOpacity onPress={onStoryPress}>
+            <TouchableOpacity onPress={onStoryPress} hitSlop={PILL_HIT_SLOP}>
               <BadgeChip label={storyActName} color={testament.ot} />
             </TouchableOpacity>
           )}
@@ -68,6 +75,7 @@ export function ChapterHeader({
           {noteCount > 0 && (
             <TouchableOpacity
               onPress={onNotesPress}
+              hitSlop={PILL_HIT_SLOP}
               accessibilityLabel={`${noteCount} notes`}
               accessibilityRole="button"
             >

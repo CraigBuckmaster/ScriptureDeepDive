@@ -25,6 +25,7 @@ import { RelatedContentCarousel } from './RelatedContentCarousel';
 import { MapChip } from './map/MapChip';
 import { PanelInfoSheet } from './PanelInfoSheet';
 import RelatedLifeTopics from './RelatedLifeTopics';
+import { GoldSeparator } from './GoldSeparator';
 
 export interface ChapterMeta {
   timeline_link_event?: string | null;
@@ -66,8 +67,22 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
   }, [navigation]);
 
   const sectionElements = useMemo(() => {
-    return sections.flatMap((sec) => {
-      const elements: React.ReactNode[] = [
+    return sections.flatMap((sec, secIdx) => {
+      const elements: React.ReactNode[] = [];
+
+      // Gold separator between SectionBlocks (not before the first one).
+      // Card #1362: replaces the hard bottom border previously on SectionBlock.
+      if (secIdx > 0) {
+        elements.push(
+          <GoldSeparator
+            key={`sep-${sec.id}`}
+            marginTop={spacing.md}
+            marginBottom={spacing.md}
+          />,
+        );
+      }
+
+      elements.push(
         <View
           key={sec.id}
           onLayout={(e) => {
@@ -131,7 +146,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
             )}
           />
         </View>,
-      ];
+      );
 
       // Inject coaching card after this section if applicable (hidden in focus mode)
       if (!display.focusMode && coaching.studyCoachEnabled && coaching.coachingTips.length > 0) {

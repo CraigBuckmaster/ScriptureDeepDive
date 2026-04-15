@@ -8,7 +8,7 @@
 
 import React, { useCallback } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { useTheme, spacing } from '../theme';
+import { spacing } from '../theme';
 import type { Section, SectionPanel, Verse, VHLGroup, ParsedRef } from '../types';
 import { SectionHeader } from './SectionHeader';
 import { VerseBlock } from './VerseBlock';
@@ -56,8 +56,6 @@ function SectionBlock({
   comparisonVerses, comparisonLabel, primaryLabel,
   redLetterVerses, onVerseLayout, highlightMap,
 }: Props) {
-  const { base } = useTheme();
-
   // Filter verses for this section
   const sectionVerses = verses.filter(
     (v) => v.verse_num >= section.verse_start && v.verse_num <= section.verse_end
@@ -88,7 +86,7 @@ function SectionBlock({
       : null;
 
   return (
-    <View style={[styles.container, { borderBottomColor: base.border + '60' }]}>
+    <View style={styles.container}>
       <SectionHeader header={section.header} explored={depthExplored} total={depthTotal} />
 
       <VerseBlock
@@ -126,7 +124,6 @@ export default MemoizedSectionBlock;
 
 const styles = StyleSheet.create({
   container: {
-    borderBottomWidth: 1,
     paddingBottom: spacing.sm,
   },
 });

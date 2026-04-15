@@ -12,6 +12,7 @@
 
 import React, { useCallback, useMemo, useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, Platform, UIManager, StyleSheet } from 'react-native';
+import { ChevronRight } from 'lucide-react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import type { Book } from '../types';
@@ -351,6 +352,23 @@ function ChapterScreen() {
             } : null}
           />
         </ChapterReaderProvider>
+
+        {/* Card #1362: subtle next-chapter hint at the bottom of the scroll.
+            Duplicates the swipe-next affordance for users who prefer tap. */}
+        {hasNext && (
+          <TouchableOpacity
+            onPress={goNext}
+            activeOpacity={0.7}
+            style={styles.nextChapterHint}
+            accessibilityRole="button"
+            accessibilityLabel={`Next chapter — ${bookData?.name ?? bookId} ${chapterNum + 1}`}
+          >
+            <Text style={[styles.nextChapterText, { color: base.textMuted }]}>
+              {`Next: ${bookData?.name ?? bookId} ${chapterNum + 1}`}
+            </Text>
+            <ChevronRight size={14} color={base.gold} />
+          </TouchableOpacity>
+        )}
       </ScrollView>
 
       {ttsHook.ttsActive && (
@@ -441,6 +459,19 @@ const styles = StyleSheet.create({
     marginBottom: spacing.xs,
   },
   lensGuidanceText: { fontFamily: fontFamily.ui, fontSize: 13, lineHeight: 20 },
+  nextChapterHint: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: spacing.xs,
+    paddingVertical: spacing.lg,
+    paddingHorizontal: spacing.md,
+  },
+  nextChapterText: {
+    fontFamily: fontFamily.ui,
+    fontSize: 13,
+    letterSpacing: 0.3,
+  },
 });
 
 export default withErrorBoundary(ChapterScreen);
