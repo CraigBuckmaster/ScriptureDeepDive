@@ -95,7 +95,7 @@ export function ContinueReadingHero({ mostRecent, onPress }: Props) {
     <TouchableOpacity
       activeOpacity={0.8}
       onPress={onPress}
-      style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '1F' }]}
+      style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '14' }]}
       accessibilityRole="button"
       accessibilityLabel={`${titleText}: ${subtitleText}. Tap to ${ctaText.toLowerCase()}`}
     >
@@ -174,16 +174,18 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   gradient: {
+    // Card #1361: stronger gradient — taller (bottom 50% of the image) and
+    // deeper shadow for a more dramatic fade-to-black into the text area.
     position: 'absolute',
     bottom: 0,
     left: 0,
     right: 0,
-    height: 48,
+    height: Math.round(IMAGE_HEIGHT * 0.5),
     backgroundColor: 'transparent',
     shadowColor: '#000', // overlay-color: intentional (RN shadow must be #000 on iOS)
-    shadowOffset: { width: 0, height: -12 },
-    shadowOpacity: 0.5,
-    shadowRadius: 12,
+    shadowOffset: { width: 0, height: -16 },
+    shadowOpacity: 0.65,
+    shadowRadius: 16,
   },
   caption: {
     position: 'absolute',
@@ -230,8 +232,9 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   subtitle: {
-    fontFamily: fontFamily.ui,
-    fontSize: 13,
+    // Card #1361: EB Garamond italic for the book/chapter subtitle
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 14,
     marginTop: 2,
   },
   ctaButton: {
