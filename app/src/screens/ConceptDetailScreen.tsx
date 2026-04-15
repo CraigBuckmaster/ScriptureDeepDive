@@ -28,6 +28,7 @@ import { UpgradePrompt } from '../components/UpgradePrompt';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ExploreStackParamList } from '../navigation/types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+import { DetailTabBar } from '../components/DetailTabBar';
 
 type Nav = StackNavigationProp<ExploreStackParamList, 'ConceptDetail'>;
 type Route = RouteProp<ExploreStackParamList, 'ConceptDetail'>;
@@ -105,30 +106,14 @@ function ConceptDetailScreen() {
 
       {/* Tab bar — only shown when journey data exists */}
       {hasJourney && (
-        <View style={[styles.tabBar, { backgroundColor: base.bgElevated }]}>
-          <TouchableOpacity
-            style={[styles.tab, activeTab === 'overview' && [styles.tabActive, { backgroundColor: base.gold + '25' }]]}
-            onPress={() => setActiveTab('overview')}
-            accessibilityRole="button"
-            accessibilityLabel="Overview tab"
-            accessibilityState={{ selected: activeTab === 'overview' }}
-          >
-            <Text style={[styles.tabText, { color: base.textMuted }, activeTab === 'overview' && { color: base.gold }]}>
-              Overview
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.tab, activeTab === 'journey' && [styles.tabActive, { backgroundColor: base.gold + '25' }]]}
-            onPress={() => setActiveTab('journey')}
-            accessibilityRole="button"
-            accessibilityLabel="Journey tab"
-            accessibilityState={{ selected: activeTab === 'journey' }}
-          >
-            <Text style={[styles.tabText, { color: base.textMuted }, activeTab === 'journey' && { color: base.gold }]}>
-              Journey
-            </Text>
-          </TouchableOpacity>
-        </View>
+        <DetailTabBar
+          tabs={[
+            { key: 'overview', label: 'Overview' },
+            { key: 'journey', label: 'Journey' },
+          ]}
+          active={activeTab}
+          onChange={setActiveTab}
+        />
       )}
 
       {/* Journey tab */}
@@ -352,26 +337,6 @@ const styles = StyleSheet.create({
     width: 24,
   },
 
-  // Tab bar
-  tabBar: {
-    flexDirection: 'row',
-    marginHorizontal: spacing.md,
-    marginBottom: spacing.sm,
-    borderRadius: radii.md,
-    padding: 2,
-  },
-  tab: {
-    flex: 1,
-    paddingVertical: spacing.xs + 2,
-    alignItems: 'center',
-    borderRadius: radii.sm + 2,
-  },
-  tabActive: {
-  },
-  tabText: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 13,
-  },
   bottomSpacer: {
     height: spacing.xxl,
   },

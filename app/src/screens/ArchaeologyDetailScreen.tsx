@@ -4,6 +4,12 @@
  * Shows name, date range, location, significance, description, and linked
  * verses (tappable to navigate to Chapter). Description is visible to free
  * users; full detail (linked verses, source) is premium-gated.
+ *
+ * Card #1360 (UI polish phase 3):
+ *   - Hero image via DetailHeroHeader when R2 images exist
+ *   - Section titles use DetailSectionTitle (Cinzel + gold bar)
+ *   - Verse-ref / date / location metadata use MetadataPill
+ *   - Hairline section separators replaced by GoldSeparator
  */
 
 import React, { useCallback } from 'react';
@@ -18,6 +24,10 @@ import { CollapsibleSection } from '../components/CollapsibleSection';
 import { UpgradePrompt } from '../components/UpgradePrompt';
 import { DiscoveryImageGallery } from '../components/DiscoveryImageGallery';
 import { BadgeChip } from '../components/BadgeChip';
+import { DetailHeroHeader } from '../components/DetailHeroHeader';
+import { DetailSectionTitle } from '../components/DetailSectionTitle';
+import { MetadataPill } from '../components/MetadataPill';
+import { GoldSeparator } from '../components/GoldSeparator';
 import { useArchaeologyDetail } from '../hooks/useArchaeology';
 import { usePremium } from '../hooks/usePremium';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
@@ -60,99 +70,98 @@ function ArchaeologyDetailScreen() {
     );
   }
 
+  const heroImage = images.length > 0 ? images[0].url : undefined;
+
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <View style={styles.headerPad}>
-        <ScreenHeader title={discovery.name} onBack={() => navigation.goBack()} />
-        <View style={styles.badgeRow}>
-          <BadgeChip label={discovery.category} />
-        </View>
-        {discovery.location && (
-          <Text style={[styles.locationText, { color: base.textDim }]}>
-            {discovery.location}
-          </Text>
-        )}
-      </View>
-
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
       <ScrollView style={styles.scroll} contentContainerStyle={styles.scrollContent}>
-        {/* Icon + date range */}
-        <View style={styles.heroRow}>
-          <Text style={styles.heroEmoji}>🏛</Text>
-          {discovery.date_range && (
-            <Text style={[styles.dateRange, { color: base.textDim }]}>
-              {discovery.date_range}
-            </Text>
+        <DetailHeroHeader
+          title={discovery.name}
+          subtitle={discovery.location ?? undefined}
+          imageUrl={heroImage}
+          onBack={() => navigation.goBack()}
+        />
+
+        <View style={styles.body}>
+          {/* Metadata pill row */}
+          <View style={styles.pillRow}>
+            <MetadataPill label={discovery.category} />
+            {discovery.date_range && <MetadataPill label={discovery.date_range} />}
+          </View>
+
+          {/* Image gallery — only when we have more than one image (hero already shows the first) */}
+          {images.length > 1 && (
+            <View style={styles.galleryWrap}>
+              <DiscoveryImageGallery images={images} />
+            </View>
           )}
-        </View>
 
-        {/* Image gallery */}
-        {images.length > 0 && (
-          <DiscoveryImageGallery images={images} />
-        )}
+          {/* Significance — always visible */}
+          <View style={[styles.significanceCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}>
+            <DetailSectionTitle title="Significance" transform="uppercase" />
+            <Text style={[styles.significanceText, { color: base.text }]}>
+              {discovery.significance}
+            </Text>
+          </View>
 
-        {/* Significance — always visible */}
-        <View style={[styles.significanceCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}>
-          <Text style={[styles.significanceLabel, { color: base.gold }]}>Significance</Text>
-          <Text style={[styles.significanceText, { color: base.text }]}>
-            {discovery.significance}
-          </Text>
-        </View>
-
-        {/* Description — always visible */}
-        <View style={styles.bodySection}>
+          {/* Description */}
           <Text style={[styles.bodyText, { color: base.text }]}>
             {discovery.description}
           </Text>
+
+          {/* Linked Verses — premium gated */}
+          {isPremium && verseLinks.length > 0 && (
+            <>
+              <GoldSeparator marginTop={spacing.md} />
+              <CollapsibleSection title="Linked Verses" initiallyCollapsed={false}>
+                {verseLinks.map((vl: ArchaeologyVerseLink) => (
+                  <TouchableOpacity
+                    key={vl.id}
+                    onPress={() => handleVersePress(vl.verse_ref)}
+                    style={[styles.verseCard, { backgroundColor: base.tintParchment, borderColor: base.gold + '20' }]}
+                  >
+                    <Text style={[styles.verseRef, { color: base.gold }]}>
+                      {vl.verse_ref}
+                    </Text>
+                    {vl.relevance && (
+                      <Text style={[styles.verseRelevance, { color: base.textDim }]}>
+                        {vl.relevance}
+                      </Text>
+                    )}
+                  </TouchableOpacity>
+                ))}
+              </CollapsibleSection>
+            </>
+          )}
+
+          {/* Source — premium gated */}
+          {isPremium && discovery.source && (
+            <View style={styles.sourceSection}>
+              <GoldSeparator marginBottom={spacing.md} />
+              <DetailSectionTitle title="Source" transform="uppercase" />
+              <Text style={[styles.sourceText, { color: base.textDim }]}>
+                {discovery.source}
+              </Text>
+            </View>
+          )}
+
+          {/* Premium upsell for free users */}
+          {!isPremium && (
+            <View style={[styles.gateCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}>
+              <Text style={[styles.gateIcon, { color: base.gold }]}>{'✦'}</Text>
+              <Text style={[styles.gateTitle, { color: base.text }]}>
+                Full discovery details available with Companion+
+              </Text>
+              <Text style={[styles.gateDesc, { color: base.textDim }]}>
+                Unlock linked verses, source references, and more.
+              </Text>
+              <BadgeChip
+                label="Learn More"
+                onPress={() => showUpgrade('explore', 'Archaeological Evidence')}
+              />
+            </View>
+          )}
         </View>
-
-        {/* Linked Verses — premium gated */}
-        {isPremium && verseLinks.length > 0 && (
-          <CollapsibleSection title="Linked Verses" initiallyCollapsed={false}>
-            {verseLinks.map((vl: ArchaeologyVerseLink) => (
-              <TouchableOpacity
-                key={vl.id}
-                onPress={() => handleVersePress(vl.verse_ref)}
-                style={[styles.verseCard, { backgroundColor: base.bgElevated, borderColor: base.border + '40' }]}
-              >
-                <Text style={[styles.verseRef, { color: base.gold }]}>
-                  {vl.verse_ref}
-                </Text>
-                {vl.relevance && (
-                  <Text style={[styles.verseRelevance, { color: base.textDim }]}>
-                    {vl.relevance}
-                  </Text>
-                )}
-              </TouchableOpacity>
-            ))}
-          </CollapsibleSection>
-        )}
-
-        {/* Source — premium gated */}
-        {isPremium && discovery.source && (
-          <View style={styles.sourceSection}>
-            <Text style={[styles.sourceLabel, { color: base.textMuted }]}>Source</Text>
-            <Text style={[styles.sourceText, { color: base.textDim }]}>
-              {discovery.source}
-            </Text>
-          </View>
-        )}
-
-        {/* Premium upsell for free users */}
-        {!isPremium && (
-          <View style={[styles.gateCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}>
-            <Text style={[styles.gateIcon, { color: base.gold }]}>{'✦'}</Text>
-            <Text style={[styles.gateTitle, { color: base.text }]}>
-              Full discovery details available with Companion+
-            </Text>
-            <Text style={[styles.gateDesc, { color: base.textDim }]}>
-              Unlock linked verses, source references, and more.
-            </Text>
-            <BadgeChip
-              label="Learn More"
-              onPress={() => showUpgrade('explore', 'Archaeological Evidence')}
-            />
-          </View>
-        )}
       </ScrollView>
 
       {upgradeRequest && (
@@ -170,32 +179,19 @@ function ArchaeologyDetailScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   headerPad: { paddingHorizontal: spacing.md, paddingTop: spacing.md },
-  badgeRow: {
+  scroll: { flex: 1 },
+  scrollContent: { paddingBottom: spacing.xxl },
+  body: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+  },
+  pillRow: {
     flexDirection: 'row',
     gap: spacing.xs,
-    marginTop: spacing.xs,
-  },
-  locationText: {
-    fontFamily: fontFamily.ui,
-    fontSize: 12,
-    lineHeight: 18,
-    marginTop: spacing.xs,
-    marginBottom: spacing.sm,
-  },
-  scroll: { flex: 1 },
-  scrollContent: { padding: spacing.md, paddingBottom: spacing.xxl },
-  heroRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.sm,
     marginBottom: spacing.md,
   },
-  heroEmoji: {
-    fontSize: 28,
-  },
-  dateRange: {
-    fontFamily: fontFamily.ui,
-    fontSize: 13,
+  galleryWrap: {
+    marginBottom: spacing.md,
   },
   significanceCard: {
     borderWidth: 1,
@@ -203,25 +199,16 @@ const styles = StyleSheet.create({
     padding: spacing.md,
     marginBottom: spacing.md,
   },
-  significanceLabel: {
-    fontFamily: fontFamily.display,
-    fontSize: 10,
-    letterSpacing: 0.5,
-    textTransform: 'uppercase',
-    marginBottom: spacing.xs,
-  },
   significanceText: {
     fontFamily: fontFamily.body,
-    fontSize: 14,
-    lineHeight: 22,
-  },
-  bodySection: {
-    marginBottom: spacing.md,
+    fontSize: 15,
+    lineHeight: 25,
   },
   bodyText: {
     fontFamily: fontFamily.body,
-    fontSize: 14,
-    lineHeight: 22,
+    fontSize: 15,
+    lineHeight: 25,
+    marginBottom: spacing.md,
   },
   verseCard: {
     borderWidth: 1,
@@ -236,25 +223,16 @@ const styles = StyleSheet.create({
   },
   verseRelevance: {
     fontFamily: fontFamily.body,
-    fontSize: 12,
-    lineHeight: 18,
+    fontSize: 13,
+    lineHeight: 20,
   },
   sourceSection: {
     marginTop: spacing.md,
-    paddingTop: spacing.md,
-    borderTopWidth: StyleSheet.hairlineWidth,
-  },
-  sourceLabel: {
-    fontFamily: fontFamily.display,
-    fontSize: 10,
-    letterSpacing: 0.5,
-    textTransform: 'uppercase',
-    marginBottom: spacing.xs,
   },
   sourceText: {
     fontFamily: fontFamily.body,
-    fontSize: 12,
-    lineHeight: 18,
+    fontSize: 13,
+    lineHeight: 20,
   },
   gateCard: {
     borderWidth: 1,
