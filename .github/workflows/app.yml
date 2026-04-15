@@ -1,0 +1,52 @@
+name: App Deploy (EAS)
+
+# Step 3 of epic #1312 — ship JS bundle updates via Expo EAS on push to master.
+#
+# Content (scripture.db) is deployed separately by content.yml. This workflow
+# handles app code only — lint, then `eas update --branch production`. No DB
+# rebuild, no R2 upload.
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'app/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy-app:
+    name: Lint and publish EAS update
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    env:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      - name: Lint
+        working-directory: app
+        run: npm run lint
+
+      - name: Install EAS CLI
+        run: npm install -g eas-cli@latest
+
+      - name: Publish EAS update
+        working-directory: app
+        run: eas update --branch production --message "App update from ${{ github.sha }}" --non-interactive
