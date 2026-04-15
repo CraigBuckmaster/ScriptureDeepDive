@@ -242,6 +242,13 @@ jest.mock('@maplibre/maplibre-react-native', () => {
   return { ...api, default: api };
 });
 
+// `isMapNativeAvailable()` reads NativeModules.MLRNModule to decide
+// whether to render the real map or fall back to MapUnavailableCard.
+// In the jest env the NativeModules table is empty, so without this
+// stub every map-rendering test would short-circuit to the card.
+const { NativeModules } = require('react-native');
+NativeModules.MLRNModule = { ...(NativeModules.MLRNModule ?? {}) };
+
 // Mock react-native-svg
 jest.mock('react-native-svg', () => ({
   __esModule: true,
