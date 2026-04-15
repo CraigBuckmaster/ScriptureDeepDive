@@ -1,0 +1,72 @@
+name: Content Deploy (R2)
+
+# Step 2 of epic #1312 — post-merge deployment of scripture.db to CloudFlare R2.
+#
+# This is the deploy-to-production half of the content pipeline. PR-time
+# schema validation still lives in content-pipeline.yml and is unchanged.
+#
+# Flow on push to master:
+#   1. build_sqlite.py       — build scripture.db from content/**
+#   2. validate_sqlite.py    — integrity checks on the new DB
+#   3. generate_delta.py     — download previously-deployed DB from R2,
+#                              diff against new, upload delta under /db/deltas/
+#   4. upload_to_r2.py       — upload new full DB + refresh manifest.json
+#
+# NOTE: generate_delta.py runs BEFORE upload_to_r2.py on purpose. The delta
+# generator fetches the currently-deployed DB from R2 to diff against, so it
+# must run while the old version is still "current" in the manifest.
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'content/**'
+      - '_tools/build_sqlite.py'
+      - '_tools/validate_sqlite.py'
+      - '_tools/config.py'
+      - '_tools/content_writer.py'
+      - '_tools/upload_to_r2.py'
+      - '_tools/generate_delta.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy-content:
+    name: Build and deploy scripture.db to R2
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    env:
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+      R2_PUBLIC_URL: ${{ secrets.R2_PUBLIC_URL }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install boto3
+
+      - name: Build scripture.db
+        run: python _tools/build_sqlite.py
+
+      - name: Validate scripture.db
+        run: python _tools/validate_sqlite.py
+
+      - name: Generate and upload delta (old → new)
+        run: python _tools/generate_delta.py
+
+      - name: Upload full DB + manifest to R2
+        run: python _tools/upload_to_r2.py
