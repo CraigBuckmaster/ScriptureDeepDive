@@ -1,7 +1,12 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react-native';
 import { renderWithProviders } from '../helpers/renderWithProviders';
-import MapScreen from '@/screens/MapScreen';
+// Import the native implementation directly. The default export from
+// `@/screens/MapScreen` is now the MapLibre-gating dispatcher that
+// lazy-loads this component via React.lazy, which jest can't resolve
+// without --experimental-vm-modules. The dispatcher is covered by its
+// own test file.
+import MapScreen from '@/screens/MapScreenNative';
 
 // ── Navigation mock ───────────────────────────────────────────────
 
