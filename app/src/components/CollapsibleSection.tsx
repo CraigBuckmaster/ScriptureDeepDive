@@ -2,11 +2,16 @@
  * CollapsibleSection — Animated expand/collapse container.
  *
  * Used for panel content, authorship section, and any expandable UI.
+ *
+ * Card #1358 (UI polish phase 1):
+ *   - Cinzel header title (displayMedium)
+ *   - Gold chevron indicator using ChevronDown / ChevronUp
+ *   - 3px gold left border accent on the header
  */
 
 import React, { useState, useCallback } from 'react';
 import { View, Text, TouchableOpacity, LayoutAnimation, Platform, UIManager, StyleSheet } from 'react-native';
-import { Plus, Minus } from 'lucide-react-native';
+import { ChevronDown, ChevronUp } from 'lucide-react-native';
 import { useTheme, spacing, fontFamily } from '../theme';
 
 // Enable LayoutAnimation on Android
@@ -39,14 +44,14 @@ function CollapsibleSection({ title, initiallyCollapsed = true, accentColor, chi
         accessibilityRole="button"
         accessibilityState={{ expanded: !collapsed }}
         accessibilityLabel={`${title}, ${collapsed ? 'collapsed' : 'expanded'}`}
-        style={styles.headerButton}
+        style={[styles.headerButton, { borderLeftColor: accent }]}
       >
         <Text style={[styles.headerTitle, { color: accent }]}>
           {title}
         </Text>
         {collapsed
-          ? <Plus size={14} color={base.textMuted} />
-          : <Minus size={14} color={base.textMuted} />
+          ? <ChevronDown size={16} color={accent} />
+          : <ChevronUp size={16} color={accent} />
         }
       </TouchableOpacity>
       {!collapsed && (
@@ -68,13 +73,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingVertical: spacing.sm,
-    paddingHorizontal: spacing.md,
+    paddingLeft: spacing.md,
+    paddingRight: spacing.md,
     minHeight: 44,
+    borderLeftWidth: 3,
   },
   headerTitle: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 12,
-    letterSpacing: 0.4,
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 13,
+    letterSpacing: 0.8,
   },
   contentContainer: {
     paddingHorizontal: spacing.md,

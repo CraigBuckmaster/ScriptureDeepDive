@@ -5,6 +5,10 @@
  * SettingsScreen and ChapterListScreen into a single component so that
  * icon size, touch target, font tokens, and accessibility are consistent.
  *
+ * Card #1358 (UI polish phase 1) — adds a 3px gold bar accent to the left of
+ * the title text. The design language thread ties headers to CollapsibleSection
+ * and (subsequently) BrowseScreenTemplate section headers.
+ *
  * Usage:
  *   <ScreenHeader title="Settings" onBack={() => navigation.goBack()} />
  *   <ScreenHeader title={book.name} subtitle="50 chapters" onBack={...} />
@@ -29,6 +33,7 @@ interface Props {
 
 export function ScreenHeader({ title, subtitle, onBack, style, titleColor, backLabel }: Props) {
   const { base } = useTheme();
+  const resolvedTitleColor = titleColor ?? base.gold;
 
   return (
     <View style={[styles.row, style]}>
@@ -41,10 +46,13 @@ export function ScreenHeader({ title, subtitle, onBack, style, titleColor, backL
         <ArrowLeft size={20} color={base.gold} />
       </TouchableOpacity>
       <View style={styles.textWrap}>
-        <Text style={[styles.title, { color: titleColor ?? base.gold }]} numberOfLines={1} accessibilityRole="header">{title}</Text>
-        {subtitle ? (
-          <Text style={[styles.subtitle, { color: base.textMuted }]}>{subtitle}</Text>
-        ) : null}
+        <View style={[styles.goldBar, { backgroundColor: resolvedTitleColor }]} />
+        <View style={styles.titleTextWrap}>
+          <Text style={[styles.title, { color: resolvedTitleColor }]} numberOfLines={1} accessibilityRole="header">{title}</Text>
+          {subtitle ? (
+            <Text style={[styles.subtitle, { color: base.textMuted }]}>{subtitle}</Text>
+          ) : null}
+        </View>
       </View>
     </View>
   );
@@ -63,6 +71,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textWrap: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  goldBar: {
+    width: 3,
+    alignSelf: 'stretch',
+    marginRight: spacing.sm,
+    borderRadius: 1.5,
+  },
+  titleTextWrap: {
     flex: 1,
   },
   title: {

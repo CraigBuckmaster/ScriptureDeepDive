@@ -10,7 +10,7 @@ import Animated, {
   withRepeat,
   withTiming,
 } from 'react-native-reanimated';
-import { useTheme, spacing, radii } from '../theme';
+import { spacing, radii } from '../theme';
 
 interface Props {
   lines?: number;
@@ -18,8 +18,14 @@ interface Props {
   height?: number;
 }
 
+/**
+ * Gold-tinted bone color — 8% opacity gold gives a warm, branded loading feel
+ * instead of the generic gray surface used in earlier iterations.
+ * Card #1358 (UI polish phase 1).
+ */
+const BONE_COLOR = 'rgba(191, 160, 80, 0.08)';
+
 export function LoadingSkeleton({ lines = 3, width = '100%', height = 14 }: Props) {
-  const { base } = useTheme();
   const opacity = useSharedValue(0.3);
 
   useEffect(() => {
@@ -44,7 +50,7 @@ export function LoadingSkeleton({ lines = 3, width = '100%', height = 14 }: Prop
             {
               width: i === lines - 1 ? '60%' : width,
               height,
-              backgroundColor: base.bgSurface,
+              backgroundColor: BONE_COLOR,
             },
             animStyle,
           ]}
