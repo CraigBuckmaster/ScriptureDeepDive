@@ -72,6 +72,7 @@ export function useDictionaryBrowse() {
   // FTS search
   useEffect(() => {
     if (searchQuery.length < 2) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSearchResults(null);
       return;
     }

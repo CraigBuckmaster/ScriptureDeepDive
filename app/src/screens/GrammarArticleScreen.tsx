@@ -33,6 +33,7 @@ function GrammarArticleScreen() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
     getGrammarArticle(articleId).then((a) => {
       setArticle(a);
@@ -44,13 +45,13 @@ function GrammarArticleScreen() {
     if (!article?.examples_json) return [];
     try { return JSON.parse(article.examples_json) as { ref: string; text: string }[]; }
     catch { return []; }
-  }, [article?.examples_json]);
+  }, [article]);
 
   const relatedArticles = useMemo(() => {
     if (!article?.related_articles_json) return [];
     try { return JSON.parse(article.related_articles_json) as { id: string; title: string }[]; }
     catch { return []; }
-  }, [article?.related_articles_json]);
+  }, [article]);
 
   const accentColor = article?.language === 'hebrew' ? panels.heb.accent : panels.hist.accent;
 
@@ -112,7 +113,7 @@ function GrammarArticleScreen() {
                     {relatedArticles.map((rel) => (
                       <TouchableOpacity
                         key={rel.id}
-                        onPress={() => (navigation as any).push('GrammarArticle', { articleId: rel.id })}
+                        onPress={() => navigation.push('GrammarArticle', { articleId: rel.id })}
                         style={[styles.relatedBtn, { borderColor: base.border }]}
                         accessibilityRole="button"
                       >

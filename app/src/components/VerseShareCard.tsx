@@ -17,7 +17,7 @@ export const VerseShareCard = forwardRef<View, Props>(({ verseRef, verseText, tr
   return (
     <View ref={ref} style={[styles.cardContainer, { backgroundColor: base.bg }]}>
       <Text style={[styles.verseText, { color: base.text }]}>
-        "{verseText}"
+        &quot;{verseText}&quot;
       </Text>
       <Text style={[styles.verseRef, { color: base.gold }]}>
         — {verseRef} ({translation.toUpperCase()})

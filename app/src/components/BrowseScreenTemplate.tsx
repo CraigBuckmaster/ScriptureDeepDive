@@ -156,8 +156,8 @@ export function BrowseScreenTemplate<T>(props: BrowseScreenTemplateProps<T>) {
         <SectionList
           sections={props.sections}
           keyExtractor={props.keyExtractor}
-          renderItem={props.renderItem as any}
-          renderSectionHeader={props.renderSectionHeader as any}
+          renderItem={props.renderItem as unknown as SectionListProps<T>['renderItem']}
+          renderSectionHeader={props.renderSectionHeader as unknown as SectionListProps<T>['renderSectionHeader']}
           stickySectionHeadersEnabled
           contentContainerStyle={contentContainerStyle ?? styles.listPad}
           ListHeaderComponent={headerInList ? headerContent : undefined}

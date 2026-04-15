@@ -19,7 +19,7 @@ export function ReceptionPanel({ entries, onRefPress }: Props) {
 
   return (
     <View style={[styles.container, { gap: spacing.md }]}>
-      {entries.map((e: any, i: number) => {
+      {entries.map((e: RecEntry & { title?: string; quote?: string; who?: string; text?: string }, i: number) => {
         // Support both shapes: { title, quote, note } and { who, text }
         const heading = e.title ?? e.who ?? '';
         const body = e.quote ?? e.text ?? '';

@@ -186,6 +186,7 @@ function TimelineScreen() {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (initialEventId) setExpandedId(initialEventId);
   }, [initialEventId]);
 

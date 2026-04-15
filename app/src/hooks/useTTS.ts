@@ -61,6 +61,7 @@ export function useTTS(verses: Verse[], voiceId?: string) {
       onDone: () => {
         // Only auto-advance if we didn't manually stop
         if (!stoppedManually.current) {
+          // eslint-disable-next-line react-hooks/immutability, @typescript-eslint/no-use-before-define -- recursive auto-advance via stable callback
           speakVerse(index + 1);
         }
       },

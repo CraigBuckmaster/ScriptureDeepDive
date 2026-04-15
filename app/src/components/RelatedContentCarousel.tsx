@@ -26,6 +26,7 @@ export function RelatedContentCarousel({ items }: Props) {
   if (items.length === 0) return null;
 
   const handlePress = (item: RelatedContentItem) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (navigation as any).navigate('ExploreTab', {
       screen: item.screen,
       params: item.params,

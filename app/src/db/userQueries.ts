@@ -432,7 +432,7 @@ export async function getReferencingNotes(noteId: number): Promise<UserNote[]> {
 export async function searchNotesFTS(query: string): Promise<UserNote[]> {
   // Sanitize: wrap each word in quotes for phrase matching
   const sanitized = query
-    .replace(/["\*\(\)\{\}\[\]^~:]/g, '')
+    .replace(/["*(){}[\]^~:]/g, '')
     .split(/\s+/)
     .filter((w) => w.length >= 2)
     .map((w) => `"${w}"`)

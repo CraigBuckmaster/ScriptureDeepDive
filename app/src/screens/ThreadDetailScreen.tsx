@@ -59,6 +59,7 @@ export default function ThreadDetailScreen() {
   // Fetch verse text for each stop
   useEffect(() => {
     if (!thread) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setVersesLoading(true);
 
     Promise.all(

@@ -42,7 +42,7 @@ function LensBrowseScreen() {
   );
 
   const handleTry = (_lensId: string) => {
-    (navigation as any).navigate('Chapter', {
+    navigation.navigate('Chapter', {
       bookId: SAMPLE_CHAPTER.bookId,
       chapterNum: SAMPLE_CHAPTER.chapterNum,
     });

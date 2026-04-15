@@ -52,6 +52,7 @@ export function placesToFeatureCollection(places: Place[]): GeoJSON.FeatureColle
  * from geoMath.ts but expressed as a MapLibre `match` expression so the
  * GPU renders/hides per-feature without JS involvement.
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const PRIORITY_MIN_ZOOM: any = ['match',
   ['get', 'priority'],
   1, 3,
@@ -74,10 +75,11 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
   const storyPlaceIds = useMemo<string[]>(() => {
     if (!activeStory?.places_json) return [];
     return safeParse<string[]>(activeStory.places_json, []);
-  }, [activeStory?.places_json]);
+  }, [activeStory]);
 
   // Full visibility expression: story places are always visible (min-zoom 0),
   // other places hidden below their priority's min-zoom threshold.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const minZoomExpr: any = useMemo(
     () => [
       'case',
@@ -92,10 +94,12 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
   // Uses a direct id comparison (effectively a poor-man's feature-state —
   // MapLibre RN v10 doesn't yet expose setFeatureState imperatively, so
   // we drive highlight state through the expression instead).
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const isActive: any = activePlaceId
     ? ['==', ['get', 'id'], activePlaceId]
     : false;
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const circleRadiusExpr: any = [
     'case',
     isActive,
@@ -103,18 +107,21 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
     ['match', ['get', 'priority'], 1, 5, 2, 4, 3, 3, 4, 2.5, 3],
   ];
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const circleColorExpr: any = [
     'case',
     isActive, '#f5e6b8', // data-color: intentional (warm highlight — active place marker, MapLibre GL)
     '#bfa050',           // data-color: intentional (gold — default place marker, MapLibre GL)
   ];
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const circleStrokeColorExpr: any = [
     'case',
     isActive, '#bfa050', // data-color: intentional (gold stroke on active — MapLibre GL)
     '#1a1610',           // data-color: intentional (dark stroke on inactive — MapLibre GL)
   ];
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const circleStrokeWidthExpr: any = [
     'case',
     isActive, 2,
@@ -122,6 +129,7 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
   ];
 
   const onPress = useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (e: any) => {
       const feature = e?.features?.[0];
       const id = feature?.properties?.id as string | undefined;
@@ -135,6 +143,7 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
   return (
     <ShapeSource
       id="places-source"
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       shape={fc as any}
       onPress={onPress}
       hitbox={{ width: 22, height: 22 }}
@@ -146,27 +155,32 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
           circleColor: circleColorExpr,
           circleStrokeColor: circleStrokeColorExpr,
           circleStrokeWidth: circleStrokeWidthExpr,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           circleOpacity: ['step', ['zoom'], 0, minZoomExpr, 1] as any,
         }}
       />
       <SymbolLayer
         id="places-label"
         style={{
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           textField: ['get', showModern ? 'modern' : 'ancient'] as any,
           // OpenFreeMap's glyph server ships the Noto family. Italic reads
           // as the parchment aesthetic even though the glyph itself is Noto.
           textFont: ['Noto Sans Italic'],
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           textSize: ['match', ['get', 'priority'], 1, 13, 2, 12, 3, 11, 4, 10, 11] as any,
           textColor: [
             'case',
             isActive, '#f5e6b8', // data-color: intentional (warm highlight label — active, MapLibre GL)
             '#bfa050',           // data-color: intentional (gold label — default, MapLibre GL)
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           ] as any,
           textHaloColor: '#1a1610', // data-color: intentional (dark halo against map bg — MapLibre GL)
           textHaloWidth: 1.5,
           textOffset: [0, 1.1],
           textAnchor: 'top',
           textOptional: true,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           textOpacity: ['step', ['zoom'], 0, minZoomExpr, 1] as any,
           textAllowOverlap: false,
           textIgnorePlacement: false,

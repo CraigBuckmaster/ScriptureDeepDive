@@ -81,11 +81,10 @@ function decodeGreek(code: string): DecodedMorphology {
   }
 
   // Resolve POS — handle two-char pronoun prefixes (P-, D-, R-, etc.)
-  let posLabel: string;
   if (posCode.length >= 2 && posCode.endsWith('-')) {
     posCode = posCode.slice(0, -1);
   }
-  posLabel = GREEK_POS[posCode] ?? posCode;
+  const posLabel = GREEK_POS[posCode] ?? posCode;
   parts.push({ label: 'Part of Speech', value: posLabel });
 
   const isVerb = posCode === 'V';

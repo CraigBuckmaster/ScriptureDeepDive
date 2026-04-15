@@ -34,8 +34,8 @@ export const TRANSLATIONS: TranslationInfo[] = manifest.map((t) => ({
   label: LABELS[t.id]?.label ?? t.id.toUpperCase(),
   fullName: LABELS[t.id]?.fullName ?? t.id.toUpperCase(),
   bundled: t.bundled,
-  file: (t as any).file,
-  sizeBytes: (t as any).sizeBytes ?? 0,
+  file: (t as { file?: string }).file,
+  sizeBytes: (t as { sizeBytes?: number }).sizeBytes ?? 0,
 }));
 
 /** Quick lookup by ID. */

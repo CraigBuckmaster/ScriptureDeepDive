@@ -64,12 +64,15 @@ export function useChapterTTS({
       y: Math.max(0, sectionY + verseOffsetY - 120),
       animated: true,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- scrollRef, sectionYMap, verseYMap are stable refs
   }, [ttsActive, tts.currentVerse, verses, sections, fontSize]);
 
   // Stop TTS on chapter change
   useEffect(() => {
     tts.stop();
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTtsActive(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- tts is intentionally omitted to run only on chapter change
   }, [bookId, chapterNum]);
 
   const toggleTTS = useCallback(() => {

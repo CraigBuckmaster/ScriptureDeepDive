@@ -47,6 +47,7 @@ export function useRedemptiveActDetail(actId: string | null) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!actId) { setIsLoading(false); return; }
     getRedemptiveAct(actId).then((row) => {
       setAct(row ? parseAct(row) : null);

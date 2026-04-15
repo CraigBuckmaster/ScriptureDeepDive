@@ -46,8 +46,10 @@ export function LexiconSheet({
   // Sync stack with prop changes
   useEffect(() => {
     if (initialStrongs && visible) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setStrongsStack([initialStrongs]);
     } else if (!visible) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setStrongsStack([]);
     }
   }, [initialStrongs, visible]);
@@ -73,7 +75,7 @@ export function LexiconSheet({
     try {
       return JSON.parse(entry.definition_json);
     } catch { return null; }
-  }, [entry?.definition_json]);
+  }, [entry]);
 
   // Parse related strongs for gloss display
   const relatedGlosses = useMemo(() => {

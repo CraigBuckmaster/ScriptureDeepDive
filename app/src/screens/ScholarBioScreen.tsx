@@ -92,6 +92,7 @@ function ScholarBioScreen() {
               {(scope as string[]).map((bookId) => (
                 <TouchableOpacity
                   key={bookId}
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   onPress={() => (navigation as any).navigate('ReadTab', { screen: 'ChapterList', params: { bookId } })}
                   style={[styles.scopeChip, { backgroundColor: color + '1A', borderColor: color + '40' }]}
                   accessibilityRole="button"

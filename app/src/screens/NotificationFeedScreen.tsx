@@ -117,7 +117,7 @@ function NotificationFeedScreen() {
             <Bell size={32} color={base.textMuted} />
             <Text style={[styles.emptyTitle, { color: base.text }]}>No notifications</Text>
             <Text style={[styles.emptyText, { color: base.textMuted }]}>
-              You'll see notifications here when there's activity on content you follow.
+              You&apos;ll see notifications here when there&apos;s activity on content you follow.
             </Text>
           </View>
         }

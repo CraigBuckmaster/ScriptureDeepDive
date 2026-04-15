@@ -3,7 +3,7 @@
  * Auto-dismisses after 3 seconds. Slides up from bottom.
  */
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { Animated, Text, StyleSheet } from 'react-native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 
@@ -14,8 +14,8 @@ interface Props {
 
 export function MilestoneToast({ message, onDismiss }: Props) {
   const { base } = useTheme();
-  const translateY = useRef(new Animated.Value(80)).current;
-  const opacity = useRef(new Animated.Value(0)).current;
+  const translateY = useMemo(() => new Animated.Value(80), []);
+  const opacity = useMemo(() => new Animated.Value(0), []);
 
   useEffect(() => {
     if (!message) return;

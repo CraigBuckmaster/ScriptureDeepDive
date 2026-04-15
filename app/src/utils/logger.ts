@@ -6,6 +6,7 @@
  * - warn: always logged + sent to Sentry as message
  * - error: always logged + sent to Sentry as exception
  */
+/* eslint-disable no-console */
 
 import { Sentry, DSN } from '../lib/sentry';
 

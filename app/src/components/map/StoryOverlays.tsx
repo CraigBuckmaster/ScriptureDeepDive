@@ -143,10 +143,12 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
   return (
     <>
       {/* Region polygons — fill + outline */}
+      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
       <ShapeSource id="story-regions" shape={regionsFC as any}>
         <FillLayer
           id="story-regions-fill"
           style={{
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             fillColor: ['get', 'color'] as any,
             fillOpacity: 0.15,
           }}
@@ -154,6 +156,7 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
         <LineLayer
           id="story-regions-stroke"
           style={{
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             lineColor: ['get', 'color'] as any,
             lineOpacity: 0.7,
             lineWidth: 1.5,
@@ -165,9 +168,11 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
           MapLibre interpolates coordinates between source updates so
           swapping the active story animates the path draw rather than
           snapping. */}
+      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
       <ShapeSource id="story-paths" shape={pathsFC as any}>
         <LineLayer
           id="story-paths-solid"
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           filter={['!', ['get', 'dashed']] as any}
           style={{
             lineColor: '#bfa050', // data-color: intentional (gold story path — MapLibre GL)
@@ -178,6 +183,7 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
         />
         <LineLayer
           id="story-paths-dashed"
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           filter={['get', 'dashed'] as any}
           style={{
             lineColor: '#bfa050', // data-color: intentional (gold dashed path — MapLibre GL)
@@ -192,6 +198,7 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
       {/* Directional arrowheads at each path's endpoint, rotated along
           the final segment's bearing. Uses a unicode ► glyph — no image
           asset required — kept legible across zoom levels. */}
+      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
       <ShapeSource id="story-path-arrows" shape={arrowsFC as any}>
         <SymbolLayer
           id="story-path-arrows-layer"
@@ -199,6 +206,7 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
             textField: '\u25B6',
             textFont: ['Noto Sans Regular'],
             textSize: 14,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             textRotate: ['get', 'bearing'] as any,
             textRotationAlignment: 'map',
             textPitchAlignment: 'map',

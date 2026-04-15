@@ -111,6 +111,7 @@ function GenealogyTreeScreen({ route, navigation }: {
     const node = nodes.find((n) => n.data.id === initialPersonId);
     if (node) {
       const person = people.find((p) => p.id === initialPersonId);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (person) setSelectedPerson(person);
       centreOnNodeAbovePanel(node.x, node.y);
     }
@@ -239,6 +240,7 @@ function GenealogyTreeScreen({ route, navigation }: {
         onChapterPress={(link) => {
           const match = link.match(/(\w+)_(\d+)\.html/);
           if (match) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (navigation as any).navigate('ReadTab', {
               screen: 'Chapter',
               params: { bookId: match[1].toLowerCase(), chapterNum: parseInt(match[2], 10) },

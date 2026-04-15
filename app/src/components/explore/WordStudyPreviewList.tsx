@@ -62,6 +62,7 @@ export function WordStudyPreviewList({
 
   useEffect(() => {
     if (wordStudies !== undefined) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLoaded(wordStudies);
       return;
     }

@@ -106,7 +106,7 @@ function nameScore(name: string, lower: string): number {
   return 0;
 }
 
-function groupScore(items: Record<string, any>[], lower: string): number {
+function groupScore(items: Array<{ name?: string; title?: string }>, lower: string): number {
   let best = 0;
   for (const item of items) {
     const field: string = item.name ?? item.title ?? '';
@@ -119,7 +119,7 @@ function groupScore(items: Record<string, any>[], lower: string): number {
 export interface SearchResultGroup {
   key: string;
   label: string;
-  data: any[];
+  data: unknown[];
 }
 
 /** Return non-empty result groups ordered by relevance. */
@@ -135,8 +135,8 @@ export function buildOrderedGroups(
 
   // Stable sort: higher group relevance score → earlier position
   groups.sort((a, b) => {
-    const sa = groupScore(a.data, lower);
-    const sb = groupScore(b.data, lower);
+    const sa = groupScore(a.data as Array<{ name?: string; title?: string }>, lower);
+    const sb = groupScore(b.data as Array<{ name?: string; title?: string }>, lower);
     return sb - sa;
   });
 
@@ -169,7 +169,7 @@ async function loadCaches(
   return cache.current;
 }
 
-function filterByFields<T extends Record<string, any>>(
+function filterByFields<T extends object>(
   items: T[],
   lower: string,
   fields: (keyof T)[],

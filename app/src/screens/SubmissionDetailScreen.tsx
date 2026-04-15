@@ -57,7 +57,7 @@ function SubmissionDetailScreen() {
     } catch {
       return [];
     }
-  }, [submission?.verses_json]);
+  }, [submission]);
 
   if (loading || !submission) {
     return (

@@ -61,6 +61,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
   }, []);
 
   const handleGoToFullBio = useCallback((scholarId: string) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (navigation as any).navigate('ExploreTab', { screen: 'ScholarBio', params: { scholarId } });
   }, [navigation]);
 
@@ -149,7 +150,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
 
       return elements;
     });
-  }, [sections, verse, panel, callbacks, layout, coaching, display]);
+  }, [sections, verse, panel, callbacks, layout, coaching, display, handlePanelLongPress]);
 
   return (
     <>
@@ -196,6 +197,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
           story={chipData.story}
           places={chipData.places}
           onExpand={() =>
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (navigation as any).navigate('ExploreTab', {
               screen: 'Map',
               params: { storyId: chipData.story.id },

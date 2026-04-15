@@ -29,7 +29,10 @@ export function TranslationManager({ base }: { base: BaseColors }) {
     setStatuses(result);
   };
 
-  useEffect(() => { refresh(); }, [busy]);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    refresh();
+  }, [busy]);
 
   const handleDownload = async (id: string) => {
     setBusy(id);

@@ -110,11 +110,14 @@ export function useVisibleNodes(
     }
 
     // ── Entrance tracking ───────────────────────────────────────────
+    // eslint-disable-next-line react-hooks/refs -- legitimate prev-value tracking
     const prevIds = prevVisibleIdsRef.current;
+    // eslint-disable-next-line react-hooks/refs -- legitimate prev-value tracking
     const visibleNodes: VisibleLayoutNode[] = visibleNodesByTier.map((n) => ({
       ...n,
       isEntering: !prevIds.has(n.data.id),
     }));
+    // eslint-disable-next-line react-hooks/refs -- legitimate prev-value tracking
     prevVisibleIdsRef.current = visibleIds;
 
     // ── Links (always include spine-to-spine links) ─────────────────

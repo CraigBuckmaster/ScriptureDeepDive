@@ -78,7 +78,7 @@ function SectionBlock({
         onDepthRecord?.(sectionId, matchType);
       }
     },
-    [panels, onPanelToggle]
+    [panels, onPanelToggle, onDepthRecord]
   );
 
   // Find the currently active panel for this section

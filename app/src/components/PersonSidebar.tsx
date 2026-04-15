@@ -20,6 +20,23 @@ import { safeParse } from '../utils/logger';
 import { ContentImageGallery } from './ContentImageGallery';
 import { BadgeChip } from './BadgeChip';
 
+function FamilyLink({ p, onNavigate, base }: {
+  p: Person;
+  onNavigate: (personId: string) => void;
+  base: ReturnType<typeof useTheme>['base'];
+}) {
+  const linkColor = p.era ? (eras[p.era] ?? base.gold) : base.gold;
+  return (
+    <TouchableOpacity onPress={() => onNavigate(p.id)} style={styles.familyLink}>
+      <Text style={[styles.familyLinkText, {
+        color: linkColor, borderBottomColor: linkColor + '40',
+      }]}>
+        {p.name}
+      </Text>
+    </TouchableOpacity>
+  );
+}
+
 interface Props {
   visible: boolean;
   onClose: () => void;
@@ -49,7 +66,9 @@ export function PersonSidebar({
     if (!person || !visible) return;
     getPersonChildren(person.id).then(setChildren);
     getSpousesOf(person.id).then(setSpouses);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (person.father) getPerson(person.father).then(setFather); else setFather(null);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (person.mother) getPerson(person.mother).then(setMother); else setMother(null);
   }, [person, visible]);
 
@@ -58,19 +77,6 @@ export function PersonSidebar({
   const eraColor = person.era ? (eras[person.era] ?? base.gold) : base.gold;
   const eraLabel = person.era ? (eraNames[person.era] ?? person.era) : '';
   const refs = safeParse<string[]>(person.refs_json, []);
-
-  const FamilyLink = ({ p }: { p: Person }) => {
-    const linkColor = p.era ? (eras[p.era] ?? base.gold) : base.gold;
-    return (
-      <TouchableOpacity onPress={() => onNavigate(p.id)} style={styles.familyLink}>
-        <Text style={[styles.familyLinkText, {
-          color: linkColor, borderBottomColor: linkColor + '40',
-        }]}>
-          {p.name}
-        </Text>
-      </TouchableOpacity>
-    );
-  };
 
   return (
     <Modal visible={visible} transparent animationType="slide">
@@ -123,8 +129,8 @@ export function PersonSidebar({
                 <Text style={[styles.familyLabel, { color: base.textMuted }]}>
                   {father && mother ? 'Parents' : 'Father'}
                 </Text>
-                {father && <FamilyLink p={father} />}
-                {mother && <FamilyLink p={mother} />}
+                {father && <FamilyLink p={father} onNavigate={onNavigate} base={base} />}
+                {mother && <FamilyLink p={mother} onNavigate={onNavigate} base={base} />}
               </View>
             )}
             {spouses.length > 0 && (
@@ -132,7 +138,7 @@ export function PersonSidebar({
                 <Text style={[styles.familyLabel, { color: base.textMuted }]}>
                   {spouses.length > 1 ? 'Spouses' : 'Spouse'}
                 </Text>
-                {spouses.map((s) => <FamilyLink key={s.id} p={s} />)}
+                {spouses.map((s) => <FamilyLink key={s.id} p={s} onNavigate={onNavigate} base={base} />)}
               </View>
             )}
             {children.length > 0 && (
@@ -140,7 +146,7 @@ export function PersonSidebar({
                 <Text style={[styles.familyLabel, { color: base.textMuted }]}>
                   {children.length > 1 ? 'Children' : 'Child'}
                 </Text>
-                {children.slice(0, 15).map((c) => <FamilyLink key={c.id} p={c} />)}
+                {children.slice(0, 15).map((c) => <FamilyLink key={c.id} p={c} onNavigate={onNavigate} base={base} />)}
                 {children.length > 15 && <Text style={[styles.moreText, { color: base.textMuted }]}>+{children.length - 15} more</Text>}
               </View>
             )}

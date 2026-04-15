@@ -74,6 +74,7 @@ function MoreMenuScreen() {
         {MENU_ITEMS.map((item, idx) => (
           <TouchableOpacity
             key={item.screen}
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             onPress={() => navigation.navigate(item.screen as any)}
             activeOpacity={0.6}
             style={[

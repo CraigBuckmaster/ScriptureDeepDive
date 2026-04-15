@@ -53,7 +53,7 @@ interface ExportPayload {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const APP_VERSION: string = (require('../../app.json') as any).expo.version ?? '1.0.0';
+const APP_VERSION: string = (require('../../app.json') as { expo: { version?: string } }).expo.version ?? '1.0.0';
 
 /**
  * Export all user study data to a JSON file and open the system share sheet.

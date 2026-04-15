@@ -56,7 +56,7 @@ function DebateBrowseScreen() {
 
   const handleTopicPress = useCallback(
     (topic: DebateTopicSummary) => {
-      (navigation as any).navigate('DebateDetail', { topicId: topic.id });
+      navigation.navigate('DebateDetail', { topicId: topic.id });
     },
     [navigation]
   );

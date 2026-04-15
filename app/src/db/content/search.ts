@@ -13,7 +13,7 @@ import type { Verse, Person } from '../../types';
  */
 function sanitizeFtsQuery(query: string): string {
   return query
-    .replace(/["\*\(\)\{\}\[\]^~:]/g, '') // Strip FTS5 special chars
+    .replace(/["*(){}[\]^~:]/g, '') // Strip FTS5 special chars
     .split(/\s+/)
     .filter((w) => w.length >= 2)
     .map((w) => `"${w}"`)                 // Quote each term (AND semantics)

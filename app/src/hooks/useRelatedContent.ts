@@ -23,7 +23,7 @@ interface ChapterMeta {
   map_story_link_text?: string | null;
 }
 
-function tryParseJson(json: string): any {
+function tryParseJson(json: string): unknown {
   try { return JSON.parse(json); } catch { return null; }
 }
 
@@ -71,18 +71,18 @@ function extractCards(
   // People (from ppl panel)
   const pplPanel = panelMap.get('ppl');
   if (pplPanel) {
-    const data = tryParseJson(pplPanel.content_json);
+    const data = tryParseJson(pplPanel.content_json) as Record<string, unknown> | null;
     if (data) {
       const raw = data.people ?? data.entries ?? (Array.isArray(data) ? data : []);
-      const people = Array.isArray(raw) ? raw : [];
+      const people = Array.isArray(raw) ? (raw as Record<string, unknown>[]) : [];
       for (const p of people.slice(0, 2)) {
         cards.push({
           type: 'people',
-          title: p.name ?? p.label ?? 'Person',
-          snippet: p.role ?? p.bio?.slice(0, 60) ?? p.description?.slice(0, 60) ?? 'Biblical figure',
+          title: (p.name as string) ?? (p.label as string) ?? 'Person',
+          snippet: (p.role as string) ?? (p.bio as string)?.slice(0, 60) ?? (p.description as string)?.slice(0, 60) ?? 'Biblical figure',
           color: '#e86040',
           screen: 'PersonDetail',
-          params: { personId: p.id ?? p.name },
+          params: { personId: (p.id as string) ?? (p.name as string) },
           imageUrl: null,
           label: 'Person',
         });
@@ -93,7 +93,7 @@ function extractCards(
   // Debate
   const debatePanel = panelMap.get('debate');
   if (debatePanel) {
-    const data = tryParseJson(debatePanel.content_json);
+    const data = tryParseJson(debatePanel.content_json) as Record<string, unknown> | null;
     if (data) {
       const title = data.title ?? data.question ?? data.topic ?? 'Scholarly debate';
       cards.push({
@@ -102,7 +102,7 @@ function extractCards(
         snippet: 'Scholarly debate with multiple positions',
         color: '#d08080',
         screen: 'DebateDetail',
-        params: { topicId: data.id ?? data.debate_id },
+        params: { topicId: (data.id as string) ?? (data.debate_id as string) },
         imageUrl: null,
         label: 'Debate',
       });
@@ -112,10 +112,10 @@ function extractCards(
   // Themes → concept
   const themesPanel = panelMap.get('themes');
   if (themesPanel) {
-    const data = tryParseJson(themesPanel.content_json);
+    const data = tryParseJson(themesPanel.content_json) as Record<string, unknown> | null;
     if (data) {
-      const themes = data.themes ?? data.entries ?? (Array.isArray(data) ? data : []);
-      const first = themes[0];
+      const themes = (data.themes as unknown[]) ?? (data.entries as unknown[]) ?? (Array.isArray(data) ? data : []);
+      const first = themes[0] as Record<string, unknown> | undefined;
       if (first) {
         const name = first.name ?? first.theme ?? first.label ?? 'Theme';
         cards.push({
@@ -160,6 +160,7 @@ export function useRelatedContent(
   const [items, setItems] = useState<RelatedContentItem[]>([]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (baseCards.length === 0) { setItems([]); return; }
     let cancelled = false;
 
@@ -170,8 +171,8 @@ export function useRelatedContent(
         const ct = TYPE_TO_CONTENT_TYPE[card.type];
         if (!ct) return;
         // Extract the content ID from the card params
-        const contentId = card.params.eventId ?? card.params.storyId ??
-          card.params.personId ?? card.params.topicId ?? null;
+        const contentId = (card.params.eventId ?? card.params.storyId ??
+          card.params.personId ?? card.params.topicId ?? null) as string | null;
         if (!contentId) return;
         if (!groups[ct]) groups[ct] = { contentIds: [], indices: [] };
         groups[ct].contentIds.push(contentId);
@@ -199,8 +200,8 @@ export function useRelatedContent(
       // Merge images into cards
       const enriched = baseCards.map((card) => {
         const ct = TYPE_TO_CONTENT_TYPE[card.type];
-        const contentId = card.params.eventId ?? card.params.storyId ??
-          card.params.personId ?? card.params.topicId ?? null;
+        const contentId = (card.params.eventId ?? card.params.storyId ??
+          card.params.personId ?? card.params.topicId ?? null) as string | null;
         const key = ct && contentId ? `${ct}:${contentId}` : '';
         return {
           ...card,

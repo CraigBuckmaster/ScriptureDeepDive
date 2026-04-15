@@ -52,7 +52,7 @@ function LifeTopicDetailScreen() {
 
   const handleSubmissionPress = useCallback(
     (submissionId: string) => {
-      navigation.push('SubmissionDetail' as any, { submissionId });
+      navigation.push('SubmissionDetail', { submissionId });
     },
     [navigation],
   );
@@ -117,13 +117,13 @@ function LifeTopicDetailScreen() {
         {/* Key verses — premium gated */}
         {isPremium && verses.length > 0 && (
           <CollapsibleSection title="Key Verses" initiallyCollapsed={false}>
-            {verses.map((v: any) => (
+            {verses.map((v: Record<string, unknown>) => (
               <VerseCard
-                key={v.id ?? v.verse_ref}
-                verseRef={v.verse_ref}
-                annotation={v.annotation}
+                key={(v.id as string) ?? (v.verse_ref as string)}
+                verseRef={v.verse_ref as string}
+                annotation={v.annotation as string}
                 isPrimary={!!v.is_primary}
-                onPress={() => handleVersePress(v.verse_ref)}
+                onPress={() => handleVersePress(v.verse_ref as string)}
               />
             ))}
           </CollapsibleSection>
@@ -139,12 +139,12 @@ function LifeTopicDetailScreen() {
         {/* Scholar perspectives — premium gated */}
         {isPremium && scholars.length > 0 && (
           <CollapsibleSection title="Scholar Perspectives" initiallyCollapsed={false}>
-            {scholars.map((s: any, idx: number) => (
+            {scholars.map((s: Record<string, unknown>, idx: number) => (
               <ScholarQuoteCard
-                key={s.id ?? idx}
-                quote={s.quote ?? s.content ?? ''}
-                scholarName={s.scholar_name ?? ''}
-                tradition={s.tradition}
+                key={(s.id as string) ?? idx}
+                quote={(s.quote as string) ?? (s.content as string) ?? ''}
+                scholarName={(s.scholar_name as string) ?? ''}
+                tradition={s.tradition as string}
               />
             ))}
           </CollapsibleSection>

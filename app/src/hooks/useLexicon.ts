@@ -13,7 +13,9 @@ export function useLexicon(strongs: string | null) {
 
   useEffect(() => {
     if (!strongs) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setEntry(null);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setRelated([]);
       return;
     }

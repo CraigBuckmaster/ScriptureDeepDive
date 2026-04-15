@@ -55,7 +55,7 @@ export function WordStudyPopup({ visible, onClose, word, onGoToFullStudy }: Prop
               </Text>
               {study.strongs && (
                 <Text style={[styles.strongs, { color: base.textMuted }]}>
-                  Strong's: {study.strongs}
+                  Strong&apos;s: {study.strongs}
                 </Text>
               )}
 

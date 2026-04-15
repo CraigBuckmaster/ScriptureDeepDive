@@ -56,6 +56,7 @@ function ConcordanceScreen() {
 
   // Auto-search if opened with a Strong's number
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (initialStrongs) runSearch(initialStrongs);
   }, [initialStrongs, runSearch]);
 
@@ -156,7 +157,7 @@ function ConcordanceScreen() {
             No results found for {strongs}.
           </Text>
           <Text style={[styles.emptyHint, { color: base.textMuted }]}>
-            Make sure the Strong's number is correct (e.g. H2617 for Hebrew, G26 for Greek).
+            Make sure the Strong&apos;s number is correct (e.g. H2617 for Hebrew, G26 for Greek).
           </Text>
         </View>
       ) : (
@@ -165,7 +166,7 @@ function ConcordanceScreen() {
             Find every verse where a Hebrew or Greek word appears across the entire Bible.
           </Text>
           <Text style={[styles.emptyHint, { color: base.textMuted }]}>
-            Enter a Strong's number above, or tap a word in the Interlinear view to see all its occurrences.
+            Enter a Strong&apos;s number above, or tap a word in the Interlinear view to see all its occurrences.
           </Text>
         </View>
       )}

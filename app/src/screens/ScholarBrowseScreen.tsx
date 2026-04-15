@@ -9,6 +9,7 @@ import { Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useScholars } from '../hooks/useScholars';
+import type { Scholar } from '../types';
 import { BrowseScreenTemplate } from '../components/BrowseScreenTemplate';
 import { useSettingsStore } from '../stores';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
@@ -51,7 +52,7 @@ function ScholarBrowseScreen() {
   }, [scholars, tradition, search]);
 
   const renderItem = useCallback(
-    ({ item: s }: { item: any }) => {
+    ({ item: s }: { item: Scholar }) => {
       let scope = 'All books';
       try {
         const parsed = JSON.parse(s.scope_json);
@@ -110,7 +111,7 @@ function ScholarBrowseScreen() {
       filterBar={filterBar}
       data={filtered}
       renderItem={renderItem}
-      keyExtractor={(s: any) => s.id}
+      keyExtractor={(s: Scholar) => s.id}
       numColumns={2}
       columnWrapperStyle={styles.gridRow}
       contentContainerStyle={styles.gridContent}

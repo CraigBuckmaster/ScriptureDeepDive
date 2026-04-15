@@ -60,6 +60,7 @@ export function InterlinearSheet({
 
   useEffect(() => {
     if (!visible) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
     getInterlinearWords(bookId, chapter, verse).then((w) => {
       setWords(w);

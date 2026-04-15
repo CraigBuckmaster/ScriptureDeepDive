@@ -170,7 +170,7 @@ function BookListScreen() {
           windowSize={7}
           ListEmptyComponent={
             <View style={styles.emptyWrap}>
-              <Text style={[styles.emptyText, { color: base.textMuted }]}>No books matching "{search.trim()}"</Text>
+              <Text style={[styles.emptyText, { color: base.textMuted }]}>No books matching &quot;{search.trim()}&quot;</Text>
             </View>
           }
         />

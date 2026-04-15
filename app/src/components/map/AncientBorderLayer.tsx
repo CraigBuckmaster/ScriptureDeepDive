@@ -35,7 +35,11 @@ export const AncientBorderLayer = memo(function AncientBorderLayer({
   const eraColor = (era && eras[era]) || '#bfa050'; // data-color: intentional (gold fallback for unknown era — MapLibre GL)
 
   return (
-    <ShapeSource id="ancient-borders" shape={borders as any}>
+    <ShapeSource
+      id="ancient-borders"
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      shape={borders as any}
+    >
       <FillLayer
         id="ancient-borders-fill"
         style={{

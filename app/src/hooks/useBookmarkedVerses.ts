@@ -7,8 +7,10 @@ export function useBookmarkedVerses(bookId: string | null, ch: number) {
   const [bookmarkIds, setBookmarkIds] = useState<Map<number, number>>(new Map());
   const bookmarkedRef = useRef(bookmarked);
   const bookmarkIdsRef = useRef(bookmarkIds);
-  bookmarkedRef.current = bookmarked;
-  bookmarkIdsRef.current = bookmarkIds;
+  useEffect(() => {
+    bookmarkedRef.current = bookmarked;
+    bookmarkIdsRef.current = bookmarkIds;
+  }, [bookmarked, bookmarkIds]);
 
   const reload = useCallback(() => {
     if (!bookId) return;

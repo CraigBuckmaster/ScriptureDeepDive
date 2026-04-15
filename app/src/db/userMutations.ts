@@ -7,6 +7,7 @@
 
 import { logger } from '../utils/logger';
 import { getUserDb } from './userDatabase';
+import type { ReadingPlan } from './userQueries';
 
 // ── Notes (write) ─────────────────────────────────────────────────
 
@@ -116,8 +117,6 @@ export async function deleteHighlightCollection(id: string): Promise<void> {
 }
 
 // ── Reading Plans (write) ────────────────────────────────────────
-
-import type { ReadingPlan } from './userQueries';
 
 export async function startPlan(planId: string): Promise<void> {
   const plan = await getUserDb().getFirstAsync<ReadingPlan>(

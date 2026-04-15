@@ -48,6 +48,7 @@ export function NoteLinkSheet({ visible, onClose, currentNoteId, linkedNoteIds, 
   }, [visible, searchQuery, currentNoteId]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     reload();
   }, [reload]);
 

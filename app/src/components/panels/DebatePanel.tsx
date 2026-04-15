@@ -27,16 +27,16 @@ export function DebatePanel({
 
   return (
     <View style={styles.container}>
-      {entries.map((d: any, i) => {
+      {entries.map((d: DebateEntry & { title?: string }, i) => {
         const heading = d.topic ?? d.title ?? 'Debate';
-        const positions = d.positions ?? [];
+        const positions: Array<Record<string, string>> = (d.positions as Array<Record<string, string>>) ?? [];
 
         return (
           <View key={i} style={styles.entryBlock}>
             <Text style={[styles.heading, { color: colors.accent }]}>
               {heading}
             </Text>
-            {positions.map((p: any, j: number) => {
+            {positions.map((p: Record<string, string>, j: number) => {
               const isLegacy = 'argument' in p;
               const label = isLegacy ? (p.name ?? 'Position') : (p.scholar ?? 'Scholar');
               const sublabel = isLegacy ? (p.proponents ?? '') : '';

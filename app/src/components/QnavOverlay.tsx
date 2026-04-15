@@ -37,8 +37,10 @@ export function QnavOverlay({
   // Auto-expand current book when opening
   useEffect(() => {
     if (visible && currentBookId) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setExpandedBook(currentBookId);
       const currentBook = books.find((b) => b.id === currentBookId);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (currentBook) setTestament(currentBook.testament);
       sheetRef.current?.snapToIndex(0);
     }
@@ -47,6 +49,7 @@ export function QnavOverlay({
   // Clear search when closing
   useEffect(() => {
     if (!visible) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSearch('');
       sheetRef.current?.close();
     }

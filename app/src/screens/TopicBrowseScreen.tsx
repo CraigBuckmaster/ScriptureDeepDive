@@ -35,7 +35,7 @@ function hasConceptLinks(topic: Topic): boolean {
 interface TopicRowProps {
   topic: Topic;
   onPress: () => void;
-  base: any;
+  base: import('../theme/palettes').BaseColors;
 }
 
 function TopicRow({ topic, onPress, base }: TopicRowProps) {

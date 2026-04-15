@@ -38,10 +38,12 @@ export function useArchaeologySearch() {
 
   useEffect(() => {
     if (search.length < 2) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setResults([]);
       setSearching(false);
       return;
     }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSearching(true);
     const timer = setTimeout(() => {
       searchDiscoveries(search)
@@ -100,6 +102,7 @@ export function useArchaeologyDetail(discoveryId: string): ArchaeologyDetailData
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
     Promise.all([
       getDiscovery(discoveryId),

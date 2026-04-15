@@ -52,6 +52,7 @@ export function DbDownloadScreen({ onComplete }: Props) {
   }, [onComplete]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     startDownload();
   }, [startDownload]);
 

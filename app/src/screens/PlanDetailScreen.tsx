@@ -33,7 +33,10 @@ function PlanDetailScreen() {
     if (activeId === planId) setProgress(await getPlanProgress(planId));
   }, [planId]);
 
-  useEffect(() => { reload(); }, [reload]);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    reload();
+  }, [reload]);
 
   const isActive = activePlanId === planId;
   const completed = progress.filter((p) => p.completed_at).length;

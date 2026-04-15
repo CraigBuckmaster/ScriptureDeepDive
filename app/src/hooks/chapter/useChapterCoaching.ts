@@ -35,6 +35,7 @@ export function useChapterCoaching(
 
   // Reset dismissed tips when chapter changes
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDismissedTips(new Set());
   }, [bookId, chapterNum]);
 

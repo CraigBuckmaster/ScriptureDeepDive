@@ -20,8 +20,13 @@ import {
   StyleSheet,
   Pressable,
 } from 'react-native';
-import { ArrowUpRight } from 'lucide-react-native';
 import { MapView, Camera } from '@maplibre/maplibre-react-native';
+import { ArrowUpRight } from 'lucide-react-native';
+import { STYLE_ANCIENT } from '../../constants/mapStyles';
+import { useTheme, spacing, radii, fontFamily } from '../../theme';
+import type { MapStory, Place } from '../../types';
+import { safeParse } from '../../utils/logger';
+import { StoryOverlays } from './StoryOverlays';
 
 /**
  * Subset of MapLibre's `CameraStop` shape that we actually use. The real
@@ -41,11 +46,6 @@ type ChipCameraSettings = {
     paddingBottom?: number;
   };
 };
-import { STYLE_ANCIENT } from '../../constants/mapStyles';
-import { useTheme, spacing, radii, fontFamily } from '../../theme';
-import type { MapStory, Place } from '../../types';
-import { safeParse } from '../../utils/logger';
-import { StoryOverlays } from './StoryOverlays';
 
 interface Props {
   story: MapStory;

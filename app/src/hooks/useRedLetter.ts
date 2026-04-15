@@ -15,6 +15,7 @@ export function useRedLetter(bookId: string | null, chapterNum: number): Set<num
 
   useEffect(() => {
     if (!bookId || !enabled) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setVerses(new Set());
       return;
     }

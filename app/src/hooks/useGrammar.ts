@@ -14,6 +14,7 @@ export function useGrammarArticle(articleId: string | null) {
 
   useEffect(() => {
     if (!articleId) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setArticle(null);
       return;
     }
