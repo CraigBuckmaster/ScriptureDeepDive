@@ -5,7 +5,7 @@
  * and an engagement bar for upvote/star/share.
  */
 
-import React, { useCallback } from 'react';
+import React from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
@@ -16,7 +16,7 @@ import { EngagementBar } from '../components/engagement';
 import TrustBadge from '../components/TrustBadge';
 import { useAsyncData } from '../hooks/useAsyncData';
 import { useEngagement } from '../hooks/useEngagement';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 import { getSupabase } from '../lib/supabase';
 import type { Submission } from '../types';

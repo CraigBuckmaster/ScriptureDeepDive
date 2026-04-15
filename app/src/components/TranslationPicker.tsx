@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet, ActivityIndicator } from 'react-native';
+import { Text, TouchableOpacity, ScrollView, StyleSheet, ActivityIndicator } from 'react-native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { TRANSLATIONS } from '../db/translationRegistry';
 import { isTranslationInstalled, downloadTranslation } from '../db/translationManager';

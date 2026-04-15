@@ -12,7 +12,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { getAllWordStudies } from '../db/content';
 import { useTheme, spacing, radii, fontFamily, panels } from '../theme';
 import type { WordStudy } from '../types';
-import { logger } from '../utils/logger';
 
 interface Props {
   visible: boolean;
@@ -67,7 +66,7 @@ export function WordStudyPopup({ visible, onClose, word, onGoToFullStudy }: Prop
                     GLOSSES
                   </Text>
                   <Text style={[styles.glossText, { color: base.text }]}>
-                    {(() => { try { return JSON.parse(study.glosses_json).join(', '); } catch (err) { return study.glosses_json; } })()}
+                    {(() => { try { return JSON.parse(study.glosses_json).join(', '); } catch { return study.glosses_json; } })()}
                   </Text>
                 </View>
               )}

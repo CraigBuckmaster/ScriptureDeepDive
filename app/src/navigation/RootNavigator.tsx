@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
 import OnboardingScreen from '../screens/OnboardingScreen';
 import { useOnboardingStatus } from '../hooks/useOnboardingStatus';
 import { TabNavigator } from './TabNavigator';

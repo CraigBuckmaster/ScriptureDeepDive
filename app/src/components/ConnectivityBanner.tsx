@@ -8,11 +8,11 @@
  * Addresses #971 (offline connectivity indicator).
  */
 
-import React, { memo, useEffect, useState, useRef } from 'react';
+import React, { memo, useEffect, useMemo, useState } from 'react';
 import { View, Text, Animated, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { WifiOff } from 'lucide-react-native';
-import { useTheme, spacing, fontFamily } from '../theme';
+import { useTheme, spacing } from '../theme';
 import { isConnected, onConnectivityChange } from '../services/connectivity';
 import { getPendingCount } from '../services/syncQueue';
 
@@ -21,7 +21,7 @@ function ConnectivityBanner() {
   const insets = useSafeAreaInsets();
   const [offline, setOffline] = useState(!isConnected());
   const [pendingCount, setPendingCount] = useState(0);
-  const slideAnim = useRef(new Animated.Value(offline ? 0 : -60)).current;
+  const slideAnim = useMemo(() => new Animated.Value(isConnected() ? -60 : 0), []);
 
   useEffect(() => {
     const unsub = onConnectivityChange((connected) => {
@@ -67,7 +67,7 @@ function ConnectivityBanner() {
       <View style={styles.content}>
         <WifiOff size={14} color="#fff" />{/* overlay-color: intentional (white icon on offline banner) */}
         <Text style={styles.text}>
-          You're offline
+          You&apos;re offline
           {pendingCount > 0 ? ` \u00b7 ${pendingCount} pending` : ''}
         </Text>
       </View>

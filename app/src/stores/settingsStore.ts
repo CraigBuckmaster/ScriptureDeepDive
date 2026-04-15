@@ -161,7 +161,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
         gettingStartedDone: gsDone,
         isHydrated: true,
       });
-    } catch (err) {
+    } catch {
       set({ isHydrated: true });
     }
   },

@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import { X } from 'lucide-react-native';
 import { getInterlinearWords } from '../db/content';
-import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { InterlinearWord } from '../types';
 import { LoadingSkeleton } from './LoadingSkeleton';
 import { GrammarSheet } from './GrammarSheet';

@@ -5,7 +5,7 @@
  * full-text search, and detail view with verses + scholars + related topics.
  */
 
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   getLifeTopicCategories,
   getLifeTopics,

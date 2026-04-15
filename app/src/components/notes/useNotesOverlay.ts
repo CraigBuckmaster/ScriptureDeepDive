@@ -103,7 +103,7 @@ export function useNotesOverlay({
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editText, setEditText] = useState('');
   const [editTags, setEditTags] = useState<string[]>([]);
-  const [editCollectionId, setEditCollectionId] = useState<number | null>(null);
+  const [, setEditCollectionId] = useState<number | null>(null);
   const [editCollection, setEditCollection] = useState<StudyCollection | null>(null);
   const [editLinkedNotes, setEditLinkedNotes] = useState<UserNote[]>([]);
 

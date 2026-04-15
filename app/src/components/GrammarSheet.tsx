@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import { X, BookOpen } from 'lucide-react-native';
 import { useMorphologyDecode, useGrammarArticle } from '../hooks/useGrammar';
-import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET, panels } from '../theme';
+import { useTheme, spacing, radii, fontFamily, panels } from '../theme';
 import { LoadingSkeleton } from './LoadingSkeleton';
 
 interface Props {

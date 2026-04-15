@@ -50,7 +50,7 @@ interface Props {
 function SectionBlock({
   section, panels, verses, vhlGroups, activeVhlGroups,
   notedVerses, activePanel, fontSize,
-  onPanelToggle, onNotePress, onRefPress, onVerseLongPress, onVerseNumPress, activeVerseNum,
+  onPanelToggle, onNotePress, onRefPress: _onRefPress, onVerseLongPress, onVerseNumPress, activeVerseNum,
   renderButtonRow, renderPanel,
   depthExplored, depthTotal, onDepthRecord,
   comparisonVerses, comparisonLabel, primaryLabel,

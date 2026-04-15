@@ -35,7 +35,6 @@ import {
 import type { StackNavigationProp } from '@react-navigation/stack';
 import {
   useDifficultPassage,
-  DifficultPassageCategory,
   DifficultPassageResponse,
 } from '../hooks/useDifficultPassages';
 import { useTheme, spacing, radii, fontFamily } from '../theme';

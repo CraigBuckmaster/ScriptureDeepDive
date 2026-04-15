@@ -19,7 +19,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import { Search, X, Plus, Folder, Tag, FileText, ChevronRight, Link } from 'lucide-react-native';
+import { Search, X, Folder, Tag, FileText, ChevronRight, Link } from 'lucide-react-native';
 import type { ScreenNavProp } from '../navigation/types';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { TagChips } from '../components/TagChips';
@@ -34,7 +34,6 @@ import {
   getCollectionNoteCounts,
   getAllTags,
   getNotesByTag,
-  createCollection,
   updateNoteTags,
   setNoteCollection,
   getCollection,
@@ -212,11 +211,6 @@ function AllNotesScreen() {
 
   const handleCollectionPress = (collectionId: number) => {
     navigation.navigate('CollectionDetail', { collectionId });
-  };
-
-  const handleCreateCollection = () => {
-    // Use a simple prompt - Alert.prompt is iOS only, so we keep it simple
-    Alert.alert('New Collection', 'Use the + button in Collection Detail to create collections with custom colors.');
   };
 
   const groups = groupNotes(notes);

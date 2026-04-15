@@ -33,7 +33,7 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { useTheme, spacing } from '../theme';
 import type { MapStory, Place } from '../types';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
-import { logger, safeParse } from '../utils/logger';
+import { logger } from '../utils/logger';
 import { lightImpact } from '../utils/haptics';
 import { STYLE_ANCIENT, STYLE_MODERN } from '../constants/mapStyles';
 import { buildPlaceToStoriesMap } from './MapScreen';

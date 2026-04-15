@@ -17,7 +17,6 @@ import React, { useMemo, useCallback } from 'react';
 import { Text, type TextStyle } from 'react-native';
 import { panels, useTheme, fontFamily } from '../theme';
 import type { VHLGroup } from '../types';
-import { logger } from '../utils/logger';
 
 // ── BTN TYPE mapping (button CSS class → panel_type in DB) ──────────
 
@@ -84,7 +83,7 @@ function HighlightedText({
         words = typeof group.words_json === 'string'
           ? JSON.parse(group.words_json)
           : group.words_json;
-      } catch (err) {
+      } catch {
         continue;
       }
       if (!Array.isArray(words)) continue;
@@ -96,7 +95,7 @@ function HighlightedText({
           : group.btn_types_json;
         // Map button CSS class names → panel_type DB values
         btnTypes = (rawBtns as string[]).map((btn) => BTN_TO_PANEL[btn] ?? btn);
-      } catch (err) {
+      } catch {
         btnTypes = [];
       }
 

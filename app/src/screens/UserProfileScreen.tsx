@@ -265,7 +265,7 @@ const STATUS_COLORS: Record<SubmissionStatus, string> = {
 
 function StatusBadge({
   status,
-  base,
+  base: _base,
 }: {
   status: SubmissionStatus;
   base: ReturnType<typeof useTheme>['base'];

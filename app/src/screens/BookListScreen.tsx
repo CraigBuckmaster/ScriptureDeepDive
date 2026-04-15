@@ -9,7 +9,7 @@
  */
 
 import React, { useState, useMemo, useRef, useCallback } from 'react';
-import { View, Text, TouchableOpacity, SectionList, FlatList, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, SectionList, FlatList, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { useScrollToTop } from '@react-navigation/native';
@@ -17,7 +17,7 @@ import type { ScreenNavProp } from '../navigation/types';
 import { useBooks, type BookWithProgress } from '../hooks/useBooks';
 import { useSettingsStore } from '../stores';
 import { SearchInput } from '../components/SearchInput';
-import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 // ── Tradition groupings (by book_order index) ────────────────────

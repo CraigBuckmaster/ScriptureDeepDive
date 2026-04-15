@@ -6,7 +6,7 @@
  */
 
 import React, { useMemo } from 'react';
-import { View, TouchableOpacity, Text, StyleSheet, LayoutAnimation, Platform, UIManager } from 'react-native';
+import { View, TouchableOpacity, Text, StyleSheet, Platform, UIManager } from 'react-native';
 import { useTheme, spacing } from '../theme';
 import { lightImpact } from '../utils/haptics';
 import type { ParsedRef } from '../types';

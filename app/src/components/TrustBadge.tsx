@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { spacing, radii, fontFamily } from '../theme';
 
 const LEVEL_COLORS: Record<0 | 1 | 2, string> = {
   0: '#888888', // data-color: intentional
@@ -24,7 +24,6 @@ interface Props {
 }
 
 function TrustBadge({ level, label }: Props) {
-  const { base } = useTheme();
   const color = LEVEL_COLORS[level];
   const text = label ?? LEVEL_LABELS[level];
 

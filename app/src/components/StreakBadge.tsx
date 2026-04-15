@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Flame, Share2 } from 'lucide-react-native';
 import { useTheme, spacing, fontFamily } from '../theme';
 import { shareStreak } from '../utils/shareVerse';

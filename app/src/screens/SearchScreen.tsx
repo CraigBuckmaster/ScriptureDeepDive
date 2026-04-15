@@ -12,32 +12,18 @@ import { View, Text, TouchableOpacity, SectionList, ScrollView, StyleSheet } fro
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useScrollToTop } from '@react-navigation/native';
 import {
-  Search as SearchIcon, BookOpen, Users, Compass, MapPin,
+  Search as SearchIcon, BookOpen, Compass, MapPin,
   Clock, Heart, HelpCircle, ArrowRight, Landmark,
 } from 'lucide-react-native';
 import { useSearch, buildOrderedGroups } from '../hooks/useSearch';
-import type { SearchResultGroup, ParsedReference } from '../hooks/useSearch';
+import type { ParsedReference } from '../hooks/useSearch';
 import { SearchInput } from '../components/SearchInput';
-import { useTheme, spacing, radii, fontFamily, panels } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { Person, Book, MapStory, TimelineEntry, Verse, DifficultPassage, Concept, LifeTopic, ArchaeologicalDiscovery } from '../types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const INITIAL_VERSE_LIMIT = 20;
 const LOAD_MORE_INCREMENT = 30;
-
-// ── Section icons & colors by group key ─────────────────────────────
-
-const GROUP_META: Record<string, { Icon: any; colorKey: string }> = {
-  books:              { Icon: BookOpen,   colorKey: 'gold' },
-  people:             { Icon: Users,      colorKey: 'gold' },
-  concepts:           { Icon: Compass,    colorKey: 'gold' },
-  archaeology:        { Icon: Landmark,   colorKey: 'gold' },
-  difficultPassages:  { Icon: HelpCircle, colorKey: 'gold' },
-  mapStories:         { Icon: MapPin,     colorKey: 'gold' },
-  timelineEvents:     { Icon: Clock,      colorKey: 'gold' },
-  lifeTopics:         { Icon: Heart,      colorKey: 'gold' },
-  verses:             { Icon: BookOpen,   colorKey: 'gold' },
-};
 
 function SearchScreen() {
   const { base, eras } = useTheme();

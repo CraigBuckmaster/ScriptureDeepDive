@@ -11,7 +11,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import {
   View, Text, FlatList, TextInput, TouchableOpacity,
-  StyleSheet, ActivityIndicator,
+  StyleSheet,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
@@ -71,12 +71,6 @@ function ConcordanceScreen() {
   // Determine the accent color (Hebrew = pink, Greek = blue)
   const isHebrew = strongs.startsWith('H');
   const accentColor = isHebrew ? panels.heb.accent : panels.hist.accent;
-
-  const headerTitle = original
-    ? `${original} (${strongs})`
-    : strongs
-    ? strongs
-    : 'Concordance';
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>

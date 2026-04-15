@@ -4,7 +4,7 @@
  * Extracted from ChapterScreen (#970).
  */
 
-import { useState, useEffect, useCallback, useRef, type RefObject } from 'react';
+import { useState, useEffect, useCallback, type RefObject } from 'react';
 import type { ScrollView } from 'react-native';
 import { useTTS } from '../useTTS';
 import { useSettingsStore } from '../../stores';

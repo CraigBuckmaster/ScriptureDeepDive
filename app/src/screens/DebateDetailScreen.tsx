@@ -36,7 +36,7 @@ function DebateDetailScreen() {
   const navigation = useNavigation<Nav>();
   const route = useRoute<Route>();
   const { topicId } = route.params;
-  const { topic, scholars, loading } = useDebateTopic(topicId);
+  const { topic, loading } = useDebateTopic(topicId);
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
   const [traditionFilter, setTraditionFilter] = useState('all');
 

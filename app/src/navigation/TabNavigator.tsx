@@ -40,7 +40,7 @@ export function TabNavigator() {
           tabBarIcon: ({ color, size }) => <Home color={color} size={size} />,
         }}
         listeners={({ navigation }) => ({
-          tabPress: (e) => {
+          tabPress: () => {
             navigation.navigate('HomeTab', { screen: 'HomeMain' });
           },
         })}
@@ -53,7 +53,7 @@ export function TabNavigator() {
           tabBarIcon: ({ color, size }) => <Library color={color} size={size} />,
         }}
         listeners={({ navigation }) => ({
-          tabPress: (e) => {
+          tabPress: () => {
             navigation.navigate('ReadTab', { screen: 'BookList' });
           },
         })}
@@ -66,7 +66,7 @@ export function TabNavigator() {
           tabBarIcon: ({ color, size }) => <Compass color={color} size={size} />,
         }}
         listeners={({ navigation }) => ({
-          tabPress: (e) => {
+          tabPress: () => {
             navigation.navigate('ExploreTab', { screen: 'ExploreMenu' });
           },
         })}
@@ -79,7 +79,7 @@ export function TabNavigator() {
           tabBarIcon: ({ color, size }) => <Search color={color} size={size} />,
         }}
         listeners={({ navigation }) => ({
-          tabPress: (e) => {
+          tabPress: () => {
             navigation.navigate('SearchTab', { screen: 'SearchMain' });
           },
         })}
@@ -92,7 +92,7 @@ export function TabNavigator() {
           tabBarIcon: ({ color, size }) => <MoreHorizontal color={color} size={size} />,
         }}
         listeners={({ navigation }) => ({
-          tabPress: (e) => {
+          tabPress: () => {
             navigation.navigate('MoreTab', { screen: 'MoreMenu' });
           },
         })}

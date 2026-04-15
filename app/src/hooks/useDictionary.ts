@@ -2,7 +2,7 @@
  * hooks/useDictionary.ts — Data hooks for Bible Dictionary feature.
  */
 
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import {
   getAllDictionaryEntries,
   getDictionaryEntry,

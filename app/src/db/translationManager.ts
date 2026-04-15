@@ -19,7 +19,7 @@ import * as SQLite from 'expo-sqlite';
 import { Asset } from 'expo-asset';
 import * as FileSystem from 'expo-file-system/legacy';
 import { logger } from '../utils/logger';
-import { TRANSLATION_MAP, type TranslationInfo } from './translationRegistry';
+import { TRANSLATION_MAP } from './translationRegistry';
 
 /** Cache of open DB connections for supplemental translations. */
 const openDbs = new Map<string, SQLite.SQLiteDatabase>();

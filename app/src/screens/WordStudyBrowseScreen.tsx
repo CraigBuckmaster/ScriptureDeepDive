@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useWordStudies } from '../hooks/useWordStudies';
 import { BrowseScreenTemplate } from '../components/BrowseScreenTemplate';
-import { useTheme, spacing, radii, fontFamily, panels } from '../theme';
+import { useTheme, spacing, fontFamily, panels } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 function WordStudyBrowseScreen() {
