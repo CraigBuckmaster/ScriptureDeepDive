@@ -17,7 +17,8 @@ const mockGetInfoAsync = jest.fn();
 const mockCopyAsync = jest.fn();
 const mockDeleteAsync = jest.fn();
 const mockResumableDownloadAsync = jest.fn();
-const mockCreateDownloadResumable = jest.fn(() => ({
+// Typed as (...any[]) because ContentUpdater passes (url, path, options, progressCb).
+const mockCreateDownloadResumable: jest.Mock<any, any[]> = jest.fn((..._args: any[]) => ({
   downloadAsync: (...args: any[]) => mockResumableDownloadAsync(...args),
 }));
 
