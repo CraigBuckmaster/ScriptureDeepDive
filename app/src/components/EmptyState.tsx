@@ -3,11 +3,16 @@
  *
  * Replaces the duplicated emptyWrap + emptyText pattern across screens.
  * Supports three variants: empty (default), error, and offline.
+ *
+ * Card #1358 (UI polish phase 1) — warmer styling:
+ *   - Title in Cinzel (displaySemiBold)
+ *   - `tint` prop wraps content in a parchment-tinted card
+ *   - `empty` variant icon in soft gold
  */
 
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { useTheme, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 type Variant = 'empty' | 'error' | 'offline';
 
@@ -16,6 +21,8 @@ interface Props {
   subtitle?: string;
   variant?: Variant;
   action?: { label: string; onPress: () => void };
+  /** When true, wrap the content in a parchment-tinted card. Default false. */
+  tint?: boolean;
 }
 
 const VARIANT_ICONS: Record<Variant, string> = {
@@ -24,13 +31,24 @@ const VARIANT_ICONS: Record<Variant, string> = {
   offline: '☁',
 };
 
-function EmptyState({ title, subtitle, variant = 'empty', action }: Props) {
+function EmptyState({ title, subtitle, variant = 'empty', action, tint = false }: Props) {
   const { base } = useTheme();
 
-  const iconColor = variant === 'error' ? base.danger : base.textMuted;
+  // Per #1358: empty variant uses soft gold at 40% opacity (rendered via
+  // the gold color with a 66 alpha hex suffix). Error keeps danger red.
+  const iconColor =
+    variant === 'error' ? base.danger : `${base.gold}66`;
+
+  const containerStyle = [
+    styles.container,
+    tint && {
+      backgroundColor: base.tintParchment,
+      borderRadius: radii.lg,
+    },
+  ];
 
   return (
-    <View style={styles.container}>
+    <View style={containerStyle}>
       {variant !== 'empty' && (
         <Text style={[styles.icon, { color: iconColor }]}>
           {VARIANT_ICONS[variant]}
@@ -68,8 +86,9 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
   title: {
-    fontFamily: fontFamily.ui,
-    fontSize: 14,
+    fontFamily: fontFamily.displaySemiBold,
+    fontSize: 16,
+    letterSpacing: 0.5,
     textAlign: 'center',
   },
   subtitle: {
