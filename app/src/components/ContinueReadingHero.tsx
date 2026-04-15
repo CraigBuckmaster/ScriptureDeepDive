@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     right: 0,
     height: 48,
     backgroundColor: 'transparent',
-    shadowColor: '#000',
+    shadowColor: '#000', // overlay-color: intentional (RN shadow must be #000 on iOS)
     shadowOffset: { width: 0, height: -12 },
     shadowOpacity: 0.5,
     shadowRadius: 12,

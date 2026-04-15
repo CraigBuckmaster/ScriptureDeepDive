@@ -35,8 +35,8 @@ const NAME_GAP = 8;            // circle bottom edge → name baseline
 const MIN_TOUCH_H = 44;
 
 // Flat fills — match the wireframe's dark backgrounds
-const SPINE_FILL = '#1a1810';
-const SAT_FILL = '#181612';
+const SPINE_FILL = '#1a1810'; // data-color: intentional (SVG spine node fill — warm-dark bg)
+const SAT_FILL = '#181612';   // data-color: intentional (SVG satellite node fill — warm-dark bg)
 
 interface Props {
   node: LayoutNode;

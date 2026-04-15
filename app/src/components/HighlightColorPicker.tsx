@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     borderWidth: 3,
   },
   checkmark: {
-    color: '#fff',
+    color: '#fff', // overlay-color: intentional (white checkmark on color swatch)
     fontSize: 14,
   },
   removeButton: {

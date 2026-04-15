@@ -26,6 +26,8 @@ const CATEGORY_COLORS: Record<string, string> = {
   interpretive: '#4FC3F7', // data-color: intentional
 };
 
+const CHIP_ACTIVE_TEXT = '#fff'; // overlay-color: intentional (white text on active colored category chip)
+
 function getPositionTraditions(topic: DebateTopicSummary): string[] {
   try {
     const positions = JSON.parse(topic.positions_json || '[]');
@@ -139,8 +141,8 @@ function DebateBrowseScreen() {
               },
             ]}
           >
-            {/* data-color: intentional — '#fff' is white text on colored chip */}
-            <Text style={[styles.chipText, { color: active ? '#fff' : color }]}>
+            {/* data-color: intentional — white text on active colored chip */}
+            <Text style={[styles.chipText, { color: active ? CHIP_ACTIVE_TEXT : color }]}>
               {DEBATE_CATEGORY_LABELS[cat] || cat}
             </Text>
           </TouchableOpacity>

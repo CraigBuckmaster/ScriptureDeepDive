@@ -23,6 +23,7 @@ import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { isMapNativeAvailable } from '../utils/isMapNativeAvailable';
 import { MapUnavailableCard } from '../components/map/MapUnavailableCard';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+import { useTheme } from '../theme';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import type { MapStory } from '../types';
 import { safeParse } from '../utils/logger';
@@ -71,9 +72,10 @@ function MapScreen(props: Props) {
 }
 
 function LazyFallback() {
+  const { base } = useTheme();
   return (
     <View style={styles.center}>
-      <ActivityIndicator color="#bfa050" size="large" />
+      <ActivityIndicator color={base.gold} size="large" />
     </View>
   );
 }

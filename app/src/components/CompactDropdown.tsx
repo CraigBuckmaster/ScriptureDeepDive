@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     borderRadius: radii.md,
     overflow: 'hidden',
     // Subtle shadow on iOS
-    shadowColor: '#000',
+    shadowColor: '#000', // overlay-color: intentional (RN shadow must be #000 on iOS)
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,

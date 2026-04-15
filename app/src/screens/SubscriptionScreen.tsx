@@ -17,6 +17,8 @@ import { PLANS, purchasePlan, restorePurchases, type PlanInfo } from '../service
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
+const GOLD_BUTTON_DARK = '#1a1a1a'; // data-color: intentional (dark text/elements on gold CTA button)
+
 const FEATURES = [
   'Interlinear Hebrew & Greek',
   'Concordance search',
@@ -136,7 +138,7 @@ function SubscriptionScreen() {
             >
               {/* data-color: intentional — dark spinner on gold button */}
               {purchasing ? (
-                <ActivityIndicator size="small" color="#1a1a1a" />
+                <ActivityIndicator size="small" color={GOLD_BUTTON_DARK} />
               ) : (
                 <Text style={styles.purchaseBtnText}>Subscribe Now</Text>
               )}

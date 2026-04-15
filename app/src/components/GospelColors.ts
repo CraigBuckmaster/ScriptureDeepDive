@@ -6,10 +6,10 @@
  */
 
 export const GOSPEL_COLORS: Record<string, string> = {
-  matthew: '#5b8def',
-  mark: '#e8854a',
-  luke: '#5cb85c',
-  john: '#b070d8',
+  matthew: '#5b8def', // data-color: intentional (Matthew identity blue)
+  mark: '#e8854a',    // data-color: intentional (Mark identity orange)
+  luke: '#5cb85c',    // data-color: intentional (Luke identity green)
+  john: '#b070d8',    // data-color: intentional (John identity purple)
 };
 
 export const GOSPEL_LABELS: Record<string, string> = {
@@ -29,5 +29,5 @@ export const GOSPEL_SHORT: Record<string, string> = {
 export const GOSPEL_ORDER = ['matthew', 'mark', 'luke', 'john'];
 
 export function gospelColor(bookId: string): string {
-  return GOSPEL_COLORS[bookId] ?? '#908878';
+  return GOSPEL_COLORS[bookId] ?? '#908878'; // data-color: intentional (neutral fallback for non-gospel books)
 }

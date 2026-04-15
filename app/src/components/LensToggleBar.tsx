@@ -42,7 +42,7 @@ function LensToggleBarInner({ lenses, activeLensId, onSelect }: Props) {
           <Text
             style={[
               styles.pillText,
-              { color: activeLensId === null ? '#000' : base.textMuted },
+              { color: activeLensId === null ? '#000' : base.textMuted }, // data-color: intentional (dark text on gold active pill)
             ]}
           >
             Default
@@ -70,7 +70,7 @@ function LensToggleBarInner({ lenses, activeLensId, onSelect }: Props) {
               <Text
                 style={[
                   styles.pillText,
-                  { color: isActive ? '#000' : base.textMuted },
+                  { color: isActive ? '#000' : base.textMuted }, // data-color: intentional (dark text on gold active pill)
                 ]}
               >
                 {lens.name}

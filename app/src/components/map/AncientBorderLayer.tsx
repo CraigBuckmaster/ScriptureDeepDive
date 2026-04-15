@@ -32,7 +32,7 @@ export const AncientBorderLayer = memo(function AncientBorderLayer({
   if (showModern) return null;
   if (!era || era === 'all') return null;
 
-  const eraColor = (era && eras[era]) || '#bfa050';
+  const eraColor = (era && eras[era]) || '#bfa050'; // data-color: intentional (gold fallback for unknown era — MapLibre GL)
 
   return (
     <ShapeSource id="ancient-borders" shape={borders as any}>

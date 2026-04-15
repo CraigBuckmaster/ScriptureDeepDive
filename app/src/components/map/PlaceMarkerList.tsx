@@ -105,14 +105,14 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
 
   const circleColorExpr: any = [
     'case',
-    isActive, '#f5e6b8', // warm highlight gold
-    '#bfa050',           // default gold
+    isActive, '#f5e6b8', // data-color: intentional (warm highlight — active place marker, MapLibre GL)
+    '#bfa050',           // data-color: intentional (gold — default place marker, MapLibre GL)
   ];
 
   const circleStrokeColorExpr: any = [
     'case',
-    isActive, '#bfa050',
-    '#1a1610',
+    isActive, '#bfa050', // data-color: intentional (gold stroke on active — MapLibre GL)
+    '#1a1610',           // data-color: intentional (dark stroke on inactive — MapLibre GL)
   ];
 
   const circleStrokeWidthExpr: any = [
@@ -159,10 +159,10 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
           textSize: ['match', ['get', 'priority'], 1, 13, 2, 12, 3, 11, 4, 10, 11] as any,
           textColor: [
             'case',
-            isActive, '#f5e6b8',
-            '#bfa050',
+            isActive, '#f5e6b8', // data-color: intentional (warm highlight label — active, MapLibre GL)
+            '#bfa050',           // data-color: intentional (gold label — default, MapLibre GL)
           ] as any,
-          textHaloColor: '#1a1610',
+          textHaloColor: '#1a1610', // data-color: intentional (dark halo against map bg — MapLibre GL)
           textHaloWidth: 1.5,
           textOffset: [0, 1.1],
           textAnchor: 'top',

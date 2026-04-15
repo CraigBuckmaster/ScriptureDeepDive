@@ -19,6 +19,8 @@ import {
 import { useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../../theme';
 import { submitFlag } from '../../services/engagementApi';
 
+const SUBMIT_BUTTON_TEXT = '#fff'; // overlay-color: intentional (white text on gold submit button)
+
 const REASONS = [
   'Spam',
   'Inappropriate content',
@@ -146,7 +148,7 @@ export const FlagReasonPicker = memo(function FlagReasonPicker({
               accessibilityLabel="Submit report"
             >
               {/* overlay-color: intentional — white text on gold submit button */}
-              <Text style={[styles.actionText, { color: '#fff' }]}>
+              <Text style={[styles.actionText, { color: SUBMIT_BUTTON_TEXT }]}>
                 {submitting ? 'Submitting...' : 'Submit'}
               </Text>
             </TouchableOpacity>

@@ -12,6 +12,12 @@ import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { families } from '../theme/colors';
 import type { DebatePosition } from '../types';
 
+// Analysis panel colors — semantic green/red for argument strength/weakness
+const STRENGTHS_COLOR = '#4CAF50';   // data-color: intentional (green label — strengths)
+const STRENGTHS_BG    = '#4CAF5010'; // data-color: intentional (green tint — strengths panel)
+const WEAKNESSES_COLOR = '#F44336';  // data-color: intentional (red label — weaknesses)
+const WEAKNESSES_BG   = '#F4433610'; // data-color: intentional (red tint — weaknesses panel)
+
 interface Props {
   position: DebatePosition;
   defaultExpanded?: boolean;
@@ -75,20 +81,20 @@ function DebatePositionCard({
       {/* Expanded analysis */}
       {expanded && (
         <View style={styles.analysis}>
-          {/* Strengths — data-color: intentional (analysis colors) */}
+          {/* Strengths — data-color: intentional (green tint and label — analysis colors) */}
           {position.strengths ? (
-            <View style={[styles.analysisCard, { backgroundColor: '#4CAF5010' }]}>
-              <Text style={[styles.analysisLabel, { color: '#4CAF50' }]}>Strengths</Text>
+            <View style={[styles.analysisCard, { backgroundColor: STRENGTHS_BG }]}>
+              <Text style={[styles.analysisLabel, { color: STRENGTHS_COLOR }]}>Strengths</Text>
               <Text style={[styles.analysisText, { color: base.text }]}>
                 {position.strengths}
               </Text>
             </View>
           ) : null}
 
-          {/* Weaknesses — data-color: intentional (analysis colors) */}
+          {/* Weaknesses — data-color: intentional (red tint and label — analysis colors) */}
           {position.weaknesses ? (
-            <View style={[styles.analysisCard, { backgroundColor: '#F4433610' }]}>
-              <Text style={[styles.analysisLabel, { color: '#F44336' }]}>Weaknesses</Text>
+            <View style={[styles.analysisCard, { backgroundColor: WEAKNESSES_BG }]}>
+              <Text style={[styles.analysisLabel, { color: WEAKNESSES_COLOR }]}>Weaknesses</Text>
               <Text style={[styles.analysisText, { color: base.text }]}>
                 {position.weaknesses}
               </Text>

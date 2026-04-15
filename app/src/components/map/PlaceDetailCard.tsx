@@ -53,16 +53,16 @@ const TYPE_LABELS: Record<Place['type'], string> = {
 };
 
 const TYPE_COLORS: Record<Place['type'], string> = {
-  city: '#d4b483',
-  mountain: '#d4b483',
-  site: '#d4b483',
-  water: '#90c8d8',
-  region: '#b8a070',
+  city: '#d4b483',     // data-color: intentional (warm sand — built environment)
+  mountain: '#d4b483', // data-color: intentional (warm sand — terrain)
+  site: '#d4b483',     // data-color: intentional (warm sand — archaeological site)
+  water: '#90c8d8',    // data-color: intentional (steel blue — water body)
+  region: '#b8a070',   // data-color: intentional (muted gold — region boundary)
 };
 
 const TESTAMENT_COLORS = {
-  OT: '#d4a05a', // amber
-  NT: '#5ea073', // green
+  OT: '#d4a05a', // data-color: intentional (amber — Old Testament era)
+  NT: '#5ea073', // data-color: intentional (green — New Testament era)
 };
 
 /** Format a coordinate to 2 decimals with N/S, E/W suffix. */
@@ -281,11 +281,11 @@ export function PlaceDetailCard({
                 accessibilityLabel={`Show ${p.name}'s geographic arc`}
                 style={[
                   styles.storyChip,
-                  { backgroundColor: '#e09050' + '1A', borderColor: '#e09050' + '40' },
+                  { backgroundColor: '#e09050' + '1A', borderColor: '#e09050' + '40' }, // data-color: intentional (amber arc — matches PersonArcLayer ARC_COLOR)
                 ]}
               >
                 <Text
-                  style={[styles.storyChipText, { color: '#e09050' }]}
+                  style={[styles.storyChipText, { color: '#e09050' }]} // data-color: intentional (amber arc text — matches PersonArcLayer ARC_COLOR)
                   numberOfLines={1}
                 >
                   {p.name}

@@ -65,7 +65,7 @@ function ConnectivityBanner() {
       accessibilityLiveRegion="polite"
     >
       <View style={styles.content}>
-        <WifiOff size={14} color="#fff" />
+        <WifiOff size={14} color="#fff" />{/* overlay-color: intentional (white icon on offline banner) */}
         <Text style={styles.text}>
           You're offline
           {pendingCount > 0 ? ` \u00b7 ${pendingCount} pending` : ''}
@@ -93,8 +93,7 @@ const styles = StyleSheet.create({
     gap: spacing.xs,
   },
   text: {
-    color: '#fff',
-    fontFamily: fontFamily.uiMedium,
+    color: '#fff', // overlay-color: intentional (white text on offline banner)
     fontSize: 13,
   },
 });
