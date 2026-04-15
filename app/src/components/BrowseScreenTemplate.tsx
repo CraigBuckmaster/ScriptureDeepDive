@@ -6,12 +6,19 @@
  * loading state + empty state + FlatList or SectionList.
  *
  * Each screen provides its unique data hook, renderItem, and filter config.
+ *
+ * Card #1358 (UI polish phase 1):
+ *   - Default empty state uses tinted EmptyState for warmer feel
+ *   - Default list padding includes bottom breathing room (spacing.xxl)
+ *   - Exports BrowseSectionHeader for SectionList mode screens to use
+ *     for a consistent Cinzel + gold bar look (matches ScreenHeader).
  */
 
 import React from 'react';
 import {
   View,
   Text,
+  TouchableOpacity,
   FlatList,
   SectionList,
   StyleSheet,
@@ -22,10 +29,12 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import { useTheme, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
+import type { BaseColors } from '../theme/palettes';
 import { ScreenHeader } from './ScreenHeader';
 import { SearchInput } from './SearchInput';
 import { LoadingSkeleton } from './LoadingSkeleton';
+import EmptyState from './EmptyState';
 
 // ─── Flat list mode ───────────────────────────────────────────────
 
@@ -126,9 +135,7 @@ export function BrowseScreenTemplate<T>(props: BrowseScreenTemplateProps<T>) {
 
   const emptyState = emptyComponent ?? (
     <View style={styles.emptyState}>
-      <Text style={[styles.emptyText, { color: base.textMuted }]}>
-        {emptyMessage}
-      </Text>
+      <EmptyState title={emptyMessage} tint />
     </View>
   );
 
@@ -189,6 +196,133 @@ export function BrowseScreenTemplate<T>(props: BrowseScreenTemplateProps<T>) {
   );
 }
 
+// ─── Shared section header ────────────────────────────────────────
+
+interface BrowseSectionHeaderProps {
+  title: string;
+  /** Optional background color override. Defaults to the screen background
+   *  so sticky section headers don't overlap list content visually. */
+  backgroundColor?: string;
+}
+
+/**
+ * Standard section header for SectionList-mode browse screens.
+ * Cinzel title in gold with a 3px gold bar accent — matches ScreenHeader.
+ */
+export function BrowseSectionHeader({ title, backgroundColor }: BrowseSectionHeaderProps) {
+  const { base } = useTheme();
+  return (
+    <View style={[sectionHeaderStyles.row, { backgroundColor: backgroundColor ?? base.bg }]}>
+      <View style={[sectionHeaderStyles.bar, { backgroundColor: base.gold }]} />
+      <Text style={[sectionHeaderStyles.title, { color: base.gold }]}>{title}</Text>
+    </View>
+  );
+}
+
+const sectionHeaderStyles = StyleSheet.create({
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: spacing.sm,
+    paddingHorizontal: spacing.md,
+  },
+  bar: {
+    width: 3,
+    alignSelf: 'stretch',
+    marginRight: spacing.sm,
+    borderRadius: 1.5,
+  },
+  title: {
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 14,
+    letterSpacing: 0.6,
+  },
+});
+
+// ─── Shared card style ────────────────────────────────────────────
+
+/**
+ * Returns the standard browse-card style object (parchment tint + 10% gold
+ * border). Screens opt in by spreading this into their card's style prop.
+ * Card #1359 (UI polish phase 2).
+ */
+export function browseCardStyle(base: BaseColors): ViewStyle {
+  return {
+    backgroundColor: base.tintParchment,
+    borderRadius: radii.lg,
+    borderWidth: 1,
+    borderColor: base.gold + '1A', // ~10% opacity
+    padding: spacing.md,
+    marginBottom: spacing.sm,
+  };
+}
+
+// ─── Shared filter pill ───────────────────────────────────────────
+
+interface BrowseFilterPillProps {
+  label: string;
+  active: boolean;
+  onPress: () => void;
+  accessibilityLabel?: string;
+  /** Optional role — use 'tab' for language/view switchers, defaults to 'button'. */
+  role?: 'button' | 'tab';
+}
+
+/**
+ * Standard filter pill for browse-screen filter bars.
+ * Gold active state, transparent inactive, consistent sizing.
+ * Card #1359 (UI polish phase 2).
+ */
+export function BrowseFilterPill({
+  label,
+  active,
+  onPress,
+  accessibilityLabel,
+  role = 'button',
+}: BrowseFilterPillProps) {
+  const { base } = useTheme();
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.7}
+      accessibilityRole={role}
+      accessibilityState={role === 'tab' ? { selected: active } : undefined}
+      accessibilityLabel={accessibilityLabel ?? label}
+      style={[
+        filterPillStyles.pill,
+        {
+          borderColor: active ? base.gold : base.border,
+          backgroundColor: active ? base.gold + '20' : 'transparent',
+        },
+      ]}
+    >
+      <Text
+        style={[
+          filterPillStyles.label,
+          { color: active ? base.gold : base.textMuted },
+        ]}
+      >
+        {label}
+      </Text>
+    </TouchableOpacity>
+  );
+}
+
+const filterPillStyles = StyleSheet.create({
+  pill: {
+    height: 32,
+    justifyContent: 'center',
+    paddingHorizontal: spacing.md,
+    borderRadius: radii.pill,
+    borderWidth: 1,
+  },
+  label: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 12,
+    letterSpacing: 0.3,
+  },
+});
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -205,6 +339,7 @@ const styles = StyleSheet.create({
   },
   listPad: {
     paddingHorizontal: spacing.md,
+    paddingBottom: spacing.xxl,
   },
   loadingPad: {
     padding: spacing.lg,
@@ -212,9 +347,5 @@ const styles = StyleSheet.create({
   emptyState: {
     padding: spacing.xl,
     alignItems: 'center',
-  },
-  emptyText: {
-    fontFamily: fontFamily.ui,
-    fontSize: 14,
   },
 });

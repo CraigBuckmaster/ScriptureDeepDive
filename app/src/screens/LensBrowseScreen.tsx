@@ -2,14 +2,17 @@
  * LensBrowseScreen — Browse all hermeneutic lenses with descriptions.
  *
  * Explains each interpretive framework and links to try it on a sample chapter.
+ *
+ * Card #1359 (UI polish phase 2): migrated from a raw ScrollView to the
+ * BrowseScreenTemplate (FlatList). The intro paragraph is rendered via the
+ * template's flatListProps.ListHeaderComponent so it scrolls with the list.
  */
 
-import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React, { useCallback } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
-import { ScreenHeader } from '../components/ScreenHeader';
+import { BrowseScreenTemplate, browseCardStyle } from '../components/BrowseScreenTemplate';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { useAsyncData } from '../hooks/useAsyncData';
 import { getAllLenses } from '../db/content/hermeneutics';
@@ -41,89 +44,67 @@ function LensBrowseScreen() {
     [],
   );
 
-  const handleTry = (_lensId: string) => {
+  const handleTry = useCallback((_lensId: string) => {
     navigation.navigate('Chapter', {
       bookId: SAMPLE_CHAPTER.bookId,
       chapterNum: SAMPLE_CHAPTER.chapterNum,
     });
-  };
+  }, [navigation]);
+
+  const cardStyle = browseCardStyle(base);
+
+  const renderItem = useCallback(({ item: lens }: { item: HermeneuticLens }) => (
+    <View style={cardStyle}>
+      <View style={styles.cardHeader}>
+        {lens.icon ? <Text style={styles.cardIcon}>{lens.icon}</Text> : null}
+        <Text style={[styles.cardTitle, { color: base.text }]}>{lens.name}</Text>
+      </View>
+      <Text style={[styles.cardDescription, { color: base.textDim }]}>
+        {lens.description}
+      </Text>
+      {LENS_DETAILS[lens.id] && (
+        <Text style={[styles.cardDetail, { color: base.textMuted }]}>
+          {LENS_DETAILS[lens.id]}
+        </Text>
+      )}
+      <TouchableOpacity
+        onPress={() => handleTry(lens.id)}
+        activeOpacity={0.7}
+        style={[styles.tryButton, { borderColor: base.gold }]}
+      >
+        <Text style={[styles.tryButtonText, { color: base.gold }]}>
+          Try on Genesis 1
+        </Text>
+      </TouchableOpacity>
+    </View>
+  ), [base, cardStyle, handleTry]);
+
+  const intro = (
+    <Text style={[styles.intro, { color: base.textDim }]}>
+      Read Scripture through different interpretive frameworks. Each lens highlights
+      different aspects of the text and reshapes the study tools shown alongside it.
+    </Text>
+  );
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <View style={styles.headerPad}>
-        <ScreenHeader title="Hermeneutic Lenses" onBack={() => navigation.goBack()} />
-      </View>
-      <ScrollView contentContainerStyle={styles.content}>
-        <Text style={[styles.intro, { color: base.textDim }]}>
-          Read Scripture through different interpretive frameworks. Each lens highlights
-          different aspects of the text and reshapes the study tools shown alongside it.
-        </Text>
-
-        {loading && (
-          <Text style={[styles.loadingText, { color: base.textMuted }]}>Loading lenses...</Text>
-        )}
-
-        {lenses.map((lens) => (
-          <View
-            key={lens.id}
-            style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
-          >
-            <View style={styles.cardHeader}>
-              {lens.icon ? <Text style={styles.cardIcon}>{lens.icon}</Text> : null}
-              <Text style={[styles.cardTitle, { color: base.text }]}>{lens.name}</Text>
-            </View>
-            <Text style={[styles.cardDescription, { color: base.textDim }]}>
-              {lens.description}
-            </Text>
-            {LENS_DETAILS[lens.id] && (
-              <Text style={[styles.cardDetail, { color: base.textMuted }]}>
-                {LENS_DETAILS[lens.id]}
-              </Text>
-            )}
-            <TouchableOpacity
-              onPress={() => handleTry(lens.id)}
-              activeOpacity={0.7}
-              style={[styles.tryButton, { borderColor: base.gold }]}
-            >
-              <Text style={[styles.tryButtonText, { color: base.gold }]}>
-                Try on Genesis 1
-              </Text>
-            </TouchableOpacity>
-          </View>
-        ))}
-      </ScrollView>
-    </SafeAreaView>
+    <BrowseScreenTemplate
+      title="Hermeneutic Lenses"
+      loading={loading}
+      data={lenses}
+      renderItem={renderItem}
+      keyExtractor={(lens: HermeneuticLens) => lens.id}
+      emptyMessage="No lenses available."
+      flatListProps={{ ListHeaderComponent: intro }}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  headerPad: {
-    paddingHorizontal: spacing.md,
-    paddingTop: spacing.md,
-  },
-  content: {
-    padding: spacing.md,
-    paddingBottom: spacing.xxl,
-  },
   intro: {
     fontFamily: fontFamily.ui,
     fontSize: 13,
     lineHeight: 20,
     marginBottom: spacing.lg,
-  },
-  loadingText: {
-    fontFamily: fontFamily.ui,
-    fontSize: 13,
-    marginBottom: spacing.md,
-  },
-  card: {
-    borderWidth: 1,
-    borderRadius: radii.lg,
-    padding: spacing.md,
-    marginBottom: spacing.md,
   },
   cardHeader: {
     flexDirection: 'row',

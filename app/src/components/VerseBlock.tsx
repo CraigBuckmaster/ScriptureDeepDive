@@ -46,7 +46,9 @@ export const VerseBlock = React.memo(function VerseBlock({
   const { base } = useTheme();
   if (!verses.length) return null;
 
-  const lineHeight = fontSize * 1.6;
+  // Card #1362: 1.7× line-height per spec (was 1.6×) — improves reading ergonomics
+  // at the default 16px / 1.125× dynamic-type bump scales.
+  const lineHeight = fontSize * 1.7;
   const numSize = Math.max(11, fontSize * 0.65);
   const isComparing = !!comparisonVerses && comparisonVerses.length > 0;
 
@@ -143,7 +145,10 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   verseNum: {
-    fontFamily: fontFamily.display,
+    // Card #1362: verse numbers in uiMedium (was fontFamily.display) so the
+    // numbers read as UI chrome, not as mini-display type. Color is set inline
+    // to base.verseNum which is already the muted value.
+    fontFamily: fontFamily.uiMedium,
     marginRight: 4,
     minWidth: 28,
     textAlign: 'right',

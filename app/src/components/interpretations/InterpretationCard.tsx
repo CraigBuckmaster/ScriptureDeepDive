@@ -31,7 +31,12 @@ export const InterpretationCard = React.memo(function InterpretationCard({
       {...wrapperProps}
       style={[
         styles.card,
-        { backgroundColor: base.bgElevated, borderColor: eraColor + '30' },
+        {
+          backgroundColor: base.tintWarm,
+          // Scholar-quote accent: 3px gold left border per Card #1360.
+          // Era color still differentiates via the eraBadge and eraDot.
+          borderLeftColor: base.gold,
+        },
       ]}
     >
       {/* Era badge + verse ref row */}
@@ -94,7 +99,7 @@ export const InterpretationCard = React.memo(function InterpretationCard({
 
 const styles = StyleSheet.create({
   card: {
-    borderWidth: 1,
+    borderLeftWidth: 3,
     borderRadius: radii.md,
     padding: spacing.md,
     marginBottom: spacing.sm,

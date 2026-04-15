@@ -226,16 +226,16 @@ const styles = StyleSheet.create({
   },
   summaryText: {
     fontFamily: fontFamily.body,
-    fontSize: 14,
-    lineHeight: 22,
+    fontSize: 15,
+    lineHeight: 25,
   },
   bodySection: {
     marginBottom: spacing.md,
   },
   bodyText: {
     fontFamily: fontFamily.body,
-    fontSize: 14,
-    lineHeight: 22,
+    fontSize: 15,
+    lineHeight: 25,
   },
   gateCard: {
     borderWidth: 1,

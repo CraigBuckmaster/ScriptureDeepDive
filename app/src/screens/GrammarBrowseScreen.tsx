@@ -1,18 +1,23 @@
 /**
  * GrammarBrowseScreen — Browse grammar articles by language (Greek/Hebrew tabs)
  * and category, with search. Premium gated for full article access.
+ *
+ * Card #1359 (UI polish phase 2): migrated to BrowseScreenTemplate in
+ * SectionList mode with BrowseSectionHeader for category grouping, and
+ * BrowseFilterPill for the language tabs.
  */
 
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import {
-  View, Text, TouchableOpacity, FlatList, StyleSheet,
+  View, Text, TouchableOpacity, StyleSheet,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
-import { ScreenHeader } from '../components/ScreenHeader';
-import { SearchInput } from '../components/SearchInput';
-import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import { useTheme, spacing, fontFamily } from '../theme';
+import {
+  BrowseScreenTemplate,
+  BrowseFilterPill,
+  BrowseSectionHeader,
+} from '../components/BrowseScreenTemplate';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 import { getGrammarArticles, searchGrammarArticles } from '../db/content/grammar';
 import type { GrammarArticle } from '../types';
@@ -62,21 +67,20 @@ function GrammarBrowseScreen() {
   const isSearching = searchQuery.length >= 2;
   const displayData = isSearching ? searchResults : articles;
 
-  // Group articles by category
-  const categories = React.useMemo(() => {
+  // Group articles by category for SectionList.
+  const sections = useMemo(() => {
     const map = new Map<string, GrammarArticle[]>();
     for (const a of displayData) {
       const cat = a.category || 'General';
       if (!map.has(cat)) map.set(cat, []);
       map.get(cat)!.push(a);
     }
-    return Array.from(map.entries());
+    return Array.from(map.entries()).map(([title, data]) => ({ title, data }));
   }, [displayData]);
 
-  const renderArticle = useCallback(
-    (item: GrammarArticle) => (
+  const renderItem = useCallback(
+    ({ item }: { item: GrammarArticle }) => (
       <TouchableOpacity
-        key={item.id}
         onPress={() => handleArticlePress(item)}
         activeOpacity={0.6}
         style={[styles.articleRow, { borderBottomColor: base.border }]}
@@ -94,128 +98,54 @@ function GrammarBrowseScreen() {
     [base, handleArticlePress]
   );
 
+  const renderSectionHeader = useCallback(
+    ({ section }: { section: { title: string; data: GrammarArticle[] } }) => (
+      <BrowseSectionHeader title={section.title.toUpperCase()} />
+    ),
+    [],
+  );
+
+  const filterBar = !isSearching ? (
+    <View style={styles.tabRow}>
+      {LANGUAGE_TABS.map((tab) => (
+        <BrowseFilterPill
+          key={tab.key}
+          label={tab.label}
+          active={language === tab.key}
+          onPress={() => setLanguage(tab.key)}
+          role="tab"
+        />
+      ))}
+    </View>
+  ) : null;
+
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <View style={styles.topSection}>
-        <ScreenHeader
-          title="Grammar Reference"
-          onBack={() => navigation.goBack()}
-          style={styles.headerSpacing}
-        />
-        <View style={styles.searchWrap}>
-          <SearchInput
-            value={searchQuery}
-            onChangeText={setSearchQuery}
-            placeholder="Search grammar articles..."
-          />
-        </View>
-
-        {/* Language tabs */}
-        {!isSearching && (
-          <View style={styles.tabRow}>
-            {LANGUAGE_TABS.map((tab) => {
-              const isActive = language === tab.key;
-              return (
-                <TouchableOpacity
-                  key={tab.key}
-                  onPress={() => setLanguage(tab.key)}
-                  style={[
-                    styles.tab,
-                    { borderColor: isActive ? base.gold : base.border },
-                    isActive && { backgroundColor: base.gold + '10' },
-                  ]}
-                  accessibilityRole="tab"
-                  accessibilityState={{ selected: isActive }}
-                >
-                  <Text
-                    style={[
-                      styles.tabText,
-                      { color: isActive ? base.gold : base.textMuted },
-                    ]}
-                  >
-                    {tab.label}
-                  </Text>
-                </TouchableOpacity>
-              );
-            })}
-          </View>
-        )}
-      </View>
-
-      {/* Content */}
-      {loading ? (
-        <View style={styles.loadingPad}>
-          <LoadingSkeleton lines={6} />
-        </View>
-      ) : displayData.length === 0 ? (
-        <View style={styles.center}>
-          <Text style={[styles.emptyText, { color: base.textDim }]}>
-            {isSearching
-              ? `No articles found for "${searchQuery}"`
-              : 'No grammar articles available yet.'}
-          </Text>
-        </View>
-      ) : (
-        <FlatList
-          data={categories}
-          keyExtractor={([cat]) => cat}
-          renderItem={({ item: [category, items] }) => (
-            <View>
-              <View style={[styles.categoryHeader, { backgroundColor: base.bgElevated }]}>
-                <Text style={[styles.categoryText, { color: base.gold }]}>
-                  {category.toUpperCase()}
-                </Text>
-              </View>
-              {items.map(renderArticle)}
-            </View>
-          )}
-        />
-      )}
-    </SafeAreaView>
+    <BrowseScreenTemplate
+      title="Grammar Reference"
+      loading={loading}
+      search={searchQuery}
+      onSearchChange={setSearchQuery}
+      searchPlaceholder="Search grammar articles..."
+      filterBar={filterBar}
+      mode="section"
+      sections={sections}
+      renderItem={renderItem}
+      renderSectionHeader={renderSectionHeader}
+      keyExtractor={(a: GrammarArticle) => a.id}
+      emptyMessage={
+        isSearching
+          ? `No articles found for "${searchQuery}"`
+          : 'No grammar articles available yet.'
+      }
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  topSection: {
-    paddingHorizontal: spacing.md,
-    paddingTop: spacing.lg,
-  },
-  headerSpacing: {
-    marginBottom: spacing.md,
-  },
-  searchWrap: {
-    marginBottom: spacing.sm,
-  },
   tabRow: {
     flexDirection: 'row',
     gap: spacing.sm,
-    marginBottom: spacing.sm,
-  },
-  tab: {
-    flex: 1,
-    paddingVertical: spacing.xs + 2,
-    borderWidth: 1,
-    borderRadius: radii.pill,
-    alignItems: 'center',
-  },
-  tabText: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 13,
-  },
-  loadingPad: {
-    padding: spacing.lg,
-  },
-  categoryHeader: {
-    paddingHorizontal: spacing.md,
-    paddingVertical: 6,
-  },
-  categoryText: {
-    fontFamily: fontFamily.displaySemiBold,
-    fontSize: 11,
-    letterSpacing: 0.8,
+    paddingBottom: spacing.sm,
   },
   articleRow: {
     flexDirection: 'row',
@@ -237,17 +167,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginTop: 3,
     lineHeight: 16,
-  },
-  center: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: spacing.xl,
-  },
-  emptyText: {
-    fontFamily: fontFamily.ui,
-    fontSize: 14,
-    textAlign: 'center',
   },
 });
 

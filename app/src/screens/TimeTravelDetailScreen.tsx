@@ -16,6 +16,7 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { InterpretationCard } from '../components/interpretations/InterpretationCard';
 import { BadgeChip } from '../components/BadgeChip';
 import { UpgradePrompt } from '../components/UpgradePrompt';
+import { DetailHeroHeader } from '../components/DetailHeroHeader';
 import { useVerseInterpretations } from '../hooks/useInterpretations';
 import { usePremium } from '../hooks/usePremium';
 import { useTheme, spacing, fontFamily, churchEras } from '../theme';
@@ -112,14 +113,12 @@ function TimeTravelDetailScreen() {
   }
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <View style={styles.headerPad}>
-        <ScreenHeader
-          title="Through the Ages"
-          onBack={() => navigation.goBack()}
-        />
-        <Text style={[styles.verseRef, { color: base.gold }]}>{verseRef}</Text>
-      </View>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
+      <DetailHeroHeader
+        title="Through the Ages"
+        subtitle={verseRef}
+        onBack={() => navigation.goBack()}
+      />
 
       <ScrollView ref={scrollRef} style={styles.scroll} contentContainerStyle={styles.scrollContent}>
         {interpretations.length === 0 ? (
@@ -203,12 +202,6 @@ function TimeTravelDetailScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   headerPad: { paddingHorizontal: spacing.md, paddingTop: spacing.md },
-  verseRef: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 13,
-    marginTop: spacing.xs,
-    marginBottom: spacing.sm,
-  },
   scroll: { flex: 1 },
   scrollContent: { padding: spacing.md, paddingBottom: spacing.xxl },
   eraSection: {

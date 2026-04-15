@@ -10,7 +10,10 @@ import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useScholars } from '../hooks/useScholars';
 import type { Scholar } from '../types';
-import { BrowseScreenTemplate } from '../components/BrowseScreenTemplate';
+import {
+  BrowseScreenTemplate,
+  BrowseFilterPill,
+} from '../components/BrowseScreenTemplate';
 import { useSettingsStore } from '../stores';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
@@ -80,23 +83,12 @@ function ScholarBrowseScreen() {
     <ScrollView horizontal showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.filterRow}>
       {traditions.map((t) => (
-        <TouchableOpacity
+        <BrowseFilterPill
           key={t}
+          label={t === 'all' ? 'All' : t}
+          active={tradition === t}
           onPress={() => setTradition(t)}
-          style={[
-            styles.filterPill,
-            { borderColor: tradition === t ? base.gold : base.border },
-            tradition === t && { backgroundColor: base.gold + '12' },
-          ]}
-          activeOpacity={0.7}
-        >
-          <Text style={[
-            styles.filterLabel,
-            { color: tradition === t ? base.gold : base.textMuted },
-          ]}>
-            {t === 'all' ? 'All' : t}
-          </Text>
-        </TouchableOpacity>
+        />
       ))}
     </ScrollView>
   );
@@ -121,18 +113,8 @@ function ScholarBrowseScreen() {
 
 const styles = StyleSheet.create({
   filterRow: {
-    gap: 6,
+    gap: spacing.xs,
     marginBottom: spacing.md,
-  },
-  filterPill: {
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    borderRadius: 14,
-    borderWidth: 1,
-  },
-  filterLabel: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 10,
   },
   gridContent: {
     paddingHorizontal: spacing.md,

@@ -29,6 +29,8 @@ import { ContinueReadingHero } from '../components/ContinueReadingHero';
 import { ProgressRow } from '../components/ProgressRow';
 import { FeatureCard, CARD_WIDTH, type FeatureCardData } from '../components/FeatureCard';
 import { MilestoneToast } from '../components/MilestoneToast';
+import { GoldSeparator } from '../components/GoldSeparator';
+import { DetailSectionTitle } from '../components/DetailSectionTitle';
 import { useSettingsStore } from '../stores';
 import { shareVerse } from '../utils/shareVerse';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
@@ -139,16 +141,19 @@ function HomeScreen() {
           <ContinueReadingHero mostRecent={mostRecent} onPress={handleContinuePress} />
         </View>
 
+        {/* Major-zone divider: greeting + hero → scripture engagement */}
+        <GoldSeparator marginBottom={spacing.lg} />
+
         {/* ── 3. Verse of the Day (typography-forward) ──── */}
         <TouchableOpacity
           activeOpacity={0.7}
           onPress={handleVersePress}
-          style={[styles.verseCard, { backgroundColor: base.bg3, borderColor: base.gold + '14' }]}
+          style={[styles.verseCard, { backgroundColor: base.tintParchment, borderColor: base.gold + '14' }]}
           accessibilityRole="button"
           accessibilityLabel={`Verse of the day: ${verse.ref}. ${verse.text}. Tap to read in context`}
         >
           <View style={styles.verseCardHeader}>
-            <Text style={[styles.verseCardLabel, { color: base.textMuted }]}>VERSE OF THE DAY</Text>
+            <Text style={[styles.verseCardLabel, { color: base.gold }]}>VERSE OF THE DAY</Text>
             <TouchableOpacity
               onPress={(e) => { e.stopPropagation(); shareVerse(verse.text, verse.ref, translation); }}
               hitSlop={{ top: 8, right: 8, bottom: 8, left: 8 }}
@@ -158,7 +163,9 @@ function HomeScreen() {
               <Share2 size={15} color={base.textMuted} />
             </TouchableOpacity>
           </View>
-          <Text style={[styles.verseCardRef, { color: base.gold }]}>{verse.ref}</Text>
+          <View style={[styles.verseCardRefPill, { borderColor: base.gold + '30' }]}>
+            <Text style={[styles.verseCardRefText, { color: base.gold }]}>{verse.ref}</Text>
+          </View>
           <Text style={[styles.verseCardText, { color: base.text }]}>{verse.text}</Text>
         </TouchableOpacity>
 
@@ -167,9 +174,14 @@ function HomeScreen() {
           <ActivePlanCard />
         </View>
 
+        {/* Major-zone divider: scripture engagement → exploration + stats */}
+        <GoldSeparator marginBottom={spacing.lg} />
+
         {/* ── 5. "From your study" / "Start exploring" carousel ── */}
         <View style={styles.carouselSection}>
-          <Text style={[styles.sectionLabel, { color: base.textMuted }]}>{carouselLabel}</Text>
+          <View style={styles.carouselLabelWrap}>
+            <DetailSectionTitle title={carouselLabel} transform="uppercase" />
+          </View>
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -249,9 +261,9 @@ const styles = StyleSheet.create({
     marginBottom: 22,
   },
 
-  // Verse of the Day (#1091 restyle)
+  // Verse of the Day — Card #1361 polish: tintParchment bg, radii.xl, gold pill ref
   verseCard: {
-    borderRadius: radii.lg,
+    borderRadius: radii.xl,
     borderWidth: 1,
     paddingHorizontal: spacing.lg,
     paddingVertical: 28,
@@ -264,19 +276,27 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
   verseCardLabel: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 11,
-    letterSpacing: 0.5,
-  },
-  verseCardRef: {
     fontFamily: fontFamily.displayMedium,
-    fontSize: 14,
+    fontSize: 11,
+    letterSpacing: 0.9,
+  },
+  verseCardRefPill: {
+    alignSelf: 'flex-start',
+    borderWidth: 1,
+    borderRadius: radii.pill,
+    paddingHorizontal: spacing.sm,
+    paddingVertical: spacing.xs,
     marginBottom: spacing.sm,
+  },
+  verseCardRefText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 12,
+    letterSpacing: 0.3,
   },
   verseCardText: {
     fontFamily: fontFamily.bodyItalic,
     fontSize: 20,
-    lineHeight: 32,
+    lineHeight: 34,
   },
 
   // Carousel section (#1093)
@@ -285,10 +305,7 @@ const styles = StyleSheet.create({
     marginHorizontal: -HORIZONTAL_PAD,
     paddingHorizontal: HORIZONTAL_PAD,
   },
-  sectionLabel: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 11,
-    letterSpacing: 0.5,
+  carouselLabelWrap: {
     marginBottom: spacing.sm,
   },
   carouselContent: {

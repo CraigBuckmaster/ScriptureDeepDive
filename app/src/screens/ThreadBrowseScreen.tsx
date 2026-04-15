@@ -3,17 +3,19 @@
  *
  * Each thread shows its theme, tag chips (max 4), and stop count.
  * Follows the ProphecyBrowseScreen pattern.
+ *
+ * Card #1359 (UI polish phase 2): migrated to shared BrowseScreenTemplate.
+ * The custom TextInput is replaced by the template's SearchInput; the plain
+ * empty Text now flows through EmptyState + tint.
  */
 
 import React, { useState, useMemo } from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useThreads } from '../hooks/useThreads';
 import type { ParsedThread } from '../hooks/useThreads';
-import { ScreenHeader } from '../components/ScreenHeader';
-import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import { BrowseScreenTemplate, browseCardStyle } from '../components/BrowseScreenTemplate';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 export default function ThreadBrowseScreen() {
@@ -32,20 +34,12 @@ export default function ThreadBrowseScreen() {
     );
   }, [threads, search]);
 
-  if (isLoading) {
-    return (
-      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-        <View style={styles.loadingPad}>
-          <LoadingSkeleton lines={6} />
-        </View>
-      </SafeAreaView>
-    );
-  }
+  const cardStyle = browseCardStyle(base);
 
   const renderItem = ({ item }: { item: ParsedThread }) => (
     <TouchableOpacity
       onPress={() => navigation.navigate('ThreadDetail', { threadId: item.id })}
-      style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '25' }]}
+      style={cardStyle}
       accessibilityLabel={item.theme}
       accessibilityRole="button"
     >
@@ -70,73 +64,21 @@ export default function ThreadBrowseScreen() {
   );
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <View style={styles.topSection}>
-        <ScreenHeader
-          title="Threads"
-          onBack={() => navigation.goBack()}
-          style={styles.headerSpacing}
-        />
-
-        <TextInput
-          style={[styles.searchInput, { backgroundColor: base.bgElevated, color: base.text, borderColor: base.border }]}
-          placeholder="Search threads..."
-          placeholderTextColor={base.textMuted}
-          value={search}
-          onChangeText={setSearch}
-          autoCorrect={false}
-          accessibilityLabel="Search threads"
-        />
-      </View>
-
-      <FlatList
-        data={filtered}
-        keyExtractor={(t) => t.id}
-        renderItem={renderItem}
-        contentContainerStyle={styles.listContent}
-        ListEmptyComponent={
-          <Text style={[styles.emptyText, { color: base.textMuted }]}>
-            {search ? 'No threads match your search.' : 'No threads available.'}
-          </Text>
-        }
-      />
-    </SafeAreaView>
+    <BrowseScreenTemplate
+      title="Threads"
+      loading={isLoading}
+      search={search}
+      onSearchChange={setSearch}
+      searchPlaceholder="Search threads..."
+      data={filtered}
+      renderItem={renderItem}
+      keyExtractor={(t: ParsedThread) => t.id}
+      emptyMessage={search ? 'No threads match your search.' : 'No threads available.'}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  loadingPad: {
-    padding: spacing.lg,
-  },
-  topSection: {
-    paddingHorizontal: spacing.md,
-    paddingTop: spacing.lg,
-  },
-  headerSpacing: {
-    marginBottom: spacing.md,
-  },
-  searchInput: {
-    fontFamily: fontFamily.ui,
-    fontSize: 14,
-    borderWidth: 1,
-    borderRadius: radii.md,
-    paddingHorizontal: spacing.sm,
-    paddingVertical: spacing.xs + 2,
-    marginBottom: spacing.md,
-  },
-  listContent: {
-    paddingHorizontal: spacing.md,
-    paddingBottom: spacing.xxl,
-  },
-  card: {
-    borderWidth: 1,
-    borderRadius: radii.md,
-    padding: spacing.md,
-    marginBottom: spacing.sm,
-  },
   cardTitle: {
     fontFamily: fontFamily.displayMedium,
     fontSize: 15,
@@ -160,11 +102,5 @@ const styles = StyleSheet.create({
   stopCount: {
     fontFamily: fontFamily.ui,
     fontSize: 11,
-  },
-  emptyText: {
-    fontFamily: fontFamily.ui,
-    fontSize: 14,
-    textAlign: 'center',
-    marginTop: spacing.xl,
   },
 });
