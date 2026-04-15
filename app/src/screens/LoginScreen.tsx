@@ -9,7 +9,6 @@ import React, { useState } from 'react';
 import {
   View,
   Text,
-  TextInput,
   TouchableOpacity,
   ScrollView,
   ActivityIndicator,
@@ -21,6 +20,7 @@ import type { ScreenNavProp } from '../navigation/types';
 import { useAuthStore } from '../stores';
 import { useAuth } from '../hooks/useAuth';
 import { ScreenHeader } from '../components/ScreenHeader';
+import { AuthInput } from '../components/AuthInput';
 import { useTheme, spacing, fontFamily, radii } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
@@ -127,17 +127,8 @@ function LoginScreen() {
         </View>
 
         {/* Email input */}
-        <TextInput
-          style={[
-            styles.input,
-            {
-              backgroundColor: base.bgElevated,
-              borderColor: base.border,
-              color: base.text,
-            },
-          ]}
+        <AuthInput
           placeholder="Email"
-          placeholderTextColor={base.textMuted}
           value={email}
           onChangeText={setEmail}
           autoCapitalize="none"
@@ -146,18 +137,9 @@ function LoginScreen() {
         />
 
         {/* Password input */}
-        <TextInput
-          style={[
-            styles.input,
-            {
-              backgroundColor: base.bgElevated,
-              borderColor: base.border,
-              color: base.text,
-              marginTop: spacing.sm,
-            },
-          ]}
+        <View style={styles.inputSpacer} />
+        <AuthInput
           placeholder="Password"
-          placeholderTextColor={base.textMuted}
           value={password}
           onChangeText={setPassword}
           secureTextEntry
@@ -267,13 +249,8 @@ const styles = StyleSheet.create({
     fontSize: 13,
     marginHorizontal: spacing.md,
   },
-  input: {
-    height: 44,
-    borderWidth: 1,
-    borderRadius: radii.md,
-    paddingHorizontal: spacing.md,
-    fontFamily: fontFamily.ui,
-    fontSize: 15,
+  inputSpacer: {
+    height: spacing.sm,
   },
   forgotRow: {
     alignSelf: 'flex-end',

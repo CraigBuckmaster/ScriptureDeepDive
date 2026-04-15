@@ -8,7 +8,6 @@ import React, { useState } from 'react';
 import {
   View,
   Text,
-  TextInput,
   TouchableOpacity,
   ScrollView,
   ActivityIndicator,
@@ -19,6 +18,7 @@ import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useAuthStore } from '../stores';
 import { ScreenHeader } from '../components/ScreenHeader';
+import { AuthInput } from '../components/AuthInput';
 import { useTheme, spacing, fontFamily, radii } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
@@ -64,17 +64,8 @@ function ForgotPasswordScreen() {
         </Text>
 
         {/* Email input */}
-        <TextInput
-          style={[
-            styles.input,
-            {
-              backgroundColor: base.bgElevated,
-              borderColor: base.border,
-              color: base.text,
-            },
-          ]}
+        <AuthInput
           placeholder="Email"
-          placeholderTextColor={base.textMuted}
           value={email}
           onChangeText={setEmail}
           autoCapitalize="none"
@@ -138,14 +129,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 22,
     marginBottom: spacing.lg,
-  },
-  input: {
-    height: 44,
-    borderWidth: 1,
-    borderRadius: radii.md,
-    paddingHorizontal: spacing.md,
-    fontFamily: fontFamily.ui,
-    fontSize: 15,
   },
   primaryButton: {
     height: 48,
