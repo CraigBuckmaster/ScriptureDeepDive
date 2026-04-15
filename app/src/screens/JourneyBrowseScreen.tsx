@@ -6,23 +6,29 @@
  * Taps navigate to PersonJourney or ConceptDetail (journey tab).
  *
  * Part of Journeys on Explore feature.
+ *
+ * Card #1359 (UI polish phase 2): migrated to shared BrowseScreenTemplate.
+ * The People/Concepts tab switcher now uses BrowseFilterPill for consistency
+ * with other browse screens; row-level layout is preserved.
  */
 
 import React, { useState, useCallback } from 'react';
 import {
-  View, Text, TouchableOpacity, FlatList, StyleSheet,
+  View, Text, TouchableOpacity, StyleSheet,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { ChevronRight } from 'lucide-react-native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { useJourneyBrowse, type PersonJourneyEntry, type ConceptJourneyEntry } from '../hooks/useJourneyBrowse';
-import { ScreenHeader } from '../components/ScreenHeader';
-import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import {
+  BrowseScreenTemplate,
+  BrowseFilterPill,
+} from '../components/BrowseScreenTemplate';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 type Tab = 'people' | 'concepts';
+type AnyJourneyEntry = PersonJourneyEntry | ConceptJourneyEntry;
 
 function JourneyBrowseScreen() {
   const { base } = useTheme();
@@ -40,7 +46,7 @@ function JourneyBrowseScreen() {
     navigation.navigate('ConceptDetail', { conceptId, initialTab: 'journey' });
   }, [navigation]);
 
-  const renderPersonItem = useCallback(({ item }: { item: PersonJourneyEntry }) => (
+  const renderPersonItem = useCallback((item: PersonJourneyEntry) => (
     <TouchableOpacity
       style={[styles.row, { borderBottomColor: base.border }]}
       onPress={() => handlePersonPress(item.personId)}
@@ -68,7 +74,7 @@ function JourneyBrowseScreen() {
     </TouchableOpacity>
   ), [base, handlePersonPress]);
 
-  const renderConceptItem = useCallback(({ item }: { item: ConceptJourneyEntry }) => (
+  const renderConceptItem = useCallback((item: ConceptJourneyEntry) => (
     <TouchableOpacity
       style={[styles.row, { borderBottomColor: base.border }]}
       onPress={() => handleConceptPress(item.conceptId)}
@@ -96,98 +102,60 @@ function JourneyBrowseScreen() {
     </TouchableOpacity>
   ), [base, handleConceptPress]);
 
-  if (isLoading) {
-    return (
-      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-        <ScreenHeader title="Journeys" onBack={() => navigation.goBack()} />
-        <View style={styles.loadingPad}>
-          <LoadingSkeleton lines={8} />
-        </View>
-      </SafeAreaView>
-    );
-  }
+  const data: AnyJourneyEntry[] = activeTab === 'people' ? personJourneys : conceptJourneys;
+
+  const renderItem = useCallback(({ item }: { item: AnyJourneyEntry }) => {
+    if (activeTab === 'people') {
+      return renderPersonItem(item as PersonJourneyEntry);
+    }
+    return renderConceptItem(item as ConceptJourneyEntry);
+  }, [activeTab, renderPersonItem, renderConceptItem]);
+
+  const keyExtractor = useCallback((item: AnyJourneyEntry) => {
+    return activeTab === 'people'
+      ? (item as PersonJourneyEntry).personId
+      : (item as ConceptJourneyEntry).conceptId;
+  }, [activeTab]);
+
+  const filterBar = (
+    <View style={styles.tabRow}>
+      <BrowseFilterPill
+        label={`People (${personJourneys.length})`}
+        active={activeTab === 'people'}
+        onPress={() => setActiveTab('people')}
+        role="tab"
+      />
+      <BrowseFilterPill
+        label={`Concepts (${conceptJourneys.length})`}
+        active={activeTab === 'concepts'}
+        onPress={() => setActiveTab('concepts')}
+        role="tab"
+      />
+    </View>
+  );
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <ScreenHeader title="Journeys" onBack={() => navigation.goBack()} />
-
-      {/* Tab bar */}
-      <View style={[styles.tabBar, { borderBottomColor: base.border }]}>
-        <TouchableOpacity
-          style={[styles.tab, activeTab === 'people' && [styles.tabActive, { backgroundColor: base.gold + '15' }]]}
-          onPress={() => setActiveTab('people')}
-          accessibilityRole="tab"
-          accessibilityState={{ selected: activeTab === 'people' }}
-        >
-          <Text style={[styles.tabText, { color: base.textMuted }, activeTab === 'people' && { color: base.gold }]}>
-            People ({personJourneys.length})
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[styles.tab, activeTab === 'concepts' && [styles.tabActive, { backgroundColor: base.gold + '15' }]]}
-          onPress={() => setActiveTab('concepts')}
-          accessibilityRole="tab"
-          accessibilityState={{ selected: activeTab === 'concepts' }}
-        >
-          <Text style={[styles.tabText, { color: base.textMuted }, activeTab === 'concepts' && { color: base.gold }]}>
-            Concepts ({conceptJourneys.length})
-          </Text>
-        </TouchableOpacity>
-      </View>
-
-      {/* List */}
-      {activeTab === 'people' ? (
-        <FlatList
-          data={personJourneys}
-          keyExtractor={(item) => item.personId}
-          renderItem={renderPersonItem}
-          contentContainerStyle={styles.listContent}
-          showsVerticalScrollIndicator={false}
-        />
-      ) : (
-        <FlatList
-          data={conceptJourneys}
-          keyExtractor={(item) => item.conceptId}
-          renderItem={renderConceptItem}
-          contentContainerStyle={styles.listContent}
-          showsVerticalScrollIndicator={false}
-        />
-      )}
-    </SafeAreaView>
+    <BrowseScreenTemplate
+      title="Journeys"
+      loading={isLoading}
+      filterBar={filterBar}
+      data={data}
+      renderItem={renderItem}
+      keyExtractor={keyExtractor}
+      emptyMessage={activeTab === 'people' ? 'No journeys available.' : 'No concept journeys available.'}
+      contentContainerStyle={styles.listContent}
+    />
   );
 }
 
 export default withErrorBoundary(JourneyBrowseScreen);
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  loadingPad: {
-    padding: spacing.lg,
-  },
-
-  // Tab bar
-  tabBar: {
+  tabRow: {
     flexDirection: 'row',
-    borderBottomWidth: 1,
-    paddingHorizontal: spacing.lg,
+    gap: spacing.sm,
+    paddingBottom: spacing.md,
   },
-  tab: {
-    paddingVertical: spacing.sm + 2,
-    paddingHorizontal: spacing.md,
-    borderRadius: radii.sm,
-    marginBottom: -1,
-  },
-  tabActive: {
-    borderRadius: radii.sm,
-  },
-  tabText: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 13,
-  },
-
-  // List
   listContent: {
     paddingBottom: spacing.xxl,
   },

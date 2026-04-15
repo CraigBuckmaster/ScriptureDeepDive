@@ -11,13 +11,21 @@ import { useNavigation } from '@react-navigation/native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { families } from '../theme/colors';
 import { useDebateTopics, DEBATE_CATEGORY_LABELS } from '../hooks/useDebateTopics';
-import { BrowseScreenTemplate } from '../components/BrowseScreenTemplate';
+import {
+  BrowseScreenTemplate,
+  BrowseFilterPill,
+} from '../components/BrowseScreenTemplate';
 import type { DebateTopicSummary } from '../types';
 import type { ScreenNavProp } from '../navigation/types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 type Nav = ScreenNavProp<'Explore', 'DebateBrowse'>;
 
+/**
+ * Per-category accent colors kept as-is — they're used on the card's left
+ * border + tradition dots to preserve at-a-glance category differentiation.
+ * The filter bar itself uses the monochrome gold pills now (#1359).
+ */
 const CATEGORY_COLORS: Record<string, string> = {
   theological: '#64B5F6', // data-color: intentional
   ethical: '#81C784', // data-color: intentional
@@ -25,8 +33,6 @@ const CATEGORY_COLORS: Record<string, string> = {
   textual: '#BA68C8', // data-color: intentional
   interpretive: '#4FC3F7', // data-color: intentional
 };
-
-const CHIP_ACTIVE_TEXT = '#fff'; // overlay-color: intentional (white text on active colored category chip)
 
 function getPositionTraditions(topic: DebateTopicSummary): string[] {
   try {
@@ -112,42 +118,19 @@ function DebateBrowseScreen() {
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.chipRow}
     >
-      <TouchableOpacity
+      <BrowseFilterPill
+        label="All"
+        active={categoryFilter === 'all'}
         onPress={() => setCategoryFilter('all')}
-        style={[
-          styles.chip,
-          {
-            backgroundColor: categoryFilter === 'all' ? base.gold : base.gold + '15',
-            borderColor: base.gold + '40',
-          },
-        ]}
-      >
-        <Text style={[styles.chipText, { color: categoryFilter === 'all' ? base.bg : base.gold }]}>
-          All
-        </Text>
-      </TouchableOpacity>
-      {categories.map((cat) => {
-        const active = categoryFilter === cat;
-        const color = CATEGORY_COLORS[cat] || base.gold;
-        return (
-          <TouchableOpacity
-            key={cat}
-            onPress={() => setCategoryFilter(cat)}
-            style={[
-              styles.chip,
-              {
-                backgroundColor: active ? color : color + '15',
-                borderColor: color + '40',
-              },
-            ]}
-          >
-            {/* data-color: intentional — white text on active colored chip */}
-            <Text style={[styles.chipText, { color: active ? CHIP_ACTIVE_TEXT : color }]}>
-              {DEBATE_CATEGORY_LABELS[cat] || cat}
-            </Text>
-          </TouchableOpacity>
-        );
-      })}
+      />
+      {categories.map((cat) => (
+        <BrowseFilterPill
+          key={cat}
+          label={DEBATE_CATEGORY_LABELS[cat] || cat}
+          active={categoryFilter === cat}
+          onPress={() => setCategoryFilter(cat)}
+        />
+      ))}
     </ScrollView>
   );
 
@@ -173,16 +156,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 8,
     paddingBottom: spacing.xs,
-  },
-  chip: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: radii.md,
-    borderWidth: 1,
-  },
-  chipText: {
-    fontFamily: fontFamily.displayMedium,
-    fontSize: 12,
   },
   list: {
     padding: spacing.md,
