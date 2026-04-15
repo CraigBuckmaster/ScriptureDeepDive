@@ -242,17 +242,41 @@ class ContentUpdaterService {
    * Download a complete replacement database from R2.
    * Downloads to a temp file, verifies checksum AND content hash
    * BEFORE touching the live database, then swaps in place.
+   *
+   * @param onProgress Optional callback receiving download percentage (0–100).
    */
-  async downloadFullDb(manifest: Manifest): Promise<UpdateResult> {
+  async downloadFullDb(
+    manifest: Manifest,
+    onProgress?: (pct: number) => void,
+  ): Promise<UpdateResult> {
     const tempPath = `${SQLITE_DIR}scripture_download.db`;
     const tempDbName = 'scripture_download.db';
     try {
       const fromVersion = await this.getInstalledVersion();
 
-      // Download the full DB
-      const download = await FileSystem.downloadAsync(manifest.full_db_url, tempPath);
-      if (download.status !== 200) {
-        throw new Error(`Full DB download failed: HTTP ${download.status}`);
+      // Ensure SQLite directory exists (first-launch fallback — scripture.db
+      // may never have been opened yet, so the parent dir may not exist).
+      await FileSystem.makeDirectoryAsync(SQLITE_DIR, { intermediates: true });
+
+      // Remove any partial download from a previous failed attempt
+      await FileSystem.deleteAsync(tempPath, { idempotent: true });
+
+      // Download the full DB with progress tracking.
+      // createDownloadResumable supports progressCallback; downloadAsync does not.
+      const resumable = FileSystem.createDownloadResumable(
+        manifest.full_db_url,
+        tempPath,
+        {},
+        (downloadProgress) => {
+          const { totalBytesWritten, totalBytesExpectedToWrite } = downloadProgress;
+          if (totalBytesExpectedToWrite > 0) {
+            onProgress?.((totalBytesWritten / totalBytesExpectedToWrite) * 100);
+          }
+        },
+      );
+      const download = await resumable.downloadAsync();
+      if (!download || download.status !== 200) {
+        throw new Error(`Full DB download failed: HTTP ${download?.status ?? 'unknown'}`);
       }
 
       // Verify file checksum

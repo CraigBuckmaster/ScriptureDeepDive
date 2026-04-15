@@ -21,18 +21,11 @@ jest.mock('expo-sqlite', () => ({
   openDatabaseAsync: jest.fn().mockResolvedValue(mockDbInstance),
 }));
 
-jest.mock('expo-asset', () => ({
-  Asset: {
-    fromModule: jest.fn().mockReturnValue({
-      downloadAsync: jest.fn().mockResolvedValue(undefined),
-      localUri: '/fake/asset/scripture.db',
-    }),
-  },
-}));
-
+// Simulate a DB file present on-device so initDatabase() returns 'ready'.
+const mockGetInfoAsync = jest.fn().mockResolvedValue({ exists: true, size: 5_000_000 });
 jest.mock('expo-file-system/legacy', () => ({
   documentDirectory: '/fake/docs/',
-  getInfoAsync: jest.fn().mockResolvedValue({ exists: false }),
+  getInfoAsync: (...args: any[]) => mockGetInfoAsync(...args),
   makeDirectoryAsync: jest.fn().mockResolvedValue(undefined),
   copyAsync: jest.fn().mockResolvedValue(undefined),
   deleteAsync: jest.fn().mockResolvedValue(undefined),
@@ -48,6 +41,7 @@ jest.mock('@/db/translationManager', () => ({
 
 beforeEach(() => {
   jest.clearAllMocks();
+  mockGetInfoAsync.mockResolvedValue({ exists: true, size: 5_000_000 });
 });
 
 describe('database', () => {
@@ -55,10 +49,17 @@ describe('database', () => {
     jest.resetModules();
   });
 
-  it('initDatabase returns a database instance', async () => {
+  it('initDatabase returns ready when DB is present', async () => {
     const { initDatabase } = require('@/db/database');
-    const db = await initDatabase();
-    expect(db).toBe(mockDbInstance);
+    const status = await initDatabase();
+    expect(status).toBe('ready');
+  });
+
+  it('initDatabase returns needs_download when DB is missing', async () => {
+    mockGetInfoAsync.mockResolvedValueOnce({ exists: false });
+    const { initDatabase } = require('@/db/database');
+    const status = await initDatabase();
+    expect(status).toBe('needs_download');
   });
 
   it('getDb throws if not initialized', () => {
@@ -73,11 +74,12 @@ describe('database', () => {
     expect(db).toBe(mockDbInstance);
   });
 
-  it('initDatabase returns cached db on second call', async () => {
+  it('initDatabase returns ready on cached second call', async () => {
     const { initDatabase } = require('@/db/database');
-    const db1 = await initDatabase();
-    const db2 = await initDatabase();
-    expect(db1).toBe(db2);
+    const s1 = await initDatabase();
+    const s2 = await initDatabase();
+    expect(s1).toBe('ready');
+    expect(s2).toBe('ready');
   });
 
   it('getVerseDb returns core db for bundled translations', async () => {

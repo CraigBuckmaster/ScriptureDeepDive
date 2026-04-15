@@ -22,7 +22,8 @@ export function mockDatabaseModule() {
   return {
     getDb: () => sharedMockDb,
     getVerseDb: jest.fn().mockResolvedValue(sharedMockDb),
-    initDatabase: jest.fn().mockResolvedValue(sharedMockDb),
+    // initDatabase now returns a status ('ready' | 'needs_download')
+    initDatabase: jest.fn().mockResolvedValue('ready'),
   };
 }
 
