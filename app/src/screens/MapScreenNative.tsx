@@ -35,8 +35,8 @@ import type { MapStory, Place } from '../types';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { logger, safeParse } from '../utils/logger';
 import { lightImpact } from '../utils/haptics';
-import { buildPlaceToStoriesMap } from './MapScreen';
 import { STYLE_ANCIENT, STYLE_MODERN } from '../constants/mapStyles';
+import { buildPlaceToStoriesMap } from './MapScreen';
 
 // Roughly the Fertile Crescent — Israel through Turkey, Egypt, Iraq.
 // Used as default camera and as the pre-cached tile region (#1321).

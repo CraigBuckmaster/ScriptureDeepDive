@@ -19,8 +19,8 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import type { ScreenNavProp } from '../navigation/types';
 import { Search, X, Plus, Folder, Tag, FileText, ChevronRight, Link } from 'lucide-react-native';
+import type { ScreenNavProp } from '../navigation/types';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { TagChips } from '../components/TagChips';
 import { CollectionPicker } from '../components/CollectionPicker';

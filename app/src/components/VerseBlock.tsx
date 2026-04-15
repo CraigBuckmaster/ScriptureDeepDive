@@ -5,11 +5,11 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { useTheme, spacing, fontFamily } from '../theme';
+import type { Verse, VHLGroup } from '../types';
 import { HighlightedText } from './HighlightedText';
 import { NoteIndicator } from './NoteIndicator';
 import { ComparisonVerse } from './ComparisonVerse';
-import { useTheme, spacing, fontFamily } from '../theme';
-import type { Verse, VHLGroup } from '../types';
 
 interface Props {
   verses: Verse[];

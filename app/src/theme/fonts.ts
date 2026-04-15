@@ -10,7 +10,6 @@ import {
   Cinzel_500Medium,
   Cinzel_600SemiBold,
 } from '@expo-google-fonts/cinzel';
-
 import {
   EBGaramond_400Regular,
   EBGaramond_500Medium,
@@ -18,7 +17,6 @@ import {
   EBGaramond_400Regular_Italic,
   EBGaramond_500Medium_Italic,
 } from '@expo-google-fonts/eb-garamond';
-
 import {
   SourceSans3_300Light,
   SourceSans3_400Regular,

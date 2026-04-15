@@ -11,7 +11,6 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
-
 import { useTheme, spacing, fontFamily } from '../theme';
 import { ContentUpdater } from '../services/ContentUpdater';
 

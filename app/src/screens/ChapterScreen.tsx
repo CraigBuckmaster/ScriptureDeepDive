@@ -15,7 +15,6 @@ import { View, Text, TouchableOpacity, ScrollView, Platform, UIManager, StyleShe
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import type { Book } from '../types';
-
 import { useChapterData } from '../hooks/useChapterData';
 import { useSwipeNavigation } from '../hooks/useSwipeNavigation';
 import { useNotedVerses } from '../hooks/useNotedVerses';
@@ -27,7 +26,6 @@ import { useStoreReview } from '../hooks/useStoreReview';
 import { logEvent } from '../services/analytics';
 import { updateLastActive, cancelReengagement } from '../services/reengagement';
 import { getBook, getRedemptiveAct } from '../db/content';
-
 import { useRedLetter } from '../hooks/useRedLetter';
 import { ChapterNavBar } from '../components/ChapterNavBar';
 import { CompareBar } from '../components/CompareBar';
@@ -39,16 +37,13 @@ import { TTSControls } from '../components/TTSControls';
 import { useBookmarkedVerses } from '../hooks/useBookmarkedVerses';
 import { useAvailableLenses, useChapterLensContent } from '../hooks/useHermeneuticLens';
 import { LensToggleBar } from '../components/LensToggleBar';
-
 import { TRANSLATION_MAP } from '../db/translationRegistry';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { usePremium } from '../hooks/usePremium';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
-
 import { ChapterVerseList } from '../components/ChapterVerseList';
 import { ChapterReaderProvider } from '../components/ChapterReaderContext';
 import { ChapterPanelSheet } from '../components/ChapterPanelSheet';
-
 import { useChapterTTS } from '../hooks/chapter/useChapterTTS';
 import { useChapterHighlights } from '../hooks/chapter/useChapterHighlights';
 import { useChapterCoaching } from '../hooks/chapter/useChapterCoaching';

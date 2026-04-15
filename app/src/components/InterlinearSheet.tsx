@@ -13,10 +13,10 @@ import {
 } from 'react-native';
 import { X } from 'lucide-react-native';
 import { getInterlinearWords } from '../db/content';
-import { LoadingSkeleton } from './LoadingSkeleton';
-import { GrammarSheet } from './GrammarSheet';
 import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { InterlinearWord } from '../types';
+import { LoadingSkeleton } from './LoadingSkeleton';
+import { GrammarSheet } from './GrammarSheet';
 
 interface ConcordanceParams {
   strongs: string;

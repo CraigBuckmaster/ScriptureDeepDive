@@ -11,9 +11,9 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useTheme, spacing, fontFamily } from '../theme';
 import { RelatedContentCard, CARD_WIDTH } from './RelatedContentCard';
 import type { RelatedContentItem } from './RelatedContentCard';
-import { useTheme, spacing, fontFamily } from '../theme';
 
 interface Props {
   items: RelatedContentItem[];

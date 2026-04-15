@@ -18,7 +18,6 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
-
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { getAllTimelineEntries, getEras } from '../db/content';
 import type { EraRow } from '../db/content/reference';

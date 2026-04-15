@@ -32,13 +32,13 @@ import {
   ChevronLeft, ChevronDown, ChevronUp,
   BookOpen, User, HelpCircle, Quote, Target, BookMarked,
 } from 'lucide-react-native';
+import type { StackNavigationProp } from '@react-navigation/stack';
 import {
   useDifficultPassage,
   DifficultPassageCategory,
   DifficultPassageResponse,
 } from '../hooks/useDifficultPassages';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
-import type { StackNavigationProp } from '@react-navigation/stack';
 import type { ExploreStackParamList } from '../navigation/types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 

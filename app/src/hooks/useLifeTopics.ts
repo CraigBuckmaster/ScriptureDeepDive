@@ -6,7 +6,6 @@
  */
 
 import { useState, useCallback, useEffect, useRef } from 'react';
-import { useAsyncData } from './useAsyncData';
 import {
   getLifeTopicCategories,
   getLifeTopics,
@@ -17,6 +16,7 @@ import {
   getRelatedLifeTopics,
 } from '../db/content/lifeTopics';
 import type { LifeTopicCategory, LifeTopic } from '../types';
+import { useAsyncData } from './useAsyncData';
 
 export function useLifeTopicCategories() {
   return useAsyncData<LifeTopicCategory[]>(getLifeTopicCategories, [], []);

@@ -7,9 +7,9 @@
 
 import React, { useMemo } from 'react';
 import { useColorScheme } from 'react-native';
+import { useSettingsStore } from '../stores';
 import { ThemeContext } from './ThemeContext';
 import { buildPalette, type ThemeMode } from './palettes';
-import { useSettingsStore } from '../stores';
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const systemScheme = useColorScheme();

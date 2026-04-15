@@ -5,10 +5,10 @@
  * via getUserDb().
  */
 
-import { getUserDb } from './userDatabase';
 import type { UserNote } from '../types';
-import { getPreference } from './userQueries';
 import { logger } from '../utils/logger';
+import { getUserDb } from './userDatabase';
+import { getPreference } from './userQueries';
 
 // ── Notes (write) ─────────────────────────────────────────────────
 

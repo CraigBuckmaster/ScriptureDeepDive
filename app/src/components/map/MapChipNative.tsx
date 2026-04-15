@@ -41,11 +41,11 @@ type ChipCameraSettings = {
     paddingBottom?: number;
   };
 };
-import { StoryOverlays } from './StoryOverlays';
 import { STYLE_ANCIENT } from '../../constants/mapStyles';
 import { useTheme, spacing, radii, fontFamily } from '../../theme';
 import type { MapStory, Place } from '../../types';
 import { safeParse } from '../../utils/logger';
+import { StoryOverlays } from './StoryOverlays';
 
 interface Props {
   story: MapStory;

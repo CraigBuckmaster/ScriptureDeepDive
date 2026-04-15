@@ -14,9 +14,9 @@
 import { Platform } from 'react-native';
 import * as SQLite from 'expo-sqlite';
 import * as FileSystem from 'expo-file-system/legacy';
+import { logger } from '../utils/logger';
 import { isBundled } from './translationRegistry';
 import { openTranslationDb } from './translationManager';
-import { logger } from '../utils/logger';
 
 /**
  * Result of {@link initDatabase}. When `'needs_download'`, the caller should

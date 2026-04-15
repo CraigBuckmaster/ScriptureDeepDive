@@ -12,11 +12,11 @@ import {
 } from 'react-native';
 import { ArrowLeft, X, BookOpen, Search } from 'lucide-react-native';
 import { useLexicon } from '../hooks/useLexicon';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET, panels } from '../theme';
+import type { DefinitionJSON } from '../types/lexicon';
 import { LexiconDefinition } from './LexiconDefinition';
 import { RelatedWordCard } from './RelatedWordCard';
 import { LoadingSkeleton } from './LoadingSkeleton';
-import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET, panels } from '../theme';
-import type { DefinitionJSON } from '../types/lexicon';
 
 interface ConcordanceParams {
   strongs?: string;

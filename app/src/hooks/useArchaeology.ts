@@ -6,7 +6,6 @@
  */
 
 import { useState, useEffect, useRef } from 'react';
-import { useAsyncData } from './useAsyncData';
 import {
   getAllDiscoveries,
   getDiscovery,
@@ -16,6 +15,7 @@ import {
   getDiscoveryImages,
 } from '../db/content/archaeology';
 import type { ArchaeologicalDiscovery, ArchaeologyVerseLink, ArchaeologyImage } from '../types';
+import { useAsyncData } from './useAsyncData';
 
 export function useArchaeologyBrowse(category?: string) {
   return useAsyncData<ArchaeologicalDiscovery[]>(

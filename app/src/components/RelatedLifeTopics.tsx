@@ -9,8 +9,8 @@
 import React, { useMemo } from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { BadgeChip } from './BadgeChip';
 import { useTheme, spacing, fontFamily } from '../theme';
+import { BadgeChip } from './BadgeChip';
 
 interface RelatedLifeTopic {
   topic_id: string;

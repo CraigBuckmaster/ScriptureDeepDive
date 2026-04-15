@@ -5,11 +5,11 @@
 
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+import { BookmarkButton } from '../BookmarkButton';
+import { spacing } from '../../theme';
 import { UpvoteButton } from './UpvoteButton';
 import { StarRating } from './StarRating';
 import { ShareButton } from './ShareButton';
-import { BookmarkButton } from '../BookmarkButton';
-import { spacing } from '../../theme';
 
 interface Props {
   /** Upvote state */

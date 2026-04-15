@@ -8,11 +8,11 @@
 
 import React, { useMemo } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { useTheme, spacing, fontFamily } from '../../theme';
+import type { LitPanel } from '../../types';
 import { TabbedPanelRenderer } from './TabbedPanelRenderer';
 import type { TabConfig } from './TabbedPanelRenderer';
 import { ChiasmView } from './ChiasmView';
-import { useTheme, spacing, fontFamily } from '../../theme';
-import type { LitPanel } from '../../types';
 
 interface Props { data: LitPanel; defaultTab?: string; }
 

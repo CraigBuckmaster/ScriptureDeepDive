@@ -5,11 +5,11 @@
  * via getUserDb().
  */
 
-import { getUserDb } from './userDatabase';
-import { getDb } from './database';
 import { chapterPrefix, formatVerseRef } from '../utils/verseRef';
 import { escapeLike } from '../utils/escapeLike';
 import type { UserNote, ReadingProgress, Bookmark, RecentChapter, StudyCollection, StudySession, StudySessionEvent } from '../types';
+import { getDb } from './database';
+import { getUserDb } from './userDatabase';
 
 // ── Shared interfaces ─────────────────────────────────────────────
 

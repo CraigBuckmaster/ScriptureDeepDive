@@ -18,8 +18,8 @@ import { Platform } from 'react-native';
 import * as SQLite from 'expo-sqlite';
 import { Asset } from 'expo-asset';
 import * as FileSystem from 'expo-file-system/legacy';
-import { TRANSLATION_MAP, type TranslationInfo } from './translationRegistry';
 import { logger } from '../utils/logger';
+import { TRANSLATION_MAP, type TranslationInfo } from './translationRegistry';
 
 /** Cache of open DB connections for supplemental translations. */
 const openDbs = new Map<string, SQLite.SQLiteDatabase>();

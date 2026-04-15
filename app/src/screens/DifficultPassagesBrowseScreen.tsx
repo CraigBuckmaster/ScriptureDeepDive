@@ -11,6 +11,7 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import type { StackNavigationProp } from '@react-navigation/stack';
 import {
   useDifficultPassages,
   DifficultPassage,
@@ -18,7 +19,6 @@ import {
 } from '../hooks/useDifficultPassages';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { BrowseScreenTemplate } from '../components/BrowseScreenTemplate';
-import type { StackNavigationProp } from '@react-navigation/stack';
 import type { ExploreStackParamList } from '../navigation/types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 

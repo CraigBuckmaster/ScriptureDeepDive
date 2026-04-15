@@ -1,11 +1,11 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home, Library, Compass, Search, MoreHorizontal } from 'lucide-react-native';
+import { useTheme } from '../theme';
 import { HomeStack } from './HomeStack';
 import { ReadStack } from './ReadStack';
 import { ExploreStack } from './ExploreStack';
 import { SearchStack } from './SearchStack';
 import { MoreStack } from './MoreStack';
-import { useTheme } from '../theme';
 
 const Tab = createBottomTabNavigator();
 

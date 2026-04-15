@@ -6,9 +6,9 @@
 
 import React, { useState, useCallback } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import SubmissionCard from './SubmissionCard';
 import { useTheme, spacing, radii, fontFamily } from '../../theme';
 import type { Submission } from '../../types';
+import SubmissionCard from './SubmissionCard';
 
 type SortMode = 'newest' | 'top_rated';
 

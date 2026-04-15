@@ -8,10 +8,10 @@
 
 import React, { useCallback } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { SectionHeader } from './SectionHeader';
-import { VerseBlock } from './VerseBlock';
 import { useTheme, spacing } from '../theme';
 import type { Section, SectionPanel, Verse, VHLGroup, ParsedRef } from '../types';
+import { SectionHeader } from './SectionHeader';
+import { VerseBlock } from './VerseBlock';
 
 interface Props {
   section: Section;

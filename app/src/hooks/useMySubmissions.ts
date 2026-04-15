@@ -2,10 +2,10 @@
  * hooks/useMySubmissions.ts — Current user's submissions.
  */
 
-import { useAsyncData } from './useAsyncData';
 import { useAuthStore } from '../stores';
 import { getSupabase } from '../lib/supabase';
 import type { Submission } from '../types';
+import { useAsyncData } from './useAsyncData';
 
 async function fetchMySubmissions(userId: string): Promise<Submission[]> {
   const supabase = getSupabase();

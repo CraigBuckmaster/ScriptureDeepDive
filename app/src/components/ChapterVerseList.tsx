@@ -10,7 +10,9 @@ import React, { useMemo, useState, useCallback } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { Section, SectionPanel, ChapterPanel } from '../types';
-
+import { useRelatedContent } from '../hooks/useRelatedContent';
+import { useMapChipData } from '../hooks/useMapChipData';
+import { useTheme, spacing, fontFamily } from '../theme';
 import { useChapterReader } from './ChapterReaderContext';
 import { SectionBlock } from './SectionBlock';
 import { ButtonRow } from './ButtonRow';
@@ -20,12 +22,9 @@ import { StudyCoachCard } from './StudyCoachCard';
 import { ChapterCoachingCard } from './ChapterCoachingCard';
 import { PrayerPromptCard } from './PrayerPromptCard';
 import { RelatedContentCarousel } from './RelatedContentCarousel';
-import { useRelatedContent } from '../hooks/useRelatedContent';
 import { MapChip } from './map/MapChip';
-import { useMapChipData } from '../hooks/useMapChipData';
 import { PanelInfoSheet } from './PanelInfoSheet';
 import RelatedLifeTopics from './RelatedLifeTopics';
-import { useTheme, spacing, fontFamily } from '../theme';
 
 export interface ChapterMeta {
   timeline_link_event?: string | null;

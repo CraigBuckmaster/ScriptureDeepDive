@@ -22,10 +22,10 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import { useTheme, spacing, fontFamily } from '../theme';
 import { ScreenHeader } from './ScreenHeader';
 import { SearchInput } from './SearchInput';
 import { LoadingSkeleton } from './LoadingSkeleton';
-import { useTheme, spacing, fontFamily } from '../theme';
 
 // ─── Flat list mode ───────────────────────────────────────────────
 

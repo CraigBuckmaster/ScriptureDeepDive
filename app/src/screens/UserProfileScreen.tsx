@@ -17,7 +17,6 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import type { ScreenNavProp } from '../navigation/types';
 import {
   Settings,
   Bookmark,
@@ -26,6 +25,7 @@ import {
   ChevronRight,
   FileText,
 } from 'lucide-react-native';
+import type { ScreenNavProp } from '../navigation/types';
 import { useAuthStore } from '../stores';
 import { getAuthProfile, type AuthProfile } from '../db/userQueries';
 import { upsertAuthProfile } from '../db/userMutations';

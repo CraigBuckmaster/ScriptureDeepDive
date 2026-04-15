@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, spacing, radii, fontFamily } from '../../theme';
-import { ManuscriptStoriesView } from './ManuscriptStoriesView';
 import type { TextualEntry } from '../../types';
+import { ManuscriptStoriesView } from './ManuscriptStoriesView';
 import type { ManuscriptStory } from './ManuscriptStoriesView';
 
 interface Props { entries: TextualEntry[]; }

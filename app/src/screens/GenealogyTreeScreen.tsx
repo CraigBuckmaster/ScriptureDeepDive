@@ -18,20 +18,17 @@ import { View, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg from 'react-native-svg';
 import { GestureDetector } from 'react-native-gesture-handler';
-
 import { usePeople } from '../hooks/usePeople';
 import { useTreeLayout } from '../hooks/useTreeLayout';
 import { useTreeCamera } from '../hooks/useTreeCamera';
 import { useVisibleNodes } from '../hooks/useVisibleNodes';
 import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
-
 import { TreeCanvas } from '../components/tree/TreeCanvas';
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { PersonSearchBar } from '../components/tree/PersonSearchBar';
 import { MessianicLegend } from '../components/tree/MessianicLegend';
 import { PersonSidebar } from '../components/PersonSidebar';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-
 import { useTheme, spacing } from '../theme';
 import type { Person } from '../types';
 import type { TreePerson } from '../utils/treeBuilder';

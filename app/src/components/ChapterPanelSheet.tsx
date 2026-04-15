@@ -10,12 +10,12 @@
  */
 
 import React, { useState, useCallback } from 'react';
+import { setHighlight, removeHighlight, type VerseHighlight } from '../db/user';
 import { InterlinearSheet } from './InterlinearSheet';
 import { LexiconSheet } from './LexiconSheet';
 import { VerseLongPressMenu } from './VerseLongPressMenu';
 import { HighlightColorPicker, HIGHLIGHT_COLORS } from './HighlightColorPicker';
 import { UpgradePrompt } from './UpgradePrompt';
-import { setHighlight, removeHighlight, type VerseHighlight } from '../db/user';
 
 interface Props {
   bookId: string;

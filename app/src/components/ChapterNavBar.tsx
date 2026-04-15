@@ -13,10 +13,10 @@ import React, { useCallback, useState } from 'react';
 import { View, Text, TouchableOpacity, Modal, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft, ChevronLeft, ChevronRight, Info, Volume2, Check, BookOpen, Eye } from 'lucide-react-native';
-import { CompactDropdown, type DropdownOption } from './CompactDropdown';
 import { lightImpact, selectionFeedback } from '../utils/haptics';
 import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import { TRANSLATIONS } from '../db/translationRegistry';
+import { CompactDropdown, type DropdownOption } from './CompactDropdown';
 
 const TRANSLATION_OPTIONS: DropdownOption[] = TRANSLATIONS.map((t) => ({
   key: t.id,

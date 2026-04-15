@@ -12,13 +12,13 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Modal, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowRight } from 'lucide-react-native';
-import { BadgeChip } from './BadgeChip';
-import { ContentImageGallery } from './ContentImageGallery';
 import { getPersonChildren, getSpousesOf, getPerson } from '../db/content';
 import { useContentImages } from '../hooks/useContentImages';
 import { useTheme, spacing, radii, eras, eraNames, fontFamily } from '../theme';
 import type { Person } from '../types';
 import { safeParse } from '../utils/logger';
+import { ContentImageGallery } from './ContentImageGallery';
+import { BadgeChip } from './BadgeChip';
 
 interface Props {
   visible: boolean;
