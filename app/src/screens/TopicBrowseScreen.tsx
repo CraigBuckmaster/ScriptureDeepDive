@@ -11,9 +11,13 @@ import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { BrowseScreenTemplate } from '../components/BrowseScreenTemplate';
+import {
+  BrowseScreenTemplate,
+  BrowseFilterPill,
+  BrowseSectionHeader,
+} from '../components/BrowseScreenTemplate';
 import { useTopicData, CATEGORY_LABELS } from '../hooks/useTopicData';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily } from '../theme';
 import type { Topic } from '../types/topic';
 import type { Subtopic } from '../types/topic';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
@@ -94,18 +98,14 @@ function TopicBrowseScreen() {
   const filterBar = !isSearching ? (
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.pillRow}>
       {['all', ...categories].map((cat) => {
-        const active = categoryFilter === cat;
         const label = cat === 'all' ? 'All' : (CATEGORY_LABELS[cat] ?? cat);
         return (
-          <TouchableOpacity
+          <BrowseFilterPill
             key={cat}
+            label={label}
+            active={categoryFilter === cat}
             onPress={() => setCategoryFilter(cat)}
-            style={[styles.pill, { borderColor: base.border }, active && { borderColor: base.gold + '55', backgroundColor: base.gold + '12' }]}
-          >
-            <Text style={[styles.pillText, { color: base.textMuted }, active && { color: base.gold }]}>
-              {label}
-            </Text>
-          </TouchableOpacity>
+          />
         );
       })}
     </ScrollView>
@@ -156,11 +156,7 @@ function TopicBrowseScreen() {
       sections={sectionListData}
       keyExtractor={(item) => item.id}
       renderSectionHeader={({ section }) => (
-        <View style={[styles.sectionHeader, { borderBottomColor: base.gold + '25', backgroundColor: base.bg }]}>
-          <Text style={[styles.sectionHeaderText, { color: base.gold }]}>
-            {section.title}
-          </Text>
-        </View>
+        <BrowseSectionHeader title={section.title} />
       )}
       renderItem={renderTopicItem}
       emptyMessage="No topics found"
@@ -173,30 +169,7 @@ const styles = StyleSheet.create({
   container: { flex: 1 },
   headerPad: { paddingHorizontal: spacing.md, paddingTop: spacing.lg },
   pillRow: { gap: spacing.xs, marginBottom: spacing.md },
-  pill: {
-    borderWidth: 1,
-    borderRadius: radii.pill,
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-  },
-  pillText: {
-    fontFamily: fontFamily.display,
-    fontSize: 10,
-    letterSpacing: 0.3,
-  },
   listPad: { paddingHorizontal: spacing.md },
-  sectionHeader: {
-    paddingTop: spacing.lg,
-    paddingBottom: spacing.xs,
-    borderBottomWidth: 1,
-    marginBottom: spacing.xs,
-  },
-  sectionHeaderText: {
-    fontFamily: fontFamily.display,
-    fontSize: 10,
-    letterSpacing: 1,
-    textTransform: 'uppercase',
-  },
   entryRow: {
     paddingVertical: spacing.md,
     borderBottomWidth: 1,
