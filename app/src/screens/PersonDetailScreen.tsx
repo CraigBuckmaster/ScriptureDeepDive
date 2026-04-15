@@ -44,6 +44,7 @@ function PersonDetailScreen() {
   const handleChapterPress = useCallback((link: string) => {
     const match = link.match(/(\w+)_(\d+)\.html/);
     if (match) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (navigation as any).navigate('ReadTab', {
         screen: 'Chapter',
         params: { bookId: match[1].toLowerCase(), chapterNum: parseInt(match[2], 10) },
@@ -61,7 +62,7 @@ function PersonDetailScreen() {
 
   // "View on Map" — opens MapScreen with the person arc layer (#1324)
   const handleMapPress = useCallback((pid: string) => {
-    (navigation as any).navigate('Map', { personId: pid });
+    navigation.navigate('Map', { personId: pid });
   }, [navigation]);
 
   return (

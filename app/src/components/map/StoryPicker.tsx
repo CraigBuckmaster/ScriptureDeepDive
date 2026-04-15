@@ -9,7 +9,7 @@
  * Part of Card #1272 Fix 4 (Map UX overhaul).
  */
 
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import {
   ScrollView,
   Text,

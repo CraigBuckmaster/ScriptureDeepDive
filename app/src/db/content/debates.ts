@@ -3,7 +3,7 @@
  */
 
 import { getDb } from '../database';
-import type { DebateTopicRow, DebateTopicSummary, DebateTopic, DebatePosition, Scholar } from '../../types';
+import type { DebateTopicRow, DebateTopicSummary, DebateTopic, Scholar } from '../../types';
 import { escapeLike } from '../../utils/escapeLike';
 
 // ── Browse: all topics with summary info ──────────────────────

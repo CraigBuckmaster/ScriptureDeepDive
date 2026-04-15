@@ -9,7 +9,7 @@
  */
 
 import { logger } from '../utils/logger';
-import { flushQueue, getPendingCount } from './syncQueue';
+import { flushQueue } from './syncQueue';
 
 type Listener = (connected: boolean) => void;
 

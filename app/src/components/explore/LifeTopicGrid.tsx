@@ -45,6 +45,7 @@ export function LifeTopicGrid({
 
   useEffect(() => {
     if (categories !== undefined) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLoaded(categories);
       return;
     }

@@ -7,8 +7,9 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useWordStudies } from '../hooks/useWordStudies';
+import type { WordStudy } from '../types';
 import { BrowseScreenTemplate } from '../components/BrowseScreenTemplate';
-import { useTheme, spacing, radii, fontFamily, panels } from '../theme';
+import { useTheme, spacing, fontFamily, panels } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 function WordStudyBrowseScreen() {
@@ -33,7 +34,7 @@ function WordStudyBrowseScreen() {
   }, [studies, langFilter, search]);
 
   const renderItem = useCallback(
-    ({ item: w }: { item: any }) => {
+    ({ item: w }: { item: WordStudy }) => {
       const accentColor = w.language === 'hebrew' ? panels.heb.accent : panels.hist.accent;
       let glosses = '';
       try { glosses = JSON.parse(w.glosses_json).join(', '); } catch { glosses = w.glosses_json; }
@@ -50,7 +51,7 @@ function WordStudyBrowseScreen() {
             <Text style={[styles.transliteration, { color: base.goldDim }]}>{w.transliteration}</Text>
           </View>
           <Text style={[styles.glosses, { color: base.gold }]}>{glosses}</Text>
-          {w.strongs && <Text style={[styles.strongs, { color: base.textMuted }]}>Strong's: {w.strongs}</Text>}
+          {w.strongs && <Text style={[styles.strongs, { color: base.textMuted }]}>Strong&apos;s: {w.strongs}</Text>}
         </TouchableOpacity>
       );
     },
@@ -84,7 +85,7 @@ function WordStudyBrowseScreen() {
       filterBar={filterBar}
       data={filtered}
       renderItem={renderItem}
-      keyExtractor={(w: any) => w.id}
+      keyExtractor={(w: WordStudy) => w.id}
       contentContainerStyle={styles.listContent}
     />
   );

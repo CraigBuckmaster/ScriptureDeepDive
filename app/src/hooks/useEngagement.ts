@@ -32,6 +32,7 @@ export function useEngagement(topicId: string, userId?: string): UseEngagementRe
   // Fetch initial counts
   useEffect(() => {
     let cancelled = false;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsLoading(true);
     getEngagementCounts(topicId).then((c) => {
       if (!cancelled) {

@@ -7,8 +7,8 @@
  */
 
 import React from 'react';
-import { CompactDropdown, type DropdownOption } from './CompactDropdown';
 import { TRANSLATIONS } from '../db/translationRegistry';
+import { CompactDropdown, type DropdownOption } from './CompactDropdown';
 
 const TRANSLATION_OPTIONS: DropdownOption[] = TRANSLATIONS.map((t) => ({
   key: t.id,

@@ -59,6 +59,7 @@ export function useTopicData(): UseTopicDataResult {
   // FTS search with debounce
   useEffect(() => {
     if (!search.trim() || search.length < 2) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSearchResults([]);
       return;
     }

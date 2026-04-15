@@ -33,10 +33,10 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { useTheme, spacing } from '../theme';
 import type { MapStory, Place } from '../types';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
-import { logger, safeParse } from '../utils/logger';
+import { logger } from '../utils/logger';
 import { lightImpact } from '../utils/haptics';
-import { buildPlaceToStoriesMap } from './MapScreen';
 import { STYLE_ANCIENT, STYLE_MODERN } from '../constants/mapStyles';
+import { buildPlaceToStoriesMap } from './MapScreen';
 
 // Roughly the Fertile Crescent — Israel through Turkey, Egypt, Iraq.
 // Used as default camera and as the pre-cached tile region (#1321).
@@ -163,6 +163,7 @@ function MapScreen({ route, navigation }: {
       const story = stories.find((s) => s.id === initialStoryId);
       if (story) {
         selectStory(story);
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         if (story.era) setActiveEra(story.era);
         lastProcessedStory.current = initialStoryId;
       }
@@ -202,6 +203,7 @@ function MapScreen({ route, navigation }: {
       }
       lastProcessedPerson.current = initialPersonId;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- only length matters for array deps; adding full arrays causes unnecessary reruns
   }, [
     initialStoryId, initialPlaceId, initialPersonId,
     stories.length, places.length, personArc,
@@ -213,6 +215,7 @@ function MapScreen({ route, navigation }: {
     if (!story.chapter_link) return;
     const match = story.chapter_link.match(/(\w+)\/(\w+)_(\d+)\.html/);
     if (match) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (navigation as any).navigate('ReadTab', {
         screen: 'Chapter',
         params: { bookId: match[2].toLowerCase(), chapterNum: parseInt(match[3], 10) },

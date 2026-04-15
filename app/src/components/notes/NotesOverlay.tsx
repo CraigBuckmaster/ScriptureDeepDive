@@ -20,11 +20,11 @@ import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { X, Plus } from 'lucide-react-native';
 import { CollectionPicker } from '../CollectionPicker';
 import { NoteLinkSheet } from '../NoteLinkSheet';
+import { useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../../theme';
+import type { UserNote } from '../../types';
 import { NoteCard } from './NoteCard';
 import { NewNoteInput } from './NewNoteInput';
 import { useNotesOverlay } from './useNotesOverlay';
-import { useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../../theme';
-import type { UserNote } from '../../types';
 
 interface Props {
   visible: boolean;

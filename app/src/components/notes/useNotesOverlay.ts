@@ -103,7 +103,7 @@ export function useNotesOverlay({
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editText, setEditText] = useState('');
   const [editTags, setEditTags] = useState<string[]>([]);
-  const [editCollectionId, setEditCollectionId] = useState<number | null>(null);
+  const [, setEditCollectionId] = useState<number | null>(null);
   const [editCollection, setEditCollection] = useState<StudyCollection | null>(null);
   const [editLinkedNotes, setEditLinkedNotes] = useState<UserNote[]>([]);
 
@@ -122,8 +122,11 @@ export function useNotesOverlay({
 
   const displayName = bookName ?? bookId;
 
-  const makeRef = (verseNum?: number | null) =>
-    formatVerseRef(bookId, chapterNum, verseNum ?? undefined);
+  const makeRef = useCallback(
+    (verseNum?: number | null) =>
+      formatVerseRef(bookId, chapterNum, verseNum ?? undefined),
+    [bookId, chapterNum],
+  );
 
   const formatNoteRef = useCallback(
     (ref: string) => {
@@ -150,26 +153,31 @@ export function useNotesOverlay({
 
   // Reload notes when overlay becomes visible
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (visible) reload();
   }, [visible, reload]);
 
   // Auto-open add form when launched with a specific verse
   useEffect(() => {
     if (visible && initialVerseNum) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setAddRef(makeRef(initialVerseNum));
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShowAdd(true);
       setTimeout(() => newTextRef.current?.focus(), 200);
     }
-  }, [visible, initialVerseNum]);
+  }, [visible, initialVerseNum, makeRef]);
 
   // Load editing note's collection and linked notes
   useEffect(() => {
     if (editingId !== null) {
       const note = notes.find((n) => n.id === editingId);
       if (note) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setEditTags(parseTags(note.tags_json));
         setEditCollectionId(note.collection_id);
         if (note.collection_id) {
+          // eslint-disable-next-line react-hooks/set-state-in-effect
           getCollection(note.collection_id).then(setEditCollection);
         } else {
           setEditCollection(null);
@@ -199,13 +207,13 @@ export function useNotesOverlay({
     }
     setAddRef('');
     onClose();
-  }, [addRef, editingId, editText, onClose, bookId, chapterNum]);
+  }, [addRef, editingId, editText, onClose, makeRef]);
 
   const handleShowAdd = useCallback(() => {
     setAddRef(makeRef());
     setShowAdd(true);
     setTimeout(() => newTextRef.current?.focus(), 100);
-  }, [bookId, chapterNum]);
+  }, [makeRef]);
 
   const handleCancelAdd = useCallback(() => {
     pendingNewText.current = '';
@@ -243,7 +251,7 @@ export function useNotesOverlay({
       setEditingId(newId);
       setEditText(savedText);
     }
-  }, [addRef, bookId, chapterNum, reload, newTags, newCollectionId, newLinkedNotes]);
+  }, [addRef, reload, newTags, newCollectionId, newLinkedNotes, makeRef]);
 
   const startEditing = useCallback((note: UserNote) => {
     setEditingId(note.id);

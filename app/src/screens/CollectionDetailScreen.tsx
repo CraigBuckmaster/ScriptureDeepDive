@@ -24,7 +24,6 @@ import {
   getCollection,
   getNotesInCollection,
   deleteCollection,
-  updateNoteTags,
 } from '../db/user';
 import { displayRef, parseVerseRef } from '../utils/verseRef';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
@@ -54,6 +53,7 @@ function CollectionDetailScreen() {
   }, [collectionId]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     reload();
   }, [reload]);
 
@@ -75,7 +75,7 @@ function CollectionDetailScreen() {
     const text = lines.join('\n');
     try {
       await Share.share({ message: text, title: collection.name });
-    } catch (err) {
+    } catch {
       // User cancelled or share failed
     }
   };

@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
  * Create a lazy-loaded component wrapped in its own Suspense boundary.
  * Drop-in replacement for React.lazy() in navigation stacks.
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function lazySuspense<T extends ComponentType<any>>(
   factory: () => Promise<{ default: T }>,
 ): React.FC<React.ComponentProps<T>> {

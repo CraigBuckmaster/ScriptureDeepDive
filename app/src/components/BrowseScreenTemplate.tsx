@@ -22,10 +22,10 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import { useTheme, spacing, fontFamily } from '../theme';
 import { ScreenHeader } from './ScreenHeader';
 import { SearchInput } from './SearchInput';
 import { LoadingSkeleton } from './LoadingSkeleton';
-import { useTheme, spacing, fontFamily } from '../theme';
 
 // ─── Flat list mode ───────────────────────────────────────────────
 
@@ -156,8 +156,8 @@ export function BrowseScreenTemplate<T>(props: BrowseScreenTemplateProps<T>) {
         <SectionList
           sections={props.sections}
           keyExtractor={props.keyExtractor}
-          renderItem={props.renderItem as any}
-          renderSectionHeader={props.renderSectionHeader as any}
+          renderItem={props.renderItem as unknown as SectionListProps<T>['renderItem']}
+          renderSectionHeader={props.renderSectionHeader as unknown as SectionListProps<T>['renderSectionHeader']}
           stickySectionHeadersEnabled
           contentContainerStyle={contentContainerStyle ?? styles.listPad}
           ListHeaderComponent={headerInList ? headerContent : undefined}

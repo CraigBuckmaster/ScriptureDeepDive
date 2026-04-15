@@ -9,8 +9,9 @@
 import React, { useMemo } from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { BadgeChip } from './BadgeChip';
 import { useTheme, spacing, fontFamily } from '../theme';
+import type { ScreenNavProp } from '../navigation/types';
+import { BadgeChip } from './BadgeChip';
 
 interface RelatedLifeTopic {
   topic_id: string;
@@ -23,7 +24,7 @@ interface Props {
 
 function RelatedLifeTopics({ relatedLifeTopicsJson }: Props) {
   const { base } = useTheme();
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<ScreenNavProp<'Explore', 'LifeTopicDetail'>>();
 
   const topics = useMemo<RelatedLifeTopic[]>(() => {
     if (!relatedLifeTopicsJson) return [];
@@ -31,7 +32,10 @@ function RelatedLifeTopics({ relatedLifeTopicsJson }: Props) {
       const parsed = JSON.parse(relatedLifeTopicsJson);
       if (!Array.isArray(parsed)) return [];
       return parsed.filter(
-        (item: any) => item && typeof item.topic_id === 'string' && typeof item.title === 'string',
+        (item: unknown): item is RelatedLifeTopic =>
+          !!item && typeof item === 'object'
+          && typeof (item as RelatedLifeTopic).topic_id === 'string'
+          && typeof (item as RelatedLifeTopic).title === 'string',
       );
     } catch {
       return [];

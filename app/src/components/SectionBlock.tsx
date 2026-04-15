@@ -8,10 +8,10 @@
 
 import React, { useCallback } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { SectionHeader } from './SectionHeader';
-import { VerseBlock } from './VerseBlock';
 import { useTheme, spacing } from '../theme';
 import type { Section, SectionPanel, Verse, VHLGroup, ParsedRef } from '../types';
+import { SectionHeader } from './SectionHeader';
+import { VerseBlock } from './VerseBlock';
 
 interface Props {
   section: Section;
@@ -50,7 +50,7 @@ interface Props {
 function SectionBlock({
   section, panels, verses, vhlGroups, activeVhlGroups,
   notedVerses, activePanel, fontSize,
-  onPanelToggle, onNotePress, onRefPress, onVerseLongPress, onVerseNumPress, activeVerseNum,
+  onPanelToggle, onNotePress, onRefPress: _onRefPress, onVerseLongPress, onVerseNumPress, activeVerseNum,
   renderButtonRow, renderPanel,
   depthExplored, depthTotal, onDepthRecord,
   comparisonVerses, comparisonLabel, primaryLabel,
@@ -78,7 +78,7 @@ function SectionBlock({
         onDepthRecord?.(sectionId, matchType);
       }
     },
-    [panels, onPanelToggle]
+    [panels, onPanelToggle, onDepthRecord]
   );
 
   // Find the currently active panel for this section

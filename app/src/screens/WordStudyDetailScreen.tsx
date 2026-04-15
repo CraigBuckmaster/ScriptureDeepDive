@@ -68,7 +68,7 @@ function WordStudyDetailScreen() {
         <Text style={[styles.original, { color: accentColor }]}>{word.original}</Text>
         <Text style={[styles.transliteration, { color: base.goldDim }]}>{word.transliteration}</Text>
         {word.strongs && (
-          <Text style={[styles.strongs, { color: base.textMuted }]}>Strong's: {word.strongs}</Text>
+          <Text style={[styles.strongs, { color: base.textMuted }]}>Strong&apos;s: {word.strongs}</Text>
         )}
 
         {/* Concordance link */}

@@ -103,7 +103,7 @@ export async function getPeopleAtPlace(
 ): Promise<{ id: string; name: string }[]> {
   // Guard: reject anything that can't occur in a valid place_id so the
   // LIKE pattern is always injection-safe.
-  if (!/^[a-z0-9_\-]+$/i.test(placeId)) return [];
+  if (!/^[a-z0-9_-]+$/i.test(placeId)) return [];
   const pattern = `%"place_id":"${placeId}"%`;
   return getDb().getAllAsync<{ id: string; name: string }>(
     'SELECT id, name FROM people WHERE geography_json LIKE ? ORDER BY name',

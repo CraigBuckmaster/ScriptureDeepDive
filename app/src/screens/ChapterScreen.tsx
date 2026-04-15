@@ -15,7 +15,6 @@ import { View, Text, TouchableOpacity, ScrollView, Platform, UIManager, StyleShe
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import type { Book } from '../types';
-
 import { useChapterData } from '../hooks/useChapterData';
 import { useSwipeNavigation } from '../hooks/useSwipeNavigation';
 import { useNotedVerses } from '../hooks/useNotedVerses';
@@ -27,7 +26,6 @@ import { useStoreReview } from '../hooks/useStoreReview';
 import { logEvent } from '../services/analytics';
 import { updateLastActive, cancelReengagement } from '../services/reengagement';
 import { getBook, getRedemptiveAct } from '../db/content';
-
 import { useRedLetter } from '../hooks/useRedLetter';
 import { ChapterNavBar } from '../components/ChapterNavBar';
 import { CompareBar } from '../components/CompareBar';
@@ -39,16 +37,13 @@ import { TTSControls } from '../components/TTSControls';
 import { useBookmarkedVerses } from '../hooks/useBookmarkedVerses';
 import { useAvailableLenses, useChapterLensContent } from '../hooks/useHermeneuticLens';
 import { LensToggleBar } from '../components/LensToggleBar';
-
 import { TRANSLATION_MAP } from '../db/translationRegistry';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { usePremium } from '../hooks/usePremium';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
-
 import { ChapterVerseList } from '../components/ChapterVerseList';
 import { ChapterReaderProvider } from '../components/ChapterReaderContext';
 import { ChapterPanelSheet } from '../components/ChapterPanelSheet';
-
 import { useChapterTTS } from '../hooks/chapter/useChapterTTS';
 import { useChapterHighlights } from '../hooks/chapter/useChapterHighlights';
 import { useChapterCoaching } from '../hooks/chapter/useChapterCoaching';
@@ -195,8 +190,13 @@ function ChapterScreen() {
   const handleVerseLongPress = useCallback((verseNum: number, text: string) => { setLongPress({ verseNum, text }); }, []);
   const handleRefPress = useCallback((ref: { bookId: string; chapter: number }) => { navigation.push('Chapter', { bookId: ref.bookId, chapterNum: ref.chapter }); }, [navigation]);
   const handleAddNote = useCallback((verseNum: number) => { setNoteVerseNum(verseNum); toggleNotes(); }, [toggleNotes]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleWordStudyPress = useCallback((wsId: string) => { (navigation as any).navigate('ExploreTab', { screen: 'WordStudyDetail', params: { wordId: wsId } }); }, [navigation]);
-  const handleConcordancePress = useCallback((params: any) => { (navigation as any).navigate('ExploreTab', { screen: 'Concordance', params }); }, [navigation]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleConcordancePress = useCallback((params: any) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (navigation as any).navigate('ExploreTab', { screen: 'Concordance', params });
+  }, [navigation]);
 
   // Comparison labels
   const comparisonLabel = comparisonTranslation
@@ -258,9 +258,11 @@ function ChapterScreen() {
       </View>
 
       <ScrollView
+        // eslint-disable-next-line react-hooks/refs -- passing ref to component is idiomatic
         ref={scroll.scrollRef}
         style={styles.scroll}
         contentContainerStyle={styles.scrollContent}
+        // eslint-disable-next-line react-hooks/refs -- stable handler from hook
         onScroll={scroll.handleScroll}
         scrollEventThrottle={32}
         onTouchStart={onTouchStart}
@@ -280,15 +282,18 @@ function ChapterScreen() {
           noteCount={noteCount}
           onNotesPress={toggleNotes}
           onTimelinePress={chapter.timeline_link_event
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             ? () => (navigation as any).navigate('ExploreTab', { screen: 'Timeline', params: { eventId: chapter.timeline_link_event } })
             : undefined}
           onMapPress={chapter.map_story_link_id
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             ? () => (navigation as any).navigate('ExploreTab', { screen: 'Map', params: { storyId: chapter.map_story_link_id } })
             : undefined}
           storyActName={storyActName}
           onStoryPress={chapter.redemptive_act
             ? () => {
                 if (!isPremium) { showUpgrade('explore', 'The Story of the Bible'); return; }
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 (navigation as any).navigate('ExploreTab', { screen: 'RedemptiveArc' });
               }
             : undefined}
@@ -320,11 +325,13 @@ function ChapterScreen() {
             onInterlinearPress: handleInterlinearPress,
             onRefPress: handleRefPress,
           }}
+          /* eslint-disable react-hooks/refs -- stable handlers from hook */
           layout={{
             onSectionLayout: scroll.handleSectionLayout,
             onVerseLayout: scroll.handleVerseLayout,
             onBtnRowLayout: scroll.handleBtnRowLayout,
           }}
+          /* eslint-enable react-hooks/refs */
           coaching={{
             studyCoachEnabled, coachingTips, chapterCoaching,
             dismissedTips, onDismissTip: handleDismissTip,

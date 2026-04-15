@@ -28,7 +28,7 @@ export function LoadingSkeleton({ lines = 3, width = '100%', height = 14 }: Prop
       -1,
       true
     );
-  }, []);
+  }, [opacity]);
 
   const animStyle = useAnimatedStyle(() => ({
     opacity: opacity.value,

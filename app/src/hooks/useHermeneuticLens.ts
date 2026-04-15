@@ -2,9 +2,9 @@
  * useHermeneuticLens — Hooks for hermeneutic lens feature.
  */
 
-import { useAsyncData } from './useAsyncData';
 import { getLensesForChapter, getChapterLensContent } from '../db/content/hermeneutics';
 import type { HermeneuticLens, ChapterLensContent } from '../types';
+import { useAsyncData } from './useAsyncData';
 
 /**
  * Returns the lenses that have content for the given chapter.

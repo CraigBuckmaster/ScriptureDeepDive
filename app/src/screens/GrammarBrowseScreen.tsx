@@ -35,6 +35,7 @@ function GrammarBrowseScreen() {
   const [searchResults, setSearchResults] = useState<GrammarArticle[]>([]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
     getGrammarArticles(language).then((a) => {
       setArticles(a);
@@ -44,6 +45,7 @@ function GrammarBrowseScreen() {
 
   useEffect(() => {
     if (searchQuery.length < 2) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSearchResults([]);
       return;
     }
@@ -52,7 +54,7 @@ function GrammarBrowseScreen() {
 
   const handleArticlePress = useCallback(
     (article: GrammarArticle) => {
-      (navigation as any).navigate('GrammarArticle', { articleId: article.id });
+      navigation.navigate('GrammarArticle', { articleId: article.id });
     },
     [navigation]
   );

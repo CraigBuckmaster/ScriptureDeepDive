@@ -5,8 +5,7 @@
  * full-text search, and detail view with verses + scholars + related topics.
  */
 
-import { useState, useCallback, useEffect, useRef } from 'react';
-import { useAsyncData } from './useAsyncData';
+import { useState, useEffect, useRef } from 'react';
 import {
   getLifeTopicCategories,
   getLifeTopics,
@@ -17,6 +16,7 @@ import {
   getRelatedLifeTopics,
 } from '../db/content/lifeTopics';
 import type { LifeTopicCategory, LifeTopic } from '../types';
+import { useAsyncData } from './useAsyncData';
 
 export function useLifeTopicCategories() {
   return useAsyncData<LifeTopicCategory[]>(getLifeTopicCategories, [], []);
@@ -43,6 +43,7 @@ export function useLifeTopicSearch() {
 
   useEffect(() => {
     if (search.length < 2) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setResults([]);
       setSearching(false);
       return;
@@ -68,16 +69,16 @@ export function useLifeTopicSearch() {
 
 export interface LifeTopicDetailData {
   topic: LifeTopic | null;
-  verses: any[];
-  scholars: any[];
+  verses: Record<string, unknown>[];
+  scholars: Record<string, unknown>[];
   related: LifeTopic[];
   loading: boolean;
 }
 
 export function useLifeTopicDetail(topicId: string): LifeTopicDetailData {
   const [topic, setTopic] = useState<LifeTopic | null>(null);
-  const [verses, setVerses] = useState<any[]>([]);
-  const [scholars, setScholars] = useState<any[]>([]);
+  const [verses, setVerses] = useState<Record<string, unknown>[]>([]);
+  const [scholars, setScholars] = useState<Record<string, unknown>[]>([]);
   const [related, setRelated] = useState<LifeTopic[]>([]);
   const [loading, setLoading] = useState(true);
   const mountedRef = useRef(true);
@@ -88,6 +89,7 @@ export function useLifeTopicDetail(topicId: string): LifeTopicDetailData {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
     Promise.all([
       getLifeTopic(topicId),
@@ -98,8 +100,8 @@ export function useLifeTopicDetail(topicId: string): LifeTopicDetailData {
       .then(([t, v, s, r]) => {
         if (mountedRef.current) {
           setTopic(t);
-          setVerses(v);
-          setScholars(s);
+          setVerses(v as Record<string, unknown>[]);
+          setScholars(s as Record<string, unknown>[]);
           setRelated(r);
           setLoading(false);
         }

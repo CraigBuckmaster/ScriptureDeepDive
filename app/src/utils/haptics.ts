@@ -10,11 +10,14 @@
 import { Platform } from 'react-native';
 import { logger } from './logger';
 
+// Platform-specific native module API
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let Haptics: any = null;
 
 async function loadHaptics() {
   if (Platform.OS !== 'ios') return;
   try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     Haptics = await import('expo-haptics' as any);
   } catch (err) { logger.warn('haptics', 'Operation failed', err); }
 }

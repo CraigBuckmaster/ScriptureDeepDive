@@ -17,7 +17,6 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { GospelDots } from '../components/GospelDots';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { SynopticEntry } from '../types';
-import { logger } from '../utils/logger';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const CATEGORY_LABELS: Record<string, string> = {

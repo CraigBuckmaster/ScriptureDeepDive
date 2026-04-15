@@ -2,9 +2,9 @@
  * hooks/useTrustLevel.ts — React hook for the current user's trust score.
  */
 
-import { useAsyncData } from './useAsyncData';
 import { getUserTrustScore, TRUST_LABELS, type TrustScore } from '../services/trustLevel';
 import { useAuthStore } from '../stores';
+import { useAsyncData } from './useAsyncData';
 
 const DEFAULT_TRUST: TrustScore = { level: 0, score: 0, label: TRUST_LABELS[0] };
 

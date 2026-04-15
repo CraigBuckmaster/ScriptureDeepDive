@@ -26,7 +26,7 @@ import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 function LoginScreen() {
   const { base } = useTheme();
-  const navigation = useNavigation<ScreenNavProp<'More', 'Settings'>>();
+  const navigation = useNavigation<ScreenNavProp<'More', 'Login'>>();
   const { signIn, signInWithMagicLink, isLoading } = useAuth();
   const signInWithGoogle = useAuthStore((s) => s.signInWithGoogle);
   const signInWithFacebook = useAuthStore((s) => s.signInWithFacebook);
@@ -166,7 +166,7 @@ function LoginScreen() {
 
         {/* Forgot password */}
         <TouchableOpacity
-          onPress={() => (navigation as any).navigate('ForgotPassword')}
+          onPress={() => navigation.navigate('ForgotPassword')}
           style={styles.forgotRow}
           activeOpacity={0.6}
         >
@@ -207,12 +207,12 @@ function LoginScreen() {
 
         {/* Bottom link */}
         <TouchableOpacity
-          onPress={() => (navigation as any).navigate('SignUp')}
+          onPress={() => navigation.navigate('SignUp')}
           style={styles.bottomLink}
           activeOpacity={0.6}
         >
           <Text style={[styles.bottomLinkText, { color: base.textDim }]}>
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <Text style={{ color: base.gold }}>Sign Up</Text>
           </Text>
         </TouchableOpacity>

@@ -9,7 +9,7 @@
  * to Genesis 1 to start the user's reading journey.
  */
 
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useMemo, useCallback } from 'react';
 import {
   View,
   Text,
@@ -31,15 +31,17 @@ interface Props {
   onComplete: () => void;
 }
 
+type ThemeBase = import('../theme/palettes').BaseColors;
+
 interface PageData {
   key: string;
   title: string;
   subtitle: string;
   body: string;
-  renderContent: (base: any) => React.ReactNode;
+  renderContent: (base: ThemeBase) => React.ReactNode;
 }
 
-function ToolIcon({ Icon, label, base }: { Icon: React.ElementType; label: string; base: any }) {
+function ToolIcon({ Icon, label, base }: { Icon: React.ElementType; label: string; base: ThemeBase }) {
   return (
     <View style={styles.toolItem}>
       <View style={[styles.toolIconBg, { backgroundColor: base.gold + '15', borderColor: base.gold + '30' }]}>
@@ -104,7 +106,7 @@ function OnboardingScreen({ onComplete }: Props) {
     [],
   );
 
-  const viewabilityConfig = useRef({ viewAreaCoveragePercentThreshold: 50 }).current;
+  const viewabilityConfig = useMemo(() => ({ viewAreaCoveragePercentThreshold: 50 }), []);
 
   const handleNext = () => {
     if (isLastPage) {

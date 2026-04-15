@@ -58,6 +58,7 @@ export function useDebateTopics(): UseDebateTopicsResult {
   // Debounced search
   useEffect(() => {
     if (!search.trim() || search.length < 2) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSearchResults([]);
       return;
     }
@@ -140,6 +141,7 @@ export function useChapterDebateTopics(
 
   useEffect(() => {
     if (!bookId) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setTopics([]);
       return;
     }

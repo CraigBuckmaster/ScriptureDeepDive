@@ -5,11 +5,11 @@
  * via getUserDb().
  */
 
-import { getUserDb } from './userDatabase';
-import { getDb } from './database';
 import { chapterPrefix, formatVerseRef } from '../utils/verseRef';
 import { escapeLike } from '../utils/escapeLike';
 import type { UserNote, ReadingProgress, Bookmark, RecentChapter, StudyCollection, StudySession, StudySessionEvent } from '../types';
+import { getDb } from './database';
+import { getUserDb } from './userDatabase';
 
 // ── Shared interfaces ─────────────────────────────────────────────
 
@@ -432,7 +432,7 @@ export async function getReferencingNotes(noteId: number): Promise<UserNote[]> {
 export async function searchNotesFTS(query: string): Promise<UserNote[]> {
   // Sanitize: wrap each word in quotes for phrase matching
   const sanitized = query
-    .replace(/["\*\(\)\{\}\[\]^~:]/g, '')
+    .replace(/["*(){}[\]^~:]/g, '')
     .split(/\s+/)
     .filter((w) => w.length >= 2)
     .map((w) => `"${w}"`)

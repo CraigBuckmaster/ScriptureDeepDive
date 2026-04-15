@@ -135,6 +135,7 @@ export function PlaceDetailCard({
     const parsed = parseVerseRef(ref);
     if (!parsed) return;
     lightImpact();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (navigation as any).navigate('ReadTab', {
       screen: 'Chapter',
       params: parsed,
@@ -275,6 +276,7 @@ export function PlaceDetailCard({
                 key={p.id}
                 onPress={() => {
                   lightImpact();
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   (navigation as any).navigate('Map', { personId: p.id });
                 }}
                 accessibilityRole="button"

@@ -52,9 +52,10 @@ export function useChapterScroll({
     planDayCompletedRef.current = false;
     scrollRef.current?.scrollTo({ y: 0, animated: false });
     clearActivePanel();
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setScrollProgress(0);
     verseYMap.current = {};
-  }, [bookId, chapterNum]);
+  }, [bookId, chapterNum, clearActivePanel]);
 
   // Scroll progress tracking
   const handleScroll = useCallback((e: NativeSyntheticEvent<NativeScrollEvent>) => {

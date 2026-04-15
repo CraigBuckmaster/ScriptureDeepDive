@@ -16,6 +16,7 @@ export function usePersonJourney(personId: string | null): PersonJourneyData {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!personId) { setIsLoading(false); return; }
     let cancelled = false;
 

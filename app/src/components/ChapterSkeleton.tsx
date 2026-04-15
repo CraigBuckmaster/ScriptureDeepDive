@@ -47,7 +47,7 @@ export function ChapterSkeleton() {
       -1,
       true
     );
-  }, []);
+  }, [opacity]);
 
   const pulse = useAnimatedStyle(() => ({
     opacity: opacity.value,

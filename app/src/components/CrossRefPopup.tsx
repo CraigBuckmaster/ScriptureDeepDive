@@ -24,6 +24,7 @@ export function CrossRefPopup({ visible, onClose, reference, onGoToChapter }: Pr
 
   useEffect(() => {
     if (!reference || !visible) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
     resolveVerseText(reference, translation).then((texts) => {
       setVerseTexts(texts);

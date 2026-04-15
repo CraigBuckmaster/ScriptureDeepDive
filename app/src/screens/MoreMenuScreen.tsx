@@ -9,8 +9,8 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import type { ScreenNavProp } from '../navigation/types';
 import { Bookmark, Clock, Calendar, Settings, ArrowRight, StickyNote, LogIn, LogOut, User } from 'lucide-react-native';
+import type { ScreenNavProp } from '../navigation/types';
 import { useTheme, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 import { useAuthStore } from '../stores';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
@@ -74,6 +74,7 @@ function MoreMenuScreen() {
         {MENU_ITEMS.map((item, idx) => (
           <TouchableOpacity
             key={item.screen}
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             onPress={() => navigation.navigate(item.screen as any)}
             activeOpacity={0.6}
             style={[

@@ -25,7 +25,9 @@ export function useStudyDepth(
   const [depthMap, setDepthMap] = useState<Map<string, DepthInfo>>(new Map());
   const openedRef = useRef<Set<string>>(new Set());
   const sectionPanelsRef = useRef(sectionPanels);
-  sectionPanelsRef.current = sectionPanels;
+  useEffect(() => {
+    sectionPanelsRef.current = sectionPanels;
+  }, [sectionPanels]);
 
   const buildMap = useCallback(
     (openedSet: Set<string>) => {

@@ -26,7 +26,7 @@ interface Props {
   onGoToRef?: (bookId: string, ch: number) => void;
 }
 
-export function ThreadViewerSheet({ visible, onClose, threadId, currentBookId, currentChapter, onGoToRef }: Props) {
+export function ThreadViewerSheet({ visible, onClose, threadId, currentBookId: _currentBookId, currentChapter: _currentChapter, onGoToRef: _onGoToRef }: Props) {
   const { base } = useTheme();
   const [thread, setThread] = useState<CrossRefThread | null>(null);
   const [steps, setSteps] = useState<CrossRefStep[]>([]);

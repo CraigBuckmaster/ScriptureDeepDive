@@ -37,7 +37,7 @@ export function useAvailableVoices() {
           identifier: v.identifier,
           name: v.name ?? v.identifier,
           language: v.language,
-          quality: (v as any).quality ?? 'Default',
+          quality: (v as { quality?: string }).quality ?? 'Default',
           recommended: RECOMMENDED_VOICES.has(v.identifier),
         }))
         // Sort: recommended first, then alphabetical

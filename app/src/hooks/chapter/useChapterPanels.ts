@@ -99,11 +99,14 @@ export function useChapterPanels({
         scrollRef.current?.scrollToEnd({ animated: true });
       }, 300);
     }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpenPanelApplied(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- scrollRef is a stable ref
   }, [openPanel, openPanelApplied, isLoading, chapterId, sections, handleSectionPanelToggle, handleChapterPanelToggle]);
 
   // Reset openPanel applied state on chapter change
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpenPanelApplied(false);
   }, [bookId, chapterNum]);
 

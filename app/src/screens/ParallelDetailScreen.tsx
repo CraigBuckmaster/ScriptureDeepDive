@@ -21,7 +21,6 @@ import { DiffAnnotationList, normalizeDiffAnnotation } from '../components/DiffA
 import type { DiffAnnotationData } from '../components/DiffAnnotation';
 import { useTheme, spacing, fontFamily } from '../theme';
 import type { SynopticEntry } from '../types';
-import { logger } from '../utils/logger';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 interface Passage {

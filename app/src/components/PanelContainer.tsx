@@ -6,12 +6,12 @@
  */
 
 import React, { useMemo } from 'react';
-import { View, TouchableOpacity, Text, StyleSheet, LayoutAnimation, Platform, UIManager } from 'react-native';
-import { PanelRenderer } from './panels/PanelRenderer';
-import { PanelCallbacksProvider } from './panels/PanelCallbacksContext';
+import { View, TouchableOpacity, Text, StyleSheet, Platform, UIManager } from 'react-native';
 import { useTheme, spacing } from '../theme';
 import { lightImpact } from '../utils/haptics';
 import type { ParsedRef } from '../types';
+import { PanelCallbacksProvider } from './panels/PanelCallbacksContext';
+import { PanelRenderer } from './panels/PanelRenderer';
 
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
   UIManager.setLayoutAnimationEnabledExperimental(true);

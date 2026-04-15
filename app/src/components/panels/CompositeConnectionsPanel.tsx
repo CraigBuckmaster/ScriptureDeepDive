@@ -7,11 +7,11 @@
  */
 
 import React, { useMemo } from 'react';
+import type { CompositeConnectionsData, ParsedRef } from '../../types';
 import { TabbedPanelRenderer } from './TabbedPanelRenderer';
 import type { TabConfig } from './TabbedPanelRenderer';
 import { CrossRefPanel } from './CrossRefPanel';
 import { EchoesView } from './EchoesView';
-import type { CompositeConnectionsData, ParsedRef } from '../../types';
 
 interface Props {
   data: CompositeConnectionsData;

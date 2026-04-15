@@ -3,13 +3,12 @@ import { View, Text, TouchableOpacity, FlatList, Alert, StyleSheet } from 'react
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
-import { getPlans, getActivePlanId, getPlanProgress, startPlan, completePlanDay, abandonPlan } from '../db/user';
+import { getPlans, getActivePlanId, getPlanProgress, startPlan, abandonPlan } from '../db/user';
 import { PlanProgressBar } from '../components/PlanProgressBar';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ReadingPlan, PlanProgress } from '../db/user';
-import { logger } from '../utils/logger';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 function PlanDetailScreen() {
@@ -27,14 +26,17 @@ function PlanDetailScreen() {
     const p = plans.find((x) => x.id === planId);
     setPlan(p ?? null);
     if (p) {
-      try { setDays(JSON.parse(p.chapters_json)); } catch (err) { setDays([]); }
+      try { setDays(JSON.parse(p.chapters_json)); } catch { setDays([]); }
     }
     const activeId = await getActivePlanId();
     setActivePlanId(activeId);
     if (activeId === planId) setProgress(await getPlanProgress(planId));
   }, [planId]);
 
-  useEffect(() => { reload(); }, [reload]);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    reload();
+  }, [reload]);
 
   const isActive = activePlanId === planId;
   const completed = progress.filter((p) => p.completed_at).length;

@@ -9,9 +9,9 @@
  * Feature for epic #1314 / issue #1322.
  */
 
-import { useAsyncData } from './useAsyncData';
 import { getMapStory, getPlaces } from '../db/content';
 import type { MapStory, Place } from '../types';
+import { useAsyncData } from './useAsyncData';
 
 export interface MapChipData {
   story: MapStory;

@@ -74,6 +74,7 @@ export function useContentLibrary() {
   }, [activeCategory, testament, searchQuery]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     loadEntries();
   }, [loadEntries]);
 

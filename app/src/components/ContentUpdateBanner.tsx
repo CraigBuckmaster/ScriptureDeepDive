@@ -6,7 +6,7 @@
  * Part of epic #758 (CloudFlare R2 Delta DB Delivery).
  */
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { View, Text, Animated, StyleSheet } from 'react-native';
 import { useTheme, fontFamily } from '../theme';
 
@@ -28,7 +28,7 @@ const STATUS_LABELS: Record<UpdateStatus, string> = {
 
 function ContentUpdateBanner({ visible, progress, status, onDismiss }: Props) {
   const { base } = useTheme();
-  const translateY = useRef(new Animated.Value(-80)).current;
+  const translateY = useMemo(() => new Animated.Value(-80), []);
 
   useEffect(() => {
     Animated.timing(translateY, {

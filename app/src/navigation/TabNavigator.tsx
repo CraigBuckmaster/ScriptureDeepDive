@@ -1,11 +1,11 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home, Library, Compass, Search, MoreHorizontal } from 'lucide-react-native';
+import { useTheme } from '../theme';
 import { HomeStack } from './HomeStack';
 import { ReadStack } from './ReadStack';
 import { ExploreStack } from './ExploreStack';
 import { SearchStack } from './SearchStack';
 import { MoreStack } from './MoreStack';
-import { useTheme } from '../theme';
 
 const Tab = createBottomTabNavigator();
 
@@ -40,7 +40,7 @@ export function TabNavigator() {
           tabBarIcon: ({ color, size }) => <Home color={color} size={size} />,
         }}
         listeners={({ navigation }) => ({
-          tabPress: (e) => {
+          tabPress: () => {
             navigation.navigate('HomeTab', { screen: 'HomeMain' });
           },
         })}
@@ -53,7 +53,7 @@ export function TabNavigator() {
           tabBarIcon: ({ color, size }) => <Library color={color} size={size} />,
         }}
         listeners={({ navigation }) => ({
-          tabPress: (e) => {
+          tabPress: () => {
             navigation.navigate('ReadTab', { screen: 'BookList' });
           },
         })}
@@ -66,7 +66,7 @@ export function TabNavigator() {
           tabBarIcon: ({ color, size }) => <Compass color={color} size={size} />,
         }}
         listeners={({ navigation }) => ({
-          tabPress: (e) => {
+          tabPress: () => {
             navigation.navigate('ExploreTab', { screen: 'ExploreMenu' });
           },
         })}
@@ -79,7 +79,7 @@ export function TabNavigator() {
           tabBarIcon: ({ color, size }) => <Search color={color} size={size} />,
         }}
         listeners={({ navigation }) => ({
-          tabPress: (e) => {
+          tabPress: () => {
             navigation.navigate('SearchTab', { screen: 'SearchMain' });
           },
         })}
@@ -92,7 +92,7 @@ export function TabNavigator() {
           tabBarIcon: ({ color, size }) => <MoreHorizontal color={color} size={size} />,
         }}
         listeners={({ navigation }) => ({
-          tabPress: (e) => {
+          tabPress: () => {
             navigation.navigate('MoreTab', { screen: 'MoreMenu' });
           },
         })}

@@ -14,8 +14,8 @@
  * Scaffold for epic #1314 / issue #1317.
  */
 
-import { useAsyncData } from './useAsyncData';
 import { getAncientBorders } from '../db/content';
+import { useAsyncData } from './useAsyncData';
 
 const EMPTY: GeoJSON.FeatureCollection = { type: 'FeatureCollection', features: [] };
 

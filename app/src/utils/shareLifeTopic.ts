@@ -6,8 +6,8 @@
  */
 
 import { Share } from 'react-native';
-import { logger } from './logger';
 import { logEvent } from '../services/analytics';
+import { logger } from './logger';
 
 export async function shareLifeTopic(title: string, summary: string, topicId: string) {
   const message = `📖 What the Bible Says About ${title}\n\n${summary.slice(0, 200)}...\n\nRead more in Companion Study`;

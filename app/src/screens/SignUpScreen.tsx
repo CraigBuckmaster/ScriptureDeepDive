@@ -25,7 +25,7 @@ import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 function SignUpScreen() {
   const { base } = useTheme();
-  const navigation = useNavigation<ScreenNavProp<'More', 'Settings'>>();
+  const navigation = useNavigation<ScreenNavProp<'More', 'SignUp'>>();
   const signUpWithEmail = useAuthStore((s) => s.signUpWithEmail);
   const signInWithGoogle = useAuthStore((s) => s.signInWithGoogle);
   const signInWithFacebook = useAuthStore((s) => s.signInWithFacebook);
@@ -193,7 +193,7 @@ function SignUpScreen() {
 
         {/* Bottom link */}
         <TouchableOpacity
-          onPress={() => (navigation as any).navigate('Login')}
+          onPress={() => navigation.navigate('Login')}
           style={styles.bottomLink}
           activeOpacity={0.6}
         >

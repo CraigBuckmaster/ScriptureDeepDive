@@ -18,7 +18,7 @@ import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { getPreference, setPreference } from '../db/user';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 import { logger } from '../utils/logger';
 

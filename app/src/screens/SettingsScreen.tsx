@@ -79,7 +79,7 @@ function SettingsScreen() {
           base={base}
           isPremium={isPremium}
           purchaseType={purchaseType}
-          onPress={() => navigation.navigate('Subscription' as any)}
+          onPress={() => navigation.navigate('Subscription')}
         />
 
         <PreferencesSection
@@ -107,7 +107,7 @@ function SettingsScreen() {
 
         {/* Notification preferences link */}
         <TouchableOpacity
-          onPress={() => navigation.navigate('NotificationPrefs' as any)}
+          onPress={() => navigation.navigate('NotificationPrefs')}
           style={[sharedStyles.row, { borderBottomColor: base.border + '40' }]}
           accessibilityRole="button"
           accessibilityLabel="Notification Preferences"

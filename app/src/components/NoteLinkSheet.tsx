@@ -16,7 +16,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { X, Search, Link } from 'lucide-react-native';
-import { getAllNotes, searchNotesFTS, getLinkedNotes } from '../db/user';
+import { getAllNotes, searchNotesFTS } from '../db/user';
 import { displayRef } from '../utils/verseRef';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { UserNote } from '../types';
@@ -48,6 +48,7 @@ export function NoteLinkSheet({ visible, onClose, currentNoteId, linkedNoteIds, 
   }, [visible, searchQuery, currentNoteId]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     reload();
   }, [reload]);
 

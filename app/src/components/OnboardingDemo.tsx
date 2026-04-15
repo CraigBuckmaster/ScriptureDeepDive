@@ -11,9 +11,9 @@
  * Part of Epic #1048 (#1055).
  */
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Animated, StyleSheet } from 'react-native';
-import { useTheme, spacing, radii, fontFamily, panels, scholars } from '../theme';
+import { spacing, radii, fontFamily, panels, scholars, type ThemePalette } from '../theme';
 import { logEvent } from '../services/analytics';
 
 // ── Static demo content (from Genesis 1, section 1) ────────────
@@ -62,13 +62,13 @@ const DEMO_PANELS: DemoPanel[] = [
 // ── Component ──────────────────────────────────────────────────
 
 interface Props {
-  base: any;
+  base: ThemePalette['base'];
 }
 
 export function OnboardingDemo({ base }: Props) {
   const [activePanel, setActivePanel] = useState<string | null>(null);
   const [hasInteracted, setHasInteracted] = useState(false);
-  const pulseAnim = useRef(new Animated.Value(1)).current;
+  const pulseAnim = useMemo(() => new Animated.Value(1), []);
 
   // Pulsing hint animation
   useEffect(() => {

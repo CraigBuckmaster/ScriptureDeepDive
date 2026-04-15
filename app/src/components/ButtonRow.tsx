@@ -13,11 +13,11 @@
 
 import React, { useMemo } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { PanelButton } from './PanelButton';
 import { SECTION_PANEL_ORDER, CHAPTER_PANEL_ORDER, isScholarPanel } from '../utils/panelLabels';
 import type { PanelCategory } from '../utils/panelLabels';
 import { useTheme, spacing, fontFamily } from '../theme';
 import type { SectionPanel, ChapterPanel } from '../types';
+import { PanelButton } from './PanelButton';
 
 interface Props {
   panels: (SectionPanel | ChapterPanel)[];
