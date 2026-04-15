@@ -1,14 +1,13 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react-native';
 import { renderWithProviders } from '../helpers/renderWithProviders';
-import { MapChip } from '@/components/map/MapChip';
 import type { MapStory, Place } from '@/types';
 
-// MapChip transitively imports MapScreen (for the STYLE_ANCIENT constant).
-// Stub MapScreen's heavy dependencies at the screen-test level.
-jest.mock('@/screens/MapScreen', () => ({
-  STYLE_ANCIENT: 'https://contentcompanionstudy.com/map-styles/ancient.json',
-}));
+// Import the native component directly rather than the dispatcher, since
+// the dispatcher uses React.lazy() which jest's default environment can't
+// resolve synchronously (requires --experimental-vm-modules). The
+// dispatcher gate is covered by `MapChipDispatcher.test.tsx`.
+import MapChipNative from '@/components/map/MapChipNative';
 
 const story: MapStory = {
   id: 'exodus-journey',
@@ -45,11 +44,11 @@ const places: Place[] = [
   },
 ];
 
-describe('MapChip', () => {
+describe('MapChipNative', () => {
   it('fires onExpand when the expand pill is tapped', () => {
     const onExpand = jest.fn();
     const { getByLabelText } = renderWithProviders(
-      <MapChip story={story} places={places} onExpand={onExpand} />,
+      <MapChipNative story={story} places={places} onExpand={onExpand} />,
     );
     fireEvent.press(getByLabelText('Expand to full map'));
     expect(onExpand).toHaveBeenCalledTimes(1);
@@ -57,14 +56,14 @@ describe('MapChip', () => {
 
   it('renders an inline map view keyed for identification', () => {
     const { getByTestId } = renderWithProviders(
-      <MapChip story={story} places={places} onExpand={jest.fn()} />,
+      <MapChipNative story={story} places={places} onExpand={jest.fn()} />,
     );
     expect(getByTestId('map-chip-view')).toBeTruthy();
   });
 
   it('labels the chip with the story name for accessibility', () => {
     const { getByLabelText } = renderWithProviders(
-      <MapChip story={story} places={places} onExpand={jest.fn()} />,
+      <MapChipNative story={story} places={places} onExpand={jest.fn()} />,
     );
     expect(getByLabelText(/Open full map for The Exodus/)).toBeTruthy();
   });
