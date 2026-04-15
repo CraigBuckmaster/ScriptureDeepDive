@@ -1,5 +1,9 @@
 /**
  * Tests for db/database.ts — Content database initialization.
+ *
+ * Since scripture.db is now delivered via R2 (not bundled), initDatabase()
+ * returns 'needs_download' when the DB file is missing or too small, and
+ * 'ready' once the DB is open.
  */
 
 const mockOpenDatabaseAsync = jest.fn();
@@ -22,22 +26,6 @@ jest.mock('expo-file-system/legacy', () => ({
   deleteAsync: (...args: any[]) => mockDeleteAsync(...args),
   copyAsync: (...args: any[]) => mockCopyAsync(...args),
 }));
-
-jest.mock('expo-asset', () => ({
-  Asset: {
-    fromModule: jest.fn(() => ({
-      downloadAsync: jest.fn().mockResolvedValue(undefined),
-      localUri: 'file:///mock/asset/scripture.db',
-    })),
-  },
-}));
-
-jest.mock('../../assets/db-manifest.json', () => ({
-  content_hash: 'abc123',
-  build_time: '2025-01-01',
-}), { virtual: true });
-
-jest.mock('../../assets/scripture.db', () => 'mock-asset', { virtual: true });
 
 jest.mock('@/db/translationRegistry', () => ({
   isBundled: jest.fn((id: string) => id === 'kjv' || id === 'asv'),
@@ -76,27 +64,28 @@ describe('database', () => {
     });
   });
 
-  describe('initDatabase', () => {
-    it('opens database and returns it', async () => {
+  describe('initDatabase on web', () => {
+    it('opens database and returns ready', async () => {
       jest.doMock('react-native', () => ({
         Platform: { OS: 'web' },
       }));
       jest.resetModules();
       databaseModule = require('@/db/database');
-      const db = await databaseModule.initDatabase();
-      expect(db).toBeDefined();
+      const status = await databaseModule.initDatabase();
+      expect(status).toBe('ready');
       expect(mockOpenDatabaseAsync).toHaveBeenCalledWith('scripture.db');
     });
 
-    it('returns cached db on second call', async () => {
+    it('returns ready on cached second call', async () => {
       jest.doMock('react-native', () => ({
         Platform: { OS: 'web' },
       }));
       jest.resetModules();
       databaseModule = require('@/db/database');
-      const db1 = await databaseModule.initDatabase();
-      const db2 = await databaseModule.initDatabase();
-      expect(db1).toBe(db2);
+      const s1 = await databaseModule.initDatabase();
+      const s2 = await databaseModule.initDatabase();
+      expect(s1).toBe('ready');
+      expect(s2).toBe('ready');
       expect(mockOpenDatabaseAsync).toHaveBeenCalledTimes(1);
     });
   });
@@ -127,58 +116,45 @@ describe('database', () => {
   });
 
   describe('initDatabase on native platform', () => {
-    it('copies asset database when file does not exist', async () => {
+    it('returns needs_download when DB file does not exist', async () => {
       jest.doMock('react-native', () => ({
         Platform: { OS: 'ios' },
       }));
       jest.resetModules();
-      // DB file doesn't exist => needs copy
-      mockGetInfoAsync
-        .mockResolvedValueOnce({ exists: false }) // copyAssetDatabaseIfNeeded check
-        .mockResolvedValueOnce({ exists: true, size: 5000000 }); // post-copy info check
+      mockGetInfoAsync.mockResolvedValueOnce({ exists: false });
 
       databaseModule = require('@/db/database');
-      const db = await databaseModule.initDatabase();
-      expect(db).toBeDefined();
-      expect(mockMakeDirectoryAsync).toHaveBeenCalled();
-      expect(mockCopyAsync).toHaveBeenCalled();
-      expect(mockExecAsync).toHaveBeenCalledWith('PRAGMA journal_mode=WAL');
+      const status = await databaseModule.initDatabase();
+      expect(status).toBe('needs_download');
+      // Should NOT open the DB until it has been downloaded
+      expect(mockOpenDatabaseAsync).not.toHaveBeenCalled();
     });
 
-    it('skips copy when installed hash matches expected', async () => {
+    it('returns needs_download when DB file is too small', async () => {
+      jest.doMock('react-native', () => ({
+        Platform: { OS: 'ios' },
+      }));
+      jest.resetModules();
+      mockGetInfoAsync.mockResolvedValueOnce({ exists: true, size: 100 });
+
+      databaseModule = require('@/db/database');
+      const status = await databaseModule.initDatabase();
+      expect(status).toBe('needs_download');
+      expect(mockOpenDatabaseAsync).not.toHaveBeenCalled();
+    });
+
+    it('returns ready and enables WAL when DB is present', async () => {
       jest.doMock('react-native', () => ({
         Platform: { OS: 'android' },
       }));
       jest.resetModules();
-      // DB exists with correct hash
-      mockGetInfoAsync.mockResolvedValue({ exists: true, size: 5000000 });
-      mockGetFirstAsync.mockResolvedValueOnce({ value: 'abc123' });
+      mockGetInfoAsync.mockResolvedValueOnce({ exists: true, size: 5_000_000 });
 
       databaseModule = require('@/db/database');
-      const db = await databaseModule.initDatabase();
-      expect(db).toBeDefined();
-      // Should not copy since hash matches
-      expect(mockCopyAsync).not.toHaveBeenCalled();
-    });
-
-    it('replaces DB when hash does not match', async () => {
-      jest.doMock('react-native', () => ({
-        Platform: { OS: 'ios' },
-      }));
-      jest.resetModules();
-      // DB exists but wrong hash
-      mockGetInfoAsync
-        .mockResolvedValueOnce({ exists: true, size: 5000000 }) // exists check
-        .mockResolvedValueOnce({ exists: true, size: 5000000 }); // post-copy
-      // getInstalledContentHash opens db, reads hash, closes
-      mockGetFirstAsync.mockResolvedValueOnce({ value: 'old_hash' });
-
-      databaseModule = require('@/db/database');
-      const db = await databaseModule.initDatabase();
-      expect(db).toBeDefined();
-      // Should delete old and copy new
-      expect(mockDeleteAsync).toHaveBeenCalled();
-      expect(mockCopyAsync).toHaveBeenCalled();
+      const status = await databaseModule.initDatabase();
+      expect(status).toBe('ready');
+      expect(mockOpenDatabaseAsync).toHaveBeenCalledWith('scripture.db');
+      expect(mockExecAsync).toHaveBeenCalledWith('PRAGMA journal_mode=WAL');
     });
   });
 });

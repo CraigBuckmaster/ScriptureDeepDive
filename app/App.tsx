@@ -20,6 +20,7 @@ import { RootNavigator } from './src/navigation';
 import { ErrorBoundary } from './src/components/ErrorBoundary';
 import { closeAllTranslationDbs } from './src/db/translationManager';
 import { ContentUpdateProvider } from './src/providers/ContentUpdateProvider';
+import { DbDownloadScreen } from './src/screens/DbDownloadScreen';
 import { Sentry, DSN } from './src/lib/sentry';
 
 // Keep splash visible while we load
@@ -111,27 +112,30 @@ function AppShell() {
 
 function App() {
   const [fontsLoaded] = useFonts(FONT_MAP);
-  const [dbReady, setDbReady] = useState(false);
+  const [dbStatus, setDbStatus] = useState<'loading' | 'needs_download' | 'ready'>('loading');
 
   useEffect(() => {
     async function init() {
       try {
         // Lock to portrait by default — specific screens unlock for landscape
         await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
-        await initDatabase();        // Content DB (scripture.db) — replaced on updates
-        await initUserDatabase();    // User DB (user.db) — never replaced, migrated
+        const status = await initDatabase();   // Content DB (scripture.db) — may be missing on first launch
+        await initUserDatabase();              // User DB (user.db) — never replaced, migrated
         await useSettingsStore.getState().hydrate();
         await useAuthStore.getState().hydrate();
         await usePremiumStore.getState().hydrate();
         pruneEvents(90); // Clean up old analytics (fire-and-forget)
+        setDbStatus(status);
       } catch (e) {
         console.error('Init error:', e);
-      } finally {
-        setDbReady(true);
+        // Fail-safe: surface the download screen so the user can recover
+        setDbStatus('needs_download');
       }
     }
     init();
   }, []);
+
+  const dbReady = dbStatus === 'ready';
 
   // Re-engagement + premium sync: check on app foreground
   useEffect(() => {
@@ -154,17 +158,39 @@ function App() {
   }, []);
 
   const onLayoutReady = useCallback(async () => {
-    if (fontsLoaded && dbReady) {
+    if (fontsLoaded && dbStatus !== 'loading') {
       await SplashScreen.hideAsync();
     }
-  }, [fontsLoaded, dbReady]);
+  }, [fontsLoaded, dbStatus]);
 
-  if (!fontsLoaded || !dbReady) {
+  if (!fontsLoaded || dbStatus === 'loading') {
     return (
       <View style={appStyles.splashContainer}>
         <ActivityIndicator color="#bfa050" size="large" />
         <Text style={appStyles.splashText}>Loading...</Text>
       </View>
+    );
+  }
+
+  if (dbStatus === 'needs_download') {
+    return (
+      <GestureHandlerRootView style={appStyles.rootView} onLayout={onLayoutReady}>
+        <SafeAreaProvider>
+          <ThemeProvider>
+            <DbDownloadScreen
+              onComplete={async () => {
+                // Open the freshly-downloaded DB before entering the app tree
+                try {
+                  await initDatabase();
+                } catch (e) {
+                  console.error('Post-download init error:', e);
+                }
+                setDbStatus('ready');
+              }}
+            />
+          </ThemeProvider>
+        </SafeAreaProvider>
+      </GestureHandlerRootView>
     );
   }
 

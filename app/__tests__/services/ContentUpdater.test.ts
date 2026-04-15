@@ -16,6 +16,10 @@ const mockMoveAsync = jest.fn();
 const mockGetInfoAsync = jest.fn();
 const mockCopyAsync = jest.fn();
 const mockDeleteAsync = jest.fn();
+const mockResumableDownloadAsync = jest.fn();
+const mockCreateDownloadResumable = jest.fn(() => ({
+  downloadAsync: (...args: any[]) => mockResumableDownloadAsync(...args),
+}));
 
 jest.mock('expo-file-system/legacy', () => ({
   documentDirectory: '/fake/docs/',
@@ -24,6 +28,7 @@ jest.mock('expo-file-system/legacy', () => ({
   copyAsync: (...args: any[]) => mockCopyAsync(...args),
   deleteAsync: (...args: any[]) => mockDeleteAsync(...args),
   downloadAsync: (...args: any[]) => mockDownloadAsync(...args),
+  createDownloadResumable: (...args: any[]) => mockCreateDownloadResumable(...args),
   readAsStringAsync: (...args: any[]) => mockReadAsStringAsync(...args),
   moveAsync: (...args: any[]) => mockMoveAsync(...args),
   EncodingType: { Base64: 'base64' },
@@ -136,6 +141,10 @@ describe('ContentUpdater service', () => {
     mockCopyAsync.mockResolvedValue(undefined);
     mockMoveAsync.mockResolvedValue(undefined);
     mockDownloadAsync.mockResolvedValue({ status: 200 });
+    mockResumableDownloadAsync.mockResolvedValue({ status: 200 });
+    mockCreateDownloadResumable.mockImplementation(() => ({
+      downloadAsync: (...args: any[]) => mockResumableDownloadAsync(...args),
+    }));
     mockReadAsStringAsync.mockResolvedValue(
       Buffer.from('fake-content').toString('base64'),
     );
@@ -290,7 +299,7 @@ describe('ContentUpdater service', () => {
       mockFetchManifest();
       mockGetFirstAsync.mockResolvedValueOnce({ value: 'v0.5.0' });
       mockGetFirstAsync.mockResolvedValueOnce({ value: 'v0.5.0' });
-      mockDownloadAsync.mockResolvedValue({ status: 200 });
+      mockResumableDownloadAsync.mockResolvedValue({ status: 200 });
       mockChecksumPass(sampleManifest.full_db_sha256);
       mockGetFirstAsync.mockResolvedValueOnce({ value: 'v2.0.0' });
 
@@ -304,7 +313,7 @@ describe('ContentUpdater service', () => {
       mockFetchManifest();
       mockGetFirstAsync.mockResolvedValueOnce(null);
       mockGetFirstAsync.mockResolvedValueOnce(null);
-      mockDownloadAsync.mockResolvedValue({ status: 200 });
+      mockResumableDownloadAsync.mockResolvedValue({ status: 200 });
       mockChecksumPass(sampleManifest.full_db_sha256);
       mockGetFirstAsync.mockResolvedValueOnce({ value: 'v2.0.0' });
 
@@ -418,7 +427,7 @@ describe('ContentUpdater service', () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })
         .mockResolvedValueOnce({ value: 'v2.0.0' });
-      mockDownloadAsync.mockResolvedValue({ status: 200 });
+      mockResumableDownloadAsync.mockResolvedValue({ status: 200 });
       mockChecksumPass(sampleManifest.full_db_sha256);
 
       const result = await ContentUpdater.downloadFullDb(sampleManifest);
@@ -430,9 +439,32 @@ describe('ContentUpdater service', () => {
       expect(result.bytesDownloaded).toBe(sampleManifest.full_db_size_bytes);
     });
 
+    it('forwards download progress to the onProgress callback', async () => {
+      mockGetFirstAsync
+        .mockResolvedValueOnce({ value: 'v1.0.0' })
+        .mockResolvedValueOnce({ value: 'v2.0.0' });
+      mockChecksumPass(sampleManifest.full_db_sha256);
+
+      let capturedCallback: ((p: { totalBytesWritten: number; totalBytesExpectedToWrite: number }) => void) | undefined;
+      mockCreateDownloadResumable.mockImplementation((_url: string, _path: string, _opts: any, cb: any) => {
+        capturedCallback = cb;
+        return { downloadAsync: (...args: any[]) => mockResumableDownloadAsync(...args) };
+      });
+      mockResumableDownloadAsync.mockImplementation(async () => {
+        capturedCallback?.({ totalBytesWritten: 50, totalBytesExpectedToWrite: 200 });
+        capturedCallback?.({ totalBytesWritten: 200, totalBytesExpectedToWrite: 200 });
+        return { status: 200 };
+      });
+
+      const progress: number[] = [];
+      await ContentUpdater.downloadFullDb(sampleManifest, (pct) => progress.push(pct));
+
+      expect(progress).toEqual([25, 100]);
+    });
+
     it('returns failed on download HTTP error', async () => {
       mockGetFirstAsync.mockResolvedValue({ value: 'v1.0.0' });
-      mockDownloadAsync.mockResolvedValue({ status: 500 });
+      mockResumableDownloadAsync.mockResolvedValue({ status: 500 });
 
       const result = await ContentUpdater.downloadFullDb(sampleManifest);
 
@@ -442,7 +474,7 @@ describe('ContentUpdater service', () => {
 
     it('returns failed on checksum mismatch', async () => {
       mockGetFirstAsync.mockResolvedValue({ value: 'v1.0.0' });
-      mockDownloadAsync.mockResolvedValue({ status: 200 });
+      mockResumableDownloadAsync.mockResolvedValue({ status: 200 });
       mockChecksumFail();
 
       const result = await ContentUpdater.downloadFullDb(sampleManifest);
@@ -455,7 +487,7 @@ describe('ContentUpdater service', () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })   // getInstalledVersion
         .mockResolvedValueOnce({ value: 'wrong_hash' }); // verify after swap
-      mockDownloadAsync.mockResolvedValue({ status: 200 });
+      mockResumableDownloadAsync.mockResolvedValue({ status: 200 });
       mockChecksumPass(sampleManifest.full_db_sha256);
       mockGetInfoAsync.mockResolvedValue({ exists: true });
 
@@ -469,7 +501,7 @@ describe('ContentUpdater service', () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })
         .mockResolvedValueOnce({ value: 'v2.0.0' });
-      mockDownloadAsync.mockResolvedValue({ status: 200 });
+      mockResumableDownloadAsync.mockResolvedValue({ status: 200 });
       mockChecksumPass(sampleManifest.full_db_sha256);
 
       await ContentUpdater.downloadFullDb(sampleManifest);
@@ -484,7 +516,7 @@ describe('ContentUpdater service', () => {
 
     it('cleans up temp file on failure', async () => {
       mockGetFirstAsync.mockResolvedValue({ value: 'v1.0.0' });
-      mockDownloadAsync.mockResolvedValue({ status: 500 });
+      mockResumableDownloadAsync.mockResolvedValue({ status: 500 });
 
       await ContentUpdater.downloadFullDb(sampleManifest);
 
@@ -498,7 +530,7 @@ describe('ContentUpdater service', () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })
         .mockResolvedValueOnce({ value: 'v2.0.0' });
-      mockDownloadAsync.mockResolvedValue({ status: 200 });
+      mockResumableDownloadAsync.mockResolvedValue({ status: 200 });
       mockChecksumPass(sampleManifest.full_db_sha256);
 
       await ContentUpdater.downloadFullDb(sampleManifest);
