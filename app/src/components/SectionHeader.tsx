@@ -1,6 +1,10 @@
 /**
- * SectionHeader — Cinzel heading with gold accent and bottom border.
+ * SectionHeader — Cinzel heading with 3px gold bar accent.
  * Optional DepthDots indicator right-aligned when depth data provided.
+ *
+ * Card #1362 (UI polish phase 5): replaces the hard bottom-border with a
+ * left-side 3px gold bar accent, matching ScreenHeader / BrowseSectionHeader.
+ * GoldSeparator is rendered between SectionBlocks in the list itself.
  */
 
 import React from 'react';
@@ -17,7 +21,8 @@ interface Props {
 function SectionHeader({ header, explored, total }: Props) {
   const { base } = useTheme();
   return (
-    <View style={[styles.container, { borderBottomColor: base.border }]} accessibilityRole="header">
+    <View style={styles.container} accessibilityRole="header">
+      <View style={[styles.bar, { backgroundColor: base.gold }]} />
       <Text style={[styles.text, { color: base.gold }]} numberOfLines={2}>{header}</Text>
       {total != null && total > 0 ? (
         <View style={styles.depthWrap}>
@@ -35,18 +40,23 @@ export default MemoizedSectionHeader;
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
-    borderBottomWidth: 1,
     paddingHorizontal: spacing.md,
-    paddingTop: 32,
+    paddingTop: spacing.lg,
     paddingBottom: spacing.sm,
+  },
+  bar: {
+    width: 3,
+    alignSelf: 'stretch',
+    minHeight: 16,
+    marginRight: spacing.sm,
+    borderRadius: 1.5,
   },
   text: {
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
     lineHeight: 20,
-    letterSpacing: 0.3,
+    letterSpacing: 0.4,
     flex: 1,
     marginRight: spacing.sm,
   },
