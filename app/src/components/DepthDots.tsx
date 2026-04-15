@@ -28,7 +28,7 @@ function DepthDots({ explored, total }: Props) {
       {dots.map((filled, i) => (
         <View
           key={i}
-          style={[styles.dot, filled ? { backgroundColor: base.gold } : styles.unfilled]}
+          style={[styles.dot, { backgroundColor: filled ? base.gold : base.border }]}
         />
       ))}
     </View>
@@ -49,8 +49,5 @@ const styles = StyleSheet.create({
     width: 4,
     height: 4,
     borderRadius: 2,
-  },
-  unfilled: {
-    backgroundColor: '#444',
   },
 });

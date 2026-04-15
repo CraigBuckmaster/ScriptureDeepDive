@@ -125,7 +125,7 @@ function closeRing(coords: number[][]): number[][] {
 }
 
 export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
-  const eraColor = eras[story.era] ?? '#bfa050';
+  const eraColor = eras[story.era] ?? '#bfa050'; // data-color: intentional (gold fallback for unknown era — MapLibre GL)
 
   const regionsFC = useMemo(() => {
     const regions = safeParse<RawRegion[]>(story.regions_json, []);
@@ -170,7 +170,7 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
           id="story-paths-solid"
           filter={['!', ['get', 'dashed']] as any}
           style={{
-            lineColor: '#bfa050',
+            lineColor: '#bfa050', // data-color: intentional (gold story path — MapLibre GL)
             lineWidth: 2,
             lineCap: 'round',
             lineJoin: 'round',
@@ -180,7 +180,7 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
           id="story-paths-dashed"
           filter={['get', 'dashed'] as any}
           style={{
-            lineColor: '#bfa050',
+            lineColor: '#bfa050', // data-color: intentional (gold dashed path — MapLibre GL)
             lineWidth: 2,
             lineCap: 'round',
             lineJoin: 'round',
@@ -202,8 +202,8 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
             textRotate: ['get', 'bearing'] as any,
             textRotationAlignment: 'map',
             textPitchAlignment: 'map',
-            textColor: '#bfa050',
-            textHaloColor: '#1a1610',
+            textColor: '#bfa050',   // data-color: intentional (gold arrowhead — MapLibre GL)
+            textHaloColor: '#1a1610', // data-color: intentional (dark halo against map bg — MapLibre GL)
             textHaloWidth: 1.5,
             textAllowOverlap: true,
             textIgnorePlacement: true,

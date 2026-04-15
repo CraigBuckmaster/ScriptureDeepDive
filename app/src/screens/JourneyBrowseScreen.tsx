@@ -77,7 +77,7 @@ function JourneyBrowseScreen() {
       accessibilityLabel={`${item.title}, ${item.stopCount} stops`}
     >
       <View style={[styles.conceptIcon, { backgroundColor: base.gold + '12' }]}>
-        <Text style={styles.conceptIconText}>◆</Text>
+        <Text style={[styles.conceptIconText, { color: base.gold }]}>◆</Text>
       </View>
       <View style={styles.rowCenter}>
         <Text style={[styles.rowTitle, { color: base.text }]}>{item.title}</Text>
@@ -220,7 +220,6 @@ const styles = StyleSheet.create({
   },
   conceptIconText: {
     fontSize: 14,
-    color: '#bfa050', // Uses gold directly for the icon — matches brand
   },
   rowCenter: {
     flex: 1,

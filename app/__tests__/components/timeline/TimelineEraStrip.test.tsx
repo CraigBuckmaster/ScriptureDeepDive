@@ -93,7 +93,7 @@ describe('TimelineEraStrip', () => {
     expect(getByText(/40 events/)).toBeTruthy();
   });
 
-  it('shows the era first-word label only for wide segments (>30 events)', () => {
+  it('renders a pill label for every era segment regardless of event count', () => {
     const { queryByText } = renderWithProviders(
       <TimelineEraStrip
         eras={ERAS}
@@ -102,10 +102,9 @@ describe('TimelineEraStrip', () => {
         onSelectEra={jest.fn()}
       />,
     );
-    // Primeval has 60 events → label rendered
+    // Every segment always renders its pill label — no threshold-based hiding.
     expect(queryByText('Primeval')).toBeTruthy();
-    // Patriarchs has only 5 → label not rendered (caption wouldn't show either — no active era)
-    expect(queryByText('Patriarchs')).toBeNull();
+    expect(queryByText('Patriarchs')).toBeTruthy();
   });
 });
 

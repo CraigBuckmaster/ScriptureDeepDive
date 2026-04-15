@@ -21,7 +21,7 @@ interface Props {
 }
 
 /** Amber, distinct from story-path gold (#bfa050). */
-const ARC_COLOR = '#e09050';
+const ARC_COLOR = '#e09050'; // data-color: intentional (person arc amber — MapLibre GL)
 
 function arcLineFeatureCollection(stops: PersonArcStop[]): GeoJSON.FeatureCollection {
   if (stops.length < 2) return { type: 'FeatureCollection', features: [] };
@@ -90,7 +90,7 @@ export const PersonArcLayer = memo(function PersonArcLayer({
           style={{
             circleRadius: 10,
             circleColor: color,
-            circleStrokeColor: '#1a1610',
+            circleStrokeColor: '#1a1610', // data-color: intentional (dark stroke against map bg — MapLibre GL)
             circleStrokeWidth: 1.5,
           }}
         />
@@ -100,8 +100,7 @@ export const PersonArcLayer = memo(function PersonArcLayer({
             textField: ['get', 'label'] as any,
             textFont: ['Noto Sans Regular'],
             textSize: 11,
-            textColor: '#1a1610',
-            textAllowOverlap: true,
+            textColor: '#1a1610', // data-color: intentional (dark label on amber stop circle — MapLibre GL)
             textIgnorePlacement: true,
           }}
         />
@@ -114,7 +113,7 @@ export const PersonArcLayer = memo(function PersonArcLayer({
             textFont: ['Noto Sans Italic'],
             textSize: 11,
             textColor: color,
-            textHaloColor: '#1a1610',
+            textHaloColor: '#1a1610', // data-color: intentional (dark halo against map bg — MapLibre GL)
             textHaloWidth: 1.3,
             textOffset: [0, 1.4],
             textAnchor: 'top',
