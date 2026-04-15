@@ -25,6 +25,7 @@ jest.mock('@react-navigation/native', () => {
 
 jest.mock('lucide-react-native', () => ({
   ArrowRight: () => null,
+  Check: () => null,
 }));
 
 jest.mock('react-native-safe-area-context', () => ({

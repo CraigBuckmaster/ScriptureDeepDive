@@ -6,6 +6,14 @@
  *
  * Segment toggle replaces the old dropdown. Search bar filters across
  * both modes. Per-book progress bars show reading completion.
+ *
+ * Card #1363 (UI polish phase 6):
+ *   - Book rows now render as parchment-tinted cards with a 10% gold
+ *     border (shared browseCardStyle pattern), Cinzel book name.
+ *   - Testament toggle uses the shared BrowseFilterPill for visual
+ *     consistency with browse screens.
+ *   - Completed books show a gold checkmark instead of the "N/M" fraction.
+ *   - Genre section headers use BrowseSectionHeader (Cinzel + gold bar).
  */
 
 import React, { useState, useMemo, useRef, useCallback } from 'react';
@@ -13,11 +21,17 @@ import { View, Text, TouchableOpacity, SectionList, FlatList, StyleSheet } from 
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { useScrollToTop } from '@react-navigation/native';
+import { Check } from 'lucide-react-native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useBooks, type BookWithProgress } from '../hooks/useBooks';
 import { useSettingsStore } from '../stores';
 import { SearchInput } from '../components/SearchInput';
-import { useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import {
+  browseCardStyle,
+  BrowseFilterPill,
+  BrowseSectionHeader,
+} from '../components/BrowseScreenTemplate';
+import { useTheme, spacing, fontFamily } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 // ── Tradition groupings (by book_order index) ────────────────────
@@ -42,33 +56,38 @@ const BookRow = React.memo(function BookRow({ book, onPress, base }: {
   onPress: (bookId: string) => void;
   base: ReturnType<typeof useTheme>['base'];
 }) {
+  const isComplete = book.chaptersRead >= book.total_chapters && book.total_chapters > 0;
+  const inProgress = book.chaptersRead > 0 && !isComplete;
+  const cardStyle = browseCardStyle(base);
   return (
     <TouchableOpacity
       onPress={() => onPress(book.id)}
-      style={[styles.bookRow, { borderBottomColor: base.border + '40' }]}
+      style={[styles.bookRowTouch, cardStyle]}
       accessibilityRole="button"
       accessibilityLabel={`${book.name}, ${book.chaptersRead > 0 ? `${book.chaptersRead} of ${book.total_chapters} chapters read` : `${book.total_chapters} chapters`}`}
     >
-      <View style={styles.bookRowContent}>
-        <View style={styles.bookRowHeader}>
-          <Text style={[styles.bookName, { color: base.text }, !book.is_live && { color: base.textMuted }]}>
-            {book.name}
-          </Text>
+      <View style={styles.bookRowHeader}>
+        <Text style={[styles.bookName, { color: base.gold }, !book.is_live && { color: base.textMuted }]}>
+          {book.name}
+        </Text>
+        {isComplete ? (
+          <Check size={14} color={base.gold} />
+        ) : (
           <Text style={[styles.chapterCount, { color: base.textMuted }]}>
-            {book.chaptersRead > 0
+            {inProgress
               ? `${book.chaptersRead}/${book.total_chapters}`
               : `${book.total_chapters} ch`}
           </Text>
-        </View>
-        {book.chaptersRead > 0 && (
-          <View style={[styles.progressTrack, { backgroundColor: base.border }]}>
-            <View style={[
-              styles.progressFill,
-              { width: `${(book.chaptersRead / book.total_chapters) * 100}%`, backgroundColor: base.gold + '50' },
-            ]} />
-          </View>
         )}
       </View>
+      {inProgress && (
+        <View style={[styles.progressTrack, { backgroundColor: base.border + '80' }]}>
+          <View style={[
+            styles.progressFill,
+            { width: `${(book.chaptersRead / book.total_chapters) * 100}%`, backgroundColor: base.gold },
+          ]} />
+        </View>
+      )}
     </TouchableOpacity>
   );
 });
@@ -137,13 +156,18 @@ function BookListScreen() {
       {/* OT/NT toggle (canonical mode only, no search) */}
       {mode === 'canonical' && !searchResults && (
         <View style={styles.testamentRow}>
-          {(['ot', 'nt'] as const).map((t) => (
-            <TouchableOpacity key={t} onPress={() => setTestament(t)} accessibilityRole="button" accessibilityLabel={t === 'ot' ? 'Old Testament' : 'New Testament'} accessibilityState={{ selected: testament === t }}>
-              <Text style={[styles.testamentLabel, { color: base.textMuted }, testament === t && [styles.testamentActive, { color: base.gold, borderBottomColor: base.gold }]]}>
-                {t === 'ot' ? 'Old Testament' : 'New Testament'}
-              </Text>
-            </TouchableOpacity>
-          ))}
+          <BrowseFilterPill
+            label="Old Testament"
+            active={testament === 'ot'}
+            onPress={() => setTestament('ot')}
+            role="tab"
+          />
+          <BrowseFilterPill
+            label="New Testament"
+            active={testament === 'nt'}
+            onPress={() => setTestament('nt')}
+            role="tab"
+          />
         </View>
       )}
 
@@ -190,11 +214,7 @@ function BookListScreen() {
           keyExtractor={(item) => item.id}
           contentContainerStyle={styles.listContent}
           renderSectionHeader={({ section }) => (
-            <View style={[styles.sectionHeader, { backgroundColor: base.bg }]}>
-              <Text style={[styles.sectionTitle, { color: base.textMuted }]}>
-                {section.title.toUpperCase()}
-              </Text>
-            </View>
+            <BrowseSectionHeader title={section.title.toUpperCase()} />
           )}
           renderItem={renderBookRow}
         />
@@ -234,42 +254,22 @@ const styles = StyleSheet.create({
   testamentRow: {
     flexDirection: 'row',
     paddingHorizontal: spacing.md,
-    gap: spacing.md,
+    gap: spacing.sm,
     marginBottom: spacing.sm,
-  },
-  testamentLabel: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 12,
-    paddingBottom: 3,
-  },
-  testamentActive: {
-    borderBottomWidth: 2,
   },
   searchRow: {
     paddingHorizontal: spacing.md,
     marginBottom: spacing.sm,
   },
   listContent: {
+    paddingHorizontal: spacing.md,
     paddingBottom: spacing.xxl,
   },
-  sectionHeader: {
+  bookRowTouch: {
+    // Card #1363: layered on top of browseCardStyle() (parchment tint + gold border).
+    // Padding overridden to preserve the compact vertical rhythm for long lists.
+    paddingVertical: spacing.sm,
     paddingHorizontal: spacing.md,
-    paddingTop: spacing.md,
-    paddingBottom: spacing.xs,
-  },
-  sectionTitle: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 11,
-    letterSpacing: 0.5,
-  },
-  bookRow: {
-    paddingHorizontal: spacing.md,
-    minHeight: MIN_TOUCH_TARGET,
-    justifyContent: 'center',
-    borderBottomWidth: 1,
-  },
-  bookRowContent: {
-    paddingVertical: 6,
   },
   bookRowHeader: {
     flexDirection: 'row',
@@ -277,10 +277,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   bookName: {
-    fontFamily: fontFamily.display,
-    fontSize: 14,
-  },
-  bookNameDim: {
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 15,
+    letterSpacing: 0.3,
   },
   chapterCount: {
     fontFamily: fontFamily.ui,
@@ -289,7 +288,8 @@ const styles = StyleSheet.create({
   progressTrack: {
     height: 2,
     borderRadius: 1,
-    marginTop: 4,
+    marginTop: spacing.xs,
+    overflow: 'hidden',
   },
   progressFill: {
     height: 2,
