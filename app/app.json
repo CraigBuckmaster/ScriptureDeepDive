@@ -19,12 +19,11 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.scripturedeepive.app",
-      "buildNumber": "1",
+      "bundleIdentifier": "com.companionstudy.app",
       "infoPlist": {
-        "UIBackgroundModes": [
-          "audio"
-        ]
+        "UIBackgroundModes": [ "audio" ],
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSLocationWhenInUseUsageDescription": "This app does not currently use your location."
       }
     },
     "android": {
