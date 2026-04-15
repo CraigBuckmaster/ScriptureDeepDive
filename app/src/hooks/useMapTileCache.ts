@@ -18,6 +18,7 @@
 
 import { useEffect, useRef } from 'react';
 import { OfflineManager } from '@maplibre/maplibre-react-native';
+import { isMapNativeAvailable } from '../utils/isMapNativeAvailable';
 import { logger } from '../utils/logger';
 
 /** 75 MB ambient tile cache budget — see issue #1321. */
@@ -44,6 +45,9 @@ export function useMapTileCache(styleURL: string) {
   useEffect(() => {
     if (ranRef.current) return;
     ranRef.current = true;
+    // MapLibre's OfflineManager has no effect (and throws) when the
+    // native module isn't linked. Skip silently in Expo Go.
+    if (!isMapNativeAvailable()) return;
 
     (async () => {
       try {

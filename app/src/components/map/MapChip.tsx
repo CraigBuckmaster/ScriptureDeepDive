@@ -46,6 +46,7 @@ import { STYLE_ANCIENT } from '../../screens/MapScreen';
 import { useTheme, spacing, radii, fontFamily } from '../../theme';
 import type { MapStory, Place } from '../../types';
 import { safeParse } from '../../utils/logger';
+import { isMapNativeAvailable } from '../../utils/isMapNativeAvailable';
 
 interface Props {
   story: MapStory;
@@ -104,6 +105,11 @@ export function MapChip({ story, places, onExpand }: Props) {
     () => defaultCameraForStory(story, places),
     [story, places],
   );
+
+  // In Expo Go (no native MapLibre), drop the chip entirely rather than
+  // crash the reader. The reader already renders normally; this is a
+  // nice-to-have enrichment so silent suppression is the right call.
+  if (!isMapNativeAvailable()) return null;
 
   return (
     <Pressable
