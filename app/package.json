@@ -3,20 +3,17 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "setup": "node scripts/setup.js",
-    "prestart": "node scripts/setup.js",
-    "start": "node scripts/setup.js && expo start",
-    "dev": "node scripts/setup.js && expo start --clear --go",
-    "android": "node scripts/setup.js && expo start --android",
-    "ios": "node scripts/setup.js && expo start --ios",
-    "web": "node scripts/setup.js && expo start --web",
-    "pre-update": "node scripts/pre-eas-update.js",
+    "start": "expo start",
+    "dev": "expo start --clear --go",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
     "test": "jest",
     "lint": "eslint src/ --max-warnings 0",
     "lint:fix": "eslint src/ --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx}\"",
-    "update": "node scripts/pre-eas-update.js && eas update --branch production"
+    "update": "eas update --branch production --message"
   },
   "dependencies": {
     "@expo-google-fonts/cinzel": "^0.2.3",
