@@ -13,10 +13,10 @@ import {
 } from 'react-native';
 import { X } from 'lucide-react-native';
 import { getInterlinearWords } from '../db/content';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
+import type { InterlinearWord } from '../types';
 import { LoadingSkeleton } from './LoadingSkeleton';
 import { GrammarSheet } from './GrammarSheet';
-import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
-import type { InterlinearWord } from '../types';
 
 interface ConcordanceParams {
   strongs: string;
@@ -60,6 +60,7 @@ export function InterlinearSheet({
 
   useEffect(() => {
     if (!visible) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
     getInterlinearWords(bookId, chapter, verse).then((w) => {
       setWords(w);

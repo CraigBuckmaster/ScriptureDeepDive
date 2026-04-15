@@ -18,6 +18,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { ChevronLeft, BookOpen, Users, Scroll, Link2, MapPin, ChevronRight } from 'lucide-react-native';
+import type { StackNavigationProp } from '@react-navigation/stack';
 import { useConceptData } from '../hooks/useConceptData';
 import { useContentImages } from '../hooks/useContentImages';
 import { ContentImageGallery } from '../components/ContentImageGallery';
@@ -25,7 +26,6 @@ import { usePremium } from '../hooks/usePremium';
 import ConceptJourney from '../components/ConceptJourney';
 import { UpgradePrompt } from '../components/UpgradePrompt';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
-import type { StackNavigationProp } from '@react-navigation/stack';
 import type { ExploreStackParamList } from '../navigation/types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 

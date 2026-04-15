@@ -17,7 +17,6 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import type { ScreenNavProp } from '../navigation/types';
 import {
   Settings,
   Bookmark,
@@ -26,6 +25,7 @@ import {
   ChevronRight,
   FileText,
 } from 'lucide-react-native';
+import type { ScreenNavProp } from '../navigation/types';
 import { useAuthStore } from '../stores';
 import { getAuthProfile, type AuthProfile } from '../db/userQueries';
 import { upsertAuthProfile } from '../db/userMutations';
@@ -44,8 +44,8 @@ const TRUST_LEVELS: Record<number, { label: string; color: string }> = {
   2: { label: 'Trusted', color: '#50b060' }, // data-color: intentional
 };
 
-function getTrustLevel(_user: { app_metadata?: Record<string, any> }): number {
-  return _user?.app_metadata?.trust_level ?? 0;
+function getTrustLevel(_user: { app_metadata?: Record<string, unknown> }): number {
+  return (_user?.app_metadata?.trust_level as number) ?? 0;
 }
 
 /* ── Component ────────────────────────────────────────────────────── */
@@ -128,7 +128,7 @@ function UserProfileScreen() {
             Sign in to view your profile.
           </Text>
           <TouchableOpacity
-            onPress={() => navigation.navigate('Login' as any)}
+            onPress={() => navigation.navigate('Login')}
             style={[styles.signInButton, { backgroundColor: base.gold }]}
           >
             <Text style={[styles.signInButtonText, { color: base.bg }]}>Sign In</Text>
@@ -207,6 +207,7 @@ function UserProfileScreen() {
             {mySubmissions.map((sub: Submission) => (
               <TouchableOpacity
                 key={sub.id}
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 onPress={() => navigation.navigate('SubmissionDetail' as any, { submissionId: sub.id })}
                 style={[styles.navRow, { borderBottomColor: base.border + '40' }]}
                 activeOpacity={0.6}
@@ -265,7 +266,7 @@ const STATUS_COLORS: Record<SubmissionStatus, string> = {
 
 function StatusBadge({
   status,
-  base,
+  base: _base,
 }: {
   status: SubmissionStatus;
   base: ReturnType<typeof useTheme>['base'];

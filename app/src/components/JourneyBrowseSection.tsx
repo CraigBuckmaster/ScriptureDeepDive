@@ -13,7 +13,6 @@ import {
   View, Text, TouchableOpacity, ScrollView, StyleSheet,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { ChevronRight } from 'lucide-react-native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useJourneyBrowse, type PersonJourneyEntry, type ConceptJourneyEntry } from '../hooks/useJourneyBrowse';
 import { useTheme, spacing, radii, fontFamily } from '../theme';

@@ -131,7 +131,7 @@ function PersonJourneyScreen() {
               {stages.length - FREE_STAGE_COUNT} more stages
             </Text>
             <Text style={[styles.gateSubtitle, { color: base.textDim }]}>
-              Follow {person.name}'s complete journey
+              Follow {person.name}&apos;s complete journey
             </Text>
           </TouchableOpacity>
         )}

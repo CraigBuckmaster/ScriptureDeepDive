@@ -14,6 +14,7 @@ import { BrowseScreenTemplate } from '../components/BrowseScreenTemplate';
 import { useHarmonyData, PERIOD_LABELS } from '../hooks/useHarmonyData';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+import type { HarmonyEntry } from '../types';
 
 function HarmonyBrowseScreen() {
   const { base } = useTheme();
@@ -58,7 +59,7 @@ function HarmonyBrowseScreen() {
       filterBar={filterBar}
       mode="section"
       sections={sectionListData}
-      keyExtractor={(item: any) => item.id}
+      keyExtractor={(item: HarmonyEntry) => item.id}
       renderSectionHeader={({ section }) => (
         <View style={[styles.sectionHeader, { borderBottomColor: base.gold + '25', backgroundColor: base.bg }]}>
           <Text style={[styles.sectionHeaderText, { color: base.gold }]}>
@@ -66,10 +67,10 @@ function HarmonyBrowseScreen() {
           </Text>
         </View>
       )}
-      renderItem={({ item }: { item: any }) => {
+      renderItem={({ item }: { item: HarmonyEntry }) => {
         let passages: { book: string; ref: string }[] = [];
         try { passages = JSON.parse(item.passages_json); } catch { /* */ }
-        const books = passages.map((p: any) => p.book);
+        const books = passages.map((p: { book: string; ref: string }) => p.book);
 
         let diffCount = 0;
         try {

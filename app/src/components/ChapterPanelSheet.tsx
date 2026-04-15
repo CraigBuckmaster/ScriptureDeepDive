@@ -10,12 +10,19 @@
  */
 
 import React, { useState, useCallback } from 'react';
+import { setHighlight, removeHighlight, type VerseHighlight } from '../db/user';
 import { InterlinearSheet } from './InterlinearSheet';
 import { LexiconSheet } from './LexiconSheet';
 import { VerseLongPressMenu } from './VerseLongPressMenu';
 import { HighlightColorPicker, HIGHLIGHT_COLORS } from './HighlightColorPicker';
 import { UpgradePrompt } from './UpgradePrompt';
-import { setHighlight, removeHighlight, type VerseHighlight } from '../db/user';
+
+interface ConcordanceParams {
+  strongs?: string;
+  original?: string;
+  transliteration?: string;
+  gloss?: string | null;
+}
 
 interface Props {
   bookId: string;
@@ -29,7 +36,7 @@ interface Props {
   setInterlinearVerse: (v: number | null) => void;
   /** Navigation callbacks */
   onWordStudyPress: (wsId: string) => void;
-  onConcordancePress: (params: any) => void;
+  onConcordancePress: (params: ConcordanceParams) => void;
   /** Notes callback */
   onAddNote: (verseNum: number) => void;
   /** Bookmark support */
@@ -76,7 +83,7 @@ const ChapterPanelSheet = React.memo(function ChapterPanelSheet({
     onWordStudyPress(wsId);
   }, [setInterlinearVerse, onWordStudyPress]);
 
-  const handleInterlinearConcordance = useCallback((params: any) => {
+  const handleInterlinearConcordance = useCallback((params: ConcordanceParams) => {
     setInterlinearVerse(null);
     onConcordancePress(params);
   }, [setInterlinearVerse, onConcordancePress]);
@@ -87,7 +94,7 @@ const ChapterPanelSheet = React.memo(function ChapterPanelSheet({
     onWordStudyPress(wsId);
   }, [onWordStudyPress]);
 
-  const handleLexiconConcordance = useCallback((params: any) => {
+  const handleLexiconConcordance = useCallback((params: ConcordanceParams) => {
     setLexiconStrongs(null);
     setLexiconWordStudyId(null);
     onConcordancePress(params);

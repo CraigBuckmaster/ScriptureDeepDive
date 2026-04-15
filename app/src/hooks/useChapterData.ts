@@ -5,7 +5,7 @@
  * for parallel translation view.
  */
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { useSettingsStore } from '../stores';
 import {
   getChapter, getSections, getSectionPanels,

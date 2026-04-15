@@ -11,28 +11,6 @@
  *   eras    — 9 era timeline colors
  */
 
-// ── Base UI Colors ──────────────────────────────────────────────────
-
-const base = {
-  bg: '#0c0a07',
-  bgElevated: '#252015',
-  bgSurface: '#1f1b14',
-  bg3: '#1a1508',
-  text: '#f0e8d8',
-  textDim: '#b8a888',
-  textMuted: '#a09888',
-  gold: '#bfa050',
-  goldDim: '#8a6e1a',
-  goldBright: '#d4b868',
-  border: '#3a2e18',
-  borderLight: '#2a2010',
-  verseNum: '#9a8a6a',
-  navText: '#d8ccb0',
-  danger: '#e05a6a',
-  success: '#81C784',
-  redLetter: '#d4847a',
-} as const;
-
 // ── Panel Accent Colors ─────────────────────────────────────────────
 
 export interface PanelColors {

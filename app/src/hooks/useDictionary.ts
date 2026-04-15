@@ -2,7 +2,7 @@
  * hooks/useDictionary.ts — Data hooks for Bible Dictionary feature.
  */
 
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import {
   getAllDictionaryEntries,
   getDictionaryEntry,
@@ -72,6 +72,7 @@ export function useDictionaryBrowse() {
   // FTS search
   useEffect(() => {
     if (searchQuery.length < 2) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSearchResults(null);
       return;
     }

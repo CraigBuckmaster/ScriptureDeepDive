@@ -24,7 +24,7 @@ import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 function ForgotPasswordScreen() {
   const { base } = useTheme();
-  const navigation = useNavigation<ScreenNavProp<'More', 'Settings'>>();
+  const navigation = useNavigation<ScreenNavProp<'More', 'Login'>>();
   const resetPassword = useAuthStore((s) => s.resetPassword);
   const isLoading = useAuthStore((s) => s.isLoading);
 
@@ -60,7 +60,7 @@ function ForgotPasswordScreen() {
 
         {/* Explanatory text */}
         <Text style={[styles.description, { color: base.textDim }]}>
-          Enter your email and we'll send you a link to reset your password.
+          Enter your email and we&apos;ll send you a link to reset your password.
         </Text>
 
         {/* Email input */}
@@ -103,7 +103,7 @@ function ForgotPasswordScreen() {
 
         {/* Back to Sign In link */}
         <TouchableOpacity
-          onPress={() => (navigation as any).navigate('Login')}
+          onPress={() => navigation.navigate('Login')}
           style={styles.bottomLink}
           activeOpacity={0.6}
         >

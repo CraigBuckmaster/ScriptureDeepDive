@@ -11,7 +11,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import {
   View, Text, FlatList, TextInput, TouchableOpacity,
-  StyleSheet, ActivityIndicator,
+  StyleSheet,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
@@ -56,6 +56,7 @@ function ConcordanceScreen() {
 
   // Auto-search if opened with a Strong's number
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (initialStrongs) runSearch(initialStrongs);
   }, [initialStrongs, runSearch]);
 
@@ -71,12 +72,6 @@ function ConcordanceScreen() {
   // Determine the accent color (Hebrew = pink, Greek = blue)
   const isHebrew = strongs.startsWith('H');
   const accentColor = isHebrew ? panels.heb.accent : panels.hist.accent;
-
-  const headerTitle = original
-    ? `${original} (${strongs})`
-    : strongs
-    ? strongs
-    : 'Concordance';
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
@@ -162,7 +157,7 @@ function ConcordanceScreen() {
             No results found for {strongs}.
           </Text>
           <Text style={[styles.emptyHint, { color: base.textMuted }]}>
-            Make sure the Strong's number is correct (e.g. H2617 for Hebrew, G26 for Greek).
+            Make sure the Strong&apos;s number is correct (e.g. H2617 for Hebrew, G26 for Greek).
           </Text>
         </View>
       ) : (
@@ -171,7 +166,7 @@ function ConcordanceScreen() {
             Find every verse where a Hebrew or Greek word appears across the entire Bible.
           </Text>
           <Text style={[styles.emptyHint, { color: base.textMuted }]}>
-            Enter a Strong's number above, or tap a word in the Interlinear view to see all its occurrences.
+            Enter a Strong&apos;s number above, or tap a word in the Interlinear view to see all its occurrences.
           </Text>
         </View>
       )}

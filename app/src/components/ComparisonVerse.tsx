@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { useTheme, fontFamily, spacing } from '../theme';
+import { useTheme, fontFamily } from '../theme';
 
 interface Props {
   text: string | null;

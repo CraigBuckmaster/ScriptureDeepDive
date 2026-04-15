@@ -278,6 +278,7 @@ export function useConceptData(conceptId: string | undefined): ConceptData {
 
   useEffect(() => {
     cancelRef.current = false;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     loadData();
     return () => { cancelRef.current = true; };
   }, [loadData]);

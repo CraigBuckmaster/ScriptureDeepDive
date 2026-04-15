@@ -46,7 +46,7 @@ export async function getDiscoveriesByCategory(
  */
 function sanitizeFtsQuery(query: string): string {
   return query
-    .replace(/["\*\(\)\{\}\[\]^~:]/g, '')
+    .replace(/["*(){}[\]^~:]/g, '')
     .split(/\s+/)
     .filter((w) => w.length >= 2)
     .map((w) => `"${w}"`)

@@ -3,13 +3,13 @@
  *
  * Provides era metadata and historical interpretations for verses/chapters.
  */
-import { useAsyncData } from './useAsyncData';
 import {
   getAllEras,
   getInterpretationsForVerse,
   getInterpretationsForChapter,
 } from '../db/content/interpretations';
 import type { InterpretationEra, HistoricalInterpretation } from '../types';
+import { useAsyncData } from './useAsyncData';
 
 export function useInterpretationEras() {
   return useAsyncData<InterpretationEra[]>(getAllEras, [], []);

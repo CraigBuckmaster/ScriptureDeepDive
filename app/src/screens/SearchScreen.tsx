@@ -12,35 +12,22 @@ import { View, Text, TouchableOpacity, SectionList, ScrollView, StyleSheet } fro
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useScrollToTop } from '@react-navigation/native';
 import {
-  Search as SearchIcon, BookOpen, Users, Compass, MapPin,
+  Search as SearchIcon, BookOpen, Compass, MapPin,
   Clock, Heart, HelpCircle, ArrowRight, Landmark,
 } from 'lucide-react-native';
 import { useSearch, buildOrderedGroups } from '../hooks/useSearch';
-import type { SearchResultGroup, ParsedReference } from '../hooks/useSearch';
+import type { ParsedReference } from '../hooks/useSearch';
 import { SearchInput } from '../components/SearchInput';
-import { useTheme, spacing, radii, fontFamily, panels } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { Person, Book, MapStory, TimelineEntry, Verse, DifficultPassage, Concept, LifeTopic, ArchaeologicalDiscovery } from '../types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const INITIAL_VERSE_LIMIT = 20;
 const LOAD_MORE_INCREMENT = 30;
 
-// ── Section icons & colors by group key ─────────────────────────────
-
-const GROUP_META: Record<string, { Icon: any; colorKey: string }> = {
-  books:              { Icon: BookOpen,   colorKey: 'gold' },
-  people:             { Icon: Users,      colorKey: 'gold' },
-  concepts:           { Icon: Compass,    colorKey: 'gold' },
-  archaeology:        { Icon: Landmark,   colorKey: 'gold' },
-  difficultPassages:  { Icon: HelpCircle, colorKey: 'gold' },
-  mapStories:         { Icon: MapPin,     colorKey: 'gold' },
-  timelineEvents:     { Icon: Clock,      colorKey: 'gold' },
-  lifeTopics:         { Icon: Heart,      colorKey: 'gold' },
-  verses:             { Icon: BookOpen,   colorKey: 'gold' },
-};
-
 function SearchScreen() {
   const { base, eras } = useTheme();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const navigation = useNavigation<any>();
   const [query, setQuery] = useState('');
   const [verseLimit, setVerseLimit] = useState(INITIAL_VERSE_LIMIT);
@@ -67,18 +54,18 @@ function SearchScreen() {
         return {
           ...g,
           data: [
-            ...sliced.map((v: Verse) => ({ type: g.key, item: v })),
+            ...sliced.map((v) => ({ type: g.key, item: v as Verse })),
             ...(hasMore ? [{ type: 'loadMore', item: null }] : []),
           ],
         };
       }
-      return { ...g, data: g.data.map((item: any) => ({ type: g.key, item })) };
+      return { ...g, data: g.data.map((item: unknown) => ({ type: g.key, item })) };
     });
   }, [results, trimmed, verseLimit]);
 
   // Prepend reference result as its own section
   const sections = useMemo(() => {
-    const s: { title: string; key: string; data: any[] }[] = [];
+    const s: { title: string; key: string; data: { type: string; item: unknown }[] }[] = [];
     if (results.reference && !activeFilter) {
       s.push({
         title: 'Go To',
@@ -100,8 +87,8 @@ function SearchScreen() {
       key: g.key,
       label: g.label,
       count: g.key === 'verses'
-        ? (results as any).verses?.length ?? g.data.length
-        : g.data.filter((d: any) => d.type !== 'loadMore').length,
+        ? (results as unknown as { verses?: unknown[] }).verses?.length ?? g.data.length
+        : g.data.filter((d: unknown) => (d as { type?: string }).type !== 'loadMore').length,
     }));
   }, [groups, results]);
 
@@ -116,13 +103,13 @@ function SearchScreen() {
     });
   }, [navigation]);
 
-  const goToExplore = useCallback((screen: string, params: Record<string, any>) => {
+  const goToExplore = useCallback((screen: string, params: Record<string, unknown>) => {
     navigation.navigate('ExploreTab', { screen, params });
   }, [navigation]);
 
   // ── Render items ────────────────────────────────────────────────
 
-  const renderItem = useCallback(({ item: { type, item } }: { item: { type: string; item: any } }) => {
+  const renderItem = useCallback(({ item: { type, item } }: { item: { type: string; item: unknown } }) => {
     if (type === 'loadMore') {
       return (
         <TouchableOpacity
@@ -301,7 +288,7 @@ function SearchScreen() {
 
     // Verses (default)
     const v = item as Verse;
-    const displayName = (v as any).book_name ?? v.book_id;
+    const displayName = (v as Verse & { book_name?: string }).book_name ?? v.book_id;
     return (
       <TouchableOpacity
         onPress={() => goToChapter(v.book_id, v.chapter_num, v.verse_num)}
@@ -389,7 +376,7 @@ function SearchScreen() {
       ) : !hasResults && !isLoading ? (
         <View style={styles.emptyCenter}>
           <Text style={[styles.emptyText, { color: base.textMuted }]}>
-            No results found for "{trimmed}"
+            No results found for &quot;{trimmed}&quot;
           </Text>
         </View>
       ) : (

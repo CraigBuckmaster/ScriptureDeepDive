@@ -6,11 +6,11 @@
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { ButtonRow } from './ButtonRow';
-import { PanelContainer } from './PanelContainer';
 import { CHAPTER_PANEL_CATEGORIES } from '../utils/panelLabels';
 import { useTheme, spacing, fontFamily } from '../theme';
 import type { ChapterPanel, ParsedRef } from '../types';
+import { PanelContainer } from './PanelContainer';
+import { ButtonRow } from './ButtonRow';
 
 interface Props {
   chapterPanels: ChapterPanel[];

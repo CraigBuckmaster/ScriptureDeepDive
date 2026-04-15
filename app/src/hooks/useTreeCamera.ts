@@ -21,9 +21,9 @@
 
 import { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import { useWindowDimensions } from 'react-native';
-import { BREAKPOINTS } from '../theme/breakpoints';
 import { Gesture } from 'react-native-gesture-handler';
 import { runOnJS } from 'react-native-reanimated';
+import { BREAKPOINTS } from '../theme/breakpoints';
 import { TREE_CONSTANTS } from '../utils/treeBuilder';
 
 export interface CameraState {

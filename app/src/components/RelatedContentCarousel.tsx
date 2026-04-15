@@ -11,9 +11,9 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useTheme, spacing, fontFamily } from '../theme';
 import { RelatedContentCard, CARD_WIDTH } from './RelatedContentCard';
 import type { RelatedContentItem } from './RelatedContentCard';
-import { useTheme, spacing, fontFamily } from '../theme';
 
 interface Props {
   items: RelatedContentItem[];
@@ -26,6 +26,7 @@ export function RelatedContentCarousel({ items }: Props) {
   if (items.length === 0) return null;
 
   const handlePress = (item: RelatedContentItem) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (navigation as any).navigate('ExploreTab', {
       screen: item.screen,
       params: item.params,

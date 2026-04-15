@@ -41,8 +41,8 @@ function LensBrowseScreen() {
     [],
   );
 
-  const handleTry = (lensId: string) => {
-    (navigation as any).navigate('Chapter', {
+  const handleTry = (_lensId: string) => {
+    navigation.navigate('Chapter', {
       bookId: SAMPLE_CHAPTER.bookId,
       chapterNum: SAMPLE_CHAPTER.chapterNum,
     });

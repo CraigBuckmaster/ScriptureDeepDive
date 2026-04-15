@@ -16,7 +16,7 @@ import type { ScreenNavProp } from '../navigation/types';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { useContentLibrary, type ContentCategory } from '../hooks/useContentLibrary';
 import { ContentLibraryCard } from '../components/ContentLibraryCard';
-import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ContentLibraryEntry } from '../types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 

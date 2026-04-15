@@ -73,6 +73,7 @@ function PeriodsScreen() {
               navigation.navigate('PersonDetail', { personId })
             }
             onBookPress={(bookId) =>
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               (navigation as any).navigate('BookIntro', { bookId })
             }
           />

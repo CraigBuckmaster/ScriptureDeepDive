@@ -42,8 +42,10 @@ export function useStudyRecorder(
   const chapterIdRef = useRef(chapterId);
 
   // Keep refs in sync without triggering effects
-  isPremiumRef.current = isPremium;
-  chapterIdRef.current = chapterId;
+  useEffect(() => {
+    isPremiumRef.current = isPremium;
+    chapterIdRef.current = chapterId;
+  }, [isPremium, chapterId]);
 
   // Start/end session lifecycle
   useEffect(() => {

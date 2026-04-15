@@ -7,8 +7,8 @@
 
 import React, { Component, type ErrorInfo, type ReactNode } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { useTheme, spacing, fontFamily } from '../theme';
 import { useNavigation } from '@react-navigation/native';
+import { useTheme, spacing, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
 
 // ── Types ───────────────────────────────────────────────────────────

@@ -147,7 +147,7 @@ function SubmissionFlowScreen() {
               style={[styles.selectButton, { borderColor: base.border + '60' }]}
             >
               <Text style={[styles.selectButtonText, { color: base.text }]}>
-                Use "{topicSearch || '...'}"
+                Use &quot;{topicSearch || '...'}&quot;
               </Text>
             </TouchableOpacity>
             <TouchableOpacity

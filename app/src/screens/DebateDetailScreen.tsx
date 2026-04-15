@@ -36,7 +36,7 @@ function DebateDetailScreen() {
   const navigation = useNavigation<Nav>();
   const route = useRoute<Route>();
   const { topicId } = route.params;
-  const { topic, scholars, loading } = useDebateTopic(topicId);
+  const { topic, loading } = useDebateTopic(topicId);
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
   const [traditionFilter, setTraditionFilter] = useState('all');
 
@@ -62,7 +62,7 @@ function DebateDetailScreen() {
 
   const handleScholarPress = useCallback(
     (scholarId: string) => {
-      (navigation as any).navigate('ScholarBio', { scholarId });
+      navigation.navigate('ScholarBio', { scholarId });
     },
     [navigation]
   );
@@ -71,7 +71,7 @@ function DebateDetailScreen() {
     (ref: string) => {
       const parsed = parseVerseRef(ref);
       if (parsed) {
-        (navigation as any).navigate('Chapter', { bookId: parsed.bookId, chapterNum: parsed.ch });
+        navigation.navigate('Chapter', { bookId: parsed.bookId, chapterNum: parsed.ch });
       }
     },
     [navigation]

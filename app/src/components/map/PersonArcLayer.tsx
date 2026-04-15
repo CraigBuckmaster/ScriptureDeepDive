@@ -70,6 +70,7 @@ export const PersonArcLayer = memo(function PersonArcLayer({
 
   return (
     <>
+      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
       <ShapeSource id="person-arc-line" shape={lineFC as any}>
         <LineLayer
           id="person-arc-line-layer"
@@ -84,6 +85,7 @@ export const PersonArcLayer = memo(function PersonArcLayer({
         />
       </ShapeSource>
 
+      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
       <ShapeSource id="person-arc-stops" shape={stopsFC as any}>
         <CircleLayer
           id="person-arc-stops-circle"
@@ -97,6 +99,7 @@ export const PersonArcLayer = memo(function PersonArcLayer({
         <SymbolLayer
           id="person-arc-stops-number"
           style={{
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             textField: ['get', 'label'] as any,
             textFont: ['Noto Sans Regular'],
             textSize: 11,
@@ -109,6 +112,7 @@ export const PersonArcLayer = memo(function PersonArcLayer({
           id="person-arc-stops-event"
           minZoomLevel={8}
           style={{
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             textField: ['get', 'event'] as any,
             textFont: ['Noto Sans Italic'],
             textSize: 11,

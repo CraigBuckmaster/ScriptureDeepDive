@@ -20,7 +20,7 @@ export interface RelatedContentItem {
   snippet: string;
   color: string;
   screen: string;
-  params: Record<string, any>;
+  params: Record<string, unknown>;
   imageUrl?: string | null;
   label: string;  // e.g. "Person", "Timeline Event", "Map Journey"
 }

@@ -40,7 +40,9 @@ export function PanelInfoSheet({ visible, panelType, onClose, onGoToFullBio }: P
   // Load scholar data when needed
   useEffect(() => {
     if (!panelType || !visible || !isScholar) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setScholar(null);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setScholarDesc(null);
       return;
     }

@@ -41,8 +41,11 @@ export const PLANS: PlanInfo[] = [
 
 // ── SDK availability check ──────────────────────────────────────────
 
+// Platform-specific native module API - react-native-purchases SDK shape varies
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let Purchases: any = null;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function getSDK(): any {
   if (Purchases) return Purchases;
   try {
@@ -90,7 +93,7 @@ export async function purchasePlan(plan: PlanInfo): Promise<boolean> {
   try {
     const offerings = await sdk.getOfferings();
     const pkg = offerings?.current?.availablePackages?.find(
-      (p: any) => p.product?.identifier === plan.productId
+      (p: { product?: { identifier?: string } }) => p.product?.identifier === plan.productId
     );
     if (!pkg) {
       logger.error('purchases', `Package not found: ${plan.productId}`);
@@ -99,8 +102,8 @@ export async function purchasePlan(plan: PlanInfo): Promise<boolean> {
 
     const { customerInfo } = await sdk.purchasePackage(pkg);
     return applyCustomerInfo(customerInfo);
-  } catch (err: any) {
-    if (err?.userCancelled) return false;
+  } catch (err: unknown) {
+    if ((err as { userCancelled?: boolean })?.userCancelled) return false;
     logger.error('purchases', `Purchase failed: ${plan.productId}`, err);
     return false;
   }
@@ -145,6 +148,8 @@ export async function syncPremiumStatus(): Promise<void> {
 
 const ENTITLEMENT_ID = 'companion_plus';
 
+// Platform-specific native module API - RevenueCat customer info has complex shape
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function applyCustomerInfo(customerInfo: any): boolean {
   const entitlement = customerInfo?.entitlements?.active?.[ENTITLEMENT_ID];
   const store = usePremiumStore.getState();

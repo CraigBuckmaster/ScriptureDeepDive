@@ -61,6 +61,7 @@ export function DebatePreviewList({
 
   useEffect(() => {
     if (debates !== undefined) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLoaded(debates);
       return;
     }

@@ -14,16 +14,16 @@ import {
   Defs, RadialGradient, Stop, G, Circle, Text as SvgText, Path,
 } from 'react-native-svg';
 import { useTheme } from '../../theme';
-import { TreeLink } from './TreeLink';
-import { MarriageBarSvg } from './MarriageBarSvg';
-import { SpouseConnectorSvg } from './SpouseConnectorSvg';
-import { TreeNode } from './TreeNode';
 import { TIER_THRESHOLDS } from '../../utils/treeTiers';
 import type {
   TreeLink as TreeLinkType, MarriageBar, SpouseConnector, TreePerson,
   AssociationLink, AssociateBloomLabel, AssociateTrail,
 } from '../../utils/treeBuilder';
 import type { VisibleLayoutNode } from '../../hooks/useVisibleNodes';
+import { TreeLink } from './TreeLink';
+import { MarriageBarSvg } from './MarriageBarSvg';
+import { SpouseConnectorSvg } from './SpouseConnectorSvg';
+import { TreeNode } from './TreeNode';
 
 interface Props {
   nodes: VisibleLayoutNode[];

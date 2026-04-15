@@ -17,7 +17,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useRedemptiveArc } from '../hooks/useRedemptiveArc';
-import type { ParsedRedemptiveAct } from '../hooks/useRedemptiveArc';
 import { usePremium } from '../hooks/usePremium';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';

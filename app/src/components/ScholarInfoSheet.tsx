@@ -9,7 +9,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { getScholar } from '../db/content';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { Scholar, ScholarBio } from '../types';
-import { logger } from '../utils/logger';
 
 interface Props {
   visible: boolean;
@@ -28,7 +27,7 @@ export function ScholarInfoSheet({ visible, onClose, scholarId, onGoToFullBio }:
     getScholar(scholarId).then((s) => {
       setScholar(s);
       if (s?.bio_json) {
-        try { setBio(JSON.parse(s.bio_json)); } catch (err) { setBio(null); }
+        try { setBio(JSON.parse(s.bio_json)); } catch { setBio(null); }
       }
     });
   }, [scholarId, visible]);

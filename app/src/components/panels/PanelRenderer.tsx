@@ -11,7 +11,6 @@ import { useTheme, spacing, fontFamily } from '../../theme';
 import { isScholarPanel } from '../../utils/panelLabels';
 import { logger } from '../../utils/logger';
 import type { ParsedRef } from '../../types';
-
 // Section-level panels
 import { HebrewPanel } from './HebrewPanel';
 import { ContextPanel } from './ContextPanel';
@@ -22,7 +21,6 @@ import { CompositeConnectionsPanel } from './CompositeConnectionsPanel';
 import { CommentaryPanel } from './CommentaryPanel';
 import { PlacesPanel } from './PlacesPanel';
 import { TimelinePanel } from './TimelinePanel';
-
 // Chapter-level panels
 import { LiteraryStructurePanel } from './LiteraryStructurePanel';
 import { HebrewReadingPanel } from './HebrewReadingPanel';

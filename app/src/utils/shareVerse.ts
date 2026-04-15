@@ -8,8 +8,8 @@
 
 import { Share } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
-import { logger } from './logger';
 import { logEvent } from '../services/analytics';
+import { logger } from './logger';
 
 function formatVerseMessage(text: string, ref: string, translation?: string, bookId?: string, ch?: number): string {
   const translationTag = translation ? ` (${translation.toUpperCase()})` : '';

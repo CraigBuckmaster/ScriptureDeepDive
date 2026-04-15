@@ -9,8 +9,8 @@
 
 import { useState, useEffect } from 'react';
 import { getPeopleWithJourneys } from '../db/content';
-import { useConcepts, type Concept } from './useConceptData';
 import { logger } from '../utils/logger';
+import { useConcepts, type Concept } from './useConceptData';
 
 export interface PersonJourneyEntry {
   personId: string;

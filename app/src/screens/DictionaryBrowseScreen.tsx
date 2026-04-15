@@ -59,7 +59,7 @@ function DictionaryBrowseScreen() {
 
   const handleEntryPress = useCallback(
     (entry: DictionaryEntryParsed) => {
-      (navigation as any).navigate('DictionaryDetail', { entryId: entry.id });
+      navigation.navigate('DictionaryDetail', { entryId: entry.id });
     },
     [navigation]
   );
@@ -150,7 +150,7 @@ function DictionaryBrowseScreen() {
         ) : (
           <View style={styles.center}>
             <Text style={[styles.emptyText, { color: base.textDim }]}>
-              No entries found for "{searchQuery}"
+              No entries found for &quot;{searchQuery}&quot;
             </Text>
           </View>
         )
@@ -160,6 +160,7 @@ function DictionaryBrowseScreen() {
           sections={sections}
           keyExtractor={(item) => item.id}
           renderItem={renderEntry}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           renderSectionHeader={renderSectionHeader as any}
           stickySectionHeadersEnabled
           getItemLayout={(_data, index) => ({

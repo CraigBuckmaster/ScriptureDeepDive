@@ -10,10 +10,10 @@
  */
 
 import { getSupabase } from '../lib/supabase';
-import { getCurrentSession } from './auth';
-import { enqueue } from './syncQueue';
 import { flagContent as flagContentLocally } from '../db/userMutations';
 import { logger } from '../utils/logger';
+import { getCurrentSession } from './auth';
+import { enqueue } from './syncQueue';
 
 export interface EngagementCounts {
   upvotes: number;

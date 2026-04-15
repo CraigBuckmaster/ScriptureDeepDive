@@ -8,11 +8,11 @@
 
 import React, { useMemo } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { TabbedPanelRenderer } from './TabbedPanelRenderer';
-import type { TabConfig } from './TabbedPanelRenderer';
 import { TappableReference } from '../TappableReference';
 import { useTheme, spacing, fontFamily } from '../../theme';
 import type { CompositeContextData, ParsedRef } from '../../types';
+import type { TabConfig } from './TabbedPanelRenderer';
+import { TabbedPanelRenderer } from './TabbedPanelRenderer';
 
 interface Props {
   data: CompositeContextData;

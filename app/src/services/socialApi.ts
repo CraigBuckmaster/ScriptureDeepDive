@@ -68,7 +68,7 @@ export async function getFollowing(userId: string): Promise<FollowRecord[]> {
       .eq('user_id', userId)
       .order('created_at', { ascending: false });
     if (error || !data) return [];
-    return data.map((row: any) => ({
+    return data.map((row: { target_id: string; target_type: string; created_at: string }) => ({
       target_id: row.target_id,
       target_type: row.target_type,
       followed_at: row.created_at,

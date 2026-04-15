@@ -29,17 +29,18 @@ export interface DiffAnnotationData {
  * Normalize a diff annotation from either new `texts` map format or
  * legacy flat `matthew`/`luke`/`mark`/`john` fields.
  */
-export function normalizeDiffAnnotation(raw: any): DiffAnnotationData {
-  if (raw.texts) return raw as DiffAnnotationData;
+export function normalizeDiffAnnotation(raw: DiffAnnotationData | Record<string, unknown>): DiffAnnotationData {
+  const r = raw as Record<string, unknown>;
+  if (r.texts) return raw as DiffAnnotationData;
   const texts: Record<string, string> = {};
   for (const key of ['matthew', 'mark', 'luke', 'john']) {
-    if (raw[key]) texts[key] = raw[key];
+    if (r[key]) texts[key] = r[key] as string;
   }
   return {
-    location: raw.location,
-    diff_type: raw.diff_type,
+    location: r.location as string,
+    diff_type: r.diff_type as DiffAnnotationData['diff_type'],
     texts,
-    explanation: raw.explanation,
+    explanation: r.explanation as string,
   };
 }
 

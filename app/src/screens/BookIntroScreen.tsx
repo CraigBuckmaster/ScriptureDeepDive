@@ -15,7 +15,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import type {
   BookIntroSection, BookIntroOutlineItem, BookIntroPlanItem,
-  BookIntroKeyVerse, BookIntroEnrichedOutlineItem, BookIntroAtAGlance,
+  BookIntroKeyVerse, BookIntroEnrichedOutlineItem,
 } from '../types';
 import { useBookIntro } from '../hooks/useBookIntro';
 import { ScreenHeader } from '../components/ScreenHeader';

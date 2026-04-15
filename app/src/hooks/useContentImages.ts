@@ -23,6 +23,7 @@ export function useContentImages(
     let cancelled = false;
 
     if (!contentId) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsLoading(false);
       return;
     }

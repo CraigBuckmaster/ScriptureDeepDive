@@ -18,20 +18,17 @@ import { View, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg from 'react-native-svg';
 import { GestureDetector } from 'react-native-gesture-handler';
-
 import { usePeople } from '../hooks/usePeople';
 import { useTreeLayout } from '../hooks/useTreeLayout';
 import { useTreeCamera } from '../hooks/useTreeCamera';
 import { useVisibleNodes } from '../hooks/useVisibleNodes';
 import { useLandscapeUnlock } from '../hooks/useLandscapeUnlock';
-
 import { TreeCanvas } from '../components/tree/TreeCanvas';
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { PersonSearchBar } from '../components/tree/PersonSearchBar';
 import { MessianicLegend } from '../components/tree/MessianicLegend';
 import { PersonSidebar } from '../components/PersonSidebar';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-
 import { useTheme, spacing } from '../theme';
 import type { Person } from '../types';
 import type { TreePerson } from '../utils/treeBuilder';
@@ -114,6 +111,7 @@ function GenealogyTreeScreen({ route, navigation }: {
     const node = nodes.find((n) => n.data.id === initialPersonId);
     if (node) {
       const person = people.find((p) => p.id === initialPersonId);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (person) setSelectedPerson(person);
       centreOnNodeAbovePanel(node.x, node.y);
     }
@@ -242,6 +240,7 @@ function GenealogyTreeScreen({ route, navigation }: {
         onChapterPress={(link) => {
           const match = link.match(/(\w+)_(\d+)\.html/);
           if (match) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (navigation as any).navigate('ReadTab', {
               screen: 'Chapter',
               params: { bookId: match[1].toLowerCase(), chapterNum: parseInt(match[2], 10) },

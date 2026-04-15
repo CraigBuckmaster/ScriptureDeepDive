@@ -19,8 +19,8 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import { Search, X, Folder, Tag, FileText, ChevronRight, Link } from 'lucide-react-native';
 import type { ScreenNavProp } from '../navigation/types';
-import { Search, X, Plus, Folder, Tag, FileText, ChevronRight, Link } from 'lucide-react-native';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { TagChips } from '../components/TagChips';
 import { CollectionPicker } from '../components/CollectionPicker';
@@ -34,7 +34,6 @@ import {
   getCollectionNoteCounts,
   getAllTags,
   getNotesByTag,
-  createCollection,
   updateNoteTags,
   setNoteCollection,
   getCollection,
@@ -130,12 +129,16 @@ function AllNotesScreen() {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (activeTab === 'all') reloadNotes();
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (activeTab === 'collections') reloadCollections();
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (activeTab === 'tags') reloadTags();
   }, [activeTab, reloadNotes, reloadCollections, reloadTags]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (selectedTag) loadTagNotes(selectedTag);
   }, [selectedTag, loadTagNotes]);
 
@@ -214,15 +217,10 @@ function AllNotesScreen() {
     navigation.navigate('CollectionDetail', { collectionId });
   };
 
-  const handleCreateCollection = () => {
-    // Use a simple prompt - Alert.prompt is iOS only, so we keep it simple
-    Alert.alert('New Collection', 'Use the + button in Collection Detail to create collections with custom colors.');
-  };
-
   const groups = groupNotes(notes);
 
-  // Tab selector
-  const TabBar = () => (
+  // Tab selector JSX (inlined below)
+  const tabBar = (
     <View style={[styles.tabBar, { borderBottomColor: base.border }]}>
       {([
         { key: 'collections' as TabKey, label: 'Collections', icon: Folder },
@@ -474,7 +472,7 @@ function AllNotesScreen() {
         style={styles.header}
       />
 
-      <TabBar />
+      {tabBar}
 
       {activeTab === 'collections' && renderCollectionsTab()}
       {activeTab === 'tags' && renderTagsTab()}

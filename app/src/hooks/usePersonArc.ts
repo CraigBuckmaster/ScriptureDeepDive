@@ -8,10 +8,10 @@
  * Feature for epic #1314 / issue #1324.
  */
 
-import { useAsyncData } from './useAsyncData';
 import { getPerson, getPlaces } from '../db/content';
 import type { Person, Place, PersonGeographyStop } from '../types';
 import { safeParse } from '../utils/logger';
+import { useAsyncData } from './useAsyncData';
 
 export interface PersonArcStop extends PersonGeographyStop {
   /** Resolved place, looked up by place_id from places.json. */

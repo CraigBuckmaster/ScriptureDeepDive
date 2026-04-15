@@ -42,7 +42,7 @@ function DictionaryDetailScreen() {
     (ref: string) => {
       const parsed = parseVerseRef(ref);
       if (parsed) {
-        (navigation as any).navigate('Chapter', { bookId: parsed.bookId, chapterNum: parsed.ch });
+        navigation.navigate('Chapter', { bookId: parsed.bookId, chapterNum: parsed.ch });
       }
     },
     [navigation]
@@ -50,35 +50,35 @@ function DictionaryDetailScreen() {
 
   const handleRelatedPress = useCallback(
     (relatedId: string) => {
-      (navigation as any).push('DictionaryDetail', { entryId: relatedId });
+      navigation.push('DictionaryDetail', { entryId: relatedId });
     },
     [navigation]
   );
 
   const handlePersonPress = useCallback(
     (personId: string) => {
-      (navigation as any).navigate('PersonDetail', { personId });
+      navigation.navigate('PersonDetail', { personId });
     },
     [navigation]
   );
 
   const handlePlacePress = useCallback(
     (placeId: string) => {
-      (navigation as any).navigate('Map', { placeId });
+      navigation.navigate('Map', { placeId });
     },
     [navigation]
   );
 
   const handleWordStudyPress = useCallback(
     (wordId: string) => {
-      (navigation as any).navigate('WordStudyDetail', { wordId });
+      navigation.navigate('WordStudyDetail', { wordId });
     },
     [navigation]
   );
 
   const handleConceptPress = useCallback(
     (conceptId: string) => {
-      (navigation as any).navigate('ConceptDetail', { conceptId });
+      navigation.navigate('ConceptDetail', { conceptId });
     },
     [navigation]
   );
@@ -198,7 +198,7 @@ function DictionaryDetailScreen() {
         {/* Attribution */}
         <View style={[styles.attribution, { borderTopColor: base.border }]}>
           <Text style={[styles.attributionText, { color: base.textMuted }]}>
-            Source: Easton's Bible Dictionary{'\n'}
+            Source: Easton&apos;s Bible Dictionary{'\n'}
             M.G. Easton, 1897 (public domain)
           </Text>
         </View>
