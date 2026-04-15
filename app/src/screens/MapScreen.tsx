@@ -23,6 +23,8 @@ import { AncientBorderLayer } from '../components/map/AncientBorderLayer';
 import { PlaceMarkerList } from '../components/map/PlaceMarkerList';
 import { PersonArcLayer } from '../components/map/PersonArcLayer';
 import { StoryOverlays } from '../components/map/StoryOverlays';
+import { MapUnavailableCard } from '../components/map/MapUnavailableCard';
+import { isMapNativeAvailable } from '../utils/isMapNativeAvailable';
 import { usePersonArc } from '../hooks/usePersonArc';
 import { StoryPicker } from '../components/map/StoryPicker';
 import { StoryPanel } from '../components/map/StoryPanel';
@@ -71,7 +73,17 @@ function MapScreen({ route, navigation }: {
 }) {
   const { base } = useTheme();
   useLandscapeUnlock();
-  // Configure ambient tile cache + pre-cache biblical region on first mount.
+
+  // Expo Go (and dev builds made before the MapLibre plugin was added)
+  // don't have MapLibre's native module. Rendering any MapView in that
+  // state blows up with "Element type is invalid"; bail to a friendly
+  // placeholder instead. Computed once per mount — the native bridge
+  // state doesn't change during a session.
+  const mapAvailable = isMapNativeAvailable();
+
+  // Configure ambient tile cache + pre-cache biblical region on first
+  // mount. The hook itself no-ops when MapLibre isn't linked, so no
+  // extra guard is needed here.
   useMapTileCache(STYLE_ANCIENT);
   const initialStoryId = route?.params?.storyId;
   const initialPlaceId = route?.params?.placeId;
@@ -258,6 +270,10 @@ function MapScreen({ route, navigation }: {
       setShowPanel(false);
     }
   }, [activeStory, stories, selectStory]);
+
+  if (!mapAvailable) {
+    return <MapUnavailableCard />;
+  }
 
   if (placesLoading || storiesLoading) {
     return (
