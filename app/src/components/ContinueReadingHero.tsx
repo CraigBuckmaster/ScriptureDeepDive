@@ -4,13 +4,13 @@
  * Image header (160px), caption overlay, dot indicators, gradient fade,
  * text area with book/chapter + "Continue" CTA button.
  *
- * Fallback chain: book images → key person images → accent strip.
+ * Fallback chain: book images → key person images → category images → accent strip.
  * New user state: "Begin your journey" with Genesis CTA.
  *
  * Part of Epic #1089 (#1090).
  */
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Image } from 'expo-image';
 import { ArrowRight } from 'lucide-react-native';
@@ -21,6 +21,7 @@ import type { RecentChapter } from '../types';
 
 const IMAGE_HEIGHT = 160;
 const CYCLE_INTERVAL = 8000;
+const R2 = 'https://contentcompanionstudy.com/art';
 
 // Key person for each book (used as fallback when book has no images)
 const BOOK_FALLBACK_PERSON: Record<string, string> = {
@@ -35,6 +36,98 @@ const BOOK_FALLBACK_PERSON: Record<string, string> = {
   revelation: 'john',
 };
 
+// ── Category fallback images (Doré + historical maps on R2) ─────────
+// Used when neither the book nor its key person has content_images.
+
+type BookCategory = 'torah' | 'history' | 'wisdom' | 'major_prophets' | 'minor_prophets' | 'gospels' | 'acts' | 'epistles' | 'revelation';
+
+const BOOK_CATEGORY: Record<string, BookCategory> = {
+  genesis: 'torah', exodus: 'torah', leviticus: 'torah', numbers: 'torah', deuteronomy: 'torah',
+  joshua: 'history', judges: 'history', ruth: 'history',
+  '1_samuel': 'history', '2_samuel': 'history', '1_kings': 'history', '2_kings': 'history',
+  '1_chronicles': 'history', '2_chronicles': 'history', ezra: 'history', nehemiah: 'history', esther: 'history',
+  job: 'wisdom', psalms: 'wisdom', proverbs: 'wisdom', ecclesiastes: 'wisdom', song_of_solomon: 'wisdom',
+  isaiah: 'major_prophets', jeremiah: 'major_prophets', lamentations: 'major_prophets',
+  ezekiel: 'major_prophets', daniel: 'major_prophets',
+  hosea: 'minor_prophets', joel: 'minor_prophets', amos: 'minor_prophets', obadiah: 'minor_prophets',
+  jonah: 'minor_prophets', micah: 'minor_prophets', nahum: 'minor_prophets', habakkuk: 'minor_prophets',
+  zephaniah: 'minor_prophets', haggai: 'minor_prophets', zechariah: 'minor_prophets', malachi: 'minor_prophets',
+  matthew: 'gospels', mark: 'gospels', luke: 'gospels', john: 'gospels',
+  acts: 'acts',
+  romans: 'epistles', '1_corinthians': 'epistles', '2_corinthians': 'epistles', galatians: 'epistles',
+  ephesians: 'epistles', philippians: 'epistles', colossians: 'epistles',
+  '1_thessalonians': 'epistles', '2_thessalonians': 'epistles',
+  '1_timothy': 'epistles', '2_timothy': 'epistles', titus: 'epistles', philemon: 'epistles',
+  hebrews: 'epistles', james: 'epistles', '1_peter': 'epistles', '2_peter': 'epistles',
+  '1_john': 'epistles', '2_john': 'epistles', '3_john': 'epistles', jude: 'epistles',
+  revelation: 'revelation',
+};
+
+interface FallbackImage { url: string; caption: string; credit: string }
+
+const CATEGORY_IMAGES: Record<BookCategory, FallbackImage[]> = {
+  torah: [
+    { url: `${R2}/dore-creation-light.jpg`,   caption: 'Creation of Light',        credit: 'Gustave Doré' },
+    { url: `${R2}/dore-adam-eve.jpg`,          caption: 'Adam and Eve in Eden',     credit: 'Gustave Doré' },
+    { url: `${R2}/dore-flood.jpg`,             caption: 'The Great Flood',          credit: 'Gustave Doré' },
+    { url: `${R2}/dore-abraham-angels.jpg`,    caption: 'Abraham and the Angels',   credit: 'Gustave Doré' },
+    { url: `${R2}/dore-red-sea.jpg`,           caption: 'Crossing the Red Sea',     credit: 'Gustave Doré' },
+    { url: `${R2}/dore-sinai.jpg`,             caption: 'Moses on Mount Sinai',     credit: 'Gustave Doré' },
+  ],
+  history: [
+    { url: `${R2}/dore-jericho.jpg`,           caption: 'The Fall of Jericho',      credit: 'Gustave Doré' },
+    { url: `${R2}/dore-deborah.jpg`,           caption: 'Deborah',                  credit: 'Gustave Doré' },
+    { url: `${R2}/dore-samson.jpg`,            caption: 'Samson',                   credit: 'Gustave Doré' },
+    { url: `${R2}/dore-ruth-boaz.jpg`,         caption: 'Ruth and Boaz',            credit: 'Gustave Doré' },
+    { url: `${R2}/dore-david-goliath.jpg`,     caption: 'David and Goliath',        credit: 'Gustave Doré' },
+    { url: `${R2}/dore-solomon-judgment.jpg`,  caption: 'Judgment of Solomon',      credit: 'Gustave Doré' },
+    { url: `${R2}/dore-elijah-carmel.jpg`,     caption: 'Elijah on Mount Carmel',   credit: 'Gustave Doré' },
+    { url: `${R2}/dore-esther.jpg`,            caption: 'Esther Before the King',   credit: 'Gustave Doré' },
+  ],
+  wisdom: [
+    { url: `${R2}/dore-solomon-judgment.jpg`,  caption: 'The Wisdom of Solomon',    credit: 'Gustave Doré' },
+    { url: `${R2}/dore-creation-light.jpg`,    caption: 'The Majesty of Creation',  credit: 'Gustave Doré' },
+    { url: `${R2}/dore-jacob-blessing.jpg`,    caption: 'Jacob\'s Blessing',        credit: 'Gustave Doré' },
+    { url: `${R2}/dore-david-goliath.jpg`,     caption: 'David — Psalmist and King', credit: 'Gustave Doré' },
+  ],
+  major_prophets: [
+    { url: `${R2}/dore-isaiah.jpg`,            caption: 'The Vision of Isaiah',     credit: 'Gustave Doré' },
+    { url: `${R2}/dore-jeremiah.jpg`,          caption: 'Jeremiah',                 credit: 'Gustave Doré' },
+    { url: `${R2}/dore-ezekiel.jpg`,           caption: 'Ezekiel\'s Vision',        credit: 'Gustave Doré' },
+    { url: `${R2}/dore-daniel.jpg`,            caption: 'Daniel in the Lions\' Den', credit: 'Gustave Doré' },
+    { url: `${R2}/dore-assyrian-exile.jpg`,    caption: 'The Exile',                credit: 'Gustave Doré' },
+  ],
+  minor_prophets: [
+    { url: `${R2}/dore-jonah.jpg`,             caption: 'Jonah',                    credit: 'Gustave Doré' },
+    { url: `${R2}/dore-assyrian-exile.jpg`,    caption: 'The Exile',                credit: 'Gustave Doré' },
+    { url: `${R2}/dore-elijah-chariot.jpg`,    caption: 'Elijah\'s Chariot of Fire', credit: 'Gustave Doré' },
+    { url: `${R2}/dore-isaiah.jpg`,            caption: 'The Prophetic Word',       credit: 'Gustave Doré' },
+  ],
+  gospels: [
+    { url: `${R2}/dore-nativity.jpg`,          caption: 'The Nativity',             credit: 'Gustave Doré' },
+    { url: `${R2}/dore-prodigal-son.jpg`,      caption: 'The Prodigal Son',         credit: 'Gustave Doré' },
+    { url: `${R2}/dore-crucifixion-darkness.jpg`, caption: 'The Crucifixion',        credit: 'Gustave Doré' },
+    { url: `${R2}/dore-resurrection.jpg`,      caption: 'The Resurrection',         credit: 'Gustave Doré' },
+  ],
+  acts: [
+    { url: `${R2}/dore-pentecost.jpg`,         caption: 'The Day of Pentecost',     credit: 'Gustave Doré' },
+    { url: `${R2}/dore-paul.jpg`,              caption: 'The Apostle Paul',         credit: 'Gustave Doré' },
+    { url: `${R2}/map-paul-journeys.jpg`,      caption: 'Paul\'s Missionary Journeys', credit: 'Historical map' },
+  ],
+  epistles: [
+    { url: `${R2}/dore-paul.jpg`,              caption: 'Paul — Apostle to the Nations', credit: 'Gustave Doré' },
+    { url: `${R2}/dore-pentecost.jpg`,         caption: 'The Early Church',         credit: 'Gustave Doré' },
+    { url: `${R2}/map-paul-journeys.jpg`,      caption: 'Paul\'s Journeys',         credit: 'Historical map' },
+    { url: `${R2}/map-palestine-christ.jpg`,   caption: 'The Ancient World',        credit: 'Historical map' },
+  ],
+  revelation: [
+    { url: `${R2}/dore-crucifixion-darkness.jpg`, caption: 'Darkness Over the Land', credit: 'Gustave Doré' },
+    { url: `${R2}/dore-creation-light.jpg`,    caption: 'And God Said, Let There Be Light', credit: 'Gustave Doré' },
+    { url: `${R2}/dore-resurrection.jpg`,      caption: 'The Risen Christ',         credit: 'Gustave Doré' },
+    { url: `${R2}/dore-daniel.jpg`,            caption: 'Daniel\'s Vision',         credit: 'Gustave Doré' },
+  ],
+};
+
 interface Props {
   mostRecent: RecentChapter | null;
   onPress: () => void;
@@ -45,15 +138,33 @@ export function ContinueReadingHero({ mostRecent, onPress }: Props) {
 
   const bookId = mostRecent?.book_id ?? 'genesis';
   const fallbackPerson = BOOK_FALLBACK_PERSON[bookId];
+  const category = BOOK_CATEGORY[bookId] ?? 'torah';
 
-  // Fallback chain: book images → person images
+  // Fallback chain: book images → person images → category images
   const { images: bookImages } = useContentImages('book', bookId);
   const { images: personImages } = useContentImages('people', fallbackPerson);
 
-  // Use book images first, then person, then empty
+  // Category fallback: Doré illustrations + historical maps by book category.
+  // Shaped as ContentImage[] so the cycling/error logic downstream is unchanged.
+  const categoryImages = useMemo<ContentImage[]>(() =>
+    (CATEGORY_IMAGES[category] ?? []).map((img, i) => ({
+      id: -(i + 1), // Negative IDs to avoid collision with real content_images
+      content_type: 'fallback',
+      content_id: category,
+      url: img.url,
+      caption: img.caption,
+      credit: img.credit,
+      display_order: i,
+    })),
+    [category],
+  );
+
+  // Use book images first, then person, then category
   const images: ContentImage[] = bookImages.length > 0
     ? bookImages
-    : personImages;
+    : personImages.length > 0
+      ? personImages
+      : categoryImages;
 
   const hasImages = images.length > 0;
 
