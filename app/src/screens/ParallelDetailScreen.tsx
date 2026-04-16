@@ -122,6 +122,7 @@ function ParallelDetailScreen() {
                   navigation.navigate('Chapter', {
                     bookId: parsed.bookId,
                     chapterNum: parsed.chapter,
+                    ...(parsed.verseStart ? { verseNum: parsed.verseStart } : {}),
                   });
                 }
               }}

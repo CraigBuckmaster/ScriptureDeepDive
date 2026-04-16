@@ -41,7 +41,7 @@ interface Callbacks {
   onNotePress: (verseNum: number) => void;
   onVerseLongPress: (verseNum: number, text: string) => void;
   onInterlinearPress: (verseNum: number) => void;
-  onRefPress: (ref: { bookId: string; chapter: number }) => void;
+  onRefPress: (ref: { bookId: string; chapter: number; verseStart?: number; verseNum?: number }) => void;
 }
 
 // ── Layout callbacks ──

@@ -27,6 +27,11 @@ import { useTheme, spacing, radii, fontFamily } from '../../theme';
 import type { MapStory, Place } from '../../types';
 import { safeParse } from '../../utils/logger';
 import { StoryOverlays } from './StoryOverlays';
+import { ensureMapLibreInit } from '../../utils/isMapNativeAvailable';
+
+// The MapChip dispatcher gates on isMapNativeAvailable() before loading
+// this module. Ensure the SDK is initialized before rendering.
+ensureMapLibreInit();
 
 /**
  * Subset of MapLibre's `CameraStop` shape that we actually use. The real

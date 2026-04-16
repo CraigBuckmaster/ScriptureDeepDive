@@ -121,8 +121,8 @@ function ConceptDetailScreen() {
         <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
           <ConceptJourney
             stops={concept.journey_stops}
-            onNavigate={(book, chapter) =>
-              navigation.navigate('Chapter', { bookId: book, chapterNum: chapter })
+            onNavigate={(book, chapter, verseNum) =>
+              navigation.navigate('Chapter', { bookId: book, chapterNum: chapter, ...(verseNum ? { verseNum } : {}) })
             }
           />
           <View style={styles.bottomSpacer} />

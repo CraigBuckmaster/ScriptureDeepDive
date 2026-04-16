@@ -86,9 +86,13 @@ function ProphecyDetailScreen() {
   const handleVersePress = (link: ProphecyChainLink) => {
     // Navigate to Chapter screen in ExploreStack
     try {
+      // Extract starting verse from verse_ref (e.g., "Gen 12:1-3" → 1)
+      const vm = link.verse_ref?.match(/:(\d+)/);
+      const verseNum = vm ? parseInt(vm[1], 10) : undefined;
       navigation.navigate('Chapter', {
         bookId: link.book_dir,
         chapterNum: link.chapter_num,
+        ...(verseNum ? { verseNum } : {}),
       });
     } catch (err) {
       logger.warn('ProphecyDetailScreen', 'Navigation failed', err);

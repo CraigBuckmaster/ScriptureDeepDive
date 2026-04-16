@@ -66,6 +66,7 @@ function ConcordanceScreen() {
     navigation.navigate('Chapter', {
       bookId: item.book_id,
       chapterNum: item.chapter_num,
+      verseNum: item.verse_num,
     });
   };
 

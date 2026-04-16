@@ -14,6 +14,11 @@ import { View, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { MapView, Camera, type CameraRef } from '@maplibre/maplibre-react-native';
 import { usePlaces } from '../hooks/usePlaces';
+import { ensureMapLibreInit } from '../utils/isMapNativeAvailable';
+
+// The dispatcher (MapScreen.tsx) gates on isMapNativeAvailable() before
+// this module loads. Run module-level init so tiles can be fetched.
+ensureMapLibreInit();
 import { useMapStories } from '../hooks/useMapStories';
 import { useMapZoom } from '../hooks/useMapZoom';
 import { useMapTileCache } from '../hooks/useMapTileCache';

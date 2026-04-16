@@ -48,12 +48,12 @@ describe('ConceptJourney', () => {
     expect(getByText('Introduces the seed promise.')).toBeTruthy();
   });
 
-  it('calls onNavigate with book and chapter when a card is pressed', () => {
+  it('calls onNavigate with book, chapter, and verseNum when a card is pressed', () => {
     const onNavigate = jest.fn();
     const { getByText } = renderWithProviders(
       <ConceptJourney stops={makeStops()} onNavigate={onNavigate} />,
     );
     fireEvent.press(getByText('Protoevangelium'));
-    expect(onNavigate).toHaveBeenCalledWith('Genesis', 3);
+    expect(onNavigate).toHaveBeenCalledWith('Genesis', 3, 15);
   });
 });

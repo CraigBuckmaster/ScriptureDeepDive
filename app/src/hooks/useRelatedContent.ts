@@ -46,7 +46,7 @@ function extractCards(
       type: 'timeline',
       title: 'Timeline Event',
       snippet: chapter.timeline_link_text ?? 'See this event on the interactive timeline',
-      color: '#70b8e8',
+      color: '#bfa050', // theme: Scroll Gold
       screen: 'Timeline',
       params: { eventId: chapter.timeline_link_event },
       imageUrl: null,
@@ -60,7 +60,7 @@ function extractCards(
       type: 'map',
       title: 'Map Journey',
       snippet: chapter.map_story_link_text ?? 'Trace this journey on the interactive map',
-      color: '#81C784',
+      color: '#bfa050', // theme: Scroll Gold
       screen: 'Map',
       params: { storyId: chapter.map_story_link_id },
       imageUrl: null,
@@ -80,7 +80,7 @@ function extractCards(
           type: 'people',
           title: (p.name as string) ?? (p.label as string) ?? 'Person',
           snippet: (p.role as string) ?? (p.bio as string)?.slice(0, 60) ?? (p.description as string)?.slice(0, 60) ?? 'Biblical figure',
-          color: '#e86040',
+          color: '#bfa050', // theme: Scroll Gold
           screen: 'PersonDetail',
           params: { personId: (p.id as string) ?? (p.name as string) },
           imageUrl: null,
@@ -100,7 +100,7 @@ function extractCards(
         type: 'debate',
         title: typeof title === 'string' ? (title.length > 40 ? title.slice(0, 37) + '…' : title) : 'Debate',
         snippet: 'Scholarly debate with multiple positions',
-        color: '#d08080',
+        color: '#bfa050', // theme: Scroll Gold
         screen: 'DebateDetail',
         params: { topicId: (data.id as string) ?? (data.debate_id as string) },
         imageUrl: null,
