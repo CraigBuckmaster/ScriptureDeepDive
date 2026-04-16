@@ -1,79 +1,81 @@
 /**
- * useJourneyBrowse — Data for the Journeys section on ExploreMenuScreen.
+ * useJourneyBrowse — Load all journeys from the unified journeys table
+ * for the three-tab JourneyBrowseScreen.
  *
- * Loads person journeys (from people_journeys table) and concept journeys
- * (from concepts table, filtered to those with journey_stops) in parallel.
- *
- * Part of Journeys on Explore feature.
+ * Rewritten for Epic #1379 unified journey model.
  */
 
-import { useState, useEffect } from 'react';
-import { getPeopleWithJourneys } from '../db/content';
+import { useState, useEffect, useMemo } from 'react';
+import { getAllJourneys } from '../db/content/features';
 import { logger } from '../utils/logger';
-import { useConcepts, type Concept } from './useConceptData';
+import type { Journey } from '../types';
 
-export interface PersonJourneyEntry {
-  personId: string;
-  name: string;
-  era: string | null;
-  role: string | null;
-  stageCount: number;
-}
-
-export interface ConceptJourneyEntry {
-  conceptId: string;
+export interface JourneyBrowseEntry {
+  id: string;
+  journeyType: 'person' | 'concept' | 'thematic';
   title: string;
-  stopCount: number;
-  firstLabel: string;
-  lastLabel: string;
+  subtitle: string | null;
+  lensId: string | null;
+  depth: string | null;
+  personId: string | null;
+  conceptId: string | null;
 }
 
 export interface JourneyBrowseData {
-  personJourneys: PersonJourneyEntry[];
-  conceptJourneys: ConceptJourneyEntry[];
+  allJourneys: JourneyBrowseEntry[];
+  personJourneys: JourneyBrowseEntry[];
+  conceptJourneys: JourneyBrowseEntry[];
+  thematicJourneys: JourneyBrowseEntry[];
+  lensIds: string[];
   isLoading: boolean;
 }
 
-export function useJourneyBrowse(): JourneyBrowseData {
-  const [personJourneys, setPersonJourneys] = useState<PersonJourneyEntry[]>([]);
-  const [isLoadingPeople, setIsLoadingPeople] = useState(true);
-  const { concepts, loading: conceptsLoading } = useConcepts();
+function toEntry(j: Journey): JourneyBrowseEntry {
+  return {
+    id: j.id,
+    journeyType: j.journey_type,
+    title: j.title,
+    subtitle: j.subtitle,
+    lensId: j.lens_id,
+    depth: j.depth,
+    personId: j.person_id,
+    conceptId: j.concept_id,
+  };
+}
 
-  // Load person journeys
+export function useJourneyBrowse(): JourneyBrowseData {
+  const [allJourneys, setAllJourneys] = useState<JourneyBrowseEntry[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    getPeopleWithJourneys()
-      .then((rows) => {
-        setPersonJourneys(
-          rows.map((r) => ({
-            personId: r.person_id,
-            name: r.name,
-            era: r.era,
-            role: r.role,
-            stageCount: r.stage_count,
-          })),
-        );
-      })
-      .catch((err) => {
-        logger.warn('useJourneyBrowse', 'Failed to load person journeys', err);
-      })
-      .finally(() => setIsLoadingPeople(false));
+    getAllJourneys()
+      .then((rows) => setAllJourneys(rows.map(toEntry)))
+      .catch((err) => logger.warn('useJourneyBrowse', 'Failed to load journeys', err))
+      .finally(() => setIsLoading(false));
   }, []);
 
-  // Derive concept journeys from the concepts hook (already loaded)
-  const conceptJourneys: ConceptJourneyEntry[] = concepts
-    .filter((c: Concept) => c.journey_stops && c.journey_stops.length > 0)
-    .map((c: Concept) => ({
-      conceptId: c.id,
-      title: c.title,
-      stopCount: c.journey_stops.length,
-      firstLabel: c.journey_stops[0]?.label ?? '',
-      lastLabel: c.journey_stops[c.journey_stops.length - 1]?.label ?? '',
-    }))
-    .sort((a, b) => b.stopCount - a.stopCount);
+  const personJourneys = useMemo(
+    () => allJourneys.filter((j) => j.journeyType === 'person').sort((a, b) => a.title.localeCompare(b.title)),
+    [allJourneys],
+  );
 
-  return {
-    personJourneys,
-    conceptJourneys,
-    isLoading: isLoadingPeople || conceptsLoading,
-  };
+  const conceptJourneys = useMemo(
+    () => allJourneys.filter((j) => j.journeyType === 'concept'),
+    [allJourneys],
+  );
+
+  const thematicJourneys = useMemo(
+    () => allJourneys.filter((j) => j.journeyType === 'thematic'),
+    [allJourneys],
+  );
+
+  const lensIds = useMemo(() => {
+    const set = new Set<string>();
+    for (const j of allJourneys) {
+      if (j.lensId) set.add(j.lensId);
+    }
+    return [...set].sort();
+  }, [allJourneys]);
+
+  return { allJourneys, personJourneys, conceptJourneys, thematicJourneys, lensIds, isLoading };
 }

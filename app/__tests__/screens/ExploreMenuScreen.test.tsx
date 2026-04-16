@@ -11,8 +11,11 @@ jest.mock('@/db/content', () => ({
 
 jest.mock('@/hooks/useJourneyBrowse', () => ({
   useJourneyBrowse: jest.fn().mockReturnValue({
+    allJourneys: [],
     personJourneys: [],
     conceptJourneys: [],
+    thematicJourneys: [],
+    lensIds: [],
     isLoading: false,
   }),
 }));

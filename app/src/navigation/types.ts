@@ -94,7 +94,7 @@ export type ExploreStackParamList = {
   Periods: undefined;
   RedemptiveArc: undefined;
   PersonJourney: { personId: string };
-  JourneyBrowse: { tab?: 'people' | 'concepts' } | undefined;
+  JourneyBrowse: { tab?: 'lenses' | 'people' | 'featured'; filterLens?: string } | undefined;
   JourneyDetail: { journeyId: string };
   Concordance: {
     strongs?: string;
