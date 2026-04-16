@@ -15,10 +15,6 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { MapView, Camera, type CameraRef } from '@maplibre/maplibre-react-native';
 import { usePlaces } from '../hooks/usePlaces';
 import { ensureMapLibreInit } from '../utils/isMapNativeAvailable';
-
-// The dispatcher (MapScreen.tsx) gates on isMapNativeAvailable() before
-// this module loads. Run module-level init so tiles can be fetched.
-ensureMapLibreInit();
 import { useMapStories } from '../hooks/useMapStories';
 import { useMapZoom } from '../hooks/useMapZoom';
 import { useMapTileCache } from '../hooks/useMapTileCache';
@@ -42,6 +38,10 @@ import { logger } from '../utils/logger';
 import { lightImpact } from '../utils/haptics';
 import { STYLE_ANCIENT, STYLE_MODERN } from '../constants/mapStyles';
 import { buildPlaceToStoriesMap } from './MapScreen';
+
+// The dispatcher (MapScreen.tsx) gates on isMapNativeAvailable() before
+// this module loads. Run module-level init so tiles can be fetched.
+ensureMapLibreInit();
 
 // Roughly the Fertile Crescent — Israel through Turkey, Egypt, Iraq.
 // Used as default camera and as the pre-cached tile region (#1321).

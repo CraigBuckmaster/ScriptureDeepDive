@@ -26,8 +26,8 @@ import { STYLE_ANCIENT } from '../../constants/mapStyles';
 import { useTheme, spacing, radii, fontFamily } from '../../theme';
 import type { MapStory, Place } from '../../types';
 import { safeParse } from '../../utils/logger';
-import { StoryOverlays } from './StoryOverlays';
 import { ensureMapLibreInit } from '../../utils/isMapNativeAvailable';
+import { StoryOverlays } from './StoryOverlays';
 
 // The MapChip dispatcher gates on isMapNativeAvailable() before loading
 // this module. Ensure the SDK is initialized before rendering.
