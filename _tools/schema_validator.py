@@ -11,6 +11,7 @@ Validation sections:
   3. COMPLETENESS      — 66 live books, correct chapter counts
   4. PANEL DISTRIBUTION — Section/chapter panel type frequency counts
   5. FEATURE META      — Prophecy chains, concepts, difficult passages, debate topics schema
+ 19. JOURNEY VALIDATION — Journey JSON schema, stop structure, cross-file linked refs
 
 Exit codes:
   0 = all checks passed
@@ -1326,6 +1327,253 @@ def main():
                 check(f"verses/{trans} encoding", False,
                       f"{encoding_issues} files with encoding issues")
             print(f"  {trans}: {len(trans_files)} books, {total_verses} verses")
+
+    # ── 19. Journey JSON schema validation (#1384) ──
+    journeys_root = META / 'journeys'
+    journey_subdirs = ('thematic', 'concept', 'person')
+    journey_files = []
+    for subdir in journey_subdirs:
+        d = journeys_root / subdir
+        if d.is_dir():
+            journey_files.extend(sorted(d.glob('*.json')))
+
+    if journey_files:
+        print("\n--- 19. JOURNEY VALIDATION ---")
+
+        # Load valid lens IDs from journey-lenses.json
+        lenses_path = META / 'journey-lenses.json'
+        valid_lens_ids = set()
+        if lenses_path.exists():
+            lenses_data = json.loads(lenses_path.read_text(encoding='utf-8'))
+            if isinstance(lenses_data, list):
+                valid_lens_ids = {l['id'] for l in lenses_data if 'id' in l}
+
+        # Load all book IDs for book_id validation
+        all_book_ids_j = {b['id'] for b in books}
+
+        id_re = re.compile(r'^[a-z0-9][a-z0-9-]*$')
+        valid_journey_types = {'person', 'concept', 'thematic'}
+        valid_depths = {'short', 'medium', 'long'}
+        valid_stop_types = {'regular', 'linked_journey'}
+        valid_tag_types = {'person', 'place', 'theme', 'word_study', 'prophecy_chain'}
+
+        # First pass: collect all journey IDs for cross-file linked_journey_id resolution
+        all_journey_ids = set()
+        journey_data_cache = {}
+        for json_file in journey_files:
+            try:
+                data = json.loads(json_file.read_text(encoding='utf-8'))
+            except json.JSONDecodeError as e:
+                check(f"{json_file.name} valid JSON", False, str(e))
+                continue
+            journey_data_cache[json_file] = data
+            jid = data.get('id')
+            if jid:
+                all_journey_ids.add(jid)
+
+        # Second pass: validate each journey
+        linked_refs = []  # collect (file, linked_journey_id) for cross-file check
+        total_journeys = 0
+        total_stops = 0
+
+        for json_file, data in journey_data_cache.items():
+            total_journeys += 1
+            jid = data.get('id', json_file.stem)
+
+            # id — required, string, matches pattern
+            check(f"journey {jid} has 'id'", 'id' in data, "missing 'id'")
+            if 'id' in data:
+                check(f"journey {jid} id format",
+                      isinstance(data['id'], str) and bool(id_re.match(data['id'])),
+                      f"got '{data['id']}'")
+
+            # journey_type — required, enum
+            check(f"journey {jid} has 'journey_type'",
+                  'journey_type' in data, "missing 'journey_type'")
+            jtype = data.get('journey_type')
+            if jtype is not None:
+                check(f"journey {jid} journey_type valid",
+                      jtype in valid_journey_types,
+                      f"got '{jtype}'")
+
+            # title — required, non-empty string
+            check(f"journey {jid} has 'title'", 'title' in data, "missing 'title'")
+            if 'title' in data:
+                check(f"journey {jid} title non-empty",
+                      isinstance(data['title'], str) and len(data['title'].strip()) > 0)
+
+            # description — required, non-empty string
+            check(f"journey {jid} has 'description'",
+                  'description' in data, "missing 'description'")
+            if 'description' in data:
+                check(f"journey {jid} description non-empty",
+                      isinstance(data['description'], str) and len(data['description'].strip()) > 0)
+
+            # lens_id — required when thematic, optional otherwise; must match lenses
+            lens_id = data.get('lens_id')
+            if jtype == 'thematic':
+                check(f"journey {jid} has 'lens_id' (thematic)",
+                      lens_id is not None, "lens_id required for thematic journeys")
+            if lens_id is not None and valid_lens_ids:
+                check(f"journey {jid} lens_id valid",
+                      lens_id in valid_lens_ids,
+                      f"'{lens_id}' not in journey-lenses.json")
+
+            # depth — optional, enum if present
+            depth = data.get('depth')
+            if depth is not None:
+                check(f"journey {jid} depth valid",
+                      depth in valid_depths,
+                      f"got '{depth}'")
+
+            # person_id — required when person, null otherwise
+            if jtype == 'person':
+                check(f"journey {jid} has 'person_id' (person type)",
+                      data.get('person_id') is not None,
+                      "person_id required for person journeys")
+            else:
+                check(f"journey {jid} person_id null (non-person type)",
+                      data.get('person_id') is None,
+                      f"person_id should be null for {jtype} journey")
+
+            # concept_id — required when concept, null otherwise
+            if jtype == 'concept':
+                check(f"journey {jid} has 'concept_id' (concept type)",
+                      data.get('concept_id') is not None,
+                      "concept_id required for concept journeys")
+            else:
+                check(f"journey {jid} concept_id null (non-concept type)",
+                      data.get('concept_id') is None,
+                      f"concept_id should be null for {jtype} journey")
+
+            # stops — required, non-empty array
+            check(f"journey {jid} has 'stops'", 'stops' in data, "missing 'stops'")
+            stops = data.get('stops', [])
+            check(f"journey {jid} stops is non-empty list",
+                  isinstance(stops, list) and len(stops) >= 1,
+                  f"got {len(stops) if isinstance(stops, list) else type(stops).__name__}")
+
+            if not isinstance(stops, list):
+                continue
+
+            total_stops += len(stops)
+
+            # Validate each stop
+            for si, stop in enumerate(stops):
+                slabel = f"journey {jid} stop [{si}]"
+
+                # stop_order — required, integer, sequential from 1
+                check(f"{slabel} has 'stop_order'",
+                      'stop_order' in stop, "missing 'stop_order'")
+                so = stop.get('stop_order')
+                if so is not None:
+                    check(f"{slabel} stop_order is int",
+                          isinstance(so, int), f"got {type(so).__name__}")
+                    check(f"{slabel} stop_order sequential",
+                          so == si + 1,
+                          f"expected {si + 1}, got {so}")
+
+                # stop_type — required, enum
+                check(f"{slabel} has 'stop_type'",
+                      'stop_type' in stop, "missing 'stop_type'")
+                stype = stop.get('stop_type')
+                if stype is not None:
+                    check(f"{slabel} stop_type valid",
+                          stype in valid_stop_types,
+                          f"got '{stype}'")
+
+                # Type-specific fields
+                if stype == 'regular':
+                    # label — required non-empty
+                    check(f"{slabel} has 'label'",
+                          'label' in stop, "missing 'label'")
+                    if 'label' in stop:
+                        check(f"{slabel} label non-empty",
+                              isinstance(stop['label'], str) and len(stop['label'].strip()) > 0)
+
+                    # ref — required non-empty
+                    check(f"{slabel} has 'ref'",
+                          'ref' in stop, "missing 'ref'")
+                    if 'ref' in stop:
+                        check(f"{slabel} ref non-empty",
+                              isinstance(stop['ref'], str) and len(stop['ref'].strip()) > 0)
+
+                    # book_id — required, must be valid
+                    check(f"{slabel} has 'book_id'",
+                          'book_id' in stop, "missing 'book_id'")
+                    sbid = stop.get('book_id')
+                    if sbid:
+                        check(f"{slabel} book_id valid",
+                              sbid in all_book_ids_j,
+                              f"'{sbid}' not in books.json")
+
+                    # chapter_num — required positive int
+                    check(f"{slabel} has 'chapter_num'",
+                          'chapter_num' in stop, "missing 'chapter_num'")
+                    scn = stop.get('chapter_num')
+                    if scn is not None:
+                        check(f"{slabel} chapter_num positive int",
+                              isinstance(scn, int) and scn > 0,
+                              f"got {scn}")
+
+                    # development — required non-empty
+                    check(f"{slabel} has 'development'",
+                          'development' in stop, "missing 'development'")
+                    if 'development' in stop:
+                        check(f"{slabel} development non-empty",
+                              isinstance(stop['development'], str) and len(stop['development'].strip()) > 0)
+
+                elif stype == 'linked_journey':
+                    # linked_journey_id — required
+                    check(f"{slabel} has 'linked_journey_id'",
+                          'linked_journey_id' in stop, "missing 'linked_journey_id'")
+                    ljid = stop.get('linked_journey_id')
+                    if ljid:
+                        linked_refs.append((json_file.name, ljid))
+
+                    # linked_journey_intro — required non-empty
+                    check(f"{slabel} has 'linked_journey_intro'",
+                          'linked_journey_intro' in stop,
+                          "missing 'linked_journey_intro'")
+                    if 'linked_journey_intro' in stop:
+                        check(f"{slabel} linked_journey_intro non-empty",
+                              isinstance(stop['linked_journey_intro'], str) and len(stop['linked_journey_intro'].strip()) > 0)
+
+                # bridge_to_next — required on all stops except the last; null/absent on last
+                is_last = (si == len(stops) - 1)
+                bridge = stop.get('bridge_to_next')
+                if is_last:
+                    check(f"{slabel} bridge_to_next null on final stop",
+                          bridge is None or bridge == '',
+                          f"final stop should not have bridge_to_next")
+                else:
+                    check(f"{slabel} has bridge_to_next",
+                          bridge is not None and isinstance(bridge, str) and len(bridge.strip()) > 0,
+                          "bridge_to_next required on non-final stops")
+
+                # Tag validation
+                tags = stop.get('tags', [])
+                if isinstance(tags, list):
+                    for ti, tag in enumerate(tags):
+                        if isinstance(tag, dict):
+                            check(f"{slabel} tag [{ti}] has 'type'",
+                                  'type' in tag, "missing 'type'")
+                            ttype = tag.get('type')
+                            if ttype is not None:
+                                check(f"{slabel} tag [{ti}] type valid",
+                                      ttype in valid_tag_types,
+                                      f"got '{ttype}'")
+                            check(f"{slabel} tag [{ti}] has 'id'",
+                                  'id' in tag, "missing 'id'")
+
+        # Cross-file check: all linked_journey_id references resolve
+        for fname, ljid in linked_refs:
+            check(f"{fname} linked_journey_id '{ljid}' resolves",
+                  ljid in all_journey_ids,
+                  f"'{ljid}' not found in any journey file")
+
+        print(f"  journey files: {total_journeys}")
+        print(f"  total stops: {total_stops}")
 
     # ── Summary ──
     print(f"\n{'='*60}")
