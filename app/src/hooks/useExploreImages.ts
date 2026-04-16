@@ -23,7 +23,7 @@ const CONTENT_TYPE_TO_SCREEN: Record<string, { screen: string; paramKey: string 
   people: { screen: 'GenealogyTree', paramKey: 'personId' },
   timeline: { screen: 'Timeline', paramKey: 'eventId' },
   map_story: { screen: 'Map', paramKey: 'storyId' },
-  concept: { screen: 'ConceptDetail', paramKey: 'conceptId' },
+  concept: { screen: 'JourneyBrowse', paramKey: 'filterLens' },
   topic: { screen: 'TopicBrowse', paramKey: 'topicId' },
   prophecy: { screen: 'ProphecyDetail', paramKey: 'chainId' },
   thread: { screen: 'ThreadBrowse', paramKey: 'threadId' },

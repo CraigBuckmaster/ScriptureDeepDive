@@ -49,7 +49,8 @@ SplashScreen.preventAutoHideAsync();
  *   scripture://topic/covenant           → TopicDetail
  *   scripture://debate/predestination    → DebateDetail
  *   scripture://prophecy/messianic-line  → ProphecyDetail
- *   scripture://concept/atonement        → ConceptDetail
+ *   scripture://concept/atonement        → JourneyDetail (redirected)
+ *   scripture://journey/garden-to-city   → JourneyDetail
  *   scripture://word-study/agape         → WordStudyDetail
  *   scripture://people/abraham           → GenealogyTree (person)
  *   scripture://map                      → Map
@@ -82,7 +83,10 @@ const linking: any = {
           TopicDetail: 'topic/:topicId',
           DebateDetail: 'debate/:topicId',
           ProphecyDetail: 'prophecy/:chainId',
-          ConceptDetail: 'concept/:conceptId',
+          JourneyDetail: {
+            path: 'journey/:journeyId',
+            parse: { journeyId: String },
+          },
           WordStudyDetail: 'word-study/:wordId',
           GenealogyTree: 'people/:personId',
           Map: 'map',

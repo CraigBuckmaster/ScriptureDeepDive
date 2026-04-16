@@ -66,7 +66,7 @@ const SECTIONS: FeatureSection[] = [
   {
     id: 'themes', label: 'Themes & Connections', subtitle: 'Trace ideas across Scripture',
     features: [
-      { title: 'Concepts',           subtitle: 'Covenant, atonement, kingdom & more',                  color: '#bfa050', screen: 'ConceptBrowse' }, // data-color: intentional
+      { title: 'Guided Journeys',    subtitle: '60 journeys \u2014 people, concepts, themes',             color: '#bfa050', screen: 'JourneyBrowse' }, // data-color: intentional
       { title: 'Topical Index',      subtitle: 'What does the Bible say about...?',                    color: '#c8a040', screen: 'TopicBrowse' }, // data-color: intentional
       { title: 'Prophecy',           subtitle: '50 chains \u2014 OT to NT fulfillment',                color: '#e8a070', screen: 'ProphecyBrowse' }, // data-color: intentional
       { title: 'Threads',            subtitle: 'One idea across 31 chains',                            color: '#9090e0', screen: 'ThreadBrowse', premium: true }, // data-color: intentional

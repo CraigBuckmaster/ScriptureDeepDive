@@ -23,7 +23,7 @@ const SCREEN_LABELS: Record<string, string> = {
   ArchaeologyBrowse: 'View discoveries',
   ProphecyBrowse: 'View chain',
   ProphecyDetail: 'View chain',
-  ConceptBrowse: 'View concept',
+  JourneyBrowse: 'View journeys',
   PersonDetail: 'View person',
   GenealogyTree: 'View family tree',
   Map: 'View journey',

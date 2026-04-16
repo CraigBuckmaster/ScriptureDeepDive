@@ -68,8 +68,6 @@ export type ExploreStackParamList = {
   TopicDetail: { topicId: string };
   ProphecyBrowse: undefined;
   ProphecyDetail: { chainId: string };
-  ConceptBrowse: undefined;
-  ConceptDetail: { conceptId: string; initialTab?: 'overview' | 'journey' };
   DifficultPassagesBrowse: undefined;
   DifficultPassageDetail: { passageId: string };
   DictionaryBrowse: undefined;
