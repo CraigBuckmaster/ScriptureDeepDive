@@ -2,8 +2,8 @@
 """
 download_explore_images.py — Download and stage images for Explore screen panels.
 
-Downloads Doré Bible illustrations from creationism.org, the Stattler Maccabees
-from Wikimedia, and the Babylonian map tablet from Wikimedia. Stages them in
+Downloads images from Wikimedia Commons, Doré Bible illustrations from
+creationism.org, and other public domain sources. Stages them in
 _tools/art_staging/priority/ for upload to R2.
 
 Run from the repo root:
@@ -12,10 +12,12 @@ Run from the repo root:
 Then upload to R2:
     python _tools/upload_images_to_r2.py --priority
 
-Images are for:
+Images cover:
   - 4 tool panels (Map, Dictionary, Concordance, Topical Index)
-  - 12 period cards
-  - 8 redemptive arc (story) cards
+  - 12 period cards + 8 redemptive arc (story) cards
+  - 8 explore feature panels (Threads, Harmony, Debates, Life Topics,
+    Hermeneutic Lenses, Time Travel, Grammar, Content Library)
+  - 4 scholar portraits (Calvin, Catena/Aquinas, Robertson, MacArthur)
 """
 
 import os
@@ -92,6 +94,70 @@ DOWNLOADS = [
         "stattler-maccabees.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/0/0b/Stattler-Machabeusze.jpg",
         "Period 10 (Intertestamental) — Stattler's Maccabees (1842)",
+    ),
+
+    # === EXPLORE PANEL IMAGES (Wikimedia → R2 migration) ===
+    (
+        "book-of-kells-chirho.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/9/98/Book_of_Kells_ChiRho_Folio_34R.png",
+        "Threads panel — Book of Kells Chi Rho illumination",
+    ),
+    (
+        "aachen-gospels-evangelists.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/3/36/Meister_der_Ada-Gruppe_002.jpg",
+        "Gospel Harmony panel — Aachen Gospels, the four Evangelists",
+    ),
+    (
+        "raphael-disputation.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/6/61/Disputa_del_Sacramento_%28Rafael%29.jpg",
+        "Debates panel — Raphael's Disputation of the Holy Sacrament",
+    ),
+    (
+        "bloch-sermon-on-mount.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/9/96/Bloch-SermonOnTheMount.jpg",
+        "Life Topics panel — Carl Bloch's Sermon on the Mount",
+    ),
+    (
+        "rembrandt-moses.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/4/4a/Rembrandt_Harmensz._van_Rijn_079.jpg",
+        "Hermeneutic Lenses panel — Rembrandt's Moses with the Tablets",
+    ),
+    (
+        "st-augustine-portrait.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/6/6b/St_Augustine_Portrait.jpg",
+        "Time Travel Reader panel — St. Augustine of Hippo",
+    ),
+    (
+        "martin-luther-cranach.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/9/9a/Martin_Luther_by_Cranach-restoration.tif",
+        "Time Travel Reader panel — Martin Luther by Cranach",
+    ),
+    (
+        "papyrus-46.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/5/5c/P46.jpg",
+        "Grammar panel — Papyrus 46, Greek NT manuscript",
+    ),
+
+    # === SCHOLAR PORTRAIT IMAGES (Wikimedia → R2 migration) ===
+    (
+        "john-calvin-holbein.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/c/c5/John_Calvin_by_Holbein.png",
+        "Scholar portrait — John Calvin by Holbein",
+    ),
+    (
+        "thomas-aquinas.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/e/e3/St-thomas-aquinas.jpg",
+        "Scholar portrait — Thomas Aquinas (Catena Aurea)",
+    ),
+    (
+        "archibald-robertson.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/3/37/Archibald_Thomas_Robertson.jpg",
+        "Scholar portrait — A.T. Robertson",
+    ),
+    (
+        "john-macarthur.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/d/da/John_F._MacArthur_Jr..JPG",
+        "Scholar portrait — John MacArthur",
     ),
 ]
 
