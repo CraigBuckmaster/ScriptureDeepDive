@@ -14,6 +14,7 @@ const PeriodsScreen = lazySuspense(() => import('../screens/PeriodsScreen'));
 const RedemptiveArcScreen = lazySuspense(() => import('../screens/RedemptiveArcScreen'));
 const PersonJourneyScreen = lazySuspense(() => import('../screens/PersonJourneyScreen'));
 const JourneyBrowseScreen = lazySuspense(() => import('../screens/JourneyBrowseScreen'));
+const JourneyDetailScreen = lazySuspense(() => import('../screens/JourneyDetailScreen'));
 const WordStudyBrowseScreen = lazySuspense(() => import('../screens/WordStudyBrowseScreen'));
 const WordStudyDetailScreen = lazySuspense(() => import('../screens/WordStudyDetailScreen'));
 const ScholarBrowseScreen = lazySuspense(() => import('../screens/ScholarBrowseScreen'));
@@ -74,6 +75,7 @@ export function ExploreStack() {
       <Stack.Screen name="RedemptiveArc" component={RedemptiveArcScreen} />
       <Stack.Screen name="PersonJourney" component={PersonJourneyScreen} />
       <Stack.Screen name="JourneyBrowse" component={JourneyBrowseScreen} />
+      <Stack.Screen name="JourneyDetail" component={JourneyDetailScreen} />
       <Stack.Screen name="WordStudyBrowse" component={WordStudyBrowseScreen} />
       <Stack.Screen name="WordStudyDetail" component={WordStudyDetailScreen} />
       <Stack.Screen name="ScholarBrowse" component={ScholarBrowseScreen} />
