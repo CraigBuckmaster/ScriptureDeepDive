@@ -1,0 +1,62 @@
+{
+  "id": "stephen",
+  "journey_type": "person",
+  "lens_id": "biographical",
+  "title": "Stephen",
+  "subtitle": "First Christian martyr; deacon of blazing testimony",
+  "description": "Stephen was one of the Seven — appointed by the Jerusalem church to oversee food distribution for Hellenistic Jewish widows who were being overlooked. He was not merely an administrator: he 'did great wonders and signs among the people' and engaged so effectively in debate that his opponents could not withstand his wisdom or the Spirit by which he spoke. Dragged before the Sanhedrin on charges of blasphemy against Moses and the Temple, his face was said to look like the face of an angel. His defense speech (Acts 7) is the longest speech in Acts and one of the most sophisticated: a retelling of the entire OT narrative — Abraham, Joseph, Moses, the Exodus, the Tabernacle, the Temple — building to a devastating accusation: Israel has always resisted the Holy Spirit, always killed the prophets, always rejected God's chosen deliverers. 'You stiff-necked people!' The Sanhedrin erupted. He was dragged outside the city walls and stoned — the first Christian martyr. He died looking into heaven, seeing the Son of Man standing at the right hand of God, and praying 'Lord, do not hold this sin against them.' Among those present, holding the coats: Saul of Tarsus.",
+  "depth": "short",
+  "sort_order": 0,
+  "person_id": "stephen",
+  "concept_id": null,
+  "era": "nt",
+  "hero_image_url": null,
+  "tags": [],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "Chosen as Deacon",
+      "ref": "Acts 6:1-7",
+      "book_id": "acts",
+      "chapter_num": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Stephen is one of seven men chosen to serve the Hellenistic widows in the Jerusalem church. He is described as 'full of faith and of the Holy Spirit' and 'full of God's grace and power.'",
+      "what_changes": "Practical service and spiritual power are not separate categories — Stephen embodies both.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "The Speech",
+      "ref": "Acts 7:1-53",
+      "book_id": "acts",
+      "chapter_num": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Before the Sanhedrin, Stephen delivers the longest speech in Acts — a sweeping retelling of Israel's history showing that God's people have always resisted the Holy Spirit and rejected God's messengers.",
+      "what_changes": "Scripture rightly read becomes a mirror — Israel's history of rejecting prophets reaches its climax in rejecting Jesus.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "Martyrdom",
+      "ref": "Acts 7:54-60",
+      "book_id": "acts",
+      "chapter_num": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "As the crowd rages, Stephen sees heaven open and Jesus standing at God's right hand. They stone him while he prays: 'Lord, do not hold this sin against them.' Saul watches, approving.",
+      "what_changes": "The first Christian martyr mirrors Christ's death — forgiving his killers while commending his spirit to God.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}

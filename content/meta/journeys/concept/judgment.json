@@ -1,0 +1,178 @@
+{
+  "id": "judgment",
+  "journey_type": "concept",
+  "lens_id": "theological",
+  "title": "Judgment",
+  "subtitle": null,
+  "description": "God's righteous evaluation and response to human sin. Judgment is not arbitrary anger but the necessary consequence of rebellion against a holy God. Yet even in judgment, God's aim is often redemptive — calling his people back through discipline.",
+  "depth": "medium",
+  "sort_order": 0,
+  "person_id": null,
+  "concept_id": "judgment",
+  "era": null,
+  "hero_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Gustave_Dor%C3%A9_-_The_Holy_Bible_-_Plate_CXL_-_The_Darkness_at_the_Crucifixion.jpg/400px-Gustave_Dor%C3%A9_-_The_Holy_Bible_-_Plate_CXL_-_The_Darkness_at_the_Crucifixion.jpg",
+  "tags": [
+    {
+      "type": "word_study",
+      "id": "mishpat"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "day_of_the_lord"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "judgment_on_nations"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "babylon_judgment"
+    },
+    {
+      "type": "person",
+      "id": "noah"
+    },
+    {
+      "type": "person",
+      "id": "jonah"
+    },
+    {
+      "type": "theme",
+      "id": "wrath"
+    },
+    {
+      "type": "theme",
+      "id": "justice"
+    },
+    {
+      "type": "theme",
+      "id": "discipline"
+    },
+    {
+      "type": "theme",
+      "id": "day of the LORD"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "The Flood",
+      "ref": "Genesis 6:5-7",
+      "book_id": "genesis",
+      "chapter_num": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God sees that human wickedness is great and 'every intention of the thoughts of his heart was only evil continually.' He resolves to destroy.",
+      "what_changes": "The first comprehensive judgment establishes the pattern: divine patience has limits, and persistent evil calls forth devastating response.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "Sodom and Gomorrah",
+      "ref": "Genesis 19:24-25",
+      "book_id": "genesis",
+      "chapter_num": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Fire and sulfur rain from heaven, overthrowing the cities of the plain. Even Abraham's intercession could not find ten righteous.",
+      "what_changes": "Judgment becomes localized and specific. Particular communities bear the consequences of their particular sins.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "The Ten Plagues",
+      "ref": "Exodus 7-12",
+      "book_id": "exodus",
+      "chapter_num": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Systematic judgments fall on Egypt, each targeting an Egyptian deity. Pharaoh's hardened heart escalates the severity.",
+      "what_changes": "Judgment serves liberation. The plagues are not purposeless wrath but targeted acts that accomplish redemption.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "Day of the LORD — Darkness",
+      "ref": "Amos 5:18-24",
+      "book_id": "amos",
+      "chapter_num": 5,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Israel expected the Day of the LORD as vindication. Amos inverts it: 'It is darkness, and not light.' God demands justice, not empty worship.",
+      "what_changes": "Judgment turns inward toward God's own people. Covenant privilege does not exempt from covenant accountability.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 5,
+      "stop_type": "regular",
+      "label": "Assyria as God's Rod",
+      "ref": "Isaiah 10:5-12",
+      "book_id": "isaiah",
+      "chapter_num": 10,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God uses Assyria as 'the rod of my anger' against Israel, then judges Assyria for its arrogance. Even instruments of judgment are accountable.",
+      "what_changes": "Divine sovereignty encompasses pagan empires. God's use of nations does not excuse their moral culpability.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 6,
+      "stop_type": "regular",
+      "label": "Seventy Years of Exile",
+      "ref": "Jeremiah 25:8-11",
+      "book_id": "jeremiah",
+      "chapter_num": 25,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Judah's refusal to heed prophetic warning results in 70 years of Babylonian exile. The covenant curses of Deuteronomy 28 are enacted.",
+      "what_changes": "Judgment is shown to be neither arbitrary nor disproportionate. The covenant spelled out the consequences in advance; judgment is covenant enforcement.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 7,
+      "stop_type": "regular",
+      "label": "Sheep and Goats",
+      "ref": "Matthew 25:31-46",
+      "book_id": "matthew",
+      "chapter_num": 25,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The Son of Man separates the nations. The criterion is not ritual observance but treatment of 'the least of these.'",
+      "what_changes": "Final judgment is christological and ethical. Care for the vulnerable is care for Christ himself; neglect is rejection of him.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 8,
+      "stop_type": "regular",
+      "label": "Great White Throne",
+      "ref": "Revelation 20:11-15",
+      "book_id": "revelation",
+      "chapter_num": 20,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The dead stand before the great white throne. Books are opened. Anyone not found in the book of life is cast into the lake of fire.",
+      "what_changes": "Judgment reaches its absolute and final form. All human history stands before the throne; the distinction between the righteous and the wicked is made permanent.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}

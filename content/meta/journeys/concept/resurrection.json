@@ -1,0 +1,190 @@
+{
+  "id": "resurrection",
+  "journey_type": "concept",
+  "lens_id": "theological",
+  "title": "Resurrection",
+  "subtitle": null,
+  "description": "The restoration of bodily life after death. Foreshadowed in Isaac's near-sacrifice, hinted in the prophets, dramatized in Ezekiel's dry bones, and accomplished in Christ's empty tomb, resurrection is the linchpin of Christian hope.",
+  "depth": "medium",
+  "sort_order": 0,
+  "person_id": null,
+  "concept_id": "resurrection",
+  "era": null,
+  "hero_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_251.png/400px-Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_251.png",
+  "tags": [
+    {
+      "type": "word_study",
+      "id": "zoe"
+    },
+    {
+      "type": "word_study",
+      "id": "anastasis"
+    },
+    {
+      "type": "word_study",
+      "id": "egeiro"
+    },
+    {
+      "type": "word_study",
+      "id": "qum"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "resurrection_foretold"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "dry_bones"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "jonah_sign"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "firstfruits"
+    },
+    {
+      "type": "person",
+      "id": "lazarus"
+    },
+    {
+      "type": "theme",
+      "id": "life"
+    },
+    {
+      "type": "theme",
+      "id": "death"
+    },
+    {
+      "type": "theme",
+      "id": "tomb"
+    },
+    {
+      "type": "theme",
+      "id": "firstfruits"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "My Redeemer Lives",
+      "ref": "Job 19:25-27",
+      "book_id": "job",
+      "chapter_num": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Job declares: 'I know that my Redeemer lives, and at the last he will stand upon the earth. In my flesh I shall see God.'",
+      "what_changes": "The first explicit hope of bodily vindication after death appears. Even before resurrection theology develops, the seed is planted.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "Death Swallowed Up",
+      "ref": "Isaiah 25:6-8",
+      "book_id": "isaiah",
+      "chapter_num": 25,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "On the mountain of the LORD, God 'will swallow up death forever' and 'wipe away tears from all faces.'",
+      "what_changes": "Death is declared temporary, not permanent. The prophetic vision includes the reversal of death itself.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "Dry Bones Live",
+      "ref": "Ezekiel 37:1-14",
+      "book_id": "ezekiel",
+      "chapter_num": 37,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The valley of dry bones is reconstituted: bones, sinews, flesh, breath. 'I will open your graves and raise you from your graves, O my people.'",
+      "what_changes": "Resurrection imagery is applied to national restoration, but the language transcends metaphor. Death's reversal becomes thinkable.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "Many Who Sleep Shall Awake",
+      "ref": "Daniel 12:2-3",
+      "book_id": "daniel",
+      "chapter_num": 12,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The most explicit OT resurrection text: 'Many of those who sleep in the dust of the earth shall awake, some to everlasting life.'",
+      "what_changes": "Individual, bodily resurrection becomes an explicit eschatological expectation. The righteous and the wicked face different destinies.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 5,
+      "stop_type": "regular",
+      "label": "The Empty Tomb",
+      "ref": "Luke 24:1-12",
+      "book_id": "luke",
+      "chapter_num": 24,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The women find the stone rolled away and the tomb empty. Two angels declare: 'He is not here, but has risen.'",
+      "what_changes": "Resurrection moves from prophecy to event. The hope of centuries becomes historical reality on the third day.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 6,
+      "stop_type": "regular",
+      "label": "The Resurrection Tradition",
+      "ref": "1 Corinthians 15:3-8",
+      "book_id": "1_corinthians",
+      "chapter_num": 15,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Paul transmits the earliest resurrection creed: Christ died, was buried, was raised on the third day, and appeared to Cephas, the Twelve, and over 500.",
+      "what_changes": "The resurrection is documented as tradition received and transmitted. Multiple witnesses establish its historicity.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 7,
+      "stop_type": "regular",
+      "label": "Firstfruits of Those Who Sleep",
+      "ref": "1 Corinthians 15:20-28",
+      "book_id": "1_corinthians",
+      "chapter_num": 15,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Christ's resurrection is 'the firstfruits of those who have fallen asleep.' As in Adam all die, so in Christ shall all be made alive.",
+      "what_changes": "Christ's resurrection guarantees the future resurrection of all believers. His rising is not an isolated event but the beginning of a harvest.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 8,
+      "stop_type": "regular",
+      "label": "First Resurrection",
+      "ref": "Revelation 20:4-6",
+      "book_id": "revelation",
+      "chapter_num": 20,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Those who had been faithful 'came to life and reigned with Christ.' The first resurrection anticipates the final transformation.",
+      "what_changes": "Resurrection is the gateway to co-reign with Christ. The hope of bodily rising is inseparable from the hope of sharing in Christ's kingdom.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "id": "suffering",
+  "journey_type": "concept",
+  "lens_id": "theological",
+  "title": "Suffering & Lament",
+  "subtitle": null,
+  "description": "The experience of pain, loss, and grief that pervades human existence. Scripture neither explains suffering away nor ignores it, but places it within the context of covenant relationship — where lament is itself an act of faith.",
+  "depth": "medium",
+  "sort_order": 0,
+  "person_id": null,
+  "concept_id": "suffering",
+  "era": null,
+  "hero_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Michelangelo_Buonarroti_-_Sistine_Chapel_Ceiling_-_Jeremiah.jpg/400px-Michelangelo_Buonarroti_-_Sistine_Chapel_Ceiling_-_Jeremiah.jpg",
+  "tags": [
+    {
+      "type": "word_study",
+      "id": "ani"
+    },
+    {
+      "type": "word_study",
+      "id": "pathema"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "suffering_servant"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "psalm_22_suffering"
+    },
+    {
+      "type": "person",
+      "id": "job"
+    },
+    {
+      "type": "person",
+      "id": "jeremiah"
+    },
+    {
+      "type": "person",
+      "id": "joseph-patriarch"
+    },
+    {
+      "type": "theme",
+      "id": "lament"
+    },
+    {
+      "type": "theme",
+      "id": "grief"
+    },
+    {
+      "type": "theme",
+      "id": "theodicy"
+    },
+    {
+      "type": "theme",
+      "id": "perseverance"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "Curse and Toil",
+      "ref": "Genesis 3:16-19",
+      "book_id": "genesis",
+      "chapter_num": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Pain in childbirth, conflict in marriage, thorns in the ground, death as the final horizon. Suffering enters human experience as consequence of the fall.",
+      "what_changes": "Suffering is established as universal and connected to human rebellion. The world as experienced is not the world as originally designed.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "Job's Undeserved Suffering",
+      "ref": "Job 1:1-2:10",
+      "book_id": "job",
+      "chapter_num": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "A blameless man loses everything. The retribution principle — the righteous prosper, the wicked suffer — is shattered.",
+      "what_changes": "Suffering is revealed to be irreducible to simple moral calculus. The question 'Why do the righteous suffer?' is posed with full force.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "My God, Why Have You Forsaken Me?",
+      "ref": "Psalm 22:1-18",
+      "book_id": "psalms",
+      "chapter_num": 22,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The psalmist cries out in abandonment. Surrounded by enemies, mocked, physically broken. Yet the psalm turns to praise in its second half.",
+      "what_changes": "Suffering becomes liturgical and prophetic. Lament is given a canonical form that later generations will use, including Jesus himself.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "Man of Sorrows",
+      "ref": "Isaiah 53:3-6",
+      "book_id": "isaiah",
+      "chapter_num": 53,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The Servant is 'despised and rejected, a man of sorrows.' He bears griefs, carries sorrows, is wounded for others' transgressions.",
+      "what_changes": "Suffering becomes vicarious and redemptive. One person's suffering can accomplish atonement for many.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 5,
+      "stop_type": "regular",
+      "label": "Hope in the Midst of Suffering",
+      "ref": "Lamentations 3:21-33",
+      "book_id": "lamentations",
+      "chapter_num": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "In the ashes of Jerusalem: 'The steadfast love of the LORD never ceases; his mercies never come to an end.' Hope surfaces from the deepest grief.",
+      "what_changes": "Suffering does not have the last word. Even in the worst imaginable circumstances, divine faithfulness endures.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 6,
+      "stop_type": "regular",
+      "label": "The Way of the Cross",
+      "ref": "Mark 8:31-34",
+      "book_id": "mark",
+      "chapter_num": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Jesus begins teaching that the Son of Man must suffer, be rejected, and be killed. He calls disciples to take up their cross.",
+      "what_changes": "Suffering becomes volitional and paradigmatic. The Messiah's suffering is not failure but divine necessity, and discipleship means following the same path.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 7,
+      "stop_type": "regular",
+      "label": "Present Suffering, Future Glory",
+      "ref": "Romans 8:18-25",
+      "book_id": "romans",
+      "chapter_num": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Paul declares that 'the sufferings of this present time are not worth comparing with the glory that is to be revealed.'",
+      "what_changes": "Suffering is set within an eschatological framework. Present pain is real but penultimate; glory is the final reality.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 8,
+      "stop_type": "regular",
+      "label": "Sharing Christ's Sufferings",
+      "ref": "1 Peter 4:12-13",
+      "book_id": "1_peter",
+      "chapter_num": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Believers are told not to be surprised by suffering but to 'rejoice insofar as you share Christ's sufferings.' Suffering is participation in Christ.",
+      "what_changes": "Suffering acquires christological meaning for every believer. Union with Christ includes union in his suffering.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}

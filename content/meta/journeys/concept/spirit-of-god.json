@@ -1,0 +1,182 @@
+{
+  "id": "spirit-of-god",
+  "journey_type": "concept",
+  "lens_id": "theological",
+  "title": "Spirit of God",
+  "subtitle": null,
+  "description": "The divine presence and power at work from creation's first breath to Pentecost's flames. The Spirit empowers prophets and kings, gives life to dry bones, indwells believers, and guarantees the coming resurrection.",
+  "depth": "medium",
+  "sort_order": 0,
+  "person_id": null,
+  "concept_id": "spirit-of-god",
+  "era": null,
+  "hero_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_254.png/400px-Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_254.png",
+  "tags": [
+    {
+      "type": "word_study",
+      "id": "ruach"
+    },
+    {
+      "type": "word_study",
+      "id": "pneuma"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "spirit_poured_out"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "new_heart"
+    },
+    {
+      "type": "person",
+      "id": "elijah"
+    },
+    {
+      "type": "person",
+      "id": "elisha"
+    },
+    {
+      "type": "person",
+      "id": "ezekiel"
+    },
+    {
+      "type": "theme",
+      "id": "breath"
+    },
+    {
+      "type": "theme",
+      "id": "power"
+    },
+    {
+      "type": "theme",
+      "id": "indwelling"
+    },
+    {
+      "type": "theme",
+      "id": "pentecost"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "Spirit over the Waters",
+      "ref": "Genesis 1:2",
+      "book_id": "genesis",
+      "chapter_num": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The Spirit of God hovers over the face of the deep. The first act of creation begins with the Spirit's brooding presence.",
+      "what_changes": "The Spirit is associated with creation and the bringing of order from chaos. Creative power is pneumatological from the beginning.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "Spirit upon the Judges",
+      "ref": "Judges 3:10",
+      "book_id": "judges",
+      "chapter_num": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The Spirit of the LORD comes upon Othniel, and he judges Israel. A recurring pattern: the Spirit empowers specific leaders for specific tasks.",
+      "what_changes": "The Spirit's work becomes charismatic — given for a task, then withdrawn. Empowerment is temporary and functional.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "Spirit Transferred to David",
+      "ref": "1 Samuel 16:13-14",
+      "book_id": "1_samuel",
+      "chapter_num": 16,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Samuel anoints David; the Spirit rushes upon him 'from that day forward.' Simultaneously, the Spirit departs from Saul.",
+      "what_changes": "The Spirit is linked to anointing and kingship. The transfer marks divine election and rejection.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "Spirit upon the Branch",
+      "ref": "Isaiah 11:1-3",
+      "book_id": "isaiah",
+      "chapter_num": 11,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The coming Davidic ruler will be endowed with the Spirit in fullness: wisdom, understanding, counsel, might, knowledge, fear of the LORD.",
+      "what_changes": "The messianic king will not merely receive the Spirit temporarily but will be permanently characterized by the Spirit's sevenfold endowment.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 5,
+      "stop_type": "regular",
+      "label": "Valley of Dry Bones",
+      "ref": "Ezekiel 37:1-14",
+      "book_id": "ezekiel",
+      "chapter_num": 37,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The Spirit breathes life into dead bones. National resurrection is accomplished through the Spirit's creative, life-giving power.",
+      "what_changes": "The Spirit's role expands from individual empowerment to corporate, national resurrection. The Spirit recreates what death has destroyed.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 6,
+      "stop_type": "regular",
+      "label": "Spirit Poured Out on All Flesh",
+      "ref": "Joel 2:28-29",
+      "book_id": "joel",
+      "chapter_num": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God promises to pour out his Spirit on all flesh — sons, daughters, old, young, servants. No social or gender limitation.",
+      "what_changes": "The Spirit's work will no longer be restricted to select leaders. Universal outpouring replaces occasional charismatic endowment.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 7,
+      "stop_type": "regular",
+      "label": "Pentecost",
+      "ref": "Acts 2:1-4",
+      "book_id": "acts",
+      "chapter_num": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The Spirit descends as tongues of fire. All present are filled. Peter identifies this as Joel's prophecy fulfilled.",
+      "what_changes": "The age of the Spirit begins. What was promised through the prophets becomes the permanent, universal experience of the church.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 8,
+      "stop_type": "regular",
+      "label": "Spirit of Life in Christ Jesus",
+      "ref": "Romans 8:9-11",
+      "book_id": "romans",
+      "chapter_num": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Paul declares that anyone who does not have the Spirit of Christ does not belong to him. The Spirit who raised Jesus will also give life to mortal bodies.",
+      "what_changes": "The Spirit becomes the defining mark of belonging to Christ. Indwelling, not occasional empowerment, is the new normal.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}

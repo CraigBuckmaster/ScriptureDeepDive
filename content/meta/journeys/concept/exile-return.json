@@ -1,0 +1,194 @@
+{
+  "id": "exile-return",
+  "journey_type": "concept",
+  "lens_id": "theological",
+  "title": "Exile & Return",
+  "subtitle": null,
+  "description": "The pattern of displacement and restoration that runs from Eden through Babylon and beyond. Exile is both judgment and refining; return is both geographical and spiritual, pointing to the ultimate homecoming in the new creation.",
+  "depth": "medium",
+  "sort_order": 0,
+  "person_id": null,
+  "concept_id": "exile-return",
+  "era": null,
+  "hero_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Tissot_The_Flight_of_the_Prisoners.jpg/400px-Tissot_The_Flight_of_the_Prisoners.jpg",
+  "tags": [
+    {
+      "type": "word_study",
+      "id": "shalom"
+    },
+    {
+      "type": "word_study",
+      "id": "yasha"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "exile_and_return"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "restoration_of_israel"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "dry_bones"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "new_heart"
+    },
+    {
+      "type": "person",
+      "id": "daniel"
+    },
+    {
+      "type": "person",
+      "id": "ezekiel"
+    },
+    {
+      "type": "person",
+      "id": "ezra"
+    },
+    {
+      "type": "person",
+      "id": "nehemiah"
+    },
+    {
+      "type": "theme",
+      "id": "babylon"
+    },
+    {
+      "type": "theme",
+      "id": "captivity"
+    },
+    {
+      "type": "theme",
+      "id": "restoration"
+    },
+    {
+      "type": "theme",
+      "id": "remnant"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "Exile from Eden",
+      "ref": "Genesis 3:23-24",
+      "book_id": "genesis",
+      "chapter_num": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Adam and Eve are driven from the garden; cherubim and a flaming sword guard the way to the tree of life.",
+      "what_changes": "The primal exile establishes the pattern: sin leads to separation from God's presence. All subsequent exiles echo this first expulsion.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "Abraham's Call from Exile",
+      "ref": "Genesis 12:1-3",
+      "book_id": "genesis",
+      "chapter_num": 12,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God calls Abraham out of Ur to a promised land. The journey from exile to homeland begins with a single family.",
+      "what_changes": "Return from exile becomes linked to promise and faith. The land is both gift and destination.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "Exodus from Egypt",
+      "ref": "Exodus 14:21-31",
+      "book_id": "exodus",
+      "chapter_num": 14,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Israel crosses the Red Sea, escaping 400 years of Egyptian bondage. The paradigmatic deliverance event of the Old Testament.",
+      "what_changes": "Exodus becomes the controlling metaphor for all future deliverances. Every return from exile is a 'new exodus.'",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "Northern Exile to Assyria",
+      "ref": "2 Kings 17:6-23",
+      "book_id": "2_kings",
+      "chapter_num": 17,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The ten northern tribes are deported to Assyria in 722 BC. The text gives a theological autopsy: they sinned, were warned, refused to listen.",
+      "what_changes": "Exile is shown to be covenant consequence, not arbitrary punishment. The prophetic warnings are vindicated.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 5,
+      "stop_type": "regular",
+      "label": "Babylonian Exile",
+      "ref": "2 Kings 25:8-21",
+      "book_id": "2_kings",
+      "chapter_num": 25,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Jerusalem falls in 586 BC. The temple is burned, the walls broken down, the people deported. The Davidic dynasty is interrupted.",
+      "what_changes": "The unthinkable happens: God's own house is destroyed. Every theological certainty — temple, monarchy, land — is removed.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 6,
+      "stop_type": "regular",
+      "label": "Comfort, Comfort My People",
+      "ref": "Isaiah 40:1-5",
+      "book_id": "isaiah",
+      "chapter_num": 40,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The voice cries: 'In the wilderness prepare the way of the LORD.' A new exodus through the desert is announced.",
+      "what_changes": "The exile is not the final word. God's return to his people is described in language that echoes and surpasses the first exodus.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 7,
+      "stop_type": "regular",
+      "label": "Cyrus Decree — Return Begins",
+      "ref": "Ezra 1:1-4",
+      "book_id": "ezra",
+      "chapter_num": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Cyrus of Persia issues the decree permitting Jews to return and rebuild the temple. Jeremiah's 70-year prophecy is fulfilled.",
+      "what_changes": "Physical return begins, but the spiritual restoration promised by the prophets remains incomplete. The second temple lacks the glory of the first.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 8,
+      "stop_type": "regular",
+      "label": "The Prodigal Returns",
+      "ref": "Luke 15:11-24",
+      "book_id": "luke",
+      "chapter_num": 15,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Jesus tells of a son who squanders his inheritance in a 'far country' and returns to his father's embrace. Israel's exile story in miniature.",
+      "what_changes": "Exile and return become personal and universal. The father's welcome redefines what homecoming means: not merit but grace.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}

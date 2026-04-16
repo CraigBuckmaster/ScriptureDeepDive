@@ -1,0 +1,174 @@
+{
+  "id": "holiness",
+  "journey_type": "concept",
+  "lens_id": "theological",
+  "title": "Holiness",
+  "subtitle": null,
+  "description": "The 'otherness' of God that sets him apart from all creation, and the call for his people to reflect that separateness. Holiness is not merely moral purity but the very nature of the divine presence that both attracts and terrifies.",
+  "depth": "medium",
+  "sort_order": 0,
+  "person_id": null,
+  "concept_id": "holiness",
+  "era": null,
+  "hero_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_055.png/400px-Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_055.png",
+  "tags": [
+    {
+      "type": "word_study",
+      "id": "qadosh"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "tabernacle_temple"
+    },
+    {
+      "type": "person",
+      "id": "moses"
+    },
+    {
+      "type": "person",
+      "id": "isaiah"
+    },
+    {
+      "type": "person",
+      "id": "aaron"
+    },
+    {
+      "type": "theme",
+      "id": "holy"
+    },
+    {
+      "type": "theme",
+      "id": "set apart"
+    },
+    {
+      "type": "theme",
+      "id": "pure"
+    },
+    {
+      "type": "theme",
+      "id": "sacred"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "Holy Ground",
+      "ref": "Exodus 3:1-6",
+      "book_id": "exodus",
+      "chapter_num": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Moses encounters the burning bush. God commands: 'Take off your sandals, for the place where you are standing is holy ground.'",
+      "what_changes": "Holiness is revealed as the fundamental attribute of God's presence. It creates a boundary that requires human response.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "Holy Mountain",
+      "ref": "Exodus 19:10-25",
+      "book_id": "exodus",
+      "chapter_num": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Mount Sinai is consecrated; boundaries are set. Touching the mountain means death. The people must consecrate themselves.",
+      "what_changes": "Holiness is shown to be dangerous to the unprepared. Separation and consecration become prerequisites for approaching God.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "Be Holy, for I Am Holy",
+      "ref": "Leviticus 11:44-45",
+      "book_id": "leviticus",
+      "chapter_num": 11,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The central command of Leviticus: Israel's holiness is to mirror God's holiness. Purity laws are the practical outworking.",
+      "what_changes": "Holiness becomes a calling, not just a divine attribute. Israel's entire way of life — food, clothing, agriculture — is shaped by the holiness imperative.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "Holy, Holy, Holy",
+      "ref": "Isaiah 6:1-7",
+      "book_id": "isaiah",
+      "chapter_num": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Isaiah sees the LORD in the temple; seraphim cry 'Holy, holy, holy.' The prophet is undone: 'I am a man of unclean lips.'",
+      "what_changes": "The threefold repetition intensifies the concept to its absolute degree. Holiness produces both terror and cleansing.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 5,
+      "stop_type": "regular",
+      "label": "Sanctifying the Name",
+      "ref": "Ezekiel 36:22-23",
+      "book_id": "ezekiel",
+      "chapter_num": 36,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God will vindicate his holy name, profaned among the nations through Israel's exile. Restoration serves his holiness, not Israel's merit.",
+      "what_changes": "Holiness becomes the driving motive of redemptive history. God acts 'for the sake of my holy name,' not for human deserving.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 6,
+      "stop_type": "regular",
+      "label": "Be Perfect",
+      "ref": "Matthew 5:48",
+      "book_id": "matthew",
+      "chapter_num": 5,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Jesus reframes the holiness command: 'Be perfect, as your heavenly Father is perfect.' The standard is not merely ritual purity but character.",
+      "what_changes": "Holiness is internalized. External purity codes give way to holiness of heart and motive.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 7,
+      "stop_type": "regular",
+      "label": "Holy in All Conduct",
+      "ref": "1 Peter 1:15-16",
+      "book_id": "1_peter",
+      "chapter_num": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Peter quotes Leviticus 11:44 to the church: 'Be holy in all your conduct.' The Levitical call extends to all believers.",
+      "what_changes": "The holiness imperative crosses the covenant boundary. What was Israel's distinctive calling becomes the universal mark of God's people.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 8,
+      "stop_type": "regular",
+      "label": "Eternal Holy, Holy, Holy",
+      "ref": "Revelation 4:8",
+      "book_id": "revelation",
+      "chapter_num": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The four living creatures ceaselessly declare 'Holy, holy, holy is the Lord God Almighty.' Isaiah's vision becomes eternal reality.",
+      "what_changes": "Holiness is revealed as the eternal atmosphere of heaven. The story that began at the burning bush culminates in ceaseless worship.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}

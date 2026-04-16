@@ -1,0 +1,62 @@
+{
+  "id": "deborah",
+  "journey_type": "person",
+  "lens_id": "biographical",
+  "title": "Deborah",
+  "subtitle": "Judge, prophet, military leader of Israel",
+  "description": "Deborah was a prophet, the wife of Lappidoth, and a judge of Israel who held court under the Palm of Deborah between Ramah and Bethel. She was the only judge who functioned primarily as a judicial figure — people came to her to have disputes settled — in addition to her military-prophetic role. When she summoned the commander Barak and gave him God's command to assemble troops and engage Sisera's iron chariots at the Kishon River, Barak's condition revealed the weight of her authority: 'If you go with me, I will go; but if you don't go with me, I won't go.' She agreed, but warned him that the honor of killing Sisera would go to a woman. She led the army into battle herself — 'Arise! For this is the day in which the LORD has given Sisera into your hand. Has not the LORD gone out before you?' — and Sisera's entire army fell by the sword, with Sisera fleeing on foot to the tent of Jael, who drove a tent peg through his skull while he slept. The Song of Deborah (Judges 5) is one of the oldest sustained poems in the OT and one of the finest examples of ancient Hebrew verse — celebrating the battle, honoring the tribes who came, castigating those who didn't, and ending with Sisera's mother waiting for a son who would never return.",
+  "depth": "short",
+  "sort_order": 0,
+  "person_id": "deborah",
+  "concept_id": null,
+  "era": "judges",
+  "hero_image_url": null,
+  "tags": [],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "Judge and Prophet",
+      "ref": "Judg 4:1-10",
+      "book_id": "judges",
+      "chapter_num": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Deborah holds court under a palm tree, judging Israel's disputes. She summons Barak and delivers God's battle plan against Sisera's 900 iron chariots, but Barak refuses to go without her.",
+      "what_changes": "God raises leaders regardless of gender — Deborah combines judicial, prophetic, and military authority.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "Victory and Song",
+      "ref": "Judg 4:14-5:31",
+      "book_id": "judges",
+      "chapter_num": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Deborah accompanies Barak into battle. God routes Sisera's army; Jael kills Sisera with a tent peg. Deborah and Barak sing one of the oldest poems in Scripture, celebrating God's victory.",
+      "what_changes": "God uses unexpected people and unconventional means — the mighty general falls to a woman with a tent peg.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "Forty Years of Peace",
+      "ref": "Judg 5:31",
+      "book_id": "judges",
+      "chapter_num": 5,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Under Deborah's leadership, the land has peace for forty years — the longest rest in the judges period. Her faithfulness creates a generation of stability.",
+      "what_changes": "Godly leadership produces lasting peace — the fruit of faithfulness extends far beyond a single battle.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}

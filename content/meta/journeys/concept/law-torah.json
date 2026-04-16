@@ -1,0 +1,170 @@
+{
+  "id": "law-torah",
+  "journey_type": "concept",
+  "lens_id": "theological",
+  "title": "Law & Torah",
+  "subtitle": null,
+  "description": "God's instruction for covenant life. Torah is not mere legislation but teaching — the revelation of God's character and the path to human flourishing. The law exposes sin, guides conduct, and points forward to Christ who fulfills it.",
+  "depth": "medium",
+  "sort_order": 0,
+  "person_id": null,
+  "concept_id": "law-torah",
+  "era": null,
+  "hero_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Rembrandt_Harmensz._van_Rijn_079.jpg/400px-Rembrandt_Harmensz._van_Rijn_079.jpg",
+  "tags": [
+    {
+      "type": "word_study",
+      "id": "torah"
+    },
+    {
+      "type": "word_study",
+      "id": "mishpat"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "mosaic_covenant"
+    },
+    {
+      "type": "person",
+      "id": "moses"
+    },
+    {
+      "type": "theme",
+      "id": "commandment"
+    },
+    {
+      "type": "theme",
+      "id": "instruction"
+    },
+    {
+      "type": "theme",
+      "id": "Sinai"
+    },
+    {
+      "type": "theme",
+      "id": "obedience"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "The Ten Commandments",
+      "ref": "Exodus 20:1-17",
+      "book_id": "exodus",
+      "chapter_num": 20,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God speaks directly to the assembled people. The Decalogue establishes the moral foundation: duties to God (1-4) and neighbor (5-10).",
+      "what_changes": "Divine will is codified. Israel receives not merely guidance but binding covenant stipulations from the mouth of God.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "The Shema",
+      "ref": "Deuteronomy 6:4-9",
+      "book_id": "deuteronomy",
+      "chapter_num": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "'Hear, O Israel: The LORD our God, the LORD is one.' Love God with all heart, soul, and might. Teach diligently to your children.",
+      "what_changes": "Torah observance is rooted in love, not mere obedience. The law is relational before it is regulatory.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "Torah as Delight",
+      "ref": "Psalm 19:7-11",
+      "book_id": "psalms",
+      "chapter_num": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The law is 'perfect, reviving the soul.' It is sweeter than honey, more desired than gold. Torah is not burden but gift.",
+      "what_changes": "Torah piety is expressed as joy and desire. The psalmist celebrates the law rather than enduring it.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "Oh How I Love Your Law",
+      "ref": "Psalm 119:97-104",
+      "book_id": "psalms",
+      "chapter_num": 119,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The longest psalm is an acrostic meditation on Torah. 'Your word is a lamp to my feet and a light to my path.'",
+      "what_changes": "Torah devotion reaches its literary peak. Every letter of the alphabet is pressed into service to praise God's instruction.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 5,
+      "stop_type": "regular",
+      "label": "Law Written on Hearts",
+      "ref": "Jeremiah 31:33",
+      "book_id": "jeremiah",
+      "chapter_num": 31,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "In the new covenant, God declares: 'I will put my law within them, and I will write it on their hearts.' External code becomes internal reality.",
+      "what_changes": "Torah is not abolished but internalized. The problem was never the law itself but the human heart's inability to keep it.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 6,
+      "stop_type": "regular",
+      "label": "Not to Abolish but to Fulfill",
+      "ref": "Matthew 5:17-20",
+      "book_id": "matthew",
+      "chapter_num": 5,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Jesus declares he came not to abolish the Law but to fulfill it. Not the smallest letter will pass away until all is accomplished.",
+      "what_changes": "The law finds its intended goal in Christ. Fulfillment is neither abolition nor mere continuation but the realization of what Torah pointed toward.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 7,
+      "stop_type": "regular",
+      "label": "The Law Is Holy",
+      "ref": "Romans 7:7-12",
+      "book_id": "romans",
+      "chapter_num": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Paul insists: 'The law is holy, and the commandment is holy and righteous and good.' The problem is sin, not Torah.",
+      "what_changes": "The law is defended against antinomian misreading. Torah remains good; the diagnosis of failure lies in the human condition, not the divine instruction.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 8,
+      "stop_type": "regular",
+      "label": "The Law as Pedagogue",
+      "ref": "Galatians 3:23-25",
+      "book_id": "galatians",
+      "chapter_num": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The law was a 'guardian' (paidagogos) until Christ came. Now that faith has come, believers are no longer under the custodian.",
+      "what_changes": "Torah's role is revealed as preparatory and temporary in its supervisory function. Christ's arrival marks the transition from pedagogy to sonship.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}
