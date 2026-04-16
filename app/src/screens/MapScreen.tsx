@@ -20,8 +20,9 @@
 
 import React, { Suspense } from 'react';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
-import { isMapNativeAvailable } from '../utils/isMapNativeAvailable';
+import { isMapNativeAvailable, getMapUnavailableReason } from '../utils/isMapNativeAvailable';
 import { MapUnavailableCard } from '../components/map/MapUnavailableCard';
+import { MapErrorBoundary } from '../components/map/MapErrorBoundary';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 import { useTheme } from '../theme';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
@@ -62,12 +63,14 @@ const MapScreenNative = React.lazy(() => import('./MapScreenNative'));
 
 function MapScreen(props: Props) {
   if (!isMapNativeAvailable()) {
-    return <MapUnavailableCard />;
+    return <MapUnavailableCard reason={getMapUnavailableReason() ?? undefined} />;
   }
   return (
-    <Suspense fallback={<LazyFallback />}>
-      <MapScreenNative {...props} />
-    </Suspense>
+    <MapErrorBoundary>
+      <Suspense fallback={<LazyFallback />}>
+        <MapScreenNative {...props} />
+      </Suspense>
+    </MapErrorBoundary>
   );
 }
 
