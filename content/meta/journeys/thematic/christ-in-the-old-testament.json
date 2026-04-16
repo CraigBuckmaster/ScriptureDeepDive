@@ -1,0 +1,90 @@
+{
+  "id": "christ-in-the-old-testament",
+  "journey_type": "thematic",
+  "title": "Christ in the Old Testament",
+  "subtitle": "Theophanies, types, prophecies, foreshadowings",
+  "description": "On the road to Emmaus, the risen Jesus opened the Scriptures and showed two bewildered disciples that Moses, the prophets, and the psalms all pointed to him. Luke does not tell us which passages he cited, but the church has spent two millennia reconstructing that Bible study. This journey traces the figure of Christ through the Old Testament — not by imposing the New Testament backward onto ancient texts, but by following the threads that the biblical authors themselves identified. Some connections are explicit prophecy: a virgin will conceive, a ruler will come from Bethlehem. Others are typological: Isaac on the altar foreshadows the Son given up by the Father; the bronze serpent lifted in the wilderness anticipates the Son of Man lifted on the cross. Still others are theophanies — appearances of the Angel of the Lord who speaks as God, accepts worship, and bears the divine name. Together they form a pattern too coherent to be coincidental and too complex to be manufactured: the Old Testament is a book about someone who had not yet arrived.",
+  "lens_id": "christological",
+  "depth": "long",
+  "sort_order": 8,
+  "person_id": null,
+  "concept_id": null,
+  "era": null,
+  "hero_image_url": null,
+  "tags": [
+    {
+      "type": "theme",
+      "id": "prophecy"
+    },
+    {
+      "type": "theme",
+      "id": "redemption"
+    },
+    {
+      "type": "person",
+      "id": "jesus"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "The First Promise",
+      "ref": "Genesis 3:15",
+      "book_id": "genesis",
+      "chapter_num": 3,
+      "verse_start": 15,
+      "verse_end": 15,
+      "development": "In the curse upon the serpent, God embeds the Bible's first messianic promise: the seed of the woman will crush the serpent's head, though the serpent will strike his heel. The protoevangelium, as theologians call it, is remarkable for what it implies. The deliverer will come through the woman — a human being, not an angel or a divine intervention from outside creation. The victory will be costly: a crushed head for the serpent but a bruised heel for the deliverer. The language is deliberately obscure in Genesis, but the New Testament reads it as the first announcement of the gospel: a human descendant who defeats evil at personal cost. Paul writes that 'the God of peace will soon crush Satan under your feet' (Romans 16:20), echoing this verse and applying it to Christ's victory through the church.",
+      "what_changes": "The promise of a deliverer enters the narrative at the moment of the fall. From this point, every genealogy and every birth announcement carries latent messianic weight — which descendant will be the seed?",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "The seed promise threaded silently through the generations — Seth, Noah, Shem, Abraham. But alongside the promise of a future deliverer, God appeared in the present. A mysterious figure called the Angel of the Lord showed up at critical moments, speaking and acting as God himself."
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "The Angel of the Lord",
+      "ref": "Genesis 18:1-3",
+      "book_id": "genesis",
+      "chapter_num": 18,
+      "verse_start": 1,
+      "verse_end": 3,
+      "development": "Three visitors arrived at Abraham's tent at Mamre. The text says 'the Lord appeared to Abraham,' yet Abraham saw three men. Throughout the Old Testament, the Angel of the Lord occupies a unique theological space: he is distinguished from God ('the Lord said to the Angel') yet identified with God ('the Angel of the Lord said, I am the God of your father'). He appeared to Hagar, wrestled with Jacob, spoke from the burning bush, confronted Balaam, and commissioned Gideon. In each case, the figure accepts worship, speaks in the first person as God, and bears the divine name — yet is somehow sent by God. The church fathers saw in this figure a pre-incarnate appearance of the Son, the Word who was 'with God and was God' before becoming flesh. Whether or not every theophany is christological, the pattern establishes that God can appear in human form — a principle the incarnation will fulfill permanently.",
+      "what_changes": "God appears in human-accessible form. The Angel of the Lord establishes that divine presence can take visible, personal shape — a theological precedent without which the incarnation would be inconceivable.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "The Angel appeared and departed. But in the story of Isaac, a different kind of foreshadowing emerged — not a divine appearance but a human drama that mirrored, with eerie precision, what God himself would later do with his own Son."
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "Isaac — The Son Offered Up",
+      "ref": "Genesis 22:1-14",
+      "book_id": "genesis",
+      "chapter_num": 22,
+      "verse_start": 1,
+      "verse_end": 14,
+      "development": "Abraham took his 'only son, whom you love' to Mount Moriah and bound him on an altar. Isaac carried the wood for his own sacrifice up the mountain. When Isaac asked 'Where is the lamb?', Abraham answered with words that proved prophetic: 'God himself will provide the lamb.' The parallels to the crucifixion are striking and have been recognized since the earliest Christian interpretation. A beloved only son, wood carried to the place of sacrifice, a father willing to give up his son, a mountain in the Jerusalem area (Moriah is traditionally identified with the temple mount), and a substitute provided at the last moment. The author of Hebrews says Abraham reasoned that God could raise the dead, and 'figuratively speaking, he did receive Isaac back from death.' The Akedah is the Old Testament's most sustained typological anticipation of the cross — a father's willingness to sacrifice his son, reversed at the last moment by a ram, but fulfilled at Calvary by a Lamb.",
+      "what_changes": "The pattern of substitutionary sacrifice is established through narrative, not legislation. A beloved son is offered; a substitute is provided. The story creates a template that Passover, the Day of Atonement, and ultimately Calvary will fill.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "Abraham named the place 'The Lord Will Provide,' and centuries later God provided again on a mountain — not a ram but a lamb. The Passover in Egypt made explicit what the Akedah had foreshadowed: deliverance through the blood of a substitute."
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "The Passover Lamb",
+      "ref": "Exodus 12:3-13",
+      "book_id": "exodus",
+      "chapter_num": 12,
+      "verse_start": 3,
+      "verse_end": 13,
+      "development": "Each household selected a lamb without blemish, slaughtered it at twilight, and painted its blood on the doorframe. When the destroyer passed through Egypt, every house marked by blood was spared. The Passover lamb was not merely a historical memory — it became Israel's central liturgical act, repeated annually for fifteen centuries. John the Baptist pointed at Jesus and said, 'Behold, the Lamb of God who takes away the sin of the world.' Paul wrote, 'Christ, our Passover lamb, has been sacrificed.' John's Gospel places the crucifixion at the exact hour the Passover lambs were being slaughtered in the temple, and notes that none of Jesus's bones were broken — fulfilling the Passover regulation that the lamb's bones must remain intact. The typology is not retrospective invention; the Passover was designed to create a vocabulary of substitutionary sacrifice that would find its ultimate referent in Christ.",
+      "what_changes": "Salvation through blood becomes Israel's founding experience. The lamb's blood does not merely symbolize deliverance — it effects it. Every subsequent Passover is both memory and anticipation, looking back to Egypt and forward to a final Lamb.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "The Passover lamb died so that Israel might live. But before Israel reached Sinai, they encountered another mysterious figure — a priest-king who appeared without genealogy, offering bread and wine, and whom the author of Hebrews would identify as a type of Christ's eternal priesthood."
+    }
+  ]
+}
