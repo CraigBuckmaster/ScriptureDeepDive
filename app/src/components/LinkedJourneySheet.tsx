@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
     marginRight: spacing.sm,
   },
   title: {
-    fontFamily: fontFamily.serif,
+    fontFamily: fontFamily.body,
     fontSize: 18,
   },
   subtitle: {
@@ -249,7 +249,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   stopLabel: {
-    fontFamily: fontFamily.serifBold,
+    fontFamily: fontFamily.bodySemiBold,
     fontSize: 15,
     marginBottom: 4,
   },
