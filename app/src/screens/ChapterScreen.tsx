@@ -189,7 +189,7 @@ function ChapterScreen() {
   // Callbacks
   const handleNotePress = useCallback((v: number) => { setNoteVerseNum(v); toggleNotes(); }, [toggleNotes]);
   const handleVerseLongPress = useCallback((verseNum: number, text: string) => { setLongPress({ verseNum, text }); }, []);
-  const handleRefPress = useCallback((ref: { bookId: string; chapter: number }) => { navigation.push('Chapter', { bookId: ref.bookId, chapterNum: ref.chapter }); }, [navigation]);
+  const handleRefPress = useCallback((ref: { bookId: string; chapter: number; verseStart?: number; verseNum?: number }) => { const v = ref.verseStart ?? ref.verseNum; navigation.push('Chapter', { bookId: ref.bookId, chapterNum: ref.chapter, ...(v ? { verseNum: v } : {}) }); }, [navigation]);
   const handleAddNote = useCallback((verseNum: number) => { setNoteVerseNum(verseNum); toggleNotes(); }, [toggleNotes]);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleWordStudyPress = useCallback((wsId: string) => { (navigation as any).navigate('ExploreTab', { screen: 'WordStudyDetail', params: { wordId: wsId } }); }, [navigation]);

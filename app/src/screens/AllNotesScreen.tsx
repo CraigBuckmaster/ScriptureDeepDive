@@ -209,6 +209,7 @@ function AllNotesScreen() {
       navigation.navigate('Chapter', {
         bookId: parsed.bookId,
         chapterNum: parsed.ch,
+        ...(parsed.v ? { verseNum: parsed.v } : {}),
       });
     }
   };

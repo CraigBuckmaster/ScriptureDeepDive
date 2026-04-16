@@ -22,7 +22,7 @@ export interface JourneyStop {
 
 interface Props {
   stops: JourneyStop[];
-  onNavigate: (book: string, chapter: number) => void;
+  onNavigate: (book: string, chapter: number, verseNum?: number) => void;
 }
 
 export default function ConceptJourney({ stops, onNavigate }: Props) {
@@ -34,6 +34,9 @@ export default function ConceptJourney({ stops, onNavigate }: Props) {
     <View style={styles.container}>
       {stops.map((stop, idx) => {
         const isLast = idx === stops.length - 1;
+        // Extract starting verse from ref (e.g., "Genesis 12:1-3" → 1)
+        const vm = stop.ref?.match(/:(\d+)/);
+        const verseNum = vm ? parseInt(vm[1], 10) : undefined;
         return (
           <View key={`${stop.book}-${stop.chapter}-${idx}`} style={styles.row}>
             {/* Timeline spine */}
@@ -46,7 +49,7 @@ export default function ConceptJourney({ stops, onNavigate }: Props) {
             <TouchableOpacity
               style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '18' }]}
               activeOpacity={0.7}
-              onPress={() => onNavigate(stop.book, stop.chapter)}
+              onPress={() => onNavigate(stop.book, stop.chapter, verseNum)}
             >
               <View style={styles.cardHeader}>
                 <View style={[styles.refBadge, { backgroundColor: base.gold + '20' }]}>

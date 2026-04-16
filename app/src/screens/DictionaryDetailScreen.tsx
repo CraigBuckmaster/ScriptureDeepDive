@@ -42,7 +42,7 @@ function DictionaryDetailScreen() {
     (ref: string) => {
       const parsed = parseVerseRef(ref);
       if (parsed) {
-        navigation.navigate('Chapter', { bookId: parsed.bookId, chapterNum: parsed.ch });
+        navigation.navigate('Chapter', { bookId: parsed.bookId, chapterNum: parsed.ch, ...(parsed.v ? { verseNum: parsed.v } : {}) });
       }
     },
     [navigation]
