@@ -775,3 +775,69 @@ def verse_range(start, end):
     """
     return [(n, '') for n in range(start, end + 1)]
 
+
+# ══════════════════════════════════════════════════════════════════════
+#  JOURNEY PIPELINE — save_journey() writes journey JSON files
+# ══════════════════════════════════════════════════════════════════════
+
+def save_journey(journey_type: str, data: dict):
+    """Validate and write a journey JSON file to the correct subdirectory.
+
+    Args:
+        journey_type: one of 'thematic', 'concept', 'person'
+        data: the journey dict — must include 'id' and conform to journey schema
+
+    Returns:
+        Path to the written file.
+
+    Raises:
+        ValueError: if journey_type is invalid, data is malformed, or stop
+                    ordering / bridge rules are violated.
+    """
+    valid_types = {'thematic', 'concept', 'person'}
+    if journey_type not in valid_types:
+        raise ValueError(f"journey_type must be one of {valid_types}, got '{journey_type}'")
+
+    if data.get('journey_type') != journey_type:
+        raise ValueError(
+            f"data['journey_type']='{data.get('journey_type')}' does not match "
+            f"argument journey_type='{journey_type}'"
+        )
+
+    journey_id = data.get('id')
+    if not journey_id or not re.match(r'^[a-z0-9][a-z0-9-]*$', journey_id):
+        raise ValueError(f"Invalid journey id: '{journey_id}' — must be lowercase alphanumeric + hyphens")
+
+    for required in ('title', 'description', 'stops'):
+        if not data.get(required):
+            raise ValueError(f"Required field missing or empty: '{required}'")
+
+    if not isinstance(data['stops'], list) or len(data['stops']) == 0:
+        raise ValueError("'stops' must be a non-empty list")
+
+    for i, stop in enumerate(data['stops'], start=1):
+        if stop.get('stop_order') != i:
+            raise ValueError(f"Stop at index {i-1} has stop_order={stop.get('stop_order')}, expected {i}")
+
+    last_idx = len(data['stops']) - 1
+    for i, stop in enumerate(data['stops']):
+        bridge = stop.get('bridge_to_next')
+        if i == last_idx:
+            if bridge is not None and bridge != '':
+                raise ValueError(f"Final stop (order {i+1}) must have bridge_to_next = null")
+        else:
+            if not bridge or not bridge.strip():
+                raise ValueError(f"Stop at order {i+1} requires non-empty bridge_to_next")
+
+    out_dir = Path(ROOT) / 'content' / 'meta' / 'journeys' / journey_type
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_path = out_dir / f'{journey_id}.json'
+
+    with open(out_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+        f.write('\n')
+
+    print(f"  [OK] Saved {journey_type} journey: {journey_id} ({len(data['stops'])} stops) → {out_path}")
+    return out_path
+
+
