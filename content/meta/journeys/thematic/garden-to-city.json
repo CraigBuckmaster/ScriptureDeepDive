@@ -1,0 +1,90 @@
+{
+  "id": "garden-to-city",
+  "journey_type": "thematic",
+  "title": "From Garden to City",
+  "subtitle": "Eden lost, Eden restored as New Jerusalem",
+  "description": "The Bible opens in a garden and closes in a city. Between those two images stretches the entire story of Scripture — a narrative of loss, wandering, provisional dwelling, and ultimate restoration. In Eden, God walked with humanity in unmediated intimacy. By Revelation 21, that intimacy returns, but the setting has changed: not a garden for two but a city for nations, where the tree of life lines a river running through streets of gold. This journey traces the Bible's spatial theology — the places where God chooses to dwell and what those places reveal about his purposes. From the eastward exile of Genesis 3 to Abraham's tent-altars, from the portable tabernacle to Solomon's permanent temple, from the temple's destruction to its replacement by something the prophets could barely articulate, each stop marks a turning point in how God relates to the world he made. The arc is not a circle back to Eden but an escalation: what was lost in a garden is restored in a city, and what began with two people ends with every tribe and tongue.",
+  "lens_id": "narrative",
+  "depth": "long",
+  "sort_order": 1,
+  "person_id": null,
+  "concept_id": null,
+  "era": null,
+  "hero_image_url": null,
+  "tags": [
+    {
+      "type": "theme",
+      "id": "creation"
+    },
+    {
+      "type": "theme",
+      "id": "temple-presence"
+    },
+    {
+      "type": "theme",
+      "id": "redemption"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "The Garden",
+      "ref": "Genesis 2:8-15",
+      "book_id": "genesis",
+      "chapter_num": 2,
+      "verse_start": 8,
+      "verse_end": 15,
+      "development": "Eden is not merely a paradise but a temple. The language of Genesis 2 echoes Israel's later sanctuary vocabulary: God 'places' the man in the garden as priests were 'placed' in the tabernacle; the man is to 'work and keep' it using the same Hebrew terms (abad and shamar) later applied to Levitical service. The garden faces east, as the tabernacle and temple would. A river flows out to water the earth, anticipating Ezekiel's temple river and Revelation's river of life. God walks in the garden in the cool of the day — the Hebrew suggests a regular, anticipated communion. This is the Bible's first portrait of divine dwelling: God and humanity sharing the same space without barrier, mediator, or veil.",
+      "what_changes": "Eden establishes the baseline — unmediated divine presence in a place of abundance. Every subsequent dwelling place in Scripture is measured against this original intimacy and found to be partial.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "The fruit was eaten, the eyes were opened, and for the first time the humans hid from the God who had walked among them. What followed was not annihilation but exile — an eastward departure from the only home humanity had known, guarded now by a flaming sword."
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "Exile from Eden",
+      "ref": "Genesis 3:22-24",
+      "book_id": "genesis",
+      "chapter_num": 3,
+      "verse_start": 22,
+      "verse_end": 24,
+      "development": "The expulsion from Eden is the Bible's founding spatial trauma. The cherubim stationed at the east entrance anticipate the cherubim embroidered on the tabernacle curtain and carved into the temple's inner sanctuary — guardians marking the boundary between holy space and the profane world outside. Humanity now lives east of Eden, separated from the tree of life and from the unguarded presence of God. Yet the exile is not total abandonment. God clothes the humans before sending them out — a provision that hints at future covering. The narrative does not end with a locked gate but with a question: how will God's presence return to a world that has been expelled from his dwelling?",
+      "what_changes": "The direct divine presence is lost. From this point forward, every encounter with God requires some form of mediation — altars, sacrifice, consecrated space, appointed intermediaries.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "East of Eden, humanity multiplied — and so did the distance from God. Within ten generations the earth was corrupt, and God started over with a flood. But the pattern of scattering accelerated, reaching its climax when humanity attempted to build its own substitute for the garden: a city with a tower reaching to heaven."
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "Babel — The Failed City",
+      "ref": "Genesis 11:1-9",
+      "book_id": "genesis",
+      "chapter_num": 11,
+      "verse_start": 1,
+      "verse_end": 9,
+      "development": "Babel is the Bible's first city-building project, and it fails precisely because it attempts to recover what was lost in Eden through human engineering rather than divine initiative. The builders want a tower 'with its top in the heavens' — an artificial mountain to bridge the gap between earth and God's dwelling. They want to 'make a name' for themselves — to create their own identity apart from the God who names. The result is the opposite of what they intended: instead of unity, scattering; instead of a great name, confusion. The story establishes a crucial biblical principle: the city of God cannot be built from below. It must come down from above. This anti-temple, this counterfeit sacred mountain, stands as a warning against every human attempt to storm heaven.",
+      "what_changes": "Human ambition to rebuild sacred space on its own terms is judged. The city-as-dwelling-of-God is not abandoned as an idea — but it will require God's initiative, not humanity's engineering.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "From the scattering at Babel, God chose one family — not to build a city but to walk by faith toward a land they had never seen. Abraham would erect altars, not towers, and the promise attached to his name would be given, not seized."
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "Abraham's Altars",
+      "ref": "Genesis 12:7-8",
+      "book_id": "genesis",
+      "chapter_num": 12,
+      "verse_start": 7,
+      "verse_end": 8,
+      "development": "Abraham's response to divine encounter is consistently spatial: he builds altars. At Shechem, between Bethel and Ai, at Hebron — each altar marks a place where heaven touched earth, however briefly. These are not temples but memorial points, portable sacred spaces for a nomadic people. Abraham does not attempt to recreate Eden or build Babel; he simply marks the places where God spoke. Hebrews 11 will later reveal what Abraham understood: he was 'looking forward to the city that has foundations, whose designer and builder is God.' The patriarch lived in tents precisely because he awaited a city he could not construct. His altars were signposts pointing toward a dwelling he would never see in his lifetime — but which his descendants would begin to approximate.",
+      "what_changes": "Sacred space becomes portable and promissory. Abraham's altars mark encounters but don't contain God. The dwelling of God is now a future hope, not a present reality.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "Four centuries of silence and slavery in Egypt separated Abraham's altars from the next great leap in God's dwelling plan. When Israel left Egypt, they carried gold and fabric — raw materials for something unprecedented: a tent where the Creator of the universe would take up residence among a nation of former slaves."
+    }
+  ]
+}
