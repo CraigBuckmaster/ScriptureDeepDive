@@ -2,6 +2,7 @@ import React from 'react';
 import { NativeModules } from 'react-native';
 import { renderWithProviders } from '../helpers/renderWithProviders';
 import { MapChip } from '@/components/map/MapChip';
+import { __resetMapNativeProbeForTests } from '@/utils/isMapNativeAvailable';
 import type { MapStory, Place } from '@/types';
 
 const story: MapStory = {
@@ -18,6 +19,10 @@ const story: MapStory = {
 
 describe('MapChip (dispatcher)', () => {
   const original = (NativeModules as any).MLRNModule;
+
+  beforeEach(() => {
+    __resetMapNativeProbeForTests();
+  });
 
   afterEach(() => {
     (NativeModules as any).MLRNModule = original;

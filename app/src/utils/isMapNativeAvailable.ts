@@ -41,9 +41,17 @@ function probe(): boolean {
     // builds via the static import graph. We exercise the cheapest API
     // surface MapLibre exposes (setConnected) — if that throws, the
     // native side is broken in some way we can't render around.
+    //
+    // If `setConnected` is missing entirely (older versions of the
+    // library, or test mocks that don't include it) we treat that as
+    // success: the presence of MLRNModule is sufficient evidence that
+    // the native side is wired up. The probe is here to catch *throws*,
+    // not API-shape drift.
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const MapLibreGL = require('@maplibre/maplibre-react-native').default;
-    MapLibreGL.setConnected(true);
+    if (typeof MapLibreGL?.setConnected === 'function') {
+      MapLibreGL.setConnected(true);
+    }
     return true;
   } catch (err) {
     _probeError = err instanceof Error ? err.message : String(err);
@@ -69,6 +77,22 @@ export function getMapUnavailableReason(): string | null {
   // null when the component mounts before the gate is checked.
   isMapNativeAvailable();
   return _probeError;
+}
+
+/**
+ * Test-only helper to clear the memoised probe state between cases.
+ * The probe deliberately memoises so production callers can hit it from
+ * render paths without paying for a re-probe each time, but that
+ * memoisation has to be reset between test cases that mutate
+ * NativeModules.MLRNModule.
+ *
+ * Guarded against accidental production use — calling this in a non-test
+ * environment is a no-op.
+ */
+export function __resetMapNativeProbeForTests(): void {
+  if (process.env.NODE_ENV !== 'test') return;
+  _probeResult = null;
+  _probeError = null;
 }
 
 /**
