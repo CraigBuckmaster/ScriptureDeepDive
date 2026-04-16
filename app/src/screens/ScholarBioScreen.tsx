@@ -2,12 +2,12 @@
  * ScholarBioScreen — Full scholar bio with sections, scope, other scholars grid.
  */
 
-import React, { useState, useEffect, useMemo } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet, type DimensionValue } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
-import { getScholar, getAllScholars } from '../db/content';
+import { getScholar } from '../db/content';
 import { useContentImages } from '../hooks/useContentImages';
 import { ContentImageGallery } from '../components/ContentImageGallery';
 import { ScreenHeader } from '../components/ScreenHeader';
@@ -24,7 +24,6 @@ function ScholarBioScreen() {
   const { scholarId } = route.params ?? {};
   const [scholar, setScholar] = useState<Scholar | null>(null);
   const [bio, setBio] = useState<ScholarBio | null>(null);
-  const [allScholars, setAllScholars] = useState<Scholar[]>([]);
   const { images: contentImages } = useContentImages('scholar', scholarId);
 
   useEffect(() => {
@@ -34,13 +33,7 @@ function ScholarBioScreen() {
         if (s?.bio_json) try { setBio(JSON.parse(s.bio_json)); } catch (err) { logger.warn('ScholarBioScreen', 'Operation failed', err); }
       });
     }
-    getAllScholars().then(setAllScholars);
   }, [scholarId]);
-
-  const otherScholars = useMemo(
-    () => allScholars.filter((s) => s.id !== scholarId).slice(0, 12),
-    [allScholars, scholarId]
-  );
 
   if (!scholar) {
     return (
@@ -105,27 +98,6 @@ function ScholarBioScreen() {
           )}
         </View>
 
-        {/* Other Scholars */}
-        <Text style={[styles.othersLabel, { color: base.textMuted }]}>OTHER SCHOLARS</Text>
-        <View style={styles.othersGrid}>
-          {otherScholars.map((s) => {
-            const sColor = getScholarColor(s.id);
-            return (
-              <TouchableOpacity
-                key={s.id}
-                onPress={() => navigation.setParams({ scholarId: s.id })}
-                style={[styles.otherCard, { backgroundColor: sColor + '14', borderLeftColor: sColor }]}
-                accessibilityRole="button"
-                accessibilityLabel={`View scholar: ${s.name}`}
-              >
-                <Text style={[styles.otherName, { color: sColor }]}>{s.name}</Text>
-                {s.tradition && (
-                  <Text style={[styles.otherTradition, { color: base.textMuted }]}>{s.tradition}</Text>
-                )}
-              </TouchableOpacity>
-            );
-          })}
-        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -182,30 +154,6 @@ const styles = StyleSheet.create({
   scopeChipText: {
     fontFamily: fontFamily.uiMedium,
     fontSize: 11,
-  },
-  othersLabel: {
-    fontFamily: fontFamily.display,
-    fontSize: 10,
-    letterSpacing: 0.5,
-    marginBottom: spacing.sm,
-  },
-  othersGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: spacing.sm,
-  },
-  otherCard: {
-    width: '48%' as DimensionValue,
-    borderLeftWidth: 3,
-    borderRadius: radii.md,
-    padding: spacing.sm,
-  },
-  otherName: {
-    fontFamily: fontFamily.display,
-    fontSize: 11,
-  },
-  otherTradition: {
-    fontSize: 9,
   },
 });
 
