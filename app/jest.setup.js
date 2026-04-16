@@ -280,6 +280,30 @@ jest.mock('react-native-safe-area-context', () => {
   };
 });
 
+// Make InteractionManager.runAfterInteractions execute its callback
+// synchronously. In production, RN drains the interaction queue after
+// gestures/animations finish; in jsdom there's no such loop, so any
+// code deferred behind runAfterInteractions would silently never run.
+// Returning a cancel handle preserves the API surface for code that
+// stores it for cleanup.
+//
+// We mock the internal module path because RN's top-level
+// `InteractionManager` export pulls `.default` from this file. Both
+// the named import (`import { InteractionManager } from 'react-native'`)
+// and the direct import resolve here.
+jest.mock('react-native/Libraries/Interaction/InteractionManager', () => {
+  const api = {
+    runAfterInteractions: (cb) => {
+      if (typeof cb === 'function') cb();
+      return { cancel: () => undefined };
+    },
+    createInteractionHandle: () => 0,
+    clearInteractionHandle: () => undefined,
+    setDeadline: () => undefined,
+  };
+  return { __esModule: true, default: api, ...api };
+});
+
 // ── Navigation mocks ──────────────────────────────────────────────
 
 jest.mock('@react-navigation/native', () => {

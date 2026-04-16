@@ -1,11 +1,16 @@
 /**
  * MapUnavailableCard — Friendly placeholder shown when MapLibre's native
  * module isn't linked into the current binary (Expo Go, or a dev build
- * created before the MapLibre plugin was added to app.json).
+ * created before the MapLibre plugin was added to app.json), or when the
+ * native module loaded but threw during render (caught by MapErrorBoundary).
  *
  * Matches the parchment aesthetic of the real map: bgElevated card with
  * a gold border and a short explanation of the limitation plus a link
  * to the Expo docs on development builds.
+ *
+ * The optional `reason` prop is shown only in __DEV__ builds and is the
+ * lifeline that turns "the map screen is broken" into something
+ * diagnosable without an Xcode device-log session.
  */
 
 import React from 'react';
@@ -15,7 +20,12 @@ import { useTheme, spacing, radii, fontFamily } from '../../theme';
 
 const DEV_BUILD_DOCS_URL = 'https://docs.expo.dev/develop/development-builds/introduction/';
 
-export function MapUnavailableCard() {
+interface Props {
+  /** Optional diagnostic reason; rendered only in __DEV__ builds. */
+  reason?: string;
+}
+
+export function MapUnavailableCard({ reason }: Props = {}) {
   const { base } = useTheme();
   return (
     <View style={[styles.container, { backgroundColor: base.bg }]}>
@@ -45,6 +55,14 @@ export function MapUnavailableCard() {
             How to create a development build →
           </Text>
         </TouchableOpacity>
+        {__DEV__ && reason ? (
+          <Text
+            style={[styles.diagnostic, { color: base.textMuted }]}
+            numberOfLines={4}
+          >
+            {reason}
+          </Text>
+        ) : null}
       </View>
     </View>
   );
@@ -83,5 +101,12 @@ const styles = StyleSheet.create({
   link: {
     fontFamily: fontFamily.uiMedium,
     fontSize: 13,
+  },
+  diagnostic: {
+    fontFamily: fontFamily.body,
+    fontSize: 10,
+    marginTop: spacing.md,
+    textAlign: 'center',
+    opacity: 0.7,
   },
 });

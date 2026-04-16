@@ -8,10 +8,21 @@
  */
 
 import { NativeModules } from 'react-native';
-import { isMapNativeAvailable } from '@/utils/isMapNativeAvailable';
+import {
+  isMapNativeAvailable,
+  __resetMapNativeProbeForTests,
+} from '@/utils/isMapNativeAvailable';
 
 describe('isMapNativeAvailable', () => {
   const originalModule = (NativeModules as any).MLRNModule;
+
+  beforeEach(() => {
+    // The probe memoises its result for production efficiency. Tests
+    // that mutate NativeModules.MLRNModule per case must clear that
+    // memoisation between cases or they'll see whichever result the
+    // first case produced.
+    __resetMapNativeProbeForTests();
+  });
 
   afterEach(() => {
     (NativeModules as any).MLRNModule = originalModule;

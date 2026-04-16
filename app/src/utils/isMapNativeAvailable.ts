@@ -1,49 +1,107 @@
 /**
  * isMapNativeAvailable — True when MapLibre's native module is linked
- * into the current app binary.
+ * AND can be safely exercised from JS in the current binary.
  *
- * Returns `false` in Expo Go and in dev/preview builds that were created
- * before the `@maplibre/maplibre-react-native` Expo plugin was added. The
- * library itself logs a noisy console.error when the native module is
- * missing; rendering any MapLibre component in that state throws
- * "Element type is invalid" because `requireNativeComponent('MLRNMapView')`
- * resolves to undefined.
+ * Returns `false` in three cases:
+ *   1. Expo Go and dev/preview builds created before the
+ *      `@maplibre/maplibre-react-native` Expo plugin was added — the
+ *      MLRNModule singleton simply doesn't exist.
+ *   2. Builds where the module is registered but broken (e.g. MapLibre
+ *      v10 under the React Native New Architecture, where MLRNModule
+ *      passes the presence check but MLRNMapView throws at fabric
+ *      component instantiation). Just probing `NativeModules?.MLRNModule`
+ *      isn't enough — we have to *use* the module to find out.
+ *   3. Any other native error during the one-shot probe.
+ *
+ * The probe runs once per app lifetime and the result is memoised, so
+ * this is cheap to call from render paths.
  *
  * Consumers should branch on this check and render a friendly fallback
- * rather than letting the map tree crash.
+ * (MapUnavailableCard) rather than letting the map tree crash. For
+ * defence in depth, MapErrorBoundary catches anything that slips past
+ * this gate during render.
  */
 
 import { NativeModules } from 'react-native';
+import { logger } from './logger';
+
+let _probeResult: boolean | null = null;
+let _probeError: string | null = null;
+
+function probe(): boolean {
+  // Cheap presence check first — saves us from even trying to require()
+  // the JS module in Expo Go.
+  if (NativeModules?.MLRNModule == null) {
+    _probeError = 'MLRNModule native module not registered';
+    return false;
+  }
+
+  try {
+    // Dynamic require so the native module isn't pulled into Expo Go
+    // builds via the static import graph. We exercise the cheapest API
+    // surface MapLibre exposes (setConnected) — if that throws, the
+    // native side is broken in some way we can't render around.
+    //
+    // If `setConnected` is missing entirely (older versions of the
+    // library, or test mocks that don't include it) we treat that as
+    // success: the presence of MLRNModule is sufficient evidence that
+    // the native side is wired up. The probe is here to catch *throws*,
+    // not API-shape drift.
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const MapLibreGL = require('@maplibre/maplibre-react-native').default;
+    if (typeof MapLibreGL?.setConnected === 'function') {
+      MapLibreGL.setConnected(true);
+    }
+    return true;
+  } catch (err) {
+    _probeError = err instanceof Error ? err.message : String(err);
+    logger.warn('isMapNativeAvailable', 'MapLibre probe failed', err);
+    return false;
+  }
+}
 
 export function isMapNativeAvailable(): boolean {
-  // `MLRNModule` is the singleton MapLibre registers at bridge init. If
-  // it's null, no MapLibre native code is loaded and we must bail before
-  // any MapView / ShapeSource / Camera renders.
-  return NativeModules?.MLRNModule != null;
+  if (_probeResult === null) {
+    _probeResult = probe();
+  }
+  return _probeResult;
 }
 
 /**
- * One-time MapLibre module init. Call before the first <MapView> render.
- *
- * `setConnected(true)` tells the SDK it can make network requests for
- * tiles and style JSON. Without this call, MapView may throw or render
- * a blank canvas on first mount.
- *
- * Safe to call multiple times — the flag is idempotent and the dynamic
- * require only evaluates once.
+ * Diagnostic accessor for MapUnavailableCard so the dev build can surface
+ * the actual failure reason rather than asking the user (or future you)
+ * to spelunk Xcode device logs.
  */
-let _mapLibreInitDone = false;
+export function getMapUnavailableReason(): string | null {
+  // Force the probe to run if it hasn't yet so callers don't get a stale
+  // null when the component mounts before the gate is checked.
+  isMapNativeAvailable();
+  return _probeError;
+}
+
+/**
+ * Test-only helper to clear the memoised probe state between cases.
+ * The probe deliberately memoises so production callers can hit it from
+ * render paths without paying for a re-probe each time, but that
+ * memoisation has to be reset between test cases that mutate
+ * NativeModules.MLRNModule.
+ *
+ * Guarded against accidental production use — calling this in a non-test
+ * environment is a no-op.
+ */
+export function __resetMapNativeProbeForTests(): void {
+  if (process.env.NODE_ENV !== 'test') return;
+  _probeResult = null;
+  _probeError = null;
+}
+
+/**
+ * One-time MapLibre module init. Now a no-op preserved for backwards
+ * compatibility — the probe in `isMapNativeAvailable` already calls
+ * `setConnected(true)` on the success path. Kept exported so existing
+ * `ensureMapLibreInit()` call sites continue to compile.
+ */
 export function ensureMapLibreInit(): void {
-  if (_mapLibreInitDone) return;
-  if (!isMapNativeAvailable()) return;
-  try {
-    // Dynamic require so the native module isn't pulled into Expo Go builds
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const MapLibreGL = require('@maplibre/maplibre-react-native').default;
-    MapLibreGL.setConnected(true);
-    _mapLibreInitDone = true;
-  } catch {
-    // Swallow — if the module isn't available, isMapNativeAvailable()
-    // will gate rendering downstream.
-  }
+  // Probe is the init. Calling it is idempotent.
+  isMapNativeAvailable();
 }

@@ -2,13 +2,12 @@
   "expo": {
     "name": "Companion Study",
     "slug": "companion-study",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "default",
     "icon": "./assets/images/icon-512.png",
     "scheme": "scripture",
     "userInterfaceStyle": "dark",
     "backgroundColor": "#0c0a07",
-    "newArchEnabled": true,
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -23,7 +22,7 @@
       "infoPlist": {
         "UIBackgroundModes": [ "audio" ],
         "ITSAppUsesNonExemptEncryption": false,
-        "NSLocationWhenInUseUsageDescription": "This app does not currently use your location."
+        "NSLocationWhenInUseUsageDescription": "Used to centre the biblical map on your current location when you tap the locate control."
       }
     },
     "android": {
@@ -39,6 +38,13 @@
       "bundler": "metro"
     },
     "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": { "newArchEnabled": false },
+          "android": { "newArchEnabled": false }
+        }
+      ],
       "expo-font",
       "expo-screen-orientation",
       [
@@ -67,4 +73,4 @@
     },
     "owner": "skahz"
   }
-}
+}

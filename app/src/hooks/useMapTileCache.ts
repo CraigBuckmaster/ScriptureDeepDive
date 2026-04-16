@@ -17,6 +17,7 @@
  */
 
 import { useEffect, useRef } from 'react';
+import { InteractionManager } from 'react-native';
 import { OfflineManager } from '@maplibre/maplibre-react-native';
 import { isMapNativeAvailable } from '../utils/isMapNativeAvailable';
 import { logger } from '../utils/logger';
@@ -49,36 +50,49 @@ export function useMapTileCache(styleURL: string) {
     // native module isn't linked. Skip silently in Expo Go.
     if (!isMapNativeAvailable()) return;
 
-    (async () => {
-      try {
-        await OfflineManager.setMaximumAmbientCacheSize(AMBIENT_CACHE_BYTES);
-      } catch (err) {
-        logger.warn('useMapTileCache', 'Failed to set ambient cache size', err);
-      }
+    // Defer cache work until after the MapView has finished its initial
+    // mount + interaction frame. The native side serialises offline-pack
+    // creation and view registration poorly on first launch — running
+    // them on the same tick has been observed to crash the map subtree
+    // on iOS. runAfterInteractions queues onto the JS interaction
+    // manager so the work happens after navigation and first paint.
+    const handle = InteractionManager.runAfterInteractions(() => {
+      (async () => {
+        try {
+          await OfflineManager.setMaximumAmbientCacheSize(AMBIENT_CACHE_BYTES);
+        } catch (err) {
+          logger.warn('useMapTileCache', 'Failed to set ambient cache size', err);
+        }
 
-      try {
-        const existing = await OfflineManager.getPack(PACK_NAME);
-        if (existing) return;
+        try {
+          const existing = await OfflineManager.getPack(PACK_NAME);
+          if (existing) return;
 
-        await OfflineManager.createPack(
-          {
-            name: PACK_NAME,
-            styleURL,
-            minZoom: PACK_MIN_ZOOM,
-            maxZoom: PACK_MAX_ZOOM,
-            bounds: [BIBLICAL_BOUNDS.ne, BIBLICAL_BOUNDS.sw],
-          },
-          // Progress and error listeners are required by the v10 API but
-          // we don't surface either to the user — the download runs in
-          // the background. Log errors for diagnosis only.
-          () => undefined,
-          (_pack, err) => {
-            logger.warn('useMapTileCache', 'Offline pack error', err);
-          },
-        );
-      } catch (err) {
-        logger.warn('useMapTileCache', 'Failed to create offline pack', err);
-      }
-    })();
+          await OfflineManager.createPack(
+            {
+              name: PACK_NAME,
+              styleURL,
+              minZoom: PACK_MIN_ZOOM,
+              maxZoom: PACK_MAX_ZOOM,
+              bounds: [BIBLICAL_BOUNDS.ne, BIBLICAL_BOUNDS.sw],
+            },
+            // Progress and error listeners are required by the v10 API but
+            // we don't surface either to the user — the download runs in
+            // the background. Log errors for diagnosis only.
+            () => undefined,
+            (_pack, err) => {
+              logger.warn('useMapTileCache', 'Offline pack error', err);
+            },
+          );
+        } catch (err) {
+          logger.warn('useMapTileCache', 'Failed to create offline pack', err);
+        }
+      })();
+    });
+
+    return () => {
+      // Cancel the deferred work if the screen unmounts before it ran.
+      handle.cancel();
+    };
   }, [styleURL]);
 }
