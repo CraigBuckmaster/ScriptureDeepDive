@@ -178,6 +178,17 @@ def main():
     if explore_src.exists():
         shutil.copy2(explore_src, explore_dst)
 
+    # Validate no Wikimedia hotlinks survived
+    from validate_image_urls import validate_file, BLOCKED_HOSTS
+    violations = validate_file(explore_dst) + validate_file(META / 'scholar-bios.json')
+    if violations:
+        print(f"\n  ✗ {len(violations)} blocked hotlink URL(s) found:")
+        for jp, url in violations:
+            print(f"    {jp}: {url[:80]}")
+        print("  Run: python _tools/download_explore_images.py && python _tools/upload_images_to_r2.py --priority")
+        sys.exit(1)
+    print("  [OK] image URLs: no blocked hotlinks")
+
     size = DB_PATH.stat().st_size
     print(f"\n{'='*60}")
     print(f"scripture.db: {size // 1024 // 1024}MB ({size // 1024}KB)")
