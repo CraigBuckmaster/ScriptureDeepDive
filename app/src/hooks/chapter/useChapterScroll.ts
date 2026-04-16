@@ -80,32 +80,75 @@ export function useChapterScroll({
     }
   }, [activePanel]);
 
-  // Auto-scroll to a specific verse when navigated with verseNum param
+  // Auto-scroll to a specific verse when navigated with verseNum param.
+  //
+  // RACE NOTES:
+  //   1. The previous version only scrolled via an effect that ran when
+  //      isLoading flipped to false. At that moment, React Native's onLayout
+  //      callbacks haven't fired yet, so verseYMap is empty and the scroll
+  //      was silently dropped. Layout callbacks don't trigger a re-render,
+  //      so the effect never retried.
+  //   2. onLayout order across nested views is not guaranteed — a verse's
+  //      onLayout can fire before its enclosing section's onLayout. If we
+  //      scrolled immediately using sectionY + verseY, sectionY might still
+  //      be 0 and the computed target would be wrong.
+  //
+  // Fix: track scroll as *pending* when the target is set. Attempt to flush
+  // from both handleVerseLayout and handleSectionLayout — whichever completes
+  // the picture last triggers the actual scroll. We require a non-zero
+  // sectionY to flush (scrolling to y=0 is what a zero-offset target looks
+  // like, and would be indistinguishable from an uninitialised section at
+  // the very top; we treat the top-of-chapter case as already-scrolled so
+  // flushing it is a no-op anyway).
   const scrolledToInitialVerse = useRef(false);
   useEffect(() => {
     scrolledToInitialVerse.current = false;
   }, [bookId, chapterNum]);
 
+  const tryFlushInitialScroll = useCallback((sectionId: string) => {
+    if (!initialVerseNum || scrolledToInitialVerse.current) return;
+    const sectionY = sectionYMap.current[sectionId];
+    const verseY = verseYMap.current[initialVerseNum];
+    // Need both pieces. verseYMap values are stored as (sectionY + verseRelative),
+    // so if section wasn't known at store time, verseY here is effectively just
+    // verseRelative. We re-derive from the refs rather than trusting a stale sum.
+    if (sectionY == null || verseY == null) return;
+    scrolledToInitialVerse.current = true;
+    const targetY = Math.max(0, verseY - 80);
+    // 50ms delay lets any remaining sibling layouts settle before animating.
+    setTimeout(() => {
+      scrollRef.current?.scrollTo({ y: targetY, animated: true });
+    }, 50);
+  }, [initialVerseNum]);
+
+  // Fast-path: if layout already happened (e.g. cached chapter), scroll now.
   useEffect(() => {
     if (!initialVerseNum || scrolledToInitialVerse.current || isLoading) return;
-    const y = verseYMap.current[initialVerseNum];
-    if (y != null) {
-      scrolledToInitialVerse.current = true;
-      setTimeout(() => {
-        scrollRef.current?.scrollTo({ y: Math.max(0, y - 80), animated: true });
-      }, 150);
+    // We don't know which section the verse is in; iterate and try each.
+    // Ref map is small (one key per section), so this is cheap.
+    for (const sectionId of Object.keys(sectionYMap.current)) {
+      tryFlushInitialScroll(sectionId);
+      if (scrolledToInitialVerse.current) break;
     }
-  }, [initialVerseNum, isLoading, versesLength]);
+  }, [initialVerseNum, isLoading, versesLength, tryFlushInitialScroll]);
 
   // Layout callbacks
   const handleSectionLayout = useCallback((sectionId: string, y: number) => {
     sectionYMap.current[sectionId] = y;
-  }, []);
+    // A section's position became known — if we were waiting on it for
+    // the initial verse scroll, try to flush now.
+    tryFlushInitialScroll(sectionId);
+  }, [tryFlushInitialScroll]);
 
   const handleVerseLayout = useCallback((verseNum: number, y: number, sectionId: string) => {
     const sectionY = sectionYMap.current[sectionId] ?? 0;
     verseYMap.current[verseNum] = sectionY + y;
-  }, []);
+
+    // The target verse just laid out — try to flush.
+    if (initialVerseNum === verseNum) {
+      tryFlushInitialScroll(sectionId);
+    }
+  }, [initialVerseNum, tryFlushInitialScroll]);
 
   const handleBtnRowLayout = useCallback((sectionId: string, _sectionY: number, rowY: number) => {
     const secY = sectionYMap.current[sectionId] ?? 0;

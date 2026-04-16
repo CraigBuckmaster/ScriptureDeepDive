@@ -2,16 +2,22 @@
  * __tests__/services/notifications.test.ts
  *
  * Tests for the notifications service: permission requests,
- * daily verse scheduling, and cancellation.
+ * daily verse scheduling (rolling CALENDAR-triggered window),
+ * and scoped cancellation.
  */
 
 import { Platform } from 'react-native';
 import * as Notifications from 'expo-notifications';
 
-// Mock the database module
-const mockGetFirstAsync = jest.fn();
-jest.mock('@/db/database', () => ({
-  getDb: () => ({ getFirstAsync: mockGetFirstAsync }),
+// Mock the user-preferences DB layer (replaces old getDb mock)
+jest.mock('@/db/user', () => ({
+  setPreference: jest.fn().mockResolvedValue(undefined),
+  getPreference: jest.fn().mockResolvedValue(null),
+}));
+
+// Mock the verse-of-day module so we control what verse is returned
+jest.mock('@/utils/verseOfDay', () => ({
+  getVerseForDate: jest.fn(),
 }));
 
 // Mock the icon asset require (used inside scheduleDailyVerse)
@@ -22,17 +28,37 @@ import {
   scheduleDailyVerse,
   cancelAllNotifications,
 } from '@/services/notifications';
+import { setPreference } from '@/db/user';
+import { getVerseForDate } from '@/utils/verseOfDay';
+
+const sampleVerse = {
+  ref: 'Genesis 1:1',
+  bookId: 'genesis',
+  chapter: 1,
+  verseNum: 1,
+  text: 'In the beginning God created the heavens and the earth.',
+};
 
 describe('notifications service', () => {
   const mockRequestPermissions = Notifications.requestPermissionsAsync as jest.Mock;
   const mockSetChannel = Notifications.setNotificationChannelAsync as jest.Mock;
   const mockSchedule = Notifications.scheduleNotificationAsync as jest.Mock;
-  const mockCancelAll = Notifications.cancelAllScheduledNotificationsAsync as jest.Mock;
+  const mockGetAll = Notifications.getAllScheduledNotificationsAsync as jest.Mock;
+  const mockCancelOne = Notifications.cancelScheduledNotificationAsync as jest.Mock;
 
   beforeEach(() => {
     jest.clearAllMocks();
+    jest.useFakeTimers();
+    // Set a deterministic "now": 2026-01-15 at 00:00 local time
+    jest.setSystemTime(new Date(2026, 0, 15, 0, 0, 0));
     mockRequestPermissions.mockResolvedValue({ status: 'granted' });
+    mockGetAll.mockResolvedValue([]);
+    (getVerseForDate as jest.Mock).mockReturnValue(sampleVerse);
     (Platform as any).OS = 'ios';
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
   });
 
   // ── requestPermission ──────────────────────────────────────────
@@ -71,65 +97,78 @@ describe('notifications service', () => {
   // ── scheduleDailyVerse ─────────────────────────────────────────
 
   describe('scheduleDailyVerse', () => {
-    const sampleVerse = {
-      book_id: 'GEN',
-      chapter_num: 1,
-      verse_num: 1,
-      text: 'In the beginning God created the heaven and the earth.',
-    };
-
-    it('cancels existing notifications first', async () => {
-      mockGetFirstAsync.mockResolvedValue(sampleVerse);
+    it('cancels existing VOTD notifications before scheduling', async () => {
+      mockGetAll.mockResolvedValue([
+        { identifier: 'votd-2026-01-10' },
+        { identifier: 'reengagement-nudge' },
+        { identifier: 'votd-2026-01-11' },
+      ]);
       await scheduleDailyVerse(8, 0);
-      expect(mockCancelAll).toHaveBeenCalled();
+
+      // Only the votd-* notifications should be cancelled
+      expect(mockCancelOne).toHaveBeenCalledWith('votd-2026-01-10');
+      expect(mockCancelOne).toHaveBeenCalledWith('votd-2026-01-11');
+      expect(mockCancelOne).not.toHaveBeenCalledWith('reengagement-nudge');
     });
 
     it('schedules with correct hour and minute', async () => {
-      mockGetFirstAsync.mockResolvedValue(sampleVerse);
       await scheduleDailyVerse(9, 30);
-      expect(mockSchedule).toHaveBeenCalledWith(
-        expect.objectContaining({
-          trigger: expect.objectContaining({ hour: 9, minute: 30 }),
-        }),
-      );
+
+      expect(mockSchedule).toHaveBeenCalled();
+      const firstCall = mockSchedule.mock.calls[0][0];
+      expect(firstCall.trigger).toMatchObject({
+        hour: 9,
+        minute: 30,
+        second: 0,
+        repeats: false,
+      });
     });
 
     it('truncates long verse text at 147 chars with ellipsis', async () => {
       const longText = 'A'.repeat(200);
-      mockGetFirstAsync.mockResolvedValue({
-        ...sampleVerse,
-        text: longText,
-      });
+      (getVerseForDate as jest.Mock).mockReturnValue({ ...sampleVerse, text: longText });
+
       await scheduleDailyVerse(8, 0);
 
       const call = mockSchedule.mock.calls[0][0];
-      const bodyText: string = call.content.body;
-      // Body starts with truncated text (147 chars + '...')
-      expect(bodyText.startsWith('A'.repeat(147) + '...')).toBe(true);
+      const bodyFirstLine: string = call.content.body.split('\n')[0];
+      // buildBody: slice(0, 150-3) + '...' = 147 A's + '...' = 150 chars
+      expect(bodyFirstLine).toBe('A'.repeat(147) + '...');
     });
 
     it('does not truncate short verse text', async () => {
-      mockGetFirstAsync.mockResolvedValue(sampleVerse);
       await scheduleDailyVerse(8, 0);
 
       const call = mockSchedule.mock.calls[0][0];
-      const bodyText: string = call.content.body;
-      expect(bodyText).toContain(sampleVerse.text);
+      expect(call.content.body).toContain(sampleVerse.text);
     });
 
-    it('returns early when no verse found', async () => {
-      mockGetFirstAsync.mockResolvedValue(null);
+    it('includes verseNum in notification data payload', async () => {
       await scheduleDailyVerse(8, 0);
-      expect(mockSchedule).not.toHaveBeenCalled();
+
+      const call = mockSchedule.mock.calls[0][0];
+      expect(call.content.data).toMatchObject({
+        type: 'daily_verse',
+        bookId: 'genesis',
+        chapterNum: 1,
+        verseNum: 1,
+      });
     });
   });
 
   // ── cancelAllNotifications ─────────────────────────────────────
 
   describe('cancelAllNotifications', () => {
-    it('calls cancelAllScheduledNotificationsAsync', async () => {
+    it('cancels scoped VOTD notifications and clears last-scheduled preference', async () => {
+      mockGetAll.mockResolvedValue([
+        { identifier: 'votd-2026-01-15' },
+        { identifier: 'reengagement-nudge' },
+      ]);
       await cancelAllNotifications();
-      expect(mockCancelAll).toHaveBeenCalled();
+
+      expect(mockCancelOne).toHaveBeenCalledWith('votd-2026-01-15');
+      expect(mockCancelOne).not.toHaveBeenCalledWith('reengagement-nudge');
+      expect(setPreference).toHaveBeenCalledWith('votd_last_scheduled_date', '');
     });
   });
 });

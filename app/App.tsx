@@ -6,7 +6,12 @@ import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NavigationContainer, DarkTheme, DefaultTheme } from '@react-navigation/native';
+import {
+  NavigationContainer,
+  DarkTheme,
+  DefaultTheme,
+  createNavigationContainerRef,
+} from '@react-navigation/native';
 
 import { FONT_MAP, ThemeProvider, useTheme } from './src/theme';
 import { initDatabase } from './src/db/database';
@@ -14,14 +19,23 @@ import { initUserDatabase } from './src/db/userDatabase';
 import { useSettingsStore, useAuthStore, usePremiumStore } from './src/stores';
 import { pruneEvents } from './src/services/analytics';
 import { checkAndScheduleReengagement } from './src/services/reengagement';
+import { rescheduleIfStale } from './src/services/notifications';
 import { syncPremiumStatus } from './src/services/purchases';
 import { flushQueue } from './src/services/syncQueue';
 import { RootNavigator } from './src/navigation';
+import type { TabParamList } from './src/navigation/types';
+import { useNotificationRouter } from './src/hooks/useNotificationRouter';
 import { ErrorBoundary } from './src/components/ErrorBoundary';
 import { closeAllTranslationDbs } from './src/db/translationManager';
 import { ContentUpdateProvider } from './src/providers/ContentUpdateProvider';
 import { DbDownloadScreen } from './src/screens/DbDownloadScreen';
 import { Sentry, DSN } from './src/lib/sentry';
+
+/**
+ * Root navigation ref — shared with non-component code (notification tap
+ * handler) so taps can navigate without drilling props through the tree.
+ */
+const navigationRef = createNavigationContainerRef<TabParamList>();
 
 // Keep splash visible while we load
 SplashScreen.preventAutoHideAsync();
@@ -83,6 +97,9 @@ const linking: any = {
 function AppShell() {
   const { base: themeBase, mode, statusBarStyle } = useTheme();
 
+  // Install notification tap router (handles both cold-start and warm taps).
+  useNotificationRouter(navigationRef);
+
   const navTheme = useMemo(() => {
     const baseTheme = mode === 'dark' ? DarkTheme : DefaultTheme;
     return {
@@ -100,7 +117,7 @@ function AppShell() {
 
   return (
     <>
-      <NavigationContainer theme={navTheme} linking={linking}>
+      <NavigationContainer ref={navigationRef} theme={navTheme} linking={linking}>
         <ErrorBoundary>
           <RootNavigator />
         </ErrorBoundary>
@@ -137,13 +154,14 @@ function App() {
 
   const dbReady = dbStatus === 'ready';
 
-  // Re-engagement + premium sync: check on app foreground
+  // Re-engagement + premium sync + VOTD reschedule: check on app foreground
   useEffect(() => {
     const sub = AppState.addEventListener('change', (state) => {
       if (state === 'active' && dbReady) {
         checkAndScheduleReengagement();
         syncPremiumStatus();
         flushQueue(); // Sync any queued offline mutations
+        rescheduleIfStale(); // Extend VOTD rolling window if a day has passed
       }
     });
     return () => sub.remove();
