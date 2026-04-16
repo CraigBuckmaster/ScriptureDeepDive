@@ -27,8 +27,6 @@ const TopicBrowseScreen = lazySuspense(() => import('../screens/TopicBrowseScree
 const TopicDetailScreen = lazySuspense(() => import('../screens/TopicDetailScreen'));
 const ProphecyBrowseScreen = lazySuspense(() => import('../screens/ProphecyBrowseScreen'));
 const ProphecyDetailScreen = lazySuspense(() => import('../screens/ProphecyDetailScreen'));
-const ConceptBrowseScreen = lazySuspense(() => import('../screens/ConceptBrowseScreen'));
-const ConceptDetailScreen = lazySuspense(() => import('../screens/ConceptDetailScreen'));
 const DifficultPassagesBrowseScreen = lazySuspense(() => import('../screens/DifficultPassagesBrowseScreen'));
 const DifficultPassageDetailScreen = lazySuspense(() => import('../screens/DifficultPassageDetailScreen'));
 const ConcordanceScreen = lazySuspense(() => import('../screens/ConcordanceScreen'));
@@ -88,8 +86,6 @@ export function ExploreStack() {
       <Stack.Screen name="TopicDetail" component={TopicDetailScreen} />
       <Stack.Screen name="ProphecyBrowse" component={ProphecyBrowseScreen} />
       <Stack.Screen name="ProphecyDetail" component={ProphecyDetailScreen} />
-      <Stack.Screen name="ConceptBrowse" component={ConceptBrowseScreen} />
-      <Stack.Screen name="ConceptDetail" component={ConceptDetailScreen} />
       <Stack.Screen name="DifficultPassagesBrowse" component={DifficultPassagesBrowseScreen} />
       <Stack.Screen name="DifficultPassageDetail" component={DifficultPassageDetailScreen} />
       <Stack.Screen name="Concordance" component={ConcordanceScreen} />

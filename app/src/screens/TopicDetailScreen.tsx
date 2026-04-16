@@ -88,7 +88,7 @@ function TopicDetailScreen() {
           concepts={relatedConcepts}
           threads={relatedThreads}
           prophecyChains={relatedProphecyChains}
-          onConceptPress={(id) => navigation.push('ConceptDetail', { conceptId: id })}
+          onConceptPress={(id) => navigation.push('JourneyDetail', { journeyId: id })}
           onThreadPress={handleThreadPress}
           onProphecyPress={(id) => navigation.push('ProphecyDetail', { chainId: id })}
         />

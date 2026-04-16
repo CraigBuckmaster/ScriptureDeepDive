@@ -123,7 +123,7 @@ function extractCards(
           title: typeof name === 'string' ? name : 'Theme',
           snippet: 'Trace this concept across Scripture',
           color: '#bfa050',
-          screen: 'ConceptBrowse',
+          screen: 'JourneyBrowse',
           params: {},
           imageUrl: null,
           label: 'Concept',

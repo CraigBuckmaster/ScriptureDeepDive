@@ -54,7 +54,7 @@ describe('useRecommendations', () => {
     expect(ids).toContain('covenant-concept');
   });
 
-  it('uses conceptId param in covenant recommendation', async () => {
+  it('uses journeyId param in covenant recommendation', async () => {
     mockGetFirstAsync
       .mockResolvedValueOnce({ count: 5 })
       .mockResolvedValueOnce({ count: 0 })
@@ -71,7 +71,7 @@ describe('useRecommendations', () => {
 
     const covenant = result.current.find((r) => r.id === 'covenant-concept');
     expect(covenant).toBeDefined();
-    expect((covenant!.params as any).params.conceptId).toBe('covenant');
+    expect((covenant!.params as any).params.journeyId).toBe('covenant');
   });
 
   it('sorts recommendations by priority descending', async () => {

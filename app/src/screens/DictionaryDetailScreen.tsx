@@ -78,7 +78,7 @@ function DictionaryDetailScreen() {
 
   const handleConceptPress = useCallback(
     (conceptId: string) => {
-      navigation.navigate('ConceptDetail', { conceptId });
+      navigation.navigate('JourneyDetail', { journeyId: conceptId });
     },
     [navigation]
   );

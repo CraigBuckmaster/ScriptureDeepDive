@@ -24,28 +24,28 @@ export interface ExploreRecommendation extends FeatureCardData {
 
 const BOOK_RECS: Record<string, ExploreRecommendation[]> = {
   genesis: [
-    { title: 'Creation',           subtitle: 'Concept you explored in Genesis',       color: '#bfa050', screen: 'ConceptBrowse', params: {} },
+    { title: 'Creation',           subtitle: 'Concept you explored in Genesis',       color: '#bfa050', screen: 'JourneyBrowse', params: {} },
     { title: "Abraham's Journey",  subtitle: 'Follow the route from Ur to Canaan',    color: '#81C784', screen: 'Map',           params: { storyId: 'abraham_journey' } },
-    { title: 'Covenant',           subtitle: 'Trace the idea from Genesis onward',     color: '#9090e0', screen: 'ConceptBrowse', params: {} },
+    { title: 'Covenant',           subtitle: 'Trace the idea from Genesis onward',     color: '#9090e0', screen: 'JourneyBrowse', params: {} },
   ],
   exodus: [
     { title: 'The Exodus Route',   subtitle: 'From Egypt to Sinai on the map',        color: '#81C784', screen: 'Map',           params: { storyId: 'exodus_route' } },
     { title: 'Moses',              subtitle: 'The central figure of the Torah',        color: '#e86040', screen: 'PersonDetail',  params: { personId: 'moses' } },
-    { title: 'Torah & Law',        subtitle: 'What role does the law play?',           color: '#bfa050', screen: 'ConceptBrowse', params: {} },
+    { title: 'Torah & Law',        subtitle: 'What role does the law play?',           color: '#bfa050', screen: 'JourneyBrowse', params: {} },
   ],
   psalms: [
     { title: 'Hebrew Poetry',      subtitle: 'How parallelism and meter work',         color: '#7a9ab0', screen: 'GrammarBrowse', params: {} },
-    { title: 'Lament',             subtitle: 'The theology of crying out to God',      color: '#bfa050', screen: 'ConceptBrowse', params: {} },
+    { title: 'Lament',             subtitle: 'The theology of crying out to God',      color: '#bfa050', screen: 'JourneyBrowse', params: {} },
     { title: 'David',              subtitle: 'The poet behind the psalms',             color: '#e86040', screen: 'PersonDetail',  params: { personId: 'david' } },
   ],
   romans: [
-    { title: 'Justification',      subtitle: "Paul's central argument unpacked",       color: '#bfa050', screen: 'ConceptBrowse', params: {} },
+    { title: 'Justification',      subtitle: "Paul's central argument unpacked",       color: '#bfa050', screen: 'JourneyBrowse', params: {} },
     { title: 'Paul',               subtitle: 'The apostle to the Gentiles',            color: '#e86040', screen: 'PersonDetail',  params: { personId: 'paul' } },
     { title: 'Faith vs Works',     subtitle: 'A debate that shaped church history',    color: '#d08080', screen: 'DebateBrowse',  params: {} },
   ],
   revelation: [
     { title: 'Apocalyptic Genre',  subtitle: 'How to read symbolic literature',        color: '#7a9ab0', screen: 'GrammarBrowse', params: {} },
-    { title: 'Kingdom of God',     subtitle: 'The consummation of a biblical theme',   color: '#bfa050', screen: 'ConceptBrowse', params: {} },
+    { title: 'Kingdom of God',     subtitle: 'The consummation of a biblical theme',   color: '#bfa050', screen: 'JourneyBrowse', params: {} },
     { title: 'Prophecy Chains',    subtitle: 'Trace OT promises to their conclusion',  color: '#e8a070', screen: 'ProphecyBrowse',params: {} },
   ],
 };
@@ -71,15 +71,15 @@ const GENRE_RECS: Record<string, ExploreRecommendation[]> = {
   'Wisdom Literature': [
     { title: 'Hebrew Poetry',      subtitle: 'How parallelism shapes meaning',         color: '#7a9ab0', screen: 'GrammarBrowse', params: {} },
     { title: 'Word Studies',       subtitle: 'Key Hebrew terms in wisdom',             color: '#e890b8', screen: 'WordStudyBrowse',params: {} },
-    { title: 'Concepts',           subtitle: 'Wisdom, fear of the Lord & more',        color: '#bfa050', screen: 'ConceptBrowse', params: {} },
+    { title: 'Concepts',           subtitle: 'Wisdom, fear of the Lord & more',        color: '#bfa050', screen: 'JourneyBrowse', params: {} },
   ],
   'Hebrew Poetry': [
     { title: 'Hebrew Poetry',      subtitle: 'How parallelism and meter work',         color: '#7a9ab0', screen: 'GrammarBrowse', params: {} },
     { title: 'Word Studies',       subtitle: 'Key Hebrew terms in the psalms',         color: '#e890b8', screen: 'WordStudyBrowse',params: {} },
-    { title: 'Concepts',           subtitle: 'Praise, lament, trust & more',           color: '#bfa050', screen: 'ConceptBrowse', params: {} },
+    { title: 'Concepts',           subtitle: 'Praise, lament, trust & more',           color: '#bfa050', screen: 'JourneyBrowse', params: {} },
   ],
   'Lament Poetry': [
-    { title: 'Lament',             subtitle: 'The theology of crying out to God',      color: '#bfa050', screen: 'ConceptBrowse', params: {} },
+    { title: 'Lament',             subtitle: 'The theology of crying out to God',      color: '#bfa050', screen: 'JourneyBrowse', params: {} },
     { title: 'Hebrew Poetry',      subtitle: 'Acrostic structure and meter',           color: '#7a9ab0', screen: 'GrammarBrowse', params: {} },
     { title: 'Timeline',           subtitle: 'The fall of Jerusalem in context',       color: '#70b8e8', screen: 'Timeline',      params: {} },
   ],
@@ -89,14 +89,14 @@ const GENRE_RECS: Record<string, ExploreRecommendation[]> = {
     { title: 'Word Studies',       subtitle: 'Love, beauty, and desire in Hebrew',     color: '#e890b8', screen: 'WordStudyBrowse',params: {} },
   ],
   'Ritual Law': [
-    { title: 'Atonement',          subtitle: 'The sacrificial system and its meaning', color: '#bfa050', screen: 'ConceptBrowse', params: {} },
+    { title: 'Atonement',          subtitle: 'The sacrificial system and its meaning', color: '#bfa050', screen: 'JourneyBrowse', params: {} },
     { title: 'Word Studies',       subtitle: 'Holiness, clean, and unclean in Hebrew', color: '#e890b8', screen: 'WordStudyBrowse',params: {} },
     { title: 'Scholarly Debates',  subtitle: 'How should modern readers approach law?',color: '#d08080', screen: 'DebateBrowse',  params: {} },
   ],
   'Covenant Law': [
-    { title: 'Covenant',           subtitle: 'The treaty structure behind Deuteronomy',color: '#bfa050', screen: 'ConceptBrowse', params: {} },
+    { title: 'Covenant',           subtitle: 'The treaty structure behind Deuteronomy',color: '#bfa050', screen: 'JourneyBrowse', params: {} },
     { title: 'Ancient Sources',    subtitle: 'ANE treaty parallels',                   color: '#b07d4f', screen: 'ArchaeologyBrowse',params: {} },
-    { title: 'Torah & Law',        subtitle: 'What role does the law play?',           color: '#bfa050', screen: 'ConceptBrowse', params: {} },
+    { title: 'Torah & Law',        subtitle: 'What role does the law play?',           color: '#bfa050', screen: 'JourneyBrowse', params: {} },
   ],
   'Gospel': [
     { title: 'Gospel Harmony',     subtitle: 'Compare across all 4 Gospels',           color: '#70d098', screen: 'HarmonyBrowse', params: {} },
@@ -106,7 +106,7 @@ const GENRE_RECS: Record<string, ExploreRecommendation[]> = {
   'Epistle': [
     { title: 'Argument Flow',      subtitle: 'Follow the logic of the letter',         color: '#7a9ab0', screen: 'GrammarBrowse', params: {} },
     { title: 'Word Studies',       subtitle: 'Key Greek terms in this letter',         color: '#e890b8', screen: 'WordStudyBrowse',params: {} },
-    { title: 'Concepts',           subtitle: 'Grace, faith, sanctification & more',    color: '#bfa050', screen: 'ConceptBrowse', params: {} },
+    { title: 'Concepts',           subtitle: 'Grace, faith, sanctification & more',    color: '#bfa050', screen: 'JourneyBrowse', params: {} },
   ],
   'Apocalyptic': [
     { title: 'Apocalyptic Genre',  subtitle: 'How to read symbolic literature',        color: '#7a9ab0', screen: 'GrammarBrowse', params: {} },
@@ -165,7 +165,7 @@ export function useExploreRecommendations(): {
           setRecommendations([
             { title: 'People',    subtitle: 'See who appears in the text', color: '#e86040', screen: 'GenealogyTree', params: {} },
             { title: 'Timeline',  subtitle: 'Place events in context',     color: '#70b8e8', screen: 'Timeline',      params: {} },
-            { title: 'Concepts',  subtitle: 'Trace themes across the Bible',color: '#bfa050', screen: 'ConceptBrowse', params: {} },
+            { title: 'Concepts',  subtitle: 'Trace themes across the Bible',color: '#bfa050', screen: 'JourneyBrowse', params: {} },
           ]);
         }
       } catch (err) {

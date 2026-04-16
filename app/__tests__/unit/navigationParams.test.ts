@@ -22,8 +22,7 @@ jest.mock('@/db/content', () => ({
 }));
 
 describe('navigation parameter names', () => {
-  it('useRecommendations uses conceptId (not id) for ConceptDetail', () => {
-    // Read the source file and verify the param name
+  it('useRecommendations uses journeyId (not id) for JourneyDetail', () => {
     const fs = require('fs');
     const path = require('path');
     const source = fs.readFileSync(
@@ -31,8 +30,7 @@ describe('navigation parameter names', () => {
       'utf-8'
     );
 
-    // Should contain conceptId, not bare id
-    expect(source).toContain("params: { conceptId: 'covenant' }");
+    expect(source).toContain("params: { journeyId: 'covenant' }");
     expect(source).not.toContain("params: { id: 'covenant' }");
   });
 

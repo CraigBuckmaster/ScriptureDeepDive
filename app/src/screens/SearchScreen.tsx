@@ -180,7 +180,7 @@ function SearchScreen() {
       const c = item as Concept;
       return (
         <TouchableOpacity
-          onPress={() => goToExplore('ConceptDetail', { conceptId: c.id })}
+          onPress={() => goToExplore('JourneyDetail', { journeyId: c.id })}
           style={styles.row}
           accessibilityRole="button"
           accessibilityLabel={`Concept: ${c.name}`}

@@ -57,7 +57,7 @@ function PersonDetailScreen() {
   }, [navigation]);
 
   const handleJourneyPress = useCallback((pid: string) => {
-    navigation.navigate('PersonJourney', { personId: pid });
+    navigation.navigate('JourneyDetail', { journeyId: pid });
   }, [navigation]);
 
   // "View on Map" — opens MapScreen with the person arc layer (#1324)
