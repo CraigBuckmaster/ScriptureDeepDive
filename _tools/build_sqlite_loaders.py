@@ -480,7 +480,6 @@ def populate_people(cur):
     spine_ids = set(gc.get('spine_ids', []))
 
     count = 0
-    journey_count = 0
     legacy_count = 0
     for p in people:
         # Explicit `type` in people.json wins (lets us mark allegorical
@@ -513,21 +512,6 @@ def populate_people(cur):
         )
         count += 1
 
-        # Journey stages (#1125)
-        for j, stage in enumerate(p.get('journey', [])):
-            cur.execute(
-                'INSERT INTO people_journeys '
-                '(person_id, stage_order, stage, era, book_dir, chapters, '
-                'verse_ref, summary, theme) '
-                'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                (p['id'], j, stage['stage'], stage.get('era'),
-                 stage.get('book_dir'),
-                 _json_str(stage['chapters']) if 'chapters' in stage else None,
-                 stage.get('verse_ref'), stage.get('summary'),
-                 stage.get('theme'))
-            )
-            journey_count += 1
-
         # Legacy refs (#1125)
         for lr in p.get('legacy_refs', []):
             cur.execute(
@@ -537,8 +521,6 @@ def populate_people(cur):
             )
             legacy_count += 1
 
-    if journey_count > 0:
-        print(f"  [OK] people_journeys: {journey_count} stages")
     if legacy_count > 0:
         print(f"  [OK] people_legacy_refs: {legacy_count} refs")
     return count
@@ -1041,25 +1023,6 @@ def populate_prophecy_chains(cur):
              _json_str(c['links']))
         )
     return len(chains)
-
-
-def populate_concepts(cur):
-    path = META / 'concepts.json'
-    if not path.exists():
-        return 0
-    concepts = _load_json(path)
-    for c in concepts:
-        cur.execute(
-            'INSERT INTO concepts VALUES (?,?,?,?,?,?,?,?,?,?)',
-            (c['id'], c['title'], c.get('description'),
-             c.get('theme_key'), _json_str(c.get('word_study_ids', [])),
-             _json_str(c.get('thread_ids', [])),
-             _json_str(c.get('prophecy_chain_ids', [])),
-             _json_str(c.get('people_tags', [])),
-             _json_str(c.get('tags', [])),
-             _json_str(c.get('journey_stops', [])))
-        )
-    return len(concepts)
 
 
 def populate_difficult_passages(cur):
@@ -1611,7 +1574,6 @@ def populate_content_images(cur):
         ('people', META / 'people.json', lambda d: d.get('people', []), 'id'),
         ('timeline', META / 'timelines.json', lambda d: d.get('events', []) if isinstance(d, dict) else d, 'id'),
         ('map_story', META / 'map-stories.json', lambda d: d.get('stories', []) if isinstance(d, dict) else d, 'id'),
-        ('concept', META / 'concepts.json', lambda d: d if isinstance(d, list) else [], 'id'),
         ('topic', META / 'topics.json', lambda d: d if isinstance(d, list) else [], 'id'),
         ('prophecy', META / 'prophecy-chains.json', lambda d: d if isinstance(d, list) else [], 'id'),
         ('thread', META / 'cross-refs.json', lambda d: d.get('threads', []) if isinstance(d, dict) else d, 'id'),
