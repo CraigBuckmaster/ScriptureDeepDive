@@ -37,11 +37,13 @@ import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 // ── Static cards for new users ────────────────────────────────
-const NEW_USER_CARDS: FeatureCardData[] = [
-  { title: 'People',       subtitle: 'Lives that shaped sacred history',        color: '#e86040', screen: 'GenealogyTree' }, // data-color: intentional
-  { title: 'Timeline',     subtitle: 'The arc of redemption',                   color: '#70b8e8', screen: 'Timeline' }, // data-color: intentional
-  { title: 'Scholars',     subtitle: 'Centuries of scholarship',                color: '#a0b8d0', screen: 'ScholarBrowse' }, // data-color: intentional
-  { title: 'Word Studies', subtitle: 'Meaning in the original languages',       color: '#e890b8', screen: 'WordStudyBrowse' }, // data-color: intentional
+// These navigate cross-tab to ExploreStack screens. The color is
+// resolved at render time from the theme (see carouselCards below).
+const NEW_USER_CARDS: Omit<FeatureCardData, 'color'>[] = [
+  { title: 'People',       subtitle: 'Lives that shaped sacred history',        screen: 'ExploreTab', params: { screen: 'GenealogyTree' } },
+  { title: 'Timeline',     subtitle: 'The arc of redemption',                   screen: 'ExploreTab', params: { screen: 'Timeline' } },
+  { title: 'Scholars',     subtitle: 'Centuries of scholarship',                screen: 'ExploreTab', params: { screen: 'ScholarBrowse' } },
+  { title: 'Word Studies', subtitle: 'Meaning in the original languages',       screen: 'ExploreTab', params: { screen: 'WordStudyBrowse' } },
 ];
 
 function HomeScreen() {
@@ -89,7 +91,11 @@ function HomeScreen() {
   };
 
   const handleVersePress = () => {
-    navigation.navigate('Chapter', { bookId: verse.bookId, chapterNum: verse.chapter });
+    navigation.navigate('Chapter', {
+      bookId: verse.bookId,
+      chapterNum: verse.chapter,
+      verseNum: verse.verseNum,
+    });
   };
 
   // ── Map recommendations to FeatureCardData + images ──────
@@ -101,9 +107,9 @@ function HomeScreen() {
     params: r.params as Record<string, string> | undefined,
   }));
 
-  const carouselCards = chaptersRead > 0 && recCards.length > 0
+  const carouselCards: FeatureCardData[] = chaptersRead > 0 && recCards.length > 0
     ? recCards
-    : NEW_USER_CARDS;
+    : NEW_USER_CARDS.map((c) => ({ ...c, color: base.gold }));
 
   const carouselLabel = chaptersRead > 0 && recCards.length > 0
     ? 'FROM YOUR STUDY'

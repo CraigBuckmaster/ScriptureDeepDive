@@ -21,3 +21,29 @@ export function isMapNativeAvailable(): boolean {
   // any MapView / ShapeSource / Camera renders.
   return NativeModules?.MLRNModule != null;
 }
+
+/**
+ * One-time MapLibre module init. Call before the first <MapView> render.
+ *
+ * `setConnected(true)` tells the SDK it can make network requests for
+ * tiles and style JSON. Without this call, MapView may throw or render
+ * a blank canvas on first mount.
+ *
+ * Safe to call multiple times — the flag is idempotent and the dynamic
+ * require only evaluates once.
+ */
+let _mapLibreInitDone = false;
+export function ensureMapLibreInit(): void {
+  if (_mapLibreInitDone) return;
+  if (!isMapNativeAvailable()) return;
+  try {
+    // Dynamic require so the native module isn't pulled into Expo Go builds
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const MapLibreGL = require('@maplibre/maplibre-react-native').default;
+    MapLibreGL.setConnected(true);
+    _mapLibreInitDone = true;
+  } catch {
+    // Swallow — if the module isn't available, isMapNativeAvailable()
+    // will gate rendering downstream.
+  }
+}

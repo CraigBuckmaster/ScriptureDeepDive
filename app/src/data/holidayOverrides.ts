@@ -16,6 +16,7 @@ export interface HolidayContent {
     ref: string;
     bookId: string;
     chapter: number;
+    verseNum: number;
     text: string;
   };
 }
@@ -30,6 +31,7 @@ export const fixedHolidays: Record<string, HolidayContent> = {
       ref: 'Lamentations 3:22–23',
       bookId: 'lamentations',
       chapter: 3,
+      verseNum: 22,
       text: 'Because of the LORD\'s great love we are not consumed, for his compassions never fail. They are new every morning; great is your faithfulness.',
     },
   },
@@ -40,6 +42,7 @@ export const fixedHolidays: Record<string, HolidayContent> = {
       ref: 'Matthew 2:11',
       bookId: 'matthew',
       chapter: 2,
+      verseNum: 11,
       text: 'On coming to the house, they saw the child with his mother Mary, and they bowed down and worshiped him. Then they opened their treasures and presented him with gifts of gold, frankincense and myrrh.',
     },
   },
@@ -50,6 +53,7 @@ export const fixedHolidays: Record<string, HolidayContent> = {
       ref: 'Romans 1:17',
       bookId: 'romans',
       chapter: 1,
+      verseNum: 17,
       text: 'For in the gospel the righteousness of God is revealed — a righteousness that is by faith from first to last, just as it is written: "The righteous will live by faith."',
     },
   },
@@ -60,6 +64,7 @@ export const fixedHolidays: Record<string, HolidayContent> = {
       ref: 'Luke 2:10–11',
       bookId: 'luke',
       chapter: 2,
+      verseNum: 10,
       text: 'But the angel said to them, "Do not be afraid. I bring you good news that will cause great joy for all the people. Today in the town of David a Savior has been born to you; he is the Messiah, the Lord."',
     },
   },
@@ -75,6 +80,7 @@ export const movableHolidays: Record<string, HolidayContent> = {
       ref: 'Matthew 21:9',
       bookId: 'matthew',
       chapter: 21,
+      verseNum: 9,
       text: 'The crowds that went ahead of him and those that followed shouted, "Hosanna to the Son of David!" "Blessed is he who comes in the name of the Lord!" "Hosanna in the highest heaven!"',
     },
   },
@@ -85,6 +91,7 @@ export const movableHolidays: Record<string, HolidayContent> = {
       ref: 'Isaiah 53:5',
       bookId: 'isaiah',
       chapter: 53,
+      verseNum: 5,
       text: 'But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.',
     },
   },
@@ -95,6 +102,7 @@ export const movableHolidays: Record<string, HolidayContent> = {
       ref: '1 Corinthians 15:55–57',
       bookId: '1_corinthians',
       chapter: 15,
+      verseNum: 55,
       text: '"Where, O death, is your victory? Where, O death, is your sting?" The sting of death is sin, and the power of sin is the law. But thanks be to God! He gives us the victory through our Lord Jesus Christ.',
     },
   },
@@ -105,6 +113,7 @@ export const movableHolidays: Record<string, HolidayContent> = {
       ref: 'Acts 1:9–11',
       bookId: 'acts',
       chapter: 1,
+      verseNum: 9,
       text: 'After he said this, he was taken up before their very eyes, and a cloud hid him from their sight. They were looking intently up into the sky as he was going, when suddenly two men dressed in white stood beside them.',
     },
   },
@@ -115,6 +124,7 @@ export const movableHolidays: Record<string, HolidayContent> = {
       ref: 'Acts 2:4',
       bookId: 'acts',
       chapter: 2,
+      verseNum: 4,
       text: 'All of them were filled with the Holy Spirit and began to speak in other tongues as the Spirit enabled them.',
     },
   },
@@ -125,6 +135,7 @@ export const movableHolidays: Record<string, HolidayContent> = {
       ref: '1 Thessalonians 5:16–18',
       bookId: '1_thessalonians',
       chapter: 5,
+      verseNum: 16,
       text: 'Rejoice always, pray continually, give thanks in all circumstances; for this is God\'s will for you in Christ Jesus.',
     },
   },
@@ -135,6 +146,7 @@ export const movableHolidays: Record<string, HolidayContent> = {
       ref: 'Proverbs 31:28–29',
       bookId: 'proverbs',
       chapter: 31,
+      verseNum: 28,
       text: 'Her children arise and call her blessed; her husband also, and he praises her: "Many women do noble things, but you surpass them all."',
     },
   },
@@ -145,6 +157,7 @@ export const movableHolidays: Record<string, HolidayContent> = {
       ref: 'Proverbs 4:1–2',
       bookId: 'proverbs',
       chapter: 4,
+      verseNum: 1,
       text: 'Listen, my sons, to a father\'s instruction; pay attention and gain understanding. I give you sound learning, so do not forsake my teaching.',
     },
   },
