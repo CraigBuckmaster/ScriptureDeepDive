@@ -1,0 +1,182 @@
+{
+  "id": "temple-presence",
+  "journey_type": "concept",
+  "lens_id": "theological",
+  "title": "Temple & Divine Presence",
+  "subtitle": null,
+  "description": "The place where heaven meets earth and God dwells among his people. From Eden as the first sanctuary through tabernacle and temple to Christ as the true temple to the church as living stones, God's presence defines sacred space.",
+  "depth": "medium",
+  "sort_order": 0,
+  "person_id": null,
+  "concept_id": "temple-presence",
+  "era": null,
+  "hero_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_112.png/400px-Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_112.png",
+  "tags": [
+    {
+      "type": "word_study",
+      "id": "doxa"
+    },
+    {
+      "type": "word_study",
+      "id": "kabod"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "tabernacle_temple"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "temple_rebuilt"
+    },
+    {
+      "type": "person",
+      "id": "solomon"
+    },
+    {
+      "type": "person",
+      "id": "moses"
+    },
+    {
+      "type": "person",
+      "id": "ezekiel"
+    },
+    {
+      "type": "theme",
+      "id": "tabernacle"
+    },
+    {
+      "type": "theme",
+      "id": "glory"
+    },
+    {
+      "type": "theme",
+      "id": "shekinah"
+    },
+    {
+      "type": "theme",
+      "id": "dwelling"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "Bethel — House of God",
+      "ref": "Genesis 28:16-17",
+      "book_id": "genesis",
+      "chapter_num": 28,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Jacob awakens from his ladder vision: 'Surely the LORD is in this place, and I did not know it.' He names it Bethel — house of God.",
+      "what_changes": "Sacred space is first experienced as surprising encounter. God's presence is localized but unpredictable.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "Tabernacle Blueprint",
+      "ref": "Exodus 25:8-9",
+      "book_id": "exodus",
+      "chapter_num": 25,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God commands: 'Let them make me a sanctuary, that I may dwell in their midst.' The tabernacle is built according to a heavenly pattern.",
+      "what_changes": "God's presence becomes architecturally structured. The tabernacle is a portable Eden, mediating divine presence within the camp.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "Glory Fills the Tabernacle",
+      "ref": "Exodus 40:34-35",
+      "book_id": "exodus",
+      "chapter_num": 40,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The cloud covers the tent of meeting, and the glory of the LORD fills the tabernacle. Even Moses cannot enter.",
+      "what_changes": "The promise of Exodus 25:8 is fulfilled. God's kavod — his weighty, luminous presence — takes up residence among his people.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "Glory Fills Solomon's Temple",
+      "ref": "1 Kings 8:10-13",
+      "book_id": "1_kings",
+      "chapter_num": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The cloud fills the temple so that the priests cannot stand to minister. Solomon dedicates the house with prayer and sacrifice.",
+      "what_changes": "The tabernacle's portability gives way to permanence. Jerusalem becomes the fixed center of God's earthly presence.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 5,
+      "stop_type": "regular",
+      "label": "Glory Departs",
+      "ref": "Ezekiel 10:18-19",
+      "book_id": "ezekiel",
+      "chapter_num": 10,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Ezekiel watches the glory of the LORD leave the temple threshold and ascend from the city. The ichabod moment of Israel's history.",
+      "what_changes": "The temple without the glory is merely a building. God's presence is shown to be free, not captive to a structure.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 6,
+      "stop_type": "regular",
+      "label": "The Word Became Flesh",
+      "ref": "John 1:14",
+      "book_id": "john",
+      "chapter_num": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The Word 'tabernacled' (eskenosen) among us, 'and we have seen his glory.' The incarnation is the new temple.",
+      "what_changes": "God's presence is no longer mediated through a building but through a person. Jesus himself is the locus of divine glory.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 7,
+      "stop_type": "regular",
+      "label": "Your Body Is a Temple",
+      "ref": "1 Corinthians 6:19",
+      "book_id": "1_corinthians",
+      "chapter_num": 6,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Paul declares that the believer's body is 'a temple of the Holy Spirit.' The temple concept is radically individualized.",
+      "what_changes": "Every believer becomes a sacred space. The Spirit who filled tabernacle and temple now indwells each member of Christ's body.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 8,
+      "stop_type": "regular",
+      "label": "No Temple Needed",
+      "ref": "Revelation 21:22",
+      "book_id": "revelation",
+      "chapter_num": 21,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The new Jerusalem has no temple, 'for its temple is the Lord God the Almighty and the Lamb.' The mediation of sacred space is transcended.",
+      "what_changes": "The temple trajectory reaches its telos: unmediated presence. The building that pointed to the person gives way to the person himself.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}

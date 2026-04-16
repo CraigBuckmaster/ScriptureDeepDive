@@ -1,0 +1,228 @@
+{
+  "id": "covenant",
+  "journey_type": "concept",
+  "lens_id": "theological",
+  "title": "Covenant",
+  "subtitle": null,
+  "description": "The binding agreements through which God relates to his people. From Noah's rainbow to Abraham's promise to Moses at Sinai to David's throne to the new covenant in Christ's blood, covenant is the structural backbone of biblical theology.",
+  "depth": "long",
+  "sort_order": 0,
+  "person_id": null,
+  "concept_id": "covenant",
+  "era": null,
+  "hero_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_030.png/400px-Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_030.png",
+  "tags": [
+    {
+      "type": "word_study",
+      "id": "berith"
+    },
+    {
+      "type": "word_study",
+      "id": "hesed"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "abrahamic_covenant"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "mosaic_covenant"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "noahic_covenant"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "davidic_covenant"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "new_covenant"
+    },
+    {
+      "type": "person",
+      "id": "abraham"
+    },
+    {
+      "type": "person",
+      "id": "moses"
+    },
+    {
+      "type": "person",
+      "id": "david"
+    },
+    {
+      "type": "person",
+      "id": "noah"
+    },
+    {
+      "type": "theme",
+      "id": "promise"
+    },
+    {
+      "type": "theme",
+      "id": "oath"
+    },
+    {
+      "type": "theme",
+      "id": "faithfulness"
+    },
+    {
+      "type": "theme",
+      "id": "treaty"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "Noahic Covenant",
+      "ref": "Genesis 9:8-17",
+      "book_id": "genesis",
+      "chapter_num": 9,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "First covenant: universal scope, unilateral, with all creation. No conditions imposed on humanity.",
+      "what_changes": "God binds himself never to destroy by flood again. The rainbow serves as the covenant sign visible to both parties.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "Abrahamic Covenant",
+      "ref": "Genesis 15:1-21",
+      "book_id": "genesis",
+      "chapter_num": 15,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Narrows from universal to one family. Still unilateral: God alone passes between the severed pieces.",
+      "what_changes": "Land, offspring, and blessing are promised. The covenant family that will mediate blessing to all nations begins here.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "Covenant Sign: Circumcision",
+      "ref": "Genesis 17:1-14",
+      "book_id": "genesis",
+      "chapter_num": 17,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The Abrahamic covenant receives a bodily sign. Every male bears the mark of belonging to the covenant community.",
+      "what_changes": "Covenant identity becomes physically inscribed. The sign distinguishes Abraham's line from the nations.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "Sinai Covenant Proposal",
+      "ref": "Exodus 19:1-6",
+      "book_id": "exodus",
+      "chapter_num": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Shifts from family to nation. Bilateral: 'if you obey... you will be my treasured possession.' Conditions are introduced.",
+      "what_changes": "Israel becomes a 'kingdom of priests and a holy nation.' National identity is now covenantal identity.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 5,
+      "stop_type": "regular",
+      "label": "Covenant Ratification by Blood",
+      "ref": "Exodus 24:1-8",
+      "book_id": "exodus",
+      "chapter_num": 24,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The Sinai covenant is ratified with sacrificial blood sprinkled on both altar and people.",
+      "what_changes": "Blood becomes the medium of covenant ratification, establishing a pattern that persists through the entire sacrificial system.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 6,
+      "stop_type": "regular",
+      "label": "Davidic Covenant",
+      "ref": "2 Samuel 7:8-16",
+      "book_id": "2_samuel",
+      "chapter_num": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Narrows further: one family within the nation. Unconditional promise of an eternal dynasty.",
+      "what_changes": "The throne of David is promised permanence. Messianic expectation is anchored to a specific royal line.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 7,
+      "stop_type": "regular",
+      "label": "New Covenant Promised",
+      "ref": "Jeremiah 31:31-34",
+      "book_id": "jeremiah",
+      "chapter_num": 31,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Declares the Mosaic covenant broken and announces a new one. Law will be internalized, not externally imposed.",
+      "what_changes": "The problem of covenant-breaking is addressed at its root: the human heart. Universal knowledge of God is promised.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 8,
+      "stop_type": "regular",
+      "label": "Spirit and New Heart",
+      "ref": "Ezekiel 36:25-27",
+      "book_id": "ezekiel",
+      "chapter_num": 36,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Expands the new covenant vision: God will replace hearts of stone with hearts of flesh and put his Spirit within his people.",
+      "what_changes": "The mechanism of covenant obedience shifts from external law to internal transformation by the Spirit.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 9,
+      "stop_type": "regular",
+      "label": "New Covenant in Christ's Blood",
+      "ref": "Luke 22:19-20",
+      "book_id": "luke",
+      "chapter_num": 22,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Jesus identifies the cup as 'the new covenant in my blood.' All prior covenants converge in his sacrificial death.",
+      "what_changes": "The new covenant is inaugurated. The pattern of blood ratification from Exodus 24 reaches its fulfillment.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 10,
+      "stop_type": "regular",
+      "label": "Better Covenant, Better Mediator",
+      "ref": "Hebrews 8:6-13",
+      "book_id": "hebrews",
+      "chapter_num": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Systematic argument that the new covenant is superior to the old. Christ is mediator of a 'better covenant, enacted on better promises.'",
+      "what_changes": "The old covenant is declared 'obsolete.' The new covenant is shown to fulfill, not merely replace, what preceded it.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}

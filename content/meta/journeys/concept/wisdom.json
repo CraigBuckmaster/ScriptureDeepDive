@@ -1,0 +1,166 @@
+{
+  "id": "wisdom",
+  "journey_type": "concept",
+  "lens_id": "theological",
+  "title": "Wisdom",
+  "subtitle": null,
+  "description": "The skill for living that begins with the fear of the LORD. Biblical wisdom is not abstract philosophy but practical knowledge rooted in covenant relationship — knowing how to navigate life in alignment with the Creator's design.",
+  "depth": "medium",
+  "sort_order": 0,
+  "person_id": null,
+  "concept_id": "wisdom",
+  "era": null,
+  "hero_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_112.png/400px-Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_112.png",
+  "tags": [
+    {
+      "type": "word_study",
+      "id": "hokmah"
+    },
+    {
+      "type": "word_study",
+      "id": "sophia"
+    },
+    {
+      "type": "person",
+      "id": "solomon"
+    },
+    {
+      "type": "theme",
+      "id": "fear of the LORD"
+    },
+    {
+      "type": "theme",
+      "id": "prudence"
+    },
+    {
+      "type": "theme",
+      "id": "understanding"
+    },
+    {
+      "type": "theme",
+      "id": "folly"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "Fear of the LORD",
+      "ref": "Proverbs 1:7",
+      "book_id": "proverbs",
+      "chapter_num": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The programmatic statement of Israel's wisdom tradition: 'The fear of the LORD is the beginning of knowledge.'",
+      "what_changes": "Wisdom is anchored in theology, not mere pragmatism. True knowledge begins with right relationship to God.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "Wisdom Personified at Creation",
+      "ref": "Proverbs 8:22-31",
+      "book_id": "proverbs",
+      "chapter_num": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Wisdom speaks as a person present at creation: 'Before the mountains were settled... I was there.' She was 'beside him, like a master workman.'",
+      "what_changes": "Wisdom is elevated from practical skill to cosmic principle. The created order itself embodies divine wisdom.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "Where Is Wisdom Found?",
+      "ref": "Job 28:12-28",
+      "book_id": "job",
+      "chapter_num": 28,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "A hymn to wisdom's inaccessibility. No human effort can discover it; 'God understands the way to it.' The conclusion: fear the LORD.",
+      "what_changes": "The limits of human wisdom are exposed. True wisdom is not achievable by human striving but received as divine gift.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "Vanity of Vanities",
+      "ref": "Ecclesiastes 1:1-11",
+      "book_id": "ecclesiastes",
+      "chapter_num": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Qoheleth declares all things 'hevel' — vapor, breath, meaningless under the sun. The wisdom tradition confronts its own limits.",
+      "what_changes": "Wisdom literature gains its necessary counterpoint. Conventional wisdom cannot explain all of life's inequities.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 5,
+      "stop_type": "regular",
+      "label": "The Whole Duty of Humanity",
+      "ref": "Ecclesiastes 12:13-14",
+      "book_id": "ecclesiastes",
+      "chapter_num": 12,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "After exhaustive investigation, the conclusion: 'Fear God and keep his commandments, for this is the whole duty of man.'",
+      "what_changes": "Skeptical wisdom circles back to faith. Even the most rigorous questioning ends at the same starting point as Proverbs 1:7.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 6,
+      "stop_type": "regular",
+      "label": "Greater Than Solomon",
+      "ref": "Matthew 12:42",
+      "book_id": "matthew",
+      "chapter_num": 12,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Jesus declares that 'something greater than Solomon is here.' The queen of the South came for Solomon's wisdom; a greater wisdom is now present.",
+      "what_changes": "Wisdom is no longer merely a tradition or a body of teaching but a person. Christological wisdom supersedes sapiential wisdom.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 7,
+      "stop_type": "regular",
+      "label": "Foolishness of God",
+      "ref": "1 Corinthians 1:18-25",
+      "book_id": "1_corinthians",
+      "chapter_num": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The cross is 'foolishness to those who are perishing' but 'the power of God' to those being saved. God's wisdom inverts human categories.",
+      "what_changes": "The cross redefines wisdom entirely. What appears as ultimate folly — a crucified Messiah — is revealed as ultimate wisdom.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 8,
+      "stop_type": "regular",
+      "label": "All Treasures of Wisdom in Christ",
+      "ref": "Colossians 2:2-3",
+      "book_id": "colossians",
+      "chapter_num": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "In Christ 'are hidden all the treasures of wisdom and knowledge.' Proverbs 8's personified Wisdom finds its ultimate referent.",
+      "what_changes": "The entire wisdom tradition is christologically fulfilled. The search for wisdom ends in a person, not a principle.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}

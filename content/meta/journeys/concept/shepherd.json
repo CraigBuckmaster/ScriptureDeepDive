@@ -1,0 +1,174 @@
+{
+  "id": "shepherd",
+  "journey_type": "concept",
+  "lens_id": "theological",
+  "title": "Shepherd & Flock",
+  "subtitle": null,
+  "description": "The image of God as shepherd caring for his people. From Abel the first shepherd through David the shepherd-king to Christ the Good Shepherd, this metaphor captures divine provision, protection, and intimate knowledge of each sheep.",
+  "depth": "medium",
+  "sort_order": 0,
+  "person_id": null,
+  "concept_id": "shepherd",
+  "era": null,
+  "hero_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_091.png/400px-Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_091.png",
+  "tags": [
+    {
+      "type": "word_study",
+      "id": "poimen"
+    },
+    {
+      "type": "word_study",
+      "id": "raah"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "david_shepherd_king"
+    },
+    {
+      "type": "person",
+      "id": "david"
+    },
+    {
+      "type": "person",
+      "id": "abel"
+    },
+    {
+      "type": "theme",
+      "id": "flock"
+    },
+    {
+      "type": "theme",
+      "id": "pasture"
+    },
+    {
+      "type": "theme",
+      "id": "Psalm 23"
+    },
+    {
+      "type": "theme",
+      "id": "care"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "God Who Has Shepherded Me",
+      "ref": "Genesis 48:15",
+      "book_id": "genesis",
+      "chapter_num": 48,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Jacob blesses Joseph's sons, naming God as 'the God who has been my shepherd all my life long to this day.'",
+      "what_changes": "The shepherd metaphor is applied to God for the first time. Divine care is described in terms of the most familiar occupation in the ancient world.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "The LORD Is My Shepherd",
+      "ref": "Psalm 23:1-6",
+      "book_id": "psalms",
+      "chapter_num": 23,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "David's psalm of complete trust: green pastures, still waters, the valley of the shadow of death, the overflowing cup, goodness and mercy.",
+      "what_changes": "The shepherd image becomes Israel's defining expression of divine care. Every element of pastoral provision is theologized.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "David Shepherds Israel",
+      "ref": "Psalm 78:70-72",
+      "book_id": "psalms",
+      "chapter_num": 78,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God chose David from the sheepfolds to shepherd his people. 'With upright heart he shepherded them and guided them with his skillful hand.'",
+      "what_changes": "Human kingship is described as shepherding. The good king mirrors the divine shepherd's care for the flock.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "Woe to the False Shepherds",
+      "ref": "Ezekiel 34:1-10",
+      "book_id": "ezekiel",
+      "chapter_num": 34,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Israel's leaders are condemned as shepherds who feed themselves instead of the flock. The sheep are scattered and devoured.",
+      "what_changes": "The shepherd metaphor becomes a standard of judgment for leaders. Failed shepherding is covenant-breaking with the most vulnerable.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 5,
+      "stop_type": "regular",
+      "label": "God Will Shepherd His Flock",
+      "ref": "Ezekiel 34:11-16",
+      "book_id": "ezekiel",
+      "chapter_num": 34,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God himself declares: 'I myself will search for my sheep... I will rescue them... I will feed them with good pasture.'",
+      "what_changes": "God replaces failed human shepherds with himself. The divine shepherd will do what human leaders refused to do.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 6,
+      "stop_type": "regular",
+      "label": "The Good Shepherd",
+      "ref": "John 10:11-18",
+      "book_id": "john",
+      "chapter_num": 10,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Jesus declares: 'I am the good shepherd. The good shepherd lays down his life for the sheep.' He knows his sheep by name.",
+      "what_changes": "Ezekiel 34's promise of God shepherding his flock is fulfilled christologically. The good shepherd is simultaneously divine and self-sacrificing.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 7,
+      "stop_type": "regular",
+      "label": "Shepherd and Overseer of Souls",
+      "ref": "1 Peter 2:25",
+      "book_id": "1_peter",
+      "chapter_num": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Believers who were 'straying like sheep have now returned to the Shepherd and Overseer of your souls.'",
+      "what_changes": "The shepherd image extends to spiritual oversight. Christ shepherds not merely bodies and communities but souls.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 8,
+      "stop_type": "regular",
+      "label": "The Lamb Will Shepherd Them",
+      "ref": "Revelation 7:17",
+      "book_id": "revelation",
+      "chapter_num": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The Lamb at the center of the throne 'will be their shepherd, and he will guide them to springs of living water.'",
+      "what_changes": "The paradox is complete: the Lamb who was sacrificed becomes the eternal shepherd. Vulnerability and authority merge in the final vision.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}

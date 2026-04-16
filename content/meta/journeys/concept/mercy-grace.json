@@ -1,0 +1,166 @@
+{
+  "id": "mercy-grace",
+  "journey_type": "concept",
+  "lens_id": "theological",
+  "title": "Mercy & Grace",
+  "subtitle": null,
+  "description": "God's undeserved favor and compassion toward sinners. Mercy withholds deserved punishment; grace gives undeserved blessing. Together they reveal a God who delights to forgive and restore the broken.",
+  "depth": "medium",
+  "sort_order": 0,
+  "person_id": null,
+  "concept_id": "mercy-grace",
+  "era": null,
+  "hero_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Rembrandt_Harmensz._van_Rijn_-_The_Return_of_the_Prodigal_Son_-_Google_Art_Project.jpg/400px-Rembrandt_Harmensz._van_Rijn_-_The_Return_of_the_Prodigal_Son_-_Google_Art_Project.jpg",
+  "tags": [
+    {
+      "type": "word_study",
+      "id": "hesed"
+    },
+    {
+      "type": "word_study",
+      "id": "racham"
+    },
+    {
+      "type": "word_study",
+      "id": "charis"
+    },
+    {
+      "type": "theme",
+      "id": "compassion"
+    },
+    {
+      "type": "theme",
+      "id": "lovingkindness"
+    },
+    {
+      "type": "theme",
+      "id": "forgiveness"
+    },
+    {
+      "type": "theme",
+      "id": "favor"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "The LORD, Merciful and Gracious",
+      "ref": "Exodus 34:6-7",
+      "book_id": "exodus",
+      "chapter_num": 34,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God proclaims his own name: 'merciful and gracious, slow to anger, abounding in steadfast love and faithfulness.' The definitive self-revelation.",
+      "what_changes": "God's character is revealed as fundamentally merciful. This formula becomes the most frequently quoted creed in the Old Testament.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "Pardon in the Wilderness",
+      "ref": "Numbers 14:17-20",
+      "book_id": "numbers",
+      "chapter_num": 14,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "After the golden calf rebellion and the spies' report, Moses appeals to Exodus 34:6. God pardons, but with consequences.",
+      "what_changes": "Mercy is shown to coexist with judgment. Pardon does not eliminate consequences but preserves the covenant relationship.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "David Pardoned",
+      "ref": "2 Samuel 12:13",
+      "book_id": "2_samuel",
+      "chapter_num": 12,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "After David's confession of adultery and murder, Nathan declares: 'The LORD has put away your sin; you shall not die.'",
+      "what_changes": "Grace reaches into the most grievous moral failure. Even the king who should die by his own law receives mercy.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "As a Father Shows Compassion",
+      "ref": "Psalm 103:8-14",
+      "book_id": "psalms",
+      "chapter_num": 103,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Echoing Exodus 34:6: 'As far as the east is from the west, so far does he remove our transgressions.' The image of a tender father.",
+      "what_changes": "Mercy becomes intimate and parental. God's compassion is grounded in his knowledge of human frailty: 'He knows our frame.'",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 5,
+      "stop_type": "regular",
+      "label": "How Can I Give You Up?",
+      "ref": "Hosea 11:1-9",
+      "book_id": "hosea",
+      "chapter_num": 11,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God agonizes over Israel: 'My heart recoils within me; my compassion grows warm and tender.' Divine love wrestles with divine justice.",
+      "what_changes": "Grace is revealed as costly to God himself. Mercy is not indifference to sin but the triumph of love over just wrath.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 6,
+      "stop_type": "regular",
+      "label": "Grace to the Enemy",
+      "ref": "Jonah 4:2",
+      "book_id": "jonah",
+      "chapter_num": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Jonah quotes Exodus 34:6 as a complaint: God's mercy extends even to Israel's worst enemy, Nineveh.",
+      "what_changes": "Grace shatters national boundaries. The prophet who knows God's character resents its implications for the ungodly.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 7,
+      "stop_type": "regular",
+      "label": "Seeking the Lost",
+      "ref": "Luke 15:1-7",
+      "book_id": "luke",
+      "chapter_num": 15,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Jesus tells of a shepherd who leaves ninety-nine sheep to find the one that is lost. Heaven rejoices over one sinner who repents.",
+      "what_changes": "Grace becomes active and seeking. God does not merely wait for the sinner's return but pursues the lost.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 8,
+      "stop_type": "regular",
+      "label": "By Grace Through Faith",
+      "ref": "Ephesians 2:4-9",
+      "book_id": "ephesians",
+      "chapter_num": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Paul gives the definitive statement: 'By grace you have been saved through faith. And this is not your own doing; it is the gift of God.'",
+      "what_changes": "Grace is defined as the entire mechanism of salvation. Human contribution is excluded; even faith itself is gift.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}

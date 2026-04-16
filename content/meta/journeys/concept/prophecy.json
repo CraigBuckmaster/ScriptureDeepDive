@@ -1,0 +1,194 @@
+{
+  "id": "prophecy",
+  "journey_type": "concept",
+  "lens_id": "theological",
+  "title": "Prophecy & Fulfillment",
+  "subtitle": null,
+  "description": "God speaking through human messengers to reveal his will and his future. Prophecy is forth-telling (proclamation) as much as foretelling (prediction). The prophetic word creates history, and history vindicates the prophetic word.",
+  "depth": "medium",
+  "sort_order": 0,
+  "person_id": null,
+  "concept_id": "prophecy",
+  "era": null,
+  "hero_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Michelangelo%2C_profeta_Isaia_02.jpg/400px-Michelangelo%2C_profeta_Isaia_02.jpg",
+  "tags": [
+    {
+      "type": "word_study",
+      "id": "nabi"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "prophet_like_moses"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "prepare_the_way"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "anointed_to_preach"
+    },
+    {
+      "type": "person",
+      "id": "moses"
+    },
+    {
+      "type": "person",
+      "id": "elijah"
+    },
+    {
+      "type": "person",
+      "id": "isaiah"
+    },
+    {
+      "type": "person",
+      "id": "jeremiah"
+    },
+    {
+      "type": "person",
+      "id": "ezekiel"
+    },
+    {
+      "type": "person",
+      "id": "daniel"
+    },
+    {
+      "type": "theme",
+      "id": "prophet"
+    },
+    {
+      "type": "theme",
+      "id": "oracle"
+    },
+    {
+      "type": "theme",
+      "id": "vision"
+    },
+    {
+      "type": "theme",
+      "id": "word of the LORD"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "Protoevangelium",
+      "ref": "Genesis 3:15",
+      "book_id": "genesis",
+      "chapter_num": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God declares to the serpent: 'He shall bruise your head, and you shall bruise his heel.' The first prophetic promise in Scripture.",
+      "what_changes": "The prophetic trajectory begins. A coming figure will defeat evil, though at personal cost. Redemptive history has a goal.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "A Prophet Like Moses",
+      "ref": "Deuteronomy 18:15-19",
+      "book_id": "deuteronomy",
+      "chapter_num": 18,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God promises to raise up a prophet like Moses from among the people. This figure will speak God's own words with full divine authority.",
+      "what_changes": "Prophetic office is institutionalized. The pattern is set: God communicates through appointed human mediators.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "Elijah on Carmel",
+      "ref": "1 Kings 18:20-40",
+      "book_id": "1_kings",
+      "chapter_num": 18,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Elijah confronts 450 prophets of Baal. Fire falls from heaven, vindicating YHWH. 'The LORD, he is God!'",
+      "what_changes": "The prophet becomes a public figure who confronts national apostasy. Prophetic ministry is not merely predictive but confrontational.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "Immanuel Prophecy",
+      "ref": "Isaiah 7:14",
+      "book_id": "isaiah",
+      "chapter_num": 7,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Isaiah declares: 'The virgin shall conceive and bear a son, and shall call his name Immanuel.' A sign given to the house of David.",
+      "what_changes": "Prophecy becomes explicitly messianic. The coming figure is not merely a leader but 'God with us' in the most literal sense.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 5,
+      "stop_type": "regular",
+      "label": "Seventy Weeks",
+      "ref": "Daniel 9:24-27",
+      "book_id": "daniel",
+      "chapter_num": 9,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Gabriel reveals a timeline: seventy weeks are decreed for the people and the holy city. An anointed one will be 'cut off.'",
+      "what_changes": "Prophecy acquires temporal specificity. The divine plan operates on a revealed timeline, not arbitrary timing.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 6,
+      "stop_type": "regular",
+      "label": "Ruler from Bethlehem",
+      "ref": "Micah 5:2",
+      "book_id": "micah",
+      "chapter_num": 5,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "From Bethlehem Ephrathah, 'too little to be among the clans of Judah,' shall come a ruler whose origin is 'from of old, from ancient days.'",
+      "what_changes": "Prophecy pinpoints geography. The specificity of Bethlehem will become a criterion for identifying the Messiah.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 7,
+      "stop_type": "regular",
+      "label": "All the Scriptures Concerning Himself",
+      "ref": "Luke 24:25-27",
+      "book_id": "luke",
+      "chapter_num": 24,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The risen Jesus walks with the Emmaus disciples, interpreting 'in all the Scriptures the things concerning himself.' Moses and all the prophets are christological.",
+      "what_changes": "The entire prophetic corpus is revealed as christocentric. Every prophecy finds its coherence in one person.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 8,
+      "stop_type": "regular",
+      "label": "Testimony of Jesus Is the Spirit of Prophecy",
+      "ref": "Revelation 19:10",
+      "book_id": "revelation",
+      "chapter_num": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The angel declares that 'the testimony of Jesus is the spirit of prophecy.' Prophecy's essential content and goal is Christ.",
+      "what_changes": "The prophetic tradition receives its definitive hermeneutical key. Prophecy is not about predictions but about a person.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}

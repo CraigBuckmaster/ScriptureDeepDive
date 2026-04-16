@@ -1,0 +1,170 @@
+{
+  "id": "creation",
+  "journey_type": "concept",
+  "lens_id": "theological",
+  "title": "Creation & New Creation",
+  "subtitle": null,
+  "description": "God's sovereign act of bringing all things into existence, and his promise to make all things new. The first creation groans under the curse; the new creation awaits the revealing of the sons of God. What was lost in Eden will be restored and surpassed.",
+  "depth": "medium",
+  "sort_order": 0,
+  "person_id": null,
+  "concept_id": "creation",
+  "era": null,
+  "hero_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Gustave_Dor%C3%A9_-_The_Holy_Bible_-_Plate_I%2C_The_Creation_of_Light.jpg/400px-Gustave_Dor%C3%A9_-_The_Holy_Bible_-_Plate_I%2C_The_Creation_of_Light.jpg",
+  "tags": [
+    {
+      "type": "word_study",
+      "id": "tselem"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "adam_type_of_christ"
+    },
+    {
+      "type": "person",
+      "id": "adam"
+    },
+    {
+      "type": "person",
+      "id": "eve"
+    },
+    {
+      "type": "theme",
+      "id": "image of God"
+    },
+    {
+      "type": "theme",
+      "id": "cosmos"
+    },
+    {
+      "type": "theme",
+      "id": "renewal"
+    },
+    {
+      "type": "theme",
+      "id": "restoration"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "Creation in Seven Days",
+      "ref": "Genesis 1:1-2:3",
+      "book_id": "genesis",
+      "chapter_num": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God creates by speaking. Light, sky, land, vegetation, luminaries, creatures, and humanity emerge in ordered sequence. 'It was very good.'",
+      "what_changes": "The world is established as purposeful, ordered, and good. God is sovereign over all that exists; nothing rivals him.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "Humanity Formed from Dust",
+      "ref": "Genesis 2:7-9",
+      "book_id": "genesis",
+      "chapter_num": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God forms adam from the adamah, breathes life into his nostrils. Human dignity and creaturely dependence are simultaneously established.",
+      "what_changes": "Humanity is distinct: made of earth yet animated by divine breath. Image-bearing and dust-origin coexist.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "God Answers from the Whirlwind",
+      "ref": "Job 38:1-11",
+      "book_id": "job",
+      "chapter_num": 38,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God challenges Job: 'Where were you when I laid the foundation of the earth?' Creation's mystery silences human complaint.",
+      "what_changes": "Creation serves as theodicy. The incomprehensibility of the created order mirrors the incomprehensibility of divine governance.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "Heavens Declare God's Glory",
+      "ref": "Psalm 19:1-6",
+      "book_id": "psalms",
+      "chapter_num": 19,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The firmament speaks without words. Day pours forth speech to day; night reveals knowledge to night. Creation is revelation.",
+      "what_changes": "The created order becomes a mode of divine communication. General revelation through nature complements special revelation through Torah.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 5,
+      "stop_type": "regular",
+      "label": "New Heavens and New Earth",
+      "ref": "Isaiah 65:17-25",
+      "book_id": "isaiah",
+      "chapter_num": 65,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God declares: 'Behold, I create new heavens and a new earth.' The first creation will be surpassed, not merely restored.",
+      "what_changes": "Creation theology gains an eschatological dimension. The original 'very good' will be exceeded by a new creation free from curse.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 6,
+      "stop_type": "regular",
+      "label": "All Things through the Word",
+      "ref": "John 1:1-3",
+      "book_id": "john",
+      "chapter_num": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The Word who was with God and was God is identified as the agent of creation: 'All things were made through him.'",
+      "what_changes": "Creation is christologically grounded. The one who will become incarnate is the same one through whom all things came into being.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 7,
+      "stop_type": "regular",
+      "label": "Creation Groans",
+      "ref": "Romans 8:19-22",
+      "book_id": "romans",
+      "chapter_num": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The whole creation 'has been groaning together in the pains of childbirth.' It waits with eager longing for the redemption of God's children.",
+      "what_changes": "Creation is not static but participates in the drama of redemption. The fall affected the entire created order; redemption will restore it.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 8,
+      "stop_type": "regular",
+      "label": "New Creation Realized",
+      "ref": "Revelation 21:1-5",
+      "book_id": "revelation",
+      "chapter_num": 21,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "A new heaven and new earth appear. God dwells with humanity; death, mourning, and pain are no more. 'Behold, I am making all things new.'",
+      "what_changes": "The arc from Genesis 1 to Revelation 21 is completed. Creation's trajectory is not dissolution but transformation and consummation.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}

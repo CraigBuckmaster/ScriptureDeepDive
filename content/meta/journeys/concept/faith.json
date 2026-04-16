@@ -1,0 +1,174 @@
+{
+  "id": "faith",
+  "journey_type": "concept",
+  "lens_id": "theological",
+  "title": "Faith",
+  "subtitle": null,
+  "description": "Trust in God that takes him at his word. Abraham believed and it was credited as righteousness; the righteous live by faith. Biblical faith is not blind assent but confident reliance on the character and promises of God.",
+  "depth": "medium",
+  "sort_order": 0,
+  "person_id": null,
+  "concept_id": "faith",
+  "era": null,
+  "hero_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Rembrandt_Abraham_and_Isaac_1634.jpg/400px-Rembrandt_Abraham_and_Isaac_1634.jpg",
+  "tags": [
+    {
+      "type": "word_study",
+      "id": "pistis"
+    },
+    {
+      "type": "word_study",
+      "id": "aman"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "abrahamic_covenant"
+    },
+    {
+      "type": "person",
+      "id": "abraham"
+    },
+    {
+      "type": "person",
+      "id": "sarah"
+    },
+    {
+      "type": "theme",
+      "id": "trust"
+    },
+    {
+      "type": "theme",
+      "id": "belief"
+    },
+    {
+      "type": "theme",
+      "id": "righteousness"
+    },
+    {
+      "type": "theme",
+      "id": "justification"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "Abraham Believed",
+      "ref": "Genesis 15:6",
+      "book_id": "genesis",
+      "chapter_num": 15,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Abraham 'believed the LORD, and he counted it to him as righteousness.' The paradigmatic act of faith in the Hebrew Bible.",
+      "what_changes": "Faith is established as the basis of right standing with God. Righteousness is credited, not earned.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "Israel Believed at the Sea",
+      "ref": "Exodus 14:31",
+      "book_id": "exodus",
+      "chapter_num": 14,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "After the Red Sea crossing, 'the people feared the LORD, and they believed in the LORD and in his servant Moses.'",
+      "what_changes": "Faith becomes communal and responsive to divine action. The pattern is established: God acts, the people believe.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "The Righteous Shall Live by Faith",
+      "ref": "Habakkuk 2:4",
+      "book_id": "habakkuk",
+      "chapter_num": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "In the face of Babylonian invasion and apparent divine silence, the prophet receives the foundational principle: faithfulness is the path of life.",
+      "what_changes": "Faith is defined against the backdrop of crisis. Trust in God persists even when circumstances contradict the promises.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "Centurion's Faith",
+      "ref": "Matthew 8:5-13",
+      "book_id": "matthew",
+      "chapter_num": 8,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "A Gentile centurion demonstrates faith that amazes Jesus: 'I have not found such great faith even in Israel.'",
+      "what_changes": "Faith crosses ethnic boundaries. The expected people lack what an outsider possesses, foreshadowing the Gentile mission.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 5,
+      "stop_type": "regular",
+      "label": "Help My Unbelief",
+      "ref": "Mark 9:24",
+      "book_id": "mark",
+      "chapter_num": 9,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "A desperate father cries: 'I believe; help my unbelief!' Jesus heals his son despite the father's mixed faith.",
+      "what_changes": "Faith is shown to be compatible with doubt. Honest struggling faith, not perfect certainty, is sufficient.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 6,
+      "stop_type": "regular",
+      "label": "Faith of Abraham Revisited",
+      "ref": "Romans 4:18-25",
+      "book_id": "romans",
+      "chapter_num": 4,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Paul holds up Abraham as the exemplar of justifying faith: 'against hope he believed in hope.' His faith was counted as righteousness.",
+      "what_changes": "Genesis 15:6 becomes the cornerstone of Pauline soteriology. Faith, not works of the law, is the instrument of justification.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 7,
+      "stop_type": "regular",
+      "label": "Faith Defined",
+      "ref": "Hebrews 11:1-3",
+      "book_id": "hebrews",
+      "chapter_num": 11,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Faith is 'the assurance of things hoped for, the conviction of things not seen.' The great catalog of faith heroes follows.",
+      "what_changes": "Faith receives its most concentrated theological definition. It bridges the gap between promise and fulfillment, visible and invisible.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 8,
+      "stop_type": "regular",
+      "label": "Faith and Works",
+      "ref": "James 2:14-26",
+      "book_id": "james",
+      "chapter_num": 2,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "James insists that 'faith without works is dead.' Abraham's faith was 'completed by his works' when he offered Isaac.",
+      "what_changes": "The faith tradition receives its necessary complement. Genuine faith produces visible action; mere intellectual assent is insufficient.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}

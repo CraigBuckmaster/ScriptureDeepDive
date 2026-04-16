@@ -1,0 +1,194 @@
+{
+  "id": "sacrifice-atonement",
+  "journey_type": "concept",
+  "lens_id": "theological",
+  "title": "Sacrifice & Atonement",
+  "subtitle": null,
+  "description": "The system of blood offerings that addresses human sin and restores relationship with a holy God. From Abel's firstborn lamb through the Levitical system to Christ's once-for-all sacrifice, atonement reveals both the gravity of sin and the depths of divine love.",
+  "depth": "medium",
+  "sort_order": 0,
+  "person_id": null,
+  "concept_id": "sacrifice-atonement",
+  "era": null,
+  "hero_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_143.png/400px-Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_143.png",
+  "tags": [
+    {
+      "type": "word_study",
+      "id": "kaphar"
+    },
+    {
+      "type": "word_study",
+      "id": "hesed"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "suffering_servant"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "passover_lamb"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "day_of_atonement"
+    },
+    {
+      "type": "prophecy_chain",
+      "id": "isaac_sacrifice"
+    },
+    {
+      "type": "person",
+      "id": "abel"
+    },
+    {
+      "type": "person",
+      "id": "abraham"
+    },
+    {
+      "type": "person",
+      "id": "isaac"
+    },
+    {
+      "type": "person",
+      "id": "aaron"
+    },
+    {
+      "type": "theme",
+      "id": "blood"
+    },
+    {
+      "type": "theme",
+      "id": "propitiation"
+    },
+    {
+      "type": "theme",
+      "id": "forgiveness"
+    },
+    {
+      "type": "theme",
+      "id": "lamb"
+    }
+  ],
+  "stops": [
+    {
+      "stop_order": 1,
+      "stop_type": "regular",
+      "label": "First Animal Covering",
+      "ref": "Genesis 3:21",
+      "book_id": "genesis",
+      "chapter_num": 3,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "God provides garments of skin for Adam and Eve after the fall. An animal dies to cover human shame.",
+      "what_changes": "The pattern of substitutionary covering is introduced. Sin requires a death to address its consequences.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 2,
+      "stop_type": "regular",
+      "label": "The Binding of Isaac",
+      "ref": "Genesis 22:1-14",
+      "book_id": "genesis",
+      "chapter_num": 22,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Abraham is tested to offer Isaac, but God provides a ram as substitute. 'On the mountain of the LORD it shall be provided.'",
+      "what_changes": "The principle of divine provision of the sacrifice is established. God himself will supply what he demands.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 3,
+      "stop_type": "regular",
+      "label": "Passover Lamb",
+      "ref": "Exodus 12:1-13",
+      "book_id": "exodus",
+      "chapter_num": 12,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "A lamb without blemish is slain; its blood on the doorposts causes the destroyer to pass over. Deliverance through substitutionary blood.",
+      "what_changes": "Sacrifice becomes communal and commemorative. The annual Passover ritualizes Israel's foundational experience of redemption through blood.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 4,
+      "stop_type": "regular",
+      "label": "Day of Atonement",
+      "ref": "Leviticus 16:1-34",
+      "book_id": "leviticus",
+      "chapter_num": 16,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The high priest enters the Most Holy Place once a year with blood for the sins of the nation. The scapegoat carries sins away.",
+      "what_changes": "National atonement is systematized. Two goats illustrate two aspects: propitiation (blood sprinkled) and expiation (sins removed).",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 5,
+      "stop_type": "regular",
+      "label": "Blood is the Life",
+      "ref": "Leviticus 17:11",
+      "book_id": "leviticus",
+      "chapter_num": 17,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The theological rationale for blood sacrifice is stated explicitly: 'The life of the flesh is in the blood, and I have given it to you on the altar to make atonement.'",
+      "what_changes": "Sacrifice is grounded in theology, not mere ritual. Blood represents life given in place of life forfeited.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 6,
+      "stop_type": "regular",
+      "label": "Suffering Servant",
+      "ref": "Isaiah 53:4-12",
+      "book_id": "isaiah",
+      "chapter_num": 53,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "The Servant bears the sins of many, is pierced for transgressions, crushed for iniquities. His suffering is vicarious and voluntary.",
+      "what_changes": "Sacrifice becomes personal and prophetic. A single figure, not an animal, will accomplish what the entire sacrificial system pointed toward.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 7,
+      "stop_type": "regular",
+      "label": "Lamb of God",
+      "ref": "John 1:29",
+      "book_id": "john",
+      "chapter_num": 1,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "John the Baptist identifies Jesus as 'the Lamb of God who takes away the sin of the world.' All prior sacrificial imagery converges.",
+      "what_changes": "The sacrifice is no longer prospective but present. The one to whom all lambs pointed has arrived.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": "[BRIDGE TO AUTHOR]"
+    },
+    {
+      "stop_order": 8,
+      "stop_type": "regular",
+      "label": "Once for All",
+      "ref": "Hebrews 9:11-14",
+      "book_id": "hebrews",
+      "chapter_num": 9,
+      "verse_start": null,
+      "verse_end": null,
+      "development": "Christ entered the heavenly sanctuary 'not with the blood of goats and calves but with his own blood, thus securing an eternal redemption.'",
+      "what_changes": "The repetitive cycle of animal sacrifice ends. A single, unrepeatable sacrifice accomplishes what countless offerings could only anticipate.",
+      "linked_journey_id": null,
+      "linked_journey_intro": null,
+      "bridge_to_next": null
+    }
+  ]
+}
