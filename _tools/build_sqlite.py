@@ -35,6 +35,7 @@ from build_sqlite_loaders import (
     populate_content_library, populate_life_topics, populate_hermeneutic_lenses,
     populate_archaeology, populate_historical_interpretations,
     populate_grammar_articles, populate_content_images,
+    populate_journeys,
     build_fts, compute_difficulty, build_supplemental_translations,
     AVAILABLE_TRANSLATIONS, BUNDLED_TRANSLATIONS,
 )
@@ -144,6 +145,10 @@ def main():
 
     print(f"  [OK] grammar_articles: {populate_grammar_articles(cur)} rows")
     print(f"  [OK] content_images: {populate_content_images(cur)} rows")
+
+    j, s, t = populate_journeys(cur)
+    print(f"  [OK] journeys: {j} journeys, {s} stops, {t} tags")
+
     print(f"  [OK] difficulty scores: {compute_difficulty(cur)} chapters rated")
 
     build_fts(cur)

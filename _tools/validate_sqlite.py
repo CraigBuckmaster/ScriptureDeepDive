@@ -170,33 +170,26 @@ def main():
     check(f"{expected_people} people", q1(cur, "SELECT COUNT(*) FROM people") == expected_people)
     check(f"{expected_scholars} scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == expected_scholars)
 
-    # People journeys (#1125)
-    pj_count = q1(cur, "SELECT COUNT(*) FROM people_journeys")
-    if pj_count and pj_count > 0:
-        # Every journey stage must reference a valid person
-        orphan_journeys = q(cur,
-            "SELECT pj.person_id FROM people_journeys pj "
-            "WHERE pj.person_id NOT IN (SELECT id FROM people)")
-        check("Journey stages reference valid people", len(orphan_journeys) == 0,
-              f"orphaned: {[r[0] for r in orphan_journeys[:5]]}")
+    # Journeys (#1383)
+    j_count = q1(cur, "SELECT COUNT(*) FROM journeys")
+    js_count = q1(cur, "SELECT COUNT(*) FROM journey_stops")
+    jt_count = q1(cur, "SELECT COUNT(*) FROM journey_tags")
+    if j_count and j_count > 0:
+        # Every journey stop must reference a valid journey
+        orphan_stops = q(cur,
+            "SELECT js.journey_id FROM journey_stops js "
+            "WHERE js.journey_id NOT IN (SELECT id FROM journeys)")
+        check("Journey stops reference valid journeys", len(orphan_stops) == 0,
+              f"orphaned: {[r[0] for r in orphan_stops[:5]]}")
 
-        # era cross-reference
-        bad_journey_eras = q(cur,
-            "SELECT pj.person_id, pj.era FROM people_journeys pj "
-            "WHERE pj.era IS NOT NULL AND pj.era NOT IN (SELECT id FROM eras)")
-        check("Journey eras reference valid eras", len(bad_journey_eras) == 0,
-              f"invalid: {[(r[0], r[1]) for r in bad_journey_eras[:5]]}")
+        # Every journey tag must reference a valid journey
+        orphan_tags = q(cur,
+            "SELECT jt.journey_id FROM journey_tags jt "
+            "WHERE jt.journey_id NOT IN (SELECT id FROM journeys)")
+        check("Journey tags reference valid journeys", len(orphan_tags) == 0,
+              f"orphaned: {[r[0] for r in orphan_tags[:5]]}")
 
-        # book_dir cross-reference
-        bad_journey_books = q(cur,
-            "SELECT pj.person_id, pj.book_dir FROM people_journeys pj "
-            "WHERE pj.book_dir IS NOT NULL AND pj.book_dir NOT IN (SELECT id FROM books)")
-        check("Journey book_dirs reference valid books", len(bad_journey_books) == 0,
-              f"invalid: {[(r[0], r[1]) for r in bad_journey_books[:5]]}")
-
-        people_with_journey = q1(cur,
-            "SELECT COUNT(DISTINCT person_id) FROM people_journeys")
-        print(f"  people_journeys: {pj_count} stages across {people_with_journey} people")
+    print(f"  journeys: {j_count or 0}, stops: {js_count or 0}, tags: {jt_count or 0}")
 
     # People legacy refs (#1125)
     plr_count = q1(cur, "SELECT COUNT(*) FROM people_legacy_refs")
@@ -398,9 +391,9 @@ def main():
               f"{len(bad_links)} chains with empty links")
     print(f"  prophecy_chains: {pc_count or 0}")
 
-    co_count = q1(cur, "SELECT COUNT(*) FROM concepts")
-    check("concepts table exists", co_count is not None, "table missing")
-    print(f"  concepts: {co_count or 0}")
+    j2_count = q1(cur, "SELECT COUNT(*) FROM journeys")
+    check("journeys table exists", j2_count is not None, "table missing")
+    print(f"  journeys: {j2_count or 0}")
 
     dp_count = q1(cur, "SELECT COUNT(*) FROM difficult_passages")
     check("difficult_passages table exists", dp_count is not None, "table missing")
