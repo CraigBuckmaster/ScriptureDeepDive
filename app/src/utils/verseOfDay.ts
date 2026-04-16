@@ -12,8 +12,8 @@
  */
 
 import dailyEncouragements from '../data/dailyEncouragements';
-import { computeMovableHolidays } from './computeMovableHolidays';
 import { fixedHolidays, movableHolidays, type HolidayContent } from '../data/holidayOverrides';
+import { computeMovableHolidays } from './computeMovableHolidays';
 
 // ── Types ─────────────────────────────────────────────────────────
 
