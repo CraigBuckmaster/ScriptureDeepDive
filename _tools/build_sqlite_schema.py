@@ -116,19 +116,6 @@ CREATE TABLE people (
   geography_json TEXT
 );
 
-CREATE TABLE people_journeys (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  person_id TEXT NOT NULL REFERENCES people(id),
-  stage_order INTEGER NOT NULL,
-  stage TEXT NOT NULL,
-  era TEXT,
-  book_dir TEXT,
-  chapters TEXT,
-  verse_ref TEXT,
-  summary TEXT,
-  theme TEXT
-);
-
 CREATE TABLE people_legacy_refs (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   person_id TEXT NOT NULL REFERENCES people(id),
@@ -333,7 +320,7 @@ CREATE TABLE db_meta (
 );
 
 -- ══════════════════════════════════════════════════════════════
--- FEATURE TABLES (prophecy chains, concepts, difficult passages)
+-- FEATURE TABLES (prophecy chains, difficult passages)
 -- ══════════════════════════════════════════════════════════════
 
 CREATE TABLE prophecy_chains (
@@ -344,19 +331,6 @@ CREATE TABLE prophecy_chains (
   summary TEXT,
   tags_json TEXT,
   links_json TEXT NOT NULL
-);
-
-CREATE TABLE concepts (
-  id TEXT PRIMARY KEY,
-  title TEXT NOT NULL,
-  description TEXT,
-  theme_key TEXT,
-  word_study_ids_json TEXT,
-  thread_ids_json TEXT,
-  prophecy_chain_ids_json TEXT,
-  people_tags_json TEXT,
-  tags_json TEXT,
-  journey_stops_json TEXT
 );
 
 CREATE TABLE difficult_passages (
@@ -646,6 +620,60 @@ CREATE TABLE IF NOT EXISTS content_images (
 
 CREATE INDEX IF NOT EXISTS idx_content_images
   ON content_images(content_type, content_id);
+
+-- ══════════════════════════════════════════════════════════════
+-- UNIFIED JOURNEYS (person, concept, thematic)
+-- ══════════════════════════════════════════════════════════════
+
+CREATE TABLE journeys (
+  id TEXT PRIMARY KEY,
+  journey_type TEXT NOT NULL CHECK (journey_type IN ('person', 'concept', 'thematic')),
+  title TEXT NOT NULL,
+  subtitle TEXT,
+  description TEXT NOT NULL,
+  lens_id TEXT,
+  depth TEXT CHECK (depth IN ('short', 'medium', 'long')),
+  sort_order INTEGER DEFAULT 0,
+  person_id TEXT,
+  concept_id TEXT,
+  era TEXT,
+  tags TEXT,
+  hero_image_url TEXT,
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_journeys_type ON journeys(journey_type);
+CREATE INDEX IF NOT EXISTS idx_journeys_lens ON journeys(lens_id);
+
+CREATE TABLE journey_stops (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  journey_id TEXT NOT NULL REFERENCES journeys(id) ON DELETE CASCADE,
+  stop_order INTEGER NOT NULL,
+  stop_type TEXT NOT NULL CHECK (stop_type IN ('regular', 'linked_journey')),
+  label TEXT,
+  ref TEXT,
+  book_id TEXT,
+  chapter_num INTEGER,
+  verse_start INTEGER,
+  verse_end INTEGER,
+  development TEXT,
+  what_changes TEXT,
+  linked_journey_id TEXT,
+  linked_journey_intro TEXT,
+  bridge_to_next TEXT,
+  UNIQUE (journey_id, stop_order)
+);
+
+CREATE INDEX IF NOT EXISTS idx_stops_journey ON journey_stops(journey_id);
+
+CREATE TABLE journey_tags (
+  journey_id TEXT NOT NULL REFERENCES journeys(id) ON DELETE CASCADE,
+  tag_type TEXT NOT NULL CHECK (tag_type IN ('person', 'place', 'theme', 'word_study', 'prophecy_chain')),
+  tag_id TEXT NOT NULL,
+  PRIMARY KEY (journey_id, tag_type, tag_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_journey_tags_target ON journey_tags(tag_type, tag_id);
 
 -- ══════════════════════════════════════════════════════════════
 -- NOTE: User tables (notes, bookmarks, preferences, highlights,

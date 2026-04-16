@@ -30,7 +30,7 @@ from build_sqlite_loaders import (
     populate_synoptic, populate_topics, populate_debate_topics,
     populate_genealogy_config, populate_cross_refs, populate_timelines,
     populate_eras, populate_redemptive_acts, populate_prophecy_chains,
-    populate_concepts, populate_difficult_passages, populate_interlinear,
+    populate_difficult_passages, populate_interlinear,
     populate_lexicon, populate_dictionary, populate_red_letter,
     populate_content_library, populate_life_topics, populate_hermeneutic_lenses,
     populate_archaeology, populate_historical_interpretations,
@@ -110,7 +110,6 @@ def main():
     print(f"  [OK] eras: {populate_eras(cur)} rows")
     print(f"  [OK] redemptive_acts: {populate_redemptive_acts(cur)} rows")
     print(f"  [OK] prophecy_chains: {populate_prophecy_chains(cur)} rows")
-    print(f"  [OK] concepts: {populate_concepts(cur)} rows")
     print(f"  [OK] difficult_passages: {populate_difficult_passages(cur)} rows")
     print(f"  [OK] interlinear_words: {populate_interlinear(cur)} rows")
     print(f"  [OK] lexicon_entries: {populate_lexicon(cur)} rows")
@@ -157,7 +156,6 @@ def main():
         CREATE INDEX IF NOT EXISTS idx_chapter_panels_chapter ON chapter_panels(chapter_id);
         CREATE INDEX IF NOT EXISTS idx_vhl_groups_chapter ON vhl_groups(chapter_id);
         CREATE INDEX IF NOT EXISTS idx_chapters_book ON chapters(book_id);
-        CREATE INDEX IF NOT EXISTS idx_people_journeys_person ON people_journeys(person_id);
     """)
     print("  [OK] Performance indexes created")
 
