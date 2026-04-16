@@ -95,6 +95,7 @@ export type ExploreStackParamList = {
   RedemptiveArc: undefined;
   PersonJourney: { personId: string };
   JourneyBrowse: { tab?: 'people' | 'concepts' } | undefined;
+  JourneyDetail: { journeyId: string };
   Concordance: {
     strongs?: string;
     original?: string;
