@@ -101,29 +101,47 @@ function SubscriptionScreen() {
             <View style={styles.planRow}>
               {PLANS.map((plan) => {
                 const isSelected = selectedPlan.id === plan.id;
+                // Annual is highlighted as recommended (best value — save 33%).
+                const isRecommended = plan.id === 'annual';
                 return (
-                  <TouchableOpacity
-                    key={plan.id}
-                    onPress={() => setSelectedPlan(plan)}
-                    style={[
-                      styles.planCard,
-                      { borderColor: isSelected ? base.gold : base.border },
-                      isSelected && { backgroundColor: base.gold + '10' },
-                    ]}
-                    accessibilityRole="radio"
-                    accessibilityState={{ selected: isSelected }}
-                    accessibilityLabel={`${plan.label} plan: ${plan.price} ${plan.detail}`}
-                  >
-                    <Text style={[styles.planLabel, { color: isSelected ? base.gold : base.text }]}>
-                      {plan.label}
-                    </Text>
-                    <Text style={[styles.planPrice, { color: isSelected ? base.gold : base.text }]}>
-                      {plan.price}
-                    </Text>
-                    <Text style={[styles.planDetail, { color: base.textMuted }]}>
-                      {plan.detail}
-                    </Text>
-                  </TouchableOpacity>
+                  <View key={plan.id} style={styles.planCardWrap}>
+                    {isRecommended && (
+                      <View style={[styles.recommendedBadge, { backgroundColor: base.gold }]}>
+                        <Text style={styles.recommendedBadgeText}>RECOMMENDED</Text>
+                      </View>
+                    )}
+                    <TouchableOpacity
+                      onPress={() => setSelectedPlan(plan)}
+                      style={[
+                        styles.planCard,
+                        {
+                          borderColor: isSelected
+                            ? base.gold
+                            : isRecommended
+                              ? base.gold + '55'
+                              : base.border,
+                          backgroundColor: isSelected
+                            ? base.gold + '10'
+                            : isRecommended
+                              ? base.tintWarm
+                              : 'transparent',
+                        },
+                      ]}
+                      accessibilityRole="radio"
+                      accessibilityState={{ selected: isSelected }}
+                      accessibilityLabel={`${plan.label} plan${isRecommended ? ', recommended' : ''}: ${plan.price} ${plan.detail}`}
+                    >
+                      <Text style={[styles.planLabel, { color: isSelected ? base.gold : base.text }]}>
+                        {plan.label}
+                      </Text>
+                      <Text style={[styles.planPrice, { color: isSelected ? base.gold : base.text }]}>
+                        {plan.price}
+                      </Text>
+                      <Text style={[styles.planDetail, { color: base.textMuted }]}>
+                        {plan.detail}
+                      </Text>
+                    </TouchableOpacity>
+                  </View>
                 );
               })}
             </View>
@@ -165,7 +183,7 @@ function SubscriptionScreen() {
 
         {/* Feature list */}
         <View style={styles.featureSection}>
-          <Text style={[styles.featureSectionLabel, { color: base.textMuted }]}>
+          <Text style={[styles.featureSectionLabel, { color: base.gold }]}>
             INCLUDED WITH COMPANION+
           </Text>
           {FEATURES.map((f) => (
@@ -234,9 +252,31 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: spacing.sm,
     marginBottom: spacing.lg,
+    alignItems: 'flex-end',
+  },
+  planCardWrap: {
+    flex: 1,
+    position: 'relative',
+  },
+  recommendedBadge: {
+    position: 'absolute',
+    top: -10,
+    left: 0,
+    right: 0,
+    zIndex: 1,
+    alignSelf: 'center',
+    paddingHorizontal: spacing.xs,
+    paddingVertical: 3,
+    borderRadius: radii.pill,
+    alignItems: 'center',
+  },
+  recommendedBadgeText: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 9,
+    letterSpacing: 0.8,
+    color: '#1a1a1a', // data-color: intentional — dark text on gold badge
   },
   planCard: {
-    flex: 1,
     borderWidth: 1.5,
     borderRadius: radii.md,
     paddingVertical: spacing.md,
@@ -283,9 +323,9 @@ const styles = StyleSheet.create({
     marginBottom: spacing.lg,
   },
   featureSectionLabel: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 11,
-    letterSpacing: 0.5,
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 12,
+    letterSpacing: 0.9,
     marginBottom: spacing.md,
   },
   featureRow: {

@@ -14,6 +14,7 @@ import type { ScreenNavProp } from '../navigation/types';
 import { useTheme, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 import { useAuthStore } from '../stores';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+import { DetailSectionTitle } from '../components/DetailSectionTitle';
 
 interface MenuItem {
   icon: React.ElementType;
@@ -70,6 +71,8 @@ function MoreMenuScreen() {
         )}
       </View>
 
+      <DetailSectionTitle title="MY STUDY" transform="uppercase" style={styles.menuSectionLabel} />
+
       <View style={[styles.menuList, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
         {MENU_ITEMS.map((item, idx) => (
           <TouchableOpacity
@@ -115,6 +118,10 @@ const styles = StyleSheet.create({
     minHeight: MIN_TOUCH_TARGET,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm + 2,
+  },
+  menuSectionLabel: {
+    marginTop: spacing.xs,
+    marginBottom: spacing.xs,
   },
   menuList: {
     borderRadius: radii.lg,
