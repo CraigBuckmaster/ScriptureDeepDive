@@ -1657,6 +1657,83 @@ def build_fts(cur):
     cur.execute('INSERT INTO dictionary_fts(dictionary_fts) VALUES("rebuild")')
 
 
+def populate_journeys(cur):
+    """Load all journey JSON files into journeys, journey_stops, journey_tags tables."""
+    journeys_dir = ROOT / 'content' / 'meta' / 'journeys'
+    if not journeys_dir.exists():
+        return 0, 0, 0
+
+    count_journeys = 0
+    count_stops = 0
+    count_tags = 0
+
+    for journey_type in ['thematic', 'concept', 'person']:
+        type_dir = journeys_dir / journey_type
+        if not type_dir.exists():
+            continue
+
+        for json_file in sorted(type_dir.glob('*.json')):
+            data = _load_json(json_file)
+
+            cur.execute('''
+                INSERT INTO journeys
+                (id, journey_type, title, subtitle, description, lens_id, depth,
+                 sort_order, person_id, concept_id, era, tags, hero_image_url)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ''', (
+                data['id'],
+                data['journey_type'],
+                data['title'],
+                data.get('subtitle'),
+                data['description'],
+                data.get('lens_id'),
+                data.get('depth'),
+                data.get('sort_order', 0),
+                data.get('person_id'),
+                data.get('concept_id'),
+                data.get('era'),
+                json.dumps(data.get('tags', [])) if data.get('tags') else None,
+                data.get('hero_image_url'),
+            ))
+            count_journeys += 1
+
+            for stop in data.get('stops', []):
+                cur.execute('''
+                    INSERT INTO journey_stops
+                    (journey_id, stop_order, stop_type, label, ref, book_id,
+                     chapter_num, verse_start, verse_end, development, what_changes,
+                     linked_journey_id, linked_journey_intro, bridge_to_next)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ''', (
+                    data['id'],
+                    stop['stop_order'],
+                    stop['stop_type'],
+                    stop.get('label'),
+                    stop.get('ref'),
+                    stop.get('book_id'),
+                    stop.get('chapter_num'),
+                    stop.get('verse_start'),
+                    stop.get('verse_end'),
+                    stop.get('development'),
+                    stop.get('what_changes'),
+                    stop.get('linked_journey_id'),
+                    stop.get('linked_journey_intro'),
+                    stop.get('bridge_to_next'),
+                ))
+                count_stops += 1
+
+            for tag in data.get('tags', []):
+                if isinstance(tag, dict) and 'type' in tag and 'id' in tag:
+                    cur.execute('''
+                        INSERT OR IGNORE INTO journey_tags
+                        (journey_id, tag_type, tag_id)
+                        VALUES (?, ?, ?)
+                    ''', (data['id'], tag['type'], tag['id']))
+                    count_tags += 1
+
+    return count_journeys, count_stops, count_tags
+
+
 # ---------------------------------------------------------------------------
 # Difficulty scoring
 # ---------------------------------------------------------------------------
