@@ -48,10 +48,14 @@ jest.mock('expo-notifications', () => ({
   getExpoPushTokenAsync: jest.fn().mockResolvedValue({ data: 'ExponentPushToken[xxx]' }),
   scheduleNotificationAsync: jest.fn(),
   cancelAllScheduledNotificationsAsync: jest.fn(),
+  getAllScheduledNotificationsAsync: jest.fn().mockResolvedValue([]),
+  cancelScheduledNotificationAsync: jest.fn(),
+  getLastNotificationResponseAsync: jest.fn().mockResolvedValue(null),
+  addNotificationResponseReceivedListener: jest.fn().mockReturnValue({ remove: jest.fn() }),
   setNotificationHandler: jest.fn(),
   setNotificationChannelAsync: jest.fn(),
   AndroidImportance: { DEFAULT: 3, HIGH: 4, LOW: 2 },
-  SchedulableTriggerInputTypes: { DAILY: 'daily', TIME_INTERVAL: 'timeInterval' },
+  SchedulableTriggerInputTypes: { DAILY: 'daily', TIME_INTERVAL: 'timeInterval', CALENDAR: 'calendar' },
 }));
 
 // Mock expo-sqlite — used by db/database.ts and db/userDatabase.ts
