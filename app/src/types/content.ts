@@ -177,6 +177,51 @@ export interface PersonLegacyRef {
   note: string | null;
 }
 
+// ── Unified Journeys (#1379) ─────────────────────────────────────
+
+export type JourneyType = 'person' | 'concept' | 'thematic';
+export type StopType = 'regular' | 'linked_journey';
+
+export interface Journey {
+  id: string;
+  journey_type: JourneyType;
+  title: string;
+  subtitle: string | null;
+  description: string;
+  lens_id: string | null;
+  depth: 'short' | 'medium' | 'long' | null;
+  sort_order: number;
+  person_id: string | null;
+  concept_id: string | null;
+  era: string | null;
+  tags: string | null;
+  hero_image_url: string | null;
+}
+
+export interface JourneyStop {
+  id: number;
+  journey_id: string;
+  stop_order: number;
+  stop_type: StopType;
+  label: string | null;
+  ref: string | null;
+  book_id: string | null;
+  chapter_num: number | null;
+  verse_start: number | null;
+  verse_end: number | null;
+  development: string | null;
+  what_changes: string | null;
+  linked_journey_id: string | null;
+  linked_journey_intro: string | null;
+  bridge_to_next: string | null;
+}
+
+export interface JourneyTag {
+  journey_id: string;
+  tag_type: string;
+  tag_id: string;
+}
+
 /** Row from redemptive_acts table (#1118). */
 export interface RedemptiveAct {
   id: string;

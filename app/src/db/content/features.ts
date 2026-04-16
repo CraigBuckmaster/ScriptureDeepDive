@@ -1,9 +1,9 @@
 /**
- * db/content/features.ts — Prophecy chains, concepts, difficult passages.
+ * db/content/features.ts — Prophecy chains, concepts, difficult passages, journeys.
  */
 
 import { getDb } from '../database';
-import type { ProphecyChain, Concept, DifficultPassage } from '../../types';
+import type { ProphecyChain, Concept, DifficultPassage, Journey, JourneyStop, JourneyTag } from '../../types';
 import { escapeLike } from '../../utils/escapeLike';
 
 // ── Prophecy Chains ────────────────────────────────────────────────
@@ -92,5 +92,48 @@ export async function getDifficultPassagesForChapter(
     `SELECT * FROM difficult_passages
      WHERE related_chapters_json LIKE ? ESCAPE '\\' AND related_chapters_json LIKE ? ESCAPE '\\'`,
     [`%"book_dir":"${safeBook}"%`, `%"chapter_num":${Number(chapterNum)}%`]
+  );
+}
+
+// ── Journeys (#1379) ──────────────────────────────────────────────
+
+export async function getJourney(id: string): Promise<Journey | null> {
+  return getDb().getFirstAsync<Journey>(
+    'SELECT * FROM journeys WHERE id = ?',
+    [id]
+  );
+}
+
+export async function getJourneyStops(journeyId: string): Promise<JourneyStop[]> {
+  return getDb().getAllAsync<JourneyStop>(
+    'SELECT * FROM journey_stops WHERE journey_id = ? ORDER BY stop_order',
+    [journeyId]
+  );
+}
+
+export async function getJourneyTags(journeyId: string): Promise<JourneyTag[]> {
+  return getDb().getAllAsync<JourneyTag>(
+    'SELECT * FROM journey_tags WHERE journey_id = ?',
+    [journeyId]
+  );
+}
+
+export async function getAllJourneys(): Promise<Journey[]> {
+  return getDb().getAllAsync<Journey>(
+    'SELECT * FROM journeys ORDER BY journey_type, sort_order, title'
+  );
+}
+
+export async function getJourneysByType(journeyType: string): Promise<Journey[]> {
+  return getDb().getAllAsync<Journey>(
+    'SELECT * FROM journeys WHERE journey_type = ? ORDER BY sort_order, title',
+    [journeyType]
+  );
+}
+
+export async function getJourneysByLens(lensId: string): Promise<Journey[]> {
+  return getDb().getAllAsync<Journey>(
+    'SELECT * FROM journeys WHERE lens_id = ? ORDER BY sort_order, title',
+    [lensId]
   );
 }
