@@ -2,7 +2,7 @@
   "expo": {
     "name": "Companion Study",
     "slug": "companion-study",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "orientation": "default",
     "icon": "./assets/images/icon-512.png",
     "scheme": "scripture",
@@ -62,7 +62,7 @@
     ],
     "updates": {
       "url": "https://u.expo.dev/105f31ba-3cfb-4d35-8509-4abbe6ab132d",
-      "enabled": true,
+      "enabled": false,
       "fallbackToCacheTimeout": 0
     },
     "runtimeVersion": {
