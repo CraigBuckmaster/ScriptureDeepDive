@@ -26,6 +26,7 @@ import {
   navigateToCitation,
   type MetaFaqArticle,
 } from '../services/amicus/citationNav';
+import { useAmicusConsent } from '../services/amicus/consent';
 import type { AmicusCitation, AmicusThread } from '../types';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { logger } from '../utils/logger';
@@ -38,6 +39,7 @@ export default function AmicusThreadScreen(): React.ReactElement {
 
   const [thread, setThread] = useState<AmicusThread | null>(null);
   const [faqArticle, setFaqArticle] = useState<MetaFaqArticle | null>(null);
+  const { requestAmicusConsent } = useAmicusConsent();
   const { messages, isStreaming, error, sendMessage, abortStream, clearError } =
     useAmicusThread(threadId);
 
@@ -64,9 +66,15 @@ export default function AmicusThreadScreen(): React.ReactElement {
         logger.warn('Amicus', 'no auth token — aborting send');
         return;
       }
+      // Gate on one-time privacy acknowledgement (#1458).
+      const accepted = await requestAmicusConsent();
+      if (!accepted) {
+        logger.info('Amicus', 'opt-in declined — not sending');
+        return;
+      }
       await sendMessage(text, authToken);
     },
-    [sendMessage],
+    [sendMessage, requestAmicusConsent],
   );
 
   const handleCitation = useCallback(
