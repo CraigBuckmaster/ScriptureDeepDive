@@ -10,22 +10,51 @@ const mockOpenDatabaseAsync = jest.fn();
 const mockExecAsync = jest.fn().mockResolvedValue(undefined);
 const mockGetFirstAsync = jest.fn();
 const mockCloseAsync = jest.fn().mockResolvedValue(undefined);
-const mockGetInfoAsync = jest.fn();
-const mockMakeDirectoryAsync = jest.fn().mockResolvedValue(undefined);
-const mockDeleteAsync = jest.fn().mockResolvedValue(undefined);
-const mockCopyAsync = jest.fn().mockResolvedValue(undefined);
+
+// `File` instances defer to this fixture so each test can tweak
+// exists/size via `fileState.exists = ...` etc.
+const fileState: { exists: boolean; size: number } = {
+  exists: false,
+  size: 0,
+};
 
 jest.mock('expo-sqlite', () => ({
   openDatabaseAsync: (...args: any[]) => mockOpenDatabaseAsync(...args),
 }));
 
-jest.mock('expo-file-system/legacy', () => ({
-  documentDirectory: '/mock/documents/',
-  getInfoAsync: (...args: any[]) => mockGetInfoAsync(...args),
-  makeDirectoryAsync: (...args: any[]) => mockMakeDirectoryAsync(...args),
-  deleteAsync: (...args: any[]) => mockDeleteAsync(...args),
-  copyAsync: (...args: any[]) => mockCopyAsync(...args),
-}));
+jest.mock('expo-file-system', () => {
+  class MockFile {
+    uri: string;
+    constructor(...parts: any[]) {
+      this.uri = parts.map((p) => (p?.uri ?? String(p))).join('/');
+    }
+    get exists(): boolean { return fileState.exists; }
+    get size(): number { return fileState.size; }
+    create() { /* no-op */ }
+    delete() { /* no-op */ }
+    copy() { /* no-op */ }
+    move() { /* no-op */ }
+    write() { /* no-op */ }
+    async text() { return ''; }
+    async base64() { return ''; }
+    async bytes() { return new Uint8Array(); }
+    static async downloadFileAsync(_url: string, destination: any) { return destination; }
+  }
+  class MockDirectory {
+    uri: string;
+    constructor(...parts: any[]) {
+      this.uri = parts.map((p) => (p?.uri ?? String(p))).join('/');
+    }
+    exists = true;
+    create() { /* no-op */ }
+    delete() { /* no-op */ }
+  }
+  return {
+    File: MockFile,
+    Directory: MockDirectory,
+    Paths: { document: '/mock/documents', cache: '/mock/cache' },
+  };
+});
 
 jest.mock('@/db/translationRegistry', () => ({
   isBundled: jest.fn((id: string) => id === 'kjv' || id === 'asv'),
@@ -54,7 +83,8 @@ describe('database', () => {
       getFirstAsync: mockGetFirstAsync,
       closeAsync: mockCloseAsync,
     });
-    mockGetInfoAsync.mockResolvedValue({ exists: false });
+    fileState.exists = false;
+    fileState.size = 0;
   });
 
   describe('getDb', () => {
@@ -121,7 +151,8 @@ describe('database', () => {
         Platform: { OS: 'ios' },
       }));
       jest.resetModules();
-      mockGetInfoAsync.mockResolvedValueOnce({ exists: false });
+      fileState.exists = false;
+      fileState.size = 0;
 
       databaseModule = require('@/db/database');
       const status = await databaseModule.initDatabase();
@@ -135,7 +166,8 @@ describe('database', () => {
         Platform: { OS: 'ios' },
       }));
       jest.resetModules();
-      mockGetInfoAsync.mockResolvedValueOnce({ exists: true, size: 100 });
+      fileState.exists = true;
+      fileState.size = 100;
 
       databaseModule = require('@/db/database');
       const status = await databaseModule.initDatabase();
@@ -148,7 +180,8 @@ describe('database', () => {
         Platform: { OS: 'android' },
       }));
       jest.resetModules();
-      mockGetInfoAsync.mockResolvedValueOnce({ exists: true, size: 5_000_000 });
+      fileState.exists = true;
+      fileState.size = 5_000_000;
 
       databaseModule = require('@/db/database');
       const status = await databaseModule.initDatabase();

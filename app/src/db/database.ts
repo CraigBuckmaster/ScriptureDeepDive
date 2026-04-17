@@ -13,7 +13,7 @@
 
 import { Platform } from 'react-native';
 import * as SQLite from 'expo-sqlite';
-import * as FileSystem from 'expo-file-system/legacy';
+import { File, Paths } from 'expo-file-system';
 import { logger } from '../utils/logger';
 import { isBundled } from './translationRegistry';
 import { openTranslationDb } from './translationManager';
@@ -45,9 +45,8 @@ export async function initDatabase(): Promise<DbInitStatus> {
     return 'ready';
   }
 
-  const dbPath = `${FileSystem.documentDirectory}SQLite/scripture.db`;
-  const info = await FileSystem.getInfoAsync(dbPath);
-  if (!info.exists || !info.size || info.size < 1000) {
+  const dbFile = new File(Paths.document, 'SQLite', 'scripture.db');
+  if (!dbFile.exists || !dbFile.size || dbFile.size < 1000) {
     logger.info('DB', 'scripture.db missing or too small — signaling needs_download');
     return 'needs_download';
   }

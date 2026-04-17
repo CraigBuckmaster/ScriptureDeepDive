@@ -75,7 +75,9 @@ jest.mock('expo-asset', () => ({
   Asset: { fromModule: jest.fn().mockReturnValue({ downloadAsync: jest.fn(), localUri: '/fake' }) },
 }));
 
-// Mock expo-file-system
+// Mock expo-file-system legacy shim — still used by modules that haven't
+// migrated (translationManager, exportData). The SDK 54 new API is mocked
+// separately below.
 jest.mock('expo-file-system/legacy', () => ({
   documentDirectory: '/fake/docs/',
   cacheDirectory: '/fake/cache/',
@@ -87,6 +89,48 @@ jest.mock('expo-file-system/legacy', () => ({
   readAsStringAsync: jest.fn().mockResolvedValue(''),
   downloadAsync: jest.fn().mockResolvedValue({ uri: '/fake/download' }),
 }));
+
+// Mock expo-file-system (SDK 54 new API). Modules that need richer
+// behavior override this per-file with jest.mock at the top of the test.
+jest.mock('expo-file-system', () => {
+  class MockFile {
+    constructor(...parts) {
+      this.uri = parts
+        .map((p) => (p && typeof p === 'object' && 'uri' in p ? p.uri : String(p)))
+        .join('/')
+        .replace(/\/+/g, '/');
+      this.exists = false;
+      this.size = 0;
+    }
+    create() {}
+    delete() {}
+    copy() {}
+    move() {}
+    write() {}
+    async text() { return ''; }
+    async base64() { return ''; }
+    async bytes() { return new Uint8Array(); }
+    static async downloadFileAsync(_url, destination) {
+      return destination instanceof MockFile ? destination : new MockFile(_url);
+    }
+  }
+  class MockDirectory {
+    constructor(...parts) {
+      this.uri = parts
+        .map((p) => (p && typeof p === 'object' && 'uri' in p ? p.uri : String(p)))
+        .join('/')
+        .replace(/\/+/g, '/');
+      this.exists = true;
+    }
+    create() {}
+    delete() {}
+  }
+  return {
+    File: MockFile,
+    Directory: MockDirectory,
+    Paths: { document: '/fake/docs', cache: '/fake/cache' },
+  };
+});
 
 // Mock expo-clipboard
 jest.mock('expo-clipboard', () => ({

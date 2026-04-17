@@ -4,36 +4,198 @@
  * Tests for the OTA content database updater service:
  * manifest fetching, delta application, full DB download,
  * checksum verification, backup/restore, and debounce logic.
+ *
+ * Under SDK 54, ContentUpdater uses the new `expo-file-system`
+ * File/Directory/Paths API plus XMLHttpRequest for the full-DB
+ * download (needed for progress callbacks, which the new file API
+ * does not yet expose). These tests mock both surfaces.
  */
 
 import type { Manifest, ManifestDelta } from '@/services/ContentUpdater';
 
-// ── Override expo-file-system mock with full API ──────────────────
-// Using wrapper functions so jest.clearAllMocks() does not break them.
-const mockDownloadAsync = jest.fn();
-const mockReadAsStringAsync = jest.fn();
-const mockMoveAsync = jest.fn();
-const mockGetInfoAsync = jest.fn();
-const mockCopyAsync = jest.fn();
-const mockDeleteAsync = jest.fn();
-const mockResumableDownloadAsync = jest.fn();
-// Typed as (...any[]) because ContentUpdater passes (url, path, options, progressCb).
-const mockCreateDownloadResumable: jest.Mock<any, any[]> = jest.fn((..._args: any[]) => ({
-  downloadAsync: (...args: any[]) => mockResumableDownloadAsync(...args),
-}));
+// ── File / Directory mock ─────────────────────────────────────────
+// Shared, mutable state lives at module scope so each test can poke
+// file existence/size through `mockFileMap` and observe ops via `mockFileOps`.
 
-jest.mock('expo-file-system/legacy', () => ({
-  documentDirectory: '/fake/docs/',
-  getInfoAsync: (...args: any[]) => mockGetInfoAsync(...args),
-  makeDirectoryAsync: jest.fn(),
-  copyAsync: (...args: any[]) => mockCopyAsync(...args),
-  deleteAsync: (...args: any[]) => mockDeleteAsync(...args),
-  downloadAsync: (...args: any[]) => mockDownloadAsync(...args),
-  createDownloadResumable: (...args: any[]) => mockCreateDownloadResumable(...args),
-  readAsStringAsync: (...args: any[]) => mockReadAsStringAsync(...args),
-  moveAsync: (...args: any[]) => mockMoveAsync(...args),
-  EncodingType: { Base64: 'base64' },
-}));
+interface FileRecord {
+  exists: boolean;
+  size: number;
+}
+
+const mockFileMap = new Map<string, FileRecord>();
+const mockFileOps = {
+  create: jest.fn(),
+  write: jest.fn(),
+  copy: jest.fn(),
+  move: jest.fn(),
+  delete: jest.fn(),
+  downloadFileAsync: jest.fn(),
+  base64: jest.fn(),
+};
+const mockDownloadState = { nextError: null as Error | null };
+const mockBase64State = { value: '' };
+
+function getOrCreateRecord(uri: string): FileRecord {
+  let rec = mockFileMap.get(uri);
+  if (!rec) {
+    rec = { exists: false, size: 0 };
+    mockFileMap.set(uri, rec);
+  }
+  return rec;
+}
+
+jest.mock('expo-file-system', () => {
+  function getRec(uri: string): FileRecord {
+    let rec = mockFileMap.get(uri);
+    if (!rec) {
+      rec = { exists: false, size: 0 };
+      mockFileMap.set(uri, rec);
+    }
+    return rec;
+  }
+  function joinParts(parts: unknown[]): string {
+    return parts
+      .map((p) =>
+        p && typeof p === 'object' && 'uri' in p
+          ? String((p as { uri: string }).uri)
+          : String(p),
+      )
+      .join('/')
+      .replace(/\/+/g, '/');
+  }
+
+  class MockFile {
+    uri: string;
+    constructor(...parts: unknown[]) {
+      this.uri = joinParts(parts);
+    }
+    get exists(): boolean { return getRec(this.uri).exists; }
+    get size(): number { return getRec(this.uri).size; }
+    create(opts?: { overwrite?: boolean; intermediates?: boolean }): void {
+      mockFileOps.create(this.uri, opts);
+      const rec = getRec(this.uri);
+      rec.exists = true;
+      if (!rec.size) rec.size = 1;
+    }
+    write(bytes: Uint8Array | string): void {
+      mockFileOps.write(this.uri, bytes);
+      const rec = getRec(this.uri);
+      rec.exists = true;
+      rec.size = typeof bytes === 'string' ? bytes.length : bytes.byteLength;
+    }
+    copy(dest: { uri: string }): void {
+      mockFileOps.copy({ from: this.uri, to: dest.uri });
+      const destRec = getRec(dest.uri);
+      const srcRec = getRec(this.uri);
+      destRec.exists = true;
+      destRec.size = srcRec.size;
+    }
+    move(dest: { uri: string }): void {
+      mockFileOps.move({ from: this.uri, to: dest.uri });
+      const destRec = getRec(dest.uri);
+      const srcRec = getRec(this.uri);
+      destRec.exists = true;
+      destRec.size = srcRec.size;
+      srcRec.exists = false;
+      srcRec.size = 0;
+      this.uri = dest.uri;
+    }
+    delete(): void {
+      mockFileOps.delete(this.uri);
+      const rec = getRec(this.uri);
+      rec.exists = false;
+      rec.size = 0;
+    }
+    async base64(): Promise<string> {
+      mockFileOps.base64(this.uri);
+      return mockBase64State.value;
+    }
+    async text(): Promise<string> { return ''; }
+    async bytes(): Promise<Uint8Array> { return new Uint8Array(); }
+    static async downloadFileAsync(
+      url: string,
+      destination: { uri: string },
+    ): Promise<MockFile> {
+      mockFileOps.downloadFileAsync(url, destination.uri);
+      if (mockDownloadState.nextError) {
+        const err = mockDownloadState.nextError;
+        mockDownloadState.nextError = null;
+        throw err;
+      }
+      const destRec = getRec(destination.uri);
+      destRec.exists = true;
+      destRec.size = 1024;
+      return new MockFile(destination.uri);
+    }
+  }
+
+  class MockDirectory {
+    uri: string;
+    constructor(...parts: unknown[]) {
+      this.uri = joinParts(parts);
+    }
+    get exists(): boolean { return true; }
+    create(): void { /* no-op */ }
+    delete(): void { /* no-op */ }
+  }
+
+  return {
+    File: MockFile,
+    Directory: MockDirectory,
+    Paths: { document: '/fake/docs', cache: '/fake/cache' },
+  };
+});
+
+// ── XMLHttpRequest mock ──────────────────────────────────────────
+// Drives ContentUpdater.downloadWithProgress (full-DB path).
+
+interface XhrControls {
+  /** Emit these events before onload (set per-test). */
+  progressEvents: Array<{ loaded: number; total: number; lengthComputable: boolean }>;
+  /** Resolve onload with this status; if null, triggers onerror. */
+  status: number | null;
+  /** Optional ArrayBuffer returned in xhr.response. */
+  response: ArrayBuffer;
+}
+
+const xhrControls: XhrControls = {
+  progressEvents: [],
+  status: 200,
+  response: new ArrayBuffer(4),
+};
+
+class MockXHR {
+  method = '';
+  url = '';
+  responseType = '';
+  status = 0;
+  response: ArrayBuffer | null = null;
+  onload: (() => void) | null = null;
+  onerror: (() => void) | null = null;
+  ontimeout: (() => void) | null = null;
+  onprogress: ((e: ProgressEvent) => void) | null = null;
+  open(method: string, url: string, _async?: boolean): void {
+    this.method = method;
+    this.url = url;
+  }
+  setRequestHeader(): void { /* no-op */ }
+  send(): void {
+    // Simulate async network — schedule a microtask to fire events.
+    Promise.resolve().then(() => {
+      for (const evt of xhrControls.progressEvents) {
+        this.onprogress?.(evt as unknown as ProgressEvent);
+      }
+      if (xhrControls.status == null) {
+        this.onerror?.();
+        return;
+      }
+      this.status = xhrControls.status;
+      this.response = xhrControls.response;
+      this.onload?.();
+    });
+  }
+}
+(global as unknown as { XMLHttpRequest: typeof MockXHR }).XMLHttpRequest = MockXHR;
 
 // ── Mock expo-crypto ──────────────────────────────────────────────
 const mockDigest = jest.fn();
@@ -110,9 +272,7 @@ function mockFetchManifest(manifest = sampleManifest) {
 }
 
 function mockChecksumPass(expectedHash: string) {
-  mockReadAsStringAsync.mockResolvedValue(
-    Buffer.from('fake-content').toString('base64'),
-  );
+  mockBase64State.value = Buffer.from('fake-content').toString('base64');
   const hashBytes = new Uint8Array(32);
   for (let i = 0; i < 32 && i * 2 < expectedHash.length; i++) {
     hashBytes[i] = parseInt(expectedHash.slice(i * 2, i * 2 + 2), 16);
@@ -121,11 +281,15 @@ function mockChecksumPass(expectedHash: string) {
 }
 
 function mockChecksumFail() {
-  mockReadAsStringAsync.mockResolvedValue(
-    Buffer.from('fake-content').toString('base64'),
-  );
+  mockBase64State.value = Buffer.from('fake-content').toString('base64');
   const wrongBytes = new Uint8Array(32).fill(0xff);
   mockDigest.mockResolvedValue(wrongBytes.buffer);
+}
+
+function resetXhr(status: number | null = 200): void {
+  xhrControls.progressEvents = [];
+  xhrControls.status = status;
+  xhrControls.response = new ArrayBuffer(4);
 }
 
 // ── Tests ─────────────────────────────────────────────────────────
@@ -135,20 +299,14 @@ describe('ContentUpdater service', () => {
     jest.clearAllMocks();
     (ContentUpdater as any).lastCheckTime = 0;
 
+    // Reset file-system virtual state
+    mockFileMap.clear();
+    mockDownloadState.nextError = null;
+    mockBase64State.value = Buffer.from('fake-content').toString('base64');
+    resetXhr();
+
     // Re-establish default mock return values after clearAllMocks
     mockOpenDatabaseAsync.mockResolvedValue(mockDbInstance);
-    mockGetInfoAsync.mockResolvedValue({ exists: false });
-    mockDeleteAsync.mockResolvedValue(undefined);
-    mockCopyAsync.mockResolvedValue(undefined);
-    mockMoveAsync.mockResolvedValue(undefined);
-    mockDownloadAsync.mockResolvedValue({ status: 200 });
-    mockResumableDownloadAsync.mockResolvedValue({ status: 200 });
-    mockCreateDownloadResumable.mockImplementation(() => ({
-      downloadAsync: (...args: any[]) => mockResumableDownloadAsync(...args),
-    }));
-    mockReadAsStringAsync.mockResolvedValue(
-      Buffer.from('fake-content').toString('base64'),
-    );
   });
 
   // ── shouldCheckForUpdates ─────────────────────────────────────
@@ -284,7 +442,6 @@ describe('ContentUpdater service', () => {
     it('attempts delta update when installed version has matching delta', async () => {
       mockFetchManifest();
       mockGetFirstAsync.mockResolvedValueOnce({ value: 'v1.0.0' });
-      mockDownloadAsync.mockResolvedValue({ status: 200 });
       mockChecksumPass(sampleDelta.sha256);
       mockGetFirstAsync.mockResolvedValueOnce({ integrity_check: 'ok' });
 
@@ -300,7 +457,7 @@ describe('ContentUpdater service', () => {
       mockFetchManifest();
       mockGetFirstAsync.mockResolvedValueOnce({ value: 'v0.5.0' });
       mockGetFirstAsync.mockResolvedValueOnce({ value: 'v0.5.0' });
-      mockResumableDownloadAsync.mockResolvedValue({ status: 200 });
+      resetXhr(200);
       mockChecksumPass(sampleManifest.full_db_sha256);
       mockGetFirstAsync.mockResolvedValueOnce({ value: 'v2.0.0' });
 
@@ -314,7 +471,7 @@ describe('ContentUpdater service', () => {
       mockFetchManifest();
       mockGetFirstAsync.mockResolvedValueOnce(null);
       mockGetFirstAsync.mockResolvedValueOnce(null);
-      mockResumableDownloadAsync.mockResolvedValue({ status: 200 });
+      resetXhr(200);
       mockChecksumPass(sampleManifest.full_db_sha256);
       mockGetFirstAsync.mockResolvedValueOnce({ value: 'v2.0.0' });
 
@@ -329,7 +486,6 @@ describe('ContentUpdater service', () => {
 
   describe('applyDelta', () => {
     it('downloads, decompresses, and applies delta SQL', async () => {
-      mockDownloadAsync.mockResolvedValue({ status: 200 });
       mockChecksumPass(sampleDelta.sha256);
       mockGetFirstAsync.mockResolvedValue({ integrity_check: 'ok' });
 
@@ -343,7 +499,9 @@ describe('ContentUpdater service', () => {
     });
 
     it('returns failed on download HTTP error', async () => {
-      mockDownloadAsync.mockResolvedValue({ status: 404 });
+      const httpErr = new Error('HTTP 404') as Error & { httpStatus: number };
+      httpErr.httpStatus = 404;
+      mockDownloadState.nextError = httpErr;
 
       const result = await ContentUpdater.applyDelta(sampleDelta);
 
@@ -352,7 +510,6 @@ describe('ContentUpdater service', () => {
     });
 
     it('returns failed on checksum mismatch', async () => {
-      mockDownloadAsync.mockResolvedValue({ status: 200 });
       mockChecksumFail();
 
       const result = await ContentUpdater.applyDelta(sampleDelta);
@@ -362,37 +519,39 @@ describe('ContentUpdater service', () => {
     });
 
     it('restores backup on integrity check failure', async () => {
-      mockDownloadAsync.mockResolvedValue({ status: 200 });
       mockChecksumPass(sampleDelta.sha256);
       mockGetFirstAsync.mockResolvedValue({ integrity_check: 'corrupt' });
-      mockGetInfoAsync.mockResolvedValue({ exists: true });
+      // Simulate an existing live DB so backupCurrentDb actually copies.
+      getOrCreateRecord('/fake/docs/SQLite/scripture.db').exists = true;
+      getOrCreateRecord('/fake/docs/SQLite/scripture.db').size = 5_000_000;
 
       const result = await ContentUpdater.applyDelta(sampleDelta);
 
       expect(result.status).toBe('failed');
       expect(result.error).toContain('Integrity check failed');
-      expect(mockMoveAsync).toHaveBeenCalled();
+      // Restore-from-backup moves scripture_backup.db → scripture.db
+      expect(mockFileOps.move).toHaveBeenCalled();
     });
 
     it('cleans up temp files on success', async () => {
-      mockDownloadAsync.mockResolvedValue({ status: 200 });
       mockChecksumPass(sampleDelta.sha256);
       mockGetFirstAsync.mockResolvedValue({ integrity_check: 'ok' });
+      // Pre-seed backup + temp so safeDelete observes them.
+      getOrCreateRecord('/fake/docs/SQLite/scripture_backup.db').exists = true;
+      getOrCreateRecord('/fake/docs/SQLite/delta_temp.sql.gz').exists = true;
 
       await ContentUpdater.applyDelta(sampleDelta);
 
-      expect(mockDeleteAsync).toHaveBeenCalledWith(
-        expect.stringContaining('scripture_backup.db'),
-        { idempotent: true },
-      );
-      expect(mockDeleteAsync).toHaveBeenCalledWith(
-        expect.stringContaining('delta_temp.sql.gz'),
-        { idempotent: true },
+      const deletedUris = mockFileOps.delete.mock.calls.map((c) => c[0]);
+      expect(deletedUris).toEqual(
+        expect.arrayContaining([
+          expect.stringContaining('scripture_backup.db'),
+          expect.stringContaining('delta_temp.sql.gz'),
+        ]),
       );
     });
 
     it('updates content_hash in db_meta after applying delta', async () => {
-      mockDownloadAsync.mockResolvedValue({ status: 200 });
       mockChecksumPass(sampleDelta.sha256);
       mockGetFirstAsync.mockResolvedValue({ integrity_check: 'ok' });
 
@@ -405,19 +564,19 @@ describe('ContentUpdater service', () => {
     });
 
     it('backs up current DB before modifying', async () => {
-      mockDownloadAsync.mockResolvedValue({ status: 200 });
       mockChecksumPass(sampleDelta.sha256);
       mockGetFirstAsync.mockResolvedValue({ integrity_check: 'ok' });
-      mockGetInfoAsync.mockResolvedValue({ exists: true });
+      // Live DB must exist for the backup copy to run.
+      const rec = getOrCreateRecord('/fake/docs/SQLite/scripture.db');
+      rec.exists = true;
+      rec.size = 5_000_000;
 
       await ContentUpdater.applyDelta(sampleDelta);
 
-      expect(mockCopyAsync).toHaveBeenCalledWith(
-        expect.objectContaining({
-          from: expect.stringContaining('scripture.db'),
-          to: expect.stringContaining('scripture_backup.db'),
-        }),
-      );
+      expect(mockFileOps.copy).toHaveBeenCalledWith({
+        from: expect.stringContaining('scripture.db'),
+        to: expect.stringContaining('scripture_backup.db'),
+      });
     });
   });
 
@@ -428,7 +587,7 @@ describe('ContentUpdater service', () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })
         .mockResolvedValueOnce({ value: 'v2.0.0' });
-      mockResumableDownloadAsync.mockResolvedValue({ status: 200 });
+      resetXhr(200);
       mockChecksumPass(sampleManifest.full_db_sha256);
 
       const result = await ContentUpdater.downloadFullDb(sampleManifest);
@@ -445,17 +604,11 @@ describe('ContentUpdater service', () => {
         .mockResolvedValueOnce({ value: 'v1.0.0' })
         .mockResolvedValueOnce({ value: 'v2.0.0' });
       mockChecksumPass(sampleManifest.full_db_sha256);
-
-      let capturedCallback: ((p: { totalBytesWritten: number; totalBytesExpectedToWrite: number }) => void) | undefined;
-      mockCreateDownloadResumable.mockImplementation((_url: string, _path: string, _opts: any, cb: any) => {
-        capturedCallback = cb;
-        return { downloadAsync: (...args: any[]) => mockResumableDownloadAsync(...args) };
-      });
-      mockResumableDownloadAsync.mockImplementation(async () => {
-        capturedCallback?.({ totalBytesWritten: 50, totalBytesExpectedToWrite: 200 });
-        capturedCallback?.({ totalBytesWritten: 200, totalBytesExpectedToWrite: 200 });
-        return { status: 200 };
-      });
+      xhrControls.progressEvents = [
+        { loaded: 50, total: 200, lengthComputable: true },
+        { loaded: 200, total: 200, lengthComputable: true },
+      ];
+      xhrControls.status = 200;
 
       const progress: number[] = [];
       await ContentUpdater.downloadFullDb(sampleManifest, (pct) => progress.push(pct));
@@ -465,7 +618,7 @@ describe('ContentUpdater service', () => {
 
     it('returns failed on download HTTP error', async () => {
       mockGetFirstAsync.mockResolvedValue({ value: 'v1.0.0' });
-      mockResumableDownloadAsync.mockResolvedValue({ status: 500 });
+      resetXhr(500);
 
       const result = await ContentUpdater.downloadFullDb(sampleManifest);
 
@@ -475,7 +628,7 @@ describe('ContentUpdater service', () => {
 
     it('returns failed on checksum mismatch', async () => {
       mockGetFirstAsync.mockResolvedValue({ value: 'v1.0.0' });
-      mockResumableDownloadAsync.mockResolvedValue({ status: 200 });
+      resetXhr(200);
       mockChecksumFail();
 
       const result = await ContentUpdater.downloadFullDb(sampleManifest);
@@ -488,9 +641,10 @@ describe('ContentUpdater service', () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })   // getInstalledVersion
         .mockResolvedValueOnce({ value: 'wrong_hash' }); // verify after swap
-      mockResumableDownloadAsync.mockResolvedValue({ status: 200 });
+      resetXhr(200);
       mockChecksumPass(sampleManifest.full_db_sha256);
-      mockGetInfoAsync.mockResolvedValue({ exists: true });
+      // Live DB must exist to exercise the path.
+      getOrCreateRecord('/fake/docs/SQLite/scripture.db').exists = true;
 
       const result = await ContentUpdater.downloadFullDb(sampleManifest);
 
@@ -502,28 +656,27 @@ describe('ContentUpdater service', () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })
         .mockResolvedValueOnce({ value: 'v2.0.0' });
-      mockResumableDownloadAsync.mockResolvedValue({ status: 200 });
+      resetXhr(200);
       mockChecksumPass(sampleManifest.full_db_sha256);
 
       await ContentUpdater.downloadFullDb(sampleManifest);
 
-      expect(mockMoveAsync).toHaveBeenCalledWith(
-        expect.objectContaining({
-          from: expect.stringContaining('scripture_download.db'),
-          to: expect.stringContaining('scripture.db'),
-        }),
-      );
+      expect(mockFileOps.move).toHaveBeenCalledWith({
+        from: expect.stringContaining('scripture_download.db'),
+        to: expect.stringContaining('scripture.db'),
+      });
     });
 
     it('cleans up temp file on failure', async () => {
       mockGetFirstAsync.mockResolvedValue({ value: 'v1.0.0' });
-      mockResumableDownloadAsync.mockResolvedValue({ status: 500 });
+      resetXhr(500);
+      // Temp must "exist" so the cleanup path actually calls delete.
+      getOrCreateRecord('/fake/docs/SQLite/scripture_download.db').exists = true;
 
       await ContentUpdater.downloadFullDb(sampleManifest);
 
-      expect(mockDeleteAsync).toHaveBeenCalledWith(
+      expect(mockFileOps.delete).toHaveBeenCalledWith(
         expect.stringContaining('scripture_download.db'),
-        { idempotent: true },
       );
     });
 
@@ -531,14 +684,15 @@ describe('ContentUpdater service', () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })
         .mockResolvedValueOnce({ value: 'v2.0.0' });
-      mockResumableDownloadAsync.mockResolvedValue({ status: 200 });
+      resetXhr(200);
       mockChecksumPass(sampleManifest.full_db_sha256);
+      // Pre-seed an old backup so safeDelete observes the delete.
+      getOrCreateRecord('/fake/docs/SQLite/scripture_backup.db').exists = true;
 
       await ContentUpdater.downloadFullDb(sampleManifest);
 
-      expect(mockDeleteAsync).toHaveBeenCalledWith(
+      expect(mockFileOps.delete).toHaveBeenCalledWith(
         expect.stringContaining('scripture_backup.db'),
-        { idempotent: true },
       );
     });
   });
