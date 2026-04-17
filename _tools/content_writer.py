@@ -297,12 +297,38 @@ def save_chapter(book_dir, ch, data):
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(chapter, f, ensure_ascii=False, indent=2)
 
+    _mark_chapter_dirty(book_dir, ch)
+
     sec_panel_count = sum(len(s['panels']) for s in chapter['sections'])
     ch_panel_count = len(chapter['chapter_panels'])
     print(f'  [OK] Saved {book_dir} {ch} → {out_path}  '
           f'({len(chapter["sections"])} sections, {sec_panel_count} sec panels, '
           f'{ch_panel_count} ch panels)')
     return out_path
+
+
+def _mark_chapter_dirty(book_dir: str, ch: int) -> None:
+    """Record this chapter in _tools/embedding_manifest.json under
+    `dirty_chapters` so `build_embeddings.py --incremental` knows to
+    re-chunk + re-embed it on the next run.
+    """
+    chapter_id = f'{book_dir}-{ch}'
+    manifest_path = os.path.join(ROOT, '_tools', 'embedding_manifest.json')
+    manifest = {'chunks': {}, 'dirty_chapters': []}
+    if os.path.exists(manifest_path):
+        try:
+            with open(manifest_path, 'r', encoding='utf-8') as f:
+                manifest = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            pass
+    manifest.setdefault('dirty_chapters', [])
+    if chapter_id not in manifest['dirty_chapters']:
+        manifest['dirty_chapters'].append(chapter_id)
+    try:
+        with open(manifest_path, 'w', encoding='utf-8') as f:
+            json.dump(manifest, f, indent=2, sort_keys=True)
+    except OSError:
+        pass
 
 
 # ── Section panel normalisation ──────────────────────────────────────
