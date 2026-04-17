@@ -26,3 +26,8 @@ _tools/art_staging/
 
 # Local-only source data (Card #1271) — see _data/README.md
 _data/openbible/*.jsonl
+
+# Amicus embeddings pipeline (Card #1447) — never tracked; rebuilt by
+# _tools/build_embeddings.py and merged into scripture.db by #1448.
+embeddings.db
+_tools/embedding_manifest.json
