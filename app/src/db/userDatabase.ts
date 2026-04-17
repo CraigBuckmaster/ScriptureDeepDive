@@ -496,6 +496,41 @@ const MIGRATIONS: Migration[] = [
       );
     `,
   },
+  {
+    version: 16,
+    description: 'Amicus — threads, messages, and usage (#1457)',
+    sql: `
+      CREATE TABLE IF NOT EXISTS amicus_threads (
+        thread_id TEXT PRIMARY KEY,
+        title TEXT NOT NULL,
+        chapter_ref TEXT,
+        pinned INTEGER NOT NULL DEFAULT 0,
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        last_message_at TEXT NOT NULL DEFAULT (datetime('now'))
+      );
+
+      CREATE INDEX IF NOT EXISTS idx_amicus_threads_pinned_last
+        ON amicus_threads(pinned DESC, last_message_at DESC);
+
+      CREATE TABLE IF NOT EXISTS amicus_messages (
+        message_id TEXT PRIMARY KEY,
+        thread_id TEXT NOT NULL REFERENCES amicus_threads(thread_id) ON DELETE CASCADE,
+        role TEXT NOT NULL CHECK (role IN ('user', 'assistant')),
+        content TEXT NOT NULL,
+        citations_json TEXT,
+        follow_ups_json TEXT,
+        created_at TEXT NOT NULL DEFAULT (datetime('now'))
+      );
+
+      CREATE INDEX IF NOT EXISTS idx_amicus_messages_thread
+        ON amicus_messages(thread_id, created_at);
+
+      CREATE TABLE IF NOT EXISTS amicus_usage (
+        day TEXT PRIMARY KEY,
+        query_count INTEGER NOT NULL DEFAULT 0
+      );
+    `,
+  },
 ];
 
 /**

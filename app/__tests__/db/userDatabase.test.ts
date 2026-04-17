@@ -78,7 +78,7 @@ describe('userDatabase', () => {
       jest.resetModules();
       // Simulate all migrations already applied
       mockGetAllAsync.mockResolvedValueOnce(
-        Array.from({ length: 15 }, (_, i) => ({ version: i + 1 })),
+        Array.from({ length: 16 }, (_, i) => ({ version: i + 1 })),
       );
       userDatabaseModule = require('@/db/userDatabase');
       await userDatabaseModule.initUserDatabase();
@@ -93,8 +93,8 @@ describe('userDatabase', () => {
       mockGetAllAsync.mockResolvedValueOnce([{ version: 1 }]);
       userDatabaseModule = require('@/db/userDatabase');
       await userDatabaseModule.initUserDatabase();
-      // Should run 14 remaining migrations (2 through 15)
-      expect(mockWithTransactionAsync).toHaveBeenCalledTimes(14);
+      // Should run 15 remaining migrations (2 through 16)
+      expect(mockWithTransactionAsync).toHaveBeenCalledTimes(15);
     });
 
     it('throws on migration failure', async () => {

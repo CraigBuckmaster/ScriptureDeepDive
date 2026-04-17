@@ -7,7 +7,11 @@
 
 import { chapterPrefix, formatVerseRef } from '../utils/verseRef';
 import { escapeLike } from '../utils/escapeLike';
-import type { UserNote, ReadingProgress, Bookmark, RecentChapter, StudyCollection, StudySession, StudySessionEvent } from '../types';
+import type {
+  UserNote, ReadingProgress, Bookmark, RecentChapter,
+  StudyCollection, StudySession, StudySessionEvent,
+  AmicusThread, AmicusMessage, AmicusCitation,
+} from '../types';
 import { getDb } from './database';
 import { getUserDb } from './userDatabase';
 
@@ -493,4 +497,118 @@ export async function isTopicBookmarked(topicId: string): Promise<boolean> {
     [topicId],
   );
   return (row?.count ?? 0) > 0;
+}
+
+// ── Amicus threads + messages + usage (#1457) ───────────────────────
+
+interface AmicusThreadRow {
+  thread_id: string;
+  title: string;
+  chapter_ref: string | null;
+  pinned: number;
+  created_at: string;
+  last_message_at: string;
+}
+
+interface AmicusMessageRow {
+  message_id: string;
+  thread_id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  citations_json: string | null;
+  follow_ups_json: string | null;
+  created_at: string;
+}
+
+function hydrateThread(row: AmicusThreadRow): AmicusThread {
+  return {
+    thread_id: row.thread_id,
+    title: row.title,
+    chapter_ref: row.chapter_ref,
+    pinned: row.pinned === 1,
+    created_at: row.created_at,
+    last_message_at: row.last_message_at,
+  };
+}
+
+function hydrateMessage(row: AmicusMessageRow): AmicusMessage {
+  let citations: AmicusCitation[] = [];
+  let follow_ups: string[] = [];
+  if (row.citations_json) {
+    try {
+      const parsed = JSON.parse(row.citations_json);
+      if (Array.isArray(parsed)) citations = parsed as AmicusCitation[];
+    } catch {
+      /* ignore */
+    }
+  }
+  if (row.follow_ups_json) {
+    try {
+      const parsed = JSON.parse(row.follow_ups_json);
+      if (Array.isArray(parsed)) follow_ups = parsed as string[];
+    } catch {
+      /* ignore */
+    }
+  }
+  return {
+    message_id: row.message_id,
+    thread_id: row.thread_id,
+    role: row.role,
+    content: row.content,
+    citations,
+    follow_ups,
+    created_at: row.created_at,
+  };
+}
+
+export async function listAmicusThreads(
+  limit = 50, offset = 0,
+): Promise<AmicusThread[]> {
+  const rows = await getUserDb().getAllAsync<AmicusThreadRow>(
+    `SELECT thread_id, title, chapter_ref, pinned, created_at, last_message_at
+       FROM amicus_threads
+      ORDER BY pinned DESC, last_message_at DESC
+      LIMIT ? OFFSET ?`,
+    [limit, offset],
+  );
+  return rows.map(hydrateThread);
+}
+
+export async function getAmicusThread(
+  threadId: string,
+): Promise<AmicusThread | null> {
+  const row = await getUserDb().getFirstAsync<AmicusThreadRow>(
+    `SELECT thread_id, title, chapter_ref, pinned, created_at, last_message_at
+       FROM amicus_threads WHERE thread_id = ?`,
+    [threadId],
+  );
+  return row ? hydrateThread(row) : null;
+}
+
+export async function listAmicusMessages(
+  threadId: string,
+): Promise<AmicusMessage[]> {
+  const rows = await getUserDb().getAllAsync<AmicusMessageRow>(
+    `SELECT message_id, thread_id, role, content, citations_json, follow_ups_json, created_at
+       FROM amicus_messages WHERE thread_id = ? ORDER BY created_at ASC`,
+    [threadId],
+  );
+  return rows.map(hydrateMessage);
+}
+
+export async function getAmicusUsageToday(): Promise<number> {
+  const row = await getUserDb().getFirstAsync<{ query_count: number }>(
+    "SELECT query_count FROM amicus_usage WHERE day = strftime('%Y-%m-%d', 'now')",
+  );
+  return row?.query_count ?? 0;
+}
+
+export async function getAmicusUsageThisMonth(): Promise<number> {
+  const row = await getUserDb().getFirstAsync<{ total: number }>(
+    `SELECT COALESCE(SUM(query_count), 0) AS total
+       FROM amicus_usage
+      WHERE day >= strftime('%Y-%m-01', 'now')
+        AND day <  strftime('%Y-%m-01', 'now', '+1 month')`,
+  );
+  return row?.total ?? 0;
 }
