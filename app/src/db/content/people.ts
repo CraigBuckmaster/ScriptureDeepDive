@@ -31,11 +31,18 @@ export async function getSpousesOf(personId: string): Promise<Person[]> {
   );
 }
 
-// ── People Journeys (#1125) ───────────────────────────────────────
+// ── People Journeys (now backed by unified journeys/journey_stops) ──
 
 export async function getPersonJourney(personId: string): Promise<PersonJourneyStage[]> {
   return getDb().getAllAsync<PersonJourneyStage>(
-    'SELECT * FROM people_journeys WHERE person_id = ? ORDER BY stage_order',
+    `SELECT js.id, j.person_id, js.stop_order AS stage_order,
+            js.label AS stage, j.era, js.book_id AS book_dir,
+            NULL AS chapters, js.ref AS verse_ref,
+            js.development AS summary, js.what_changes AS theme
+     FROM journey_stops js
+     JOIN journeys j ON js.journey_id = j.id
+     WHERE j.person_id = ? AND j.journey_type = 'person'
+     ORDER BY js.stop_order`,
     [personId]
   );
 }
@@ -53,9 +60,10 @@ export async function getPeopleWithJourneys(): Promise<
 > {
   return getDb().getAllAsync(
     `SELECT p.id as person_id, p.name, p.era, p.role,
-            COUNT(pj.id) as stage_count
+            COUNT(js.id) as stage_count
      FROM people p
-     JOIN people_journeys pj ON pj.person_id = p.id
+     JOIN journeys j ON j.person_id = p.id AND j.journey_type = 'person'
+     JOIN journey_stops js ON js.journey_id = j.id
      GROUP BY p.id
      ORDER BY stage_count DESC`,
   );
@@ -64,7 +72,7 @@ export async function getPeopleWithJourneys(): Promise<
 /** Check if a person has a journey (fast count query). */
 export async function hasPersonJourney(personId: string): Promise<boolean> {
   const row = await getDb().getFirstAsync<{ c: number }>(
-    'SELECT COUNT(*) as c FROM people_journeys WHERE person_id = ?',
+    "SELECT COUNT(*) as c FROM journeys WHERE person_id = ? AND journey_type = 'person'",
     [personId]
   );
   return (row?.c ?? 0) > 0;

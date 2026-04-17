@@ -91,7 +91,6 @@ export type ExploreStackParamList = {
   ContentLibrary: undefined;
   Periods: undefined;
   RedemptiveArc: undefined;
-  PersonJourney: { personId: string };
   JourneyBrowse: { tab?: 'lenses' | 'people' | 'featured'; filterLens?: string } | undefined;
   JourneyDetail: { journeyId: string };
   Concordance: {

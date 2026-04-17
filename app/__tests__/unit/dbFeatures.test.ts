@@ -83,30 +83,30 @@ describe('getProphecyChainsForChapter', () => {
   });
 });
 
-// ── Concepts ─────────────────────────────────────────────────────
+// ── Concepts (backed by journeys table) ──────────────────────────
 
 describe('getAllConcepts', () => {
-  it('returns all concepts ordered by name', async () => {
+  it('returns all concepts from journeys table ordered by name', async () => {
     const concepts = [{ id: 'c1', name: 'Grace' }];
     getMockDb().getAllAsync.mockResolvedValue(concepts);
 
     const result = await getAllConcepts();
     expect(result).toEqual(concepts);
     expect(getMockDb().getAllAsync).toHaveBeenCalledWith(
-      expect.stringContaining('concepts'),
+      expect.stringContaining('journeys'),
     );
   });
 });
 
 describe('getConcept', () => {
-  it('returns a concept by id', async () => {
+  it('returns a concept by id from journeys table', async () => {
     const concept = { id: 'c1', name: 'Grace' };
     getMockDb().getFirstAsync.mockResolvedValue(concept);
 
     const result = await getConcept('c1');
     expect(result).toEqual(concept);
     expect(getMockDb().getFirstAsync).toHaveBeenCalledWith(
-      expect.stringContaining('concepts'),
+      expect.stringContaining('journeys'),
       ['c1'],
     );
   });

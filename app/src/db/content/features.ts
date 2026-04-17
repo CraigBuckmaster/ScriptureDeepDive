@@ -43,17 +43,25 @@ export async function getProphecyChainsForChapter(
   );
 }
 
-// ── Concepts ───────────────────────────────────────────────────────
+// ── Concepts (now backed by unified journeys table) ───────────────
 
 export async function getAllConcepts(): Promise<Concept[]> {
   return getDb().getAllAsync<Concept>(
-    'SELECT *, title AS name FROM concepts ORDER BY title'
+    `SELECT id, title AS name, description, NULL AS theme_key,
+            NULL AS word_study_ids_json, NULL AS thread_ids_json,
+            NULL AS prophecy_chain_ids_json, NULL AS people_tags_json,
+            tags AS tags_json
+     FROM journeys WHERE journey_type = 'concept' ORDER BY title`
   );
 }
 
 export async function getConcept(id: string): Promise<Concept | null> {
   return getDb().getFirstAsync<Concept>(
-    'SELECT *, title AS name FROM concepts WHERE id = ?',
+    `SELECT id, title AS name, description, NULL AS theme_key,
+            NULL AS word_study_ids_json, NULL AS thread_ids_json,
+            NULL AS prophecy_chain_ids_json, NULL AS people_tags_json,
+            tags AS tags_json
+     FROM journeys WHERE journey_type = 'concept' AND id = ?`,
     [id]
   );
 }
