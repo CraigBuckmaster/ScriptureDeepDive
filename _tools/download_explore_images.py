@@ -159,6 +159,68 @@ DOWNLOADS = [
         "https://upload.wikimedia.org/wikipedia/commons/d/da/John_F._MacArthur_Jr..JPG",
         "Scholar portrait — John MacArthur",
     ),
+
+    # === CONTENT FILE IMAGES (book intros, maps, timelines, prophecy, etc.) ===
+
+    # Schnorr von Carolsfeld Bible in Pictures series (1860, public domain)
+    ("schnorr-010.jpg", "https://upload.wikimedia.org/wikipedia/commons/f/f5/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_010.png", "Schnorr — Creation"),
+    ("schnorr-024.jpg", "https://upload.wikimedia.org/wikipedia/commons/0/04/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_024.png", "Schnorr — Isaac sacrifice"),
+    ("schnorr-030.jpg", "https://upload.wikimedia.org/wikipedia/commons/7/7a/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_030.png", "Schnorr — Covenant"),
+    ("schnorr-036.jpg", "https://upload.wikimedia.org/wikipedia/commons/b/b0/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_036.png", "Schnorr — Joseph in Egypt"),
+    ("schnorr-042.jpg", "https://upload.wikimedia.org/wikipedia/commons/3/3c/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_042.png", "Schnorr — Moses basket"),
+    ("schnorr-055.jpg", "https://upload.wikimedia.org/wikipedia/commons/b/be/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_055.png", "Schnorr — Moses at Sinai"),
+    ("schnorr-060.jpg", "https://upload.wikimedia.org/wikipedia/commons/5/5a/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_060.png", "Schnorr — Levitical offerings"),
+    ("schnorr-067.jpg", "https://upload.wikimedia.org/wikipedia/commons/6/6b/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_067.png", "Schnorr — Balaam's donkey"),
+    ("schnorr-068.jpg", "https://upload.wikimedia.org/wikipedia/commons/2/2e/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_068.png", "Schnorr — Moses farewell"),
+    ("schnorr-072.jpg", "https://upload.wikimedia.org/wikipedia/commons/d/d3/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_072.png", "Schnorr — Jordan crossing"),
+    ("schnorr-076.jpg", "https://upload.wikimedia.org/wikipedia/commons/3/36/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_076.png", "Schnorr — Judges/Samson"),
+    ("schnorr-082.jpg", "https://upload.wikimedia.org/wikipedia/commons/e/ee/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_082.png", "Schnorr — Ruth and Boaz"),
+    ("schnorr-091.jpg", "https://upload.wikimedia.org/wikipedia/commons/2/28/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_091.png", "Schnorr — David with harp"),
+    ("schnorr-098.jpg", "https://upload.wikimedia.org/wikipedia/commons/4/42/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_098.png", "Schnorr — Solomon's wisdom"),
+    ("schnorr-112.jpg", "https://upload.wikimedia.org/wikipedia/commons/1/19/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_112.png", "Schnorr — Elijah and prophets"),
+    ("schnorr-124.jpg", "https://upload.wikimedia.org/wikipedia/commons/2/2e/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_124.png", "Schnorr — Isaiah's vision"),
+    ("schnorr-143.jpg", "https://upload.wikimedia.org/wikipedia/commons/e/e0/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_143.png", "Schnorr — Crucifixion"),
+    ("schnorr-147.jpg", "https://upload.wikimedia.org/wikipedia/commons/a/aa/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_147.png", "Schnorr — Job's suffering"),
+    ("schnorr-172.jpg", "https://upload.wikimedia.org/wikipedia/commons/c/c5/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_172.png", "Schnorr — Ezra reading"),
+    ("schnorr-175.jpg", "https://upload.wikimedia.org/wikipedia/commons/2/22/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_175.png", "Schnorr — Nehemiah's wall"),
+    ("schnorr-200.jpg", "https://upload.wikimedia.org/wikipedia/commons/1/1f/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_200.png", "Schnorr — Jonah and whale"),
+    ("schnorr-227.jpg", "https://upload.wikimedia.org/wikipedia/commons/5/53/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_227.png", "Schnorr — Jesus teaching"),
+    ("schnorr-233.jpg", "https://upload.wikimedia.org/wikipedia/commons/9/92/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_233.png", "Schnorr — Peter preaching"),
+    ("schnorr-240.jpg", "https://upload.wikimedia.org/wikipedia/commons/4/4e/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_240.png", "Schnorr — Paul preaching"),
+    ("schnorr-251.jpg", "https://upload.wikimedia.org/wikipedia/commons/9/93/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_251.png", "Schnorr — Resurrection"),
+    ("schnorr-254.jpg", "https://upload.wikimedia.org/wikipedia/commons/5/5f/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_254.png", "Schnorr — Pentecost"),
+    ("schnorr-257.jpg", "https://upload.wikimedia.org/wikipedia/commons/6/65/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_257.png", "Schnorr — New Jerusalem"),
+
+    # Michelangelo (Sistine Chapel, public domain)
+    ("michelangelo-creation-adam.jpg", "https://upload.wikimedia.org/wikipedia/commons/5/5b/Creaci%C3%B3n_de_Ad%C3%A1m.jpg", "Michelangelo — Creation of Adam"),
+    ("michelangelo-isaiah.jpg", "https://upload.wikimedia.org/wikipedia/commons/1/18/Michelangelo%2C_profeta_Isaia_02.jpg", "Michelangelo — Prophet Isaiah"),
+    ("michelangelo-ezekiel.jpg", "https://upload.wikimedia.org/wikipedia/commons/0/06/Michelangelo%2C_profeta_Ezechiele_02.jpg", "Michelangelo — Prophet Ezekiel"),
+    ("michelangelo-daniel.jpg", "https://upload.wikimedia.org/wikipedia/commons/0/03/Michelangelo%2C_profeta_Daniele_02.jpg", "Michelangelo — Prophet Daniel"),
+    ("michelangelo-jeremiah.jpg", "https://upload.wikimedia.org/wikipedia/commons/4/4a/Michelangelo_Buonarroti_-_Sistine_Chapel_Ceiling_-_Jeremiah.jpg", "Michelangelo — Prophet Jeremiah"),
+    ("michelangelo-jonah.jpg", "https://upload.wikimedia.org/wikipedia/commons/2/2c/Michelangelo_Buonarroti_-_Jonah_%28detail%29.jpg", "Michelangelo — Prophet Jonah"),
+    ("michelangelo-david.jpg", "https://upload.wikimedia.org/wikipedia/commons/a/ab/%27David%27_by_Michelangelo_Fir_JBU005.jpg", "Michelangelo — David statue"),
+
+    # Rembrandt (public domain)
+    ("rembrandt-paul.jpg", "https://upload.wikimedia.org/wikipedia/commons/b/bc/Rembrandt_-_The_Apostle_Paul_-_WGA19120.jpg", "Rembrandt — Apostle Paul"),
+    ("rembrandt-abraham-isaac.jpg", "https://upload.wikimedia.org/wikipedia/commons/5/54/Rembrandt_Abraham_and_Isaac_1634.jpg", "Rembrandt — Abraham and Isaac"),
+    ("rembrandt-jacob-wrestling.jpg", "https://upload.wikimedia.org/wikipedia/commons/7/7c/Rembrandt_-_Jacob_Wrestling_with_the_Angel_-_Google_Art_Project.jpg", "Rembrandt — Jacob wrestling the angel"),
+    ("rembrandt-prodigal-son.jpg", "https://upload.wikimedia.org/wikipedia/commons/9/93/Rembrandt_Harmensz._van_Rijn_-_The_Return_of_the_Prodigal_Son_-_Google_Art_Project.jpg", "Rembrandt — Return of the Prodigal Son"),
+
+    # Doré additional (public domain)
+    ("dore-creation-of-light.jpg", "https://upload.wikimedia.org/wikipedia/commons/b/ba/Gustave_Dor%C3%A9_-_The_Holy_Bible_-_Plate_I%2C_The_Creation_of_Light.jpg", "Doré — Creation of Light (large version)"),
+    ("dore-deluge.jpg", "https://upload.wikimedia.org/wikipedia/commons/2/24/Gustave_Dor%C3%A9_-_The_Holy_Bible_-_Plate_I%2C_The_Deluge.jpg", "Doré — The Deluge"),
+    ("dore-crucifixion-darkness.jpg", "https://upload.wikimedia.org/wikipedia/commons/4/4e/Gustave_Dor%C3%A9_-_The_Holy_Bible_-_Plate_CXL_-_The_Darkness_at_the_Crucifixion.jpg", "Doré — Darkness at the Crucifixion"),
+
+    # Tissot, Holman, Campin, and others (public domain)
+    ("tissot-flight-prisoners.jpg", "https://upload.wikimedia.org/wikipedia/commons/2/2c/Tissot_The_Flight_of_the_Prisoners.jpg", "Tissot — Flight of the Prisoners (Exile)"),
+    ("codex-sinaiticus.jpg", "https://upload.wikimedia.org/wikipedia/commons/d/d8/Codex_Sinaiticus_open_full.jpg", "Codex Sinaiticus — oldest complete NT"),
+    ("dead-sea-isaiah-scroll.jpg", "https://upload.wikimedia.org/wikipedia/commons/a/a6/Dead_Sea_Scroll_-_part_of_Isaiah_Scroll_%28Isa_57.17_-_59.9%29.jpg", "Dead Sea Isaiah Scroll"),
+    ("nuremberg-chronicles.jpg", "https://upload.wikimedia.org/wikipedia/commons/4/4a/Nuremberg_chronicles_f_10v.png", "Nuremberg Chronicles — genealogy"),
+    ("figures-abraham-journey.jpg", "https://upload.wikimedia.org/wikipedia/commons/7/72/Figures_The_Journey_of_Abraham.jpg", "Figures — Journey of Abraham"),
+    ("figures-red-sea-crossing.jpg", "https://upload.wikimedia.org/wikipedia/commons/1/17/Figures_Crossing_of_the_Red_Sea.jpg", "Figures — Crossing of the Red Sea"),
+    ("holman-jericho-walls.jpg", "https://upload.wikimedia.org/wikipedia/commons/0/0e/Holman_The_Walls_of_Jericho_Fall_Down.jpg", "Holman — Walls of Jericho"),
+    ("campin-nativity.jpg", "https://upload.wikimedia.org/wikipedia/commons/3/38/Robert_Campin_-_The_Nativity_-_WGA14420.jpg", "Campin — The Nativity"),
+    ("holman-paul-journey3.jpg", "https://upload.wikimedia.org/wikipedia/commons/0/02/Holman_Paul%27s_Third_Missionary_Journey.jpg", "Holman — Paul's Third Missionary Journey"),
 ]
 
 # Fallback URLs for Doré images (Wikimedia copies if creationism.org is down)
