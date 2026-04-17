@@ -1,0 +1,41 @@
+name = "amicus-proxy"
+main = "src/index.ts"
+compatibility_date = "2026-04-01"
+compatibility_flags = ["nodejs_compat"]
+
+# ──────────────────────────────────────────────────────────────
+# Secrets — set via `wrangler secret put NAME --env <env>`:
+#   REVENUECAT_SECRET_KEY   — validates receipts
+#   ANTHROPIC_API_KEY       — chat completions
+#   OPENAI_API_KEY          — /ai/embed (same model as build-time corpus)
+# Never commit actual values here.
+# ──────────────────────────────────────────────────────────────
+
+[vars]
+VERSION = "0.1.0"
+
+# ── Staging ───────────────────────────────────────────────────
+[env.staging]
+route = "ai-staging.contentcompanionstudy.com/*"
+
+[[env.staging.kv_namespaces]]
+binding = "RATE_LIMITS"
+id = "REPLACE_WITH_STAGING_KV_ID"
+
+[[env.staging.d1_databases]]
+binding = "CORPUS_GAPS"
+database_name = "amicus-corpus-gaps-staging"
+database_id = "REPLACE_WITH_STAGING_D1_ID"
+
+# ── Production ────────────────────────────────────────────────
+[env.production]
+route = "ai.contentcompanionstudy.com/*"
+
+[[env.production.kv_namespaces]]
+binding = "RATE_LIMITS"
+id = "REPLACE_WITH_PROD_KV_ID"
+
+[[env.production.d1_databases]]
+binding = "CORPUS_GAPS"
+database_name = "amicus-corpus-gaps"
+database_id = "REPLACE_WITH_PROD_D1_ID"

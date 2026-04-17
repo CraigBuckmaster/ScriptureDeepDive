@@ -1,0 +1,21 @@
+{
+  "name": "amicus-proxy",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cloudflare Worker sitting between the Companion Study mobile client and Anthropic. Handles auth, rate-limit, zero-retention, streaming, and gap-signal detection.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy:staging": "wrangler deploy --env staging",
+    "deploy:production": "wrangler deploy --env production",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240402.0",
+    "miniflare": "^3.20240404.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.4.0",
+    "wrangler": "^3.50.0"
+  }
+}
