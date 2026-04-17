@@ -1,12 +1,23 @@
+import { act, fireEvent } from '@testing-library/react-native';
 import React from 'react';
-import { fireEvent } from '@testing-library/react-native';
+import { getMockDb, resetMockDb } from '../../../../__tests__/helpers/mockDb';
 import { renderWithProviders } from '../../../../__tests__/helpers/renderWithProviders';
 import AmicusPeekSheet from '@/components/amicus/AmicusPeekSheet';
-import { getMockDb, resetMockDb } from '../../../../__tests__/helpers/mockDb';
 
 jest.mock('@/db/database', () =>
   require('../../../../__tests__/helpers/mockDb').mockDatabaseModule(),
 );
+
+type StreamChatParams = Parameters<
+  typeof import('@/services/amicus/chat').streamChat
+>[0];
+let lastStreamParams: StreamChatParams | null = null;
+const mockStreamChat = jest.fn(async (params: StreamChatParams) => {
+  lastStreamParams = params;
+});
+jest.mock('@/services/amicus/chat', () => ({
+  streamChat: (p: StreamChatParams) => mockStreamChat(p),
+}));
 
 jest.mock('@react-navigation/native', () => {
   const actual = jest.requireActual('@react-navigation/native');
@@ -29,7 +40,12 @@ jest.mock('@gorhom/bottom-sheet', () => {
   };
 });
 
-beforeEach(() => resetMockDb());
+beforeEach(() => {
+  resetMockDb();
+  mockStreamChat.mockClear();
+  lastStreamParams = null;
+  process.env.EXPO_PUBLIC_AMICUS_DEV_TOKEN = 'tok';
+});
 
 describe('AmicusPeekSheet', () => {
   it('renders chips from the precached_prompts table', async () => {
@@ -93,6 +109,37 @@ describe('AmicusPeekSheet', () => {
     fireEvent.changeText(getByLabelText('Message Amicus from peek'), '  what is grace?  ');
     fireEvent.press(getByLabelText('Send'));
     expect(onSend).toHaveBeenCalledWith('what is grace?');
+  });
+
+  it('starts a mini-conversation when a chip is tapped and streams the reply', async () => {
+    getMockDb().getFirstAsync.mockResolvedValueOnce({
+      chips_json: JSON.stringify([
+        {
+          label: 'Explain hesed',
+          seed_query: 'What is hesed?',
+          expected_source_types: ['word_study'],
+        },
+      ]),
+    });
+    const { findByLabelText, findByText } = renderWithProviders(
+      <AmicusPeekSheet
+        isOpen
+        onClose={() => undefined}
+        contextOverride={{ kind: 'chapter', bookId: 'psalms', chapterNum: 23 }}
+      />,
+    );
+    fireEvent.press(await findByLabelText('Ask: Explain hesed'));
+    expect(mockStreamChat).toHaveBeenCalled();
+    expect(lastStreamParams!.userQuery).toBe('What is hesed?');
+    expect(lastStreamParams!.currentChapterRef).toEqual({
+      book_id: 'psalms',
+      chapter_num: 23,
+    });
+    await act(async () => {
+      lastStreamParams!.onDelta('Hesed is ');
+      lastStreamParams!.onDelta('covenant love.');
+    });
+    expect(await findByText(/covenant love/)).toBeTruthy();
   });
 
   it('returns nothing when isOpen is false', () => {
