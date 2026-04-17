@@ -13,6 +13,10 @@ import { authenticate, type AuthResult } from './auth';
 import { checkAndIncrement } from './rateLimit';
 import { streamChat } from './anthropic';
 import {
+  generateDailyPrompt,
+  validateDailyPromptRequest,
+} from './dailyPrompt';
+import {
   captureGap,
   isLowRetrievalScore,
   parseGapSignal,
@@ -36,6 +40,9 @@ export default {
       }
       if (url.pathname === '/ai/chat' && request.method === 'POST') {
         return handleChat(request, env, ctx, startedAt);
+      }
+      if (url.pathname === '/ai/daily-prompt' && request.method === 'POST') {
+        return handleDailyPrompt(request, env, startedAt);
       }
       if (url.pathname === '/ai/feedback' && request.method === 'POST') {
         return handleFeedback(request, env, startedAt);
@@ -316,6 +323,66 @@ async function embedQuestion(text: string, env: Env): Promise<number[] | null> {
     return vec && vec.length === 1536 ? vec : null;
   } catch {
     return null;
+  }
+}
+
+// ── /ai/daily-prompt ─────────────────────────────────────────────────
+
+async function handleDailyPrompt(
+  request: Request,
+  env: Env,
+  startedAt: number,
+): Promise<Response> {
+  const auth = await authenticate(request.headers.get('Authorization'), env);
+  const authResponse = authToHttp(auth);
+  if (authResponse) return authResponse;
+  const ctx = (auth as Extract<AuthResult, { ok: true }>).context;
+
+  const rate = await checkAndIncrement(ctx, env);
+  if (!rate.allowed) {
+    return new Response(
+      JSON.stringify({
+        error: 'rate_limit_exceeded',
+        retry_after: rate.retryAfterSec ?? 60,
+      }),
+      {
+        status: 429,
+        headers: { ...JSON_HEADERS, 'Retry-After': String(rate.retryAfterSec ?? 60) },
+      },
+    );
+  }
+
+  let rawBody: unknown;
+  try {
+    rawBody = await request.json();
+  } catch {
+    return jsonError(400, 'invalid_json');
+  }
+  const parsed = validateDailyPromptRequest(rawBody);
+  if (!parsed) return jsonError(400, 'invalid_body');
+  if (!env.ANTHROPIC_API_KEY) {
+    return jsonError(503, 'anthropic_key_missing');
+  }
+
+  try {
+    const result = await generateDailyPrompt({
+      req: parsed,
+      apiKey: env.ANTHROPIC_API_KEY,
+    });
+    logMetadata({
+      endpoint: '/ai/daily-prompt',
+      status: 200,
+      startedAt,
+      entitlement: ctx.entitlement,
+      receiptHash: ctx.receiptHash,
+    });
+    return new Response(JSON.stringify(result), {
+      status: 200,
+      headers: JSON_HEADERS,
+    });
+  } catch (err) {
+    const detail = (err as Error).message;
+    return jsonError(502, 'daily_prompt_failed', detail);
   }
 }
 

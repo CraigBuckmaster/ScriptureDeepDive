@@ -612,3 +612,22 @@ export async function getAmicusUsageThisMonth(): Promise<number> {
   );
   return row?.total ?? 0;
 }
+
+// ── Amicus daily prompt cache (#1465) ───────────────────────────────
+
+export interface CachedDailyPrompt {
+  date: string;
+  profile_hash: string;
+  prompt_text: string;
+  seed_query: string;
+  generated_at: string;
+}
+
+export async function getCachedDailyPrompt(): Promise<CachedDailyPrompt | null> {
+  const row = await getUserDb().getFirstAsync<CachedDailyPrompt>(
+    `SELECT date, profile_hash, prompt_text, seed_query, generated_at
+       FROM amicus_daily_prompt_cache
+      WHERE id = 1`,
+  );
+  return row ?? null;
+}

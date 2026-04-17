@@ -531,6 +531,20 @@ const MIGRATIONS: Migration[] = [
       );
     `,
   },
+  {
+    version: 17,
+    description: 'Amicus — daily prompt cache (#1465)',
+    sql: `
+      CREATE TABLE IF NOT EXISTS amicus_daily_prompt_cache (
+        id INTEGER PRIMARY KEY CHECK (id = 1),
+        date TEXT NOT NULL,
+        profile_hash TEXT NOT NULL,
+        prompt_text TEXT NOT NULL,
+        seed_query TEXT NOT NULL,
+        generated_at TEXT NOT NULL DEFAULT (datetime('now'))
+      );
+    `,
+  },
 ];
 
 /**
