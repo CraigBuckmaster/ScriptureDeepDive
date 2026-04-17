@@ -676,6 +676,37 @@ CREATE TABLE journey_tags (
 CREATE INDEX IF NOT EXISTS idx_journey_tags_target ON journey_tags(tag_type, tag_id);
 
 -- ══════════════════════════════════════════════════════════════
+-- AMICUS — Vector retrieval companions (Card #1448).
+-- The `embeddings` vec0 virtual table is created inside
+-- populate_embeddings() only when sqlite-vec is loadable AND
+-- embeddings.db is present. The two companion tables below are
+-- regular tables so they work in every environment.
+-- ══════════════════════════════════════════════════════════════
+
+CREATE TABLE chunk_text (
+  chunk_id TEXT PRIMARY KEY,
+  text     TEXT NOT NULL
+);
+
+CREATE TABLE chunk_metadata (
+  chunk_id    TEXT PRIMARY KEY,
+  source_type TEXT NOT NULL,
+  source_id   TEXT NOT NULL,
+  scholar_id  TEXT,
+  tradition   TEXT,
+  book_id     TEXT,
+  chapter_num INTEGER,
+  verse_start INTEGER,
+  verse_end   INTEGER,
+  panel_type  TEXT
+);
+
+CREATE INDEX idx_chunk_metadata_source
+  ON chunk_metadata(source_type, source_id);
+CREATE INDEX idx_chunk_metadata_chapter
+  ON chunk_metadata(book_id, chapter_num);
+
+-- ══════════════════════════════════════════════════════════════
 -- NOTE: User tables (notes, bookmarks, preferences, highlights,
 -- reading progress, plans) live in a separate user.db managed by
 -- the app's userDatabase.ts migration system. They are NOT bundled

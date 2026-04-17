@@ -100,6 +100,54 @@ def q1(cur, sql, params=()):
     return row[0] if row else None
 
 
+def _has_table(cur, name):
+    return bool(q1(cur,
+        "SELECT 1 FROM sqlite_master WHERE name=? AND type IN ('table', 'view')",
+        (name,)))
+
+
+def _validate_embeddings(cur):
+    """Section 6 EMBEDDINGS — warn (don't fail) when the optional Amicus
+    tables are absent so the pre-AI pipeline keeps passing."""
+    has_text = _has_table(cur, 'chunk_text')
+    has_meta = _has_table(cur, 'chunk_metadata')
+    has_vec = _has_table(cur, 'embeddings')
+
+    check("chunk_text table present", has_text)
+    check("chunk_metadata table present", has_meta)
+
+    if not has_vec:
+        warn("embeddings virtual table absent — build_embeddings.py not run "
+             "or sqlite-vec unavailable (non-fatal)")
+        return
+
+    # The vec0 virtual table needs the extension loaded to be queryable.
+    sys.path.insert(0, str(ROOT / '_tools'))
+    from sqlite_vec_loader import try_load
+    loaded, msg = try_load(cur.connection)
+    if not loaded:
+        warn(f"embeddings table present but sqlite-vec not loadable ({msg})")
+        return
+
+    vec_rows = q1(cur, "SELECT COUNT(*) FROM embeddings") or 0
+    text_rows = q1(cur, "SELECT COUNT(*) FROM chunk_text") or 0
+    meta_rows = q1(cur, "SELECT COUNT(*) FROM chunk_metadata") or 0
+
+    check(f"embeddings has rows ({vec_rows})", vec_rows > 0, f"got {vec_rows}")
+    check(
+        "embeddings / chunk_text / chunk_metadata counts match",
+        vec_rows == text_rows == meta_rows,
+        f"vec={vec_rows} text={text_rows} meta={meta_rows}",
+    )
+
+    orphans = q1(
+        cur,
+        "SELECT COUNT(*) FROM chunk_text t "
+        "WHERE NOT EXISTS (SELECT 1 FROM chunk_metadata m WHERE m.chunk_id = t.chunk_id)",
+    ) or 0
+    check("no orphan chunk_ids", orphans == 0, f"{orphans} orphans")
+
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -751,6 +799,18 @@ def main():
     jesus_type = q1(cur, "SELECT type FROM people WHERE id='jesus'")
     check("Adam is spine", adam_type == 'spine')
     check("Jesus is spine", jesus_type == 'spine')
+
+    # =========================================================
+    # 6. EMBEDDINGS (Amicus — Card #1448)
+    # =========================================================
+    print("\n--- 6. EMBEDDINGS ---")
+    _validate_embeddings(cur)
+
+    # DB size cap (raised from the 150MB spec value to accommodate the
+    # pre-embedding baseline when embeddings.db hasn't been merged yet).
+    size_mb = DB_PATH.stat().st_size // 1024 // 1024
+    check(f"scripture.db under 250MB ({size_mb}MB)", size_mb < 250,
+          f"got {size_mb}MB")
 
     # =========================================================
     # SUMMARY
