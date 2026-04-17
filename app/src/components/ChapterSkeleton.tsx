@@ -6,14 +6,8 @@
  * animation on reanimated shared values.
  */
 
-import React, { useEffect } from 'react';
-import { View, StyleSheet, type ViewStyle, type DimensionValue } from 'react-native';
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withRepeat,
-  withTiming,
-} from 'react-native-reanimated';
+import React, { useEffect, useRef } from 'react';
+import { View, Animated, StyleSheet, type ViewStyle, type DimensionValue } from 'react-native';
 import { useTheme, spacing, radii } from '../theme';
 
 function Bone({ width, height = 14, style, bgColor }: {
@@ -39,22 +33,21 @@ function Bone({ width, height = 14, style, bgColor }: {
 
 export function ChapterSkeleton() {
   const { base } = useTheme();
-  const opacity = useSharedValue(0.3);
+  const opacity = useRef(new Animated.Value(0.3)).current;
 
   useEffect(() => {
-    opacity.value = withRepeat(
-      withTiming(0.7, { duration: 800 }),
-      -1,
-      true
+    const loop = Animated.loop(
+      Animated.sequence([
+        Animated.timing(opacity, { toValue: 0.7, duration: 800, useNativeDriver: true }),
+        Animated.timing(opacity, { toValue: 0.3, duration: 800, useNativeDriver: true }),
+      ]),
     );
+    loop.start();
+    return () => loop.stop();
   }, [opacity]);
 
-  const pulse = useAnimatedStyle(() => ({
-    opacity: opacity.value,
-  }));
-
   return (
-    <Animated.View style={[styles.container, { backgroundColor: base.bg }, pulse]}>
+    <Animated.View style={[styles.container, { backgroundColor: base.bg, opacity }]}>
       {/* Title */}
       <View style={styles.header}>
         <Bone width="70%" height={22} bgColor={base.bgSurface} />
