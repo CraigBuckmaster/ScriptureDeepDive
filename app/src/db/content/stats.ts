@@ -23,7 +23,7 @@ export async function getContentStats(): Promise<ContentStats> {
     getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM people"),
     getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM timelines"),
     getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM prophecy_chains"),
-    getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM concepts"),
+    getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM journeys WHERE journey_type = 'concept'"),
     getDb().getFirstAsync<{ c: number }>("SELECT COUNT(*) as c FROM difficult_passages"),
   ]);
   return {
