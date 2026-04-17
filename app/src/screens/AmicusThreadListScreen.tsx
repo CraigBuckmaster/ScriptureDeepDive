@@ -21,6 +21,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { Pin, Plus, MessageSquare } from 'lucide-react-native';
 import { useAmicusThreads } from '../hooks/useAmicusThreads';
+import { useAmicusAccess } from '../hooks/useAmicusAccess';
 import { useTheme, spacing, fontFamily } from '../theme';
 import type { ScreenNavProp } from '../navigation/types';
 import type { AmicusThread } from '../types';
@@ -30,7 +31,15 @@ export default function AmicusThreadListScreen(): React.ReactElement {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Amicus', 'ThreadList'>>();
   const { threads, isLoading, refresh, actions } = useAmicusThreads();
+  const access = useAmicusAccess();
   const [renaming, setRenaming] = useState<{ id: string; title: string } | null>(null);
+
+  // Non-premium users see the paywall in place of the thread list.
+  React.useEffect(() => {
+    if (access.reason === 'not_premium') {
+      navigation.replace('Paywall');
+    }
+  }, [access.reason, navigation]);
 
   const pinned = threads.filter((t) => t.pinned);
   const unpinned = threads.filter((t) => !t.pinned);

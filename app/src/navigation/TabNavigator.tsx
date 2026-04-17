@@ -7,11 +7,13 @@ import { ExploreStack } from './ExploreStack';
 import { SearchStack } from './SearchStack';
 import { MoreStack } from './MoreStack';
 import { AmicusStack } from './AmicusStack';
+import { useSettingsStore } from '../stores';
 
 const Tab = createBottomTabNavigator();
 
 export function TabNavigator() {
   const { base } = useTheme();
+  const amicusEnabled = useSettingsStore((s) => s.amicusEnabled);
 
   return (
     <Tab.Navigator
@@ -72,19 +74,21 @@ export function TabNavigator() {
           },
         })}
       />
-      <Tab.Screen
-        name="AmicusTab"
-        component={AmicusStack}
-        options={{
-          tabBarLabel: 'Amicus',
-          tabBarIcon: ({ color, size }) => <MessageSquare color={color} size={size} />,
-        }}
-        listeners={({ navigation }) => ({
-          tabPress: () => {
-            navigation.navigate('AmicusTab', { screen: 'ThreadList' });
-          },
-        })}
-      />
+      {amicusEnabled && (
+        <Tab.Screen
+          name="AmicusTab"
+          component={AmicusStack}
+          options={{
+            tabBarLabel: 'Amicus',
+            tabBarIcon: ({ color, size }) => <MessageSquare color={color} size={size} />,
+          }}
+          listeners={({ navigation }) => ({
+            tabPress: () => {
+              navigation.navigate('AmicusTab', { screen: 'ThreadList' });
+            },
+          })}
+        />
+      )}
       <Tab.Screen
         name="SearchTab"
         component={SearchStack}
