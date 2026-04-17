@@ -72,6 +72,58 @@ def check(label, condition, detail=''):
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
+_FAQ_FRONTMATTER_RE = re.compile(r'^---\n(.*?)\n---\n(.*)$', re.DOTALL)
+
+
+def _validate_meta_faq():
+    """Section 20 META-FAQ (Card #1449) — validates the editorial meta-FAQ
+    corpus in content/meta_faq/*.md. Every article must have an `id`, `title`,
+    and `tags` frontmatter field, a non-empty body, and a word count under 700.
+    Runs only if the directory exists (so the check is a no-op on branches
+    that do not include the corpus)."""
+    faq_dir = CONTENT / 'meta_faq'
+    if not faq_dir.is_dir():
+        return
+
+    print("\n--- 20. META-FAQ ---")
+    articles = sorted(faq_dir.glob('*.md'))
+    check(f"meta_faq directory present with {len(articles)} articles",
+          len(articles) >= 1, f"got {len(articles)}")
+
+    seen_ids: set[str] = set()
+    for md in articles:
+        raw = md.read_text(encoding='utf-8')
+        m = _FAQ_FRONTMATTER_RE.match(raw)
+        if not m:
+            check(f"{md.name} has frontmatter", False,
+                  'missing --- ... --- block')
+            continue
+        fm_text, body = m.group(1), m.group(2)
+        fm = {}
+        for line in fm_text.splitlines():
+            if ':' in line:
+                key, _, val = line.partition(':')
+                fm[key.strip()] = val.strip()
+        for required in ('id', 'title', 'tags'):
+            check(f"{md.name}: '{required}' frontmatter",
+                  bool(fm.get(required)), f"missing or empty {required}")
+        fid = fm.get('id', '')
+        if fid:
+            check(f"{md.name}: unique id",
+                  fid not in seen_ids, f"duplicate id '{fid}'")
+            seen_ids.add(fid)
+            check(f"{md.name}: id matches filename",
+                  fid == md.stem,
+                  f"id '{fid}' != filename '{md.stem}'")
+        body = body.strip()
+        check(f"{md.name}: non-empty body",
+              bool(body), 'body is empty')
+        word_count = len(body.split())
+        check(f"{md.name}: word count < 700 ({word_count})",
+              word_count < 700,
+              f'article is {word_count} words; spec says under 500-ish, cap 700')
+
+
 def main():
     """Run all content validation checks and print a summary.
 
@@ -1574,6 +1626,9 @@ def main():
 
         print(f"  journey files: {total_journeys}")
         print(f"  total stops: {total_stops}")
+
+    # ── 20. META-FAQ (Amicus Card #1449) ──
+    _validate_meta_faq()
 
     # ── Summary ──
     print(f"\n{'='*60}")
