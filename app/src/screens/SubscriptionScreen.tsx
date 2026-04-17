@@ -13,7 +13,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { usePremiumStore } from '../stores/premiumStore';
-import { PLANS, purchasePlan, restorePurchases, type PlanInfo } from '../services/purchases';
+import {
+  PARTNER_PLUS_PLANS,
+  PLANS,
+  purchasePlan,
+  restorePurchases,
+  type PlanInfo,
+} from '../services/purchases';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
@@ -194,6 +200,70 @@ function SubscriptionScreen() {
           ))}
         </View>
 
+        {/* Partner+ tier (#1472) — compact upsell card for AI-heavy users. */}
+        <View
+          style={[
+            styles.partnerPlusCard,
+            { borderColor: `${base.gold}55`, backgroundColor: `${base.gold}10` },
+          ]}
+        >
+          <View style={styles.partnerPlusHeader}>
+            <Text style={[styles.partnerPlusEyebrow, { color: base.gold }]}>
+              FOR SERIOUS STUDY
+            </Text>
+            <Text
+              style={[
+                styles.partnerPlusTitle,
+                { color: base.text, fontFamily: fontFamily.displaySemiBold },
+              ]}
+            >
+              Partner+
+            </Text>
+            <Text
+              style={[
+                styles.partnerPlusSubtitle,
+                { color: base.textMuted, fontFamily: fontFamily.bodyItalic },
+              ]}
+            >
+              Everything in Companion+, plus an AI study partner tuned for depth.
+            </Text>
+          </View>
+
+          <View style={styles.partnerPlusFeatures}>
+            <Text style={[styles.partnerPlusFeature, { color: base.text }]}>
+              ✦ 1,500 Amicus queries / month (5× the Companion+ cap)
+            </Text>
+            <Text style={[styles.partnerPlusFeature, { color: base.text }]}>
+              ✦ Sonnet-tier answers on every question
+            </Text>
+            <Text style={[styles.partnerPlusFeature, { color: base.text }]}>
+              ✦ Priority during peak load
+            </Text>
+            <Text style={[styles.partnerPlusFeature, { color: base.text }]}>
+              ✦ Export any conversation to Markdown
+            </Text>
+          </View>
+
+          <View style={styles.partnerPlusPriceRow}>
+            {PARTNER_PLUS_PLANS.map((plan) => (
+              <View
+                key={plan.productId}
+                style={[styles.partnerPlusPriceCell, { borderColor: `${base.gold}40` }]}
+              >
+                <Text style={[styles.partnerPlusPriceLabel, { color: base.textMuted }]}>
+                  {plan.label}
+                </Text>
+                <Text style={[styles.partnerPlusPrice, { color: base.gold }]}>
+                  {plan.price}
+                </Text>
+                <Text style={[styles.partnerPlusPriceDetail, { color: base.textMuted }]}>
+                  {plan.detail}
+                </Text>
+              </View>
+            ))}
+          </View>
+        </View>
+
         {/* Fine print */}
         <Text style={[styles.finePrint, { color: base.textMuted }]}>
           Cancel anytime. Your study data is always yours, even if you cancel.
@@ -352,6 +422,54 @@ const styles = StyleSheet.create({
   },
   bottomSpacer: {
     height: spacing.xxl,
+  },
+  partnerPlusCard: {
+    borderWidth: 1,
+    borderRadius: radii.lg,
+    padding: spacing.md,
+    marginBottom: spacing.lg,
+    gap: spacing.sm,
+  },
+  partnerPlusHeader: { gap: 4 },
+  partnerPlusEyebrow: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 10,
+    letterSpacing: 1,
+  },
+  partnerPlusTitle: { fontSize: 22 },
+  partnerPlusSubtitle: { fontSize: 13 },
+  partnerPlusFeatures: { gap: 4, marginTop: spacing.xs },
+  partnerPlusFeature: {
+    fontFamily: fontFamily.ui,
+    fontSize: 13,
+  },
+  partnerPlusPriceRow: {
+    flexDirection: 'row',
+    gap: spacing.sm,
+    marginTop: spacing.sm,
+  },
+  partnerPlusPriceCell: {
+    flex: 1,
+    borderWidth: 1,
+    borderRadius: radii.md,
+    padding: spacing.sm,
+    alignItems: 'center',
+  },
+  partnerPlusPriceLabel: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 11,
+    letterSpacing: 0.5,
+    textTransform: 'uppercase',
+  },
+  partnerPlusPrice: {
+    fontFamily: fontFamily.displaySemiBold,
+    fontSize: 18,
+    marginTop: 2,
+  },
+  partnerPlusPriceDetail: {
+    fontFamily: fontFamily.ui,
+    fontSize: 10,
+    marginTop: 2,
   },
 });
 

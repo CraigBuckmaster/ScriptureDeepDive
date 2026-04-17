@@ -15,7 +15,8 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { ChevronLeft } from 'lucide-react-native';
+import { ChevronLeft, Share } from 'lucide-react-native';
+import { Share as RNShare } from 'react-native';
 import { useTheme, spacing, fontFamily } from '../theme';
 import { getAmicusThread } from '../db/userQueries';
 import MessageList from '../components/amicus/MessageList';
@@ -24,6 +25,7 @@ import MetaFaqModal from '../components/amicus/MetaFaqModal';
 import { useAmicusThread } from '../hooks/useAmicusThread';
 import { useAmicusAccess } from '../hooks/useAmicusAccess';
 import CapExceededBanner from '../components/amicus/CapExceededBanner';
+import { exportThreadToMarkdown } from '../services/amicus/exportThread';
 import {
   navigateToCitation,
   type MetaFaqArticle,
@@ -104,6 +106,18 @@ export default function AmicusThreadScreen(): React.ReactElement {
     void handleSend(initialQuery);
   }, [initialQuery, messages.length, isStreaming, handleSend]);
 
+  const handleExport = useCallback(async () => {
+    try {
+      const payload = await exportThreadToMarkdown(threadId);
+      await RNShare.share({
+        title: payload.title,
+        message: payload.markdown,
+      });
+    } catch (err) {
+      logger.error('Amicus', 'export failed', err);
+    }
+  }, [threadId]);
+
   const handleCitation = useCallback(
     async (c: AmicusCitation) => {
       const parts = c.chunk_id.split(':');
@@ -142,12 +156,31 @@ export default function AmicusThreadScreen(): React.ReactElement {
           >
             {thread?.title ?? 'Amicus'}
           </Text>
-          {thread?.chapter_ref && (
-            <Text style={[styles.headerBadge, { color: base.gold }]}>
-              {thread.chapter_ref}
-            </Text>
-          )}
+          <View style={styles.headerMetaRow}>
+            {thread?.chapter_ref && (
+              <Text style={[styles.headerBadge, { color: base.gold }]}>
+                {thread.chapter_ref}
+              </Text>
+            )}
+            {access.entitlement === 'partner_plus' && (
+              <Text
+                accessibilityLabel="Powered by Sonnet"
+                style={[styles.partnerPlusBadge, { color: base.gold, borderColor: `${base.gold}50` }]}
+              >
+                PARTNER+
+              </Text>
+            )}
+          </View>
         </View>
+        {access.entitlement === 'partner_plus' && (
+          <Pressable
+            accessibilityLabel="Export conversation"
+            onPress={() => void handleExport()}
+            style={styles.headerAction}
+          >
+            <Share size={20} color={base.text} />
+          </Pressable>
+        )}
       </View>
 
       <KeyboardAvoidingView
@@ -237,7 +270,18 @@ const styles = StyleSheet.create({
   backButton: { padding: spacing.xs },
   headerText: { flex: 1, marginLeft: spacing.sm },
   headerTitle: { fontSize: 16 },
-  headerBadge: { fontSize: 11, marginTop: 2 },
+  headerMetaRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs, marginTop: 2 },
+  headerBadge: { fontSize: 11 },
+  partnerPlusBadge: {
+    fontSize: 9,
+    letterSpacing: 0.6,
+    fontWeight: '600',
+    borderWidth: StyleSheet.hairlineWidth,
+    borderRadius: 4,
+    paddingHorizontal: 4,
+    paddingVertical: 1,
+  },
+  headerAction: { padding: spacing.xs },
   banner: {
     padding: spacing.sm,
     marginHorizontal: spacing.sm,

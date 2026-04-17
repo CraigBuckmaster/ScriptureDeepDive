@@ -17,6 +17,10 @@ jest.mock('@/services/purchases', () => ({
     { id: 'annual', name: 'Annual', price: '$29.99' },
     { id: 'lifetime', name: 'Lifetime', price: '$79.99' },
   ],
+  PARTNER_PLUS_PLANS: [
+    { id: 'partner_plus_monthly', productId: 'p_m', label: 'Monthly', price: '$9.99', detail: '/month' },
+    { id: 'partner_plus_annual', productId: 'p_a', label: 'Annual', price: '$99.99', detail: '/year' },
+  ],
   purchasePlan: jest.fn().mockResolvedValue(false),
   restorePurchases: jest.fn().mockResolvedValue(false),
 }));

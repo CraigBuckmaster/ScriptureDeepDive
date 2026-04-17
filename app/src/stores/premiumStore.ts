@@ -13,7 +13,22 @@ import { create } from 'zustand';
 import { getPreference, setPreference } from '../db/user';
 import { logger } from '../utils/logger';
 
-export type PurchaseType = 'monthly' | 'annual' | 'lifetime' | null;
+/**
+ * Subscription plan identifiers.
+ *
+ * The base "Companion+" tier uses 'monthly' | 'annual' | 'lifetime'.
+ * The premium "Partner+" tier (AI-heavy users, #1472) uses the two
+ * `partner_plus_*` sentinels. `useAmicusAccess` reads these directly to
+ * derive the AI proxy entitlement.
+ */
+export type PurchaseType =
+  | 'monthly'
+  | 'annual'
+  | 'lifetime'
+  | 'partner_plus_monthly'
+  | 'partner_plus_annual'
+  | 'partner_plus'
+  | null;
 
 interface PremiumState {
   /** Whether the user currently has an active subscription or lifetime purchase. */
