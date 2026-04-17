@@ -44,12 +44,12 @@ export function useAmicusAccess(): AmicusAccessState {
   const [usageThisMonth, setUsageThisMonth] = useState(0);
   const [online, setOnline] = useState(isConnected());
 
-  // Derive entitlement. Partner+ is a tier introduced in #1472; for now,
-  // treat any premium subscriber as `premium` (partner_plus is reserved
-  // for a future `purchaseType === 'partner_plus'` sentinel).
+  // Derive entitlement. Partner+ introduced in #1472 — any purchase type
+  // that starts with `partner_plus` (monthly/annual) counts; the base
+  // `companion_*` plans remain `premium`.
   const entitlement: Entitlement = !isPremium
     ? 'none'
-    : (purchaseType as unknown) === 'partner_plus'
+    : typeof purchaseType === 'string' && purchaseType.startsWith('partner_plus')
       ? 'partner_plus'
       : 'premium';
 
