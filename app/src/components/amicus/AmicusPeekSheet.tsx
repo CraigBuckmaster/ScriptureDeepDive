@@ -20,11 +20,18 @@ import BottomSheet, {
   BottomSheetView,
 } from '@gorhom/bottom-sheet';
 import { ArrowUp } from 'lucide-react-native';
-import { useNavigationState } from '@react-navigation/native';
+import {
+  useNavigation,
+  useNavigationState,
+  type NavigationProp,
+  type ParamListBase,
+} from '@react-navigation/native';
 import { useAmicusChips, type ChipContext } from '../../hooks/useAmicusChips';
 import { usePeekConversation } from '../../hooks/usePeekConversation';
+import { promotePeekToThread } from '../../services/amicus/promotePeekToThread';
 import { fontFamily, spacing, useTheme } from '../../theme';
 import type { AmicusCitation } from '../../types';
+import { logger } from '../../utils/logger';
 import PeekMiniConversation from './PeekMiniConversation';
 
 export interface AmicusPeekSheetProps {
@@ -38,10 +45,12 @@ export interface AmicusPeekSheetProps {
   onSend?: (text: string) => void;
   /** Navigate to the citation target and close the peek (wired by parent). */
   onCitationPress?: (c: AmicusCitation) => void;
-  /** Promote the peek conversation to a persistent thread (#1464). */
-  onContinueInTab?: (snapshot: ReturnType<ReturnType<typeof usePeekConversation>['snapshotForPromotion']>) => void | Promise<void>;
-  /** Expose when handoff is in progress (disables the CTA). */
-  handoffInProgress?: boolean;
+  /**
+   * Override the default handoff behavior (#1464). Tests inject this to
+   * avoid touching the real user.db. Production uses the built-in
+   * `promotePeekToThread` service directly.
+   */
+  onContinueInTab?: (snapshot: ReturnType<ReturnType<typeof usePeekConversation>['snapshotForPromotion']>) => Promise<void> | void;
 }
 
 export default function AmicusPeekSheet(
@@ -51,9 +60,12 @@ export default function AmicusPeekSheet(
   const sheetRef = useRef<BottomSheet>(null);
   const snapPoints = useMemo(() => ['50%', '85%'], []);
 
+  const navigation = useNavigation<NavigationProp<ParamListBase>>();
   const ctx = useNavigationContext(props.contextOverride);
   const { chips } = useAmicusChips(ctx);
   const [text, setText] = useState('');
+  const [handoffInProgress, setHandoffInProgress] = useState(false);
+  const [handoffError, setHandoffError] = useState<string | null>(null);
   const peek = usePeekConversation();
   const hasConversation = peek.messages.length > 0;
 
@@ -69,7 +81,11 @@ export default function AmicusPeekSheet(
 
   // Reset the ephemeral conversation whenever the peek closes.
   useEffect(() => {
-    if (!props.isOpen) peek.reset();
+    if (!props.isOpen) {
+      peek.reset();
+      setHandoffInProgress(false);
+      setHandoffError(null);
+    }
     // `peek.reset` is stable via useCallback, but exhaustive-deps can't see it.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.isOpen]);
@@ -108,10 +124,33 @@ export default function AmicusPeekSheet(
     void peek.send(trimmed, chapterRef);
   }, [text, props, peek, chapterRef]);
 
-  const handleContinueInTab = useCallback(() => {
-    if (!props.onContinueInTab) return;
-    void props.onContinueInTab(peek.snapshotForPromotion());
-  }, [props, peek]);
+  const handleContinueInTab = useCallback(async () => {
+    if (handoffInProgress) return;
+    setHandoffInProgress(true);
+    setHandoffError(null);
+    const snapshot = peek.snapshotForPromotion();
+    try {
+      if (props.onContinueInTab) {
+        await props.onContinueInTab(snapshot);
+      } else {
+        await promotePeekToThread({
+          peekMessages: snapshot,
+          chapterRef,
+          navigation,
+        });
+      }
+      props.onClose();
+    } catch (err) {
+      logger.error('AmicusPeek', `handoff failed: ${String(err)}`);
+      setHandoffError("Couldn't save conversation — try again");
+      setHandoffInProgress(false);
+    }
+  }, [handoffInProgress, peek, props, chapterRef, navigation]);
+
+  const dismissHandoffError = useCallback(
+    () => setHandoffError(null),
+    [],
+  );
 
   if (!props.isOpen) return null;
 
@@ -156,11 +195,12 @@ export default function AmicusPeekSheet(
             isStreaming={peek.isStreaming}
             turnCount={peek.turnCount}
             error={peek.error}
-            onDismissError={peek.clearError}
+            handoffError={handoffError}
+            onDismissError={handoffError ? dismissHandoffError : peek.clearError}
             onCitationPress={props.onCitationPress}
             onFollowUp={(t) => void peek.send(t, chapterRef)}
-            onContinueInTab={handleContinueInTab}
-            handoffInProgress={props.handoffInProgress === true}
+            onContinueInTab={() => void handleContinueInTab()}
+            handoffInProgress={handoffInProgress}
           />
         ) : (
           <View style={styles.chipArea}>
