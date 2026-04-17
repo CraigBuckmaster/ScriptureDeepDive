@@ -483,6 +483,19 @@ const MIGRATIONS: Migration[] = [
       ALTER TABLE flagged_content ADD COLUMN synced INTEGER NOT NULL DEFAULT 0;
     `,
   },
+  {
+    version: 15,
+    description: 'Amicus — compressed profile cache (#1452)',
+    sql: `
+      CREATE TABLE IF NOT EXISTS partner_profile_cache (
+        id INTEGER PRIMARY KEY CHECK (id = 1),
+        profile_prose TEXT NOT NULL,
+        raw_signals_hash TEXT NOT NULL,
+        raw_signals_json TEXT NOT NULL DEFAULT '{}',
+        generated_at TEXT NOT NULL DEFAULT (datetime('now'))
+      );
+    `,
+  },
 ];
 
 /**
