@@ -12,8 +12,13 @@
 import { authenticate, type AuthResult } from './auth';
 import { checkAndIncrement } from './rateLimit';
 import { streamChat } from './anthropic';
-import { captureGap, parseGapSignal } from './gapDetection';
-import type { ChatRequest, EmbedRequest, Env } from './types';
+import {
+  captureGap,
+  isLowRetrievalScore,
+  parseGapSignal,
+  redactGap,
+} from './gapDetection';
+import type { ChatRequest, EmbedRequest, Env, GapSignal } from './types';
 
 const JSON_HEADERS = { 'Content-Type': 'application/json; charset=utf-8' };
 
@@ -31,6 +36,12 @@ export default {
       }
       if (url.pathname === '/ai/chat' && request.method === 'POST') {
         return handleChat(request, env, ctx, startedAt);
+      }
+      if (url.pathname === '/ai/feedback' && request.method === 'POST') {
+        return handleFeedback(request, env, startedAt);
+      }
+      if (url.pathname.startsWith('/ai/gaps/') && request.method === 'DELETE') {
+        return handleRedact(request, env, url);
       }
       return new Response('not found', { status: 404 });
     } catch (err) {
@@ -170,11 +181,25 @@ async function handleChat(
     return jsonError(upstream.status || 502, 'anthropic_error');
   }
 
+  // Pre-compute retrieval-score gap signal so captureGap can combine it
+  // with the model's self-report.
+  const retrievalMaxScore = maxChunkScore(chat.retrieved_chunks);
+  const retrievedChunkIds = chat.retrieved_chunks.map((c) => c.chunk_id);
+  const lowScore = isLowRetrievalScore(chat.retrieved_chunks);
+
   // Tee the stream: forward one branch straight to the client, consume the
   // other server-side to extract the gap_signal envelope.
   const [clientBranch, serverBranch] = upstream.body.tee();
   execCtx.waitUntil(
-    consumeForGap(serverBranch, chat.query, env, ctx.receiptHash),
+    consumeForGap({
+      stream: serverBranch,
+      chat,
+      env,
+      receiptHash: ctx.receiptHash,
+      retrievalMaxScore,
+      retrievedChunkIds,
+      lowScore,
+    }),
   );
 
   logMetadata({
@@ -195,14 +220,19 @@ async function handleChat(
   });
 }
 
-async function consumeForGap(
-  stream: ReadableStream<Uint8Array>,
-  query: string,
-  env: Env,
-  receiptHash: string,
-): Promise<void> {
+interface ConsumeForGapArgs {
+  stream: ReadableStream<Uint8Array>;
+  chat: ChatRequest;
+  env: Env;
+  receiptHash: string;
+  retrievalMaxScore: number;
+  retrievedChunkIds: string[];
+  lowScore: boolean;
+}
+
+async function consumeForGap(args: ConsumeForGapArgs): Promise<void> {
   const decoder = new TextDecoder();
-  const reader = stream.getReader();
+  const reader = args.stream.getReader();
   let accumulated = '';
   try {
     for (;;) {
@@ -227,13 +257,150 @@ async function consumeForGap(
       }
     }
   } catch (err) {
-    console.log(JSON.stringify({ type: 'gap_consume_error', detail: (err as Error).message }));
+    console.log(
+      JSON.stringify({ type: 'gap_consume_error', detail: (err as Error).message }),
+    );
     return;
   }
 
-  const signal = parseGapSignal(accumulated);
-  if (!signal || !signal.gap) return;
-  await captureGap({ signal, query, env, receiptHash });
+  const modelSignal = parseGapSignal(accumulated);
+
+  // A gap counts if the model said so OR retrieval scored low. The two
+  // signals are independent; low-score catches cases where the model
+  // hallucinated a confident answer despite nothing in the corpus.
+  let effective: GapSignal | null = null;
+  if (modelSignal?.gap) effective = modelSignal;
+  else if (args.lowScore) {
+    effective = { gap: true, gap_type: 'content' };
+  }
+  if (!effective) return;
+
+  const questionEmbedding = await embedQuestion(args.chat.query, args.env);
+
+  await captureGap({
+    signal: effective,
+    query: args.chat.query,
+    retrievalMaxScore: args.retrievalMaxScore,
+    retrievedChunkIds: args.retrievedChunkIds,
+    profileSummary: args.chat.profile_summary,
+    currentChapterRef: args.chat.current_chapter_ref,
+    questionEmbedding,
+    env: args.env,
+    receiptHash: args.receiptHash,
+  });
+}
+
+function maxChunkScore(chunks: ChatRequest['retrieved_chunks']): number {
+  let max = 0;
+  for (const c of chunks) {
+    const score = (c as unknown as { score?: number }).score ?? 0;
+    if (score > max) max = score;
+  }
+  return max;
+}
+
+async function embedQuestion(text: string, env: Env): Promise<number[] | null> {
+  if (!env.OPENAI_API_KEY) return null;
+  try {
+    const resp = await fetch('https://api.openai.com/v1/embeddings', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${env.OPENAI_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ model: 'text-embedding-3-small', input: text }),
+    });
+    if (!resp.ok) return null;
+    const payload = (await resp.json()) as { data?: Array<{ embedding?: number[] }> };
+    const vec = payload.data?.[0]?.embedding;
+    return vec && vec.length === 1536 ? vec : null;
+  } catch {
+    return null;
+  }
+}
+
+// ── /ai/feedback ──────────────────────────────────────────────────────
+
+interface FeedbackBody {
+  query: string;
+  current_chapter_ref: string | null;
+  profile_summary?: string;
+  retrieved_chunks?: ChatRequest['retrieved_chunks'];
+  reason?: string;
+}
+
+async function handleFeedback(
+  request: Request,
+  env: Env,
+  startedAt: number,
+): Promise<Response> {
+  const auth = await authenticate(request.headers.get('Authorization'), env);
+  const authResponse = authToHttp(auth);
+  if (authResponse) return authResponse;
+  const ctx = (auth as Extract<AuthResult, { ok: true }>).context;
+
+  let body: FeedbackBody;
+  try {
+    body = (await request.json()) as FeedbackBody;
+  } catch {
+    return jsonError(400, 'invalid_json');
+  }
+  if (!body.query) return jsonError(400, 'missing_query');
+
+  const questionEmbedding = await embedQuestion(body.query, env);
+  await captureGap({
+    signal: { gap: true, gap_type: 'content', topic: body.reason?.slice(0, 120) },
+    query: body.query,
+    retrievalMaxScore: body.retrieved_chunks
+      ? maxChunkScore(body.retrieved_chunks)
+      : null,
+    retrievedChunkIds:
+      body.retrieved_chunks?.map((c) => c.chunk_id) ?? [],
+    profileSummary: body.profile_summary ?? '',
+    currentChapterRef: body.current_chapter_ref,
+    questionEmbedding,
+    env,
+    receiptHash: ctx.receiptHash,
+  });
+
+  logMetadata({
+    endpoint: '/ai/feedback',
+    status: 200,
+    startedAt,
+    entitlement: ctx.entitlement,
+    receiptHash: ctx.receiptHash,
+  });
+  return new Response(JSON.stringify({ ok: true }), {
+    status: 200,
+    headers: JSON_HEADERS,
+  });
+}
+
+// ── DELETE /ai/gaps/:id (redaction) ──────────────────────────────────
+
+async function handleRedact(
+  request: Request,
+  env: Env,
+  url: URL,
+): Promise<Response> {
+  const auth = await authenticate(request.headers.get('Authorization'), env);
+  const authResponse = authToHttp(auth);
+  if (authResponse) return authResponse;
+
+  // Simple admin gate — only partner_plus receipts can redact. Real admin
+  // access is layered via Cloudflare Access in front of this Worker.
+  const ctx = (auth as Extract<AuthResult, { ok: true }>).context;
+  if (ctx.entitlement !== 'partner_plus') {
+    return jsonError(403, 'forbidden');
+  }
+
+  const gapId = url.pathname.split('/').pop() ?? '';
+  if (!gapId) return jsonError(400, 'missing_gap_id');
+  const ok = await redactGap(env, gapId);
+  return new Response(JSON.stringify({ ok }), {
+    status: ok ? 200 : 500,
+    headers: JSON_HEADERS,
+  });
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────
