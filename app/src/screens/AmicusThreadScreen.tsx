@@ -4,7 +4,7 @@
  * Shell came from #1454; this card (#1455) wires the streaming orchestrator,
  * MessageList, InputBar, and error banners.
  */
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   KeyboardAvoidingView,
   Platform,
@@ -38,7 +38,7 @@ export default function AmicusThreadScreen(): React.ReactElement {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Amicus', 'Thread'>>();
   const route = useRoute<ScreenRouteProp<'Amicus', 'Thread'>>();
-  const { threadId } = route.params;
+  const { threadId, initialQuery } = route.params;
 
   const [thread, setThread] = useState<AmicusThread | null>(null);
   const [faqArticle, setFaqArticle] = useState<MetaFaqArticle | null>(null);
@@ -90,6 +90,19 @@ export default function AmicusThreadScreen(): React.ReactElement {
     },
     [sendMessage, requestAmicusConsent, access.reason, navigation],
   );
+
+  // Auto-send the seed query once per mount when navigated in from the
+  // home card / deep-link handoff (#1467). Guarded by a ref so rapid
+  // re-renders don't re-dispatch.
+  const autoSentRef = useRef(false);
+  useEffect(() => {
+    if (autoSentRef.current) return;
+    if (!initialQuery) return;
+    if (messages.length > 0) return;
+    if (isStreaming) return;
+    autoSentRef.current = true;
+    void handleSend(initialQuery);
+  }, [initialQuery, messages.length, isStreaming, handleSend]);
 
   const handleCitation = useCallback(
     async (c: AmicusCitation) => {

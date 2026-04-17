@@ -130,7 +130,7 @@ export type SearchStackParamList = {
 
 export type AmicusStackParamList = {
   ThreadList: undefined;
-  Thread: { threadId: string };
+  Thread: { threadId: string; initialQuery?: string };
   NewThread: { seedQuery?: string; seedChapterRef?: string } | undefined;
   Paywall: undefined;
 };
