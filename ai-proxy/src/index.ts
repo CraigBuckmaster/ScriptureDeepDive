@@ -22,6 +22,12 @@ import {
   parseGapSignal,
   redactGap,
 } from './gapDetection';
+import {
+  recordClientMetrics,
+  recordDailyUser,
+  recordHourlyMetric,
+  validateClientMetricsPayload,
+} from './metrics';
 import { captureResponseSample } from './responseSampling';
 import type { ChatRequest, EmbedRequest, Env, GapSignal } from './types';
 
@@ -47,6 +53,9 @@ export default {
       }
       if (url.pathname === '/ai/feedback' && request.method === 'POST') {
         return handleFeedback(request, env, startedAt);
+      }
+      if (url.pathname === '/ai/metrics' && request.method === 'POST') {
+        return handleClientMetrics(request, env);
       }
       if (url.pathname.startsWith('/ai/gaps/') && request.method === 'DELETE') {
         return handleRedact(request, env, url);
@@ -147,7 +156,10 @@ async function handleChat(
 ): Promise<Response> {
   const auth = await authenticate(request.headers.get('Authorization'), env);
   const authResponse = authToHttp(auth);
-  if (authResponse) return authResponse;
+  if (authResponse) {
+    void recordHourlyMetric({ env, bucket: 'auth_fail_count' });
+    return authResponse;
+  }
   const ctx = (auth as Extract<AuthResult, { ok: true }>).context;
 
   const rate = await checkAndIncrement(ctx, env);
@@ -159,6 +171,7 @@ async function handleChat(
     if (ctx.entitlement === 'premium') {
       body.upgrade_url = 'https://contentcompanionstudy.com/amicus-plus';
     }
+    void recordHourlyMetric({ env, bucket: 'rate_limit_count' });
     return new Response(JSON.stringify(body), {
       status: 429,
       headers: { ...JSON_HEADERS, 'Retry-After': String(rate.retryAfterSec ?? 60) },
@@ -232,6 +245,25 @@ async function handleChat(
     entitlement: ctx.entitlement,
     receiptHash: ctx.receiptHash,
   });
+
+  // Fire-and-forget metric writes — never blocking the response.
+  void recordHourlyMetric({
+    env,
+    bucket: 'total_requests',
+    latencyMs: Date.now() - startedAt,
+  });
+  void recordHourlyMetric({ env, bucket: 'success_count' });
+  void recordHourlyMetric({
+    env,
+    bucket: chat.model_tier === 'sonnet' ? 'sonnet_count' : 'haiku_count',
+  });
+  if (ctx.entitlement === 'partner_plus' || ctx.entitlement === 'premium') {
+    void recordDailyUser({
+      env,
+      receiptHash: ctx.receiptHash,
+      tier: ctx.entitlement,
+    });
+  }
 
   return new Response(clientBranch, {
     status: 200,
@@ -413,6 +445,35 @@ async function embedQuestion(text: string, env: Env): Promise<number[] | null> {
   } catch {
     return null;
   }
+}
+
+// ── /ai/metrics (client aggregates, #1469) ───────────────────────────
+
+async function handleClientMetrics(
+  request: Request,
+  env: Env,
+): Promise<Response> {
+  const auth = await authenticate(request.headers.get('Authorization'), env);
+  const authResponse = authToHttp(auth);
+  if (authResponse) {
+    void recordHourlyMetric({ env, bucket: 'auth_fail_count' });
+    return authResponse;
+  }
+
+  let raw: unknown;
+  try {
+    raw = await request.json();
+  } catch {
+    return jsonError(400, 'invalid_json');
+  }
+  const payload = validateClientMetricsPayload(raw);
+  if (!payload) return jsonError(400, 'invalid_body');
+
+  await recordClientMetrics(env, payload);
+  return new Response(JSON.stringify({ ok: true }), {
+    status: 200,
+    headers: JSON_HEADERS,
+  });
 }
 
 // ── /ai/daily-prompt ─────────────────────────────────────────────────
