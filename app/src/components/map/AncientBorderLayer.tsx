@@ -38,7 +38,7 @@ export const AncientBorderLayer = memo(function AncientBorderLayer({
     <GeoJSONSource
       id="ancient-borders"
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      shape={borders as any}
+      data={borders as any}
     >
       <Layer
         id="ancient-borders-fill"

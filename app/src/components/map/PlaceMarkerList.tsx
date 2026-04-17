@@ -144,9 +144,11 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
     <GeoJSONSource
       id="places-source"
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      shape={fc as any}
+      data={fc as any}
       onPress={onPress}
-      hitbox={{ width: 22, height: 22 }}
+      // v11: hitbox is a ViewPadding (top/right/bottom/left), not width/height.
+      // 22px in each direction matches the v10 22x22 box.
+      hitbox={{ top: 11, right: 11, bottom: 11, left: 11 }}
     >
       <Layer
         id="places-dot"

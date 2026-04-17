@@ -20,7 +20,7 @@ import {
   StyleSheet,
   Pressable,
 } from 'react-native';
-import { Map, Camera } from '@maplibre/maplibre-react-native';
+import { Map, Camera, type InitialViewState } from '@maplibre/maplibre-react-native';
 import { ArrowUpRight } from 'lucide-react-native';
 import { STYLE_ANCIENT } from '../../constants/mapStyles';
 import { useTheme, spacing, radii, fontFamily } from '../../theme';
@@ -34,17 +34,11 @@ import { StoryOverlays } from './StoryOverlays';
 ensureMapLibreInit();
 
 /**
- * Subset of the v11 Camera `initialViewState` shape that we actually use.
- * MapLibre RN v11 consolidated the defaultSettings / fitBoundsOptions
- * surface into a single `initialViewState` prop taking either a center
- * or bounds. We expose just the fields the chip needs.
+ * v11 `InitialViewState` is a discriminated union: either a `center`
+ * variant or a `bounds` variant, never both. We alias the library type
+ * here and build each variant explicitly in `defaultCameraForStory`.
  */
-type ChipInitialViewState = {
-  center?: [number, number];
-  zoom?: number;
-  bounds?: [number, number, number, number]; // [west, south, east, north]
-  padding?: { top?: number; right?: number; bottom?: number; left?: number };
-};
+type ChipInitialViewState = InitialViewState;
 
 interface Props {
   story: MapStory;
@@ -89,7 +83,7 @@ function defaultCameraForStory(
     if (p.latitude > maxLat) maxLat = p.latitude;
   }
   return {
-    bounds: [minLon, minLat, maxLon, maxLat],
+    bounds: [minLon, minLat, maxLon, maxLat] as [number, number, number, number],
     padding: { top: 14, right: 18, bottom: 14, left: 18 },
   };
 }

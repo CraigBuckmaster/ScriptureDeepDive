@@ -71,7 +71,7 @@ export const PersonArcLayer = memo(function PersonArcLayer({
   return (
     <>
       {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-      <GeoJSONSource id="person-arc-line" shape={lineFC as any}>
+      <GeoJSONSource id="person-arc-line" data={lineFC as any}>
         <Layer
           id="person-arc-line-layer"
           type="line"
@@ -87,7 +87,7 @@ export const PersonArcLayer = memo(function PersonArcLayer({
       </GeoJSONSource>
 
       {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-      <GeoJSONSource id="person-arc-stops" shape={stopsFC as any}>
+      <GeoJSONSource id="person-arc-stops" data={stopsFC as any}>
         <Layer
           id="person-arc-stops-circle"
           type="circle"

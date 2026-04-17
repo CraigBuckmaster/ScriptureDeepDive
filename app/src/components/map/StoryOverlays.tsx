@@ -144,7 +144,7 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
     <>
       {/* Region polygons — fill + outline */}
       {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-      <GeoJSONSource id="story-regions" shape={regionsFC as any}>
+      <GeoJSONSource id="story-regions" data={regionsFC as any}>
         <Layer
           id="story-regions-fill"
           type="fill"
@@ -171,7 +171,7 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
           swapping the active story animates the path draw rather than
           snapping. */}
       {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-      <GeoJSONSource id="story-paths" shape={pathsFC as any}>
+      <GeoJSONSource id="story-paths" data={pathsFC as any}>
         <Layer
           id="story-paths-solid"
           type="line"
@@ -203,7 +203,7 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
           the final segment's bearing. Uses a unicode ► glyph — no image
           asset required — kept legible across zoom levels. */}
       {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-      <GeoJSONSource id="story-path-arrows" shape={arrowsFC as any}>
+      <GeoJSONSource id="story-path-arrows" data={arrowsFC as any}>
         <Layer
           id="story-path-arrows-layer"
           type="symbol"
