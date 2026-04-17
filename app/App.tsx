@@ -28,6 +28,7 @@ import { useNotificationRouter } from './src/hooks/useNotificationRouter';
 import { ErrorBoundary } from './src/components/ErrorBoundary';
 import { closeAllTranslationDbs } from './src/db/translationManager';
 import { ContentUpdateProvider } from './src/providers/ContentUpdateProvider';
+import { AmicusConsentProvider } from './src/services/amicus/consent';
 import { DbDownloadScreen } from './src/screens/DbDownloadScreen';
 import { Sentry, DSN } from './src/lib/sentry';
 
@@ -221,7 +222,9 @@ function App() {
       <SafeAreaProvider>
         <ThemeProvider>
           <ContentUpdateProvider>
-            <AppShell />
+            <AmicusConsentProvider>
+              <AppShell />
+            </AmicusConsentProvider>
           </ContentUpdateProvider>
         </ThemeProvider>
       </SafeAreaProvider>
