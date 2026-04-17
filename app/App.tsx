@@ -58,6 +58,7 @@ SplashScreen.preventAutoHideAsync();
  *   scripture://people/abraham           → GenealogyTree (person)
  *   scripture://map                      → Map
  *   scripture://timeline                 → Timeline
+ *   scripture://amicus/new?q=…&ch=book/n → Amicus NewThread (seeded) — #1467
  */
 const linking: any = {
   prefixes: ['scripture://'],
@@ -94,6 +95,17 @@ const linking: any = {
           GenealogyTree: 'people/:personId',
           Map: 'map',
           Timeline: 'timeline',
+        },
+      },
+      AmicusTab: {
+        screens: {
+          NewThread: {
+            path: 'amicus/new',
+            parse: {
+              seedQuery: (v: string) => v,
+              seedChapterRef: (v: string) => v,
+            },
+          },
         },
       },
     },

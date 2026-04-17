@@ -2,9 +2,11 @@
  * services/purchases.ts — RevenueCat SDK wrapper for Companion+ subscriptions.
  *
  * Products:
- *   companion_plus_monthly  — $4.99/mo auto-renewing
- *   companion_plus_annual   — $39.99/yr auto-renewing
- *   companion_plus_lifetime — $149.99 one-time
+ *   companion_plus_monthly       — $4.99/mo auto-renewing
+ *   companion_plus_annual        — $39.99/yr auto-renewing
+ *   companion_plus_lifetime      — $149.99 one-time
+ *   companion_partner_plus_monthly — $9.99/mo auto-renewing (Partner+ #1472)
+ *   companion_partner_plus_annual  — $99.99/yr auto-renewing (Partner+ #1472)
  *
  * RevenueCat handles receipt validation, cross-platform status, and analytics.
  * Free until $2.5K MRR, then 1%.
@@ -23,6 +25,8 @@ export const PRODUCT_IDS = {
   monthly: 'companion_plus_monthly',
   annual: 'companion_plus_annual',
   lifetime: 'companion_plus_lifetime',
+  partner_plus_monthly: 'companion_partner_plus_monthly',
+  partner_plus_annual: 'companion_partner_plus_annual',
 } as const;
 
 export interface PlanInfo {
@@ -37,6 +41,24 @@ export const PLANS: PlanInfo[] = [
   { id: 'monthly', productId: PRODUCT_IDS.monthly, label: 'Monthly', price: '$4.99', detail: '/month' },
   { id: 'annual', productId: PRODUCT_IDS.annual, label: 'Annual', price: '$39.99', detail: '/year · save 33%' },
   { id: 'lifetime', productId: PRODUCT_IDS.lifetime, label: 'Lifetime', price: '$149.99', detail: 'one-time' },
+];
+
+/** Partner+ plans (#1472) — power-user tier with 1,500 queries/mo + Sonnet. */
+export const PARTNER_PLUS_PLANS: PlanInfo[] = [
+  {
+    id: 'partner_plus_monthly',
+    productId: PRODUCT_IDS.partner_plus_monthly,
+    label: 'Monthly',
+    price: '$9.99',
+    detail: '/month',
+  },
+  {
+    id: 'partner_plus_annual',
+    productId: PRODUCT_IDS.partner_plus_annual,
+    label: 'Annual',
+    price: '$99.99',
+    detail: '/year · save 17%',
+  },
 ];
 
 // ── SDK availability check ──────────────────────────────────────────

@@ -45,7 +45,10 @@ export default function AmicusNewThreadScreen(): React.ReactElement {
           chapterRef: params?.seedChapterRef ?? null,
         });
         if (cancelled) return;
-        navigation.replace('Thread', { threadId });
+        navigation.replace('Thread', {
+          threadId,
+          initialQuery: params?.seedQuery,
+        });
       } catch (err) {
         logger.error('Amicus', 'create thread failed', err);
         if (!cancelled) navigation.goBack();
