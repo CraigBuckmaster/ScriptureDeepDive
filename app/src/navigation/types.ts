@@ -127,12 +127,20 @@ export type SearchStackParamList = {
   SearchMain: undefined;
 };
 
+export type AmicusStackParamList = {
+  ThreadList: undefined;
+  Thread: { threadId: string };
+  NewThread: { seedQuery?: string; seedChapterRef?: string } | undefined;
+  Paywall: undefined;
+};
+
 // ── Tab Param List ────────────────────────────────────────────────
 
 export type TabParamList = {
   HomeTab: NavigatorScreenParams<HomeStackParamList>;
   ReadTab: NavigatorScreenParams<ReadStackParamList>;
   ExploreTab: NavigatorScreenParams<ExploreStackParamList>;
+  AmicusTab: NavigatorScreenParams<AmicusStackParamList>;
   SearchTab: NavigatorScreenParams<SearchStackParamList>;
   MoreTab: NavigatorScreenParams<MoreStackParamList>;
 };
@@ -147,6 +155,7 @@ type StackMap = {
   Explore: ExploreStackParamList;
   More: MoreStackParamList;
   Search: SearchStackParamList;
+  Amicus: AmicusStackParamList;
 };
 
 export type ScreenNavProp<
