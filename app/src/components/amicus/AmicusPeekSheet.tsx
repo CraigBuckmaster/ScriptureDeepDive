@@ -1,9 +1,10 @@
 /**
  * components/amicus/AmicusPeekSheet.tsx — bottom sheet that expands on FAB tap.
  *
- * Renders chips + free-text input. Chip activation or send will wire into
- * the mini-conversation in #1463; for now the peek just surfaces chips and
- * a non-functional input (to keep #1462 focused on the shell).
+ * Layers:
+ *   1. Chips + free-text input (collapsed state).
+ *   2. Once a chip or send fires, a mini-conversation (#1463) takes over
+ *      the body of the peek. At turn 3, "Continue in Amicus tab →" shows.
  */
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
@@ -20,18 +21,27 @@ import BottomSheet, {
 } from '@gorhom/bottom-sheet';
 import { ArrowUp } from 'lucide-react-native';
 import { useNavigationState } from '@react-navigation/native';
-import { fontFamily, spacing, useTheme } from '../../theme';
 import { useAmicusChips, type ChipContext } from '../../hooks/useAmicusChips';
+import { usePeekConversation } from '../../hooks/usePeekConversation';
+import { fontFamily, spacing, useTheme } from '../../theme';
+import type { AmicusCitation } from '../../types';
+import PeekMiniConversation from './PeekMiniConversation';
 
 export interface AmicusPeekSheetProps {
   isOpen: boolean;
   onClose: () => void;
   /** Optional override for tests. */
   contextOverride?: ChipContext;
-  /** Fired when the user taps a chip. #1463 takes this from here. */
+  /** Fired when the user taps a chip before the conversation starts. */
   onChipTap?: (seedQuery: string) => void;
-  /** Fired when the user submits free-text. */
+  /** Fired when the user submits free-text before the conversation starts. */
   onSend?: (text: string) => void;
+  /** Navigate to the citation target and close the peek (wired by parent). */
+  onCitationPress?: (c: AmicusCitation) => void;
+  /** Promote the peek conversation to a persistent thread (#1464). */
+  onContinueInTab?: (snapshot: ReturnType<ReturnType<typeof usePeekConversation>['snapshotForPromotion']>) => void | Promise<void>;
+  /** Expose when handoff is in progress (disables the CTA). */
+  handoffInProgress?: boolean;
 }
 
 export default function AmicusPeekSheet(
@@ -44,11 +54,24 @@ export default function AmicusPeekSheet(
   const ctx = useNavigationContext(props.contextOverride);
   const { chips } = useAmicusChips(ctx);
   const [text, setText] = useState('');
+  const peek = usePeekConversation();
+  const hasConversation = peek.messages.length > 0;
 
-  // Open / close programmatically.
+  // Open / close programmatically. Expand to 85% once a conversation is
+  // underway so users see the bubbles without having to drag.
   useEffect(() => {
-    if (props.isOpen) sheetRef.current?.snapToIndex(0);
-    else sheetRef.current?.close();
+    if (!props.isOpen) {
+      sheetRef.current?.close();
+      return;
+    }
+    sheetRef.current?.snapToIndex(hasConversation ? 1 : 0);
+  }, [props.isOpen, hasConversation]);
+
+  // Reset the ephemeral conversation whenever the peek closes.
+  useEffect(() => {
+    if (!props.isOpen) peek.reset();
+    // `peek.reset` is stable via useCallback, but exhaustive-deps can't see it.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.isOpen]);
 
   // Android hardware-back closes the sheet (not the app).
@@ -61,11 +84,20 @@ export default function AmicusPeekSheet(
     return () => sub.remove();
   }, [props.isOpen, props]);
 
+  const chapterRef = useMemo(
+    () =>
+      ctx.kind === 'chapter'
+        ? { book_id: ctx.bookId, chapter_num: ctx.chapterNum }
+        : null,
+    [ctx],
+  );
+
   const handleChip = useCallback(
     (seedQuery: string) => {
       props.onChipTap?.(seedQuery);
+      void peek.send(seedQuery, chapterRef);
     },
-    [props],
+    [props, peek, chapterRef],
   );
 
   const handleSend = useCallback(() => {
@@ -73,7 +105,13 @@ export default function AmicusPeekSheet(
     if (!trimmed) return;
     setText('');
     props.onSend?.(trimmed);
-  }, [text, props]);
+    void peek.send(trimmed, chapterRef);
+  }, [text, props, peek, chapterRef]);
+
+  const handleContinueInTab = useCallback(() => {
+    if (!props.onContinueInTab) return;
+    void props.onContinueInTab(peek.snapshotForPromotion());
+  }, [props, peek]);
 
   if (!props.isOpen) return null;
 
@@ -112,35 +150,49 @@ export default function AmicusPeekSheet(
           )}
         </View>
 
-        <View style={styles.chipArea}>
-          {chips.length === 0 ? (
-            <Text style={[styles.emptyChips, { color: base.textMuted }]}>
-              Ask anything about your current reading.
-            </Text>
-          ) : (
-            chips.map((chip) => (
-              <Pressable
-                key={chip.label}
-                accessibilityLabel={`Ask: ${chip.label}`}
-                onPress={() => handleChip(chip.seed_query)}
-                style={({ pressed }) => [
-                  styles.chip,
-                  {
-                    borderColor: base.gold,
-                    backgroundColor: pressed ? `${base.gold}20` : 'transparent',
-                  },
-                ]}
-              >
-                <Text
-                  style={[styles.chipText, { color: base.gold, fontFamily: fontFamily.body }]}
-                  numberOfLines={2}
+        {hasConversation ? (
+          <PeekMiniConversation
+            messages={peek.messages}
+            isStreaming={peek.isStreaming}
+            turnCount={peek.turnCount}
+            error={peek.error}
+            onDismissError={peek.clearError}
+            onCitationPress={props.onCitationPress}
+            onFollowUp={(t) => void peek.send(t, chapterRef)}
+            onContinueInTab={handleContinueInTab}
+            handoffInProgress={props.handoffInProgress === true}
+          />
+        ) : (
+          <View style={styles.chipArea}>
+            {chips.length === 0 ? (
+              <Text style={[styles.emptyChips, { color: base.textMuted }]}>
+                Ask anything about your current reading.
+              </Text>
+            ) : (
+              chips.map((chip) => (
+                <Pressable
+                  key={chip.label}
+                  accessibilityLabel={`Ask: ${chip.label}`}
+                  onPress={() => handleChip(chip.seed_query)}
+                  style={({ pressed }) => [
+                    styles.chip,
+                    {
+                      borderColor: base.gold,
+                      backgroundColor: pressed ? `${base.gold}20` : 'transparent',
+                    },
+                  ]}
                 >
-                  {chip.label}
-                </Text>
-              </Pressable>
-            ))
-          )}
-        </View>
+                  <Text
+                    style={[styles.chipText, { color: base.gold, fontFamily: fontFamily.body }]}
+                    numberOfLines={2}
+                  >
+                    {chip.label}
+                  </Text>
+                </Pressable>
+              ))
+            )}
+          </View>
+        )}
 
         <View style={[styles.inputBar, { borderTopColor: base.border }]}>
           <TextInput
