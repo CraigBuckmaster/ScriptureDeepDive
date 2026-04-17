@@ -35,8 +35,6 @@ export interface PeekMiniConversationProps {
   onContinueInTab: () => void;
   /** Shown when handoff is in progress. */
   handoffInProgress?: boolean;
-  /** Custom string error specific to the handoff flow (#1464). */
-  handoffError?: string | null;
 }
 
 export default function PeekMiniConversation(
@@ -99,11 +97,9 @@ export default function PeekMiniConversation(
         )}
       </ScrollView>
 
-      {(props.handoffError || props.error) && (
+      {props.error && (
         <Pressable
-          accessibilityLabel={`${
-            props.handoffError ?? errorCopy(props.error!)
-          }. Tap to dismiss.`}
+          accessibilityLabel={`${errorCopy(props.error)}. Tap to dismiss.`}
           onPress={props.onDismissError}
           style={[
             styles.errorBanner,
@@ -113,7 +109,7 @@ export default function PeekMiniConversation(
           <Text
             style={[styles.errorText, { color: base.text, fontFamily: fontFamily.body }]}
           >
-            {props.handoffError ?? errorCopy(props.error!)}
+            {errorCopy(props.error)}
           </Text>
         </Pressable>
       )}
