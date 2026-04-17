@@ -1924,3 +1924,41 @@ def populate_embeddings(conn):
 
     conn.commit()
     return inserted
+# Amicus — Pre-cached FAB chip pool loader (Card #1461)
+# ---------------------------------------------------------------------------
+
+def populate_precached_prompts(conn):
+    """Merge prompts.db (from build_prompts.py) into scripture.db.
+
+    No-op with warning when prompts.db is absent (local dev / CI without
+    the Anthropic key set). Leaves the empty precached_prompts table in
+    place so app code can query safely.
+
+    Returns the number of rows populated (0 on skip).
+    """
+    import sqlite3
+    prompts_db = ROOT / 'prompts.db'
+    if not prompts_db.exists():
+        print('  [WARN] prompts.db not found — skipping precached prompts')
+        print('         Run: python _tools/build_prompts.py')
+        return 0
+
+    src = sqlite3.connect(f'file:{prompts_db}?mode=ro', uri=True)
+    try:
+        rows = src.execute(
+            'SELECT entity_type, entity_id, profile_variant, chips_json, generated_at '
+            'FROM precached_prompts ORDER BY entity_type, entity_id, profile_variant'
+        ).fetchall()
+    finally:
+        src.close()
+
+    cur = conn.cursor()
+    for entity_type, entity_id, variant, chips_json, generated_at in rows:
+        cur.execute(
+            'INSERT INTO precached_prompts'
+            '(entity_type, entity_id, profile_variant, chips_json, generated_at) '
+            'VALUES (?, ?, ?, ?, ?)',
+            (entity_type, entity_id, variant, chips_json, generated_at),
+        )
+    conn.commit()
+    return len(rows)

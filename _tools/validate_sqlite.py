@@ -106,6 +106,45 @@ def _has_table(cur, name):
         (name,)))
 
 
+def _validate_precached_prompts(cur):
+    """Section 7 PRECACHED PROMPTS — warn (don't fail) when the table
+    is absent or empty so builds without prompts.db keep passing."""
+    if not _has_table(cur, 'precached_prompts'):
+        warn("precached_prompts table absent — build_prompts.py not run "
+             "or scripture.db pre-dates the schema (non-fatal)")
+        return
+    total = q1(cur, "SELECT COUNT(*) FROM precached_prompts") or 0
+    if total == 0:
+        warn("precached_prompts empty — build_prompts.py not run")
+        return
+    chapter_rows = q1(
+        cur,
+        "SELECT COUNT(*) FROM precached_prompts WHERE entity_type='chapter'",
+    ) or 0
+    entity_rows = total - chapter_rows
+    check(f"precached_prompts populated ({total} rows)", total > 0)
+    if chapter_rows == 0:
+        warn("no chapter chip rows — build_prompts.py was run without an "
+             "ANTHROPIC_API_KEY (or --entity-only). Chapter chips not yet built.")
+    else:
+        check(
+            "precached_prompts chapter rows present",
+            chapter_rows > 0,
+            f"{chapter_rows} chapter rows",
+        )
+    check(
+        "precached_prompts entity rows present",
+        entity_rows > 0,
+        f"{entity_rows} entity rows",
+    )
+    # Spot check: every row has non-empty chips_json array.
+    empty_rows = q1(
+        cur,
+        "SELECT COUNT(*) FROM precached_prompts WHERE chips_json IS NULL OR chips_json = ''",
+    ) or 0
+    check("no empty chips_json rows", empty_rows == 0, f"{empty_rows} empty")
+
+
 def _validate_embeddings(cur):
     """Section 6 EMBEDDINGS — warn (don't fail) when the optional Amicus
     tables are absent so the pre-AI pipeline keeps passing."""
@@ -805,6 +844,12 @@ def main():
     # =========================================================
     print("\n--- 6. EMBEDDINGS ---")
     _validate_embeddings(cur)
+
+    # =========================================================
+    # 7. PRECACHED PROMPTS (Amicus — Card #1461)
+    # =========================================================
+    print("\n--- 7. PRECACHED PROMPTS ---")
+    _validate_precached_prompts(cur)
 
     # DB size cap (raised from the 150MB spec value to accommodate the
     # pre-embedding baseline when embeddings.db hasn't been merged yet).

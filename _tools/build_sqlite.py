@@ -35,7 +35,7 @@ from build_sqlite_loaders import (
     populate_content_library, populate_life_topics, populate_hermeneutic_lenses,
     populate_archaeology, populate_historical_interpretations,
     populate_grammar_articles, populate_content_images,
-    populate_journeys, populate_embeddings,
+    populate_journeys, populate_embeddings, populate_precached_prompts,
     build_fts, compute_difficulty, build_supplemental_translations,
     AVAILABLE_TRANSLATIONS, BUNDLED_TRANSLATIONS,
 )
@@ -159,6 +159,11 @@ def main():
     emb_count = populate_embeddings(conn)
     if emb_count:
         print(f"  [OK] embeddings: {emb_count} chunks populated")
+
+    # Amicus chip pool (Card #1461). Safe no-op when prompts.db is absent.
+    chip_count = populate_precached_prompts(conn)
+    if chip_count:
+        print(f"  [OK] precached_prompts: {chip_count} rows populated")
 
     # Performance indexes for hot-path queries (Card #1175)
     cur.executescript("""

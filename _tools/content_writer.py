@@ -298,6 +298,7 @@ def save_chapter(book_dir, ch, data):
         json.dump(chapter, f, ensure_ascii=False, indent=2)
 
     _mark_chapter_dirty(book_dir, ch)
+    _mark_chapter_dirty_prompts(book_dir, ch)
 
     sec_panel_count = sum(len(s['panels']) for s in chapter['sections'])
     ch_panel_count = len(chapter['chapter_panels'])
@@ -315,6 +316,30 @@ def _mark_chapter_dirty(book_dir: str, ch: int) -> None:
     chapter_id = f'{book_dir}-{ch}'
     manifest_path = os.path.join(ROOT, '_tools', 'embedding_manifest.json')
     manifest = {'chunks': {}, 'dirty_chapters': []}
+    if os.path.exists(manifest_path):
+        try:
+            with open(manifest_path, 'r', encoding='utf-8') as f:
+                manifest = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            pass
+    manifest.setdefault('dirty_chapters', [])
+    if chapter_id not in manifest['dirty_chapters']:
+        manifest['dirty_chapters'].append(chapter_id)
+    try:
+        with open(manifest_path, 'w', encoding='utf-8') as f:
+            json.dump(manifest, f, indent=2, sort_keys=True)
+    except OSError:
+        pass
+
+
+def _mark_chapter_dirty_prompts(book_dir: str, ch: int) -> None:
+    """Flag this chapter in _tools/prompts_manifest.json so
+    `build_prompts.py --incremental` knows to re-generate its chip pool
+    on the next run (Card #1461).
+    """
+    chapter_id = f'{book_dir}-{ch}'
+    manifest_path = os.path.join(ROOT, '_tools', 'prompts_manifest.json')
+    manifest = {'dirty_chapters': [], 'chapter_hashes': {}}
     if os.path.exists(manifest_path):
         try:
             with open(manifest_path, 'r', encoding='utf-8') as f:
