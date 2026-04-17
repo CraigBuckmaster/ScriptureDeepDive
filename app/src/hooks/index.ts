@@ -58,5 +58,4 @@ export { useSubmissionFeed } from './useSubmissionFeed';
 export { useMySubmissions } from './useMySubmissions';
 export { useEras } from './useEras';
 export { useRedemptiveArc, useRedemptiveActDetail } from './useRedemptiveArc';
-export { usePersonJourney } from './usePersonJourney';
 export { useJourneyBrowse } from './useJourneyBrowse';
