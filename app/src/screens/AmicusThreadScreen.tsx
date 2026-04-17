@@ -22,6 +22,8 @@ import MessageList from '../components/amicus/MessageList';
 import InputBar from '../components/amicus/InputBar';
 import MetaFaqModal from '../components/amicus/MetaFaqModal';
 import { useAmicusThread } from '../hooks/useAmicusThread';
+import { useAmicusAccess } from '../hooks/useAmicusAccess';
+import CapExceededBanner from '../components/amicus/CapExceededBanner';
 import {
   navigateToCitation,
   type MetaFaqArticle,
@@ -40,6 +42,7 @@ export default function AmicusThreadScreen(): React.ReactElement {
   const [thread, setThread] = useState<AmicusThread | null>(null);
   const [faqArticle, setFaqArticle] = useState<MetaFaqArticle | null>(null);
   const { requestAmicusConsent } = useAmicusConsent();
+  const access = useAmicusAccess();
   const { messages, isStreaming, error, sendMessage, abortStream, clearError } =
     useAmicusThread(threadId);
 
@@ -60,7 +63,16 @@ export default function AmicusThreadScreen(): React.ReactElement {
 
   const handleSend = useCallback(
     async (text: string) => {
-      // TODO(#1460): source authToken from RevenueCat entitlement store.
+      // Pre-flight access check (#1460).
+      if (access.reason === 'not_premium') {
+        navigation.navigate('Paywall');
+        return;
+      }
+      if (access.reason === 'monthly_cap_reached' || access.reason === 'offline') {
+        logger.info('Amicus', `send blocked: ${access.reason}`);
+        return;
+      }
+
       const authToken = process.env.EXPO_PUBLIC_AMICUS_DEV_TOKEN ?? '';
       if (!authToken) {
         logger.warn('Amicus', 'no auth token — aborting send');
@@ -74,7 +86,7 @@ export default function AmicusThreadScreen(): React.ReactElement {
       }
       await sendMessage(text, authToken);
     },
-    [sendMessage, requestAmicusConsent],
+    [sendMessage, requestAmicusConsent, access.reason, navigation],
   );
 
   const handleCitation = useCallback(
@@ -136,8 +148,20 @@ export default function AmicusThreadScreen(): React.ReactElement {
 
         {error && <ErrorBanner error={error} onDismiss={clearError} />}
 
+        {access.reason === 'monthly_cap_reached' && (
+          <CapExceededBanner
+            entitlement={access.entitlement}
+            onUpgrade={() =>
+              navigation.getParent()?.navigate('MoreTab', {
+                screen: 'Subscription',
+              })
+            }
+          />
+        )}
+
         <InputBar
           isStreaming={isStreaming}
+          disabled={access.reason !== 'ok'}
           onSend={(t) => void handleSend(t)}
           onAbort={abortStream}
         />
