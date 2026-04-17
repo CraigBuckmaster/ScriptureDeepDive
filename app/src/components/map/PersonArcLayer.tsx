@@ -11,7 +11,7 @@
  */
 
 import React, { memo, useMemo } from 'react';
-import { ShapeSource, LineLayer, SymbolLayer, CircleLayer } from '@maplibre/maplibre-react-native';
+import { GeoJSONSource, Layer } from '@maplibre/maplibre-react-native';
 import type { PersonArcStop } from '../../hooks/usePersonArc';
 
 interface Props {
@@ -71,9 +71,10 @@ export const PersonArcLayer = memo(function PersonArcLayer({
   return (
     <>
       {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-      <ShapeSource id="person-arc-line" shape={lineFC as any}>
-        <LineLayer
+      <GeoJSONSource id="person-arc-line" shape={lineFC as any}>
+        <Layer
           id="person-arc-line-layer"
+          type="line"
           style={{
             lineColor: color,
             lineWidth: 2.5,
@@ -83,12 +84,13 @@ export const PersonArcLayer = memo(function PersonArcLayer({
             lineOpacity: 0.85,
           }}
         />
-      </ShapeSource>
+      </GeoJSONSource>
 
       {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-      <ShapeSource id="person-arc-stops" shape={stopsFC as any}>
-        <CircleLayer
+      <GeoJSONSource id="person-arc-stops" shape={stopsFC as any}>
+        <Layer
           id="person-arc-stops-circle"
+          type="circle"
           style={{
             circleRadius: 10,
             circleColor: color,
@@ -96,8 +98,9 @@ export const PersonArcLayer = memo(function PersonArcLayer({
             circleStrokeWidth: 1.5,
           }}
         />
-        <SymbolLayer
+        <Layer
           id="person-arc-stops-number"
+          type="symbol"
           style={{
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             textField: ['get', 'label'] as any,
@@ -108,9 +111,10 @@ export const PersonArcLayer = memo(function PersonArcLayer({
           }}
         />
         {/* Event label — visible only at closer zooms to avoid clutter */}
-        <SymbolLayer
+        <Layer
           id="person-arc-stops-event"
-          minZoomLevel={8}
+          type="symbol"
+          minzoom={8}
           style={{
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             textField: ['get', 'event'] as any,
@@ -125,7 +129,7 @@ export const PersonArcLayer = memo(function PersonArcLayer({
             textMaxWidth: 10,
           }}
         />
-      </ShapeSource>
+      </GeoJSONSource>
     </>
   );
 });

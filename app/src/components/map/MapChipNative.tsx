@@ -20,7 +20,7 @@ import {
   StyleSheet,
   Pressable,
 } from 'react-native';
-import { MapView, Camera } from '@maplibre/maplibre-react-native';
+import { Map, Camera } from '@maplibre/maplibre-react-native';
 import { ArrowUpRight } from 'lucide-react-native';
 import { STYLE_ANCIENT } from '../../constants/mapStyles';
 import { useTheme, spacing, radii, fontFamily } from '../../theme';
@@ -34,22 +34,16 @@ import { StoryOverlays } from './StoryOverlays';
 ensureMapLibreInit();
 
 /**
- * Subset of MapLibre's `CameraStop` shape that we actually use. The real
- * type is internal to `@maplibre/maplibre-react-native` (not re-exported
- * from the package root), so we declare our own structural alias and
- * lean on Camera's prop type acceptance at the usage site.
+ * Subset of the v11 Camera `initialViewState` shape that we actually use.
+ * MapLibre RN v11 consolidated the defaultSettings / fitBoundsOptions
+ * surface into a single `initialViewState` prop taking either a center
+ * or bounds. We expose just the fields the chip needs.
  */
-type ChipCameraSettings = {
-  centerCoordinate?: [number, number];
-  zoomLevel?: number;
-  bounds?: {
-    ne: [number, number];
-    sw: [number, number];
-    paddingLeft?: number;
-    paddingRight?: number;
-    paddingTop?: number;
-    paddingBottom?: number;
-  };
+type ChipInitialViewState = {
+  center?: [number, number];
+  zoom?: number;
+  bounds?: [number, number, number, number]; // [west, south, east, north]
+  padding?: { top?: number; right?: number; bottom?: number; left?: number };
 };
 
 interface Props {
@@ -62,13 +56,16 @@ interface Props {
 const CHIP_HEIGHT = 88;
 
 /**
- * Compute a Camera default settings block that frames all of the story's
+ * Compute an `initialViewState` block that frames all of the story's
  * places inside the 88px chip with a little breathing room.
+ *
+ * v11 accepts bounds as `[west, south, east, north]` (LngLatBounds) and
+ * padding as `{top, right, bottom, left}`.
  */
 function defaultCameraForStory(
   story: MapStory,
   places: Place[],
-): ChipCameraSettings {
+): ChipInitialViewState {
   const placeIds = safeParse<string[]>(story.places_json, []);
   const storyPlaces = placeIds
     .map((id) => places.find((p) => p.id === id))
@@ -76,12 +73,12 @@ function defaultCameraForStory(
 
   if (storyPlaces.length === 0) {
     // Fall back to a wide biblical-region view.
-    return { centerCoordinate: [38, 30], zoomLevel: 3 };
+    return { center: [38, 30], zoom: 3 };
   }
 
   if (storyPlaces.length === 1) {
     const p = storyPlaces[0];
-    return { centerCoordinate: [p.longitude, p.latitude], zoomLevel: 6 };
+    return { center: [p.longitude, p.latitude], zoom: 6 };
   }
 
   let minLon = Infinity, maxLon = -Infinity, minLat = Infinity, maxLat = -Infinity;
@@ -92,14 +89,8 @@ function defaultCameraForStory(
     if (p.latitude > maxLat) maxLat = p.latitude;
   }
   return {
-    bounds: {
-      ne: [maxLon, maxLat],
-      sw: [minLon, minLat],
-      paddingLeft: 18,
-      paddingRight: 18,
-      paddingTop: 14,
-      paddingBottom: 14,
-    },
+    bounds: [minLon, minLat, maxLon, maxLat],
+    padding: { top: 14, right: 18, bottom: 14, left: 18 },
   };
 }
 
@@ -145,20 +136,22 @@ function MapChipNative({ story, places, onExpand }: Props) {
 
       {/* Map */}
       <View style={styles.mapFrame} pointerEvents="none">
-        <MapView
+        <Map
           testID="map-chip-view"
           style={StyleSheet.absoluteFill}
           mapStyle={STYLE_ANCIENT}
-          scrollEnabled={false}
-          zoomEnabled={false}
-          pitchEnabled={false}
-          rotateEnabled={false}
-          attributionEnabled={false}
-          logoEnabled={false}
+          dragPan={false}
+          touchZoom={false}
+          doubleTapZoom={false}
+          doubleTapHoldZoom={false}
+          touchRotate={false}
+          touchPitch={false}
+          attribution={false}
+          logo={false}
         >
-          <Camera defaultSettings={cameraSettings} />
+          <Camera initialViewState={cameraSettings} />
           <StoryOverlays story={story} />
-        </MapView>
+        </Map>
       </View>
     </Pressable>
   );

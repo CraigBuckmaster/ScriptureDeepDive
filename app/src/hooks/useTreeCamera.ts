@@ -22,6 +22,7 @@
 import { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import { useWindowDimensions } from 'react-native';
 import { Gesture } from 'react-native-gesture-handler';
+import { runOnJS } from 'react-native-reanimated';
 import { BREAKPOINTS } from '../theme/breakpoints';
 import { TREE_CONSTANTS } from '../utils/treeBuilder';
 
@@ -196,27 +197,25 @@ export function useTreeCamera(): TreeCameraResult {
     () => Gesture.Pan()
       .minDistance(5)
       .onBegin(() => {
-        onPanBegin();
+        runOnJS(onPanBegin)();
       })
       .onUpdate((e) => {
-        onPanUpdate(e.translationX, e.translationY);
+        runOnJS(onPanUpdate)(e.translationX, e.translationY);
       })
       .onEnd((e) => {
-        onPanEnd(e.velocityX, e.velocityY);
-      })
-      .runOnJS(true),
+        runOnJS(onPanEnd)(e.velocityX, e.velocityY);
+      }),
     [onPanBegin, onPanUpdate, onPanEnd],
   );
 
   const pinchGesture = useMemo(
     () => Gesture.Pinch()
       .onBegin((e) => {
-        onPinchBegin(e.focalX, e.focalY);
+        runOnJS(onPinchBegin)(e.focalX, e.focalY);
       })
       .onUpdate((e) => {
-        onPinchUpdate(e.scale, e.focalX, e.focalY);
-      })
-      .runOnJS(true),
+        runOnJS(onPinchUpdate)(e.scale, e.focalX, e.focalY);
+      }),
     [onPinchBegin, onPinchUpdate],
   );
 

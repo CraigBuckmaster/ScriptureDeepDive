@@ -170,6 +170,16 @@ jest.mock('react-native-svg', () => {
   };
 });
 
+jest.mock('react-native-reanimated', () => {
+  const React = require('react');
+  const { View } = require('react-native');
+  return {
+    __esModule: true,
+    default: { View: (props: any) => React.createElement(View, props) },
+    runOnJS: (fn: any) => fn,
+  };
+});
+
 jest.mock('react-native-gesture-handler', () => ({
   GestureDetector: (props: any) => props.children,
 }));

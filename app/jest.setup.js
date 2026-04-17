@@ -158,8 +158,16 @@ jest.mock('expo-web-browser', () => ({
 
 // ── React Native library mocks ────────────────────────────────────
 
-// react-native-reanimated was removed in favor of RN's built-in Animated API.
-// No mock needed — Animated is part of react-native core.
+// Mock react-native-reanimated — uses the library's own jest mock, which
+// provides shared-value stubs and a no-op worklet runtime. Reanimated 4
+// requires react-native-worklets; the worklets init path throws in jest
+// without this mock, so every component that imports reanimated needs it.
+jest.mock('react-native-reanimated', () => {
+  const Reanimated = require('react-native-reanimated/mock');
+  // Silence call() warnings from the mock.
+  Reanimated.default.call = () => {};
+  return Reanimated;
+});
 
 // Mock react-native-gesture-handler
 jest.mock('react-native-gesture-handler', () => {
@@ -182,6 +190,10 @@ jest.mock('react-native-gesture-handler', () => {
 // Mock @maplibre/maplibre-react-native — renders children inline as Views
 // and exposes stub CameraRef methods so components under test can call
 // fitBounds / flyTo without crashing.
+//
+// Matches the v11 API surface: `Map` (not MapView), `GeoJSONSource`
+// (not ShapeSource), a single `Layer` component with a `type` prop
+// instead of `CircleLayer`/`FillLayer`/etc, and the default export removed.
 jest.mock('@maplibre/maplibre-react-native', () => {
   const React = require('react');
   const { View } = require('react-native');
@@ -191,25 +203,26 @@ jest.mock('@maplibre/maplibre-react-native', () => {
       React.createElement(View, { ...props, ref, testID: props.testID ?? name }, props.children),
     );
 
-  const MapView = React.forwardRef((props, ref) =>
+  const Map = React.forwardRef((props, ref) =>
     React.createElement(View, { ...props, ref }, props.children),
   );
 
   const Camera = React.forwardRef((props, ref) => {
     React.useImperativeHandle(ref, () => ({
-      fitBounds: jest.fn(),
+      jumpTo: jest.fn(),
+      easeTo: jest.fn(),
       flyTo: jest.fn(),
-      setCamera: jest.fn(),
-      moveTo: jest.fn(),
+      fitBounds: jest.fn(),
       zoomTo: jest.fn(),
+      setStop: jest.fn().mockResolvedValue(undefined),
     }));
     return React.createElement(View, { testID: 'camera' });
   });
 
-  const ShapeSource = ({ children, onPress }) =>
-    React.createElement(View, { testID: 'shape-source', onPress }, children);
+  const GeoJSONSource = ({ children, onPress }) =>
+    React.createElement(View, { testID: 'geojson-source', onPress }, children);
 
-  const offlineManager = {
+  const OfflineManager = {
     createPack: jest.fn().mockResolvedValue(undefined),
     getPack: jest.fn().mockResolvedValue(null),
     getPacks: jest.fn().mockResolvedValue([]),
@@ -218,28 +231,30 @@ jest.mock('@maplibre/maplibre-react-native', () => {
     clearAmbientCache: jest.fn().mockResolvedValue(undefined),
   };
 
-  const api = {
+  return {
     __esModule: true,
-    MapView,
+    Map,
     Camera,
-    ShapeSource,
-    CircleLayer: pass('CircleLayer'),
-    SymbolLayer: pass('SymbolLayer'),
-    FillLayer: pass('FillLayer'),
-    LineLayer: pass('LineLayer'),
+    GeoJSONSource,
+    Layer: pass('Layer'),
+    LayerAnnotation: pass('LayerAnnotation'),
     Images: pass('Images'),
     RasterSource: pass('RasterSource'),
-    RasterLayer: pass('RasterLayer'),
+    VectorSource: pass('VectorSource'),
+    ImageSource: pass('ImageSource'),
     UserLocation: pass('UserLocation'),
-    Logger: { setLogLevel: jest.fn() },
-    // MapLibre RN exposes both the preferred `OfflineManager` and the
-    // deprecated `offlineManager` alias. Export both so tests can import
-    // either shape.
-    OfflineManager: offlineManager,
-    offlineManager,
+    NativeUserLocation: pass('NativeUserLocation'),
+    Marker: pass('Marker'),
+    ViewAnnotation: pass('ViewAnnotation'),
+    Callout: pass('Callout'),
+    Animated: {},
+    LogManager: { setLogLevel: jest.fn() },
+    NetworkManager: { setConnected: jest.fn() },
+    LocationManager: {},
+    OfflineManager,
+    StaticMapImageManager: {},
+    TransformRequestManager: {},
   };
-
-  return { ...api, default: api };
 });
 
 // `isMapNativeAvailable()` reads NativeModules.MLRNModule to decide

@@ -19,7 +19,6 @@ import React, { useState, useCallback, useRef } from 'react';
 import {
   View,
   Text,
-  Animated,
   ScrollView,
   Modal,
   TouchableOpacity,
@@ -31,6 +30,11 @@ import {
   type NativeScrollEvent,
 } from 'react-native';
 import { Image } from 'expo-image';
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+} from 'react-native-reanimated';
 import {
   GestureDetector,
   Gesture,
@@ -132,110 +136,80 @@ interface ZoomViewerProps {
 }
 
 function ZoomViewer({ image, visible, onClose }: ZoomViewerProps) {
-  // Animated values drive the transform. Paired refs mirror current values so
-  // gesture callbacks (which run on the JS thread via .runOnJS(true)) can
-  // read them synchronously — Animated.Value has no sync getter.
-  const scale = useRef(new Animated.Value(1)).current;
-  const translateX = useRef(new Animated.Value(0)).current;
-  const translateY = useRef(new Animated.Value(0)).current;
-
-  const scaleRef = useRef(1);
-  const savedScaleRef = useRef(1);
-  const translateXRef = useRef(0);
-  const savedTranslateXRef = useRef(0);
-  const translateYRef = useRef(0);
-  const savedTranslateYRef = useRef(0);
-
-  // Helper: set both the Animated.Value and the shadow ref.
-  const setScale = useCallback((v: number) => {
-    scaleRef.current = v;
-    scale.setValue(v);
-  }, [scale]);
-  const setTx = useCallback((v: number) => {
-    translateXRef.current = v;
-    translateX.setValue(v);
-  }, [translateX]);
-  const setTy = useCallback((v: number) => {
-    translateYRef.current = v;
-    translateY.setValue(v);
-  }, [translateY]);
-
-  // Animate helper: runs Animated.timing and keeps the ref in sync.
-  const animateTo = useCallback((value: Animated.Value, ref: React.MutableRefObject<number>, to: number, duration: number) => {
-    ref.current = to;
-    Animated.timing(value, { toValue: to, duration, useNativeDriver: true }).start();
-  }, []);
+  const scale = useSharedValue(1);
+  const savedScale = useSharedValue(1);
+  const translateX = useSharedValue(0);
+  const translateY = useSharedValue(0);
+  const savedTranslateX = useSharedValue(0);
+  const savedTranslateY = useSharedValue(0);
 
   const resetTransform = useCallback(() => {
-    animateTo(scale, scaleRef, 1, 200);
-    animateTo(translateX, translateXRef, 0, 200);
-    animateTo(translateY, translateYRef, 0, 200);
-    savedScaleRef.current = 1;
-    savedTranslateXRef.current = 0;
-    savedTranslateYRef.current = 0;
-  }, [animateTo, scale, translateX, translateY]);
+    scale.value = withTiming(1, { duration: 200 });
+    translateX.value = withTiming(0, { duration: 200 });
+    translateY.value = withTiming(0, { duration: 200 });
+    savedScale.value = 1;
+    savedTranslateX.value = 0;
+    savedTranslateY.value = 0;
+  }, [scale, translateX, translateY, savedScale, savedTranslateX, savedTranslateY]);
 
   const pinchGesture = Gesture.Pinch()
     .onUpdate((e) => {
-      setScale(Math.max(1, Math.min(savedScaleRef.current * e.scale, 5)));
+      scale.value = Math.max(1, Math.min(savedScale.value * e.scale, 5));
     })
     .onEnd(() => {
-      if (scaleRef.current < 1.1) {
-        animateTo(scale, scaleRef, 1, 200);
-        animateTo(translateX, translateXRef, 0, 200);
-        animateTo(translateY, translateYRef, 0, 200);
-        savedScaleRef.current = 1;
-        savedTranslateXRef.current = 0;
-        savedTranslateYRef.current = 0;
+      if (scale.value < 1.1) {
+        scale.value = withTiming(1, { duration: 200 });
+        translateX.value = withTiming(0, { duration: 200 });
+        translateY.value = withTiming(0, { duration: 200 });
+        savedScale.value = 1;
+        savedTranslateX.value = 0;
+        savedTranslateY.value = 0;
       } else {
-        savedScaleRef.current = scaleRef.current;
+        savedScale.value = scale.value;
       }
-    })
-    .runOnJS(true);
+    });
 
   const panGesture = Gesture.Pan()
     .minPointers(1)
     .onUpdate((e) => {
-      if (savedScaleRef.current > 1) {
-        setTx(savedTranslateXRef.current + e.translationX);
-        setTy(savedTranslateYRef.current + e.translationY);
+      if (savedScale.value > 1) {
+        translateX.value = savedTranslateX.value + e.translationX;
+        translateY.value = savedTranslateY.value + e.translationY;
       }
     })
     .onEnd(() => {
-      savedTranslateXRef.current = translateXRef.current;
-      savedTranslateYRef.current = translateYRef.current;
-    })
-    .runOnJS(true);
+      savedTranslateX.value = translateX.value;
+      savedTranslateY.value = translateY.value;
+    });
 
   const doubleTapGesture = Gesture.Tap()
     .numberOfTaps(2)
     .onEnd(() => {
-      if (scaleRef.current > 1.1) {
-        animateTo(scale, scaleRef, 1, 250);
-        animateTo(translateX, translateXRef, 0, 250);
-        animateTo(translateY, translateYRef, 0, 250);
-        savedScaleRef.current = 1;
-        savedTranslateXRef.current = 0;
-        savedTranslateYRef.current = 0;
+      if (scale.value > 1.1) {
+        scale.value = withTiming(1, { duration: 250 });
+        translateX.value = withTiming(0, { duration: 250 });
+        translateY.value = withTiming(0, { duration: 250 });
+        savedScale.value = 1;
+        savedTranslateX.value = 0;
+        savedTranslateY.value = 0;
       } else {
-        animateTo(scale, scaleRef, 2.5, 250);
-        savedScaleRef.current = 2.5;
+        scale.value = withTiming(2.5, { duration: 250 });
+        savedScale.value = 2.5;
       }
-    })
-    .runOnJS(true);
+    });
 
   const composedGesture = Gesture.Simultaneous(
     pinchGesture,
     Gesture.Race(doubleTapGesture, panGesture),
   );
 
-  const animatedStyle = {
+  const animatedStyle = useAnimatedStyle(() => ({
     transform: [
-      { translateX },
-      { translateY },
-      { scale },
+      { translateX: translateX.value },
+      { translateY: translateY.value },
+      { scale: scale.value },
     ],
-  };
+  }));
 
   const handleClose = useCallback(() => {
     resetTransform();
