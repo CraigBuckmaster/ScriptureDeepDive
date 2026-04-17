@@ -158,12 +158,8 @@ jest.mock('expo-web-browser', () => ({
 
 // ── React Native library mocks ────────────────────────────────────
 
-// Mock react-native-reanimated
-jest.mock('react-native-reanimated', () => {
-  const Reanimated = require('react-native-reanimated/mock');
-  Reanimated.default.call = () => {};
-  return Reanimated;
-});
+// react-native-reanimated was removed in favor of RN's built-in Animated API.
+// No mock needed — Animated is part of react-native core.
 
 // Mock react-native-gesture-handler
 jest.mock('react-native-gesture-handler', () => {
