@@ -101,11 +101,52 @@ wrangler rollback <deployment-id> --env production
 If Cloudflare's dashboard access is faster, the "Deployments" tab on the
 Worker page offers a one-click rollback.
 
+## Corpus gap capture (#1471)
+
+Three inputs flag a gap, any of which triggers D1 persistence:
+
+1. Model self-report via the trailing `{"gap": true, ...}` JSON envelope.
+2. Retrieval max score below `GAP_SIMILARITY_FLOOR` (0.55).
+3. Explicit thumbs-down via `POST /ai/feedback`.
+
+On capture:
+
+- The question is SHA-PII-scrubbed (email, phone, URL, card) before storage.
+- A scrubbed summary is produced by Haiku (`anthropic-no-retention: true`)
+  for the GitHub issue body.
+- The question is embedded once and compared against recent open gaps
+  (cosine ≥ 0.9 → increment `occurrence_count` rather than insert).
+- `DELETE /ai/gaps/:id` wipes the row (admin-gated; current gate is
+  `partner_plus` entitlement + Cloudflare Access).
+
+**Endpoints added:**
+
+| Method | Path | Purpose |
+|--------|------|---------|
+| POST | `/ai/feedback` | Thumbs-down a response; body includes query + chunks + reason |
+| DELETE | `/ai/gaps/:id` | Hard-redact a gap row |
+
+**D1 schema:** `migrations/0001_corpus_gaps.sql`. Apply with:
+
+```bash
+wrangler d1 execute amicus-corpus-gaps-staging --file=migrations/0001_corpus_gaps.sql
+wrangler d1 execute amicus-corpus-gaps         --file=migrations/0001_corpus_gaps.sql
+```
+
+**Config flag:** the `amicus_config` table stores `gap_sync_mode` =
+`individual` | `digest`. Default `individual`; flip at ~20K users by
+updating the row, no backend change needed.
+
+**Sync to GitHub:** `_tools/corpus_gap_sync.py` (runs on a schedule) reads
+`status='new'` rows, creates issues with label `corpus-gap` (the Partner
+Gaps kanban swim lane), and marks rows `issue_opened`. In digest mode,
+singletons roll up into a daily digest issue; clusters (≥3 occurrences)
+still get dedicated issues.
+
 ## Relationship to other cards
 
 - `#1447` produces the embeddings this proxy never directly touches; the
   client uses `#1451` retrieval before calling `/ai/chat`.
-- `#1471` replaces the gap-signal stub writer with full D1 persistence +
-  GitHub issue sync in the Partner Gaps swim lane.
+- `#1471` (this card) — full corpus-gap capture pipeline.
 - `#1472` adds Partner+ upgrade flow, which leans on the `partner_plus`
   entitlement this proxy already recognizes.
