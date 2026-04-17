@@ -31,3 +31,8 @@ _data/openbible/*.jsonl
 # _tools/build_embeddings.py and merged into scripture.db by #1448.
 embeddings.db
 _tools/embedding_manifest.json
+
+# Amicus chip pool (Card #1461) — never tracked; rebuilt by
+# _tools/build_prompts.py and merged into scripture.db.
+prompts.db
+_tools/prompts_manifest.json

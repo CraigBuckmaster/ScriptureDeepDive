@@ -707,6 +707,22 @@ CREATE INDEX idx_chunk_metadata_chapter
   ON chunk_metadata(book_id, chapter_num);
 
 -- ══════════════════════════════════════════════════════════════
+-- AMICUS — Pre-cached FAB chip pool (Card #1461).
+-- ══════════════════════════════════════════════════════════════
+
+CREATE TABLE precached_prompts (
+  entity_type     TEXT NOT NULL,     -- 'chapter' | 'person' | 'place' | 'debate_topic'
+  entity_id       TEXT NOT NULL,
+  profile_variant TEXT NOT NULL,
+  chips_json      TEXT NOT NULL,
+  generated_at    TEXT NOT NULL,
+  PRIMARY KEY (entity_type, entity_id, profile_variant)
+);
+
+CREATE INDEX idx_precached_prompts_entity
+  ON precached_prompts(entity_type, entity_id);
+
+-- ══════════════════════════════════════════════════════════════
 -- NOTE: User tables (notes, bookmarks, preferences, highlights,
 -- reading progress, plans) live in a separate user.db managed by
 -- the app's userDatabase.ts migration system. They are NOT bundled
