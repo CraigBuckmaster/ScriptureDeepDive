@@ -367,3 +367,107 @@ export async function resetToNewUser(): Promise<void> {
   await db.runAsync('DELETE FROM plan_progress');
   await db.runAsync("UPDATE reading_plans SET started_at = NULL, completed_at = NULL, abandoned_at = NULL WHERE started_at IS NOT NULL");
 }
+
+// ── Amicus threads + messages + usage (#1457) ───────────────────────
+
+export interface CreateAmicusThreadArgs {
+  threadId: string;           // caller-generated UUID
+  title: string;
+  chapterRef?: string | null;
+}
+
+export async function createAmicusThread(args: CreateAmicusThreadArgs): Promise<void> {
+  await getUserDb().runAsync(
+    `INSERT INTO amicus_threads (thread_id, title, chapter_ref)
+     VALUES (?, ?, ?)`,
+    [args.threadId, args.title, args.chapterRef ?? null],
+  );
+  logger.info('Amicus', `created thread ${args.threadId}`);
+}
+
+export interface AppendAmicusMessageArgs {
+  messageId: string;
+  threadId: string;
+  role: 'user' | 'assistant';
+  content: string;
+  citations?: Array<{
+    chunk_id: string; source_type: string; display_label: string; scholar_id?: string;
+  }>;
+  followUps?: string[];
+}
+
+export async function appendAmicusMessage(args: AppendAmicusMessageArgs): Promise<void> {
+  const db = getUserDb();
+  await db.withTransactionAsync(async () => {
+    await db.runAsync(
+      `INSERT INTO amicus_messages
+         (message_id, thread_id, role, content, citations_json, follow_ups_json)
+       VALUES (?, ?, ?, ?, ?, ?)`,
+      [
+        args.messageId,
+        args.threadId,
+        args.role,
+        args.content,
+        args.citations ? JSON.stringify(args.citations) : null,
+        args.followUps ? JSON.stringify(args.followUps) : null,
+      ],
+    );
+    await db.runAsync(
+      `UPDATE amicus_threads
+          SET last_message_at = datetime('now')
+        WHERE thread_id = ?`,
+      [args.threadId],
+    );
+  });
+}
+
+export async function updateThreadTitle(
+  threadId: string, title: string,
+): Promise<void> {
+  await getUserDb().runAsync(
+    'UPDATE amicus_threads SET title = ? WHERE thread_id = ?',
+    [title, threadId],
+  );
+}
+
+export async function toggleThreadPin(threadId: string): Promise<boolean> {
+  const db = getUserDb();
+  const row = await db.getFirstAsync<{ pinned: number }>(
+    'SELECT pinned FROM amicus_threads WHERE thread_id = ?',
+    [threadId],
+  );
+  if (!row) return false;
+  const next = row.pinned === 1 ? 0 : 1;
+  await db.runAsync(
+    'UPDATE amicus_threads SET pinned = ? WHERE thread_id = ?',
+    [next, threadId],
+  );
+  return next === 1;
+}
+
+export async function deleteAmicusThread(threadId: string): Promise<void> {
+  // CASCADE handles amicus_messages.
+  await getUserDb().runAsync(
+    'DELETE FROM amicus_threads WHERE thread_id = ?',
+    [threadId],
+  );
+  logger.info('Amicus', `deleted thread ${threadId}`);
+}
+
+export async function clearAllAmicusData(): Promise<void> {
+  const db = getUserDb();
+  await db.withTransactionAsync(async () => {
+    await db.runAsync('DELETE FROM amicus_messages');
+    await db.runAsync('DELETE FROM amicus_threads');
+    await db.runAsync('DELETE FROM amicus_usage');
+  });
+  logger.info('Amicus', 'cleared all amicus data');
+}
+
+export async function incrementAmicusUsage(): Promise<void> {
+  await getUserDb().runAsync(
+    `INSERT INTO amicus_usage (day, query_count)
+     VALUES (strftime('%Y-%m-%d', 'now'), 1)
+     ON CONFLICT(day) DO UPDATE SET query_count = query_count + 1`,
+  );
+}

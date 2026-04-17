@@ -66,9 +66,9 @@ describe('userDatabase', () => {
   });
 
   it('skips already-applied migrations', async () => {
-    // Simulate all 15 migrations already applied
+    // Simulate all 16 migrations already applied
     mockGetAllAsync.mockResolvedValue(
-      Array.from({ length: 15 }, (_, i) => ({ version: i + 1 })),
+      Array.from({ length: 16 }, (_, i) => ({ version: i + 1 })),
     );
 
     const { initUserDatabase } = require('@/db/userDatabase');

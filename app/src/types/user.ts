@@ -62,6 +62,34 @@ export interface Bookmark {
   created_at: string;
 }
 
+// ── Amicus (#1457) ────────────────────────────────────────────
+
+export interface AmicusThread {
+  thread_id: string;
+  title: string;
+  chapter_ref: string | null;    // e.g. "romans:9"
+  pinned: boolean;
+  created_at: string;
+  last_message_at: string;
+}
+
+export interface AmicusCitation {
+  chunk_id: string;
+  source_type: string;
+  display_label: string;
+  scholar_id?: string;
+}
+
+export interface AmicusMessage {
+  message_id: string;
+  thread_id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  citations: AmicusCitation[];
+  follow_ups: string[];
+  created_at: string;
+}
+
 // ══════════════════════════════════════════════════════════════
 // COMPUTED / JOINED TYPES
 // ══════════════════════════════════════════════════════════════
