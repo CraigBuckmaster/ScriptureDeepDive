@@ -4,9 +4,14 @@
  * Checks a remote manifest for newer DB versions, then applies
  * either a delta SQL patch or a full DB replacement. Part of
  * epic #758 (CloudFlare R2 Delta DB Delivery).
+ *
+ * Uses the SDK 54 `expo-file-system` File/Directory/Paths API. The
+ * legacy (`expo-file-system/legacy`) shim is broken under the New
+ * Architecture and causes an Obj-C rethrow from RCTTurboModule on
+ * download completion — see the 1.0.5 TestFlight crash log.
  */
 
-import * as FileSystem from 'expo-file-system/legacy';
+import { File, Directory, Paths } from 'expo-file-system';
 import * as SQLite from 'expo-sqlite';
 import * as Crypto from 'expo-crypto';
 import { inflate } from 'pako';
@@ -18,9 +23,29 @@ const TAG = 'ContentUpdater';
 const MANIFEST_URL = 'https://contentcompanionstudy.com/db/manifest.json';
 const CHECK_INTERVAL_MS = 60 * 60 * 1000; // 1 hour
 
-const SQLITE_DIR = `${FileSystem.documentDirectory}SQLite/`;
-const DB_PATH = `${SQLITE_DIR}scripture.db`;
-const BACKUP_PATH = `${SQLITE_DIR}scripture_backup.db`;
+const SQLITE_SUBDIR = 'SQLite';
+const DB_NAME = 'scripture.db';
+const BACKUP_NAME = 'scripture_backup.db';
+const DELTA_TEMP_NAME = 'delta_temp.sql.gz';
+const DOWNLOAD_TEMP_NAME = 'scripture_download.db';
+
+function sqliteDir(): Directory {
+  return new Directory(Paths.document, SQLITE_SUBDIR);
+}
+
+function sqliteFile(name: string): File {
+  return new File(Paths.document, SQLITE_SUBDIR, name);
+}
+
+/** Silently delete a file that may or may not exist (idempotent). */
+function safeDelete(file: File): void {
+  if (!file.exists) return;
+  try {
+    file.delete();
+  } catch (err) {
+    logger.warn(TAG, `delete failed for ${file.uri}`, err);
+  }
+}
 
 // ── Types ────────────────────────────────────────────────────
 
@@ -158,21 +183,32 @@ class ContentUpdaterService {
    * inside a transaction, and validates DB integrity afterward.
    */
   async applyDelta(delta: ManifestDelta): Promise<UpdateResult> {
-    const tempPath = `${SQLITE_DIR}delta_temp.sql.gz`;
+    const tempFile = sqliteFile(DELTA_TEMP_NAME);
     try {
-      // Download gzipped delta
-      const download = await FileSystem.downloadAsync(delta.url, tempPath);
-      if (download.status !== 200) {
-        throw new Error(`Delta download failed: HTTP ${download.status}`);
+      this.ensureSqliteDir();
+
+      // Clear any stale temp file before downloading.
+      safeDelete(tempFile);
+
+      // Download gzipped delta. File.downloadFileAsync throws on non-2xx;
+      // the legacy API returned a { status } object, so we preserve the
+      // "HTTP N" error shape for parity with existing error surfaces.
+      try {
+        await File.downloadFileAsync(delta.url, tempFile);
+      } catch (err) {
+        const status = extractHttpStatus(err);
+        throw new Error(
+          status != null
+            ? `Delta download failed: HTTP ${status}`
+            : `Delta download failed: ${err instanceof Error ? err.message : String(err)}`,
+        );
       }
 
       // Verify checksum of the compressed file
-      await this.verifyChecksum(tempPath, delta.sha256);
+      await this.verifyChecksum(tempFile, delta.sha256);
 
       // Read and decompress
-      const compressed = await FileSystem.readAsStringAsync(tempPath, {
-        encoding: FileSystem.EncodingType.Base64,
-      });
+      const compressed = await tempFile.base64();
       const bytes = Uint8Array.from(atob(compressed), (c) => c.charCodeAt(0));
       const sql = new TextDecoder().decode(inflate(bytes));
 
@@ -209,6 +245,7 @@ class ContentUpdaterService {
             // Transaction may already be rolled back
           }
           await updateDb.closeAsync();
+          updateDb = null;
         }
         await this.restoreFromBackup();
         throw err;
@@ -219,8 +256,8 @@ class ContentUpdaterService {
       }
 
       // Success — remove backup and temp file
-      await FileSystem.deleteAsync(BACKUP_PATH, { idempotent: true });
-      await FileSystem.deleteAsync(tempPath, { idempotent: true });
+      safeDelete(sqliteFile(BACKUP_NAME));
+      safeDelete(tempFile);
 
       logger.info(TAG, `Delta applied: ${delta.from_version} → ${delta.to_version}`);
       return {
@@ -231,7 +268,7 @@ class ContentUpdaterService {
         bytesDownloaded: delta.size_bytes,
       };
     } catch (err) {
-      await FileSystem.deleteAsync(tempPath, { idempotent: true });
+      safeDelete(tempFile);
       const message = err instanceof Error ? err.message : String(err);
       logger.error(TAG, 'Delta application failed', err);
       return { status: 'failed', error: message };
@@ -249,38 +286,36 @@ class ContentUpdaterService {
     manifest: Manifest,
     onProgress?: (pct: number) => void,
   ): Promise<UpdateResult> {
-    const tempPath = `${SQLITE_DIR}scripture_download.db`;
-    const tempDbName = 'scripture_download.db';
+    const tempFile = sqliteFile(DOWNLOAD_TEMP_NAME);
+    const tempDbName = DOWNLOAD_TEMP_NAME;
     try {
       const fromVersion = await this.getInstalledVersion();
 
       // Ensure SQLite directory exists (first-launch fallback — scripture.db
       // may never have been opened yet, so the parent dir may not exist).
-      await FileSystem.makeDirectoryAsync(SQLITE_DIR, { intermediates: true });
+      this.ensureSqliteDir();
 
-      // Remove any partial download from a previous failed attempt
-      await FileSystem.deleteAsync(tempPath, { idempotent: true });
+      // Remove any partial download from a previous failed attempt.
+      safeDelete(tempFile);
 
-      // Download the full DB with progress tracking.
-      // createDownloadResumable supports progressCallback; downloadAsync does not.
-      const resumable = FileSystem.createDownloadResumable(
-        manifest.full_db_url,
-        tempPath,
-        {},
-        (downloadProgress) => {
-          const { totalBytesWritten, totalBytesExpectedToWrite } = downloadProgress;
-          if (totalBytesExpectedToWrite > 0) {
-            onProgress?.((totalBytesWritten / totalBytesExpectedToWrite) * 100);
-          }
-        },
-      );
-      const download = await resumable.downloadAsync();
-      if (!download || download.status !== 200) {
-        throw new Error(`Full DB download failed: HTTP ${download?.status ?? 'unknown'}`);
+      // The new expo-file-system API does not yet expose a progress
+      // callback on File.downloadFileAsync. XMLHttpRequest gives us
+      // length-computable onprogress events in the RN runtime, and we
+      // write the resulting ArrayBuffer to disk via File#write — which
+      // routes through the SDK 54 TurboModule cleanly.
+      try {
+        await this.downloadWithProgress(manifest.full_db_url, tempFile, onProgress);
+      } catch (err) {
+        const status = extractHttpStatus(err);
+        throw new Error(
+          status != null
+            ? `Full DB download failed: HTTP ${status}`
+            : `Full DB download failed: ${err instanceof Error ? err.message : String(err)}`,
+        );
       }
 
       // Verify file checksum
-      await this.verifyChecksum(tempPath, manifest.full_db_sha256);
+      await this.verifyChecksum(tempFile, manifest.full_db_sha256);
 
       // Verify content hash in the downloaded DB BEFORE swapping.
       // Open by its temp filename so we never touch the live connection.
@@ -301,11 +336,14 @@ class ContentUpdaterService {
 
       // Verification passed — now swap the live DB
       await this.backupCurrentDb();
-      await FileSystem.deleteAsync(DB_PATH, { idempotent: true });
-      await FileSystem.moveAsync({ from: tempPath, to: DB_PATH });
+      const dbFile = sqliteFile(DB_NAME);
+      safeDelete(dbFile);
+      // tempFile.move(dbFile) mutates tempFile.uri to point at dbFile; after
+      // this call the downloaded bytes live at DB_NAME.
+      tempFile.move(dbFile);
 
       // Success — remove backup
-      await FileSystem.deleteAsync(BACKUP_PATH, { idempotent: true });
+      safeDelete(sqliteFile(BACKUP_NAME));
 
       logger.info(TAG, `Full DB downloaded: v${manifest.current_version}`);
       return {
@@ -316,7 +354,7 @@ class ContentUpdaterService {
         bytesDownloaded: manifest.full_db_size_bytes,
       };
     } catch (err) {
-      await FileSystem.deleteAsync(tempPath, { idempotent: true });
+      safeDelete(tempFile);
       const message = err instanceof Error ? err.message : String(err);
       logger.error(TAG, 'Full DB download failed', err);
       return { status: 'failed', error: message };
@@ -326,35 +364,93 @@ class ContentUpdaterService {
   // ── Helpers ──────────────────────────────────────────────
 
   /**
+   * Ensure the SQLite subdirectory exists. First-launch fallback — on a
+   * fresh install scripture.db has never been opened so this dir may not
+   * be on disk yet.
+   */
+  private ensureSqliteDir(): void {
+    const dir = sqliteDir();
+    if (!dir.exists) {
+      dir.create({ intermediates: true });
+    }
+  }
+
+  /**
+   * XHR-based download with progress reporting. Writes the full response
+   * body to `destFile` via the new File API.
+   */
+  private async downloadWithProgress(
+    url: string,
+    destFile: File,
+    onProgress?: (pct: number) => void,
+  ): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.responseType = 'arraybuffer';
+      xhr.onprogress = (event: ProgressEvent) => {
+        if (event.lengthComputable && event.total > 0 && onProgress) {
+          onProgress((event.loaded / event.total) * 100);
+        }
+      };
+      xhr.onload = () => {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          try {
+            const buffer = xhr.response as ArrayBuffer | null;
+            if (!buffer) {
+              reject(new Error('Download returned empty body'));
+              return;
+            }
+            const bytes = new Uint8Array(buffer);
+            destFile.create({ overwrite: true });
+            destFile.write(bytes);
+            resolve();
+          } catch (err) {
+            reject(err);
+          }
+          return;
+        }
+        const httpErr = new Error(`HTTP ${xhr.status}`);
+        (httpErr as Error & { httpStatus?: number }).httpStatus = xhr.status;
+        reject(httpErr);
+      };
+      xhr.onerror = () => reject(new Error('Download network error'));
+      xhr.ontimeout = () => reject(new Error('Download timeout'));
+      xhr.send();
+    });
+  }
+
+  /**
    * Copy the current scripture.db to a backup location.
    */
   private async backupCurrentDb(): Promise<void> {
-    const info = await FileSystem.getInfoAsync(DB_PATH);
-    if (info.exists) {
-      await FileSystem.copyAsync({ from: DB_PATH, to: BACKUP_PATH });
-      logger.info(TAG, 'Database backed up');
-    }
+    const dbFile = sqliteFile(DB_NAME);
+    if (!dbFile.exists) return;
+    // The new File API throws if copy destination already exists — clear
+    // any stale backup from an earlier aborted update first.
+    const backupFile = sqliteFile(BACKUP_NAME);
+    safeDelete(backupFile);
+    dbFile.copy(backupFile);
+    logger.info(TAG, 'Database backed up');
   }
 
   /**
    * Restore scripture.db from the backup copy after a failed update.
    */
   private async restoreFromBackup(): Promise<void> {
-    const info = await FileSystem.getInfoAsync(BACKUP_PATH);
-    if (info.exists) {
-      await FileSystem.deleteAsync(DB_PATH, { idempotent: true });
-      await FileSystem.moveAsync({ from: BACKUP_PATH, to: DB_PATH });
-      logger.warn(TAG, 'Database restored from backup');
-    }
+    const backupFile = sqliteFile(BACKUP_NAME);
+    if (!backupFile.exists) return;
+    const dbFile = sqliteFile(DB_NAME);
+    safeDelete(dbFile);
+    backupFile.move(dbFile);
+    logger.warn(TAG, 'Database restored from backup');
   }
 
   /**
    * Validate that a downloaded file matches the expected SHA-256 hash.
    */
-  private async verifyChecksum(filePath: string, expectedSha256: string): Promise<void> {
-    const base64 = await FileSystem.readAsStringAsync(filePath, {
-      encoding: FileSystem.EncodingType.Base64,
-    });
+  private async verifyChecksum(file: File, expectedSha256: string): Promise<void> {
+    const base64 = await file.base64();
     // Decode base64 to raw bytes, then SHA-256 the binary content
     const binaryStr = atob(base64);
     const bytes = new Uint8Array(binaryStr.length);
@@ -371,6 +467,24 @@ class ContentUpdaterService {
       );
     }
   }
+}
+
+/**
+ * Pull the HTTP status out of an error returned by File.downloadFileAsync
+ * or our XHR helper. Best-effort — returns null when the error carries no
+ * status hint.
+ */
+function extractHttpStatus(err: unknown): number | null {
+  if (err && typeof err === 'object') {
+    const maybe = err as { httpStatus?: unknown; status?: unknown; message?: unknown };
+    if (typeof maybe.httpStatus === 'number') return maybe.httpStatus;
+    if (typeof maybe.status === 'number') return maybe.status;
+    if (typeof maybe.message === 'string') {
+      const m = /HTTP\s+(\d{3})/i.exec(maybe.message);
+      if (m) return Number(m[1]);
+    }
+  }
+  return null;
 }
 
 export const ContentUpdater = new ContentUpdaterService();
