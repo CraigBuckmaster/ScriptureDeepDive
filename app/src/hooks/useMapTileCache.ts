@@ -14,6 +14,12 @@
  * failure must not block the user from opening the map. At zoom 8+ or
  * outside the biblical region, tiles load online as normal and degrade
  * to blank if the network is unavailable (acceptable per spec).
+ *
+ * v11 note: packs no longer accept a user-provided `name`; each pack
+ * gets an auto-generated UUID. We tag ours via `metadata.name` and
+ * look it up by scanning `getPacks()` rather than `getPack(name)`.
+ * Option names also shifted: `styleURL` → `mapStyle`; bounds are flat
+ * `[west, south, east, north]` instead of `[ne, sw]` nested tuples.
  */
 
 import { useEffect, useRef } from 'react';
@@ -25,20 +31,19 @@ import { logger } from '../utils/logger';
 /** 75 MB ambient tile cache budget — see issue #1321. */
 const AMBIENT_CACHE_BYTES = 75 * 1024 * 1024;
 
-/** Biblical region — bbox covers Israel through Turkey, Egypt, Iraq. */
-const BIBLICAL_BOUNDS = {
-  ne: [55, 45] as [number, number],
-  sw: [25, 20] as [number, number],
-};
+/**
+ * Biblical region as MapLibre RN v11 `LngLatBounds`:
+ * `[west, south, east, north]`. Covers Israel through Turkey, Egypt, Iraq.
+ */
+const BIBLICAL_BOUNDS: [number, number, number, number] = [25, 20, 55, 45];
 
 const PACK_NAME = 'biblical-region-base';
 const PACK_MIN_ZOOM = 0;
 const PACK_MAX_ZOOM = 7;
 
 /**
- * Run once per app lifetime. Idempotent: creating the same pack twice
- * is a no-op (`getPack` short-circuits), and the ambient cache call is
- * cheap.
+ * Run once per app lifetime. Idempotent: an existing pack with the same
+ * metadata.name short-circuits, and the ambient cache call is cheap.
  */
 export function useMapTileCache(styleURL: string) {
   const ranRef = useRef(false);
@@ -65,20 +70,25 @@ export function useMapTileCache(styleURL: string) {
         }
 
         try {
-          const existing = await OfflineManager.getPack(PACK_NAME);
-          if (existing) return;
+          // v11 has no `getPack(name)` — packs are UUID-keyed. Scan the
+          // list and match our tag in `metadata.name`.
+          const existing = await OfflineManager.getPacks();
+          const alreadyCached = existing.some(
+            (p) => p?.metadata?.name === PACK_NAME,
+          );
+          if (alreadyCached) return;
 
           await OfflineManager.createPack(
             {
-              name: PACK_NAME,
-              styleURL,
+              mapStyle: styleURL,
               minZoom: PACK_MIN_ZOOM,
               maxZoom: PACK_MAX_ZOOM,
-              bounds: [BIBLICAL_BOUNDS.ne, BIBLICAL_BOUNDS.sw],
+              bounds: BIBLICAL_BOUNDS,
+              metadata: { name: PACK_NAME },
             },
-            // Progress and error listeners are required by the v10 API but
-            // we don't surface either to the user — the download runs in
-            // the background. Log errors for diagnosis only.
+            // Progress and error listeners are required by the API but we
+            // don't surface either to the user — the download runs in the
+            // background. Log errors for diagnosis only.
             () => undefined,
             (_pack, err) => {
               logger.warn('useMapTileCache', 'Offline pack error', err);

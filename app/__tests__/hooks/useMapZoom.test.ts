@@ -2,14 +2,15 @@ import { renderHook, act } from '@testing-library/react-native';
 
 import { useMapZoom } from '@/hooks/useMapZoom';
 
-/** Build a synthetic MapLibre onRegionDidChange event. */
+/** Build a synthetic MapLibre v11 onRegionDidChange event. */
 function event(zoom: number) {
   return {
-    properties: {
-      zoomLevel: zoom,
-      heading: 0,
+    nativeEvent: {
+      zoom,
+      bearing: 0,
       pitch: 0,
-      isUserInteraction: true,
+      animated: false,
+      userInteraction: true,
     },
   };
 }
@@ -77,5 +78,14 @@ describe('useMapZoom', () => {
       jest.advanceTimersByTime(200);
     });
     expect(result.current.zoomLevel).toBe(22);
+  });
+
+  it('still accepts the v10 feature-shape event during migration', () => {
+    const { result } = renderHook(() => useMapZoom(5));
+    act(() => {
+      result.current.onRegionDidChange({ properties: { zoomLevel: 6.5 } });
+      jest.advanceTimersByTime(200);
+    });
+    expect(result.current.zoomLevel).toBeCloseTo(6.5, 1);
   });
 });

@@ -1,19 +1,19 @@
 /**
  * AncientBorderLayer — Renders ancient political borders for the active
  * era (tribal allotments, Roman provinces, Divided Kingdom, etc.) as a
- * single MapLibre ShapeSource with Fill + Line layers.
+ * single MapLibre GeoJSONSource with Fill + Line layers.
  *
  * Hidden in Modern mode — the modern.json style already layers OSM
  * country borders for that variant. Suppressed at the ancient era's
  * default (era === 'all') since no single era's borders apply.
  *
- * Scaffold for epic #1314 / issue #1317. Renders an empty ShapeSource
+ * Scaffold for epic #1314 / issue #1317. Renders an empty GeoJSONSource
  * gracefully until the AWMC/hand-authored polygons land in a follow-up
  * Chat session.
  */
 
 import React, { memo } from 'react';
-import { ShapeSource, FillLayer, LineLayer } from '@maplibre/maplibre-react-native';
+import { GeoJSONSource, Layer } from '@maplibre/maplibre-react-native';
 import { useAncientBorders } from '../../hooks/useAncientBorders';
 import { eras } from '../../theme';
 
@@ -35,20 +35,22 @@ export const AncientBorderLayer = memo(function AncientBorderLayer({
   const eraColor = (era && eras[era]) || '#bfa050'; // data-color: intentional (gold fallback for unknown era — MapLibre GL)
 
   return (
-    <ShapeSource
+    <GeoJSONSource
       id="ancient-borders"
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      shape={borders as any}
+      data={borders as any}
     >
-      <FillLayer
+      <Layer
         id="ancient-borders-fill"
+        type="fill"
         style={{
           fillColor: eraColor,
           fillOpacity: 0.08,
         }}
       />
-      <LineLayer
+      <Layer
         id="ancient-borders-stroke"
+        type="line"
         style={{
           lineColor: eraColor,
           lineOpacity: 0.55,
@@ -56,6 +58,6 @@ export const AncientBorderLayer = memo(function AncientBorderLayer({
           lineDasharray: [2, 2],
         }}
       />
-    </ShapeSource>
+    </GeoJSONSource>
   );
 });

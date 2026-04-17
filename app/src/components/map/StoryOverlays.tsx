@@ -2,7 +2,7 @@
  * StoryOverlays — Renders a story's region polygons and journey paths
  * as MapLibre GeoJSON layers.
  *
- * Uses a single `ShapeSource` per channel (regions / paths / path-arrows)
+ * Uses a single `GeoJSONSource` per channel (regions / paths / path-arrows)
  * so the map interpolates smoothly between stories when `story` changes,
  * rather than flickering as React-rendered primitives unmount and remount.
  *
@@ -14,7 +14,7 @@
  */
 
 import React, { memo, useMemo } from 'react';
-import { ShapeSource, FillLayer, LineLayer, SymbolLayer } from '@maplibre/maplibre-react-native';
+import { GeoJSONSource, Layer } from '@maplibre/maplibre-react-native';
 import { eras } from '../../theme';
 import type { MapStory } from '../../types';
 import { safeParse } from '../../utils/logger';
@@ -95,7 +95,7 @@ export function pathsToFeatureCollection(
 
 /**
  * Path endpoints → Point FeatureCollection with a `bearing` property so
- * a SymbolLayer can render a direction arrow rotated along the final
+ * a symbol Layer can render a direction arrow rotated along the final
  * segment of each journey.
  */
 export function arrowsFromPaths(paths: RawPath[]): GeoJSON.FeatureCollection {
@@ -144,17 +144,19 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
     <>
       {/* Region polygons — fill + outline */}
       {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-      <ShapeSource id="story-regions" shape={regionsFC as any}>
-        <FillLayer
+      <GeoJSONSource id="story-regions" data={regionsFC as any}>
+        <Layer
           id="story-regions-fill"
+          type="fill"
           style={{
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             fillColor: ['get', 'color'] as any,
             fillOpacity: 0.15,
           }}
         />
-        <LineLayer
+        <Layer
           id="story-regions-stroke"
+          type="line"
           style={{
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             lineColor: ['get', 'color'] as any,
@@ -162,16 +164,17 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
             lineWidth: 1.5,
           }}
         />
-      </ShapeSource>
+      </GeoJSONSource>
 
       {/* Journey paths — solid + dashed variants driven by a filter.
           MapLibre interpolates coordinates between source updates so
           swapping the active story animates the path draw rather than
           snapping. */}
       {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-      <ShapeSource id="story-paths" shape={pathsFC as any}>
-        <LineLayer
+      <GeoJSONSource id="story-paths" data={pathsFC as any}>
+        <Layer
           id="story-paths-solid"
+          type="line"
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           filter={['!', ['get', 'dashed']] as any}
           style={{
@@ -181,8 +184,9 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
             lineJoin: 'round',
           }}
         />
-        <LineLayer
+        <Layer
           id="story-paths-dashed"
+          type="line"
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           filter={['get', 'dashed'] as any}
           style={{
@@ -193,15 +197,16 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
             lineDasharray: [3, 2],
           }}
         />
-      </ShapeSource>
+      </GeoJSONSource>
 
       {/* Directional arrowheads at each path's endpoint, rotated along
           the final segment's bearing. Uses a unicode ► glyph — no image
           asset required — kept legible across zoom levels. */}
       {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-      <ShapeSource id="story-path-arrows" shape={arrowsFC as any}>
-        <SymbolLayer
+      <GeoJSONSource id="story-path-arrows" data={arrowsFC as any}>
+        <Layer
           id="story-path-arrows-layer"
+          type="symbol"
           style={{
             textField: '\u25B6',
             textFont: ['Noto Sans Regular'],
@@ -218,7 +223,7 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
             textOffset: [0.4, 0],
           }}
         />
-      </ShapeSource>
+      </GeoJSONSource>
     </>
   );
 });

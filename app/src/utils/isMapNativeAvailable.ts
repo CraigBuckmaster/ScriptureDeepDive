@@ -38,19 +38,19 @@ function probe(): boolean {
 
   try {
     // Dynamic require so the native module isn't pulled into Expo Go
-    // builds via the static import graph. We exercise the cheapest API
-    // surface MapLibre exposes (setConnected) — if that throws, the
-    // native side is broken in some way we can't render around.
+    // builds via the static import graph. We exercise a cheap no-throw
+    // API — if that throws, the native side is broken in some way we
+    // can't render around.
     //
-    // If `setConnected` is missing entirely (older versions of the
-    // library, or test mocks that don't include it) we treat that as
-    // success: the presence of MLRNModule is sufficient evidence that
-    // the native side is wired up. The probe is here to catch *throws*,
-    // not API-shape drift.
+    // MapLibre RN v11 removed the package's `default` export and moved
+    // the top-level `setConnected` helper under `NetworkManager`. If
+    // either the module or the manager is missing (older versions or
+    // test mocks) we treat that as success: the presence of MLRNModule
+    // is sufficient evidence that the native side is wired up.
     // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const MapLibreGL = require('@maplibre/maplibre-react-native').default;
-    if (typeof MapLibreGL?.setConnected === 'function') {
-      MapLibreGL.setConnected(true);
+    const MapLibreGL = require('@maplibre/maplibre-react-native');
+    if (typeof MapLibreGL?.NetworkManager?.setConnected === 'function') {
+      MapLibreGL.NetworkManager.setConnected(true);
     }
     return true;
   } catch (err) {

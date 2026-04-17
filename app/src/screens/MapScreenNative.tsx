@@ -12,7 +12,7 @@
 import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { View, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { MapView, Camera, type CameraRef } from '@maplibre/maplibre-react-native';
+import { Map, Camera, type CameraRef } from '@maplibre/maplibre-react-native';
 import { usePlaces } from '../hooks/usePlaces';
 import { ensureMapLibreInit } from '../utils/isMapNativeAvailable';
 import { useMapStories } from '../hooks/useMapStories';
@@ -120,10 +120,12 @@ function MapScreen({ route, navigation }: {
           if (p.latitude > maxLat) maxLat = p.latitude;
         }
         cameraRef.current.fitBounds(
-          [maxLon, maxLat],
-          [minLon, minLat],
-          [topPad, 40, panelHeight + 20, 40],
-          700,
+          // v11: LngLatBounds = [west, south, east, north]
+          [minLon, minLat, maxLon, maxLat],
+          {
+            padding: { top: topPad, right: 40, bottom: panelHeight + 20, left: 40 },
+            duration: 700,
+          },
         );
       }
     } catch (err) { logger.warn('MapScreen', 'Operation failed', err); }
@@ -132,16 +134,14 @@ function MapScreen({ route, navigation }: {
   /**
    * Pan (and zoom in) to a specific place.
    *
-   * `setCamera` combines centerCoordinate + zoomLevel in one animation so
-   * we recreate the old `animateToRegion({delta: 2})` behaviour — a close
-   * zoom that clearly frames one place.
+   * v11: `flyTo` takes `{ center, zoom, duration }` and animates the
+   * camera in a single pass — replaces v10's `setCamera({ ..., animationMode })`.
    */
   const panToPlace = useCallback((place: Place) => {
-    cameraRef.current?.setCamera({
-      centerCoordinate: [place.longitude, place.latitude],
-      zoomLevel: 7.5,
-      animationDuration: 500,
-      animationMode: 'flyTo',
+    cameraRef.current?.flyTo({
+      center: [place.longitude, place.latitude],
+      zoom: 7.5,
+      duration: 500,
     });
   }, []);
 
@@ -200,10 +200,11 @@ function MapScreen({ route, navigation }: {
           if (lat > maxLat) maxLat = lat;
         }
         cameraRef.current.fitBounds(
-          [maxLon, maxLat],
-          [minLon, minLat],
-          [insets.top + 80, 40, 120, 40],
-          700,
+          [minLon, minLat, maxLon, maxLat],
+          {
+            padding: { top: insets.top + 80, right: 40, bottom: 120, left: 40 },
+            duration: 700,
+          },
         );
       }
       lastProcessedPerson.current = initialPersonId;
@@ -235,11 +236,10 @@ function MapScreen({ route, navigation }: {
     if (era === 'all') {
       setActiveStory(null);
       setShowPanel(false);
-      cameraRef.current?.setCamera({
-        centerCoordinate: BIBLICAL_REGION.center,
-        zoomLevel: BIBLICAL_REGION.zoom,
-        animationDuration: 500,
-        animationMode: 'flyTo',
+      cameraRef.current?.flyTo({
+        center: BIBLICAL_REGION.center,
+        zoom: BIBLICAL_REGION.zoom,
+        duration: 500,
       });
       return;
     }
@@ -277,18 +277,18 @@ function MapScreen({ route, navigation }: {
         accessibilityLabel="Biblical world map"
         accessibilityHint="Pinch to zoom, drag to pan"
       >
-      <MapView
+      <Map
         style={StyleSheet.absoluteFill}
         mapStyle={showModern ? STYLE_MODERN : STYLE_ANCIENT}
         onRegionDidChange={onRegionDidChange}
-        logoEnabled={false}
-        attributionEnabled={false}
+        logo={false}
+        attribution={false}
       >
         <Camera
           ref={cameraRef}
-          defaultSettings={{
-            centerCoordinate: BIBLICAL_REGION.center,
-            zoomLevel: BIBLICAL_REGION.zoom,
+          initialViewState={{
+            center: BIBLICAL_REGION.center,
+            zoom: BIBLICAL_REGION.zoom,
           }}
         />
         {/* Ancient political borders for the active era (Biblical mode only) */}
@@ -306,7 +306,7 @@ function MapScreen({ route, navigation }: {
         )}
         {/* Person geographic arc (#1324) */}
         {personArc?.stops?.length ? <PersonArcLayer stops={personArc.stops} /> : null}
-      </MapView>
+      </Map>
       </View>
 
       {/* Search bar + era filter — overlaid at top below status bar */}
@@ -322,11 +322,10 @@ function MapScreen({ route, navigation }: {
           onToggleNames={() => setShowModern((v) => !v)}
           onCentre={() => {
             if (activeStory) selectStory(activeStory);
-            else cameraRef.current?.setCamera({
-              centerCoordinate: BIBLICAL_REGION.center,
-              zoomLevel: BIBLICAL_REGION.zoom,
-              animationDuration: 500,
-              animationMode: 'flyTo',
+            else cameraRef.current?.flyTo({
+              center: BIBLICAL_REGION.center,
+              zoom: BIBLICAL_REGION.zoom,
+              duration: 500,
             });
           }}
         />

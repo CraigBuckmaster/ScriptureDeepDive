@@ -1,6 +1,6 @@
 /**
  * PlaceMarkerList — Renders all place markers on the map as a single
- * MapLibre ShapeSource + CircleLayer + SymbolLayer.
+ * MapLibre GeoJSONSource + circle Layer + symbol Layer.
  *
  * One GeoJSON FeatureCollection per full `places` list (memoised). Layer
  * expressions drive priority-based visibility, active-place highlighting,
@@ -11,7 +11,7 @@
  */
 
 import React, { memo, useMemo, useCallback } from 'react';
-import { ShapeSource, CircleLayer, SymbolLayer } from '@maplibre/maplibre-react-native';
+import { GeoJSONSource, Layer } from '@maplibre/maplibre-react-native';
 import type { Place, MapStory } from '../../types';
 import { safeParse } from '../../utils/logger';
 
@@ -92,7 +92,7 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
 
   // Radius / color / stroke for the active-place spotlight.
   // Uses a direct id comparison (effectively a poor-man's feature-state —
-  // MapLibre RN v10 doesn't yet expose setFeatureState imperatively, so
+  // MapLibre RN v11 still doesn't expose setFeatureState imperatively, so
   // we drive highlight state through the expression instead).
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const isActive: any = activePlaceId
@@ -141,15 +141,18 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
   );
 
   return (
-    <ShapeSource
+    <GeoJSONSource
       id="places-source"
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      shape={fc as any}
+      data={fc as any}
       onPress={onPress}
-      hitbox={{ width: 22, height: 22 }}
+      // v11: hitbox is a ViewPadding (top/right/bottom/left), not width/height.
+      // 22px in each direction matches the v10 22x22 box.
+      hitbox={{ top: 11, right: 11, bottom: 11, left: 11 }}
     >
-      <CircleLayer
+      <Layer
         id="places-dot"
+        type="circle"
         style={{
           circleRadius: circleRadiusExpr,
           circleColor: circleColorExpr,
@@ -159,8 +162,9 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
           circleOpacity: ['step', ['zoom'], 0, minZoomExpr, 1] as any,
         }}
       />
-      <SymbolLayer
+      <Layer
         id="places-label"
+        type="symbol"
         style={{
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           textField: ['get', showModern ? 'modern' : 'ancient'] as any,
@@ -186,6 +190,6 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
           textIgnorePlacement: false,
         }}
       />
-    </ShapeSource>
+    </GeoJSONSource>
   );
 });
