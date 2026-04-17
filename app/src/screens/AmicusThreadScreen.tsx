@@ -20,7 +20,12 @@ import { useTheme, spacing, fontFamily } from '../theme';
 import { getAmicusThread } from '../db/userQueries';
 import MessageList from '../components/amicus/MessageList';
 import InputBar from '../components/amicus/InputBar';
+import MetaFaqModal from '../components/amicus/MetaFaqModal';
 import { useAmicusThread } from '../hooks/useAmicusThread';
+import {
+  navigateToCitation,
+  type MetaFaqArticle,
+} from '../services/amicus/citationNav';
 import type { AmicusCitation, AmicusThread } from '../types';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { logger } from '../utils/logger';
@@ -32,6 +37,7 @@ export default function AmicusThreadScreen(): React.ReactElement {
   const { threadId } = route.params;
 
   const [thread, setThread] = useState<AmicusThread | null>(null);
+  const [faqArticle, setFaqArticle] = useState<MetaFaqArticle | null>(null);
   const { messages, isStreaming, error, sendMessage, abortStream, clearError } =
     useAmicusThread(threadId);
 
@@ -63,10 +69,26 @@ export default function AmicusThreadScreen(): React.ReactElement {
     [sendMessage],
   );
 
-  const handleCitation = useCallback((c: AmicusCitation) => {
-    // #1456 wires real navigation. For now, log.
-    logger.info('Amicus', `citation pressed: ${c.chunk_id}`);
-  }, []);
+  const handleCitation = useCallback(
+    async (c: AmicusCitation) => {
+      const parts = c.chunk_id.split(':');
+      const source_id = parts.slice(1).join(':');
+      const outcome = await navigateToCitation(
+        {
+          chunk_id: c.chunk_id,
+          source_type: c.source_type,
+          source_id,
+        },
+        navigation,
+      );
+      if (outcome.kind === 'modal' && outcome.modal === 'meta_faq') {
+        setFaqArticle(outcome.article);
+      } else if (outcome.kind === 'unresolved') {
+        logger.warn('Amicus', `citation unresolved: ${c.chunk_id}`);
+      }
+    },
+    [navigation],
+  );
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
@@ -112,6 +134,8 @@ export default function AmicusThreadScreen(): React.ReactElement {
           onAbort={abortStream}
         />
       </KeyboardAvoidingView>
+
+      <MetaFaqModal article={faqArticle} onClose={() => setFaqArticle(null)} />
     </SafeAreaView>
   );
 }
