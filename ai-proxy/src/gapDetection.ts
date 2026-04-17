@@ -75,10 +75,13 @@ export function isLowRetrievalScore(chunks: RetrievedChunk[]): boolean {
 
 // ── Scrub ─────────────────────────────────────────────────────────────
 
-const EMAIL_RE = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
-const PHONE_RE = /\+?\d[\d\s().-]{7,}\d/g;
-const URL_RE = /https?:\/\/\S+/g;
-const CARD_RE = /\b(?:\d[ -]*?){13,16}\b/g;
+// Bounded quantifiers to avoid polynomial-backtracking ReDoS on long inputs.
+// Email local-parts are RFC-capped at 64; domains at 253 total. The TLD
+// max of 63 is well above every real TLD.
+const EMAIL_RE = /[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]{1,253}\.[A-Za-z]{2,63}/g;
+const PHONE_RE = /\+?\d[\d\s().-]{7,20}\d/g;
+const URL_RE = /https?:\/\/\S{1,2048}/g;
+const CARD_RE = /\b(?:\d[ -]?){13,19}\b/g;
 
 /** Light PII scrub for the raw question_text stored in D1. */
 export function scrubPII(text: string): string {
