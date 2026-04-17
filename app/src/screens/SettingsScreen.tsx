@@ -23,6 +23,7 @@ import {
   TranslationManager,
   AboutSection,
   DataSection,
+  AmicusSettingsSection,
   sharedStyles,
 } from './settings';
 
@@ -57,6 +58,8 @@ function SettingsScreen() {
   const toggleFocusMode = useSettingsStore((s) => s.toggleFocusMode);
   const theme = useSettingsStore((s) => s.theme);
   const setTheme = useSettingsStore((s) => s.setTheme);
+  const amicusEnabled = useSettingsStore((s) => s.amicusEnabled);
+  const setAmicusEnabled = useSettingsStore((s) => s.setAmicusEnabled);
   const isPremium = usePremiumStore((s) => s.isPremium);
   const purchaseType = usePremiumStore((s) => s.purchaseType);
 
@@ -115,6 +118,13 @@ function SettingsScreen() {
           <Text style={[sharedStyles.rowLabel, { color: base.text }]}>Notification Preferences</Text>
           <Text style={[styles.navArrow, { color: base.textMuted }]}>{'\u203A'}</Text>
         </TouchableOpacity>
+
+        <AmicusSettingsSection
+          base={base}
+          amicusEnabled={amicusEnabled}
+          setAmicusEnabled={setAmicusEnabled}
+          onInspectProfile={() => navigation.navigate('AmicusProfileInspector')}
+        />
 
         <AboutSection base={base} paragraphs={ABOUT_PARAGRAPHS} stats={stats} version={APP_VERSION} />
         <DataSection base={base} />

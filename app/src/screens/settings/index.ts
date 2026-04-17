@@ -7,3 +7,4 @@ export { PreferencesSection } from './PreferencesSection';
 export { AboutSection } from './AboutSection';
 export { DataSection } from './DataSection';
 export { sharedStyles } from './styles';
+export { AmicusSettingsSection } from './AmicusSettingsSection';
