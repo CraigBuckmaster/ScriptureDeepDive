@@ -148,3 +148,19 @@ jobs:
       - name: Fail if tests failed
         if: env.TESTS_EXIT_CODE != '0'
         run: exit 1
+
+      # ── Preflight bundle checks ──────────────────────────────────────
+      # These catch issues that unit tests can't see: dep version drift
+      # and Metro bundle-level resolution failures. They run only after
+      # tests pass — no point bundling a red build.
+      #
+      # Added after we shipped a TestFlight binary whose JS bundle
+      # couldn't resolve react-native-reanimated transitively; tests
+      # passed, EAS build failed during bundling. expo-doctor + expo
+      # export in CI would have caught both issues before merge.
+
+      - name: Expo doctor — dep version check
+        run: npx expo-doctor@latest
+
+      - name: Expo export — iOS bundle resolution check
+        run: npx expo export --platform ios --output-dir /tmp/expo-export-check
