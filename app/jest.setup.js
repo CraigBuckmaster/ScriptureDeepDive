@@ -257,12 +257,12 @@ jest.mock('@maplibre/maplibre-react-native', () => {
   };
 });
 
-// `isMapNativeAvailable()` reads NativeModules.MLRNModule to decide
-// whether to render the real map or fall back to MapUnavailableCard.
-// In the jest env the NativeModules table is empty, so without this
-// stub every map-rendering test would short-circuit to the card.
-const { NativeModules } = require('react-native');
-NativeModules.MLRNModule = { ...(NativeModules.MLRNModule ?? {}) };
+// Under MapLibre v11 + React Native New Architecture, the map native
+// module registers via TurboModuleRegistry, not the legacy bridge, so
+// `NativeModules.MLRNModule` no longer exists at all. The probe in
+// `isMapNativeAvailable` now just require()s the MapLibre package and
+// checks for the `Map` named export — which the jest mock above
+// provides — so no NativeModules patching is needed here.
 
 // Mock react-native-svg
 jest.mock('react-native-svg', () => ({
