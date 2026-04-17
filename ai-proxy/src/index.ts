@@ -22,6 +22,7 @@ import {
   parseGapSignal,
   redactGap,
 } from './gapDetection';
+import { captureResponseSample } from './responseSampling';
 import type { ChatRequest, EmbedRequest, Env, GapSignal } from './types';
 
 const JSON_HEADERS = { 'Content-Type': 'application/json; charset=utf-8' };
@@ -206,6 +207,21 @@ async function handleChat(
       retrievalMaxScore,
       retrievedChunkIds,
       lowScore,
+      // Audit pipeline (#1468): capture a random 1% of successful
+      // responses into D1 at the same point we know the final prose.
+      onFinalProse: ({ responseText, citations, citedChunkIds }) => {
+        void captureResponseSample({
+          chat,
+          responseText,
+          citations,
+          citedChunkIds,
+          modelTier: chat.model_tier === 'sonnet' ? 'sonnet' : 'haiku',
+          latencyMs: Date.now() - startedAt,
+          reason: 'random_1pct',
+          receiptHash: ctx.receiptHash,
+          env,
+        });
+      },
     }),
   );
 
@@ -227,6 +243,17 @@ async function handleChat(
   });
 }
 
+interface FinalProseInfo {
+  responseText: string;
+  citations: Array<{
+    chunk_id: string;
+    source_type: string;
+    display_label?: string;
+    scholar_id?: string;
+  }>;
+  citedChunkIds: string[];
+}
+
 interface ConsumeForGapArgs {
   stream: ReadableStream<Uint8Array>;
   chat: ChatRequest;
@@ -235,6 +262,8 @@ interface ConsumeForGapArgs {
   retrievalMaxScore: number;
   retrievedChunkIds: string[];
   lowScore: boolean;
+  /** Audit hook (#1468) — fires once per successful completion. */
+  onFinalProse?: (info: FinalProseInfo) => void;
 }
 
 async function consumeForGap(args: ConsumeForGapArgs): Promise<void> {
@@ -270,6 +299,20 @@ async function consumeForGap(args: ConsumeForGapArgs): Promise<void> {
     return;
   }
 
+  // Fire the audit hook before the gap-signal branch so we sample even
+  // responses that didn't trigger a gap.
+  if (args.onFinalProse) {
+    const { citedChunkIds, citations } = extractCitations(
+      accumulated,
+      args.chat.retrieved_chunks,
+    );
+    args.onFinalProse({
+      responseText: accumulated,
+      citations,
+      citedChunkIds,
+    });
+  }
+
   const modelSignal = parseGapSignal(accumulated);
 
   // A gap counts if the model said so OR retrieval scored low. The two
@@ -295,6 +338,52 @@ async function consumeForGap(args: ConsumeForGapArgs): Promise<void> {
     env: args.env,
     receiptHash: args.receiptHash,
   });
+}
+
+/** Extract `[CITE:chunk_id]` markers from the accumulated prose. */
+function extractCitations(
+  prose: string,
+  retrievedChunks: ChatRequest['retrieved_chunks'],
+): {
+  citedChunkIds: string[];
+  citations: Array<{
+    chunk_id: string;
+    source_type: string;
+    display_label?: string;
+    scholar_id?: string;
+  }>;
+} {
+  const ids = new Set<string>();
+  const re = /\[CITE:([^\]]+)\]/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(prose)) !== null) {
+    ids.add(m[1]!);
+  }
+  const byId = new Map<string, ChatRequest['retrieved_chunks'][number]>(
+    retrievedChunks.map((c) => [c.chunk_id, c]),
+  );
+  const citations: Array<{
+    chunk_id: string;
+    source_type: string;
+    display_label?: string;
+    scholar_id?: string;
+  }> = [];
+  const citedChunkIds: string[] = [];
+  for (const id of ids) {
+    citedChunkIds.push(id);
+    const chunk = byId.get(id);
+    if (chunk) {
+      citations.push({
+        chunk_id: id,
+        source_type: chunk.source_type,
+        scholar_id: (chunk as unknown as { scholar_id?: string }).scholar_id,
+      });
+    } else {
+      // Still record the marker so the classifier can flag it.
+      citations.push({ chunk_id: id, source_type: 'unknown' });
+    }
+  }
+  return { citedChunkIds, citations };
 }
 
 function maxChunkScore(chunks: ChatRequest['retrieved_chunks']): number {
