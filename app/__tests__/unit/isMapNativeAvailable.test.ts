@@ -1,45 +1,78 @@
 /**
  * Unit test for the native-module guard.
  *
- * React Native's NativeModules lookup table varies by environment —
- * Expo Go returns `undefined` for `MLRNModule`, dev builds return the
- * registered bridge object. We want the guard to be truthy only in
- * the latter case.
+ * The probe uses `require('@maplibre/maplibre-react-native')` + a check
+ * for the `Map` named export as evidence that MapLibre v11's native
+ * side is linked into this binary. We toggle the mocked module's shape
+ * per case via `jest.isolateModules` — it creates a fresh registry
+ * (including fresh mock-factory resolution) scoped to the callback, so
+ * per-test `jest.doMock` overrides both the global jest.setup mock AND
+ * any file-level hoisted mock. Plain `jest.resetModules()` +
+ * `jest.doMock()` outside of an isolate block proved unreliable under
+ * `--coverage` (the hoisted setup factory kept winning).
  */
 
-import { NativeModules } from 'react-native';
-import {
-  isMapNativeAvailable,
-  __resetMapNativeProbeForTests,
-} from '@/utils/isMapNativeAvailable';
-
 describe('isMapNativeAvailable', () => {
-  const originalModule = (NativeModules as any).MLRNModule;
-
-  beforeEach(() => {
-    // The probe memoises its result for production efficiency. Tests
-    // that mutate NativeModules.MLRNModule per case must clear that
-    // memoisation between cases or they'll see whichever result the
-    // first case produced.
-    __resetMapNativeProbeForTests();
+  it('returns true when MapLibre package loads with Map export (linked build)', () => {
+    jest.isolateModules(() => {
+      jest.doMock('@maplibre/maplibre-react-native', () => ({
+        __esModule: true,
+        Map: () => null,
+        NetworkManager: { setConnected: jest.fn() },
+      }));
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      const { isMapNativeAvailable } = require('@/utils/isMapNativeAvailable');
+      expect(isMapNativeAvailable()).toBe(true);
+    });
   });
 
-  afterEach(() => {
-    (NativeModules as any).MLRNModule = originalModule;
+  it('returns false when MapLibre package is missing (Expo Go)', () => {
+    jest.isolateModules(() => {
+      jest.doMock('@maplibre/maplibre-react-native', () => {
+        throw new Error("Cannot find module '@maplibre/maplibre-react-native'");
+      });
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      const {
+        isMapNativeAvailable,
+        getMapUnavailableReason,
+      } = require('@/utils/isMapNativeAvailable');
+      expect(isMapNativeAvailable()).toBe(false);
+      expect(getMapUnavailableReason()).toMatch(/Cannot find module/);
+    });
   });
 
-  it('returns false when MLRNModule is undefined (Expo Go)', () => {
-    (NativeModules as any).MLRNModule = undefined;
-    expect(isMapNativeAvailable()).toBe(false);
+  it('returns false when MapLibre package loads but Map export is absent (v10 residue)', () => {
+    jest.isolateModules(() => {
+      jest.doMock('@maplibre/maplibre-react-native', () => ({
+        __esModule: true,
+        // No `Map` export — simulates v10-era package or a partial install
+        MapView: () => null,
+        NetworkManager: { setConnected: jest.fn() },
+      }));
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      const {
+        isMapNativeAvailable,
+        getMapUnavailableReason,
+      } = require('@/utils/isMapNativeAvailable');
+      expect(isMapNativeAvailable()).toBe(false);
+      expect(getMapUnavailableReason()).toMatch(/"Map" export missing/);
+    });
   });
 
-  it('returns false when MLRNModule is null', () => {
-    (NativeModules as any).MLRNModule = null;
-    expect(isMapNativeAvailable()).toBe(false);
-  });
-
-  it('returns true when MLRNModule is registered (dev build)', () => {
-    (NativeModules as any).MLRNModule = { someMethod: jest.fn() };
-    expect(isMapNativeAvailable()).toBe(true);
+  it('survives a throw from NetworkManager.setConnected (iOS path)', () => {
+    jest.isolateModules(() => {
+      jest.doMock('@maplibre/maplibre-react-native', () => ({
+        __esModule: true,
+        Map: () => null,
+        NetworkManager: {
+          setConnected: jest.fn(() => {
+            throw new Error('iOS native method unavailable');
+          }),
+        },
+      }));
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      const { isMapNativeAvailable } = require('@/utils/isMapNativeAvailable');
+      expect(isMapNativeAvailable()).toBe(true);
+    });
   });
 });

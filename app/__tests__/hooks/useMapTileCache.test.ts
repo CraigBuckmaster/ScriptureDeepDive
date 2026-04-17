@@ -1,6 +1,11 @@
 import { renderHook, waitFor } from '@testing-library/react-native';
 
 jest.mock('@maplibre/maplibre-react-native', () => ({
+  // v11 probe in `isMapNativeAvailable` requires the `Map` named export
+  // to exist — without it the probe short-circuits to `false` and
+  // `useMapTileCache` never touches OfflineManager.
+  Map: () => null,
+  NetworkManager: { setConnected: jest.fn() },
   OfflineManager: {
     createPack: jest.fn().mockResolvedValue(undefined),
     getPacks: jest.fn().mockResolvedValue([]),
