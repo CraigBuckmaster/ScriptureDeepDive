@@ -25,6 +25,7 @@ import { useExploreImages } from '../hooks/useExploreImages';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { StreakBadge } from '../components/StreakBadge';
 import { ActivePlanCard } from '../components/ActivePlanCard';
+import AmicusHomeCard from '../components/AmicusHomeCard';
 import { ContinueReadingHero } from '../components/ContinueReadingHero';
 import { ProgressRow } from '../components/ProgressRow';
 import { FeatureCard, CARD_WIDTH, type FeatureCardData } from '../components/FeatureCard';
@@ -178,6 +179,11 @@ function HomeScreen() {
         {/* ── 4. Active Reading Plan (compact) ─────────── */}
         <View style={styles.sectionGap}>
           <ActivePlanCard />
+        </View>
+
+        {/* ── 4b. Amicus daily prompt card (#1466) ─────────── */}
+        <View style={styles.sectionGap}>
+          <AmicusHomeCard />
         </View>
 
         {/* Major-zone divider: scripture engagement → exploration + stats */}
