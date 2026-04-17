@@ -1,11 +1,5 @@
 import { renderHook, act } from '@testing-library/react-native';
 
-// react-native-reanimated's runOnJS is a passthrough in tests so the hook
-// logic runs synchronously.
-jest.mock('react-native-reanimated', () => ({
-  runOnJS: (fn: any) => fn,
-}));
-
 // Gesture-handler needs a tiny stand-in for Gesture.Pan / Gesture.Pinch
 // that captures the callbacks so tests can trigger them manually.
 jest.mock('react-native-gesture-handler', () => {
@@ -17,6 +11,7 @@ jest.mock('react-native-gesture-handler', () => {
       onBegin: (cb: any) => { handlers.onBegin = cb; return g; },
       onUpdate: (cb: any) => { handlers.onUpdate = cb; return g; },
       onEnd: (cb: any) => { handlers.onEnd = cb; return g; },
+      runOnJS: () => g,
     };
     return g;
   };
