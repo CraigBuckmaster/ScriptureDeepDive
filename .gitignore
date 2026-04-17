@@ -36,3 +36,7 @@ _tools/embedding_manifest.json
 # _tools/build_prompts.py and merged into scripture.db.
 prompts.db
 _tools/prompts_manifest.json
+
+# Expo export output (from `npx expo export`) 
+app/bundle.log 
+app/dist/ 
