@@ -1,0 +1,126 @@
+[
+  {
+    "id": "q01",
+    "query": "Why do Reformed and Jewish scholars read election theology differently?",
+    "current_chapter_ref": { "book_id": "romans", "chapter_num": 9 },
+    "expected_citations": {
+      "must_include_any_of": [
+        "section_panel:romans-9-s1-calvin",
+        "section_panel:romans-9-s2-calvin",
+        "chapter_panel:romans-9-debate"
+      ],
+      "must_include_source_types": ["section_panel", "debate_topic"],
+      "must_not_include": []
+    },
+    "expected_behavior": "multi-source synthesis with citations"
+  },
+  {
+    "id": "q02",
+    "query": "What does the Hebrew word chesed mean and where does it appear?",
+    "current_chapter_ref": null,
+    "expected_citations": {
+      "must_include_any_of": [
+        "word_study:hesed",
+        "lexicon_entry:heb-H2617"
+      ],
+      "must_include_source_types": ["word_study", "lexicon_entry"],
+      "must_not_include": []
+    },
+    "expected_behavior": "single-source lexicon + word-study lookup"
+  },
+  {
+    "id": "q03",
+    "query": "Are the days of Genesis 1 literal 24-hour periods or a literary framework?",
+    "current_chapter_ref": { "book_id": "genesis", "chapter_num": 1 },
+    "expected_citations": {
+      "must_include_any_of": [
+        "debate_topic:the-nature-of-the-days-yom"
+      ],
+      "must_include_source_types": ["debate_topic"],
+      "must_not_include": []
+    },
+    "expected_behavior": "debate topic with multiple positions"
+  },
+  {
+    "id": "q04",
+    "query": "How does Hebrews 10 connect the Day of Atonement to the cross?",
+    "current_chapter_ref": { "book_id": "hebrews", "chapter_num": 10 },
+    "expected_citations": {
+      "must_include_any_of": [
+        "cross_ref_thread_note:substitutionary-sacrifice-3"
+      ],
+      "must_include_source_types": ["cross_ref_thread_note"],
+      "must_not_include": []
+    },
+    "expected_behavior": "cross-testament typological reading"
+  },
+  {
+    "id": "q05",
+    "query": "What is the journey stop for Genesis 22 in Christ in the OT?",
+    "current_chapter_ref": { "book_id": "genesis", "chapter_num": 22 },
+    "expected_citations": {
+      "must_include_any_of": [],
+      "must_include_source_types": ["journey_stop"],
+      "must_not_include": []
+    },
+    "expected_behavior": "journey stop retrieval"
+  },
+  {
+    "id": "q06",
+    "query": "What do Coptic Orthodox theologians say about Romans 9?",
+    "current_chapter_ref": { "book_id": "romans", "chapter_num": 9 },
+    "expected_citations": {
+      "must_include_any_of": [],
+      "must_include_source_types": [],
+      "must_not_include": []
+    },
+    "expected_behavior": "corpus gap — expect gap_signal {gap: true}"
+  },
+  {
+    "id": "q07",
+    "query": "What is the difference between formal and dynamic equivalence translations?",
+    "current_chapter_ref": null,
+    "expected_citations": {
+      "must_include_any_of": ["meta_faq:formal-vs-dynamic-equivalence"],
+      "must_include_source_types": ["meta_faq"],
+      "must_not_include": []
+    },
+    "expected_behavior": "meta-FAQ editorial lookup"
+  },
+  {
+    "id": "q08",
+    "query": "Who was Melchizedek and why does Hebrews make so much of him?",
+    "current_chapter_ref": { "book_id": "hebrews", "chapter_num": 7 },
+    "expected_citations": {
+      "must_include_any_of": [],
+      "must_include_source_types": ["section_panel"],
+      "must_not_include": []
+    },
+    "expected_behavior": "character study with scriptural arc"
+  },
+  {
+    "id": "q09",
+    "query": "What does archaeology tell us about the walls of Jericho?",
+    "current_chapter_ref": { "book_id": "joshua", "chapter_num": 6 },
+    "expected_citations": {
+      "must_include_any_of": [],
+      "must_include_source_types": ["section_panel", "chapter_panel"],
+      "must_not_include": []
+    },
+    "expected_behavior": "archaeology + historical context"
+  },
+  {
+    "id": "q10",
+    "query": "How does the Septuagint differ from the Masoretic Text of Psalms?",
+    "current_chapter_ref": null,
+    "expected_citations": {
+      "must_include_any_of": [
+        "meta_faq:septuagint-lxx",
+        "meta_faq:masoretic-text"
+      ],
+      "must_include_source_types": ["meta_faq"],
+      "must_not_include": []
+    },
+    "expected_behavior": "textual-transmission question"
+  }
+]

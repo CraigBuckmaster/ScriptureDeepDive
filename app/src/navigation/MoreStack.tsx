@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import MoreMenuScreen from '../screens/MoreMenuScreen';
 import { useTheme } from '../theme';
+import { featureFlags } from '../constants/featureFlags';
 import type { MoreStackParamList } from './types';
 import { lazySuspense } from './lazySuspense';
 
@@ -22,6 +23,7 @@ const ForgotPasswordScreen = lazySuspense(() => import('../screens/ForgotPasswor
 const UserProfileScreen = lazySuspense(() => import('../screens/UserProfileScreen'));
 const NotificationPrefsScreen = lazySuspense(() => import('../screens/NotificationPrefsScreen'));
 const NotificationFeedScreen = lazySuspense(() => import('../screens/NotificationFeedScreen'));
+const AmicusSmokeScreen = lazySuspense(() => import('../screens/dev/AmicusSmokeScreen'));
 
 const Stack = createStackNavigator<MoreStackParamList>();
 
@@ -47,6 +49,9 @@ export function MoreStack() {
       <Stack.Screen name="UserProfile" component={UserProfileScreen} />
       <Stack.Screen name="NotificationPrefs" component={NotificationPrefsScreen} />
       <Stack.Screen name="NotificationFeed" component={NotificationFeedScreen} />
+      {featureFlags.AMICUS_SMOKE_TEST && (
+        <Stack.Screen name="AmicusSmoke" component={AmicusSmokeScreen} />
+      )}
     </Stack.Navigator>
   );
 }
