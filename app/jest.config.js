@@ -19,6 +19,9 @@ module.exports = {
     '!src/**/*.d.ts',
     '!src/types/**',
     '!src/navigation/**',
+    // Dev-only Amicus smoke harness (feature-flagged) — not shipped to users.
+    '!src/screens/dev/**',
+    '!src/services/amicus/__smoke__/**',
   ],
   coverageThreshold: {
     global: {
