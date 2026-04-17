@@ -1,11 +1,12 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home, Library, Compass, Search, MoreHorizontal } from 'lucide-react-native';
+import { Home, Library, Compass, Search, MessageSquare, MoreHorizontal } from 'lucide-react-native';
 import { useTheme } from '../theme';
 import { HomeStack } from './HomeStack';
 import { ReadStack } from './ReadStack';
 import { ExploreStack } from './ExploreStack';
 import { SearchStack } from './SearchStack';
 import { MoreStack } from './MoreStack';
+import { AmicusStack } from './AmicusStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -68,6 +69,19 @@ export function TabNavigator() {
         listeners={({ navigation }) => ({
           tabPress: () => {
             navigation.navigate('ExploreTab', { screen: 'ExploreMenu' });
+          },
+        })}
+      />
+      <Tab.Screen
+        name="AmicusTab"
+        component={AmicusStack}
+        options={{
+          tabBarLabel: 'Amicus',
+          tabBarIcon: ({ color, size }) => <MessageSquare color={color} size={size} />,
+        }}
+        listeners={({ navigation }) => ({
+          tabPress: () => {
+            navigation.navigate('AmicusTab', { screen: 'ThreadList' });
           },
         })}
       />
