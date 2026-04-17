@@ -32,6 +32,7 @@ interface SettingsState {
   comparisonTranslation: string | null;
   redLetterEnabled: boolean;
   focusMode: boolean;
+  amicusEnabled: boolean;
   gettingStartedDone: Set<string>;
   isHydrated: boolean;
 
@@ -44,6 +45,7 @@ interface SettingsState {
   setTtsVoice: (v: string) => void;
   setComparisonTranslation: (t: string | null) => void;
   setRedLetterEnabled: (v: boolean) => void;
+  setAmicusEnabled: (v: boolean) => void;
   toggleFocusMode: () => void;
   markGettingStartedDone: (key: string) => void;
   hydrate: () => Promise<void>;
@@ -60,6 +62,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   comparisonTranslation: null,
   redLetterEnabled: true,
   focusMode: false,
+  amicusEnabled: true,
   gettingStartedDone: new Set<string>(),
   isHydrated: false,
 
@@ -104,6 +107,11 @@ export const useSettingsStore = create<SettingsState>((set) => ({
     setPreference('redLetterEnabled', v ? '1' : '0').catch((err) => { logger.warn('settingsStore', 'Failed to persist redLetterEnabled', err); });
   },
 
+  setAmicusEnabled: (v) => {
+    set({ amicusEnabled: v });
+    setPreference('amicusEnabled', v ? '1' : '0').catch((err) => { logger.warn('settingsStore', 'Failed to persist amicusEnabled', err); });
+  },
+
   toggleFocusMode: () => {
     const next = !useSettingsStore.getState().focusMode;
     set({ focusMode: next });
@@ -136,6 +144,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
       const comp = await getPreference('comparisonTranslation');
       const rl = await getPreference('redLetterEnabled');
       const fm = await getPreference('focusMode');
+      const amicus = await getPreference('amicusEnabled');
       const gs = await getPreference('getting_started');
 
       let gsDone = new Set<string>();
@@ -158,6 +167,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
         comparisonTranslation: (comp && TRANSLATION_MAP.has(comp)) ? comp : null,
         redLetterEnabled: rl !== '0',
         focusMode: fm === '1',
+        amicusEnabled: amicus !== '0',
         gettingStartedDone: gsDone,
         isHydrated: true,
       });

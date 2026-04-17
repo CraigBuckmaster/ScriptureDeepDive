@@ -24,6 +24,9 @@ const UserProfileScreen = lazySuspense(() => import('../screens/UserProfileScree
 const NotificationPrefsScreen = lazySuspense(() => import('../screens/NotificationPrefsScreen'));
 const NotificationFeedScreen = lazySuspense(() => import('../screens/NotificationFeedScreen'));
 const AmicusSmokeScreen = lazySuspense(() => import('../screens/dev/AmicusSmokeScreen'));
+const AmicusProfileInspectorScreen = lazySuspense(() =>
+  import('../screens/AmicusProfileInspectorScreen'),
+);
 
 const Stack = createStackNavigator<MoreStackParamList>();
 
@@ -52,6 +55,7 @@ export function MoreStack() {
       {featureFlags.AMICUS_SMOKE_TEST && (
         <Stack.Screen name="AmicusSmoke" component={AmicusSmokeScreen} />
       )}
+      <Stack.Screen name="AmicusProfileInspector" component={AmicusProfileInspectorScreen} />
     </Stack.Navigator>
   );
 }

@@ -121,6 +121,7 @@ export type MoreStackParamList = {
   NotificationPrefs: undefined;
   NotificationFeed: undefined;
   AmicusSmoke: undefined;
+  AmicusProfileInspector: undefined;
 };
 
 export type SearchStackParamList = {
