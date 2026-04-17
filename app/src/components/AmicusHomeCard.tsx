@@ -24,6 +24,7 @@ import { setPreference } from '../db/userMutations';
 import { getPreference } from '../db/userQueries';
 import { useAmicusAccess } from '../hooks/useAmicusAccess';
 import { useDailyPrompt } from '../hooks/useDailyPrompt';
+import { navigateToAmicusWithSeed } from '../services/amicus/deepLink';
 import { useSettingsStore } from '../stores/settingsStore';
 import { fontFamily, radii, spacing, useTheme } from '../theme';
 import { logger } from '../utils/logger';
@@ -67,15 +68,14 @@ export default function AmicusHomeCard(): React.ReactElement | null {
 
   const navigateToNewThread = useCallback(
     (seedQuery?: string) => {
-      const parent = navigation.getParent<NavigationProp<ParamListBase>>();
-      parent?.navigate('AmicusTab', {
-        screen: 'NewThread',
-        params: seedQuery ? { seedQuery } : undefined,
-      });
-      logger.info(
-        'AmicusHomeCard',
-        seedQuery ? 'tapped prompt' : 'tapped input',
-      );
+      if (seedQuery) {
+        navigateToAmicusWithSeed(navigation, { query: seedQuery });
+        logger.info('AmicusHomeCard', 'tapped prompt');
+      } else {
+        const parent = navigation.getParent<NavigationProp<ParamListBase>>();
+        parent?.navigate('AmicusTab', { screen: 'NewThread' });
+        logger.info('AmicusHomeCard', 'tapped input');
+      }
     },
     [navigation],
   );
