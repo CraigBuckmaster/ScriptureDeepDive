@@ -2,14 +2,8 @@
  * LoadingSkeleton — Animated shimmer placeholder for loading states.
  */
 
-import React, { useEffect } from 'react';
-import { View, StyleSheet, type DimensionValue } from 'react-native';
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withRepeat,
-  withTiming,
-} from 'react-native-reanimated';
+import React, { useEffect, useRef } from 'react';
+import { View, Animated, StyleSheet, type DimensionValue } from 'react-native';
 import { spacing, radii } from '../theme';
 
 interface Props {
@@ -26,19 +20,18 @@ interface Props {
 const BONE_COLOR = 'rgba(191, 160, 80, 0.08)';
 
 export function LoadingSkeleton({ lines = 3, width = '100%', height = 14 }: Props) {
-  const opacity = useSharedValue(0.3);
+  const opacity = useRef(new Animated.Value(0.3)).current;
 
   useEffect(() => {
-    opacity.value = withRepeat(
-      withTiming(0.7, { duration: 800 }),
-      -1,
-      true
+    const loop = Animated.loop(
+      Animated.sequence([
+        Animated.timing(opacity, { toValue: 0.7, duration: 800, useNativeDriver: true }),
+        Animated.timing(opacity, { toValue: 0.3, duration: 800, useNativeDriver: true }),
+      ]),
     );
+    loop.start();
+    return () => loop.stop();
   }, [opacity]);
-
-  const animStyle = useAnimatedStyle(() => ({
-    opacity: opacity.value,
-  }));
 
   return (
     <View style={styles.container}>
@@ -51,8 +44,8 @@ export function LoadingSkeleton({ lines = 3, width = '100%', height = 14 }: Prop
               width: i === lines - 1 ? '60%' : width,
               height,
               backgroundColor: BONE_COLOR,
+              opacity,
             },
-            animStyle,
           ]}
         />
       ))}
