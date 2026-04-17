@@ -29,6 +29,8 @@ import { ErrorBoundary } from './src/components/ErrorBoundary';
 import { closeAllTranslationDbs } from './src/db/translationManager';
 import { ContentUpdateProvider } from './src/providers/ContentUpdateProvider';
 import { AmicusConsentProvider } from './src/services/amicus/consent';
+import { AmicusFabProvider } from './src/contexts/AmicusFabContext';
+import AmicusFab from './src/components/amicus/AmicusFab';
 import { DbDownloadScreen } from './src/screens/DbDownloadScreen';
 import { Sentry, DSN } from './src/lib/sentry';
 
@@ -223,7 +225,10 @@ function App() {
         <ThemeProvider>
           <ContentUpdateProvider>
             <AmicusConsentProvider>
-              <AppShell />
+              <AmicusFabProvider>
+                <AppShell />
+                <AmicusFab />
+              </AmicusFabProvider>
             </AmicusConsentProvider>
           </ContentUpdateProvider>
         </ThemeProvider>

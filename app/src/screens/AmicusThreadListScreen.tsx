@@ -22,6 +22,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Pin, Plus, MessageSquare } from 'lucide-react-native';
 import { useAmicusThreads } from '../hooks/useAmicusThreads';
 import { useAmicusAccess } from '../hooks/useAmicusAccess';
+import { useSuppressAmicusFab } from '../contexts/AmicusFabContext';
 import { useTheme, spacing, fontFamily } from '../theme';
 import type { ScreenNavProp } from '../navigation/types';
 import type { AmicusThread } from '../types';
@@ -33,6 +34,7 @@ export default function AmicusThreadListScreen(): React.ReactElement {
   const { threads, isLoading, refresh, actions } = useAmicusThreads();
   const access = useAmicusAccess();
   const [renaming, setRenaming] = useState<{ id: string; title: string } | null>(null);
+  useSuppressAmicusFab(); // FAB is redundant on the Amicus tab itself.
 
   // Non-premium users see the paywall in place of the thread list.
   React.useEffect(() => {

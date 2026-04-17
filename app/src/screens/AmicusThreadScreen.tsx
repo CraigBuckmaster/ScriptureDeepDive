@@ -29,6 +29,7 @@ import {
   type MetaFaqArticle,
 } from '../services/amicus/citationNav';
 import { useAmicusConsent } from '../services/amicus/consent';
+import { useSuppressAmicusFab } from '../contexts/AmicusFabContext';
 import type { AmicusCitation, AmicusThread } from '../types';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { logger } from '../utils/logger';
@@ -45,6 +46,7 @@ export default function AmicusThreadScreen(): React.ReactElement {
   const access = useAmicusAccess();
   const { messages, isStreaming, error, sendMessage, abortStream, clearError } =
     useAmicusThread(threadId);
+  useSuppressAmicusFab();
 
   useEffect(() => {
     let cancelled = false;
