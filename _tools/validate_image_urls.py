@@ -38,7 +38,17 @@ SCAN_TARGETS = [
     META / 'explore-images.json',
     ASSETS / 'explore-images.json',
     META / 'scholar-bios.json',
+    META / 'book-intros.json',
+    META / 'concepts.json',
+    META / 'map-stories.json',
+    META / 'people.json',
+    META / 'prophecy-chains.json',
+    META / 'timelines.json',
+    META / 'word-studies.json',
 ]
+
+# Also scan journey files dynamically
+JOURNEY_DIR = META / 'journeys'
 
 
 def find_image_urls(obj, path=''):
@@ -46,7 +56,7 @@ def find_image_urls(obj, path=''):
     if isinstance(obj, dict):
         for k, v in obj.items():
             child_path = f'{path}.{k}' if path else k
-            if k in ('url', 'image_url', 'image', 'portrait_url', 'src'):
+            if k in ('url', 'image_url', 'image', 'portrait_url', 'src', 'hero_image_url'):
                 if isinstance(v, str) and v.startswith('http'):
                     yield child_path, v
             else:
@@ -118,6 +128,18 @@ def main():
             total_violations += len(violations)
         else:
             print(f'  OK: {rel}')
+
+    # Scan journey files
+    if JOURNEY_DIR.exists():
+        for journey_file in sorted(JOURNEY_DIR.rglob('*.json')):
+            violations = validate_file(journey_file)
+            if violations:
+                rel = journey_file.relative_to(ROOT)
+                print(f'\n  FAIL: {rel} — {len(violations)} blocked hotlink URL(s):')
+                for json_path, url in violations:
+                    display_url = url if len(url) < 80 else url[:77] + '...'
+                    print(f'    {json_path}: {display_url}')
+                total_violations += len(violations)
 
     synced = validate_manifest_sync()
 
