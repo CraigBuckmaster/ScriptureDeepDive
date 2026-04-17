@@ -471,3 +471,29 @@ export async function incrementAmicusUsage(): Promise<void> {
      ON CONFLICT(day) DO UPDATE SET query_count = query_count + 1`,
   );
 }
+
+// ── Amicus daily prompt cache (#1465) ───────────────────────────────
+
+export interface UpsertDailyPromptArgs {
+  date: string;           // YYYY-MM-DD in user's local tz
+  profileHash: string;
+  promptText: string;
+  seedQuery: string;
+}
+
+export async function upsertDailyPrompt(
+  args: UpsertDailyPromptArgs,
+): Promise<void> {
+  await getUserDb().runAsync(
+    `INSERT INTO amicus_daily_prompt_cache
+       (id, date, profile_hash, prompt_text, seed_query, generated_at)
+     VALUES (1, ?, ?, ?, ?, datetime('now'))
+     ON CONFLICT(id) DO UPDATE SET
+       date = excluded.date,
+       profile_hash = excluded.profile_hash,
+       prompt_text = excluded.prompt_text,
+       seed_query = excluded.seed_query,
+       generated_at = excluded.generated_at`,
+    [args.date, args.profileHash, args.promptText, args.seedQuery],
+  );
+}
