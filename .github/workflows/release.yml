@@ -1,0 +1,248 @@
+name: Release (iOS TestFlight)
+
+# On-demand iOS build + TestFlight submit for Companion Study.
+#
+# How it works:
+#   1. You bump `app.json`'s `version` field on master (or leave it — EAS
+#      auto-increments buildNumber per production build).
+#   2. Go to the Actions tab → "Release (iOS TestFlight)" → "Run workflow".
+#   3. Pick the branch (master), dispatch.
+#   4. Preflight + build run automatically.
+#   5. Submit step is gated on the `testflight-submit` GitHub
+#      Environment — you get a notification asking to approve the
+#      submit. Click Approve in the Actions UI, submit runs.
+#   6. On success, a git tag `v<version>-build<number>` is pushed for
+#      traceability.
+#
+# Secrets required (repository level):
+#   EXPO_TOKEN          — Expo access token (already set, used by app.yml)
+#   ASC_API_KEY_P8_B64  — base64-encoded contents of AuthKey_T42VNQ7V5Z.p8
+#
+# Environment required:
+#   testflight-submit   — with required reviewer = you
+#
+# Setup walkthrough is in the PR description.
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_notes:
+        description: 'Optional note for the git tag (e.g. "map probe fix + Amicus handoff")'
+        required: false
+        type: string
+
+permissions:
+  contents: write   # needed to push git tags
+
+jobs:
+  # ── Preflight ──────────────────────────────────────────────────────
+  # Defense in depth. Mirrors the PR preflight — catches the case where
+  # master somehow ended up in a broken state between the last PR merge
+  # and now (rare but possible if PRs merged out of order).
+  preflight:
+    name: Preflight (tsc, jest, expo-doctor, expo export)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - run: npm ci
+
+      - name: TypeScript check
+        run: npx tsc --noEmit
+
+      - name: Jest
+        run: npx jest --ci
+
+      - name: Expo doctor
+        run: npx expo-doctor@latest
+
+      - name: Expo export — iOS bundle check
+        run: npx expo export --platform ios --output-dir /tmp/expo-export-check
+
+  # ── Build ──────────────────────────────────────────────────────────
+  # Triggers an EAS production build. `--wait` blocks the job until the
+  # build finishes (or fails) so submit can depend on its output.
+  build:
+    name: EAS build (iOS production)
+    needs: preflight
+    runs-on: ubuntu-latest
+    timeout-minutes: 45  # EAS builds typically 15-25 min; buffer for queue
+    defaults:
+      run:
+        working-directory: app
+    env:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+    outputs:
+      build_id: ${{ steps.build.outputs.build_id }}
+      app_version: ${{ steps.version.outputs.app_version }}
+      build_number: ${{ steps.version.outputs.build_number }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - run: npm ci
+
+      - name: Install EAS CLI
+        run: npm install -g eas-cli@latest
+
+      - name: Start EAS build
+        id: build
+        run: |
+          # --json emits a machine-readable build record.
+          # --wait blocks until build completes (success OR failure).
+          # --non-interactive prevents prompts.
+          BUILD_JSON=$(eas build --platform ios --profile production --non-interactive --wait --json)
+          echo "$BUILD_JSON" > /tmp/build-result.json
+
+          # eas build --json returns an array with one entry on success.
+          BUILD_ID=$(echo "$BUILD_JSON" | jq -r '.[0].id // empty')
+          if [ -z "$BUILD_ID" ]; then
+            echo "Build did not return a valid id. Raw output:"
+            echo "$BUILD_JSON"
+            exit 1
+          fi
+          echo "build_id=$BUILD_ID" >> $GITHUB_OUTPUT
+          echo "Build succeeded: https://expo.dev/accounts/skahz/projects/companion-study/builds/$BUILD_ID"
+
+      - name: Extract version + build number from build record
+        id: version
+        run: |
+          # EAS auto-increments buildNumber and records it in the build
+          # record. Pull both so the tag step has them.
+          APP_VERSION=$(jq -r '.[0].appVersion // empty' /tmp/build-result.json)
+          BUILD_NUMBER=$(jq -r '.[0].appBuildVersion // empty' /tmp/build-result.json)
+          echo "app_version=$APP_VERSION" >> $GITHUB_OUTPUT
+          echo "build_number=$BUILD_NUMBER" >> $GITHUB_OUTPUT
+          echo "Built v${APP_VERSION} build ${BUILD_NUMBER}"
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## EAS Build"
+            echo ""
+            echo "- **Version:** ${{ steps.version.outputs.app_version }}"
+            echo "- **Build number:** ${{ steps.version.outputs.build_number }}"
+            echo "- **Build ID:** ${{ steps.build.outputs.build_id }}"
+            echo "- **Expo URL:** https://expo.dev/accounts/skahz/projects/companion-study/builds/${{ steps.build.outputs.build_id }}"
+          } >> $GITHUB_STEP_SUMMARY
+
+  # ── Submit (gated) ─────────────────────────────────────────────────
+  # Gated on the `testflight-submit` environment. When the job reaches
+  # this step, you get a GitHub notification asking to approve. No
+  # approval = no submit.
+  submit:
+    name: Submit to TestFlight (approval required)
+    needs: build
+    runs-on: ubuntu-latest
+    environment: testflight-submit   # ← approval gate lives here
+    defaults:
+      run:
+        working-directory: app
+    env:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - run: npm ci
+
+      - name: Install EAS CLI
+        run: npm install -g eas-cli@latest
+
+      - name: Write App Store Connect API key to disk
+        # eas.json references `./AuthKey_T42VNQ7V5Z.p8` relative to the
+        # app/ directory. We recreate that file here from the base64
+        # secret. Deleted in a cleanup step below even on failure.
+        run: |
+          echo "${{ secrets.ASC_API_KEY_P8_B64 }}" | base64 -d > AuthKey_T42VNQ7V5Z.p8
+          # Sanity check — the decoded file should start with the PEM header.
+          if ! head -c 10 AuthKey_T42VNQ7V5Z.p8 | grep -q "BEGIN PRIVATE"; then
+            echo "ASC_API_KEY_P8_B64 secret did not decode to a valid .p8 file."
+            echo "Expected first 10 bytes to contain 'BEGIN PRIVATE'."
+            exit 1
+          fi
+          chmod 600 AuthKey_T42VNQ7V5Z.p8
+
+      - name: Submit latest build to TestFlight
+        run: |
+          eas submit \
+            --platform ios \
+            --id ${{ needs.build.outputs.build_id }} \
+            --non-interactive
+
+      - name: Clean up API key
+        if: always()   # run even on failure — never leave the key on disk
+        run: rm -f AuthKey_T42VNQ7V5Z.p8
+
+      - name: Job summary
+        if: success()
+        run: |
+          {
+            echo "## Submitted to TestFlight ✅"
+            echo ""
+            echo "- **Version:** ${{ needs.build.outputs.app_version }}"
+            echo "- **Build number:** ${{ needs.build.outputs.build_number }}"
+            echo "- **Build ID:** ${{ needs.build.outputs.build_id }}"
+          } >> $GITHUB_STEP_SUMMARY
+
+  # ── Tag ─────────────────────────────────────────────────────────────
+  # After successful submit, tag the commit for future crash bisection.
+  # Tag format: v1.0.5-build13
+  tag:
+    name: Create traceability tag
+    needs: [build, submit]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+          fetch-depth: 0  # need full history to tag
+
+      - name: Create and push tag
+        env:
+          APP_VERSION: ${{ needs.build.outputs.app_version }}
+          BUILD_NUMBER: ${{ needs.build.outputs.build_number }}
+          NOTES: ${{ github.event.inputs.release_notes }}
+        run: |
+          TAG="v${APP_VERSION}-build${BUILD_NUMBER}"
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "Tag $TAG already exists, skipping."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -n "$NOTES" ]; then
+            git tag -a "$TAG" -m "$TAG" -m "$NOTES"
+          else
+            git tag -a "$TAG" -m "$TAG"
+          fi
+          git push origin "$TAG"
+          echo "Pushed tag: $TAG"
