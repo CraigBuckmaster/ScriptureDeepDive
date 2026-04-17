@@ -35,7 +35,7 @@ from build_sqlite_loaders import (
     populate_content_library, populate_life_topics, populate_hermeneutic_lenses,
     populate_archaeology, populate_historical_interpretations,
     populate_grammar_articles, populate_content_images,
-    populate_journeys,
+    populate_journeys, populate_embeddings,
     build_fts, compute_difficulty, build_supplemental_translations,
     AVAILABLE_TRANSLATIONS, BUNDLED_TRANSLATIONS,
 )
@@ -153,6 +153,12 @@ def main():
 
     build_fts(cur)
     print("  [OK] FTS5 indexes built")
+
+    # Amicus vector embeddings (Card #1448). Safe no-op when embeddings.db
+    # is absent or sqlite-vec unavailable — build still succeeds.
+    emb_count = populate_embeddings(conn)
+    if emb_count:
+        print(f"  [OK] embeddings: {emb_count} chunks populated")
 
     # Performance indexes for hot-path queries (Card #1175)
     cur.executescript("""

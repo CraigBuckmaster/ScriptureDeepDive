@@ -1853,3 +1853,74 @@ def compute_difficulty(cur):
 
 
 # ---------------------------------------------------------------------------
+# Amicus — Vector embeddings loader (Card #1448)
+# ---------------------------------------------------------------------------
+
+def populate_embeddings(conn):
+    """Merge embeddings.db into scripture.db.
+
+    No-op with a warning in three cases (all safe for CI/builds without
+    AI-partner tooling set up):
+      - embeddings.db does not exist (run build_embeddings.py first)
+      - sqlite-vec Python package not installed
+      - the build's sqlite3 can't load extensions
+
+    On success, creates the `embeddings` vec0 virtual table, copies every
+    row from the source DB into (embeddings, chunk_text, chunk_metadata)
+    in matching order so rowid ↔ chunk_id stays consistent.
+
+    Returns the number of chunks populated (0 on skip).
+    """
+    import sqlite3
+
+    embeddings_db = ROOT / 'embeddings.db'
+    if not embeddings_db.exists():
+        print('  [WARN] embeddings.db not found — skipping embeddings table')
+        print('         Run: python _tools/build_embeddings.py')
+        return 0
+
+    import sys as _sys
+    _sys.path.insert(0, str(ROOT / '_tools'))
+    from sqlite_vec_loader import try_load
+
+    loaded, msg = try_load(conn)
+    if not loaded:
+        print(f'  [WARN] sqlite-vec unavailable ({msg}) — skipping embeddings table')
+        return 0
+
+    conn.execute(
+        'CREATE VIRTUAL TABLE IF NOT EXISTS embeddings USING vec0('
+        'embedding FLOAT[1536])'
+    )
+
+    src = sqlite3.connect(f'file:{embeddings_db}?mode=ro', uri=True)
+    try:
+        rows = src.execute(
+            'SELECT chunk_id, source_type, source_id, text, metadata_json, '
+            'embedding FROM embedding_chunks ORDER BY chunk_id'
+        ).fetchall()
+    finally:
+        src.close()
+
+    cur = conn.cursor()
+    inserted = 0
+    for chunk_id, src_type, src_id, text, meta_json, emb_blob in rows:
+        meta = json.loads(meta_json) if meta_json else {}
+        cur.execute('INSERT INTO embeddings(embedding) VALUES (?)', (emb_blob,))
+        cur.execute('INSERT INTO chunk_text(chunk_id, text) VALUES (?, ?)',
+                    (chunk_id, text))
+        cur.execute(
+            'INSERT INTO chunk_metadata'
+            '(chunk_id, source_type, source_id, scholar_id, tradition,'
+            ' book_id, chapter_num, verse_start, verse_end, panel_type)'
+            ' VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (chunk_id, src_type, src_id,
+             meta.get('scholar_id'), meta.get('tradition'),
+             meta.get('book_id'), meta.get('chapter_num'),
+             meta.get('verse_start'), meta.get('verse_end'),
+             meta.get('panel_type')),
+        )
+        inserted += 1
+
+    conn.commit()
+    return inserted
