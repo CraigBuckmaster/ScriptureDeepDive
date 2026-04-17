@@ -9,18 +9,12 @@ jest.mock('expo-image', () => ({
   },
 }));
 
-jest.mock('react-native-reanimated', () => {
-  const Reanimated = require('react-native-reanimated/mock');
-  Reanimated.default.call = () => {};
-  return Reanimated;
-});
-
 jest.mock('react-native-gesture-handler', () => ({
   GestureDetector: ({ children }: any) => children,
   Gesture: {
-    Pinch: () => ({ onUpdate: () => ({ onEnd: () => ({}) }), onEnd: () => ({}) }),
-    Pan: () => ({ minPointers: () => ({ onUpdate: () => ({ onEnd: () => ({}) }) }) }),
-    Tap: () => ({ numberOfTaps: () => ({ onEnd: () => ({}) }) }),
+    Pinch: () => ({ onUpdate: () => ({ onEnd: () => ({ runOnJS: () => ({}) }) }), onEnd: () => ({ runOnJS: () => ({}) }), runOnJS: () => ({}) }),
+    Pan: () => ({ minPointers: () => ({ onUpdate: () => ({ onEnd: () => ({ runOnJS: () => ({}) }) }) }), runOnJS: () => ({}) }),
+    Tap: () => ({ numberOfTaps: () => ({ onEnd: () => ({ runOnJS: () => ({}) }) }), runOnJS: () => ({}) }),
     Simultaneous: () => ({}),
     Race: () => ({}),
   },
