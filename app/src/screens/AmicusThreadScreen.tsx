@@ -1,27 +1,27 @@
 /**
- * AmicusThreadScreen — shell for a single Amicus conversation.
+ * AmicusThreadScreen — live conversation view with streaming chat.
  *
- * Only the header + placeholder list + placeholder input are wired in this
- * card (#1454). Streaming + citation rendering + full input behavior arrive
- * in #1455.
+ * Shell came from #1454; this card (#1455) wires the streaming orchestrator,
+ * MessageList, InputBar, and error banners.
  */
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
-  FlatList,
   KeyboardAvoidingView,
   Platform,
   Pressable,
   StyleSheet,
   Text,
-  TextInput,
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { ChevronLeft } from 'lucide-react-native';
 import { useTheme, spacing, fontFamily } from '../theme';
-import { getAmicusThread, listAmicusMessages } from '../db/userQueries';
-import type { AmicusMessage, AmicusThread } from '../types';
+import { getAmicusThread } from '../db/userQueries';
+import MessageList from '../components/amicus/MessageList';
+import InputBar from '../components/amicus/InputBar';
+import { useAmicusThread } from '../hooks/useAmicusThread';
+import type { AmicusCitation, AmicusThread } from '../types';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { logger } from '../utils/logger';
 
@@ -32,27 +32,41 @@ export default function AmicusThreadScreen(): React.ReactElement {
   const { threadId } = route.params;
 
   const [thread, setThread] = useState<AmicusThread | null>(null);
-  const [messages, setMessages] = useState<AmicusMessage[]>([]);
+  const { messages, isStreaming, error, sendMessage, abortStream, clearError } =
+    useAmicusThread(threadId);
 
   useEffect(() => {
     let cancelled = false;
-    (async () => {
+    void (async () => {
       try {
-        const [t, m] = await Promise.all([
-          getAmicusThread(threadId),
-          listAmicusMessages(threadId),
-        ]);
-        if (cancelled) return;
-        setThread(t);
-        setMessages(m);
+        const t = await getAmicusThread(threadId);
+        if (!cancelled) setThread(t);
       } catch (err) {
-        logger.error('Amicus', 'thread load failed', err);
+        logger.error('Amicus', 'thread fetch failed', err);
       }
     })();
     return () => {
       cancelled = true;
     };
   }, [threadId]);
+
+  const handleSend = useCallback(
+    async (text: string) => {
+      // TODO(#1460): source authToken from RevenueCat entitlement store.
+      const authToken = process.env.EXPO_PUBLIC_AMICUS_DEV_TOKEN ?? '';
+      if (!authToken) {
+        logger.warn('Amicus', 'no auth token — aborting send');
+        return;
+      }
+      await sendMessage(text, authToken);
+    },
+    [sendMessage],
+  );
+
+  const handleCitation = useCallback((c: AmicusCitation) => {
+    // #1456 wires real navigation. For now, log.
+    logger.info('Amicus', `citation pressed: ${c.chunk_id}`);
+  }, []);
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
@@ -83,50 +97,60 @@ export default function AmicusThreadScreen(): React.ReactElement {
         style={styles.flex}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
-        <FlatList
-          inverted
-          data={[...messages].reverse()}
-          keyExtractor={(m) => m.message_id}
-          contentContainerStyle={styles.messagesContent}
-          renderItem={({ item }) => (
-            <View
-              style={[
-                styles.messageBubble,
-                item.role === 'user'
-                  ? [styles.userBubble, { backgroundColor: base.gold }]
-                  : [styles.assistantBubble, { backgroundColor: base.bgSurface }],
-              ]}
-            >
-              <Text
-                style={{
-                  color: item.role === 'user' ? base.bg : base.text,
-                  fontFamily: fontFamily.body,
-                }}
-              >
-                {item.content}
-              </Text>
-            </View>
-          )}
-          ListEmptyComponent={
-            <View style={styles.empty}>
-              <Text style={[styles.emptyText, { color: base.textMuted, fontFamily: fontFamily.bodyItalic }]}>
-                Ask Amicus anything.
-              </Text>
-            </View>
-          }
+        <MessageList
+          messages={messages}
+          isStreaming={isStreaming}
+          onCitationPress={handleCitation}
+          onFollowUp={(text) => void handleSend(text)}
         />
 
-        <View style={[styles.inputBar, { borderTopColor: base.border, backgroundColor: base.bg }]}>
-          <TextInput
-            placeholder="Message Amicus…"
-            placeholderTextColor={base.textMuted}
-            style={[styles.input, { color: base.text, borderColor: base.border }]}
-            editable={false}
-          />
-        </View>
+        {error && <ErrorBanner error={error} onDismiss={clearError} />}
+
+        <InputBar
+          isStreaming={isStreaming}
+          onSend={(t) => void handleSend(t)}
+          onAbort={abortStream}
+        />
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
+}
+
+function ErrorBanner({
+  error,
+  onDismiss,
+}: {
+  error: { code: string; message: string };
+  onDismiss: () => void;
+}): React.ReactElement {
+  const { base } = useTheme();
+  const message = bannerCopy(error.code);
+  return (
+    <Pressable
+      accessibilityLabel={`${message}. Tap to dismiss.`}
+      onPress={onDismiss}
+      style={[styles.banner, { backgroundColor: `${base.gold}20`, borderColor: base.gold }]}
+    >
+      <Text style={{ color: base.text, fontFamily: fontFamily.body, fontSize: 13 }}>
+        {message}
+      </Text>
+    </Pressable>
+  );
+}
+
+function bannerCopy(code: string): string {
+  switch (code) {
+    case 'OFFLINE':
+      return 'Amicus needs an internet connection. Tap to dismiss.';
+    case 'PROXY_UNAUTHORIZED':
+      return 'Your subscription is required to use Amicus. Tap to dismiss.';
+    case 'EMBED_FAILED':
+      return 'Amicus is temporarily unavailable. Tap to dismiss.';
+    case 'EXTENSION_NOT_LOADED':
+      return 'Amicus retrieval is unavailable on this device build. Tap to dismiss.';
+    default:
+      return 'Something went wrong. Tap to dismiss.';
+  }
 }
 
 const styles = StyleSheet.create({
@@ -143,24 +167,11 @@ const styles = StyleSheet.create({
   headerText: { flex: 1, marginLeft: spacing.sm },
   headerTitle: { fontSize: 16 },
   headerBadge: { fontSize: 11, marginTop: 2 },
-  messagesContent: { padding: spacing.md, gap: spacing.sm },
-  messageBubble: { padding: spacing.sm, borderRadius: 12, maxWidth: '85%' },
-  userBubble: { alignSelf: 'flex-end' },
-  assistantBubble: { alignSelf: 'flex-start' },
-  empty: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: spacing.lg },
-  emptyText: { fontSize: 15 },
-  inputBar: {
-    flexDirection: 'row',
-    alignItems: 'center',
+  banner: {
     padding: spacing.sm,
-    borderTopWidth: StyleSheet.hairlineWidth,
-  },
-  input: {
-    flex: 1,
+    marginHorizontal: spacing.sm,
+    marginBottom: spacing.xs,
+    borderRadius: 12,
     borderWidth: 1,
-    borderRadius: 999,
-    paddingHorizontal: spacing.md,
-    paddingVertical: 8,
-    fontSize: 14,
   },
 });
