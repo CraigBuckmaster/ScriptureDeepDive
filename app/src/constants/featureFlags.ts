@@ -20,6 +20,15 @@ export const featureFlags = {
    */
   AMICUS_SMOKE_TEST:
     isDev() && process.env.EXPO_PUBLIC_AMICUS_SMOKE === 'true',
+
+  /**
+   * Sentry smoke-test screen — triggers synthetic errors so we can verify
+   * events land in Sentry with resolved stack traces. Dev-only by
+   * construction — only visible when `__DEV__` is true AND
+   * `EXPO_PUBLIC_SENTRY_SMOKE=true`.
+   */
+  SENTRY_SMOKE_TEST:
+    isDev() && process.env.EXPO_PUBLIC_SENTRY_SMOKE === 'true',
 } as const;
 
 export type FeatureFlag = keyof typeof featureFlags;

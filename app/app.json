@@ -58,7 +58,15 @@
       ],
       "expo-asset",
       "expo-sqlite",
-      "@maplibre/maplibre-react-native"
+      "@maplibre/maplibre-react-native",
+      [
+        "@sentry/react-native/expo",
+        {
+          "organization": "companion-study",
+          "project": "react-native",
+          "url": "https://sentry.io/"
+        }
+      ]
     ],
     "updates": {
       "url": "https://u.expo.dev/105f31ba-3cfb-4d35-8509-4abbe6ab132d",

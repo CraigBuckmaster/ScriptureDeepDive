@@ -24,6 +24,7 @@ const UserProfileScreen = lazySuspense(() => import('../screens/UserProfileScree
 const NotificationPrefsScreen = lazySuspense(() => import('../screens/NotificationPrefsScreen'));
 const NotificationFeedScreen = lazySuspense(() => import('../screens/NotificationFeedScreen'));
 const AmicusSmokeScreen = lazySuspense(() => import('../screens/dev/AmicusSmokeScreen'));
+const SentrySmokeScreen = lazySuspense(() => import('../screens/dev/SentrySmokeScreen'));
 const AmicusProfileInspectorScreen = lazySuspense(() =>
   import('../screens/AmicusProfileInspectorScreen'),
 );
@@ -54,6 +55,9 @@ export function MoreStack() {
       <Stack.Screen name="NotificationFeed" component={NotificationFeedScreen} />
       {featureFlags.AMICUS_SMOKE_TEST && (
         <Stack.Screen name="AmicusSmoke" component={AmicusSmokeScreen} />
+      )}
+      {featureFlags.SENTRY_SMOKE_TEST && (
+        <Stack.Screen name="SentrySmoke" component={SentrySmokeScreen} />
       )}
       <Stack.Screen name="AmicusProfileInspector" component={AmicusProfileInspectorScreen} />
     </Stack.Navigator>

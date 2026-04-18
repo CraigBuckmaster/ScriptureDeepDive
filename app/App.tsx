@@ -32,7 +32,8 @@ import { AmicusConsentProvider } from './src/services/amicus/consent';
 import { AmicusFabProvider } from './src/contexts/AmicusFabContext';
 import AmicusFab from './src/components/amicus/AmicusFab';
 import { DbDownloadScreen } from './src/screens/DbDownloadScreen';
-import { Sentry, DSN } from './src/lib/sentry';
+import { Sentry, DSN, setSentryUser } from './src/lib/sentry';
+import { getAnonymousId } from './src/utils/anonymousId';
 
 /**
  * Root navigation ref — shared with non-component code (notification tap
@@ -157,6 +158,15 @@ function App() {
         await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
         const status = await initDatabase();   // Content DB (scripture.db) — may be missing on first launch
         await initUserDatabase();              // User DB (user.db) — never replaced, migrated
+        // Bind an anonymous identifier to Sentry so crashes from a single
+        // install roll up under one user. Best-effort — if it fails we
+        // just don't get per-user grouping this session.
+        try {
+          const anonId = await getAnonymousId();
+          setSentryUser(anonId);
+        } catch {
+          /* non-fatal */
+        }
         await useSettingsStore.getState().hydrate();
         await useAuthStore.getState().hydrate();
         await usePremiumStore.getState().hydrate();
