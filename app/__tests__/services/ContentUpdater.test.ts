@@ -26,6 +26,9 @@ const mockFileMap = new Map<string, FileRecord>();
 const mockFileOps = {
   create: jest.fn(),
   write: jest.fn(),
+  writeBytes: jest.fn(),
+  handleOpen: jest.fn(),
+  handleClose: jest.fn(),
   copy: jest.fn(),
   move: jest.fn(),
   delete: jest.fn(),
@@ -82,6 +85,24 @@ jest.mock('expo-file-system', () => {
       const rec = getRec(this.uri);
       rec.exists = true;
       rec.size = typeof bytes === 'string' ? bytes.length : bytes.byteLength;
+    }
+    open(): {
+      writeBytes: (chunk: Uint8Array) => void;
+      close: () => void;
+    } {
+      mockFileOps.handleOpen(this.uri);
+      const uri = this.uri;
+      return {
+        writeBytes: (chunk: Uint8Array) => {
+          mockFileOps.writeBytes(uri, chunk);
+          const rec = getRec(uri);
+          rec.exists = true;
+          rec.size += chunk.byteLength;
+        },
+        close: () => {
+          mockFileOps.handleClose(uri);
+        },
+      };
     }
     copy(dest: { uri: string }): void {
       mockFileOps.copy({ from: this.uri, to: dest.uri });
@@ -694,6 +715,68 @@ describe('ContentUpdater service', () => {
       expect(mockFileOps.delete).toHaveBeenCalledWith(
         expect.stringContaining('scripture_backup.db'),
       );
+    });
+
+    // ── chunked-write path (regression for 1.0.6(15)/1.0.6(16)) ─────
+    // `File#write` is a synchronous Expo Modules Function; passing a ~90 MB
+    // buffer through it in one shot caused a process-terminating NSException
+    // on iOS 26. We now route through a FileHandle with 1 MiB chunks and
+    // surface any error as a promise rejection. See PR #1514 + #1516 history.
+
+    it('writes the downloaded payload via FileHandle, not File#write', async () => {
+      mockGetFirstAsync
+        .mockResolvedValueOnce({ value: 'v1.0.0' })
+        .mockResolvedValueOnce({ value: 'v2.0.0' });
+      resetXhr(200);
+      mockChecksumPass(sampleManifest.full_db_sha256);
+
+      await ContentUpdater.downloadFullDb(sampleManifest);
+
+      expect(mockFileOps.handleOpen).toHaveBeenCalledWith(
+        expect.stringContaining('scripture_download.db'),
+      );
+      expect(mockFileOps.writeBytes).toHaveBeenCalled();
+      expect(mockFileOps.handleClose).toHaveBeenCalledWith(
+        expect.stringContaining('scripture_download.db'),
+      );
+      // The legacy single-shot write path must be gone.
+      expect(mockFileOps.write).not.toHaveBeenCalled();
+    });
+
+    it('splits a multi-MB payload into 1 MiB chunks', async () => {
+      mockGetFirstAsync
+        .mockResolvedValueOnce({ value: 'v1.0.0' })
+        .mockResolvedValueOnce({ value: 'v2.0.0' });
+      // 2.5 MiB payload → expect 3 chunks (1 MiB, 1 MiB, 0.5 MiB)
+      const payloadBytes = Math.floor(2.5 * (1 << 20));
+      xhrControls.response = new ArrayBuffer(payloadBytes);
+      xhrControls.status = 200;
+      xhrControls.progressEvents = [];
+      mockChecksumPass(sampleManifest.full_db_sha256);
+
+      await ContentUpdater.downloadFullDb(sampleManifest);
+
+      expect(mockFileOps.writeBytes).toHaveBeenCalledTimes(3);
+      const chunkSizes = mockFileOps.writeBytes.mock.calls.map(
+        (call) => (call[1] as Uint8Array).byteLength,
+      );
+      expect(chunkSizes).toEqual([1 << 20, 1 << 20, payloadBytes - 2 * (1 << 20)]);
+    });
+
+    it('closes the file handle even when a chunk write throws', async () => {
+      mockGetFirstAsync.mockResolvedValue({ value: 'v1.0.0' });
+      resetXhr(200);
+      mockFileOps.writeBytes.mockImplementationOnce(() => {
+        throw new Error('simulated native write failure');
+      });
+
+      const result = await ContentUpdater.downloadFullDb(sampleManifest);
+
+      expect(result.status).toBe('failed');
+      expect(result.error).toContain('File write failed');
+      expect(result.error).toContain('simulated native write failure');
+      // Handle must still have been closed despite the throw.
+      expect(mockFileOps.handleClose).toHaveBeenCalled();
     });
   });
 });

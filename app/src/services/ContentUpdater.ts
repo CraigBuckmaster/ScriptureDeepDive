@@ -375,9 +375,29 @@ class ContentUpdaterService {
     }
   }
 
+  /** Size of each chunk (in bytes) when streaming a downloaded payload to disk. */
+  private static readonly WRITE_CHUNK_BYTES = 1 << 20; // 1 MiB
+
   /**
    * XHR-based download with progress reporting. Writes the full response
    * body to `destFile` via the new File API.
+   *
+   * The payload is written in {@link WRITE_CHUNK_BYTES}-sized chunks through a
+   * {@link FileHandle} rather than via a single {@link File#write} call.
+   * `File#write` is a synchronous Expo Modules `Function` — when invoked
+   * with a large (~90 MB) `Uint8Array`, any native error thrown during the
+   * write surfaces as an `NSException` from within
+   * `ObjCTurboModule::performVoidMethodInvocation`. With the iOS 26 patch
+   * from #1514 in place, that exception is re-thrown cleanly rather than
+   * corrupting `jsi::Runtime`, but there is no `@catch` up the GCD queue
+   * so the process aborts. See the 1.0.6(15)/1.0.6(16) TestFlight crash
+   * logs for the terminating `RCTTurboModule.mm:446` frame.
+   *
+   * Chunked writes keep each individual TurboModule invocation in a size
+   * range that file-system natives routinely handle without issue, and —
+   * critically — wrap the write in a try/catch so any failure becomes a
+   * promise rejection surfaced by {@link DbDownloadScreen} instead of a
+   * process-terminating exception.
    */
   private async downloadWithProgress(
     url: string,
@@ -394,30 +414,63 @@ class ContentUpdaterService {
         }
       };
       xhr.onload = () => {
-        if (xhr.status >= 200 && xhr.status < 300) {
-          try {
-            const buffer = xhr.response as ArrayBuffer | null;
-            if (!buffer) {
-              reject(new Error('Download returned empty body'));
-              return;
-            }
-            const bytes = new Uint8Array(buffer);
-            destFile.create({ overwrite: true });
-            destFile.write(bytes);
-            resolve();
-          } catch (err) {
-            reject(err);
-          }
+        if (xhr.status < 200 || xhr.status >= 300) {
+          const httpErr = new Error(`HTTP ${xhr.status}`);
+          (httpErr as Error & { httpStatus?: number }).httpStatus = xhr.status;
+          reject(httpErr);
           return;
         }
-        const httpErr = new Error(`HTTP ${xhr.status}`);
-        (httpErr as Error & { httpStatus?: number }).httpStatus = xhr.status;
-        reject(httpErr);
+
+        const buffer = xhr.response as ArrayBuffer | null;
+        if (!buffer) {
+          reject(new Error('Download returned empty body'));
+          return;
+        }
+
+        const bytes = new Uint8Array(buffer);
+        try {
+          this.writeChunked(destFile, bytes);
+        } catch (err) {
+          const msg = err instanceof Error ? err.message : String(err);
+          reject(new Error(
+            `File write failed after ${bytes.length} bytes received: ${msg}`,
+          ));
+          return;
+        }
+        resolve();
       };
       xhr.onerror = () => reject(new Error('Download network error'));
       xhr.ontimeout = () => reject(new Error('Download timeout'));
       xhr.send();
     });
+  }
+
+  /**
+   * Write `bytes` to `destFile` in {@link WRITE_CHUNK_BYTES} chunks via a
+   * `FileHandle`. Any error thrown during create/open/write propagates; the
+   * handle is closed via `finally` so a partial write cannot leak a handle.
+   *
+   * Factored out so the full write path is covered by the single try/catch
+   * in {@link downloadWithProgress}.
+   */
+  private writeChunked(destFile: File, bytes: Uint8Array): void {
+    destFile.create({ overwrite: true });
+    const handle = destFile.open();
+    try {
+      const chunk = ContentUpdaterService.WRITE_CHUNK_BYTES;
+      for (let offset = 0; offset < bytes.length; offset += chunk) {
+        const end = Math.min(offset + chunk, bytes.length);
+        handle.writeBytes(bytes.subarray(offset, end));
+      }
+    } finally {
+      try {
+        handle.close();
+      } catch (closeErr) {
+        // Closing a handle on an already-failed write shouldn't mask the
+        // real error; log it and move on so the original exception surfaces.
+        logger.warn(TAG, 'FileHandle close failed after chunked write', closeErr);
+      }
+    }
   }
 
   /**
