@@ -16,6 +16,7 @@ import { useTheme, spacing, fontFamily } from '../theme';
 import { usePremiumStore } from '../stores/premiumStore';
 import { logger } from '../utils/logger';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+import { featureFlags } from '../constants/featureFlags';
 import {
   PremiumBanner,
   PreferencesSection,
@@ -128,6 +129,20 @@ function SettingsScreen() {
 
         <AboutSection base={base} paragraphs={ABOUT_PARAGRAPHS} stats={stats} version={APP_VERSION} />
         <DataSection base={base} />
+
+        {featureFlags.SENTRY_SMOKE_TEST && (
+          <TouchableOpacity
+            onPress={() => navigation.navigate('SentrySmoke')}
+            style={[sharedStyles.row, { borderBottomColor: base.border + '40' }]}
+            accessibilityRole="button"
+            accessibilityLabel="Sentry Smoke Test (dev)"
+          >
+            <Text style={[sharedStyles.rowLabel, { color: base.textDim }]}>
+              Sentry Smoke Test (dev)
+            </Text>
+            <Text style={[styles.navArrow, { color: base.textMuted }]}>{'\u203A'}</Text>
+          </TouchableOpacity>
+        )}
 
         <View style={styles.bottomSpacer} />
       </ScrollView>

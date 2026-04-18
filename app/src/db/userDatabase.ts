@@ -545,6 +545,17 @@ const MIGRATIONS: Migration[] = [
       );
     `,
   },
+  {
+    version: 18,
+    description: 'App metadata — device-local key/value (anonymous IDs, etc.). Intentionally separate from user_preferences so values are never synced to Supabase.',
+    sql: `
+      CREATE TABLE IF NOT EXISTS app_meta (
+        key TEXT PRIMARY KEY,
+        value TEXT NOT NULL,
+        updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+      );
+    `,
+  },
 ];
 
 /**

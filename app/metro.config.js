@@ -1,23 +1,17 @@
-const { getDefaultConfig } = require('expo/metro-config');
+/**
+ * metro.config.js — Metro bundler configuration.
+ *
+ * Wraps Expo's default config with Sentry's Expo wrapper so that source maps
+ * are automatically uploaded to Sentry during EAS builds. The wrapper is a
+ * pass-through at bundle time; it only adds the source-map-upload step in CI.
+ *
+ * See: https://docs.sentry.io/platforms/react-native/manual-setup/expo/
+ */
+const { getSentryExpoConfig } = require('@sentry/react-native/metro');
 
-const config = getDefaultConfig(__dirname);
+const config = getSentryExpoConfig(__dirname);
 
 // Allow metro to resolve .db files as bundled assets
 config.resolver.assetExts = [...(config.resolver.assetExts || []), 'db'];
-
-// Optional native packages that may not be installed yet.
-// Resolve them to an empty shim so Metro doesn't fail at bundle time.
-const optionalPeers = new Set(['@sentry/react-native']);
-
-const originalResolveRequest = config.resolver.resolveRequest;
-config.resolver.resolveRequest = (context, moduleName, platform) => {
-  if (optionalPeers.has(moduleName)) {
-    return { type: 'empty' };
-  }
-  if (originalResolveRequest) {
-    return originalResolveRequest(context, moduleName, platform);
-  }
-  return context.resolveRequest(context, moduleName, platform);
-};
 
 module.exports = config;
