@@ -1,9 +1,9 @@
 import React from 'react';
 import { Alert } from 'react-native';
 import { fireEvent } from '@testing-library/react-native';
+import { getMockUserDb, resetMockUserDb } from '../../../../__tests__/helpers/mockUserDb';
 import { renderWithProviders } from '../../../../__tests__/helpers/renderWithProviders';
 import { AmicusSettingsSection } from '@/screens/settings/AmicusSettingsSection';
-import { getMockUserDb, resetMockUserDb } from '../../../../__tests__/helpers/mockUserDb';
 
 jest.mock('@/db/userDatabase', () =>
   require('../../../../__tests__/helpers/mockUserDb').mockUserDatabaseModule(),

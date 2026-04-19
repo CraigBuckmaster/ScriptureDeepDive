@@ -18,8 +18,8 @@
  */
 
 import React, { Component, type ErrorInfo, type ReactNode } from 'react';
-import { MapUnavailableCard } from './MapUnavailableCard';
 import { logger } from '../../utils/logger';
+import { MapUnavailableCard } from './MapUnavailableCard';
 
 interface Props {
   children: ReactNode;

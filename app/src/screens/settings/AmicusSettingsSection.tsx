@@ -17,13 +17,13 @@ import {
   View,
 } from 'react-native';
 import { ChevronRight } from 'lucide-react-native';
-import type { BaseColors } from '../../theme/palettes';
-import { fontFamily, spacing } from '../../theme';
-import { SectionLabel } from './SectionLabel';
 import { clearAllAmicusData } from '../../db/userMutations';
-import { clearProfile } from '../../services/amicus/profile/generator';
 import { resetAmicusOptIn } from '../../services/amicus/consent';
+import { clearProfile } from '../../services/amicus/profile/generator';
+import { fontFamily, spacing } from '../../theme';
+import type { BaseColors } from '../../theme/palettes';
 import { logger } from '../../utils/logger';
+import { SectionLabel } from './SectionLabel';
 
 export interface AmicusSettingsSectionProps {
   base: BaseColors;

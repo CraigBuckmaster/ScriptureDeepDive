@@ -44,6 +44,7 @@ export function useAmicusThread(threadId: string): UseAmicusThreadResult {
   }, [threadId]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load
     void refresh();
     return () => {
       abortRef.current?.abort();
