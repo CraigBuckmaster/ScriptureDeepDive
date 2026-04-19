@@ -100,6 +100,22 @@ export async function reloadDatabase(): Promise<SQLite.SQLiteDatabase> {
 }
 
 /**
+ * Close the live content DB connection (if open) and clear the in-memory
+ * handle. Used before on-disk DB replacement to avoid swapping files while
+ * SQLite still has the old file open.
+ */
+export async function closeDatabaseConnection(): Promise<void> {
+  if (!db) return;
+  try {
+    await db.closeAsync();
+  } catch {
+    // ignore — best-effort close before swap
+  } finally {
+    db = null;
+  }
+}
+
+/**
  * Get the database that contains verses for the given translation.
  * - Bundled translations (NIV, KJV) → core scripture.db
  * - Downloaded translations (ESV, ASV, etc.) → separate translation_*.db
