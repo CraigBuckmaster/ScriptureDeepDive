@@ -228,11 +228,16 @@ function App() {
               onComplete={async () => {
                 // Open the freshly-downloaded DB before entering the app tree
                 try {
-                  await initDatabase();
+                  const status = await initDatabase();
+                  if (status !== 'ready') {
+                    throw new Error('Downloaded DB did not initialize as ready');
+                  }
+                  setDbStatus('ready');
                 } catch (e) {
                   console.error('Post-download init error:', e);
+                  // Keep user on download screen (with retry) if init failed.
+                  throw e;
                 }
-                setDbStatus('ready');
               }}
             />
           </ThemeProvider>
