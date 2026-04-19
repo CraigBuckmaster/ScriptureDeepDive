@@ -24,12 +24,14 @@ import {
   addBreadcrumb,
   Sentry,
   DSN,
+  getSentryInitStatus,
 } from '../../lib/sentry';
 import { logger } from '../../utils/logger';
 
 export default function SentrySmokeScreen(): React.ReactElement {
   const dsnConfigured = Boolean(DSN);
   const sentryReady = Boolean(Sentry);
+  const initStatus = getSentryInitStatus();
 
   const throwJsError = useCallback(() => {
     addBreadcrumb('User pressed throw-js-error', 'smoke-test');
@@ -73,6 +75,15 @@ export default function SentrySmokeScreen(): React.ReactElement {
         <Text style={styles.statusLabel}>Sentry module loaded:</Text>
         <Text style={sentryReady ? styles.statusOk : styles.statusBad}>
           {sentryReady ? 'yes' : 'NO — check @sentry/react-native install'}
+        </Text>
+
+        <Text style={styles.statusLabel}>Init status:</Text>
+        <Text style={initStatus.state === 'initialized' ? styles.statusOk : styles.statusBad}>
+          {initStatus.state === 'init-threw'
+            ? `threw: ${initStatus.error}`
+            : initStatus.state === 'module-shape-mismatch'
+              ? `module shape mismatch (init was "${initStatus.initType}")`
+              : initStatus.state}
         </Text>
 
         <Text style={styles.statusLabel}>Release:</Text>
