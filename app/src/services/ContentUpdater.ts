@@ -16,7 +16,7 @@ import * as SQLite from 'expo-sqlite';
 import * as Crypto from 'expo-crypto';
 import { inflate } from 'pako';
 import { logger } from '../utils/logger';
-import { closeDatabaseConnection, getDbIfInitialized } from '../db/database';
+import { closeDatabaseConnection, getDbIfInitialized, reloadDatabase } from '../db/database';
 
 // ── Constants ────────────────────────────────────────────────
 
@@ -192,6 +192,7 @@ class ContentUpdaterService {
    */
   async applyDelta(delta: ManifestDelta): Promise<UpdateResult> {
     const tempFile = sqliteFile(DELTA_TEMP_NAME);
+    let closedLiveDb = false;
     try {
       this.ensureSqliteDir();
 
@@ -221,7 +222,8 @@ class ContentUpdaterService {
       const sql = new TextDecoder().decode(inflate(bytes));
 
       // Backup current DB before modifying
-      await closeDatabaseConnection();
+      closedLiveDb = getDbIfInitialized() != null;
+      if (closedLiveDb) await closeDatabaseConnection();
       await this.backupCurrentDb();
 
       // Apply the SQL in a transaction
@@ -269,6 +271,9 @@ class ContentUpdaterService {
       safeDelete(tempFile);
 
       logger.info(TAG, `Delta applied: ${delta.from_version} → ${delta.to_version}`);
+      if (closedLiveDb) {
+        await reloadDatabase();
+      }
       return {
         status: 'updated',
         fromVersion: delta.from_version,
@@ -278,6 +283,13 @@ class ContentUpdaterService {
       };
     } catch (err) {
       safeDelete(tempFile);
+      if (closedLiveDb) {
+        try {
+          await reloadDatabase();
+        } catch (reopenErr) {
+          logger.warn(TAG, 'Failed to reopen DB after delta failure', reopenErr);
+        }
+      }
       const message = err instanceof Error ? err.message : String(err);
       logger.error(TAG, 'Delta application failed', err);
       return { status: 'failed', error: message };
@@ -297,6 +309,7 @@ class ContentUpdaterService {
   ): Promise<UpdateResult> {
     const tempFile = sqliteFile(DOWNLOAD_TEMP_NAME);
     const tempDbName = DOWNLOAD_TEMP_NAME;
+    let closedLiveDb = false;
     try {
       const fromVersion = await this.getInstalledVersion();
 
@@ -366,7 +379,8 @@ class ContentUpdaterService {
       }
 
       // Verification passed — now swap the live DB
-      await closeDatabaseConnection();
+      closedLiveDb = getDbIfInitialized() != null;
+      if (closedLiveDb) await closeDatabaseConnection();
       await this.backupCurrentDb();
       const dbFile = sqliteFile(DB_NAME);
       safeDelete(dbFile);
@@ -376,6 +390,10 @@ class ContentUpdaterService {
 
       // Success — remove backup
       safeDelete(sqliteFile(BACKUP_NAME));
+
+      if (closedLiveDb) {
+        await reloadDatabase();
+      }
 
       logger.info(TAG, `Full DB downloaded: v${manifest.current_version}`);
       return {
@@ -387,6 +405,13 @@ class ContentUpdaterService {
       };
     } catch (err) {
       safeDelete(tempFile);
+      if (closedLiveDb) {
+        try {
+          await reloadDatabase();
+        } catch (reopenErr) {
+          logger.warn(TAG, 'Failed to reopen DB after full download failure', reopenErr);
+        }
+      }
       const message = err instanceof Error ? err.message : String(err);
       logger.error(TAG, 'Full DB download failed', err);
       return { status: 'failed', error: message };

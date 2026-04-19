@@ -257,9 +257,11 @@ const mockFetch = jest.fn();
 // ── Mock db/database live-handle helper ───────────────────────────
 const mockGetDbIfInitialized = jest.fn().mockReturnValue(null);
 const mockCloseDatabaseConnection = jest.fn().mockResolvedValue(undefined);
+const mockReloadDatabase = jest.fn().mockResolvedValue(undefined);
 jest.mock('@/db/database', () => ({
   getDbIfInitialized: () => mockGetDbIfInitialized(),
   closeDatabaseConnection: () => mockCloseDatabaseConnection(),
+  reloadDatabase: () => mockReloadDatabase(),
 }));
 
 // ── Mock atob (not available in Node test env) ────────────────────
@@ -339,6 +341,7 @@ describe('ContentUpdater service', () => {
     mockOpenDatabaseAsync.mockResolvedValue(mockDbInstance);
     mockGetDbIfInitialized.mockReturnValue(null);
     mockCloseDatabaseConnection.mockResolvedValue(undefined);
+    mockReloadDatabase.mockResolvedValue(mockDbInstance);
   });
 
   // ── shouldCheckForUpdates ─────────────────────────────────────
@@ -537,9 +540,19 @@ describe('ContentUpdater service', () => {
       expect(result.status).toBe('updated');
       expect(result.updateType).toBe('delta');
       expect(result.bytesDownloaded).toBe(sampleDelta.size_bytes);
-      expect(mockCloseDatabaseConnection).toHaveBeenCalled();
       expect(mockExecAsync).toHaveBeenCalledWith('BEGIN TRANSACTION');
       expect(mockExecAsync).toHaveBeenCalledWith('COMMIT');
+    });
+
+    it('closes and reloads live DB around delta apply when initialized', async () => {
+      mockGetDbIfInitialized.mockReturnValue(mockDbInstance);
+      mockChecksumPass(sampleDelta.sha256);
+      mockGetFirstAsync.mockResolvedValue({ integrity_check: 'ok' });
+
+      await ContentUpdater.applyDelta(sampleDelta);
+
+      expect(mockCloseDatabaseConnection).toHaveBeenCalled();
+      expect(mockReloadDatabase).toHaveBeenCalled();
     });
 
     it('returns failed on download HTTP error', async () => {
@@ -641,7 +654,19 @@ describe('ContentUpdater service', () => {
       expect(result.fromVersion).toBe('v1.0.0');
       expect(result.toVersion).toBe('v2.0.0');
       expect(result.bytesDownloaded).toBe(sampleManifest.full_db_size_bytes);
+    });
+
+    it('closes and reloads live DB around full DB swap when initialized', async () => {
+      mockGetDbIfInitialized.mockReturnValue(mockDbInstance);
+      mockGetFirstAsync
+        .mockResolvedValueOnce({ value: 'v1.0.0' })
+        .mockResolvedValueOnce({ value: 'v2.0.0' });
+      resetXhr(200);
+
+      await ContentUpdater.downloadFullDb(sampleManifest);
+
       expect(mockCloseDatabaseConnection).toHaveBeenCalled();
+      expect(mockReloadDatabase).toHaveBeenCalled();
     });
 
     it('forwards download progress to the onProgress callback', async () => {
