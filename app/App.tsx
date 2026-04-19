@@ -148,6 +148,30 @@ function AppShell() {
   );
 }
 
+/**
+ * Hydrate all app-state that depends on scripture.db being present
+ * and initialised: user DB, Sentry user binding, zustand stores, and
+ * analytics pruning. Must not run until initDatabase() has returned
+ * 'ready' — otherwise stores/pruning may touch an uninitialised DB
+ * and throw.
+ */
+async function hydrateAppState(): Promise<void> {
+  await initUserDatabase(); // User DB (user.db) — never replaced, migrated
+  // Bind an anonymous identifier to Sentry so crashes from a single
+  // install roll up under one user. Best-effort — if it fails we
+  // just don't get per-user grouping this session.
+  try {
+    const anonId = await getAnonymousId();
+    setSentryUser(anonId);
+  } catch {
+    /* non-fatal */
+  }
+  await useSettingsStore.getState().hydrate();
+  await useAuthStore.getState().hydrate();
+  await usePremiumStore.getState().hydrate();
+  pruneEvents(90); // Clean up old analytics (fire-and-forget)
+}
+
 function App() {
   const [fontsLoaded] = useFonts(FONT_MAP);
   const [dbStatus, setDbStatus] = useState<'loading' | 'needs_download' | 'ready'>('loading');
@@ -163,20 +187,12 @@ function App() {
         // Lock to portrait by default — specific screens unlock for landscape
         await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
         const status = await initDatabase();   // Content DB (scripture.db) — may be missing on first launch
-        await initUserDatabase();              // User DB (user.db) — never replaced, migrated
-        // Bind an anonymous identifier to Sentry so crashes from a single
-        // install roll up under one user. Best-effort — if it fails we
-        // just don't get per-user grouping this session.
-        try {
-          const anonId = await getAnonymousId();
-          setSentryUser(anonId);
-        } catch {
-          /* non-fatal */
+        if (status === 'needs_download') {
+          setDbStatus('needs_download');
+          return;
         }
-        await useSettingsStore.getState().hydrate();
-        await useAuthStore.getState().hydrate();
-        await usePremiumStore.getState().hydrate();
-        pruneEvents(90); // Clean up old analytics (fire-and-forget)
+
+        await hydrateAppState();
         setDbStatus(status);
       } catch (e) {
         console.error('Init error:', e);
@@ -244,6 +260,10 @@ function App() {
                   if (status !== 'ready') {
                     throw new Error('Downloaded DB did not initialize as ready');
                   }
+                  // Full hydration must complete before we enter the main
+                  // app tree, otherwise components can touch stores or
+                  // analytics against partially-hydrated state.
+                  await hydrateAppState();
                   setDbStatus('ready');
                 } catch (e) {
                   console.error('Post-download init error:', e);
