@@ -89,14 +89,25 @@ function scrubBreadcrumb(crumb: Record<string, unknown>): Record<string, unknown
 
 // ── Lazy load + init ─────────────────────────────────────────────
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { record: probeRecord, recordError: probeRecordError } = require('../utils/startupProbe');
+
 let _sentry: SentryModule | null = null;
+
+probeRecord('sentry:module-loaded', `DSN=${DSN ? 'present' : 'missing'}`);
 
 try {
   if (DSN) {
+    probeRecord('sentry:entering-init-block');
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const mod = require('@sentry/react-native');
+    probeRecord(
+      'sentry:require-succeeded',
+      `init=${typeof mod?.init}, wrap=${typeof mod?.wrap}`,
+    );
     if (typeof mod?.init === 'function') {
       _sentry = mod;
+      probeRecord('sentry:calling-init');
       _sentry!.init({
         dsn: DSN,
         environment: ENVIRONMENT,
@@ -112,11 +123,17 @@ try {
         beforeSend: (event: Record<string, unknown>) => scrubEvent(event),
         beforeBreadcrumb: (crumb: Record<string, unknown>) => scrubBreadcrumb(crumb),
       });
+      probeRecord('sentry:init-returned');
+    } else {
+      probeRecord('sentry:init-not-a-function');
     }
+  } else {
+    probeRecord('sentry:skipped-no-dsn');
   }
-} catch {
+} catch (err) {
   // @sentry/react-native failed to load (missing native module, etc.)
   // Sentry stays disabled — app boots normally.
+  probeRecordError('sentry:init-threw', err);
 }
 
 // ── Public helpers ───────────────────────────────────────────────
