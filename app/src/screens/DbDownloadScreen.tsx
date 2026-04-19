@@ -6,7 +6,11 @@
  * fetch the full scripture.db from R2, showing progress + error states.
  *
  * Calls onComplete() after a successful download so the parent can
- * transition to the normal app tree.
+ * transition to the normal app tree. `onComplete` may return a Promise —
+ * we await it so that any post-download work performed by the parent
+ * (e.g. opening the freshly-downloaded DB) can surface thrown errors
+ * through this screen's existing error UI instead of becoming an
+ * unhandled promise rejection.
  */
 
 import { useCallback, useEffect, useState } from 'react';
@@ -15,7 +19,12 @@ import { useTheme, spacing, fontFamily } from '../theme';
 import { ContentUpdater } from '../services/ContentUpdater';
 
 interface Props {
-  onComplete: () => void;
+  /**
+   * Called after a successful download. May return a Promise; if it
+   * throws or rejects, the download screen shows the error and offers
+   * Retry rather than silently transitioning to a broken app tree.
+   */
+  onComplete: () => void | Promise<void>;
 }
 
 export function DbDownloadScreen({ onComplete }: Props) {
@@ -39,7 +48,18 @@ export function DbDownloadScreen({ onComplete }: Props) {
       });
 
       if (result.status === 'updated') {
-        onComplete();
+        // Await onComplete so a post-download init failure surfaces here
+        // instead of becoming an unhandled rejection.
+        try {
+          await onComplete();
+        } catch (completeErr) {
+          setStatus('error');
+          setError(
+            completeErr instanceof Error
+              ? `Post-download setup failed: ${completeErr.message}`
+              : `Post-download setup failed: ${String(completeErr)}`,
+          );
+        }
         return;
       }
 

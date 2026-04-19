@@ -232,13 +232,24 @@ function App() {
           <ThemeProvider>
             <DbDownloadScreen
               onComplete={async () => {
-                // Open the freshly-downloaded DB before entering the app tree
+                // Open the freshly-downloaded DB before entering the app
+                // tree. If this fails we MUST NOT transition to 'ready' —
+                // a downstream DB read against an uninitialised DB would
+                // throw immediately and, on iOS 26, likely manifest as
+                // the ExceptionsManager / NSException crash we've been
+                // chasing. Throwing here lets DbDownloadScreen surface
+                // the error and offer Retry through its existing UI.
                 try {
-                  await initDatabase();
+                  const status = await initDatabase();
+                  if (status !== 'ready') {
+                    throw new Error('Downloaded DB did not initialize as ready');
+                  }
+                  setDbStatus('ready');
                 } catch (e) {
                   console.error('Post-download init error:', e);
+                  // Keep user on download screen (with retry) if init failed.
+                  throw e;
                 }
-                setDbStatus('ready');
               }}
             />
           </ThemeProvider>
