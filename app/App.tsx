@@ -34,15 +34,6 @@ import AmicusFab from './src/components/amicus/AmicusFab';
 import { DbDownloadScreen } from './src/screens/DbDownloadScreen';
 import { Sentry, DSN, setSentryUser } from './src/lib/sentry';
 import { getAnonymousId } from './src/utils/anonymousId';
-import {
-  record as probeRecord,
-  recordError as probeRecordError,
-  markLaunchStable,
-  STABILITY_WINDOW_MS,
-} from './src/utils/startupProbe';
-import { PreviousProbeGate } from './src/components/PreviousProbeGate';
-
-probeRecord('app:module-loaded');
 
 /**
  * Root navigation ref — shared with non-component code (notification tap
@@ -156,54 +147,32 @@ function AppShell() {
   );
 }
 
-function AppInner() {
+function App() {
   const [fontsLoaded] = useFonts(FONT_MAP);
   const [dbStatus, setDbStatus] = useState<'loading' | 'needs_download' | 'ready'>('loading');
 
   useEffect(() => {
-    probeRecord('app:init-useEffect-entered');
     async function init() {
       try {
-        probeRecord('app:init-started');
         // Lock to portrait by default — specific screens unlock for landscape
         await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
-        probeRecord('app:orientation-locked');
         const status = await initDatabase();   // Content DB (scripture.db) — may be missing on first launch
-        probeRecord('app:initDatabase-returned', `status=${status}`);
         await initUserDatabase();              // User DB (user.db) — never replaced, migrated
-        probeRecord('app:initUserDatabase-returned');
         // Bind an anonymous identifier to Sentry so crashes from a single
         // install roll up under one user. Best-effort — if it fails we
         // just don't get per-user grouping this session.
         try {
           const anonId = await getAnonymousId();
           setSentryUser(anonId);
-          probeRecord('app:sentry-user-bound');
-        } catch (anonErr) {
-          probeRecordError('app:sentry-user-bind-failed', anonErr);
+        } catch {
           /* non-fatal */
         }
         await useSettingsStore.getState().hydrate();
-        probeRecord('app:settings-hydrated');
         await useAuthStore.getState().hydrate();
-        probeRecord('app:auth-hydrated');
         await usePremiumStore.getState().hydrate();
-        probeRecord('app:premium-hydrated');
         pruneEvents(90); // Clean up old analytics (fire-and-forget)
-        probeRecord('app:analytics-pruned');
         setDbStatus(status);
-        probeRecord('app:dbStatus-set', `status=${status}`);
-
-        // Declare stability: if we make it here and stay alive for
-        // STABILITY_WINDOW_MS, clear the probe so next launch sees
-        // a clean slate. If the app crashes before the timer fires,
-        // the probe survives for next-launch display.
-        setTimeout(() => {
-          probeRecord('app:launch-stable');
-          markLaunchStable();
-        }, STABILITY_WINDOW_MS);
       } catch (e) {
-        probeRecordError('app:init-threw', e);
         console.error('Init error:', e);
         // Fail-safe: surface the download screen so the user can recover
         setDbStatus('needs_download');
@@ -287,19 +256,6 @@ function AppInner() {
         </ThemeProvider>
       </SafeAreaProvider>
     </GestureHandlerRootView>
-  );
-}
-
-/**
- * Outer wrapper: gates the real app tree behind the PreviousProbeGate
- * so the previous-session probe is visible before any crash-prone
- * code paths run. See src/utils/startupProbe.ts for context.
- */
-function App() {
-  return (
-    <PreviousProbeGate>
-      <AppInner />
-    </PreviousProbeGate>
   );
 }
 
