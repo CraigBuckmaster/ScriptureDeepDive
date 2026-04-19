@@ -256,8 +256,10 @@ const mockFetch = jest.fn();
 
 // ── Mock db/database live-handle helper ───────────────────────────
 const mockGetDbIfInitialized = jest.fn().mockReturnValue(null);
+const mockCloseDatabaseConnection = jest.fn().mockResolvedValue(undefined);
 jest.mock('@/db/database', () => ({
   getDbIfInitialized: () => mockGetDbIfInitialized(),
+  closeDatabaseConnection: () => mockCloseDatabaseConnection(),
 }));
 
 // ── Mock atob (not available in Node test env) ────────────────────
@@ -336,6 +338,7 @@ describe('ContentUpdater service', () => {
     // Re-establish default mock return values after clearAllMocks
     mockOpenDatabaseAsync.mockResolvedValue(mockDbInstance);
     mockGetDbIfInitialized.mockReturnValue(null);
+    mockCloseDatabaseConnection.mockResolvedValue(undefined);
   });
 
   // ── shouldCheckForUpdates ─────────────────────────────────────
@@ -534,6 +537,7 @@ describe('ContentUpdater service', () => {
       expect(result.status).toBe('updated');
       expect(result.updateType).toBe('delta');
       expect(result.bytesDownloaded).toBe(sampleDelta.size_bytes);
+      expect(mockCloseDatabaseConnection).toHaveBeenCalled();
       expect(mockExecAsync).toHaveBeenCalledWith('BEGIN TRANSACTION');
       expect(mockExecAsync).toHaveBeenCalledWith('COMMIT');
     });
@@ -637,6 +641,7 @@ describe('ContentUpdater service', () => {
       expect(result.fromVersion).toBe('v1.0.0');
       expect(result.toVersion).toBe('v2.0.0');
       expect(result.bytesDownloaded).toBe(sampleManifest.full_db_size_bytes);
+      expect(mockCloseDatabaseConnection).toHaveBeenCalled();
     });
 
     it('forwards download progress to the onProgress callback', async () => {

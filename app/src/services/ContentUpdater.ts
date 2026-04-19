@@ -16,7 +16,7 @@ import * as SQLite from 'expo-sqlite';
 import * as Crypto from 'expo-crypto';
 import { inflate } from 'pako';
 import { logger } from '../utils/logger';
-import { getDbIfInitialized } from '../db/database';
+import { closeDatabaseConnection, getDbIfInitialized } from '../db/database';
 
 // ── Constants ────────────────────────────────────────────────
 
@@ -221,6 +221,7 @@ class ContentUpdaterService {
       const sql = new TextDecoder().decode(inflate(bytes));
 
       // Backup current DB before modifying
+      await closeDatabaseConnection();
       await this.backupCurrentDb();
 
       // Apply the SQL in a transaction
@@ -365,6 +366,7 @@ class ContentUpdaterService {
       }
 
       // Verification passed — now swap the live DB
+      await closeDatabaseConnection();
       await this.backupCurrentDb();
       const dbFile = sqliteFile(DB_NAME);
       safeDelete(dbFile);
