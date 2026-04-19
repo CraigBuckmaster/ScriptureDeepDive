@@ -34,6 +34,7 @@ import AmicusFab from './src/components/amicus/AmicusFab';
 import { DbDownloadScreen } from './src/screens/DbDownloadScreen';
 import { Sentry, DSN, setSentryUser } from './src/lib/sentry';
 import { getAnonymousId } from './src/utils/anonymousId';
+import { displayLastCrashIfAny } from './src/utils/crashHandler';
 
 /**
  * Root navigation ref — shared with non-component code (notification tap
@@ -152,6 +153,11 @@ function App() {
   const [dbStatus, setDbStatus] = useState<'loading' | 'needs_download' | 'ready'>('loading');
 
   useEffect(() => {
+    // Fire-and-forget: if the previous launch crashed, show the error
+    // in a native Alert. Does NOT block init — the Alert renders on
+    // top of whatever screen becomes visible. See crashHandler.ts.
+    displayLastCrashIfAny();
+
     async function init() {
       try {
         // Lock to portrait by default — specific screens unlock for landscape
