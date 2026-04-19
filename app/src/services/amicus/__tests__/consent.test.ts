@@ -2,17 +2,16 @@
  * Tests for services/amicus/consent.ts (pure helpers).
  */
 import { getMockUserDb, resetMockUserDb } from '../../../../__tests__/helpers/mockUserDb';
-
-jest.mock('@/db/userDatabase', () =>
-  require('../../../../__tests__/helpers/mockUserDb').mockUserDatabaseModule(),
-);
-
 import {
   AMICUS_OPT_IN_KEY,
   acceptAmicusOptIn,
   hasAcceptedAmicusOptIn,
   resetAmicusOptIn,
 } from '../consent';
+
+jest.mock('@/db/userDatabase', () =>
+  require('../../../../__tests__/helpers/mockUserDb').mockUserDatabaseModule(),
+);
 
 beforeEach(() => {
   resetMockUserDb();

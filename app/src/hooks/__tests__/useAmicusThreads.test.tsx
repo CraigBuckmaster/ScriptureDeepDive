@@ -5,12 +5,11 @@ import React from 'react';
 import { Text } from 'react-native';
 import { act, render } from '@testing-library/react-native';
 import { getMockUserDb, resetMockUserDb } from '../../../__tests__/helpers/mockUserDb';
+import { useAmicusThreads } from '@/hooks/useAmicusThreads';
 
 jest.mock('@/db/userDatabase', () =>
   require('../../../__tests__/helpers/mockUserDb').mockUserDatabaseModule(),
 );
-
-import { useAmicusThreads } from '@/hooks/useAmicusThreads';
 
 function Harness({
   onReady,

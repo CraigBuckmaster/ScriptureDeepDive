@@ -8,6 +8,7 @@ import React from 'react';
 import { Text } from 'react-native';
 import { AmicusError } from '@/services/amicus';
 import type { streamChat as streamChatFn } from '@/services/amicus/chat';
+import { usePeekConversation } from '@/hooks/usePeekConversation';
 
 type StreamChatParams = Parameters<typeof streamChatFn>[0];
 
@@ -19,8 +20,6 @@ const mockStreamChat = jest.fn(async (params: StreamChatParams) => {
 jest.mock('@/services/amicus/chat', () => ({
   streamChat: (p: StreamChatParams) => mockStreamChat(p),
 }));
-
-import { usePeekConversation } from '@/hooks/usePeekConversation';
 
 function Harness({
   onReady,
