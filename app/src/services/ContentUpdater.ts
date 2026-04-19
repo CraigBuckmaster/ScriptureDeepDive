@@ -16,6 +16,7 @@ import * as SQLite from 'expo-sqlite';
 import * as Crypto from 'expo-crypto';
 import { inflate } from 'pako';
 import { logger } from '../utils/logger';
+import { getDbIfInitialized } from '../db/database';
 
 // ── Constants ────────────────────────────────────────────────
 
@@ -150,8 +151,14 @@ class ContentUpdaterService {
   async getInstalledVersion(): Promise<string | null> {
     let tempDb: SQLite.SQLiteDatabase | null = null;
     try {
-      tempDb = await SQLite.openDatabaseAsync('scripture.db');
-      const row = await tempDb.getFirstAsync<{ value: string }>(
+      // If the app already has scripture.db open, reuse that live handle.
+      // Opening/closing another handle to the same file can close the active
+      // connection on some SQLite wrappers, causing downstream query crashes.
+      const liveDb = getDbIfInitialized();
+      const queryDb = liveDb ?? await SQLite.openDatabaseAsync('scripture.db');
+      if (!liveDb) tempDb = queryDb;
+
+      const row = await queryDb.getFirstAsync<{ value: string }>(
         "SELECT value FROM db_meta WHERE key = 'content_hash'",
       );
       return row?.value ?? null;

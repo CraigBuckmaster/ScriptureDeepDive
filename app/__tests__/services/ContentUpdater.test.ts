@@ -254,6 +254,12 @@ jest.mock('expo-sqlite', () => ({
 const mockFetch = jest.fn();
 (global as any).fetch = mockFetch;
 
+// ── Mock db/database live-handle helper ───────────────────────────
+const mockGetDbIfInitialized = jest.fn().mockReturnValue(null);
+jest.mock('@/db/database', () => ({
+  getDbIfInitialized: () => mockGetDbIfInitialized(),
+}));
+
 // ── Mock atob (not available in Node test env) ────────────────────
 (global as any).atob = (str: string) => Buffer.from(str, 'base64').toString('binary');
 
@@ -329,6 +335,7 @@ describe('ContentUpdater service', () => {
 
     // Re-establish default mock return values after clearAllMocks
     mockOpenDatabaseAsync.mockResolvedValue(mockDbInstance);
+    mockGetDbIfInitialized.mockReturnValue(null);
   });
 
   // ── shouldCheckForUpdates ─────────────────────────────────────
@@ -402,6 +409,17 @@ describe('ContentUpdater service', () => {
       const version = await ContentUpdater.getInstalledVersion();
 
       expect(version).toBeNull();
+    });
+
+    it('reuses initialized live DB without opening/closing a temp handle', async () => {
+      mockGetFirstAsync.mockResolvedValue({ value: 'v_live' });
+      mockGetDbIfInitialized.mockReturnValue(mockDbInstance);
+
+      const version = await ContentUpdater.getInstalledVersion();
+
+      expect(version).toBe('v_live');
+      expect(mockOpenDatabaseAsync).not.toHaveBeenCalled();
+      expect(mockCloseAsync).not.toHaveBeenCalled();
     });
   });
 
