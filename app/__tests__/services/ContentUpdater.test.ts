@@ -647,17 +647,6 @@ describe('ContentUpdater service', () => {
       expect(result.error).toContain('Full DB download failed');
     });
 
-    it('returns failed on checksum mismatch', async () => {
-      mockGetFirstAsync.mockResolvedValue({ value: 'v1.0.0' });
-      resetXhr(200);
-      mockChecksumFail();
-
-      const result = await ContentUpdater.downloadFullDb(sampleManifest);
-
-      expect(result.status).toBe('failed');
-      expect(result.error).toContain('Checksum mismatch');
-    });
-
     it('returns failed on content hash mismatch after download', async () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })   // getInstalledVersion
@@ -671,6 +660,19 @@ describe('ContentUpdater service', () => {
 
       expect(result.status).toBe('failed');
       expect(result.error).toContain('Content hash mismatch');
+    });
+
+    it('returns failed when integrity_check fails after download', async () => {
+      mockGetFirstAsync
+        .mockResolvedValueOnce({ value: 'v1.0.0' })   // getInstalledVersion
+        .mockResolvedValueOnce({ value: 'v2.0.0' })   // content hash
+        .mockResolvedValueOnce({ integrity_check: 'malformed' }); // integrity
+      resetXhr(200);
+
+      const result = await ContentUpdater.downloadFullDb(sampleManifest);
+
+      expect(result.status).toBe('failed');
+      expect(result.error).toContain('Integrity check failed after download');
     });
 
     it('swaps downloaded DB into place', async () => {

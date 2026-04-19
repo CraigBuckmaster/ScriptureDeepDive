@@ -314,8 +314,15 @@ class ContentUpdaterService {
         );
       }
 
-      // Verify file checksum
-      await this.verifyChecksum(tempFile, manifest.full_db_sha256);
+      // NOTE: Do NOT run verifyChecksum(tempFile, ...) on full DB payloads.
+      // That helper reads the entire file into a base64 string and then into
+      // a Uint8Array; with ~100 MB content DBs this can spike memory high
+      // enough for iOS to terminate the process right after download.
+      //
+      // For full-db updates we validate by opening the downloaded DB and
+      // checking both (1) expected content_hash in db_meta and
+      // (2) PRAGMA integrity_check === 'ok' before swapping into place.
+      // Delta payloads remain checksum-verified (they are much smaller).
 
       // Verify content hash in the downloaded DB BEFORE swapping.
       // Open by its temp filename so we never touch the live connection.
@@ -329,6 +336,12 @@ class ContentUpdaterService {
           throw new Error(
             `Content hash mismatch after download: expected ${manifest.current_version}, got ${row?.value}`,
           );
+        }
+        const integrity = await verifyDb.getFirstAsync<{ integrity_check: string }>(
+          'PRAGMA integrity_check',
+        );
+        if (integrity?.integrity_check !== 'ok') {
+          throw new Error(`Integrity check failed after download: ${integrity?.integrity_check}`);
         }
       } finally {
         if (verifyDb) await verifyDb.closeAsync();
