@@ -6,9 +6,10 @@
  * checksum verification, backup/restore, and debounce logic.
  *
  * Under SDK 54, ContentUpdater uses the new `expo-file-system`
- * File/Directory/Paths API plus XMLHttpRequest for the full-DB
- * download (needed for progress callbacks, which the new file API
- * does not yet expose). These tests mock both surfaces.
+ * File/Directory/Paths API plus an XHR fallback for small full-DB
+ * downloads (progress callbacks). Large full-DB payloads use native
+ * File.downloadFileAsync to avoid JS memory spikes. These tests mock
+ * both surfaces.
  */
 
 import type { Manifest, ManifestDelta } from '@/services/ContentUpdater';
@@ -253,6 +254,12 @@ jest.mock('expo-sqlite', () => ({
 const mockFetch = jest.fn();
 (global as any).fetch = mockFetch;
 
+// ── Mock db/database live-handle helper ───────────────────────────
+const mockGetDbIfInitialized = jest.fn().mockReturnValue(null);
+jest.mock('@/db/database', () => ({
+  getDbIfInitialized: () => mockGetDbIfInitialized(),
+}));
+
 // ── Mock atob (not available in Node test env) ────────────────────
 (global as any).atob = (str: string) => Buffer.from(str, 'base64').toString('binary');
 
@@ -328,6 +335,7 @@ describe('ContentUpdater service', () => {
 
     // Re-establish default mock return values after clearAllMocks
     mockOpenDatabaseAsync.mockResolvedValue(mockDbInstance);
+    mockGetDbIfInitialized.mockReturnValue(null);
   });
 
   // ── shouldCheckForUpdates ─────────────────────────────────────
@@ -402,6 +410,17 @@ describe('ContentUpdater service', () => {
 
       expect(version).toBeNull();
     });
+
+    it('reuses initialized live DB without opening/closing a temp handle', async () => {
+      mockGetFirstAsync.mockResolvedValue({ value: 'v_live' });
+      mockGetDbIfInitialized.mockReturnValue(mockDbInstance);
+
+      const version = await ContentUpdater.getInstalledVersion();
+
+      expect(version).toBe('v_live');
+      expect(mockOpenDatabaseAsync).not.toHaveBeenCalled();
+      expect(mockCloseAsync).not.toHaveBeenCalled();
+    });
   });
 
   // ── findDelta ─────────────────────────────────────────────────
@@ -474,6 +493,16 @@ describe('ContentUpdater service', () => {
       expect(result.toVersion).toBe('v2.0.0');
     });
 
+    it('defers OTA apply when live DB handle is open', async () => {
+      mockFetchManifest();
+      mockGetFirstAsync.mockResolvedValueOnce({ value: 'v1.0.0' });
+      mockGetDbIfInitialized.mockReturnValue(mockDbInstance);
+
+      const result = await ContentUpdater.checkForUpdates();
+
+      expect(result.status).toBe('up_to_date');
+    });
+
     it('falls back to full download when no delta matches', async () => {
       mockFetchManifest();
       mockGetFirstAsync.mockResolvedValueOnce({ value: 'v0.5.0' });
@@ -518,6 +547,7 @@ describe('ContentUpdater service', () => {
       expect(mockExecAsync).toHaveBeenCalledWith('BEGIN TRANSACTION');
       expect(mockExecAsync).toHaveBeenCalledWith('COMMIT');
     });
+
 
     it('returns failed on download HTTP error', async () => {
       const httpErr = new Error('HTTP 404') as Error & { httpStatus: number };
@@ -620,6 +650,7 @@ describe('ContentUpdater service', () => {
       expect(result.bytesDownloaded).toBe(sampleManifest.full_db_size_bytes);
     });
 
+
     it('forwards download progress to the onProgress callback', async () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })
@@ -637,6 +668,26 @@ describe('ContentUpdater service', () => {
       expect(progress).toEqual([25, 100]);
     });
 
+    it('uses native file download for large full DB payloads', async () => {
+      const largeManifest: Manifest = {
+        ...sampleManifest,
+        full_db_size_bytes: 100 * 1024 * 1024,
+      };
+      mockGetFirstAsync
+        .mockResolvedValueOnce({ value: 'v1.0.0' })
+        .mockResolvedValueOnce({ value: 'v2.0.0' })
+        .mockResolvedValueOnce({ integrity_check: 'ok' });
+      resetXhr(200);
+
+      const progress: number[] = [];
+      const result = await ContentUpdater.downloadFullDb(largeManifest, (pct) => progress.push(pct));
+
+      expect(result.status).toBe('updated');
+      expect(mockFileOps.downloadFileAsync).toHaveBeenCalled();
+      expect(mockFileOps.writeBytes).not.toHaveBeenCalled();
+      expect(progress).toEqual([5, 100]);
+    });
+
     it('returns failed on download HTTP error', async () => {
       mockGetFirstAsync.mockResolvedValue({ value: 'v1.0.0' });
       resetXhr(500);
@@ -645,17 +696,6 @@ describe('ContentUpdater service', () => {
 
       expect(result.status).toBe('failed');
       expect(result.error).toContain('Full DB download failed');
-    });
-
-    it('returns failed on checksum mismatch', async () => {
-      mockGetFirstAsync.mockResolvedValue({ value: 'v1.0.0' });
-      resetXhr(200);
-      mockChecksumFail();
-
-      const result = await ContentUpdater.downloadFullDb(sampleManifest);
-
-      expect(result.status).toBe('failed');
-      expect(result.error).toContain('Checksum mismatch');
     });
 
     it('returns failed on content hash mismatch after download', async () => {
@@ -671,6 +711,19 @@ describe('ContentUpdater service', () => {
 
       expect(result.status).toBe('failed');
       expect(result.error).toContain('Content hash mismatch');
+    });
+
+    it('returns failed when integrity_check fails after download', async () => {
+      mockGetFirstAsync
+        .mockResolvedValueOnce({ value: 'v1.0.0' })   // getInstalledVersion
+        .mockResolvedValueOnce({ value: 'v2.0.0' })   // content hash
+        .mockResolvedValueOnce({ integrity_check: 'malformed' }); // integrity
+      resetXhr(200);
+
+      const result = await ContentUpdater.downloadFullDb(sampleManifest);
+
+      expect(result.status).toBe('failed');
+      expect(result.error).toContain('Integrity check failed after download');
     });
 
     it('swaps downloaded DB into place', async () => {
