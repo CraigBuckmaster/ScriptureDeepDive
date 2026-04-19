@@ -28,6 +28,7 @@ const DB_NAME = 'scripture.db';
 const BACKUP_NAME = 'scripture_backup.db';
 const DELTA_TEMP_NAME = 'delta_temp.sql.gz';
 const DOWNLOAD_TEMP_NAME = 'scripture_download.db';
+const LARGE_DB_NATIVE_DOWNLOAD_THRESHOLD_BYTES = 25 * 1024 * 1024;
 
 function sqliteDir(): Directory {
   return new Directory(Paths.document, SQLITE_SUBDIR);
@@ -298,13 +299,22 @@ class ContentUpdaterService {
       // Remove any partial download from a previous failed attempt.
       safeDelete(tempFile);
 
-      // The new expo-file-system API does not yet expose a progress
-      // callback on File.downloadFileAsync. XMLHttpRequest gives us
-      // length-computable onprogress events in the RN runtime, and we
-      // write the resulting ArrayBuffer to disk via File#write — which
-      // routes through the SDK 54 TurboModule cleanly.
+      // For large payloads, prefer native File.downloadFileAsync to avoid
+      // keeping the entire response body in JS memory (XHR arraybuffer can
+      // spike memory on ~100 MB DBs and terminate the process on iOS).
+      //
+      // For smaller payloads we keep the XHR + chunked write path so the
+      // first-launch screen can show exact progress.
       try {
-        await this.downloadWithProgress(manifest.full_db_url, tempFile, onProgress);
+        const shouldUseNativeDownload =
+          manifest.full_db_size_bytes >= LARGE_DB_NATIVE_DOWNLOAD_THRESHOLD_BYTES;
+        if (shouldUseNativeDownload) {
+          onProgress?.(5);
+          await File.downloadFileAsync(manifest.full_db_url, tempFile);
+          onProgress?.(100);
+        } else {
+          await this.downloadWithProgress(manifest.full_db_url, tempFile, onProgress);
+        }
       } catch (err) {
         const status = extractHttpStatus(err);
         throw new Error(
@@ -314,8 +324,15 @@ class ContentUpdaterService {
         );
       }
 
-      // Verify file checksum
-      await this.verifyChecksum(tempFile, manifest.full_db_sha256);
+      // NOTE: Do NOT run verifyChecksum(tempFile, ...) on full DB payloads.
+      // That helper reads the entire file into a base64 string and then into
+      // a Uint8Array; with ~100 MB content DBs this can spike memory high
+      // enough for iOS to terminate the process right after download.
+      //
+      // For full-db updates we validate by opening the downloaded DB and
+      // checking both (1) expected content_hash in db_meta and
+      // (2) PRAGMA integrity_check === 'ok' before swapping into place.
+      // Delta payloads remain checksum-verified (they are much smaller).
 
       // Verify content hash in the downloaded DB BEFORE swapping.
       // Open by its temp filename so we never touch the live connection.
@@ -329,6 +346,12 @@ class ContentUpdaterService {
           throw new Error(
             `Content hash mismatch after download: expected ${manifest.current_version}, got ${row?.value}`,
           );
+        }
+        const integrity = await verifyDb.getFirstAsync<{ integrity_check: string }>(
+          'PRAGMA integrity_check',
+        );
+        if (integrity?.integrity_check !== 'ok') {
+          throw new Error(`Integrity check failed after download: ${integrity?.integrity_check}`);
         }
       } finally {
         if (verifyDb) await verifyDb.closeAsync();
