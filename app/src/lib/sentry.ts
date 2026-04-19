@@ -94,6 +94,14 @@ const { record: probeRecord, recordError: probeRecordError } = require('../utils
 
 let _sentry: SentryModule | null = null;
 
+export type SentryInitStatus =
+  | { state: 'disabled-no-dsn' }
+  | { state: 'initialized' }
+  | { state: 'module-shape-mismatch'; initType: string }
+  | { state: 'init-threw'; error: string };
+
+let _initStatus: SentryInitStatus = { state: 'disabled-no-dsn' };
+
 probeRecord('sentry:module-loaded', `DSN=${DSN ? 'present' : 'missing'}`);
 
 try {
@@ -124,16 +132,35 @@ try {
         beforeBreadcrumb: (crumb: Record<string, unknown>) => scrubBreadcrumb(crumb),
       });
       probeRecord('sentry:init-returned');
+      _initStatus = { state: 'initialized' };
     } else {
       probeRecord('sentry:init-not-a-function');
+      _initStatus = { state: 'module-shape-mismatch', initType: typeof mod?.init };
+      // eslint-disable-next-line no-console
+      console.warn('[sentry] @sentry/react-native loaded but .init is not a function:', typeof mod?.init);
     }
   } else {
     probeRecord('sentry:skipped-no-dsn');
   }
 } catch (err) {
-  // @sentry/react-native failed to load (missing native module, etc.)
-  // Sentry stays disabled — app boots normally.
+  _initStatus = {
+    state: 'init-threw',
+    error: err instanceof Error ? `${err.name}: ${err.message}` : String(err),
+  };
   probeRecordError('sentry:init-threw', err);
+  // Surfaces in device logs (Xcode console, Console.app, Metro). Previously
+  // this catch was silent, which hid native-module link failures and any
+  // unexpected option rejections in @sentry/react-native init.
+  // eslint-disable-next-line no-console
+  console.warn('[sentry] init failed:', err);
+}
+
+/**
+ * Returns why Sentry is/isn't active. The smoke test screen surfaces this
+ * so we don't have to guess at why events aren't landing in the dashboard.
+ */
+export function getSentryInitStatus(): SentryInitStatus {
+  return _initStatus;
 }
 
 // ── Public helpers ───────────────────────────────────────────────
