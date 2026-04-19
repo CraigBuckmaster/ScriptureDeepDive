@@ -69,6 +69,15 @@ export function getDb(): SQLite.SQLiteDatabase {
 }
 
 /**
+ * Returns the open core DB handle when initialized, otherwise null.
+ * Useful for read-only callers that should avoid opening/closing a
+ * second connection with the same filename.
+ */
+export function getDbIfInitialized(): SQLite.SQLiteDatabase | null {
+  return db;
+}
+
+/**
  * Close the current DB connection and reopen from the (updated) file.
  * Called after ContentUpdater swaps the DB file on disk so all
  * subsequent getDb() calls return a connection to the new content.
