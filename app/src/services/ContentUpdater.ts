@@ -16,6 +16,7 @@ import * as SQLite from 'expo-sqlite';
 import * as Crypto from 'expo-crypto';
 import { inflate } from 'pako';
 import { logger } from '../utils/logger';
+import { closeDatabaseConnection, getDbIfInitialized, reloadDatabase } from '../db/database';
 
 // ── Constants ────────────────────────────────────────────────
 
@@ -78,6 +79,38 @@ export interface UpdateResult {
 }
 
 // ── Service ──────────────────────────────────────────────────
+//
+// TODO (future architecture): migrate OTA apply from close-and-reopen
+// to defer-to-cold-start.
+//
+// Current approach: when an update is ready, we close the live DB
+// handle, apply the swap on disk, then reopen. This works but is
+// fragile — any code holding a `getDb()` reference across an `await`
+// that spans an update will have a stale handle, and any in-flight
+// query at close time surfaces as a cryptic SQLite error.
+//
+// The safer architecture is to never close a running DB for an update
+// at all. Instead:
+//   1. Download the new DB to a pending-update temp path.
+//   2. Write a tiny marker file indicating an update is pending.
+//   3. Do NOT swap during the running session.
+//   4. On next app cold-start, BEFORE initDatabase() opens scripture.db,
+//      check for the pending marker. If present, swap the files while
+//      no SQLite connection exists, then delete the marker and proceed
+//      with normal startup.
+//
+// This trades "users see updates within seconds" for "users see updates
+// on next launch." For a Bible study app with scholarly content updates
+// (rather than safety-critical data), that's an acceptable tradeoff and
+// eliminates an entire class of concurrency bugs by design.
+//
+// The tri-commit close/reopen logic below is phase-1. Phase-2 replaces
+// it with the cold-start-swap architecture. See PR #1532 / #1533
+// discussion for context.
+//
+// In the interim, the `if (!closedCleanly) return up_to_date` safety
+// valve below (ContentUpdaterService.applyDelta + downloadFullDb) ensures
+// a failed close aborts the update rather than corrupting the DB file.
 
 class ContentUpdaterService {
   private lastCheckTime = 0;
@@ -150,8 +183,14 @@ class ContentUpdaterService {
   async getInstalledVersion(): Promise<string | null> {
     let tempDb: SQLite.SQLiteDatabase | null = null;
     try {
-      tempDb = await SQLite.openDatabaseAsync('scripture.db');
-      const row = await tempDb.getFirstAsync<{ value: string }>(
+      // If the app already has scripture.db open, reuse that live handle.
+      // Opening/closing another handle to the same file can close the active
+      // connection on some SQLite wrappers, causing downstream query crashes.
+      const liveDb = getDbIfInitialized();
+      const queryDb = liveDb ?? await SQLite.openDatabaseAsync('scripture.db');
+      if (!liveDb) tempDb = queryDb;
+
+      const row = await queryDb.getFirstAsync<{ value: string }>(
         "SELECT value FROM db_meta WHERE key = 'content_hash'",
       );
       return row?.value ?? null;
@@ -185,6 +224,7 @@ class ContentUpdaterService {
    */
   async applyDelta(delta: ManifestDelta): Promise<UpdateResult> {
     const tempFile = sqliteFile(DELTA_TEMP_NAME);
+    let closedLiveDb = false;
     try {
       this.ensureSqliteDir();
 
@@ -214,6 +254,19 @@ class ContentUpdaterService {
       const sql = new TextDecoder().decode(inflate(bytes));
 
       // Backup current DB before modifying
+      closedLiveDb = getDbIfInitialized() != null;
+      if (closedLiveDb) {
+        const closedCleanly = await closeDatabaseConnection();
+        if (!closedCleanly) {
+          // Safety valve: close threw. Don't proceed with a file swap against
+          // a DB that may still be open on the native side — on iOS 26 that
+          // risks the FTS5 teardown crash and/or a locked-file error.
+          // Skip this update and try again next launch. See PR #1534 for
+          // the build 20 crash this valve protects against.
+          logger.warn(TAG, 'Skipping delta apply: failed to close live DB handle');
+          return { status: 'up_to_date' };
+        }
+      }
       await this.backupCurrentDb();
 
       // Apply the SQL in a transaction
@@ -261,6 +314,9 @@ class ContentUpdaterService {
       safeDelete(tempFile);
 
       logger.info(TAG, `Delta applied: ${delta.from_version} → ${delta.to_version}`);
+      if (closedLiveDb) {
+        await reloadDatabase();
+      }
       return {
         status: 'updated',
         fromVersion: delta.from_version,
@@ -270,6 +326,13 @@ class ContentUpdaterService {
       };
     } catch (err) {
       safeDelete(tempFile);
+      if (closedLiveDb) {
+        try {
+          await reloadDatabase();
+        } catch (reopenErr) {
+          logger.warn(TAG, 'Failed to reopen DB after delta failure', reopenErr);
+        }
+      }
       const message = err instanceof Error ? err.message : String(err);
       logger.error(TAG, 'Delta application failed', err);
       return { status: 'failed', error: message };
@@ -289,6 +352,7 @@ class ContentUpdaterService {
   ): Promise<UpdateResult> {
     const tempFile = sqliteFile(DOWNLOAD_TEMP_NAME);
     const tempDbName = DOWNLOAD_TEMP_NAME;
+    let closedLiveDb = false;
     try {
       const fromVersion = await this.getInstalledVersion();
 
@@ -366,6 +430,20 @@ class ContentUpdaterService {
       }
 
       // Verification passed — now swap the live DB
+      closedLiveDb = getDbIfInitialized() != null;
+      if (closedLiveDb) {
+        const closedCleanly = await closeDatabaseConnection();
+        if (!closedCleanly) {
+          // Safety valve: close threw. Same reasoning as applyDelta — on
+          // iOS 26 a close failure means SQLite may still hold the file
+          // open natively. Moving the temp file over it would produce
+          // lock errors or trigger the FTS5 teardown crash. Abort and
+          // retry next launch. See PR #1534.
+          logger.warn(TAG, 'Skipping full DB swap: failed to close live DB handle');
+          safeDelete(tempFile);
+          return { status: 'up_to_date' };
+        }
+      }
       await this.backupCurrentDb();
       const dbFile = sqliteFile(DB_NAME);
       safeDelete(dbFile);
@@ -375,6 +453,10 @@ class ContentUpdaterService {
 
       // Success — remove backup
       safeDelete(sqliteFile(BACKUP_NAME));
+
+      if (closedLiveDb) {
+        await reloadDatabase();
+      }
 
       logger.info(TAG, `Full DB downloaded: v${manifest.current_version}`);
       return {
@@ -386,6 +468,13 @@ class ContentUpdaterService {
       };
     } catch (err) {
       safeDelete(tempFile);
+      if (closedLiveDb) {
+        try {
+          await reloadDatabase();
+        } catch (reopenErr) {
+          logger.warn(TAG, 'Failed to reopen DB after full download failure', reopenErr);
+        }
+      }
       const message = err instanceof Error ? err.message : String(err);
       logger.error(TAG, 'Full DB download failed', err);
       return { status: 'failed', error: message };
