@@ -15,7 +15,7 @@ import { useTheme, spacing, fontFamily } from '../theme';
 import { ContentUpdater } from '../services/ContentUpdater';
 
 interface Props {
-  onComplete: () => void;
+  onComplete: () => void | Promise<void>;
 }
 
 export function DbDownloadScreen({ onComplete }: Props) {
@@ -39,7 +39,7 @@ export function DbDownloadScreen({ onComplete }: Props) {
       });
 
       if (result.status === 'updated') {
-        onComplete();
+        await onComplete();
         return;
       }
 

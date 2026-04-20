@@ -152,25 +152,34 @@ function App() {
   const [dbStatus, setDbStatus] = useState<'loading' | 'needs_download' | 'ready'>('loading');
 
   useEffect(() => {
+    async function hydrateAppState() {
+      await initUserDatabase(); // User DB (user.db) — never replaced, migrated
+      // Bind an anonymous identifier to Sentry so crashes from a single
+      // install roll up under one user. Best-effort — if it fails we
+      // just don't get per-user grouping this session.
+      try {
+        const anonId = await getAnonymousId();
+        setSentryUser(anonId);
+      } catch {
+        /* non-fatal */
+      }
+      await useSettingsStore.getState().hydrate();
+      await useAuthStore.getState().hydrate();
+      await usePremiumStore.getState().hydrate();
+      pruneEvents(90); // Clean up old analytics (fire-and-forget)
+    }
+
     async function init() {
       try {
         // Lock to portrait by default — specific screens unlock for landscape
         await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
         const status = await initDatabase();   // Content DB (scripture.db) — may be missing on first launch
-        await initUserDatabase();              // User DB (user.db) — never replaced, migrated
-        // Bind an anonymous identifier to Sentry so crashes from a single
-        // install roll up under one user. Best-effort — if it fails we
-        // just don't get per-user grouping this session.
-        try {
-          const anonId = await getAnonymousId();
-          setSentryUser(anonId);
-        } catch {
-          /* non-fatal */
+        if (status === 'needs_download') {
+          setDbStatus('needs_download');
+          return;
         }
-        await useSettingsStore.getState().hydrate();
-        await useAuthStore.getState().hydrate();
-        await usePremiumStore.getState().hydrate();
-        pruneEvents(90); // Clean up old analytics (fire-and-forget)
+
+        await hydrateAppState();
         setDbStatus(status);
       } catch (e) {
         console.error('Init error:', e);
@@ -228,11 +237,27 @@ function App() {
               onComplete={async () => {
                 // Open the freshly-downloaded DB before entering the app tree
                 try {
-                  await initDatabase();
+                  const status = await initDatabase();
+                  if (status !== 'ready') {
+                    throw new Error('Downloaded DB did not initialize as ready');
+                  }
+                  await initUserDatabase();
+                  try {
+                    const anonId = await getAnonymousId();
+                    setSentryUser(anonId);
+                  } catch {
+                    /* non-fatal */
+                  }
+                  await useSettingsStore.getState().hydrate();
+                  await useAuthStore.getState().hydrate();
+                  await usePremiumStore.getState().hydrate();
+                  pruneEvents(90);
+                  setDbStatus('ready');
                 } catch (e) {
                   console.error('Post-download init error:', e);
+                  // Keep user on download screen (with retry) if init failed.
+                  throw e;
                 }
-                setDbStatus('ready');
               }}
             />
           </ThemeProvider>

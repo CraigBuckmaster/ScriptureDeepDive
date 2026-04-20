@@ -69,6 +69,15 @@ export function getDb(): SQLite.SQLiteDatabase {
 }
 
 /**
+ * Returns the open core DB handle when initialized, otherwise null.
+ * Useful for read-only callers that should avoid opening/closing a
+ * second connection with the same filename.
+ */
+export function getDbIfInitialized(): SQLite.SQLiteDatabase | null {
+  return db;
+}
+
+/**
  * Close the current DB connection and reopen from the (updated) file.
  * Called after ContentUpdater swaps the DB file on disk so all
  * subsequent getDb() calls return a connection to the new content.
@@ -88,6 +97,22 @@ export async function reloadDatabase(): Promise<SQLite.SQLiteDatabase> {
   }
   logger.info('DB', 'Database connection reloaded after content update');
   return db;
+}
+
+/**
+ * Close the live content DB connection (if open) and clear the in-memory
+ * handle. Used before on-disk DB replacement to avoid swapping files while
+ * SQLite still has the old file open.
+ */
+export async function closeDatabaseConnection(): Promise<void> {
+  if (!db) return;
+  try {
+    await db.closeAsync();
+  } catch {
+    // ignore — best-effort close before swap
+  } finally {
+    db = null;
+  }
 }
 
 /**

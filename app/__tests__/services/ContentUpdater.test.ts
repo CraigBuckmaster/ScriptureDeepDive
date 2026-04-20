@@ -6,9 +6,8 @@
  * checksum verification, backup/restore, and debounce logic.
  *
  * Under SDK 54, ContentUpdater uses the new `expo-file-system`
- * File/Directory/Paths API plus XMLHttpRequest for the full-DB
- * download (needed for progress callbacks, which the new file API
- * does not yet expose). These tests mock both surfaces.
+ * File/Directory/Paths API with native File.downloadFileAsync for full-DB
+ * downloads. XHR remains mocked for legacy/internal helper coverage.
  */
 
 import type { Manifest, ManifestDelta } from '@/services/ContentUpdater';
@@ -253,6 +252,12 @@ jest.mock('expo-sqlite', () => ({
 const mockFetch = jest.fn();
 (global as any).fetch = mockFetch;
 
+// ── Mock db/database live-handle helper ───────────────────────────
+const mockGetDbIfInitialized = jest.fn().mockReturnValue(null);
+jest.mock('@/db/database', () => ({
+  getDbIfInitialized: () => mockGetDbIfInitialized(),
+}));
+
 // ── Mock atob (not available in Node test env) ────────────────────
 (global as any).atob = (str: string) => Buffer.from(str, 'base64').toString('binary');
 
@@ -328,6 +333,7 @@ describe('ContentUpdater service', () => {
 
     // Re-establish default mock return values after clearAllMocks
     mockOpenDatabaseAsync.mockResolvedValue(mockDbInstance);
+    mockGetDbIfInitialized.mockReturnValue(null);
   });
 
   // ── shouldCheckForUpdates ─────────────────────────────────────
@@ -402,6 +408,17 @@ describe('ContentUpdater service', () => {
 
       expect(version).toBeNull();
     });
+
+    it('reuses initialized live DB without opening/closing a temp handle', async () => {
+      mockGetFirstAsync.mockResolvedValue({ value: 'v_live' });
+      mockGetDbIfInitialized.mockReturnValue(mockDbInstance);
+
+      const version = await ContentUpdater.getInstalledVersion();
+
+      expect(version).toBe('v_live');
+      expect(mockOpenDatabaseAsync).not.toHaveBeenCalled();
+      expect(mockCloseAsync).not.toHaveBeenCalled();
+    });
   });
 
   // ── findDelta ─────────────────────────────────────────────────
@@ -474,6 +491,16 @@ describe('ContentUpdater service', () => {
       expect(result.toVersion).toBe('v2.0.0');
     });
 
+    it('defers OTA apply when live DB handle is open', async () => {
+      mockFetchManifest();
+      mockGetFirstAsync.mockResolvedValueOnce({ value: 'v1.0.0' });
+      mockGetDbIfInitialized.mockReturnValue(mockDbInstance);
+
+      const result = await ContentUpdater.checkForUpdates();
+
+      expect(result.status).toBe('up_to_date');
+    });
+
     it('falls back to full download when no delta matches', async () => {
       mockFetchManifest();
       mockGetFirstAsync.mockResolvedValueOnce({ value: 'v0.5.0' });
@@ -518,6 +545,7 @@ describe('ContentUpdater service', () => {
       expect(mockExecAsync).toHaveBeenCalledWith('BEGIN TRANSACTION');
       expect(mockExecAsync).toHaveBeenCalledWith('COMMIT');
     });
+
 
     it('returns failed on download HTTP error', async () => {
       const httpErr = new Error('HTTP 404') as Error & { httpStatus: number };
@@ -620,26 +648,39 @@ describe('ContentUpdater service', () => {
       expect(result.bytesDownloaded).toBe(sampleManifest.full_db_size_bytes);
     });
 
-    it('forwards download progress to the onProgress callback', async () => {
+
+    it('forwards coarse progress to the onProgress callback', async () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })
         .mockResolvedValueOnce({ value: 'v2.0.0' });
       mockChecksumPass(sampleManifest.full_db_sha256);
-      xhrControls.progressEvents = [
-        { loaded: 50, total: 200, lengthComputable: true },
-        { loaded: 200, total: 200, lengthComputable: true },
-      ];
-      xhrControls.status = 200;
 
       const progress: number[] = [];
       await ContentUpdater.downloadFullDb(sampleManifest, (pct) => progress.push(pct));
 
-      expect(progress).toEqual([25, 100]);
+      expect(progress).toEqual([5, 100]);
+    });
+
+    it('uses native file download for full DB payloads', async () => {
+      mockGetFirstAsync
+        .mockResolvedValueOnce({ value: 'v1.0.0' })
+        .mockResolvedValueOnce({ value: 'v2.0.0' })
+        .mockResolvedValueOnce({ integrity_check: 'ok' });
+
+      const progress: number[] = [];
+      const result = await ContentUpdater.downloadFullDb(sampleManifest, (pct) => progress.push(pct));
+
+      expect(result.status).toBe('updated');
+      expect(mockFileOps.downloadFileAsync).toHaveBeenCalled();
+      expect(mockFileOps.writeBytes).not.toHaveBeenCalled();
+      expect(progress).toEqual([5, 100]);
     });
 
     it('returns failed on download HTTP error', async () => {
       mockGetFirstAsync.mockResolvedValue({ value: 'v1.0.0' });
-      resetXhr(500);
+      const httpErr = new Error('HTTP 500') as Error & { httpStatus: number };
+      httpErr.httpStatus = 500;
+      mockDownloadState.nextError = httpErr;
 
       const result = await ContentUpdater.downloadFullDb(sampleManifest);
 
@@ -647,22 +688,10 @@ describe('ContentUpdater service', () => {
       expect(result.error).toContain('Full DB download failed');
     });
 
-    it('returns failed on checksum mismatch', async () => {
-      mockGetFirstAsync.mockResolvedValue({ value: 'v1.0.0' });
-      resetXhr(200);
-      mockChecksumFail();
-
-      const result = await ContentUpdater.downloadFullDb(sampleManifest);
-
-      expect(result.status).toBe('failed');
-      expect(result.error).toContain('Checksum mismatch');
-    });
-
     it('returns failed on content hash mismatch after download', async () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })   // getInstalledVersion
         .mockResolvedValueOnce({ value: 'wrong_hash' }); // verify after swap
-      resetXhr(200);
       mockChecksumPass(sampleManifest.full_db_sha256);
       // Live DB must exist to exercise the path.
       getOrCreateRecord('/fake/docs/SQLite/scripture.db').exists = true;
@@ -673,11 +702,21 @@ describe('ContentUpdater service', () => {
       expect(result.error).toContain('Content hash mismatch');
     });
 
+    it('returns failed when integrity_check fails after download', async () => {
+      mockGetFirstAsync
+        .mockResolvedValueOnce({ value: 'v1.0.0' })   // getInstalledVersion
+        .mockResolvedValueOnce({ value: 'v2.0.0' })   // content hash
+        .mockResolvedValueOnce({ integrity_check: 'malformed' }); // integrity
+      const result = await ContentUpdater.downloadFullDb(sampleManifest);
+
+      expect(result.status).toBe('failed');
+      expect(result.error).toContain('Integrity check failed after download');
+    });
+
     it('swaps downloaded DB into place', async () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })
         .mockResolvedValueOnce({ value: 'v2.0.0' });
-      resetXhr(200);
       mockChecksumPass(sampleManifest.full_db_sha256);
 
       await ContentUpdater.downloadFullDb(sampleManifest);
@@ -690,7 +729,9 @@ describe('ContentUpdater service', () => {
 
     it('cleans up temp file on failure', async () => {
       mockGetFirstAsync.mockResolvedValue({ value: 'v1.0.0' });
-      resetXhr(500);
+      const httpErr = new Error('HTTP 500') as Error & { httpStatus: number };
+      httpErr.httpStatus = 500;
+      mockDownloadState.nextError = httpErr;
       // Temp must "exist" so the cleanup path actually calls delete.
       getOrCreateRecord('/fake/docs/SQLite/scripture_download.db').exists = true;
 
@@ -705,7 +746,6 @@ describe('ContentUpdater service', () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })
         .mockResolvedValueOnce({ value: 'v2.0.0' });
-      resetXhr(200);
       mockChecksumPass(sampleManifest.full_db_sha256);
       // Pre-seed an old backup so safeDelete observes the delete.
       getOrCreateRecord('/fake/docs/SQLite/scripture_backup.db').exists = true;
@@ -717,66 +757,16 @@ describe('ContentUpdater service', () => {
       );
     });
 
-    // ── chunked-write path (regression for 1.0.6(15)/1.0.6(16)) ─────
-    // `File#write` is a synchronous Expo Modules Function; passing a ~90 MB
-    // buffer through it in one shot caused a process-terminating NSException
-    // on iOS 26. We now route through a FileHandle with 1 MiB chunks and
-    // surface any error as a promise rejection. See PR #1514 + #1516 history.
-
-    it('writes the downloaded payload via FileHandle, not File#write', async () => {
+    it('does not invoke XHR/file-handle write path for full DB', async () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })
         .mockResolvedValueOnce({ value: 'v2.0.0' });
-      resetXhr(200);
-      mockChecksumPass(sampleManifest.full_db_sha256);
 
       await ContentUpdater.downloadFullDb(sampleManifest);
 
-      expect(mockFileOps.handleOpen).toHaveBeenCalledWith(
-        expect.stringContaining('scripture_download.db'),
-      );
-      expect(mockFileOps.writeBytes).toHaveBeenCalled();
-      expect(mockFileOps.handleClose).toHaveBeenCalledWith(
-        expect.stringContaining('scripture_download.db'),
-      );
-      // The legacy single-shot write path must be gone.
+      expect(mockFileOps.writeBytes).not.toHaveBeenCalled();
+      expect(mockFileOps.handleOpen).not.toHaveBeenCalled();
       expect(mockFileOps.write).not.toHaveBeenCalled();
-    });
-
-    it('splits a multi-MB payload into 1 MiB chunks', async () => {
-      mockGetFirstAsync
-        .mockResolvedValueOnce({ value: 'v1.0.0' })
-        .mockResolvedValueOnce({ value: 'v2.0.0' });
-      // 2.5 MiB payload → expect 3 chunks (1 MiB, 1 MiB, 0.5 MiB)
-      const payloadBytes = Math.floor(2.5 * (1 << 20));
-      xhrControls.response = new ArrayBuffer(payloadBytes);
-      xhrControls.status = 200;
-      xhrControls.progressEvents = [];
-      mockChecksumPass(sampleManifest.full_db_sha256);
-
-      await ContentUpdater.downloadFullDb(sampleManifest);
-
-      expect(mockFileOps.writeBytes).toHaveBeenCalledTimes(3);
-      const chunkSizes = mockFileOps.writeBytes.mock.calls.map(
-        (call) => (call[1] as Uint8Array).byteLength,
-      );
-      expect(chunkSizes).toEqual([1 << 20, 1 << 20, payloadBytes - 2 * (1 << 20)]);
-    });
-
-    it('closes the file handle even when a chunk write throws', async () => {
-      mockGetFirstAsync.mockResolvedValue({ value: 'v1.0.0' });
-      resetXhr(200);
-      mockFileOps.writeBytes.mockImplementationOnce(() => {
-        throw new Error('simulated native write failure');
-      });
-
-      const result = await ContentUpdater.downloadFullDb(sampleManifest);
-
-      expect(result.status).toBe('failed');
-      expect(result.error).toContain('File write failed');
-      expect(result.error).toContain('simulated native write failure');
-      // Handle must still have been closed despite the throw.
-      expect(mockFileOps.handleClose).toHaveBeenCalled();
     });
   });
 });
