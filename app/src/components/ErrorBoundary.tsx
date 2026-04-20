@@ -10,6 +10,17 @@ import { logger } from '../utils/logger';
 interface Props {
   children: ReactNode;
   fallbackMessage?: string;
+  /**
+   * Optional fully-custom fallback renderer. When provided, this is used
+   * INSTEAD of the default centered "Something went wrong" UI. Use this
+   * for boundaries around small / non-blocking components (e.g. floating
+   * action buttons) where the default flex:1 fallback would displace
+   * real UI.
+   */
+  renderFallback?: (props: {
+    error: Error | null;
+    onRetry: () => void;
+  }) => ReactNode;
 }
 
 interface State {
@@ -66,6 +77,12 @@ export class ErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
+      if (this.props.renderFallback) {
+        return this.props.renderFallback({
+          error: this.state.error,
+          onRetry: this.handleRetry,
+        });
+      }
       return (
         <ErrorFallback
           error={this.state.error}

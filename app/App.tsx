@@ -31,6 +31,7 @@ import { ContentUpdateProvider } from './src/providers/ContentUpdateProvider';
 import { AmicusConsentProvider } from './src/services/amicus/consent';
 import { AmicusFabProvider } from './src/contexts/AmicusFabContext';
 import AmicusFab from './src/components/amicus/AmicusFab';
+import { AmicusFabErrorFallback } from './src/components/amicus/AmicusFabErrorFallback';
 import { DbDownloadScreen } from './src/screens/DbDownloadScreen';
 import { Sentry, DSN, setSentryUser } from './src/lib/sentry';
 import { getAnonymousId } from './src/utils/anonymousId';
@@ -142,7 +143,7 @@ function AppShell() {
         <ErrorBoundary>
           <RootNavigator />
         </ErrorBoundary>
-        <ErrorBoundary fallbackMessage="The Amicus button is temporarily unavailable.">
+        <ErrorBoundary renderFallback={AmicusFabErrorFallback}>
           <AmicusFab />
         </ErrorBoundary>
       </NavigationContainer>
