@@ -6,18 +6,34 @@ import { AmicusFabProvider, useAmicusFab } from '@/contexts/AmicusFabContext';
 
 const mockNavigate = jest.fn();
 const mockGetParent = jest.fn(() => ({ navigate: mockNavigate }));
+let mockUseNavigationShouldThrow = false;
 
 jest.mock('@react-navigation/native', () => {
   const actual = jest.requireActual('@react-navigation/native');
   return {
     ...actual,
-    useNavigation: () => ({
-      navigate: jest.fn(),
-      getParent: mockGetParent,
-    }),
+    useNavigation: () => {
+      if (mockUseNavigationShouldThrow) {
+        throw new Error(
+          "Couldn't find a navigation object. Is your component inside NavigationContainer?",
+        );
+      }
+      return {
+        navigate: jest.fn(),
+        getParent: mockGetParent,
+      };
+    },
     useNavigationState: () => ({ routes: [{ name: 'HomeMain' }], index: 0 }),
   };
 });
+
+jest.mock('@/utils/logger', () => ({
+  logger: {
+    info: jest.fn(),
+    warn: jest.fn(),
+    error: jest.fn(),
+  },
+}));
 
 // BottomSheet pulls in reanimated; stub it to a simple View in tests.
 jest.mock('@gorhom/bottom-sheet', () => {
@@ -41,6 +57,7 @@ function renderWithFab(node: React.ReactElement) {
 
 beforeEach(() => {
   jest.clearAllMocks();
+  mockUseNavigationShouldThrow = false;
   mockUseAmicusAccess.mockReturnValue({
     canUse: true,
     reason: 'ok',
@@ -97,5 +114,25 @@ describe('AmicusFab', () => {
       </AmicusFabProvider>,
     );
     expect(queryByLabelText('Open Amicus')).toBeNull();
+  });
+
+  it('renders null and logs a warning when mounted outside NavigationContainer', () => {
+    // Regression: iOS 26 first-launch crash on TestFlight builds 18 and 21.
+    // useNavigation throws synchronously when no NavigationContainer is an
+    // ancestor; in Release mode that becomes a fatal NSException via RCTFatal.
+    // The component must return null instead of throwing.
+    mockUseNavigationShouldThrow = true;
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { logger } = require('@/utils/logger');
+
+    const { queryByLabelText } = renderWithFab(<AmicusFab />);
+
+    expect(queryByLabelText('Open Amicus')).toBeNull();
+    expect(queryByLabelText('Unlock Amicus')).toBeNull();
+    expect(logger.warn).toHaveBeenCalledWith(
+      'AmicusFab',
+      expect.stringContaining('outside NavigationContainer'),
+      expect.any(Error),
+    );
   });
 });

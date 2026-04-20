@@ -142,6 +142,9 @@ function AppShell() {
         <ErrorBoundary>
           <RootNavigator />
         </ErrorBoundary>
+        <ErrorBoundary fallbackMessage="The Amicus button is temporarily unavailable.">
+          <AmicusFab />
+        </ErrorBoundary>
       </NavigationContainer>
       <StatusBar style={statusBarStyle === 'light-content' ? 'light' : 'dark'} />
     </>
@@ -286,7 +289,6 @@ function App() {
             <AmicusConsentProvider>
               <AmicusFabProvider>
                 <AppShell />
-                <AmicusFab />
               </AmicusFabProvider>
             </AmicusConsentProvider>
           </ContentUpdateProvider>

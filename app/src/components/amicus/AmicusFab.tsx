@@ -20,6 +20,7 @@ import { Lock, MessageSquare } from 'lucide-react-native';
 import { useTheme } from '../../theme';
 import { useAmicusFab } from '../../contexts/AmicusFabContext';
 import { useAmicusAccess } from '../../hooks/useAmicusAccess';
+import { logger } from '../../utils/logger';
 import AmicusPeekSheet from './AmicusPeekSheet';
 
 const FAB_SIZE = 56;
@@ -30,7 +31,18 @@ const RIGHT_MARGIN = 16;
 export default function AmicusFab(): React.ReactElement | null {
   const { base } = useTheme();
   const insets = useSafeAreaInsets();
-  const navigation = useNavigation<NavigationProp<ParamListBase>>();
+  // Defensive: useNavigation throws synchronously if no NavigationContainer
+  // ancestor exists. In Release mode that throw becomes a fatal NSException
+  // via RCTFatal and aborts the app on first launch. The hook is still called
+  // on every render (its internal useContext runs before the throw), so hook
+  // order is stable — the try/catch only suppresses the error.
+  let navigation: NavigationProp<ParamListBase> | null = null;
+  try {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    navigation = useNavigation<NavigationProp<ParamListBase>>();
+  } catch (e) {
+    logger.warn('AmicusFab', 'mounted outside NavigationContainer; rendering null', e);
+  }
   const { isVisible } = useAmicusFab();
   const access = useAmicusAccess();
   const [peekOpen, setPeekOpen] = useState(false);
@@ -52,13 +64,14 @@ export default function AmicusFab(): React.ReactElement | null {
   const handlePress = useCallback(() => {
     if (access.reason === 'not_premium') {
       // Non-premium → paywall screen in the Amicus tab.
-      const parent = navigation.getParent<NavigationProp<ParamListBase>>();
+      const parent = navigation?.getParent<NavigationProp<ParamListBase>>();
       parent?.navigate('AmicusTab', { screen: 'Paywall' });
       return;
     }
     setPeekOpen(true);
   }, [access.reason, navigation]);
 
+  if (!navigation) return null;
   if (!shouldRender) return null;
 
   const isLocked = access.reason === 'not_premium';
