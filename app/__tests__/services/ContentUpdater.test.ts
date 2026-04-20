@@ -482,7 +482,6 @@ describe('ContentUpdater service', () => {
       resetXhr(200);
       mockChecksumPass(sampleManifest.full_db_sha256);
       mockGetFirstAsync.mockResolvedValueOnce({ value: 'v2.0.0' });
-      mockGetFirstAsync.mockResolvedValueOnce({ integrity_check: 'ok' });
 
       const result = await ContentUpdater.checkForUpdates();
 
@@ -497,7 +496,6 @@ describe('ContentUpdater service', () => {
       resetXhr(200);
       mockChecksumPass(sampleManifest.full_db_sha256);
       mockGetFirstAsync.mockResolvedValueOnce({ value: 'v2.0.0' });
-      mockGetFirstAsync.mockResolvedValueOnce({ integrity_check: 'ok' });
 
       const result = await ContentUpdater.checkForUpdates();
 
@@ -647,8 +645,7 @@ describe('ContentUpdater service', () => {
       };
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })
-        .mockResolvedValueOnce({ value: 'v2.0.0' })
-        .mockResolvedValueOnce({ integrity_check: 'ok' });
+        .mockResolvedValueOnce({ value: 'v2.0.0' });
       resetXhr(200);
 
       const progress: number[] = [];
@@ -685,24 +682,10 @@ describe('ContentUpdater service', () => {
       expect(result.error).toContain('Content hash mismatch');
     });
 
-    it('returns failed when integrity_check fails after download', async () => {
-      mockGetFirstAsync
-        .mockResolvedValueOnce({ value: 'v1.0.0' })   // getInstalledVersion
-        .mockResolvedValueOnce({ value: 'v2.0.0' })   // content hash
-        .mockResolvedValueOnce({ integrity_check: 'malformed' }); // integrity
-      resetXhr(200);
-
-      const result = await ContentUpdater.downloadFullDb(sampleManifest);
-
-      expect(result.status).toBe('failed');
-      expect(result.error).toContain('Integrity check failed after download');
-    });
-
     it('swaps downloaded DB into place', async () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })
-        .mockResolvedValueOnce({ value: 'v2.0.0' })
-        .mockResolvedValueOnce({ integrity_check: 'ok' });
+        .mockResolvedValueOnce({ value: 'v2.0.0' });
       resetXhr(200);
       mockChecksumPass(sampleManifest.full_db_sha256);
 
@@ -730,8 +713,7 @@ describe('ContentUpdater service', () => {
     it('removes backup after successful download', async () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })
-        .mockResolvedValueOnce({ value: 'v2.0.0' })
-        .mockResolvedValueOnce({ integrity_check: 'ok' });
+        .mockResolvedValueOnce({ value: 'v2.0.0' });
       resetXhr(200);
       mockChecksumPass(sampleManifest.full_db_sha256);
       // Pre-seed an old backup so safeDelete observes the delete.
@@ -753,8 +735,7 @@ describe('ContentUpdater service', () => {
     it('writes the downloaded payload via FileHandle, not File#write', async () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })
-        .mockResolvedValueOnce({ value: 'v2.0.0' })
-        .mockResolvedValueOnce({ integrity_check: 'ok' });
+        .mockResolvedValueOnce({ value: 'v2.0.0' });
       resetXhr(200);
       mockChecksumPass(sampleManifest.full_db_sha256);
 
@@ -774,8 +755,7 @@ describe('ContentUpdater service', () => {
     it('splits a multi-MB payload into 1 MiB chunks', async () => {
       mockGetFirstAsync
         .mockResolvedValueOnce({ value: 'v1.0.0' })
-        .mockResolvedValueOnce({ value: 'v2.0.0' })
-        .mockResolvedValueOnce({ integrity_check: 'ok' });
+        .mockResolvedValueOnce({ value: 'v2.0.0' });
       // 2.5 MiB payload → expect 3 chunks (1 MiB, 1 MiB, 0.5 MiB)
       const payloadBytes = Math.floor(2.5 * (1 << 20));
       xhrControls.response = new ArrayBuffer(payloadBytes);
