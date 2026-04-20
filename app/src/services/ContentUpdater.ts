@@ -329,9 +329,23 @@ class ContentUpdaterService {
       // a Uint8Array; with ~100 MB content DBs this can spike memory high
       // enough for iOS to terminate the process right after download.
       //
-      // For full-db updates we validate by opening the downloaded DB and
-      // checking both (1) expected content_hash in db_meta and
-      // (2) PRAGMA integrity_check === 'ok' before swapping into place.
+      // We also deliberately do NOT run `PRAGMA integrity_check` here. On
+      // iOS 26 with expo-sqlite, running integrity_check loads all FTS5
+      // virtual-table indexes, and the subsequent `closeAsync` then
+      // segfaults inside `sqlite3Fts5IndexClose` during FTS5 vtab
+      // teardown. See TestFlight 1.0.7(20) crash — Thread 7 EXC_BAD_ACCESS
+      // at exsqlite3_finalize, called from SQLiteModule.closeDatabase.
+      //
+      // Validation for full-db updates is now: open the downloaded DB and
+      // check that `db_meta.content_hash` matches the manifest's
+      // `current_version`. The content_hash was computed at build time
+      // over the full contents of scripture.db — a corrupt/truncated
+      // download is overwhelmingly likely to fail at SQLite open
+      // (throwing before we reach the content_hash read) or to miss the
+      // db_meta row entirely. This is less rigorous than integrity_check
+      // but avoids the teardown crash. TODO: re-add integrity verification
+      // once expo-sqlite's FTS5 teardown bug is resolved upstream, or
+      // migrate to a streaming SHA-256 during chunked write.
       // Delta payloads remain checksum-verified (they are much smaller).
 
       // Verify content hash in the downloaded DB BEFORE swapping.
@@ -346,12 +360,6 @@ class ContentUpdaterService {
           throw new Error(
             `Content hash mismatch after download: expected ${manifest.current_version}, got ${row?.value}`,
           );
-        }
-        const integrity = await verifyDb.getFirstAsync<{ integrity_check: string }>(
-          'PRAGMA integrity_check',
-        );
-        if (integrity?.integrity_check !== 'ok') {
-          throw new Error(`Integrity check failed after download: ${integrity?.integrity_check}`);
         }
       } finally {
         if (verifyDb) await verifyDb.closeAsync();
