@@ -256,7 +256,7 @@ const mockFetch = jest.fn();
 
 // ── Mock db/database live-handle helper ───────────────────────────
 const mockGetDbIfInitialized = jest.fn().mockReturnValue(null);
-const mockCloseDatabaseConnection = jest.fn().mockResolvedValue(undefined);
+const mockCloseDatabaseConnection = jest.fn().mockResolvedValue(true);
 const mockReloadDatabase = jest.fn().mockResolvedValue(undefined);
 jest.mock('@/db/database', () => ({
   getDbIfInitialized: () => mockGetDbIfInitialized(),
@@ -340,7 +340,7 @@ describe('ContentUpdater service', () => {
     // Re-establish default mock return values after clearAllMocks
     mockOpenDatabaseAsync.mockResolvedValue(mockDbInstance);
     mockGetDbIfInitialized.mockReturnValue(null);
-    mockCloseDatabaseConnection.mockResolvedValue(undefined);
+    mockCloseDatabaseConnection.mockResolvedValue(true);
     mockReloadDatabase.mockResolvedValue(mockDbInstance);
   });
 
@@ -557,6 +557,29 @@ describe('ContentUpdater service', () => {
       expect(mockReloadDatabase).toHaveBeenCalled();
     });
 
+    it('safety valve: aborts delta apply when live DB close fails', async () => {
+      // Simulate a live DB that refuses to close cleanly. The updater must
+      // NOT proceed with backup+swap work against a DB that may still be
+      // open on the native side — doing so risks file locks or, on iOS 26,
+      // the FTS5 teardown crash. Expected behavior: log a warning, return
+      // up_to_date, and leave the on-disk DB untouched.
+      mockGetDbIfInitialized.mockReturnValue(mockDbInstance);
+      mockCloseDatabaseConnection.mockResolvedValueOnce(false);
+      mockChecksumPass(sampleDelta.sha256);
+
+      const result = await ContentUpdater.applyDelta(sampleDelta);
+
+      expect(result.status).toBe('up_to_date');
+      expect(mockCloseDatabaseConnection).toHaveBeenCalled();
+      // Backup must NOT have fired — that's a file-swap-path operation we
+      // explicitly skipped.
+      expect(mockFileOps.copy).not.toHaveBeenCalledWith(
+        expect.objectContaining({
+          to: expect.stringContaining('scripture_backup.db'),
+        }),
+      );
+    });
+
     it('returns failed on download HTTP error', async () => {
       const httpErr = new Error('HTTP 404') as Error & { httpStatus: number };
       httpErr.httpStatus = 404;
@@ -669,6 +692,31 @@ describe('ContentUpdater service', () => {
 
       expect(mockCloseDatabaseConnection).toHaveBeenCalled();
       expect(mockReloadDatabase).toHaveBeenCalled();
+    });
+
+    it('safety valve: aborts full DB swap when live DB close fails', async () => {
+      // Same reasoning as the applyDelta safety valve: a failed close means
+      // the native handle may still be live; moving the temp DB over it
+      // would be unsafe. Expected behavior: log, cleanup the temp file,
+      // return up_to_date, leave scripture.db untouched.
+      mockGetDbIfInitialized.mockReturnValue(mockDbInstance);
+      mockCloseDatabaseConnection.mockResolvedValueOnce(false);
+      mockGetFirstAsync
+        .mockResolvedValueOnce({ value: 'v1.0.0' })
+        .mockResolvedValueOnce({ value: 'v2.0.0' });
+      resetXhr(200);
+      getOrCreateRecord('/fake/docs/SQLite/scripture_download.db').exists = true;
+
+      const result = await ContentUpdater.downloadFullDb(sampleManifest);
+
+      expect(result.status).toBe('up_to_date');
+      expect(mockCloseDatabaseConnection).toHaveBeenCalled();
+      // Temp file should be cleaned up so the next attempt re-downloads fresh.
+      expect(mockFileOps.delete).toHaveBeenCalledWith(
+        expect.stringContaining('scripture_download.db'),
+      );
+      // The file swap (move) must NOT have fired.
+      expect(mockFileOps.move).not.toHaveBeenCalled();
     });
 
     it('forwards download progress to the onProgress callback', async () => {

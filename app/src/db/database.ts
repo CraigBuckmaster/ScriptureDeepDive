@@ -103,15 +103,31 @@ export async function reloadDatabase(): Promise<SQLite.SQLiteDatabase> {
  * Close the live content DB connection (if open) and clear the in-memory
  * handle. Used before on-disk DB replacement to avoid swapping files while
  * SQLite still has the old file open.
+ *
+ * Returns true if the connection was successfully closed (or was never
+ * open). Returns false if closeAsync threw — in which case the native
+ * SQLite handle may or may not actually be released. Callers should NOT
+ * proceed with a file swap on false, because attempting to move/overwrite
+ * a file that SQLite still has open leads to lock conflicts and, on
+ * iOS 26, the FTS5 teardown crash we saw in TestFlight 1.0.7(20).
+ *
+ * Safety valve: a failed close still sets `db = null` so subsequent
+ * `getDb()` calls force a reopen from disk rather than returning a
+ * possibly-invalid handle. That matches the historical behavior but now
+ * surfaces the error to the caller too.
+ *
+ * @returns true on clean close; false if closeAsync threw
  */
-export async function closeDatabaseConnection(): Promise<void> {
-  if (!db) return;
+export async function closeDatabaseConnection(): Promise<boolean> {
+  if (!db) return true;
   try {
     await db.closeAsync();
-  } catch {
-    // ignore — best-effort close before swap
-  } finally {
     db = null;
+    return true;
+  } catch (err) {
+    logger.warn('DB', 'closeDatabaseConnection: closeAsync threw', err);
+    db = null;
+    return false;
   }
 }
 
