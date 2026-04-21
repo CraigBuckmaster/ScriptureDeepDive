@@ -1,0 +1,72 @@
+name: Fix Missing Art (R2)
+
+# Manually-triggered workflow to upload curated Wikimedia art assets to R2.
+#
+# Runs `_tools/fix_missing_art.py`, which holds a hardcoded list of
+# (r2_filename, wikimedia_source_url) pairs. To add or change what gets
+# uploaded, edit the `TARGETS` list in that script and push to master —
+# no workflow edit required.
+#
+# Trigger:
+#   - workflow_dispatch (manual, from the Actions tab)
+#
+# Deliberately NOT triggered by path filters on push/PR: the target list
+# is curated, not derived from content. Running on every push to
+# `_tools/fix_missing_art.py` would re-fetch and re-upload the same files
+# unnecessarily.
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Fetch + convert but skip R2 uploads (for validation)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+      only:
+        description: 'Filename substring filter (optional — leave empty to run full list)'
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  upload-art:
+    name: Upload missing art assets to R2
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    env:
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+      R2_PUBLIC_URL: ${{ secrets.R2_PUBLIC_URL }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install boto3 Pillow
+
+      - name: Run fix_missing_art
+        run: |
+          args=""
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            args="$args --dry-run"
+          fi
+          if [ -n "${{ github.event.inputs.only }}" ]; then
+            args="$args --only ${{ github.event.inputs.only }}"
+          fi
+          python _tools/fix_missing_art.py $args
