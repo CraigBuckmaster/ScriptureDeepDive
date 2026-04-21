@@ -54,6 +54,17 @@
  * React Native's own code (Fabric, Hermes, TurboModule JSI glue)
  * genuinely needs C++20 and will not compile as C++17.
  *
+ * ── Injection point matters ───────────────────────────────────────
+ *
+ * The block MUST be injected AFTER the `react_native_post_install(...)`
+ * call, NOT at the opening of `post_install do |installer|`. RN 0.81.5's
+ * `react_native_post_install` ends by calling
+ * `NewArchitectureHelper.set_clang_cxx_language_standard_if_needed`,
+ * which iterates every pod target (including `fmt`) and sets
+ * `CLANG_CXX_LANGUAGE_STANDARD = "c++20"`. A block injected before that
+ * call would run first and then be silently overwritten, fmt would
+ * still build as C++20, and the consteval error would reappear.
+ *
  * ── Lifecycle ──────────────────────────────────────────────────────
  *
  * This plugin is a temporary workaround paired with the iOS 26
@@ -63,8 +74,8 @@
  * rules, at which point RN can be consumed as a precompiled XCFramework
  * again and fmt is no longer compiled in the project build.
  *
- * Idempotent: a marker check ensures repeated prebuilds don't stack
- * duplicate patches in the Podfile.
+ * Idempotent: repeated prebuilds strip-and-reinject the current block,
+ * so stale content from prior plugin versions is replaced cleanly.
  */
 
 const { withDangerousMod } = require('@expo/config-plugins');
@@ -141,19 +152,55 @@ const withFmtConsteval = (config) => {
       // always inject current content. Idempotent when no block is present.
       contents = stripExistingBlock(contents);
 
-      // The Expo template's post_install block opens with this exact line.
-      // Matching on the line with the installer binding is specific enough
-      // to avoid accidentally matching a different post_install block.
-      const postInstallOpen = /(post_install do \|installer\|\n)/;
-      if (!postInstallOpen.test(contents)) {
+      // CRITICAL: inject AFTER the `react_native_post_install(...)` call,
+      // not at the opening of `post_install do |installer|`. React Native
+      // 0.81.5's `react_native_post_install` ends with a call to
+      // `NewArchitectureHelper.set_clang_cxx_language_standard_if_needed`,
+      // which iterates every pod target (including fmt) and sets
+      // `CLANG_CXX_LANGUAGE_STANDARD` to c++20. If our block ran first,
+      // RN would overwrite our c++17 setting and fmt would still build
+      // as C++20, reproducing the consteval error we came here to fix.
+      // See: facebook/react-native commit 71da21243 (scripts/cocoapods/
+      // new_architecture.rb) for the overwrite logic.
+      const callStart = contents.indexOf('react_native_post_install(');
+      if (callStart === -1) {
         throw new Error(
-          '[withFmtConsteval] Could not find `post_install do |installer|` ' +
-            'block in Podfile. The Expo template structure may have changed; ' +
+          '[withFmtConsteval] Could not find `react_native_post_install(` ' +
+            'call in Podfile. The Expo template structure may have changed; ' +
             'update this plugin to match.',
         );
       }
 
-      contents = contents.replace(postInstallOpen, `$1${PATCH_BLOCK}`);
+      // Scan forward tracking paren depth to find the matching closing `)`.
+      // RN's post-install call uses simple args (no parens inside strings),
+      // so naive counting is safe for the Expo Podfile template.
+      let depth = 1;
+      let i = callStart + 'react_native_post_install('.length;
+      while (i < contents.length && depth > 0) {
+        const ch = contents[i];
+        if (ch === '(') depth += 1;
+        else if (ch === ')') depth -= 1;
+        i += 1;
+      }
+      if (depth !== 0) {
+        throw new Error(
+          '[withFmtConsteval] Could not find matching `)` for ' +
+            'react_native_post_install call. Podfile may be malformed.',
+        );
+      }
+
+      // `i` now points one past the closing `)`. Find the newline that
+      // terminates the call statement and inject immediately after it so
+      // the block starts on a fresh line.
+      const nlIdx = contents.indexOf('\n', i);
+      if (nlIdx === -1) {
+        throw new Error(
+          '[withFmtConsteval] No newline found after react_native_post_install() call.',
+        );
+      }
+
+      contents =
+        contents.slice(0, nlIdx + 1) + PATCH_BLOCK + contents.slice(nlIdx + 1);
       fs.writeFileSync(podfilePath, contents);
 
       return config;
