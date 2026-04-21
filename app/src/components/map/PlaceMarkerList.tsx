@@ -47,21 +47,6 @@ export function placesToFeatureCollection(places: Place[]): GeoJSON.FeatureColle
   };
 }
 
-/**
- * Min-zoom per priority — mirrors the old `maxPriorityForZoom` thresholds
- * from geoMath.ts but expressed as a MapLibre `match` expression so the
- * GPU renders/hides per-feature without JS involvement.
- */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const PRIORITY_MIN_ZOOM: any = ['match',
-  ['get', 'priority'],
-  1, 3,
-  2, 5,
-  3, 7,
-  4, 8,
-  8, // fallback
-];
-
 export const PlaceMarkerList = memo(function PlaceMarkerList({
   places,
   showModern,
@@ -77,18 +62,33 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
     return safeParse<string[]>(activeStory.places_json, []);
   }, [activeStory]);
 
-  // Full visibility expression: story places are always visible (min-zoom 0),
-  // other places hidden below their priority's min-zoom threshold.
+  // Full visibility expression: story places are always visible, other places
+  // appear at fixed zoom stops according to priority. Keep the zoom stops as
+  // literal numbers; MapLibre rejects dynamic stop thresholds in `step`.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const minZoomExpr: any = useMemo(
-    () => [
+  const visibilityOpacityExpr: any = useMemo(() => {
+    const isStoryPlace = ['in', ['get', 'id'], ['literal', storyPlaceIds]];
+    const visibleThroughPriority = (maxPriority: number) => [
       'case',
-      ['in', ['get', 'id'], ['literal', storyPlaceIds]],
+      ['any', isStoryPlace, ['<=', ['get', 'priority'], maxPriority]],
+      1,
       0,
-      PRIORITY_MIN_ZOOM,
-    ],
-    [storyPlaceIds],
-  );
+    ];
+
+    return [
+      'step',
+      ['zoom'],
+      ['case', isStoryPlace, 1, 0],
+      3,
+      visibleThroughPriority(1),
+      5,
+      visibleThroughPriority(2),
+      7,
+      visibleThroughPriority(3),
+      8,
+      1,
+    ];
+  }, [storyPlaceIds]);
 
   // Radius / color / stroke for the active-place spotlight.
   // Uses a direct id comparison (effectively a poor-man's feature-state —
@@ -158,8 +158,7 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
           circleColor: circleColorExpr,
           circleStrokeColor: circleStrokeColorExpr,
           circleStrokeWidth: circleStrokeWidthExpr,
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          circleOpacity: ['step', ['zoom'], 0, minZoomExpr, 1] as any,
+          circleOpacity: visibilityOpacityExpr,
         }}
       />
       <Layer
@@ -184,8 +183,7 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
           textOffset: [0, 1.1],
           textAnchor: 'top',
           textOptional: true,
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          textOpacity: ['step', ['zoom'], 0, minZoomExpr, 1] as any,
+          textOpacity: visibilityOpacityExpr,
           textAllowOverlap: false,
           textIgnorePlacement: false,
         }}
