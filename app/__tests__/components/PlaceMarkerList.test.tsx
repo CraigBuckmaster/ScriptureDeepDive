@@ -90,7 +90,9 @@ describe('buildPlaceVisibilityExpr (MapLibre step-spec regression guard)', () =>
     //   index 2:           base_output (any expression — OK)
     //   index 3, 5, 7, ...: stop_input_N (MUST be literal number)
     //   index 4, 6, 8, ...: stop_output_N (any expression — OK)
-    const stopInputs = expr.slice(3).filter((_, i) => i % 2 === 0);
+    const stopInputs = (expr.slice(3) as unknown[]).filter(
+      (_: unknown, i: number) => i % 2 === 0,
+    );
     expect(stopInputs.length).toBeGreaterThan(0);
     for (const input of stopInputs) {
       expect(typeof input).toBe('number');
@@ -100,7 +102,9 @@ describe('buildPlaceVisibilityExpr (MapLibre step-spec regression guard)', () =>
 
   it('produces stop inputs in strictly ascending order (also a step-spec requirement)', () => {
     const expr = buildPlaceVisibilityExpr([]);
-    const stopInputs = expr.slice(3).filter((_, i) => i % 2 === 0) as number[];
+    const stopInputs = (expr.slice(3) as unknown[]).filter(
+      (_: unknown, i: number) => i % 2 === 0,
+    ) as number[];
     for (let i = 1; i < stopInputs.length; i += 1) {
       expect(stopInputs[i]).toBeGreaterThan(stopInputs[i - 1]);
     }
