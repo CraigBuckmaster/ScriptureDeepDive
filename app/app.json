@@ -48,6 +48,7 @@
           "android": { "newArchEnabled": true }
         }
       ],
+      "./plugins/withFmtConsteval",
       "expo-font",
       "expo-screen-orientation",
       [
