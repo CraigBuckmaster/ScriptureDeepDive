@@ -309,6 +309,28 @@ jest.mock('@maplibre/maplibre-react-native', () => {
 // per-test via `jest.doMock('react-native', ...)`; the global @maplibre
 // mock above is for tests that render MapLibre components (it does not
 // affect the probe, which no longer imports @maplibre at all).
+//
+// To keep the global default behavior as "MapLibre native is available"
+// (matching the @maplibre mock above, matching the pre-Apr 2026 require-
+// based probe behavior), we spy on `TurboModuleRegistry.get` and return a
+// minimal setConnected-capable stub for `'MLRNNetworkModule'`. Other
+// TurboModule names fall through to the underlying implementation so
+// unrelated tests depending on different TurboModules are untouched.
+//
+// We use `jest.spyOn` rather than a full `jest.mock('react-native', ...)`
+// to avoid stomping on the jest-expo preset's own react-native mock —
+// spying is additive, module-replacement is not.
+{
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { TurboModuleRegistry } = require('react-native');
+  const realGet = TurboModuleRegistry.get.bind(TurboModuleRegistry);
+  jest.spyOn(TurboModuleRegistry, 'get').mockImplementation((name) => {
+    if (name === 'MLRNNetworkModule') {
+      return { setConnected: jest.fn() };
+    }
+    return realGet(name);
+  });
+}
 
 // Mock react-native-svg
 jest.mock('react-native-svg', () => ({
