@@ -83,7 +83,7 @@ export function placesToFeatureCollection(places: Place[]): GeoJSON.FeatureColle
  * which is the spec invariant whose violation caused the crash.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function buildPlaceVisibilityExpr(storyPlaceIds: string[]): any[] {
+export function buildPlaceVisibilityExpr(storyPlaceIds: string[]): any {
   const isStoryPlace = ['in', ['get', 'id'], ['literal', storyPlaceIds]];
   const visibleThroughPriority = (maxPriority: number) => [
     'case',
