@@ -304,9 +304,11 @@ jest.mock('@maplibre/maplibre-react-native', () => {
 // Under MapLibre v11 + React Native New Architecture, the map native
 // module registers via TurboModuleRegistry, not the legacy bridge, so
 // `NativeModules.MLRNModule` no longer exists at all. The probe in
-// `isMapNativeAvailable` now just require()s the MapLibre package and
-// checks for the `Map` named export — which the jest mock above
-// provides — so no NativeModules patching is needed here.
+// `isMapNativeAvailable` probes MLRNNetworkModule via
+// `TurboModuleRegistry.get(...)`. Individual test cases override that
+// per-test via `jest.doMock('react-native', ...)`; the global @maplibre
+// mock above is for tests that render MapLibre components (it does not
+// affect the probe, which no longer imports @maplibre at all).
 
 // Mock react-native-svg
 jest.mock('react-native-svg', () => ({
