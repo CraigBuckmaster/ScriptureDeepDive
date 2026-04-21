@@ -1,78 +1,107 @@
 /**
  * Unit test for the native-module guard.
  *
- * The probe uses `require('@maplibre/maplibre-react-native')` + a check
- * for the `Map` named export as evidence that MapLibre v11's native
- * side is linked into this binary. We toggle the mocked module's shape
- * per case via `jest.isolateModules` — it creates a fresh registry
- * (including fresh mock-factory resolution) scoped to the callback, so
- * per-test `jest.doMock` overrides both the global jest.setup mock AND
- * any file-level hoisted mock. Plain `jest.resetModules()` +
- * `jest.doMock()` outside of an isolate block proved unreliable under
- * `--coverage` (the hoisted setup factory kept winning).
+ * The probe calls `TurboModuleRegistry.get('MLRNNetworkModule')` — see
+ * the long comment in `isMapNativeAvailable.ts` for why require() was
+ * removed. `jest.setup.js` installs a global `jest.spyOn` on
+ * `TurboModuleRegistry.get` that returns a setConnected-capable stub
+ * for `'MLRNNetworkModule'` and falls through for other names, so the
+ * default in every test suite is "MapLibre native available".
+ *
+ * Per-test overrides here mutate the spy's implementation directly,
+ * then `afterEach` reinstates the setup default so downstream test
+ * suites see the expected behaviour. `__resetMapNativeProbeForTests()`
+ * clears the probe's memoised result between cases.
+ *
+ * An earlier draft of this file used `jest.isolateModules` + a fresh
+ * `require` to bypass the probe's memoisation, but that gave the
+ * re-required probe a DIFFERENT `react-native` module instance than
+ * the one we held a reference to at the top of this file — per-test
+ * spy overrides never reached the probe. Explicit reset + shared
+ * module instance is simpler and avoids that trap.
  */
 
+import { TurboModuleRegistry } from 'react-native';
+
+import {
+  isMapNativeAvailable,
+  getMapUnavailableReason,
+  __resetMapNativeProbeForTests,
+} from '@/utils/isMapNativeAvailable';
+
+const getSpy = TurboModuleRegistry.get as unknown as jest.Mock;
+
+/** Default implementation mirroring the one installed by jest.setup.js. */
+function installDefaultMock(): void {
+  getSpy.mockReset();
+  getSpy.mockImplementation((name: string) => {
+    if (name === 'MLRNNetworkModule') {
+      return { setConnected: jest.fn() };
+    }
+    return undefined;
+  });
+}
+
 describe('isMapNativeAvailable', () => {
-  it('returns true when MapLibre package loads with Map export (linked build)', () => {
-    jest.isolateModules(() => {
-      jest.doMock('@maplibre/maplibre-react-native', () => ({
-        __esModule: true,
-        Map: () => null,
-        NetworkManager: { setConnected: jest.fn() },
-      }));
-      // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const { isMapNativeAvailable } = require('@/utils/isMapNativeAvailable');
-      expect(isMapNativeAvailable()).toBe(true);
-    });
+  beforeEach(() => {
+    __resetMapNativeProbeForTests();
   });
 
-  it('returns false when MapLibre package is missing (Expo Go)', () => {
-    jest.isolateModules(() => {
-      jest.doMock('@maplibre/maplibre-react-native', () => {
-        throw new Error("Cannot find module '@maplibre/maplibre-react-native'");
-      });
-      // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const {
-        isMapNativeAvailable,
-        getMapUnavailableReason,
-      } = require('@/utils/isMapNativeAvailable');
-      expect(isMapNativeAvailable()).toBe(false);
-      expect(getMapUnavailableReason()).toMatch(/Cannot find module/);
-    });
+  afterEach(() => {
+    // Restore the setup default so subsequent test suites see the
+    // expected "MapLibre native available" behaviour. We reset rather
+    // than restore, because restoreAllMocks would kill the jest.setup.js
+    // spy entirely.
+    installDefaultMock();
+    __resetMapNativeProbeForTests();
   });
 
-  it('returns false when MapLibre package loads but Map export is absent (v10 residue)', () => {
-    jest.isolateModules(() => {
-      jest.doMock('@maplibre/maplibre-react-native', () => ({
-        __esModule: true,
-        // No `Map` export — simulates v10-era package or a partial install
-        MapView: () => null,
-        NetworkManager: { setConnected: jest.fn() },
-      }));
-      // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const {
-        isMapNativeAvailable,
-        getMapUnavailableReason,
-      } = require('@/utils/isMapNativeAvailable');
-      expect(isMapNativeAvailable()).toBe(false);
-      expect(getMapUnavailableReason()).toMatch(/"Map" export missing/);
-    });
+  it('returns true when MLRNNetworkModule TurboModule is registered', () => {
+    // Uses the jest.setup default — no per-test override needed.
+    expect(isMapNativeAvailable()).toBe(true);
   });
 
-  it('survives a throw from NetworkManager.setConnected (iOS path)', () => {
-    jest.isolateModules(() => {
-      jest.doMock('@maplibre/maplibre-react-native', () => ({
-        __esModule: true,
-        Map: () => null,
-        NetworkManager: {
+  it('returns false when TurboModule is not registered (Expo Go / plugin not linked)', () => {
+    getSpy.mockImplementation(() => null);
+    expect(isMapNativeAvailable()).toBe(false);
+    expect(getMapUnavailableReason()).toMatch(/MLRNNetworkModule/);
+    expect(getMapUnavailableReason()).toMatch(/not registered/);
+  });
+
+  it('returns true when setConnected throws (iOS no-op path / future spec drift)', () => {
+    getSpy.mockImplementation((name: string) => {
+      if (name === 'MLRNNetworkModule') {
+        return {
           setConnected: jest.fn(() => {
             throw new Error('iOS native method unavailable');
           }),
-        },
-      }));
-      // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const { isMapNativeAvailable } = require('@/utils/isMapNativeAvailable');
-      expect(isMapNativeAvailable()).toBe(true);
+        };
+      }
+      return undefined;
     });
+    // Degrades gracefully — TurboModule presence is the real signal;
+    // setConnected failure just gets logged.
+    expect(isMapNativeAvailable()).toBe(true);
+  });
+
+  it('returns true when TurboModule is registered without setConnected (method absent)', () => {
+    getSpy.mockImplementation((name: string) => {
+      if (name === 'MLRNNetworkModule') {
+        // No setConnected — e.g. if MapLibre renames the method in a
+        // future spec version. We should still succeed on the presence
+        // signal alone.
+        return {};
+      }
+      return undefined;
+    });
+    expect(isMapNativeAvailable()).toBe(true);
+  });
+
+  it('returns false with error reason when TurboModuleRegistry.get itself throws', () => {
+    getSpy.mockImplementation(() => {
+      throw new Error('registry subsystem offline');
+    });
+    expect(isMapNativeAvailable()).toBe(false);
+    expect(getMapUnavailableReason()).toMatch(/registry subsystem offline/);
   });
 });
