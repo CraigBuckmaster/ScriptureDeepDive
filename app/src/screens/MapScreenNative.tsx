@@ -37,7 +37,7 @@ import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { logger } from '../utils/logger';
 import { lightImpact } from '../utils/haptics';
 import { STYLE_ANCIENT, STYLE_MODERN } from '../constants/mapStyles';
-import { buildPlaceToStoriesMap } from './MapScreen';
+import { buildPlaceToStoriesMap } from './mapScreenUtils';
 
 // The dispatcher (MapScreen.tsx) gates on isMapNativeAvailable() before
 // this module loads. Run module-level init so tiles can be fetched.

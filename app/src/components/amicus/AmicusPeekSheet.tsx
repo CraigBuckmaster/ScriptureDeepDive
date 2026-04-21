@@ -20,7 +20,6 @@ import BottomSheet, {
   BottomSheetView,
 } from '@gorhom/bottom-sheet';
 import { ArrowUp } from 'lucide-react-native';
-import { useNavigationState } from '@react-navigation/native';
 import { useAmicusChips, type ChipContext } from '../../hooks/useAmicusChips';
 import { usePeekConversation } from '../../hooks/usePeekConversation';
 import { fontFamily, spacing, useTheme } from '../../theme';
@@ -42,6 +41,8 @@ export interface AmicusPeekSheetProps {
   onContinueInTab?: (snapshot: ReturnType<ReturnType<typeof usePeekConversation>['snapshotForPromotion']>) => void | Promise<void>;
   /** Expose when handoff is in progress (disables the CTA). */
   handoffInProgress?: boolean;
+  /** Root nav state supplied by AppShell; this sheet is not a navigator child. */
+  navigationState?: unknown;
 }
 
 export default function AmicusPeekSheet(
@@ -51,7 +52,7 @@ export default function AmicusPeekSheet(
   const sheetRef = useRef<BottomSheet>(null);
   const snapPoints = useMemo(() => ['50%', '85%'], []);
 
-  const ctx = useNavigationContext(props.contextOverride);
+  const ctx = useNavigationContext(props.contextOverride, props.navigationState);
   const { chips } = useAmicusChips(ctx);
   const [text, setText] = useState('');
   const peek = usePeekConversation();
@@ -234,12 +235,14 @@ export default function AmicusPeekSheet(
 // ── Helpers ────────────────────────────────────────────────────────────
 
 /** Extract chapter/entity context from the active route for chip selection. */
-function useNavigationContext(override?: ChipContext): ChipContext {
-  const state = useNavigationState((s) => s);
+function useNavigationContext(
+  override?: ChipContext,
+  navigationState?: unknown,
+): ChipContext {
   return useMemo(() => {
     if (override) return override;
-    if (!state) return { kind: 'none' };
-    const route = findDeepestRoute(state);
+    if (!navigationState) return { kind: 'none' };
+    const route = findDeepestRoute(navigationState);
     if (!route) return { kind: 'none' };
     const params = (route.params ?? {}) as Record<string, unknown>;
     switch (route.name) {
@@ -265,7 +268,7 @@ function useNavigationContext(override?: ChipContext): ChipContext {
       default:
         return { kind: 'none' };
     }
-  }, [state, override]);
+  }, [navigationState, override]);
 }
 
 interface MinimalRoute {

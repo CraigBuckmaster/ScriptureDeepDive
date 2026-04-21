@@ -26,34 +26,16 @@ import { MapErrorBoundary } from '../components/map/MapErrorBoundary';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 import { useTheme } from '../theme';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
-import type { MapStory } from '../types';
-import { safeParse } from '../utils/logger';
 
 // Re-export the R2 style URLs so any existing `import { STYLE_ANCIENT }
 // from '../screens/MapScreen'` call sites keep working without pulling
 // MapLibre into scope.
 export { STYLE_ANCIENT, STYLE_MODERN } from '../constants/mapStyles';
+export { buildPlaceToStoriesMap } from './mapScreenUtils';
 
 interface Props {
   route: ScreenRouteProp<'Explore', 'Map'>;
   navigation: ScreenNavProp<'Explore', 'Map'>;
-}
-
-/**
- * Build a place-id → stories[] index. Pure helper kept at the dispatcher
- * level so unit tests don't need MapLibre (even transitively).
- */
-export function buildPlaceToStoriesMap(stories: MapStory[]): Map<string, MapStory[]> {
-  const map = new Map<string, MapStory[]>();
-  for (const story of stories) {
-    const ids = safeParse<string[]>(story.places_json, []);
-    for (const id of ids) {
-      const list = map.get(id);
-      if (list) list.push(story);
-      else map.set(id, [story]);
-    }
-  }
-  return map;
 }
 
 // Lazy so MapScreenNative.tsx (and therefore `@maplibre/...`) never

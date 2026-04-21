@@ -11,6 +11,7 @@ import {
   DarkTheme,
   DefaultTheme,
   createNavigationContainerRef,
+  type NavigationState,
 } from '@react-navigation/native';
 
 import { FONT_MAP, ThemeProvider, useTheme } from './src/theme';
@@ -118,6 +119,7 @@ const linking: any = {
 /** Inner app shell — consumes theme context for nav theme + status bar. */
 function AppShell() {
   const { base: themeBase, mode, statusBarStyle } = useTheme();
+  const [navigationState, setNavigationState] = useState<NavigationState | undefined>();
 
   // Install notification tap router (handles both cold-start and warm taps).
   useNotificationRouter(navigationRef);
@@ -139,12 +141,26 @@ function AppShell() {
 
   return (
     <>
-      <NavigationContainer ref={navigationRef} theme={navTheme} linking={linking}>
+      <NavigationContainer
+        ref={navigationRef}
+        theme={navTheme}
+        linking={linking}
+        onReady={() => setNavigationState(navigationRef.getRootState())}
+        onStateChange={() => setNavigationState(navigationRef.getRootState())}
+      >
         <ErrorBoundary>
           <RootNavigator />
         </ErrorBoundary>
         <ErrorBoundary renderFallback={AmicusFabErrorFallback}>
-          <AmicusFab />
+          <AmicusFab
+            navigationState={navigationState}
+            onOpenPaywall={() =>
+              (navigationRef.navigate as unknown as (
+                name: 'AmicusTab',
+                params: { screen: 'Paywall' },
+              ) => void)('AmicusTab', { screen: 'Paywall' })
+            }
+          />
         </ErrorBoundary>
       </NavigationContainer>
       <StatusBar style={statusBarStyle === 'light-content' ? 'light' : 'dark'} />

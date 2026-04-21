@@ -5,24 +5,11 @@ import AmicusFab from '@/components/amicus/AmicusFab';
 import { AmicusFabProvider, useAmicusFab } from '@/contexts/AmicusFabContext';
 
 const mockNavigate = jest.fn();
-const mockGetParent = jest.fn(() => ({ navigate: mockNavigate }));
-let mockUseNavigationShouldThrow = false;
 
 jest.mock('@react-navigation/native', () => {
   const actual = jest.requireActual('@react-navigation/native');
   return {
     ...actual,
-    useNavigation: () => {
-      if (mockUseNavigationShouldThrow) {
-        throw new Error(
-          "Couldn't find a navigation object. Is your component inside NavigationContainer?",
-        );
-      }
-      return {
-        navigate: jest.fn(),
-        getParent: mockGetParent,
-      };
-    },
     useNavigationState: () => ({ routes: [{ name: 'HomeMain' }], index: 0 }),
   };
 });
@@ -57,7 +44,6 @@ function renderWithFab(node: React.ReactElement) {
 
 beforeEach(() => {
   jest.clearAllMocks();
-  mockUseNavigationShouldThrow = false;
   mockUseAmicusAccess.mockReturnValue({
     canUse: true,
     reason: 'ok',
@@ -91,10 +77,11 @@ describe('AmicusFab', () => {
       entitlement: 'none',
       usage: { thisMonth: 0, cap: 0, remaining: 0 },
     });
-    const { getByLabelText } = renderWithFab(<AmicusFab />);
+    const { getByLabelText } = renderWithFab(
+      <AmicusFab onOpenPaywall={() => mockNavigate('AmicusTab', { screen: 'Paywall' })} />,
+    );
     const fab = getByLabelText('Unlock Amicus');
     fireEvent.press(fab);
-    expect(mockGetParent).toHaveBeenCalled();
     expect(mockNavigate).toHaveBeenCalledWith(
       'AmicusTab',
       expect.objectContaining({ screen: 'Paywall' }),
@@ -116,23 +103,8 @@ describe('AmicusFab', () => {
     expect(queryByLabelText('Open Amicus')).toBeNull();
   });
 
-  it('renders null and logs a warning when mounted outside NavigationContainer', () => {
-    // Regression: iOS 26 first-launch crash on TestFlight builds 18 and 21.
-    // useNavigation throws synchronously when no NavigationContainer is an
-    // ancestor; in Release mode that becomes a fatal NSException via RCTFatal.
-    // The component must return null instead of throwing.
-    mockUseNavigationShouldThrow = true;
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const { logger } = require('@/utils/logger');
-
-    const { queryByLabelText } = renderWithFab(<AmicusFab />);
-
-    expect(queryByLabelText('Open Amicus')).toBeNull();
-    expect(queryByLabelText('Unlock Amicus')).toBeNull();
-    expect(logger.warn).toHaveBeenCalledWith(
-      'AmicusFab',
-      expect.stringContaining('outside NavigationContainer'),
-      expect.any(Error),
-    );
+  it('renders outside NavigationContainer because navigation is supplied by AppShell', () => {
+    const { getByLabelText } = renderWithFab(<AmicusFab />);
+    expect(getByLabelText('Open Amicus')).toBeTruthy();
   });
 });
