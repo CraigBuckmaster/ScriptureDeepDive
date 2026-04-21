@@ -48,19 +48,60 @@ export function placesToFeatureCollection(places: Place[]): GeoJSON.FeatureColle
 }
 
 /**
- * Min-zoom per priority — mirrors the old `maxPriorityForZoom` thresholds
- * from geoMath.ts but expressed as a MapLibre `match` expression so the
- * GPU renders/hides per-feature without JS involvement.
+ * Build the per-feature, zoom-gated opacity expression for the places layer.
+ *
+ * ⚠️ DO NOT REFACTOR INTO THE OBVIOUS-LOOKING SHAPE.
+ *
+ * The natural-feeling form crashes the iOS MapLibre SDK at runtime:
+ *
+ *     ['step', ['zoom'], 0, perFeatureMinZoomExpr, 1]
+ *
+ * MapLibre's style spec requires the stop INPUTS of a `step` expression to
+ * be literal numeric constants. A `case`/`match` sub-expression as a stop
+ * input is a spec violation; the iOS SDK throws an uncaught NSException
+ * from -[MLRNStyle setCircleOpacity:withReactStyleValue:]
+ * (MLRNStyle.m:1216), Sentry's CPP terminate handler converts it to
+ * SIGABRT, and the app hard-crashes the moment a place layer is added to
+ * the map. There is no JS error boundary that catches this. See PR #1567
+ * / the crash report at commit 1b9183bb for the full stack.
+ *
+ * The valid structure is the inverse: `step` on `["zoom"]` with literal
+ * breakpoints, and `case` expressions as the OUTPUTS at each zoom band.
+ * Yes it's verbose. Leave it that way.
+ *
+ * Visibility ladder (matches the old PRIORITY_MIN_ZOOM table):
+ *   zoom < 3  — story places only
+ *   zoom 3+   — story + priority 1
+ *   zoom 5+   — story + priority 1-2
+ *   zoom 7+   — story + priority 1-3
+ *   zoom 8+   — everything (also handles unknown priority values,
+ *               which previously got the fallback min-zoom 8)
+ *
+ * Exported for unit testing — the regression test in
+ * `__tests__/components/PlaceMarkerList.test.tsx` asserts that all stop-
+ * input positions in the returned `step` expression are numeric literals,
+ * which is the spec invariant whose violation caused the crash.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const PRIORITY_MIN_ZOOM: any = ['match',
-  ['get', 'priority'],
-  1, 3,
-  2, 5,
-  3, 7,
-  4, 8,
-  8, // fallback
-];
+export function buildPlaceVisibilityExpr(storyPlaceIds: string[]): any {
+  const isStoryPlace = ['in', ['get', 'id'], ['literal', storyPlaceIds]];
+  const visibleThroughPriority = (maxPriority: number) => [
+    'case',
+    ['any', isStoryPlace, ['<=', ['get', 'priority'], maxPriority]],
+    1,
+    0,
+  ];
+
+  return [
+    'step',
+    ['zoom'],
+    ['case', isStoryPlace, 1, 0],
+    3, visibleThroughPriority(1),
+    5, visibleThroughPriority(2),
+    7, visibleThroughPriority(3),
+    8, 1,
+  ];
+}
 
 export const PlaceMarkerList = memo(function PlaceMarkerList({
   places,
@@ -77,16 +118,12 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
     return safeParse<string[]>(activeStory.places_json, []);
   }, [activeStory]);
 
-  // Full visibility expression: story places are always visible (min-zoom 0),
-  // other places hidden below their priority's min-zoom threshold.
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const minZoomExpr: any = useMemo(
-    () => [
-      'case',
-      ['in', ['get', 'id'], ['literal', storyPlaceIds]],
-      0,
-      PRIORITY_MIN_ZOOM,
-    ],
+  // Per-feature, zoom-gated visibility expression. The expression is built
+  // by `buildPlaceVisibilityExpr` above — see its doc comment for the
+  // (substantial) constraints. Memoised so identity is stable when
+  // `storyPlaceIds` doesn't change, avoiding native style re-applies.
+  const visibilityOpacityExpr = useMemo(
+    () => buildPlaceVisibilityExpr(storyPlaceIds),
     [storyPlaceIds],
   );
 
@@ -158,8 +195,7 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
           circleColor: circleColorExpr,
           circleStrokeColor: circleStrokeColorExpr,
           circleStrokeWidth: circleStrokeWidthExpr,
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          circleOpacity: ['step', ['zoom'], 0, minZoomExpr, 1] as any,
+          circleOpacity: visibilityOpacityExpr,
         }}
       />
       <Layer
@@ -184,8 +220,7 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
           textOffset: [0, 1.1],
           textAnchor: 'top',
           textOptional: true,
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          textOpacity: ['step', ['zoom'], 0, minZoomExpr, 1] as any,
+          textOpacity: visibilityOpacityExpr,
           textAllowOverlap: false,
           textIgnorePlacement: false,
         }}
