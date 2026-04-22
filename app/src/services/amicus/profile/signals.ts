@@ -21,6 +21,25 @@ const CURRENT_FOCUS_MIN_CHAPTERS = 3;
 const TOP_SCHOLARS_LIMIT = 5;
 const SCHOLAR_ENGAGEMENT_FLOOR = 10;
 
+/**
+ * True iff `err` is the "no such table" SQLite error — i.e. the table
+ * a query targets has not been created yet. This is the *expected*
+ * failure mode for tables that exist in signals.ts in advance of the
+ * migrations that create them (e.g. `scholar_opens`, `journey_progress`
+ * as of 2026-04). Those queries deliberately run and fail-fast rather
+ * than gate behind table-existence checks; this helper lets us skip
+ * the logger breadcrumb so dev terminals and Sentry aren't filled
+ * with confirmed-harmless noise on every call to `collectSignals`.
+ *
+ * Any other SQL failure (syntax error, corrupted DB, type mismatch)
+ * still surfaces through `logger.info` so we don't accidentally hide
+ * real bugs behind this predicate.
+ */
+function isNoSuchTableError(err: unknown): boolean {
+  const msg = (err as Error | undefined)?.message ?? '';
+  return /no such table/i.test(msg);
+}
+
 export async function collectSignals(): Promise<RawSignals> {
   const [totals, recent30, scholars, traditions, genres, journeys, recentChapters, focus] =
     await Promise.all([
@@ -76,8 +95,13 @@ export async function getTopScholarsOpened(limit: number): Promise<ScholarEngage
     );
     return rows;
   } catch (err) {
-    // scholar_opens is a future engagement table — return empty until it exists.
-    logger.info('AmicusProfile', `scholar_opens unavailable: ${(err as Error).message}`);
+    // `scholar_opens` is a future engagement table; return empty until
+    // the migration that creates it lands. Skip the logger breadcrumb
+    // for the expected "no such table" case so dev terminals and
+    // Sentry don't get spammed on every signal collection.
+    if (!isNoSuchTableError(err)) {
+      logger.info('AmicusProfile', `scholar_opens unavailable: ${(err as Error).message}`);
+    }
     return [];
   }
 }
@@ -148,8 +172,12 @@ export async function getJourneyState(): Promise<{
       active: activeRow?.journey_id ?? null,
     };
   } catch (err) {
-    // journey_progress not yet populated for this user — safe to skip.
-    logger.info('AmicusProfile', `journey_progress unavailable: ${(err as Error).message}`);
+    // `journey_progress` is a future engagement table; return an empty
+    // journey state until the migration that creates it lands. Same
+    // rationale as `scholar_opens` above.
+    if (!isNoSuchTableError(err)) {
+      logger.info('AmicusProfile', `journey_progress unavailable: ${(err as Error).message}`);
+    }
     return { completed: [], active: null };
   }
 }
