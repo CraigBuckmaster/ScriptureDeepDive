@@ -156,13 +156,18 @@ TARGETS: list[ArtTarget] = [
     # Commons URLs into _discovered.json. Do NOT upload with placeholders.
     ArtTarget(
         r2_filename='rembrandt-emmaus.jpg',
-        source_url='{FROM _discovered.json}',
+        source_url='https://upload.wikimedia.org/wikipedia/commons/a/a6/Rembrandt%2C_cristo_si_rivela_ai_pellegrini_di_emmaus%2C_1648%2C_02.JPG',
         description='JourneyBrowse — Rembrandt: The Supper at Emmaus',
     ),
     ArtTarget(
         r2_filename='botticelli-augustine-study.jpg',
-        source_url='{FROM _discovered.json}',
+        source_url='https://upload.wikimedia.org/wikipedia/commons/d/d3/Sandro_Botticelli_-_St_Augustin_dans_son_cabinet_de_travail.jpg',
         description='TopicBrowse — Botticelli: St. Augustine in His Study',
+    ),
+    ArtTarget(
+        r2_filename='st-augustine-portrait.jpg',
+        source_url='https://upload.wikimedia.org/wikipedia/commons/0/0a/Philippe_de_Champaigne_-_Saint_Augustine_-_LACMA_-_without_frame.jpg',
+        description='TimeTravelBrowse — Philippe de Champaigne: Saint Augustine (re-curated)',
     ),
 ]
 

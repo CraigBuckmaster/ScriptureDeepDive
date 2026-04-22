@@ -46,10 +46,12 @@ API = 'https://commons.wikimedia.org/w/api.php'
 SUBJECTS = [
     {
         'r2_filename': 'figures-abraham-journey.jpg',
-        'first_guesses': [],
-        'search': 'Abraham journey Figures Bible 1728',
+        'first_guesses': [
+            "Lastman, Pieter - Abraham's Journey to Canaan - 1614.jpg",
+        ],
+        'search': 'Lastman Abraham Journey Canaan 1614',
         'name_must_include': ['abraham'],
-        'name_should_include': ['figures', 'journey', 'bible'],
+        'name_should_include': ['lastman', 'journey', 'canaan'],
     },
     {
         'r2_filename': 'figures-red-sea-crossing.jpg',
@@ -60,10 +62,12 @@ SUBJECTS = [
     },
     {
         'r2_filename': 'holman-paul-journey3.jpg',
-        'first_guesses': [],
-        'search': 'Holman Paul third missionary journey map',
+        'first_guesses': [
+            'Raphael - St Paul Preaching at Athens c.1515-6.jpg',
+        ],
+        'search': 'Raphael Saint Paul preaching Athens',
         'name_must_include': ['paul'],
-        'name_should_include': ['holman', 'third', 'missionary', 'journey'],
+        'name_should_include': ['raphael', 'athens', 'preaching'],
     },
     {
         'r2_filename': 'campin-nativity.jpg',
@@ -120,12 +124,12 @@ SUBJECTS = [
     {
         'r2_filename': 'rembrandt-emmaus.jpg',
         'first_guesses': [
-            'Rembrandt Harmensz. van Rijn - The Supper at Emmaus - WGA19117.jpg',
-            'Rembrandt Harmensz. van Rijn - Christ at Emmaus - WGA19095.jpg',
+            'Rembrandt, cristo si rivela ai pellegrini di emmaus, 1648, 02.JPG',
+            'Rembrant van Rijn (1606-1669), Sopar a Emaús (1648). Museu del Louvre, París.jpg',
         ],
-        'search': 'Rembrandt Supper Emmaus',
-        'name_must_include': ['rembrandt', 'emmaus'],
-        'name_should_include': ['supper', 'christ'],
+        'search': 'Rembrandt Emmaus 1648 Louvre',
+        'name_must_include': ['emmaus', '1648'],
+        'name_should_include': ['rembrandt', 'louvre', 'cristo'],
     },
     {
         'r2_filename': 'botticelli-augustine-study.jpg',
@@ -136,6 +140,17 @@ SUBJECTS = [
         'search': 'Botticelli Augustine study',
         'name_must_include': ['botticelli', 'augustin'],
         'name_should_include': ['study', 'cabinet'],
+    },
+    {
+        'r2_filename': 'st-augustine-portrait.jpg',
+        'first_guesses': [
+            'Philippe de Champaigne - Saint Augustine - LACMA - without frame.jpg',
+            'Champaigne, Philippe de - Saint Augustin - 1645-1650.jpg',
+            'Saint Augustine by Philippe de Champaigne.jpg',
+        ],
+        'search': 'Philippe Champaigne Saint Augustine',
+        'name_must_include': ['champaigne', 'augustin'],
+        'name_should_include': ['saint', 'lacma'],
     },
 ]
 
