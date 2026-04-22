@@ -19,14 +19,6 @@ jest.mock('@/services/amicus/chat', () => ({
   streamChat: (p: StreamChatParams) => mockStreamChat(p),
 }));
 
-jest.mock('@react-navigation/native', () => {
-  const actual = jest.requireActual('@react-navigation/native');
-  return {
-    ...actual,
-    useNavigationState: () => ({ routes: [{ name: 'HomeMain' }], index: 0 }),
-  };
-});
-
 jest.mock('@gorhom/bottom-sheet', () => {
   const { View } = require('react-native');
   const BottomSheet = ({ children }: { children: React.ReactNode }) => (
