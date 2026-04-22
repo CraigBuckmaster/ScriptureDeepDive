@@ -20,6 +20,7 @@ import { Lock, MessageSquare } from 'lucide-react-native';
 import { useTheme } from '../../theme';
 import { useAmicusFab } from '../../contexts/AmicusFabContext';
 import { useAmicusAccess } from '../../hooks/useAmicusAccess';
+import { useAmicusChipContext } from '../../hooks/useAmicusChipContext';
 import { logger } from '../../utils/logger';
 import AmicusPeekSheet from './AmicusPeekSheet';
 
@@ -45,6 +46,11 @@ export default function AmicusFab(): React.ReactElement | null {
   }
   const { isVisible } = useAmicusFab();
   const access = useAmicusAccess();
+  // Resolve the Amicus chip context from nav state here so the hook's
+  // try/catch guard lives next to the `useNavigation()` guard above.
+  // Passed to AmicusPeekSheet as a prop, keeping that component free
+  // of navigation-state hooks.
+  const chipContext = useAmicusChipContext();
   const [peekOpen, setPeekOpen] = useState(false);
 
   // Hide when any screen has requested suppression OR the user turned the
@@ -99,7 +105,11 @@ export default function AmicusFab(): React.ReactElement | null {
         )}
       </Pressable>
 
-      <AmicusPeekSheet isOpen={peekOpen} onClose={() => setPeekOpen(false)} />
+      <AmicusPeekSheet
+        isOpen={peekOpen}
+        onClose={() => setPeekOpen(false)}
+        context={chipContext}
+      />
     </View>
   );
 }

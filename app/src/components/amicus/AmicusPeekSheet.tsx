@@ -20,7 +20,6 @@ import BottomSheet, {
   BottomSheetView,
 } from '@gorhom/bottom-sheet';
 import { ArrowUp } from 'lucide-react-native';
-import { useNavigationState } from '@react-navigation/native';
 import { useAmicusChips, type ChipContext } from '../../hooks/useAmicusChips';
 import { usePeekConversation } from '../../hooks/usePeekConversation';
 import { fontFamily, spacing, useTheme } from '../../theme';
@@ -30,7 +29,18 @@ import PeekMiniConversation from './PeekMiniConversation';
 export interface AmicusPeekSheetProps {
   isOpen: boolean;
   onClose: () => void;
-  /** Optional override for tests. */
+  /**
+   * Route-derived chip context supplied by the parent (typically
+   * `AmicusFab`, which calls `useAmicusChipContext`). When absent and
+   * no `contextOverride` is provided, the sheet falls back to
+   * `{ kind: 'none' }`.
+   */
+  context?: ChipContext;
+  /**
+   * Hard override used by tests and anywhere that wants to pin the
+   * chip context regardless of navigation state. Takes precedence
+   * over `context`.
+   */
   contextOverride?: ChipContext;
   /** Fired when the user taps a chip before the conversation starts. */
   onChipTap?: (seedQuery: string) => void;
@@ -51,7 +61,14 @@ export default function AmicusPeekSheet(
   const sheetRef = useRef<BottomSheet>(null);
   const snapPoints = useMemo(() => ['50%', '85%'], []);
 
-  const ctx = useNavigationContext(props.contextOverride);
+  // Resolve chip context with clear precedence:
+  //   1. contextOverride (test / programmatic pin)
+  //   2. context (from AmicusFab's useAmicusChipContext)
+  //   3. { kind: 'none' } (rendered outside the FAB, or nav not ready)
+  // The sheet no longer subscribes to navigation state itself — that
+  // moved to `useAmicusChipContext` via AmicusFab, where the safety
+  // guard for pre-mount/no-container states already lives.
+  const ctx = props.contextOverride ?? props.context ?? { kind: 'none' };
   const { chips } = useAmicusChips(ctx);
   const [text, setText] = useState('');
   const peek = usePeekConversation();
@@ -232,60 +249,6 @@ export default function AmicusPeekSheet(
 }
 
 // ── Helpers ────────────────────────────────────────────────────────────
-
-/** Extract chapter/entity context from the active route for chip selection. */
-function useNavigationContext(override?: ChipContext): ChipContext {
-  const state = useNavigationState((s) => s);
-  return useMemo(() => {
-    if (override) return override;
-    if (!state) return { kind: 'none' };
-    const route = findDeepestRoute(state);
-    if (!route) return { kind: 'none' };
-    const params = (route.params ?? {}) as Record<string, unknown>;
-    switch (route.name) {
-      case 'Chapter': {
-        const bookId = typeof params.bookId === 'string' ? params.bookId : undefined;
-        const chapterNum =
-          typeof params.chapterNum === 'number' ? params.chapterNum : undefined;
-        if (bookId && chapterNum) {
-          return { kind: 'chapter', bookId, chapterNum };
-        }
-        return { kind: 'none' };
-      }
-      case 'PersonDetail':
-        if (typeof params.personId === 'string') {
-          return { kind: 'person', personId: params.personId };
-        }
-        return { kind: 'none' };
-      case 'DebateDetail':
-        if (typeof params.topicId === 'string') {
-          return { kind: 'debate_topic', topicId: params.topicId };
-        }
-        return { kind: 'none' };
-      default:
-        return { kind: 'none' };
-    }
-  }, [state, override]);
-}
-
-interface MinimalRoute {
-  name: string;
-  params?: unknown;
-  state?: { routes?: MinimalRoute[]; index?: number };
-}
-
-function findDeepestRoute(state: unknown): MinimalRoute | null {
-  const s = state as {
-    routes?: MinimalRoute[];
-    index?: number;
-  } | null;
-  if (!s || !Array.isArray(s.routes)) return null;
-  const idx = typeof s.index === 'number' ? s.index : s.routes.length - 1;
-  const route = s.routes[idx];
-  if (!route) return null;
-  if (route.state) return findDeepestRoute(route.state) ?? route;
-  return route;
-}
 
 function contextSubtitle(ctx: ChipContext): string {
   switch (ctx.kind) {
