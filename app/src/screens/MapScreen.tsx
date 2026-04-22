@@ -56,6 +56,33 @@ export function buildPlaceToStoriesMap(stories: MapStory[]): Map<string, MapStor
   return map;
 }
 
+/**
+ * Resolve which era the AncientBorderLayer should render for.
+ *
+ * When a story is selected, borders match the story's era so the
+ * map's political backdrop reflects the story's historical moment
+ * (David's kingdom borders for "David's Rise", Babylonian-era
+ * borders for "Babylonian Exile", etc.). When no story is active,
+ * borders follow the user's filter-chip selection.
+ *
+ * This used to be handled via a side effect inside `selectStory`
+ * that called `setActiveEra(story.era)` — which also hijacked the
+ * EraFilterBar chip selection and narrowed the visible story strip
+ * to just that era, stranding the user after they closed the story.
+ * Deriving the border era here instead keeps the two concerns
+ * (visual context vs. story filter) cleanly separated.
+ *
+ * Kept at the dispatcher level (not MapScreenNative) for the same
+ * reason as `buildPlaceToStoriesMap` — unit tests don't have to pull
+ * in MapLibre just to exercise this one-line decision.
+ */
+export function resolveBorderEra(
+  activeStory: Pick<MapStory, 'era'> | null,
+  filterEra: string,
+): string {
+  return activeStory?.era ?? filterEra;
+}
+
 // Lazy so MapScreenNative.tsx (and therefore `@maplibre/...`) never
 // evaluates in Expo Go. Marked as a module-level constant so React can
 // memoise the lazy wrapper across renders.
