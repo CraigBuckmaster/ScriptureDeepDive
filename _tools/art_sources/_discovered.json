@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T15:33:40.783389+00:00",
+  "generated_at": "2026-04-22T19:12:51.880010+00:00",
   "resolved": [
     {
       "r2_filename": "figures-abraham-journey.jpg",
@@ -108,6 +108,39 @@
         "Michelangelo, profeti, Jeremiah 03.jpg",
         "Michelangelo, profeti, Jeremiah 02.jpg"
       ]
+    },
+    {
+      "r2_filename": "rembrandt-emmaus.jpg",
+      "status": "ok",
+      "method": "first_guess",
+      "commons_title": "File:Rembrandt, cristo si rivela ai pellegrini di emmaus, 1648, 02.JPG",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Rembrandt%2C_cristo_si_rivela_ai_pellegrini_di_emmaus%2C_1648%2C_02.JPG",
+      "width": 3140,
+      "height": 2736,
+      "mime": "image/jpeg",
+      "size_bytes": 3209328
+    },
+    {
+      "r2_filename": "botticelli-augustine-study.jpg",
+      "status": "ok",
+      "method": "first_guess",
+      "commons_title": "File:Sandro Botticelli - St Augustin dans son cabinet de travail.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Sandro_Botticelli_-_St_Augustin_dans_son_cabinet_de_travail.jpg",
+      "width": 1763,
+      "height": 2737,
+      "mime": "image/jpeg",
+      "size_bytes": 1792911
+    },
+    {
+      "r2_filename": "st-augustine-portrait.jpg",
+      "status": "ok",
+      "method": "first_guess",
+      "commons_title": "File:Philippe de Champaigne - Saint Augustine - LACMA - without frame.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Philippe_de_Champaigne_-_Saint_Augustine_-_LACMA_-_without_frame.jpg",
+      "width": 1485,
+      "height": 1917,
+      "mime": "image/jpeg",
+      "size_bytes": 2254265
     }
   ],
   "failed": []

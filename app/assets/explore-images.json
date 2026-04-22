@@ -45,11 +45,30 @@
       "redemption"
     ]
   },
+  "JourneyBrowse": {
+    "count": 60,
+    "noun": "journeys",
+    "contentType": null,
+    "images": [
+      {
+        "url": "https://contentcompanionstudy.com/art/rembrandt-emmaus.jpg",
+        "caption": "The Supper at Emmaus — journeys that reveal who Christ is",
+        "credit": "Rembrandt · Public domain"
+      }
+    ]
+  },
   "TopicBrowse": {
     "count": 110,
     "noun": "topics",
     "contentType": "topic",
-    "featured": []
+    "featured": [],
+    "images": [
+      {
+        "url": "https://contentcompanionstudy.com/art/botticelli-augustine-study.jpg",
+        "caption": "St. Augustine in His Study — organizing thought topically",
+        "credit": "Sandro Botticelli · Public domain"
+      }
+    ]
   },
   "ProphecyBrowse": {
     "count": 50,
@@ -221,8 +240,8 @@
     "images": [
       {
         "url": "https://contentcompanionstudy.com/art/st-augustine-portrait.jpg",
-        "caption": "Augustine of Hippo — the patristic era",
-        "credit": "Public domain, via Wikimedia Commons"
+        "caption": "Saint Augustine — patristic-era interpretation",
+        "credit": "Philippe de Champaigne · Public domain"
       },
       {
         "url": "https://contentcompanionstudy.com/art/martin-luther-cranach.jpg",

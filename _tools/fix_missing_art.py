@@ -150,6 +150,25 @@ TARGETS: list[ArtTarget] = [
         source_url='https://upload.wikimedia.org/wikipedia/commons/b/b1/The_Prophet_Jeremiah%2C_from_the_series_of_Prophets_and_Sibyls_in_the_Sistine_Chapel_MET_DP821566.jpg',
         description='Prophecy/new_covenant — Michelangelo: Prophet Jeremiah',
     ),
+
+    # Explore card refresh (April 2026). source_url placeholders are patched
+    # in after `python _tools/discover_art_sources.py` resolves the current
+    # Commons URLs into _discovered.json. Do NOT upload with placeholders.
+    ArtTarget(
+        r2_filename='rembrandt-emmaus.jpg',
+        source_url='https://upload.wikimedia.org/wikipedia/commons/a/a6/Rembrandt%2C_cristo_si_rivela_ai_pellegrini_di_emmaus%2C_1648%2C_02.JPG',
+        description='JourneyBrowse — Rembrandt: The Supper at Emmaus',
+    ),
+    ArtTarget(
+        r2_filename='botticelli-augustine-study.jpg',
+        source_url='https://upload.wikimedia.org/wikipedia/commons/d/d3/Sandro_Botticelli_-_St_Augustin_dans_son_cabinet_de_travail.jpg',
+        description='TopicBrowse — Botticelli: St. Augustine in His Study',
+    ),
+    ArtTarget(
+        r2_filename='st-augustine-portrait.jpg',
+        source_url='https://upload.wikimedia.org/wikipedia/commons/0/0a/Philippe_de_Champaigne_-_Saint_Augustine_-_LACMA_-_without_frame.jpg',
+        description='TimeTravelBrowse — Philippe de Champaigne: Saint Augustine (re-curated)',
+    ),
 ]
 
 
