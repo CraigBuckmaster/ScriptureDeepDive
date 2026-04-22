@@ -37,7 +37,7 @@ import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { logger } from '../utils/logger';
 import { lightImpact } from '../utils/haptics';
 import { STYLE_ANCIENT, STYLE_MODERN } from '../constants/mapStyles';
-import { buildPlaceToStoriesMap } from './MapScreen';
+import { buildPlaceToStoriesMap, resolveBorderEra } from './MapScreen';
 
 // The dispatcher (MapScreen.tsx) gates on isMapNativeAvailable() before
 // this module loads. Run module-level init so tiles can be fetched.
@@ -90,15 +90,19 @@ function MapScreen({ route, navigation }: {
   // Map of placeId → stories that include it
   const placeToStories = useMemo(() => buildPlaceToStoriesMap(stories), [stories]);
 
-  /** Select a story → overlays, camera fit, panel open, era auto-switch. */
+  /** Select a story → overlays, camera fit, panel open. */
   const selectStory = useCallback((story: MapStory) => {
     setActiveStory(story);
     setShowPanel(true);
     setSelectedPlace(null);
-    // Auto-switch the ancient-border layer to match the story's era
-    // (scaffold for #1317). Preserves the user's 'all' selection only
-    // when no era info is present on the story.
-    if (story.era) setActiveEra(story.era);
+    // Historical note: previously this also did `setActiveEra(story.era)`
+    // so the AncientBorderLayer would repaint to the story's era. That
+    // also silently hijacked the EraFilterBar filter — selecting "David's
+    // Rise" while browsing "All" eras would narrow the story strip to
+    // just Kingdom-era stories, and closing the story left the filter
+    // stuck. The border-layer's era prop is now derived from
+    // `activeStory?.era ?? activeEra` below, so the visual effect on
+    // the map persists without touching the filter state.
 
     try {
       const placeIds: string[] = JSON.parse(story.places_json ?? '[]');
@@ -168,8 +172,12 @@ function MapScreen({ route, navigation }: {
       const story = stories.find((s) => s.id === initialStoryId);
       if (story) {
         selectStory(story);
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        if (story.era) setActiveEra(story.era);
+        // `setActiveEra(story.era)` used to live here for the same
+        // reason the former `selectStory` auto-switched — so the
+        // border layer would repaint. The border layer's prop now
+        // derives the era from `activeStory?.era ?? activeEra`, so
+        // setting it explicitly would revive the filter-hijack bug
+        // in the deep-link path.
         lastProcessedStory.current = initialStoryId;
       }
     } else if (initialPlaceId && places.length) {
@@ -291,8 +299,13 @@ function MapScreen({ route, navigation }: {
             zoom: BIBLICAL_REGION.zoom,
           }}
         />
-        {/* Ancient political borders for the active era (Biblical mode only) */}
-        <AncientBorderLayer era={activeEra} showModern={showModern} />
+        {/* Ancient political borders for the active era (Biblical mode only).
+            See `resolveBorderEra` for the derivation rationale and the
+            filter-hijack bug this avoids. */}
+        <AncientBorderLayer
+          era={resolveBorderEra(activeStory, activeEra)}
+          showModern={showModern}
+        />
         <PlaceMarkerList
           places={places}
           showModern={showModern}

@@ -27,7 +27,7 @@ jest.mock('@/hooks/useAncientBorders', () => ({
   }),
 }));
 
-import { buildPlaceToStoriesMap, STYLE_ANCIENT, STYLE_MODERN } from '@/screens/MapScreen';
+import { buildPlaceToStoriesMap, resolveBorderEra, STYLE_ANCIENT, STYLE_MODERN } from '@/screens/MapScreen';
 import type { MapStory } from '@/types';
 
 function story(id: string, places: string[]): MapStory {
@@ -81,5 +81,55 @@ describe('MapLibre style URLs', () => {
 
   it('points modern.json at the R2-hosted map-styles path', () => {
     expect(STYLE_MODERN).toMatch(/map-styles\/modern\.json$/);
+  });
+});
+
+/**
+ * Regression guard for the story-select / era-filter decoupling
+ * introduced in the PR that ships this file alongside.
+ *
+ * Before: selecting a story called `setActiveEra(story.era)` as a
+ * side effect so the AncientBorderLayer would repaint — but that
+ * ALSO narrowed the EraFilterBar to the story's era, trapping the
+ * user there after the story closed.
+ *
+ * After: border era is derived from `activeStory?.era ?? filterEra`
+ * so the map repaints correctly while the filter chip stays
+ * untouched. This test pins the derivation so a future refactor
+ * can't regress to the side-effect pattern without a red CI.
+ */
+describe('resolveBorderEra', () => {
+  it('returns the active story’s era when a story is selected, regardless of the filter', () => {
+    // The user is browsing "All" stories but has tapped one in the
+    // Kingdom era — borders should match the story, not the filter.
+    expect(resolveBorderEra({ era: 'kingdom' }, 'all')).toBe('kingdom');
+  });
+
+  it('returns the active story’s era even when the filter already matches', () => {
+    // Belt-and-suspenders: if both agree, no ambiguity.
+    expect(resolveBorderEra({ era: 'exodus' }, 'exodus')).toBe('exodus');
+  });
+
+  it('returns the filter era when no story is active', () => {
+    // User has the Patriarchs chip selected, no story open — borders
+    // follow the chip.
+    expect(resolveBorderEra(null, 'patriarchs')).toBe('patriarchs');
+  });
+
+  it("returns 'all' when no story is active and the filter is 'all'", () => {
+    // Default/idle state — whatever 'all' means downstream (typically
+    // no borders or a neutral backdrop) is correctly propagated.
+    expect(resolveBorderEra(null, 'all')).toBe('all');
+  });
+
+  it('prefers the story era over the filter even when they disagree', () => {
+    // The exact bug scenario from Craig's screenshot: user's filter
+    // chip is on "All", user taps a Kingdom story. Borders MUST
+    // follow the story (kingdom); the filter MUST remain untouched.
+    // resolveBorderEra only handles the first half; the parent
+    // component is responsible for not calling setFilterEra —
+    // but this test pins the resolver's contract.
+    expect(resolveBorderEra({ era: 'kingdom' }, 'all')).toBe('kingdom');
+    expect(resolveBorderEra({ era: 'nt' }, 'exile')).toBe('nt');
   });
 });
