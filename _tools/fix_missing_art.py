@@ -105,49 +105,49 @@ TARGETS: list[ArtTarget] = [
     # ── Map card (4) ────────────────────────────────────────────────
     ArtTarget(
         r2_filename='figures-abraham-journey.jpg',
-        source_url='https://upload.wikimedia.org/wikipedia/commons/7/72/Figures_The_Journey_of_Abraham.jpg',
+        source_url='https://upload.wikimedia.org/wikipedia/commons/7/7f/Lastman%2C_Pieter_-_Abraham%27s_Journey_to_Canaan_-_1614.jpg',
         description='Map/abram-call — Figures: The Journey of Abraham',
     ),
     ArtTarget(
         r2_filename='figures-red-sea-crossing.jpg',
-        source_url='https://upload.wikimedia.org/wikipedia/commons/1/17/Figures_Crossing_of_the_Red_Sea.jpg',
+        source_url='https://upload.wikimedia.org/wikipedia/commons/3/3c/Figures_Pharaoh_and_His_Host_Drowned_in_the_Red_Sea.jpg',
         description='Map/exodus-plagues — Figures: Crossing of the Red Sea',
     ),
     ArtTarget(
         r2_filename='holman-paul-journey3.jpg',
-        source_url="https://upload.wikimedia.org/wikipedia/commons/0/02/Holman_Paul%27s_Third_Missionary_Journey.jpg",
+        source_url='https://upload.wikimedia.org/wikipedia/commons/e/e7/Raphael_-_St_Paul_Preaching_at_Athens_c.1515-6.jpg',
         description="Map/paul-journey3 — Holman: Paul's Third Missionary Journey",
     ),
     ArtTarget(
         r2_filename='campin-nativity.jpg',
-        source_url='https://upload.wikimedia.org/wikipedia/commons/3/38/Robert_Campin_-_The_Nativity_-_WGA14420.jpg',
+        source_url='https://upload.wikimedia.org/wikipedia/commons/2/26/Robert_Campin_-_The_Nativity_-_WGA14426.jpg',
         description='Map/nativity — Robert Campin: The Nativity',
     ),
 
     # ── Prophecy card (5) ───────────────────────────────────────────
     ArtTarget(
         r2_filename='schnorr-010.jpg',
-        source_url='https://upload.wikimedia.org/wikipedia/commons/f/f5/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_010.png',
+        source_url='https://upload.wikimedia.org/wikipedia/commons/2/2a/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_010.png',
         description='Prophecy/seed_of_woman — Schnorr: Creation (PNG→JPG)',
     ),
     ArtTarget(
         r2_filename='schnorr-091.jpg',
-        source_url='https://upload.wikimedia.org/wikipedia/commons/2/28/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_091.png',
+        source_url='https://upload.wikimedia.org/wikipedia/commons/d/d0/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_091.png',
         description='Prophecy/davidic_covenant — Schnorr: David with harp (PNG→JPG)',
     ),
     ArtTarget(
         r2_filename='michelangelo-isaiah.jpg',
-        source_url='https://upload.wikimedia.org/wikipedia/commons/1/18/Michelangelo%2C_profeta_Isaia_02.jpg',
+        source_url='https://upload.wikimedia.org/wikipedia/commons/5/57/%27Isaiah_Sistine_Chapel_ceiling%27_by_Michelangelo_JBU36FXD.jpg',
         description='Prophecy/suffering_servant — Michelangelo: Prophet Isaiah',
     ),
     ArtTarget(
         r2_filename='michelangelo-daniel.jpg',
-        source_url='https://upload.wikimedia.org/wikipedia/commons/0/03/Michelangelo%2C_profeta_Daniele_02.jpg',
+        source_url='https://upload.wikimedia.org/wikipedia/commons/1/16/Michelangelo%2C_profeti%2C_Daniel_03.jpg',
         description='Prophecy/son_of_man — Michelangelo: Prophet Daniel',
     ),
     ArtTarget(
         r2_filename='michelangelo-jeremiah.jpg',
-        source_url='https://upload.wikimedia.org/wikipedia/commons/4/4a/Michelangelo_Buonarroti_-_Sistine_Chapel_Ceiling_-_Jeremiah.jpg',
+        source_url='https://upload.wikimedia.org/wikipedia/commons/b/b1/The_Prophet_Jeremiah%2C_from_the_series_of_Prophets_and_Sibyls_in_the_Sistine_Chapel_MET_DP821566.jpg',
         description='Prophecy/new_covenant — Michelangelo: Prophet Jeremiah',
     ),
 ]
