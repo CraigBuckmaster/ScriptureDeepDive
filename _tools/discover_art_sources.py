@@ -116,6 +116,27 @@ SUBJECTS = [
         'name_must_include': ['jeremiah'],
         'name_should_include': ['michelangelo', 'sistine'],
     },
+    # Explore card refresh (April 2026)
+    {
+        'r2_filename': 'rembrandt-emmaus.jpg',
+        'first_guesses': [
+            'Rembrandt Harmensz. van Rijn - The Supper at Emmaus - WGA19117.jpg',
+            'Rembrandt Harmensz. van Rijn - Christ at Emmaus - WGA19095.jpg',
+        ],
+        'search': 'Rembrandt Supper Emmaus',
+        'name_must_include': ['rembrandt', 'emmaus'],
+        'name_should_include': ['supper', 'christ'],
+    },
+    {
+        'r2_filename': 'botticelli-augustine-study.jpg',
+        'first_guesses': [
+            'Sandro Botticelli - St Augustin dans son cabinet de travail.jpg',
+            'Sandro Botticelli - St Augustin dans son cabinet de travail - WGA2707.jpg',
+        ],
+        'search': 'Botticelli Augustine study',
+        'name_must_include': ['botticelli', 'augustin'],
+        'name_should_include': ['study', 'cabinet'],
+    },
 ]
 
 

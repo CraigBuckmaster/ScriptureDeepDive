@@ -150,6 +150,20 @@ TARGETS: list[ArtTarget] = [
         source_url='https://upload.wikimedia.org/wikipedia/commons/b/b1/The_Prophet_Jeremiah%2C_from_the_series_of_Prophets_and_Sibyls_in_the_Sistine_Chapel_MET_DP821566.jpg',
         description='Prophecy/new_covenant — Michelangelo: Prophet Jeremiah',
     ),
+
+    # Explore card refresh (April 2026). source_url placeholders are patched
+    # in after `python _tools/discover_art_sources.py` resolves the current
+    # Commons URLs into _discovered.json. Do NOT upload with placeholders.
+    ArtTarget(
+        r2_filename='rembrandt-emmaus.jpg',
+        source_url='{FROM _discovered.json}',
+        description='JourneyBrowse — Rembrandt: The Supper at Emmaus',
+    ),
+    ArtTarget(
+        r2_filename='botticelli-augustine-study.jpg',
+        source_url='{FROM _discovered.json}',
+        description='TopicBrowse — Botticelli: St. Augustine in His Study',
+    ),
 ]
 
 
