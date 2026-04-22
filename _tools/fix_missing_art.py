@@ -12,21 +12,26 @@ filename extension written into the DB, and uploads to R2 under the
 `art/` prefix.
 
 Why this script exists as its own tool:
-  - `download_explore_images.py` + `upload_images_to_r2.py` do this for
-    the full curated inventory via the `_tools/art_staging/` directory.
-    That flow is fine for bulk work but brittle for one-off re-uploads: it
-    requires staging, mode flags, manifest updates, and can silently skip
-    files if the staging dir is missing pieces.
-  - This script is a single surgical operation for a named list of files.
-    No staging dir, no sibling manifests, no mode flags — just fetch,
-    convert if needed, upload, verify, report.
+  - Stateless one-off uploads, distinct from the bulk curation flow in
+    `download_explore_images.py` + `upload_images_to_r2.py`.
+  - Now reads from `_tools/art_sources/` (committed via Git LFS) as the
+    source of truth. The `--populate-sources` flag re-seeds that directory
+    from Wikimedia Commons when new assets are added or an existing one
+    needs re-curating. This eliminates runtime dependence on
+    upload.wikimedia.org, which has proven unreliable as Commons curation
+    routinely invalidates hash-prefixed URLs.
 
 Usage:
-    python _tools/fix_missing_art.py                   # run the full target list
-    python _tools/fix_missing_art.py --dry-run         # fetch + validate only, no R2 writes
-    python _tools/fix_missing_art.py --only schnorr    # substring filter over target filenames
+    # Normal operation — upload local sources to R2:
+    python _tools/fix_missing_art.py
+    python _tools/fix_missing_art.py --dry-run
+    python _tools/fix_missing_art.py --only schnorr
 
-Environment variables (required unless --dry-run):
+    # Seeding / re-seeding local sources from Wikimedia Commons:
+    python _tools/fix_missing_art.py --populate-sources
+    python _tools/fix_missing_art.py --populate-sources --only campin
+
+Environment variables (R2 upload mode only):
     R2_ACCOUNT_ID
     R2_ACCESS_KEY_ID
     R2_SECRET_ACCESS_KEY
@@ -54,6 +59,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 ENV_FILE = ROOT / '.env'
+ART_SOURCES_DIR = ROOT / '_tools' / 'art_sources'
 
 # Wikimedia requires an identifying User-Agent with contact info.
 # https://meta.wikimedia.org/wiki/User-Agent_policy
@@ -293,8 +299,13 @@ def verify_public_url(public_url_base: str, target: ArtTarget) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.split('\n\n')[0] if __doc__ else '')
-    parser.add_argument('--dry-run', action='store_true', help='Fetch + convert but skip R2 upload')
+    parser.add_argument('--dry-run', action='store_true', help='Skip writes (no R2 upload in normal mode; no disk write in populate mode)')
     parser.add_argument('--only', metavar='SUBSTRING', help='Only process targets whose filename contains SUBSTRING')
+    parser.add_argument(
+        '--populate-sources',
+        action='store_true',
+        help='Download sources from Commons into _tools/art_sources/ instead of uploading to R2',
+    )
     args = parser.parse_args()
 
     load_env()
@@ -311,14 +322,21 @@ def main() -> int:
     print('fix_missing_art — surgical R2 art upload')
     print('=' * 60)
     print(f'Targets: {len(targets)}')
-    if args.dry_run:
+    if args.populate_sources:
+        label = 'POPULATE SOURCES (Commons -> _tools/art_sources/)'
+        if args.dry_run:
+            label += ' [DRY RUN, no disk writes]'
+        print(f'Mode:    {label}')
+    elif args.dry_run:
         print('Mode:    DRY RUN (no R2 writes)')
+    else:
+        print('Mode:    UPLOAD (local -> R2)')
     print()
 
     s3 = None
     bucket = ''
     public_url_base = ''
-    if not args.dry_run:
+    if not args.dry_run and not args.populate_sources:
         s3 = get_s3_client()
         bucket = require_env('R2_BUCKET_NAME')
         public_url_base = require_env('R2_PUBLIC_URL')
@@ -330,26 +348,46 @@ def main() -> int:
         print(f'[{i}/{len(targets)}] {target.r2_filename}')
         print(f'         {target.description}')
 
-        # Fetch
-        try:
-            raw = fetch_source(target)
-            print(f'         [OK] fetched {len(raw):,} bytes')
-        except Exception as e:
-            print(f'         [X] fetch failed: {e}')
-            failed.append((target.r2_filename, f'fetch: {e}'))
+        if args.populate_sources:
+            # Commons -> local disk
+            try:
+                raw = fetch_source(target)
+                print(f'         [OK] fetched {len(raw):,} bytes')
+            except Exception as e:
+                print(f'         [X] fetch failed: {e}')
+                failed.append((target.r2_filename, f'fetch: {e}'))
+                continue
+
+            try:
+                body = ensure_jpeg(target.source_url, raw)
+                if body is not raw:
+                    print(f'         [OK] converted to JPEG ({len(body):,} bytes)')
+            except Exception as e:
+                print(f'         [X] convert failed: {e}')
+                failed.append((target.r2_filename, f'convert: {e}'))
+                continue
+
+            dest = ART_SOURCES_DIR / target.r2_filename
+            if args.dry_run:
+                print(f'         [--] skipped write to {dest.relative_to(ROOT)} (dry run)')
+            else:
+                ART_SOURCES_DIR.mkdir(parents=True, exist_ok=True)
+                dest.write_bytes(body)
+                print(f'         [OK] wrote {dest.relative_to(ROOT)}')
+            succeeded.append(target.r2_filename)
             continue
 
-        # Convert if needed
-        try:
-            body = ensure_jpeg(target.source_url, raw)
-            if body is not raw:
-                print(f'         [OK] converted to JPEG ({len(body):,} bytes)')
-        except Exception as e:
-            print(f'         [X] convert failed: {e}')
-            failed.append((target.r2_filename, f'convert: {e}'))
+        # Default mode: local disk -> R2
+        local_path = ART_SOURCES_DIR / target.r2_filename
+        if not local_path.exists():
+            print(f'         [X] no local source at {local_path.relative_to(ROOT)}')
+            print(f'             run with --populate-sources to fetch from Commons')
+            failed.append((target.r2_filename, 'missing local source'))
             continue
 
-        # Upload
+        body = local_path.read_bytes()
+        print(f'         [OK] read {len(body):,} bytes from {local_path.relative_to(ROOT)}')
+
         if args.dry_run:
             print('         [--] skipped upload (dry run)')
             succeeded.append(target.r2_filename)
@@ -363,7 +401,6 @@ def main() -> int:
             failed.append((target.r2_filename, f'upload: {e}'))
             continue
 
-        # Verify (best-effort)
         status = verify_public_url(public_url_base, target)
         if status == 200:
             print(f'         [OK] verified 200 at public URL')
