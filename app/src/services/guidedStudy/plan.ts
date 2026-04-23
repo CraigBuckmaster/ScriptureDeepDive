@@ -1,15 +1,15 @@
 import type { SectionPanel } from '../../types';
-import type {
-  ConfidenceLevel,
-  GuidedConceptChip,
-  GuidedEvidenceTrailItem,
-  GuidedPanelRecommendation,
-  GuidedPrompt,
-  GuidedStudyMode,
-  GuidedStudyPlan,
-  GuidedStudyPlanInput,
+import {
+  GUIDED_STUDY_MODE_OPTIONS,
+  type ConfidenceLevel,
+  type GuidedConceptChip,
+  type GuidedEvidenceTrailItem,
+  type GuidedPanelRecommendation,
+  type GuidedPrompt,
+  type GuidedStudyMode,
+  type GuidedStudyPlan,
+  type GuidedStudyPlanInput,
 } from './types';
-import { GUIDED_STUDY_MODE_OPTIONS } from './types';
 
 const DEFAULT_MODE: GuidedStudyMode = 'deep';
 
@@ -50,7 +50,7 @@ const MODE_RECOMMENDATION_LIMIT: Record<GuidedStudyMode, number> = {
 };
 
 // TODO(#1584): Replace with labels from content/meta/concepts.json via
-// getAllConcepts(). Hardcoding 15 concepts is a v1 stopgap — this list
+// getAllConcepts(). Hardcoding 15 concepts is a v1 stopgap. This list
 // doesn't scale with content and silently excludes concepts the content
 // team adds (justification, atonement, incarnation, sanctification, etc.).
 const CONCEPT_WORDS = [
@@ -71,11 +71,11 @@ const CONCEPT_WORDS = [
   'suffering',
 ];
 
-// Canonical genre → opening-prompt map. Keys must exactly match the
+// Canonical genre to opening-prompt map. Keys must exactly match the
 // `genre_label` values produced by the content pipeline (see books.json).
 // If a new genre is added to content, extend this table; `genrePrompt`
 // falls back to a generic prompt for unknown genres.
-// TODO(#1584): Pair this with the concept-list refactor — both should
+// TODO(#1584): Pair this with the concept-list refactor. Both should
 // derive from a single source of canonical labels.
 const GENRE_PROMPTS: Record<string, string> = {
   'Theological Narrative':
