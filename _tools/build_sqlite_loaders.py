@@ -1046,6 +1046,39 @@ def populate_difficult_passages(cur):
     return len(passages)
 
 
+def populate_extrabiblical(cur):
+    """Populate extrabiblical from content/meta/extrabiblical.json.
+
+    Added for the "How We Got The Bible" epic (#1538). The source file ships
+    as an empty array in this issue; content is added in HWGTB-P1-04.
+    """
+    path = META / 'extrabiblical.json'
+    if not path.exists():
+        return 0
+    entries = _load_json(path)
+    for e in entries:
+        cur.execute(
+            'INSERT INTO extrabiblical VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+            (e['id'], e['title'],
+             _json_str(e.get('also_known_as', [])),
+             e.get('category'),
+             e.get('estimated_date'),
+             e.get('original_language'),
+             _json_str(e['tradition_status']),
+             e['brief_summary'],
+             e.get('full_summary'),
+             _json_str(e.get('nt_citations', [])),
+             _json_str(e.get('ot_allusions', [])),
+             _json_str(e.get('scholar_voices', [])),
+             _json_str(e.get('related_debate_ids', [])),
+             _json_str(e.get('related_journey_ids', [])),
+             _json_str(e.get('related_difficult_passage_ids', [])),
+             _json_str(e.get('tags', [])),
+             _json_str(e.get('further_reading', [])))
+        )
+    return len(entries)
+
+
 def populate_lexicon(cur):
     """Populate lexicon_entries from content/meta/lexicon-greek.json and lexicon-hebrew.json."""
     n = 0

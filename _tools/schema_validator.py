@@ -573,6 +573,136 @@ def main():
                               rk in r, f"missing '{rk}'")
         print(f"  difficult passages: {len(dp_data)}")
 
+    # ── Extra-biblical literature (#1538) ──
+    eb_path = META / 'extrabiblical.json'
+    if eb_path.exists():
+        print("\n--- EXTRABIBLICAL ---")
+        eb_data = json.loads(eb_path.read_text(encoding='utf-8'))
+        check("extrabiblical.json is list", isinstance(eb_data, list))
+
+        valid_categories = {'apocrypha', 'pseudepigrapha', 'dss', 'deuterocanon'}
+        required_status_keys = {'protestant', 'catholic', 'eastern_orthodox', 'ethiopian_tewahedo'}
+        valid_citation_types = {'direct_quotation', 'allusion', 'echo'}
+        snake_re = re.compile(r'^[a-z0-9]+(_[a-z0-9]+)*$')
+        # Accept refs like "genesis 1:3", "jude 14-15", "1 peter 2:4-10",
+        # "1 john 1", "matthew 5:3-12". Books with leading digits or multiple
+        # words are permitted. The chapter portion allows an optional verse
+        # range with or without a colon (Jude has only one chapter, so "jude
+        # 14-15" is legal).
+        ref_re = re.compile(
+            r'^[a-z0-9_]+(\s[a-z0-9_]+)*\s\d+(-\d+)?(:\d+(-\d+)?)?$'
+        )
+
+        # Cross-link ID pools (loaded defensively — some may not exist yet)
+        debate_ids = set()
+        dtp = META / 'debate-topics.json'
+        if dtp.exists():
+            try:
+                dtd = json.loads(dtp.read_text(encoding='utf-8'))
+                debate_ids = {t['id'] for t in (dtd if isinstance(dtd, list) else []) if 'id' in t}
+            except Exception:
+                pass
+        difficult_ids = set()
+        if dp_path.exists():
+            try:
+                dpd = json.loads(dp_path.read_text(encoding='utf-8'))
+                difficult_ids = {p['id'] for p in (dpd if isinstance(dpd, list) else []) if 'id' in p}
+            except Exception:
+                pass
+        journey_ids = set()
+        journeys_dir = META / 'journeys'
+        if journeys_dir.exists():
+            for jf in journeys_dir.rglob('*.json'):
+                try:
+                    jd = json.loads(jf.read_text(encoding='utf-8'))
+                    if isinstance(jd, dict) and 'id' in jd:
+                        journey_ids.add(jd['id'])
+                except Exception:
+                    pass
+
+        seen_ids = set()
+        for i, e in enumerate(eb_data):
+            eid = e.get('id', f'index_{i}')
+
+            # Required top-level keys
+            for key in ('id', 'title', 'tradition_status', 'brief_summary'):
+                check(f"extrabiblical {eid} has '{key}'", key in e,
+                      f"missing '{key}'")
+
+            # id shape + uniqueness
+            if 'id' in e:
+                check(f"extrabiblical {eid} id is snake_case",
+                      bool(snake_re.match(e['id'])),
+                      f"id '{e['id']}' not snake_case")
+                check(f"extrabiblical {eid} id unique",
+                      e['id'] not in seen_ids,
+                      f"duplicate id: {e['id']}")
+                seen_ids.add(e['id'])
+
+            # category enum (nullable in schema, but if present must be valid)
+            if e.get('category') is not None:
+                check(f"extrabiblical {eid} category valid",
+                      e['category'] in valid_categories,
+                      f"'{e['category']}' not in {sorted(valid_categories)}")
+
+            # tradition_status must have all 4 keys
+            ts = e.get('tradition_status')
+            if isinstance(ts, dict):
+                missing = required_status_keys - set(ts.keys())
+                check(f"extrabiblical {eid} tradition_status has 4 keys",
+                      len(missing) == 0,
+                      f"missing: {sorted(missing)}")
+
+            # brief_summary is a non-empty string
+            bs = e.get('brief_summary')
+            check(f"extrabiblical {eid} brief_summary non-empty",
+                  isinstance(bs, str) and len(bs.strip()) > 0,
+                  "empty or non-string")
+
+            # full_summary is nullable but if present must be string
+            fs = e.get('full_summary')
+            if fs is not None:
+                check(f"extrabiblical {eid} full_summary is string if present",
+                      isinstance(fs, str), f"got {type(fs).__name__}")
+
+            # nt_citations[]
+            for j, cit in enumerate(e.get('nt_citations', []) or []):
+                ref = cit.get('ref', '')
+                check(f"extrabiblical {eid} nt_citations[{j}].ref parses",
+                      bool(ref_re.match(ref.strip().lower())),
+                      f"ref '{ref}' does not match verse pattern")
+                if 'type' in cit:
+                    check(f"extrabiblical {eid} nt_citations[{j}].type valid",
+                          cit['type'] in valid_citation_types,
+                          f"'{cit['type']}' not in {sorted(valid_citation_types)}")
+
+            # scholar_voices[].scholar_id valid
+            for j, sv in enumerate(e.get('scholar_voices', []) or []):
+                sid = sv.get('scholar_id')
+                check(f"extrabiblical {eid} scholar_voices[{j}].scholar_id valid",
+                      sid in scholar_ids,
+                      f"'{sid}' not in scholars.json")
+
+            # related_debate_ids[] valid
+            for j, did in enumerate(e.get('related_debate_ids', []) or []):
+                check(f"extrabiblical {eid} related_debate_ids[{j}] valid",
+                      did in debate_ids,
+                      f"'{did}' not in debate-topics.json")
+
+            # related_difficult_passage_ids[] valid
+            for j, did in enumerate(e.get('related_difficult_passage_ids', []) or []):
+                check(f"extrabiblical {eid} related_difficult_passage_ids[{j}] valid",
+                      did in difficult_ids,
+                      f"'{did}' not in difficult-passages.json")
+
+            # related_journey_ids[] valid
+            for j, jid in enumerate(e.get('related_journey_ids', []) or []):
+                check(f"extrabiblical {eid} related_journey_ids[{j}] valid",
+                      jid in journey_ids,
+                      f"'{jid}' not in content/meta/journeys/**")
+
+        print(f"  extrabiblical: {len(eb_data)}")
+
     # ── Debate Topics ──
     dt_path = META / 'debate-topics.json'
     if dt_path.exists():

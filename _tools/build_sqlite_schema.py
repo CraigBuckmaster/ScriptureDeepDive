@@ -349,6 +349,29 @@ CREATE TABLE difficult_passages (
   tags_json TEXT
 );
 
+-- Extra-biblical literature (1 Enoch, Jubilees, Jasher, Apocrypha, DSS, etc.)
+-- Added for "How We Got The Bible" epic (#1538).
+CREATE TABLE extrabiblical (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  also_known_as_json TEXT,
+  category TEXT,
+  estimated_date TEXT,
+  original_language TEXT,
+  tradition_status_json TEXT NOT NULL,
+  brief_summary TEXT NOT NULL,
+  full_summary TEXT,
+  nt_citations_json TEXT,
+  ot_allusions_json TEXT,
+  scholar_voices_json TEXT,
+  related_debate_ids_json TEXT,
+  related_journey_ids_json TEXT,
+  related_difficult_passage_ids_json TEXT,
+  tags_json TEXT,
+  further_reading_json TEXT
+);
+CREATE INDEX idx_extrabiblical_category ON extrabiblical(category);
+
 CREATE TABLE interlinear_glosses (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   gloss TEXT NOT NULL UNIQUE
