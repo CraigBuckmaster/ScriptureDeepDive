@@ -37,6 +37,9 @@ export const panels: Record<string, PanelColors> = {
   tx:      { bg: '#101020', border: '#303060', accent: '#8888d0' },
   debate:  { bg: '#201212', border: '#603030', accent: '#d08080' },
   themes:  { bg: '#14120e', border: '#3a3010', accent: '#bfa050' },
+  // Second Temple Context — parchment-gold, distinct from ctx (green) / hist (blue)
+  // and sibling enough to cross (gold) to signal "intertestamental literature".
+  st2:     { bg: '#1c1610', border: '#6a4a20', accent: '#c89858' },
 } as const;
 
 // ── Scholar Colors ──────────────────────────────────────────────────
