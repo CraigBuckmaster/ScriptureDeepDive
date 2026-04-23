@@ -1,6 +1,6 @@
 export { getStudyDepthEstimate } from './estimate';
 export { buildGuidedStudyPlan } from './plan';
-export { buildReviewItemsFromSynthesis, REVIEW_INTERVAL_DAYS } from './review';
+export { buildReviewItemsFromSynthesis, nextIntervalAfter, REVIEW_INTERVAL_DAYS } from './review';
 export type {
   ConfidenceLevel,
   GuidedConceptChip,

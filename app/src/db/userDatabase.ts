@@ -203,6 +203,14 @@ const MIGRATIONS: Migration[] = [
   {
     version: 6,
     description: 'Seed 10 curated reading plans',
+    // ⚠️ SQL QUOTING — DO NOT EDIT without understanding this pattern:
+    // The outer SQL string literal uses single quotes: VALUES (..., '${JSON.stringify(...)}')
+    // Inside JSON.stringify() we use SINGLE-quoted TypeScript strings (e.g. 'genesis_1').
+    // JSON.stringify then emits DOUBLE-quoted JSON (e.g. "genesis_1"), which is what we
+    // want inside the single-quoted SQL literal — no escaping needed.
+    // If you switch the inner strings to double quotes, JSON.stringify still emits double
+    // quotes, so runtime behavior is the same — but the intent becomes confusing and future
+    // edits that try to "match" the inner to the outer will break SQL parsing. Leave as-is.
     sql: `
       INSERT OR IGNORE INTO reading_plans (id, name, description, total_days, chapters_json) VALUES
       ('genesis_deep_dive', 'Genesis Deep Dive', 'Explore Genesis one chapter at a time — each day pairs a reading with a specific study tool to build your skills across the app.', 14, '${JSON.stringify(
@@ -587,6 +595,8 @@ const MIGRATIONS: Migration[] = [
         status TEXT NOT NULL DEFAULT 'active'
           CHECK (status IN ('active', 'completed', 'dismissed')),
         current_step TEXT NOT NULL DEFAULT 'scene'
+          -- These step names mirror GUIDED_STUDY_STEPS in app/src/types/user.ts.
+          -- Keep them in sync if adding/renaming a step.
           CHECK (current_step IN ('scene', 'observe', 'explore', 'synthesize', 'review')),
         started_at TEXT NOT NULL DEFAULT (datetime('now')),
         completed_at TEXT,
@@ -644,6 +654,36 @@ const MIGRATIONS: Migration[] = [
       );
       CREATE INDEX IF NOT EXISTS idx_concept_encounters_last_seen
         ON concept_encounters(last_seen_at DESC);
+    `,
+  },
+  {
+    version: 20,
+    description: 'Enforce at most one active guided study session per chapter',
+    // Prevents duplicate `status = 'active'` rows for the same chapter_id if the
+    // app crashes between session insert and status flip, or if two instances
+    // race on createOrResumeGuidedStudySession. SQLite honors partial unique
+    // indexes, and INSERT OR IGNORE is still compatible. Existing duplicates
+    // (there should be none in practice) are collapsed to the most recently
+    // updated row before the index is created, so the migration cannot fail
+    // on a dirty DB.
+    sql: `
+      UPDATE guided_study_sessions
+      SET status = 'dismissed',
+          updated_at = datetime('now')
+      WHERE status = 'active'
+        AND id NOT IN (
+          SELECT id FROM guided_study_sessions g1
+          WHERE status = 'active'
+            AND updated_at = (
+              SELECT MAX(updated_at) FROM guided_study_sessions g2
+              WHERE g2.chapter_id = g1.chapter_id AND g2.status = 'active'
+            )
+          GROUP BY chapter_id
+        );
+
+      CREATE UNIQUE INDEX IF NOT EXISTS idx_guided_sessions_one_active
+        ON guided_study_sessions(chapter_id)
+        WHERE status = 'active';
     `,
   },
 ];

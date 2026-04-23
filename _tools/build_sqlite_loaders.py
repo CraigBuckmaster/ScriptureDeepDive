@@ -478,7 +478,25 @@ def populate_proof_text_guards(cur):
     guards = _load_json(PROOF_TEXT_GUARDS_PATH)
     count = 0
     for guard in guards:
-        suggested = guard.get('suggested_chapter', {})
+        suggested = guard.get('suggested_chapter')
+        # Each guard must explicitly name the chapter to point the reader at. A
+        # self-reference is valid (the UX is often "read this verse in the full
+        # context of its own chapter"), but silently falling back to the guard's
+        # own location on a missing/malformed `suggested_chapter` masks
+        # data-quality bugs. Fail loudly instead.
+        if not isinstance(suggested, dict):
+            raise ValueError(
+                f"proof_text_guards: guard {guard.get('ref')!r} is missing "
+                f"`suggested_chapter` or it is not an object"
+            )
+        suggested_book_id = suggested.get('book_id')
+        suggested_chapter_num = suggested.get('chapter_num')
+        if not suggested_book_id or not suggested_chapter_num:
+            raise ValueError(
+                f"proof_text_guards: guard {guard.get('ref')!r} has incomplete "
+                f"`suggested_chapter` (book_id={suggested_book_id!r}, "
+                f"chapter_num={suggested_chapter_num!r}); both are required"
+            )
         cur.execute(
             'INSERT OR REPLACE INTO proof_text_guards '
             '(ref, book_id, chapter_num, verse_num, common_misreading, '
@@ -491,8 +509,8 @@ def populate_proof_text_guards(cur):
                 guard['verse_num'],
                 guard['common_misreading'],
                 guard['actual_context_summary'],
-                suggested.get('book_id', guard['book_id']),
-                suggested.get('chapter_num', guard['chapter_num']),
+                suggested_book_id,
+                suggested_chapter_num,
             ),
         )
         count += 1

@@ -1,7 +1,12 @@
 import { getStudyDepthEstimate } from '@/services/guidedStudy/estimate';
 import { buildGuidedStudyPlan } from '@/services/guidedStudy/plan';
-import { buildReviewItemsFromSynthesis, REVIEW_INTERVAL_DAYS } from '@/services/guidedStudy/review';
+import {
+  buildReviewItemsFromSynthesis,
+  nextIntervalAfter,
+  REVIEW_INTERVAL_DAYS,
+} from '@/services/guidedStudy/review';
 import type { Book, Chapter, ChapterPanel, Section, SectionPanel, Verse } from '@/types';
+import type { ParsedBookIntro } from '@/types';
 
 const book: Book = {
   id: 'genesis',
@@ -89,18 +94,25 @@ describe('guided study services', () => {
   });
 
   it('builds scene rows, observe prompts, recommendations, and concept chips', () => {
+    const bookIntro: ParsedBookIntro = {
+      era: 'Primeval',
+      purpose: 'Explain beginnings and covenant hope.',
+      at_a_glance: {
+        author: 'Moses (traditional)',
+        date: '~1446–1406 BC',
+        chapters: 50,
+        genre: 'Theological Narrative',
+        key_theme: 'Creation, fall, and covenant promise',
+        key_word: 'beginning',
+      },
+    };
     const plan = buildGuidedStudyPlan({
       book,
       chapter,
       sections,
       chapterPanels,
       verses,
-      bookIntro: {
-        book: 'Genesis',
-        era: 'Primeval',
-        purpose: 'Explain beginnings and covenant hope.',
-        at_a_glance: ['Creation', 'Promise'],
-      } as any,
+      bookIntro,
     });
 
     expect(plan.title).toBe('The Creation of the Heaven and the Earth');
@@ -115,15 +127,30 @@ describe('guided study services', () => {
     expect(plan.conceptChips.map((chip) => chip.label)).toContain('Theological Narrative');
   });
 
-  it('creates review prompts on the 1, 3, 7, and 30 day intervals', () => {
+  it('schedules one row per populated synthesis field at the first interval', () => {
     const items = buildReviewItemsFromSynthesis({
       takeaway: 'Creation is ordered by God.',
       open_question: '',
       key_connection: 'John echoes Genesis.',
     });
 
+    // Empty fields are filtered out → 2 populated rows (not 3, not 8).
     expect(REVIEW_INTERVAL_DAYS).toEqual([1, 3, 7, 30]);
-    expect(items).toHaveLength(8);
-    expect(items.slice(0, 4).map((item) => item.intervalDays)).toEqual([1, 3, 7, 30]);
+    expect(items).toHaveLength(2);
+    expect(items.every((item) => item.intervalDays === 1)).toBe(true);
+    expect(items.map((item) => item.prompt)).toEqual([
+      'What was your main takeaway from this study session?',
+      'What key connection did this chapter reveal?',
+    ]);
+  });
+
+  it('walks the interval ladder on completion and stops after the last', () => {
+    expect(nextIntervalAfter(1)).toBe(3);
+    expect(nextIntervalAfter(3)).toBe(7);
+    expect(nextIntervalAfter(7)).toBe(30);
+    expect(nextIntervalAfter(30)).toBeNull();
+    // Off-ladder values (corrupt row) terminate the chain cleanly rather than looping.
+    expect(nextIntervalAfter(2)).toBeNull();
+    expect(nextIntervalAfter(0)).toBeNull();
   });
 });

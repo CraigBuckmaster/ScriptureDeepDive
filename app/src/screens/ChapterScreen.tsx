@@ -81,6 +81,9 @@ if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental
 function ChapterScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Read', 'Chapter'>>();
+  // TODO(#1585): Replace with a typed CrossTabNavProp helper. Tracked
+  // alongside the existing TODO in navigation/types.ts — every new
+  // `as unknown as` cast makes the refactor marginally harder.
   const rootNavigation = useMemo(() => navigation as unknown as CrossTabNavigation, [navigation]);
   const route = useRoute<ScreenRouteProp<'Read', 'Chapter'>>();
   const {

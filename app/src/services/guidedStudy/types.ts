@@ -1,8 +1,18 @@
 import type { Book, Chapter, ChapterPanel, Section, SectionPanel, Verse } from '../../types';
 import type { ParsedBookIntro } from '../../types';
-import type { GuidedStudyStep } from '../../types';
+import { GUIDED_STUDY_STEPS, type GuidedStudyStep } from '../../types';
 
+export { GUIDED_STUDY_STEPS };
 export type { GuidedStudyStep };
+
+/** UI labels for each step. Order follows `GUIDED_STUDY_STEPS`. */
+export const GUIDED_STUDY_STEP_LABELS: Record<GuidedStudyStep, string> = {
+  scene: 'Scene',
+  observe: 'Observe',
+  explore: 'Explore',
+  synthesize: 'Synthesize',
+  review: 'Review',
+};
 
 export interface StudyDepthEstimate {
   readMin: number;

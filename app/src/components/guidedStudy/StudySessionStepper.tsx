@@ -1,15 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { fontFamily, radii, spacing, useTheme } from '../../theme';
-import type { GuidedStudyStep } from '../../services/guidedStudy';
-
-const STEPS: Array<{ key: GuidedStudyStep; label: string }> = [
-  { key: 'scene', label: 'Scene' },
-  { key: 'observe', label: 'Observe' },
-  { key: 'explore', label: 'Explore' },
-  { key: 'synthesize', label: 'Synthesize' },
-  { key: 'review', label: 'Review' },
-];
+import {
+  GUIDED_STUDY_STEPS,
+  GUIDED_STUDY_STEP_LABELS,
+  type GuidedStudyStep,
+} from '../../services/guidedStudy/types';
 
 interface Props {
   activeStep: GuidedStudyStep;
@@ -21,12 +17,13 @@ export function StudySessionStepper({ activeStep, onSelect }: Props) {
 
   return (
     <View style={styles.row}>
-      {STEPS.map((step) => {
-        const active = step.key === activeStep;
+      {GUIDED_STUDY_STEPS.map((key) => {
+        const active = key === activeStep;
+        const label = GUIDED_STUDY_STEP_LABELS[key];
         return (
           <TouchableOpacity
-            key={step.key}
-            onPress={() => onSelect(step.key)}
+            key={key}
+            onPress={() => onSelect(key)}
             activeOpacity={0.7}
             style={[
               styles.step,
@@ -37,7 +34,7 @@ export function StudySessionStepper({ activeStep, onSelect }: Props) {
             ]}
           >
             <Text style={[styles.label, { color: active ? base.gold : base.textMuted }]}>
-              {step.label}
+              {label}
             </Text>
           </TouchableOpacity>
         );

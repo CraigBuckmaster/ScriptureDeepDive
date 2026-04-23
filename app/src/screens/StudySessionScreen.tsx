@@ -164,10 +164,19 @@ function StudySessionScreen() {
     }
     await session.saveSynthesis(synthesisDraft);
     const ref = `${book?.name ?? bookId} ${chapterNum}`;
+    // Cap each field so the seed query doesn't blow past Amicus's length
+    // limit on long syntheses and renders reasonably in the peek sheet.
+    const clip = (s: string, n = 200) =>
+      s.length > n ? `${s.slice(0, n - 1).trimEnd()}\u2026` : s;
+    const seedQuery =
+      `Help me refine my study synthesis for ${ref}. ` +
+      `Takeaway: ${clip(synthesisDraft.takeaway)}. ` +
+      `Open question: ${clip(synthesisDraft.open_question)}. ` +
+      `Key connection: ${clip(synthesisDraft.key_connection)}.`;
     navigation.getParent()?.navigate('AmicusTab', {
       screen: 'NewThread',
       params: {
-        seedQuery: `Help me refine my study synthesis for ${ref}. Takeaway: ${synthesisDraft.takeaway}. Open question: ${synthesisDraft.open_question}. Key connection: ${synthesisDraft.key_connection}.`,
+        seedQuery,
         seedChapterRef: `${bookId}:${chapterNum}`,
       },
     });

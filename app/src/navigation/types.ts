@@ -213,4 +213,4 @@ export type ScreenRouteProp<S extends keyof StackMap, T extends keyof StackMap[S
   T
 >;
 
-// TODO: Add CrossTabNavProp once @react-navigation type constraints are resolved
+// TODO(#1585): Add CrossTabNavProp once @react-navigation type constraints are resolved

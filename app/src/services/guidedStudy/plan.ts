@@ -33,6 +33,10 @@ const PANEL_LABELS: Record<string, string> = {
   debate: 'Scholar Debate',
 };
 
+// TODO(#1584): Replace with labels from content/meta/concepts.json via
+// getAllConcepts(). Hardcoding 15 concepts is a v1 stopgap — this list
+// doesn't scale with content and silently excludes concepts the content
+// team adds (justification, atonement, incarnation, sanctification, etc.).
 const CONCEPT_WORDS = [
   'creation',
   'covenant',
@@ -69,17 +73,33 @@ function displayChapter(input: GuidedStudyPlanInput): string {
   return `${bookName} ${input.chapter.chapter_num}`;
 }
 
+// Canonical genre → opening-prompt map. Keys must exactly match the
+// `genre_label` values produced by the content pipeline (see books.json).
+// If a new genre is added to content, extend this table; `genrePrompt`
+// falls back to a generic prompt for unknown genres.
+// TODO(#1584): Pair this with the concept-list refactor — both should
+// derive from a single source of canonical labels.
+const GENRE_PROMPTS: Record<string, string> = {
+  'Theological Narrative':
+    'What tension, movement, or turning point do you notice in this scene?',
+  Narrative: 'What tension, movement, or turning point do you notice in this scene?',
+  Poetry: 'What emotional movement do you notice from the opening line to the close?',
+  Psalm: 'What emotional movement do you notice from the opening line to the close?',
+  Prophecy: 'What covenant problem is the prophet confronting?',
+  Prophet: 'What covenant problem is the prophet confronting?',
+  Letter: 'What problem or question is this paragraph answering?',
+  Epistle: 'What problem or question is this paragraph answering?',
+  Wisdom: 'What pattern of wise or foolish living is being exposed?',
+};
+
 function genrePrompt(genreLabel?: string): string {
-  const label = (genreLabel ?? '').toLowerCase();
-  if (label.includes('narrative'))
-    return 'What tension, movement, or turning point do you notice in this scene?';
-  if (label.includes('poetry') || label.includes('psalm'))
-    return 'What emotional movement do you notice from the opening line to the close?';
-  if (label.includes('prophet')) return 'What covenant problem is the prophet confronting?';
-  if (label.includes('letter') || label.includes('epistle'))
-    return 'What problem or question is this paragraph answering?';
-  if (label.includes('wisdom')) return 'What pattern of wise or foolish living is being exposed?';
-  return 'What does the passage emphasize before you open any study panels?';
+  if (!genreLabel) {
+    return 'What does the passage emphasize before you open any study panels?';
+  }
+  return (
+    GENRE_PROMPTS[genreLabel] ??
+    'What does the passage emphasize before you open any study panels?'
+  );
 }
 
 function sectionPrompt(input: GuidedStudyPlanInput): string {

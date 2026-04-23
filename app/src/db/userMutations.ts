@@ -7,6 +7,7 @@
 
 import { logger } from '../utils/logger';
 import type { GuidedStudyStep } from '../types';
+import { nextIntervalAfter } from '../services/guidedStudy/review';
 import { getUserDb } from './userDatabase';
 import type { ReadingPlan } from './userQueries';
 
@@ -428,15 +429,63 @@ export async function createGuidedReviewItems(
   });
 }
 
+/**
+ * Marks a review item as completed and, if the ladder has more intervals,
+ * schedules the next-interval row in the same transaction. Row identity is
+ * preserved by copying source_session_id / chapter_id / title / prompt /
+ * answer from the completed row.
+ *
+ * Intervals live in `services/guidedStudy/review.ts`. See that file for the
+ * spaced-repetition design rationale.
+ */
 export async function completeGuidedReviewItem(id: number): Promise<void> {
-  await getUserDb().runAsync(
-    `UPDATE guided_review_items
-     SET status = 'completed',
-         review_count = review_count + 1,
-         updated_at = datetime('now')
-     WHERE id = ?`,
-    [id],
-  );
+  const db = getUserDb();
+  await db.withTransactionAsync(async () => {
+    const current = await db.getFirstAsync<{
+      source_session_id: number;
+      chapter_id: string;
+      title: string;
+      prompt: string;
+      answer: string;
+      interval_days: number;
+      review_count: number;
+    }>(
+      `SELECT source_session_id, chapter_id, title, prompt, answer,
+              interval_days, review_count
+       FROM guided_review_items WHERE id = ?`,
+      [id],
+    );
+    if (!current) return;
+
+    await db.runAsync(
+      `UPDATE guided_review_items
+       SET status = 'completed',
+           review_count = review_count + 1,
+           updated_at = datetime('now')
+       WHERE id = ?`,
+      [id],
+    );
+
+    const next = nextIntervalAfter(current.interval_days);
+    if (next != null) {
+      await db.runAsync(
+        `INSERT INTO guided_review_items
+          (source_session_id, chapter_id, title, prompt, answer,
+           due_date, interval_days, review_count)
+         VALUES (?, ?, ?, ?, ?, date('now', ?), ?, ?)`,
+        [
+          current.source_session_id,
+          current.chapter_id,
+          current.title,
+          current.prompt,
+          current.answer,
+          `+${next} days`,
+          next,
+          current.review_count + 1,
+        ],
+      );
+    }
+  });
 }
 
 export async function recordConceptEncounter(
