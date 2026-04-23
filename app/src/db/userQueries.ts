@@ -20,9 +20,11 @@ import type {
   AmicusCitation,
   ConceptEncounter,
   GuidedReviewItem,
+  GuidedStudyQuestion,
   GuidedStudyResponse,
   GuidedStudySession,
   GuidedStudySynthesis,
+  GuidedStudyTakeawaySummary,
 } from '../types';
 import { getDb } from './database';
 import { getUserDb } from './userDatabase';
@@ -493,6 +495,57 @@ export async function getAllGuidedReviewItems(limit: number = 50): Promise<Guide
     `SELECT * FROM guided_review_items
      ORDER BY due_date ASC, id ASC
      LIMIT ?`,
+    [limit],
+  );
+}
+
+export async function getDueGuidedReviewItemCountForChapter(chapterId: string): Promise<number> {
+  const row = await getUserDb().getFirstAsync<{ count: number }>(
+    `SELECT COUNT(*) as count FROM guided_review_items
+     WHERE chapter_id = ? AND status = 'due' AND due_date <= date('now')`,
+    [chapterId],
+  );
+  return row?.count ?? 0;
+}
+
+export async function getActiveGuidedStudySessions(
+  limit: number = 5,
+): Promise<GuidedStudySession[]> {
+  return getUserDb().getAllAsync<GuidedStudySession>(
+    `SELECT * FROM guided_study_sessions
+     WHERE status = 'active'
+     ORDER BY updated_at DESC, id DESC
+     LIMIT ?`,
+    [limit],
+  );
+}
+
+export async function getOpenGuidedStudyQuestions(
+  limit: number = 10,
+): Promise<GuidedStudyQuestion[]> {
+  return getUserDb().getAllAsync<GuidedStudyQuestion>(
+    `SELECT * FROM guided_study_questions
+     WHERE status = 'open'
+     ORDER BY updated_at DESC, id DESC
+     LIMIT ?`,
+    [limit],
+  );
+}
+
+export async function getRecentGuidedStudyTakeaways(
+  limit: number = 10,
+): Promise<GuidedStudyTakeawaySummary[]> {
+  return getUserDb().getAllAsync<GuidedStudyTakeawaySummary>(
+    `SELECT
+        synthesis.session_id,
+        sessions.chapter_id,
+        synthesis.takeaway,
+        synthesis.updated_at
+      FROM guided_study_synthesis synthesis
+      JOIN guided_study_sessions sessions ON sessions.id = synthesis.session_id
+      WHERE trim(synthesis.takeaway) != ''
+      ORDER BY synthesis.updated_at DESC, synthesis.id DESC
+      LIMIT ?`,
     [limit],
   );
 }

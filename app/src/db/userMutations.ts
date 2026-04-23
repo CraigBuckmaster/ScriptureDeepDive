@@ -6,8 +6,8 @@
  */
 
 import { logger } from '../utils/logger';
+import { getNextReviewIntervalDays } from '../services/guidedStudy/review';
 import type { GuidedStudyStep } from '../types';
-import { nextIntervalAfter } from '../services/guidedStudy/review';
 import { getUserDb } from './userDatabase';
 import type { ReadingPlan } from './userQueries';
 
@@ -324,7 +324,13 @@ export async function recordSessionEvent(
 // Guided Study V1 (write)
 
 export async function createOrResumeGuidedStudySession(chapterId: string): Promise<number> {
-  const existing = await getUserDb().getFirstAsync<{ id: number }>(
+  const db = getUserDb();
+  await db.runAsync(
+    "INSERT OR IGNORE INTO guided_study_sessions (chapter_id, status, current_step) VALUES (?, 'active', 'scene')",
+    [chapterId],
+  );
+
+  const existing = await db.getFirstAsync<{ id: number }>(
     `SELECT id FROM guided_study_sessions
      WHERE chapter_id = ? AND status = 'active'
      ORDER BY updated_at DESC, id DESC
@@ -333,11 +339,7 @@ export async function createOrResumeGuidedStudySession(chapterId: string): Promi
   );
   if (existing) return existing.id;
 
-  const result = await getUserDb().runAsync(
-    "INSERT INTO guided_study_sessions (chapter_id, status, current_step) VALUES (?, 'active', 'scene')",
-    [chapterId],
-  );
-  return result.lastInsertRowId;
+  throw new Error(`Unable to create guided study session for ${chapterId}`);
 }
 
 export async function setGuidedStudyStep(sessionId: number, step: GuidedStudyStep): Promise<void> {
@@ -406,6 +408,44 @@ export async function upsertGuidedStudySynthesis(
   );
 }
 
+export async function upsertGuidedStudyQuestion(
+  sessionId: number,
+  chapterId: string,
+  questionText: string,
+): Promise<void> {
+  const normalized = questionText.trim();
+  if (normalized.length === 0) {
+    await getUserDb().runAsync('DELETE FROM guided_study_questions WHERE session_id = ?', [
+      sessionId,
+    ]);
+    return;
+  }
+
+  await getUserDb().runAsync(
+    `INSERT INTO guided_study_questions
+       (session_id, chapter_id, question_text, status, resolved_at, updated_at)
+     VALUES (?, ?, ?, 'open', NULL, datetime('now'))
+     ON CONFLICT(session_id) DO UPDATE SET
+       chapter_id = excluded.chapter_id,
+       question_text = excluded.question_text,
+       status = 'open',
+       resolved_at = NULL,
+       updated_at = datetime('now')`,
+    [sessionId, chapterId, normalized],
+  );
+}
+
+export async function resolveGuidedStudyQuestion(id: number): Promise<void> {
+  await getUserDb().runAsync(
+    `UPDATE guided_study_questions
+     SET status = 'resolved',
+         resolved_at = datetime('now'),
+         updated_at = datetime('now')
+     WHERE id = ?`,
+    [id],
+  );
+}
+
 export async function createGuidedReviewItems(
   sessionId: number,
   chapterId: string,
@@ -429,62 +469,54 @@ export async function createGuidedReviewItems(
   });
 }
 
-/**
- * Marks a review item as completed and, if the ladder has more intervals,
- * schedules the next-interval row in the same transaction. Row identity is
- * preserved by copying source_session_id / chapter_id / title / prompt /
- * answer from the completed row.
- *
- * Intervals live in `services/guidedStudy/review.ts`. See that file for the
- * spaced-repetition design rationale.
- */
 export async function completeGuidedReviewItem(id: number): Promise<void> {
   const db = getUserDb();
-  await db.withTransactionAsync(async () => {
-    const current = await db.getFirstAsync<{
-      source_session_id: number;
-      chapter_id: string;
-      title: string;
-      prompt: string;
-      answer: string;
-      interval_days: number;
-      review_count: number;
-    }>(
-      `SELECT source_session_id, chapter_id, title, prompt, answer,
-              interval_days, review_count
-       FROM guided_review_items WHERE id = ?`,
-      [id],
-    );
-    if (!current) return;
+  const item = await db.getFirstAsync<{
+    source_session_id: number;
+    chapter_id: string;
+    title: string;
+    prompt: string;
+    answer: string;
+    interval_days: number;
+    status: 'due' | 'completed';
+  }>('SELECT * FROM guided_review_items WHERE id = ?', [id]);
+  if (!item || item.status !== 'due') return;
 
+  const nextIntervalDays = getNextReviewIntervalDays(item.interval_days);
+  await db.withTransactionAsync(async () => {
     await db.runAsync(
       `UPDATE guided_review_items
        SET status = 'completed',
            review_count = review_count + 1,
            updated_at = datetime('now')
-       WHERE id = ?`,
+       WHERE id = ? AND status = 'due'`,
       [id],
     );
 
-    const next = nextIntervalAfter(current.interval_days);
-    if (next != null) {
-      await db.runAsync(
-        `INSERT INTO guided_review_items
-          (source_session_id, chapter_id, title, prompt, answer,
-           due_date, interval_days, review_count)
-         VALUES (?, ?, ?, ?, ?, date('now', ?), ?, ?)`,
-        [
-          current.source_session_id,
-          current.chapter_id,
-          current.title,
-          current.prompt,
-          current.answer,
-          `+${next} days`,
-          next,
-          current.review_count + 1,
-        ],
-      );
-    }
+    if (nextIntervalDays == null) return;
+    await db.runAsync(
+      `INSERT INTO guided_review_items
+        (source_session_id, chapter_id, title, prompt, answer, due_date, interval_days)
+       SELECT ?, ?, ?, ?, ?, date('now', ?), ?
+       WHERE NOT EXISTS (
+         SELECT 1 FROM guided_review_items
+         WHERE source_session_id = ?
+           AND prompt = ?
+           AND interval_days = ?
+       )`,
+      [
+        item.source_session_id,
+        item.chapter_id,
+        item.title,
+        item.prompt,
+        item.answer,
+        `+${nextIntervalDays} days`,
+        nextIntervalDays,
+        item.source_session_id,
+        item.prompt,
+        nextIntervalDays,
+      ],
+    );
   });
 }
 
@@ -556,6 +588,7 @@ export async function resetToNewUser(): Promise<void> {
   await db.runAsync('DELETE FROM reading_progress');
   await db.runAsync('DELETE FROM concept_encounters');
   await db.runAsync('DELETE FROM guided_review_items');
+  await db.runAsync('DELETE FROM guided_study_questions');
   await db.runAsync('DELETE FROM guided_study_synthesis');
   await db.runAsync('DELETE FROM guided_study_responses');
   await db.runAsync('DELETE FROM guided_study_sessions');

@@ -686,6 +686,38 @@ const MIGRATIONS: Migration[] = [
         WHERE status = 'active';
     `,
   },
+  {
+    version: 21,
+    description: 'Guided Study V3 retention loop - open questions',
+    sql: `
+      CREATE TABLE IF NOT EXISTS guided_study_questions (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        session_id INTEGER NOT NULL REFERENCES guided_study_sessions(id) ON DELETE CASCADE,
+        chapter_id TEXT NOT NULL,
+        question_text TEXT NOT NULL,
+        status TEXT NOT NULL DEFAULT 'open' CHECK (status IN ('open', 'resolved')),
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        resolved_at TEXT,
+        updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+        UNIQUE(session_id)
+      );
+      CREATE INDEX IF NOT EXISTS idx_guided_questions_status_updated
+        ON guided_study_questions(status, updated_at DESC);
+
+      INSERT OR IGNORE INTO guided_study_questions
+        (session_id, chapter_id, question_text, status, created_at, updated_at)
+      SELECT
+        synthesis.session_id,
+        sessions.chapter_id,
+        trim(synthesis.open_question),
+        'open',
+        COALESCE(sessions.completed_at, sessions.updated_at, datetime('now')),
+        COALESCE(synthesis.updated_at, sessions.updated_at, datetime('now'))
+      FROM guided_study_synthesis synthesis
+      JOIN guided_study_sessions sessions ON sessions.id = synthesis.session_id
+      WHERE trim(synthesis.open_question) != '';
+    `,
+  },
 ];
 
 /**

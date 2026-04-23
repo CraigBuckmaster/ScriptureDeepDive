@@ -61,6 +61,7 @@ import { useChapterPanels } from '../hooks/chapter/useChapterPanels';
 import { useProofTextGuard } from '../hooks/useProofTextGuard';
 import { getStudyDepthEstimate } from '../services/guidedStudy';
 import { ContextGuardBanner, StudySessionCTA } from '../components/guidedStudy';
+import { useGuidedStudyChapterState } from '../hooks';
 
 interface CrossTabNavigation {
   navigate: (screen: string, params?: object) => void;
@@ -82,8 +83,7 @@ function ChapterScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Read', 'Chapter'>>();
   // TODO(#1585): Replace with a typed CrossTabNavProp helper. Tracked
-  // alongside the existing TODO in navigation/types.ts — every new
-  // `as unknown as` cast makes the refactor marginally harder.
+  // alongside the existing TODO in navigation/types.ts.
   const rootNavigation = useMemo(() => navigation as unknown as CrossTabNavigation, [navigation]);
   const route = useRoute<ScreenRouteProp<'Read', 'Chapter'>>();
   const {
@@ -175,6 +175,7 @@ function ChapterScreen() {
   const notedVerses = useNotedVerses(bookId, chapterNum);
   const { bookmarked, toggleBookmark } = useBookmarkedVerses(bookId, chapterNum);
   const proofTextGuard = useProofTextGuard(bookId, chapterNum, initialVerseNum);
+  const guidedStudyState = useGuidedStudyChapterState(chapter?.id);
   const allSectionPanels = useMemo(() => sections.flatMap((section) => section.panels), [sections]);
   const studyEstimate = useMemo(
     () => getStudyDepthEstimate(verses, allSectionPanels, chapterPanels),
@@ -459,10 +460,14 @@ function ChapterScreen() {
         {!focusMode ? (
           <StudySessionCTA
             estimate={studyEstimate}
+            mode={guidedStudyState.mode}
+            currentStep={guidedStudyState.activeSession?.current_step}
+            dueCount={guidedStudyState.dueCount}
             onPress={() =>
               navigation.navigate('StudySession', {
                 bookId,
                 chapterNum,
+                initialStep: guidedStudyState.initialStep,
                 verseNum: initialVerseNum,
               })
             }
