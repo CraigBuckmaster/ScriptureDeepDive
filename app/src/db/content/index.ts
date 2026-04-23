@@ -69,6 +69,7 @@ export {
   getContentLibraryCounts, getContentLibrary, searchContentLibrary,
 } from './contentLibrary';
 export {
-  getAllExtraBiblical, getExtraBiblicalById, searchExtraBiblical,
-  getExtraBiblicalByCategory, _resetExtrabiblicalTableCache,
+  getAllExtraBiblical, getExtraBiblicalById, getExtraBiblicalEntry,
+  searchExtraBiblical, getExtraBiblicalByCategory,
+  _resetExtrabiblicalTableCache,
 } from './extrabiblical';

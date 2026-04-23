@@ -14,7 +14,12 @@ import { getDb } from '../database';
 import { escapeLike } from '../../utils/escapeLike';
 import type {
   ExtrabiblicalCategory,
+  ExtrabiblicalEntry,
+  ExtrabiblicalFurtherReading,
+  ExtrabiblicalNTCitation,
+  ExtrabiblicalOTAllusion,
   ExtrabiblicalRow,
+  ExtrabiblicalScholarVoice,
   ExtrabiblicalSummary,
   ExtrabiblicalTraditionStatus,
 } from '../../types';
@@ -90,6 +95,43 @@ function rowToSummary(row: ExtrabiblicalRow): ExtrabiblicalSummary {
   };
 }
 
+function safeParseObjectArray<T>(raw: string | null): T[] {
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? (parsed as T[]) : [];
+  } catch {
+    return [];
+  }
+}
+
+/** Parse a raw row into a fully-typed entry for the Detail screen. */
+function rowToEntry(row: ExtrabiblicalRow): ExtrabiblicalEntry {
+  return {
+    id: row.id,
+    title: row.title,
+    also_known_as: safeParseStringArray(row.also_known_as_json),
+    category: row.category,
+    estimated_date: row.estimated_date,
+    original_language: row.original_language,
+    tradition_status: parseTraditionStatus(row.tradition_status_json),
+    brief_summary: row.brief_summary,
+    full_summary: row.full_summary,
+    nt_citations: safeParseObjectArray<ExtrabiblicalNTCitation>(row.nt_citations_json),
+    ot_allusions: safeParseObjectArray<ExtrabiblicalOTAllusion>(row.ot_allusions_json),
+    scholar_voices: safeParseObjectArray<ExtrabiblicalScholarVoice>(row.scholar_voices_json),
+    related_debate_ids: safeParseStringArray(row.related_debate_ids_json),
+    related_journey_ids: safeParseStringArray(row.related_journey_ids_json),
+    related_difficult_passage_ids: safeParseStringArray(
+      row.related_difficult_passage_ids_json,
+    ),
+    tags: safeParseStringArray(row.tags_json),
+    further_reading: safeParseObjectArray<ExtrabiblicalFurtherReading>(
+      row.further_reading_json,
+    ),
+  };
+}
+
 // ── Queries ───────────────────────────────────────────────────
 
 const SUMMARY_COLUMNS =
@@ -132,6 +174,18 @@ export async function getExtraBiblicalById(
     logger.error('db/extrabiblical', 'getExtraBiblicalById failed', err);
     return null;
   }
+}
+
+/**
+ * Parsed entry for the Detail screen (HWGTB-P2-03 / #1548). Wraps
+ * getExtraBiblicalById with JSON parsing of every serialized column
+ * so screen code never has to JSON.parse defensively.
+ */
+export async function getExtraBiblicalEntry(
+  id: string,
+): Promise<ExtrabiblicalEntry | null> {
+  const row = await getExtraBiblicalById(id);
+  return row ? rowToEntry(row) : null;
 }
 
 /**

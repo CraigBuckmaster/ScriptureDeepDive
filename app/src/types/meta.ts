@@ -204,6 +204,56 @@ export interface ExtrabiblicalSummary {
   tradition_status: ExtrabiblicalTraditionStatus;
 }
 
+// Parsed sub-shapes used by ExtraBiblicalDetailScreen (HWGTB-P2-03).
+
+export type ExtrabiblicalCitationType = 'direct_quotation' | 'allusion' | 'echo';
+
+export interface ExtrabiblicalNTCitation {
+  ref: string;
+  cites: string;
+  type?: ExtrabiblicalCitationType;
+}
+
+export interface ExtrabiblicalOTAllusion {
+  ref: string;
+  connection: string;
+}
+
+export interface ExtrabiblicalScholarVoice {
+  scholar_id: string;
+  position: string;
+}
+
+export interface ExtrabiblicalFurtherReading {
+  title: string;
+  author?: string;
+  note?: string;
+  /** Present if future entries add external links; the Phase-1 seed
+   *  (#1541) uses text-only references so this is rarely populated. */
+  url?: string;
+}
+
+/** Parsed entry — what the Detail screen consumes after JSON.parse. */
+export interface ExtrabiblicalEntry {
+  id: string;
+  title: string;
+  also_known_as: string[];
+  category: ExtrabiblicalCategory | null;
+  estimated_date: string | null;
+  original_language: string | null;
+  tradition_status: ExtrabiblicalTraditionStatus;
+  brief_summary: string;
+  full_summary: string | null;
+  nt_citations: ExtrabiblicalNTCitation[];
+  ot_allusions: ExtrabiblicalOTAllusion[];
+  scholar_voices: ExtrabiblicalScholarVoice[];
+  related_debate_ids: string[];
+  related_journey_ids: string[];
+  related_difficult_passage_ids: string[];
+  tags: string[];
+  further_reading: ExtrabiblicalFurtherReading[];
+}
+
 /** Raw row as stored in SQLite (serialized JSON columns). */
 export interface ExtrabiblicalRow {
   id: string;
