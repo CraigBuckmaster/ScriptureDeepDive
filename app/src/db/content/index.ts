@@ -68,3 +68,7 @@ export type { ContentStats } from './stats';
 export {
   getContentLibraryCounts, getContentLibrary, searchContentLibrary,
 } from './contentLibrary';
+export {
+  getAllExtraBiblical, getExtraBiblicalById, searchExtraBiblical,
+  getExtraBiblicalByCategory, _resetExtrabiblicalTableCache,
+} from './extrabiblical';
