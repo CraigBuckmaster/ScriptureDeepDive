@@ -372,6 +372,20 @@ CREATE TABLE extrabiblical (
 );
 CREATE INDEX idx_extrabiblical_category ON extrabiblical(category);
 
+-- Canon traditions (Protestant, Catholic, Eastern Orthodox, Ethiopian
+-- Tewahedo, etc.). Feeds the Canon Comparison screen (#1539 / #1542).
+CREATE TABLE canon_traditions (
+  id TEXT PRIMARY KEY,
+  label TEXT NOT NULL,
+  book_count INTEGER NOT NULL,
+  short_description TEXT,
+  canon_list_json TEXT NOT NULL,
+  distinctives_json TEXT,
+  formation_events_json TEXT,
+  sort_order INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX idx_canon_traditions_sort ON canon_traditions(sort_order);
+
 CREATE TABLE interlinear_glosses (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   gloss TEXT NOT NULL UNIQUE

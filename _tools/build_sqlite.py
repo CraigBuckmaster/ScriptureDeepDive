@@ -30,7 +30,7 @@ from build_sqlite_loaders import (
     populate_synoptic, populate_topics, populate_debate_topics,
     populate_genealogy_config, populate_cross_refs, populate_timelines,
     populate_eras, populate_redemptive_acts, populate_prophecy_chains,
-    populate_difficult_passages, populate_extrabiblical, populate_interlinear,
+    populate_difficult_passages, populate_extrabiblical, populate_canon_traditions, populate_interlinear,
     populate_lexicon, populate_dictionary, populate_red_letter,
     populate_content_library, populate_life_topics, populate_hermeneutic_lenses,
     populate_archaeology, populate_historical_interpretations,
@@ -113,6 +113,7 @@ def main():
     print(f"  [OK] prophecy_chains: {populate_prophecy_chains(cur)} rows")
     print(f"  [OK] difficult_passages: {populate_difficult_passages(cur)} rows")
     print(f"  [OK] extrabiblical: {populate_extrabiblical(cur)} rows")
+    print(f"  [OK] canon_traditions: {populate_canon_traditions(cur)} rows")
     print(f"  [OK] interlinear_words: {populate_interlinear(cur)} rows")
     print(f"  [OK] lexicon_entries: {populate_lexicon(cur)} rows")
     print(f"  [OK] dictionary_entries: {populate_dictionary(cur)} rows")

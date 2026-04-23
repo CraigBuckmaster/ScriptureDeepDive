@@ -703,6 +703,79 @@ def main():
 
         print(f"  extrabiblical: {len(eb_data)}")
 
+    # ── Canon Traditions (#1539 / #1542) ──
+    ct_path = META / 'canon_traditions.json'
+    if ct_path.exists():
+        print("\n--- CANON TRADITIONS ---")
+        ct_data = json.loads(ct_path.read_text(encoding='utf-8'))
+        check("canon_traditions.json is list", isinstance(ct_data, list))
+
+        all_book_ids = {b['id'] for b in books}
+        # Dual-table book-ID resolution per #1542: canon_list[].books[] ids
+        # may reference either the 66-book Protestant canon (books.json) or
+        # extrabiblical.json (deuterocanon, pseudepigrapha, DSS, etc.).
+        # Ids resolving in neither table are logged as informational —
+        # expected while the extrabiblical table is seeded incrementally —
+        # but malformed snake_case ids always fail.
+        extrabib_ids = set()
+        eb_path_ct = META / 'extrabiblical.json'
+        if eb_path_ct.exists():
+            try:
+                ebd = json.loads(eb_path_ct.read_text(encoding='utf-8'))
+                extrabib_ids = {e['id'] for e in (ebd if isinstance(ebd, list) else []) if 'id' in e}
+            except Exception:
+                pass
+
+        snake_re = re.compile(r'^[a-z0-9]+(_[a-z0-9]+)*$')
+        seen_ct_ids = set()
+        for i, t in enumerate(ct_data):
+            tid = t.get('id', f'index_{i}')
+
+            # Required top-level keys
+            for key in ('id', 'label', 'book_count', 'canon_list'):
+                check(f"canon_tradition {tid} has '{key}'", key in t,
+                      f"missing '{key}'")
+
+            # id shape + uniqueness
+            if 'id' in t:
+                check(f"canon_tradition {tid} id is snake_case",
+                      bool(snake_re.match(t['id'])),
+                      f"id '{t['id']}' not snake_case")
+                check(f"canon_tradition {tid} id unique",
+                      t['id'] not in seen_ct_ids,
+                      f"duplicate id: {t['id']}")
+                seen_ct_ids.add(t['id'])
+
+            # book_count matches total canon_list length
+            canon_list = t.get('canon_list', [])
+            if isinstance(canon_list, list) and 'book_count' in t:
+                total_listed = sum(
+                    len(s.get('books', [])) for s in canon_list
+                    if isinstance(s, dict)
+                )
+                check(f"canon_tradition {tid} book_count matches canon_list",
+                      total_listed == t['book_count'],
+                      f"book_count={t['book_count']}, listed={total_listed}")
+
+            # canon_list[].books[]: dual-table resolution
+            unresolved = []
+            for sec in canon_list if isinstance(canon_list, list) else []:
+                if not isinstance(sec, dict):
+                    continue
+                for bid in sec.get('books', []):
+                    check(f"canon_tradition {tid} book '{bid}' is snake_case",
+                          bool(snake_re.match(bid)),
+                          f"'{bid}' is not a valid id token")
+                    if bid not in all_book_ids and bid not in extrabib_ids:
+                        unresolved.append(bid)
+            if unresolved:
+                uniq = sorted(set(unresolved))
+                print(f"  canon_tradition {tid}: {len(unresolved)} unresolved "
+                      f"book id(s) (expected while extrabiblical is partial): "
+                      f"{uniq[:5]}" + ("…" if len(uniq) > 5 else ""))
+
+        print(f"  canon_traditions: {len(ct_data)}")
+
     # ── Debate Topics ──
     dt_path = META / 'debate-topics.json'
     if dt_path.exists():
