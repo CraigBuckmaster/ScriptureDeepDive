@@ -18,6 +18,14 @@ import {
 } from '@react-navigation/native';
 import { ArrowLeft, MessageSquare } from 'lucide-react-native';
 import {
+  EvidenceTrailRow,
+  PanelRecommendationRow,
+  StudyModeSelector,
+  StudySessionStepper,
+} from '../components/guidedStudy';
+import { UpgradePrompt } from '../components/UpgradePrompt';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+import {
   getBook,
   getBookIntro,
   getChapter,
@@ -27,21 +35,11 @@ import {
   getVerses,
 } from '../db/content';
 import { useGuidedStudySession, usePremium } from '../hooks';
+import { buildGuidedStudyPlan, type GuidedStudyMode, type GuidedStudyStep } from '../services/guidedStudy';
 import { useSettingsStore } from '../stores';
-import type { Book, Chapter, ChapterPanel, Section, SectionPanel, Verse } from '../types';
-import type { ParsedBookIntro } from '../types';
-import type { GuidedStudyMode, GuidedStudyStep } from '../services/guidedStudy';
-import { buildGuidedStudyPlan } from '../services/guidedStudy';
-import {
-  EvidenceTrailRow,
-  PanelRecommendationRow,
-  StudyModeSelector,
-  StudySessionStepper,
-} from '../components/guidedStudy';
-import { UpgradePrompt } from '../components/UpgradePrompt';
-import { safeParse } from '../utils/logger';
 import { fontFamily, radii, spacing, useTheme } from '../theme';
-import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+import type { Book, Chapter, ChapterPanel, ParsedBookIntro, Section, SectionPanel, Verse } from '../types';
+import { safeParse } from '../utils/logger';
 
 interface RouteParams {
   bookId: string;
@@ -178,10 +176,7 @@ function StudySessionScreen() {
     }
     await session.saveSynthesis(synthesisDraft);
     const ref = `${book?.name ?? bookId} ${chapterNum}`;
-    // Cap each field so the seed query doesn't blow past Amicus's length
-    // limit on long syntheses and renders reasonably in the peek sheet.
-    const clip = (s: string, n = 200) =>
-      s.length > n ? `${s.slice(0, n - 1).trimEnd()}\u2026` : s;
+    const clip = (s: string, n = 200) => (s.length > n ? `${s.slice(0, n - 3).trimEnd()}...` : s);
     const seedQuery =
       `Help me refine my study synthesis for ${ref}. ` +
       `Takeaway: ${clip(synthesisDraft.takeaway)}. ` +
@@ -223,9 +218,7 @@ function StudySessionScreen() {
         <TouchableOpacity onPress={() => navigation.goBack()} accessibilityLabel="Back">
           <ArrowLeft size={20} color={base.gold} />
         </TouchableOpacity>
-        <Text style={[styles.navTitle, { color: base.text }]}> 
-          Study {book?.name ?? bookId} {chapterNum}
-        </Text>
+        <Text style={[styles.navTitle, { color: base.text }]}>Study {book?.name ?? bookId} {chapterNum}</Text>
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
@@ -276,9 +269,7 @@ function StudySessionScreen() {
         {session.currentStep === 'explore' && (
           <View style={styles.section}>
             <Text style={[styles.heading, { color: base.text }]}>Evidence Trail</Text>
-            <Text style={[styles.sectionIntro, { color: base.textDim }]}> 
-              Open the panels in this order to build context before conclusions.
-            </Text>
+            <Text style={[styles.sectionIntro, { color: base.textDim }]}>Open the panels in this order to build context before conclusions.</Text>
             {plan.evidenceTrail.length > 0 ? (
               <View style={styles.trailList}>
                 {plan.evidenceTrail.map((item, index) => (
@@ -310,9 +301,7 @@ function StudySessionScreen() {
               ]}
             >
               <Text style={[styles.questionLabel, { color: base.gold }]}>Better question</Text>
-              <Text style={[styles.questionText, { color: base.text }]}> 
-                {plan.betterQuestionPrompt}
-              </Text>
+              <Text style={[styles.questionText, { color: base.text }]}>{plan.betterQuestionPrompt}</Text>
             </View>
             <PrimaryButton label="Synthesize what you saw" onPress={() => goStep('synthesize')} />
           </View>
@@ -358,7 +347,7 @@ function StudySessionScreen() {
         {session.currentStep === 'review' && (
           <View style={styles.section}>
             <Text style={[styles.heading, { color: base.text }]}>Review</Text>
-            <Text style={[styles.body, { color: base.textDim }]}> 
+            <Text style={[styles.body, { color: base.textDim }]}>
               {reviewSaved
                 ? 'Saved. Your review prompts and concept vocabulary are ready in My Study.'
                 : isPremium
@@ -367,7 +356,7 @@ function StudySessionScreen() {
             </Text>
             <View style={styles.chipRow}>
               {plan.conceptChips.map((chip) => (
-                <View key={chip.id} style={[styles.chip, { borderColor: `${base.gold}35` }]}> 
+                <View key={chip.id} style={[styles.chip, { borderColor: `${base.gold}35` }]}>
                   <Text style={[styles.chipText, { color: base.gold }]}>{chip.label}</Text>
                 </View>
               ))}
