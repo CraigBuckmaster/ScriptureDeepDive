@@ -78,13 +78,14 @@ function JourneyDetailScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <View style={[styles.stickyHeader, { backgroundColor: base.bg }]}>
         <ScreenHeader
           title={journey.title}
           subtitle={journey.subtitle ?? undefined}
           onBack={() => navigation.goBack()}
-          style={styles.header}
         />
+      </View>
+      <ScrollView contentContainerStyle={styles.scrollContent}>
 
         {/* Metadata row */}
         <View style={styles.metaRow}>
@@ -176,9 +177,10 @@ const styles = StyleSheet.create({
   scrollContent: {
     paddingBottom: spacing.xl * 2,
   },
-  header: {
+  stickyHeader: {
     paddingHorizontal: spacing.md,
     paddingTop: spacing.sm,
+    paddingBottom: spacing.sm,
   },
   metaRow: {
     flexDirection: 'row',

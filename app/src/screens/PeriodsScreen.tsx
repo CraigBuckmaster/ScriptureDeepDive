@@ -54,13 +54,14 @@ function PeriodsScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <View style={[styles.stickyHeader, { backgroundColor: base.bg }]}>
         <ScreenHeader
           title="The Periods of the Bible"
           subtitle={`${eras.length} eras from creation to the apostolic age`}
           onBack={() => navigation.goBack()}
-          style={styles.header}
         />
+      </View>
+      <ScrollView contentContainerStyle={styles.scrollContent}>
 
         {visibleEras.map((era, index) => (
           <EraCard
@@ -226,11 +227,13 @@ const styles = StyleSheet.create({
     padding: spacing.lg,
   },
   scrollContent: {
-    padding: spacing.md,
+    paddingHorizontal: spacing.md,
     paddingBottom: spacing.xxl,
   },
-  header: {
-    marginBottom: spacing.lg,
+  stickyHeader: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+    paddingBottom: spacing.lg,
   },
   /* Era card wrapper with timeline track */
   eraCardWrapper: {

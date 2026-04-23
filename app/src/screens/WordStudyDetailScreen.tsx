@@ -54,13 +54,14 @@ function WordStudyDetailScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <ScrollView contentContainerStyle={styles.content}>
+      <View style={[styles.stickyHeader, { backgroundColor: base.bg }]}>
         <ScreenHeader
           title="Word Study"
           titleColor={accentColor}
           onBack={() => navigation.goBack()}
-          style={styles.header}
         />
+      </View>
+      <ScrollView contentContainerStyle={styles.content}>
 
         {contentImages.length > 0 && <ContentImageGallery images={contentImages} />}
 
@@ -147,10 +148,13 @@ const styles = StyleSheet.create({
     padding: spacing.lg,
   },
   content: {
-    padding: spacing.md,
+    paddingHorizontal: spacing.md,
+    paddingBottom: spacing.md,
   },
-  header: {
-    marginBottom: spacing.md,
+  stickyHeader: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+    paddingBottom: spacing.md,
   },
   original: {
     fontFamily: fontFamily.bodyMedium,
