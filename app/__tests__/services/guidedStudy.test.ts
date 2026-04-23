@@ -167,7 +167,7 @@ describe('guided study services', () => {
       chapterPanels,
       verses,
     });
-    const genrePromptText = plan.prompts.find((p) => p.key === 'genre')?.text ?? '';
+    const genrePromptText = plan.prompts.find((p) => p.key === 'genre-observation')?.text ?? '';
     expect(genrePromptText).toBe(
       'What does the passage emphasize before you open any study panels?',
     );
@@ -180,7 +180,7 @@ describe('guided study services', () => {
       chapterPanels,
       verses,
     });
-    expect(plan2.prompts.find((p) => p.key === 'genre')?.text).toBe(
+    expect(plan2.prompts.find((p) => p.key === 'genre-observation')?.text).toBe(
       'What does the passage emphasize before you open any study panels?',
     );
   });
@@ -201,7 +201,7 @@ describe('guided study services', () => {
         chapterPanels,
         verses,
       });
-      expect(plan.prompts.find((p) => p.key === 'genre')?.text).toBe(expected);
+      expect(plan.prompts.find((p) => p.key === 'genre-observation')?.text).toBe(expected);
     }
   });
 
