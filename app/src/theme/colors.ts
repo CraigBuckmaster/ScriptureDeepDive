@@ -202,6 +202,8 @@ export const families = {
   // Second Temple Judaism reception (HWGTB epic) — sand/parchment tone
   // evoking ancient manuscripts; distinct from jewish (rabbinic-era) green.
   'second-temple': '#D4A373',
+  // Eastern Orthodox tradition — deeper liturgical red, distinct from catholic.
+  orthodox: '#B85C5C',
 } as const;
 
 // ── Prophecy Category Colors ───────────────────────────────────────
