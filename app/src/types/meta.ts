@@ -275,6 +275,47 @@ export interface ExtrabiblicalRow {
   further_reading_json: string | null;
 }
 
+// ── Canon Traditions (HWGTB #1539 / #1542 → consumed by #1550) ──────
+
+export interface CanonListSection {
+  section: string;
+  books: string[];
+}
+
+export interface CanonDistinctive {
+  title: string;
+  detail: string;
+}
+
+export interface CanonFormationEvent {
+  year: number;
+  label: string;
+  detail: string;
+}
+
+export interface CanonTradition {
+  id: string;
+  label: string;
+  book_count: number;
+  short_description: string | null;
+  canon_list: CanonListSection[];
+  distinctives: CanonDistinctive[];
+  formation_events: CanonFormationEvent[];
+  sort_order: number;
+}
+
+/** Raw row in SQLite (serialized JSON columns). */
+export interface CanonTraditionRow {
+  id: string;
+  label: string;
+  book_count: number;
+  short_description: string | null;
+  canon_list_json: string;
+  distinctives_json: string | null;
+  formation_events_json: string | null;
+  sort_order: number;
+}
+
 export interface HebTextEntry {
   word: string;
   tlit: string;
