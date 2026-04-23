@@ -172,6 +172,44 @@
         },
         "hist": {
           "context": "The Olivet Discourse is Jesus’s extended eschatological teaching, prompted by the disciples’ amazement at the Temple’s grandeur. Jesus’s prediction that not one stone will be left (v.2) was fulfilled in AD 70 when Titus destroyed Jerusalem. The discourse weaves together near-term events (the Jerusalem siege) and far-term events (the Son of Man’s coming) in a way that has produced sustained interpretive disagreement."
+        },
+        "st2": {
+          "header": "The Desolating Sacrilege: Mark 13's Danielic-Enochic Background",
+          "body": "Mark 13 is the Markan version of the Olivet Discourse, parallel to Matthew 24 and Luke 21. Mark's distinctive editorial note — 'let the reader understand' (13:14) — signals that Jesus's reference to 'the abomination of desolation (to bdelugma tes eremoseos) standing where it ought not to be' is an encoded reference the reader is invited to decode. The decoding requires Second Temple Jewish apocalyptic literacy, specifically familiarity with Daniel and with 1 Maccabees's application of Daniel's prophecy.\n\nDaniel uses the phrase 'the abomination that makes desolate' (Hebrew shiqquts meshomem) three times: Daniel 9:27, 11:31, 12:11. In Daniel's context (6th-2nd century depending on dating) the phrase refers to a pagan profanation of the Jerusalem Temple that cuts off regular sacrifice for a limited period. The LXX Greek bdelugma tes eremoseos became the standard translation.\n\n1 Maccabees 1:54 identifies the Danielic 'abomination of desolation' with a specific historical event: on the 15th of Kislev, 167 BC, Antiochus IV Epiphanes 'erected a desolating sacrilege on the altar of burnt offering' in the Jerusalem Temple — most probably an altar or image of Olympian Zeus. The sacrifice of unclean animals there, the cessation of Jewish worship for three years, and the eventual Maccabean rededication in 164 BC provided the original historical fulfillment of Daniel's oracle. By Jesus's day 'abomination of desolation' was a charged symbol in the Jewish apocalyptic imagination — it meant a pagan profanation of the Temple serious enough to trigger eschatological reckoning.\n\nMark 13:14's 'let the reader understand' invites a fresh identification. The text Mark wrote c. 65-70 AD was probably published in a Jewish-Christian community facing the Jewish War and the Roman siege of Jerusalem. The reader is invited to understand that the Temple's coming destruction — being perpetrated by Titus's Roman legions — is a new 'abomination of desolation' comparable to and fulfilling beyond Antiochus's. Some scholars argue for a specific event: Titus's setting of Roman ensigns with imperial iconography in the Temple courts during the siege; others for the general cultic disruption of the war period.\n\n1 Enoch provides the apocalyptic-eschatological layer. 1 Enoch 1:9's theophanic judgment ('Behold, the Lord comes with his myriads of holy ones') is the template for Mark 13:26's 'Son of Man coming in clouds with great power and glory.' 1 Enoch's Book of Dreams (especially the Animal Apocalypse, chs 85-90) narrates eschatological tribulation climaxing in theophany in patterns Mark 13 presupposes. 1 Enoch 46-48's Son of Man imagery (the Parables, chs 37-71) provides the nearest Jewish parallel to Jesus's self-designation in Mark 13:26.\n\nMark is not creating Jesus's apocalyptic teaching from 1 Enoch; he is reporting Jesus's inhabitation of a shared Jewish apocalyptic vocabulary that 1 Enoch, Daniel, and 1 Maccabees all participate in. The 'desolating sacrilege' is Daniel + 1 Maccabees; the theophanic advent is Daniel + 1 Enoch; the tribulation-framework is the broader Jewish apocalyptic tradition. Mark's reader is invited to decode the whole tradition-complex, not just one source.",
+          "extrabiblical_ids": [
+            "1_enoch",
+            "1_maccabees"
+          ],
+          "citation_refs": [
+            {
+              "nt": "Mark 13:14",
+              "source": "Daniel 9:27, 11:31, 12:11 + 1 Maccabees 1:54 (historical abomination under Antiochus IV)",
+              "type": "direct_quotation"
+            },
+            {
+              "nt": "Mark 13:26-27",
+              "source": "1 Enoch 1:9 theophany + 1 Enoch 46-48 Son of Man",
+              "type": "echo"
+            }
+          ],
+          "scholar_voices": [
+            {
+              "scholar_id": "marcus",
+              "tradition": "Evangelical-critical Mark",
+              "note": "Marcus's AB Mark commentary treats Mark 13:14 as a deliberately encoded reference inviting the reader to decode via Daniel + 1 Maccabees + the contemporary Jewish War. The 'desolating sacrilege' is a charged symbol from the Antiochean crisis being redeployed for the 70 AD Temple destruction."
+            },
+            {
+              "scholar_id": "nickelsburg",
+              "tradition": "Critical (Second Temple)",
+              "note": "Nickelsburg connects the Mark 13 apocalyptic discourse to the broader Jewish apocalyptic tradition — 1 Enoch, Daniel, 1 Maccabees, 4 Ezra, 2 Baruch — in which eschatological tribulation, cosmic disturbance, and theophanic advent are shared vocabulary."
+            },
+            {
+              "scholar_id": "keener",
+              "tradition": "Evangelical NT (backgrounds)",
+              "note": "Keener emphasizes the 1 Maccabees 1:54 hinge: 'abomination of desolation' was not an abstract phrase in 1st-century Jewish ears — it specifically meant the Antiochean crisis of 167 BC, which created a template for interpreting subsequent threats to Temple worship. Mark's 'let the reader understand' assumes this literacy."
+            }
+          ],
+          "takeaway": "Mark 13:14's 'abomination of desolation' draws on Daniel's oracle + 1 Maccabees's historical fulfillment under Antiochus IV. The Markan text invites the reader to decode the coming Roman siege of Jerusalem as a new fulfillment. The theophanic climax draws on 1 Enoch's Son of Man and judgment imagery."
         }
       }
     },

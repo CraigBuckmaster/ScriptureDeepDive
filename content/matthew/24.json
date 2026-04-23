@@ -155,6 +155,43 @@
         },
         "hist": {
           "context": "The Olivet Discourse (chs.24-25) is Matthew's fifth and final discourse. The first half addresses signs preceding the end: birth pains (wars, famines, persecution), the abomination, the great distress, and false messiahs. The discourse interweaves near fulfilment (Jerusalem, AD 70) and far fulfilment (the Son of Man's return) simultaneously."
+        },
+        "st2": {
+          "header": "The Olivet Discourse and the Animal Apocalypse of 1 Enoch",
+          "body": "Matthew 24 is the longest sustained eschatological teaching in the Synoptic tradition — Jesus's answer on the Mount of Olives to the disciples' double question about the destruction of the Temple and the sign of his coming at the end of the age. The imagery is dense with Second Temple Jewish apocalyptic vocabulary: 'wars and rumors of wars' (v6), 'famines and earthquakes' (v7), 'the abomination of desolation' (v15), 'great tribulation such as has not been from the beginning of the world' (v21), 'false christs and false prophets' (v24), 'the sun will be darkened, the moon will not give its light, the stars will fall from heaven' (v29), 'the Son of Man coming on the clouds of heaven with power and great glory' (v30).\n\nThe closest sustained Second Temple parallel is the Animal Apocalypse — 1 Enoch chapters 85-90, part of the Book of Dreams written during the Maccabean crisis (c. 165 BC). The Animal Apocalypse narrates Israel's history zoomorphically: Adam as a white bull, the patriarchs as bulls of various colors, Israel as sheep, Gentiles as beasts of prey. It culminates in a final eschatological battle — the sheep oppressed by wild animals, shepherds (the 70 angelic overseers) failing or colluding, then a climactic theophany: the Lord descending with his host, the unjust shepherds judged, the books opened, the bulls and sheep dwelling peacefully, a new 'white bull' arising as the messianic figure.\n\nSpecific parallels between Matt 24 and the Animal Apocalypse: (1) eschatological tribulation preceded by wars, betrayal, and apostasy; (2) false shepherds / false christs leading the flock astray; (3) cosmic disturbance — stars falling, sun and moon darkened; (4) climactic advent of the divine/messianic figure on the clouds with angelic host; (5) final judgment with books opened. The vocabulary is not word-for-word borrowing; it is shared apocalyptic vocabulary that both the Animal Apocalypse and Matt 24 draw from a common Jewish tradition pool.\n\nThe 'abomination of desolation' in Matt 24:15 is the most explicit direct citation — Jesus refers the disciples 'to what was spoken by the prophet Daniel' (Dan 9:27, 11:31, 12:11). But the Danielic abomination had already been interpreted in 1 Maccabees 1:54 as the specific desecration of the Jerusalem Temple under Antiochus IV Epiphanes in 167 BC. By Jesus's day the 'abomination of desolation' was a charged Jewish apocalyptic symbol that could be re-applied to any pagan profanation of the Temple — which is precisely what Jesus does, redirecting the Danielic oracle to the Temple's destruction in 70 AD (with broader eschatological resonance).\n\nThe synoptic apocalyptic of Matt 24 / Mark 13 / Luke 21 is not a new genre; it is Jesus inhabiting an existing Jewish apocalyptic vocabulary and redirecting its reference-frame around his own person and the coming destruction of Jerusalem. The Animal Apocalypse and similar Second Temple Jewish texts provide the closest literary context for how this vocabulary functioned in 1st-century Jewish hearing.",
+          "extrabiblical_ids": [
+            "1_enoch"
+          ],
+          "citation_refs": [
+            {
+              "nt": "Matthew 24:15",
+              "source": "Daniel 9:27, 11:31, 12:11 + 1 Maccabees 1:54 (abomination of desolation)",
+              "type": "direct_quotation"
+            },
+            {
+              "nt": "Matthew 24:21-30",
+              "source": "1 Enoch 85-90 (Animal Apocalypse) + 1 Enoch 1:9 theophany",
+              "type": "echo"
+            }
+          ],
+          "scholar_voices": [
+            {
+              "scholar_id": "keener",
+              "tradition": "Evangelical NT (cultural backgrounds)",
+              "note": "Keener (Matthew commentary + IVP Background Commentary) traces the Second Temple apocalyptic vocabulary Jesus inherits — cosmic disturbance, false christs, clouds-of-heaven advent — across 1 Enoch, Daniel, and broader Jewish apocalyptic. Matt 24 inhabits an existing vocabulary rather than inventing one."
+            },
+            {
+              "scholar_id": "nickelsburg",
+              "tradition": "Critical (1 Enoch)",
+              "note": "Nickelsburg's Hermeneia 1 Enoch treats the Animal Apocalypse (chs 85-90) as the fullest Second Temple narrative of eschatological tribulation climaxing in messianic advent. Matt 24's imagery draws from this tradition-stream even when the specific verbal links are loose."
+            },
+            {
+              "scholar_id": "beale",
+              "tradition": "Evangelical biblical theology",
+              "note": "Beale emphasizes the Daniel-centered intertextuality of Matt 24 (abomination of desolation, Son of Man on clouds) with 1 Enoch and related Jewish apocalyptic as the interpretive medium through which 1st-century audiences heard Jesus's Danielic allusions."
+            }
+          ],
+          "takeaway": "Matt 24's Olivet Discourse inhabits Second Temple Jewish apocalyptic vocabulary — Danielic (abomination of desolation), Maccabean (1 Macc 1:54's profaned altar), Enochic (Animal Apocalypse's eschatological tribulation). Jesus redirects the inherited vocabulary around his own person and the 70 AD Temple destruction with broader eschatological resonance."
         }
       }
     },
