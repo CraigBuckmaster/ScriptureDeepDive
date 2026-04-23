@@ -1204,6 +1204,8 @@ def main():
             'heb', 'hist', 'ctx', 'cross', 'greek', 'hebtext', 'interlinear',
             'tl', 'places', 'poi', 'themes', 'lit', 'trans', 'src', 'rec',
             'thread', 'tx', 'textual', 'debate', 'discourse', 'ppl', 'com',
+            # st2 — Second Temple Context panel (HWGTB #1540)
+            'st2',
         }
         unregistered = []
         for book_dir in sorted(CONTENT.iterdir()):
@@ -1223,6 +1225,80 @@ def main():
         print(f"  Unregistered scholars: {len(unregistered)}")
     else:
         print("  [SKIP] scholars.json not found")
+
+    # ── 13b. st2 panel payload integrity (HWGTB #1540) ──
+    print("\n--- 13b. ST2 PANEL INTEGRITY ---")
+
+    st2_extrabiblical_ids = set()
+    eb_path_st2 = META / 'extrabiblical.json'
+    if eb_path_st2.exists():
+        try:
+            ebd = json.loads(eb_path_st2.read_text(encoding='utf-8'))
+            st2_extrabiblical_ids = {e['id'] for e in (ebd if isinstance(ebd, list) else []) if 'id' in e}
+        except Exception:
+            pass
+
+    st2_ref_re = re.compile(
+        r'^[a-z0-9_]+(\s[a-z0-9_]+)*\s\d+(-\d+)?(:\d+(-\d+)?)?$'
+    )
+    st2_valid_citation_types = {'direct_quotation', 'allusion', 'echo'}
+    st2_required_keys = {'header', 'body', 'extrabiblical_ids', 'citation_refs'}
+    st2_panel_count = 0
+
+    for book_dir in sorted(CONTENT.iterdir()):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
+            continue
+        for json_file in sorted(book_dir.glob('*.json')):
+            try:
+                data = json.loads(json_file.read_text(encoding='utf-8'))
+            except Exception:
+                continue
+            for i, sec in enumerate(data.get('sections', [])):
+                st2 = sec.get('panels', {}).get('st2')
+                if st2 is None:
+                    continue
+                loc = f"{book_dir.name}/{json_file.stem} S{i+1}"
+                st2_panel_count += 1
+                check(f"st2 {loc} is object", isinstance(st2, dict),
+                      f"got {type(st2).__name__}")
+                if not isinstance(st2, dict):
+                    continue
+                missing = st2_required_keys - set(st2.keys())
+                check(f"st2 {loc} has required keys",
+                      len(missing) == 0,
+                      f"missing {sorted(missing)}")
+
+                # extrabiblical_ids[] resolve
+                for j, eid in enumerate(st2.get('extrabiblical_ids', []) or []):
+                    check(f"st2 {loc} extrabiblical_ids[{j}] valid",
+                          eid in st2_extrabiblical_ids,
+                          f"'{eid}' not in extrabiblical.json")
+
+                # citation_refs[].nt parses + .type enum
+                for j, cit in enumerate(st2.get('citation_refs', []) or []):
+                    if not isinstance(cit, dict):
+                        check(f"st2 {loc} citation_refs[{j}] is object", False,
+                              f"got {type(cit).__name__}")
+                        continue
+                    nt = str(cit.get('nt', '')).strip().lower()
+                    check(f"st2 {loc} citation_refs[{j}].nt parses",
+                          bool(st2_ref_re.match(nt)),
+                          f"ref '{cit.get('nt')}' does not match verse pattern")
+                    if 'type' in cit:
+                        check(f"st2 {loc} citation_refs[{j}].type valid",
+                              cit['type'] in st2_valid_citation_types,
+                              f"'{cit['type']}' not in {sorted(st2_valid_citation_types)}")
+
+                # scholar_voices[].scholar_id resolve (if present)
+                for j, sv in enumerate(st2.get('scholar_voices', []) or []):
+                    if not isinstance(sv, dict):
+                        continue
+                    sid = sv.get('scholar_id')
+                    check(f"st2 {loc} scholar_voices[{j}].scholar_id valid",
+                          sid in scholar_ids,
+                          f"'{sid}' not in scholars.json")
+
+    print(f"  st2 panels scanned: {st2_panel_count}")
 
     # ── 14. Verse overlap check (#560) ──
     print("\n--- 14. VERSE OVERLAPS ---")
