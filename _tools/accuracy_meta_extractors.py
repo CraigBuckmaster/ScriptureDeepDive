@@ -53,6 +53,8 @@ class MetaClaimExtractor:
         claims.extend(self.extract_places())
         claims.extend(self.extract_map_stories())
         claims.extend(self.extract_cross_refs())
+        claims.extend(self.extract_extrabiblical())
+        claims.extend(self.extract_canon_traditions())
         return claims
 
     def _load(self, filename: str):
@@ -910,5 +912,241 @@ class MetaClaimExtractor:
                     verse_ref=None,
                     verification_tier=2,
                 ))
+
+        return claims
+
+    # ── Extra-Biblical Literature (HWGTB #1538 / #1556) ─────────
+
+    def extract_extrabiblical(self) -> list[Claim]:
+        """Extract claims from extrabiblical.json.
+
+        Covers 1 Enoch, Jubilees, Tobit, the Dead Sea Scrolls, etc. —
+        the Second Temple literature the Companion Study surfaces under
+        the "How We Got The Bible" bundle. Claim types:
+          - historical (summaries, dates, languages, NT citations)
+          - cross_reference (nt_citations / ot_allusions verse refs)
+          - scholar_attribution (scholar_voices entries)
+        """
+        data = self._load("extrabiblical.json")
+        if not data or not isinstance(data, list):
+            return []
+
+        claims = []
+        for entry in data:
+            eid = entry.get("id", "unknown")
+            title = entry.get("title", "")
+
+            # Brief summary — high-level historical claim
+            brief = entry.get("brief_summary", "")
+            if brief and len(brief) > 30:
+                claims.append(Claim(
+                    id=_meta_id("extrabib", eid, 0),
+                    chapter_id="meta_extrabiblical",
+                    book_dir="meta",
+                    section_num=None,
+                    panel_type="extrabiblical_entry",
+                    claim_type="historical",
+                    claim_text=f"[{title} — brief] {brief}",
+                    source_attribution=None,
+                    verse_ref=None,
+                    verification_tier=2,
+                ))
+
+            # Full summary — deeper historical claim (long-form)
+            full = entry.get("full_summary", "")
+            if full and len(full) > 30:
+                claims.append(Claim(
+                    id=_meta_id("extrabib", eid, 1),
+                    chapter_id="meta_extrabiblical",
+                    book_dir="meta",
+                    section_num=None,
+                    panel_type="extrabiblical_entry",
+                    claim_type="historical",
+                    claim_text=f"[{title} — full] {full}",
+                    source_attribution=None,
+                    verse_ref=None,
+                    verification_tier=2,
+                ))
+
+            # Estimated date / original language — historical metadata
+            for field, offset in [("estimated_date", 2), ("original_language", 3)]:
+                text = entry.get(field, "")
+                if text and len(text) > 10:
+                    claims.append(Claim(
+                        id=_meta_id("extrabib", eid, offset),
+                        chapter_id="meta_extrabiblical",
+                        book_dir="meta",
+                        section_num=None,
+                        panel_type="extrabiblical_entry",
+                        claim_type="historical",
+                        claim_text=f"[{title} — {field}] {text}",
+                        source_attribution=None,
+                        verse_ref=None,
+                        verification_tier=2,
+                    ))
+
+            # NT citations — cross-reference claims (NT verse + source book).
+            # Schema: {"ref": "Jude 14-15", "cites": "1 Enoch 1:9", "type": "..."}
+            for j, cite in enumerate(entry.get("nt_citations", [])):
+                ref = cite.get("ref", "")
+                cites = cite.get("cites", "")
+                ctype = cite.get("type", "")
+                if ref:
+                    claims.append(Claim(
+                        id=_meta_id("extrabib", eid, 100 + j * 2),
+                        chapter_id="meta_extrabiblical",
+                        book_dir="meta",
+                        section_num=None,
+                        panel_type="extrabiblical_entry",
+                        claim_type="cross_reference",
+                        claim_text=ref,
+                        source_attribution=None,
+                        verse_ref=ref,
+                        verification_tier=0,
+                    ))
+                if ref and cites:
+                    claims.append(Claim(
+                        id=_meta_id("extrabib", eid, 100 + j * 2 + 1),
+                        chapter_id="meta_extrabiblical",
+                        book_dir="meta",
+                        section_num=None,
+                        panel_type="extrabiblical_entry",
+                        claim_type="historical",
+                        claim_text=f"[{title}: {ref} {ctype or 'cites'} {cites}]",
+                        source_attribution=None,
+                        verse_ref=ref or None,
+                        verification_tier=2,
+                    ))
+
+            # OT allusions — cross-reference claims.
+            # Schema: {"ref": "Genesis 6:1-4", "connection": "..."}
+            for j, allu in enumerate(entry.get("ot_allusions", [])):
+                ref = allu.get("ref", "")
+                connection = allu.get("connection", "")
+                if ref:
+                    claims.append(Claim(
+                        id=_meta_id("extrabib", eid, 200 + j * 2),
+                        chapter_id="meta_extrabiblical",
+                        book_dir="meta",
+                        section_num=None,
+                        panel_type="extrabiblical_entry",
+                        claim_type="cross_reference",
+                        claim_text=ref,
+                        source_attribution=None,
+                        verse_ref=ref,
+                        verification_tier=0,
+                    ))
+                if connection and len(connection) > 20:
+                    claims.append(Claim(
+                        id=_meta_id("extrabib", eid, 200 + j * 2 + 1),
+                        chapter_id="meta_extrabiblical",
+                        book_dir="meta",
+                        section_num=None,
+                        panel_type="extrabiblical_entry",
+                        claim_type="historical",
+                        claim_text=f"[{title}: {ref}] {connection}",
+                        source_attribution=None,
+                        verse_ref=ref or None,
+                        verification_tier=2,
+                    ))
+
+            # Scholar voices — scholar_attribution.
+            # Schema: {"scholar_id": "...", "position": "..."}
+            for j, voice in enumerate(entry.get("scholar_voices", [])):
+                scholar_id = voice.get("scholar_id", "")
+                position = voice.get("position", "")
+                if position and len(position) > 30:
+                    claims.append(Claim(
+                        id=_meta_id("extrabib", eid, 300 + j),
+                        chapter_id="meta_extrabiblical",
+                        book_dir="meta",
+                        section_num=None,
+                        panel_type="extrabiblical_entry",
+                        claim_type="scholar_attribution",
+                        claim_text=f"[{title}] {position}",
+                        source_attribution=scholar_id,
+                        verse_ref=None,
+                        verification_tier=3,
+                    ))
+
+        return claims
+
+    # ── Canon Traditions (HWGTB #1539 / #1556) ──────────────────
+
+    def extract_canon_traditions(self) -> list[Claim]:
+        """Extract claims from canon_traditions.json.
+
+        Covers the Protestant / Catholic / Eastern Orthodox / Ethiopian
+        Tewahedo canon entries. Claim types:
+          - historical (short_description, distinctives, formation_events)
+          - cross_reference (not applicable — book lists are validated by
+            the schema, not the accuracy audit)
+        """
+        data = self._load("canon_traditions.json")
+        if not data or not isinstance(data, list):
+            return []
+
+        claims = []
+        for tradition in data:
+            tid = tradition.get("id", "unknown")
+            label = tradition.get("label", tid)
+
+            # Short description — historical summary of the tradition
+            desc = tradition.get("short_description", "")
+            if desc and len(desc) > 30:
+                claims.append(Claim(
+                    id=_meta_id("canon", tid, 0),
+                    chapter_id="meta_canon",
+                    book_dir="meta",
+                    section_num=None,
+                    panel_type="canon_tradition",
+                    claim_type="historical",
+                    claim_text=f"[{label}] {desc}",
+                    source_attribution=None,
+                    verse_ref=None,
+                    verification_tier=2,
+                ))
+
+            # Distinctives — each is a historical/theological claim about
+            # what makes this tradition's canon different.
+            for j, dist in enumerate(tradition.get("distinctives", [])):
+                title = dist.get("title", "")
+                detail = dist.get("detail", "")
+                if detail and len(detail) > 30:
+                    claims.append(Claim(
+                        id=_meta_id("canon", tid, 100 + j),
+                        chapter_id="meta_canon",
+                        book_dir="meta",
+                        section_num=None,
+                        panel_type="canon_tradition",
+                        claim_type="historical",
+                        claim_text=f"[{label} — {title}] {detail}",
+                        source_attribution=None,
+                        verse_ref=None,
+                        verification_tier=2,
+                    ))
+
+            # Formation events — dated historical claims (councils,
+            # confessions, translations).
+            for j, evt in enumerate(tradition.get("formation_events", [])):
+                year = evt.get("year", "")
+                ev_label = evt.get("label", "")
+                detail = evt.get("detail", "")
+                if detail and len(detail) > 30:
+                    year_str = f"{year} AD" if isinstance(year, int) and year >= 0 else (
+                        f"{abs(year)} BC" if isinstance(year, int) else str(year)
+                    )
+                    claims.append(Claim(
+                        id=_meta_id("canon", tid, 200 + j),
+                        chapter_id="meta_canon",
+                        book_dir="meta",
+                        section_num=None,
+                        panel_type="canon_tradition",
+                        claim_type="historical",
+                        claim_text=f"[{label} — {year_str} — {ev_label}] {detail}",
+                        source_attribution=None,
+                        verse_ref=None,
+                        verification_tier=2,
+                    ))
 
         return claims

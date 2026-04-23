@@ -584,6 +584,8 @@ class Tier0Verifier:
                 "book_intro", "prophecy_chain", "concept", "topic",
                 "word_study", "timeline", "synoptic", "place",
                 "map_story", "cross_ref_thread", "cross_ref_pair", "people",
+                # HWGTB bundle (#1538 / #1539 / #1556)
+                "extrabiblical_entry", "canon_tradition",
             }
             is_meta = claim.panel_type in META_PANEL_TYPES
 
