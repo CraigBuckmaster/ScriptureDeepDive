@@ -233,6 +233,44 @@
         },
         "hist": {
           "context": "The catalogue begins with pre-flood figures. Abel's faith is evidenced in offering; Enoch's in walking with God; Noah's in building. Each acted on divine revelation they could not verify empirically. The variety demonstrates that faith expresses itself differently depending on vocation and circumstance."
+        },
+        "st2": {
+          "header": "Enoch Taken: From Genesis 5:24 to Sirach 44:16",
+          "body": "Hebrews 11:5 mentions Enoch in the faith-catalogue: 'By faith Enoch was taken up so that he should not see death, and he was not found, because God had taken him. Now before he was taken he was commended as having pleased God.' The phrasing is drawn directly from Genesis 5:24 ('Enoch walked with God, and he was not, for God took him') in its Septuagint form ('Enoch pleased God and was not found'). But the specific detail Hebrews emphasizes — Enoch 'was commended as having pleased God' — matches the Sirach 44:16 expansion of Genesis: 'Enoch pleased the Lord and was translated; being an example of repentance to the generations.' Both the LXX Genesis wording and the Sirach gloss stand behind the Hebrews verse.\n\nThis matters because Sirach 44-50 — the Praise of the Ancestors (Laus Patrum) — is the first extant literary encomium of Israel's heroes, and Hebrews 11 is its clearest NT descendant. Sirach 44:1 ('Let us now praise famous men, and our fathers in their generations') inaugurates the sustained catalogue-genre; Hebrews 11 picks it up, expanding the specifically covenantal-faith frame and adding NT-era figures the Laus Patrum could not have included. The literary kinship is close enough that most Hebrews commentators (Cockerill, Lane, Attridge, Ellingworth) treat Sirach 44-50 as at least a probable source for the Hebrews 11 structure.\n\nBut Hebrews' framing of Enoch is not just literary-historical. The broader Second Temple tradition had developed Enoch enormously — into a patriarch-seer who ascended alive, saw the heavens, delivered apocalyptic revelations, and functioned as an eschatological witness. The Enochic corpus (1 Enoch, 2 Enoch) treats him this way throughout. Hebrews, by contrast, picks out only the single verse from Genesis: Enoch walked with God; he was taken. The Hebrews author is not rejecting the Enochic tradition — Hebrews elsewhere shows clear familiarity with Second Temple Jewish thought — but subsuming it into a covenantal-faith category. Enoch is a witness of faith, not a source of esoteric cosmological revelation.\n\nThe Sirach parallel reinforces this: Sirach's Enoch is 'an example of repentance to the generations' — a moral exemplar, not a mystical revealer. Hebrews shares this framing. The apocalyptic Enoch of 1 Enoch recedes; the covenantal Enoch of Genesis and Sirach steps forward.\n\nThe canonical implications are modest but real. Sirach is not quoted directly; its influence on Hebrews 11 is structural and atmospheric. Sirach's canonicity in the Catholic, Orthodox, and Ethiopian traditions and its position as Apocrypha in the Protestant tradition does not change the fact that its Laus Patrum is the proximate literary ancestor of Hebrews 11. Reading Hebrews 11 in awareness of Sirach 44-50 deepens rather than threatens the NT text — it shows the author drawing on his own community's received wisdom tradition to structure a christological encomium.",
+          "extrabiblical_ids": [
+            "sirach",
+            "1_enoch"
+          ],
+          "citation_refs": [
+            {
+              "nt": "Hebrews 11:5",
+              "source": "Genesis 5:24 LXX + Sirach 44:16",
+              "type": "allusion"
+            },
+            {
+              "nt": "Hebrews 11:5",
+              "source": "1 Enoch (broader Enochic tradition, selectively appropriated)",
+              "type": "echo"
+            }
+          ],
+          "scholar_voices": [
+            {
+              "scholar_id": "cockerill",
+              "tradition": "Evangelical Hebrews (NICNT)",
+              "note": "Cockerill treats Sirach 44-50 as the proximate literary model for Hebrews 11's catalogue-form. The specific Enoch phrasing ('pleased God') follows LXX Genesis 5:24 + Sirach 44:16, not the Hebrew Masoretic Text."
+            },
+            {
+              "scholar_id": "lane",
+              "tradition": "Evangelical Hebrews (WBC)",
+              "note": "Lane argues Hebrews 11:5 deliberately selects the Genesis + Sirach Enoch material while bypassing the developed Enochic apocalyptic tradition. The author knows the Enochic literature but framing Enoch as a witness of faith, not a revealer of secrets."
+            },
+            {
+              "scholar_id": "nickelsburg",
+              "tradition": "Critical (1 Enoch)",
+              "note": "Nickelsburg notes that by the 1st century AD, 'Enoch' was a rich and contested figure — both the covenantal-patriarchal Enoch of Genesis/Sirach and the apocalyptic-seer Enoch of 1 Enoch. Hebrews chooses the first framing deliberately."
+            }
+          ],
+          "takeaway": "Hebrews 11:5 follows the LXX Genesis 5:24 + Sirach 44:16 portrait of Enoch (moral exemplar, covenantal-faith patriarch) rather than the apocalyptic-seer Enoch of 1 Enoch. The broader Sirach 44-50 Laus Patrum is the literary ancestor of Hebrews 11 as a genre. NT use of extra-biblical structure is substantive without implying the source's canonicity."
         }
       }
     },
