@@ -179,6 +179,52 @@ export interface SecondTemplePanelPayload {
   takeaway?: string;
 }
 
+// ── Extra-biblical literature (HWGTB #1538 / #1541) ──────────────────
+
+export type ExtrabiblicalCategory =
+  | 'apocrypha'
+  | 'pseudepigrapha'
+  | 'dss'
+  | 'deuterocanon';
+
+export interface ExtrabiblicalTraditionStatus {
+  protestant: string;
+  catholic: string;
+  eastern_orthodox: string;
+  ethiopian_tewahedo: string;
+}
+
+/** Summary row used by the index screen's FlatList. */
+export interface ExtrabiblicalSummary {
+  id: string;
+  title: string;
+  category: ExtrabiblicalCategory | null;
+  brief_summary: string;
+  also_known_as: string[];
+  tradition_status: ExtrabiblicalTraditionStatus;
+}
+
+/** Raw row as stored in SQLite (serialized JSON columns). */
+export interface ExtrabiblicalRow {
+  id: string;
+  title: string;
+  also_known_as_json: string | null;
+  category: ExtrabiblicalCategory | null;
+  estimated_date: string | null;
+  original_language: string | null;
+  tradition_status_json: string;
+  brief_summary: string;
+  full_summary: string | null;
+  nt_citations_json: string | null;
+  ot_allusions_json: string | null;
+  scholar_voices_json: string | null;
+  related_debate_ids_json: string | null;
+  related_journey_ids_json: string | null;
+  related_difficult_passage_ids_json: string | null;
+  tags_json: string | null;
+  further_reading_json: string | null;
+}
+
 export interface HebTextEntry {
   word: string;
   tlit: string;
