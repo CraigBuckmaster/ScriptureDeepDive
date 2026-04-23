@@ -10,7 +10,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useTheme, spacing, fontFamily } from '../../theme';
 import { isScholarPanel } from '../../utils/panelLabels';
 import { logger } from '../../utils/logger';
-import type { ParsedRef } from '../../types';
+import type { ParsedRef, SecondTemplePanelPayload } from '../../types';
 // Section-level panels
 import { HebrewPanel } from './HebrewPanel';
 import { ContextPanel } from './ContextPanel';
@@ -33,6 +33,7 @@ import { ThreadingPanel } from './ThreadingPanel';
 import { TextualPanel, CompositeTextualPanel } from './TextualPanel';
 import { DebatePanel } from './DebatePanel';
 import { DiscoursePanel } from './DiscoursePanel';
+import { SecondTemplePanel } from './SecondTemplePanel';
 
 interface Props {
   panelType: string;
@@ -43,6 +44,8 @@ interface Props {
   onPersonPress?: (name: string) => void;
   onPlacePress?: (name: string) => void;
   onEventPress?: (name: string) => void;
+  /** Chip tap on st2 panels — deep-link to ExtraBiblicalDetail (HWGTB #1548). */
+  onExtraBiblicalPress?: (extrabiblicalId: string) => void;
   /** Override the initial tab for composite panels (deep-link). */
   defaultTab?: string;
 }
@@ -51,6 +54,7 @@ export function PanelRenderer({
   panelType, contentJson,
   onRefPress, onWordStudyPress, onScholarPress,
   onPersonPress, onPlacePress, onEventPress,
+  onExtraBiblicalPress,
   defaultTab,
 }: Props) {
   const { base } = useTheme();
@@ -148,6 +152,21 @@ export function PanelRenderer({
       return <DebatePanel entries={Array.isArray(data) ? data : []} onScholarPress={onScholarPress} />;
     case 'discourse':
       return <DiscoursePanel data={data} />;
+    case 'st2':
+      // Second Temple Context (HWGTB #1540 / #1543). Defensive: bail out if
+      // the payload doesn't have the required fields, matching the pattern
+      // used by the composite panels above.
+      if (data && typeof data === 'object' && !Array.isArray(data) && typeof data.header === 'string' && typeof data.body === 'string') {
+        return (
+          <SecondTemplePanel
+            data={data as SecondTemplePanelPayload}
+            onRefPress={onRefPress}
+            onScholarPress={onScholarPress}
+            onExtraBiblicalPress={onExtraBiblicalPress}
+          />
+        );
+      }
+      return null;
 
     default:
       // Scholar commentary panels (mac, calvin, sarna, etc.)

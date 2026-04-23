@@ -151,6 +151,34 @@ export interface DebateEntry {
   positions: { scholar: string; position: string }[];
 }
 
+/**
+ * Second Temple Context (st2) panel payload.
+ * Matches the pipeline schema from HWGTB-P1-03 (#1540) and the authored
+ * content in HWGTB-P1-06 (#1543).
+ */
+export type St2CitationType = 'direct_quotation' | 'allusion' | 'echo';
+
+export interface St2CitationRef {
+  nt: string;
+  source?: string;
+  type?: St2CitationType;
+}
+
+export interface St2ScholarVoice {
+  scholar_id: string;
+  tradition?: string;
+  note: string;
+}
+
+export interface SecondTemplePanelPayload {
+  header: string;
+  body: string;
+  extrabiblical_ids: string[];
+  citation_refs: St2CitationRef[];
+  scholar_voices?: St2ScholarVoice[];
+  takeaway?: string;
+}
+
 export interface HebTextEntry {
   word: string;
   tlit: string;
