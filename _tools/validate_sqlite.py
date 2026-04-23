@@ -492,6 +492,47 @@ def main():
               f"{len(bad_resp)} passages with empty responses")
     print(f"  difficult_passages: {dp_count or 0}")
 
+    # Canon traditions (#1539 / #1542)
+    if _has_table(cur, 'canon_traditions'):
+        ct_count = q1(cur, "SELECT COUNT(*) FROM canon_traditions") or 0
+        if ct_count:
+            import json as _json
+            bad_counts = []
+            unresolved = []
+            all_book_ids = {row[0] for row in q(cur, "SELECT id FROM books")}
+            extrabib_ids = set()
+            if _has_table(cur, 'extrabiblical'):
+                extrabib_ids = {row[0] for row in q(cur, "SELECT id FROM extrabiblical")}
+            for row in q(cur,
+                "SELECT id, book_count, canon_list_json FROM canon_traditions"):
+                cid, bc, cl_json = row
+                try:
+                    sections = _json.loads(cl_json) if cl_json else []
+                    total = sum(
+                        len(s.get('books', [])) for s in sections
+                        if isinstance(s, dict)
+                    )
+                    if total != bc:
+                        bad_counts.append(f"{cid}: declared={bc} listed={total}")
+                    for s in sections:
+                        if not isinstance(s, dict):
+                            continue
+                        for bid in s.get('books', []):
+                            if bid not in all_book_ids and bid not in extrabib_ids:
+                                unresolved.append(f"{cid}:{bid}")
+                except Exception as err:
+                    bad_counts.append(f"{cid}: JSON parse error — {err}")
+            check("canon_traditions book_count matches canon_list_json",
+                  len(bad_counts) == 0, f"{bad_counts[:3]}")
+            # Unresolved ids are logged informationally per #1542 — the
+            # extrabiblical table fills in incrementally across the epic.
+            if unresolved:
+                print(f"  canon_traditions: {len(unresolved)} unresolved book "
+                      f"ref(s) (expected while extrabiblical is partial): "
+                      f"{unresolved[:5]}"
+                      + ("…" if len(unresolved) > 5 else ""))
+        print(f"  canon_traditions: {ct_count}")
+
     # Content Library
     cl_count = q1(cur, "SELECT COUNT(*) FROM content_library")
     check("content_library table exists", cl_count is not None, "table missing")
