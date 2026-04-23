@@ -122,7 +122,9 @@ function UserProfileScreen() {
   if (!user) {
     return (
       <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-        <ScreenHeader title="Profile" onBack={() => navigation.goBack()} style={styles.headerSpacing} />
+        <View style={[styles.stickyHeader, { backgroundColor: base.bg }]}>
+          <ScreenHeader title="Profile" onBack={() => navigation.goBack()} />
+        </View>
         <View style={styles.emptyState}>
           <Text style={[styles.emptyText, { color: base.textDim }]}>
             Sign in to view your profile.
@@ -142,8 +144,10 @@ function UserProfileScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
+      <View style={[styles.stickyHeader, { backgroundColor: base.bg }]}>
+        <ScreenHeader title="Profile" onBack={() => navigation.goBack()} />
+      </View>
       <ScrollView contentContainerStyle={styles.content}>
-        <ScreenHeader title="Profile" onBack={() => navigation.goBack()} style={styles.headerSpacing} />
 
         {/* Avatar */}
         <View style={styles.avatarSection}>
@@ -321,10 +325,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   content: {
-    padding: spacing.md,
+    paddingHorizontal: spacing.md,
+    paddingBottom: spacing.md,
   },
-  headerSpacing: {
-    marginBottom: spacing.lg,
+  stickyHeader: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+    paddingBottom: spacing.lg,
   },
 
   /* Avatar */

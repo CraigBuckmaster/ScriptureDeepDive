@@ -76,12 +76,13 @@ function SubscriptionScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <ScrollView contentContainerStyle={styles.scroll}>
+      <View style={[styles.stickyHeader, { backgroundColor: base.bg }]}>
         <ScreenHeader
           title=""
           onBack={() => navigation.goBack()}
-          style={styles.header}
         />
+      </View>
+      <ScrollView contentContainerStyle={styles.scroll}>
 
         {/* Hero */}
         <View style={styles.hero}>
@@ -280,10 +281,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scroll: {
-    padding: spacing.md,
+    paddingHorizontal: spacing.md,
+    paddingBottom: spacing.md,
   },
-  header: {
-    marginBottom: spacing.sm,
+  stickyHeader: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+    paddingBottom: spacing.sm,
   },
   hero: {
     alignItems: 'center',
