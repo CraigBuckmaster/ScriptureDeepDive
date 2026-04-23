@@ -50,6 +50,7 @@ const PREMIUM_SCREENS: Record<string, string> = {
   Concordance: 'Concordance Search',
   ContentLibrary: 'Content Library',
   ThreadBrowse: 'Cross-Reference Threading',
+  HowWeGotTheBibleLanding: 'How We Got The Bible',
 };
 
 const SECTIONS: FeatureSection[] = [
@@ -88,10 +89,11 @@ const SECTIONS: FeatureSection[] = [
   {
     id: 'scholarly', label: 'Scholarly Analysis', subtitle: 'Academic perspectives & debate',
     features: [
-      { title: 'Scholars',           subtitle: 'Browse all 54 by tradition',                            color: '#a0b8d0', screen: 'ScholarBrowse' }, // data-color: intentional
-      { title: 'Debates',            subtitle: '303 topics where scholars disagree',                    color: '#d08080', screen: 'DebateBrowse' }, // data-color: intentional
-      { title: 'Difficult Passages', subtitle: '53 hard texts with multi-view responses',               color: '#FFB74D', screen: 'DifficultPassagesBrowse' }, // data-color: intentional
-      { title: 'Content Library',    subtitle: 'Discourse, manuscripts & more',                          color: '#b8a0d0', screen: 'ContentLibrary', premium: true }, // data-color: intentional
+      { title: 'Scholars',             subtitle: 'Browse all 54 by tradition',                            color: '#a0b8d0', screen: 'ScholarBrowse' }, // data-color: intentional
+      { title: 'Debates',              subtitle: '303 topics where scholars disagree',                    color: '#d08080', screen: 'DebateBrowse' }, // data-color: intentional
+      { title: 'Difficult Passages',   subtitle: '53 hard texts with multi-view responses',               color: '#FFB74D', screen: 'DifficultPassagesBrowse' }, // data-color: intentional
+      { title: 'How We Got The Bible', subtitle: 'Canon, manuscripts, translations, and the books Jude quoted', color: '#c89858', screen: 'HowWeGotTheBibleLanding', premium: true }, // data-color: intentional
+      { title: 'Content Library',      subtitle: 'Discourse, manuscripts & more',                          color: '#b8a0d0', screen: 'ContentLibrary', premium: true }, // data-color: intentional
     ],
   },
   {

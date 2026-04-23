@@ -70,6 +70,14 @@ export type ExploreStackParamList = {
   ProphecyDetail: { chainId: string };
   DifficultPassagesBrowse: undefined;
   DifficultPassageDetail: { passageId: string };
+  // "How We Got The Bible" bundle (HWGTB epic #1536).
+  HowWeGotTheBibleLanding: undefined;
+  ExtraBiblicalIndex: undefined;
+  ExtraBiblicalDetail: { id: string };
+  // CanonComparison screen lands in HWGTB-P3-01 (#1550); typed ahead so
+  // the landing screen's "Coming soon" entry can switch to a real
+  // navigation call without a follow-up param-list edit.
+  CanonComparison: undefined;
   DictionaryBrowse: undefined;
   DictionaryDetail: { entryId: string };
   DebateBrowse: undefined;
