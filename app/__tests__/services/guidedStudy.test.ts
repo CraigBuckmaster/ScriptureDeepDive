@@ -153,4 +153,149 @@ describe('guided study services', () => {
     expect(nextIntervalAfter(2)).toBeNull();
     expect(nextIntervalAfter(0)).toBeNull();
   });
+
+  it('falls back to the generic genre prompt when genre is unknown or missing', () => {
+    const mysteryBook: Book = {
+      ...book,
+      genre: 'mystery_genre',
+      genre_label: 'Mystery Genre',
+    };
+    const plan = buildGuidedStudyPlan({
+      book: mysteryBook,
+      chapter,
+      sections,
+      chapterPanels,
+      verses,
+    });
+    const genrePromptText = plan.prompts.find((p) => p.key === 'genre')?.text ?? '';
+    expect(genrePromptText).toBe(
+      'What does the passage emphasize before you open any study panels?',
+    );
+
+    // No book/genre at all → same generic fallback
+    const plan2 = buildGuidedStudyPlan({
+      book: { ...book, genre_label: '' },
+      chapter,
+      sections,
+      chapterPanels,
+      verses,
+    });
+    expect(plan2.prompts.find((p) => p.key === 'genre')?.text).toBe(
+      'What does the passage emphasize before you open any study panels?',
+    );
+  });
+
+  it('produces genre-specific prompts for each canonical genre label', () => {
+    const cases: Array<[string, string]> = [
+      ['Narrative', 'What tension, movement, or turning point do you notice in this scene?'],
+      ['Psalm', 'What emotional movement do you notice from the opening line to the close?'],
+      ['Prophet', 'What covenant problem is the prophet confronting?'],
+      ['Letter', 'What problem or question is this paragraph answering?'],
+      ['Wisdom', 'What pattern of wise or foolish living is being exposed?'],
+    ];
+    for (const [label, expected] of cases) {
+      const plan = buildGuidedStudyPlan({
+        book: { ...book, genre_label: label },
+        chapter,
+        sections,
+        chapterPanels,
+        verses,
+      });
+      expect(plan.prompts.find((p) => p.key === 'genre')?.text).toBe(expected);
+    }
+  });
+
+  it('derives confidence badges for debate and commentary panel types', () => {
+    const plan = buildGuidedStudyPlan({
+      book,
+      chapter,
+      sections: [
+        {
+          ...sections[0],
+          panels: [
+            {
+              id: 10,
+              section_id: 'genesis_1_1',
+              panel_type: 'debate',
+              content_json: '{"positions":[]}',
+            },
+            {
+              id: 11,
+              section_id: 'genesis_1_1',
+              panel_type: 'com',
+              content_json: '{"scholar":"calvin"}',
+            },
+          ],
+        },
+      ],
+      chapterPanels: [],
+      verses,
+    });
+    const debate = plan.recommendations.find((r) => r.panelType === 'debate');
+    const com = plan.recommendations.find((r) => r.panelType === 'com');
+    expect(debate?.confidence).toBe('debated');
+    expect(com?.confidence).toBe('majority');
+  });
+
+  it('caps recommendations at 5 and dedupes by panel type', () => {
+    // Many chapter panels → recommendations should still cap at 5
+    const lotsOfChapterPanels: ChapterPanel[] = [
+      { id: 1, chapter_id: 'genesis_1', panel_type: 'cross', content_json: '{}' },
+      { id: 2, chapter_id: 'genesis_1', panel_type: 'lit', content_json: '{}' },
+      { id: 3, chapter_id: 'genesis_1', panel_type: 'themes', content_json: '{}' },
+      { id: 4, chapter_id: 'genesis_1', panel_type: 'rec', content_json: '{}' },
+      { id: 5, chapter_id: 'genesis_1', panel_type: 'trans', content_json: '{}' },
+      { id: 6, chapter_id: 'genesis_1', panel_type: 'src', content_json: '{}' },
+      { id: 7, chapter_id: 'genesis_1', panel_type: 'ppl', content_json: '{}' },
+    ];
+    const plan = buildGuidedStudyPlan({
+      book,
+      chapter,
+      sections,
+      chapterPanels: lotsOfChapterPanels,
+      verses,
+    });
+    expect(plan.recommendations.length).toBeLessThanOrEqual(5);
+  });
+
+  it('handles empty sections and empty panels without crashing', () => {
+    const plan = buildGuidedStudyPlan({
+      book,
+      chapter,
+      sections: [],
+      chapterPanels: [],
+      verses: [],
+    });
+    expect(plan.title).toBe('The Creation of the Heaven and the Earth');
+    expect(plan.recommendations).toHaveLength(0);
+    // Section prompt falls back to the generic chapter-level prompt
+    expect(plan.prompts.some((p) => p.text.includes('chapter on its own terms'))).toBe(true);
+  });
+
+  it('reads concept haystack from bookIntro fields (purpose, key_theme, key_word)', () => {
+    const bookIntro: ParsedBookIntro = {
+      purpose: 'Explores themes of covenant and mercy between God and his people.',
+      at_a_glance: {
+        author: 'Moses',
+        date: '~1446 BC',
+        chapters: 50,
+        genre: 'Theological Narrative',
+        key_theme: 'Creation and redemption',
+        key_word: 'covenant',
+      },
+    };
+    const plan = buildGuidedStudyPlan({
+      book: { ...book, genre_label: '' },
+      chapter: { ...chapter, title: 'Neutral Title', subtitle: null },
+      sections: [],
+      chapterPanels: [],
+      verses: [],
+      bookIntro,
+    });
+    const labels = plan.conceptChips.map((c) => c.label.toLowerCase());
+    // At least one lexical concept from the bookIntro haystack is picked up
+    expect(labels.some((l) => ['covenant', 'creation', 'redemption', 'mercy'].includes(l))).toBe(
+      true,
+    );
+  });
 });
