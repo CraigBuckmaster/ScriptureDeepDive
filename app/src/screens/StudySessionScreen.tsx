@@ -310,7 +310,7 @@ function StudySessionScreen() {
               ]}
             >
               <Text style={[styles.questionLabel, { color: base.gold }]}>Better question</Text>
-              <Text style={[styles.questionText, { color: base.text }]}>
+              <Text style={[styles.questionText, { color: base.text }]}> 
                 {plan.betterQuestionPrompt}
               </Text>
             </View>
