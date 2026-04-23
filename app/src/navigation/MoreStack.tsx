@@ -14,7 +14,9 @@ const AllNotesScreen = lazySuspense(() => import('../screens/AllNotesScreen'));
 const CollectionDetailScreen = lazySuspense(() => import('../screens/CollectionDetailScreen'));
 const PlanListScreen = lazySuspense(() => import('../screens/PlanListScreen'));
 const PlanDetailScreen = lazySuspense(() => import('../screens/PlanDetailScreen'));
+const MyStudyScreen = lazySuspense(() => import('../screens/MyStudyScreen'));
 const ChapterScreen = lazySuspense(() => import('../screens/ChapterScreen'));
+const StudySessionScreen = lazySuspense(() => import('../screens/StudySessionScreen'));
 const BookIntroScreen = lazySuspense(() => import('../screens/BookIntroScreen'));
 const SubscriptionScreen = lazySuspense(() => import('../screens/SubscriptionScreen'));
 const LoginScreen = lazySuspense(() => import('../screens/LoginScreen'));
@@ -25,8 +27,8 @@ const NotificationPrefsScreen = lazySuspense(() => import('../screens/Notificati
 const NotificationFeedScreen = lazySuspense(() => import('../screens/NotificationFeedScreen'));
 const AmicusSmokeScreen = lazySuspense(() => import('../screens/dev/AmicusSmokeScreen'));
 const SentrySmokeScreen = lazySuspense(() => import('../screens/dev/SentrySmokeScreen'));
-const AmicusProfileInspectorScreen = lazySuspense(() =>
-  import('../screens/AmicusProfileInspectorScreen'),
+const AmicusProfileInspectorScreen = lazySuspense(
+  () => import('../screens/AmicusProfileInspectorScreen'),
 );
 
 const Stack = createStackNavigator<MoreStackParamList>();
@@ -35,7 +37,9 @@ export function MoreStack() {
   const { base } = useTheme();
 
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: base.bg } }}>
+    <Stack.Navigator
+      screenOptions={{ headerShown: false, cardStyle: { backgroundColor: base.bg } }}
+    >
       <Stack.Screen name="MoreMenu" component={MoreMenuScreen} />
       <Stack.Screen name="Settings" component={SettingsScreen} />
       <Stack.Screen name="Bookmarks" component={BookmarkListScreen} />
@@ -44,7 +48,9 @@ export function MoreStack() {
       <Stack.Screen name="CollectionDetail" component={CollectionDetailScreen} />
       <Stack.Screen name="PlanList" component={PlanListScreen} />
       <Stack.Screen name="PlanDetail" component={PlanDetailScreen} />
+      <Stack.Screen name="MyStudy" component={MyStudyScreen} />
       <Stack.Screen name="Chapter" component={ChapterScreen} />
+      <Stack.Screen name="StudySession" component={StudySessionScreen} />
       <Stack.Screen name="BookIntro" component={BookIntroScreen} />
       <Stack.Screen name="Subscription" component={SubscriptionScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />

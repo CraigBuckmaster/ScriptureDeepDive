@@ -92,6 +92,19 @@ CREATE TABLE book_intros (
   at_a_glance TEXT
 );
 
+CREATE TABLE proof_text_guards (
+  ref TEXT PRIMARY KEY,
+  book_id TEXT NOT NULL REFERENCES books(id),
+  chapter_num INTEGER NOT NULL,
+  verse_num INTEGER NOT NULL,
+  common_misreading TEXT NOT NULL,
+  actual_context_summary TEXT NOT NULL,
+  suggested_book_id TEXT NOT NULL,
+  suggested_chapter_num INTEGER NOT NULL
+);
+CREATE INDEX idx_proof_text_guards_lookup
+  ON proof_text_guards(book_id, chapter_num, verse_num);
+
 CREATE TABLE people (
   id TEXT PRIMARY KEY,
   name TEXT NOT NULL,

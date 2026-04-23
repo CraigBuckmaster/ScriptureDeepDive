@@ -8,6 +8,7 @@
 import type { NavigatorScreenParams } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import type { RouteProp } from '@react-navigation/native';
+import type { GuidedStudyStep } from '../types';
 
 // ── Stack Param Lists ─────────────────────────────────────────────
 
@@ -18,11 +19,26 @@ export interface OpenPanelParam {
   tabKey?: string;
 }
 
+export interface StudySessionParam {
+  bookId: string;
+  chapterNum: number;
+  initialStep?: GuidedStudyStep;
+  verseNum?: number;
+}
+
 export type ReadStackParamList = {
   BookList: undefined;
   ChapterList: { bookId: string };
   BookIntro: { bookId: string };
-  Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam; planId?: string; planDayNum?: number; verseNum?: number };
+  Chapter: {
+    bookId: string;
+    chapterNum: number;
+    openPanel?: OpenPanelParam;
+    planId?: string;
+    planDayNum?: number;
+    verseNum?: number;
+  };
+  StudySession: StudySessionParam;
   ParallelPassage: { entryId: string };
   ParallelDetail: { entryId: string };
   HarmonyBrowse: undefined;
@@ -35,7 +51,15 @@ export type ReadStackParamList = {
 
 export type HomeStackParamList = {
   HomeMain: undefined;
-  Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam; planId?: string; planDayNum?: number; verseNum?: number };
+  Chapter: {
+    bookId: string;
+    chapterNum: number;
+    openPanel?: OpenPanelParam;
+    planId?: string;
+    planDayNum?: number;
+    verseNum?: number;
+  };
+  StudySession: StudySessionParam;
   ChapterList: { bookId: string };
   BookList: undefined;
   BookIntro: { bookId: string };
@@ -93,13 +117,23 @@ export type ExploreStackParamList = {
   RedemptiveArc: undefined;
   JourneyBrowse: { tab?: 'lenses' | 'people' | 'featured'; filterLens?: string } | undefined;
   JourneyDetail: { journeyId: string };
-  Concordance: {
-    strongs?: string;
-    original?: string;
-    transliteration?: string;
-    gloss?: string;
-  } | undefined;
-  Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam; planId?: string; planDayNum?: number; verseNum?: number };
+  Concordance:
+    | {
+        strongs?: string;
+        original?: string;
+        transliteration?: string;
+        gloss?: string;
+      }
+    | undefined;
+  Chapter: {
+    bookId: string;
+    chapterNum: number;
+    openPanel?: OpenPanelParam;
+    planId?: string;
+    planDayNum?: number;
+    verseNum?: number;
+  };
+  StudySession: StudySessionParam;
 };
 
 export type MoreStackParamList = {
@@ -111,7 +145,16 @@ export type MoreStackParamList = {
   CollectionDetail: { collectionId: number };
   PlanList: undefined;
   PlanDetail: { planId: string };
-  Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam; planId?: string; planDayNum?: number };
+  MyStudy: undefined;
+  StudySession: StudySessionParam;
+  Chapter: {
+    bookId: string;
+    chapterNum: number;
+    openPanel?: OpenPanelParam;
+    planId?: string;
+    planDayNum?: number;
+    verseNum?: number;
+  };
   BookIntro: { bookId: string };
   Subscription: undefined;
   Login: undefined;
@@ -165,9 +208,9 @@ export type ScreenNavProp<
   T extends keyof StackMap[S],
 > = StackNavigationProp<StackMap[S], T>;
 
-export type ScreenRouteProp<
-  S extends keyof StackMap,
-  T extends keyof StackMap[S],
-> = RouteProp<StackMap[S], T>;
+export type ScreenRouteProp<S extends keyof StackMap, T extends keyof StackMap[S]> = RouteProp<
+  StackMap[S],
+  T
+>;
 
 // TODO: Add CrossTabNavProp once @react-navigation type constraints are resolved

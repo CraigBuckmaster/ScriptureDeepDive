@@ -35,14 +35,7 @@
  */
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import {
-  ActivityIndicator,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-
+import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { ContentUpdater } from '../services/ContentUpdater';
 import { fontFamily, spacing, useTheme } from '../theme';
 
@@ -162,8 +155,7 @@ export function DbDownloadScreen({ onComplete }: Props) {
       // 100 we're handing off to onComplete and the bar hitting full
       // immediately after a long indeterminate stretch is jarring.
       const sinceLastUpdate = lastUpdate == null ? Infinity : now - lastUpdate;
-      const isLive =
-        sinceLastUpdate < STALL_DETECTION_MS && progress > 0 && progress < 100;
+      const isLive = sinceLastUpdate < STALL_DETECTION_MS && progress > 0 && progress < 100;
       setProgressIsLive(isLive);
     }, TICK_INTERVAL_MS);
 
@@ -177,9 +169,7 @@ export function DbDownloadScreen({ onComplete }: Props) {
     <View style={[styles.container, { backgroundColor: base.bg }]}>
       <View style={styles.content}>
         <Text style={[styles.title, { color: base.gold }]}>Companion Study</Text>
-        <Text style={[styles.subtitle, { color: base.textDim }]}>
-          Setting up your library…
-        </Text>
+        <Text style={[styles.subtitle, { color: base.textDim }]}>Setting up your library…</Text>
 
         {status === 'downloading' && progressIsLive && (
           <>
@@ -199,8 +189,7 @@ export function DbDownloadScreen({ onComplete }: Props) {
               />
             </View>
             <Text style={[styles.progressText, { color: base.text }]}>
-              {clampedPct.toFixed(0)}%
-              {sizeText ? ` • ${sizeText}` : ''}
+              {clampedPct.toFixed(0)}%{sizeText ? ` • ${sizeText}` : ''}
             </Text>
           </>
         )}
@@ -211,11 +200,7 @@ export function DbDownloadScreen({ onComplete }: Props) {
             accessibilityRole="progressbar"
             accessibilityLabel="Downloading scripture content"
           >
-            <ActivityIndicator
-              color={base.gold}
-              size="large"
-              style={styles.spinnerLarge}
-            />
+            <ActivityIndicator color={base.gold} size="large" style={styles.spinnerLarge} />
             <Text style={[styles.indetTitle, { color: base.text }]}>
               Downloading scripture content
             </Text>

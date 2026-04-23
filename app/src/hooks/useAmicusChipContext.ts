@@ -26,9 +26,9 @@
 
 import { useMemo } from 'react';
 import { useNavigationState } from '@react-navigation/native';
-import type { ChipContext } from './useAmicusChips';
 import { findDeepestRoute, routeToChipContext } from '../utils/routeContext';
 import { logger } from '../utils/logger';
+import type { ChipContext } from './useAmicusChips';
 
 export function useAmicusChipContext(): ChipContext {
   let state: unknown = undefined;
@@ -41,8 +41,5 @@ export function useAmicusChipContext(): ChipContext {
     // until the next render once nav state is populated.
     logger.warn('AmicusChipContext', 'navigation state not yet available', e);
   }
-  return useMemo(
-    () => routeToChipContext(findDeepestRoute(state)),
-    [state],
-  );
+  return useMemo(() => routeToChipContext(findDeepestRoute(state)), [state]);
 }

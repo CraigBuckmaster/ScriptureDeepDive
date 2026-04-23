@@ -5,7 +5,9 @@
 const mockExecAsync = jest.fn().mockResolvedValue(undefined);
 const mockGetAllAsync = jest.fn().mockResolvedValue([]);
 const mockRunAsync = jest.fn().mockResolvedValue({ changes: 0 });
-const mockWithTransactionAsync = jest.fn().mockImplementation(async (cb: () => Promise<void>) => cb());
+const mockWithTransactionAsync = jest
+  .fn()
+  .mockImplementation(async (cb: () => Promise<void>) => cb());
 const mockOpenDatabaseAsync = jest.fn();
 
 jest.mock('expo-sqlite', () => ({
@@ -78,7 +80,7 @@ describe('userDatabase', () => {
       jest.resetModules();
       // Simulate all migrations already applied
       mockGetAllAsync.mockResolvedValueOnce(
-        Array.from({ length: 18 }, (_, i) => ({ version: i + 1 })),
+        Array.from({ length: 19 }, (_, i) => ({ version: i + 1 })),
       );
       userDatabaseModule = require('@/db/userDatabase');
       await userDatabaseModule.initUserDatabase();
@@ -93,8 +95,8 @@ describe('userDatabase', () => {
       mockGetAllAsync.mockResolvedValueOnce([{ version: 1 }]);
       userDatabaseModule = require('@/db/userDatabase');
       await userDatabaseModule.initUserDatabase();
-      // Should run 17 remaining migrations (2 through 18)
-      expect(mockWithTransactionAsync).toHaveBeenCalledTimes(17);
+      // Should run 18 remaining migrations (2 through 19)
+      expect(mockWithTransactionAsync).toHaveBeenCalledTimes(18);
     });
 
     it('throws on migration failure', async () => {

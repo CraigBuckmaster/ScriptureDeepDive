@@ -9,7 +9,18 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import { Bookmark, Clock, Calendar, Settings, ArrowRight, StickyNote, LogIn, LogOut, User } from 'lucide-react-native';
+import {
+  Bookmark,
+  Clock,
+  Calendar,
+  Settings,
+  ArrowRight,
+  StickyNote,
+  LogIn,
+  LogOut,
+  User,
+  BookOpen,
+} from 'lucide-react-native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useTheme, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 import { useAuthStore } from '../stores';
@@ -23,11 +34,12 @@ interface MenuItem {
 }
 
 const MENU_ITEMS: MenuItem[] = [
-  { icon: StickyNote, label: 'All Notes',         screen: 'AllNotes' },
-  { icon: Bookmark,   label: 'Bookmarks',         screen: 'Bookmarks' },
-  { icon: Clock,      label: 'Reading History',    screen: 'ReadingHistory' },
-  { icon: Calendar,   label: 'Reading Plans',      screen: 'PlanList' },
-  { icon: Settings,   label: 'Settings',           screen: 'Settings' },
+  { icon: BookOpen, label: 'My Study', screen: 'MyStudy' },
+  { icon: StickyNote, label: 'All Notes', screen: 'AllNotes' },
+  { icon: Bookmark, label: 'Bookmarks', screen: 'Bookmarks' },
+  { icon: Clock, label: 'Reading History', screen: 'ReadingHistory' },
+  { icon: Calendar, label: 'Reading Plans', screen: 'PlanList' },
+  { icon: Settings, label: 'Settings', screen: 'Settings' },
 ];
 
 function MoreMenuScreen() {
@@ -38,10 +50,14 @@ function MoreMenuScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <Text style={[styles.title, { color: base.gold }]} accessibilityRole="header">More</Text>
+      <Text style={[styles.title, { color: base.gold }]} accessibilityRole="header">
+        More
+      </Text>
 
       {/* Auth section */}
-      <View style={[styles.authCard, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
+      <View
+        style={[styles.authCard, { backgroundColor: base.bgElevated, borderColor: base.border }]}
+      >
         {user ? (
           <View style={styles.authRow}>
             <User size={20} color={base.gold} />
@@ -49,7 +65,11 @@ function MoreMenuScreen() {
               <Text style={[styles.authLabel, { color: base.text }]}>{user.email}</Text>
               <Text style={[styles.authSubtitle, { color: base.textMuted }]}>Signed in</Text>
             </View>
-            <TouchableOpacity onPress={signOut} accessibilityLabel="Sign out" accessibilityRole="button">
+            <TouchableOpacity
+              onPress={signOut}
+              accessibilityLabel="Sign out"
+              accessibilityRole="button"
+            >
               <LogOut size={18} color={base.textMuted} />
             </TouchableOpacity>
           </View>
@@ -64,7 +84,9 @@ function MoreMenuScreen() {
             <LogIn size={20} color={base.gold} />
             <View style={styles.authInfo}>
               <Text style={[styles.authLabel, { color: base.text }]}>Sign In</Text>
-              <Text style={[styles.authSubtitle, { color: base.textMuted }]}>Unlock premium features and sync</Text>
+              <Text style={[styles.authSubtitle, { color: base.textMuted }]}>
+                Unlock premium features and sync
+              </Text>
             </View>
             <ArrowRight size={14} color={base.textMuted} />
           </TouchableOpacity>
@@ -73,7 +95,9 @@ function MoreMenuScreen() {
 
       <DetailSectionTitle title="MY STUDY" transform="uppercase" style={styles.menuSectionLabel} />
 
-      <View style={[styles.menuList, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
+      <View
+        style={[styles.menuList, { backgroundColor: base.bgElevated, borderColor: base.border }]}
+      >
         {MENU_ITEMS.map((item, idx) => (
           <TouchableOpacity
             key={item.screen}
@@ -82,7 +106,10 @@ function MoreMenuScreen() {
             activeOpacity={0.6}
             style={[
               styles.menuRow,
-              idx < MENU_ITEMS.length - 1 && [styles.menuRowBorder, { borderBottomColor: base.border + '40' }],
+              idx < MENU_ITEMS.length - 1 && [
+                styles.menuRowBorder,
+                { borderBottomColor: base.border + '40' },
+              ],
             ]}
           >
             <item.icon size={20} color={base.textDim} />

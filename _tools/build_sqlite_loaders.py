@@ -15,6 +15,7 @@ VERSES_DIR = ROOT / 'content' / 'verses'
 AUDIT_DIR = ROOT / '_tools' / 'audit'
 REFERENCE_MATRIX_PATH = AUDIT_DIR / 'reference_matrix.json'
 TRANSLATIONS_DIR = ROOT / 'app' / 'assets' / 'translations'
+PROOF_TEXT_GUARDS_PATH = META / 'proof-text-guards.json'
 
 # Translations config — must match build_sqlite.py
 AVAILABLE_TRANSLATIONS = {'kjv', 'asv'}
@@ -466,6 +467,33 @@ def populate_book_intros(cur):
              intro.get('christ_in'),
              _json_str(intro['outline']) if 'outline' in intro else None,
              _json_str(intro['at_a_glance']) if 'at_a_glance' in intro else None)
+        )
+        count += 1
+    return count
+
+
+def populate_proof_text_guards(cur):
+    if not PROOF_TEXT_GUARDS_PATH.exists():
+        return 0
+    guards = _load_json(PROOF_TEXT_GUARDS_PATH)
+    count = 0
+    for guard in guards:
+        suggested = guard.get('suggested_chapter', {})
+        cur.execute(
+            'INSERT OR REPLACE INTO proof_text_guards '
+            '(ref, book_id, chapter_num, verse_num, common_misreading, '
+            'actual_context_summary, suggested_book_id, suggested_chapter_num) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+            (
+                guard['ref'],
+                guard['book_id'],
+                guard['chapter_num'],
+                guard['verse_num'],
+                guard['common_misreading'],
+                guard['actual_context_summary'],
+                suggested.get('book_id', guard['book_id']),
+                suggested.get('chapter_num', guard['chapter_num']),
+            ),
         )
         count += 1
     return count

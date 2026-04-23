@@ -4,7 +4,7 @@
  * Follows the same pattern as tree/EraFilterBar but uses church history eras
  * (patristic, medieval, reformation, modern).
  */
-import React, { useRef, useCallback } from 'react';
+import React, { useRef, useCallback, useEffect } from 'react';
 import {
   ScrollView,
   Text,
@@ -30,6 +30,14 @@ export const EraTimeline = React.memo(function EraTimeline({ activeEra, onSelect
   const { base } = useTheme();
   const scrollRef = useRef<ScrollView>(null);
   const chipLayouts = useRef<Record<string, { x: number; width: number }>>({});
+  const frameRef = useRef<number | null>(null);
+
+  useEffect(
+    () => () => {
+      if (frameRef.current != null) cancelAnimationFrame(frameRef.current);
+    },
+    [],
+  );
 
   const handleChipLayout = useCallback(
     (era: string) => (e: LayoutChangeEvent) => {
@@ -45,7 +53,9 @@ export const EraTimeline = React.memo(function EraTimeline({ activeEra, onSelect
     (era: string) => {
       lightImpact();
       onSelect(era);
-      requestAnimationFrame(() => {
+      if (frameRef.current != null) cancelAnimationFrame(frameRef.current);
+      frameRef.current = requestAnimationFrame(() => {
+        frameRef.current = null;
         const layout = chipLayouts.current[era];
         if (layout && scrollRef.current) {
           scrollRef.current.scrollTo({
@@ -88,13 +98,8 @@ export const EraTimeline = React.memo(function EraTimeline({ activeEra, onSelect
               },
             ]}
           >
-            {era !== 'all' && (
-              <View style={[styles.dot, { backgroundColor: color }]} />
-            )}
-            <Text
-              style={[styles.label, { color: isActive ? color : base.gold }]}
-              numberOfLines={1}
-            >
+            {era !== 'all' && <View style={[styles.dot, { backgroundColor: color }]} />}
+            <Text style={[styles.label, { color: isActive ? color : base.gold }]} numberOfLines={1}>
               {label}
             </Text>
           </TouchableOpacity>
