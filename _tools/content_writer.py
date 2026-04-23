@@ -423,6 +423,12 @@ def _normalise_section_panel(key, value):
     if key in ('poi', 'tl'):
         return value
 
+    # Second Temple Context (st2) — already structured by the generator
+    # (HWGTB #1540). Expected payload: {header, body, extrabiblical_ids,
+    # citation_refs, scholar_voices?, takeaway?}.
+    if key == 'st2' and isinstance(value, dict):
+        return value
+
     # Scholar commentary panels (mac, calvin, net, sarna, oswalt, etc.)
     if isinstance(value, list) and value:
         first = value[0]
@@ -588,6 +594,8 @@ def validate_chapter_json(json_path):
 
     known_section_types = {
         'heb', 'ctx', 'hist', 'cross', 'poi', 'tl', 'places',
+        # st2 — Second Temple Context panel (HWGTB #1540)
+        'st2',
     }
     # Add all scholar keys from COMMENTATOR_SCOPE
     try:

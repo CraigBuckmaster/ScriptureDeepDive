@@ -728,6 +728,28 @@ def main():
         "SELECT COUNT(*) FROM chapter_panels WHERE json_valid(content_json) = 0")
     check("All chapter_panel JSON valid", invalid_cp == 0, f"{invalid_cp} invalid")
 
+    # st2 panels (HWGTB #1540): extrabiblical_ids[] entries resolve to
+    # extrabiblical.id. Defensive: only runs if the extrabiblical table
+    # exists (merged via #1538) and there are st2 panels to check.
+    if _has_table(cur, 'extrabiblical'):
+        import json as _json
+        eb_ids = {row[0] for row in q(cur, "SELECT id FROM extrabiblical")}
+        st2_rows = q(cur,
+            "SELECT section_id, content_json FROM section_panels "
+            "WHERE panel_type = 'st2'")
+        bad_refs = []
+        for sid, cj in st2_rows:
+            try:
+                payload = _json.loads(cj) if cj else {}
+                for eid in payload.get('extrabiblical_ids', []) or []:
+                    if eid not in eb_ids:
+                        bad_refs.append(f"{sid} -> {eid}")
+            except Exception as err:
+                bad_refs.append(f"{sid}: JSON parse error — {err}")
+        check("st2 panel extrabiblical_ids resolve",
+              len(bad_refs) == 0, f"{bad_refs[:5]}")
+        print(f"  st2 panels: {len(st2_rows)}")
+
     # People: father/mother references point to existing people
     bad_fathers = q(cur,
         "SELECT p.id, p.father FROM people p "
