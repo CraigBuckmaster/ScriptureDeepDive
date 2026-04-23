@@ -95,6 +95,8 @@ describe('reference integrity', () => {
       'heb', 'cross', 'hist', 'poi', 'places', 'tl', 'lit', 'themes',
       'ppl', 'trans', 'src', 'rec', 'hebtext', 'thread', 'tx', 'debate',
       'discourse', 'echoes', 'chiasm',
+      // Second Temple Context (HWGTB epic, introduced in #1588)
+      'st2',
     ]);
 
     const violations: string[] = [];
