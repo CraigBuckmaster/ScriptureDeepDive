@@ -78,6 +78,10 @@ export type ExploreStackParamList = {
   // the landing screen's "Coming soon" entry can switch to a real
   // navigation call without a follow-up param-list edit.
   CanonComparison: undefined;
+  // BookIntro is registered on ExploreStack so Explore-nested screens
+  // (CanonComparison's Protestant canon column, etc.) can deep-link into
+  // it without crossing stack boundaries. Also exists on RootStack.
+  BookIntro: { bookId: string };
   DictionaryBrowse: undefined;
   DictionaryDetail: { entryId: string };
   DebateBrowse: undefined;
