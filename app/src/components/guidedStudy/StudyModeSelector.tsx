@@ -34,9 +34,7 @@ export function StudyModeSelector({ value, onChange }: Props) {
             accessibilityState={{ selected: active }}
             accessibilityLabel={`${mode.label}, ${mode.estimate}`}
           >
-            <Text style={[styles.label, { color: active ? base.gold : base.text }]}> 
-              {mode.label}
-            </Text>
+            <Text style={[styles.label, { color: active ? base.gold : base.text }]}>{mode.label}</Text>
             <Text style={[styles.estimate, { color: base.textMuted }]}>{mode.estimate}</Text>
           </TouchableOpacity>
         );
