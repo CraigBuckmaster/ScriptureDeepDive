@@ -30,6 +30,7 @@ const DifficultPassagesBrowseScreen = lazySuspense(() => import('../screens/Diff
 const DifficultPassageDetailScreen = lazySuspense(() => import('../screens/DifficultPassageDetailScreen'));
 const HowWeGotTheBibleLandingScreen = lazySuspense(() => import('../screens/HowWeGotTheBibleLandingScreen'));
 const ExtraBiblicalIndexScreen = lazySuspense(() => import('../screens/ExtraBiblicalIndexScreen'));
+const ExtraBiblicalDetailScreen = lazySuspense(() => import('../screens/ExtraBiblicalDetailScreen'));
 const ConcordanceScreen = lazySuspense(() => import('../screens/ConcordanceScreen'));
 const ContentLibraryScreen = lazySuspense(() => import('../screens/ContentLibraryScreen'));
 const DictionaryBrowseScreen = lazySuspense(() => import('../screens/DictionaryBrowseScreen'));
@@ -90,6 +91,7 @@ export function ExploreStack() {
       <Stack.Screen name="DifficultPassageDetail" component={DifficultPassageDetailScreen} />
       <Stack.Screen name="HowWeGotTheBibleLanding" component={HowWeGotTheBibleLandingScreen} />
       <Stack.Screen name="ExtraBiblicalIndex" component={ExtraBiblicalIndexScreen} />
+      <Stack.Screen name="ExtraBiblicalDetail" component={ExtraBiblicalDetailScreen} />
       <Stack.Screen name="Concordance" component={ConcordanceScreen} />
       <Stack.Screen name="ContentLibrary" component={ContentLibraryScreen} />
       <Stack.Screen name="DictionaryBrowse" component={DictionaryBrowseScreen} />
