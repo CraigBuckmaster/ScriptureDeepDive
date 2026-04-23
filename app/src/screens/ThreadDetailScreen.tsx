@@ -106,12 +106,13 @@ export default function ThreadDetailScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <ScrollView contentContainerStyle={styles.content}>
+      <View style={[styles.stickyHeader, { backgroundColor: base.bg }]}>
         <ScreenHeader
           title="Thread"
           onBack={() => navigation.goBack()}
-          style={styles.header}
         />
+      </View>
+      <ScrollView contentContainerStyle={styles.content}>
 
         {/* Theme title */}
         <Text style={[styles.themeTitle, { color: base.text }]}>{thread.theme}</Text>
@@ -224,11 +225,13 @@ const styles = StyleSheet.create({
     padding: spacing.lg,
   },
   content: {
-    padding: spacing.md,
+    paddingHorizontal: spacing.md,
     paddingBottom: spacing.xxl,
   },
-  header: {
-    marginBottom: spacing.sm,
+  stickyHeader: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+    paddingBottom: spacing.sm,
   },
   themeTitle: {
     fontFamily: fontFamily.displaySemiBold,

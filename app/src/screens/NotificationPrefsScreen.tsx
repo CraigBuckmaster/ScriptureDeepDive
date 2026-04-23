@@ -88,12 +88,13 @@ function NotificationPrefsScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <ScrollView contentContainerStyle={styles.content}>
+      <View style={[styles.stickyHeader, { backgroundColor: base.bg }]}>
         <ScreenHeader
           title="Notification Preferences"
           onBack={() => navigation.goBack()}
-          style={styles.headerSpacing}
         />
+      </View>
+      <ScrollView contentContainerStyle={styles.content}>
 
         {/* Global toggle */}
         <SectionLabel text="GENERAL" base={base} />
@@ -198,8 +199,12 @@ function ToggleRow({
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
-  content: { padding: spacing.md },
-  headerSpacing: { marginBottom: spacing.lg },
+  content: { paddingHorizontal: spacing.md, paddingBottom: spacing.md },
+  stickyHeader: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+    paddingBottom: spacing.lg,
+  },
   sectionLabel: {
     fontFamily: fontFamily.uiMedium,
     fontSize: 11,
