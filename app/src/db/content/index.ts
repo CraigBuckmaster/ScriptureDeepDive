@@ -73,3 +73,7 @@ export {
   searchExtraBiblical, getExtraBiblicalByCategory,
   _resetExtrabiblicalTableCache,
 } from './extrabiblical';
+export {
+  getAllCanonTraditions, getCanonTraditionById,
+  _resetCanonTraditionsTableCache,
+} from './canonTraditions';
