@@ -199,6 +199,9 @@ export const families = {
   patristic: '#BA68C8',
   reformed: '#4FC3F7',
   catholic: '#E57373',
+  // Second Temple Judaism reception (HWGTB epic) — sand/parchment tone
+  // evoking ancient manuscripts; distinct from jewish (rabbinic-era) green.
+  'second-temple': '#D4A373',
 } as const;
 
 // ── Prophecy Category Colors ───────────────────────────────────────

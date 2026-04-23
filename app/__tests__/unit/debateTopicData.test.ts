@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 const VALID_CATEGORIES = ['theological', 'ethical', 'historical', 'textual', 'interpretive'];
-const VALID_FAMILIES = ['evangelical', 'critical', 'reformed', 'catholic', 'jewish', 'patristic'];
+const VALID_FAMILIES = ['evangelical', 'critical', 'reformed', 'catholic', 'jewish', 'patristic', 'second-temple'];
 
 describe('debate-topics.json integrity', () => {
   let topics: any[];
