@@ -728,3 +728,10 @@ async function runMigrations(db: SQLite.SQLiteDatabase): Promise<void> {
     }
   }
 }
+
+/**
+ * Total number of migrations defined. Exported so tests can assert
+ * migration-run counts without hardcoding a number that breaks every
+ * time a new migration is added.
+ */
+export const MIGRATION_COUNT = MIGRATIONS.length;

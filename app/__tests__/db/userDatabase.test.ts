@@ -78,11 +78,12 @@ describe('userDatabase', () => {
     it('skips already applied migrations', async () => {
       jest.doMock('react-native', () => ({ Platform: { OS: 'ios' } }));
       jest.resetModules();
+      userDatabaseModule = require('@/db/userDatabase');
+      const { MIGRATION_COUNT } = userDatabaseModule;
       // Simulate all migrations already applied
       mockGetAllAsync.mockResolvedValueOnce(
-        Array.from({ length: 19 }, (_, i) => ({ version: i + 1 })),
+        Array.from({ length: MIGRATION_COUNT }, (_, i) => ({ version: i + 1 })),
       );
-      userDatabaseModule = require('@/db/userDatabase');
       await userDatabaseModule.initUserDatabase();
       // withTransactionAsync should NOT have been called since all migrations are applied
       expect(mockWithTransactionAsync).not.toHaveBeenCalled();
@@ -91,12 +92,13 @@ describe('userDatabase', () => {
     it('runs pending migrations in order', async () => {
       jest.doMock('react-native', () => ({ Platform: { OS: 'ios' } }));
       jest.resetModules();
+      userDatabaseModule = require('@/db/userDatabase');
+      const { MIGRATION_COUNT } = userDatabaseModule;
       // Simulate only version 1 applied
       mockGetAllAsync.mockResolvedValueOnce([{ version: 1 }]);
-      userDatabaseModule = require('@/db/userDatabase');
       await userDatabaseModule.initUserDatabase();
-      // Should run 18 remaining migrations (2 through 19)
-      expect(mockWithTransactionAsync).toHaveBeenCalledTimes(18);
+      // Should run the remaining migrations (2 through MIGRATION_COUNT)
+      expect(mockWithTransactionAsync).toHaveBeenCalledTimes(MIGRATION_COUNT - 1);
     });
 
     it('throws on migration failure', async () => {
