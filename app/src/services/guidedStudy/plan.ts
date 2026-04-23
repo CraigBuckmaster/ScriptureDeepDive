@@ -249,24 +249,28 @@ function buildEvidenceTrail(
   mode: GuidedStudyMode,
   recommendations: GuidedPanelRecommendation[],
 ): GuidedEvidenceTrailItem[] {
-  return MODE_TRAIL_ORDER[mode]
-    .map((kind) => {
-      const definition = EVIDENCE_TRAIL_DEFINITIONS[kind];
-      const recommendation = recommendations.find((rec) =>
-        definition.candidatePanelTypes.includes(rec.panelType),
-      );
-      if (!recommendation) return null;
-      return {
-        key: `${kind}:${recommendation.key}`,
-        title: definition.title,
-        subtitle: definition.subtitle,
-        panelType: recommendation.panelType,
-        sectionNum: recommendation.sectionNum,
-        badge: definition.badge,
-        confidence: definition.confidence ?? recommendation.confidence,
-      } satisfies GuidedEvidenceTrailItem;
-    })
-    .filter((item): item is GuidedEvidenceTrailItem => item != null);
+  const items: GuidedEvidenceTrailItem[] = [];
+
+  for (const kind of MODE_TRAIL_ORDER[mode]) {
+    const definition = EVIDENCE_TRAIL_DEFINITIONS[kind];
+    const recommendation = recommendations.find((rec) =>
+      definition.candidatePanelTypes.includes(rec.panelType),
+    );
+    if (!recommendation) continue;
+
+    const confidence = definition.confidence ?? recommendation.confidence;
+    items.push({
+      key: `${kind}:${recommendation.key}`,
+      title: definition.title,
+      subtitle: definition.subtitle,
+      panelType: recommendation.panelType,
+      badge: definition.badge,
+      ...(recommendation.sectionNum != null ? { sectionNum: recommendation.sectionNum } : {}),
+      ...(confidence ? { confidence } : {}),
+    });
+  }
+
+  return items;
 }
 
 function buildConceptChips(input: GuidedStudyPlanInput): GuidedConceptChip[] {
