@@ -129,6 +129,10 @@ function ChapterScreen() {
     setActiveLens(lensId);
   }, [isPremium, showUpgrade]);
 
+  const handleSecondTempleUpgrade = useCallback(() => {
+    showUpgrade('feature', 'Second Temple Context');
+  }, [showUpgrade]);
+
   // Load book data for nav
   useEffect(() => {
     if (bookId) getBook(bookId).then(setBookData);
@@ -338,6 +342,7 @@ function ChapterScreen() {
             dismissedTips, onDismissTip: handleDismissTip,
           }}
           display={{ focusMode }}
+          premium={{ isPremium, onUpgradePress: handleSecondTempleUpgrade }}
         >
           <ChapterVerseList
             sections={sections}

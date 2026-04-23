@@ -34,4 +34,21 @@ describe('UpgradePrompt', () => {
     fireEvent.press(getByText('Not Now'));
     expect(defaultProps.onClose).toHaveBeenCalled();
   });
+
+  // HWGTB #1555 — copy deck for the four bundle features. Regression guard
+  // against the FEATURE_DESCRIPTIONS lookup falling back to the generic
+  // "Unlock {name} and other premium study tools." fallback.
+  describe('HWGTB feature descriptions', () => {
+    it.each([
+      ['Extra-Biblical Literature', /1 Enoch, Jubilees, the Apocrypha/],
+      ['Canon Comparison', /Protestant, Catholic, Orthodox, and Ethiopian/],
+      ['How We Got The Bible', /canon formation and textual transmission/],
+      ['Second Temple Context', /Intertestamental literature background/],
+    ])('shows the description for "%s"', (featureName, expected) => {
+      const { getByText } = renderWithProviders(
+        <UpgradePrompt {...defaultProps} featureName={featureName} />,
+      );
+      expect(getByText(expected)).toBeTruthy();
+    });
+  });
 });

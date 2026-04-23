@@ -44,4 +44,57 @@ describe('PanelContainer', () => {
     // Verify it rendered something (not null)
     expect(root?.type).toBe('View');
   });
+
+  // HWGTB #1555 — st2 panels honor premium props threaded from
+  // ChapterScreen → PanelContainer → PanelRenderer → SecondTemplePanel.
+  describe('st2 premium gating', () => {
+    const st2Json = JSON.stringify({
+      header: "Jude's Use of Second Temple Literature",
+      body: 'In these twelve verses Jude draws on two works outside the Hebrew canon.',
+      extrabiblical_ids: ['1_enoch'],
+      citation_refs: [{ nt: 'Jude 14-15', source: '1 Enoch 1:9', type: 'direct_quotation' }],
+      scholar_voices: [],
+      takeaway: 'NT citation does not equal canonicity.',
+    });
+
+    it('free tier renders the upgrade CTA teaser', () => {
+      const { getByText } = renderWithProviders(
+        <PanelContainer
+          panelType="st2"
+          contentJson={st2Json}
+          isOpen
+          isPremium={false}
+        />,
+      );
+      expect(getByText(/Unlock Second Temple Context/)).toBeTruthy();
+    });
+
+    it('free tier tap on teaser fires onUpgradePress', () => {
+      const onUpgradePress = jest.fn();
+      const { getByLabelText } = renderWithProviders(
+        <PanelContainer
+          panelType="st2"
+          contentJson={st2Json}
+          isOpen
+          isPremium={false}
+          onUpgradePress={onUpgradePress}
+        />,
+      );
+      fireEvent.press(getByLabelText('Unlock Second Temple Context'));
+      expect(onUpgradePress).toHaveBeenCalledTimes(1);
+    });
+
+    it('premium tier renders the full body (no teaser)', () => {
+      const { getByText, queryByText } = renderWithProviders(
+        <PanelContainer
+          panelType="st2"
+          contentJson={st2Json}
+          isOpen
+          isPremium
+        />,
+      );
+      expect(getByText(/In these twelve verses Jude draws/)).toBeTruthy();
+      expect(queryByText(/Unlock Second Temple Context/)).toBeNull();
+    });
+  });
 });

@@ -45,10 +45,9 @@ function HowWeGotTheBibleLandingScreen() {
     navigation.navigate('ExtraBiblicalIndex');
   }, [navigation]);
 
-  // Canon Comparison screen lands in HWGTB-P3-01 (#1550). The route is
-  // typed ahead in ExploreStackParamList so this handler stays ready;
-  // until #1550 ships it's surfaced as "Coming soon" with a no-op.
-  const canonComparisonReady = false;
+  // Canon Comparison screen ships with HWGTB-P3-01 (#1550) — route is
+  // registered in ExploreStackParamList and navigable from here.
+  const canonComparisonReady = true;
   const goCanonComparison = useCallback(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     navigation.navigate('CanonComparison' as any);

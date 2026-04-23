@@ -51,7 +51,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
   chapterMeta,
 }: Props) {
   const { base } = useTheme();
-  const { verse, panel, callbacks, layout, coaching, display } = useChapterReader();
+  const { verse, panel, callbacks, layout, coaching, display, premium } = useChapterReader();
   const relatedItems = useRelatedContent(chapterMeta, chapterPanels);
   const { chipData } = useMapChipData(chapterMeta?.map_story_link_id);
   const navigation = useNavigation();
@@ -137,6 +137,8 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
                 isOpen
                 onClose={callbacks.clearActivePanel}
                 onRefPress={callbacks.onRefPress}
+                isPremium={premium.isPremium}
+                onUpgradePress={premium.onUpgradePress}
                 defaultTab={
                   panel.openPanel?.tabKey && panel.openPanel.panelType === p.panel_type
                     ? panel.openPanel.tabKey
@@ -165,7 +167,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
 
       return elements;
     });
-  }, [sections, verse, panel, callbacks, layout, coaching, display, handlePanelLongPress]);
+  }, [sections, verse, panel, callbacks, layout, coaching, display, premium, handlePanelLongPress]);
 
   return (
     <>

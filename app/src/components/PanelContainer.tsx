@@ -28,6 +28,11 @@ interface Props {
   onPersonPress?: (name: string) => void;
   onPlacePress?: (name: string) => void;
   onEventPress?: (name: string) => void;
+  /** Chip tap on st2 panels — deep-link to ExtraBiblicalDetail (HWGTB #1548). */
+  onExtraBiblicalPress?: (extrabiblicalId: string) => void;
+  /** Premium gating for st2 panels (HWGTB #1555). */
+  isPremium?: boolean;
+  onUpgradePress?: () => void;
   /** Override the initial tab for composite panels (deep-link). */
   defaultTab?: string;
 }
@@ -36,6 +41,9 @@ export function PanelContainer({
   panelType, contentJson, isOpen, onClose,
   onRefPress, onWordStudyPress, onScholarPress,
   onPersonPress, onPlacePress, onEventPress,
+  onExtraBiblicalPress,
+  isPremium,
+  onUpgradePress,
   defaultTab,
 }: Props) {
   const { base, getPanelColors } = useTheme();
@@ -83,6 +91,9 @@ export function PanelContainer({
           onPersonPress={onPersonPress}
           onPlacePress={onPlacePress}
           onEventPress={onEventPress}
+          onExtraBiblicalPress={onExtraBiblicalPress}
+          isPremium={isPremium}
+          onUpgradePress={onUpgradePress}
           defaultTab={defaultTab}
         />
       </PanelCallbacksProvider>

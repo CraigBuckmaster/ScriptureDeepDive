@@ -65,6 +65,14 @@ interface DisplayState {
   focusMode: boolean;
 }
 
+// ── Premium state (HWGTB #1555) ──
+// Lets PanelContainer render locked teasers for st2 panels without
+// prop-drilling from ChapterScreen.
+interface PremiumState {
+  isPremium: boolean;
+  onUpgradePress: () => void;
+}
+
 export interface ChapterReaderContextValue {
   verse: VerseState;
   panel: PanelState;
@@ -72,6 +80,7 @@ export interface ChapterReaderContextValue {
   layout: LayoutCallbacks;
   coaching: CoachingState;
   display: DisplayState;
+  premium: PremiumState;
 }
 
 const ChapterReaderCtx = createContext<ChapterReaderContextValue | null>(null);
