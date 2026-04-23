@@ -52,13 +52,15 @@ function ScholarBioScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <ScrollView contentContainerStyle={styles.content}>
+      <View style={[styles.stickyHeader, { backgroundColor: base.bg }]}>
         <ScreenHeader
           title={scholar.name}
           subtitle={scholar.tradition ?? undefined}
           titleColor={color}
           onBack={() => navigation.goBack()}
         />
+      </View>
+      <ScrollView contentContainerStyle={styles.content}>
         {bio?.eyebrow && (
           <Text style={[styles.eyebrow, { color: base.textMuted }]}>{bio.eyebrow}</Text>
         )}
@@ -112,7 +114,13 @@ const styles = StyleSheet.create({
     padding: spacing.lg,
   },
   content: {
-    padding: spacing.md,
+    paddingHorizontal: spacing.md,
+    paddingBottom: spacing.md,
+  },
+  stickyHeader: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+    paddingBottom: spacing.md,
   },
   eyebrow: {
     fontFamily: fontFamily.bodyItalic,

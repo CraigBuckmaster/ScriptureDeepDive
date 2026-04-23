@@ -74,13 +74,13 @@ function ArchaeologyDetailScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
+      <DetailHeroHeader
+        title={discovery.name}
+        subtitle={discovery.location ?? undefined}
+        imageUrl={heroImage}
+        onBack={() => navigation.goBack()}
+      />
       <ScrollView style={styles.scroll} contentContainerStyle={styles.scrollContent}>
-        <DetailHeroHeader
-          title={discovery.name}
-          subtitle={discovery.location ?? undefined}
-          imageUrl={heroImage}
-          onBack={() => navigation.goBack()}
-        />
 
         <View style={styles.body}>
           {/* Metadata pill row */}
