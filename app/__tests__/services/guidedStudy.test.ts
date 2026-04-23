@@ -80,7 +80,21 @@ const sections: Array<Section & { panels: SectionPanel[] }> = [
 
 const chapterPanels: ChapterPanel[] = [
   { id: 1, chapter_id: 'genesis_1', panel_type: 'cross', content_json: '{"refs":["John 1:1"]}' },
+  { id: 2, chapter_id: 'genesis_1', panel_type: 'debate', content_json: '{"topic":"days"}' },
 ];
+
+const bookIntro: ParsedBookIntro = {
+  era: 'Primeval',
+  purpose: 'Explain beginnings and covenant hope.',
+  at_a_glance: {
+    author: 'Moses (traditional)',
+    date: '~1446–1406 BC',
+    chapters: 50,
+    genre: 'Theological Narrative',
+    key_theme: 'Creation, fall, and covenant promise',
+    key_word: 'beginning',
+  },
+};
 
 describe('guided study services', () => {
   it('calculates stable study depth estimates from verse and panel word counts', () => {
@@ -94,18 +108,6 @@ describe('guided study services', () => {
   });
 
   it('builds scene rows, observe prompts, recommendations, and concept chips', () => {
-    const bookIntro: ParsedBookIntro = {
-      era: 'Primeval',
-      purpose: 'Explain beginnings and covenant hope.',
-      at_a_glance: {
-        author: 'Moses (traditional)',
-        date: '~1446–1406 BC',
-        chapters: 50,
-        genre: 'Theological Narrative',
-        key_theme: 'Creation, fall, and covenant promise',
-        key_word: 'beginning',
-      },
-    };
     const plan = buildGuidedStudyPlan({
       book,
       chapter,
@@ -116,6 +118,7 @@ describe('guided study services', () => {
     });
 
     expect(plan.title).toBe('The Creation of the Heaven and the Earth');
+    expect(plan.mode).toBe('deep');
     expect(plan.sceneRows.map((row) => row.label)).toEqual([
       'Genre',
       'Moment',
@@ -123,8 +126,56 @@ describe('guided study services', () => {
       'Purpose',
     ]);
     expect(plan.prompts).toHaveLength(2);
-    expect(plan.recommendations.map((rec) => rec.panelType)).toEqual(['ctx', 'heb', 'cross']);
+    expect(plan.recommendations.map((rec) => rec.panelType)).toEqual([
+      'ctx',
+      'heb',
+      'cross',
+      'debate',
+    ]);
+    expect(plan.evidenceTrail.map((item) => item.title)).toEqual([
+      'Start with context',
+      'Check the language',
+      'Compare Scripture',
+      'If unclear, weigh debate',
+    ]);
     expect(plan.conceptChips.map((chip) => chip.label)).toContain('Theological Narrative');
+  });
+
+  it('adapts recommendation depth and better questions by study mode', () => {
+    const quick = buildGuidedStudyPlan({
+      book,
+      chapter,
+      sections,
+      chapterPanels,
+      verses,
+      bookIntro,
+      mode: 'quick',
+    });
+    const teaching = buildGuidedStudyPlan({
+      book,
+      chapter,
+      sections,
+      chapterPanels,
+      verses,
+      bookIntro,
+      mode: 'teaching',
+    });
+    const devotional = buildGuidedStudyPlan({
+      book,
+      chapter,
+      sections,
+      chapterPanels,
+      verses,
+      bookIntro,
+      mode: 'devotional',
+    });
+
+    expect(quick.recommendations).toHaveLength(3);
+    expect(quick.betterQuestionPrompt).toContain('one question');
+    expect(teaching.betterQuestionPrompt).toContain('teach this passage');
+    expect(devotional.betterQuestionPrompt).toBe(
+      'What does the chapter emphasize before you ask how it applies to me?',
+    );
   });
 
   it('schedules one row per populated synthesis field at the first interval', () => {
