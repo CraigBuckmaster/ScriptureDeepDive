@@ -492,6 +492,30 @@ def main():
               f"{len(bad_resp)} passages with empty responses")
     print(f"  difficult_passages: {dp_count or 0}")
 
+    # Canon traditions (#1539)
+    ct_count = q1(cur, "SELECT COUNT(*) FROM canon_traditions")
+    check("canon_traditions table exists", ct_count is not None, "table missing")
+    if ct_count:
+        import json as _json
+        # canon_list_json and book_count must match
+        bad_counts = []
+        for row in q(cur,
+            "SELECT id, book_count, canon_list_json FROM canon_traditions"):
+            cid, bc, cl_json = row
+            try:
+                sections = _json.loads(cl_json) if cl_json else []
+                total = sum(
+                    len(s.get('books', [])) for s in sections
+                    if isinstance(s, dict)
+                )
+                if total != bc:
+                    bad_counts.append(f"{cid}: declared={bc} listed={total}")
+            except Exception as err:
+                bad_counts.append(f"{cid}: JSON parse error — {err}")
+        check("canon_traditions book_count matches canon_list_json",
+              len(bad_counts) == 0, f"{bad_counts[:3]}")
+    print(f"  canon_traditions: {ct_count or 0}")
+
     # Content Library
     cl_count = q1(cur, "SELECT COUNT(*) FROM content_library")
     check("content_library table exists", cl_count is not None, "table missing")
