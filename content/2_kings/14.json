@@ -258,7 +258,55 @@
         }
       ],
       "note": "Amaziah and Jeroboam II"
-    }
+    },
+    "rec": [
+      {
+        "who": "Targum Jonathan on 2 Kgs 14",
+        "text": "The targum expands Amaziah's Edom victory (v.7) with moralising content: victory produces pride, pride produces fall. The tragedy of Amaziah is his inability to metabolise success without losing perspective. The targum becomes homiletical commentary rather than translation in this section."
+      },
+      {
+        "who": "Calvin, Commentary (1561)",
+        "text": "Calvin focuses on the Jonah reference (v.25) as evidence of Jeroboam II's prophetic-theological context: even a king ruling during the northern kingdom's greatest material prosperity still had access to prophetic correction. The Amos-Hosea prophetic corpus emerges in exactly this reign. Prosperity does not diminish the need for prophetic warning; if anything, it intensifies it."
+      },
+      {
+        "who": "Marvin A. Sweeney, 1 & 2 Kings, OTL (2007)",
+        "text": "Sweeney highlights the parable-battle between Amaziah and Jehoash of Israel (vv.8-14): the thorn-bush's challenge to the cedar (v.9) is one of the OT's sharpest political-wisdom images, warning about the vulnerability of the weaker party who overplays his position. The resulting Judean defeat and temple-treasury sacking mark a significant setback in Judah's otherwise generally-favorable 8th-century economic position."
+      }
+    ],
+    "src": [
+      {
+        "title": "Amos 1-2, Hosea 1-2 — prophetic critique of Jeroboam II's era",
+        "quote": "'They sell the righteous for silver, and the needy for a pair of sandals' (Amos 2:6); 'They have rejected what is good; an enemy will pursue him' (Hos 8:3).",
+        "note": "The Jeroboam II reign (793-753 BCE) is the backdrop for Amos and Hosea's ministries. 2 Kgs 14:25 notes Jonah's contemporaneity; the prophetic trio (Amos, Hosea, Jonah) operated during the northern kingdom's material peak, warning precisely against the prosperity-complacency the royal narrative celebrates. Kings treats this positively; the prophets treat it as the terminal diagnosis."
+      },
+      {
+        "title": "Tel Siran Inscription / ANE parable traditions",
+        "quote": "Fable-parables featuring thornbush-vs-cedar dialogues are attested widely in ANE wisdom literature (Aesopic corpus; Akkadian wisdom texts).",
+        "note": "Jehoash's thornbush-and-cedar parable to Amaziah (14:9) uses standard ANE political-wisdom vocabulary. The 'little thorn thinks itself the equal of the great cedar' is a stock form (cf. Judg 9:8-15 Jotham's fable). The Kings narrative assumes audience familiarity with the genre — the parable lands immediately as a political warning."
+      }
+    ],
+    "tx": [
+      {
+        "ref": "14:25",
+        "title": "Jonah son of Amittai — the prophet vs the book",
+        "content": "MT: 'He restored the border of Israel from Lebo Hamath to the Dead Sea, in accordance with the word of the LORD, the God of Israel, spoken through his servant Jonah son of Amittai.'",
+        "note": "The only OT reference to Jonah outside the book bearing his name. Confirms Jonah's historicity as a court-prophet during Jeroboam II's reign, making the book of Jonah (which depicts him fleeing to Tarshish and ministering to Nineveh) a narrative about a historical figure. The Kings reference is the crucial external witness for treating Jonah as biographical rather than purely parabolic."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "חוֹחַ",
+        "tlit": "ḥoaḥ",
+        "gloss": "thornbush",
+        "note": "Jehoash's parable creature (14:9) — a scrubby thorn plant of the Judean hill country, proverbially unimpressive. Contrasted with the erez (cedar) of Lebanon, the most majestic tree in the ANE imagination. The thornbush's 'request' for the cedar's daughter as wife is political allegory: small-power Judah/Edom overreaches when challenging the great northern kingdom."
+      },
+      {
+        "word": "אֶרֶז",
+        "tlit": "'erez",
+        "gloss": "cedar (of Lebanon)",
+        "note": "The ANE's most prestigious timber, used for royal building (Solomon's temple, 1 Kgs 5-6) and imperial ships. In the parable, it stands for the aggrieved dignity of the higher-power. The hydraulic image — cedar crushed by a passing wild animal, stepping on the thornbush (14:9) — captures the asymmetric fate when small powers challenge great ones."
+      }
+    ]
   },
   "vhl_groups": [
     {

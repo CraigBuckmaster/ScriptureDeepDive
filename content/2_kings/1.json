@@ -366,7 +366,41 @@
         }
       ],
       "note": "Fire from Heaven — Elijah vs Ahaziah"
-    }
+    },
+    "rec": [
+      {
+        "who": "Josephus, Antiquities 9.2.1 (c. 93 CE)",
+        "text": "Josephus retells the Ahaziah-fall-and-inquiry-of-Baal-zebub episode with characteristic apologetic framing: the king's consultation of a pagan oracle is treated as the defining act of covenantal unfaithfulness. Elijah's denunciation is presented as Israel's lost political voice — prophets as the king's true counsellors, displaced by foreign priests."
+      },
+      {
+        "who": "John Calvin, Commentary on the Former Prophets (1561)",
+        "text": "Calvin's extended treatment of 2 Kgs 1 frames Elijah's calling down of fire as legitimate prophetic authority, not private revenge. The captains' approach in v.13 — 'may my life be precious in your sight' — is Calvin's paradigm for how ordinary authorities should speak to God's servants: with fear of the divine word they bear, not with institutional condescension."
+      },
+      {
+        "who": "Iain W. Provan, 1 & 2 Kings, NIBCOT (1995)",
+        "text": "Provan reads ch.1 as the definitive pivot from Elijah to Elisha: the Baal-zebub episode closes the Elijah-Ahab struggle by confirming Yahweh's verdict, and the ascension narrative of ch.2 follows immediately. Ahaziah's brief reign (vv.17-18) functions as a narrative bracket: the house of Ahab continues its trajectory of judgment even after its architect is gone."
+      }
+    ],
+    "src": [
+      {
+        "title": "Ekron inscription (7th c. BCE, Tel Miqne)",
+        "quote": "'[Temple] which Achish, son of Padi, son of Ysd, son of Ada, son of Ya'ir, ruler of Ekron, built for PTGYH his lady.'",
+        "note": "Ekron was a major Philistine city-state in the late monarchy period; the inscription confirms the city's continuity as a cultic centre. 'Baal-zebub' ('lord of flies') at Ekron is likely a hostile rendering of Baal-zebul ('lord prince'); the text's mockery is an ancient Israelite scribal gesture against Ekron's state-deity."
+      },
+      {
+        "title": "Cuneiform god-lists naming 'bel zabûbi'",
+        "quote": "Mesopotamian omen texts occasionally refer to Baal-style deities under fly-related titles, associated with pestilence and oracles.",
+        "note": "The biblical 'Baal-zebub of Ekron' sits within this broader ANE pattern of deities consulted for illness and future-telling. Ahaziah's inquiry is not a private theological error but his participation in a recognised regional oracular network — which is exactly what the text is polemicising against."
+      }
+    ],
+    "tx": [
+      {
+        "ref": "1:2",
+        "title": "Baal-zebub vs Baal-zebul",
+        "content": "MT: Ba'al-zebub ('lord of flies'). Many modern scholars argue the original Ugaritic/Phoenician deity name was Baal-zebul ('Prince Baal'), preserved in NT Greek as Beelzeboul (Matt 10:25; 12:24). The MT reading may be a scribal dysphemism, substituting one consonant (l→b) to produce 'lord of flies' as an insult.",
+        "note": "NT 'Beelzeboul' (not Beelzebub) is the key textual witness for the dysphemism hypothesis. By the first century the insult name had displaced the original honorific in Jewish memory, even while retaining the Greek spelling that preserves the original."
+      }
+    ]
   },
   "vhl_groups": [
     {

@@ -268,7 +268,55 @@
         }
       ],
       "note": "The Parade of Kings — Rapid Decline"
-    }
+    },
+    "rec": [
+      {
+        "who": "Josephus, Antiquities 9.10.3-4",
+        "text": "Josephus preserves the rapid-succession detail: after the 41-year reign of Jeroboam II and the long reign of Azariah/Uzziah, the northern kingdom cycles through six kings in 15 years (vv.8-31), four of whom are assassinated. Josephus frames this political instability as the covenant-curse of Deut 28's 'the foreigner who resides among you will rise above you' — the Assyrian-tribute burden destabilises every short-lived regime."
+      },
+      {
+        "who": "Chrysostom, Homily on Uzziah (c. 380 CE)",
+        "text": "Uzziah's leprosy (v.5) — triggered by his presumptuous incense-offering (2 Chr 26:16-21) — becomes, in Chrysostom's treatment, the classical warning against liturgical usurpation: when kings take priestly prerogatives, God enforces the boundary with immediate bodily judgment. The long-tenured king ends his life quarantined in a separate house."
+      },
+      {
+        "who": "Peter J. Leithart, 1 & 2 Kings, BTCB (2006)",
+        "text": "Leithart reads the Tiglath-pileser-tribute episode (vv.19-20) as the moment Israel finances its own eventual destruction: the 1,000 talents of silver paid for 'strengthening his hold on the kingdom' are paid through forced collection from 'every wealthy person' — creating internal class resentment that undermines the regime as much as Assyrian pressure. The northern kingdom is eating itself from within at the same time external threat grows."
+      }
+    ],
+    "src": [
+      {
+        "title": "Tiglath-pileser III's annals (744-727 BCE)",
+        "quote": "Assyrian royal annals list tribute from 'Menahem of Samaria' (verified in 2 Kgs 15:19-20: 'Pul king of Assyria... received tribute from Menahem'). The specific amount — 1,000 silver talents — matches.",
+        "note": "One of the 9th/8th-century Assyrian inscriptional attestations of named Israelite kings. Pul and Tiglath-pileser III are the same person (Pul is the Babylonian throne-name). The tribute payment is dated precisely in Assyrian records and matches 2 Kings to the silver-talent. Historical layer of 2 Kgs 15 is verifiable at a high level of confidence."
+      },
+      {
+        "title": "Black Obelisk continuation / Neo-Assyrian relief art",
+        "quote": "Kingly succession data for the rapid 752-732 BCE period of northern-kingdom instability.",
+        "note": "The six rapid-succession northern kings of 2 Kgs 15:8-31 — Zechariah, Shallum, Menahem, Pekahiah, Pekah, Hoshea — are each documented in Assyrian records of varying detail. The political chaos is not narrator-invention; it matches external chronicles showing northern-kingdom disintegration under Assyrian pressure."
+      }
+    ],
+    "tx": [
+      {
+        "ref": "15:5",
+        "title": "Uzziah/Azariah name variation",
+        "content": "2 Kings uses 'Azariah' for the Judean king (15:1, 6, 7, 8, 17, 23, 27); 2 Chronicles and most prophetic-book references use 'Uzziah' (Isa 1:1; 6:1; Hos 1:1; Amos 1:1). Both names appear in the same royal inscriptions and tomb-artifacts.",
+        "note": "The king had two throne-names, a common ANE practice. 'Azariah' ('YHWH has helped') and 'Uzziah' ('YHWH is my strength') are theologically equivalent regnal-names. Kings uses one consistently; Chronicles uses the other consistently; the prophetic corpus uses Uzziah because that was his later common name. The dual naming does not indicate different persons or textual confusion."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "מָצוֹר",
+        "tlit": "matsor",
+        "gloss": "fortified / strengthened",
+        "note": "Related to the root meaning 'besiege' / 'narrow confines,' used for city-fortification work. Azariah/Uzziah's reign is characterised by extensive fortification-building (2 Chr 26:9-10 expands on this). The 8th-century Judean building boom under Uzziah is archaeologically attested in the expansion of sites like Tel Batash, Beth-Shemesh, and Lachish."
+      },
+      {
+        "word": "צָרַעַת",
+        "tlit": "tsara'at",
+        "gloss": "skin disease (often 'leprosy')",
+        "note": "Uzziah's affliction (15:5). Leviticus 13-14's cultic protocol required quarantine; 2 Chr 26:16-21 provides the backstory absent from Kings — Uzziah's presumptuous entry into the temple to burn incense triggered the disease. Kings is characteristically silent on the cultic cause, preserving the Judean royal theology's tendency to attribute consequences rather than re-narrate transgressions."
+      }
+    ]
   },
   "vhl_groups": [
     {

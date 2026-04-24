@@ -423,7 +423,41 @@
         }
       ],
       "note": "The End of the Northern Kingdom"
-    }
+    },
+    "rec": [
+      {
+        "who": "Josephus, Antiquities 9.14.1-3",
+        "text": "Josephus treats the fall of Samaria (722 BCE) with a sustained theological reflection on the Deuteronomistic History's central thesis: covenant violation produces national catastrophe. He compiles the cumulative north-kingdom sins (calf-worship, high places, child sacrifice, divination) as the itemised grounds for the Assyrian exile. His retelling becomes the model for rabbinic theology of exile as covenantal consequence rather than random misfortune."
+      },
+      {
+        "who": "Augustine, City of God 17.22 (c. 413 CE)",
+        "text": "Augustine reads the foreign-immigrant-syncretism episode (vv.24-41) — the Samaritan origin story — as the founding etiology of the first-century Samaritan controversy. The 'they feared the LORD and served their own gods' formula (v.33) is Augustine's paradigm for all partial conversions: religious practice that adds Christ without displacing prior idolatries. The formula has had enormous influence on Christian evaluation of syncretism."
+      },
+      {
+        "who": "Marvin A. Sweeney, 1 & 2 Kings, OTL (2007)",
+        "text": "Sweeney treats 17:7-23 as the Deuteronomistic History's central sermon — the most extended theological commentary in Kings, itemising exactly why the northern kingdom fell. It is the hinge passage of the entire work: everything before points toward it (Jeroboam's calves in 1 Kgs 12 onward), and everything after is read in its shadow (Judah's eventual fall, 2 Kgs 25). The passage functions as the book's interpretive key."
+      }
+    ],
+    "src": [
+      {
+        "title": "Sargon II's annals / Khorsabad inscriptions (722/721 BCE)",
+        "quote": "'I besieged and captured the city of Samaria, and carried away 27,290 of its inhabitants; I took them to Assyria and settled them. I restored the city and made it greater than before, and I caused people from the lands I had captured to dwell there.'",
+        "note": "Sargon II's conquest-boast matches 2 Kgs 17's fall-of-Samaria datum with substantial precision. The 27,290 exiles number is often cited as the definitive population of the northern-kingdom capital. The foreign-immigration policy (v.24) is itself Assyrian standard — 'Aramean ethnic-mixing' as imperial control strategy, attested across the Neo-Assyrian documentary corpus."
+      },
+      {
+        "title": "Samaria Ostraca (8th century BCE)",
+        "quote": "Administrative ostraca from Samaria document the wine/oil bureaucracy, land-tenure, and priestly families of pre-exile northern Israel.",
+        "note": "The 102 inscribed potsherds from Samaria's royal quarters (discovered 1910) provide concrete evidence of the northern kingdom's administrative apparatus in the reigns of Jeroboam II through Pekah — exactly the period leading up to 2 Kgs 17's collapse. Names include both Yahwistic (Yh-based) and Baalistic (Bl-based) theophorics, attesting the syncretism the narrative indicts."
+      }
+    ],
+    "tx": [
+      {
+        "ref": "17:33",
+        "title": "'They feared the LORD yet served their own gods' — syncretism formula",
+        "content": "MT: yere'im et-YHWH ve'et-eloheihem hayu ovedim. The participial construction emphasises ongoing divided loyalty: both fearing YHWH and serving other gods as a continuous dual practice. LXX retains the coordination clearly.",
+        "note": "The formula becomes the OT's classical description of syncretistic religion, echoed in Zeph 1:5 ('those who bow down and swear by the LORD and who also swear by Molek') and implied in 1 Kgs 18:21's 'how long will you waver between two opinions?' The syntax itself performs the theological problem: 'both... and' where the covenant requires 'only.'"
+      }
+    ]
   },
   "vhl_groups": [
     {
