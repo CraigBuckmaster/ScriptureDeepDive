@@ -60,6 +60,19 @@
         },
         "hist": {
           "context": "Hezekiah's illness occurred around 701 BC, during or shortly after the Assyrian crisis. The fifteen added years would place his death around 686 BC. The poultice of figs was standard ancient Near Eastern medicine for boils. The shadow retreating on Ahaz's sundial (or stairway) served as a visible sign confirming Isaiah's word — physical phenomena validating prophetic authority."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "38:1-5",
+              "note": "Oswalt reads Hezekiah's illness-and-healing narrative as a theological mirror of chapter 37: the king who trusted Yahweh against Assyria now trusts Yahweh against death. The fifteen added years are framed as specifically covenant-protective — 'I will defend this city' is repeated (v.6), tying Hezekiah's life and Jerusalem's preservation into a single divine act."
+            },
+            {
+              "ref": "38:7-8",
+              "note": "The retreating sundial shadow is, in Oswalt's reading, the cosmological sign that corresponds to Hezekiah's healing: creation itself moves backwards to signify the reversal of death. It is paired with the Ahaz-Immanuel sign of 7:14 — both kings are offered cosmic signs; the difference is one accepted and one refused."
+            }
+          ]
         }
       }
     },
@@ -112,6 +125,19 @@
         },
         "hist": {
           "context": "Hezekiah's psalm (vv.10-20) is a thanksgiving for recovery, structured like individual psalms of lament that move from distress to praise. The imagery of Sheol and the Pit reflects standard Israelite afterlife concepts where the dead exist in shadowy half-life, unable to praise YHWH. The temple procession mentioned in v.20 indicates the psalm's liturgical use after recovery."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "38:9-20",
+              "note": "Oswalt treats Hezekiah's psalm as genuine royal liturgy in the lament-to-thanksgiving pattern of the Psalter: description of crisis (vv.10-14), turn of divine action (v.15), thanksgiving vow (vv.18-20). The psalm is theologically honest about Sheol: 'death cannot praise you' frames death not as transition-to-presence but as silence — a view Isaiah itself will push beyond in 26:19 and ultimately in 53:10-11."
+            },
+            {
+              "ref": "38:17",
+              "note": "'You have put all my sins behind your back' — Oswalt notes this is one of the OT's strongest forgiveness-images: sin consigned to the place Yahweh refuses to look. It sits inside a chapter where physical and spiritual healing are presented as the same divine act, setting up the same-act theology of ch.53."
+            }
+          ]
         }
       }
     }
@@ -199,7 +225,23 @@
         }
       ],
       "note": "Mercy peaks at 9: death-verdict reversed, fifteen years added, sins behind God’s back. Worship: the living praise. Prayer changes God’s stated intention."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 38:1-5",
+        "target": "2 Kgs 20:1-6",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Hezekiah's illness and healing is the only narrative outside the Kings history that the Chronicler also preserves (2 Chr 32:24-26), indicating the episode's theological weight: the covenant-king whose prayer extends his life becomes the type for covenant-hope against death."
+      },
+      {
+        "anchor": "Isa 38:17-20",
+        "target": "Ps 6; Ps 116",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "Hezekiah's thanksgiving psalm ('you have kept me from the pit of destruction... I will walk humbly all my years') stands alongside the deliverance-from-death psalms of the Psalter, particularly Ps 6 and 116 — royal-theological liturgy for the same experience."
+      }
+    ]
   },
   "vhl_groups": [
     {

@@ -60,6 +60,19 @@
         },
         "hist": {
           "context": "The catalogue of sins (lying, violence, injustice) describes post-exilic Judah's moral condition. The legal metaphors (justice, righteousness, truth) suggest covenant lawsuit language. Sin is presented not merely as individual failure but as communal darkness that blinds the nation. The image of groping like the blind at noon captures spiritual disorientation."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "59:1-2",
+              "note": "'The LORD's hand is not shortened that it cannot save, nor his ear too dull to hear. But your iniquities have made a separation.' Oswalt: the diagnosis refuses the deus-absconditus reading of divine silence. Yahweh has not retracted; sin has built a wall. The problem is not absence of power but presence of iniquity."
+            },
+            {
+              "ref": "59:3-15a",
+              "note": "The extended sin-catalogue. Oswalt: Paul-in-Romans quotes v.7-8 in Rom 3:15-17 as part of the universal-human-depravity proof. The diagnosis is comprehensive (lips, tongue, feet, thoughts, works) and culminates in 'truth has stumbled in the public squares, and uprightness cannot enter' — social dissolution traced to personal unrighteousness."
+            }
+          ]
         }
       }
     },
@@ -112,6 +125,19 @@
         },
         "hist": {
           "context": "When no human intercessor appears, YHWH himself arms for battle. The divine warrior imagery draws on ancient Near Eastern combat mythology but redirects it: God fights for his people when they cannot fight for themselves. The Redeemer coming to Zion addresses those who turn from transgression, maintaining the prophetic tension between judgment and hope."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "59:16-17",
+              "note": "'He saw that there was no one... so his own arm brought him salvation.' Oswalt: the divine-warrior imagery is explicit — Yahweh himself puts on righteousness as a breastplate, salvation as a helmet. Paul applies this armour directly to believers in Eph 6:14-17, making the servant-community wear its God's own equipment."
+            },
+            {
+              "ref": "59:20-21",
+              "note": "'A Redeemer will come to Zion, to those in Jacob who repent.' Paul quotes this in Rom 11:26 as the basis for the eschatological salvation of Israel. Oswalt: the chapter closes with the eternal-covenant promise — Spirit and word will not depart from the servant-community 'forever.' The Redeemer-announcement sets up chs.60-62's glory-vision."
+            }
+          ]
         }
       }
     }
@@ -209,7 +235,30 @@
         }
       ],
       "note": "Prophecy peaks at 9: the divine warrior (Eph 6:14-17), the Redeemer coming to Zion (Rom 11:26), the Spirit-and-word covenant forever. Justice and Judgment: sin as barrier, truth stumbled, no one to intervene — so God acts alone."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 59:7-8",
+        "target": "Rom 3:15-17",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'Their feet rush into sin; they are swift to shed innocent blood... ruin and destruction mark their ways.' Paul quotes these verses in Rom 3:15-17 as part of his universal-depravity catena — Isaiah's indictment of Israel becomes Paul's proof of universal human sinfulness."
+      },
+      {
+        "anchor": "Isa 59:17",
+        "target": "Eph 6:14-17; 1 Thess 5:8",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'He put on righteousness as his breastplate, and the helmet of salvation on his head.' Paul's armour-of-God passage applies Yahweh's own warrior equipment to believers — the Servant's community wears its God's armour."
+      },
+      {
+        "anchor": "Isa 59:20-21",
+        "target": "Rom 11:26-27",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'The Redeemer will come to Zion, to those in Jacob who repent of their sins.' Paul quotes this in Rom 11:26 as the eschatological foundation for 'all Israel will be saved' — the final salvation of ethnic Israel anchored in Isaiah's promise."
+      }
+    ]
   },
   "vhl_groups": [
     {

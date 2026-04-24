@@ -60,6 +60,19 @@
         },
         "hist": {
           "context": "Third Isaiah (chapters 56-66) addresses the post-exilic community, likely in the late sixth century BC. The inclusion of foreigners and eunuchs reverses Deuteronomy 23:1-8's exclusions, signaling that the restoration transcends ethnic boundaries. The rebuilt temple must serve its original purpose as a house of prayer for all peoples, not a nationalistic shrine."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "56:1-2",
+              "note": "Oswalt reads chs.56-66 as the third major section of the book: after judgment (1-39) and comfort (40-55), these chapters describe the servant-community's post-restoration life. 'Keep justice, and do righteousness; my salvation is soon to come.' The ethical imperatives flow from the eschatological expectation: servants live as if the kingdom is already near."
+            },
+            {
+              "ref": "56:3-8",
+              "note": "The inclusion of foreigners and eunuchs. Oswalt: both categories had been explicitly excluded from the Deuteronomic assembly (Deut 23:1-8). Isaiah 56 reverses the exclusions — 'a name better than sons and daughters' to the eunuch, 'my house will be called a house of prayer for all nations' (v.7, Jesus' Temple-cleansing text). The servant's universal mission disassembles the old boundary markers."
+            }
+          ]
         }
       }
     },
@@ -108,6 +121,19 @@
         },
         "hist": {
           "context": "The 'blind watchmen' and 'mute dogs' represent post-exilic leadership failures. Despite the return from Babylon, the community faced corrupt priests, economic exploitation, and spiritual lethargy. The accusation that leaders love to sleep and dream echoes pre-exilic prophetic critiques, warning that restoration alone does not guarantee righteousness."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "56:9-12",
+              "note": "The oracle against corrupt leaders. Oswalt: the 'dumb dogs... loving to slumber' are Israel's watchmen who should be warning the people but instead are greedy and self-serving. The ideal-Zion of vv.1-8 sits against the real-Zion of vv.9-12 — the vision and the reality are theologically paired, the gap between them is the work of the rest of the book."
+            },
+            {
+              "ref": "56:10-11",
+              "note": "'They are shepherds who lack understanding.' Oswalt notes the direct echo of Ezekiel 34 (failed shepherds), which becomes the backdrop for John 10's good-shepherd discourse. The leadership-failure theme is dense across the prophets and consistently points to a coming true Shepherd the servant will embody."
+            }
+          ]
         }
       }
     }
@@ -205,7 +231,23 @@
         }
       ],
       "note": "Mission peaks at 10: house of prayer for ALL nations. Foreigners and eunuchs included. Mark 11:17. Acts 8 (Ethiopian eunuch) fulfils. The widest inclusion in the OT."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 56:3-5",
+        "target": "Acts 8:26-39",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'Let no foreigner say... let no eunuch say, I am only a dry tree.' Deut 23:1 had excluded eunuchs from the assembly; Isaiah 56 reverses the exclusion. Acts 8's conversion of the Ethiopian eunuch — the first Gentile-convert — concretises this reversal."
+      },
+      {
+        "anchor": "Isa 56:7",
+        "target": "Matt 21:13; Mark 11:17; Luke 19:46",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'My house will be called a house of prayer for all nations.' Jesus quotes this at the Temple cleansing — the all-nations scope of the temple's purpose is the theological ground of his protest against the commercial encroachment of the Court of the Gentiles."
+      }
+    ]
   },
   "vhl_groups": [
     {

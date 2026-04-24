@@ -64,6 +64,19 @@
         },
         "hist": {
           "context": "Chapter 45 contains the most explicit Cyrus oracle in Scripture. YHWH calls Cyrus 'my anointed' (māšîaḥ, v.1) — the only non-Israelite to receive this title. YHWH promises to subdue nations, open doors, and give Cyrus treasures so that he will know there is no God but YHWH (v.3). The theological audacity is stunning: Israel's deliverer will be a Persian who does not acknowledge Israel's God. Yet YHWH uses even those who do not know him (v.4–5). The chapter's monotheistic affirmations ('I am YHWH, there is no other') are among the clearest in the Hebrew Bible."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "45:1-7",
+              "note": "'His anointed, Cyrus.' Oswalt: the shock of the OT's only use of mashiach for a non-Israelite. Cyrus, who does not know Yahweh (v.4, 5), is given the messianic title because Yahweh is commissioning him for a specific covenant-serving task: returning Judah and rebuilding Jerusalem. Yahweh's freedom to anoint outside the covenant community prefigures the universal scope of the servant's own anointing."
+            },
+            {
+              "ref": "45:7",
+              "note": "'I form light and create darkness, I make weal and create woe, I the LORD do all these things.' Oswalt: direct polemic against Zoroastrian dualism that was emerging in the Persian context. One God, not two; cosmos ordered under single sovereignty. The 'create woe' claim is theologically sharp: Yahweh superintends even the hard edges of providence."
+            }
+          ]
         }
       }
     },
@@ -120,6 +133,19 @@
         },
         "hist": {
           "context": "The universal-salvation oracle (vv.22–25) is programmatic: 'Turn to me and be saved, all you ends of the earth, for I am God and there is no other.' Every knee will bow, every tongue swear allegiance. This is not merely Israel's restoration but a vision of worldwide worship. The chapter also contains a theodicy-like dialogue (vv.9–13): the potter-and-clay imagery answers those who question YHWH's use of a pagan king. The Creator who formed the earth and gave it meaning does not owe explanations to creatures who are like potsherds among potsherds."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "45:14-17",
+              "note": "'They will make supplication to you... surely God is with you; there is no other.' Oswalt sees the nations-confession as the culmination of the courtroom scenes: gentiles come in chains confessing Yahweh's uniqueness. The pattern is reversed from conquest — not Yahweh's people fighting the nations but the nations voluntarily submitting to Yahweh's name."
+            },
+            {
+              "ref": "45:22-23",
+              "note": "'Turn to me and be saved, all you ends of the earth.' Oswalt: the universal invitation reaches its widest horizon here. 'Every knee shall bow, every tongue confess' becomes Paul's proof-text in Phil 2:10-11 for the exaltation of Christ — with the telling move that what Isaiah says of Yahweh, Paul says of Jesus, a direct christological claim."
+            }
+          ]
         }
       }
     }
@@ -217,7 +243,23 @@
         }
       ],
       "note": "Sovereignty AND Mission peak at 10: Cyrus called Messiah. \"I form light and create darkness.\" \"Every knee will bow\" (Phil 2:10). The universal invitation: all the earth. The most comprehensive sovereignty claim in the Bible."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 45:1-4",
+        "target": "Ezra 1:1-11",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "The Cyrus-as-anointed oracle is historically fulfilled in Ezra 1, with the Cyrus cylinder (540s BC) providing extra-biblical corroboration of Cyrus's policy of funding the rebuilding of local sanctuaries across his empire — including Jerusalem's temple."
+      },
+      {
+        "anchor": "Isa 45:22-23",
+        "target": "Rom 14:11; Phil 2:10-11",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'Before me every knee will bow; by me every tongue will swear.' Paul applies this text to God the Father in Rom 14:11 and to the exalted Christ in Phil 2:10-11 — a decisive christological move: what Isaiah says of Yahweh, Paul says of Jesus."
+      }
+    ]
   },
   "vhl_groups": [
     {

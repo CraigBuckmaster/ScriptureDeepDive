@@ -64,6 +64,19 @@
         },
         "hist": {
           "context": "Chapter 55 opens with the most expansive invitation in the Hebrew Bible: come, all who thirst, buy wine and milk without money (v.1). Why spend money on what is not bread? (v.2). The offer is free, universal, and life-giving. YHWH extends to the many the 'everlasting covenant, the sure mercies promised to David' (v.3). David as witness, leader, and commander of peoples (v.4) now becomes a paradigm for nations who will run to Israel because of YHWH's glory. The democratization of the Davidic covenant is striking: what was promised to the king is now offered to all who come."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "55:1-3",
+              "note": "'Come, all you who are thirsty, come to the waters.' Oswalt: the post-servant invitation is universally open and absolutely free. 'You who have no money' — the economy of grace repudiates the merit economy. The 'everlasting covenant, my faithful love promised to David' transfers Davidic-covenant blessings to the servant-community — democratised messianic privilege."
+            },
+            {
+              "ref": "55:3-5",
+              "note": "'I will make an everlasting covenant with you, my faithful love promised to David.' Oswalt: Paul quotes v.3 in Acts 13:34 (the 'sure mercies of David') as proof of the resurrection — the Davidic covenant's permanence requires a permanent Davidic figure. The servant becomes the means by which Davidic promises reach the nations: 'nations that did not know you will come running.'"
+            }
+          ]
         }
       }
     },
@@ -124,6 +137,19 @@
         },
         "hist": {
           "context": "The chapter closes with one of Scripture's most profound statements about divine speech: as rain and snow water the earth and make it bring forth seed, so my word will not return empty but will accomplish what I purpose (vv.10–11). The effectiveness of YHWH's word is guaranteed. The final image is eschatological transformation: mountains and hills will burst into song, trees will clap their hands, cypress will replace thornbush (vv.12–13). This everlasting sign will be for YHWH's renown. The Book of Comfort ends on a note of cosmic rejoicing, nature itself celebrating the redemption announced."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "55:6-9",
+              "note": "'Seek the LORD while he may be found.' Oswalt: the window-of-opportunity language is urgent because the servant's work has actually been accomplished; the response is now. 'My thoughts are not your thoughts' is the epistemological foundation of this whole section — grace operates on a logic humans cannot construct from below."
+            },
+            {
+              "ref": "55:10-13",
+              "note": "'So is my word that goes out from my mouth; it will not return to me empty.' Oswalt: the word-efficacy theology climaxes Second Isaiah's entire argument. The predictions announced in chs.40-48 will definitely land. 'You will go out in joy and be led forth in peace' — the new exodus is now framed as creation-wide joy; thorn-to-cypress reversal recalls Eden's curse being undone."
+            }
+          ]
         }
       }
     }
@@ -216,7 +242,30 @@
         }
       ],
       "note": "Mercy peaks at 10: the great invitation. Free grace. No money. Mission at 9: all who are thirsty, all nations. God word as rain: it accomplishes its purpose. Trees clap their hands."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 55:1",
+        "target": "John 7:37; Rev 22:17",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Come, all you who are thirsty, come to the waters; and you who have no money, come!' Jesus' 'if anyone thirsts, let him come to me and drink' at Tabernacles and Revelation's closing 'let the one who is thirsty come; and let the one who wishes take the free gift of the water of life' both rest on Isa 55:1."
+      },
+      {
+        "anchor": "Isa 55:3",
+        "target": "Acts 13:34",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'I will make with you an everlasting covenant, my faithful love promised to David.' Paul quotes this verse in Acts 13:34 as proof of the resurrection — the Davidic covenant's permanence requires a perpetual Davidic figure, which only a risen Christ can be."
+      },
+      {
+        "anchor": "Isa 55:10-11",
+        "target": "Heb 4:12; 1 Pet 1:23-25",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'My word that goes out from my mouth will not return to me empty.' The word-efficacy theology feeds Hebrews' 'word of God is living and active' and Peter's 'imperishable seed... the living and enduring word of God.'"
+      }
+    ]
   },
   "vhl_groups": [
     {

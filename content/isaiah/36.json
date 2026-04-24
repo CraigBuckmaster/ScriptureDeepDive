@@ -60,6 +60,19 @@
         },
         "hist": {
           "context": "In 701 BC, Sennacherib of Assyria invaded Judah after Hezekiah joined an anti-Assyrian coalition. The Rabshakeh (chief cupbearer) was a high official sent to negotiate Jerusalem's surrender. His speech, delivered in Hebrew rather than Aramaic, was psychological warfare aimed at undermining civilian morale. The mention of Egypt as a 'splintered reed' reflects the failed Egyptian alliance that had encouraged Judah's rebellion."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "36:1-10",
+              "note": "Oswalt reads chapters 36-39 as the pivot of the book: they re-present, in narrative form, the dilemma of chapters 7-39 (trust God or trust the nations?) so that the comfort of chapter 40 can land. Sennacherib's envoys arrive 'on the highway to the Launderer's Field' — the exact spot where Isaiah met Ahaz in 7:3. The narrative is deliberately echoing the Ahaz episode: same place, same threat-category, now a different king."
+            },
+            {
+              "ref": "36:4-10",
+              "note": "Oswalt emphasises the Rabshakeh's rhetorical sophistication: he knows Judah's theology and weaponises it ('the LORD himself sent me against this land,' v.10). The temptation is not to abandon faith but to redirect it — to read Yahweh's will through imperial circumstance rather than prophetic word."
+            }
+          ]
         }
       }
     },
@@ -112,6 +125,19 @@
         },
         "hist": {
           "context": "The Rabshakeh's demand that officials speak Aramaic (the diplomatic lingua franca) rather than Hebrew reveals the propaganda dimension of the confrontation. Assyrian royal inscriptions boasted of making conquered peoples' gods powerless; the Rabshakeh applies this template to YHWH. The officials' silence and torn clothes signal both grief and the gravity of blasphemy against Israel's God."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "36:11-12",
+              "note": "Oswalt: the Rabshakeh's refusal to switch to Aramaic exposes the psychological warfare aim. He is not negotiating with officials; he is preaching surrender-theology to the wall-top audience. Isaiah's later answer (37:6) — 'do not be afraid of the words' — treats this as the central threat: not the army but the rhetoric."
+            },
+            {
+              "ref": "36:18-20",
+              "note": "The comparative-gods taunt ('has any god of any nation delivered his land?') is the doctrinal climax of the speech. Oswalt reads it as the Assyrian proposal of a closed immanent universe: all gods have failed against Assyria, and there is no reason to suppose Yahweh is any different. Chapter 37 is engineered to answer exactly this claim."
+            }
+          ]
         }
       }
     }
@@ -204,7 +230,30 @@
         }
       ],
       "note": "Faith peaks: the theological crisis. Everything Isaiah preached about trusting God, not Egypt, is now tested at the wall. The Rabshakeh’s challenge is the exam."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 36:1-22",
+        "target": "2 Kgs 18:13-37; 2 Chr 32:1-19",
+        "type": "Echo",
+        "direction": "back",
+        "text": "The Sennacherib-siege narrative is recorded in parallel in 2 Kings 18-19 and 2 Chronicles 32 — the rare case of a historical narrative reproduced in three canonical books, signalling its structural importance for the OT's theology of divine deliverance."
+      },
+      {
+        "anchor": "Isa 36:4-10",
+        "target": "1 Sam 17:43-47",
+        "type": "Echo",
+        "direction": "back",
+        "text": "The Rabshakeh's intimidating speech echoes Goliath's taunts — and the outcome matches: the pagan champion's contempt for Yahweh becomes the occasion for Yahweh's spectacular intervention. Theophany through military-political reversal is a consistent OT pattern."
+      },
+      {
+        "anchor": "Isa 36:18-20",
+        "target": "Dan 3:15",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Has the god of any nation ever delivered his land from the hand of the king of Assyria?' The comparative-gods-challenge reappears verbatim in Daniel 3:15 from Nebuchadnezzar — the same imperial theological posture, the same divine rebuke to come."
+      }
+    ]
   },
   "vhl_groups": [
     {

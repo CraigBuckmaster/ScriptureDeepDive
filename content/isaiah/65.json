@@ -60,6 +60,19 @@
         },
         "hist": {
           "context": "The opening reversal — God found by those who didn't seek him — addresses the paradox of Gentile responsiveness versus Israelite resistance. The syncretistic practices described (gardens, secret places, eating pig flesh) reflect persistent idolatry in the post-exilic community. The 'servants' who receive blessing versus those who forsake God establishes the remnant concept central to Isaiah's theology."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "65:1-7",
+              "note": "'I revealed myself to those who did not ask for me; I was found by those who did not seek me.' Oswalt: Paul quotes v.1 in Rom 10:20 as the OT basis for gentile inclusion — Yahweh found by those not seeking him (gentiles) while Israel refused to come (v.2, quoted Rom 10:21). The servant-narrative's universal reach is rooted in Yahweh's universal availability."
+            },
+            {
+              "ref": "65:8-16",
+              "note": "'My servants' (plural) will eat, drink, rejoice, while 'you' (the idolatrous majority) will hunger, thirst, be put to shame. Oswalt: the binary split of the community — not Jew/gentile but servant/non-servant — foreshadows the NT's remnant-ecclesiology. 'My chosen ones... will be called by a different name.'"
+            }
+          ]
         }
       }
     },
@@ -116,6 +129,19 @@
         },
         "hist": {
           "context": "The new heavens and new earth represent the most expansive eschatological vision in Isaiah. Former things forgotten, Jerusalem a delight, lifespans extending like trees, wolf and lamb feeding together — these images shaped Jewish and Christian apocalypticism. The reference to 'my holy mountain' (Zion) maintains continuity between present worship and cosmic transformation."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "65:17-19",
+              "note": "'See, I will create new heavens and a new earth.' Oswalt: one of the OT's few explicit new-creation promises, picked up directly in 2 Pet 3:13 and Rev 21:1. 'The former things will not be remembered, nor will they come to mind' — the eschatological healing of covenant trauma."
+            },
+            {
+              "ref": "65:20-25",
+              "note": "The new-creation description — long lives, fruitful labour, children not born to calamity, wolf and lamb feeding together. Oswalt: the imagery deliberately recalls 11:6-9 (the peaceable-kingdom vision), now consolidated in the final new-creation horizon. 'They will neither harm nor destroy on all my holy mountain' — the curse of Gen 3 undone."
+            }
+          ]
         }
       }
     }
@@ -218,7 +244,30 @@
         }
       ],
       "note": "Prophecy peaks at 10: new heavens and new earth (Rev 21:1). Rom 10:20. Wolf and lamb. Before they call, I answer. Sovereignty at 9: God creates entirely new. Mercy at 9: revealed to the unseeking."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 65:1-2",
+        "target": "Rom 10:20-21",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'I revealed myself to those who did not ask for me; I was found by those who did not seek me... all day long I have held out my hands to an obstinate people.' Paul quotes both verses in Rom 10:20-21 — v.1 for gentile inclusion, v.2 for Israel's resistance."
+      },
+      {
+        "anchor": "Isa 65:17",
+        "target": "2 Pet 3:13; Rev 21:1",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'See, I will create new heavens and a new earth.' One of the OT's two explicit new-creation promises (with 66:22), fulfilled in 2 Pet 3:13's 'new heavens and a new earth, where righteousness dwells' and Rev 21:1's opening vision."
+      },
+      {
+        "anchor": "Isa 65:25",
+        "target": "Rom 8:19-21; Rev 22:3",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The wolf and the lamb will feed together, and the lion will eat straw like the ox... they will neither harm nor destroy on all my holy mountain.' The peaceable-kingdom imagery (echoing 11:6-9) feeds the cosmic-reconciliation theology of Rom 8 and the 'no more curse' of Rev 22:3."
+      }
+    ]
   },
   "vhl_groups": [
     {

@@ -60,6 +60,19 @@
         },
         "hist": {
           "context": "The righteous perishing unnoticed reflects the post-exilic community's moral confusion. The idolatrous practices described (child sacrifice in valleys, worship among oaks) suggest that exile had not fully purged Judah of its syncretism. Some returning exiles revived pre-exilic abominations, prompting this harsh prophetic condemnation."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "57:1-2",
+              "note": "'The righteous perish, and no one takes it to heart.' Oswalt: the chapter's opening is a lament for the post-exilic community's moral blindness. The death of the righteous is not tragedy for them ('they enter into peace') but an indictment of the community that does not notice. The righteous are 'taken away from calamity' — death as mercy."
+            },
+            {
+              "ref": "57:3-13",
+              "note": "The idolatry-polemic. Oswalt notes that the specific offenses — sacred trees, valley altars, child sacrifice — are the pre-exilic Canaanite syncretism Israel was never fully purged of. Post-exilic Judah is still dealing with the same heart-idolatries. Return from geographical exile has not produced return from theological exile."
+            }
+          ]
         }
       }
     },
@@ -112,6 +125,19 @@
         },
         "hist": {
           "context": "The declaration that God dwells both in the high and holy place and with the contrite represents Isaiah's characteristic both/and theology. The post-exilic community, humbled by exile, is assured that their brokenness is itself the condition for divine presence. The peace promised to those far and near anticipates universal scope even in restoration-era prophecy."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "57:14-19",
+              "note": "'I dwell in a high and holy place, and also with him who is of a contrite and lowly spirit.' Oswalt: this is one of the OT's strongest statements of the divine condescension — the transcendent God's deliberate presence with the broken. 'I will heal them; I will guide them and give them comfort' — the servant-community's ongoing pastoral reality."
+            },
+            {
+              "ref": "57:20-21",
+              "note": "'The wicked are like the tossing sea... there is no peace for the wicked, says my God.' Oswalt: the exact refrain as 48:22, marking the boundary of another major subsection. The book has three 'no peace' refrains (48:22, 57:21, 66:24 equivalent) structuring its final movement."
+            }
+          ]
         }
       }
     }
@@ -224,7 +250,30 @@
         }
       ],
       "note": "Holiness peaks at 9: the high-and-holy God with the contrite. Mercy: peace to far and near (Eph 2:17). The divine paradox: transcendence inhabits lowliness."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 57:15",
+        "target": "Matt 5:3; Jas 4:6",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'I live in a high and holy place, but also with the one who is contrite and lowly in spirit.' The divine presence with the humble feeds Jesus' 'blessed are the poor in spirit' and James's (via Prov 3:34) 'God opposes the proud but shows favor to the humble.'"
+      },
+      {
+        "anchor": "Isa 57:19",
+        "target": "Eph 2:13-17",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Peace, peace, to those far and near.' Paul's 'preached peace to you who were far away and peace to those who were near' in Eph 2:17 is a direct appropriation — Christ is the peace that brings near and far together."
+      },
+      {
+        "anchor": "Isa 57:20-21",
+        "target": "Jude 13",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The wicked are like the tossing sea, which cannot rest, whose waves cast up mire and mud.' Jude 13's 'wild waves of the sea, foaming up their shame' applies the imagery to false teachers within the church."
+      }
+    ]
   },
   "vhl_groups": [
     {
