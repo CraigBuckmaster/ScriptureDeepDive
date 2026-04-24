@@ -2,12 +2,14 @@ import React from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, type NavigationProp, type ParamListBase } from '@react-navigation/native';
-import { ArrowLeft, Check, ChevronRight, Clock } from 'lucide-react-native';
+import { ArrowLeft, Check, Clock, MessageSquare } from 'lucide-react-native';
 import { usePremium, useReviewQueue } from '../hooks';
 import { UpgradePrompt } from '../components/UpgradePrompt';
 import { formatChapterRef, getGuidedStudyStepLabel } from '../services/guidedStudy';
+import { launchAmicusStudyThread } from '../services/amicus';
 import { fontFamily, radii, spacing, useTheme } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+import type { GuidedStudyQuestion, GuidedStudySession, GuidedStudyTakeawaySummary } from '../types';
 
 function chapterRouteParams(chapterId: string, initialStep?: string) {
   return {
@@ -34,6 +36,69 @@ function MyStudyScreen() {
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
 
   const locked = !isPremium;
+  const nextSession = activeSessions[0] ?? null;
+  const nextSessionQuestion = nextSession
+    ? (openQuestions.find((question) => question.session_id === nextSession.id) ?? null)
+    : null;
+  const nextSessionTakeaway = nextSession
+    ? (recentTakeaways.find((takeaway) => takeaway.session_id === nextSession.id) ?? null)
+    : null;
+
+  async function openQuestionWithAmicus(question: GuidedStudyQuestion) {
+    if (locked) {
+      showUpgrade('feature', 'Guided Study Review');
+      return;
+    }
+    await launchAmicusStudyThread(navigation, {
+      entryPoint: 'my_study',
+      chapterId: question.chapter_id,
+      sessionId: question.session_id,
+      guidedStudyStep: 'synthesize',
+      openQuestionId: question.id,
+      openQuestionText: question.question_text,
+      seedQuery: `Help me investigate this study question in ${formatChapterRef(question.chapter_id)}: ${question.question_text}`,
+    });
+  }
+
+  async function refineTakeawayWithAmicus(takeaway: GuidedStudyTakeawaySummary) {
+    if (locked) {
+      showUpgrade('feature', 'Guided Study Review');
+      return;
+    }
+    await launchAmicusStudyThread(navigation, {
+      entryPoint: 'my_study',
+      chapterId: takeaway.chapter_id,
+      sessionId: takeaway.session_id,
+      guidedStudyStep: 'synthesize',
+      takeaway: takeaway.takeaway,
+      seedQuery: `Help me refine this takeaway from ${formatChapterRef(takeaway.chapter_id)} so it stays faithful to the chapter: ${takeaway.takeaway}`,
+    });
+  }
+
+  async function discussActiveSessionWithAmicus(
+    session: GuidedStudySession,
+    question?: GuidedStudyQuestion | null,
+    takeaway?: GuidedStudyTakeawaySummary | null,
+  ) {
+    if (locked) {
+      showUpgrade('feature', 'Guided Study Review');
+      return;
+    }
+    await launchAmicusStudyThread(navigation, {
+      entryPoint: 'my_study',
+      chapterId: session.chapter_id,
+      sessionId: session.id,
+      guidedStudyStep: session.current_step,
+      openQuestionId: question?.id ?? null,
+      openQuestionText: question?.question_text ?? null,
+      takeaway: takeaway?.takeaway ?? null,
+      seedQuery: question?.question_text
+        ? `Help me continue investigating this study question in ${formatChapterRef(session.chapter_id)}: ${question.question_text}`
+        : takeaway?.takeaway
+          ? `Help me keep refining this takeaway from ${formatChapterRef(session.chapter_id)}: ${takeaway.takeaway}`
+          : `Help me continue my guided study of ${formatChapterRef(session.chapter_id)}. I am currently at ${getGuidedStudyStepLabel(session.current_step)}.`,
+    });
+  }
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
@@ -79,18 +144,51 @@ function MyStudyScreen() {
                 >
                   <Text style={[styles.cardTitle, { color: base.text }]}>{nextAction.title}</Text>
                   <Text style={[styles.body, { color: base.textDim }]}>{nextAction.subtitle}</Text>
-                  <TouchableOpacity
-                    onPress={() => {
-                      if (!nextAction.chapterId) return;
-                      navigation.navigate(
-                        'StudySession',
-                        chapterRouteParams(nextAction.chapterId, nextAction.initialStep),
-                      );
-                    }}
-                    style={[styles.primaryButton, { backgroundColor: base.gold }]}
-                  >
-                    <Text style={styles.primaryText}>{nextAction.ctaLabel}</Text>
-                  </TouchableOpacity>
+                  <View style={styles.cardActions}>
+                    <TouchableOpacity
+                      onPress={() => {
+                        if (nextAction.kind === 'question' && openQuestions[0]) {
+                          void openQuestionWithAmicus(openQuestions[0]);
+                          return;
+                        }
+                        if (nextAction.kind === 'takeaway' && recentTakeaways[0]) {
+                          void refineTakeawayWithAmicus(recentTakeaways[0]);
+                          return;
+                        }
+                        if (!nextAction.chapterId) return;
+                        navigation.navigate(
+                          'StudySession',
+                          chapterRouteParams(nextAction.chapterId, nextAction.initialStep),
+                        );
+                      }}
+                      style={[
+                        styles.primaryButton,
+                        { backgroundColor: base.gold, marginTop: 0, flex: 1 },
+                      ]}
+                    >
+                      <Text style={styles.primaryText}>{nextAction.ctaLabel}</Text>
+                    </TouchableOpacity>
+                    {nextAction.kind === 'continue' && nextSession && (
+                      <TouchableOpacity
+                        onPress={() =>
+                          void discussActiveSessionWithAmicus(
+                            nextSession,
+                            nextSessionQuestion,
+                            nextSessionTakeaway,
+                          )
+                        }
+                        accessibilityLabel="Discuss this next step with Amicus"
+                        style={[
+                          styles.textButton,
+                          styles.cardSecondaryButton,
+                          { borderColor: `${base.gold}40` },
+                        ]}
+                      >
+                        <MessageSquare size={14} color={base.gold} />
+                        <Text style={[styles.textButtonLabel, { color: base.gold }]}>Discuss</Text>
+                      </TouchableOpacity>
+                    )}
+                  </View>
                 </View>
               </>
             ) : null}
@@ -108,14 +206,8 @@ function MyStudyScreen() {
                 ]}
               >
                 {activeSessions.map((session) => (
-                  <TouchableOpacity
+                  <View
                     key={session.id}
-                    onPress={() =>
-                      navigation.navigate(
-                        'StudySession',
-                        chapterRouteParams(session.chapter_id, session.current_step),
-                      )
-                    }
                     style={[styles.reviewRow, { borderBottomColor: `${base.border}55` }]}
                   >
                     <Clock size={16} color={base.gold} />
@@ -127,8 +219,38 @@ function MyStudyScreen() {
                         Resume at {getGuidedStudyStepLabel(session.current_step)}
                       </Text>
                     </View>
-                    <ChevronRight size={16} color={base.textMuted} />
-                  </TouchableOpacity>
+                    <View style={styles.rowActions}>
+                      <TouchableOpacity
+                        onPress={() =>
+                          navigation.navigate(
+                            'StudySession',
+                            chapterRouteParams(session.chapter_id, session.current_step),
+                          )
+                        }
+                        accessibilityLabel="Continue guided study"
+                        style={[styles.textButton, { borderColor: `${base.gold}40` }]}
+                      >
+                        <Text style={[styles.textButtonLabel, { color: base.gold }]}>Continue</Text>
+                      </TouchableOpacity>
+                      <TouchableOpacity
+                        onPress={() =>
+                          void discussActiveSessionWithAmicus(
+                            session,
+                            openQuestions.find((question) => question.session_id === session.id) ??
+                              null,
+                            recentTakeaways.find(
+                              (takeaway) => takeaway.session_id === session.id,
+                            ) ?? null,
+                          )
+                        }
+                        accessibilityLabel="Discuss this study with Amicus"
+                        style={[styles.textButton, { borderColor: `${base.gold}40` }]}
+                      >
+                        <MessageSquare size={14} color={base.gold} />
+                        <Text style={[styles.textButtonLabel, { color: base.gold }]}>Discuss</Text>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
                 ))}
               </View>
             )}
@@ -204,13 +326,23 @@ function MyStudyScreen() {
                         {question.question_text}
                       </Text>
                     </View>
-                    <TouchableOpacity
-                      onPress={() => resolveQuestion(question.id)}
-                      accessibilityLabel="Mark question resolved"
-                      style={[styles.checkButton, { borderColor: `${base.gold}40` }]}
-                    >
-                      <Check size={15} color={base.gold} />
-                    </TouchableOpacity>
+                    <View style={styles.rowActions}>
+                      <TouchableOpacity
+                        onPress={() => void openQuestionWithAmicus(question)}
+                        accessibilityLabel="Discuss with Amicus"
+                        style={[styles.textButton, { borderColor: `${base.gold}40` }]}
+                      >
+                        <MessageSquare size={14} color={base.gold} />
+                        <Text style={[styles.textButtonLabel, { color: base.gold }]}>Discuss</Text>
+                      </TouchableOpacity>
+                      <TouchableOpacity
+                        onPress={() => resolveQuestion(question.id)}
+                        accessibilityLabel="Mark question resolved"
+                        style={[styles.checkButton, { borderColor: `${base.gold}40` }]}
+                      >
+                        <Check size={15} color={base.gold} />
+                      </TouchableOpacity>
+                    </View>
                   </View>
                 ))}
               </View>
@@ -273,6 +405,14 @@ function MyStudyScreen() {
                         {takeaway.takeaway}
                       </Text>
                     </View>
+                    <TouchableOpacity
+                      onPress={() => void refineTakeawayWithAmicus(takeaway)}
+                      accessibilityLabel="Refine with Amicus"
+                      style={[styles.textButton, { borderColor: `${base.gold}40` }]}
+                    >
+                      <MessageSquare size={14} color={base.gold} />
+                      <Text style={[styles.textButtonLabel, { color: base.gold }]}>Refine</Text>
+                    </TouchableOpacity>
                   </View>
                 ))}
               </View>
@@ -357,6 +497,15 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 14,
   },
+  cardActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.xs,
+    marginTop: spacing.md,
+  },
+  cardSecondaryButton: {
+    paddingHorizontal: spacing.md,
+  },
   list: {
     borderWidth: 1,
     borderRadius: radii.md,
@@ -386,6 +535,24 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: radii.pill,
     padding: 7,
+  },
+  rowActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.xs,
+  },
+  textButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    borderWidth: 1,
+    borderRadius: radii.pill,
+    paddingHorizontal: spacing.sm,
+    paddingVertical: 7,
+  },
+  textButtonLabel: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 12,
   },
   chipRow: {
     flexDirection: 'row',

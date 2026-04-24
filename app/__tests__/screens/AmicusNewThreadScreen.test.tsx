@@ -7,13 +7,27 @@ import { getMockUserDb, resetMockUserDb } from '../helpers/mockUserDb';
 
 const mockReplace = jest.fn();
 const mockGoBack = jest.fn();
+let mockRouteParams: {
+  seedQuery?: string;
+  seedChapterRef?: string;
+  promotedMessages?: Array<{
+    role: 'user' | 'assistant';
+    content: string;
+    citations?: Array<{
+      chunk_id: string;
+      source_type: string;
+      display_label: string;
+    }>;
+    follow_ups?: string[];
+  }>;
+} = { seedQuery: 'Tell me about hesed' };
 
 jest.mock('@react-navigation/native', () => {
   const actual = jest.requireActual('@react-navigation/native');
   return {
     ...actual,
     useNavigation: () => ({ replace: mockReplace, goBack: mockGoBack }),
-    useRoute: () => ({ params: { seedQuery: 'Tell me about hesed' } }),
+    useRoute: () => ({ params: mockRouteParams }),
   };
 });
 
@@ -35,6 +49,7 @@ describe('AmicusNewThreadScreen', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     resetMockUserDb();
+    mockRouteParams = { seedQuery: 'Tell me about hesed' };
   });
 
   it('creates a thread then replaces the route with the new thread', async () => {
@@ -53,5 +68,45 @@ describe('AmicusNewThreadScreen', () => {
     renderScreen();
     await act(async () => {});
     expect(mockGoBack).toHaveBeenCalled();
+  });
+
+  it('persists promoted peek messages without resending an initial query', async () => {
+    mockRouteParams = {
+      seedChapterRef: 'psalms/23',
+      promotedMessages: [
+        { role: 'user', content: 'What is hesed?' },
+        {
+          role: 'assistant',
+          content: 'It means covenant love.',
+          citations: [
+            {
+              chunk_id: 'word_study:hesed',
+              source_type: 'word_study',
+              display_label: 'hesed',
+            },
+          ],
+          follow_ups: ['Show me more'],
+        },
+      ],
+    };
+
+    renderScreen();
+    await act(async () => {});
+
+    const calls = getMockUserDb().runAsync.mock.calls.map((c: unknown[]) => ({
+      sql: String(c[0]),
+      bindings: c[1],
+    }));
+
+    expect(calls.some((entry) => entry.sql.includes('INSERT INTO amicus_threads'))).toBe(true);
+    expect(calls.filter((entry) => entry.sql.includes('INSERT INTO amicus_messages'))).toHaveLength(2);
+    expect(mockReplace).toHaveBeenCalledWith(
+      'Thread',
+      expect.objectContaining({
+        threadId: expect.any(String),
+        initialQuery: undefined,
+        seedChapterRef: 'psalms/23',
+      }),
+    );
   });
 });

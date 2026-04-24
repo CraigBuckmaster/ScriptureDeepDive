@@ -52,4 +52,39 @@ describe('AssistantMessageBubble', () => {
     );
     expect(queryByLabelText('Amicus is responding')).toBeNull();
   });
+
+  it('shows a trust footer when grounded citations exist', () => {
+    const { getAllByText, getByLabelText, getByText } = renderWithProviders(
+      <AssistantMessageBubble
+        content="See [CITE:section_panel:romans-9-s1-calvin]"
+        citations={citations}
+        isStreaming={false}
+      />,
+    );
+
+    fireEvent.press(getByLabelText('Show sources and stance'));
+    expect(getByText('1 source')).toBeTruthy();
+    expect(getByText('Sources')).toBeTruthy();
+    expect(getAllByText(/Calvin .* Romans 9/)).toHaveLength(2);
+  });
+
+  it('shows a debated stance badge when debate-topic citations are present', () => {
+    const { getByLabelText, getByText } = renderWithProviders(
+      <AssistantMessageBubble
+        content="See [CITE:debate_topic:election]"
+        citations={[
+          {
+            chunk_id: 'debate_topic:election',
+            source_type: 'debate_topic',
+            display_label: 'Election Debate',
+          },
+        ]}
+        isStreaming={false}
+      />,
+    );
+
+    expect(getByText('Debated')).toBeTruthy();
+    fireEvent.press(getByLabelText('Show sources and stance'));
+    expect(getByText('This answer draws on a debated interpretation thread.')).toBeTruthy();
+  });
 });

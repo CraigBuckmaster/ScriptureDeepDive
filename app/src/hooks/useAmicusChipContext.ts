@@ -30,6 +30,11 @@ import { findDeepestRoute, routeToChipContext } from '../utils/routeContext';
 import { logger } from '../utils/logger';
 import type { ChipContext } from './useAmicusChips';
 
+function isNavigationStateUnavailable(error: unknown): boolean {
+  if (!(error instanceof Error)) return false;
+  return /Couldn't get the navigation state/i.test(error.message);
+}
+
 export function useAmicusChipContext(): ChipContext {
   let state: unknown = undefined;
   try {
@@ -39,7 +44,9 @@ export function useAmicusChipContext(): ChipContext {
     // Pre-mount or outside NavigationContainer. Degrade to {kind: 'none'}
     // rather than crash; Amicus simply won't have route-scoped chips
     // until the next render once nav state is populated.
-    logger.warn('AmicusChipContext', 'navigation state not yet available', e);
+    if (!isNavigationStateUnavailable(e)) {
+      logger.warn('AmicusChipContext', 'navigation state resolution failed', e);
+    }
   }
   return useMemo(() => routeToChipContext(findDeepestRoute(state)), [state]);
 }
