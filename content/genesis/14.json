@@ -523,9 +523,64 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Covenant",
+          "score": 8
+        },
+        {
+          "label": "Providence",
+          "score": 9
+        },
+        {
+          "label": "Creation Order",
+          "score": 4
+        },
+        {
+          "label": "Faith & Obedience",
+          "score": 8
+        },
+        {
+          "label": "Worship",
+          "score": 9
+        },
+        {
+          "label": "Typology",
+          "score": 10
+        }
+      ],
+      "note": "Genesis 14 introduces the most theologically loaded cameo in the OT: Melchizedek, king of Salem and priest of God Most High, who blesses Abram and receives his tithe. Two NT texts (Ps 110:4 and Hebrews 7) treat this brief encounter as the warrant for a priesthood prior to and superior to Levi's, ultimately fulfilled in Christ. The chapter also frames Abram's first military action — a successful rescue of Lot — but pointedly refuses worldly enrichment (vv.22-23) lest the king of Sodom claim credit for Abram's prosperity. Wealth received from God and wealth claimed by patron-power are kept rigorously distinct. The first tithe in Scripture is paid by the one who has just refused royal patronage."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 14:18-20",
+        "target": "Ps 110:4",
+        "type": "Fulfilment",
+        "text": "Melchizedek, king of Salem and priest of God Most High, is named exactly once more in the OT — Ps 110:4's messianic oracle: 'You are a priest forever after the order of Melchizedek.' The unlikely priest-king of Gen 14 becomes the template for the Davidic messiah's dual office.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 14:18-20",
+        "target": "Heb 7:1-10",
+        "type": "Fulfilment",
+        "text": "Hebrews 7 is the NT's most sustained exegesis of any Genesis passage: Melchizedek's superiority to Abraham (who paid him a tithe) and his priesthood 'without genealogy' prove that a priesthood exists prior to and outside the Levitical line — the order Christ himself holds.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 14:20",
+        "target": "Heb 7:4-10",
+        "type": "Echo",
+        "text": "Abram's tithe to Melchizedek — the first tithe in Scripture — establishes the practice centuries before the Mosaic law institutionalises it. Hebrews argues that because Levi (Abram's great-grandson) was 'still in the loins of his ancestor' when the tithe was paid, Levi himself paid tithes to Melchizedek — a hierarchy-reversing argument for Melchizedek's superior priesthood.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 14:22-23",
+        "target": "Heb 11:8-16",
+        "type": "Echo",
+        "text": "Abram refuses to let Sodom's king enrich him — 'lest you should say, I have made Abram rich' — preferring God's provision over pagan patronage. Hebrews 11 reads this as the hallmark of faith: those who confessed they were strangers and sought a better country.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

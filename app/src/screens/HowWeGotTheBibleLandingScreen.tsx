@@ -45,13 +45,8 @@ function HowWeGotTheBibleLandingScreen() {
     navigation.navigate('ExtraBiblicalIndex');
   }, [navigation]);
 
-  // Canon Comparison screen lands in HWGTB-P3-01 (#1550). The route is
-  // typed ahead in ExploreStackParamList so this handler stays ready;
-  // until #1550 ships it's surfaced as "Coming soon" with a no-op.
-  const canonComparisonReady = false;
   const goCanonComparison = useCallback(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    navigation.navigate('CanonComparison' as any);
+    navigation.navigate('CanonComparison');
   }, [navigation]);
 
   // Direct navigation to the two HWGTB-specific journeys. The journey
@@ -89,7 +84,7 @@ function HowWeGotTheBibleLandingScreen() {
       description:
         'Protestant, Catholic, Orthodox, and Ethiopian canons side by side — where traditions agree, where they differ, and why.',
       Icon: Scale,
-      onPress: canonComparisonReady ? goCanonComparison : undefined,
+      onPress: goCanonComparison,
     },
     {
       key: 'canon-formation',

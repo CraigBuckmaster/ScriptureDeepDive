@@ -7,7 +7,9 @@ jest.unmock('expo-sqlite');
 const mockExecAsync = jest.fn().mockResolvedValue(undefined);
 const mockGetAllAsync = jest.fn().mockResolvedValue([]);
 const mockRunAsync = jest.fn().mockResolvedValue({ changes: 0 });
-const mockWithTransactionAsync = jest.fn().mockImplementation(async (cb: () => Promise<void>) => cb());
+const mockWithTransactionAsync = jest
+  .fn()
+  .mockImplementation(async (cb: () => Promise<void>) => cb());
 
 const mockUserDbInstance = {
   execAsync: mockExecAsync,
@@ -59,16 +61,21 @@ describe('userDatabase', () => {
     await initUserDatabase();
 
     // Should have created _migrations table
-    expect(mockExecAsync).toHaveBeenCalledWith(expect.stringContaining('CREATE TABLE IF NOT EXISTS _migrations'));
+    expect(mockExecAsync).toHaveBeenCalledWith(
+      expect.stringContaining('CREATE TABLE IF NOT EXISTS _migrations'),
+    );
 
     // Should have queried for applied migrations
-    expect(mockGetAllAsync).toHaveBeenCalledWith(expect.stringContaining('SELECT version FROM _migrations'));
+    expect(mockGetAllAsync).toHaveBeenCalledWith(
+      expect.stringContaining('SELECT version FROM _migrations'),
+    );
   });
 
   it('skips already-applied migrations', async () => {
-    // Simulate all 18 migrations already applied
+    const { MIGRATION_COUNT } = require('@/db/userDatabase');
+    // Simulate all migrations already applied
     mockGetAllAsync.mockResolvedValue(
-      Array.from({ length: 18 }, (_, i) => ({ version: i + 1 })),
+      Array.from({ length: MIGRATION_COUNT }, (_, i) => ({ version: i + 1 })),
     );
 
     const { initUserDatabase } = require('@/db/userDatabase');

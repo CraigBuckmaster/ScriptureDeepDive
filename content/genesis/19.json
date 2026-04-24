@@ -516,9 +516,64 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Fall & Redemption",
+          "score": 9
+        },
+        {
+          "label": "Covenant",
+          "score": 7
+        },
+        {
+          "label": "Providence",
+          "score": 8
+        },
+        {
+          "label": "Justice",
+          "score": 10
+        },
+        {
+          "label": "Faith & Obedience",
+          "score": 5
+        },
+        {
+          "label": "Typology",
+          "score": 8
+        }
+      ],
+      "note": "Genesis 19 is the OT's most graphic enactment of divine judgment in the patriarchal narratives — the cities of the plain destroyed by fire and brimstone, with Lot's family barely extracted by angelic mercy. Jesus uses Sodom as the eschatological warning ('as it was in the days of Lot... so will it be on the day when the Son of Man is revealed,' Luke 17:28-32) and explicitly commands 'Remember Lot's wife' (v.32). The chapter is also a study in the slow compromise of a believer: Lot pitched toward Sodom (13:12), lived in Sodom (14:12), sat in the gate of Sodom (19:1), and offered his daughters there. The closing scene of Lot's daughters in the cave seeds Moab and Ammon — Israel's perennial enemies — yet Ruth the Moabitess will redeem the line."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 19:24-25",
+        "target": "Luke 17:28-32",
+        "type": "Fulfilment",
+        "text": "Jesus names Sodom as the eschatological warning: 'as it was in the days of Lot... so will it be on the day when the Son of Man is revealed.' He explicitly commands 'Remember Lot's wife' — turning Gen 19:26 into an urgent parable about divided loyalties on the day of judgment.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 19:1-11",
+        "target": "Judg 19",
+        "type": "Echo",
+        "text": "The horrifying Gibeah atrocity of Judges 19 is told in deliberate parallel to Sodom: strangers arrive in a city square, are reluctantly taken in by a sojourner, the townsmen demand them for sexual violence. The intertextual message is that Israel has become Sodom — Gentile-level depravity inside the covenant people.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 19:29",
+        "target": "2 Pet 2:6-9",
+        "type": "Echo",
+        "text": "'God remembered Abraham and sent Lot out' — rescue through intercession. 2 Peter 2 draws the theological conclusion: 'the Lord knows how to rescue the godly from trials and to keep the unrighteous under punishment for the day of judgment,' citing Sodom and Lot as the paradigm.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 19:30-38",
+        "target": "Ruth 4:13-17",
+        "type": "Echo",
+        "text": "Lot's daughters produce Moab and Ammon — the hereditary enemies of Israel — through incest. Yet Ruth the Moabitess becomes the great-grandmother of David. Genesis 19 seeds a nation the canon will later redeem through the specific Moabite woman who gleans in Boaz's field; Ruth is the reverse image of Lot's daughter.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

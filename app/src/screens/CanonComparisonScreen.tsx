@@ -269,6 +269,7 @@ function PortraitLayout({
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.tabRow}
+        style={styles.tabScroll}
       >
         {traditions.map((tr, i) => {
           const active = i === activeIndex;
@@ -492,10 +493,21 @@ const styles = StyleSheet.create({
     flex: 1,
     gap: spacing.sm,
   },
+  tabScroll: {
+    // Prevent the horizontal ScrollView from filling the remaining
+    // vertical flex space in portraitRoot — otherwise Yoga's default
+    // cross-axis stretch makes each pill inflate to the full row height
+    // and the tradition buttons render as huge vertical ovals.
+    flexGrow: 0,
+  },
   tabRow: {
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.xs,
     gap: spacing.xs,
+    // Belt-and-suspenders: even if flexGrow:0 above fails to clamp the
+    // ScrollView height on some RN/iOS version, centering children on
+    // the cross axis keeps each pill at its intrinsic text height.
+    alignItems: 'center',
   },
   tabButton: {
     borderWidth: 1,

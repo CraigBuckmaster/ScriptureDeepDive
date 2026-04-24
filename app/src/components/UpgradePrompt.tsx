@@ -48,6 +48,7 @@ const FEATURE_DESCRIPTIONS: Record<string, string> = {
   'Bible Periods': 'Explore all 12 eras of biblical history with key people, books, themes, and the redemptive thread connecting each period.',
   'The Story of the Bible': 'Trace the 8-act redemptive narrative from Creation to Restoration — see how every chapter fits into God\'s story.',
   'Person Journey': 'Follow key biblical figures across multiple books — see their full arc from calling to legacy.',
+  'Guided Study Review': 'Save your synthesis, build concept vocabulary, and revisit key insights with spaced review.',
 };
 
 export function UpgradePrompt({ visible, onClose, variant, featureName }: Props) {

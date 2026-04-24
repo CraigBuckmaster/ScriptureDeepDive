@@ -496,9 +496,64 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Fall & Redemption",
+          "score": 9
+        },
+        {
+          "label": "Covenant",
+          "score": 9
+        },
+        {
+          "label": "Providence",
+          "score": 10
+        },
+        {
+          "label": "Family Dysfunction",
+          "score": 10
+        },
+        {
+          "label": "Faith & Obedience",
+          "score": 5
+        },
+        {
+          "label": "Typology",
+          "score": 6
+        }
+      ],
+      "note": "Genesis 27 is the most morally fraught chapter in the book: a blind father, a scheming mother, a deceiving son, and a betrayed brother — each pursuing their own version of the covenant blessing through deceit. The narrator refuses to moralise the deception explicitly, yet the consequences are immediate and lasting: Jacob flees, Rebekah never sees her favorite son again, Esau's grief becomes ancestral hatred (later prophesied against Edom in Obadiah). And yet — Hebrews 11:20 reads Isaac's blessing as 'by faith,' since the prophetic word landed on God's chosen one despite the deception. Genesis insists that God's elective purposes work through, not in spite of, the messy moral choices of the covenant family."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 27:27-29",
+        "target": "Heb 11:20",
+        "type": "Fulfilment",
+        "text": "'By faith Isaac invoked future blessings on Jacob and Esau.' Hebrews 11:20 reads the blessing of Gen 27 not as Isaac's tragic misfire but as a prophetic act of faith: even though deceived about which son was before him, the blessing he spoke landed on God's chosen one.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 27:36",
+        "target": "Obad 10-21",
+        "type": "Echo",
+        "text": "Esau's cry 'Is he not rightly named Jacob ('Yaʿaqov,' heel-grabber, deceiver)? For he has cheated me (yaʿqəveni) two times' is the seedbed of Edom's long-standing grievance. Obadiah's prophecy against Edom reaches back to Gen 27's blessing-theft as the ancestral wound the brother nations never healed.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 27:41",
+        "target": "Mal 1:2-3; Rom 9:13",
+        "type": "Echo",
+        "text": "Esau's murderous hatred of Jacob supplies the context for the covenantal formula 'Jacob I loved, but Esau I hated' (Mal 1:2-3; Rom 9:13) — a phrase that is not arbitrary preference but the long history of Esau's rejection of the covenant, shown first here.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 27:42-45",
+        "target": "Gen 32:3-21",
+        "type": "Echo",
+        "text": "Rebekah's plan for Jacob to flee 'until your brother's fury turns away' sets up the twenty-year exile resolved only in Gen 32-33. The blessing-theft of Gen 27 costs Jacob two decades with Laban — a narrative consequence that Genesis never lets off the hook.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

@@ -55,6 +55,30 @@ jobs:
         run: |
           python3 _tools/validate_sqlite.py 2>&1 | tee validate_db.log
 
+      # ── Coverage audit (warning-only, Phase 1) ───────────────
+      # Non-blocking: continue-on-error is essential. Flips to strict
+      # (--ci against _audit/baseline.json) as part of Phase 1 close — see #1626.
+
+      - name: Coverage audit (warning-only)
+        id: coverage_audit
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        run: |
+          # Only audit when the PR actually touches content/** (mirrors the
+          # gating used by "Detect changed content" below).
+          CONTENT_CHANGED=$(git diff --name-only ${{ github.event.pull_request.base.sha }} HEAD | grep -E '^content/' || true)
+          if [ -z "$CONTENT_CHANGED" ]; then
+            echo "No content/** changes in this PR — skipping coverage audit."
+            exit 0
+          fi
+
+          python3 _tools/coverage_auditor.py --all --format markdown > /tmp/audit-run.md
+          echo "## Coverage audit" >> $GITHUB_STEP_SUMMARY
+          head -80 /tmp/audit-run.md >> $GITHUB_STEP_SUMMARY
+          echo "..." >> $GITHUB_STEP_SUMMARY
+          echo "Full audit in job logs." >> $GITHUB_STEP_SUMMARY
+          cat /tmp/audit-run.md
+
       # ── Upload to R2 (master only) ───────────────────────────
 
       - name: Upload to CloudFlare R2

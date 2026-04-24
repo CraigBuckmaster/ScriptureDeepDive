@@ -56,6 +56,14 @@ import {
   createCollection,
   updateCollection,
   deleteCollection,
+  createOrResumeGuidedStudySession,
+  setGuidedStudyStep,
+  completeGuidedStudySession,
+  upsertGuidedStudyResponse,
+  upsertGuidedStudySynthesis,
+  createGuidedReviewItems,
+  completeGuidedReviewItem,
+  recordConceptEncounter,
 } from '@/db/userMutations';
 
 beforeEach(() => {
@@ -472,6 +480,165 @@ describe('resetToNewUser', () => {
     expect(mockRunAsync).toHaveBeenCalledWith('DELETE FROM plan_progress');
     expect(mockRunAsync).toHaveBeenCalledWith(
       expect.stringContaining('UPDATE reading_plans'),
+    );
+  });
+});
+
+// ── Guided Study (write) ──────────────────────────────────────────
+
+describe('createOrResumeGuidedStudySession', () => {
+  it('returns the existing active session id when one is found', async () => {
+    mockGetFirstAsync.mockResolvedValueOnce({ id: 42 });
+    const id = await createOrResumeGuidedStudySession('genesis_1');
+    expect(id).toBe(42);
+    expect(mockGetFirstAsync).toHaveBeenCalledWith(
+      expect.stringContaining("WHERE chapter_id = ? AND status = 'active'"),
+      ['genesis_1'],
+    );
+    // Should NOT insert a new row when one already exists.
+    expect(mockRunAsync).not.toHaveBeenCalledWith(
+      expect.stringContaining('INSERT INTO guided_study_sessions'),
+      expect.anything(),
+    );
+  });
+
+  it('inserts a new active session when none exists', async () => {
+    mockGetFirstAsync.mockResolvedValueOnce(null);
+    mockRunAsync.mockResolvedValueOnce({ lastInsertRowId: 77, changes: 1 });
+    const id = await createOrResumeGuidedStudySession('exodus_3');
+    expect(id).toBe(77);
+    expect(mockRunAsync).toHaveBeenCalledWith(
+      expect.stringContaining('INSERT INTO guided_study_sessions'),
+      ['exodus_3'],
+    );
+  });
+});
+
+describe('createGuidedReviewItems', () => {
+  it('inserts each item inside a transaction with the correct interval offset', async () => {
+    await createGuidedReviewItems(1, 'genesis_1', 'Chapter Title', [
+      { prompt: 'A?', answer: 'a', intervalDays: 1 },
+      { prompt: 'B?', answer: 'b', intervalDays: 1 },
+    ]);
+    expect(mockWithTransactionAsync).toHaveBeenCalledTimes(1);
+    expect(mockRunAsync).toHaveBeenCalledTimes(2);
+    expect(mockRunAsync).toHaveBeenNthCalledWith(
+      1,
+      expect.stringContaining('INSERT INTO guided_review_items'),
+      [1, 'genesis_1', 'Chapter Title', 'A?', 'a', '+1 days'],
+    );
+  });
+});
+
+describe('completeGuidedReviewItem', () => {
+  it('marks the row completed and schedules the next-interval row', async () => {
+    mockGetFirstAsync.mockResolvedValueOnce({
+      source_session_id: 5,
+      chapter_id: 'genesis_1',
+      title: 'Title',
+      prompt: 'P?',
+      answer: 'A',
+      interval_days: 1,
+      review_count: 0,
+    });
+    await completeGuidedReviewItem(10);
+    // Inside the transaction: one UPDATE to complete the row, one INSERT for the next interval
+    expect(mockWithTransactionAsync).toHaveBeenCalledTimes(1);
+    const calls = mockRunAsync.mock.calls;
+    expect(calls[0][0]).toEqual(expect.stringContaining("status = 'completed'"));
+    expect(calls[0][1]).toEqual([10]);
+    expect(calls[1][0]).toEqual(expect.stringContaining('INSERT INTO guided_review_items'));
+    // Next interval after 1 is 3
+    expect(calls[1][1]).toEqual([5, 'genesis_1', 'Title', 'P?', 'A', '+3 days', 3, 1]);
+  });
+
+  it('terminates the chain after the final interval (30 days)', async () => {
+    mockGetFirstAsync.mockResolvedValueOnce({
+      source_session_id: 5,
+      chapter_id: 'genesis_1',
+      title: 'Title',
+      prompt: 'P?',
+      answer: 'A',
+      interval_days: 30,
+      review_count: 3,
+    });
+    await completeGuidedReviewItem(10);
+    // Only the UPDATE runs — no next row inserted after the last interval
+    expect(mockRunAsync).toHaveBeenCalledTimes(1);
+    expect(mockRunAsync.mock.calls[0][0]).toEqual(expect.stringContaining("status = 'completed'"));
+  });
+
+  it('no-ops if the row does not exist', async () => {
+    mockGetFirstAsync.mockResolvedValueOnce(null);
+    await completeGuidedReviewItem(999);
+    // Transaction was opened but no writes happened
+    expect(mockWithTransactionAsync).toHaveBeenCalledTimes(1);
+    expect(mockRunAsync).not.toHaveBeenCalled();
+  });
+});
+
+describe('setGuidedStudyStep', () => {
+  it('updates current_step and updated_at', async () => {
+    await setGuidedStudyStep(5, 'observe');
+    expect(mockRunAsync).toHaveBeenCalledWith(
+      expect.stringContaining('UPDATE guided_study_sessions SET current_step'),
+      ['observe', 5],
+    );
+  });
+});
+
+describe('completeGuidedStudySession', () => {
+  it("sets status to completed and current_step to review", async () => {
+    await completeGuidedStudySession(5);
+    expect(mockRunAsync).toHaveBeenCalledWith(
+      expect.stringContaining("status = 'completed'"),
+      [5],
+    );
+    expect(mockRunAsync.mock.calls[0][0]).toEqual(
+      expect.stringContaining("current_step = 'review'"),
+    );
+  });
+});
+
+describe('upsertGuidedStudyResponse', () => {
+  it('inserts (or updates) a response and bumps session updated_at', async () => {
+    await upsertGuidedStudyResponse(5, 'key1', 'prompt text', 'response text');
+    // Two queries: INSERT ... ON CONFLICT DO UPDATE, then session updated_at
+    expect(mockRunAsync).toHaveBeenCalledTimes(2);
+    expect(mockRunAsync.mock.calls[0][0]).toEqual(
+      expect.stringContaining('INSERT INTO guided_study_responses'),
+    );
+    expect(mockRunAsync.mock.calls[0][1]).toEqual([5, 'key1', 'prompt text', 'response text']);
+    expect(mockRunAsync.mock.calls[1][0]).toEqual(
+      expect.stringContaining('UPDATE guided_study_sessions SET updated_at'),
+    );
+  });
+});
+
+describe('upsertGuidedStudySynthesis', () => {
+  it('inserts (or updates) synthesis and bumps session updated_at', async () => {
+    await upsertGuidedStudySynthesis(5, {
+      takeaway: 'T',
+      open_question: 'Q',
+      key_connection: 'C',
+    });
+    expect(mockRunAsync).toHaveBeenCalledTimes(2);
+    expect(mockRunAsync.mock.calls[0][0]).toEqual(
+      expect.stringContaining('INSERT INTO guided_study_synthesis'),
+    );
+    expect(mockRunAsync.mock.calls[0][1]).toEqual([5, 'T', 'Q', 'C']);
+  });
+});
+
+describe('recordConceptEncounter', () => {
+  it('inserts or updates a concept encounter by (concept_id, chapter_id)', async () => {
+    await recordConceptEncounter('creation', 'Creation', 'genesis_1');
+    expect(mockRunAsync).toHaveBeenCalledWith(
+      expect.stringContaining('INSERT INTO concept_encounters'),
+      ['creation', 'Creation', 'genesis_1'],
+    );
+    expect(mockRunAsync.mock.calls[0][0]).toEqual(
+      expect.stringContaining('ON CONFLICT(concept_id, chapter_id)'),
     );
   });
 });

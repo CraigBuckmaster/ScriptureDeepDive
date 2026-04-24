@@ -40,11 +40,29 @@ export { usePremium } from './usePremium';
 export { useJourney } from './useJourney';
 export { useJourneyDetail } from './useJourneyDetail';
 export { useStudyDepth } from './useStudyDepth';
-export { useDebateTopics, useDebateTopic, useChapterDebateTopics, DEBATE_CATEGORY_LABELS } from './useDebateTopics';
-export { useLifeTopicCategories, useLifeTopics, useLifeTopicSearch, useLifeTopicDetail } from './useLifeTopics';
+export { useGuidedStudyChapterState } from './useGuidedStudyChapterState';
+export { useGuidedStudySession } from './useGuidedStudySession';
+export { useProofTextGuard } from './useProofTextGuard';
+export { useReviewQueue } from './useReviewQueue';
+export {
+  useDebateTopics,
+  useDebateTopic,
+  useChapterDebateTopics,
+  DEBATE_CATEGORY_LABELS,
+} from './useDebateTopics';
+export {
+  useLifeTopicCategories,
+  useLifeTopics,
+  useLifeTopicSearch,
+  useLifeTopicDetail,
+} from './useLifeTopics';
 export { useAvailableLenses, useChapterLensContent } from './useHermeneuticLens';
 export { useArchaeologyBrowse, useArchaeologySearch, useArchaeologyDetail } from './useArchaeology';
-export { useInterpretationEras, useVerseInterpretations, useChapterInterpretations } from './useInterpretations';
+export {
+  useInterpretationEras,
+  useVerseInterpretations,
+  useChapterInterpretations,
+} from './useInterpretations';
 export { useGrammarArticle, useMorphologyDecode } from './useGrammar';
 export { useAuth } from './useAuth';
 export { useEngagement } from './useEngagement';

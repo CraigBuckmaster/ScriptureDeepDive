@@ -9,6 +9,7 @@ import { lazySuspense } from './lazySuspense';
 const ChapterListScreen = lazySuspense(() => import('../screens/ChapterListScreen'));
 const BookIntroScreen = lazySuspense(() => import('../screens/BookIntroScreen'));
 const ChapterScreen = lazySuspense(() => import('../screens/ChapterScreen'));
+const StudySessionScreen = lazySuspense(() => import('../screens/StudySessionScreen'));
 const ParallelPassageScreen = lazySuspense(() => import('../screens/ParallelPassageScreen'));
 const ParallelDetailScreen = lazySuspense(() => import('../screens/ParallelDetailScreen'));
 const HarmonyBrowseScreen = lazySuspense(() => import('../screens/HarmonyBrowseScreen'));
@@ -35,6 +36,7 @@ export function ReadStack() {
       <Stack.Screen name="ChapterList" component={ChapterListScreen} />
       <Stack.Screen name="BookIntro" component={BookIntroScreen} />
       <Stack.Screen name="Chapter" component={ChapterScreen} />
+      <Stack.Screen name="StudySession" component={StudySessionScreen} />
       <Stack.Screen name="ParallelPassage" component={ParallelPassageScreen} />
       <Stack.Screen name="ParallelDetail" component={ParallelDetailScreen} />
       <Stack.Screen name="HarmonyBrowse" component={HarmonyBrowseScreen} />

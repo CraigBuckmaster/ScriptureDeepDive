@@ -559,9 +559,64 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Fall & Redemption",
+          "score": 7
+        },
+        {
+          "label": "Covenant",
+          "score": 10
+        },
+        {
+          "label": "Providence",
+          "score": 8
+        },
+        {
+          "label": "Creation Order",
+          "score": 8
+        },
+        {
+          "label": "Imago Dei",
+          "score": 9
+        },
+        {
+          "label": "Typology",
+          "score": 6
+        }
+      ],
+      "note": "Genesis 9 introduces the first formal covenant in Scripture — the Noahic covenant, made not just with Noah's family but with 'every living creature' (v.10). The bow in the clouds is a covenant sign before circumcision, before sabbath, before the tablets at Sinai. The chapter also re-grounds human dignity in the imago Dei (v.6) as the basis for prohibiting murder, establishing the first principle of biblical ethics: human life is sacrosanct because it bears the divine image. Yet the chapter ends with Noah's drunken nakedness and Ham's sin — the second Adam falls in his own vineyard. Covenant renewal does not undo the fall; it carries it forward under grace."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 9:1, 7",
+        "target": "Gen 1:28",
+        "type": "Echo",
+        "text": "'Be fruitful and multiply and fill the earth' is repeated to Noah verbatim from the creation mandate. Genesis 9 is Adam's commission renewed for a post-flood humanity — Noah stands at the head of a second humanity with the same creational vocation.",
+        "direction": "back"
+      },
+      {
+        "anchor": "Gen 9:6",
+        "target": "Matt 26:52",
+        "type": "Echo",
+        "text": "'Whoever sheds the blood of man, by man shall his blood be shed' stands behind Jesus' 'all who take the sword will perish by the sword' — the lex talionis principle rooted in the imago Dei. Genesis 9:6 is also Paul's warrant for the sword of the state in Rom 13:4.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 9:11-15",
+        "target": "Isa 54:9-10",
+        "type": "Echo",
+        "text": "Isaiah invokes the Noahic oath as the template for God's eternal covenant of peace: 'as I swore the waters of Noah should no more go over the earth, so I have sworn that I will not be angry with you.' The bow in the clouds becomes the OT's strongest image of God's irrevocable mercy.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 9:20-25",
+        "target": "Gen 3:7, 21",
+        "type": "Echo",
+        "text": "Noah's nakedness and the sons' covering of him re-stages Eden's nakedness and covering. The Second Adam falls into his own vineyard (a garden-echo), and the shameful exposure of Ham rehearses the post-fall dynamic. The covenant has been renewed, but the fall has not been undone.",
+        "direction": "back"
+      }
+    ]
   },
   "vhl_groups": [
     {

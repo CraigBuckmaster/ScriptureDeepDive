@@ -707,9 +707,64 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Fall & Redemption",
+          "score": 7
+        },
+        {
+          "label": "Covenant",
+          "score": 9
+        },
+        {
+          "label": "Providence",
+          "score": 9
+        },
+        {
+          "label": "Creation Order",
+          "score": 8
+        },
+        {
+          "label": "New Creation",
+          "score": 9
+        },
+        {
+          "label": "Typology",
+          "score": 7
+        }
+      ],
+      "note": "Genesis 8 is the world's first re-creation. The narrative arc — wind (ruaḥ) over the waters, dry ground emerging, ordered rhythms reasserted — is a deliberate reenactment of Genesis 1, miniaturised inside Noah's narrative. God 'remembers' Noah (v.1) and the same divine memory that initiated creation re-initiates it. The dove with the olive leaf (v.11) becomes one of Scripture's most enduring images: the sign that the cosmos can again support life. The chapter ends with Noah's altar and God's irrevocable 'never again' (v.21-22) — covenant stability grounded in sacrifice. Seasons, day and night, seedtime and harvest are guaranteed not by nature's reliability but by divine oath."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 8:1",
+        "target": "Gen 1:2",
+        "type": "Echo",
+        "text": "'God made a wind (ruaḥ) pass over the earth, and the waters subsided' deliberately echoes Gen 1:2, where 'the Spirit (ruaḥ) of God was hovering over the waters.' The flood is a de-creation and the receding of the waters is a re-creation — the same ruaḥ, the same cosmogonic structure, now reenacted in miniature.",
+        "direction": "back"
+      },
+      {
+        "anchor": "Gen 8:11",
+        "target": "Matt 3:16",
+        "type": "Typology",
+        "text": "The dove returning with an olive leaf — the first sign that creation is habitable again — finds its typological climax at Jesus' baptism, when the Spirit descends 'like a dove' on the true Noah who will bring the rest the flood could not secure. Early Christian iconography read Gen 8:11 this way explicitly.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 8:20-22",
+        "target": "Rom 8:19-22",
+        "type": "Echo",
+        "text": "God's 'never again' oath to curse the ground and destroy all creatures (8:21) grounds Paul's confidence in Rom 8 that creation will not be abandoned but 'liberated from its bondage to decay.' The covenant stability of Genesis 8 is the guarantee that cosmic redemption remains on the table.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 8:21",
+        "target": "1 Pet 3:20-21",
+        "type": "Typology",
+        "text": "Peter reads the ark through the waters as a type of baptism — not cleansing from dirt but 'the pledge of a good conscience toward God.' The emergence from the flood onto a new earth becomes the template for coming through the waters of baptism into new-creation life.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

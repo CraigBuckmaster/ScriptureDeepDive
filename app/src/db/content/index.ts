@@ -12,6 +12,7 @@ export {
   getVerses, getVerse, getInterlinearWords, getVHLGroups,
   getConcordanceResults, getConcordanceCount,
   getRedLetterVerses,
+  getProofTextGuard,
 } from './chapters';
 export { getAllScholars, getScholar, getScholarsForBook } from './scholars';
 export {

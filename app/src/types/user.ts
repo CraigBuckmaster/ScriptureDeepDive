@@ -10,8 +10,8 @@ export interface UserNote {
   note_text: string;
   created_at: string;
   updated_at: string;
-  tags_json: string;              // JSON array of tag strings
-  collection_id: number | null;   // FK to study_collections
+  tags_json: string; // JSON array of tag strings
+  collection_id: number | null; // FK to study_collections
 }
 
 export interface StudyCollection {
@@ -49,6 +49,81 @@ export interface StudySessionEvent {
   metadata_json?: string;
 }
 
+export const GUIDED_STUDY_STEPS = ['scene', 'observe', 'explore', 'synthesize', 'review'] as const;
+
+export type GuidedStudyStep = (typeof GUIDED_STUDY_STEPS)[number];
+
+export interface GuidedStudySession {
+  id: number;
+  chapter_id: string;
+  status: 'active' | 'completed' | 'dismissed';
+  current_step: GuidedStudyStep;
+  started_at: string;
+  completed_at: string | null;
+  updated_at: string;
+}
+
+export interface GuidedStudyResponse {
+  id: number;
+  session_id: number;
+  prompt_key: string;
+  prompt_text: string;
+  response_text: string;
+  updated_at: string;
+}
+
+export interface GuidedStudySynthesis {
+  id: number;
+  session_id: number;
+  takeaway: string;
+  open_question: string;
+  key_connection: string;
+  updated_at: string;
+}
+
+export interface GuidedStudyQuestion {
+  id: number;
+  session_id: number;
+  chapter_id: string;
+  question_text: string;
+  status: 'open' | 'resolved';
+  created_at: string;
+  resolved_at: string | null;
+  updated_at: string;
+}
+
+export interface GuidedStudyTakeawaySummary {
+  session_id: number;
+  chapter_id: string;
+  takeaway: string;
+  updated_at: string;
+}
+
+export interface GuidedReviewItem {
+  id: number;
+  source_session_id: number;
+  chapter_id: string;
+  title: string;
+  prompt: string;
+  answer: string;
+  due_date: string;
+  interval_days: number;
+  review_count: number;
+  status: 'due' | 'completed';
+  created_at: string;
+  updated_at: string;
+}
+
+export interface ConceptEncounter {
+  id: number;
+  concept_id: string;
+  concept_label: string;
+  chapter_id: string;
+  first_seen_at: string;
+  last_seen_at: string;
+  encounter_count: number;
+}
+
 export interface ReadingProgress {
   book_id: string;
   chapter_num: number;
@@ -67,7 +142,7 @@ export interface Bookmark {
 export interface AmicusThread {
   thread_id: string;
   title: string;
-  chapter_ref: string | null;    // e.g. "romans:9"
+  chapter_ref: string | null; // e.g. "romans:9"
   pinned: boolean;
   created_at: string;
   last_message_at: string;

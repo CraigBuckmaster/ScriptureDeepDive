@@ -394,7 +394,30 @@
         }
       ],
       "note": "Genesis 49 is the most explicitly prophetic chapter in Genesis. Jacob speaks from the threshold of death about the destinies of nations. The moral failures of the Joseph cycle (Reuben, Simeon, Levi) carry tribal consequences; the faithfulness of Judah and Joseph carries tribal promise. The Shiloh verse makes this the most messianic chapter in Genesis — the sceptre of Judah points forward across a thousand years to David, and beyond David to Christ."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Gen 49:10",
+        "target": "Num 24:17; Rev 5:5",
+        "type": "Fulfilment",
+        "text": "'The sceptre shall not depart from Judah... until Shiloh comes (or: until he comes to whom it belongs), and to him shall be the obedience of the peoples.' Balaam's oracle (Num 24:17) and Rev 5:5's 'Lion of the tribe of Judah' both name Gen 49:10 as prophecy of the messianic king.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 49:18",
+        "target": "Luke 2:30",
+        "type": "Echo",
+        "text": "'I wait for your salvation, O LORD' — a dying patriarch's interjection mid-blessing. Luke's Simeon (2:30) echoes it: 'my eyes have seen your salvation.' The Genesis-wide ache is resolved in the Spirit-led old man holding the infant Christ.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 49:24",
+        "target": "Ps 23:1; John 10:11",
+        "type": "Echo",
+        "text": "'By the hand of the Mighty One of Jacob, the Shepherd, the Stone of Israel' — two messianic titles (Shepherd, Stone) applied to God in the same line, both picked up throughout the OT (Ps 23; Isa 28:16) and in Jesus' self-naming ('I am the good shepherd,' John 10).",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

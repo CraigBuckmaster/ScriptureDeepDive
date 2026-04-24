@@ -381,9 +381,64 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Covenant",
+          "score": 9
+        },
+        {
+          "label": "Providence",
+          "score": 10
+        },
+        {
+          "label": "Creation Order",
+          "score": 4
+        },
+        {
+          "label": "Faith & Obedience",
+          "score": 9
+        },
+        {
+          "label": "Prayer",
+          "score": 10
+        },
+        {
+          "label": "Typology",
+          "score": 8
+        }
+      ],
+      "note": "Genesis 18 is the OT's richest theology of intercessory prayer. Abraham hosts three strangers at Mamre — the famous Rublev-icon scene — and discovers he is hosting YHWH. The promise of Isaac is renewed with a divinely-comic 'is anything too hard for the LORD?' (v.14) — the very question Gabriel will echo to Mary (Luke 1:37). Then comes the intercession for Sodom: Abraham bargains God down from fifty righteous to ten, grounded in confidence in God's character ('shall not the Judge of all the earth do right?,' v.25). The chapter establishes that God reveals his plans to his covenant friends and that they may negotiate from those revealed plans."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 18:1-8",
+        "target": "Heb 13:2",
+        "type": "Echo",
+        "text": "Abraham's hospitality to three strangers at Mamre is the OT's paradigm scene of welcoming the divine in the guise of the unknown traveller. Hebrews 13:2 distils the lesson: 'do not neglect to show hospitality to strangers, for thereby some have entertained angels unawares.'",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 18:14",
+        "target": "Luke 1:37",
+        "type": "Fulfilment",
+        "text": "'Is anything too hard for the LORD?' becomes Gabriel's 'For nothing will be impossible with God' to Mary. The Sarah-conceiving question is reprised at the virgin-conceiving moment — the same divine power answering the same skeptical laugh-turned-belief.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 18:18-19",
+        "target": "Acts 3:25",
+        "type": "Fulfilment",
+        "text": "The inner monologue of God — 'shall I hide from Abraham what I am about to do, seeing that Abraham shall surely become a great nation, and in him all the nations of the earth shall be blessed?' — is quoted by Peter at Solomon's Portico: 'in your offspring shall all the families of the earth be blessed' (Acts 3:25).",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 18:22-33",
+        "target": "Jas 5:16-18",
+        "type": "Echo",
+        "text": "Abraham's intercession for Sodom — bargaining God down from fifty to ten — is the archetype of intercessory prayer: grounded in God's character ('shall not the Judge of all the earth do right?'), persistent, and effective. James holds up Elijah as the paradigm; the Genesis template is Abraham.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

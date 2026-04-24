@@ -568,9 +568,64 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Fall & Redemption",
+          "score": 6
+        },
+        {
+          "label": "Covenant",
+          "score": 10
+        },
+        {
+          "label": "Providence",
+          "score": 8
+        },
+        {
+          "label": "Creation Order",
+          "score": 5
+        },
+        {
+          "label": "Faith & Obedience",
+          "score": 8
+        },
+        {
+          "label": "Typology",
+          "score": 8
+        }
+      ],
+      "note": "Genesis 17 institutes the covenant's permanent sign — circumcision — and renames Abram and Sarai as Abraham and Sarah. The renaming is theological: 'father of a multitude' and 'princess' encode the very promise the couple's bodies have not yet fulfilled. Paul's argument in Rom 4 turns on the chapter's chronology: Abraham was justified (Gen 15) before he was circumcised (Gen 17), making him the father both of believing Jews and believing Gentiles. The everlasting covenant clause (v.7) — 'I will be God to you and to your offspring after you' — becomes Peter's Pentecost text (Acts 2:39) for the Gospel's reach across generations."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 17:5",
+        "target": "Rom 4:17",
+        "type": "Fulfilment",
+        "text": "'No longer shall your name be called Abram, but Abraham, for I have made you the father of a multitude of nations.' Paul quotes this line in Rom 4:17 as the anchor of his argument that Abraham is the father of all who believe — the name-change is the textual warrant for gentile inclusion.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 17:10-14",
+        "target": "Rom 4:9-12",
+        "type": "Echo",
+        "text": "Circumcision as the covenant sign. Paul's key move in Rom 4 is the sequence: Abraham believed (15:6) before he was circumcised (17). Therefore circumcision is 'a seal of the righteousness that he had by faith while he was still uncircumcised' — making him the father of believing gentiles as well as Jews.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 17:19",
+        "target": "Luke 1:31-33",
+        "type": "Echo",
+        "text": "God overrides Abraham's laughter with 'No, but Sarah your wife shall bear you a son, and you shall call his name Isaac.' Gabriel's annunciation to Mary ('you will conceive... and shall call his name Jesus') deliberately rehearses this pattern — promised son, divinely named, destined to inherit an everlasting covenant.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 17:7",
+        "target": "Acts 2:39",
+        "type": "Fulfilment",
+        "text": "'I will be God to you and to your offspring after you' — the generational extension of the covenant. Peter echoes it on Pentecost: 'the promise is for you and for your children and for all who are far off, everyone whom the Lord our God calls to himself.'",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

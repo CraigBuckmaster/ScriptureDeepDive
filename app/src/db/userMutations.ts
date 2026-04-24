@@ -6,6 +6,8 @@
  */
 
 import { logger } from '../utils/logger';
+import { nextIntervalAfter } from '../services/guidedStudy/review';
+import type { GuidedStudyStep } from '../types';
 import { getUserDb } from './userDatabase';
 import type { ReadingPlan } from './userQueries';
 
@@ -13,34 +15,31 @@ import type { ReadingPlan } from './userQueries';
 
 export async function saveNote(verseRef: string, text: string): Promise<number> {
   const result = await getUserDb().runAsync(
-    "INSERT INTO user_notes (verse_ref, note_text) VALUES (?, ?)",
-    [verseRef, text]
+    'INSERT INTO user_notes (verse_ref, note_text) VALUES (?, ?)',
+    [verseRef, text],
   );
   const noteId = result.lastInsertRowId;
   // Sync FTS
-  await getUserDb().runAsync(
-    "INSERT INTO notes_fts(rowid, note_text) VALUES (?, ?)",
-    [noteId, text]
-  );
+  await getUserDb().runAsync('INSERT INTO notes_fts(rowid, note_text) VALUES (?, ?)', [
+    noteId,
+    text,
+  ]);
   return noteId;
 }
 
 export async function updateNote(id: number, text: string): Promise<void> {
   await getUserDb().runAsync(
     "UPDATE user_notes SET note_text = ?, updated_at = datetime('now') WHERE id = ?",
-    [text, id]
+    [text, id],
   );
   // Sync FTS
-  await getUserDb().runAsync(
-    "UPDATE notes_fts SET note_text = ? WHERE rowid = ?",
-    [text, id]
-  );
+  await getUserDb().runAsync('UPDATE notes_fts SET note_text = ? WHERE rowid = ?', [text, id]);
 }
 
 export async function deleteNote(id: number): Promise<void> {
-  await getUserDb().runAsync("DELETE FROM user_notes WHERE id = ?", [id]);
+  await getUserDb().runAsync('DELETE FROM user_notes WHERE id = ?', [id]);
   // Sync FTS
-  await getUserDb().runAsync("DELETE FROM notes_fts WHERE rowid = ?", [id]);
+  await getUserDb().runAsync('DELETE FROM notes_fts WHERE rowid = ?', [id]);
 }
 
 // ── Reading Progress (write) ──────────────────────────────────────
@@ -50,7 +49,7 @@ export async function recordVisit(bookId: string, ch: number): Promise<void> {
     `INSERT INTO reading_progress (book_id, chapter_num, completed_at)
      VALUES (?, ?, datetime('now'))
      ON CONFLICT(book_id, chapter_num) DO UPDATE SET completed_at = datetime('now')`,
-    [bookId, ch]
+    [bookId, ch],
   );
 }
 
@@ -58,14 +57,14 @@ export async function recordVisit(bookId: string, ch: number): Promise<void> {
 
 export async function addBookmark(verseRef: string, label?: string): Promise<number> {
   const result = await getUserDb().runAsync(
-    "INSERT INTO bookmarks (verse_ref, label) VALUES (?, ?)",
-    [verseRef, label ?? null]
+    'INSERT INTO bookmarks (verse_ref, label) VALUES (?, ?)',
+    [verseRef, label ?? null],
   );
   return result.lastInsertRowId;
 }
 
 export async function removeBookmark(id: number): Promise<void> {
-  await getUserDb().runAsync("DELETE FROM bookmarks WHERE id = ?", [id]);
+  await getUserDb().runAsync('DELETE FROM bookmarks WHERE id = ?', [id]);
 }
 
 // ── Preferences (write) ──────────────────────────────────────────
@@ -74,7 +73,7 @@ export async function setPreference(key: string, value: string): Promise<void> {
   await getUserDb().runAsync(
     `INSERT INTO user_preferences (key, value) VALUES (?, ?)
      ON CONFLICT(key) DO UPDATE SET value = ?`,
-    [key, value, value]
+    [key, value, value],
   );
 }
 
@@ -89,43 +88,54 @@ export async function setHighlight(
   await getUserDb().runAsync(
     `INSERT INTO verse_highlights (verse_ref, color, collection_id, note) VALUES (?, ?, ?, ?)
      ON CONFLICT(verse_ref) DO UPDATE SET color = ?, collection_id = ?, note = ?, created_at = datetime('now')`,
-    [verseRef, color, collectionId ?? null, note ?? null, color, collectionId ?? null, note ?? null]
+    [
+      verseRef,
+      color,
+      collectionId ?? null,
+      note ?? null,
+      color,
+      collectionId ?? null,
+      note ?? null,
+    ],
   );
 }
 
 export async function removeHighlight(verseRef: string): Promise<void> {
-  await getUserDb().runAsync("DELETE FROM verse_highlights WHERE verse_ref = ?", [verseRef]);
+  await getUserDb().runAsync('DELETE FROM verse_highlights WHERE verse_ref = ?', [verseRef]);
 }
 
 // ── Highlight Collections (write) ────────────────────────────────
 
 export async function createHighlightCollection(
-  id: string, name: string, color: string
+  id: string,
+  name: string,
+  color: string,
 ): Promise<void> {
   await getUserDb().runAsync(
-    "INSERT INTO highlight_collections (id, name, color) VALUES (?, ?, ?)",
-    [id, name, color]
+    'INSERT INTO highlight_collections (id, name, color) VALUES (?, ?, ?)',
+    [id, name, color],
   );
 }
 
 export async function deleteHighlightCollection(id: string): Promise<void> {
   await getUserDb().runAsync(
-    "UPDATE verse_highlights SET collection_id = NULL WHERE collection_id = ?",
-    [id]
+    'UPDATE verse_highlights SET collection_id = NULL WHERE collection_id = ?',
+    [id],
   );
-  await getUserDb().runAsync("DELETE FROM highlight_collections WHERE id = ?", [id]);
+  await getUserDb().runAsync('DELETE FROM highlight_collections WHERE id = ?', [id]);
 }
 
 // ── Reading Plans (write) ────────────────────────────────────────
 
 export async function startPlan(planId: string): Promise<void> {
   const plan = await getUserDb().getFirstAsync<ReadingPlan>(
-    "SELECT * FROM reading_plans WHERE id = ?", [planId]
+    'SELECT * FROM reading_plans WHERE id = ?',
+    [planId],
   );
   if (!plan) return;
 
   await getUserDb().withTransactionAsync(async () => {
-    await getUserDb().runAsync("DELETE FROM plan_progress WHERE plan_id = ?", [planId]);
+    await getUserDb().runAsync('DELETE FROM plan_progress WHERE plan_id = ?', [planId]);
 
     // Batch insert — single statement instead of N individual inserts
     const BATCH_SIZE = 100;
@@ -139,17 +149,17 @@ export async function startPlan(planId: string): Promise<void> {
       }
       await getUserDb().runAsync(
         `INSERT INTO plan_progress (plan_id, day_num) VALUES ${placeholders.join(',')}`,
-        values
+        values,
       );
     }
 
     await getUserDb().runAsync(
       "INSERT OR REPLACE INTO user_preferences (key, value) VALUES ('active_plan', ?)",
-      [planId]
+      [planId],
     );
     await getUserDb().runAsync(
       "INSERT OR REPLACE INTO user_preferences (key, value) VALUES ('plan_start_date', ?)",
-      [new Date().toISOString().slice(0, 10)]
+      [new Date().toISOString().slice(0, 10)],
     );
   });
 }
@@ -157,15 +167,15 @@ export async function startPlan(planId: string): Promise<void> {
 export async function completePlanDay(planId: string, dayNum: number): Promise<void> {
   await getUserDb().runAsync(
     "UPDATE plan_progress SET completed_at = datetime('now') WHERE plan_id = ? AND day_num = ?",
-    [planId, dayNum]
+    [planId, dayNum],
   );
 }
 
 export async function abandonPlan(planId: string): Promise<void> {
   await getUserDb().withTransactionAsync(async () => {
-    await getUserDb().runAsync("DELETE FROM plan_progress WHERE plan_id = ?", [planId]);
+    await getUserDb().runAsync('DELETE FROM plan_progress WHERE plan_id = ?', [planId]);
     await getUserDb().runAsync(
-      "INSERT OR REPLACE INTO user_preferences (key, value) VALUES ('active_plan', '')"
+      "INSERT OR REPLACE INTO user_preferences (key, value) VALUES ('active_plan', '')",
     );
   });
 }
@@ -175,11 +185,11 @@ export async function abandonPlan(planId: string): Promise<void> {
 export async function createCollection(
   name: string,
   description: string = '',
-  color: string = '#bfa050'
+  color: string = '#bfa050',
 ): Promise<number> {
   const result = await getUserDb().runAsync(
-    "INSERT INTO study_collections (name, description, color) VALUES (?, ?, ?)",
-    [name, description, color]
+    'INSERT INTO study_collections (name, description, color) VALUES (?, ?, ?)',
+    [name, description, color],
   );
   return result.lastInsertRowId;
 }
@@ -188,17 +198,17 @@ export async function updateCollection(
   id: number,
   name: string,
   description: string,
-  color: string
+  color: string,
 ): Promise<void> {
   await getUserDb().runAsync(
     "UPDATE study_collections SET name = ?, description = ?, color = ?, updated_at = datetime('now') WHERE id = ?",
-    [name, description, color, id]
+    [name, description, color, id],
   );
 }
 
 export async function deleteCollection(id: number): Promise<void> {
   // Notes in this collection will have collection_id set to NULL (ON DELETE SET NULL)
-  await getUserDb().runAsync("DELETE FROM study_collections WHERE id = ?", [id]);
+  await getUserDb().runAsync('DELETE FROM study_collections WHERE id = ?', [id]);
 }
 
 // ── Tags (write) ─────────────────────────────────────────────────
@@ -207,14 +217,17 @@ export async function updateNoteTags(noteId: number, tags: string[]): Promise<vo
   const tagsJson = JSON.stringify(tags);
   await getUserDb().runAsync(
     "UPDATE user_notes SET tags_json = ?, updated_at = datetime('now') WHERE id = ?",
-    [tagsJson, noteId]
+    [tagsJson, noteId],
   );
 }
 
-export async function setNoteCollection(noteId: number, collectionId: number | null): Promise<void> {
+export async function setNoteCollection(
+  noteId: number,
+  collectionId: number | null,
+): Promise<void> {
   await getUserDb().runAsync(
     "UPDATE user_notes SET collection_id = ?, updated_at = datetime('now') WHERE id = ?",
-    [collectionId, noteId]
+    [collectionId, noteId],
   );
 }
 
@@ -222,16 +235,16 @@ export async function setNoteCollection(noteId: number, collectionId: number | n
 
 export async function linkNotes(fromId: number, toId: number): Promise<void> {
   await getUserDb().runAsync(
-    "INSERT OR IGNORE INTO note_links (from_note_id, to_note_id) VALUES (?, ?)",
-    [fromId, toId]
+    'INSERT OR IGNORE INTO note_links (from_note_id, to_note_id) VALUES (?, ?)',
+    [fromId, toId],
   );
 }
 
 export async function unlinkNotes(fromId: number, toId: number): Promise<void> {
-  await getUserDb().runAsync(
-    "DELETE FROM note_links WHERE from_note_id = ? AND to_note_id = ?",
-    [fromId, toId]
-  );
+  await getUserDb().runAsync('DELETE FROM note_links WHERE from_note_id = ? AND to_note_id = ?', [
+    fromId,
+    toId,
+  ]);
 }
 
 // ── Auth Profile (write) ────────────────────────────────────────
@@ -263,17 +276,16 @@ export async function clearAuthProfile(): Promise<void> {
 // ── Study Sessions (write) ─────────────────────────────────────
 
 export async function startStudySession(chapterId: string): Promise<number> {
-  const result = await getUserDb().runAsync(
-    "INSERT INTO study_sessions (chapter_id) VALUES (?)",
-    [chapterId]
-  );
+  const result = await getUserDb().runAsync('INSERT INTO study_sessions (chapter_id) VALUES (?)', [
+    chapterId,
+  ]);
   return result.lastInsertRowId;
 }
 
 export async function endStudySession(sessionId: number, durationMs: number): Promise<void> {
   await getUserDb().runAsync(
     "UPDATE study_sessions SET ended_at = datetime('now'), duration_ms = ? WHERE id = ?",
-    [durationMs, sessionId]
+    [durationMs, sessionId],
   );
 }
 
@@ -286,7 +298,7 @@ export async function recordSessionEvent(
     section_id?: string;
     timestamp_ms: number;
     metadata_json?: string;
-  }
+  },
 ): Promise<void> {
   await getUserDb().runAsync(
     `INSERT INTO study_session_events (session_id, event_type, panel_type, scholar_id, section_id, timestamp_ms, metadata_json)
@@ -299,7 +311,7 @@ export async function recordSessionEvent(
       event.section_id ?? null,
       event.timestamp_ms,
       event.metadata_json ?? null,
-    ]
+    ],
   );
 }
 
@@ -309,6 +321,219 @@ export async function recordSessionEvent(
  * Flag a piece of content for moderation review.
  * Uses INSERT OR REPLACE so re-flagging the same content updates the reason.
  */
+// Guided Study V1 (write)
+
+export async function createOrResumeGuidedStudySession(chapterId: string): Promise<number> {
+  const existing = await getUserDb().getFirstAsync<{ id: number }>(
+    `SELECT id FROM guided_study_sessions
+     WHERE chapter_id = ? AND status = 'active'
+     ORDER BY updated_at DESC, id DESC
+     LIMIT 1`,
+    [chapterId],
+  );
+  if (existing) return existing.id;
+
+  const result = await getUserDb().runAsync(
+    "INSERT INTO guided_study_sessions (chapter_id, status, current_step) VALUES (?, 'active', 'scene')",
+    [chapterId],
+  );
+  return result.lastInsertRowId;
+}
+
+export async function setGuidedStudyStep(sessionId: number, step: GuidedStudyStep): Promise<void> {
+  await getUserDb().runAsync(
+    "UPDATE guided_study_sessions SET current_step = ?, updated_at = datetime('now') WHERE id = ?",
+    [step, sessionId],
+  );
+}
+
+export async function completeGuidedStudySession(sessionId: number): Promise<void> {
+  await getUserDb().runAsync(
+    `UPDATE guided_study_sessions
+     SET status = 'completed',
+         current_step = 'review',
+         completed_at = COALESCE(completed_at, datetime('now')),
+         updated_at = datetime('now')
+     WHERE id = ?`,
+    [sessionId],
+  );
+}
+
+export async function upsertGuidedStudyResponse(
+  sessionId: number,
+  promptKey: string,
+  promptText: string,
+  responseText: string,
+): Promise<void> {
+  await getUserDb().runAsync(
+    `INSERT INTO guided_study_responses
+       (session_id, prompt_key, prompt_text, response_text, updated_at)
+     VALUES (?, ?, ?, ?, datetime('now'))
+     ON CONFLICT(session_id, prompt_key) DO UPDATE SET
+       prompt_text = excluded.prompt_text,
+       response_text = excluded.response_text,
+       updated_at = datetime('now')`,
+    [sessionId, promptKey, promptText, responseText],
+  );
+  await getUserDb().runAsync(
+    "UPDATE guided_study_sessions SET updated_at = datetime('now') WHERE id = ?",
+    [sessionId],
+  );
+}
+
+export async function upsertGuidedStudySynthesis(
+  sessionId: number,
+  synthesis: {
+    takeaway: string;
+    open_question: string;
+    key_connection: string;
+  },
+): Promise<void> {
+  await getUserDb().runAsync(
+    `INSERT INTO guided_study_synthesis
+       (session_id, takeaway, open_question, key_connection, updated_at)
+     VALUES (?, ?, ?, ?, datetime('now'))
+     ON CONFLICT(session_id) DO UPDATE SET
+       takeaway = excluded.takeaway,
+       open_question = excluded.open_question,
+       key_connection = excluded.key_connection,
+       updated_at = datetime('now')`,
+    [sessionId, synthesis.takeaway, synthesis.open_question, synthesis.key_connection],
+  );
+  await getUserDb().runAsync(
+    "UPDATE guided_study_sessions SET updated_at = datetime('now') WHERE id = ?",
+    [sessionId],
+  );
+}
+
+export async function upsertGuidedStudyQuestion(
+  sessionId: number,
+  chapterId: string,
+  questionText: string,
+): Promise<void> {
+  const normalized = questionText.trim();
+  if (normalized.length === 0) {
+    await getUserDb().runAsync('DELETE FROM guided_study_questions WHERE session_id = ?', [
+      sessionId,
+    ]);
+    return;
+  }
+
+  await getUserDb().runAsync(
+    `INSERT INTO guided_study_questions
+       (session_id, chapter_id, question_text, status, resolved_at, updated_at)
+     VALUES (?, ?, ?, 'open', NULL, datetime('now'))
+     ON CONFLICT(session_id) DO UPDATE SET
+       chapter_id = excluded.chapter_id,
+       question_text = excluded.question_text,
+       status = 'open',
+       resolved_at = NULL,
+       updated_at = datetime('now')`,
+    [sessionId, chapterId, normalized],
+  );
+}
+
+export async function resolveGuidedStudyQuestion(id: number): Promise<void> {
+  await getUserDb().runAsync(
+    `UPDATE guided_study_questions
+     SET status = 'resolved',
+         resolved_at = datetime('now'),
+         updated_at = datetime('now')
+     WHERE id = ?`,
+    [id],
+  );
+}
+
+export async function createGuidedReviewItems(
+  sessionId: number,
+  chapterId: string,
+  title: string,
+  items: Array<{
+    prompt: string;
+    answer: string;
+    intervalDays: number;
+  }>,
+): Promise<void> {
+  const db = getUserDb();
+  await db.withTransactionAsync(async () => {
+    for (const item of items) {
+      await db.runAsync(
+        `INSERT INTO guided_review_items
+          (source_session_id, chapter_id, title, prompt, answer, due_date, interval_days)
+         VALUES (?, ?, ?, ?, ?, date('now', ?))`,
+        [sessionId, chapterId, title, item.prompt, item.answer, `+${item.intervalDays} days`],
+      );
+    }
+  });
+}
+
+export async function completeGuidedReviewItem(id: number): Promise<void> {
+  const db = getUserDb();
+  await db.withTransactionAsync(async () => {
+    const current = await db.getFirstAsync<{
+      source_session_id: number;
+      chapter_id: string;
+      title: string;
+      prompt: string;
+      answer: string;
+      interval_days: number;
+      review_count: number;
+    }>(
+      `SELECT source_session_id, chapter_id, title, prompt, answer,
+              interval_days, review_count
+       FROM guided_review_items WHERE id = ?`,
+      [id],
+    );
+    if (!current) return;
+
+    await db.runAsync(
+      `UPDATE guided_review_items
+       SET status = 'completed',
+           review_count = review_count + 1,
+           updated_at = datetime('now')
+       WHERE id = ?`,
+      [id],
+    );
+
+    const next = nextIntervalAfter(current.interval_days);
+    if (next != null) {
+      await db.runAsync(
+        `INSERT INTO guided_review_items
+          (source_session_id, chapter_id, title, prompt, answer,
+           due_date, interval_days, review_count)
+         VALUES (?, ?, ?, ?, ?, date('now', ?), ?, ?)`,
+        [
+          current.source_session_id,
+          current.chapter_id,
+          current.title,
+          current.prompt,
+          current.answer,
+          `+${next} days`,
+          next,
+          current.review_count + 1,
+        ],
+      );
+    }
+  });
+}
+
+export async function recordConceptEncounter(
+  conceptId: string,
+  conceptLabel: string,
+  chapterId: string,
+): Promise<void> {
+  await getUserDb().runAsync(
+    `INSERT INTO concept_encounters
+       (concept_id, concept_label, chapter_id)
+     VALUES (?, ?, ?)
+     ON CONFLICT(concept_id, chapter_id) DO UPDATE SET
+       concept_label = excluded.concept_label,
+       last_seen_at = datetime('now'),
+       encounter_count = encounter_count + 1`,
+    [conceptId, conceptLabel, chapterId],
+  );
+}
+
 export async function flagContent(
   contentId: string,
   contentType: string,
@@ -346,10 +571,7 @@ export async function bookmarkTopic(
 }
 
 export async function unbookmarkTopic(topicId: string): Promise<void> {
-  await getUserDb().runAsync(
-    'DELETE FROM bookmarked_topics WHERE topic_id = ?',
-    [topicId],
-  );
+  await getUserDb().runAsync('DELETE FROM bookmarked_topics WHERE topic_id = ?', [topicId]);
 }
 
 /**
@@ -361,17 +583,27 @@ export async function unbookmarkTopic(topicId: string): Promise<void> {
 export async function resetToNewUser(): Promise<void> {
   const db = getUserDb();
   await db.runAsync('DELETE FROM reading_progress');
+  await db.runAsync('DELETE FROM concept_encounters');
+  await db.runAsync('DELETE FROM guided_review_items');
+  await db.runAsync('DELETE FROM guided_study_questions');
+  await db.runAsync('DELETE FROM guided_study_synthesis');
+  await db.runAsync('DELETE FROM guided_study_responses');
+  await db.runAsync('DELETE FROM guided_study_sessions');
   await db.runAsync('DELETE FROM study_session_events');
   await db.runAsync('DELETE FROM study_sessions');
-  await db.runAsync("DELETE FROM user_preferences WHERE key IN ('onboarding_complete', 'focusMode', 'getting_started', 'startHereDismissed', 'lastStreakDate', 'currentStreak', 'longestStreak', 'studyMaturityOverride', 'panelOpenSet', 'lastSeenLevel')");
+  await db.runAsync(
+    "DELETE FROM user_preferences WHERE key IN ('onboarding_complete', 'focusMode', 'getting_started', 'startHereDismissed', 'lastStreakDate', 'currentStreak', 'longestStreak', 'studyMaturityOverride', 'panelOpenSet', 'lastSeenLevel')",
+  );
   await db.runAsync('DELETE FROM plan_progress');
-  await db.runAsync("UPDATE reading_plans SET started_at = NULL, completed_at = NULL, abandoned_at = NULL WHERE started_at IS NOT NULL");
+  await db.runAsync(
+    'UPDATE reading_plans SET started_at = NULL, completed_at = NULL, abandoned_at = NULL WHERE started_at IS NOT NULL',
+  );
 }
 
 // ── Amicus threads + messages + usage (#1457) ───────────────────────
 
 export interface CreateAmicusThreadArgs {
-  threadId: string;           // caller-generated UUID
+  threadId: string; // caller-generated UUID
   title: string;
   chapterRef?: string | null;
 }
@@ -391,7 +623,10 @@ export interface AppendAmicusMessageArgs {
   role: 'user' | 'assistant';
   content: string;
   citations?: Array<{
-    chunk_id: string; source_type: string; display_label: string; scholar_id?: string;
+    chunk_id: string;
+    source_type: string;
+    display_label: string;
+    scholar_id?: string;
   }>;
   followUps?: string[];
 }
@@ -421,13 +656,11 @@ export async function appendAmicusMessage(args: AppendAmicusMessageArgs): Promis
   });
 }
 
-export async function updateThreadTitle(
-  threadId: string, title: string,
-): Promise<void> {
-  await getUserDb().runAsync(
-    'UPDATE amicus_threads SET title = ? WHERE thread_id = ?',
-    [title, threadId],
-  );
+export async function updateThreadTitle(threadId: string, title: string): Promise<void> {
+  await getUserDb().runAsync('UPDATE amicus_threads SET title = ? WHERE thread_id = ?', [
+    title,
+    threadId,
+  ]);
 }
 
 export async function toggleThreadPin(threadId: string): Promise<boolean> {
@@ -438,19 +671,13 @@ export async function toggleThreadPin(threadId: string): Promise<boolean> {
   );
   if (!row) return false;
   const next = row.pinned === 1 ? 0 : 1;
-  await db.runAsync(
-    'UPDATE amicus_threads SET pinned = ? WHERE thread_id = ?',
-    [next, threadId],
-  );
+  await db.runAsync('UPDATE amicus_threads SET pinned = ? WHERE thread_id = ?', [next, threadId]);
   return next === 1;
 }
 
 export async function deleteAmicusThread(threadId: string): Promise<void> {
   // CASCADE handles amicus_messages.
-  await getUserDb().runAsync(
-    'DELETE FROM amicus_threads WHERE thread_id = ?',
-    [threadId],
-  );
+  await getUserDb().runAsync('DELETE FROM amicus_threads WHERE thread_id = ?', [threadId]);
   logger.info('Amicus', `deleted thread ${threadId}`);
 }
 
@@ -475,15 +702,13 @@ export async function incrementAmicusUsage(): Promise<void> {
 // ── Amicus daily prompt cache (#1465) ───────────────────────────────
 
 export interface UpsertDailyPromptArgs {
-  date: string;           // YYYY-MM-DD in user's local tz
+  date: string; // YYYY-MM-DD in user's local tz
   profileHash: string;
   promptText: string;
   seedQuery: string;
 }
 
-export async function upsertDailyPrompt(
-  args: UpsertDailyPromptArgs,
-): Promise<void> {
+export async function upsertDailyPrompt(args: UpsertDailyPromptArgs): Promise<void> {
   await getUserDb().runAsync(
     `INSERT INTO amicus_daily_prompt_cache
        (id, date, profile_hash, prompt_text, seed_query, generated_at)

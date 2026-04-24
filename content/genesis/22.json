@@ -232,8 +232,8 @@
           }
         ],
         "hist": {
-          "historical": "None",
-          "context": "None"
+          "historical": "The Angel of the LORD intervention (22:11) belongs to a distinctive Genesis pattern: the angel speaks in the first person as God (22:12, 16) while remaining distinguishable from him — the same pattern that appears to Hagar (16:7–13), at the burning bush (Exod 3:2–6), and to Gideon (Judg 6:11–23). Jewish and Christian exegesis have read this figure very differently; most pre-critical Christian interpreters saw the pre-incarnate Son, while rabbinic tradition treated the Angel as a distinguishable divine messenger without positing a person. Either way the narrative is careful: the voice that stops the knife is the same voice that commanded it, and the ram-substitute is explicitly divine provision (22:13–14). Mount Moriah becomes, in 2 Chr 3:1, the temple mount — so the place where a son was bound and a ram substituted becomes the place where lambs would be substituted for sinners for a millennium.",
+          "context": "The naming 'YHWH-yireh' ('the LORD will see / provide,' 22:14) is the theological summary of the Akedah and arguably the summary of OT sacrificial theology: the God who tests the covenant man is the God who supplies the substitute himself. The repeated oath of 22:16–18 intensifies the Abrahamic promises (12:1–3; 15; 17) into their strongest form — now sworn by God's own self because nothing greater exists to swear by (cf. Heb 6:13–18). The addition here is that the promise of blessing-to-the-nations becomes explicitly tied to the 'seed' (zeraʿ, singular) — the hinge on which Paul's Christological reading of Galatians 3:16 turns."
         },
         "cross": {
           "refs": [
@@ -345,8 +345,8 @@
           }
         ],
         "hist": {
-          "historical": "None",
-          "context": "None"
+          "historical": "The Nahor genealogy (22:20–24) looks like a narrative anticlimax after the Akedah, but it is load-bearing: it introduces Bethuel (v.22), father of Rebekah — the next covenant matriarch — and so supplies the marriage partner for Isaac before the narrative needs her (ch.24). The twelve sons listed here (eight by Milcah + four by the concubine Reumah) form a deliberate counterpoint to the twelve sons of Jacob and the twelve princes of Ishmael (17:20; 25:13–16) — Genesis repeatedly pairs the covenant twelve with other twelves, a structural reminder that Israel's election is embedded inside a wider world of related peoples. Aram (v.21) is the eponym of the Arameans; Buz (v.21) reappears in Jer 25:23 and Job 32:2; Kemuel fathers the Arameans of Damascus (v.21).",
+          "context": "The placement is not accidental. Immediately after Abraham has passed the definitive test of covenant faith, the narrator quietly shows that God has already been arranging the next generation's marriage partner back in the Haran clan. The 'meanwhile' structure is the same as 11:27–32's Terah genealogy that set up the call of Abram itself: Genesis consistently pairs the high-tension covenant moment with a low-key genealogical note that marks how providence is already moving on the next hinge. By the time Isaac walks down Moriah, Rebekah has effectively been born on the page."
         },
         "cross": {
           "refs": [
@@ -568,9 +568,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Fall & Redemption",
+          "score": 10
+        },
+        {
+          "label": "Covenant",
+          "score": 10
+        },
+        {
+          "label": "Providence",
+          "score": 10
+        },
+        {
+          "label": "Creation Order",
+          "score": 4
+        },
+        {
+          "label": "Faith & Obedience",
+          "score": 10
+        },
+        {
+          "label": "Typology",
+          "score": 10
+        }
+      ],
+      "note": "Genesis 22 — the Akedah, the binding of Isaac — is the OT's most theologically charged narrative. Abraham is asked to sacrifice 'your son, your only son Isaac, whom you love' — Scripture's first 'beloved son' formula, the exact phrase the Father will speak over Jesus at the baptism. Mount Moriah (v.2) becomes, in 2 Chr 3:1, the Temple Mount — the place where a son was bound and a ram substituted becomes the place where lambs would be substituted for sinners. Abraham's prophetic 'God will provide for himself the lamb' (v.8) finds its ultimate fulfilment when John the Baptist points at Jesus (John 1:29). The divine self-oath of vv.16-18 is Hebrews 6's proof that God's promises are unbreakable; the singular 'seed' is Paul's hinge in Gal 3:16 for Christ as covenant terminus."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 22:2",
+        "target": "John 3:16",
+        "type": "Typology",
+        "text": "'Take your son, your only son Isaac, whom you love' is the first appearance in Scripture of the phrase 'beloved son' — the exact phrase that will recur at Jesus' baptism and transfiguration ('this is my beloved son'). The Akedah supplies John 3:16's 'gave his only son' its entire theological vocabulary.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 22:8",
+        "target": "John 1:29",
+        "type": "Typology",
+        "text": "'God will provide (yireh) for himself the lamb for a burnt offering' — Abraham's prophetic answer to Isaac — is fulfilled when John the Baptist points at Jesus: 'Behold, the Lamb of God, who takes away the sin of the world.' Moriah becomes Calvary; the provided Lamb was hinted at long before a ram was caught in a thicket.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 22:16-18",
+        "target": "Heb 6:13-18",
+        "type": "Fulfilment",
+        "text": "'By myself I have sworn, declares the LORD' — the divine self-oath of Gen 22:16 is Hebrews 6's proof that God's promises are unbreakable: 'because he had no one greater by whom to swear, he swore by himself.' Every Christian assurance rests on this particular oath.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 22:18",
+        "target": "Gal 3:16",
+        "type": "Fulfilment",
+        "text": "'In your offspring (zeraʿ, singular) shall all the nations of the earth be blessed.' Paul's whole argument in Gal 3:16 turns on the grammatical singularity: 'it does not say, And to offsprings, referring to many, but referring to one, And to your offspring, who is Christ.'",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 22:1-14",
+        "target": "Jas 2:21-23",
+        "type": "Fulfilment",
+        "text": "James reads the Akedah as the completion — not replacement — of Gen 15:6: 'was not Abraham our father justified by works when he offered up his son Isaac on the altar?' The faith that believed God in Gen 15 is the faith that climbs Moriah in Gen 22. The two texts are one motion.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

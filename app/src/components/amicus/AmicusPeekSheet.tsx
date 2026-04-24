@@ -7,18 +7,8 @@
  *      the body of the peek. At turn 3, "Continue in Amicus tab →" shows.
  */
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import {
-  BackHandler,
-  Pressable,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from 'react-native';
-import BottomSheet, {
-  BottomSheetBackdrop,
-  BottomSheetView,
-} from '@gorhom/bottom-sheet';
+import { BackHandler, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import BottomSheet, { BottomSheetBackdrop, BottomSheetView } from '@gorhom/bottom-sheet';
 import { ArrowUp } from 'lucide-react-native';
 import { useAmicusChips, type ChipContext } from '../../hooks/useAmicusChips';
 import { usePeekConversation } from '../../hooks/usePeekConversation';
@@ -49,14 +39,14 @@ export interface AmicusPeekSheetProps {
   /** Navigate to the citation target and close the peek (wired by parent). */
   onCitationPress?: (c: AmicusCitation) => void;
   /** Promote the peek conversation to a persistent thread (#1464). */
-  onContinueInTab?: (snapshot: ReturnType<ReturnType<typeof usePeekConversation>['snapshotForPromotion']>) => void | Promise<void>;
+  onContinueInTab?: (
+    snapshot: ReturnType<ReturnType<typeof usePeekConversation>['snapshotForPromotion']>,
+  ) => void | Promise<void>;
   /** Expose when handoff is in progress (disables the CTA). */
   handoffInProgress?: boolean;
 }
 
-export default function AmicusPeekSheet(
-  props: AmicusPeekSheetProps,
-): React.ReactElement | null {
+export default function AmicusPeekSheet(props: AmicusPeekSheetProps): React.ReactElement | null {
   const { base } = useTheme();
   const sheetRef = useRef<BottomSheet>(null);
   const snapPoints = useMemo(() => ['50%', '85%'], []);
@@ -68,7 +58,11 @@ export default function AmicusPeekSheet(
   // The sheet no longer subscribes to navigation state itself — that
   // moved to `useAmicusChipContext` via AmicusFab, where the safety
   // guard for pre-mount/no-container states already lives.
-  const ctx = props.contextOverride ?? props.context ?? { kind: 'none' };
+  const fallbackCtx = useMemo<ChipContext>(() => ({ kind: 'none' }), []);
+  const ctx = useMemo(
+    () => props.contextOverride ?? props.context ?? fallbackCtx,
+    [fallbackCtx, props.context, props.contextOverride],
+  );
   const { chips } = useAmicusChips(ctx);
   const [text, setText] = useState('');
   const peek = usePeekConversation();
@@ -102,10 +96,7 @@ export default function AmicusPeekSheet(
   }, [props.isOpen, props]);
 
   const chapterRef = useMemo(
-    () =>
-      ctx.kind === 'chapter'
-        ? { book_id: ctx.bookId, chapter_num: ctx.chapterNum }
-        : null,
+    () => (ctx.kind === 'chapter' ? { book_id: ctx.bookId, chapter_num: ctx.chapterNum } : null),
     [ctx],
   );
 
@@ -160,7 +151,10 @@ export default function AmicusPeekSheet(
           {subtitle && (
             <Text
               numberOfLines={1}
-              style={[styles.subtitle, { color: base.textMuted, fontFamily: fontFamily.bodyItalic }]}
+              style={[
+                styles.subtitle,
+                { color: base.textMuted, fontFamily: fontFamily.bodyItalic },
+              ]}
             >
               {subtitle}
             </Text>

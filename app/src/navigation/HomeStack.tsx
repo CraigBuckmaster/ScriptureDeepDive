@@ -7,6 +7,7 @@ import { lazySuspense } from './lazySuspense';
 
 // Lazy-loaded screens — each wrapped in its own Suspense boundary
 const ChapterScreen = lazySuspense(() => import('../screens/ChapterScreen'));
+const StudySessionScreen = lazySuspense(() => import('../screens/StudySessionScreen'));
 const ChapterListScreen = lazySuspense(() => import('../screens/ChapterListScreen'));
 const BookListScreen = lazySuspense(() => import('../screens/BookListScreen'));
 const BookIntroScreen = lazySuspense(() => import('../screens/BookIntroScreen'));
@@ -26,9 +27,12 @@ export function HomeStack() {
   const { base } = useTheme();
 
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: base.bg } }}>
+    <Stack.Navigator
+      screenOptions={{ headerShown: false, cardStyle: { backgroundColor: base.bg } }}
+    >
       <Stack.Screen name="HomeMain" component={HomeScreen} />
       <Stack.Screen name="Chapter" component={ChapterScreen} />
+      <Stack.Screen name="StudySession" component={StudySessionScreen} />
       <Stack.Screen name="ChapterList" component={ChapterListScreen} />
       <Stack.Screen name="BookList" component={BookListScreen} />
       <Stack.Screen name="BookIntro" component={BookIntroScreen} />

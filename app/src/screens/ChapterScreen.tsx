@@ -11,7 +11,15 @@
  */
 
 import React, { useCallback, useMemo, useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, Platform, UIManager, StyleSheet } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  Platform,
+  UIManager,
+  StyleSheet,
+} from 'react-native';
 import { ChevronRight } from 'lucide-react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
@@ -50,6 +58,21 @@ import { useChapterHighlights } from '../hooks/chapter/useChapterHighlights';
 import { useChapterCoaching } from '../hooks/chapter/useChapterCoaching';
 import { useChapterScroll } from '../hooks/chapter/useChapterScroll';
 import { useChapterPanels } from '../hooks/chapter/useChapterPanels';
+import { useProofTextGuard } from '../hooks/useProofTextGuard';
+import { getStudyDepthEstimate } from '../services/guidedStudy';
+import { ContextGuardBanner, StudySessionCTA } from '../components/guidedStudy';
+import { useGuidedStudyChapterState } from '../hooks';
+
+interface CrossTabNavigation {
+  navigate: (screen: string, params?: object) => void;
+}
+
+interface ConcordanceParams {
+  strongs?: string;
+  original?: string;
+  transliteration?: string;
+  gloss?: string | null;
+}
 
 // Enable LayoutAnimation on Android
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
@@ -59,8 +82,18 @@ if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental
 function ChapterScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Read', 'Chapter'>>();
+  // TODO(#1585): Replace with a typed CrossTabNavProp helper. Tracked
+  // alongside the existing TODO in navigation/types.ts.
+  const rootNavigation = useMemo(() => navigation as unknown as CrossTabNavigation, [navigation]);
   const route = useRoute<ScreenRouteProp<'Read', 'Chapter'>>();
-  const { bookId, chapterNum, openPanel, planId, planDayNum, verseNum: initialVerseNum } = route.params ?? {};
+  const {
+    bookId,
+    chapterNum,
+    openPanel,
+    planId,
+    planDayNum,
+    verseNum: initialVerseNum,
+  } = route.params ?? {};
 
   const translation = useSettingsStore((s) => s.translation);
   const comparisonTranslation = useSettingsStore((s) => s.comparisonTranslation);
@@ -84,18 +117,32 @@ function ChapterScreen() {
   const [showBreadcrumb, setShowBreadcrumb] = useState(!!openPanel);
 
   const {
-    chapter, sections, verses, comparisonVerses, vhlGroups,
-    chapterPanels, noteCount, isLoading,
+    chapter,
+    sections,
+    verses,
+    comparisonVerses,
+    vhlGroups,
+    chapterPanels,
+    noteCount,
+    isLoading,
   } = useChapterData(bookId, chapterNum);
 
   // ─��� Extracted hooks ──
   const scroll = useChapterScroll({
-    bookId, chapterNum, initialVerseNum, isLoading,
-    versesLength: verses.length, planId, planDayNum,
+    bookId,
+    chapterNum,
+    initialVerseNum,
+    isLoading,
+    versesLength: verses.length,
+    planId,
+    planDayNum,
   });
 
   const ttsHook = useChapterTTS({
-    verses, sections, bookId, chapterNum,
+    verses,
+    sections,
+    bookId,
+    chapterNum,
     scrollRef: scroll.scrollRef,
     sectionYMap: scroll.sectionYMap,
     verseYMap: scroll.verseYMap,
@@ -103,12 +150,21 @@ function ChapterScreen() {
 
   const { highlights, highlightMap, loadHighlights } = useChapterHighlights(bookId, chapterNum);
 
-  const { coachingTips, chapterCoaching, dismissedTips, handleDismissTip } =
-    useChapterCoaching(chapter?.coaching_json, bookId, chapterNum);
+  const { coachingTips, chapterCoaching, dismissedTips, handleDismissTip } = useChapterCoaching(
+    chapter?.coaching_json,
+    bookId,
+    chapterNum,
+  );
 
   const panels = useChapterPanels({
-    chapterId: chapter?.id, sections, isPremium, bookId, chapterNum,
-    openPanel, isLoading, scrollRef: scroll.scrollRef,
+    chapterId: chapter?.id,
+    sections,
+    isPremium,
+    bookId,
+    chapterNum,
+    openPanel,
+    isLoading,
+    scrollRef: scroll.scrollRef,
   });
 
   // ── Remaining screen-level logic ──
@@ -117,16 +173,35 @@ function ChapterScreen() {
   const redLetterVerses = useRedLetter(bookId, chapterNum);
   const notedVerses = useNotedVerses(bookId, chapterNum);
   const { bookmarked, toggleBookmark } = useBookmarkedVerses(bookId, chapterNum);
+  const proofTextGuard = useProofTextGuard(bookId, chapterNum, initialVerseNum);
+  const guidedStudyState = useGuidedStudyChapterState(chapter?.id);
+  const allSectionPanels = useMemo(() => sections.flatMap((section) => section.panels), [sections]);
+  const studyEstimate = useMemo(
+    () => getStudyDepthEstimate(verses, allSectionPanels, chapterPanels),
+    [verses, allSectionPanels, chapterPanels],
+  );
 
-  const handleInterlinearPress = useCallback((verseNum: number) => {
-    if (!isPremium) { showUpgrade('feature', 'Interlinear Hebrew & Greek'); return; }
-    setInterlinearVerse(verseNum);
-  }, [isPremium, showUpgrade]);
+  const handleInterlinearPress = useCallback(
+    (verseNum: number) => {
+      if (!isPremium) {
+        showUpgrade('feature', 'Interlinear Hebrew & Greek');
+        return;
+      }
+      setInterlinearVerse(verseNum);
+    },
+    [isPremium, showUpgrade],
+  );
 
-  const handleLensSelect = useCallback((lensId: string | null) => {
-    if (lensId !== null && !isPremium) { showUpgrade('feature', 'Hermeneutic Lenses'); return; }
-    setActiveLens(lensId);
-  }, [isPremium, showUpgrade]);
+  const handleLensSelect = useCallback(
+    (lensId: string | null) => {
+      if (lensId !== null && !isPremium) {
+        showUpgrade('feature', 'Hermeneutic Lenses');
+        return;
+      }
+      setActiveLens(lensId);
+    },
+    [isPremium, showUpgrade],
+  );
 
   // Load book data for nav
   useEffect(() => {
@@ -137,7 +212,10 @@ function ChapterScreen() {
   const [storyActName, setStoryActName] = useState<string | null>(null);
   useEffect(() => {
     const actId = chapter?.redemptive_act;
-    if (!actId) { setStoryActName(null); return; }
+    if (!actId) {
+      setStoryActName(null);
+      return;
+    }
     getRedemptiveAct(actId).then((act) => setStoryActName(act ? act.name : null));
   }, [chapter?.redemptive_act]);
 
@@ -186,17 +264,49 @@ function ChapterScreen() {
   );
 
   // Callbacks
-  const handleNotePress = useCallback((v: number) => { setNoteVerseNum(v); toggleNotes(); }, [toggleNotes]);
-  const handleVerseLongPress = useCallback((verseNum: number, text: string) => { setLongPress({ verseNum, text }); }, []);
-  const handleRefPress = useCallback((ref: { bookId: string; chapter: number; verseStart?: number; verseNum?: number }) => { const v = ref.verseStart ?? ref.verseNum; navigation.push('Chapter', { bookId: ref.bookId, chapterNum: ref.chapter, ...(v ? { verseNum: v } : {}) }); }, [navigation]);
-  const handleAddNote = useCallback((verseNum: number) => { setNoteVerseNum(verseNum); toggleNotes(); }, [toggleNotes]);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleWordStudyPress = useCallback((wsId: string) => { (navigation as any).navigate('ExploreTab', { screen: 'WordStudyDetail', params: { wordId: wsId } }); }, [navigation]);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleConcordancePress = useCallback((params: any) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (navigation as any).navigate('ExploreTab', { screen: 'Concordance', params });
-  }, [navigation]);
+  const handleNotePress = useCallback(
+    (v: number) => {
+      setNoteVerseNum(v);
+      toggleNotes();
+    },
+    [toggleNotes],
+  );
+  const handleVerseLongPress = useCallback((verseNum: number, text: string) => {
+    setLongPress({ verseNum, text });
+  }, []);
+  const handleRefPress = useCallback(
+    (ref: { bookId: string; chapter: number; verseStart?: number; verseNum?: number }) => {
+      const v = ref.verseStart ?? ref.verseNum;
+      navigation.push('Chapter', {
+        bookId: ref.bookId,
+        chapterNum: ref.chapter,
+        ...(v ? { verseNum: v } : {}),
+      });
+    },
+    [navigation],
+  );
+  const handleAddNote = useCallback(
+    (verseNum: number) => {
+      setNoteVerseNum(verseNum);
+      toggleNotes();
+    },
+    [toggleNotes],
+  );
+  const handleWordStudyPress = useCallback(
+    (wsId: string) => {
+      rootNavigation.navigate('ExploreTab', {
+        screen: 'WordStudyDetail',
+        params: { wordId: wsId },
+      });
+    },
+    [rootNavigation],
+  );
+  const handleConcordancePress = useCallback(
+    (params: ConcordanceParams) => {
+      rootNavigation.navigate('ExploreTab', { screen: 'Concordance', params });
+    },
+    [rootNavigation],
+  );
 
   // Comparison labels
   const comparisonLabel = comparisonTranslation
@@ -235,26 +345,40 @@ function ChapterScreen() {
         <TouchableOpacity
           onPress={() => navigation.goBack()}
           activeOpacity={0.7}
-          style={[styles.breadcrumb, { backgroundColor: base.gold + '18', borderColor: base.gold + '40' }]}
+          style={[
+            styles.breadcrumb,
+            { backgroundColor: base.gold + '18', borderColor: base.gold + '40' },
+          ]}
         >
           <Text style={[styles.breadcrumbText, { color: base.gold }]}>{'← Content Library'}</Text>
         </TouchableOpacity>
       )}
 
       {!focusMode && availableLenses.length > 0 && (
-        <LensToggleBar lenses={availableLenses} activeLensId={activeLens} onSelect={handleLensSelect} />
+        <LensToggleBar
+          lenses={availableLenses}
+          activeLensId={activeLens}
+          onSelect={handleLensSelect}
+        />
       )}
 
       {!focusMode && comparisonTranslation && (
         <CompareBar
           primaryLabel={TRANSLATION_MAP.get(translation)?.label ?? translation.toUpperCase()}
-          comparisonLabel={TRANSLATION_MAP.get(comparisonTranslation)?.label ?? comparisonTranslation.toUpperCase()}
+          comparisonLabel={
+            TRANSLATION_MAP.get(comparisonTranslation)?.label ?? comparisonTranslation.toUpperCase()
+          }
           onDismiss={() => setComparisonTranslation(null)}
         />
       )}
 
       <View style={[styles.progressTrack, { backgroundColor: base.border }]}>
-        <View style={[styles.progressFill, { width: `${scroll.scrollProgress * 100}%`, backgroundColor: base.gold }]} />
+        <View
+          style={[
+            styles.progressFill,
+            { width: `${scroll.scrollProgress * 100}%`, backgroundColor: base.gold },
+          ]}
+        />
       </View>
 
       <ScrollView
@@ -269,11 +393,18 @@ function ChapterScreen() {
         onTouchEnd={onTouchEnd}
       >
         {activeLens && lensContent?.guidance ? (
-          <View style={[styles.lensGuidance, { backgroundColor: base.gold + '10', borderColor: base.gold + '30' }]}>
+          <View
+            style={[
+              styles.lensGuidance,
+              { backgroundColor: base.gold + '10', borderColor: base.gold + '30' },
+            ]}
+          >
             <Text style={[styles.lensGuidanceLabel, { color: base.gold }]}>
               {availableLenses.find((l) => l.id === activeLens)?.name ?? 'Lens'} Guidance
             </Text>
-            <Text style={[styles.lensGuidanceText, { color: base.textDim }]}>{lensContent.guidance}</Text>
+            <Text style={[styles.lensGuidanceText, { color: base.textDim }]}>
+              {lensContent.guidance}
+            </Text>
           </View>
         ) : null}
 
@@ -281,23 +412,66 @@ function ChapterScreen() {
           chapter={chapter}
           noteCount={noteCount}
           onNotesPress={toggleNotes}
-          onTimelinePress={chapter.timeline_link_event
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            ? () => (navigation as any).navigate('ExploreTab', { screen: 'Timeline', params: { eventId: chapter.timeline_link_event } })
-            : undefined}
-          onMapPress={chapter.map_story_link_id
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            ? () => (navigation as any).navigate('ExploreTab', { screen: 'Map', params: { storyId: chapter.map_story_link_id } })
-            : undefined}
+          onTimelinePress={
+            chapter.timeline_link_event
+              ? () =>
+                  rootNavigation.navigate('ExploreTab', {
+                    screen: 'Timeline',
+                    params: { eventId: chapter.timeline_link_event },
+                  })
+              : undefined
+          }
+          onMapPress={
+            chapter.map_story_link_id
+              ? () =>
+                  rootNavigation.navigate('ExploreTab', {
+                    screen: 'Map',
+                    params: { storyId: chapter.map_story_link_id },
+                  })
+              : undefined
+          }
           storyActName={storyActName}
-          onStoryPress={chapter.redemptive_act
-            ? () => {
-                if (!isPremium) { showUpgrade('explore', 'The Story of the Bible'); return; }
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                (navigation as any).navigate('ExploreTab', { screen: 'RedemptiveArc' });
-              }
-            : undefined}
+          onStoryPress={
+            chapter.redemptive_act
+              ? () => {
+                  if (!isPremium) {
+                    showUpgrade('explore', 'The Story of the Bible');
+                    return;
+                  }
+                  rootNavigation.navigate('ExploreTab', { screen: 'RedemptiveArc' });
+                }
+              : undefined
+          }
         />
+
+        {!focusMode && proofTextGuard ? (
+          <ContextGuardBanner
+            guard={proofTextGuard}
+            onReadContext={() =>
+              navigation.navigate('Chapter', {
+                bookId: proofTextGuard.suggested_book_id,
+                chapterNum: proofTextGuard.suggested_chapter_num,
+              })
+            }
+          />
+        ) : null}
+
+        {!focusMode ? (
+          <StudySessionCTA
+            estimate={studyEstimate}
+            mode={guidedStudyState.mode}
+            currentStep={guidedStudyState.activeSession?.current_step}
+            dueCount={guidedStudyState.dueCount}
+            onPress={() =>
+              navigation.navigate('StudySession', {
+                bookId,
+                chapterNum,
+                initialStep: guidedStudyState.initialStep,
+                verseNum: initialVerseNum,
+              })
+            }
+          />
+        ) : null}
 
         {!focusMode && bookData?.genre_label && bookData?.genre_guidance ? (
           <GenreBanner genreLabel={bookData.genre_label} genreGuidance={bookData.genre_guidance} />
@@ -305,15 +479,22 @@ function ChapterScreen() {
 
         <ChapterReaderProvider
           verse={{
-            verses, vhlGroups, activeVhlGroups, notedVerses,
-            redLetterVerses, highlightMap, activeVerseNum: ttsHook.activeVerseNum,
+            verses,
+            vhlGroups,
+            activeVhlGroups,
+            notedVerses,
+            redLetterVerses,
+            highlightMap,
+            activeVerseNum: ttsHook.activeVerseNum,
             comparisonVerses: comparisonTranslation ? comparisonVerses : undefined,
-            comparisonLabel, primaryLabel,
+            comparisonLabel,
+            primaryLabel,
           }}
           panel={{
             activeSectionPanel: panels.activeSectionPanelType,
             activeChapterPanelType: panels.activeChapterPanelType,
-            depthMap: panels.depthMap, openPanel,
+            depthMap: panels.depthMap,
+            openPanel,
           }}
           callbacks={{
             handleSectionPanelToggle: panels.handleSectionPanelToggle,
@@ -333,8 +514,11 @@ function ChapterScreen() {
           }}
           /* eslint-enable react-hooks/refs */
           coaching={{
-            studyCoachEnabled, coachingTips, chapterCoaching,
-            dismissedTips, onDismissTip: handleDismissTip,
+            studyCoachEnabled,
+            coachingTips,
+            chapterCoaching,
+            dismissedTips,
+            onDismissTip: handleDismissTip,
           }}
           display={{ focusMode }}
         >
@@ -342,13 +526,17 @@ function ChapterScreen() {
             sections={sections}
             chapterPanels={chapterPanels}
             prayerPrompt={chapter?.prayer_prompt}
-            chapterMeta={chapter ? {
-              timeline_link_event: chapter.timeline_link_event,
-              timeline_link_text: chapter.timeline_link_text,
-              map_story_link_id: chapter.map_story_link_id,
-              map_story_link_text: chapter.map_story_link_text,
-              book_name: bookData?.name,
-            } : null}
+            chapterMeta={
+              chapter
+                ? {
+                    timeline_link_event: chapter.timeline_link_event,
+                    timeline_link_text: chapter.timeline_link_text,
+                    map_story_link_id: chapter.map_story_link_id,
+                    map_story_link_text: chapter.map_story_link_text,
+                    book_name: bookData?.name,
+                  }
+                : null
+            }
           />
         </ChapterReaderProvider>
 
@@ -398,7 +586,10 @@ function ChapterScreen() {
 
       <NotesOverlay
         visible={notesOverlayOpen}
-        onClose={() => { setNoteVerseNum(null); toggleNotes(); }}
+        onClose={() => {
+          setNoteVerseNum(null);
+          toggleNotes();
+        }}
         bookId={bookId}
         bookName={bookData?.name ?? bookId}
         chapterNum={chapterNum}

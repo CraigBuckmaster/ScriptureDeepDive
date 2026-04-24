@@ -92,9 +92,10 @@ describe('HowWeGotTheBibleLandingScreen', () => {
     expect(getByLabelText('Browse all guided journeys')).toBeTruthy();
   });
 
-  it('Canon Comparison shows "Coming soon" label (HWGTB-P3-01 not yet shipped)', () => {
+  it('Canon Comparison entry navigates to CanonComparison when tapped', () => {
     const { getByLabelText } = renderWithProviders(<HowWeGotTheBibleLandingScreen />);
-    expect(getByLabelText('Coming soon')).toBeTruthy();
+    fireEvent.press(getByLabelText('Open Canon Comparison'));
+    expect(mockNavigate).toHaveBeenCalledWith('CanonComparison');
   });
 
   it('tapping Extra-Biblical Literature navigates to ExtraBiblicalIndex', () => {
@@ -123,13 +124,6 @@ describe('HowWeGotTheBibleLandingScreen', () => {
     const { getByLabelText } = renderWithProviders(<HowWeGotTheBibleLandingScreen />);
     fireEvent.press(getByLabelText('Browse all guided journeys'));
     expect(mockNavigate).toHaveBeenCalledWith('JourneyBrowse', undefined);
-  });
-
-  it('Canon Comparison entry has no onPress handler (no navigation fired)', () => {
-    const { queryByLabelText } = renderWithProviders(<HowWeGotTheBibleLandingScreen />);
-    // When locked, the container is a View (not TouchableOpacity) so it
-    // has no 'Open Canon Comparison' accessibility label.
-    expect(queryByLabelText('Open Canon Comparison')).toBeNull();
   });
 
   it('back button fires navigation.goBack', () => {

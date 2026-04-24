@@ -8,9 +8,23 @@
 import { chapterPrefix, formatVerseRef } from '../utils/verseRef';
 import { escapeLike } from '../utils/escapeLike';
 import type {
-  UserNote, ReadingProgress, Bookmark, RecentChapter,
-  StudyCollection, StudySession, StudySessionEvent,
-  AmicusThread, AmicusMessage, AmicusCitation,
+  UserNote,
+  ReadingProgress,
+  Bookmark,
+  RecentChapter,
+  StudyCollection,
+  StudySession,
+  StudySessionEvent,
+  AmicusThread,
+  AmicusMessage,
+  AmicusCitation,
+  ConceptEncounter,
+  GuidedReviewItem,
+  GuidedStudyQuestion,
+  GuidedStudyResponse,
+  GuidedStudySession,
+  GuidedStudySynthesis,
+  GuidedStudyTakeawaySummary,
 } from '../types';
 import { getDb } from './database';
 import { getUserDb } from './userDatabase';
@@ -49,8 +63,8 @@ export async function getNotesForChapter(bookId: string, ch: number): Promise<Us
   const prefix = chapterPrefix(bookId, ch);
   const chapterRef = formatVerseRef(bookId, ch);
   return getUserDb().getAllAsync<UserNote>(
-    "SELECT * FROM user_notes WHERE verse_ref LIKE ? OR verse_ref = ? ORDER BY verse_ref",
-    [`${prefix}%`, chapterRef]
+    'SELECT * FROM user_notes WHERE verse_ref LIKE ? OR verse_ref = ? ORDER BY verse_ref',
+    [`${prefix}%`, chapterRef],
   );
 }
 
@@ -58,22 +72,22 @@ export async function getNoteCount(bookId: string, ch: number): Promise<number> 
   const prefix = chapterPrefix(bookId, ch);
   const chapterRef = formatVerseRef(bookId, ch);
   const row = await getUserDb().getFirstAsync<{ count: number }>(
-    "SELECT COUNT(*) as count FROM user_notes WHERE verse_ref LIKE ? OR verse_ref = ?",
-    [`${prefix}%`, chapterRef]
+    'SELECT COUNT(*) as count FROM user_notes WHERE verse_ref LIKE ? OR verse_ref = ?',
+    [`${prefix}%`, chapterRef],
   );
   return row?.count ?? 0;
 }
 
 export async function getAllNotes(): Promise<UserNote[]> {
   return getUserDb().getAllAsync<UserNote>(
-    "SELECT * FROM user_notes ORDER BY verse_ref, updated_at DESC"
+    'SELECT * FROM user_notes ORDER BY verse_ref, updated_at DESC',
   );
 }
 
 export async function searchNotes(query: string): Promise<UserNote[]> {
   return getUserDb().getAllAsync<UserNote>(
     "SELECT * FROM user_notes WHERE note_text LIKE ? ESCAPE '\\' OR verse_ref LIKE ? ESCAPE '\\' ORDER BY verse_ref",
-    [`%${escapeLike(query)}%`, `%${escapeLike(query)}%`]
+    [`%${escapeLike(query)}%`, `%${escapeLike(query)}%`],
   );
 }
 
@@ -88,8 +102,8 @@ export async function searchNotes(query: string): Promise<UserNote[]> {
 export async function getRecentChapters(limit: number = 10): Promise<RecentChapter[]> {
   // Step 1: Get raw progress from user.db
   const rows = await getUserDb().getAllAsync<ReadingProgress>(
-    "SELECT * FROM reading_progress WHERE completed_at IS NOT NULL ORDER BY completed_at DESC LIMIT ?",
-    [limit]
+    'SELECT * FROM reading_progress WHERE completed_at IS NOT NULL ORDER BY completed_at DESC LIMIT ?',
+    [limit],
   );
 
   if (rows.length === 0) return [];
@@ -98,12 +112,17 @@ export async function getRecentChapters(limit: number = 10): Promise<RecentChapt
   const placeholders = rows.map(() => '(?, ?)').join(', ');
   const params = rows.flatMap((rp) => [rp.book_id, rp.chapter_num]);
 
-  const infos = await getDb().getAllAsync<{ book_id: string; chapter_num: number; title: string | null; book_name: string }>(
+  const infos = await getDb().getAllAsync<{
+    book_id: string;
+    chapter_num: number;
+    title: string | null;
+    book_name: string;
+  }>(
     `SELECT c.book_id, c.chapter_num, c.title, b.name as book_name
      FROM chapters c
      JOIN books b ON b.id = c.book_id
      WHERE (c.book_id, c.chapter_num) IN (VALUES ${placeholders})`,
-    params
+    params,
   );
 
   const infoMap = new Map(infos.map((i) => [`${i.book_id}:${i.chapter_num}`, i]));
@@ -122,23 +141,21 @@ export async function getRecentChapters(limit: number = 10): Promise<RecentChapt
 
 export async function getProgressForBook(bookId: string): Promise<ReadingProgress[]> {
   return getUserDb().getAllAsync<ReadingProgress>(
-    "SELECT * FROM reading_progress WHERE book_id = ? ORDER BY chapter_num",
-    [bookId]
+    'SELECT * FROM reading_progress WHERE book_id = ? ORDER BY chapter_num',
+    [bookId],
   );
 }
 
 // ── Bookmarks (read) ──────────────────────────────────────────────
 
 export async function getBookmarks(): Promise<Bookmark[]> {
-  return getUserDb().getAllAsync<Bookmark>(
-    "SELECT * FROM bookmarks ORDER BY created_at DESC"
-  );
+  return getUserDb().getAllAsync<Bookmark>('SELECT * FROM bookmarks ORDER BY created_at DESC');
 }
 
 export async function isBookmarked(verseRef: string): Promise<boolean> {
   const row = await getUserDb().getFirstAsync<{ count: number }>(
-    "SELECT COUNT(*) as count FROM bookmarks WHERE verse_ref = ?",
-    [verseRef]
+    'SELECT COUNT(*) as count FROM bookmarks WHERE verse_ref = ?',
+    [verseRef],
   );
   return (row?.count ?? 0) > 0;
 }
@@ -147,23 +164,27 @@ export async function isBookmarked(verseRef: string): Promise<boolean> {
 
 export async function getPreference(key: string): Promise<string | null> {
   const row = await getUserDb().getFirstAsync<{ value: string }>(
-    "SELECT value FROM user_preferences WHERE key = ?", [key]
+    'SELECT value FROM user_preferences WHERE key = ?',
+    [key],
   );
   return row?.value ?? null;
 }
 
 // ── Highlights (read) ─────────────────────────────────────────────
 
-export async function getHighlightsForChapter(bookId: string, ch: number): Promise<VerseHighlight[]> {
+export async function getHighlightsForChapter(
+  bookId: string,
+  ch: number,
+): Promise<VerseHighlight[]> {
   return getUserDb().getAllAsync<VerseHighlight>(
-    "SELECT * FROM verse_highlights WHERE verse_ref LIKE ?",
-    [`${chapterPrefix(bookId, ch)}%`]
+    'SELECT * FROM verse_highlights WHERE verse_ref LIKE ?',
+    [`${chapterPrefix(bookId, ch)}%`],
   );
 }
 
 export async function getAllHighlights(): Promise<VerseHighlight[]> {
   return getUserDb().getAllAsync<VerseHighlight>(
-    "SELECT * FROM verse_highlights ORDER BY created_at DESC"
+    'SELECT * FROM verse_highlights ORDER BY created_at DESC',
   );
 }
 
@@ -171,7 +192,7 @@ export async function getAllHighlights(): Promise<VerseHighlight[]> {
 
 export async function getHighlightCollections(): Promise<HighlightCollection[]> {
   return getUserDb().getAllAsync<HighlightCollection>(
-    "SELECT * FROM highlight_collections ORDER BY sort_order, name"
+    'SELECT * FROM highlight_collections ORDER BY sort_order, name',
   );
 }
 
@@ -192,13 +213,13 @@ export interface PlanProgress {
 }
 
 export async function getPlans(): Promise<ReadingPlan[]> {
-  return getUserDb().getAllAsync<ReadingPlan>("SELECT * FROM reading_plans ORDER BY total_days");
+  return getUserDb().getAllAsync<ReadingPlan>('SELECT * FROM reading_plans ORDER BY total_days');
 }
 
 export async function getPlanProgress(planId: string): Promise<PlanProgress[]> {
   return getUserDb().getAllAsync<PlanProgress>(
-    "SELECT * FROM plan_progress WHERE plan_id = ? ORDER BY day_num",
-    [planId]
+    'SELECT * FROM plan_progress WHERE plan_id = ? ORDER BY day_num',
+    [planId],
   );
 }
 
@@ -218,18 +239,18 @@ export interface ReadingStats {
 
 export async function getReadingStats(): Promise<ReadingStats> {
   const totalRow = await getUserDb().getFirstAsync<{ count: number }>(
-    "SELECT COUNT(*) as count FROM reading_progress"
+    'SELECT COUNT(*) as count FROM reading_progress',
   );
   const total = totalRow?.count ?? 0;
 
   // Favourite book
   const favRow = await getUserDb().getFirstAsync<{ book_id: string }>(
-    "SELECT book_id, COUNT(*) as c FROM reading_progress GROUP BY book_id ORDER BY c DESC LIMIT 1"
+    'SELECT book_id, COUNT(*) as c FROM reading_progress GROUP BY book_id ORDER BY c DESC LIMIT 1',
   );
 
   // Streak calculation: count consecutive days backwards from today
   const days = await getUserDb().getAllAsync<{ day: string }>(
-    "SELECT DISTINCT date(completed_at) as day FROM reading_progress WHERE completed_at IS NOT NULL ORDER BY day DESC"
+    'SELECT DISTINCT date(completed_at) as day FROM reading_progress WHERE completed_at IS NOT NULL ORDER BY day DESC',
   );
 
   let currentStreak = 0;
@@ -283,12 +304,33 @@ export async function getTestamentProgress(): Promise<TestamentProgress[]> {
 
   // Known NT book IDs
   const ntBookIds = new Set([
-    'matthew', 'mark', 'luke', 'john', 'acts', 'romans',
-    '1_corinthians', '2_corinthians', 'galatians', 'ephesians',
-    'philippians', 'colossians', '1_thessalonians', '2_thessalonians',
-    '1_timothy', '2_timothy', 'titus', 'philemon', 'hebrews',
-    'james', '1_peter', '2_peter', '1_john', '2_john', '3_john',
-    'jude', 'revelation',
+    'matthew',
+    'mark',
+    'luke',
+    'john',
+    'acts',
+    'romans',
+    '1_corinthians',
+    '2_corinthians',
+    'galatians',
+    'ephesians',
+    'philippians',
+    'colossians',
+    '1_thessalonians',
+    '2_thessalonians',
+    '1_timothy',
+    '2_timothy',
+    'titus',
+    'philemon',
+    'hebrews',
+    'james',
+    '1_peter',
+    '2_peter',
+    '1_john',
+    '2_john',
+    '3_john',
+    'jude',
+    'revelation',
   ]);
 
   let otRead = 0;
@@ -311,27 +353,27 @@ export async function getTestamentProgress(): Promise<TestamentProgress[]> {
 
 export async function getCollections(): Promise<StudyCollection[]> {
   return getUserDb().getAllAsync<StudyCollection>(
-    "SELECT * FROM study_collections ORDER BY updated_at DESC"
+    'SELECT * FROM study_collections ORDER BY updated_at DESC',
   );
 }
 
 export async function getCollection(id: number): Promise<StudyCollection | null> {
   return getUserDb().getFirstAsync<StudyCollection>(
-    "SELECT * FROM study_collections WHERE id = ?",
-    [id]
+    'SELECT * FROM study_collections WHERE id = ?',
+    [id],
   );
 }
 
 export async function getNotesInCollection(collectionId: number): Promise<UserNote[]> {
   return getUserDb().getAllAsync<UserNote>(
-    "SELECT * FROM user_notes WHERE collection_id = ? ORDER BY verse_ref, updated_at DESC",
-    [collectionId]
+    'SELECT * FROM user_notes WHERE collection_id = ? ORDER BY verse_ref, updated_at DESC',
+    [collectionId],
   );
 }
 
 export async function getCollectionNoteCounts(): Promise<Record<number, number>> {
   const rows = await getUserDb().getAllAsync<{ collection_id: number; count: number }>(
-    "SELECT collection_id, COUNT(*) as count FROM user_notes WHERE collection_id IS NOT NULL GROUP BY collection_id"
+    'SELECT collection_id, COUNT(*) as count FROM user_notes WHERE collection_id IS NOT NULL GROUP BY collection_id',
   );
   const counts: Record<number, number> = {};
   for (const row of rows) {
@@ -347,7 +389,7 @@ export async function getCollectionNoteCounts(): Promise<Record<number, number>>
  */
 export async function getAllTags(): Promise<string[]> {
   const notes = await getUserDb().getAllAsync<{ tags_json: string }>(
-    "SELECT tags_json FROM user_notes WHERE tags_json IS NOT NULL AND tags_json != '[]'"
+    "SELECT tags_json FROM user_notes WHERE tags_json IS NOT NULL AND tags_json != '[]'",
   );
   const tagSet = new Set<string>();
   for (const note of notes) {
@@ -365,7 +407,7 @@ export async function getNotesByTag(tag: string): Promise<UserNote[]> {
   // Use JSON LIKE search — fine for small datasets
   return getUserDb().getAllAsync<UserNote>(
     "SELECT * FROM user_notes WHERE tags_json LIKE ? ESCAPE '\\' ORDER BY verse_ref",
-    [`%"${escapeLike(tag)}"%`]
+    [`%"${escapeLike(tag)}"%`],
   );
 }
 
@@ -374,28 +416,25 @@ export async function getNotesByTag(tag: string): Promise<UserNote[]> {
 export async function getStudySessions(limit?: number): Promise<StudySession[]> {
   return getUserDb().getAllAsync<StudySession>(
     `SELECT * FROM study_sessions ORDER BY started_at DESC${limit ? ' LIMIT ?' : ''}`,
-    limit ? [limit] : []
+    limit ? [limit] : [],
   );
 }
 
 export async function getStudySession(id: number): Promise<StudySession | null> {
-  return getUserDb().getFirstAsync<StudySession>(
-    'SELECT * FROM study_sessions WHERE id = ?',
-    [id]
-  );
+  return getUserDb().getFirstAsync<StudySession>('SELECT * FROM study_sessions WHERE id = ?', [id]);
 }
 
 export async function getSessionEvents(sessionId: number): Promise<StudySessionEvent[]> {
   return getUserDb().getAllAsync<StudySessionEvent>(
     'SELECT * FROM study_session_events WHERE session_id = ? ORDER BY timestamp_ms',
-    [sessionId]
+    [sessionId],
   );
 }
 
 export async function getStudySessionsForChapter(chapterId: string): Promise<StudySession[]> {
   return getUserDb().getAllAsync<StudySession>(
     'SELECT * FROM study_sessions WHERE chapter_id = ? ORDER BY started_at DESC',
-    [chapterId]
+    [chapterId],
   );
 }
 
@@ -404,13 +443,129 @@ export async function getStudySessionsForChapter(chapterId: string): Promise<Stu
 /**
  * Get notes that this note links TO.
  */
+// Guided Study V1 (read)
+
+export async function getActiveGuidedStudySession(
+  chapterId: string,
+): Promise<GuidedStudySession | null> {
+  return getUserDb().getFirstAsync<GuidedStudySession>(
+    `SELECT * FROM guided_study_sessions
+     WHERE chapter_id = ? AND status = 'active'
+     ORDER BY updated_at DESC, id DESC
+     LIMIT 1`,
+    [chapterId],
+  );
+}
+
+export async function getGuidedStudySession(sessionId: number): Promise<GuidedStudySession | null> {
+  return getUserDb().getFirstAsync<GuidedStudySession>(
+    'SELECT * FROM guided_study_sessions WHERE id = ?',
+    [sessionId],
+  );
+}
+
+export async function getGuidedStudyResponses(sessionId: number): Promise<GuidedStudyResponse[]> {
+  return getUserDb().getAllAsync<GuidedStudyResponse>(
+    'SELECT * FROM guided_study_responses WHERE session_id = ? ORDER BY id',
+    [sessionId],
+  );
+}
+
+export async function getGuidedStudySynthesis(
+  sessionId: number,
+): Promise<GuidedStudySynthesis | null> {
+  return getUserDb().getFirstAsync<GuidedStudySynthesis>(
+    'SELECT * FROM guided_study_synthesis WHERE session_id = ?',
+    [sessionId],
+  );
+}
+
+export async function getDueGuidedReviewItems(limit: number = 20): Promise<GuidedReviewItem[]> {
+  return getUserDb().getAllAsync<GuidedReviewItem>(
+    `SELECT * FROM guided_review_items
+     WHERE status = 'due' AND due_date <= date('now')
+     ORDER BY due_date ASC, id ASC
+     LIMIT ?`,
+    [limit],
+  );
+}
+
+export async function getAllGuidedReviewItems(limit: number = 50): Promise<GuidedReviewItem[]> {
+  return getUserDb().getAllAsync<GuidedReviewItem>(
+    `SELECT * FROM guided_review_items
+     ORDER BY due_date ASC, id ASC
+     LIMIT ?`,
+    [limit],
+  );
+}
+
+export async function getDueGuidedReviewItemCountForChapter(chapterId: string): Promise<number> {
+  const row = await getUserDb().getFirstAsync<{ count: number }>(
+    `SELECT COUNT(*) as count FROM guided_review_items
+     WHERE chapter_id = ? AND status = 'due' AND due_date <= date('now')`,
+    [chapterId],
+  );
+  return row?.count ?? 0;
+}
+
+export async function getActiveGuidedStudySessions(
+  limit: number = 5,
+): Promise<GuidedStudySession[]> {
+  return getUserDb().getAllAsync<GuidedStudySession>(
+    `SELECT * FROM guided_study_sessions
+     WHERE status = 'active'
+     ORDER BY updated_at DESC, id DESC
+     LIMIT ?`,
+    [limit],
+  );
+}
+
+export async function getOpenGuidedStudyQuestions(
+  limit: number = 10,
+): Promise<GuidedStudyQuestion[]> {
+  return getUserDb().getAllAsync<GuidedStudyQuestion>(
+    `SELECT * FROM guided_study_questions
+     WHERE status = 'open'
+     ORDER BY updated_at DESC, id DESC
+     LIMIT ?`,
+    [limit],
+  );
+}
+
+export async function getRecentGuidedStudyTakeaways(
+  limit: number = 10,
+): Promise<GuidedStudyTakeawaySummary[]> {
+  return getUserDb().getAllAsync<GuidedStudyTakeawaySummary>(
+    `SELECT
+        synthesis.session_id,
+        sessions.chapter_id,
+        synthesis.takeaway,
+        synthesis.updated_at
+      FROM guided_study_synthesis synthesis
+      JOIN guided_study_sessions sessions ON sessions.id = synthesis.session_id
+      WHERE trim(synthesis.takeaway) != ''
+      ORDER BY synthesis.updated_at DESC, synthesis.id DESC
+      LIMIT ?`,
+    [limit],
+  );
+}
+
+export async function getConceptEncounters(limit: number = 30): Promise<ConceptEncounter[]> {
+  return getUserDb().getAllAsync<ConceptEncounter>(
+    `SELECT * FROM concept_encounters
+     ORDER BY last_seen_at DESC, encounter_count DESC
+     LIMIT ?`,
+    [limit],
+  );
+}
+
 export async function getLinkedNotes(noteId: number): Promise<UserNote[]> {
   return getUserDb().getAllAsync<UserNote>(
     `SELECT n.* FROM user_notes n
      JOIN note_links l ON l.to_note_id = n.id
      WHERE l.from_note_id = ?
      ORDER BY n.verse_ref`,
-    [noteId]
+    [noteId],
   );
 }
 
@@ -423,7 +578,7 @@ export async function getReferencingNotes(noteId: number): Promise<UserNote[]> {
      JOIN note_links l ON l.from_note_id = n.id
      WHERE l.to_note_id = ?
      ORDER BY n.verse_ref`,
-    [noteId]
+    [noteId],
   );
 }
 
@@ -449,7 +604,7 @@ export async function searchNotesFTS(query: string): Promise<UserNote[]> {
      JOIN user_notes n ON n.id = f.rowid
      WHERE f.note_text MATCH ?
      ORDER BY rank`,
-    [sanitized]
+    [sanitized],
   );
 }
 
@@ -561,9 +716,7 @@ function hydrateMessage(row: AmicusMessageRow): AmicusMessage {
   };
 }
 
-export async function listAmicusThreads(
-  limit = 50, offset = 0,
-): Promise<AmicusThread[]> {
+export async function listAmicusThreads(limit = 50, offset = 0): Promise<AmicusThread[]> {
   const rows = await getUserDb().getAllAsync<AmicusThreadRow>(
     `SELECT thread_id, title, chapter_ref, pinned, created_at, last_message_at
        FROM amicus_threads
@@ -574,9 +727,7 @@ export async function listAmicusThreads(
   return rows.map(hydrateThread);
 }
 
-export async function getAmicusThread(
-  threadId: string,
-): Promise<AmicusThread | null> {
+export async function getAmicusThread(threadId: string): Promise<AmicusThread | null> {
   const row = await getUserDb().getFirstAsync<AmicusThreadRow>(
     `SELECT thread_id, title, chapter_ref, pinned, created_at, last_message_at
        FROM amicus_threads WHERE thread_id = ?`,
@@ -585,9 +736,7 @@ export async function getAmicusThread(
   return row ? hydrateThread(row) : null;
 }
 
-export async function listAmicusMessages(
-  threadId: string,
-): Promise<AmicusMessage[]> {
+export async function listAmicusMessages(threadId: string): Promise<AmicusMessage[]> {
   const rows = await getUserDb().getAllAsync<AmicusMessageRow>(
     `SELECT message_id, thread_id, role, content, citations_json, follow_ups_json, created_at
        FROM amicus_messages WHERE thread_id = ? ORDER BY created_at ASC`,
