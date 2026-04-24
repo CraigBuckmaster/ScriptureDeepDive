@@ -117,34 +117,6 @@ export default function AmicusThreadScreen(): React.ReactElement {
     };
   }, [threadId]);
 
-  const handleSend = useCallback(
-    async (text: string) => {
-      // Pre-flight access check (#1460).
-      if (access.reason === 'not_premium') {
-        navigation.navigate('Paywall');
-        return;
-      }
-      if (access.reason === 'monthly_cap_reached' || access.reason === 'offline') {
-        logger.info('Amicus', `send blocked: ${access.reason}`);
-        return;
-      }
-
-      const authToken = await getAmicusAuthToken();
-      if (!authToken) {
-        logger.warn('Amicus', 'no auth token — aborting send');
-        return;
-      }
-      // Gate on one-time privacy acknowledgement (#1458).
-      const accepted = await requestAmicusConsent();
-      if (!accepted) {
-        logger.info('Amicus', 'opt-in declined — not sending');
-        return;
-      }
-      await sendMessage(text, authToken);
-    },
-    [sendMessage, requestAmicusConsent, access.reason, navigation],
-  );
-
   const persistThreadIntelligence = useCallback(
     async (text: string, action?: AmicusStudyActionSeed) => {
       const derived = deriveThreadIntelligence({
@@ -184,7 +156,6 @@ export default function AmicusThreadScreen(): React.ReactElement {
       }
     },
     [
-      linkedQuestion?.question_text,
       questionText,
       seedChapterRef,
       seedGuidedContext?.keyConnection,
@@ -192,7 +163,6 @@ export default function AmicusThreadScreen(): React.ReactElement {
       seedGuidedContext?.takeaway,
       thread,
       threadContext?.key_connection,
-      threadContext?.open_question_id,
       threadContext?.takeaway,
       threadId,
     ],
@@ -227,7 +197,9 @@ export default function AmicusThreadScreen(): React.ReactElement {
 
   // Auto-send the seed query once per mount when navigated in from the
   // home card / deep-link handoff (#1467). Guarded by a ref so rapid
-  // re-renders don't re-dispatch.
+  // re-renders don't re-dispatch. Deferred with queueMicrotask so the
+  // setState calls sendWithContext performs don't run synchronously
+  // within the effect body (react-hooks/set-state-in-effect).
   const autoSentRef = useRef(false);
   useEffect(() => {
     if (autoSentRef.current) return;
@@ -235,7 +207,9 @@ export default function AmicusThreadScreen(): React.ReactElement {
     if (messages.length > 0) return;
     if (isStreaming) return;
     autoSentRef.current = true;
-    void sendWithContext(initialQuery);
+    queueMicrotask(() => {
+      void sendWithContext(initialQuery);
+    });
   }, [initialQuery, messages.length, isStreaming, sendWithContext]);
 
   const handleExport = useCallback(async () => {
@@ -316,7 +290,7 @@ export default function AmicusThreadScreen(): React.ReactElement {
     } catch (err) {
       logger.warn('Amicus', 'failed to update linked question status', err);
     }
-  }, [linkedQuestion, seedChapterRef, thread?.chapter_ref, threadId]);
+  }, [linkedQuestion, seedChapterRef, thread, threadId]);
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>

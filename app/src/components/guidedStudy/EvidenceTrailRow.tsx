@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { ChevronRight } from 'lucide-react-native';
-import { ConfidenceBadge } from './ConfidenceBadge';
 import { fontFamily, MIN_TOUCH_TARGET, radii, spacing, useTheme } from '../../theme';
 import type { GuidedEvidenceTrailItem } from '../../services/guidedStudy';
+import { ConfidenceBadge } from './ConfidenceBadge';
 
 interface Props {
   item: GuidedEvidenceTrailItem;
