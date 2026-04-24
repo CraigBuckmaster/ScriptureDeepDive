@@ -25,7 +25,7 @@ function buildCopy(
   if (mode === 'continue') {
     return {
       title: 'Continue study',
-      meta: `Resume at ${getGuidedStudyStepLabel(currentStep ?? 'scene')} | ${estimate.guidedMin} min guided`,
+      meta: `Resume at ${getGuidedStudyStepLabel(currentStep ?? 'scene')} · ${estimate.guidedMin} min guided`,
       accessibilityLabel: 'Continue study',
     };
   }
@@ -43,7 +43,7 @@ function buildCopy(
 
   return {
     title: 'Study this chapter',
-    meta: `${estimate.readMin} min read | ${estimate.guidedMin} min guided | ${estimate.deepMin} min deep`,
+    meta: `${estimate.readMin} min read · ${estimate.guidedMin} min guided · ${estimate.deepMin} min deep`,
     accessibilityLabel: 'Study this chapter',
   };
 }

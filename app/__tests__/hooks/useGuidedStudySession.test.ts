@@ -7,6 +7,7 @@ const mockUpsertSynthesis = jest.fn();
 const mockCompleteSession = jest.fn();
 const mockCreateReviewItems = jest.fn();
 const mockRecordConcept = jest.fn();
+const mockUpsertQuestion = jest.fn();
 const mockGetSession = jest.fn();
 const mockGetResponses = jest.fn();
 const mockGetSynthesis = jest.fn();
@@ -20,6 +21,7 @@ jest.mock('@/db/userMutations', () => ({
   completeGuidedStudySession: (...args: any[]) => mockCompleteSession(...args),
   createGuidedReviewItems: (...args: any[]) => mockCreateReviewItems(...args),
   recordConceptEncounter: (...args: any[]) => mockRecordConcept(...args),
+  upsertGuidedStudyQuestion: (...args: any[]) => mockUpsertQuestion(...args),
 }));
 
 jest.mock('@/db/userQueries', () => ({
@@ -51,6 +53,7 @@ describe('useGuidedStudySession', () => {
     mockCompleteSession.mockResolvedValue(undefined);
     mockCreateReviewItems.mockResolvedValue(undefined);
     mockRecordConcept.mockResolvedValue(undefined);
+    mockUpsertQuestion.mockResolvedValue(undefined);
   });
 
   it('is not loading and has no sessionId when chapterId is undefined', async () => {

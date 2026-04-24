@@ -324,13 +324,7 @@ export async function recordSessionEvent(
 // Guided Study V1 (write)
 
 export async function createOrResumeGuidedStudySession(chapterId: string): Promise<number> {
-  const db = getUserDb();
-  await db.runAsync(
-    "INSERT OR IGNORE INTO guided_study_sessions (chapter_id, status, current_step) VALUES (?, 'active', 'scene')",
-    [chapterId],
-  );
-
-  const existing = await db.getFirstAsync<{ id: number }>(
+  const existing = await getUserDb().getFirstAsync<{ id: number }>(
     `SELECT id FROM guided_study_sessions
      WHERE chapter_id = ? AND status = 'active'
      ORDER BY updated_at DESC, id DESC
@@ -339,7 +333,11 @@ export async function createOrResumeGuidedStudySession(chapterId: string): Promi
   );
   if (existing) return existing.id;
 
-  throw new Error(`Unable to create guided study session for ${chapterId}`);
+  const result = await getUserDb().runAsync(
+    "INSERT INTO guided_study_sessions (chapter_id, status, current_step) VALUES (?, 'active', 'scene')",
+    [chapterId],
+  );
+  return result.lastInsertRowId;
 }
 
 export async function setGuidedStudyStep(sessionId: number, step: GuidedStudyStep): Promise<void> {
@@ -471,52 +469,51 @@ export async function createGuidedReviewItems(
 
 export async function completeGuidedReviewItem(id: number): Promise<void> {
   const db = getUserDb();
-  const item = await db.getFirstAsync<{
-    source_session_id: number;
-    chapter_id: string;
-    title: string;
-    prompt: string;
-    answer: string;
-    interval_days: number;
-    status: 'due' | 'completed';
-  }>('SELECT * FROM guided_review_items WHERE id = ?', [id]);
-  if (!item || item.status !== 'due') return;
-
-  const nextIntervalDays = nextIntervalAfter(item.interval_days);
   await db.withTransactionAsync(async () => {
+    const current = await db.getFirstAsync<{
+      source_session_id: number;
+      chapter_id: string;
+      title: string;
+      prompt: string;
+      answer: string;
+      interval_days: number;
+      review_count: number;
+    }>(
+      `SELECT source_session_id, chapter_id, title, prompt, answer,
+              interval_days, review_count
+       FROM guided_review_items WHERE id = ?`,
+      [id],
+    );
+    if (!current) return;
+
     await db.runAsync(
       `UPDATE guided_review_items
        SET status = 'completed',
            review_count = review_count + 1,
            updated_at = datetime('now')
-       WHERE id = ? AND status = 'due'`,
+       WHERE id = ?`,
       [id],
     );
 
-    if (nextIntervalDays == null) return;
-    await db.runAsync(
-      `INSERT INTO guided_review_items
-        (source_session_id, chapter_id, title, prompt, answer, due_date, interval_days)
-       SELECT ?, ?, ?, ?, ?, date('now', ?), ?
-       WHERE NOT EXISTS (
-         SELECT 1 FROM guided_review_items
-         WHERE source_session_id = ?
-           AND prompt = ?
-           AND interval_days = ?
-       )`,
-      [
-        item.source_session_id,
-        item.chapter_id,
-        item.title,
-        item.prompt,
-        item.answer,
-        `+${nextIntervalDays} days`,
-        nextIntervalDays,
-        item.source_session_id,
-        item.prompt,
-        nextIntervalDays,
-      ],
-    );
+    const next = nextIntervalAfter(current.interval_days);
+    if (next != null) {
+      await db.runAsync(
+        `INSERT INTO guided_review_items
+          (source_session_id, chapter_id, title, prompt, answer,
+           due_date, interval_days, review_count)
+         VALUES (?, ?, ?, ?, ?, date('now', ?), ?, ?)`,
+        [
+          current.source_session_id,
+          current.chapter_id,
+          current.title,
+          current.prompt,
+          current.answer,
+          `+${next} days`,
+          next,
+          current.review_count + 1,
+        ],
+      );
+    }
   });
 }
 
