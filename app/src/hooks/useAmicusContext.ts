@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useAmicusChipContext } from './useAmicusChipContext';
 import type { ChipContext } from '@/hooks/useAmicusChips';
 import {
   buildAmicusContextEnvelope,
@@ -7,7 +8,6 @@ import {
   type AmicusGuidedStudyContext,
 } from '@/services/amicus/context';
 import type { AmicusSeedChapterRef } from '@/services/amicus/deepLink';
-import { useAmicusChipContext } from './useAmicusChipContext';
 
 export interface UseAmicusContextOptions {
   entryPoint: AmicusEntryPoint;

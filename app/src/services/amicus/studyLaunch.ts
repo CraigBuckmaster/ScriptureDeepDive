@@ -1,4 +1,7 @@
 import type { NavigationProp, ParamListBase } from '@react-navigation/native';
+import { formatChapterRef, type AmicusSeedChapterRef } from './deepLink';
+import type { AmicusGuidedStudyContext } from './context';
+import { deriveThreadIntelligence } from './threadIntelligence';
 import {
   getAmicusThreadIdForGuidedQuestion,
   getAmicusThreadIdForGuidedSession,
@@ -12,9 +15,6 @@ import {
 import type { AmicusDraftMessage } from '@/types';
 import { logger } from '@/utils/logger';
 import type { GuidedStudyStep } from '@/types';
-import { formatChapterRef, type AmicusSeedChapterRef } from './deepLink';
-import type { AmicusGuidedStudyContext } from './context';
-import { deriveThreadIntelligence } from './threadIntelligence';
 
 export interface LaunchAmicusStudyThreadInput {
   entryPoint: 'guided_study' | 'my_study';

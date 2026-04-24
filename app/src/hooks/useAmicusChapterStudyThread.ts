@@ -7,12 +7,11 @@ export function useAmicusChapterStudyThread(chapterRef: string | null) {
 
   useEffect(() => {
     let cancelled = false;
-    if (!chapterRef) {
-      setThreadId(null);
-      return;
-    }
-
     void (async () => {
+      if (!chapterRef) {
+        if (!cancelled) setThreadId(null);
+        return;
+      }
       try {
         const next = await getLatestStudyAmicusThreadIdForChapter(chapterRef);
         if (!cancelled) setThreadId(next);

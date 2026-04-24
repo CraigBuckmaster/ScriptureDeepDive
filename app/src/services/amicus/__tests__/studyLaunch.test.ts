@@ -1,3 +1,4 @@
+import type { NavigationProp, ParamListBase } from '@react-navigation/native';
 import { launchAmicusStudyThread, promotePeekToAmicusThread } from '@/services/amicus/studyLaunch';
 import {
   getAmicusThreadIdForGuidedQuestion,
@@ -56,7 +57,7 @@ describe('launchAmicusStudyThread', () => {
 
   it('reuses an existing linked question thread when available', async () => {
     const parent = { navigate: jest.fn() };
-    const navigation = { getParent: () => parent } as any;
+    const navigation = { getParent: () => parent } as unknown as NavigationProp<ParamListBase>;
     mockGetThreadIdForQuestion.mockResolvedValueOnce('t-linked');
 
     await launchAmicusStudyThread(navigation, {
@@ -80,7 +81,7 @@ describe('launchAmicusStudyThread', () => {
 
   it('creates a new seeded thread when no existing study thread is found', async () => {
     const parent = { navigate: jest.fn() };
-    const navigation = { getParent: () => parent } as any;
+    const navigation = { getParent: () => parent } as unknown as NavigationProp<ParamListBase>;
 
     await launchAmicusStudyThread(navigation, {
       entryPoint: 'guided_study',
@@ -107,7 +108,7 @@ describe('launchAmicusStudyThread', () => {
 
   it('promotes peek messages into an existing study-linked thread when one exists', async () => {
     const parent = { navigate: jest.fn() };
-    const navigation = { getParent: () => parent } as any;
+    const navigation = { getParent: () => parent } as unknown as NavigationProp<ParamListBase>;
     mockGetLatestThreadIdForChapter.mockResolvedValueOnce('t-existing');
 
     await promotePeekToAmicusThread(navigation, {
@@ -141,7 +142,7 @@ describe('launchAmicusStudyThread', () => {
 
   it('falls back to a new thread when no existing study-linked thread is found for peek promotion', async () => {
     const parent = { navigate: jest.fn() };
-    const navigation = { getParent: () => parent } as any;
+    const navigation = { getParent: () => parent } as unknown as NavigationProp<ParamListBase>;
 
     await promotePeekToAmicusThread(navigation, {
       chapterRef: { book_id: 'genesis', chapter_num: 1 },

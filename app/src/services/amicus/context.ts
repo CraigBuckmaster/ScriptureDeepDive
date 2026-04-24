@@ -1,6 +1,6 @@
+import { formatChapterRef, parseChapterRef, type AmicusSeedChapterRef } from './deepLink';
 import type { ChipContext } from '@/hooks/useAmicusChips';
 import type { GuidedStudyStep } from '@/types';
-import { formatChapterRef, parseChapterRef, type AmicusSeedChapterRef } from './deepLink';
 
 export type AmicusEntryPoint =
   | 'fab'
