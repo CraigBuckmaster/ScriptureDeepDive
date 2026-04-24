@@ -262,7 +262,55 @@
         }
       ],
       "note": "Joash Repairs the Temple"
-    }
+    },
+    "rec": [
+      {
+        "who": "Targum Jonathan on 2 Kgs 12",
+        "text": "The targum amplifies the temple-repair funding episode (vv.4-16) as a paradigm of administrative integrity: the priests/Levites and the royal officials cooperate without mutual suspicion, the accounts are not audited (v.15) 'because they acted faithfully.' Jewish rabbinic tradition treats this as the ideal model of religious-civic financial cooperation."
+      },
+      {
+        "who": "Calvin, Commentary (1561)",
+        "text": "Calvin's famous treatment of v.15 ('they did not require an accounting from those to whom they gave the money for the workmen, because they acted with complete honesty') — Calvin notes that trust without audit is only justified when personal integrity is demonstrable; otherwise, accountability structures are part of Christian stewardship. He uses this verse to ground his Geneva-era reforms of church finance."
+      },
+      {
+        "who": "Peter J. Leithart, 1 & 2 Kings, BTCB (2006)",
+        "text": "Leithart reads the Joash-Jehoiada tandem as the best functioning church-state relationship in Kings: high priest and king acting in complementary roles to restore the temple, purge Baal-worship (ch.11), and fund the cult. The relationship's deterioration after Jehoiada's death (2 Chr 24:17-27) is a structural argument — Kings' silence on Joash's later apostasy is itself a theological judgment."
+      }
+    ],
+    "src": [
+      {
+        "title": "Temple funding in ANE parallels",
+        "quote": "Assyrian, Egyptian, and Phoenician temple-inscriptions routinely document repair campaigns with named donors and specific weights of bronze/silver.",
+        "note": "Joash's temple-chest system (vv.9-16) fits standard ANE temple-economic pattern. The innovation credited to him is the chest at the gate (v.9) enabling non-priestly direct donation — a transparency mechanism that reduced priestly appropriation of funds. The system is pre-monetary; weighing in shekels is cumulative not currency-based."
+      },
+      {
+        "title": "2 Chronicles 24 expansion",
+        "quote": "The Chronicler includes Joash's apostasy after Jehoiada's death — Jehoiada's son Zechariah is stoned in the temple court at the king's command (2 Chr 24:20-22).",
+        "note": "Kings omits this entirely; 2 Chronicles supplies what Kings suppresses. Jesus's reference to 'Zechariah son of Berekiah... whom you murdered between the temple and the altar' (Matt 23:35) is most plausibly drawing on this 2 Chronicles episode. The NT's retrospective assessment of OT prophetic martyrdom depends on Chronicles' fuller record."
+      }
+    ],
+    "tx": [
+      {
+        "ref": "12:1 (English 12:2; Hebrew 12:3)",
+        "title": "Hebrew/English verse-numbering divergence",
+        "content": "Hebrew Bible begins chapter 12 with the 'Jehu's seventh year' synchronism, making what English calls v.1 Hebrew's v.2. This minor off-by-one continues through chapter 12.",
+        "note": "A common feature across the Deuteronomistic History (Kings, Chronicles). Does not affect content but is worth noting when consulting Hebrew commentaries, since verse references can be one off from English Bibles. Modern critical commentaries (BHQ, WBC) typically cite both numerations."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "בֶּדֶק הַבַּיִת",
+        "tlit": "bedeq ha-bayit",
+        "gloss": "repair of the house",
+        "note": "The technical phrase for temple maintenance work (v.5, 6, 7, 8, 12, etc.). The word bedeq literally means 'breach' or 'crack' — the work is specifically the repair of structural defects. The focus on the physical building-fabric reflects post-Jehoash-era temple neglect: Athaliah's apostate regime had let the building deteriorate, and the coronation-reforms included physical restoration."
+      },
+      {
+        "word": "אֲרוֹן",
+        "tlit": "'aron",
+        "gloss": "chest (money-box)",
+        "note": "Joash's innovative collection-chest at the temple door (v.9). The same word for 'ark' (of the covenant) — the collection chest is a secular use of the technical term. The setup mimics temple-donation practices from Egyptian and Phoenician temples, where large stone chests received coin-equivalent offerings. Joash's version is notable for its transparency: fund-counting was done publicly by the priest and royal scribe together (v.10)."
+      }
+    ]
   },
   "vhl_groups": [
     {

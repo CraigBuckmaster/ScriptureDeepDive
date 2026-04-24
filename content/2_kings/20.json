@@ -281,7 +281,55 @@
         }
       ],
       "note": "Hezekiah’s Illness and Babylon’s Embassy"
-    }
+    },
+    "rec": [
+      {
+        "who": "Sirach 48:22-25",
+        "text": "Ben Sira's hymn to Hezekiah praises him as 'steadfast in the ways of David his father' and highlights specifically the Isaiah-mediated deliverance from sickness (2 Kgs 20). The fifteen-additional-years sign becomes, in post-exilic Jewish imagination, the paradigm of prayer's power to extend life within God's appointed will — carefully not cast as overturning divine decree but as disclosing a conditional clause within it."
+      },
+      {
+        "who": "Rabbinic tradition (b. Berakhot 10a)",
+        "text": "The Talmud develops Hezekiah's illness into one of Judaism's foundational teachings on prayer: even when a prophet has announced certain death ('set your house in order'), prayer with tears can open a new divine response. The rabbis connected this to the principle that 'tefillah (prayer) breaks evil decrees' — with Hezekiah as proof-text."
+      },
+      {
+        "who": "Marvin A. Sweeney, 1 & 2 Kings, OTL (2007)",
+        "text": "Sweeney reads Hezekiah's display of treasures to the Babylonian envoys (vv.12-19) as the intentional narrative hinge from the Assyrian to Babylonian threat horizons. The naive pride that Merodach-Baladan's courtesy visit produces — and the immediate prophetic word announcing future Babylonian exile — structurally transitions 2 Kings from first-major-empire-crisis to second. Exile is foretold before the final decline narrative begins."
+      }
+    ],
+    "src": [
+      {
+        "title": "Berossus (Chaldean history, via Josephus) / Merodach-Baladan records",
+        "quote": "Merodach-Baladan II (Marduk-apla-iddina) ruled Babylon twice (721-710, 703 BCE) in defiance of Assyria. His diplomatic outreach sought anti-Assyrian coalitions.",
+        "note": "Merodach-Baladan's envoys to Hezekiah (vv.12-13) fit precisely into the known politics of 703 BCE: Babylon was actively organising rebellion against Sennacherib, and Judah was a natural ally given the Assyrian siege horizon. The story's date, political logic, and named actors all correspond to the Assyriological record."
+      },
+      {
+        "title": "Siloam Inscription / Hezekiah's Tunnel (engineering)",
+        "quote": "v.20: 'how he made the pool and the tunnel by which he brought water into the city.'",
+        "note": "The tunnel is a 533-meter S-shaped water channel, hewn by teams meeting from opposite ends. The Siloam Inscription commemorates the meeting-point. It is one of the most celebrated Iron Age engineering feats and matches 2 Kgs 20:20's summary. Modern visitors can still walk through it in Jerusalem's City of David archaeological park."
+      }
+    ],
+    "tx": [
+      {
+        "ref": "20:11",
+        "title": "The retreating shadow — sign-miracle",
+        "content": "MT: 'the shadow went back ten degrees on the stairway of Ahaz.' Exactly what mechanism is unclear — stairway as sundial, rotating disk, or specific architectural feature. LXX renders similarly. The astronomical phenomenon (if literal) is unprecedented.",
+        "note": "Isaiah 38:8 parallel includes 'the sun turned back ten degrees.' The text does not speculate on mechanism; it simply affirms the sign as given. Ancient and modern readers alike have proposed various natural-scientific explanations (atmospheric refraction, volcanic activity affecting solar visibility) but the text maintains the miraculous frame. The theological point is not mechanism but confirmation."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "חֲלוּ",
+        "tlit": "ḥalu",
+        "gloss": "sick / mortally ill",
+        "note": "Hezekiah's illness (v.1) uses the general term for serious illness; Isaiah's 'you will die and not live' confirms the diagnosis was terminal-prognosis. The medicinal intervention (v.7 — a lump of figs applied to the boil) is folk remedy rather than the primary curative agent; the healing is attributed to Yahweh's extension of life in response to prayer, not to medical treatment."
+      },
+      {
+        "word": "בְּרֵכָה",
+        "tlit": "berekhah",
+        "gloss": "pool / reservoir",
+        "note": "The engineered pool Hezekiah created (v.20) to receive the tunnel-water from Gihon Spring. The Pool of Siloam — archaeologically extensive, partially excavated — is the destination. Jesus sends the blind man of John 9 to wash in this pool; the Siloam basin's association with Hezekiah is the OT-context for that NT healing narrative."
+      }
+    ]
   },
   "vhl_groups": [
     {
