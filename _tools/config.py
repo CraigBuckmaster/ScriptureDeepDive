@@ -1279,3 +1279,29 @@ BOOK_META['revelation'] = {
     'vhl_key': ['revelation', 'apocalypse', 'Alpha and Omega', 'Lamb', 'throne', 'seal', 'trumpet', 'bowl', 'dragon', 'beast', 'false prophet', 'Babylon', 'New Jerusalem', 'bride', 'witness', 'testimony', 'conquer', 'overcome', 'worthy', 'Holy Holy Holy', 'wrath', 'blood', 'white', 'mark', 'number', '666', 'thousand years', 'millennium', 'first resurrection', 'second death', 'lake of fire', 'tree of life', 'river of life', 'morning star', 'key of David', 'book of life', 'new heaven', 'new earth', 'Maranatha', 'Come Lord Jesus', 'seven spirits', 'seven churches', 'seven seals', 'seven trumpets', 'seven bowls', 'twenty-four elders', 'four living creatures', '144000', 'great multitude', 'two witnesses', 'woman clothed with the sun', 'rider on the white horse', 'King of kings', 'Lord of lords'],
     'vhl_time': ['the time is near', 'what must soon take place', 'I am coming soon', 'a thousand years', 'the first resurrection', 'the second death', 'forever and ever', 'no more death', 'no more night', 'the beginning and the end', 'who is and who was and who is to come'],
 }
+
+# ── "How We Got The Bible" epic: patristic + canon-formation voices (#1537) ──
+# These scholars are cited in extrabiblical / canon-formation content rather than
+# as per-book chapter panels. Their COMMENTATOR_SCOPE entries are left as empty
+# lists so that if a scholar panel were ever added inside a canonical book it
+# would fail schema-validator scope enforcement until deliberately widened.
+
+# Patristic (canon formation, early NT usage)
+SCHOLAR_REGISTRY.append(('athanasius', 'athanasius', 'Athanasius', 'athanasius'))
+SCHOLAR_REGISTRY.append(('jerome', 'jerome', 'Jerome', 'jerome'))
+SCHOLAR_REGISTRY.append(('augustine', 'augustine', 'Augustine', 'augustine'))
+SCHOLAR_REGISTRY.append(('tertullian', 'tertullian', 'Tertullian', 'tertullian'))
+COMMENTATOR_SCOPE['athanasius'] = []
+COMMENTATOR_SCOPE['jerome'] = []
+COMMENTATOR_SCOPE['augustine'] = []
+COMMENTATOR_SCOPE['tertullian'] = []
+
+# Modern canon studies & Second Temple Judaism
+SCHOLAR_REGISTRY.append(('kruger', 'kruger', 'Kruger', 'kruger'))
+SCHOLAR_REGISTRY.append(('metzger', 'metzger', 'Metzger', 'metzger'))
+SCHOLAR_REGISTRY.append(('nickelsburg', 'nickelsburg', 'Nickelsburg', 'nickelsburg'))
+SCHOLAR_REGISTRY.append(('vanderkam', 'vanderkam', 'VanderKam', 'vanderkam'))
+COMMENTATOR_SCOPE['kruger'] = []
+COMMENTATOR_SCOPE['metzger'] = []
+COMMENTATOR_SCOPE['nickelsburg'] = []
+COMMENTATOR_SCOPE['vanderkam'] = []

@@ -1,0 +1,421 @@
+[
+  {
+    "id": "protestant",
+    "label": "Protestant",
+    "book_count": 66,
+    "sort_order": 1,
+    "short_description": "The 66-book canon shared by almost all Protestant churches: 39 Old Testament books (the Jewish Tanakh recounted in a Christian order) and 27 New Testament books. The Reformers, following Jerome's 4th-century distinction between the Hebrew canon and the 'ecclesiastical' books, excluded the deuterocanonical writings from Scripture proper while allowing them to be read 'for example of life and instruction of manners' (Article VI of the Thirty-Nine Articles, 1563). The contents of this canon were not invented by the Reformation — the same 66 books were already widely treated as Scripture in the patristic East and had long been the contested core of Christian canon lists — but the explicit 66-book boundary was fixed in the Protestant confessions of the 16th and 17th centuries.",
+    "canon_list": [
+      {
+        "section": "Old Testament — Pentateuch",
+        "books": ["genesis", "exodus", "leviticus", "numbers", "deuteronomy"]
+      },
+      {
+        "section": "Old Testament — Historical",
+        "books": ["joshua", "judges", "ruth", "1_samuel", "2_samuel", "1_kings", "2_kings", "1_chronicles", "2_chronicles", "ezra", "nehemiah", "esther"]
+      },
+      {
+        "section": "Old Testament — Wisdom & Poetry",
+        "books": ["job", "psalms", "proverbs", "ecclesiastes", "song_of_solomon"]
+      },
+      {
+        "section": "Old Testament — Major Prophets",
+        "books": ["isaiah", "jeremiah", "lamentations", "ezekiel", "daniel"]
+      },
+      {
+        "section": "Old Testament — Minor Prophets",
+        "books": ["hosea", "joel", "amos", "obadiah", "jonah", "micah", "nahum", "habakkuk", "zephaniah", "haggai", "zechariah", "malachi"]
+      },
+      {
+        "section": "New Testament — Gospels",
+        "books": ["matthew", "mark", "luke", "john"]
+      },
+      {
+        "section": "New Testament — History",
+        "books": ["acts"]
+      },
+      {
+        "section": "New Testament — Pauline Epistles",
+        "books": ["romans", "1_corinthians", "2_corinthians", "galatians", "ephesians", "philippians", "colossians", "1_thessalonians", "2_thessalonians", "1_timothy", "2_timothy", "titus", "philemon"]
+      },
+      {
+        "section": "New Testament — General Epistles",
+        "books": ["hebrews", "james", "1_peter", "2_peter", "1_john", "2_john", "3_john", "jude"]
+      },
+      {
+        "section": "New Testament — Apocalypse",
+        "books": ["revelation"]
+      }
+    ],
+    "distinctives": [
+      {
+        "title": "Hebrew OT boundary",
+        "detail": "Follows the Jewish Tanakh for the Old Testament — the same 39 books, reordered into the Christian fourfold arrangement of Law, History, Wisdom, and Prophets. Books that survive only in Greek (Tobit, Judith, 1–2 Maccabees, Wisdom, Sirach, Baruch, the Greek additions to Esther and Daniel) are excluded from Scripture."
+      },
+      {
+        "title": "Sola Scriptura",
+        "detail": "Scripture alone is the final rule of faith and practice. This principle, articulated by the Reformers and encoded in the Westminster Confession (1646) and the Belgic Confession (1561), places normative authority on the 66 canonical books to the exclusion of unwritten tradition or later ecclesiastical decree."
+      },
+      {
+        "title": "Apocrypha as edifying but not canonical",
+        "detail": "Luther's 1534 German Bible printed the Apocrypha as a separate section between the Testaments with the header 'Books which are not held equal to the Holy Scriptures, yet are useful and good to read.' The King James Version (1611) included the Apocrypha in this same intertestamental location until British and Foreign Bible Society printings from 1826 onward typically omitted it."
+      },
+      {
+        "title": "Criteria of canonicity",
+        "detail": "Protestant canon rationale has emphasized apostolic origin (for the NT), prophetic origin (for the OT), internal consistency, reception by the churches, and — in the formulations of Kruger and others — the 'self-authenticating' quality of Scripture recognized by the believing community rather than conferred by council decree."
+      }
+    ],
+    "formation_events": [
+      {
+        "year": -200,
+        "label": "Law & Prophets functioning as Scripture",
+        "detail": "By the 2nd century BC the Torah and Nevi'im (Prophets) are treated as Scripture in Judaism; the prologue to Sirach (c. 132 BC) references 'the Law, the Prophets, and the other books of our fathers.'"
+      },
+      {
+        "year": 90,
+        "label": "Council of Jamnia (traditional)",
+        "detail": "A rabbinic gathering at Yavneh long cited as closing the Hebrew canon. Modern scholarship (Lewis, Leiman) has largely abandoned the 'Jamnia closed the canon' thesis, recognizing that the core Hebrew canon was already settled in Jewish practice well before this date."
+      },
+      {
+        "year": 367,
+        "label": "Athanasius' 39th Festal Letter",
+        "detail": "Athanasius lists 22 OT books (by Hebrew reckoning — equivalent to the 39 Protestant OT) and 27 NT books, calling these alone 'canonized.' First extant NT list matching the modern 27. Deuterocanonical books are listed as edifying but distinct."
+      },
+      {
+        "year": 405,
+        "label": "Jerome's Vulgate + Prologus Galeatus",
+        "detail": "Jerome translates the OT from Hebrew rather than Greek and flags the deuterocanonical books as 'ecclesiastical' rather than 'canonical' in his prologues — a distinction Protestants later retrieve. Augustine and the African councils (Hippo 393, Carthage 397) take the opposite view, including the deuterocanon."
+      },
+      {
+        "year": 1534,
+        "label": "Luther's German Bible",
+        "detail": "Luther groups the Apocrypha in a separate intertestamental section with a header noting they are not equal to Scripture but useful to read. Establishes the visual convention that shapes Protestant Bibles for the next three centuries."
+      },
+      {
+        "year": 1563,
+        "label": "Article VI (Thirty-Nine Articles)",
+        "detail": "The Church of England defines Holy Scripture as those books 'of whose authority was never any doubt in the Church,' explicitly naming the 39 OT books and appending the Apocrypha as read 'for example of life and instruction of manners.'"
+      },
+      {
+        "year": 1647,
+        "label": "Westminster Confession 1.3",
+        "detail": "'The books commonly called Apocrypha, not being of divine inspiration, are no part of the canon of the Scripture, and therefore are of no authority in the Church of God…' — the strongest Reformed boundary statement."
+      },
+      {
+        "year": 1826,
+        "label": "British & Foreign Bible Society drops Apocrypha",
+        "detail": "After the 'Apocrypha Controversy' within the Society, printings after 1826 typically exclude the Apocrypha from Protestant Bibles, completing the practical shift from Luther's 'separated but printed' convention to 'omitted.'"
+      }
+    ]
+  },
+  {
+    "id": "catholic",
+    "label": "Roman Catholic",
+    "book_count": 73,
+    "sort_order": 2,
+    "short_description": "The 73-book canon of the Roman Catholic Church: 46 Old Testament books and 27 New Testament books. The Catholic OT matches the Protestant 39 and adds seven 'deuterocanonical' books — Tobit, Judith, 1 and 2 Maccabees, Wisdom of Solomon, Sirach, and Baruch (with the Letter of Jeremiah as its sixth chapter) — plus the Greek additions to Esther and the three additions to Daniel (the Prayer of Azariah / Song of the Three Young Men, Susanna, and Bel and the Dragon). These books circulated in the Septuagint (LXX), were cited as Scripture by many patristic writers (notably Augustine), and were explicitly defined as canonical at the Council of Trent in 1546 in response to the Reformation. The Catholic canon treats the deuterocanon as equally inspired and normative with the rest of the Old Testament, not as a separate secondary tier.",
+    "canon_list": [
+      {
+        "section": "Old Testament — Pentateuch",
+        "books": ["genesis", "exodus", "leviticus", "numbers", "deuteronomy"]
+      },
+      {
+        "section": "Old Testament — Historical",
+        "books": ["joshua", "judges", "ruth", "1_samuel", "2_samuel", "1_kings", "2_kings", "1_chronicles", "2_chronicles", "ezra", "nehemiah", "tobit", "judith", "esther", "1_maccabees", "2_maccabees"]
+      },
+      {
+        "section": "Old Testament — Wisdom & Poetry",
+        "books": ["job", "psalms", "proverbs", "ecclesiastes", "song_of_solomon", "wisdom_of_solomon", "sirach"]
+      },
+      {
+        "section": "Old Testament — Prophets",
+        "books": ["isaiah", "jeremiah", "lamentations", "baruch", "ezekiel", "daniel", "hosea", "joel", "amos", "obadiah", "jonah", "micah", "nahum", "habakkuk", "zephaniah", "haggai", "zechariah", "malachi"]
+      },
+      {
+        "section": "New Testament — Gospels",
+        "books": ["matthew", "mark", "luke", "john"]
+      },
+      {
+        "section": "New Testament — History",
+        "books": ["acts"]
+      },
+      {
+        "section": "New Testament — Pauline Epistles",
+        "books": ["romans", "1_corinthians", "2_corinthians", "galatians", "ephesians", "philippians", "colossians", "1_thessalonians", "2_thessalonians", "1_timothy", "2_timothy", "titus", "philemon"]
+      },
+      {
+        "section": "New Testament — General Epistles",
+        "books": ["hebrews", "james", "1_peter", "2_peter", "1_john", "2_john", "3_john", "jude"]
+      },
+      {
+        "section": "New Testament — Apocalypse",
+        "books": ["revelation"]
+      }
+    ],
+    "distinctives": [
+      {
+        "title": "Septuagint-based OT",
+        "detail": "The Catholic Old Testament follows the scope of the Septuagint (LXX) — the Greek translation of the Hebrew Scriptures produced in Alexandria from the 3rd century BC onward — which included the seven deuterocanonical books alongside the Hebrew protocanon. This scope was standardized by the African councils (Hippo 393, Carthage 397) and canonized at Trent (1546)."
+      },
+      {
+        "title": "Deuterocanon is canonical, not secondary",
+        "detail": "The Catholic Church rejects the Protestant distinction between 'canonical' and 'edifying' Old Testament books. Dei Verbum (Vatican II, 1965) restates Trent: the deuterocanonical books are 'sacred and canonical… because, having been written by inspiration of the Holy Spirit, they have God as their author.'"
+      },
+      {
+        "title": "Scripture and Tradition as twin sources",
+        "detail": "Dei Verbum §9–10: Scripture and Tradition 'flow out of the same divine well-spring' and together constitute the deposit of faith. The canon is recognized, not constituted, by the Church's Magisterium — but the Magisterium's authority to make that recognition binding distinguishes the Catholic canon-rationale from the Protestant one."
+      },
+      {
+        "title": "Vulgate as definitive liturgical text",
+        "detail": "Trent declared Jerome's Latin Vulgate 'authentic' for public reading and disputation, even though Jerome himself had expressed doubts about the deuterocanon. The Nova Vulgata (1979) remains the liturgical reference text; vernacular translations (NAB, Douay-Rheims, Jerusalem Bible) preserve the 73-book scope."
+      }
+    ],
+    "formation_events": [
+      {
+        "year": 250,
+        "label": "LXX in patristic use",
+        "detail": "The Septuagint — including Tobit, Judith, Wisdom, Sirach, Baruch, and 1–2 Maccabees — is the working OT of the Greek-speaking Christian East. Writers like Clement of Alexandria, Origen, and Cyprian cite these books as Scripture alongside the Hebrew protocanon."
+      },
+      {
+        "year": 393,
+        "label": "Council of Hippo",
+        "detail": "Under Augustine's influence, Hippo lists 46 OT books — the 39 plus the seven deuterocanonical books — as canonical. This is the first full Christian list matching the later Catholic canon."
+      },
+      {
+        "year": 397,
+        "label": "Council of Carthage",
+        "detail": "Reaffirms Hippo's OT list and adds the 27-book NT, producing a 73-book canon. Augustine's De Doctrina Christiana (2.8.13) defends this broader scope against Jerome's narrower 'Hebrew canon' position."
+      },
+      {
+        "year": 405,
+        "label": "Pope Innocent I to Exsuperius",
+        "detail": "Innocent's letter to Bishop Exsuperius of Toulouse lists the same 73 books as canonical. Rome's position is firm from the early 5th century onward, even while Jerome's own translations note the ecclesiastical status of the deuterocanon."
+      },
+      {
+        "year": 1442,
+        "label": "Council of Florence — Cantate Domino",
+        "detail": "The bull Cantate Domino reiterates the 73-book canon as binding for the Western Church, in the context of reunion negotiations with the Coptic Church."
+      },
+      {
+        "year": 1546,
+        "label": "Council of Trent — Session IV",
+        "detail": "On 8 April 1546 Trent decrees the 73-book canon 'with all its parts' to be sacred and canonical, anathematizing those who reject them. This is the first ecumenical council to bind the canon dogmatically. Response to Luther's 1534 German Bible, which had relegated the deuterocanon to an appendix."
+      },
+      {
+        "year": 1870,
+        "label": "Vatican I — Dei Filius",
+        "detail": "Reaffirms Trent's canon as divinely inspired and reiterates the Church's authority to define it. Sets the terms for later Catholic canon theology through Vatican II."
+      },
+      {
+        "year": 1965,
+        "label": "Vatican II — Dei Verbum",
+        "detail": "Restates the canon, affirms the Septuagint-derived scope, and places Scripture and Tradition together as the one deposit of faith. Retains Trent's 73-book list unchanged."
+      }
+    ]
+  },
+  {
+    "id": "eastern_orthodox",
+    "label": "Eastern Orthodox",
+    "book_count": 76,
+    "sort_order": 3,
+    "short_description": "The Eastern Orthodox canon varies across the autocephalous churches (Greek, Russian, Serbian, Bulgarian, Romanian, etc.), but the commonly cited total is 76 — the 73-book Catholic canon plus 1 Esdras (LXX numbering, distinct from Catholic Ezra), the Prayer of Manasseh, and 3 Maccabees, with Psalm 151 traditionally printed as an appendix to the Psalter rather than as a separate book. Some traditions append 4 Maccabees as a non-canonical but edifying work; the Greek Orthodox Church prints it in appendix but not as Scripture. Unlike the Catholic canon, the Eastern canon was never defined by a single ecumenical council; it was received gradually through the Septuagint, the patristic authors of the Greek East, and local synods (notably Jerusalem 1672 under Patriarch Dositheos). Orthodox canon theology distinguishes between 'canonical' books (the Hebrew protocanon, treated as primary) and 'anagignoskomena' — books 'worthy to be read' — which includes the Greek-only writings.",
+    "canon_list": [
+      {
+        "section": "Old Testament — Pentateuch",
+        "books": ["genesis", "exodus", "leviticus", "numbers", "deuteronomy"]
+      },
+      {
+        "section": "Old Testament — Historical",
+        "books": ["joshua", "judges", "ruth", "1_samuel", "2_samuel", "1_kings", "2_kings", "1_chronicles", "2_chronicles", "1_esdras", "ezra", "nehemiah", "tobit", "judith", "esther", "1_maccabees", "2_maccabees", "3_maccabees"]
+      },
+      {
+        "section": "Old Testament — Wisdom & Poetry",
+        "books": ["job", "psalms", "prayer_of_manasseh", "proverbs", "ecclesiastes", "song_of_solomon", "wisdom_of_solomon", "sirach"]
+      },
+      {
+        "section": "Old Testament — Prophets",
+        "books": ["isaiah", "jeremiah", "lamentations", "baruch", "ezekiel", "daniel", "hosea", "joel", "amos", "obadiah", "jonah", "micah", "nahum", "habakkuk", "zephaniah", "haggai", "zechariah", "malachi"]
+      },
+      {
+        "section": "New Testament — Gospels",
+        "books": ["matthew", "mark", "luke", "john"]
+      },
+      {
+        "section": "New Testament — History",
+        "books": ["acts"]
+      },
+      {
+        "section": "New Testament — Pauline Epistles",
+        "books": ["romans", "1_corinthians", "2_corinthians", "galatians", "ephesians", "philippians", "colossians", "1_thessalonians", "2_thessalonians", "1_timothy", "2_timothy", "titus", "philemon"]
+      },
+      {
+        "section": "New Testament — General Epistles",
+        "books": ["hebrews", "james", "1_peter", "2_peter", "1_john", "2_john", "3_john", "jude"]
+      },
+      {
+        "section": "New Testament — Apocalypse",
+        "books": ["revelation"]
+      }
+    ],
+    "distinctives": [
+      {
+        "title": "LXX as the Orthodox Old Testament",
+        "detail": "The Septuagint is not just the source of the deuterocanon in Orthodoxy — it is the liturgical and theological OT. Quotations in the NT, citations in the Greek Fathers, and the text used in Orthodox worship all follow LXX numbering and text. Where the Masoretic Text and LXX differ (e.g., Psalm numbering, length of Jeremiah), Orthodox tradition follows the LXX."
+      },
+      {
+        "title": "Anagignoskomena category",
+        "detail": "Orthodox canon theology traditionally distinguishes the 'canonical' Hebrew-origin books from the 'anagignoskomena' (Greek: 'to be read') — books received from the LXX tradition. Both categories are read liturgically and treated as Scripture, but the distinction acknowledges the patristic debate (esp. Athanasius, Jerome) about Hebrew-vs-Greek scope without rejecting the latter."
+      },
+      {
+        "title": "Regional variation is formally tolerated",
+        "detail": "The Slavonic Bible includes 1 Esdras / 3 Esdras / Prayer of Manasseh and 3 Maccabees; the Russian Synodal Bible (1876) includes them and adds 2 Esdras (≈ 4 Ezra) as a separately-numbered book. The Jerusalem 1672 synod's list is not binding on all autocephalous churches. This diversity is a feature, not a defect, of how Orthodox tradition handles canon."
+      },
+      {
+        "title": "Received, not defined",
+        "detail": "No ecumenical council has promulgated a canon binding on the whole Orthodox communion in the manner of Trent for Rome. The canon is received through liturgical use, patristic reception, and local synodical confirmation. This leaves the exact boundaries permeable at the edges (especially 3 Maccabees, 4 Maccabees, Psalm 151) while the core is stable."
+      }
+    ],
+    "formation_events": [
+      {
+        "year": 325,
+        "label": "Council of Nicaea — no canon decree",
+        "detail": "Despite popular claims to the contrary, Nicaea did not set the biblical canon. Its concerns were christological (the homoousion) and disciplinary. The Greek Christian OT in its 5th-century form was inherited from LXX-using communities, not legislated by the early ecumenical councils."
+      },
+      {
+        "year": 367,
+        "label": "Athanasius' 39th Festal Letter",
+        "detail": "Athanasius lists 22 Hebrew-numbered OT books as canonical plus a second tier of books 'appointed by the Fathers to be read by those who newly join us' — including Wisdom, Sirach, Esther (noted as read but not canonical in the stricter sense), Judith, Tobit, the Didache, and the Shepherd of Hermas. Reflects the patristic two-tier pattern Orthodoxy formalizes as anagignoskomena."
+      },
+      {
+        "year": 692,
+        "label": "Quinisext Council (Trullo)",
+        "detail": "Canon 2 of the Council in Trullo ratifies earlier canonical lists (Apostolic Canon 85, Laodicea c. 60, Athanasius' 39th Festal Letter, Carthage 397 — which differ from each other). By affirming multiple lists simultaneously, Trullo formalizes the Orthodox tolerance for regional variation within the broader Greek canonical tradition."
+      },
+      {
+        "year": 1629,
+        "label": "Confession of Cyril Loukaris",
+        "detail": "Patriarch of Constantinople Cyril Loukaris publishes a Calvinist-leaning confession limiting the canonical OT to the Hebrew books. His position is controversial and subsequently rejected by the Jerusalem synod of 1672."
+      },
+      {
+        "year": 1672,
+        "label": "Synod of Jerusalem (Dositheos)",
+        "detail": "Under Patriarch Dositheos Notaras, this synod rejects Loukaris' narrow canon and reaffirms the broader LXX scope, including Tobit, Judith, Wisdom, Sirach, Baruch, 1–3 Maccabees, and the anagignoskomena. The Confession of Dositheos is widely cited as the Orthodox canonical position, though not formally ecumenical."
+      },
+      {
+        "year": 1876,
+        "label": "Russian Synodal Bible",
+        "detail": "The official Russian Orthodox translation prints all anagignoskomena including 2 Esdras (4 Ezra) and 3 Maccabees. Psalm 151 is printed as an appendix to the Psalter. This edition shapes Russian and Slavonic Orthodox practice into the 20th century."
+      },
+      {
+        "year": 2008,
+        "label": "Orthodox Study Bible",
+        "detail": "The St Athanasius Academy Septuagint edition published under the imprimatur of Metropolitan Maximos standardizes a 49-book OT (with Psalm 151 as Psalter appendix and 4 Maccabees in appendix) for English-speaking Orthodox. Retains the traditional LXX order and footnotes textual differences with MT."
+      }
+    ]
+  },
+  {
+    "id": "ethiopian_tewahedo",
+    "label": "Ethiopian Orthodox Tewahedo",
+    "book_count": 81,
+    "sort_order": 4,
+    "short_description": "The Ethiopian Orthodox Tewahedo Church holds the broadest canon of any major Christian communion: traditionally 81 books in the 'narrower canon' used liturgically. This includes everything in the Eastern Orthodox canon plus 1 Enoch, Jubilees, 2 Esdras (≈ 4 Ezra), the three books of Meqabyan (distinct Ethiopian works, not the Greek 1–3 Maccabees), and Ethiopian-specific recensions of Proverbs (split into Messale and Tägsas). A 'broader canon' of 88 books is also attested in some sources and adds Sinodos, Qalementos, and other clerical works, but the 81-book narrower canon is the one most commonly referenced. 1 Enoch is especially significant — quoted directly in Jude 14–15, preserved in full only in Ethiopic Geʽez, and treated as Scripture in Ethiopia when it was lost to the Greek and Latin traditions for over a millennium. The exact contents and numbering vary somewhat across Ethiopian manuscripts and modern editions, and Ethiopian canon theology treats this variation as compatible with unity in the core.",
+    "canon_list": [
+      {
+        "section": "Old Testament — Pentateuch (Orit)",
+        "books": ["genesis", "exodus", "leviticus", "numbers", "deuteronomy"]
+      },
+      {
+        "section": "Old Testament — Historical & Pseudepigraphic",
+        "books": ["joshua", "judges", "ruth", "1_samuel", "2_samuel", "1_kings", "2_kings", "1_chronicles", "2_chronicles", "jubilees", "1_enoch", "1_esdras", "ezra", "nehemiah", "4_ezra", "tobit", "judith", "esther", "1_meqabyan", "2_meqabyan", "3_meqabyan", "job"]
+      },
+      {
+        "section": "Old Testament — Wisdom & Poetry",
+        "books": ["psalms", "proverbs", "tagsas", "wisdom_of_solomon", "sirach", "ecclesiastes", "song_of_solomon", "prayer_of_manasseh"]
+      },
+      {
+        "section": "Old Testament — Prophets",
+        "books": ["isaiah", "jeremiah", "lamentations", "baruch", "letter_of_jeremiah", "ezekiel", "daniel", "hosea", "joel", "amos", "obadiah", "jonah", "micah", "nahum", "habakkuk", "zephaniah", "haggai", "zechariah", "malachi"]
+      },
+      {
+        "section": "New Testament — Gospels",
+        "books": ["matthew", "mark", "luke", "john"]
+      },
+      {
+        "section": "New Testament — History",
+        "books": ["acts"]
+      },
+      {
+        "section": "New Testament — Pauline Epistles",
+        "books": ["romans", "1_corinthians", "2_corinthians", "galatians", "ephesians", "philippians", "colossians", "1_thessalonians", "2_thessalonians", "1_timothy", "2_timothy", "titus", "philemon"]
+      },
+      {
+        "section": "New Testament — General Epistles",
+        "books": ["hebrews", "james", "1_peter", "2_peter", "1_john", "2_john", "3_john", "jude"]
+      },
+      {
+        "section": "New Testament — Apocalypse",
+        "books": ["revelation"]
+      }
+    ],
+    "distinctives": [
+      {
+        "title": "1 Enoch and Jubilees as Scripture",
+        "detail": "The Ethiopian Church preserved 1 Enoch in its complete Geʽez text when it was lost to the Greek and Latin traditions for over a millennium — rediscovered by James Bruce in 1773 and unearthed in Aramaic among the Dead Sea Scrolls in 1947. Jubilees likewise survives in full only in Ethiopic. Their canonical status reflects deep pre-Chalcedonian reception in Ethiopian Christianity rather than late medieval innovation."
+      },
+      {
+        "title": "Meqabyan ≠ Maccabees",
+        "detail": "The three books of Meqabyan in the Ethiopian canon are distinct from the Greek 1–4 Maccabees of the LXX tradition. They are original Ethiopian compositions (possibly 14th century or earlier) narrating resistance against foreign oppression under the name 'Maccabees,' and are not translations of the Greek works. The Ethiopian canon does not typically include the Greek Maccabean books."
+      },
+      {
+        "title": "Narrower and broader canons",
+        "detail": "Ethiopian sources sometimes cite 81 books (narrower canon, used liturgically) and sometimes 88 (broader canon, including Sinodos, Qalementos, the Book of Covenant, and Didascalia). The 81-book figure is the most commonly referenced and appears in the official Haile Selassie Amharic Bible (1961/1986). Both canons are considered 'Scripture' in Ethiopian usage, but the broader canon's additional books function more like authoritative church orders than narrative revelation."
+      },
+      {
+        "title": "Canon continuity with apostolic Jewish Christianity",
+        "detail": "Ethiopian tradition attributes canon-transmission to the apostle Matthew, the eunuch of Acts 8, and the Nine Saints (5th–6th century). Whether this traces historical reality, the effect is a canon less shaped by the Latin West's counter-Reformation debates and more continuous with Second Temple Jewish literature. This is why books preserved in the Dead Sea Scrolls (1 Enoch, Jubilees, some Ezra traditions) surface here as canonical."
+      }
+    ],
+    "formation_events": [
+      {
+        "year": 100,
+        "label": "Second Temple Jewish literature in diaspora",
+        "detail": "Before Ethiopian Christianization, Jewish communities in Arabia and the Horn of Africa circulate 1 Enoch, Jubilees, and related Second Temple literature in Greek and Aramaic. Ethiopian Jewish (Beta Israel) tradition preserves these texts as Scripture into the Christian era, and early Ethiopian Christianity inherits them."
+      },
+      {
+        "year": 340,
+        "label": "Frumentius and the conversion of Aksum",
+        "detail": "Traditionally dated to the reign of King Ezana; the Coptic Patriarch of Alexandria consecrates Frumentius as first bishop of Ethiopia. The Ethiopian Church remains a daughter-church of Alexandria (Coptic) until autocephaly in 1959, which shapes canon reception through Coptic channels."
+      },
+      {
+        "year": 450,
+        "label": "Council of Chalcedon — Oriental separation",
+        "detail": "Ethiopia (with the Coptic, Syriac, and Armenian churches) rejects the Chalcedonian definition and becomes non-Chalcedonian ('Miaphysite' / Oriental Orthodox). This separation from the Greek and Latin mainstream means Ethiopian canon development continues on its own trajectory, preserving pre-Chalcedonian texts that the Chalcedonian churches later dropped."
+      },
+      {
+        "year": 500,
+        "label": "Nine Saints and Geʽez translations",
+        "detail": "The Nine Saints (5th–6th century monastic missionaries) are traditionally credited with translating Scripture into Geʽez. The Ethiopic OT is translated from a Greek Vorlage closer to the LXX than the MT, cementing the broader LXX-plus scope of the Ethiopian canon."
+      },
+      {
+        "year": 1270,
+        "label": "Solomonic dynasty and Kebra Nagast",
+        "detail": "The restored Solomonic dynasty consolidates Ethiopian Christian identity. The Kebra Nagast (c. 1270) narrates the Ethiopian Church's self-understanding as heir to Solomon and guardian of authentic Scripture — an identity that underwrites the canon's distinctive breadth."
+      },
+      {
+        "year": 1773,
+        "label": "Bruce recovers 1 Enoch",
+        "detail": "Scottish explorer James Bruce returns from Ethiopia with three Geʽez manuscripts of 1 Enoch, the first copies to reach Europe since the patristic era. Establishes the Ethiopian canon's unique preservation value and ends the long European assumption that 1 Enoch was permanently lost."
+      },
+      {
+        "year": 1961,
+        "label": "Haile Selassie Amharic Bible",
+        "detail": "Published under Emperor Haile Selassie I, this Amharic translation formalizes the 81-book narrower canon for modern Ethiopian use. Includes Meqabyan I–III, Jubilees, 1 Enoch, and 4 Ezra in the OT; standard 27-book NT. Remains the reference edition for Ethiopian Orthodox Tewahedo today."
+      },
+      {
+        "year": 1959,
+        "label": "Autocephaly from Alexandria",
+        "detail": "The Ethiopian Church becomes autocephalous (self-governing) under Patriarch Abune Basilios, ending 1,600 years of formal dependency on the Coptic Patriarch. The canon remains unchanged — it had been de facto Ethiopian for centuries — but the new status gives the Ethiopian Church formal authority to maintain and teach its distinctive canon on its own terms."
+      }
+    ]
+  }
+]

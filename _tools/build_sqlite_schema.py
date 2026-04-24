@@ -362,6 +362,43 @@ CREATE TABLE difficult_passages (
   tags_json TEXT
 );
 
+-- Extra-biblical literature (1 Enoch, Jubilees, Jasher, Apocrypha, DSS, etc.)
+-- Added for "How We Got The Bible" epic (#1538).
+CREATE TABLE extrabiblical (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  also_known_as_json TEXT,
+  category TEXT,
+  estimated_date TEXT,
+  original_language TEXT,
+  tradition_status_json TEXT NOT NULL,
+  brief_summary TEXT NOT NULL,
+  full_summary TEXT,
+  nt_citations_json TEXT,
+  ot_allusions_json TEXT,
+  scholar_voices_json TEXT,
+  related_debate_ids_json TEXT,
+  related_journey_ids_json TEXT,
+  related_difficult_passage_ids_json TEXT,
+  tags_json TEXT,
+  further_reading_json TEXT
+);
+CREATE INDEX idx_extrabiblical_category ON extrabiblical(category);
+
+-- Canon traditions (Protestant, Catholic, Eastern Orthodox, Ethiopian
+-- Tewahedo, etc.). Feeds the Canon Comparison screen (#1539 / #1542).
+CREATE TABLE canon_traditions (
+  id TEXT PRIMARY KEY,
+  label TEXT NOT NULL,
+  book_count INTEGER NOT NULL,
+  short_description TEXT,
+  canon_list_json TEXT NOT NULL,
+  distinctives_json TEXT,
+  formation_events_json TEXT,
+  sort_order INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX idx_canon_traditions_sort ON canon_traditions(sort_order);
+
 CREATE TABLE interlinear_glosses (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   gloss TEXT NOT NULL UNIQUE

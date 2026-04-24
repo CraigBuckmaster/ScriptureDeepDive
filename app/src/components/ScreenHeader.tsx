@@ -48,7 +48,7 @@ export function ScreenHeader({ title, subtitle, onBack, style, titleColor, backL
       <View style={styles.textWrap}>
         <View style={[styles.goldBar, { backgroundColor: resolvedTitleColor }]} />
         <View style={styles.titleTextWrap}>
-          <Text style={[styles.title, { color: resolvedTitleColor }]} numberOfLines={1} accessibilityRole="header">{title}</Text>
+          <Text style={[styles.title, { color: resolvedTitleColor }]} numberOfLines={2} accessibilityRole="header">{title}</Text>
           {subtitle ? (
             <Text style={[styles.subtitle, { color: base.textMuted }]}>{subtitle}</Text>
           ) : null}

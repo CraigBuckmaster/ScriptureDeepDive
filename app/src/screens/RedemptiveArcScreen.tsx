@@ -48,13 +48,14 @@ function RedemptiveArcScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <View style={[styles.stickyHeader, { backgroundColor: base.bg }]}>
         <ScreenHeader
           title="The Story of the Bible"
           subtitle={`${acts.length} acts in God's redemptive narrative`}
           onBack={() => navigation.goBack()}
-          style={styles.header}
         />
+      </View>
+      <ScrollView contentContainerStyle={styles.scrollContent}>
 
         {visibleActs.map((act, index) => (
           <TouchableOpacity
@@ -171,8 +172,12 @@ function RedemptiveArcScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   loadingPad: { padding: spacing.lg },
-  scrollContent: { padding: spacing.md, paddingBottom: spacing.xxl },
-  header: { marginBottom: spacing.lg },
+  scrollContent: { paddingHorizontal: spacing.md, paddingBottom: spacing.xxl },
+  stickyHeader: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+    paddingBottom: spacing.lg,
+  },
   actCard: {
     borderRadius: radii.md,
     borderWidth: 1,

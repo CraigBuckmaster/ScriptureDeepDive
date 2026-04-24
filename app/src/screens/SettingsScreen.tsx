@@ -72,12 +72,13 @@ function SettingsScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <ScrollView contentContainerStyle={styles.content}>
+      <View style={[styles.stickyHeader, { backgroundColor: base.bg }]}>
         <ScreenHeader
           title="Settings"
           onBack={() => navigation.goBack()}
-          style={styles.headerSpacing}
         />
+      </View>
+      <ScrollView contentContainerStyle={styles.content}>
 
         <PremiumBanner
           base={base}
@@ -155,10 +156,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   content: {
-    padding: spacing.md,
+    paddingHorizontal: spacing.md,
+    paddingBottom: spacing.md,
   },
-  headerSpacing: {
-    marginBottom: spacing.lg,
+  stickyHeader: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+    paddingBottom: spacing.lg,
   },
   navArrow: {
     fontSize: 24,

@@ -23,6 +23,7 @@ export { ThreadingPanel } from './ThreadingPanel';
 export { TextualPanel } from './TextualPanel';
 export { DebatePanel } from './DebatePanel';
 export { DiscoursePanel } from './DiscoursePanel';
+export { SecondTemplePanel } from './SecondTemplePanel';
 
 // Infrastructure
 export { TabbedPanelRenderer } from './TabbedPanelRenderer';

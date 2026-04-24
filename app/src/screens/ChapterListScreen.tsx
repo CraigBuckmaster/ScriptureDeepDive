@@ -61,15 +61,16 @@ function ChapterListScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <ScrollView contentContainerStyle={styles.content}>
+      <View style={[styles.stickyHeader, { backgroundColor: base.bg }]}>
         {/* Header with back button */}
         <ScreenHeader
           title={book.name}
           subtitle={`${book.total_chapters} chapters`}
           onBack={() => navigation.goBack()}
           backLabel="Back to library"
-          style={styles.headerSpacing}
         />
+      </View>
+      <ScrollView contentContainerStyle={styles.content}>
 
         {/* Progress summary — only shown when user has started the book */}
         {visited.size > 0 && (
@@ -165,10 +166,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   content: {
-    padding: spacing.md,
+    paddingHorizontal: spacing.md,
+    paddingBottom: spacing.md,
   },
-  headerSpacing: {
-    marginBottom: spacing.md,
+  stickyHeader: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+    paddingBottom: spacing.md,
   },
   progressRow: {
     marginBottom: spacing.md,

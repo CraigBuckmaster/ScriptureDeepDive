@@ -573,6 +573,209 @@ def main():
                               rk in r, f"missing '{rk}'")
         print(f"  difficult passages: {len(dp_data)}")
 
+    # ── Extra-biblical literature (#1538) ──
+    eb_path = META / 'extrabiblical.json'
+    if eb_path.exists():
+        print("\n--- EXTRABIBLICAL ---")
+        eb_data = json.loads(eb_path.read_text(encoding='utf-8'))
+        check("extrabiblical.json is list", isinstance(eb_data, list))
+
+        valid_categories = {'apocrypha', 'pseudepigrapha', 'dss', 'deuterocanon'}
+        required_status_keys = {'protestant', 'catholic', 'eastern_orthodox', 'ethiopian_tewahedo'}
+        valid_citation_types = {'direct_quotation', 'allusion', 'echo'}
+        snake_re = re.compile(r'^[a-z0-9]+(_[a-z0-9]+)*$')
+        # Accept refs like "genesis 1:3", "jude 14-15", "1 peter 2:4-10",
+        # "1 john 1", "matthew 5:3-12". Books with leading digits or multiple
+        # words are permitted. The chapter portion allows an optional verse
+        # range with or without a colon (Jude has only one chapter, so "jude
+        # 14-15" is legal).
+        ref_re = re.compile(
+            r'^[a-z0-9_]+(\s[a-z0-9_]+)*\s\d+(-\d+)?(:\d+(-\d+)?)?$'
+        )
+
+        # Cross-link ID pools (loaded defensively — some may not exist yet)
+        debate_ids = set()
+        dtp = META / 'debate-topics.json'
+        if dtp.exists():
+            try:
+                dtd = json.loads(dtp.read_text(encoding='utf-8'))
+                debate_ids = {t['id'] for t in (dtd if isinstance(dtd, list) else []) if 'id' in t}
+            except Exception:
+                pass
+        difficult_ids = set()
+        if dp_path.exists():
+            try:
+                dpd = json.loads(dp_path.read_text(encoding='utf-8'))
+                difficult_ids = {p['id'] for p in (dpd if isinstance(dpd, list) else []) if 'id' in p}
+            except Exception:
+                pass
+        journey_ids = set()
+        journeys_dir = META / 'journeys'
+        if journeys_dir.exists():
+            for jf in journeys_dir.rglob('*.json'):
+                try:
+                    jd = json.loads(jf.read_text(encoding='utf-8'))
+                    if isinstance(jd, dict) and 'id' in jd:
+                        journey_ids.add(jd['id'])
+                except Exception:
+                    pass
+
+        seen_ids = set()
+        for i, e in enumerate(eb_data):
+            eid = e.get('id', f'index_{i}')
+
+            # Required top-level keys
+            for key in ('id', 'title', 'tradition_status', 'brief_summary'):
+                check(f"extrabiblical {eid} has '{key}'", key in e,
+                      f"missing '{key}'")
+
+            # id shape + uniqueness
+            if 'id' in e:
+                check(f"extrabiblical {eid} id is snake_case",
+                      bool(snake_re.match(e['id'])),
+                      f"id '{e['id']}' not snake_case")
+                check(f"extrabiblical {eid} id unique",
+                      e['id'] not in seen_ids,
+                      f"duplicate id: {e['id']}")
+                seen_ids.add(e['id'])
+
+            # category enum (nullable in schema, but if present must be valid)
+            if e.get('category') is not None:
+                check(f"extrabiblical {eid} category valid",
+                      e['category'] in valid_categories,
+                      f"'{e['category']}' not in {sorted(valid_categories)}")
+
+            # tradition_status must have all 4 keys
+            ts = e.get('tradition_status')
+            if isinstance(ts, dict):
+                missing = required_status_keys - set(ts.keys())
+                check(f"extrabiblical {eid} tradition_status has 4 keys",
+                      len(missing) == 0,
+                      f"missing: {sorted(missing)}")
+
+            # brief_summary is a non-empty string
+            bs = e.get('brief_summary')
+            check(f"extrabiblical {eid} brief_summary non-empty",
+                  isinstance(bs, str) and len(bs.strip()) > 0,
+                  "empty or non-string")
+
+            # full_summary is nullable but if present must be string
+            fs = e.get('full_summary')
+            if fs is not None:
+                check(f"extrabiblical {eid} full_summary is string if present",
+                      isinstance(fs, str), f"got {type(fs).__name__}")
+
+            # nt_citations[]
+            for j, cit in enumerate(e.get('nt_citations', []) or []):
+                ref = cit.get('ref', '')
+                check(f"extrabiblical {eid} nt_citations[{j}].ref parses",
+                      bool(ref_re.match(ref.strip().lower())),
+                      f"ref '{ref}' does not match verse pattern")
+                if 'type' in cit:
+                    check(f"extrabiblical {eid} nt_citations[{j}].type valid",
+                          cit['type'] in valid_citation_types,
+                          f"'{cit['type']}' not in {sorted(valid_citation_types)}")
+
+            # scholar_voices[].scholar_id valid
+            for j, sv in enumerate(e.get('scholar_voices', []) or []):
+                sid = sv.get('scholar_id')
+                check(f"extrabiblical {eid} scholar_voices[{j}].scholar_id valid",
+                      sid in scholar_ids,
+                      f"'{sid}' not in scholars.json")
+
+            # related_debate_ids[] valid
+            for j, did in enumerate(e.get('related_debate_ids', []) or []):
+                check(f"extrabiblical {eid} related_debate_ids[{j}] valid",
+                      did in debate_ids,
+                      f"'{did}' not in debate-topics.json")
+
+            # related_difficult_passage_ids[] valid
+            for j, did in enumerate(e.get('related_difficult_passage_ids', []) or []):
+                check(f"extrabiblical {eid} related_difficult_passage_ids[{j}] valid",
+                      did in difficult_ids,
+                      f"'{did}' not in difficult-passages.json")
+
+            # related_journey_ids[] valid
+            for j, jid in enumerate(e.get('related_journey_ids', []) or []):
+                check(f"extrabiblical {eid} related_journey_ids[{j}] valid",
+                      jid in journey_ids,
+                      f"'{jid}' not in content/meta/journeys/**")
+
+        print(f"  extrabiblical: {len(eb_data)}")
+
+    # ── Canon Traditions (#1539 / #1542) ──
+    ct_path = META / 'canon_traditions.json'
+    if ct_path.exists():
+        print("\n--- CANON TRADITIONS ---")
+        ct_data = json.loads(ct_path.read_text(encoding='utf-8'))
+        check("canon_traditions.json is list", isinstance(ct_data, list))
+
+        all_book_ids = {b['id'] for b in books}
+        # Dual-table book-ID resolution per #1542: canon_list[].books[] ids
+        # may reference either the 66-book Protestant canon (books.json) or
+        # extrabiblical.json (deuterocanon, pseudepigrapha, DSS, etc.).
+        # Ids resolving in neither table are logged as informational —
+        # expected while the extrabiblical table is seeded incrementally —
+        # but malformed snake_case ids always fail.
+        extrabib_ids = set()
+        eb_path_ct = META / 'extrabiblical.json'
+        if eb_path_ct.exists():
+            try:
+                ebd = json.loads(eb_path_ct.read_text(encoding='utf-8'))
+                extrabib_ids = {e['id'] for e in (ebd if isinstance(ebd, list) else []) if 'id' in e}
+            except Exception:
+                pass
+
+        snake_re = re.compile(r'^[a-z0-9]+(_[a-z0-9]+)*$')
+        seen_ct_ids = set()
+        for i, t in enumerate(ct_data):
+            tid = t.get('id', f'index_{i}')
+
+            # Required top-level keys
+            for key in ('id', 'label', 'book_count', 'canon_list'):
+                check(f"canon_tradition {tid} has '{key}'", key in t,
+                      f"missing '{key}'")
+
+            # id shape + uniqueness
+            if 'id' in t:
+                check(f"canon_tradition {tid} id is snake_case",
+                      bool(snake_re.match(t['id'])),
+                      f"id '{t['id']}' not snake_case")
+                check(f"canon_tradition {tid} id unique",
+                      t['id'] not in seen_ct_ids,
+                      f"duplicate id: {t['id']}")
+                seen_ct_ids.add(t['id'])
+
+            # book_count matches total canon_list length
+            canon_list = t.get('canon_list', [])
+            if isinstance(canon_list, list) and 'book_count' in t:
+                total_listed = sum(
+                    len(s.get('books', [])) for s in canon_list
+                    if isinstance(s, dict)
+                )
+                check(f"canon_tradition {tid} book_count matches canon_list",
+                      total_listed == t['book_count'],
+                      f"book_count={t['book_count']}, listed={total_listed}")
+
+            # canon_list[].books[]: dual-table resolution
+            unresolved = []
+            for sec in canon_list if isinstance(canon_list, list) else []:
+                if not isinstance(sec, dict):
+                    continue
+                for bid in sec.get('books', []):
+                    check(f"canon_tradition {tid} book '{bid}' is snake_case",
+                          bool(snake_re.match(bid)),
+                          f"'{bid}' is not a valid id token")
+                    if bid not in all_book_ids and bid not in extrabib_ids:
+                        unresolved.append(bid)
+            if unresolved:
+                uniq = sorted(set(unresolved))
+                print(f"  canon_tradition {tid}: {len(unresolved)} unresolved "
+                      f"book id(s) (expected while extrabiblical is partial): "
+                      f"{uniq[:5]}" + ("…" if len(uniq) > 5 else ""))
+
+        print(f"  canon_traditions: {len(ct_data)}")
+
     # ── Debate Topics ──
     dt_path = META / 'debate-topics.json'
     if dt_path.exists():
@@ -1074,6 +1277,8 @@ def main():
             'heb', 'hist', 'ctx', 'cross', 'greek', 'hebtext', 'interlinear',
             'tl', 'places', 'poi', 'themes', 'lit', 'trans', 'src', 'rec',
             'thread', 'tx', 'textual', 'debate', 'discourse', 'ppl', 'com',
+            # st2 — Second Temple Context panel (HWGTB #1540)
+            'st2',
         }
         unregistered = []
         for book_dir in sorted(CONTENT.iterdir()):
@@ -1093,6 +1298,80 @@ def main():
         print(f"  Unregistered scholars: {len(unregistered)}")
     else:
         print("  [SKIP] scholars.json not found")
+
+    # ── 13b. st2 panel payload integrity (HWGTB #1540) ──
+    print("\n--- 13b. ST2 PANEL INTEGRITY ---")
+
+    st2_extrabiblical_ids = set()
+    eb_path_st2 = META / 'extrabiblical.json'
+    if eb_path_st2.exists():
+        try:
+            ebd = json.loads(eb_path_st2.read_text(encoding='utf-8'))
+            st2_extrabiblical_ids = {e['id'] for e in (ebd if isinstance(ebd, list) else []) if 'id' in e}
+        except Exception:
+            pass
+
+    st2_ref_re = re.compile(
+        r'^[a-z0-9_]+(\s[a-z0-9_]+)*\s\d+(-\d+)?(:\d+(-\d+)?)?$'
+    )
+    st2_valid_citation_types = {'direct_quotation', 'allusion', 'echo'}
+    st2_required_keys = {'header', 'body', 'extrabiblical_ids', 'citation_refs'}
+    st2_panel_count = 0
+
+    for book_dir in sorted(CONTENT.iterdir()):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
+            continue
+        for json_file in sorted(book_dir.glob('*.json')):
+            try:
+                data = json.loads(json_file.read_text(encoding='utf-8'))
+            except Exception:
+                continue
+            for i, sec in enumerate(data.get('sections', [])):
+                st2 = sec.get('panels', {}).get('st2')
+                if st2 is None:
+                    continue
+                loc = f"{book_dir.name}/{json_file.stem} S{i+1}"
+                st2_panel_count += 1
+                check(f"st2 {loc} is object", isinstance(st2, dict),
+                      f"got {type(st2).__name__}")
+                if not isinstance(st2, dict):
+                    continue
+                missing = st2_required_keys - set(st2.keys())
+                check(f"st2 {loc} has required keys",
+                      len(missing) == 0,
+                      f"missing {sorted(missing)}")
+
+                # extrabiblical_ids[] resolve
+                for j, eid in enumerate(st2.get('extrabiblical_ids', []) or []):
+                    check(f"st2 {loc} extrabiblical_ids[{j}] valid",
+                          eid in st2_extrabiblical_ids,
+                          f"'{eid}' not in extrabiblical.json")
+
+                # citation_refs[].nt parses + .type enum
+                for j, cit in enumerate(st2.get('citation_refs', []) or []):
+                    if not isinstance(cit, dict):
+                        check(f"st2 {loc} citation_refs[{j}] is object", False,
+                              f"got {type(cit).__name__}")
+                        continue
+                    nt = str(cit.get('nt', '')).strip().lower()
+                    check(f"st2 {loc} citation_refs[{j}].nt parses",
+                          bool(st2_ref_re.match(nt)),
+                          f"ref '{cit.get('nt')}' does not match verse pattern")
+                    if 'type' in cit:
+                        check(f"st2 {loc} citation_refs[{j}].type valid",
+                              cit['type'] in st2_valid_citation_types,
+                              f"'{cit['type']}' not in {sorted(st2_valid_citation_types)}")
+
+                # scholar_voices[].scholar_id resolve (if present)
+                for j, sv in enumerate(st2.get('scholar_voices', []) or []):
+                    if not isinstance(sv, dict):
+                        continue
+                    sid = sv.get('scholar_id')
+                    check(f"st2 {loc} scholar_voices[{j}].scholar_id valid",
+                          sid in scholar_ids,
+                          f"'{sid}' not in scholars.json")
+
+    print(f"  st2 panels scanned: {st2_panel_count}")
 
     # ── 14. Verse overlap check (#560) ──
     print("\n--- 14. VERSE OVERLAPS ---")

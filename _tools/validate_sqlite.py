@@ -492,6 +492,100 @@ def main():
               f"{len(bad_resp)} passages with empty responses")
     print(f"  difficult_passages: {dp_count or 0}")
 
+    # Extra-biblical literature (#1538)
+    eb_count = q1(cur, "SELECT COUNT(*) FROM extrabiblical")
+    check("extrabiblical table exists", eb_count is not None, "table missing")
+    if eb_count:
+        # tradition_status_json and brief_summary are NOT NULL at the schema level;
+        # also enforce non-empty at the validator level.
+        bad_ts = q(cur,
+            "SELECT id FROM extrabiblical "
+            "WHERE tradition_status_json IS NULL OR tradition_status_json = ''")
+        check("All extrabiblical entries have tradition_status",
+              len(bad_ts) == 0,
+              f"{len(bad_ts)} entries with empty tradition_status")
+        bad_bs = q(cur,
+            "SELECT id FROM extrabiblical "
+            "WHERE brief_summary IS NULL OR brief_summary = ''")
+        check("All extrabiblical entries have brief_summary",
+              len(bad_bs) == 0,
+              f"{len(bad_bs)} entries with empty brief_summary")
+        # Cross-link integrity: related_debate_ids, related_difficult_passage_ids
+        # and scholar_voices[].scholar_id all resolve to their target tables.
+        import json as _json
+        debate_ids = {row[0] for row in q(cur, "SELECT id FROM debate_topics")}
+        diff_ids = {row[0] for row in q(cur, "SELECT id FROM difficult_passages")}
+        scholar_ids = {row[0] for row in q(cur, "SELECT id FROM scholars")}
+        bad_debate = []
+        bad_diff = []
+        bad_scholar = []
+        for row in q(cur,
+            "SELECT id, related_debate_ids_json, "
+            "related_difficult_passage_ids_json, scholar_voices_json "
+            "FROM extrabiblical"):
+            eid, rdj, rdpj, svj = row
+            try:
+                for did in (_json.loads(rdj) if rdj else []):
+                    if did not in debate_ids:
+                        bad_debate.append(f"{eid} -> {did}")
+                for pid in (_json.loads(rdpj) if rdpj else []):
+                    if pid not in diff_ids:
+                        bad_diff.append(f"{eid} -> {pid}")
+                for sv in (_json.loads(svj) if svj else []):
+                    sid = sv.get('scholar_id') if isinstance(sv, dict) else None
+                    if sid and sid not in scholar_ids:
+                        bad_scholar.append(f"{eid} -> {sid}")
+            except Exception as err:
+                bad_debate.append(f"{eid} JSON parse error: {err}")
+        check("extrabiblical related_debate_ids resolve",
+              len(bad_debate) == 0, f"{bad_debate[:5]}")
+        check("extrabiblical related_difficult_passage_ids resolve",
+              len(bad_diff) == 0, f"{bad_diff[:5]}")
+        check("extrabiblical scholar_voices[].scholar_id resolve",
+              len(bad_scholar) == 0, f"{bad_scholar[:5]}")
+    print(f"  extrabiblical: {eb_count or 0}")
+
+    # Canon traditions (#1539 / #1542)
+    if _has_table(cur, 'canon_traditions'):
+        ct_count = q1(cur, "SELECT COUNT(*) FROM canon_traditions") or 0
+        if ct_count:
+            import json as _json
+            bad_counts = []
+            unresolved = []
+            all_book_ids = {row[0] for row in q(cur, "SELECT id FROM books")}
+            extrabib_ids = set()
+            if _has_table(cur, 'extrabiblical'):
+                extrabib_ids = {row[0] for row in q(cur, "SELECT id FROM extrabiblical")}
+            for row in q(cur,
+                "SELECT id, book_count, canon_list_json FROM canon_traditions"):
+                cid, bc, cl_json = row
+                try:
+                    sections = _json.loads(cl_json) if cl_json else []
+                    total = sum(
+                        len(s.get('books', [])) for s in sections
+                        if isinstance(s, dict)
+                    )
+                    if total != bc:
+                        bad_counts.append(f"{cid}: declared={bc} listed={total}")
+                    for s in sections:
+                        if not isinstance(s, dict):
+                            continue
+                        for bid in s.get('books', []):
+                            if bid not in all_book_ids and bid not in extrabib_ids:
+                                unresolved.append(f"{cid}:{bid}")
+                except Exception as err:
+                    bad_counts.append(f"{cid}: JSON parse error — {err}")
+            check("canon_traditions book_count matches canon_list_json",
+                  len(bad_counts) == 0, f"{bad_counts[:3]}")
+            # Unresolved ids are logged informationally per #1542 — the
+            # extrabiblical table fills in incrementally across the epic.
+            if unresolved:
+                print(f"  canon_traditions: {len(unresolved)} unresolved book "
+                      f"ref(s) (expected while extrabiblical is partial): "
+                      f"{unresolved[:5]}"
+                      + ("…" if len(unresolved) > 5 else ""))
+        print(f"  canon_traditions: {ct_count}")
+
     # Content Library
     cl_count = q1(cur, "SELECT COUNT(*) FROM content_library")
     check("content_library table exists", cl_count is not None, "table missing")
@@ -674,6 +768,28 @@ def main():
     invalid_cp = q1(cur,
         "SELECT COUNT(*) FROM chapter_panels WHERE json_valid(content_json) = 0")
     check("All chapter_panel JSON valid", invalid_cp == 0, f"{invalid_cp} invalid")
+
+    # st2 panels (HWGTB #1540): extrabiblical_ids[] entries resolve to
+    # extrabiblical.id. Defensive: only runs if the extrabiblical table
+    # exists (merged via #1538) and there are st2 panels to check.
+    if _has_table(cur, 'extrabiblical'):
+        import json as _json
+        eb_ids = {row[0] for row in q(cur, "SELECT id FROM extrabiblical")}
+        st2_rows = q(cur,
+            "SELECT section_id, content_json FROM section_panels "
+            "WHERE panel_type = 'st2'")
+        bad_refs = []
+        for sid, cj in st2_rows:
+            try:
+                payload = _json.loads(cj) if cj else {}
+                for eid in payload.get('extrabiblical_ids', []) or []:
+                    if eid not in eb_ids:
+                        bad_refs.append(f"{sid} -> {eid}")
+            except Exception as err:
+                bad_refs.append(f"{sid}: JSON parse error — {err}")
+        check("st2 panel extrabiblical_ids resolve",
+              len(bad_refs) == 0, f"{bad_refs[:5]}")
+        print(f"  st2 panels: {len(st2_rows)}")
 
     # People: father/mother references point to existing people
     bad_fathers = q(cur,

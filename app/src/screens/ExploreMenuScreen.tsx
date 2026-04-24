@@ -50,6 +50,7 @@ const PREMIUM_SCREENS: Record<string, string> = {
   Concordance: 'Concordance Search',
   ContentLibrary: 'Content Library',
   ThreadBrowse: 'Cross-Reference Threading',
+  HowWeGotTheBibleLanding: 'How We Got The Bible',
 };
 
 const SECTIONS: FeatureSection[] = [
@@ -88,10 +89,11 @@ const SECTIONS: FeatureSection[] = [
   {
     id: 'scholarly', label: 'Scholarly Analysis', subtitle: 'Academic perspectives & debate',
     features: [
-      { title: 'Scholars',           subtitle: 'Browse all 54 by tradition',                            color: '#a0b8d0', screen: 'ScholarBrowse' }, // data-color: intentional
-      { title: 'Debates',            subtitle: '303 topics where scholars disagree',                    color: '#d08080', screen: 'DebateBrowse' }, // data-color: intentional
-      { title: 'Difficult Passages', subtitle: '53 hard texts with multi-view responses',               color: '#FFB74D', screen: 'DifficultPassagesBrowse' }, // data-color: intentional
-      { title: 'Content Library',    subtitle: 'Discourse, manuscripts & more',                          color: '#b8a0d0', screen: 'ContentLibrary', premium: true }, // data-color: intentional
+      { title: 'Scholars',             subtitle: 'Browse all 54 by tradition',                            color: '#a0b8d0', screen: 'ScholarBrowse' }, // data-color: intentional
+      { title: 'Debates',              subtitle: '303 topics where scholars disagree',                    color: '#d08080', screen: 'DebateBrowse' }, // data-color: intentional
+      { title: 'Difficult Passages',   subtitle: '53 hard texts with multi-view responses',               color: '#FFB74D', screen: 'DifficultPassagesBrowse' }, // data-color: intentional
+      { title: 'How We Got The Bible', subtitle: 'Canon, manuscripts, translations, and the books Jude quoted', color: '#c89858', screen: 'HowWeGotTheBibleLanding', premium: true }, // data-color: intentional
+      { title: 'Content Library',      subtitle: 'Discourse, manuscripts & more',                          color: '#b8a0d0', screen: 'ContentLibrary', premium: true }, // data-color: intentional
     ],
   },
   {
@@ -250,8 +252,12 @@ function ExploreMenuScreen() {
           </View>
         );
       case 'scholarly': {
-        const splitFeatures = section.features.filter(
-          (f) => f.screen === 'ScholarBrowse' || f.screen === 'DifficultPassagesBrowse',
+        // Debates renders as the preview strip above; everything else flows
+        // into the horizontal carousel below. Denylist (vs. allowlist) so
+        // future cards added to SECTIONS surface automatically — same
+        // pattern as the 'language' case for WordStudyBrowse.
+        const carouselFeatures = section.features.filter(
+          (f) => f.screen !== 'DebateBrowse',
         );
         const totalDebates = getScreenImages('DebateBrowse')?.count ?? undefined;
         return (
@@ -261,26 +267,30 @@ function ExploreMenuScreen() {
               onSeeAll={() => handleNavigate('DebateBrowse')}
               totalCount={totalDebates ?? undefined}
             />
-            <View style={styles.row2}>
-              {splitFeatures.map((f, i) => {
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.carouselContent}
+              decelerationRate="fast"
+            >
+              {carouselFeatures.map((f, cardIndex) => {
                 const imgData = getScreenImages(f.screen);
                 return (
-                  <View key={f.screen} style={styles.rowCell}>
-                    <FeatureCard
-                      feature={f}
-                      onPress={() => handleNavigate(f.screen)}
-                      isPremium={isPremium}
-                      images={imgData?.images}
-                      count={imgData?.count}
-                      noun={imgData?.noun}
-                      onImagePress={handleDeepLink}
-                      staggerMs={i * 1200}
-                      compact
-                    />
-                  </View>
+                  <FeatureCard
+                    key={f.screen}
+                    feature={f}
+                    onPress={() => handleNavigate(f.screen)}
+                    isPremium={isPremium}
+                    images={imgData?.images}
+                    count={imgData?.count}
+                    noun={imgData?.noun}
+                    onImagePress={handleDeepLink}
+                    staggerMs={cardIndex * 1200}
+                    compact
+                  />
                 );
               })}
-            </View>
+            </ScrollView>
           </View>
         );
       }
@@ -529,7 +539,6 @@ const styles = StyleSheet.create({
 
   // Split/grid rows
   sectionGap: { gap: spacing.md },
-  row2: { flexDirection: 'row', gap: spacing.sm },
   row3: { flexDirection: 'row', gap: spacing.sm },
   rowCell: { flex: 1 },
 

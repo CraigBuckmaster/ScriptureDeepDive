@@ -151,6 +151,171 @@ export interface DebateEntry {
   positions: { scholar: string; position: string }[];
 }
 
+/**
+ * Second Temple Context (st2) panel payload.
+ * Matches the pipeline schema from HWGTB-P1-03 (#1540) and the authored
+ * content in HWGTB-P1-06 (#1543).
+ */
+export type St2CitationType = 'direct_quotation' | 'allusion' | 'echo';
+
+export interface St2CitationRef {
+  nt: string;
+  source?: string;
+  type?: St2CitationType;
+}
+
+export interface St2ScholarVoice {
+  scholar_id: string;
+  tradition?: string;
+  note: string;
+}
+
+export interface SecondTemplePanelPayload {
+  header: string;
+  body: string;
+  extrabiblical_ids: string[];
+  citation_refs: St2CitationRef[];
+  scholar_voices?: St2ScholarVoice[];
+  takeaway?: string;
+}
+
+// ── Extra-biblical literature (HWGTB #1538 / #1541) ──────────────────
+
+export type ExtrabiblicalCategory =
+  | 'apocrypha'
+  | 'pseudepigrapha'
+  | 'dss'
+  | 'deuterocanon';
+
+export interface ExtrabiblicalTraditionStatus {
+  protestant: string;
+  catholic: string;
+  eastern_orthodox: string;
+  ethiopian_tewahedo: string;
+}
+
+/** Summary row used by the index screen's FlatList. */
+export interface ExtrabiblicalSummary {
+  id: string;
+  title: string;
+  category: ExtrabiblicalCategory | null;
+  brief_summary: string;
+  also_known_as: string[];
+  tradition_status: ExtrabiblicalTraditionStatus;
+}
+
+// Parsed sub-shapes used by ExtraBiblicalDetailScreen (HWGTB-P2-03).
+
+export type ExtrabiblicalCitationType = 'direct_quotation' | 'allusion' | 'echo';
+
+export interface ExtrabiblicalNTCitation {
+  ref: string;
+  cites: string;
+  type?: ExtrabiblicalCitationType;
+}
+
+export interface ExtrabiblicalOTAllusion {
+  ref: string;
+  connection: string;
+}
+
+export interface ExtrabiblicalScholarVoice {
+  scholar_id: string;
+  position: string;
+}
+
+export interface ExtrabiblicalFurtherReading {
+  title: string;
+  author?: string;
+  note?: string;
+  /** Present if future entries add external links; the Phase-1 seed
+   *  (#1541) uses text-only references so this is rarely populated. */
+  url?: string;
+}
+
+/** Parsed entry — what the Detail screen consumes after JSON.parse. */
+export interface ExtrabiblicalEntry {
+  id: string;
+  title: string;
+  also_known_as: string[];
+  category: ExtrabiblicalCategory | null;
+  estimated_date: string | null;
+  original_language: string | null;
+  tradition_status: ExtrabiblicalTraditionStatus;
+  brief_summary: string;
+  full_summary: string | null;
+  nt_citations: ExtrabiblicalNTCitation[];
+  ot_allusions: ExtrabiblicalOTAllusion[];
+  scholar_voices: ExtrabiblicalScholarVoice[];
+  related_debate_ids: string[];
+  related_journey_ids: string[];
+  related_difficult_passage_ids: string[];
+  tags: string[];
+  further_reading: ExtrabiblicalFurtherReading[];
+}
+
+/** Raw row as stored in SQLite (serialized JSON columns). */
+export interface ExtrabiblicalRow {
+  id: string;
+  title: string;
+  also_known_as_json: string | null;
+  category: ExtrabiblicalCategory | null;
+  estimated_date: string | null;
+  original_language: string | null;
+  tradition_status_json: string;
+  brief_summary: string;
+  full_summary: string | null;
+  nt_citations_json: string | null;
+  ot_allusions_json: string | null;
+  scholar_voices_json: string | null;
+  related_debate_ids_json: string | null;
+  related_journey_ids_json: string | null;
+  related_difficult_passage_ids_json: string | null;
+  tags_json: string | null;
+  further_reading_json: string | null;
+}
+
+// ── Canon Traditions (HWGTB #1539 / #1542 → consumed by #1550) ──────
+
+export interface CanonListSection {
+  section: string;
+  books: string[];
+}
+
+export interface CanonDistinctive {
+  title: string;
+  detail: string;
+}
+
+export interface CanonFormationEvent {
+  year: number;
+  label: string;
+  detail: string;
+}
+
+export interface CanonTradition {
+  id: string;
+  label: string;
+  book_count: number;
+  short_description: string | null;
+  canon_list: CanonListSection[];
+  distinctives: CanonDistinctive[];
+  formation_events: CanonFormationEvent[];
+  sort_order: number;
+}
+
+/** Raw row in SQLite (serialized JSON columns). */
+export interface CanonTraditionRow {
+  id: string;
+  label: string;
+  book_count: number;
+  short_description: string | null;
+  canon_list_json: string;
+  distinctives_json: string | null;
+  formation_events_json: string | null;
+  sort_order: number;
+}
+
 export interface HebTextEntry {
   word: string;
   tlit: string;

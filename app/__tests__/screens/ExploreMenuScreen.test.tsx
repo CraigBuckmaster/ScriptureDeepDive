@@ -69,9 +69,12 @@ describe('ExploreMenuScreen', () => {
       expect(getByText('Map')).toBeTruthy();
       // Language split row contains Concordance + Dictionary (Word Studies moves to the preview list)
       expect(getByText('Concordance')).toBeTruthy();
-      // Scholarly split row contains Scholars + Difficult Passages
+      // Scholarly carousel contains Scholars, Difficult Passages, How We Got The Bible, Content Library
+      // (Debates is rendered as the preview list strip above the carousel)
       expect(getByText('Scholars')).toBeTruthy();
       expect(getByText('Difficult Passages')).toBeTruthy();
+      expect(getByText('How We Got The Bible')).toBeTruthy();
+      expect(getByText('Content Library')).toBeTruthy();
     });
   });
 
