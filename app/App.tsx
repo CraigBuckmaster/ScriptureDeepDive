@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback, useMemo } from 'react';
-import { StyleSheet, View, Text, ActivityIndicator, AppState } from 'react-native';
+import { StyleSheet, View, Text, Text as RNText, ActivityIndicator, AppState } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { useFonts } from 'expo-font';
@@ -45,6 +45,15 @@ const navigationRef = createNavigationContainerRef<TabParamList>();
 
 // Keep splash visible while we load
 SplashScreen.preventAutoHideAsync();
+
+// Opt every <Text> out of OS font scaling by default. Scaling is applied
+// manually inside useTypography() so the content/chrome caps actually cap
+// — see epic #1639. Individual <Text> instances can still override with
+// allowFontScaling={true} if needed.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+(RNText as any).defaultProps = (RNText as any).defaultProps || {};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+(RNText as any).defaultProps.allowFontScaling = false;
 
 /** Deep linking configuration for scripture:// URLs.
  *

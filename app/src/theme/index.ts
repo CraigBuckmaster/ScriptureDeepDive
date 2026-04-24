@@ -8,8 +8,18 @@
 
 export { panels, scholars, eras, eraNames, eraPillLabels, categoryColors, categories, severity, families, prophecyCategories, roles, testament, timelineSvg, churchEras, churchEraLabels } from './colors';
 export type { PanelColors } from './colors';
-export { fontFamily, typography, scaledTypography } from './typography';
-export type { TypographyPreset } from './typography';
+export { fontFamily, typography, scaledTypography, buildTypography } from './typography';
+export type { TypographyPreset, TypographyMap, BuiltTypography } from './typography';
+export { useTypography } from './useTypography';
+export { useOsFontScale } from './useOsFontScale';
+export {
+  READING_SCALE_DEFAULT,
+  READING_SCALE_MIN,
+  READING_SCALE_MAX,
+  MAX_CONTENT_SCALE,
+  MAX_CHROME_SCALE,
+  clampReadingScale,
+} from './scale';
 export { spacing, radii, MIN_TOUCH_TARGET } from './spacing';
 export { BREAKPOINTS, useBreakpoint } from './breakpoints';
 export type { Breakpoint, BreakpointInfo } from './breakpoints';
