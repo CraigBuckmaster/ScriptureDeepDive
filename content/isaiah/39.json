@@ -60,6 +60,19 @@
         },
         "hist": {
           "context": "Merodach-Baladan (Marduk-apla-iddina II) was a Chaldean king who twice seized Babylon's throne and repeatedly sought allies against Assyria. His envoys to Hezekiah around 703-701 BC were diplomatic reconnaissance, probing Judah's military capacity for potential coalition. Hezekiah's eager display of treasures suggests he saw opportunity in Babylonian alliance rather than recognizing the emerging threat."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "39:1-2",
+              "note": "Oswalt frames the Babylonian-envoys episode as Hezekiah's failure-of-faith counterpart to his success in ch.37. Where the Assyrian threat drove him to the Temple, the Babylonian flattery drives him to the treasury. Merodach-Baladan's diplomatic gesture (a get-well visit) is accepted at face value; there is no prophetic consultation, no discernment."
+            },
+            {
+              "ref": "39:2",
+              "note": "'There was nothing in his palace or in all his kingdom that Hezekiah did not show them.' Oswalt: the completeness of the display is itself the theological problem. Hezekiah shows everything Judah has — except, tellingly, Yahweh. The Babylonian gaze receives the treasures; the covenantal centre of the kingdom is nowhere acknowledged."
+            }
+          ]
         }
       }
     },
@@ -108,6 +121,19 @@
         },
         "hist": {
           "context": "Isaiah's prophecy bridges the book's two halves: chapter 39 announces Babylonian exile, chapter 40 begins with comfort for exiles in Babylon. This literary hinge transforms a diplomatic episode into the pivot of Israel's history. Hezekiah's response ('there will be peace and security in my lifetime') has been read as either relieved acceptance or selfish short-sightedness — Isaiah leaves the ambiguity unresolved."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "39:5-7",
+              "note": "Oswalt reads Isaiah's Babylon-exile oracle as the deliberate narrative bridge to chapter 40: everything you just showed them will be carried to Babylon. The first-Isaiah (Assyrian-period) material closes with Babylon on the horizon, and the second-Isaiah (exilic-voice) material opens in ch.40 addressing that Babylon. Oswalt argues for Isaian unity: this is the same prophet speaking across the seam, not two books."
+            },
+            {
+              "ref": "39:8",
+              "note": "Hezekiah's response — 'the word of the LORD you have spoken is good,' because peace is in his own days — is, in Oswalt's reading, the saddest sentence in the Hezekiah cycle. The king who prayed for the nation now accepts a prophecy of national catastrophe as acceptable because personally insulating. Covenant concern has contracted to dynastic comfort."
+            }
+          ]
         }
       }
     }
@@ -200,7 +226,23 @@
         }
       ],
       "note": "Prophecy peaks: the exile foretold. Daniel 1 fulfils this. First Isaiah closes on failure: the king who trusted God against Assyria trusts Babylon with everything. The bridge to \"Comfort, comfort my people.\""
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 39:5-7",
+        "target": "2 Kgs 20:16-18; Dan 1:3-4",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'Some of your descendants... will be taken away, and they will become eunuchs in the palace of the king of Babylon.' The specific fulfilment begins with Daniel and his companions in Dan 1:3-4 — royal-seed youths carried to serve in Nebuchadnezzar's court. Isaiah's word lands exactly."
+      },
+      {
+        "anchor": "Isa 39:1-8",
+        "target": "2 Chr 32:25-31",
+        "type": "Echo",
+        "direction": "back",
+        "text": "The Chronicler's gloss on the Babylonian-envoys episode — 'God left him to test him, to know everything that was in his heart' — supplies the theological frame Isaiah lets stand implicit. Hezekiah's heart is revealed by the test, and found proud."
+      }
+    ]
   },
   "vhl_groups": [
     {

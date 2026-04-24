@@ -64,6 +64,19 @@
         },
         "hist": {
           "context": "Isaiah 60's vision of nations streaming to Zion reverses Israel's humiliation under empire. The wealth of Midian, Ephah, and Sheba (Arabian trade goods) represents the reversal of Israel's former dependence on foreign powers. The chapter functions as eschatological liturgy, celebrating a restoration that transcends any historical return from exile."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "60:1-3",
+              "note": "'Arise, shine, for your light has come.' Oswalt: the chapter is the vision-peak of third-Isaiah — Zion enthroned, nations streaming in, the glory of the LORD risen as the light of the world. 'Nations will come to your light, kings to the brightness of your dawn' — the nations-to-Zion pattern (2:2-3) reaches its fullest description."
+            },
+            {
+              "ref": "60:10-14",
+              "note": "'Foreigners will rebuild your walls, and their kings will serve you.' Oswalt reads this not as political triumphalism but as the fulfilment of the servant's universal mission: the nations voluntarily resource the Zion-project because they recognise it as their own true destination. Revelation 21:24-26's New Jerusalem draws directly from this vision."
+            }
+          ]
         }
       }
     },
@@ -112,6 +125,19 @@
         },
         "hist": {
           "context": "The promise that sun and moon will be unnecessary transforms cosmology into theology. No more mourning, eternal light, and perpetual divine presence describe existence beyond historical time. The 'least becoming a thousand' inverts Israel's diminished state, promising exponential growth. This vision shaped both Jewish messianic expectation and early Christian eschatology."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "60:19-20",
+              "note": "'The sun will no more be your light by day... the LORD will be your everlasting light.' Oswalt: the cosmological image is picked up directly in Rev 21:23 — the New Jerusalem has no need for sun or moon because the glory of God gives it light. Isaiah 60 is the Revelation 21 source-text for the Lamb-as-lamp-of-the-city."
+            },
+            {
+              "ref": "60:21-22",
+              "note": "'Your people will all be righteous; they will possess the land forever.' Oswalt: the post-servant community's definitive character — righteousness is no longer the exception but the rule. 'The least of you will become a thousand, the smallest a mighty nation' — the multiplication of the covenant community mirrors the Abrahamic promise's original scale."
+            }
+          ]
         }
       }
     }
@@ -209,7 +235,30 @@
         }
       ],
       "note": "Prophecy AND Mission peak at 10: Epiphany text, Matt 2:11, Rev 21:23–25. Nations stream to the light. Gates never shut. Everlasting light replaces sun and moon."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 60:1-3",
+        "target": "Matt 4:16; John 8:12",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Arise, shine, for your light has come... nations will come to your light.' The coming-of-light imagery stands behind Matthew's quotation of Isa 9:2 at Jesus' Galilee ministry and Jesus' 'I am the light of the world' claim."
+      },
+      {
+        "anchor": "Isa 60:11",
+        "target": "Rev 21:25-26",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Your gates will always stand open, they will never be shut... the wealth of nations will be brought to you.' Revelation 21:25-26 quotes directly: 'On no day will its gates ever be shut... the glory and honor of the nations will be brought into it.'"
+      },
+      {
+        "anchor": "Isa 60:19-20",
+        "target": "Rev 21:23; 22:5",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'The sun will no more be your light by day... for the LORD will be your everlasting light.' The New Jerusalem of Revelation 21:23 'does not need the sun or the moon to shine on it, for the glory of God gives it light' — direct fulfilment."
+      }
+    ]
   },
   "vhl_groups": [
     {

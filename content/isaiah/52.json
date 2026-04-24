@@ -68,6 +68,19 @@
         },
         "hist": {
           "context": "Chapter 52 opens with another 'awake, awake' summons, this time to Zion herself. Put on your beautiful garments, holy city — the uncircumcised and unclean will no longer enter (v.1). The beautiful-feet oracle (vv.7–10) celebrates the messenger running over the mountains with good news: your God reigns! The watchmen on Zion's walls see YHWH returning and break into song. The exodus call follows: depart, touch nothing unclean, go out in purity but not in haste (v.11–12). YHWH himself goes before and behind — rearguard and vanguard for the returning exiles."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "52:1-6",
+              "note": "'Awake, awake, O Zion; clothe yourself with strength.' Oswalt: the threefold 'awake' sequence (Yahweh's arm 51:9, Zion 51:17, now Zion again 52:1) builds to the announcement of deliverance. Jerusalem is to dress for a coronation. 'My name is continually blasphemed' — the covenant shame is theological, not merely political."
+            },
+            {
+              "ref": "52:7",
+              "note": "'How beautiful on the mountains are the feet of those who bring good news.' Oswalt notes this is the OT's primary euaggelion-text: 'good news' as technical vocabulary for Yahweh's reign announced. Paul quotes it in Rom 10:15 for gospel preaching; the chain of messengers from Isaiah to the apostles is deliberate."
+            }
+          ]
         }
       }
     },
@@ -124,6 +137,19 @@
         },
         "hist": {
           "context": "The Fourth Servant Song begins at 52:13 (many scholars treat 52:13–53:12 as a unit). The Servant will be raised and highly exalted (v.13), yet his appearance was marred beyond human likeness (v.14). Kings will shut their mouths at him; what they were never told they will see (v.15). This prologue sets up the shocking reversal: the despised figure is the exalted agent of YHWH's salvation. The nations and kings who were horrified will be silenced with awe. The passage is the theological climax of Deutero-Isaiah."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "52:13-15",
+              "note": "The opening stanza of the fourth Servant Song (52:13-53:12). Oswalt: 'he will be high and lifted up and greatly exalted' uses the exact triad of divine-throne language from 6:1 ('high and lifted up'). The servant shares Yahweh's exaltation. But it sits alongside 'his appearance was so disfigured beyond that of any human being' — the paradox of glory-through-suffering the song will unfold."
+            },
+            {
+              "ref": "52:15",
+              "note": "'He will sprinkle many nations; kings will shut their mouths because of him.' Oswalt on the 'sprinkle' verb — priestly language for purification. The servant does what the sacrificial system did, but for nations, not just Israel. Paul quotes v.15 in Rom 15:21 as the rationale for gentile pioneer-preaching: 'those who were not told about him will see.'"
+            }
+          ]
         }
       }
     }
@@ -231,7 +257,30 @@
         }
       ],
       "note": "Prophecy AND Mission peak at 10: beautiful feet (Rom 10:15), the fourth Servant Song begins. \"Your God reigns!\" Nations sprinkled. Kings silenced. The theological climax of the OT approaches."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 52:7",
+        "target": "Rom 10:15; Eph 6:15",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'How beautiful on the mountains are the feet of those who bring good news.' Paul quotes this in Rom 10:15 as the apostolic-mission mandate, and Eph 6:15's 'feet fitted with readiness' of the gospel of peace extends the footwear-imagery."
+      },
+      {
+        "anchor": "Isa 52:11",
+        "target": "2 Cor 6:17; Rev 18:4",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Come out from it and be pure, you who carry the articles of the LORD's house.' Paul's 'come out from them and be separate' (2 Cor 6:17) and Revelation's 'come out of her, my people' (Rev 18:4) both draw on this text — the call to separation from idolatrous systems."
+      },
+      {
+        "anchor": "Isa 52:13-15",
+        "target": "Rom 15:21",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'Those who were not told about him will see, and those who have not heard will understand.' Paul quotes v.15 in Rom 15:21 as his rationale for apostolic pioneer-preaching — taking the Servant's news to those who have not heard."
+      }
+    ]
   },
   "vhl_groups": [
     {

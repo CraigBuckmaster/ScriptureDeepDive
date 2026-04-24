@@ -60,6 +60,19 @@
         },
         "hist": {
           "context": "Post-exilic fasting commemorated Jerusalem's destruction (Zech 7:3-5), but the community observed rituals while perpetuating injustice. Isaiah redefines fasting as social ethics: loosing chains of injustice, freeing the oppressed, sharing food with the hungry. This prophetic tradition influenced later rabbinic interpretation of Yom Kippur."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "58:1-5",
+              "note": "The fasting critique. Oswalt: the post-exilic community is performing the religious rituals but missing the covenant substance. 'Why have we fasted and you have not seen it?' — their question betrays the commercial theology (we did X, God owes Y) the prophets repeatedly reject. True fasting is ethical practice, not cultic performance."
+            },
+            {
+              "ref": "58:6-9",
+              "note": "'Is not this the fast that I choose: to loose the bonds of wickedness... to share your bread with the hungry?' Oswalt: the social-justice content of true fasting is explicitly theological — it mirrors Yahweh's own liberative character (61:1). Jesus' Nazareth-manifesto in Luke 4 quotes the companion-text of Isa 61 in exactly this social-justice mode."
+            }
+          ]
         }
       }
     },
@@ -108,6 +121,19 @@
         },
         "hist": {
           "context": "The titles 'Repairer of Broken Walls' and 'Restorer of Streets with Dwellings' address a devastated Jerusalem still in ruins decades after the exile's end. The sabbath instruction (vv.13-14) gains urgency in a community redefining its identity around Torah observance. Sabbath becomes the visible marker distinguishing Israel from surrounding peoples."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "58:10-12",
+              "note": "'If you pour yourself out for the hungry... then shall your light rise in the darkness.' Oswalt: the light-imagery connects to the servant's mission (49:6) — the community that acts like the servant becomes the servant's continuing embodiment. 'Rebuilder of broken walls' (v.12) is the Nehemiah-shaped vocation of post-exilic restoration."
+            },
+            {
+              "ref": "58:13-14",
+              "note": "The Sabbath promise. Oswalt: 'if you call the Sabbath a delight... then you will find your joy in the LORD.' Sabbath is not a legal burden but an access point to covenant delight. The chapter's entire ethics — fasting, justice, Sabbath — reconfigures religious practice around the question: does this practice actually move you toward Yahweh?"
+            }
+          ]
         }
       }
     }
@@ -195,7 +221,23 @@
         }
       ],
       "note": "Justice peaks at 10: true fasting = social action. Loose chains, feed hungry, clothe naked. Justice produces answered prayer and light. Repairer of walls."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 58:6-7",
+        "target": "Matt 25:34-40; Jas 1:27",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'To loose the chains of injustice... to share your food with the hungry, to provide the poor wanderer with shelter.' The social-justice content of true fasting is directly behind Jesus' sheep-and-goats criteria ('I was hungry and you gave me something to eat') and James's 'pure and faultless religion.'"
+      },
+      {
+        "anchor": "Isa 58:11",
+        "target": "John 7:38",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'You will be like a well-watered garden, like a spring whose waters never fail.' The living-water-within-the-believer imagery anticipates Jesus' 'out of his belly shall flow rivers of living water' promise at Tabernacles."
+      }
+    ]
   },
   "vhl_groups": [
     {

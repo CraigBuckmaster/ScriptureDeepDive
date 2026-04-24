@@ -175,9 +175,24 @@
   "chapter_panels": {
     "ppl": [
       {
-        "name": "LORD",
-        "role": "Key biblical figure",
-        "text": "\"Those the LORD has rescued will return…"
+        "name": "The Redeemed",
+        "role": "Returning exiles",
+        "text": "Those ransomed by Yahweh who walk the Way of Holiness back to Zion with singing and everlasting joy (v.10). The chapter's climactic figures — not individual characters but the collective end-state people of God, the ones for whom the desert has become a highway. Their journey is the reverse of Israel's original wilderness experience: formerly wanderers in a hostile wilderness, now safe travellers on a protected road through a transformed one."
+      },
+      {
+        "name": "The Blind, Deaf, Lame, Mute",
+        "role": "Recipients of healing",
+        "text": "Four disability categories (vv.5-6) specifying what Yahweh's salvation concretely means: eyes opened, ears unstopped, lame leaping like a deer, mute tongue shouting for joy. The list becomes Jesus' template for identifying his own ministry when John the Baptist asks 'are you the one?' (Matt 11:5; Luke 7:22). Isaiah 35 provides the rubric by which the Messiah's arrival is recognised."
+      },
+      {
+        "name": "The Unclean and the Fool",
+        "role": "Excluded from the Way",
+        "text": "Two categories explicitly barred from the Way of Holiness (v.8): the ritually unclean and the wicked-foolish. The highway is not for everyone indiscriminately — it has a moral geometry. Yet the chapter insists that even simpletons ('wayfaring men, though fools') will not stray on it. The road is safe because it is holy, not merely because it is paved."
+      },
+      {
+        "name": "Yahweh (the LORD)",
+        "role": "Redeemer",
+        "text": "The one whose coming transforms the desert (v.4: 'he will come and save you') and whose glory the redeemed see (v.2). The chapter's action is entirely Yahweh-driven; the blooming of the wilderness, the healing of bodies, the construction of the highway, the ransom of the exiles are all his deeds. Isaiah 35 is a theophany-landscape: where God comes, creation flourishes."
       }
     ],
     "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>And a highway will be there; it will be called the Way of Holiness; it will be for those who walk on that Way. The unclean will not journey on it; wicked fools will not go about on it.</td></tr><tr><td class=\"t-label\">ESV</td><td>And a highway shall be there, and it shall be called the Way of Holiness; the unclean shall not pass over it. It shall belong to those who walk on the way; even if they are fools, they shall not go astray.</td></tr><tr><td class=\"t-label\">NIV</td><td>No lion will be there, nor any ravenous beast; they will not be found there. But only the redeemed will walk there,</td></tr><tr><td class=\"t-label\">ESV</td><td>No lion shall be there, nor shall any ravenous beast come up on it; they shall not be found there, but the redeemed shall walk there.</td></tr>",
@@ -255,7 +270,30 @@
         }
       ],
       "note": "Mercy AND Prophecy peak at 10: the four reversals (Matt 11:5), the highway of holiness, sorrow flees. Holiness: the Way itself is holy. Ch.35 is the positive mirror of ch.34."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 35:5-6",
+        "target": "Matt 11:5; Luke 7:22",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'Then will the eyes of the blind be opened and the ears of the deaf unstopped. Then will the lame leap like a deer, and the mute tongue shout for joy.' Jesus' reply to John the Baptist is a catena drawing directly on this verse with Isa 29:18-19 and 61:1 — a self-identification as the Messianic figure Isaiah described."
+      },
+      {
+        "anchor": "Isa 35:8-10",
+        "target": "John 14:6; Rev 21:27",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'A highway will be there; it will be called the Way of Holiness; it will be for those who walk on that Way... they will enter Zion with singing; everlasting joy will crown their heads.' The 'Way' language is picked up as the earliest self-designation of Christians in Acts (9:2; 19:9, 23) and in Jesus' 'I am the way.'"
+      },
+      {
+        "anchor": "Isa 35:1-2",
+        "target": "Rom 8:19-22",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The desert and the parched land will be glad; the wilderness will rejoice and blossom.' Creation's eschatological delight anticipates Paul's 'creation itself will be liberated from its bondage to decay and brought into the glorious freedom of the children of God.'"
+      }
+    ]
   },
   "vhl_groups": [
     {

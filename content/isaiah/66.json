@@ -60,6 +60,19 @@
         },
         "hist": {
           "context": "The challenge to temple-building ('what is the house you will build me?') is startling in a book that elsewhere celebrates Zion. The point is not anti-temple but anti-formalism: ritual without humility is rejected. The 'one who trembles at my word' becomes the true temple, anticipating later spiritualization of sacred space."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "66:1-2",
+              "note": "'Heaven is my throne, and the earth is my footstool. Where is the house you will build for me?' Oswalt: Stephen quotes these verses in Acts 7:49-50 against Temple-centred religion. The transcendence-statement is not anti-Temple but anti-presumption: 'this is the one I esteem — he who is humble and contrite in spirit.' The criterion for Yahweh's attention is posture, not architecture."
+            },
+            {
+              "ref": "66:7-14",
+              "note": "The birth-imagery — Zion giving birth before labour, a nation born in a day. Oswalt: the compressed time-scale depicts the suddenness of eschatological restoration. Galatians 4 picks up the maternal-Zion image. The mother-God comforting imagery (v.13) pairs with 49:15 as Scripture's most tender maternal theomorphism."
+            }
+          ]
         }
       }
     },
@@ -116,6 +129,19 @@
         },
         "hist": {
           "context": "Isaiah concludes with all flesh worshipping before YHWH and viewing the corpses of rebels whose 'worm does not die and fire is not quenched.' This harsh juxtaposition of universal worship and eternal judgment became foundational for later Jewish and Christian eschatology. The final verse's graphic imagery was so disturbing that synagogue reading traditionally repeats verse 23 after verse 24 to end on a positive note."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "66:18-21",
+              "note": "The gathering-of-nations climax. Oswalt: 'they will come and see my glory... I will send some of those who survive to the nations... they will proclaim my glory among the nations.' The missionary mandate of the OT finds its clearest statement here. 'I will select some of them also to be priests and Levites, says the LORD' — gentile priesthood within the covenant community."
+            },
+            {
+              "ref": "66:22-24",
+              "note": "The book's final images — new-heavens-and-new-earth endurance paired with eschatological judgment ('their worm will not die, nor will their fire be quenched'). Oswalt: Jesus quotes v.24 in Mark 9:48 as the template for Gehenna. Isaiah ends with the same two-worlds structure that frames the NT: the new creation of the redeemed and the unquenchable fire of the unrepentant, both products of the servant's completed work."
+            }
+          ]
         }
       }
     }
@@ -203,7 +229,37 @@
         }
       ],
       "note": "Mission peaks at 10: all nations gathered, all flesh worships, Gentiles as priests. Worship and Sovereignty at 9: the final vision. Prophecy at 9: Mark 9:48, Acts 7:49. Isaiah closes with both universal worship AND eternal judgment."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 66:1-2",
+        "target": "Acts 7:49-50",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'Heaven is my throne, and the earth is my footstool. Where is the house you will build for me?' Stephen quotes this in Acts 7:49-50 as the OT refutation of Temple-centred religion — God's transcendence relativises every built sanctuary."
+      },
+      {
+        "anchor": "Isa 66:13",
+        "target": "Luke 13:34; Matt 23:37",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'As a mother comforts her child, so will I comfort you; and you will be comforted over Jerusalem.' The maternal-divine imagery stands alongside Jesus' 'how often I have longed to gather your children together, as a hen gathers her chicks under her wings.'"
+      },
+      {
+        "anchor": "Isa 66:18-19",
+        "target": "Matt 28:19-20; Rom 15:9-12",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'I will send some of those who survive to the nations... they will proclaim my glory among the nations.' The OT's clearest missionary-to-the-nations commission, fulfilled in the Great Commission and Paul's gentile apostolic ministry."
+      },
+      {
+        "anchor": "Isa 66:24",
+        "target": "Mark 9:48",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'Their worm will not die, nor will their fire be quenched.' Jesus quotes this verse verbatim (three times in Mark 9:48 MSS) as the template for Gehenna's permanence. Isaiah closes with the judgment-scene Jesus uses to close his warnings."
+      }
+    ]
   },
   "vhl_groups": [
     {

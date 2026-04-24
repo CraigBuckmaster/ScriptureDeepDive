@@ -64,6 +64,19 @@
         },
         "hist": {
           "context": "The First Servant Song (42:1–9) introduces a mysterious figure: YHWH's chosen one, endowed with the Spirit, who will bring justice to the nations without force or fanfare. The bruised reed and smoldering wick (v.3) signal compassion for the weak. The Servant is appointed as 'covenant for the people, light for the Gentiles' (v.6) — a dual mission to Israel and nations. The identity is deliberately fluid: Israel as collective servant, a righteous remnant, or a future individual. The NT resolves the ambiguity Christologically."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "42:1-4",
+              "note": "Oswalt treats the first Servant Song as the introduction of the figure who will solve the problem corporate-Israel has created. 'He will not shout or cry out' contrasts the servant-king with ancient monarchs who announced themselves with trumpets. His method is quietness and bruised-reed-mercy; his scope is 'justice to the nations.' Matthew quotes this song in full (12:18-21) as Jesus' ministry template."
+            },
+            {
+              "ref": "42:6-7",
+              "note": "'A covenant for the people, a light for the nations.' Oswalt sees this as the decisive widening: the servant is not merely Israel's deliverer but the nations' illuminator. The patriarchal promise that all families of the earth would be blessed in Abraham (Gen 12:3) is now located in a specific person. Gentile inclusion is not a NT innovation; it is Isa 42's explicit commission."
+            }
+          ]
         }
       }
     },
@@ -120,6 +133,19 @@
         },
         "hist": {
           "context": "After the Servant Song comes a hymn of praise for YHWH's warrior-like intervention (vv.10–17), followed by a sharp rebuke of Israel's blindness and deafness (vv.18–25). The irony is bitter: the servant called to open blind eyes is himself blind. This duality — Israel as both servant and failed witness — creates the tension that the later Servant Songs will resolve. The plundered and imprisoned condition (v.22) reflects exilic reality; YHWH gave Jacob to the looters because of covenant unfaithfulness."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "42:10-13",
+              "note": "The 'new song' summons the ends of the earth — explicit universalism. Oswalt notes how second-Isaiah steadily enlarges the worship horizon: the coastlands, the desert, the cities of Kedar, Sela. Yahweh's people are no longer just Judah; the liturgy now requires the nations."
+            },
+            {
+              "ref": "42:18-25",
+              "note": "The paradox: the servant-people are themselves blind and deaf (vv.18-19). Oswalt's resolution: corporate Israel as servant has failed the servant-role; the mission falls to the individual servant of chs. 49-53 who succeeds where the corporate servant could not. The chapter's sharp turn from the servant-idyll (vv.1-9) to the servant-failure (vv.18-25) is not a contradiction but the book's central theological problem."
+            }
+          ]
         }
       }
     }
@@ -217,7 +243,23 @@
         }
       ],
       "note": "Prophecy AND Mission peak at 10: the first Servant Song. Matt 12:18–21; Luke 2:32; Acts 13:47. The servant IS the covenant. Light to the Gentiles. Bruised reed theology. Mercy at 9: tenderness as messianic strategy."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 42:1-4",
+        "target": "Matt 12:18-21",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "The first Servant Song is quoted in full in Matthew 12:18-21 as the programmatic text for Jesus' ministry: 'he will not shout or cry out, or raise his voice in the streets. A bruised reed he will not break.' The Servant's mercy-method is the pattern for Messianic ministry."
+      },
+      {
+        "anchor": "Isa 42:6-7",
+        "target": "Luke 2:32; Acts 13:47; 26:23",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'I will make you a light for the gentiles, to open eyes that are blind, to free captives.' Simeon quotes in the Nunc Dimittis (Luke 2:32); Paul applies it to his own mission (Acts 13:47); Christ's proclamation is 'a light to Jews and gentiles' (Acts 26:23)."
+      }
+    ]
   },
   "vhl_groups": [
     {

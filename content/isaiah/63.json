@@ -60,6 +60,19 @@
         },
         "hist": {
           "context": "The warrior from Edom with garments stained like a grape-treader represents divine judgment on Israel's ancient enemy. Edom's treachery during Jerusalem's fall (Ps 137:7; Obadiah) made it symbolic of all hostile nations. The winepress of wrath became standard apocalyptic imagery, with Isaiah's lone warrior anticipating later christological appropriation."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "63:1-6",
+              "note": "The warrior-from-Edom. Oswalt: the figure 'splendid in his apparel... crimson garments like one treading the winepress' has been christologically read since the early church. Rev 19:13-15 picks up the winepress-warrior image directly. The Edom-origin is paradigmatic — the prototypical enemy (Esau's descendants) becomes representative of all adversaries under divine judgment."
+            },
+            {
+              "ref": "63:5",
+              "note": "'I looked, but there was no one to help; I was appalled that no one gave support. So my own arm achieved salvation for me.' Oswalt: the same 'own arm' motif as 59:16 — salvation is exclusively divine work because human participation has failed. The verse is the OT's theological ground for the uniqueness of redemptive agency, later summarised in Paul's 'no one seeks God.'"
+            }
+          ]
         }
       }
     },
@@ -112,6 +125,19 @@
         },
         "hist": {
           "context": "The shift from judgment (vv.1-6) to lament (vv.7-19) is jarring but theologically coherent: the same God who tramples enemies is invoked as Father and Redeemer. The appeal to Abraham and Israel not recognizing their descendants reflects post-exilic alienation. The cry 'Why do you harden our hearts?' anticipates later debates about divine sovereignty and human responsibility."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "63:7-14",
+              "note": "The historical-covenant review. Oswalt: the prayer rehearses exodus-period grace ('in his love and mercy he redeemed them; he lifted them up and carried them all the days of old') as the basis for current appeal. The Spirit-within-the-midst-of-Israel language (v.11) is a major OT datum for the indwelling Spirit's historic work."
+            },
+            {
+              "ref": "63:16-19",
+              "note": "'You are our Father, though Abraham does not know us.' Oswalt: a remarkable transfer — paternal identity is shifted from the patriarchs to Yahweh directly. The post-exilic community grounds its identity not in biological descent but in divine parentage — a decisive move toward NT adoptive-sonship theology."
+            }
+          ]
         }
       }
     }
@@ -204,7 +230,23 @@
         }
       ],
       "note": "Sovereignty and Prophecy peak at 9: the winepress warrior (Rev 19:13), the Holy Spirit grieved (Eph 4:30), God as Father. Judgment at 8: the vengeance Jesus omitted now arrives."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 63:1-6",
+        "target": "Rev 19:13-15",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'Who is this, coming from Edom... with garments stained crimson... I trod the winepress alone.' Revelation 19:13-15 applies this directly to the returning Christ: 'he is dressed in a robe dipped in blood... he treads the winepress of the fury of the wrath of God Almighty.'"
+      },
+      {
+        "anchor": "Isa 63:9",
+        "target": "Heb 4:15; Matt 25:40",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'In all their distress he too was distressed, and the angel of his presence saved them.' The God-with-us-in-suffering theme anticipates Hebrews' sympathetic high priest who empathises with our weaknesses and Jesus' 'whatever you did to the least of these, you did to me.'"
+      }
+    ]
   },
   "vhl_groups": [
     {

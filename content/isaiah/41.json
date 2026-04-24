@@ -64,6 +64,19 @@
         },
         "hist": {
           "context": "Chapter 41 opens a courtroom drama: YHWH summons the nations to trial and asks who stirred up the conqueror from the east (v.2) — an oblique reference to Cyrus. The idol-makers are exposed as frauds who cannot predict or act. Against this background, the 'fear not' oracle (vv.8–16) addresses Israel as servant and chosen seed of Abraham, promising divine presence and transformed circumstances. The worm-and-threshing-sledge imagery (v.14–15) is jarring but deliberate: the weakest creature becomes an instrument of YHWH's judgment."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "41:1-7",
+              "note": "Oswalt frames the courtroom-of-the-nations scene as the pattern of chs. 40-48: Yahweh summons the idol-gods to trial, and the case turns on their failure to predict or control history. The rise of 'one from the east' (Cyrus, explicitly named in 44:28-45:1) will be introduced to reach the point that only Yahweh could have predicted it in advance."
+            },
+            {
+              "ref": "41:8-10",
+              "note": "Oswalt on 'you are my servant, I have chosen you': the servant identity is first introduced as corporate Israel — the covenant people as Yahweh's agent. Later the servant narrows progressively (chs. 42, 49, 50, 53) to an individual who will do what Israel-as-servant could not. The corporate-to-individual trajectory is the structural backbone of second-Isaiah's servant theology."
+            }
+          ]
         }
       }
     },
@@ -120,6 +133,19 @@
         },
         "hist": {
           "context": "The courtroom trial continues as YHWH challenges the idols to testify about the future (vv.21–24). Their silence exposes them as nothing ('ěpěs). The section closes with YHWH announcing that he alone stirred up the one from the north (v.25) — again Cyrus — who will trample rulers like mortar. The polemic against prediction failure is devastating: if the gods cannot declare the future, they cannot be gods. Israel's God, by contrast, announces things before they happen and then brings them to pass."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "41:17-20",
+              "note": "Oswalt reads the transformation-of-the-wilderness language (pools in the desert, cedar and acacia in the wasteland) as explicit new-creation typology. The seven named trees (v.19) deliberately recall Eden's vegetative abundance. The promise is not merely geographical return from Babylon but cosmological restoration; Eden is being recovered along the exiles' road."
+            },
+            {
+              "ref": "41:21-24, 28-29",
+              "note": "The idol-challenge is direct and contemptuous: 'tell us what the future holds, so we may know you are gods.' Oswalt: the inability to predict is the theological disqualification of the idol-gods. Yahweh's prediction-and-fulfilment pattern, which the prophets will document across centuries, is the evidential core of Israel's monotheism."
+            }
+          ]
         }
       }
     }
@@ -222,7 +248,30 @@
         }
       ],
       "note": "Faith peaks at 10: triple fear-not, righteous right hand, worm Jacob held. The idol-trial: YHWH alone foretells. Seven trees in the desert."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 41:8-9",
+        "target": "Rom 8:33; 2 Chr 20:7; Jas 2:23",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'You, Israel, my servant, Jacob, whom I have chosen, you descendants of Abraham my friend.' Abraham as 'friend of God' (also 2 Chr 20:7) supplies the language James applies in 2:23, and the elect-servant theology feeds Paul's 'who will bring any charge against those whom God has chosen?'"
+      },
+      {
+        "anchor": "Isa 41:10",
+        "target": "Matt 28:20; Heb 13:5-6",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Do not fear, for I am with you.' The covenant-presence formula reaches NT climax in Jesus' 'I am with you always, to the end of the age' and Hebrews' 'I will never leave you or forsake you' — the fear-not word Yahweh speaks becomes the assurance on which Christian courage rests."
+      },
+      {
+        "anchor": "Isa 41:21-23",
+        "target": "1 Kgs 18:20-40",
+        "type": "Echo",
+        "direction": "back",
+        "text": "The idol-trial motif — 'present your case... tell us what the future holds' — rhymes with Elijah's Mount Carmel contest: gods are known by their ability to act in history. Yahweh's prediction-fulfilment record is the prophetic version of Elijah's fire-from-heaven proof."
+      }
+    ]
   },
   "vhl_groups": [
     {

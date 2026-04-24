@@ -60,6 +60,19 @@
         },
         "hist": {
           "context": "Hezekiah's act of spreading the letter before YHWH in the temple was a formal appeal to the divine King whose throne sat above the cherubim. The gesture acknowledged that the real conflict was between Sennacherib's claims and YHWH's sovereignty. Tirhakah of Egypt (mentioned in v.9) was the Nubian pharaoh whose approach may have drawn Assyrian forces temporarily away from Jerusalem."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "37:1-4",
+              "note": "Oswalt highlights Hezekiah's sackcloth-to-the-temple response as the inversion of Ahaz's dismissive posture in ch.7. Where Ahaz refused to ask a sign, Hezekiah begs for prophetic intercession. The king who learned nothing from Isaiah's ministry (Ahaz) is paired with the king who learned everything — and that contrast is the book's implicit answer to 'what is faith?'"
+            },
+            {
+              "ref": "37:14-20",
+              "note": "The Temple-prayer is Oswalt's theological centre of chapters 36-39. Hezekiah 'spread out the letter before the LORD' and grounds his appeal not in Judah's righteousness but in Yahweh's uniqueness ('you alone are God over all the kingdoms of the earth'). The prayer converts the Assyrian taunt into a theological opportunity: let Yahweh answer for his own name."
+            }
+          ]
         }
       }
     },
@@ -116,6 +129,19 @@
         },
         "hist": {
           "context": "The death of 185,000 Assyrian soldiers in one night remains historically debated. Herodotus records a tradition of mice destroying Assyrian bowstrings (perhaps a plague metaphor). Sennacherib's own annals, while boasting of conquests, never claim to have taken Jerusalem — a telling silence. His assassination in 681 BC by his sons Adrammelech and Sharezer is confirmed by Assyrian records."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "37:22-29",
+              "note": "Oswalt on the Sennacherib oracle: the Assyrian king's pride is theologically diagnosed as a creaturely mistake about agency. 'Have you not heard? Long ago I ordained it' — Assyria's conquests were Yahweh's instrument, not Sennacherib's genius. The hook-in-nose image (v.29) is a direct judgment-echo of Assyria's own treatment of prisoners."
+            },
+            {
+              "ref": "37:36-38",
+              "note": "The single-verse destruction of 185,000 Assyrians (v.36) is Oswalt's OT climax of the 'salvation comes not by human strength' theme that runs from Genesis through the entire book. The siege ends without any Judahite military action; Yahweh alone is the deliverer. The patriarchal 'shall not the Judge of all the earth do right?' is answered in blood."
+            }
+          ]
         }
       }
     }
@@ -218,7 +244,30 @@
         }
       ],
       "note": "Sovereignty peaks at 10: one angel, 185,000, one night. God’s hook in Assyria’s nose. Faith at 9: Hezekiah’s prayer model. The test passed. Everything Isaiah preached vindicated."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 37:14-20",
+        "target": "2 Kgs 19:14-19; Neh 9:5-37",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "Hezekiah's temple-prayer — spreading the letter before the LORD, grounding the appeal in Yahweh's unique deity — becomes the OT template for national intercession. Nehemiah's long prayer (Neh 9) follows the same pattern: recital of God's uniqueness, confession, appeal."
+      },
+      {
+        "anchor": "Isa 37:31-32",
+        "target": "Rom 11:5; Rev 7:4",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The surviving remnant of the house of Judah will take root below and bear fruit above.' The remnant-theology of Isaiah feeds Paul's argument in Rom 11:5 ('there is a remnant chosen by grace') and the Revelation 7 sealed-tribes."
+      },
+      {
+        "anchor": "Isa 37:36-38",
+        "target": "Exod 12:29-30; 2 Chr 32:21",
+        "type": "Echo",
+        "direction": "back",
+        "text": "The Angel of the LORD striking 185,000 Assyrians overnight parallels the death-of-the-firstborn plague in Egypt — divine deliverance through nocturnal angelic agency is Isaiah's exodus-rhyme. Herodotus preserves a garbled Egyptian memory of the same campaign's sudden reversal."
+      }
+    ]
   },
   "vhl_groups": [
     {

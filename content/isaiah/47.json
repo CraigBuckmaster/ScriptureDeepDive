@@ -60,6 +60,19 @@
         },
         "hist": {
           "context": "Chapter 47 is a taunt song against personified Babylon, the 'virgin daughter' (v.1) who must now sit in the dust, stripped of royal robes, grinding grain like a slave. The reversal is complete: the queen becomes servant, the pampered becomes exposed. YHWH was angry with his people and gave them into Babylon's hand, but Babylon showed no mercy (v.6), and for that she will be judged. The chapter draws on the ancient Near Eastern convention of city-as-woman — Babylon's humiliation is personal and total."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "47:1-5",
+              "note": "Oswalt reads the Babylon-oracle as the flip side of the Cyrus announcement: every empire that oppressed the covenant people comes under judgment. 'Virgin daughter of Babylon' is a mocking title — Babylon had never been humbled, never taken, never exposed. The sit-in-the-dust imagery inverts Babylon's self-image as eternal mistress of kingdoms."
+            },
+            {
+              "ref": "47:6",
+              "note": "'I was angry with my people; I profaned my heritage and gave them into your hand.' Oswalt: Babylon was the rod of Yahweh's anger (the same theology he applied to Assyria in 10:5), but their failure was to assume their power was self-generated. The tool of judgment becomes the object of judgment when it exceeds its commission."
+            }
+          ]
         }
       }
     },
@@ -116,6 +129,19 @@
         },
         "hist": {
           "context": "The taunt continues with mockery of Babylon's astrologers and stargazers (vv.12–15). Let them save you, YHWH taunts — but they are stubble, fire consumes them, and there is not even a coal to warm oneself. The sorceries and enchantments in which Babylon trusted will prove useless. The merchants who trafficked with her will wander off, each to his own quarter, and no one will save her. The historical reference is the fall of Babylon to Cyrus in 539 BC, accomplished (according to Greek sources) without a major battle — the city fell suddenly, as Isaiah promised."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "47:8-11",
+              "note": "'You said, I am, and there is no one besides me; I shall not sit as a widow.' Oswalt: the self-deification formula Babylon uses is the exact formula Yahweh claims for himself ('I am, and there is no other'). Babylon has usurped the divine name; the judgment restores proper reference."
+            },
+            {
+              "ref": "47:12-15",
+              "note": "The astrologer-and-sorcerer parody. Oswalt notes the historical accuracy: Babylon's culture was famously invested in celestial prognostication and omen-texts. The mockery is targeted at the heart of the empire's religious establishment. 'They cannot save themselves from the power of the flame' — the very arts Babylon used to secure its future fail when the future actually arrives."
+            }
+          ]
         }
       }
     }
@@ -228,7 +254,30 @@
         }
       ],
       "note": "Judgment peaks at 10: queen to millstone. Justice at 9: Babylon showed no mercy. Rev 18 develops this. The empire that claims to be God is destroyed."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 47:1-15",
+        "target": "Jer 50-51; Rev 17-18",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "The Babylon-oracle here is one of three major biblical Babylon-downfall cycles (with Jer 50-51 and Rev 17-18). The imagery of Babylon-as-proud-queen seated in splendour, then stripped and widowed, is picked up verbatim in Rev 18:7 — 'as she glorified herself and lived luxuriously, give her a like measure of torment.'"
+      },
+      {
+        "anchor": "Isa 47:8-10",
+        "target": "Rev 18:7",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'You said, I am, and there is no one besides me. I will not be a widow or suffer the loss of children.' Revelation 18:7 quotes this directly as the prostitute-Babylon's self-deifying boast that is about to be overturned."
+      },
+      {
+        "anchor": "Isa 47:12-13",
+        "target": "Dan 2:27-28; 5:7-8",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "The astrologer-and-sorcerer mockery is dramatised in Daniel's court narratives: Babylon's magicians cannot interpret Nebuchadnezzar's dreams (Dan 2) or read the writing on Belshazzar's wall (Dan 5). Isaiah's prediction of their impotence lands historically."
+      }
+    ]
   },
   "vhl_groups": [
     {

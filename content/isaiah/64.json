@@ -60,6 +60,19 @@
         },
         "hist": {
           "context": "The prayer for God to 'rend the heavens and come down' expresses post-exilic desperation. Despite the return from Babylon, God's presence seemed distant. The appeal to Sinai theophany (mountains trembling, fire kindling) requests that foundational experience. The confession that even righteous acts are like filthy rags represents radical penitence."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "64:1-4",
+              "note": "'Oh, that you would rend the heavens and come down!' Oswalt: the prayer's opening is Advent-theology in raw form — the cry for theophany to pierce the gap between the transcendent God and the struggling community. Paul quotes v.4 ('no eye has seen, no ear has heard') in 1 Cor 2:9 as the eschatological mystery now revealed by the Spirit."
+            },
+            {
+              "ref": "64:6",
+              "note": "'All our righteous acts are like filthy rags.' Oswalt: one of the OT's strongest statements of the inadequacy of human righteousness — specifically of religious performance. The exile-aware community has lost all illusion of covenantal merit; only divine initiative can rescue. Paul's Rom 3:10-18 depravity-argument resonates with this theological posture."
+            }
+          ]
         }
       }
     },
@@ -112,6 +125,19 @@
         },
         "hist": {
           "context": "The potter-clay metaphor expresses total dependence on divine creativity. The ruined temple ('our holy and beautiful house where our ancestors praised you') confirms the post-exilic setting. The final question 'will you keep silent?' challenges divine inaction. This communal lament anticipates the eschatological answer in chapters 65-66."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "64:8-9",
+              "note": "'You, LORD, are our Father. We are the clay, you are the potter; we are all the work of your hand.' Oswalt: the potter-clay image (developed in Jer 18 and then Paul's Rom 9) is used here not for fatalistic submission but for penitent appeal — 'do not be angry beyond measure, O LORD; do not remember our sins forever.' Creaturely dependence is the ground of mercy-appeal."
+            },
+            {
+              "ref": "64:10-12",
+              "note": "'Our holy and glorious temple, where our ancestors praised you, has been burned with fire.' Oswalt: the community's lament is grounded in a specific post-exilic desolation-reality. The prayer ends without divine response recorded — the gap is intentional, filled by the judgement-and-mercy answer of chs.65-66."
+            }
+          ]
         }
       }
     }
@@ -224,7 +250,30 @@
         }
       ],
       "note": "Faith and Prophecy peak: rend the heavens (Mark 1:10), no eye has seen (1 Cor 2:9), the potter and clay (Rom 9:21). The unanswered question that demands chs.65–66."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 64:4",
+        "target": "1 Cor 2:9",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'No eye has seen any God besides you, who acts on behalf of those who wait for him.' Paul quotes this verse in 1 Cor 2:9 ('what no eye has seen, no ear has heard, no human mind has conceived the things God has prepared for those who love him') — the eschatological mystery now unveiled by the Spirit."
+      },
+      {
+        "anchor": "Isa 64:6",
+        "target": "Phil 3:9; Rom 3:10-18",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'All our righteous acts are like filthy rags.' Paul's 'a righteousness of my own that comes from the law' set against the 'righteousness that comes from God' in Phil 3:9 is the theological elaboration of Isa 64:6's despair about self-righteousness."
+      },
+      {
+        "anchor": "Isa 64:8",
+        "target": "Rom 9:20-21; Jer 18:1-6",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'You, LORD, are our Father. We are the clay, you are the potter.' The potter-clay metaphor runs through Jer 18, feeds Rom 9's divine-sovereignty argument, and grounds the creation-theology of dependence throughout Paul."
+      }
+    ]
   },
   "vhl_groups": [
     {

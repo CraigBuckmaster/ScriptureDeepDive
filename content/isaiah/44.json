@@ -64,6 +64,19 @@
         },
         "hist": {
           "context": "Isaiah 44:9–20 contains the most extended idol satire in the Hebrew Bible. A craftsman cuts a tree, uses half for fuel to warm himself and roast meat, then carves the other half into a god and bows down to it. The absurdity is deliberate: the same wood that becomes ash also becomes deity. The satire exposes idolatry as category confusion — worshiping what you make rather than the Maker. This is not mere polemic; it addresses exiles surrounded by Babylon's impressive cult, reassuring them that YHWH alone is God (vv.6–8)."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "44:1-5",
+              "note": "Oswalt reads the Spirit-poured-on-offspring promise (v.3) as one of the OT's clearest anticipations of the Pentecostal outpouring. 'I will pour out my Spirit on your descendants' is directly behind Joel 2:28-29 and then Acts 2:17-18. Identity-writing ('one will write on his hand, The LORD's,' v.5) anticipates the NT's seal-of-the-Spirit imagery."
+            },
+            {
+              "ref": "44:6-8",
+              "note": "'I am the first and I am the last; apart from me there is no God.' Oswalt highlights this as Isaiah's most radical monotheistic statement. The first-and-last formula will be applied directly to Christ in Revelation 1:17; 22:13 — a christological identification made possible only by this text's exclusivity."
+            }
+          ]
         }
       }
     },
@@ -120,6 +133,19 @@
         },
         "hist": {
           "context": "The chapter concludes with the first explicit naming of Cyrus (v.28), called 'my shepherd' who will authorize Jerusalem's rebuilding and the temple's foundation. This is remarkable: a pagan king is YHWH's agent of restoration. The oracle is set roughly 550–540 BC, when Cyrus was conquering the Median empire and would soon topple Babylon (539 BC). Isaiah's claim that YHWH named Cyrus before his rise is central to the predictive-proof argument running through these chapters: only the true God can declare the end from the beginning."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "44:9-20",
+              "note": "The extended idol-maker parody. Oswalt: the theological point is that idol-making exposes the absurdity of the entire pagan project — the same block of wood cooks your bread and is worshipped as god. The craftsman 'eats its half, roasts meat, warms himself... and from the rest he makes a god.' The parody is not mere mockery; it is an argument from materials: whatever you make cannot save you."
+            },
+            {
+              "ref": "44:24-28",
+              "note": "The Cyrus-naming oracle. Oswalt argues for the predictive-prophecy reading: Cyrus is named by Isaiah more than 150 years before his rise. The oracle climaxes in 'he is my shepherd and will accomplish all that I please' — a covenant-king title (2 Sam 7) applied to a pagan Persian who does not know Yahweh (45:4). Prediction of specific future events is Isaiah's proof against the idol-gods."
+            }
+          ]
         }
       }
     }
@@ -207,7 +233,30 @@
         }
       ],
       "note": "Prophecy peaks at 10: Cyrus named 150 years before his conquest. \"First and Last\" applied to Christ (Rev 1:17). Mercy at 9: sins swept like clouds. The idol-satire: the most savage and funny in the Bible."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 44:3",
+        "target": "John 7:38-39; Acts 2:17-18",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'I will pour water on the thirsty land... I will pour out my Spirit on your offspring.' The Spirit-outpouring promise cluster (with Joel 2:28) is cited at Pentecost and drawn on by Jesus at the Feast of Tabernacles for the 'rivers of living water' promise."
+      },
+      {
+        "anchor": "Isa 44:6",
+        "target": "Rev 1:8, 17; 22:13",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'I am the first and I am the last; apart from me there is no God.' Revelation applies this formula three times to Christ (1:8, 17; 22:13) — the most explicit christological identification of Jesus with the divine name."
+      },
+      {
+        "anchor": "Isa 44:28",
+        "target": "Ezra 1:1-4; 2 Chr 36:22-23",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'Who says of Cyrus, He is my shepherd and will accomplish all that I please; he will say of Jerusalem, Let it be rebuilt.' Fulfilled in Ezra 1:1-4 and 2 Chr 36:22-23 — Cyrus's decree for the temple's rebuilding, issued approximately 150 years after Isaiah's prediction."
+      }
+    ]
   },
   "vhl_groups": [
     {

@@ -68,6 +68,19 @@
         },
         "hist": {
           "context": "After the Fourth Servant Song, the mood shifts to exuberant celebration. The barren woman — Zion in exile — is called to sing because her children will outnumber those of the married woman (v.1). Enlarge your tent, stretch your curtains, lengthen your cords (vv.2–3). The husband-of-your-youth metaphor returns: YHWH abandoned Zion briefly in anger but now gathers her with everlasting compassion (vv.6–8). The flood-oath reference (v.9) grounds the promise: as YHWH swore never to flood the earth again, so he swears never to be angry with Zion again. The covenant is unbreakable."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "54:1-3",
+              "note": "'Sing, barren woman, you who never bore a child.' Oswalt: the imagery is the reversal of exile — Zion who seemed childless will have more children than she could imagine. Paul quotes v.1 in Gal 4:27 as the template for covenant freedom that produces more spiritual descendants than covenant slavery ever did. The post-servant fruitfulness is ecclesiologically enormous."
+            },
+            {
+              "ref": "54:7-10",
+              "note": "'As I swore that the waters of Noah should no more go over the earth, so I have sworn that I will not be angry with you.' Oswalt: the Noahic-covenant parallel makes the post-servant covenant unconditionally stable. 'The mountains may depart, but my steadfast love shall not depart from you.' Cosmic dissolution is conceivable; covenant-chesed dissolution is not."
+            }
+          ]
         }
       }
     },
@@ -124,6 +137,19 @@
         },
         "hist": {
           "context": "The afflicted, storm-tossed city will be rebuilt with precious stones: foundations of sapphires, battlements of rubies, gates of sparkling jewels (vv.11–12). All your children will be taught by YHWH, and great will be their peace (v.13). No weapon forged against you will prevail; every tongue that accuses you will be refuted (v.17). This is the heritage of YHWH's servants — plural, extending the Servant's vindication to those who belong to him. The chapter closes with one of the most sweeping security promises in Scripture: divine teaching, lasting peace, complete protection."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "54:11-17",
+              "note": "The jewelled-city vision. Oswalt: the images (sapphires, rubies, precious stones as foundations and gates) feed directly into the New Jerusalem description of Rev 21:18-21. The post-servant Zion is already eschatological — the church-that-will-be is seen from this height."
+            },
+            {
+              "ref": "54:17",
+              "note": "'No weapon formed against you shall prosper... This is the heritage of the servants of the LORD.' Oswalt: the shift from singular 'servant' (chs.42-53) to plural 'servants' (here and throughout chs.55-66). The individual servant's work produces a community of servants who inherit his vindication — the NT's 'in Christ' ecclesiology has its OT source here."
+            }
+          ]
         }
       }
     }
@@ -221,7 +247,30 @@
         }
       ],
       "note": "Covenant AND Mercy peak at 10: covenant of peace, barren woman sings, brief anger / everlasting kindness. The servant death (ch.53) produces the barren woman children (ch.54). No weapon prevails."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 54:1",
+        "target": "Gal 4:27",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'Sing, barren woman, you who never bore a child.' Paul quotes this verse in Gal 4:27 as his warrant for the theology of grace — spiritual children produced by promise (Isaac/Sarah/the Jerusalem above) outnumber those produced by flesh (Ishmael/Hagar/the present Jerusalem)."
+      },
+      {
+        "anchor": "Isa 54:13",
+        "target": "John 6:45",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'All your children will be taught by the LORD.' Jesus cites this in John 6:45 as the basis for his claim that those who come to him are the ones the Father has drawn and taught — the Servant's community is a taught-by-God community."
+      },
+      {
+        "anchor": "Isa 54:17",
+        "target": "Rom 8:31-34",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'No weapon forged against you will prevail, and you will refute every tongue that accuses you.' Paul's 'if God is for us, who can be against us?' and 'who will bring any charge against God's elect?' are Romans-language versions of this servant-community promise."
+      }
+    ]
   },
   "vhl_groups": [
     {

@@ -68,6 +68,19 @@
         },
         "hist": {
           "context": "Isaiah 53:1–6 is the theological heart of the Hebrew Bible's suffering-for-others theology. The servant grew up like a tender shoot, without beauty or majesty (v.2). He was despised, rejected, a man of suffering (v.3). Yet he bore our griefs and carried our sorrows (v.4). He was pierced for our transgressions, crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed (v.5). All we like sheep had gone astray, and YHWH laid on him the iniquity of us all (v.6). The substitutionary logic is explicit: our sins, his suffering, our healing."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "53:1-3",
+              "note": "Oswalt reads 53:1 ('who has believed our message?') as the rhetorical acknowledgment that the servant's appearance contradicts every expectation. 'No beauty or majesty' — not the kind of messiah anyone was looking for. John 12:38 and Rom 10:16 both quote v.1 as the key to unbelief: the servant is rejected because he does not look like what salvation is supposed to look like."
+            },
+            {
+              "ref": "53:4-6",
+              "note": "The substitutionary-atonement climax. Oswalt: 'pierced for our transgressions, crushed for our iniquities' is the OT's most explicit penal-substitution language. 'The LORD has laid on him the iniquity of us all.' The inversions are total: we strayed, he bore; we deserved, he suffered; we were sick, by his wounds we are healed. Peter quotes vv.4-6 in 1 Pet 2:24-25 as the structural content of the cross."
+            }
+          ]
         }
       }
     },
@@ -128,6 +141,19 @@
         },
         "hist": {
           "context": "The servant's suffering culminates in death and burial with the wicked, yet with the rich in his death (v.9). YHWH's will was to crush him and cause him to suffer (v.10), yet through his offspring's flourishing and the LORD's purpose prospering, the servant's suffering is vindicated. He will see the light of life after his anguish (v.11). The 'many' language dominates: he bore the sin of many, made many righteous, made intercession for transgressors. The Fourth Servant Song resolves the Servant's identity crisis: this is not Israel (who sins and needs healing) but someone who heals Israel's wound by bearing it himself."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "53:7-9",
+              "note": "'He was led like a lamb to the slaughter, and as a sheep before its shearers is silent.' Oswalt: the Ethiopian eunuch reads precisely these verses when Philip joins him (Acts 8:32-35), and Philip 'told him the good news about Jesus' — the earliest example of Christian exegesis of Isa 53. The silent-lamb image is the synoptic gospels' template for Jesus before Pilate."
+            },
+            {
+              "ref": "53:10-12",
+              "note": "Oswalt on the song's climax: 'it was the LORD's will to crush him.' The shock is theological — the servant's suffering is not a mistake but a divine intention, a guilt-offering ('asham, v.10). 'He bore the sin of many, and made intercession for the transgressors' — priestly language grafted onto sacrificial language. The servant is simultaneously lamb and priest, offering and offerer."
+            }
+          ]
         }
       }
     }
@@ -224,7 +250,38 @@
         }
       ],
       "note": "Covenant, Mercy, AND Prophecy all peak at 10: THE theological climax of the OT. Every NT author quotes or alludes to this chapter. Substitutionary atonement. The lamb. The guilt offering. Resurrection implied. The most important chapter in Isaiah."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 53:1",
+        "target": "John 12:37-38; Rom 10:16",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'Who has believed our message and to whom has the arm of the LORD been revealed?' John 12 and Romans 10 both quote this verse as the theological key to understanding Jewish rejection of the Servant-Messiah."
+      },
+      {
+        "anchor": "Isa 53:4-5",
+        "target": "Matt 8:17; 1 Pet 2:24",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'He took up our pain and bore our suffering... by his wounds we are healed.' Matthew applies v.4 to Jesus' healing ministry; Peter applies v.5 to the cross. The Servant's suffering is dual-dimensional: physical healing and spiritual atonement."
+      },
+      {
+        "anchor": "Isa 53:7-8",
+        "target": "Acts 8:32-35",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "The Ethiopian eunuch is reading precisely these verses when Philip meets him, and Philip 'began with that very passage of Scripture and told him the good news about Jesus.' Acts 8 is the NT's most explicit example of Christian exegesis of Isa 53."
+      },
+      {
+        "anchor": "Isa 53:12",
+        "target": "Luke 22:37",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'He was numbered with the transgressors.' Jesus quotes this verse in Luke 22:37 at the Last Supper, explicitly applying the Servant Song to himself: 'what is written about me is reaching its fulfilment.'"
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Surely he took up our pain and bore our suffering, yet we considered him punished by God, stricken by him, and afflicted.</td></tr><tr><td class=\"t-label\">ESV</td><td>Surely he has borne our griefs and carried our sorrows; yet we esteemed him stricken, smitten by God, and afflicted.</td></tr><tr><td class=\"t-label\">NIV</td><td>But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.</td></tr><tr><td class=\"t-label\">ESV</td><td>But he was pierced for our transgressions; he was crushed for our iniquities; upon him was the chastisement that brought us peace, and with his wounds we are healed.</td></tr><tr><td class=\"t-label\">NIV</td><td>We all, like sheep, have gone astray, each of us has turned to our own way; and the LORD has laid on him the iniquity of us all.</td></tr><tr><td class=\"t-label\">ESV</td><td>All we like sheep have gone astray; we have turned — every one — to his own way; and the LORD has laid on him the iniquity of us all.</td></tr><tr><td class=\"t-label\">NIV</td><td>After he has suffered, he will see the light of life and be satisfied; by his knowledge my righteous servant will justify many, and he will bear their iniquities.</td></tr><tr><td class=\"t-label\">ESV</td><td>Out of the anguish of his soul he shall see and be satisfied; by his knowledge shall the righteous one, my servant, make many to be accounted righteous, and he shall bear their iniquities.</td></tr>"
   },
   "vhl_groups": [
     {

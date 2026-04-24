@@ -68,6 +68,19 @@
         },
         "hist": {
           "context": "Isaiah 40 marks the theological hinge of the book, shifting from judgment oracles to consolation addressed to exiles in Babylon. The imperatives 'comfort, comfort' (naḥamū) are plural, summoning the heavenly council to announce that Jerusalem's warfare is ended and her iniquity pardoned. The highway-in-the-wilderness motif reimagines the exodus: just as YHWH led Israel through the desert from Egypt, so he will lead the exiles home from Babylon. The date is roughly 550–540 BC, as Cyrus's rise makes return imaginable."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "40:1-2",
+              "note": "Oswalt treats the doubled imperative 'comfort, comfort' as the structural hinge of the whole book. The first half (chs. 1-39) diagnoses the disease; chs. 40-66 announce the cure. The shift is not from one book to another but from judgment-for-sin to salvation-through-servant within a single prophetic vision. 'Speak tenderly to Jerusalem' is literally 'speak to the heart' — the covenant wooing-formula of Hos 2:14."
+            },
+            {
+              "ref": "40:3-5",
+              "note": "The wilderness highway. Oswalt emphasises the new-exodus theology: Yahweh will lead his people home from Babylon on a road he is making in the desert. The same language John the Baptist appropriates (Matt 3:3 and parallels) because the ultimate new exodus is the Messiah's work — the voice in the wilderness prepares for Yahweh's own coming."
+            }
+          ]
         }
       }
     },
@@ -128,6 +141,19 @@
         },
         "hist": {
           "context": "The incomparability hymn (vv.12–26) employs rhetorical questions to demolish any notion that YHWH can be measured, advised, or compared. Nations are drops in a bucket; islands are dust on scales. The polemic has a specific target: Babylonian astral religion, which deified the stars (v.26). By naming and numbering the host of heaven, YHWH demonstrates sovereignty over what Babylon worships. The closing promise (vv.28–31) addresses weary exiles: waiting on YHWH renews strength when human energy fails."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "40:12-17",
+              "note": "Oswalt reads the cosmic-scale rhetorical questions ('who has measured the waters in the hollow of his hand?') as the answer to the Rabshakeh's taunt in ch.36: 'has any god of any nation delivered his land?' Yes — the God who holds the oceans in his palm. The second-half's central theological move is to reground Yahweh's uniqueness in creator-power, not just historical deliverance."
+            },
+            {
+              "ref": "40:27-31",
+              "note": "The 'wait for the LORD, renew strength' ending is, for Oswalt, the pastoral payoff of the cosmological opening. The God who measures oceans is also the God who gives strength to the weary. The chapter moves deliberately from transcendence to intimacy: knowing Yahweh's bigness is what makes his personal care trustworthy."
+            }
+          ]
         }
       }
     }
@@ -230,7 +256,30 @@
         }
       ],
       "note": "Mercy AND Prophecy peak at 10: the hinge of Isaiah. \"Comfort, comfort.\" All four Gospels quote v.3. 1 Peter quotes vv.6–8. Sovereignty at 9: nations are a drop. Faith at 9: eagles, running, walking. The most beloved chapter in Isaiah."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 40:3-5",
+        "target": "Matt 3:3; Mark 1:2-3; Luke 3:4-6; John 1:23",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'A voice of one calling: In the wilderness prepare the way for the LORD.' Quoted by all four Gospels as the prophetic framework for John the Baptist's ministry — the most important single text for locating John's prophetic role in redemptive history."
+      },
+      {
+        "anchor": "Isa 40:6-8",
+        "target": "1 Pet 1:24-25; Jas 1:10-11",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'All people are like grass... the grass withers and the flowers fall, but the word of our God endures forever.' Peter quotes this in 1 Pet 1:24-25 as the theological basis for the gospel's reliability: the imperishable seed is the enduring word."
+      },
+      {
+        "anchor": "Isa 40:13-14",
+        "target": "Rom 11:34; 1 Cor 2:16",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Who has understood the mind of the LORD, or instructed him as his counselor?' Paul quotes this verse in both Rom 11:34 (doxological) and 1 Cor 2:16 (cross-related) — Yahweh's incomparability finds its NT development in the mind-of-Christ Christology."
+      }
+    ]
   },
   "vhl_groups": [
     {

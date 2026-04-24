@@ -60,6 +60,19 @@
         },
         "hist": {
           "context": "The chapter opens with rhetorical questions: where is your mother's divorce certificate? To which creditors was I forced to sell you (v.1)? The implied answer: none. Israel's exile is discipline, not divorce. YHWH's arm is not too short to save (v.2). The passage reframes exile: Israel was sold for her sins, not because YHWH was bankrupt. This legal-metaphor section sets up the Third Servant Song by clearing away the notion that YHWH abandoned his people permanently."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "50:1-3",
+              "note": "'Where is the certificate of your mother's divorce?' Oswalt: Yahweh denies that the exile is a covenant-divorce. The rhetorical question assumes no such certificate exists, because no such divorce happened. Exile was discipline, not rejection. The covenant relationship is interrupted, not terminated."
+            },
+            {
+              "ref": "50:2",
+              "note": "'Is my hand shortened, that it cannot redeem? Or have I no power to deliver?' Oswalt: the question assumes an answer the exiles may have stopped giving. The shortened-hand motif recurs (Num 11:23; Isa 59:1). Power is not the problem; Israel's sin has separated them from the available rescuer (59:2)."
+            }
+          ]
         }
       }
     },
@@ -120,6 +133,19 @@
         },
         "hist": {
           "context": "The Third Servant Song (50:4–9) introduces suffering explicitly. The Servant is YHWH's disciple (limmûd), awakened morning by morning to hear and teach. He offers his back to those who beat him, his cheeks to those who pull out his beard, his face to mocking and spitting. Yet he sets his face like flint, confident that YHWH will vindicate him (vv.7–9). This is not passive victimhood but resolute trust. The legal metaphor returns: 'Who will bring charges against me?' The Servant expects acquittal from the heavenly court even as he endures earthly abuse."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "50:4-9",
+              "note": "The third Servant Song. Oswalt: the servant is now explicitly a suffering figure — smitten, spit on, beard plucked out. And yet 'I set my face like flint,' a determination that becomes Luke's explicit echo at 9:51 ('he set his face to go to Jerusalem'). The servant's trust is grounded in vindication-language: 'he who vindicates me is near.'"
+            },
+            {
+              "ref": "50:10-11",
+              "note": "'Who among you fears the LORD and obeys the voice of his servant?' Oswalt: response to the servant becomes the dividing line of the community. Those who walk in darkness without light must 'trust in the name of the LORD and rely on his God' — the servant mediates the relationship. The alternative (v.11) is to light one's own torches and lie down in torment."
+            }
+          ]
         }
       }
     }
@@ -217,7 +243,23 @@
         }
       ],
       "note": "Prophecy peaks at 10: the third Servant Song. Beating, spitting, beard-pulling (Matt 26–27). Face like flint (Luke 9:51). \"Who will condemn?\" (Rom 8:33). Faith at 9: trust in darkness."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 50:6",
+        "target": "Matt 26:67; 27:30",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'I offered my back to those who beat me, my cheeks to those who pulled out my beard; I did not hide my face from mocking and spitting.' The passion-narratives describe Jesus undergoing exactly these specific indignities — beard-pulling, spitting, face-mocking — consciously fulfilling this third Servant Song."
+      },
+      {
+        "anchor": "Isa 50:7",
+        "target": "Luke 9:51",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'I have set my face like flint, and I know I will not be put to shame.' Luke's Greek — Jesus 'set his face' to go to Jerusalem — is a direct verbal echo of this verse. The Servant's determination is the Messiah's trajectory."
+      }
+    ]
   },
   "vhl_groups": [
     {

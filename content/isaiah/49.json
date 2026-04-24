@@ -68,6 +68,19 @@
         },
         "hist": {
           "context": "The Second Servant Song (49:1–13) shifts from third-person introduction to first-person speech. The Servant addresses the coastlands, claiming that YHWH named him from the womb and made his mouth a sharp sword. The mission is twofold: restore Israel and become a light for the Gentiles (v.6). This dual scope resolves the earlier ambiguity — the Servant has a mission to Israel, so he cannot simply be Israel. Yet the mission is also through Israel to the nations. The song ends with a hymn of cosmic rejoicing (v.13) at the comfort YHWH provides."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "49:1-6",
+              "note": "The second Servant Song. Oswalt: the servant is identified with Israel (v.3) but then sent 'to bring Jacob back to him' (v.5) — an individual distinct from the corporate people. This is the key move in the servant theology: the true Israel is a person, and his mission is to restore the people who bear the name. 'A light for the gentiles' (v.6) is Paul's text in Acts 13:47 for gentile mission."
+            },
+            {
+              "ref": "49:5-6",
+              "note": "'It is too small a thing for you to be my servant to restore the tribes of Jacob... I will make you a light for the gentiles.' Oswalt reads this as the widening that exposes the servant-Messiah's cosmic office: covenant-particular work (Israel's restoration) is the instrument of cosmic-universal work (salvation to the ends of the earth)."
+            }
+          ]
         }
       }
     },
@@ -124,6 +137,19 @@
         },
         "hist": {
           "context": "Zion's lament — 'The LORD has forsaken me, my Lord has forgotten me' (v.14) — receives one of Scripture's most tender responses: can a mother forget her nursing child? Even if she could, YHWH will not forget. Jerusalem's name is engraved on his palms (v.16). The passage addresses the exiles' deepest fear: that covenant abandonment is permanent. The answer is categorical: your children will return, your destroyers will depart, you will be too crowded for your inhabitants. Kings and queens will bow to you (vv.22–23). The reversal of exile is total."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "49:14-16",
+              "note": "'Zion said, The LORD has forsaken me.' The answer Oswalt highlights: 'Can a mother forget the baby at her breast? Though she may forget, I will not forget you. See, I have engraved you on the palms of my hands.' The maternal-God imagery (rare in the OT) combined with the graving-on-the-palms creates one of Scripture's most intimate pictures of covenant memory."
+            },
+            {
+              "ref": "49:22-23",
+              "note": "'Kings will be your foster fathers, queens your nursing mothers.' Oswalt: the reversal is complete — Judah was exile-nation, now the nations serve Judah. Not in political imperial sense but in covenant-privilege sense: the nations recognise Zion as the locus of Yahweh's presence and assist rather than oppose the restoration."
+            }
+          ]
         }
       }
     }
@@ -221,7 +247,30 @@
         }
       ],
       "note": "Mercy AND Mission peak at 10: mother-love, palm-engraving, barren mother overwhelmed. Light for the Gentiles (Acts 13:47). Covenant at 9: engraved. Prophecy at 9: second Servant Song."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 49:6",
+        "target": "Luke 2:32; Acts 13:47",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'I will make you a light for the gentiles, that my salvation may reach to the ends of the earth.' Simeon voices it over the infant Jesus (Luke 2:32); Paul takes it as his apostolic commission (Acts 13:47). The Servant's mission is inherited by the Messiah and the Church."
+      },
+      {
+        "anchor": "Isa 49:8",
+        "target": "2 Cor 6:2",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'In the time of my favor I will answer you, and in the day of salvation I will help you.' Paul quotes this in 2 Cor 6:2 and adds 'now is the time of God's favor, now is the day of salvation' — the eschatological favour Isaiah anticipated has arrived in Christ."
+      },
+      {
+        "anchor": "Isa 49:15-16",
+        "target": "John 10:27-28",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'See, I have engraved you on the palms of my hands.' The name-on-palms imagery feeds the sheep-in-my-hand security of John 10:27-28 — 'no one will snatch them out of my hand.' Possession and protection are both hand-metaphors."
+      }
+    ]
   },
   "vhl_groups": [
     {

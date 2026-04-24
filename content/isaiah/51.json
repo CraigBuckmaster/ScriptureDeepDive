@@ -64,6 +64,19 @@
         },
         "hist": {
           "context": "Chapter 51 opens with a call to those who pursue righteousness: look to Abraham your father and Sarah who bore you. The barren-rock imagery (v.1) recalls Abraham and Sarah's miraculous fertility — YHWH can make the desert bloom. The comfort motif returns (v.3): YHWH will make Zion's wilderness like Eden, her desert like YHWH's garden. Joy and gladness will be found there. The ransomed-of-the-LORD refrain (v.11) anticipates the return from exile as a second exodus, complete with everlasting joy and the banishment of sorrow."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "51:1-3",
+              "note": "'Look to the rock from which you were cut; look to Abraham your father and Sarah who bore you.' Oswalt: the Abraham-reference is rhetorically pointed — 'when I called him, he was but one.' Yahweh multiplied the one into a nation; he can do it again. Exile-Israel is small; so was the covenant at its founding."
+            },
+            {
+              "ref": "51:9-11",
+              "note": "The 'awake, awake' summons to Yahweh's arm. Oswalt on the poetry: the chaoskampf imagery (Rahab, the dragon, the sea) is deliberately invoked to connect creation-victory, Red Sea deliverance, and the coming new-exodus. Yahweh's past acts are resources for his future acts; the exiles are invited to pray history forward."
+            }
+          ]
         }
       }
     },
@@ -120,6 +133,19 @@
         },
         "hist": {
           "context": "The 'Awake, awake' summons (vv.9, 17) calls YHWH's arm to action as in the days of old — when it cut Rahab to pieces and pierced the dragon (v.9). This is combat-myth language: YHWH's victory over primordial chaos is the paradigm for his victory over Babylon. The sea-drying imagery (v.10) fuses creation and exodus. The chapter climaxes with Zion's arousal: she has drunk YHWH's cup of wrath to the dregs; now that cup will pass to her tormentors (vv.21–23). The reversal of fortunes is complete."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "51:12-16",
+              "note": "'I, I am he who comforts you.' The doubled 'I' pronoun — Oswalt notes — emphasises the exclusivity of Yahweh's comforting role. The rhetorical question 'who are you that you fear mere mortals?' is theological therapy: fear of men is always a displacement of the fear of God."
+            },
+            {
+              "ref": "51:17-23",
+              "note": "'Awake, awake, rise up, O Jerusalem.' The address now reverses from Yahweh's arm (v.9) to Zion's shaking-off the cup of wrath. Oswalt: the cup-of-wrath motif (Jer 25:15-29; Rev 14:10; 16:19) is introduced here as the staple biblical image for divine judgment. The servant of ch.53 will drink the cup Zion has drunk."
+            }
+          ]
         }
       }
     }
@@ -212,7 +238,30 @@
         }
       ],
       "note": "Sovereignty peaks at 9: the Rahab-slaying arm, the cup transferred, salvation that outlasts heaven and earth. Mercy at 8: comfort, the cup removed. The 35:10 refrain returns."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 51:1-2",
+        "target": "Rom 4:16-17; Gal 3:29",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Look to Abraham your father and Sarah who bore you. When I called him, he was but one.' Paul's 'Abraham is the father of us all' (Rom 4:16) and 'if you belong to Christ, then you are Abraham's seed' (Gal 3:29) work out the theological implication: Abraham the one becomes Abraham the many."
+      },
+      {
+        "anchor": "Isa 51:6",
+        "target": "Matt 24:35; Heb 12:26-27",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The heavens will vanish like smoke, the earth will wear out like a garment... but my salvation will last forever.' The cosmic-transience/salvation-permanence contrast feeds Jesus' 'heaven and earth will pass away, but my words will never pass away' and Hebrews' shaking-of-creation theology."
+      },
+      {
+        "anchor": "Isa 51:17-23",
+        "target": "Matt 26:39-42; Rev 14:10",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The cup of his wrath... the goblet that makes people stagger.' The cup-of-wrath image becomes Jesus' Gethsemane prayer ('let this cup pass') — the Servant drinks the cup Zion has drunk. Rev 14:10 applies it back to final judgment."
+      }
+    ]
   },
   "vhl_groups": [
     {

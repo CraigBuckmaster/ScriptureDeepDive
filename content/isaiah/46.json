@@ -64,6 +64,19 @@
         },
         "hist": {
           "context": "The chapter opens with devastating irony: Bel (Marduk) and Nebo (Nabu), Babylon's chief deities, must be loaded onto weary beasts and carted away when the city falls. The gods who cannot save themselves become burdens rather than bearers. By contrast, YHWH has carried Israel from the womb and will carry them to gray hairs (vv.3–4). The polemic is visual: imagine a New Year's procession where golden idols are paraded on carts, then imagine those same statues being looted and hauled off as plunder. That is Babylon's future."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "46:1-2",
+              "note": "'Bel bows down, Nebo stoops.' Oswalt: the image is of Babylonian gods loaded onto pack-animals as Cyrus enters Babylon — gods who must be carried, who become burdens themselves. The contrast with v.3-4 is the chapter's whole argument: idols must be carried; Yahweh carries his people 'from the womb... even to your old age.'"
+            },
+            {
+              "ref": "46:3-4",
+              "note": "'I have made, and I will bear; I will carry and will save.' Oswalt: one of the OT's tenderest pictures of divine constancy — a God who carries his people from birth through to old age. The covenant is personalised here in generational terms: Yahweh is not just Israel's God but the Israelite's God through the entire span of a life."
+            }
+          ]
         }
       }
     },
@@ -116,6 +129,19 @@
         },
         "hist": {
           "context": "The chapter concludes with YHWH's self-identification as the one who declares the end from the beginning (v.10) — the predictive-proof argument that runs through Deutero-Isaiah. My counsel will stand, and I will accomplish all my purpose (v.10). A bird of prey from the east (v.11) is summoned — again Cyrus, swift and unstoppable. The theological point is inescapable: YHWH plans, speaks, and then brings to pass. The idols cannot predict; YHWH alone controls history. This certainty grounds the exiles' hope."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "46:9-10",
+              "note": "'Declaring the end from the beginning.' Oswalt: this is the most concentrated statement of Isaiah's prediction-argument. Yahweh's claim to uniqueness rests on the historical record of announcing what he will do before he does it. This epistemology — monotheism verified by fulfilled prophecy — is the second-Isaiah's apologetic backbone."
+            },
+            {
+              "ref": "46:12-13",
+              "note": "'Listen to me, you stubborn-hearted, who are far from righteousness.' Oswalt notes that the 'far-from-righteousness' addressees are Israel, not Babylon. The comfort-oracles throughout chs.40-48 are not sentimental; they assume a people deeply estranged whose righteousness must be brought to them as a gift. 'My salvation will not delay' — the work is Yahweh's, on Yahweh's timeline."
+            }
+          ]
         }
       }
     }
@@ -228,7 +254,23 @@
         }
       ],
       "note": "Sovereignty peaks at 10: God carries; idols are carried. \"I make known the end from the beginning.\" What I plan, I do."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 46:3-4",
+        "target": "Ps 48:14; Matt 28:20",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'I have made, and I will bear; I will carry and will save.' The lifelong-carrying promise to covenant people echoes the psalmist's 'this God is our God forever and ever; he will be our guide even to the end' and Jesus' always-with-you promise."
+      },
+      {
+        "anchor": "Isa 46:9-10",
+        "target": "Eph 1:11",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'I make known the end from the beginning, from ancient times, what is still to come. I say, My purpose will stand.' Paul's 'him who works out everything in conformity with the purpose of his will' is Isaiah's divine-purpose theology applied to the cosmic plan in Christ."
+      }
+    ]
   },
   "vhl_groups": [
     {

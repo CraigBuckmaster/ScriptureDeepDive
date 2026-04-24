@@ -60,6 +60,19 @@
         },
         "hist": {
           "context": "Chapter 48 is a complex oracle mixing rebuke and promise. Israel is addressed as obstinate (v.4), a people who swear by YHWH's name but not in truth (v.1). The predictive-proof argument returns: YHWH declared things long ago precisely because Israel was stubborn and would credit idols if events seemed spontaneous (vv.3–5). New things are now announced, hidden until this moment (v.6–7). For his own name's sake, YHWH delays his wrath and does not cut Israel off (v.9). The refining-furnace metaphor (v.10) suggests that exile is purification, not annihilation."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "48:1-5",
+              "note": "Oswalt reads ch.48 as the concluding summary of chs.40-47's polemic: Yahweh predicted everything in advance 'lest you should say, My idol did them.' The repeated motif of 'former things' vs 'new things' is pedagogical — Israel is told the old predictions to build trust for the new ones. Theologically, fulfilment is the grammar of faith."
+            },
+            {
+              "ref": "48:9-11",
+              "note": "'For my own name's sake I defer my anger... I refine you, but not as silver; I have tried you in the furnace of affliction.' Oswalt: the justification of the exile is pedagogical, not punitive in the final analysis. 'How should my name be profaned?' is the root-motive — Yahweh's covenant commitment is self-anchored."
+            }
+          ]
         }
       }
     },
@@ -116,6 +129,19 @@
         },
         "hist": {
           "context": "The chapter climaxes with the exodus imperative: 'Go out from Babylon! Flee from the Chaldeans!' (v.20). The new exodus motif reaches its narrative turning point: the deliverance YHWH announced is now to be enacted. Proclaim it with shouts of joy to the ends of the earth: YHWH has redeemed his servant Jacob (v.20). The water-from-rock imagery (v.21) recalls the original exodus, assuring the exiles that the same power is available for their journey home. Yet the chapter closes with a warning: there is no peace for the wicked (v.22) — a refrain that will recur at 57:21 and 66:24."
+        },
+        "oswalt": {
+          "source": "John N. Oswalt, Isaiah, NICOT (2 vols., 1986/1998) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "48:16",
+              "note": "'And now the Lord GOD has sent me, and his Spirit.' Oswalt treats this verse as a quiet trinitarian datum: the speaker (the servant?) is sent by both the Father and the Spirit. The identification of the speaker is deliberately ambiguous, setting up the clearer servant identification in ch.49."
+            },
+            {
+              "ref": "48:20-22",
+              "note": "'Go out from Babylon, flee from Chaldea.' Oswalt: the exodus-imperative closes chs.40-48. The people-who-are-servant (corporate Israel) have been commanded to leave their exile. But v.22's 'there is no peace for the wicked' is a dissonant note: the exodus does not automatically resolve the heart-problem. The stage is set for an individual servant (chs.49-53) who will do what corporate Israel cannot."
+            }
+          ]
         }
       }
     }
@@ -213,7 +239,23 @@
         }
       ],
       "note": "Sovereignty peaks: for my own sake. First and Last again. The exodus-from-Babylon command. \"No peace for the wicked\" divides Second Isaiah."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Isa 48:10-11",
+        "target": "1 Pet 1:6-7; Mal 3:3",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'I have refined you, though not as silver; I have tested you in the furnace of affliction.' The refiner's-fire imagery becomes Malachi's (3:3) and Peter's (1 Pet 1:6-7) central metaphor for suffering as purifying discipline, not punitive destruction."
+      },
+      {
+        "anchor": "Isa 48:20-21",
+        "target": "Exod 15; 17:6",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'He did not thirst when he led them through the deserts; he made water flow for them from the rock.' The new-exodus language consciously recalls the Red Sea song and the water-from-the-rock episodes of the first exodus — not as mere analogy but as resource for expectation."
+      }
+    ]
   },
   "vhl_groups": [
     {
