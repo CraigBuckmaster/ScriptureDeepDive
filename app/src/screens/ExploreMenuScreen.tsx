@@ -252,8 +252,12 @@ function ExploreMenuScreen() {
           </View>
         );
       case 'scholarly': {
-        const splitFeatures = section.features.filter(
-          (f) => f.screen === 'ScholarBrowse' || f.screen === 'DifficultPassagesBrowse',
+        // Debates renders as the preview strip above; everything else flows
+        // into the horizontal carousel below. Denylist (vs. allowlist) so
+        // future cards added to SECTIONS surface automatically — same
+        // pattern as the 'language' case for WordStudyBrowse.
+        const carouselFeatures = section.features.filter(
+          (f) => f.screen !== 'DebateBrowse',
         );
         const totalDebates = getScreenImages('DebateBrowse')?.count ?? undefined;
         return (
@@ -263,26 +267,30 @@ function ExploreMenuScreen() {
               onSeeAll={() => handleNavigate('DebateBrowse')}
               totalCount={totalDebates ?? undefined}
             />
-            <View style={styles.row2}>
-              {splitFeatures.map((f, i) => {
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.carouselContent}
+              decelerationRate="fast"
+            >
+              {carouselFeatures.map((f, cardIndex) => {
                 const imgData = getScreenImages(f.screen);
                 return (
-                  <View key={f.screen} style={styles.rowCell}>
-                    <FeatureCard
-                      feature={f}
-                      onPress={() => handleNavigate(f.screen)}
-                      isPremium={isPremium}
-                      images={imgData?.images}
-                      count={imgData?.count}
-                      noun={imgData?.noun}
-                      onImagePress={handleDeepLink}
-                      staggerMs={i * 1200}
-                      compact
-                    />
-                  </View>
+                  <FeatureCard
+                    key={f.screen}
+                    feature={f}
+                    onPress={() => handleNavigate(f.screen)}
+                    isPremium={isPremium}
+                    images={imgData?.images}
+                    count={imgData?.count}
+                    noun={imgData?.noun}
+                    onImagePress={handleDeepLink}
+                    staggerMs={cardIndex * 1200}
+                    compact
+                  />
                 );
               })}
-            </View>
+            </ScrollView>
           </View>
         );
       }
@@ -531,7 +539,6 @@ const styles = StyleSheet.create({
 
   // Split/grid rows
   sectionGap: { gap: spacing.md },
-  row2: { flexDirection: 'row', gap: spacing.sm },
   row3: { flexDirection: 'row', gap: spacing.sm },
   rowCell: { flex: 1 },
 
