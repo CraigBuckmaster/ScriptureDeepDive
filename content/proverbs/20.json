@@ -356,7 +356,30 @@
         }
       ],
       "note": "Proverbs 20 focuses on the inner life — what is hidden in the human heart, what God sees there (the spirit as his lamp), and the honest acknowledgment that no one achieves moral purity. The chapter's most memorable observations are its most psychologically sophisticated: the deep waters of motivation, the lamp of conscience, and the rhetorical admission that the wise person falls short too."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Prov 20:9",
+        "target": "Rom 3:23; 1 John 1:8",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Who can say, I have kept my heart pure; I am clean and without sin?' The rhetorical question anchors universal-sin theology — Paul's 'all have sinned and fall short' and John's 'if we claim to be without sin, we deceive ourselves' both answer Proverbs' diagnostic question the same way."
+      },
+      {
+        "anchor": "Prov 20:22",
+        "target": "Rom 12:19; 1 Thess 5:15",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Do not say, I'll pay you back for this wrong! Wait for the LORD, and he will avenge you.' Paul's 'do not take revenge, my dear friends, but leave room for God's wrath' (Rom 12:19) applies this Proverbs wait-for-vindication ethic directly."
+      },
+      {
+        "anchor": "Prov 20:27",
+        "target": "1 Cor 2:11; Heb 4:12",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The human spirit is the lamp of the LORD that sheds light on one's inmost being.' Paul's 'who knows a person's thoughts except their own spirit within them?' and Hebrews' word-as-spirit-piercer both extend the Proverbs anthropology: human spirit as access-point for divine illumination."
+      }
+    ]
   },
   "vhl_groups": [
     {

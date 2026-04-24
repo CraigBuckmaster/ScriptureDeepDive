@@ -284,9 +284,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Instruction from a Mother to a King",
+          "score": 9
+        },
+        {
+          "label": "Wisdom and the Defense of the Poor",
+          "score": 9
+        },
+        {
+          "label": "Dangers of Royal Excess",
+          "score": 8
+        },
+        {
+          "label": "The Woman of Valour (Eshet Chayil)",
+          "score": 10
+        },
+        {
+          "label": "Charm is Deceptive, Fear of the LORD Endures",
+          "score": 10
+        },
+        {
+          "label": "Productive Household Stewardship",
+          "score": 9
+        }
+      ],
+      "note": "Proverbs 31 closes the book with 'the sayings of King Lemuel — an inspired utterance his mother taught him' (vv.1-9) followed by the acrostic poem on the 'woman of noble character' (eshet chayil, vv.10-31). The first section is the book's strongest critique of royal excess (wine, women, neglect of the poor) framed as a queen-mother's warning. The acrostic poem — 22 verses, one per Hebrew letter, A to Z — is the book's literary and theological capstone. Verse 30's 'charm is deceptive, and beauty is fleeting; but a woman who fears the LORD is to be praised' reprises Proverbs 1:7's opening axiom as the book's final word: the fear of the LORD is wisdom's beginning and wisdom's end."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 31:10-31",
+        "target": "Ruth 3:11",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'A wife of noble character (ʾeshet ḥayil) who can find?' The exact phrase is used of Ruth by Boaz: 'all my fellow townsmen know that you are a woman of noble character.' Proverbs 31 supplies the ideal portrait; Ruth supplies the concrete embodiment. In the Hebrew canonical order, the two books sit adjacent, reinforcing the connection."
+      },
+      {
+        "anchor": "Prov 31:20",
+        "target": "Matt 25:35-40",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'She opens her arms to the poor and extends her hands to the needy.' Jesus's sheep-and-goats inclusion of 'I was hungry and you gave me something to eat' as the criterion of judgment shares Proverbs 31's ethical paradigm: real righteousness is practically generous."
+      },
+      {
+        "anchor": "Prov 31:30",
+        "target": "1 Pet 3:3-5",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Charm is deceptive, and beauty is fleeting; but a woman who fears the LORD is to be praised.' Peter's 'your beauty should not come from outward adornment... rather, it should be that of your inner self' enacts this Proverbs principle of character-over-appearance in Christian community."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "אֵשֶׁת־חַיִל",
+        "tlit": "'eshet-ḥayil",
+        "gloss": "woman of valour / noble character",
+        "note": "v.10: 'an 'eshet-ḥayil who can find?' The phrase is military-vocabulary adapted: ḥayil is 'strength, valour, army.' The 'woman of valour' is not a domesticated ideal but a figure of concrete strength. The same phrase is applied to Ruth (Ruth 3:11) by Boaz. Jewish liturgy traditionally reads Proverbs 31 at the Friday-evening Sabbath table in honour of the wife."
+      },
+      {
+        "word": "יִרְאַת יְהוָה",
+        "tlit": "yirat YHWH",
+        "gloss": "fear of the LORD",
+        "note": "v.30: 'a woman who fears the LORD is to be praised.' The book's opening axiom (1:7) and closing verse (31:30) bracket Proverbs with the same phrase. The 'fear of the LORD' is simultaneously wisdom's beginning and wisdom's climax — not a stage passed through but the abiding posture that organises the whole moral life."
+      }
+    ]
   },
   "vhl_groups": [
     {

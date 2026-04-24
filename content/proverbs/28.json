@@ -272,9 +272,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "The Righteous as Bold as a Lion",
+          "score": 9
+        },
+        {
+          "label": "Confession and Concealment of Sin",
+          "score": 10
+        },
+        {
+          "label": "The Oppression of the Poor",
+          "score": 9
+        },
+        {
+          "label": "Riches Gained Unjustly",
+          "score": 8
+        },
+        {
+          "label": "Generosity to the Poor Brings Blessing",
+          "score": 8
+        },
+        {
+          "label": "Those Who Turn a Blind Eye Are Cursed",
+          "score": 8
+        }
+      ],
+      "note": "Proverbs 28 is the socio-political chapter of the final Solomonic collection. The opening saying ('the wicked flee though no one pursues, but the righteous are as bold as a lion,' v.1) establishes moral courage as character-fruit. Verse 13's 'whoever conceals their sins does not prosper, but the one who confesses and renounces them finds mercy' is one of the OT's clearest statements of the confession-forgiveness dynamic that John's first letter will carry into Christian pastoral theology (1 John 1:9). The chapter's sustained attention to the poor (vv.3, 6, 8, 11, 15, 27) makes it a key text for biblical social ethics."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 28:13",
+        "target": "1 John 1:9; Ps 32:1-5",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Whoever conceals their sins does not prosper, but the one who confesses and renounces them finds mercy.' John's 'if we confess our sins, he is faithful and just and will forgive us' and Ps 32's confession-produces-relief theology both build on this Proverbs insight."
+      },
+      {
+        "anchor": "Prov 28:1",
+        "target": "Heb 10:35-39",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The wicked flee though no one pursues, but the righteous are as bold as a lion.' Hebrews' 'do not throw away your confidence; it will be richly rewarded' carries forward this righteous-boldness theology."
+      },
+      {
+        "anchor": "Prov 28:27",
+        "target": "Matt 19:21; Luke 18:22",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Those who give to the poor will lack nothing, but those who close their eyes to them receive many curses.' Jesus's command to the rich young ruler ('sell what you possess and give to the poor, and you will have treasure in heaven') enacts this Proverbs economic theology."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "חֶמְדָּה",
+        "tlit": "ḥemdah",
+        "gloss": "desire / covetousness",
+        "note": "Implicit in v.16's 'a ruler who lacks judgment is a cruel oppressor, but one who hates ill-gotten gain enjoys long days.' The hemdah-word field overlaps with the tenth commandment's lo tachmod ('do not covet'). Proverbs treats ill-gotten-wealth desire as the opposite of covenant faithfulness — a heart posture that erodes reign and household alike."
+      },
+      {
+        "word": "תְּפִלָּה",
+        "tlit": "tefillah",
+        "gloss": "prayer",
+        "note": "v.9: 'whoever turns a deaf ear to the law, even his prayer (tefillah) is detestable.' The reciprocity principle: Yahweh's attention to prayer depends on the worshipper's attention to Yahweh's word. Tefillah is here contrasted with tora: ear closed to instruction makes prayer itself an abomination. One of the OT's strongest statements on prayer's ethical preconditions."
+      }
+    ]
   },
   "vhl_groups": [
     {

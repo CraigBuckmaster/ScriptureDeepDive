@@ -338,7 +338,30 @@
         }
       ],
       "note": "Proverbs 4 grounds wisdom instruction in genealogical tradition (three-generation chain), then presents wisdom's stakes through the two-paths metaphor (dawning light vs. deep darkness), then focuses the entire programme on its apex: guard your heart, for everything flows from it. The chapter's movement from historical (received wisdom) through cosmic (light/darkness) to anthropological (the heart) shows wisdom as simultaneously inherited, environmental, and deeply personal."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Prov 4:7",
+        "target": "1 Cor 1:30; Col 2:2-3",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The beginning of wisdom is this: Get wisdom.' Paul's assertion that 'Christ Jesus... has become for us wisdom from God' places the abstract wisdom-pursuit of Prov 4 in explicitly christological terms: to pursue wisdom is to pursue Christ."
+      },
+      {
+        "anchor": "Prov 4:18-19",
+        "target": "John 8:12; 1 John 2:9-11",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The path of the righteous is like the morning sun, shining ever brighter till the full light of day.' The light-vs-darkness ethical framework lands centrally in John's Gospel ('I am the light of the world') and Epistles. Proverbs' photographic-path imagery is one of the NT's consistent ethical-metaphor sources."
+      },
+      {
+        "anchor": "Prov 4:23",
+        "target": "Matt 15:19; Mark 7:21-23",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Above all else, guard your heart, for everything you do flows from it.' Jesus's 'from within, out of people's hearts, come evil thoughts' (Mark 7:21-23) is the explicit NT corollary: the heart is the operative source of conduct, so its protection is the primary ethical task."
+      }
+    ]
   },
   "vhl_groups": [
     {

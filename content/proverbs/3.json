@@ -215,7 +215,8 @@
           ]
         },
         "hist": {
-          "context": "None"
+          "historical": "The personification of Wisdom in Prov 3:13-18 stands in dialogue with ANE wisdom literature's own female-wisdom figures: the Egyptian Ma'at (order/truth personified), the Mesopotamian Nisaba (goddess of grain and writing), and later Hellenistic Sophia. Proverbs' literary strategy is to take the recognisable genre form — wisdom as a woman to be sought — and anchor it specifically in Yahweh's covenant-shaped world. The 'tree of life' metaphor in v.18 is the first post-Eden occurrence of that specific phrase; Proverbs uses it three more times (11:30; 13:12; 15:4) to mark speech and conduct that restore something of Eden's original fertility.",
+          "context": "The wisdom-as-tree-of-life image positions wisdom-pursuit as creation-restoration. Where the first tree-of-life was lost by disobedient taking (Gen 3), this tree-of-life is gained by wisdom's embrace. Proverbs 3 thus sits theologically between Eden lost and the Revelation 22 tree-of-life restored: a middle-state where embodied wisdom practice offers sacramental access to what the curse interrupted. The chapter's climax (vv.19-20) grounds this specifically in creation: 'by wisdom the LORD laid the earth's foundations' — the same wisdom sought by v.13 is the architectural principle of the cosmos."
         }
       }
     }
@@ -347,7 +348,37 @@
         }
       ],
       "note": "Proverbs 3 moves from the most personal command in the book (trust in the LORD with all your heart) through the most counter-intuitive (do not despise the LORD's discipline) to the most cosmic (by wisdom the LORD made the world) to the most concrete (do not withhold good from your neighbour). The chapter's arc shows that wisdom integrates the personal, theological, cosmological, and social into a single coherent orientation toward reality."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Prov 3:5-6",
+        "target": "Jer 17:5-8; Ps 1",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Trust in the LORD with all your heart and lean not on your own understanding.' The trust-vs-self-reliance binary is foundational to wisdom theology. Jeremiah 17:5-8 develops the same contrast in extended tree-by-water imagery; Ps 1 applies it to the righteous vs the wicked. The Proverbs axiom is the compact form of a broad canonical pattern."
+      },
+      {
+        "anchor": "Prov 3:11-12",
+        "target": "Heb 12:5-6; Rev 3:19",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'The LORD disciplines those he loves, as a father the son he delights in.' Hebrews quotes this verse in full (Heb 12:5-6) as the theological grounding for Christian endurance through suffering. Rev 3:19's 'those whom I love I rebuke and discipline' picks up the same line. Suffering-as-parental-love is Proverbs' contribution to NT theology of discipline."
+      },
+      {
+        "anchor": "Prov 3:19-20",
+        "target": "John 1:1-3; Col 1:16",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'By wisdom the LORD laid the earth's foundations.' The creation-by-wisdom theme feeds directly into John 1 ('all things were made through [the Logos]') and Col 1:16 ('all things were created through him'). The Wisdom/Logos/Christ identification in NT Christology is rooted in this Proverbs verse."
+      },
+      {
+        "anchor": "Prov 3:34",
+        "target": "Jas 4:6; 1 Pet 5:5",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'He mocks proud mockers but shows favor to the humble.' Quoted verbatim in both James and 1 Peter as the grounding for the NT's pride-vs-humility ethics. One of the most-cited Proverbs verses in the apostolic corpus."
+      }
+    ]
   },
   "vhl_groups": [
     {

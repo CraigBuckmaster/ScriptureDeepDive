@@ -356,7 +356,30 @@
         }
       ],
       "note": "Proverbs 19 applies the wisdom value-hierarchy to economic and social life: integrity consistently outranks wealth; generosity to the poor is a covenant transaction with God; patience in overlooking offense is gloriously noble; the LORD's purpose prevails over all human planning."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Prov 19:17",
+        "target": "Matt 25:40; Luke 6:38",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Whoever is kind to the poor lends to the LORD, and he will reward them for what they have done.' Jesus's 'whatever you did for one of the least of these... you did for me' is the explicit NT realisation of this lending-to-the-LORD theology."
+      },
+      {
+        "anchor": "Prov 19:21",
+        "target": "Acts 5:38-39; Rom 8:28",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Many are the plans in a person's heart, but it is the LORD's purpose that prevails.' Gamaliel's 'if their purpose is of human origin, it will fail; but if it is from God, you will not be able to stop these men' enacts the same theology of divine-purpose-overruling-human-planning."
+      },
+      {
+        "anchor": "Prov 19:11",
+        "target": "Matt 5:22-24; Col 3:12-13",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'A person's wisdom yields patience; it is to one's glory to overlook an offense.' Paul's 'bear with each other and forgive one another' and Jesus's reconciliation-before-offering instruction both build on this overlook-offense wisdom."
+      }
+    ]
   },
   "vhl_groups": [
     {

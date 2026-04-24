@@ -272,9 +272,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Hezekiah's Collectors Preserve Solomonic Wisdom",
+          "score": 8
+        },
+        {
+          "label": "The Glory of Kings is to Search Matters Out",
+          "score": 9
+        },
+        {
+          "label": "Taking the Lowest Seat",
+          "score": 9
+        },
+        {
+          "label": "Apples of Gold in Settings of Silver",
+          "score": 8
+        },
+        {
+          "label": "Coals of Fire on Your Enemy's Head",
+          "score": 10
+        },
+        {
+          "label": "Self-Control as Walled City",
+          "score": 8
+        }
+      ],
+      "note": "Proverbs 25's superscription ('these are more proverbs of Solomon, compiled by the men of Hezekiah king of Judah,' v.1) dates this collection's redaction to the late 8th century BCE — Hezekiah's scribal workshop (same era as Isaiah, Micah) preserving older Solomonic material. The chapter's most theologically famous verses — v.6-7 ('do not exalt yourself in the king's presence'), v.21-22 ('if your enemy is hungry, give him food; you will heap burning coals on his head') — are both directly cited by Jesus (Luke 14:7-11) and Paul (Rom 12:20). Hezekiah's editors assembled material the NT would eventually treasure."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 25:6-7",
+        "target": "Luke 14:7-11",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'Do not exalt yourself in the king's presence... it is better for him to say to you, Come up here, than for him to humiliate you before his nobles.' Jesus's parable of taking the lowest seat at the banquet ('when you are invited, take the lowest place, so that when your host comes, he will say, Friend, move up to a better place') is a direct narrative application of this proverb."
+      },
+      {
+        "anchor": "Prov 25:21-22",
+        "target": "Rom 12:20",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'If your enemy is hungry, give him food to eat; if he is thirsty, give him water to drink. In doing this, you will heap burning coals on his head.' Paul quotes this in full in Rom 12:20 as the grounding for the Christian enemy-love ethic. One of the most direct Proverbs-to-NT citations."
+      },
+      {
+        "anchor": "Prov 25:14",
+        "target": "Jude 12",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Like clouds and wind without rain is one who boasts of gifts never given.' Jude's 'clouds without rain, blown along by the wind' applies the exact Proverbs image to false teachers whose promises are theologically hollow."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "תַּפּוּחֵי זָהָב",
+        "tlit": "tappuḥei zahav",
+        "gloss": "apples of gold",
+        "note": "v.11: 'a word aptly spoken is like tappuḥei zahav in settings of silver.' The image is of finely-crafted metalwork — small golden ornaments set within silver filigree. The saying establishes well-timed speech as aesthetic achievement, not merely moral. Proverbs treats rhetorical craftsmanship as a form of wisdom's beauty."
+      },
+      {
+        "word": "גֶּחָלִים",
+        "tlit": "gechalim",
+        "gloss": "burning coals",
+        "note": "v.22: 'in doing this, you will heap burning coals on his head.' The image has been read various ways: (a) shame producing repentance (most common), (b) ANE ritual of public contrition carrying coals, (c) intensified divine judgment on one who receives kindness and remains unrepentant. Paul's citation in Rom 12:20 preserves the ambiguity."
+      }
+    ]
   },
   "vhl_groups": [
     {

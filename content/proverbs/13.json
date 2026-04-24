@@ -272,9 +272,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Receiving Correction as Wisdom",
+          "score": 10
+        },
+        {
+          "label": "Hope Deferred, Hope Fulfilled",
+          "score": 9
+        },
+        {
+          "label": "Parental Discipline as Love",
+          "score": 9
+        },
+        {
+          "label": "Companionship Shapes Character",
+          "score": 9
+        },
+        {
+          "label": "Wealth and Poverty in Wisdom's Light",
+          "score": 8
+        },
+        {
+          "label": "The Righteous Person's Lamp",
+          "score": 8
+        }
+      ],
+      "note": "Proverbs 13 focuses on formation through reception: a wise son heeds his father (v.1), hope deferred and hope fulfilled both shape the soul (v.12), and the rod-and-instruction pairing of parental discipline is the chapter's most famous saying ('whoever spares the rod hates their children,' v.24). The chapter's 'walk with the wise and become wise' (v.20) supplies the NT social ethic behind Paul's 'bad company corrupts good character' — moral formation happens relationally, not by isolated decision. The tree-of-life image reappears in v.12, knitting Prov 13 to chapters 3, 11, and 15's tree-of-life thread."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 13:12",
+        "target": "Rom 8:24-25; Heb 11:1",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Hope deferred makes the heart sick, but a longing fulfilled is a tree of life.' The psychology of long-term hope feeds directly into Paul's theology of patient waiting ('hope that is seen is no hope at all') and Hebrews' 'faith is confidence in what we hope for.'"
+      },
+      {
+        "anchor": "Prov 13:24",
+        "target": "Heb 12:5-11; Eph 6:4",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Whoever spares the rod hates their children, but the one who loves their children is careful to discipline them.' The parental-discipline-as-love theology feeds Hebrews' extensive development of God's discipline as paternal care, and Paul's 'fathers, do not exasperate your children... bring them up in the training and instruction of the Lord.'"
+      },
+      {
+        "anchor": "Prov 13:20",
+        "target": "1 Cor 15:33; 2 Cor 6:14",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Walk with the wise and become wise; for a companion of fools suffers harm.' Paul's 'bad company corrupts good character' (1 Cor 15:33, itself a quotation from Menander) and his 'do not be yoked together with unbelievers' apply the Proverbs companionship-ethics in Christian community."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "תִּקְוָה",
+        "tlit": "tiqvah",
+        "gloss": "hope / expectation",
+        "note": "v.12: 'hope deferred makes the heart sick.' Tiqvah is etymologically tied to the verb qavah ('to wait, to stretch out toward'). Biblical hope is not vague optimism but durable-waiting-oriented-toward-a-specific-future. The OT uses this word to ground eschatological expectation throughout Psalms and prophets."
+      },
+      {
+        "word": "נֵר",
+        "tlit": "ner",
+        "gloss": "lamp",
+        "note": "v.9: 'the light of the righteous shines brightly, but the lamp of the wicked is snuffed out.' Ner in Proverbs is the functional metaphor for a sustained moral life — cf. 20:27 ('the human spirit is the lamp of the LORD'). The lamp-imagery of wisdom tradition becomes the basis for NT applications (Matt 5:14-16; Rev 1:20)."
+      }
+    ]
   },
   "vhl_groups": [
     {

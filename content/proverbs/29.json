@@ -272,9 +272,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Stiff-necked Response to Rebuke",
+          "score": 9
+        },
+        {
+          "label": "The Righteous King and Social Stability",
+          "score": 9
+        },
+        {
+          "label": "Parental Discipline's Necessity",
+          "score": 9
+        },
+        {
+          "label": "Where There is No Prophetic Vision",
+          "score": 10
+        },
+        {
+          "label": "The Fear of Man as Snare",
+          "score": 9
+        },
+        {
+          "label": "Pride Brings Low, Humility Exalts",
+          "score": 8
+        }
+      ],
+      "note": "Proverbs 29 concludes the Hezekian-collected Solomonic sayings (chs.25-29). Verse 18's famous 'where there is no vision, the people perish' (KJV; more precisely, 'where there is no prophetic revelation, the people cast off restraint') makes the prophetic word the structural restraint on social disorder. The chapter's alternating rhythm of king-wisdom sayings (vv.2, 4, 12, 14, 26) and parental-discipline sayings (vv.15, 17, 19, 21) reinforces the book's consistent theme: good ordering in royal, domestic, and personal domains arises from the same wisdom-source. Verse 25's 'fear of man will prove to be a snare, but whoever trusts in the LORD is kept safe' is among Proverbs' most-cited pastoral verses."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 29:18",
+        "target": "1 Sam 3:1; Amos 8:11-12",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'Where there is no revelation (hazon), people cast off restraint.' The same word — hazon, prophetic vision — appears in 1 Sam 3:1 ('in those days the word of the LORD was rare; there were not many visions') and Amos 8:11-12's 'famine of hearing the words of the LORD.' Prophetic-word-absence as covenant-breakdown is the consistent OT pattern."
+      },
+      {
+        "anchor": "Prov 29:23",
+        "target": "Luke 14:11; 1 Pet 5:6",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Pride brings a person low, but the lowly in spirit gain honor.' Jesus's 'those who humble themselves will be exalted' and Peter's 'humble yourselves under God's mighty hand, that he may lift you up' both develop Proverbs' humility-precedes-honor axiom."
+      },
+      {
+        "anchor": "Prov 29:25",
+        "target": "Matt 10:28; Isa 41:10",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Fear of man will prove to be a snare, but whoever trusts in the LORD is kept safe.' Jesus's 'do not be afraid of those who kill the body but cannot kill the soul' and Isaiah's 'do not fear, for I am with you' both ground in this Proverbs fear-of-man-vs-trust-in-God opposition."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "חָזוֹן",
+        "tlit": "ḥazon",
+        "gloss": "prophetic vision / revelation",
+        "note": "v.18: 'where there is no ḥazon, the people perish.' Ḥazon is the specific word for authoritative prophetic revelation (1 Sam 3:1 — 'there was no widespread ḥazon'). The proverb claims prophetic revelation — not vision-as-aspiration — as the structural restraint against social disorder. A theological datum rather than a motivational slogan."
+      },
+      {
+        "word": "מוֹקֵשׁ",
+        "tlit": "moqesh",
+        "gloss": "snare / trap",
+        "note": "v.25: 'fear of man will prove to be a moqesh.' The word refers to a fowler's hidden trap — concealed until the bird is caught. Proverbs' diagnosis of people-pleasing anxiety is precise: what feels like prudent caution is in fact a concealed mechanism that captures and restricts. Jesus's 'whoever loses their life will preserve it' reverses the snare's logic."
+      }
+    ]
   },
   "vhl_groups": [
     {

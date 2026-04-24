@@ -278,9 +278,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Agur's Epistemic Humility",
+          "score": 10
+        },
+        {
+          "label": "Every Word of God is Flawless",
+          "score": 9
+        },
+        {
+          "label": "The Middle Way in Economics",
+          "score": 9
+        },
+        {
+          "label": "Four Small Things Exceedingly Wise",
+          "score": 8
+        },
+        {
+          "label": "The Mystery of Divine Sonship",
+          "score": 9
+        },
+        {
+          "label": "Nature's Wisdom-Lessons",
+          "score": 8
+        }
+      ],
+      "note": "Proverbs 30 is 'the words of Agur son of Jakeh' — a non-Israelite wisdom-figure whose oracle (massa) opens with striking epistemic humility ('I am the most ignorant of men; I do not have human understanding'). Verse 4's rhetorical questions ('who has gone up to heaven and come down? ... what is his name, and what is the name of his son?') are one of the OT's most theologically suggestive cryptic passages, read christologically by early Christian tradition. The 'neither poverty nor riches' prayer of vv.8-9 and the numerical sayings of vv.15-31 give the chapter a distinctive feel within the book — a wisdom-voice from outside the main Solomonic stream, canonically included as Yahweh-wisdom nonetheless."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 30:4",
+        "target": "John 3:13; Eph 4:9-10",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Who has gone up to heaven and come down? ... What is his name, and what is the name of his son? Surely you know!' Jesus's 'no one has ever gone into heaven except the one who came from heaven — the Son of Man' reads like direct answer to Agur's rhetorical question. The mention of God's son (Prov 30:4) is one of the OT's few pre-Davidic references to divine sonship."
+      },
+      {
+        "anchor": "Prov 30:5-6",
+        "target": "Deut 4:2; Rev 22:18-19",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'Every word of God is flawless... do not add to his words.' The prohibition on altering scripture echoes Deut 4:2 ('do not add to what I command you') and reappears at the canonical hinge of Rev 22:18-19. Proverbs' Agur teaches Scripture's self-protective textual doctrine."
+      },
+      {
+        "anchor": "Prov 30:8-9",
+        "target": "Matt 6:11; 1 Tim 6:8",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Give me neither poverty nor riches, but give me only my daily bread.' Jesus's Lord's Prayer ('give us this day our daily bread') and Paul's 'if we have food and clothing, we will be content with that' both develop Agur's middle-way economic theology."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "מַשָּׂא",
+        "tlit": "massa",
+        "gloss": "oracle / burden",
+        "note": "v.1: 'the words of Agur son of Jakeh — an oracle (massa).' Massa is the technical term for a prophetic oracle (used throughout Isaiah, e.g. massa of Babylon, Tyre). Its use here dignifies Agur's non-Israelite wisdom with prophetic-oracular authority. The word is load-bearing: these are not just opinions but prophetically-weighted speech."
+      },
+      {
+        "word": "אַל־תּוֹסֵף",
+        "tlit": "'al-tosef",
+        "gloss": "do not add",
+        "note": "v.6: 'do not add (al-tosef) to his words.' The prohibition preserves the canonical-closure principle of Deut 4:2 ('do not add to what I command you') and anticipates Rev 22:18-19. Agur's oracle contains Scripture's self-witness to its own textual integrity — a small but theologically consequential claim about revelation's canonical shape."
+      }
+    ]
   },
   "vhl_groups": [
     {

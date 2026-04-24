@@ -272,9 +272,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Wisdom Builds a House",
+          "score": 9
+        },
+        {
+          "label": "Rescuing Those Led to Slaughter",
+          "score": 10
+        },
+        {
+          "label": "Wisdom as Strength for Battle",
+          "score": 8
+        },
+        {
+          "label": "The Sluggard's Overgrown Field",
+          "score": 8
+        },
+        {
+          "label": "Partiality in Judgment Condemned",
+          "score": 9
+        },
+        {
+          "label": "Do Not Gloat When Your Enemy Falls",
+          "score": 9
+        }
+      ],
+      "note": "Proverbs 24 closes the 'Words of the Wise' section (vv.1-22) and adds 'more sayings of the wise' (vv.23-34). Verses 11-12's command to rescue those being led to death is one of the OT's strongest social-responsibility sayings — with the rhetorical challenge 'if you say, But we knew nothing about this, does not he who weighs the heart perceive it?' Verse 17's 'do not gloat when your enemy falls' preserves the counter-intuitive enemy-compassion ethic that Jesus and Paul carry into the Christian fold. The closing sluggard's-field vignette (vv.30-34) is one of Proverbs' most memorable extended images."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 24:11-12",
+        "target": "Jas 4:17",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Rescue those being led away to death; hold back those staggering toward slaughter. If you say, But we knew nothing about this — does not he who weighs the heart perceive it?' James's 'if anyone, then, knows the good they ought to do and doesn't do it, it is sin for them' is the NT's compact form of this Proverbs knowledge-responsibility axiom."
+      },
+      {
+        "anchor": "Prov 24:17-18",
+        "target": "Matt 5:43-48; Rom 12:20",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Do not gloat when your enemy falls; when they stumble, do not let your heart rejoice.' Paul's 'if your enemy is hungry, feed him' (Rom 12:20, itself a Proverbs 25:21-22 quotation) and Jesus's 'love your enemies' build on this enemy-compassion wisdom tradition."
+      },
+      {
+        "anchor": "Prov 24:23-25",
+        "target": "Jas 2:1-9",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Partiality in judging is not good.' James's extended critique of favoritism ('my brothers and sisters, believers in our glorious Lord Jesus Christ must not show favoritism') carries forward this Proverbs impartiality ethic into Christian community."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "תַּחְבֻּלוֹת",
+        "tlit": "tachbulot",
+        "gloss": "guidance / wise strategy",
+        "note": "v.6: 'with tachbulot you will wage war.' Originally a nautical term for steering-ropes (from chebel = rope), the word came to mean strategic counsel — the verbal guidance-ropes by which a course is set. Proverbs' application to both warfare (v.6) and life-direction (1:5) reflects the metaphor's versatility."
+      },
+      {
+        "word": "כֶּסֶל",
+        "tlit": "kesel",
+        "gloss": "confidence / foolish confidence",
+        "note": "v.23: 'to show partiality in judging is not good' (context-rich Heb). Related terms in Proverbs for misplaced confidence — kesel covers both legitimate trust and its distortion into foolish self-confidence. The Psalter uses kesel for false hope (Ps 49:13); Proverbs holds both senses in tension, tracking when confidence becomes folly."
+      }
+    ]
   },
   "vhl_groups": [
     {

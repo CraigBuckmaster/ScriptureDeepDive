@@ -337,7 +337,30 @@
         }
       ],
       "note": "Proverbs 10 launches the main collection with its governing antithesis — righteous vs. wicked — applied systematically to family, economics, and speech. The chapter's most concentrated theme is speech ethics: the mouth is the most direct instrument of wisdom or folly in daily communal life. The fear of the LORD that the prologue established as foundational reappears (v.27) as a practical proverb about the quality of life it produces."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Prov 10:12",
+        "target": "1 Pet 4:8; Jas 5:20",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'Hatred stirs up conflict, but love covers over all wrongs.' Quoted in Peter ('love covers over a multitude of sins') and echoed in James. Proverbs' aphoristic love-covers-wrongs formula becomes apostolic ethics of Christian community."
+      },
+      {
+        "anchor": "Prov 10:27",
+        "target": "Ps 34:12-14; 1 Pet 3:10-12",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The fear of the LORD adds length to life.' The long-life-for-fear-of-the-LORD formula threads through Ps 34 (quoted in full by Peter in 1 Pet 3:10-12) and establishes a consistent wisdom-psalmic line."
+      },
+      {
+        "anchor": "Prov 10:19",
+        "target": "Jas 3:1-12; Matt 12:36",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Sin is not ended by multiplying words, but the prudent hold their tongues.' James's extended teaching on the tongue in ch.3 and Jesus's 'everyone will have to give account for every empty word they have spoken' both sit inside this Proverbs tradition of speech-ethics."
+      }
+    ]
   },
   "vhl_groups": [
     {

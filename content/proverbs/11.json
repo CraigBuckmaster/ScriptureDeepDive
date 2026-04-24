@@ -272,9 +272,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Honesty vs. Deception in Commerce",
+          "score": 10
+        },
+        {
+          "label": "Integrity as Self-Guidance",
+          "score": 9
+        },
+        {
+          "label": "Generosity as Counter-Economic Wisdom",
+          "score": 9
+        },
+        {
+          "label": "Speech as Community Fabric",
+          "score": 8
+        },
+        {
+          "label": "Righteousness Shapes Cities",
+          "score": 8
+        },
+        {
+          "label": "Fruit of Righteousness is a Tree of Life",
+          "score": 9
+        }
+      ],
+      "note": "Proverbs 11 is the book's densest chapter on community ethics. The opening commercial-integrity saying ('the LORD detests dishonest scales, but accurate weights find favour with him,' v.1) sets the register: wisdom operates in the marketplace as much as in the schoolroom. The generosity paradox of vv.24-25 ('one person gives freely, yet gains even more') inverts ordinary economic logic: the giver prospers, the withholder shrinks. Verse 30's 'fruit of the righteous is a tree of life' connects the chapter's daily-ethics vision back to Eden and forward to the eschatological tree-of-life of Rev 22. Communal wisdom is covenant-creation continuing."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 11:1",
+        "target": "Lev 19:35-36; Mic 6:11; Amos 8:5-6",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'The LORD detests dishonest scales.' The commercial-ethics principle grounds in Leviticus's commands and resurfaces in the prophets' critiques of market fraud. Proverbs' aphoristic form condenses a broad OT tradition against false measures."
+      },
+      {
+        "anchor": "Prov 11:24-25",
+        "target": "2 Cor 9:6-11; Luke 6:38",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'One person gives freely, yet gains even more; another withholds unduly, but comes to poverty.' Paul's 'whoever sows generously will also reap generously' (2 Cor 9) and Jesus's 'give, and it will be given to you' (Luke 6) develop this generosity-produces-abundance theology directly from Proverbs."
+      },
+      {
+        "anchor": "Prov 11:30",
+        "target": "Dan 12:3; Matt 28:19",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The fruit of the righteous is a tree of life, and the one who is wise saves lives.' Daniel's 'those who lead many to righteousness will shine like stars' and Jesus's Great Commission's implied soul-winning agenda share Proverbs' wisdom-as-life-giving vision."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "צֶדֶק",
+        "tlit": "tsedek",
+        "gloss": "righteousness",
+        "note": "The keyword of Proverbs 11 (appearing 8 times). Tsedek is not merely ethical rectitude but the right-ordering of relationships — with God, neighbour, and commerce. Verse 4's 'righteousness delivers from death' frames tsedek as soteriologically efficacious, not merely moral. The theology will culminate in the NT's declaration that Christ is our righteousness (1 Cor 1:30)."
+      },
+      {
+        "word": "תּוֹעֵבָה",
+        "tlit": "to'evah",
+        "gloss": "abomination",
+        "note": "v.1's 'dishonest scales are an abomination to the LORD.' To'evah is Proverbs' strongest ethical verdict — commercial fraud, sexual immorality, and perverted speech are all labeled this way. The word's use in Leviticus for ritual abomination is extended into ethical abomination: integrity of weights is as covenantally serious as integrity of worship."
+      }
+    ]
   },
   "vhl_groups": [
     {

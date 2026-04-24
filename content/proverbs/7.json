@@ -282,9 +282,77 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "The Anatomy of Temptation",
+          "score": 10
+        },
+        {
+          "label": "Seductive Speech vs. Father's Wisdom",
+          "score": 9
+        },
+        {
+          "label": "Watchfulness as Parental Task",
+          "score": 8
+        },
+        {
+          "label": "The Simple Young Man's Vulnerability",
+          "score": 8
+        },
+        {
+          "label": "Folly as Bait for the Unprepared",
+          "score": 9
+        },
+        {
+          "label": "Sexual Sin as Slaughter Pattern",
+          "score": 9
+        }
+      ],
+      "note": "Proverbs 7 is the book's most sustained narrative exposition of temptation. The chapter unfolds as observation-through-a-lattice (vv.6-7): the father watches a young simpleton drift toward the adulteress's house at twilight. The seductive speech of vv.14-20 is cast in full — religious-credibility ('I have fellowship offerings at home'), presence-availability ('her husband is not at home'), emotional flattery — and the chapter ends with the outcome: 'like an ox going to slaughter... little knowing it will cost him his life.' The chapter is structurally the foil to chapter 8's Lady Wisdom: temptation's script vs. wisdom's invitation, both addressed to the same 'simple ones.'"
+    },
+    "thread": [
+      {
+        "anchor": "Prov 7:6-27",
+        "target": "Rev 17-18",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "The extended portrayal of the seductive strange woman (dressed like a prostitute, with crafty intent, leading the simple to slaughter) feeds into Revelation's 'Babylon the great, the mother of prostitutes' imagery. The personification of spiritual unfaithfulness as female seduction has Proverbs as its OT source-text."
+      },
+      {
+        "anchor": "Prov 7:2-3",
+        "target": "Matt 22:37-38; Deut 6:6-9",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'Keep my commands and you will live... bind them on your fingers, write them on the tablet of your heart.' Echoes the Shema's instruction (Deut 6:6-9) and anticipates Jesus's 'greatest commandment' centrality of covenant love. Wisdom and law are inseparable in OT theology."
+      },
+      {
+        "anchor": "Prov 7:22-23",
+        "target": "Rom 6:23; Jas 1:15",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Like an ox going to the slaughter... little knowing it will cost him his life.' The sin-leads-to-death logic is Pauline in sensibility: 'sin... when it is full-grown, gives birth to death' (Jas 1:15); 'the wages of sin is death' (Rom 6:23)."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "זָרָה",
+        "tlit": "zarah",
+        "gloss": "strange / foreign (woman)",
+        "note": "Proverbs 7's 'strange woman' (zarah, v.5) is the book's recurring designation for the adulteress — 'strange' not ethnically but covenantally. She stands outside the covenant marriage bond. The term is deliberate theological shorthand for sexual immorality as covenant-exteriority, and Proverbs uses it parallel to nokriyah ('foreigner') to emphasise the stranger-to-covenant dimension."
+      },
+      {
+        "word": "פִּתִי",
+        "tlit": "peti",
+        "gloss": "simple / naive",
+        "note": "The 'simple' young man of v.7 — not stupid, but morally unformed, lacking protective discernment. Proverbs uses peti consistently for those not yet committed to wisdom or folly. The chapter's whole dramatic force depends on this liminal identity: the simple one at the crossroads is still capable of going either way."
+      },
+      {
+        "word": "שְׁאוֹל",
+        "tlit": "she'ol",
+        "gloss": "Sheol / the grave",
+        "note": "v.27: 'her house is a highway to Sheol, leading down to the chambers of death.' The adulteress's house is architecturally mapped onto the realm of the dead. Sheol in Proverbs is the destination of folly's paths; wisdom's paths, by contrast, are tree-of-life-ward. The chapter's spatial theology is stark."
+      }
+    ]
   },
   "vhl_groups": [
     {

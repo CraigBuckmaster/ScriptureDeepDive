@@ -601,7 +601,30 @@
         }
       ],
       "note": "Proverbs 1 establishes the book's entire epistemological and pedagogical framework. The fear of the LORD is the thesis; Lady Wisdom's public address is the first application; the sinners' enticement is the first counter-example. The chapter trains the reader to see two competing voices — Wisdom urgent and public, folly attractive and deadly — and to choose."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Prov 1:7",
+        "target": "Ps 111:10; Job 28:28",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'The fear of the LORD is the beginning of knowledge.' Proverbs' foundational axiom sits in a wisdom-tradition cluster: Ps 111:10 ('the fear of the LORD is the beginning of wisdom') and Job 28:28 ('the fear of the Lord — that is wisdom'). The three texts form the OT's wisdom-epistemology triad: covenant reverence is the doorway to genuine knowledge."
+      },
+      {
+        "anchor": "Prov 1:20-33",
+        "target": "Luke 11:49-51; Matt 23:34-36",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "Lady Wisdom's prophetic voice ('how long will you simple ones love your simple ways?') is picked up by Jesus in Luke 11:49: 'the Wisdom of God said, I will send them prophets and apostles, some of whom they will kill and others they will persecute.' Jesus speaks as/with Wisdom, assuming the prophetic posture of Prov 1's personified Sophia."
+      },
+      {
+        "anchor": "Prov 1:24-27",
+        "target": "Heb 12:25-29",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "Wisdom's warning of the scoffers' inevitable disaster — 'I in turn will laugh when disaster strikes you' — feeds Hebrews' theology of the God 'who speaks' whom the hearers 'must not refuse.' The Wisdom-rejection pattern is structurally identical in both texts: refusal of the speaker brings unavoidable consequence."
+      }
+    ]
   },
   "vhl_groups": [
     {
