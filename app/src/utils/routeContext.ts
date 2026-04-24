@@ -14,6 +14,8 @@
  */
 
 import type { ChipContext } from '../hooks/useAmicusChips';
+import type { AmicusGuidedStudyContext } from '../services/amicus/context';
+import type { GuidedStudyStep } from '../types';
 
 /**
  * Minimal shape of a React Navigation route sufficient for our traversal.
@@ -64,8 +66,15 @@ export function routeToChipContext(route: MinimalRoute | null): ChipContext {
   switch (route.name) {
     case 'Chapter': {
       const bookId = typeof params.bookId === 'string' ? params.bookId : undefined;
-      const chapterNum =
-        typeof params.chapterNum === 'number' ? params.chapterNum : undefined;
+      const chapterNum = typeof params.chapterNum === 'number' ? params.chapterNum : undefined;
+      if (bookId && chapterNum) {
+        return { kind: 'chapter', bookId, chapterNum };
+      }
+      return { kind: 'none' };
+    }
+    case 'StudySession': {
+      const bookId = typeof params.bookId === 'string' ? params.bookId : undefined;
+      const chapterNum = typeof params.chapterNum === 'number' ? params.chapterNum : undefined;
       if (bookId && chapterNum) {
         return { kind: 'chapter', bookId, chapterNum };
       }
@@ -83,5 +92,26 @@ export function routeToChipContext(route: MinimalRoute | null): ChipContext {
       return { kind: 'none' };
     default:
       return { kind: 'none' };
+  }
+}
+
+export function routeToAmicusGuidedStudyContext(
+  route: MinimalRoute | null,
+): AmicusGuidedStudyContext | null {
+  if (!route) return null;
+  const params = (route.params ?? {}) as Record<string, unknown>;
+  switch (route.name) {
+    case 'StudySession':
+      return {
+        entryPoint: 'guided_study',
+        guidedStudyStep:
+          typeof params.initialStep === 'string' ? (params.initialStep as GuidedStudyStep) : null,
+      };
+    case 'MyStudy':
+      return {
+        entryPoint: 'my_study',
+      };
+    default:
+      return null;
   }
 }

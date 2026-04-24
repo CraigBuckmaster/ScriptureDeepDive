@@ -5,6 +5,7 @@
  * via getUserDb().
  */
 
+import { serializeAmicusChapterRef, type AmicusEntryPoint } from '../services/amicus/context';
 import { emitAmicusUsageChanged } from '../services/amicus/usageEvents';
 import { logger } from '../utils/logger';
 import { nextIntervalAfter } from '../services/guidedStudy/review';
@@ -452,6 +453,17 @@ export async function resolveGuidedStudyQuestion(id: number): Promise<void> {
   );
 }
 
+export async function reopenGuidedStudyQuestion(id: number): Promise<void> {
+  await getUserDb().runAsync(
+    `UPDATE guided_study_questions
+     SET status = 'open',
+         resolved_at = NULL,
+         updated_at = datetime('now')
+     WHERE id = ?`,
+    [id],
+  );
+}
+
 export async function createGuidedReviewItems(
   sessionId: number,
   chapterId: string,
@@ -593,6 +605,7 @@ export async function resetToNewUser(): Promise<void> {
   await db.runAsync('DELETE FROM reading_progress');
   await db.runAsync('DELETE FROM concept_encounters');
   await db.runAsync('DELETE FROM guided_review_items');
+  await db.runAsync('DELETE FROM amicus_thread_context');
   await db.runAsync('DELETE FROM guided_study_questions');
   await db.runAsync('DELETE FROM guided_study_synthesis');
   await db.runAsync('DELETE FROM guided_study_responses');
@@ -620,9 +633,46 @@ export async function createAmicusThread(args: CreateAmicusThreadArgs): Promise<
   await getUserDb().runAsync(
     `INSERT INTO amicus_threads (thread_id, title, chapter_ref)
      VALUES (?, ?, ?)`,
-    [args.threadId, args.title, args.chapterRef ?? null],
+    [args.threadId, args.title, serializeAmicusChapterRef(args.chapterRef)],
   );
   logger.info('Amicus', `created thread ${args.threadId}`);
+}
+
+export interface UpsertAmicusThreadContextArgs {
+  threadId: string;
+  entryPoint: AmicusEntryPoint;
+  guidedSessionId?: number | null;
+  guidedStep?: GuidedStudyStep | null;
+  openQuestionId?: number | null;
+  takeaway?: string | null;
+  keyConnection?: string | null;
+}
+
+export async function upsertAmicusThreadContext(
+  args: UpsertAmicusThreadContextArgs,
+): Promise<void> {
+  await getUserDb().runAsync(
+    `INSERT INTO amicus_thread_context
+       (thread_id, entry_point, guided_session_id, guided_step, open_question_id, takeaway, key_connection, updated_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, datetime('now'))
+     ON CONFLICT(thread_id) DO UPDATE SET
+       entry_point = excluded.entry_point,
+       guided_session_id = excluded.guided_session_id,
+       guided_step = excluded.guided_step,
+       open_question_id = excluded.open_question_id,
+       takeaway = excluded.takeaway,
+       key_connection = excluded.key_connection,
+       updated_at = excluded.updated_at`,
+    [
+      args.threadId,
+      args.entryPoint,
+      args.guidedSessionId ?? null,
+      args.guidedStep ?? null,
+      args.openQuestionId ?? null,
+      args.takeaway?.trim() || null,
+      args.keyConnection?.trim() || null,
+    ],
+  );
 }
 
 export interface AppendAmicusMessageArgs {
@@ -671,6 +721,26 @@ export async function updateThreadTitle(threadId: string, title: string): Promis
   ]);
 }
 
+export interface UpsertAmicusThreadSummaryArgs {
+  threadId: string;
+  summaryText: string;
+  lastUserIntent?: string | null;
+}
+
+export async function upsertAmicusThreadSummary(
+  args: UpsertAmicusThreadSummaryArgs,
+): Promise<void> {
+  await getUserDb().runAsync(
+    `INSERT INTO amicus_thread_summaries (thread_id, summary_text, last_user_intent, updated_at)
+     VALUES (?, ?, ?, datetime('now'))
+     ON CONFLICT(thread_id) DO UPDATE SET
+       summary_text = excluded.summary_text,
+       last_user_intent = excluded.last_user_intent,
+       updated_at = excluded.updated_at`,
+    [args.threadId, args.summaryText, args.lastUserIntent ?? null],
+  );
+}
+
 export async function toggleThreadPin(threadId: string): Promise<boolean> {
   const db = getUserDb();
   const row = await db.getFirstAsync<{ pinned: number }>(
@@ -684,8 +754,11 @@ export async function toggleThreadPin(threadId: string): Promise<boolean> {
 }
 
 export async function deleteAmicusThread(threadId: string): Promise<void> {
-  // CASCADE handles amicus_messages.
-  await getUserDb().runAsync('DELETE FROM amicus_threads WHERE thread_id = ?', [threadId]);
+  const db = getUserDb();
+  await db.withTransactionAsync(async () => {
+    await db.runAsync('DELETE FROM amicus_thread_context WHERE thread_id = ?', [threadId]);
+    await db.runAsync('DELETE FROM amicus_threads WHERE thread_id = ?', [threadId]);
+  });
   logger.info('Amicus', `deleted thread ${threadId}`);
 }
 
@@ -693,6 +766,7 @@ export async function clearAllAmicusData(): Promise<void> {
   const db = getUserDb();
   await db.withTransactionAsync(async () => {
     await db.runAsync('DELETE FROM amicus_messages');
+    await db.runAsync('DELETE FROM amicus_thread_context');
     await db.runAsync('DELETE FROM amicus_threads');
     await db.runAsync('DELETE FROM amicus_usage');
   });

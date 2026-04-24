@@ -3,9 +3,7 @@
  */
 import { getMockUserDb, resetMockUserDb } from '../../helpers/mockUserDb';
 
-jest.mock('@/db/userDatabase', () =>
-  require('../../helpers/mockUserDb').mockUserDatabaseModule(),
-);
+jest.mock('@/db/userDatabase', () => require('../../helpers/mockUserDb').mockUserDatabaseModule());
 
 import {
   appendAmicusMessage,
@@ -15,6 +13,8 @@ import {
   incrementAmicusUsage,
   toggleThreadPin,
   updateThreadTitle,
+  upsertAmicusThreadContext,
+  upsertAmicusThreadSummary,
 } from '@/db/userMutations';
 
 beforeEach(() => {
@@ -31,7 +31,7 @@ describe('createAmicusThread', () => {
     const mock = getMockUserDb();
     const [sql, bindings] = mock.runAsync.mock.calls[0]!;
     expect(String(sql)).toMatch(/INSERT INTO amicus_threads/);
-    expect(bindings).toEqual(['t-1', 'First', 'romans:9']);
+    expect(bindings).toEqual(['t-1', 'First', 'romans/9']);
   });
 
   it('defaults chapterRef to null', async () => {
@@ -63,9 +63,7 @@ describe('appendAmicusMessage', () => {
       threadId: 't1',
       role: 'assistant',
       content: 'answer',
-      citations: [
-        { chunk_id: 'c:1', source_type: 'section_panel', display_label: 'Calvin' },
-      ],
+      citations: [{ chunk_id: 'c:1', source_type: 'section_panel', display_label: 'Calvin' }],
       followUps: ['follow-up 1'],
     });
     const [, bindings] = getMockUserDb().runAsync.mock.calls[0]!;
@@ -80,6 +78,46 @@ describe('updateThreadTitle', () => {
     const [sql, bindings] = getMockUserDb().runAsync.mock.calls[0]!;
     expect(String(sql)).toMatch(/UPDATE amicus_threads/);
     expect(bindings).toEqual(['New title', 't1']);
+  });
+});
+
+describe('upsertAmicusThreadSummary', () => {
+  it('upserts summary text and last user intent', async () => {
+    await upsertAmicusThreadSummary({
+      threadId: 't1',
+      summaryText: 'Overview of Genesis 1.',
+      lastUserIntent: 'Explain this chapter',
+    });
+    const [sql, bindings] = getMockUserDb().runAsync.mock.calls[0]!;
+    expect(String(sql)).toMatch(/INSERT INTO amicus_thread_summaries/);
+    expect(String(sql)).toMatch(/ON CONFLICT\(thread_id\) DO UPDATE/);
+    expect(bindings).toEqual(['t1', 'Overview of Genesis 1.', 'Explain this chapter']);
+  });
+});
+
+describe('upsertAmicusThreadContext', () => {
+  it('upserts guided study context for a thread', async () => {
+    await upsertAmicusThreadContext({
+      threadId: 't1',
+      entryPoint: 'guided_study',
+      guidedSessionId: 14,
+      guidedStep: 'synthesize',
+      openQuestionId: 9,
+      takeaway: 'Creation is ordered.',
+      keyConnection: 'John 1',
+    });
+    const [sql, bindings] = getMockUserDb().runAsync.mock.calls[0]!;
+    expect(String(sql)).toMatch(/INSERT INTO amicus_thread_context/);
+    expect(String(sql)).toMatch(/ON CONFLICT\(thread_id\) DO UPDATE/);
+    expect(bindings).toEqual([
+      't1',
+      'guided_study',
+      14,
+      'synthesize',
+      9,
+      'Creation is ordered.',
+      'John 1',
+    ]);
   });
 });
 
@@ -108,10 +146,11 @@ describe('toggleThreadPin', () => {
 });
 
 describe('deleteAmicusThread', () => {
-  it('issues DELETE on thread_id (CASCADE handles messages)', async () => {
+  it('clears thread context before deleting the thread', async () => {
     await deleteAmicusThread('t1');
-    const [sql] = getMockUserDb().runAsync.mock.calls[0]!;
-    expect(String(sql)).toMatch(/DELETE FROM amicus_threads/);
+    const sqls = getMockUserDb().runAsync.mock.calls.map((call: unknown[]) => String(call[0]));
+    expect(sqls[0]).toMatch(/DELETE FROM amicus_thread_context/);
+    expect(sqls[1]).toMatch(/DELETE FROM amicus_threads/);
   });
 });
 
@@ -124,6 +163,7 @@ describe('clearAllAmicusData', () => {
     expect(sqls).toEqual(
       expect.arrayContaining([
         expect.stringMatching(/DELETE FROM amicus_messages/),
+        expect.stringMatching(/DELETE FROM amicus_thread_context/),
         expect.stringMatching(/DELETE FROM amicus_threads/),
         expect.stringMatching(/DELETE FROM amicus_usage/),
       ]),

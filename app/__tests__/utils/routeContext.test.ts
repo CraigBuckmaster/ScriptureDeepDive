@@ -11,6 +11,7 @@
 
 import {
   findDeepestRoute,
+  routeToAmicusGuidedStudyContext,
   routeToChipContext,
   type MinimalRoute,
 } from '@/utils/routeContext';
@@ -166,6 +167,20 @@ describe('routeToChipContext', () => {
     });
   });
 
+  describe('StudySession route', () => {
+    it('maps a valid StudySession route to chapter context', () => {
+      const route: MinimalRoute = {
+        name: 'StudySession',
+        params: { bookId: 'genesis', chapterNum: 1 },
+      };
+      expect(routeToChipContext(route)).toEqual({
+        kind: 'chapter',
+        bookId: 'genesis',
+        chapterNum: 1,
+      });
+    });
+  });
+
   describe('PersonDetail route', () => {
     it('maps a valid PersonDetail route to person context', () => {
       const route: MinimalRoute = {
@@ -208,5 +223,28 @@ describe('routeToChipContext', () => {
       const route: MinimalRoute = { name: 'DebateDetail', params: {} };
       expect(routeToChipContext(route)).toEqual({ kind: 'none' });
     });
+  });
+});
+
+describe('routeToAmicusGuidedStudyContext', () => {
+  it('returns guided-study entry info for StudySession', () => {
+    const route: MinimalRoute = {
+      name: 'StudySession',
+      params: { initialStep: 'synthesize' },
+    };
+    expect(routeToAmicusGuidedStudyContext(route)).toEqual({
+      entryPoint: 'guided_study',
+      guidedStudyStep: 'synthesize',
+    });
+  });
+
+  it('returns my-study entry info for MyStudy', () => {
+    expect(routeToAmicusGuidedStudyContext({ name: 'MyStudy' })).toEqual({
+      entryPoint: 'my_study',
+    });
+  });
+
+  it('returns null for unrelated routes', () => {
+    expect(routeToAmicusGuidedStudyContext({ name: 'Chapter' })).toBeNull();
   });
 });

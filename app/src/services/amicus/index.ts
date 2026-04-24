@@ -7,6 +7,27 @@
  */
 export { retrieve } from './retrieval';
 export type { RetrievalResult, RetrieveOptions } from './retrieval';
+export {
+  buildAmicusContextEnvelope,
+  chapterRefFromChipContext,
+  formatAmicusContextLabel,
+  normalizeChapterRef,
+  prettyBookId,
+  serializeAmicusChapterRef,
+} from './context';
+export { buildStudyActionSeeds } from './studyActions';
+export { launchAmicusStudyThread, promotePeekToAmicusThread } from './studyLaunch';
+export {
+  deriveThreadIntelligence,
+  shouldAutoRenameThread,
+  summarizeLinkedQuestionState,
+} from './threadIntelligence';
+export { formatTrustStanceLabel, summarizeAmicusTrust } from './trust';
+export type { AmicusContextEnvelope, AmicusEntryPoint, AmicusGuidedStudyContext } from './context';
+export type { AmicusStudyActionKey, AmicusStudyActionSeed } from './studyActions';
+export type { LaunchAmicusStudyThreadInput, PromotePeekToStudyThreadInput } from './studyLaunch';
+export type { DerivedThreadIntelligence } from './threadIntelligence';
+export type { AmicusTrustStance, AmicusTrustSummary } from './trust';
 export { AmicusError } from './types';
 export type {
   AmicusErrorCode,

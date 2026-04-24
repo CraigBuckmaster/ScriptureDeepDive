@@ -39,4 +39,18 @@ describe('userDatabase V3 migration', () => {
     expect(migrationSql).toContain('CREATE TABLE IF NOT EXISTS guided_study_questions');
     expect(migrationSql).toContain('INSERT OR IGNORE INTO guided_study_questions');
   });
+
+  it('adds Amicus thread context migration SQL', async () => {
+    jest.doMock('react-native', () => ({ Platform: { OS: 'ios' } }));
+    const userDatabase = require('@/db/userDatabase');
+
+    await userDatabase.initUserDatabase();
+
+    const migrationSql = mockExecAsync.mock.calls
+      .map(([sql]: [string]) => sql)
+      .find((sql) => sql.includes('CREATE TABLE IF NOT EXISTS amicus_thread_context'));
+
+    expect(migrationSql).toContain('CREATE TABLE IF NOT EXISTS amicus_thread_context');
+    expect(migrationSql).toContain('open_question_id INTEGER UNIQUE');
+  });
 });
