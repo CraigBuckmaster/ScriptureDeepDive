@@ -6,7 +6,7 @@
  */
 
 import { logger } from '../utils/logger';
-import { getNextReviewIntervalDays } from '../services/guidedStudy/review';
+import { nextIntervalAfter } from '../services/guidedStudy/review';
 import type { GuidedStudyStep } from '../types';
 import { getUserDb } from './userDatabase';
 import type { ReadingPlan } from './userQueries';
@@ -482,7 +482,7 @@ export async function completeGuidedReviewItem(id: number): Promise<void> {
   }>('SELECT * FROM guided_review_items WHERE id = ?', [id]);
   if (!item || item.status !== 'due') return;
 
-  const nextIntervalDays = getNextReviewIntervalDays(item.interval_days);
+  const nextIntervalDays = nextIntervalAfter(item.interval_days);
   await db.withTransactionAsync(async () => {
     await db.runAsync(
       `UPDATE guided_review_items
