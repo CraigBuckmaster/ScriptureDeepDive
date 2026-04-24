@@ -14,6 +14,44 @@ export const GUIDED_STUDY_STEP_LABELS: Record<GuidedStudyStep, string> = {
   review: 'Review',
 };
 
+export const GUIDED_STUDY_MODES = ['quick', 'deep', 'teaching', 'devotional'] as const;
+
+export type GuidedStudyMode = (typeof GUIDED_STUDY_MODES)[number];
+
+export interface GuidedStudyModeOption {
+  key: GuidedStudyMode;
+  label: string;
+  estimate: string;
+  description: string;
+}
+
+export const GUIDED_STUDY_MODE_OPTIONS: GuidedStudyModeOption[] = [
+  {
+    key: 'quick',
+    label: 'Quick pass',
+    estimate: '8-10 min',
+    description: 'Context, one key observation, and a short takeaway.',
+  },
+  {
+    key: 'deep',
+    label: 'Deep study',
+    estimate: '20-30 min',
+    description: 'A fuller trail through context, language, Scripture, and debate.',
+  },
+  {
+    key: 'teaching',
+    label: 'Teaching prep',
+    estimate: '25 min',
+    description: 'Structure, claims, and what someone else will need clarified.',
+  },
+  {
+    key: 'devotional',
+    label: 'Devotional',
+    estimate: '12 min',
+    description: 'Observe the text carefully before moving toward prayerful response.',
+  },
+];
+
 export interface StudyDepthEstimate {
   readMin: number;
   guidedMin: number;
@@ -41,6 +79,16 @@ export interface GuidedPanelRecommendation {
   confidence?: ConfidenceLevel;
 }
 
+export interface GuidedEvidenceTrailItem {
+  key: string;
+  title: string;
+  subtitle: string;
+  panelType: string;
+  sectionNum?: number;
+  badge: 'Required' | 'Helpful' | 'Optional' | 'Debated';
+  confidence?: ConfidenceLevel;
+}
+
 export interface GuidedConceptChip {
   id: string;
   label: string;
@@ -49,9 +97,13 @@ export interface GuidedConceptChip {
 export interface GuidedStudyPlan {
   chapterId: string;
   title: string;
+  mode: GuidedStudyMode;
+  modeLabel: string;
   sceneRows: GuidedSceneRow[];
   prompts: GuidedPrompt[];
   recommendations: GuidedPanelRecommendation[];
+  evidenceTrail: GuidedEvidenceTrailItem[];
+  betterQuestionPrompt: string;
   conceptChips: GuidedConceptChip[];
 }
 
@@ -62,4 +114,5 @@ export interface GuidedStudyPlanInput {
   chapterPanels: ChapterPanel[];
   verses: Verse[];
   bookIntro?: ParsedBookIntro | null;
+  mode?: GuidedStudyMode;
 }

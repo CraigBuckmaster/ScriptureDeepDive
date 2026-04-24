@@ -18,6 +18,14 @@ import {
 } from '@react-navigation/native';
 import { ArrowLeft, MessageSquare } from 'lucide-react-native';
 import {
+  EvidenceTrailRow,
+  PanelRecommendationRow,
+  StudyModeSelector,
+  StudySessionStepper,
+} from '../components/guidedStudy';
+import { UpgradePrompt } from '../components/UpgradePrompt';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+import {
   getBook,
   getBookIntro,
   getChapter,
@@ -27,16 +35,11 @@ import {
   getVerses,
 } from '../db/content';
 import { useGuidedStudySession, usePremium } from '../hooks';
+import { buildGuidedStudyPlan, type GuidedStudyMode, type GuidedStudyStep } from '../services/guidedStudy';
 import { useSettingsStore } from '../stores';
-import type { Book, Chapter, ChapterPanel, Section, SectionPanel, Verse } from '../types';
-import type { ParsedBookIntro } from '../types';
-import type { GuidedStudyStep } from '../services/guidedStudy';
-import { buildGuidedStudyPlan } from '../services/guidedStudy';
-import { PanelRecommendationRow, StudySessionStepper } from '../components/guidedStudy';
-import { UpgradePrompt } from '../components/UpgradePrompt';
-import { safeParse } from '../utils/logger';
 import { fontFamily, radii, spacing, useTheme } from '../theme';
-import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+import type { Book, Chapter, ChapterPanel, ParsedBookIntro, Section, SectionPanel, Verse } from '../types';
+import { safeParse } from '../utils/logger';
 
 interface RouteParams {
   bookId: string;
@@ -68,6 +71,7 @@ function StudySessionScreen() {
   const [responseDrafts, setResponseDrafts] = useState<Record<string, string>>({});
   const [synthesisDraft, setSynthesisDraft] = useState(session.synthesis);
   const [reviewSaved, setReviewSaved] = useState(false);
+  const [studyMode, setStudyMode] = useState<GuidedStudyMode>('deep');
 
   useEffect(() => {
     let cancelled = false;
@@ -125,8 +129,16 @@ function StudySessionScreen() {
 
   const plan = useMemo(() => {
     if (!chapter) return null;
-    return buildGuidedStudyPlan({ book, chapter, sections, chapterPanels, verses, bookIntro });
-  }, [book, chapter, sections, chapterPanels, verses, bookIntro]);
+    return buildGuidedStudyPlan({
+      book,
+      chapter,
+      sections,
+      chapterPanels,
+      verses,
+      bookIntro,
+      mode: studyMode,
+    });
+  }, [book, chapter, sections, chapterPanels, verses, bookIntro, studyMode]);
 
   const savePromptDrafts = useCallback(async () => {
     if (!plan) return;
@@ -164,10 +176,7 @@ function StudySessionScreen() {
     }
     await session.saveSynthesis(synthesisDraft);
     const ref = `${book?.name ?? bookId} ${chapterNum}`;
-    // Cap each field so the seed query doesn't blow past Amicus's length
-    // limit on long syntheses and renders reasonably in the peek sheet.
-    const clip = (s: string, n = 200) =>
-      s.length > n ? `${s.slice(0, n - 1).trimEnd()}\u2026` : s;
+    const clip = (s: string, n = 200) => (s.length > n ? `${s.slice(0, n - 3).trimEnd()}...` : s);
     const seedQuery =
       `Help me refine my study synthesis for ${ref}. ` +
       `Takeaway: ${clip(synthesisDraft.takeaway)}. ` +
@@ -209,13 +218,12 @@ function StudySessionScreen() {
         <TouchableOpacity onPress={() => navigation.goBack()} accessibilityLabel="Back">
           <ArrowLeft size={20} color={base.gold} />
         </TouchableOpacity>
-        <Text style={[styles.navTitle, { color: base.text }]}>
-          Study {book?.name ?? bookId} {chapterNum}
-        </Text>
+        <Text style={[styles.navTitle, { color: base.text }]}>Study {book?.name ?? bookId} {chapterNum}</Text>
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
         <StudySessionStepper activeStep={session.currentStep} onSelect={goStep} />
+        <StudyModeSelector value={studyMode} onChange={setStudyMode} />
 
         {session.currentStep === 'scene' && (
           <View style={styles.section}>
@@ -260,17 +268,40 @@ function StudySessionScreen() {
 
         {session.currentStep === 'explore' && (
           <View style={styles.section}>
-            <Text style={[styles.heading, { color: base.text }]}>Recommended next</Text>
+            <Text style={[styles.heading, { color: base.text }]}>Evidence Trail</Text>
+            <Text style={[styles.sectionIntro, { color: base.textDim }]}>Open the panels in this order to build context before conclusions.</Text>
+            {plan.evidenceTrail.length > 0 ? (
+              <View style={styles.trailList}>
+                {plan.evidenceTrail.map((item, index) => (
+                  <EvidenceTrailRow
+                    key={item.key}
+                    item={item}
+                    index={index}
+                    onPress={() => openRecommendation(item.panelType, item.sectionNum)}
+                  />
+                ))}
+              </View>
+            ) : (
+              <View
+                style={[styles.list, { borderColor: base.border, backgroundColor: base.bgElevated }]}
+              >
+                {plan.recommendations.map((rec) => (
+                  <PanelRecommendationRow
+                    key={rec.key}
+                    recommendation={rec}
+                    onPress={() => openRecommendation(rec.panelType, rec.sectionNum)}
+                  />
+                ))}
+              </View>
+            )}
             <View
-              style={[styles.list, { borderColor: base.border, backgroundColor: base.bgElevated }]}
+              style={[
+                styles.questionCard,
+                { backgroundColor: base.bgElevated, borderColor: `${base.gold}30` },
+              ]}
             >
-              {plan.recommendations.map((rec) => (
-                <PanelRecommendationRow
-                  key={rec.key}
-                  recommendation={rec}
-                  onPress={() => openRecommendation(rec.panelType, rec.sectionNum)}
-                />
-              ))}
+              <Text style={[styles.questionLabel, { color: base.gold }]}>Better question</Text>
+              <Text style={[styles.questionText, { color: base.text }]}>{plan.betterQuestionPrompt}</Text>
             </View>
             <PrimaryButton label="Synthesize what you saw" onPress={() => goStep('synthesize')} />
           </View>
@@ -420,6 +451,13 @@ const styles = StyleSheet.create({
     fontSize: 22,
     marginBottom: spacing.md,
   },
+  sectionIntro: {
+    fontFamily: fontFamily.body,
+    fontSize: 13,
+    lineHeight: 19,
+    marginTop: -spacing.xs,
+    marginBottom: spacing.md,
+  },
   sceneRow: {
     borderBottomWidth: 1,
     paddingVertical: spacing.sm,
@@ -459,6 +497,28 @@ const styles = StyleSheet.create({
     borderRadius: radii.md,
     paddingHorizontal: spacing.md,
     marginBottom: spacing.md,
+  },
+  trailList: {
+    gap: spacing.sm,
+    marginBottom: spacing.md,
+  },
+  questionCard: {
+    borderWidth: 1,
+    borderRadius: radii.md,
+    padding: spacing.md,
+    marginBottom: spacing.sm,
+  },
+  questionLabel: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 10,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+    marginBottom: 4,
+  },
+  questionText: {
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    lineHeight: 20,
   },
   primaryButton: {
     borderRadius: radii.md,

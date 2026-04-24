@@ -1,11 +1,17 @@
 import type { SectionPanel } from '../../types';
-import type {
-  GuidedConceptChip,
-  GuidedPanelRecommendation,
-  GuidedPrompt,
-  GuidedStudyPlan,
-  GuidedStudyPlanInput,
+import {
+  GUIDED_STUDY_MODE_OPTIONS,
+  type ConfidenceLevel,
+  type GuidedConceptChip,
+  type GuidedEvidenceTrailItem,
+  type GuidedPanelRecommendation,
+  type GuidedPrompt,
+  type GuidedStudyMode,
+  type GuidedStudyPlan,
+  type GuidedStudyPlanInput,
 } from './types';
+
+const DEFAULT_MODE: GuidedStudyMode = 'deep';
 
 const RECOMMENDATION_ORDER = [
   'hist',
@@ -31,10 +37,20 @@ const PANEL_LABELS: Record<string, string> = {
   src: 'Cross-Testament Echoes',
   com: 'Scholar Commentary',
   debate: 'Scholar Debate',
+  lit: 'Literary Structure',
+  thread: 'Intertextual Threading',
+  discourse: 'Argument Flow',
+};
+
+const MODE_RECOMMENDATION_LIMIT: Record<GuidedStudyMode, number> = {
+  quick: 3,
+  deep: 5,
+  teaching: 5,
+  devotional: 3,
 };
 
 // TODO(#1584): Replace with labels from content/meta/concepts.json via
-// getAllConcepts(). Hardcoding 15 concepts is a v1 stopgap — this list
+// getAllConcepts(). Hardcoding 15 concepts is a v1 stopgap. This list
 // doesn't scale with content and silently excludes concepts the content
 // team adds (justification, atonement, incarnation, sanctification, etc.).
 const CONCEPT_WORDS = [
@@ -55,6 +71,82 @@ const CONCEPT_WORDS = [
   'suffering',
 ];
 
+// Canonical genre to opening-prompt map. Keys must exactly match the
+// `genre_label` values produced by the content pipeline (see books.json).
+// If a new genre is added to content, extend this table; `genrePrompt`
+// falls back to a generic prompt for unknown genres.
+// TODO(#1584): Pair this with the concept-list refactor. Both should
+// derive from a single source of canonical labels.
+const GENRE_PROMPTS: Record<string, string> = {
+  'Theological Narrative':
+    'What tension, movement, or turning point do you notice in this scene?',
+  Narrative: 'What tension, movement, or turning point do you notice in this scene?',
+  Poetry: 'What emotional movement do you notice from the opening line to the close?',
+  Psalm: 'What emotional movement do you notice from the opening line to the close?',
+  Prophecy: 'What covenant problem is the prophet confronting?',
+  Prophet: 'What covenant problem is the prophet confronting?',
+  Letter: 'What problem or question is this paragraph answering?',
+  Epistle: 'What problem or question is this paragraph answering?',
+  Wisdom: 'What pattern of wise or foolish living is being exposed?',
+};
+
+type EvidenceTrailKind = 'context' | 'structure' | 'language' | 'scripture' | 'debate';
+
+interface EvidenceTrailDefinition {
+  kind: EvidenceTrailKind;
+  title: string;
+  subtitle: string;
+  badge: GuidedEvidenceTrailItem['badge'];
+  candidatePanelTypes: string[];
+  confidence?: ConfidenceLevel;
+}
+
+const EVIDENCE_TRAIL_DEFINITIONS: Record<EvidenceTrailKind, EvidenceTrailDefinition> = {
+  context: {
+    kind: 'context',
+    title: 'Start with context',
+    subtitle: 'Ancient audience, genre, and setting',
+    badge: 'Required',
+    candidatePanelTypes: ['hist', 'ctx'],
+  },
+  structure: {
+    kind: 'structure',
+    title: 'Trace the structure',
+    subtitle: 'How the chapter is arranged and argued',
+    badge: 'Helpful',
+    candidatePanelTypes: ['lit', 'discourse'],
+  },
+  language: {
+    kind: 'language',
+    title: 'Check the language',
+    subtitle: 'Key words, translation choices, and repeated phrases',
+    badge: 'Helpful',
+    candidatePanelTypes: ['heb', 'greek', 'trans', 'tx'],
+  },
+  scripture: {
+    kind: 'scripture',
+    title: 'Compare Scripture',
+    subtitle: 'Echoes, cross-references, and canonical connections',
+    badge: 'Helpful',
+    candidatePanelTypes: ['cross', 'src', 'thread'],
+  },
+  debate: {
+    kind: 'debate',
+    title: 'If unclear, weigh debate',
+    subtitle: 'Where careful interpreters differ',
+    badge: 'Debated',
+    candidatePanelTypes: ['debate', 'com'],
+    confidence: 'debated',
+  },
+};
+
+const MODE_TRAIL_ORDER: Record<GuidedStudyMode, EvidenceTrailKind[]> = {
+  quick: ['context', 'language', 'scripture'],
+  deep: ['context', 'language', 'scripture', 'debate'],
+  teaching: ['context', 'structure', 'scripture', 'debate'],
+  devotional: ['context', 'scripture', 'language'],
+};
+
 function compact(value: string | null | undefined): string | null {
   if (!value) return null;
   const cleaned = value.replace(/\s+/g, ' ').trim();
@@ -73,24 +165,15 @@ function displayChapter(input: GuidedStudyPlanInput): string {
   return `${bookName} ${input.chapter.chapter_num}`;
 }
 
-// Canonical genre → opening-prompt map. Keys must exactly match the
-// `genre_label` values produced by the content pipeline (see books.json).
-// If a new genre is added to content, extend this table; `genrePrompt`
-// falls back to a generic prompt for unknown genres.
-// TODO(#1584): Pair this with the concept-list refactor — both should
-// derive from a single source of canonical labels.
-const GENRE_PROMPTS: Record<string, string> = {
-  'Theological Narrative':
-    'What tension, movement, or turning point do you notice in this scene?',
-  Narrative: 'What tension, movement, or turning point do you notice in this scene?',
-  Poetry: 'What emotional movement do you notice from the opening line to the close?',
-  Psalm: 'What emotional movement do you notice from the opening line to the close?',
-  Prophecy: 'What covenant problem is the prophet confronting?',
-  Prophet: 'What covenant problem is the prophet confronting?',
-  Letter: 'What problem or question is this paragraph answering?',
-  Epistle: 'What problem or question is this paragraph answering?',
-  Wisdom: 'What pattern of wise or foolish living is being exposed?',
-};
+function normalizeMode(mode?: GuidedStudyMode): GuidedStudyMode {
+  return GUIDED_STUDY_MODE_OPTIONS.some((option) => option.key === mode)
+    ? mode ?? DEFAULT_MODE
+    : DEFAULT_MODE;
+}
+
+function modeLabel(mode: GuidedStudyMode): string {
+  return GUIDED_STUDY_MODE_OPTIONS.find((option) => option.key === mode)?.label ?? 'Deep study';
+}
 
 function genrePrompt(genreLabel?: string): string {
   if (!genreLabel) {
@@ -102,8 +185,17 @@ function genrePrompt(genreLabel?: string): string {
   );
 }
 
-function sectionPrompt(input: GuidedStudyPlanInput): string {
+function betterQuestionPrompt(input: GuidedStudyPlanInput, mode: GuidedStudyMode): string {
   const first = input.sections[0];
+  if (mode === 'quick') {
+    return 'What is the one question you should answer before moving on?';
+  }
+  if (mode === 'teaching') {
+    return 'What would someone need clarified before they could teach this passage responsibly?';
+  }
+  if (mode === 'devotional') {
+    return 'What does the chapter emphasize before you ask how it applies to me?';
+  }
   if (!first) return 'What question would help you understand this chapter on its own terms?';
   return `What do verses ${first.verse_start}-${first.verse_end} ask you to notice about the original audience, not just yourself?`;
 }
@@ -137,7 +229,7 @@ function buildRecommendations(input: GuidedStudyPlanInput): GuidedPanelRecommend
   }
 
   for (const chapterPanel of input.chapterPanels) {
-    if (recs.length >= 5) break;
+    if (recs.length >= 7) break;
     const label = PANEL_LABELS[chapterPanel.panel_type];
     if (!label || used.has(`chapter:${chapterPanel.panel_type}`)) continue;
     recs.push({
@@ -150,7 +242,35 @@ function buildRecommendations(input: GuidedStudyPlanInput): GuidedPanelRecommend
     used.add(`chapter:${chapterPanel.panel_type}`);
   }
 
-  return recs.slice(0, 5);
+  return recs;
+}
+
+function buildEvidenceTrail(
+  mode: GuidedStudyMode,
+  recommendations: GuidedPanelRecommendation[],
+): GuidedEvidenceTrailItem[] {
+  const items: GuidedEvidenceTrailItem[] = [];
+
+  for (const kind of MODE_TRAIL_ORDER[mode]) {
+    const definition = EVIDENCE_TRAIL_DEFINITIONS[kind];
+    const recommendation = recommendations.find((rec) =>
+      definition.candidatePanelTypes.includes(rec.panelType),
+    );
+    if (!recommendation) continue;
+
+    const confidence = definition.confidence ?? recommendation.confidence;
+    items.push({
+      key: `${kind}:${recommendation.key}`,
+      title: definition.title,
+      subtitle: definition.subtitle,
+      panelType: recommendation.panelType,
+      badge: definition.badge,
+      ...(recommendation.sectionNum != null ? { sectionNum: recommendation.sectionNum } : {}),
+      ...(confidence ? { confidence } : {}),
+    });
+  }
+
+  return items;
 }
 
 function buildConceptChips(input: GuidedStudyPlanInput): GuidedConceptChip[] {
@@ -182,6 +302,7 @@ function buildConceptChips(input: GuidedStudyPlanInput): GuidedConceptChip[] {
 }
 
 export function buildGuidedStudyPlan(input: GuidedStudyPlanInput): GuidedStudyPlan {
+  const mode = normalizeMode(input.mode);
   const chapterTitle = input.chapter.title || displayChapter(input);
   const purpose = firstSentence(input.bookIntro?.purpose);
   const moment =
@@ -193,18 +314,22 @@ export function buildGuidedStudyPlan(input: GuidedStudyPlanInput): GuidedStudyPl
   const guidance = compact(input.book?.genre_guidance);
   const audienceContext =
     compact(input.bookIntro?.era) ?? compact(input.bookIntro?.at_a_glance?.chapters?.toString());
+  const allRecommendations = buildRecommendations(input);
+  const betterQuestion = betterQuestionPrompt(input, mode);
 
   const prompts: GuidedPrompt[] = [
     {
       key: 'genre-observation',
       text: genrePrompt(input.book?.genre_label ?? input.bookIntro?.at_a_glance?.genre),
     },
-    { key: 'better-question', text: sectionPrompt(input) },
+    { key: 'better-question', text: betterQuestion },
   ];
 
   return {
     chapterId: input.chapter.id,
     title: chapterTitle,
+    mode,
+    modeLabel: modeLabel(mode),
     sceneRows: [
       { label: 'Genre', value: guidance ? `${genre}: ${guidance}` : genre },
       { label: 'Moment', value: moment },
@@ -220,7 +345,9 @@ export function buildGuidedStudyPlan(input: GuidedStudyPlanInput): GuidedStudyPl
       },
     ],
     prompts,
-    recommendations: buildRecommendations(input),
+    recommendations: allRecommendations.slice(0, MODE_RECOMMENDATION_LIMIT[mode]),
+    evidenceTrail: buildEvidenceTrail(mode, allRecommendations),
+    betterQuestionPrompt: betterQuestion,
     conceptChips: buildConceptChips(input),
   };
 }
