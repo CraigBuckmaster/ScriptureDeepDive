@@ -16,7 +16,7 @@ describe('guided study V3 CTA states', () => {
     );
 
     expect(getByText('Continue study')).toBeTruthy();
-    expect(getByText('Resume at Observe | 12 min guided')).toBeTruthy();
+    expect(getByText('Resume at Observe · 12 min guided')).toBeTruthy();
   });
 
   it('renders review state copy', () => {
