@@ -14,6 +14,7 @@ describe('settingsStore', () => {
     useSettingsStore.setState({
       translation: 'kjv',
       fontSize: 16,
+      readingScale: 1.0,
       vhlEnabled: true,
       bookListMode: 'canonical',
       studyCoachEnabled: true,
@@ -245,6 +246,76 @@ describe('settingsStore', () => {
       useSettingsStore.getState().markGettingStartedDone('task1');
       // setPreference should NOT be called since key already exists
       expect(setPreference).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('setReadingScale', () => {
+    it('clamps below minimum of 0.85', () => {
+      useSettingsStore.getState().setReadingScale(0.5);
+      expect(useSettingsStore.getState().readingScale).toBe(0.85);
+      expect(setPreference).toHaveBeenCalledWith('readingScale', '0.85');
+    });
+
+    it('clamps above maximum of 1.60', () => {
+      useSettingsStore.getState().setReadingScale(2.5);
+      expect(useSettingsStore.getState().readingScale).toBe(1.60);
+      expect(setPreference).toHaveBeenCalledWith('readingScale', '1.6');
+    });
+
+    it('accepts values inside the range', () => {
+      useSettingsStore.getState().setReadingScale(1.25);
+      expect(useSettingsStore.getState().readingScale).toBe(1.25);
+      expect(setPreference).toHaveBeenCalledWith('readingScale', '1.25');
+    });
+
+    it('falls back to default on non-finite input', () => {
+      useSettingsStore.getState().setReadingScale(Number.NaN);
+      expect(useSettingsStore.getState().readingScale).toBe(1.0);
+    });
+  });
+
+  describe('hydrate readingScale', () => {
+    it('migrates legacy fontSize=20 to readingScale ≈ 1.25 and persists', async () => {
+      getPreference.mockImplementation((key: string) => {
+        if (key === 'fontSize') return Promise.resolve('20');
+        return Promise.resolve(null);
+      });
+
+      await useSettingsStore.getState().hydrate();
+      expect(useSettingsStore.getState().readingScale).toBeCloseTo(1.25, 5);
+      expect(setPreference).toHaveBeenCalledWith('readingScale', '1.25');
+    });
+
+    it('prefers stored readingScale over legacy fontSize', async () => {
+      getPreference.mockImplementation((key: string) => {
+        const map: Record<string, string> = {
+          readingScale: '1.4',
+          fontSize: '20', // would map to 1.25 if migration ran
+        };
+        return Promise.resolve(map[key] ?? null);
+      });
+
+      await useSettingsStore.getState().hydrate();
+      expect(useSettingsStore.getState().readingScale).toBeCloseTo(1.4, 5);
+      // No migration write should happen when readingScale is already stored.
+      expect(setPreference).not.toHaveBeenCalledWith('readingScale', expect.any(String));
+    });
+
+    it('defaults readingScale to 1.0 when both keys are missing', async () => {
+      getPreference.mockResolvedValue(null);
+      await useSettingsStore.getState().hydrate();
+      expect(useSettingsStore.getState().readingScale).toBe(1.0);
+      expect(setPreference).not.toHaveBeenCalledWith('readingScale', expect.any(String));
+    });
+
+    it('clamps migrated legacy fontSize that would exceed the reading-scale cap', async () => {
+      // fontSize=24 → 24/16 = 1.5, within range
+      getPreference.mockImplementation((key: string) => {
+        if (key === 'fontSize') return Promise.resolve('24');
+        return Promise.resolve(null);
+      });
+      await useSettingsStore.getState().hydrate();
+      expect(useSettingsStore.getState().readingScale).toBeCloseTo(1.5, 5);
     });
   });
 

@@ -7,6 +7,12 @@
  *   UI:      Source Sans 3  — navigation, search, badges, buttons
  */
 
+import {
+  MAX_CHROME_SCALE,
+  MAX_CONTENT_SCALE,
+  READING_SCALE_DEFAULT,
+} from './scale';
+
 // ── Font family names (must match the keys loaded via expo-font) ────
 
 export const fontFamily = {
@@ -57,10 +63,19 @@ const presets = {
 
 export { presets as typography };
 
+export type TypographyMap = Record<keyof typeof presets, TypographyPreset>;
+
+export interface BuiltTypography {
+  content: TypographyMap;
+  chrome: TypographyMap;
+  effective: { content: number; chrome: number };
+}
+
 // ── Dynamic Type scaling ────────────────────────────────────────────
 
-export function scaledTypography(scale: number): Record<keyof typeof presets, TypographyPreset> {
-  const result = {} as Record<keyof typeof presets, TypographyPreset>;
+/** @deprecated Unused — kept for PR 2 migration, removed in PR 3. */
+export function scaledTypography(scale: number): TypographyMap {
+  const result = {} as TypographyMap;
   for (const [key, preset] of Object.entries(presets) as [keyof typeof presets, TypographyPreset][]) {
     result[key] = {
       ...preset,
@@ -69,4 +84,40 @@ export function scaledTypography(scale: number): Record<keyof typeof presets, Ty
     };
   }
   return result;
+}
+
+function applyScale(factor: number): TypographyMap {
+  const result = {} as TypographyMap;
+  for (const [key, preset] of Object.entries(presets) as [keyof typeof presets, TypographyPreset][]) {
+    result[key] = {
+      ...preset,
+      fontSize: Math.round(preset.fontSize * factor),
+      lineHeight: preset.lineHeight ? Math.round(preset.lineHeight * factor) : undefined,
+    };
+  }
+  return result;
+}
+
+/**
+ * Build the typography map for a given OS font scale and in-app reading
+ * scale. Returns two full preset copies plus the effective numeric scales:
+ *
+ *   content = min(osScale × readingScale, MAX_CONTENT_SCALE)
+ *   chrome  = min(osScale,               MAX_CHROME_SCALE)
+ *
+ * Non-finite inputs fall back to 1.0 so a corrupt preference can't
+ * collapse the UI to NaN sizes.
+ */
+export function buildTypography(osScale: number, readingScale: number): BuiltTypography {
+  const safeOs = Number.isFinite(osScale) ? osScale : 1;
+  const safeReading = Number.isFinite(readingScale) ? readingScale : READING_SCALE_DEFAULT;
+
+  const contentScale = Math.min(MAX_CONTENT_SCALE, safeOs * safeReading);
+  const chromeScale = Math.min(MAX_CHROME_SCALE, safeOs);
+
+  return {
+    content: applyScale(contentScale),
+    chrome: applyScale(chromeScale),
+    effective: { content: contentScale, chrome: chromeScale },
+  };
 }

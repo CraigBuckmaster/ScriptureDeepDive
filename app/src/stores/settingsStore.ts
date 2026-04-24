@@ -15,6 +15,7 @@
 import { create } from 'zustand';
 import { getPreference, setPreference } from '../db/user';
 import { TRANSLATION_MAP } from '../db/translationRegistry';
+import { clampReadingScale, READING_SCALE_DEFAULT } from '../theme/scale';
 import { logger } from '../utils/logger';
 
 type ThemePreference = 'dark' | 'sepia' | 'light' | 'system';
@@ -24,6 +25,7 @@ const VALID_THEMES: ThemePreference[] = ['dark', 'sepia', 'light', 'system'];
 interface SettingsState {
   translation: string;
   fontSize: number;
+  readingScale: number;
   vhlEnabled: boolean;
   bookListMode: string;
   studyCoachEnabled: boolean;
@@ -38,6 +40,7 @@ interface SettingsState {
 
   setTranslation: (t: string) => void;
   setFontSize: (s: number) => void;
+  setReadingScale: (n: number) => void;
   setVhlEnabled: (v: boolean) => void;
   setBookListMode: (m: string) => void;
   setStudyCoachEnabled: (v: boolean) => void;
@@ -54,6 +57,7 @@ interface SettingsState {
 export const useSettingsStore = create<SettingsState>((set) => ({
   translation: 'kjv',
   fontSize: 16,
+  readingScale: READING_SCALE_DEFAULT,
   vhlEnabled: false,
   bookListMode: 'canonical',
   studyCoachEnabled: true,
@@ -75,6 +79,12 @@ export const useSettingsStore = create<SettingsState>((set) => ({
     const clamped = Math.min(24, Math.max(12, s));
     set({ fontSize: clamped });
     setPreference('fontSize', String(clamped)).catch((err) => { logger.warn('settingsStore', 'Failed to persist fontSize', err); });
+  },
+
+  setReadingScale: (n) => {
+    const clamped = clampReadingScale(n);
+    set({ readingScale: clamped });
+    setPreference('readingScale', String(clamped)).catch((err) => { logger.warn('settingsStore', 'Failed to persist readingScale', err); });
   },
 
   setVhlEnabled: (v) => {
@@ -136,6 +146,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
     try {
       const t = await getPreference('translation');
       const f = await getPreference('fontSize');
+      const rs = await getPreference('readingScale');
       const v = await getPreference('vhlEnabled');
       const blm = await getPreference('bookListMode');
       const sc = await getPreference('studyCoachEnabled');
@@ -156,9 +167,27 @@ export const useSettingsStore = create<SettingsState>((set) => ({
         }
       }
 
+      // readingScale: prefer stored value; else migrate from legacy
+      // fontSize (px) by dividing by the 16 px base; else default.
+      // When migrating, persist the derived value so the computation
+      // only happens once per install.
+      let readingScale = READING_SCALE_DEFAULT;
+      if (rs !== null && rs !== undefined && rs !== '') {
+        readingScale = clampReadingScale(parseFloat(rs));
+      } else if (f !== null && f !== undefined && f !== '') {
+        const px = parseFloat(f);
+        if (Number.isFinite(px)) {
+          readingScale = clampReadingScale(px / 16);
+          setPreference('readingScale', String(readingScale)).catch((err) => {
+            logger.warn('settingsStore', 'Failed to persist migrated readingScale', err);
+          });
+        }
+      }
+
       set({
         translation: (t && TRANSLATION_MAP.has(t) ? t : 'kjv'),
         fontSize: f ? Math.min(24, Math.max(12, parseInt(f, 10) || 16)) : 16,
+        readingScale,
         vhlEnabled: v === '1',
         bookListMode: blm === 'canonical' ? 'canonical' : 'thematic',
         studyCoachEnabled: sc !== '0',
