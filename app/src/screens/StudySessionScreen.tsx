@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   ScrollView,
@@ -121,8 +121,20 @@ function StudySessionScreen() {
     setSynthesisDraft(session.synthesis);
   }, [session.synthesis]);
 
+  // When the screen is opened with an `initialStep` route param (from
+  // ChapterScreen's StudySessionCTA), we want to jump the session to
+  // that step ONCE at load time. A naive effect that fires on every
+  // `currentStep` change would fight the user: each time they tap a
+  // different step pill, `currentStep` flips, the effect re-runs,
+  // and it snaps them back to `initialStep` forever. Guard with a ref
+  // keyed on `sessionId` so the sync runs exactly once per session
+  // load and never re-fires when the user navigates between steps.
+  const appliedInitialStepForSessionRef = useRef<number | null>(null);
   useEffect(() => {
-    if (initialStep && sessionId != null && currentStep !== initialStep) {
+    if (sessionId == null || !initialStep) return;
+    if (appliedInitialStepForSessionRef.current === sessionId) return;
+    appliedInitialStepForSessionRef.current = sessionId;
+    if (currentStep !== initialStep) {
       void setSessionStep(initialStep);
     }
   }, [currentStep, initialStep, sessionId, setSessionStep]);
