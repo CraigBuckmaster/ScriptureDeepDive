@@ -277,9 +277,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Two Ways: The Path That Appears Right",
+          "score": 10
+        },
+        {
+          "label": "Social Ethics and Treatment of the Poor",
+          "score": 9
+        },
+        {
+          "label": "Fear of the LORD as Structural Security",
+          "score": 9
+        },
+        {
+          "label": "Righteousness Exalts a Nation",
+          "score": 8
+        },
+        {
+          "label": "Patience and Self-Control",
+          "score": 8
+        },
+        {
+          "label": "The Heart Knows Its Own Bitterness",
+          "score": 8
+        }
+      ],
+      "note": "Proverbs 14's most theologically potent saying is v.12: 'there is a way that appears to be right, but in the end it leads to death.' The deceptive-rightness of a path — the same path's subjective feel of correctness despite its objective wrongness — is Proverbs' epistemological humility moment. The chapter extends this into social ethics: treatment of the poor (vv.21, 31) becomes diagnostic of one's actual standing before the Maker. Verse 34's 'righteousness exalts a nation, but sin condemns any people' is the book's clearest statement of collective-moral-accountability, reverberating through the prophets' national critiques."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 14:12",
+        "target": "Matt 7:13-14",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'There is a way that appears to be right, but in the end it leads to death.' Jesus's two-ways teaching ('broad is the road that leads to destruction') shares Proverbs' deep concern with deceptive ease: what seems right can be fatal, and what seems hard can be life."
+      },
+      {
+        "anchor": "Prov 14:21, 31",
+        "target": "Matt 25:40; Jas 2:5-6",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Whoever oppresses the poor shows contempt for their Maker, but whoever is kind to the needy honors God.' Jesus's sheep-and-goats ('whatever you did for one of the least of these... you did for me') and James's 'has not God chosen those who are poor in the eyes of the world' develop this treatment-of-the-poor-as-treatment-of-God theology."
+      },
+      {
+        "anchor": "Prov 14:34",
+        "target": "Rom 13:1-7",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Righteousness exalts a nation, but sin condemns any people.' Paul's treatment of governing authorities and the proper relationship between righteousness and civic order stands inside this wisdom-tradition of national-moral-accountability."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "דֶּרֶךְ",
+        "tlit": "derek",
+        "gloss": "way / path",
+        "note": "v.12: 'there is a way (derek) that appears to be right, but in the end it leads to death.' Derek is Proverbs' master-metaphor for the structure of moral life: two paths, diverging outcomes. The NT's 'I am the way' (John 14:6) and early Christian self-designation as 'the Way' (Acts 9:2) both build on this Proverbs conceptual framework."
+      },
+      {
+        "word": "יִרְאַת יְהוָה",
+        "tlit": "yirat YHWH",
+        "gloss": "the fear of the LORD",
+        "note": "v.26-27: 'in the fear of the LORD one has strong confidence; the fear of the LORD is a fountain of life.' This is Proverbs' master-phrase, appearing 14 times and organising the book's entire epistemology. It is not craven dread but reverent covenant-awareness. The phrase is the hinge between wisdom-as-skill and wisdom-as-piety."
+      }
+    ]
   },
   "vhl_groups": [
     {

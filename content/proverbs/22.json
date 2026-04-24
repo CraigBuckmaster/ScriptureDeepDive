@@ -280,9 +280,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "A Good Name is Better Than Riches",
+          "score": 9
+        },
+        {
+          "label": "Intergenerational Formation",
+          "score": 10
+        },
+        {
+          "label": "The Poor and the Oppressor Before One Maker",
+          "score": 9
+        },
+        {
+          "label": "The Rod of Discipline Removes Folly",
+          "score": 8
+        },
+        {
+          "label": "Engagement with ANE Wisdom Traditions",
+          "score": 8
+        },
+        {
+          "label": "Thirty Sayings of the Wise Begin",
+          "score": 8
+        }
+      ],
+      "note": "Proverbs 22 contains both the close of the first Solomonic collection (vv.1-16) and the beginning of 'the Words of the Wise' (vv.17-24:22), which shows extensive literary correspondence with the Egyptian Instruction of Amenemope (c. 1250 BCE). The thirty-sayings structure (v.20: 'have I not written thirty sayings for you?') matches Amenemope's thirty chapters. The famous v.6 ('start children off on the way they should go') anchors the chapter's intergenerational-formation theme. Verse 2 ('rich and poor have this in common: the LORD is the Maker of them all') grounds economic ethics in creation theology."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 22:6",
+        "target": "Deut 6:6-7; Eph 6:4",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'Start children off on the way they should go, and even when they are old they will not turn from it.' The parental-instruction imperative grounds in Deut 6:6-7's Shema commandment and extends into Paul's household ethics in Ephesians."
+      },
+      {
+        "anchor": "Prov 22:17-24:22",
+        "target": "Egyptian Instruction of Amenemope",
+        "type": "Echo",
+        "direction": "back",
+        "text": "The 'Words of the Wise' section (22:17-24:22) shows extensive literary correspondence to the Egyptian Instruction of Amenemope (c. 1250 BCE). The 30 sayings (22:20) match Amenemope's 30-chapter structure. OT wisdom engages ANE wisdom traditions critically — absorbing forms, redirecting theology toward Yahweh."
+      },
+      {
+        "anchor": "Prov 22:8",
+        "target": "2 Cor 9:6; Gal 6:7-8",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Whoever sows injustice reaps calamity.' Paul's 'whatever one sows, that will he also reap' and 'whoever sows to please their flesh, from the flesh will reap destruction' directly develop Proverbs' sowing-reaping moral logic."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "שֵׁם",
+        "tlit": "shem",
+        "gloss": "name / reputation",
+        "note": "v.1: 'a good name is to be chosen rather than great riches.' Shem in Hebrew anthropology covers far more than label — it is identity-as-recognised-by-community, the social-moral standing of a person. The phrase 'a good shem' is the closest Hebrew equivalent to what English calls 'character-reputation.' Ecclesiastes 7:1 parallel: 'a good name is better than precious ointment.'"
+      },
+      {
+        "word": "בִּטָּחוֹן",
+        "tlit": "bittachon",
+        "gloss": "trust / security",
+        "note": "v.19: 'so that your trust (bittachon) may be in the LORD.' The noun form of the root batach ('to trust'). Bittachon is settled confidence resting on a trustworthy object — the closest OT equivalent to New Testament pistis as 'faith.' Isaiah 30:15 ('in quietness and trust is your strength') uses the same word-field."
+      }
+    ]
   },
   "vhl_groups": [
     {

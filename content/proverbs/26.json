@@ -272,9 +272,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "The Fool and the Proper Response",
+          "score": 10
+        },
+        {
+          "label": "The Sluggard's Inventive Excuses",
+          "score": 9
+        },
+        {
+          "label": "Gossip as Fire-Fuel",
+          "score": 9
+        },
+        {
+          "label": "Whitewashed Hatred",
+          "score": 8
+        },
+        {
+          "label": "The Dog Returning to Vomit",
+          "score": 9
+        },
+        {
+          "label": "Hidden Malice Revealed",
+          "score": 8
+        }
+      ],
+      "note": "Proverbs 26 is the OT's most concentrated treatment of three social types: the fool (vv.1-12), the sluggard (vv.13-16), and the divisive gossip (vv.17-28). The famous paradox of vv.4-5 ('do not answer a fool according to his folly... answer a fool according to his folly') illustrates wisdom's contextual judgment: sometimes engagement validates foolishness, sometimes silence confirms it. Verse 11's 'as a dog returns to its vomit, so fools repeat their folly' — the only Proverbs verse Peter quotes in his NT epistles (2 Pet 2:22) — captures the repetition-compulsion of moral foolishness."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 26:11",
+        "target": "2 Pet 2:22",
+        "type": "Fulfilment",
+        "direction": "forward",
+        "text": "'As a dog returns to its vomit, so fools repeat their folly.' Peter quotes this verse in 2 Pet 2:22 as the paradigm of apostasy — the false teacher who has known the truth and returns to corruption. One of the NT's most vivid Proverbs citations."
+      },
+      {
+        "anchor": "Prov 26:4-5",
+        "target": "Matt 22:15-46",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "The twin paradoxical instructions ('do not answer a fool according to his folly... answer a fool according to his folly') are the OT's classic illustration of contextual wisdom. Jesus's responses to trick questions in Matt 22 display this same judgment — sometimes engaging, sometimes redirecting, depending on what the questioner's folly requires."
+      },
+      {
+        "anchor": "Prov 26:20-28",
+        "target": "Jas 3:5-10",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "The extended treatment of gossip, strife, flattery, and deceit ('without wood a fire goes out; without a gossip a quarrel dies down') supplies the phenomenology for James's tongue-is-a-fire theology — destructive speech as combustible covenantal issue."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "עָצֵל",
+        "tlit": "'atsel",
+        "gloss": "sluggard",
+        "note": "vv.13-16: the extended portrait of the 'atsel — not merely lazy but ideologically committed to excuse-making ('there is a lion in the road!'). Proverbs uses 'atsel with comic precision: the sluggard's most marked trait is the creativity of his rationalisations. The word becomes, in wisdom literature, shorthand for inventive avoidance of responsibility."
+      },
+      {
+        "word": "נִרְגָּן",
+        "tlit": "nirgan",
+        "gloss": "whisperer / gossip",
+        "note": "v.22: 'the words of a nirgan are like choice morsels; they go down to the inmost parts.' The nirgan whispers divisive speech that is paradoxically irresistible — the listeners crave the gossip even knowing it is harmful. Proverbs treats gossip's psychological magnetism with unusual subtlety: the harm is in the pleasure."
+      }
+    ]
   },
   "vhl_groups": [
     {

@@ -272,9 +272,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Divine Sovereignty Over the King's Heart",
+          "score": 10
+        },
+        {
+          "label": "Ethical Conduct Over Cultic Performance",
+          "score": 9
+        },
+        {
+          "label": "Diligence vs. Laziness",
+          "score": 8
+        },
+        {
+          "label": "Response to the Cry of the Poor",
+          "score": 9
+        },
+        {
+          "label": "Speech Reveals the Heart",
+          "score": 8
+        },
+        {
+          "label": "Horse Prepared, Victory from the LORD",
+          "score": 9
+        }
+      ],
+      "note": "Proverbs 21 opens with one of the book's strongest statements of divine sovereignty: 'in the LORD's hand the king's heart is a stream of water that he channels toward all who please him' (v.1). The highest human authority — the king himself — is presented as a watercourse in Yahweh's hand. Verse 3's primacy-of-ethics ('to do what is right and just is more acceptable to the LORD than sacrifice') anticipates the prophets' critiques of cult-without-character. The chapter closes with v.31's 'the horse is made ready for the day of battle, but victory rests with the LORD' — a final reinforcement of the sovereignty frame."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 21:3",
+        "target": "1 Sam 15:22; Matt 9:13",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'To do what is right and just is more acceptable to the LORD than sacrifice.' Samuel's 'to obey is better than sacrifice' and Jesus's 'I desire mercy, not sacrifice' (quoting Hos 6:6) share this consistent OT-NT priority of ethics over cult."
+      },
+      {
+        "anchor": "Prov 21:13",
+        "target": "Matt 6:12, 14-15; Jas 2:13",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Whoever shuts their ears to the cry of the poor will also cry out and not be answered.' The measure-for-measure principle of Jesus's 'forgive us as we forgive' and James's 'judgment without mercy will be shown to anyone who has not been merciful' operates on the same reciprocal framework."
+      },
+      {
+        "anchor": "Prov 21:30-31",
+        "target": "Ps 20:7; Isa 40:15",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'There is no wisdom, no insight, no plan that can succeed against the LORD. The horse is made ready for the day of battle, but victory rests with the LORD.' The theme of divine-sovereignty-over-military-strength runs deep in the Psalms and Isaiah."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "לֵב הַמֶּלֶךְ",
+        "tlit": "lev ha-melek",
+        "gloss": "heart of the king",
+        "note": "v.1: 'in the LORD's hand the king's heart is a stream of water.' The compound lev ha-melek refers not to emotion but to the decision-making seat. In ANE political thought, the king's 'heart' was the sovereign organ of governance. Proverbs asserts Yahweh's channelling control over even this most-autonomous organ of the most-autonomous human authority."
+      },
+      {
+        "word": "אַף",
+        "tlit": "'af",
+        "gloss": "anger / nostril",
+        "note": "v.14: 'a gift given in secret soothes anger ('af).' 'Af literally means 'nostril' — anger is named by the bodily sign (flaring nostrils) that expresses it. The word's dual use for physical organ and emotional state preserves Hebrew's concrete-to-abstract etymological pattern. Anger is embodied before it is conceptualised."
+      }
+    ]
   },
   "vhl_groups": [
     {

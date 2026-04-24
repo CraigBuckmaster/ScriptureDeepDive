@@ -272,9 +272,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Tomorrow's Uncertainty",
+          "score": 9
+        },
+        {
+          "label": "Wounds from a Friend",
+          "score": 9
+        },
+        {
+          "label": "Iron Sharpens Iron",
+          "score": 10
+        },
+        {
+          "label": "Knowing the Condition of Your Flocks",
+          "score": 8
+        },
+        {
+          "label": "Praise from Another's Lips",
+          "score": 8
+        },
+        {
+          "label": "A Wife's Quarrelsomeness as Continuous Drip",
+          "score": 7
+        }
+      ],
+      "note": "Proverbs 27 is the chapter on practical wisdom among friends and in household affairs. The opening saying ('do not boast about tomorrow, for you do not know what a day may bring,' v.1) grounds the chapter in humility before the future. Verses 5-6's 'better is open rebuke than hidden love; wounds from a friend can be trusted' establish the counter-intuitive ethics of honest friendship. Verse 17's 'iron sharpens iron, so one person sharpens another' has become the proverbial phrase for Christian community-as-formation. The agrarian saying of vv.23-27 ('give careful attention to your herds') extends wisdom into practical household-economic stewardship."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 27:1",
+        "target": "Jas 4:13-14; Luke 12:16-21",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Do not boast about tomorrow, for you do not know what a day may bring.' James's 'you do not even know what will happen tomorrow. What is your life? You are a mist' and Jesus's rich-fool parable ('tonight your life will be demanded from you') both elaborate this Proverbs warning against tomorrow-presumption."
+      },
+      {
+        "anchor": "Prov 27:6",
+        "target": "Gal 4:16; Eph 4:15",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Wounds from a friend can be trusted, but an enemy multiplies kisses.' Paul's 'have I become your enemy by telling you the truth?' and his 'speaking the truth in love' both operate on this Proverbs principle: loving friendship includes hard correction."
+      },
+      {
+        "anchor": "Prov 27:17",
+        "target": "Heb 10:24-25",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'As iron sharpens iron, so one person sharpens another.' Hebrews' 'let us consider how we may spur one another on toward love and good deeds' carries the same mutual-sanctification theology — Christian community as friction that produces a sharper edge."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "תְּהִלָּה",
+        "tlit": "tehillah",
+        "gloss": "praise",
+        "note": "v.21: 'the crucible for silver, the furnace for gold, and a person for the praise (tehillah) they receive.' Tehillah — the word from which the Psalter's title tehillim derives — is here used for the testing-pressure of human acclaim. How one handles praise reveals character as reliably as how one handles trials."
+      },
+      {
+        "word": "בַּרְזֶל",
+        "tlit": "barzel",
+        "gloss": "iron",
+        "note": "v.17: 'iron (barzel) sharpens iron, and one person sharpens the face of his friend.' Iron in Proverbs' time was the advanced technology of weaponry and tools — sharper-than-bronze, stronger-than-copper. The metaphor of mutual sharpening assumes the ANE reader's technological intuition: improvement through friction requires material hard enough to edge another."
+      }
+    ]
   },
   "vhl_groups": [
     {

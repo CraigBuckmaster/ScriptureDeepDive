@@ -277,9 +277,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Soft Answer vs. Harsh Word",
+          "score": 10
+        },
+        {
+          "label": "Divine Omniscience Anchors Ethics",
+          "score": 9
+        },
+        {
+          "label": "Sacrifice Without Character is Abomination",
+          "score": 9
+        },
+        {
+          "label": "Receiving Rebuke as Wisdom",
+          "score": 8
+        },
+        {
+          "label": "Cheerful Heart, Good Medicine",
+          "score": 8
+        },
+        {
+          "label": "Fear of the LORD Adds to Life",
+          "score": 8
+        }
+      ],
+      "note": "Proverbs 15 opens with one of the book's most-quoted sayings: 'a gentle answer turns away wrath, but a harsh word stirs up anger' (v.1). The chapter develops this speech-diffuses-or-kindles-conflict insight across twenty verses. Verse 3 ('the eyes of the LORD are everywhere, keeping watch on the wicked and the good') grounds the ethics in divine omniscience. The prophetic-style critique of cult-without-character (vv.8-9: 'the LORD detests the sacrifice of the wicked, but the prayer of the upright pleases him') anticipates Amos and Isaiah. The chapter's theological center is the recognition that Yahweh's attentive gaze is the stable foundation for all human speech and action."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 15:1",
+        "target": "Jas 1:19-20; Matt 5:22",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'A gentle answer turns away wrath, but a harsh word stirs up anger.' James's 'quick to listen, slow to speak, slow to become angry' and Jesus's warning against anger-as-murder in the Sermon on the Mount both ground in Proverbs' speech-diffuses-or-kindles-conflict observation."
+      },
+      {
+        "anchor": "Prov 15:3",
+        "target": "Heb 4:13",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The eyes of the LORD are everywhere, keeping watch on the wicked and the good.' Hebrews' 'nothing in all creation is hidden from God's sight' is the NT theological corollary: divine omniscience is the foundation of ethical accountability."
+      },
+      {
+        "anchor": "Prov 15:8-9",
+        "target": "Isa 1:11-17; Amos 5:21-24",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'The LORD detests the sacrifice of the wicked, but the prayer of the upright pleases him.' The prophetic critique of cult-without-character (Isa 1; Amos 5) shares Proverbs' insistence that the moral state of the worshiper governs the acceptability of the worship."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "מַעֲנֶה רַךְ",
+        "tlit": "ma'aneh rak",
+        "gloss": "soft answer / gentle response",
+        "note": "v.1: 'a gentle answer turns away wrath.' The adjective rak ('soft, tender, gentle') is used elsewhere of bodily tenderness (Gen 18:7, tender calf; Deut 28:56, delicate woman). The ma'aneh rak is speech with inherent gentleness, the speech-equivalent of softness in tissue. Proverbs treats this quality as a learned skill, not merely a temperament."
+      },
+      {
+        "word": "עֵינֵי יְהוָה",
+        "tlit": "'eynei YHWH",
+        "gloss": "the eyes of the LORD",
+        "note": "v.3: 'the eyes of the LORD are everywhere, keeping watch on the wicked and the good.' The anthropomorphic divine-eye phrase runs through Psalms (e.g. Ps 34:15) and prophets (e.g. Zech 4:10) as the OT's basic image of divine omniscience. Hebrews 4:13 transposes the motif into the explicit Christian ethics of accountability."
+      }
+    ]
   },
   "vhl_groups": [
     {

@@ -272,9 +272,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Speech as Moral Index",
+          "score": 10
+        },
+        {
+          "label": "Work as Wisdom's Arena",
+          "score": 8
+        },
+        {
+          "label": "Truthfulness Before God",
+          "score": 9
+        },
+        {
+          "label": "Discipline's Instructive Value",
+          "score": 8
+        },
+        {
+          "label": "Kindness to Animals as Wisdom",
+          "score": 7
+        },
+        {
+          "label": "Anxiety Relieved by Kind Speech",
+          "score": 8
+        }
+      ],
+      "note": "Proverbs 12 concentrates on the reciprocal relationship between inner character and outward speech. The chapter's axis-saying — 'the LORD detests lying lips, but he delights in people who are trustworthy' (v.22) — frames the whole: Yahweh's own disposition toward truth-telling governs human speech-ethics. The aphorism 'anxiety weighs down the heart, but a kind word cheers it up' (v.25) is the OT's most compact observation on the mental-health effect of kind speech — pre-empting New Testament teaching on encouraging one another. The chapter also preserves Proverbs' occasional animal-welfare ethic (v.10: 'the righteous care for the needs of their animals'), an ANE-unusual concern."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 12:22",
+        "target": "Eph 4:25; Rev 21:8",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The LORD detests lying lips, but he delights in people who are trustworthy.' Paul's 'put off falsehood and speak truthfully' and Revelation's exclusion of 'all liars' from the New Jerusalem both ground in this divine attitude toward truth-telling."
+      },
+      {
+        "anchor": "Prov 12:25",
+        "target": "Matt 11:28-30; Phil 4:6-7",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Anxiety weighs down the heart, but a kind word cheers it up.' Jesus's 'come to me, all you who are weary and burdened' and Paul's anxiety-replaced-by-peace instruction in Philippians both sit inside the wisdom-tradition that anxiety is a real heart-weight requiring relief-from-outside."
+      },
+      {
+        "anchor": "Prov 12:10",
+        "target": "Deut 25:4; 1 Cor 9:9",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The righteous care for the needs of their animals.' Paul's extension of Deut 25:4 ('do not muzzle an ox while it is treading out the grain') into an argument for human-labor compensation builds on the animal-welfare wisdom tradition Proverbs encapsulates."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "מוּסָר",
+        "tlit": "musar",
+        "gloss": "discipline / instruction",
+        "note": "v.1: 'whoever loves discipline loves knowledge.' Musar covers both the content of moral teaching and the experience of corrective shaping. Proverbs' core pedagogy is that wisdom comes through received discipline, not autonomous discovery. The same word anchors the Septuagint and NT theology of paideia (Eph 6:4; Heb 12:5-11)."
+      },
+      {
+        "word": "אֱמוּנָה",
+        "tlit": "'emunah",
+        "gloss": "faithfulness / trustworthiness",
+        "note": "v.22: 'the LORD... delights in those who are 'emunah.' The word covers both personal trustworthiness and the broader covenant-faithfulness that Hab 2:4 ('the righteous shall live by his faith') and Paul in Rom 1:17 will make the theological heart of justification by faith. Proverbs grounds the word in ordinary social reliability."
+      }
+    ]
   },
   "vhl_groups": [
     {

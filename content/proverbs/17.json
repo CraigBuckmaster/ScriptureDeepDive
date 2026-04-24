@@ -272,9 +272,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Character Refined by Suffering",
+          "score": 9
+        },
+        {
+          "label": "Justice and the Court",
+          "score": 9
+        },
+        {
+          "label": "The Stability of True Friendship",
+          "score": 9
+        },
+        {
+          "label": "Speech Discipline as Wisdom",
+          "score": 8
+        },
+        {
+          "label": "Cheerful Heart as Medicine",
+          "score": 8
+        },
+        {
+          "label": "Children as Generational Glory",
+          "score": 7
+        }
+      ],
+      "note": "Proverbs 17 threads together three concerns that shape the wisdom writer's social imagination: justice in the court (vv.15, 23, 26 — acquitting the guilty and condemning the innocent alike abominable to Yahweh), the stability of covenantal friendship (vv.9, 17, 18 — 'a friend loves at all times, and a brother is born for a time of adversity'), and the discipline of speech under pressure (vv.27-28 — 'even fools are thought wise if they keep silent'). Verse 3's refining-fire imagery ('the crucible for silver and the furnace for gold, but the LORD tests the heart') offers a compact statement of suffering-as-divine-assay that will become central to NT theology of trial."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 17:15",
+        "target": "Rom 4:5",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Acquitting the guilty and condemning the innocent — the LORD detests them both.' Paul's seemingly paradoxical 'God justifies the ungodly' (Rom 4:5) operates in explicit tension with Proverbs' principle: only a substitutionary-atonement logic can resolve how the just Judge also justifies guilty sinners without violating Prov 17:15's standard."
+      },
+      {
+        "anchor": "Prov 17:17",
+        "target": "John 15:13; Prov 18:24",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'A friend loves at all times, and a brother is born for a time of adversity.' The friendship-in-adversity theme reaches its NT climax in Jesus's 'greater love has no one than this: to lay down one's life for one's friends.' Proverbs establishes friendship's covenantal depth."
+      },
+      {
+        "anchor": "Prov 17:22",
+        "target": "2 Cor 4:16-18; Phil 4:4",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'A cheerful heart is good medicine, but a crushed spirit dries up the bones.' The psychosomatic observation (inner state shapes bodily wellbeing) anchors Paul's 'rejoice in the Lord always' and 'we do not lose heart' — joy as spiritual resilience."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "מַצְרֵף",
+        "tlit": "matsref",
+        "gloss": "crucible / refining pot",
+        "note": "v.3: 'the crucible (matsref) for silver and the furnace for gold, but the LORD tests the heart.' Refining imagery — extracting precious metal from dross through intense heat — supplies one of the OT's master metaphors for sanctification through suffering. Mal 3:3 and 1 Pet 1:7 both develop this image; Proverbs supplies the compact anthropological claim."
+      },
+      {
+        "word": "רֵעַ",
+        "tlit": "rea'",
+        "gloss": "friend / companion",
+        "note": "v.17: 'a friend (rea') loves at all times, and a brother is born for a time of adversity.' Rea' is the standard OT word for neighbor/friend, the word in Lev 19:18's 'love your neighbor as yourself.' The friendship-ethics of Proverbs 17 read Lev 19:18 concretely: what does neighbor-love look like in time of adversity? It looks like the friend who shows up."
+      }
+    ]
   },
   "vhl_groups": [
     {

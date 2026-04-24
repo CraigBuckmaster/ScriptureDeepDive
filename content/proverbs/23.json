@@ -280,9 +280,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Warnings Against Covetousness",
+          "score": 9
+        },
+        {
+          "label": "The Appearance of Wealth vs. Reality",
+          "score": 9
+        },
+        {
+          "label": "Parental Joy in a Wise Child",
+          "score": 9
+        },
+        {
+          "label": "Drunkenness as Self-Enslavement",
+          "score": 10
+        },
+        {
+          "label": "Fear of the LORD All the Day",
+          "score": 8
+        },
+        {
+          "label": "Discipline Produces Life",
+          "score": 8
+        }
+      ],
+      "note": "Proverbs 23 continues the 'Words of the Wise' with extended warnings against gluttony, covetousness, moving ancient boundary stones (v.10 — the OT's standing social-justice issue), and drunkenness. The drunkenness-catalog of vv.29-35 is biblical literature's most graphic depiction of alcohol dependence — woe, sorrow, strife, bruises, bloodshot eyes, the hallucinatory and amnesic effects of excess. Verse 7's 'as a person thinks in their heart, so they are' (KJV) — though a disputed translation — has shaped popular wisdom theology of thought-life. The parental-joy theme (vv.15-16, 24-25) bookends the chapter's stern material."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 23:4-5",
+        "target": "Matt 6:19-21; 1 Tim 6:9-10",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Do not wear yourself out to get rich; do not trust your own cleverness.' Jesus's 'do not store up treasures on earth, where moths and rust destroy' and Paul's 'those who want to get rich fall into temptation' both develop this wealth-ephemerality theme directly from Proverbs."
+      },
+      {
+        "anchor": "Prov 23:29-35",
+        "target": "Eph 5:18; 1 Cor 6:10",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "The extended drunkenness-warning (woe, sorrow, strife, complaints, bruises, bloodshot eyes — the catalog of drunkard's miseries) stands behind Paul's 'do not get drunk on wine, which leads to debauchery' and his exclusion of drunkards from the kingdom. Proverbs supplies the phenomenology; Paul the kingdom-ethical conclusion."
+      },
+      {
+        "anchor": "Prov 23:13-14",
+        "target": "Heb 12:5-11",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Do not withhold discipline from a child; if you punish them with the rod, they will not die.' Hebrews' extensive theology of discipline-as-love builds on this Proverbs framework of corrective parental discipline."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "בִּינָה",
+        "tlit": "binah",
+        "gloss": "understanding / discernment",
+        "note": "v.23: 'buy the truth and do not sell it — wisdom, instruction and binah.' Binah is distinguished from hokmah (wisdom) and da'at (knowledge) in Proverbs' technical vocabulary: binah is the faculty of discernment that distinguishes between options. The verbal root means 'to separate, to examine.' Solomon prayed for binah in 1 Kgs 3:9."
+      },
+      {
+        "word": "שֵׁכָר",
+        "tlit": "shekar",
+        "gloss": "strong drink / liquor",
+        "note": "v.31: 'do not gaze at wine when it is red... it bites like a snake and poisons like a viper.' Shekar in OT classification is wine's stronger counterpart — fermented beverages of higher alcohol content. Proverbs' drunkenness warnings target shekar more than yayin (ordinary wine). Priests entering the tabernacle were forbidden both (Lev 10:9)."
+      }
+    ]
   },
   "vhl_groups": [
     {

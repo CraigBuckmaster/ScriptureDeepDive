@@ -277,9 +277,71 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Divine Sovereignty Over Human Planning",
+          "score": 10
+        },
+        {
+          "label": "Royal Wisdom and Kingship Ethics",
+          "score": 9
+        },
+        {
+          "label": "Pride Precedes Destruction",
+          "score": 9
+        },
+        {
+          "label": "Yahweh Weighs Motives",
+          "score": 8
+        },
+        {
+          "label": "Righteousness as Royal Foundation",
+          "score": 8
+        },
+        {
+          "label": "The Lot is Cast, the LORD Decides",
+          "score": 8
+        }
+      ],
+      "note": "Proverbs 16 is the royal-wisdom chapter. The divine-sovereignty verses (v.1: 'to humans belong the plans of the heart, but from the LORD comes the proper answer'; v.9: 'in their hearts humans plan their course, but the LORD establishes their steps'; v.33: 'the lot is cast into the lap, but its every decision is from the LORD') bracket the chapter. Between them, the material treats royal ethics in detail: the king's lips (v.10), the king's wrath (v.14), the king's delight (v.13). Verse 18 ('pride goes before destruction, a haughty spirit before a fall') is among the chapter's most frequently cited verses — a universal observation that has its specific royal application throughout the chapter."
+    },
+    "thread": [
+      {
+        "anchor": "Prov 16:9",
+        "target": "Jas 4:13-15; Acts 18:21",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'In their hearts humans plan their course, but the LORD establishes their steps.' James's warning against plan-without-the-Lord's-will ('if the Lord wills, we shall live and do this or that') and Paul's 'I will return to you if it is God's will' both enact Proverbs' divine-providence-over-human-planning wisdom."
+      },
+      {
+        "anchor": "Prov 16:18",
+        "target": "Luke 14:11; Jas 4:6",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Pride goes before destruction, a haughty spirit before a fall.' Jesus's 'all those who exalt themselves will be humbled' and James's citation of Proverbs 3:34 (God opposes the proud) both build on the pride-precedes-fall axiom."
+      },
+      {
+        "anchor": "Prov 16:33",
+        "target": "Acts 1:24-26",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The lot is cast into the lap, but its every decision is from the LORD.' The apostles' use of lots to choose Matthias (Acts 1) operates within this wisdom-framework: human mechanism, divine outcome."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "גֵּאוֹן",
+        "tlit": "ga'on",
+        "gloss": "pride / haughtiness",
+        "note": "v.18: 'pride (ga'on) goes before destruction.' Ga'on carries a semantic range from legitimate exaltation (used of Yahweh's majesty) to human haughtiness (here the critical sense). The distinction in usage is exactly the theological point: what is appropriate in Yahweh is catastrophic in a creature. Pride is creaturely self-deification."
+      },
+      {
+        "word": "גּוֹרָל",
+        "tlit": "goral",
+        "gloss": "lot",
+        "note": "v.33: 'the lot is cast into the lap, but its every decision is from the LORD.' The casting of lots (goral) was a common ANE divinatory practice; Proverbs preserves it as legitimate sacred practice while asserting divine sovereignty over the outcome. Acts 1:26 (the Matthias choice) is the last NT instance of this practice, exactly on the Proverbs logic."
+      }
+    ]
   },
   "vhl_groups": [
     {
