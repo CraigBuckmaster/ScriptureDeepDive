@@ -8,8 +8,10 @@
  */
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { AmicusError } from '@/services/amicus';
+import { getAmicusAuthToken } from '@/services/amicus/authToken';
 import { streamChat } from '@/services/amicus/chat';
-import type { AmicusCitation } from '@/types';
+import type { ChapterRef } from '@/services/amicus/types';
+import type { AmicusCitation, AmicusDraftMessage } from '@/types';
 import { logger } from '@/utils/logger';
 
 export interface PeekMessage {
@@ -18,11 +20,6 @@ export interface PeekMessage {
   citations?: AmicusCitation[];
   follow_ups?: string[];
   isStreaming?: boolean;
-}
-
-export interface ChapterRef {
-  book_id: string;
-  chapter_num: number;
 }
 
 export interface UsePeekConversationResult {
@@ -34,12 +31,12 @@ export interface UsePeekConversationResult {
   send: (text: string, chapterRef?: ChapterRef | null) => Promise<void>;
   reset: () => void;
   abort: () => void;
-  snapshotForPromotion: () => PeekMessage[];
+  snapshotForPromotion: () => AmicusDraftMessage[];
   clearError: () => void;
 }
 
 export interface UsePeekConversationOptions {
-  getAuthToken?: () => string;
+  getAuthToken?: () => string | null | Promise<string | null>;
   fetchImpl?: typeof fetch;
 }
 
@@ -76,7 +73,7 @@ export function usePeekConversation(
       if (!trimmed || isStreaming) return;
 
       const authToken =
-        opts.getAuthToken?.() ?? process.env.EXPO_PUBLIC_AMICUS_DEV_TOKEN ?? '';
+        (await opts.getAuthToken?.()) ?? (await getAmicusAuthToken());
       if (!authToken) {
         logger.warn('AmicusPeek', 'no auth token — peek send aborted');
         return;
@@ -175,8 +172,13 @@ export function usePeekConversation(
   );
 
   const snapshotForPromotion = useCallback(
-    (): PeekMessage[] =>
-      messages.map((m) => ({ ...m, isStreaming: false })),
+    (): AmicusDraftMessage[] =>
+      messages.map((m) => ({
+        role: m.role,
+        content: m.content,
+        citations: m.citations,
+        follow_ups: m.follow_ups,
+      })),
     [messages],
   );
 

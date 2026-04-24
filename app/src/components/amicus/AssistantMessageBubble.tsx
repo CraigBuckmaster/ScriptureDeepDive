@@ -9,6 +9,7 @@ import type { AmicusCitation } from '../../types';
 import { fontFamily, useTheme } from '../../theme';
 import StreamingDot from './StreamingDot';
 import CitationPill from './CitationPill';
+import TrustFooter from './TrustFooter';
 
 export interface AssistantMessageBubbleProps {
   content: string;
@@ -48,6 +49,7 @@ export default function AssistantMessageBubble(
         })}
         {props.isStreaming && <StreamingDot />}
       </Text>
+      {!props.isStreaming && <TrustFooter citations={props.citations} />}
     </View>
   );
 }

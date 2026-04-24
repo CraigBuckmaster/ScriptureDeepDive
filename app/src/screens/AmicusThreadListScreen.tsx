@@ -9,9 +9,9 @@ import React, { useCallback, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
-  FlatList,
   Pressable,
   RefreshControl,
+  SectionList,
   StyleSheet,
   Text,
   TextInput,
@@ -23,6 +23,8 @@ import { Pin, Plus, MessageSquare } from 'lucide-react-native';
 import { useAmicusThreads } from '../hooks/useAmicusThreads';
 import { useAmicusAccess } from '../hooks/useAmicusAccess';
 import { useSuppressAmicusFab } from '../contexts/AmicusFabContext';
+import { formatAmicusContextLabel } from '../services/amicus/context';
+import { getGuidedStudyStepLabel } from '../services/guidedStudy';
 import { useTheme, spacing, fontFamily } from '../theme';
 import type { ScreenNavProp } from '../navigation/types';
 import type { AmicusThread } from '../types';
@@ -45,6 +47,9 @@ export default function AmicusThreadListScreen(): React.ReactElement {
 
   const pinned = threads.filter((t) => t.pinned);
   const unpinned = threads.filter((t) => !t.pinned);
+  const studyThreads = unpinned.filter(isStudyThread);
+  const recentThreads = unpinned.filter((t) => !isStudyThread(t));
+  const subtitle = buildHeaderSubtitle(pinned.length, studyThreads.length, recentThreads.length);
 
   const handleLongPress = useCallback(
     (thread: AmicusThread) => {
@@ -111,7 +116,11 @@ export default function AmicusThreadListScreen(): React.ReactElement {
     [handleLongPress, navigation, actions, renaming],
   );
 
-  const data: AmicusThread[] = [...pinned, ...unpinned];
+  const sections = [
+    pinned.length > 0 ? { title: 'Pinned', data: pinned } : null,
+    studyThreads.length > 0 ? { title: 'Study', data: studyThreads } : null,
+    recentThreads.length > 0 ? { title: 'Recent', data: recentThreads } : null,
+  ].filter(Boolean) as Array<{ title: string; data: AmicusThread[] }>;
 
   if (isLoading) {
     return (
@@ -130,8 +139,10 @@ export default function AmicusThreadListScreen(): React.ReactElement {
           <Text style={[styles.title, { color: base.text, fontFamily: fontFamily.display }]}>
             Amicus
           </Text>
-          <Text style={[styles.subtitle, { color: base.textMuted, fontFamily: fontFamily.bodyItalic }]}>
-            Your study conversations
+          <Text
+            style={[styles.subtitle, { color: base.textMuted, fontFamily: fontFamily.bodyItalic }]}
+          >
+            {subtitle}
           </Text>
         </View>
         <Pressable
@@ -144,15 +155,14 @@ export default function AmicusThreadListScreen(): React.ReactElement {
         </Pressable>
       </View>
 
-      {data.length === 0 ? (
-        <EmptyState
-          onStart={() => navigation.navigate('NewThread', undefined)}
-        />
+      {sections.length === 0 ? (
+        <EmptyState onStart={() => navigation.navigate('NewThread', undefined)} />
       ) : (
-        <FlatList
-          data={data}
+        <SectionList
+          sections={sections}
           keyExtractor={(t) => t.thread_id}
           renderItem={renderRow}
+          renderSectionHeader={({ section }) => <SectionHeader label={section.title} />}
           ItemSeparatorComponent={Separator}
           refreshControl={
             <RefreshControl
@@ -163,8 +173,7 @@ export default function AmicusThreadListScreen(): React.ReactElement {
               tintColor={base.gold}
             />
           }
-          ListHeaderComponent={pinned.length > 0 ? <SectionHeader label="Pinned" /> : null}
-          contentContainerStyle={data.length === 0 ? styles.flex : undefined}
+          contentContainerStyle={sections.length === 0 ? styles.flex : undefined}
         />
       )}
     </SafeAreaView>
@@ -211,6 +220,7 @@ function ThreadRow(props: ThreadRowProps): React.ReactElement {
   }
 
   const chapter = thread.chapter_ref;
+  const summaryText = threadSummary(thread);
   return (
     <Pressable
       accessibilityLabel={`Open thread ${thread.title}`}
@@ -231,13 +241,28 @@ function ThreadRow(props: ThreadRowProps): React.ReactElement {
           >
             {thread.title}
           </Text>
-          {chapter && <ChapterBadge label={chapter} />}
         </View>
-        <Text
-          numberOfLines={1}
-          style={[styles.rowTimestamp, { color: base.textMuted }]}
-        >
-          {relativeTime(thread.last_message_at)}
+        <View style={styles.rowMetaLine}>
+          {chapter && <ChapterBadge label={chapter} />}
+          {thread.guided_step && (
+            <IntentBadge label={getGuidedStudyStepLabel(thread.guided_step)} />
+          )}
+          {thread.open_question_id != null && (
+            <IntentBadge
+              label={
+                thread.guided_question_status === 'resolved' ? 'Resolved question' : 'Open question'
+              }
+            />
+          )}
+          {thread.last_user_intent && <IntentBadge label={thread.last_user_intent} />}
+        </View>
+        {summaryText && (
+          <Text numberOfLines={2} style={[styles.rowSummary, { color: base.textMuted }]}>
+            {summaryText}
+          </Text>
+        )}
+        <Text numberOfLines={1} style={[styles.rowTimestamp, { color: base.textMuted }]}>
+          Updated {relativeTime(thread.last_message_at)}
         </Text>
       </View>
     </Pressable>
@@ -246,18 +271,34 @@ function ThreadRow(props: ThreadRowProps): React.ReactElement {
 
 function ChapterBadge({ label }: { label: string }): React.ReactElement {
   const { base } = useTheme();
+  const formattedLabel = formatAmicusContextLabel(label) ?? label;
   return (
     <View style={[styles.badge, { borderColor: base.gold, backgroundColor: `${base.gold}20` }]}>
-      <Text style={[styles.badgeText, { color: base.gold }]}>{formatChapterRef(label)}</Text>
+      <Text style={[styles.badgeText, { color: base.gold }]}>{formattedLabel}</Text>
+    </View>
+  );
+}
+
+function IntentBadge({ label }: { label: string }): React.ReactElement {
+  const { base } = useTheme();
+  return (
+    <View
+      style={[
+        styles.intentBadge,
+        {
+          borderColor: base.border,
+          backgroundColor: base.bgSurface,
+        },
+      ]}
+    >
+      <Text style={[styles.intentBadgeText, { color: base.textMuted }]}>{label}</Text>
     </View>
   );
 }
 
 function SectionHeader({ label }: { label: string }): React.ReactElement {
   const { base } = useTheme();
-  return (
-    <Text style={[styles.sectionHeader, { color: base.textMuted }]}>{label}</Text>
-  );
+  return <Text style={[styles.sectionHeader, { color: base.textMuted }]}>{label}</Text>;
 }
 
 function Separator(): React.ReactElement {
@@ -273,6 +314,9 @@ function EmptyState({ onStart }: { onStart: () => void }): React.ReactElement {
       <Text style={[styles.emptyTitle, { color: base.text, fontFamily: fontFamily.display }]}>
         Amicus is ready when you are.
       </Text>
+      <Text style={[styles.emptySubtitle, { color: base.textMuted }]}>
+        Start from a chapter, save a question, or open a fresh study thread.
+      </Text>
       <Pressable
         onPress={onStart}
         accessibilityLabel="Ask a question"
@@ -286,12 +330,44 @@ function EmptyState({ onStart }: { onStart: () => void }): React.ReactElement {
 
 // ── Formatting helpers ────────────────────────────────────────────────
 
-function formatChapterRef(ref: string): string {
-  // "romans:9" → "Romans 9"
-  const [book, chap] = ref.split(':');
-  if (!book || !chap) return ref;
-  const pretty = book.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-  return `${pretty} ${chap}`;
+function isStudyThread(thread: AmicusThread): boolean {
+  return (
+    thread.guided_step != null ||
+    thread.open_question_id != null ||
+    Boolean(thread.takeaway) ||
+    Boolean(thread.key_connection)
+  );
+}
+
+function buildHeaderSubtitle(pinnedCount: number, studyCount: number, recentCount: number): string {
+  const parts: string[] = [];
+  if (pinnedCount > 0) parts.push(`${pinnedCount} pinned`);
+  if (studyCount > 0) parts.push(`${studyCount} study`);
+  if (recentCount > 0) parts.push(`${recentCount} recent`);
+  return parts.length > 0 ? parts.join(' · ') : 'Your study conversations';
+}
+
+function threadSummary(thread: AmicusThread): string | null {
+  if (thread.summary_text) return thread.summary_text;
+  if (thread.open_question_id != null) {
+    return thread.guided_question_status === 'resolved'
+      ? 'This study question has been resolved.'
+      : 'Continue investigating this open question.';
+  }
+  if (thread.takeaway) {
+    return `Refine takeaway: ${thread.takeaway}`;
+  }
+  if (thread.key_connection) {
+    return `Trace connection: ${thread.key_connection}`;
+  }
+  if (thread.last_user_intent) {
+    return `Continue: ${thread.last_user_intent}`;
+  }
+  if (thread.chapter_ref) {
+    const chapterLabel = formatAmicusContextLabel(thread.chapter_ref);
+    if (chapterLabel) return `Study notes and questions from ${chapterLabel}.`;
+  }
+  return null;
 }
 
 function relativeTime(iso: string): string {
@@ -348,8 +424,10 @@ const styles = StyleSheet.create({
   },
   rowBody: { flex: 1, gap: 2 },
   rowTitleLine: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  rowMetaLine: { flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', gap: 6 },
   rowTitle: { fontSize: 15, flexShrink: 1 },
-  rowTimestamp: { fontSize: 11, marginLeft: spacing.sm },
+  rowSummary: { fontSize: 12, lineHeight: 17 },
+  rowTimestamp: { fontSize: 11, marginLeft: spacing.sm, marginTop: 2 },
   badge: {
     paddingHorizontal: 6,
     paddingVertical: 1,
@@ -357,10 +435,29 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   badgeText: { fontSize: 10, letterSpacing: 0.3 },
+  intentBadge: {
+    paddingHorizontal: 7,
+    paddingVertical: 2,
+    borderRadius: 999,
+    borderWidth: StyleSheet.hairlineWidth,
+  },
+  intentBadgeText: { fontSize: 10 },
   separator: { height: StyleSheet.hairlineWidth, marginLeft: spacing.md },
-  empty: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: spacing.lg, gap: spacing.md },
+  empty: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: spacing.lg,
+    gap: spacing.md,
+  },
   emptyTitle: { fontSize: 18, textAlign: 'center' },
-  primaryButton: { paddingVertical: 12, paddingHorizontal: 24, borderRadius: 999, marginTop: spacing.sm },
+  emptySubtitle: { fontSize: 13, textAlign: 'center', maxWidth: 260, lineHeight: 19 },
+  primaryButton: {
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 999,
+    marginTop: spacing.sm,
+  },
   primaryButtonText: { fontSize: 15, fontWeight: '600' },
   renameInput: {
     flex: 1,

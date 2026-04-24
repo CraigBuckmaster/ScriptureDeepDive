@@ -34,11 +34,26 @@ import {
   getSectionPanels,
   getVerses,
 } from '../db/content';
+import { getGuidedStudyQuestionForSession } from '../db/userQueries';
 import { useGuidedStudySession, usePremium } from '../hooks';
-import { buildGuidedStudyPlan, type GuidedStudyMode, type GuidedStudyStep } from '../services/guidedStudy';
+import {
+  buildGuidedStudyPlan,
+  formatChapterRef,
+  type GuidedStudyMode,
+  type GuidedStudyStep,
+} from '../services/guidedStudy';
+import { launchAmicusStudyThread } from '../services/amicus';
 import { useSettingsStore } from '../stores';
 import { fontFamily, radii, spacing, useTheme } from '../theme';
-import type { Book, Chapter, ChapterPanel, ParsedBookIntro, Section, SectionPanel, Verse } from '../types';
+import type {
+  Book,
+  Chapter,
+  ChapterPanel,
+  ParsedBookIntro,
+  Section,
+  SectionPanel,
+  Verse,
+} from '../types';
 import { safeParse } from '../utils/logger';
 
 interface RouteParams {
@@ -121,14 +136,14 @@ function StudySessionScreen() {
     setSynthesisDraft(session.synthesis);
   }, [session.synthesis]);
 
-  // When the screen is opened with an `initialStep` route param (from
-  // ChapterScreen's StudySessionCTA), we want to jump the session to
-  // that step ONCE at load time. A naive effect that fires on every
-  // `currentStep` change would fight the user: each time they tap a
-  // different step pill, `currentStep` flips, the effect re-runs,
-  // and it snaps them back to `initialStep` forever. Guard with a ref
-  // keyed on `sessionId` so the sync runs exactly once per session
-  // load and never re-fires when the user navigates between steps.
+  // Preserves #1654. The codex branch (codex/amicus-auth-access-hardening)
+  // was cut before #1654 merged and reverts this guard. Do NOT remove it
+  // without the bounce-back bug returning: a naive effect that fires on
+  // every `currentStep` change will snap the user back to `initialStep`
+  // every time they tap a stepper pill, making the whole phase tab row
+  // appear inert. Guard with a ref keyed on `sessionId` so the sync runs
+  // exactly once per session load and never re-fires when the user
+  // navigates between steps.
   const appliedInitialStepForSessionRef = useRef<number | null>(null);
   useEffect(() => {
     if (sessionId == null || !initialStep) return;
@@ -187,21 +202,33 @@ function StudySessionScreen() {
       return;
     }
     await session.saveSynthesis(synthesisDraft);
-    const ref = `${book?.name ?? bookId} ${chapterNum}`;
-    const clip = (s: string, n = 200) => (s.length > n ? `${s.slice(0, n - 3).trimEnd()}...` : s);
-    const seedQuery =
-      `Help me refine my study synthesis for ${ref}. ` +
-      `Takeaway: ${clip(synthesisDraft.takeaway)}. ` +
-      `Open question: ${clip(synthesisDraft.open_question)}. ` +
-      `Key connection: ${clip(synthesisDraft.key_connection)}.`;
-    navigation.getParent()?.navigate('AmicusTab', {
-      screen: 'NewThread',
-      params: {
-        seedQuery,
-        seedChapterRef: `${bookId}:${chapterNum}`,
-      },
+    const clip = (s: string, n = 220) => (s.length > n ? `${s.slice(0, n - 3).trimEnd()}...` : s);
+    const linkedQuestion =
+      sessionId != null ? await getGuidedStudyQuestionForSession(sessionId) : null;
+
+    const fallbackQuestion = synthesisDraft.open_question.trim();
+    const takeaway = synthesisDraft.takeaway.trim();
+    const keyConnection = synthesisDraft.key_connection.trim();
+    const chapterLabel = formatChapterRef(`${bookId}_${chapterNum}`);
+
+    const seedQuery = linkedQuestion?.question_text
+      ? `Help me investigate this study question in ${chapterLabel}: ${clip(linkedQuestion.question_text)}`
+      : fallbackQuestion
+        ? `Help me investigate this study question in ${chapterLabel}: ${clip(fallbackQuestion)}`
+        : `Help me refine my study synthesis for ${chapterLabel}. Takeaway: ${clip(takeaway)}. Key connection: ${clip(keyConnection)}.`;
+
+    await launchAmicusStudyThread(navigation, {
+      entryPoint: 'guided_study',
+      chapterId: `${bookId}_${chapterNum}`,
+      sessionId,
+      guidedStudyStep: 'synthesize',
+      openQuestionId: linkedQuestion?.id ?? null,
+      openQuestionText: linkedQuestion?.question_text ?? fallbackQuestion,
+      takeaway,
+      keyConnection,
+      seedQuery,
     });
-  }, [book?.name, bookId, chapterNum, isPremium, navigation, session, showUpgrade, synthesisDraft]);
+  }, [bookId, chapterNum, isPremium, navigation, session, sessionId, showUpgrade, synthesisDraft]);
 
   const saveToMyStudy = useCallback(async () => {
     if (!plan) return;
@@ -215,6 +242,12 @@ function StudySessionScreen() {
     setReviewSaved(true);
     await session.setCurrentStep('review');
   }, [isPremium, plan, savePromptDrafts, session, showUpgrade, synthesisDraft]);
+
+  const amicusLabel = synthesisDraft.open_question.trim()
+    ? 'Investigate this question'
+    : synthesisDraft.key_connection.trim()
+      ? 'Trace this connection'
+      : 'Help me refine';
 
   if (loading || session.isLoading || !plan) {
     return (
@@ -230,7 +263,9 @@ function StudySessionScreen() {
         <TouchableOpacity onPress={() => navigation.goBack()} accessibilityLabel="Back">
           <ArrowLeft size={20} color={base.gold} />
         </TouchableOpacity>
-        <Text style={[styles.navTitle, { color: base.text }]}>Study {book?.name ?? bookId} {chapterNum}</Text>
+        <Text style={[styles.navTitle, { color: base.text }]}>
+          Study {book?.name ?? bookId} {chapterNum}
+        </Text>
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
@@ -281,7 +316,9 @@ function StudySessionScreen() {
         {session.currentStep === 'explore' && (
           <View style={styles.section}>
             <Text style={[styles.heading, { color: base.text }]}>Evidence Trail</Text>
-            <Text style={[styles.sectionIntro, { color: base.textDim }]}>Open the panels in this order to build context before conclusions.</Text>
+            <Text style={[styles.sectionIntro, { color: base.textDim }]}>
+              Open the panels in this order to build context before conclusions.
+            </Text>
             {plan.evidenceTrail.length > 0 ? (
               <View style={styles.trailList}>
                 {plan.evidenceTrail.map((item, index) => (
@@ -295,7 +332,10 @@ function StudySessionScreen() {
               </View>
             ) : (
               <View
-                style={[styles.list, { borderColor: base.border, backgroundColor: base.bgElevated }]}
+                style={[
+                  styles.list,
+                  { borderColor: base.border, backgroundColor: base.bgElevated },
+                ]}
               >
                 {plan.recommendations.map((rec) => (
                   <PanelRecommendationRow
@@ -313,7 +353,9 @@ function StudySessionScreen() {
               ]}
             >
               <Text style={[styles.questionLabel, { color: base.gold }]}>Better question</Text>
-              <Text style={[styles.questionText, { color: base.text }]}>{plan.betterQuestionPrompt}</Text>
+              <Text style={[styles.questionText, { color: base.text }]}>
+                {plan.betterQuestionPrompt}
+              </Text>
             </View>
             <PrimaryButton label="Synthesize what you saw" onPress={() => goStep('synthesize')} />
           </View>
@@ -350,7 +392,7 @@ function StudySessionScreen() {
             >
               <View style={[styles.amicusStripe, { backgroundColor: base.gold }]} />
               <MessageSquare size={16} color={base.gold} />
-              <Text style={[styles.amicusText, { color: base.text }]}>Help me refine</Text>
+              <Text style={[styles.amicusText, { color: base.text }]}>{amicusLabel}</Text>
             </TouchableOpacity>
             <PrimaryButton label="Save to My Study" onPress={saveToMyStudy} />
           </View>

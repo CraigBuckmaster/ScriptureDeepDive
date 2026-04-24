@@ -157,16 +157,15 @@ describe('usePeekConversation', () => {
     expect(lastStreamParams!.signal.aborted).toBe(true);
   });
 
-  it('snapshotForPromotion returns messages with isStreaming flags cleared', async () => {
+  it('snapshotForPromotion returns draft messages without streaming-only fields', async () => {
     const { api } = await mount();
     await act(async () => {
       await api().send('hi');
     });
     const snap = api().snapshotForPromotion();
     expect(snap).toHaveLength(2);
-    for (const m of snap) {
-      expect(m.isStreaming).toBe(false);
-    }
+    expect(snap[0]).toEqual({ role: 'user', content: 'hi', citations: undefined, follow_ups: undefined });
+    expect(snap[1]).toEqual({ role: 'assistant', content: '', citations: [], follow_ups: [] });
   });
 
   it('sends prior conversation_history on subsequent sends', async () => {

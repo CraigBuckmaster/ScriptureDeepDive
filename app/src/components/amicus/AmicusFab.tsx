@@ -7,20 +7,19 @@
  *   - `useAmicusAccess()` entitlement/usage gate (from #1460)
  */
 import React, { useCallback, useMemo, useState } from 'react';
-import {
-  Platform,
-  Pressable,
-  StyleSheet,
-  View,
-  type ViewStyle,
-} from 'react-native';
+import { Platform, Pressable, StyleSheet, View, type ViewStyle } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useNavigation, type NavigationProp, type ParamListBase } from '@react-navigation/native';
 import { Lock, MessageSquare } from 'lucide-react-native';
 import { useTheme } from '../../theme';
 import { useAmicusFab } from '../../contexts/AmicusFabContext';
+import { useAmicusChapterStudyThread } from '../../hooks/useAmicusChapterStudyThread';
 import { useAmicusAccess } from '../../hooks/useAmicusAccess';
 import { useAmicusChipContext } from '../../hooks/useAmicusChipContext';
+import { useAmicusGuidedRouteContext } from '../../hooks/useAmicusGuidedRouteContext';
+import { chapterRefFromChipContext, formatAmicusContextLabel } from '../../services/amicus/context';
+import { promotePeekToAmicusThread } from '../../services/amicus';
+import type { AmicusDraftMessage } from '../../types';
 import { logger } from '../../utils/logger';
 import AmicusPeekSheet from './AmicusPeekSheet';
 
@@ -51,13 +50,17 @@ export default function AmicusFab(): React.ReactElement | null {
   // Passed to AmicusPeekSheet as a prop, keeping that component free
   // of navigation-state hooks.
   const chipContext = useAmicusChipContext();
+  const guidedRouteContext = useAmicusGuidedRouteContext();
+  const chapterRef = chapterRefFromChipContext(chipContext);
+  const chapterRefString = chapterRef ? `${chapterRef.book_id}/${chapterRef.chapter_num}` : null;
+  const existingStudyThreadId = useAmicusChapterStudyThread(chapterRefString);
   const [peekOpen, setPeekOpen] = useState(false);
+  const [handoffInProgress, setHandoffInProgress] = useState(false);
 
   // Hide when any screen has requested suppression OR the user turned the
   // feature off in settings. (Non-premium users still see the FAB but with
   // a lock overlay — tap opens the paywall.)
-  const shouldRender =
-    isVisible && access.reason !== 'disabled_in_settings';
+  const shouldRender = isVisible && access.reason !== 'disabled_in_settings';
 
   const bottomOffset = useMemo<ViewStyle>(
     () => ({
@@ -76,6 +79,37 @@ export default function AmicusFab(): React.ReactElement | null {
     }
     setPeekOpen(true);
   }, [access.reason, navigation]);
+
+  const handleContinueInTab = useCallback(
+    async (snapshot: AmicusDraftMessage[]) => {
+      if (!navigation) return;
+      setHandoffInProgress(true);
+      try {
+        await promotePeekToAmicusThread(navigation, {
+          messages: snapshot,
+          chapterRef,
+          guidedContext: guidedRouteContext,
+        });
+        setPeekOpen(false);
+      } finally {
+        setHandoffInProgress(false);
+      }
+    },
+    [chapterRef, guidedRouteContext, navigation],
+  );
+
+  const handleOpenExistingThread = useCallback(() => {
+    if (!navigation || !existingStudyThreadId) return;
+    const parent = navigation.getParent<NavigationProp<ParamListBase>>();
+    parent?.navigate('AmicusTab', {
+      screen: 'Thread',
+      params: {
+        threadId: existingStudyThreadId,
+        seedChapterRef: chapterRefString ?? undefined,
+      },
+    });
+    setPeekOpen(false);
+  }, [chapterRefString, existingStudyThreadId, navigation]);
 
   if (!navigation) return null;
   if (!shouldRender) return null;
@@ -109,6 +143,14 @@ export default function AmicusFab(): React.ReactElement | null {
         isOpen={peekOpen}
         onClose={() => setPeekOpen(false)}
         context={chipContext}
+        onContinueInTab={handleContinueInTab}
+        handoffInProgress={handoffInProgress}
+        existingStudyThreadLabel={
+          existingStudyThreadId && chapterRef
+            ? `Open your ${formatAmicusContextLabel(chapterRef) ?? 'current chapter'} study thread`
+            : null
+        }
+        onOpenExistingThread={existingStudyThreadId ? handleOpenExistingThread : undefined}
       />
     </View>
   );

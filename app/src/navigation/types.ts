@@ -8,7 +8,8 @@
 import type { NavigatorScreenParams } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import type { RouteProp } from '@react-navigation/native';
-import type { GuidedStudyStep } from '../types';
+import type { AmicusDraftMessage, GuidedStudyStep } from '../types';
+import type { AmicusGuidedStudyContext } from '../services/amicus/context';
 
 // ── Stack Param Lists ─────────────────────────────────────────────
 
@@ -186,8 +187,20 @@ export type SearchStackParamList = {
 
 export type AmicusStackParamList = {
   ThreadList: undefined;
-  Thread: { threadId: string; initialQuery?: string };
-  NewThread: { seedQuery?: string; seedChapterRef?: string } | undefined;
+  Thread: {
+    threadId: string;
+    initialQuery?: string;
+    seedChapterRef?: string;
+    seedGuidedContext?: AmicusGuidedStudyContext;
+  };
+  NewThread:
+    | {
+        seedQuery?: string;
+        seedChapterRef?: string;
+        promotedMessages?: AmicusDraftMessage[];
+        seedGuidedContext?: AmicusGuidedStudyContext;
+      }
+    | undefined;
   Paywall: undefined;
 };
 

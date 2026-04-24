@@ -12,9 +12,12 @@ import BottomSheet, { BottomSheetBackdrop, BottomSheetView } from '@gorhom/botto
 import { ArrowUp } from 'lucide-react-native';
 import { useAmicusChips, type ChipContext } from '../../hooks/useAmicusChips';
 import { usePeekConversation } from '../../hooks/usePeekConversation';
+import { buildAmicusContextEnvelope } from '../../services/amicus/context';
+import { buildStudyActionSeeds } from '../../services/amicus/studyActions';
 import { fontFamily, spacing, useTheme } from '../../theme';
-import type { AmicusCitation } from '../../types';
+import type { AmicusCitation, AmicusDraftMessage } from '../../types';
 import PeekMiniConversation from './PeekMiniConversation';
+import StudyActionRow from './StudyActionRow';
 
 export interface AmicusPeekSheetProps {
   isOpen: boolean;
@@ -39,11 +42,11 @@ export interface AmicusPeekSheetProps {
   /** Navigate to the citation target and close the peek (wired by parent). */
   onCitationPress?: (c: AmicusCitation) => void;
   /** Promote the peek conversation to a persistent thread (#1464). */
-  onContinueInTab?: (
-    snapshot: ReturnType<ReturnType<typeof usePeekConversation>['snapshotForPromotion']>,
-  ) => void | Promise<void>;
+  onContinueInTab?: (snapshot: AmicusDraftMessage[]) => void | Promise<void>;
   /** Expose when handoff is in progress (disables the CTA). */
   handoffInProgress?: boolean;
+  existingStudyThreadLabel?: string | null;
+  onOpenExistingThread?: () => void;
 }
 
 export default function AmicusPeekSheet(props: AmicusPeekSheetProps): React.ReactElement | null {
@@ -63,7 +66,16 @@ export default function AmicusPeekSheet(props: AmicusPeekSheetProps): React.Reac
     () => props.contextOverride ?? props.context ?? fallbackCtx,
     [fallbackCtx, props.context, props.contextOverride],
   );
+  const amicusContext = useMemo(
+    () =>
+      buildAmicusContextEnvelope({
+        entryPoint: 'peek',
+        chipContext: ctx,
+      }),
+    [ctx],
+  );
   const { chips } = useAmicusChips(ctx);
+  const actionSeeds = useMemo(() => buildStudyActionSeeds(amicusContext), [amicusContext]);
   const [text, setText] = useState('');
   const peek = usePeekConversation();
   const hasConversation = peek.messages.length > 0;
@@ -95,10 +107,7 @@ export default function AmicusPeekSheet(props: AmicusPeekSheetProps): React.Reac
     return () => sub.remove();
   }, [props.isOpen, props]);
 
-  const chapterRef = useMemo(
-    () => (ctx.kind === 'chapter' ? { book_id: ctx.bookId, chapter_num: ctx.chapterNum } : null),
-    [ctx],
-  );
+  const chapterRef = amicusContext.chapterRef;
 
   const handleChip = useCallback(
     (seedQuery: string) => {
@@ -115,6 +124,14 @@ export default function AmicusPeekSheet(props: AmicusPeekSheetProps): React.Reac
     props.onSend?.(trimmed);
     void peek.send(trimmed, chapterRef);
   }, [text, props, peek, chapterRef]);
+
+  const handleStudyAction = useCallback(
+    (seedQuery: string) => {
+      props.onChipTap?.(seedQuery);
+      void peek.send(seedQuery, chapterRef);
+    },
+    [chapterRef, peek, props],
+  );
 
   const handleContinueInTab = useCallback(() => {
     if (!props.onContinueInTab) return;
@@ -175,7 +192,29 @@ export default function AmicusPeekSheet(props: AmicusPeekSheetProps): React.Reac
           />
         ) : (
           <View style={styles.chipArea}>
-            {chips.length === 0 ? (
+            {props.existingStudyThreadLabel && props.onOpenExistingThread && (
+              <Pressable
+                accessibilityLabel={props.existingStudyThreadLabel}
+                onPress={props.onOpenExistingThread}
+                style={({ pressed }) => [
+                  styles.continueCard,
+                  {
+                    borderColor: `${base.gold}50`,
+                    backgroundColor: pressed ? `${base.gold}16` : base.bgSurface,
+                  },
+                ]}
+              >
+                <Text style={[styles.continueEyebrow, { color: base.gold }]}>Continue</Text>
+                <Text style={[styles.continueLabel, { color: base.text }]}>
+                  {props.existingStudyThreadLabel}
+                </Text>
+              </Pressable>
+            )}
+            <StudyActionRow
+              actions={actionSeeds}
+              onSelect={(action) => handleStudyAction(action.seedQuery)}
+            />
+            {chips.length === 0 && actionSeeds.length === 0 ? (
               <Text style={[styles.emptyChips, { color: base.textMuted }]}>
                 Ask anything about your current reading.
               </Text>
@@ -273,6 +312,24 @@ const styles = StyleSheet.create({
   title: { fontSize: 20 },
   subtitle: { fontSize: 13, marginTop: 2 },
   chipArea: { gap: 8 },
+  continueCard: {
+    borderWidth: StyleSheet.hairlineWidth,
+    borderRadius: 12,
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+    gap: 4,
+  },
+  continueEyebrow: {
+    fontSize: 10,
+    letterSpacing: 0.6,
+    textTransform: 'uppercase',
+    fontFamily: fontFamily.uiSemiBold,
+  },
+  continueLabel: {
+    fontSize: 14,
+    lineHeight: 19,
+    fontFamily: fontFamily.body,
+  },
   emptyChips: { fontSize: 13, fontStyle: 'italic' },
   chip: {
     paddingVertical: 10,

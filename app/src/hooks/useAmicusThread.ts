@@ -7,6 +7,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AmicusError } from '@/services/amicus';
 import { streamChat } from '@/services/amicus/chat';
+import type { AmicusContextEnvelope } from '@/services/amicus/context';
 import { appendAmicusMessage, incrementAmicusUsage } from '@/db/userMutations';
 import { listAmicusMessages } from '@/db/userQueries';
 import type { AmicusCitation, AmicusMessage } from '@/types';
@@ -22,13 +23,20 @@ export interface UseAmicusThreadResult {
   clearError: () => void;
 }
 
+export interface UseAmicusThreadOptions {
+  context?: AmicusContextEnvelope | null;
+}
+
 function uuid(prefix: string): string {
   const r = Math.random().toString(16).slice(2, 10);
   const t = Date.now().toString(16);
   return `${prefix}-${t}-${r}`;
 }
 
-export function useAmicusThread(threadId: string): UseAmicusThreadResult {
+export function useAmicusThread(
+  threadId: string,
+  options: UseAmicusThreadOptions = {},
+): UseAmicusThreadResult {
   const [messages, setMessages] = useState<AmicusMessage[]>([]);
   const [isStreaming, setIsStreaming] = useState(false);
   const [error, setError] = useState<AmicusError | null>(null);
@@ -109,7 +117,7 @@ export function useAmicusThread(threadId: string): UseAmicusThreadResult {
         conversationHistory: messages.map((m) => ({ role: m.role, content: m.content })),
         authToken,
         signal: controller.signal,
-        currentChapterRef: null,
+        currentChapterRef: options.context?.chapterRef ?? null,
         onDelta: (token) => {
           streamed += token;
           setMessages((prev) =>
@@ -177,7 +185,7 @@ export function useAmicusThread(threadId: string): UseAmicusThreadResult {
         },
       });
     },
-    [threadId, isStreaming, messages],
+    [threadId, isStreaming, messages, options.context],
   );
 
   const abortStream = useCallback((): void => {

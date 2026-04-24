@@ -23,8 +23,19 @@ import { NavigationContainer } from '@react-navigation/native';
 import { useAmicusChipContext } from '@/hooks/useAmicusChipContext';
 
 jest.unmock('@react-navigation/native');
+jest.mock('@/utils/logger', () => ({
+  logger: {
+    info: jest.fn(),
+    warn: jest.fn(),
+    error: jest.fn(),
+  },
+}));
 
 describe('useAmicusChipContext', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('returns { kind: "none" } without throwing when rendered outside NavigationContainer', () => {
     // No wrapper — the hook must survive this. Previously
     // `useNavigationState` would throw "Couldn't get the navigation
@@ -32,6 +43,9 @@ describe('useAmicusChipContext', () => {
     // spurious error on every app boot.
     const { result } = renderHook(() => useAmicusChipContext());
     expect(result.current).toEqual({ kind: 'none' });
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { logger } = require('@/utils/logger');
+    expect(logger.warn).not.toHaveBeenCalled();
   });
 
   it('returns { kind: "none" } inside a NavigationContainer with no navigator children', () => {
@@ -54,5 +68,8 @@ describe('useAmicusChipContext', () => {
     expect(result.current).toEqual({ kind: 'none' });
     rerender(undefined);
     expect(result.current).toEqual({ kind: 'none' });
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { logger } = require('@/utils/logger');
+    expect(logger.warn).not.toHaveBeenCalled();
   });
 });

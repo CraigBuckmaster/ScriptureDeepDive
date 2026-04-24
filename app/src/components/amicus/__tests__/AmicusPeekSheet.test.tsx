@@ -1,4 +1,4 @@
-import { act, fireEvent } from '@testing-library/react-native';
+import { act, fireEvent, waitFor } from '@testing-library/react-native';
 import React from 'react';
 import { getMockDb, resetMockDb } from '../../../../__tests__/helpers/mockDb';
 import { renderWithProviders } from '../../../../__tests__/helpers/renderWithProviders';
@@ -36,7 +36,7 @@ beforeEach(() => {
   resetMockDb();
   mockStreamChat.mockClear();
   lastStreamParams = null;
-  process.env.EXPO_PUBLIC_AMICUS_DEV_TOKEN = 'tok';
+  process.env.EXPO_PUBLIC_AMICUS_DEV_TOKEN = 'dev_token_123456789';
 });
 
 describe('AmicusPeekSheet', () => {
@@ -121,7 +121,7 @@ describe('AmicusPeekSheet', () => {
       />,
     );
     fireEvent.press(await findByLabelText('Ask: Explain hesed'));
-    expect(mockStreamChat).toHaveBeenCalled();
+    await waitFor(() => expect(mockStreamChat).toHaveBeenCalled());
     expect(lastStreamParams!.userQuery).toBe('What is hesed?');
     expect(lastStreamParams!.currentChapterRef).toEqual({
       book_id: 'psalms',
