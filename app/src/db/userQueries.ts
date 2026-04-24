@@ -18,6 +18,7 @@ import type {
   AmicusThread,
   AmicusMessage,
   AmicusCitation,
+  AmicusThreadContextRecord,
   ConceptEncounter,
   GuidedReviewItem,
   GuidedStudyQuestion,
@@ -532,6 +533,18 @@ export async function getOpenGuidedStudyQuestions(
   );
 }
 
+export async function getGuidedStudyQuestionForSession(
+  sessionId: number,
+): Promise<GuidedStudyQuestion | null> {
+  return getUserDb().getFirstAsync<GuidedStudyQuestion>(
+    `SELECT * FROM guided_study_questions
+     WHERE session_id = ?
+     ORDER BY updated_at DESC, id DESC
+     LIMIT 1`,
+    [sessionId],
+  );
+}
+
 export async function getRecentGuidedStudyTakeaways(
   limit: number = 10,
 ): Promise<GuidedStudyTakeawaySummary[]> {
@@ -661,8 +674,27 @@ interface AmicusThreadRow {
   title: string;
   chapter_ref: string | null;
   pinned: number;
+  summary_text: string | null;
+  last_user_intent: string | null;
+  guided_step: GuidedStudySession['current_step'] | null;
+  open_question_id: number | null;
+  guided_question_status: GuidedStudyQuestion['status'] | null;
+  takeaway: string | null;
+  key_connection: string | null;
   created_at: string;
   last_message_at: string;
+}
+
+interface AmicusThreadContextRow {
+  thread_id: string;
+  entry_point: AmicusThreadContextRecord['entry_point'];
+  guided_session_id: number | null;
+  guided_step: GuidedStudySession['current_step'] | null;
+  open_question_id: number | null;
+  takeaway: string | null;
+  key_connection: string | null;
+  created_at: string;
+  updated_at: string;
 }
 
 interface AmicusMessageRow {
@@ -681,8 +713,29 @@ function hydrateThread(row: AmicusThreadRow): AmicusThread {
     title: row.title,
     chapter_ref: row.chapter_ref,
     pinned: row.pinned === 1,
+    summary_text: row.summary_text,
+    last_user_intent: row.last_user_intent,
+    guided_step: row.guided_step,
+    open_question_id: row.open_question_id,
+    guided_question_status: row.guided_question_status,
+    takeaway: row.takeaway,
+    key_connection: row.key_connection,
     created_at: row.created_at,
     last_message_at: row.last_message_at,
+  };
+}
+
+function hydrateThreadContext(row: AmicusThreadContextRow): AmicusThreadContextRecord {
+  return {
+    thread_id: row.thread_id,
+    entry_point: row.entry_point,
+    guided_session_id: row.guided_session_id,
+    guided_step: row.guided_step,
+    open_question_id: row.open_question_id,
+    takeaway: row.takeaway,
+    key_connection: row.key_connection,
+    created_at: row.created_at,
+    updated_at: row.updated_at,
   };
 }
 
@@ -718,8 +771,15 @@ function hydrateMessage(row: AmicusMessageRow): AmicusMessage {
 
 export async function listAmicusThreads(limit = 50, offset = 0): Promise<AmicusThread[]> {
   const rows = await getUserDb().getAllAsync<AmicusThreadRow>(
-    `SELECT thread_id, title, chapter_ref, pinned, created_at, last_message_at
-       FROM amicus_threads
+    `SELECT t.thread_id, t.title, t.chapter_ref, t.pinned,
+            s.summary_text, s.last_user_intent,
+            c.guided_step, c.open_question_id, q.status AS guided_question_status,
+            c.takeaway, c.key_connection,
+            t.created_at, t.last_message_at
+       FROM amicus_threads t
+       LEFT JOIN amicus_thread_summaries s ON s.thread_id = t.thread_id
+       LEFT JOIN amicus_thread_context c ON c.thread_id = t.thread_id
+       LEFT JOIN guided_study_questions q ON q.id = c.open_question_id
       ORDER BY pinned DESC, last_message_at DESC
       LIMIT ? OFFSET ?`,
     [limit, offset],
@@ -729,11 +789,123 @@ export async function listAmicusThreads(limit = 50, offset = 0): Promise<AmicusT
 
 export async function getAmicusThread(threadId: string): Promise<AmicusThread | null> {
   const row = await getUserDb().getFirstAsync<AmicusThreadRow>(
-    `SELECT thread_id, title, chapter_ref, pinned, created_at, last_message_at
-       FROM amicus_threads WHERE thread_id = ?`,
+    `SELECT t.thread_id, t.title, t.chapter_ref, t.pinned,
+            s.summary_text, s.last_user_intent,
+            c.guided_step, c.open_question_id, q.status AS guided_question_status,
+            c.takeaway, c.key_connection,
+            t.created_at, t.last_message_at
+       FROM amicus_threads t
+       LEFT JOIN amicus_thread_summaries s ON s.thread_id = t.thread_id
+       LEFT JOIN amicus_thread_context c ON c.thread_id = t.thread_id
+       LEFT JOIN guided_study_questions q ON q.id = c.open_question_id
+      WHERE t.thread_id = ?`,
     [threadId],
   );
   return row ? hydrateThread(row) : null;
+}
+
+export async function getAmicusThreadContext(
+  threadId: string,
+): Promise<AmicusThreadContextRecord | null> {
+  const row = await getUserDb().getFirstAsync<AmicusThreadContextRow>(
+    `SELECT thread_id, entry_point, guided_session_id, guided_step,
+            open_question_id, takeaway, key_connection, created_at, updated_at
+       FROM amicus_thread_context
+      WHERE thread_id = ?`,
+    [threadId],
+  );
+  return row ? hydrateThreadContext(row) : null;
+}
+
+export async function getLinkedGuidedStudyQuestionForThread(
+  threadId: string,
+): Promise<GuidedStudyQuestion | null> {
+  return getUserDb().getFirstAsync<GuidedStudyQuestion>(
+    `SELECT q.*
+       FROM guided_study_questions q
+       JOIN amicus_thread_context c ON c.open_question_id = q.id
+      WHERE c.thread_id = ?
+      LIMIT 1`,
+    [threadId],
+  );
+}
+
+export async function getAmicusThreadIdForGuidedQuestion(
+  questionId: number,
+): Promise<string | null> {
+  const row = await getUserDb().getFirstAsync<{ thread_id: string }>(
+    `SELECT thread_id
+       FROM amicus_thread_context
+      WHERE open_question_id = ?
+      LIMIT 1`,
+    [questionId],
+  );
+  return row?.thread_id ?? null;
+}
+
+export async function getAmicusThreadIdForGuidedSession(
+  sessionId: number,
+  guidedStep?: GuidedStudySession['current_step'] | null,
+): Promise<string | null> {
+  const row = await getUserDb().getFirstAsync<{ thread_id: string }>(
+    guidedStep
+      ? `SELECT thread_id
+           FROM amicus_thread_context
+          WHERE guided_session_id = ? AND guided_step = ?
+          ORDER BY updated_at DESC
+          LIMIT 1`
+      : `SELECT thread_id
+           FROM amicus_thread_context
+          WHERE guided_session_id = ?
+          ORDER BY updated_at DESC
+          LIMIT 1`,
+    guidedStep ? [sessionId, guidedStep] : [sessionId],
+  );
+  return row?.thread_id ?? null;
+}
+
+export async function getLatestAmicusThreadIdForChapterContext(
+  chapterRef: string,
+  entryPoint?: AmicusThreadContextRecord['entry_point'] | null,
+): Promise<string | null> {
+  const row = await getUserDb().getFirstAsync<{ thread_id: string }>(
+    entryPoint
+      ? `SELECT t.thread_id
+           FROM amicus_threads t
+           LEFT JOIN amicus_thread_context c ON c.thread_id = t.thread_id
+          WHERE t.chapter_ref = ? AND c.entry_point = ?
+          ORDER BY COALESCE(c.updated_at, t.last_message_at) DESC
+          LIMIT 1`
+      : `SELECT thread_id
+           FROM amicus_threads
+          WHERE chapter_ref = ?
+          ORDER BY last_message_at DESC
+          LIMIT 1`,
+    entryPoint ? [chapterRef, entryPoint] : [chapterRef],
+  );
+  return row?.thread_id ?? null;
+}
+
+export async function getLatestStudyAmicusThreadIdForChapter(
+  chapterRef: string,
+): Promise<string | null> {
+  const row = await getUserDb().getFirstAsync<{ thread_id: string }>(
+    `SELECT t.thread_id
+       FROM amicus_threads t
+       LEFT JOIN amicus_thread_context c ON c.thread_id = t.thread_id
+      WHERE t.chapter_ref = ?
+        AND (
+          c.entry_point IN ('guided_study', 'my_study')
+          OR c.guided_session_id IS NOT NULL
+          OR c.open_question_id IS NOT NULL
+          OR trim(COALESCE(c.takeaway, '')) != ''
+          OR trim(COALESCE(c.key_connection, '')) != ''
+        )
+      ORDER BY COALESCE(c.updated_at, t.last_message_at) DESC
+      LIMIT 1`,
+    [chapterRef],
+  );
+  return row?.thread_id ?? null;
 }
 
 export async function listAmicusMessages(threadId: string): Promise<AmicusMessage[]> {

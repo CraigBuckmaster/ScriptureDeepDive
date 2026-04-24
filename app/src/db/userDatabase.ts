@@ -31,6 +31,15 @@ export async function initUserDatabase(): Promise<SQLite.SQLiteDatabase> {
     await userDb.execAsync('PRAGMA journal_mode=WAL');
   }
 
+  // Enforce foreign keys at runtime. SQLite leaves FK checks OFF by default
+  // and the setting is per-connection — if we don't turn it on here, every
+  // `REFERENCES ... ON DELETE CASCADE / SET NULL` in our schema is cosmetic
+  // and orphan rows accumulate silently. Must be set outside any transaction
+  // (which is why this lives here, before runMigrations). DDL in migrations
+  // is unaffected by the setting — only DML statements that would violate
+  // a declared FK get rejected, which is the desired runtime behavior.
+  await userDb.execAsync('PRAGMA foreign_keys = ON');
+
   await runMigrations(userDb);
   return userDb;
 }
@@ -716,6 +725,41 @@ const MIGRATIONS: Migration[] = [
       FROM guided_study_synthesis synthesis
       JOIN guided_study_sessions sessions ON sessions.id = synthesis.session_id
       WHERE trim(synthesis.open_question) != '';
+    `,
+  },
+  {
+    version: 22,
+    description: 'Amicus - thread summaries and last-intent metadata for thread intelligence',
+    sql: `
+      CREATE TABLE IF NOT EXISTS amicus_thread_summaries (
+        thread_id TEXT PRIMARY KEY REFERENCES amicus_threads(thread_id) ON DELETE CASCADE,
+        summary_text TEXT NOT NULL,
+        last_user_intent TEXT,
+        updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+      );
+    `,
+  },
+  {
+    version: 23,
+    description: 'Amicus V2 contextual study links for guided study launches',
+    sql: `
+      CREATE TABLE IF NOT EXISTS amicus_thread_context (
+        thread_id TEXT PRIMARY KEY REFERENCES amicus_threads(thread_id) ON DELETE CASCADE,
+        entry_point TEXT NOT NULL
+          CHECK (entry_point IN ('fab', 'peek', 'thread', 'home_card', 'guided_study', 'my_study')),
+        guided_session_id INTEGER REFERENCES guided_study_sessions(id) ON DELETE SET NULL,
+        guided_step TEXT
+          CHECK (guided_step IS NULL OR guided_step IN ('scene', 'observe', 'explore', 'synthesize', 'review')),
+        open_question_id INTEGER UNIQUE REFERENCES guided_study_questions(id) ON DELETE SET NULL,
+        takeaway TEXT,
+        key_connection TEXT,
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+      );
+      CREATE INDEX IF NOT EXISTS idx_amicus_thread_context_session
+        ON amicus_thread_context(guided_session_id, guided_step, updated_at DESC);
+      CREATE INDEX IF NOT EXISTS idx_amicus_thread_context_updated
+        ON amicus_thread_context(updated_at DESC);
     `,
   },
 ];

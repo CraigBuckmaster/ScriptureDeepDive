@@ -142,10 +142,29 @@ export interface Bookmark {
 export interface AmicusThread {
   thread_id: string;
   title: string;
-  chapter_ref: string | null; // e.g. "romans:9"
+  chapter_ref: string | null; // e.g. "romans/9"
   pinned: boolean;
+  summary_text?: string | null;
+  last_user_intent?: string | null;
+  guided_step?: GuidedStudyStep | null;
+  open_question_id?: number | null;
+  guided_question_status?: 'open' | 'resolved' | null;
+  takeaway?: string | null;
+  key_connection?: string | null;
   created_at: string;
   last_message_at: string;
+}
+
+export interface AmicusThreadContextRecord {
+  thread_id: string;
+  entry_point: 'fab' | 'peek' | 'thread' | 'home_card' | 'guided_study' | 'my_study';
+  guided_session_id: number | null;
+  guided_step: GuidedStudyStep | null;
+  open_question_id: number | null;
+  takeaway: string | null;
+  key_connection: string | null;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface AmicusCitation {
@@ -153,6 +172,13 @@ export interface AmicusCitation {
   source_type: string;
   display_label: string;
   scholar_id?: string;
+}
+
+export interface AmicusDraftMessage {
+  role: 'user' | 'assistant';
+  content: string;
+  citations?: AmicusCitation[];
+  follow_ups?: string[];
 }
 
 export interface AmicusMessage {

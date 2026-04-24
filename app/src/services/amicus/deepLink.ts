@@ -6,6 +6,7 @@
  * future deep-link sources (push notifications, widgets).
  */
 import type { NavigationProp, ParamListBase } from '@react-navigation/native';
+import type { AmicusDraftMessage } from '@/types';
 import { logger } from '@/utils/logger';
 
 export interface AmicusSeedChapterRef {
@@ -15,6 +16,11 @@ export interface AmicusSeedChapterRef {
 
 export interface AmicusSeed {
   query: string;
+  chapterRef?: AmicusSeedChapterRef | null;
+}
+
+export interface AmicusPeekPromotion {
+  messages: AmicusDraftMessage[];
   chapterRef?: AmicusSeedChapterRef | null;
 }
 
@@ -74,6 +80,31 @@ export function navigateToAmicusWithSeed(
   logger.info(
     'AmicusDeepLink',
     `seeded nav: query=${seed.query.length}ch chapter=${formatChapterRef(seed.chapterRef) ?? 'none'}`,
+  );
+}
+
+export function navigateToAmicusWithPromotion(
+  navigation: NavigationProp<ParamListBase>,
+  promotion: AmicusPeekPromotion,
+  opts: NavigateToAmicusWithSeedOptions = {},
+): void {
+  const parent = navigation.getParent<NavigationProp<ParamListBase>>();
+  if (!parent) {
+    (opts.onNoParent ?? (() => {
+      logger.warn('AmicusDeepLink', 'no parent navigator for promotion');
+    }))();
+    return;
+  }
+  parent.navigate('AmicusTab', {
+    screen: 'NewThread',
+    params: {
+      seedChapterRef: formatChapterRef(promotion.chapterRef),
+      promotedMessages: promotion.messages,
+    },
+  });
+  logger.info(
+    'AmicusDeepLink',
+    `promoted peek: messages=${promotion.messages.length} chapter=${formatChapterRef(promotion.chapterRef) ?? 'none'}`,
   );
 }
 

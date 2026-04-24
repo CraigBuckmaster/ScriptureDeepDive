@@ -4,6 +4,7 @@
 import type { NavigationProp, ParamListBase } from '@react-navigation/native';
 import {
   formatChapterRef,
+  navigateToAmicusWithPromotion,
   navigateToAmicusWithSeed,
   parseAmicusDeepLink,
   parseChapterRef,
@@ -80,6 +81,29 @@ describe('navigateToAmicusWithSeed', () => {
       { onNoParent },
     );
     expect(onNoParent).toHaveBeenCalled();
+  });
+});
+
+describe('navigateToAmicusWithPromotion', () => {
+  it('dispatches a NewThread navigation with promoted peek messages', () => {
+    const { nav, parentNavigate } = makeNav();
+    navigateToAmicusWithPromotion(nav, {
+      messages: [
+        { role: 'user', content: 'What is hesed?' },
+        { role: 'assistant', content: 'It means covenant love.' },
+      ],
+      chapterRef: { book_id: 'psalms', chapter_num: 23 },
+    });
+    expect(parentNavigate).toHaveBeenCalledWith('AmicusTab', {
+      screen: 'NewThread',
+      params: {
+        seedChapterRef: 'psalms/23',
+        promotedMessages: [
+          { role: 'user', content: 'What is hesed?' },
+          { role: 'assistant', content: 'It means covenant love.' },
+        ],
+      },
+    });
   });
 });
 

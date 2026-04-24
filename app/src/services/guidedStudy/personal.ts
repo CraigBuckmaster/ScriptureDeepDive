@@ -82,7 +82,7 @@ export function buildGuidedStudyNextAction(input: {
       kind: 'question',
       title: 'Return to an open question',
       subtitle: question.question_text,
-      ctaLabel: 'Revisit question',
+      ctaLabel: 'Discuss with Amicus',
       chapterId: question.chapter_id,
       initialStep: 'synthesize',
     };
@@ -94,7 +94,7 @@ export function buildGuidedStudyNextAction(input: {
       kind: 'takeaway',
       title: 'Strengthen your last takeaway',
       subtitle: takeaway.takeaway,
-      ctaLabel: 'Open My Study',
+      ctaLabel: 'Refine with Amicus',
       chapterId: takeaway.chapter_id,
       initialStep: 'review',
     };

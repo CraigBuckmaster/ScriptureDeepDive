@@ -7,6 +7,7 @@
  */
 import { getCachedDailyPrompt, getRecentChapters } from '@/db/userQueries';
 import { upsertDailyPrompt } from '@/db/userMutations';
+import { getAmicusAuthToken } from '@/services/amicus/authToken';
 import { generateProfile } from '@/services/amicus/profile/generator';
 import { logger } from '@/utils/logger';
 
@@ -21,7 +22,7 @@ export interface DailyPrompt {
 }
 
 export interface GetDailyPromptOptions {
-  getAuthToken?: () => string;
+  getAuthToken?: () => string | null | Promise<string | null>;
   fetchImpl?: typeof fetch;
   /** Inject a fixed date for deterministic tests. Defaults to now. */
   now?: () => Date;
@@ -58,7 +59,7 @@ export async function getDailyPrompt(
   }
 
   const authToken =
-    opts.getAuthToken?.() ?? process.env.EXPO_PUBLIC_AMICUS_DEV_TOKEN ?? '';
+    (await opts.getAuthToken?.()) ?? (await getAmicusAuthToken());
   if (!authToken || !profileHash) {
     // No way to call the proxy — fall back to whatever we have.
     return cached
