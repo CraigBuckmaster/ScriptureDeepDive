@@ -36,49 +36,22 @@ from collections import Counter
 
 # ─── Configuration ──────────────────────────────────────────────────
 
-# Core (non-scholar) section panel types
-CORE_SECTION_PANELS = {"heb", "cross", "hist", "tl", "places", "poi", "ctx"}
-
-# Minimum expected section panels (every section ideally has these)
-REQUIRED_SECTION_PANELS = {"heb", "cross"}
-
-# Known chapter panel types
-KNOWN_CHAPTER_PANELS = {
-    "lit", "themes", "ppl", "trans", "src", "rec",
-    "hebtext", "thread", "tx", "debate", "discourse",
-}
-
-# ── Density thresholds (character counts) ──
-# Maps content length ranges to (rating_name, score_out_of_10)
-DENSITY_TIERS = [
-    (0,       "empty",     0),
-    (100,     "stub",      2),
-    (250,     "thin",      5),
-    (500,     "adequate",  7),
-    (1000,    "good",      9),
-    (999999,  "rich",     10),
-]
-
-# Per-panel-type threshold multipliers — lower = more lenient for shorter panels
-PANEL_THRESHOLD_MULTIPLIERS = {
-    "heb": 0.5,      # Hebrew panels are naturally shorter (word studies)
-    "cross": 0.5,    # Cross-ref panels are citations, not commentary
-}
-
-# Placeholder / template artifact patterns
-PLACEHOLDER_PATTERNS = [
-    re.compile(r"\bTODO\b", re.IGNORECASE),
-    re.compile(r"\bplaceholder\b", re.IGNORECASE),
-    re.compile(r"\bLorem\b"),
-    re.compile(r"\binsert here\b", re.IGNORECASE),
-    re.compile(r"\.{4,}"),  # four or more dots
-    re.compile(r"^This passage is significant because\b"),
-    re.compile(r"^This section describes\b"),
-    re.compile(r"\[fill in\]", re.IGNORECASE),
-]
-
-# Source field format: "Author Name, Work Title — Paraphrase Type"
-SOURCE_PATTERN = re.compile(r"^.+[,\s].+\s*[—–-]\s*.+$")
+# Panel taxonomy lives in _tools/panel_taxonomy.py so it can be shared with
+# coverage_auditor.py (see epic #1625) without duplication or drift.
+# KNOWN_CHAPTER_PANELS is re-exported under its legacy name for backwards
+# compat with any external caller that may already import it from here.
+from panel_taxonomy import (
+    CORE_SECTION_PANELS,
+    REQUIRED_SECTION_PANELS,
+    CHAPTER_PANEL_TYPES as KNOWN_CHAPTER_PANELS,
+    DENSITY_TIERS,
+    PANEL_THRESHOLD_MULTIPLIERS,
+    PLACEHOLDER_PATTERNS,
+    SOURCE_PATTERN,
+    extract_panel_text,
+    get_density_score,
+    load_scholar_keys,
+)
 
 
 # ─── Data Classes ───────────────────────────────────────────────────
@@ -151,107 +124,6 @@ class ChapterScore:
                 if severity_order.get(f.severity, 0) >= min_level:
                     findings.append(f)
         return findings
-
-
-# ─── Text Extraction ────────────────────────────────────────────────
-
-def extract_panel_text(panel_key, panel_data):
-    """Extract meaningful text content from any panel type.
-
-    Returns the combined text as a single string for length measurement
-    and content analysis. Handles all known panel structures.
-    """
-    if panel_data is None:
-        return ""
-
-    # Hebrew word studies — list of dicts
-    if panel_key == "heb" and isinstance(panel_data, list):
-        parts = []
-        for entry in panel_data:
-            if isinstance(entry, dict):
-                parts.append(entry.get("paragraph", ""))
-                parts.append(entry.get("gloss", ""))
-        return " ".join(p for p in parts if p)
-
-    # Cross-references — dict with refs list + echoes list
-    if panel_key == "cross" and isinstance(panel_data, dict):
-        parts = []
-        for r in panel_data.get("refs", []):
-            if isinstance(r, dict):
-                parts.append(r.get("note", ""))
-        for e in panel_data.get("echoes", []):
-            if isinstance(e, dict):
-                parts.append(e.get("source_context", ""))
-                parts.append(e.get("target_context", ""))
-        return " ".join(p for p in parts if p)
-
-    # Historical context — dict with historical + context + ane + audience fields
-    if panel_key == "hist" and isinstance(panel_data, dict):
-        parts = [
-            panel_data.get("historical", ""),
-            panel_data.get("context", ""),
-            panel_data.get("audience", ""),
-        ]
-        ane = panel_data.get("ane", [])
-        if isinstance(ane, list):
-            parts.extend(str(item) for item in ane)
-        elif isinstance(ane, str):
-            parts.append(ane)
-        return " ".join(p for p in parts if p)
-
-    # Timeline — list of dicts with text
-    if panel_key == "tl" and isinstance(panel_data, list):
-        return " ".join(
-            entry.get("text", "") for entry in panel_data if isinstance(entry, dict)
-        )
-
-    # Places — dict, possibly with _raw_html
-    if panel_key == "places" and isinstance(panel_data, dict):
-        raw = panel_data.get("_raw_html", "")
-        # Strip HTML for length measurement
-        return re.sub(r"<[^>]+>", " ", raw).strip() if raw else ""
-
-    # Points of interest — list of dicts with text
-    if panel_key == "poi" and isinstance(panel_data, list):
-        return " ".join(
-            entry.get("text", "") for entry in panel_data if isinstance(entry, dict)
-        )
-
-    # Scholar panels — dict with source + notes list
-    if isinstance(panel_data, dict) and "notes" in panel_data:
-        notes = panel_data.get("notes", [])
-        if isinstance(notes, list):
-            return " ".join(
-                n.get("note", "") for n in notes if isinstance(n, dict)
-            )
-        return ""
-
-    # Fallback: stringify
-    if isinstance(panel_data, str):
-        return panel_data
-    if isinstance(panel_data, dict):
-        return " ".join(str(v) for v in panel_data.values())
-    if isinstance(panel_data, list):
-        return " ".join(str(item) for item in panel_data)
-
-    return str(panel_data)
-
-
-def get_density_score(char_count, panel_key=None):
-    """Score a panel's content density based on character count.
-
-    Returns (score_out_of_10, tier_name).
-    """
-    multiplier = PANEL_THRESHOLD_MULTIPLIERS.get(panel_key, 1.0)
-    adjusted = char_count / multiplier if multiplier > 0 else char_count
-
-    prev_threshold = 0
-    for threshold, name, score in DENSITY_TIERS:
-        if adjusted < threshold:
-            return score, name
-        prev_threshold = threshold
-
-    return 10, "rich"
 
 
 # ─── Scoring Functions ──────────────────────────────────────────────
@@ -957,29 +829,7 @@ class QualityEvaluator:
 
     def _load_scholar_keys(self):
         """Build set of valid scholar panel keys from all available sources."""
-        keys = set()
-
-        # From scholars.json meta
-        meta_path = self.content_dir / "meta" / "scholars.json"
-        if meta_path.exists():
-            scholars = json.loads(meta_path.read_text(encoding='utf-8'))
-            for s in scholars:
-                keys.add(s.get("panel_key", ""))
-                keys.add(s.get("id", ""))
-
-        # From config.py SCHOLAR_REGISTRY if available
-        try:
-            sys.path.insert(0, str(Path(__file__).resolve().parent))
-            from config import SCHOLAR_REGISTRY
-            for entry in SCHOLAR_REGISTRY:
-                if isinstance(entry, (tuple, list)) and len(entry) >= 4:
-                    keys.add(entry[3])  # panel_key
-                    keys.add(entry[0])  # config_id
-        except (ImportError, Exception):
-            pass
-
-        keys.discard("")
-        return keys
+        return load_scholar_keys(self.content_dir)
 
     def _load_llm_cache(self):
         cache_path = Path(__file__).resolve().parent / ".quality_cache.json"

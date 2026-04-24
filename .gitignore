@@ -37,6 +37,9 @@ _tools/embedding_manifest.json
 prompts.db
 _tools/prompts_manifest.json
 
-# Expo export output (from `npx expo export`) 
-app/bundle.log 
-app/dist/ 
+# Expo export output (from `npx expo export`)
+app/bundle.log
+app/dist/
+
+# Coverage audit artifacts (epic #1625) — regenerable snapshots, never tracked.
+_audit/
