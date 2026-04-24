@@ -12,6 +12,7 @@ const mockSDK = {
   purchasePackage: jest.fn(),
   restorePurchases: jest.fn(),
   getCustomerInfo: jest.fn(),
+  getAppUserID: jest.fn(),
 };
 jest.mock('react-native-purchases', () => ({ default: mockSDK }), { virtual: true });
 
@@ -28,6 +29,7 @@ jest.mock('@/stores/premiumStore', () => ({
 }));
 
 import {
+  getPurchasesAppUserID,
   initializePurchases,
   purchasePlan,
   restorePurchases,
@@ -73,6 +75,11 @@ describe('purchases service', () => {
       const { initializePurchases: initFresh } = require('@/services/purchases');
       await initFresh('key');
       // Should not throw, just log and return
+      expect(mockSDK.configure).not.toHaveBeenCalled();
+    });
+
+    it('does not configure when the API key is empty', async () => {
+      await initializePurchases('   ');
       expect(mockSDK.configure).not.toHaveBeenCalled();
     });
   });
@@ -244,9 +251,27 @@ describe('purchases service', () => {
         },
       });
 
+      await initializePurchases('rc_api_key');
+      mockSDK.getCustomerInfo.mockClear();
       await syncPremiumStatus();
       expect(mockSDK.getCustomerInfo).toHaveBeenCalled();
       expect(mockSetPremiumStatus).toHaveBeenCalled();
+    });
+  });
+
+  describe('getPurchasesAppUserID', () => {
+    it('returns null before RevenueCat is configured', async () => {
+      expect(await getPurchasesAppUserID()).toBeNull();
+    });
+
+    it('returns the configured app user id after initialization', async () => {
+      mockSDK.getCustomerInfo.mockResolvedValue({ entitlements: { active: {} } });
+      mockSDK.getAppUserID.mockResolvedValue('rc_app_user_123456789');
+
+      await initializePurchases('rc_api_key');
+
+      await expect(getPurchasesAppUserID()).resolves.toBe('rc_app_user_123456789');
+      expect(mockSDK.getAppUserID).toHaveBeenCalled();
     });
   });
 });
