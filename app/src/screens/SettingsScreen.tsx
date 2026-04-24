@@ -46,10 +46,8 @@ function SettingsScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'Settings'>>();
   const translation = useSettingsStore((s) => s.translation);
-  const fontSize = useSettingsStore((s) => s.fontSize);
   const vhlEnabled = useSettingsStore((s) => s.vhlEnabled);
   const { switchTranslation } = useTranslationSwitch();
-  const setFontSize = useSettingsStore((s) => s.setFontSize);
   const setVhlEnabled = useSettingsStore((s) => s.setVhlEnabled);
   const redLetterEnabled = useSettingsStore((s) => s.redLetterEnabled);
   const setRedLetterEnabled = useSettingsStore((s) => s.setRedLetterEnabled);
@@ -94,8 +92,6 @@ function SettingsScreen() {
           onTranslationChange={switchTranslation}
           theme={theme}
           setTheme={setTheme}
-          fontSize={fontSize}
-          setFontSize={setFontSize}
           vhlEnabled={vhlEnabled}
           setVhlEnabled={setVhlEnabled}
           redLetterEnabled={redLetterEnabled}

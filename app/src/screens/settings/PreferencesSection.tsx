@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Switch, StyleSheet } from 'react-native';
+import { Switch } from 'react-native';
 import type { BaseColors } from '../../theme/palettes';
 import type { DropdownOption } from '../../components/CompactDropdown';
 import { CompactDropdown } from '../../components/CompactDropdown';
 import { ThemePicker } from '../../components/ThemePicker';
-import { spacing, fontFamily } from '../../theme';
+import { ReadingScaleEditor } from '../../components/settings/ReadingScaleEditor';
 import { SectionLabel } from './SectionLabel';
 import { SettingsRow } from './SettingsRow';
 
@@ -17,8 +17,6 @@ interface PreferencesSectionProps {
   onTranslationChange: (key: string) => void;
   theme: ThemePreference;
   setTheme: (t: ThemePreference) => void;
-  fontSize: number;
-  setFontSize: (s: number) => void;
   vhlEnabled: boolean;
   setVhlEnabled: (v: boolean) => void;
   redLetterEnabled: boolean;
@@ -36,8 +34,6 @@ export function PreferencesSection({
   onTranslationChange,
   theme,
   setTheme,
-  fontSize,
-  setFontSize,
   vhlEnabled,
   setVhlEnabled,
   redLetterEnabled,
@@ -63,35 +59,8 @@ export function PreferencesSection({
       {/* Appearance */}
       <ThemePicker theme={theme} setTheme={setTheme} />
 
-      {/* Font Size */}
-      <SettingsRow label={`Font Size: ${fontSize}pt`} base={base}>
-        <View style={localStyles.sizeControls}>
-          <TouchableOpacity
-            onPress={() => setFontSize(fontSize - 1)}
-            style={[localStyles.sizeButton, { backgroundColor: base.bgElevated, borderColor: base.border }]}
-          >
-            <Text style={[localStyles.sizeButtonText, { color: base.gold }]}>{'\u2212'}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => setFontSize(fontSize + 1)}
-            style={[localStyles.sizeButton, { backgroundColor: base.bgElevated, borderColor: base.border }]}
-          >
-            <Text style={[localStyles.sizeButtonText, { color: base.gold }]}>+</Text>
-          </TouchableOpacity>
-        </View>
-      </SettingsRow>
-
-      {/* Font preview */}
-      <View style={localStyles.preview}>
-        <Text
-          style={[
-            localStyles.previewText,
-            { fontSize, lineHeight: fontSize * 1.6, color: base.textDim },
-          ]}
-        >
-          In the beginning God created the heavens and the earth.
-        </Text>
-      </View>
+      {/* Reading size (replaces legacy Font Size +/- row, #1642) */}
+      <ReadingScaleEditor />
 
       {/* VHL Toggle */}
       <SettingsRow label="Verse Highlighting" base={base}>
@@ -135,28 +104,3 @@ export function PreferencesSection({
     </>
   );
 }
-
-const localStyles = StyleSheet.create({
-  sizeControls: {
-    flexDirection: 'row',
-    gap: spacing.sm,
-    alignItems: 'center',
-  },
-  sizeButton: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderWidth: 1,
-  },
-  sizeButtonText: {
-    fontSize: 16,
-  },
-  preview: {
-    paddingVertical: spacing.sm,
-  },
-  previewText: {
-    fontFamily: fontFamily.body,
-  },
-});

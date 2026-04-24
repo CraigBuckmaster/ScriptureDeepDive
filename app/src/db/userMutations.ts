@@ -77,6 +77,13 @@ export async function setPreference(key: string, value: string): Promise<void> {
   );
 }
 
+export async function deletePreference(key: string): Promise<void> {
+  await getUserDb().runAsync(
+    'DELETE FROM user_preferences WHERE key = ?',
+    [key],
+  );
+}
+
 // ── Highlights (write) ───────────────────────────────────────────
 
 export async function setHighlight(
