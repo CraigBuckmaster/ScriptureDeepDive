@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import { X, BookOpen } from 'lucide-react-native';
 import { useMorphologyDecode, useGrammarArticle } from '../hooks/useGrammar';
-import { useTheme, spacing, radii, fontFamily, panels } from '../theme';
+import { useTheme, spacing, radii, fontFamily, panels, useTypography } from '../theme';
 import { LoadingSkeleton } from './LoadingSkeleton';
 
 interface Props {
@@ -25,6 +25,7 @@ interface Props {
 
 export function GrammarSheet({ visible, morphologyCode, onClose, onArticlePress }: Props) {
   const { base } = useTheme();
+  const { content } = useTypography();
   const decoded = useMorphologyDecode(morphologyCode);
   const { article, loading: articleLoading } = useGrammarArticle(decoded?.articleId ?? null);
 
@@ -102,7 +103,7 @@ export function GrammarSheet({ visible, morphologyCode, onClose, onArticlePress 
                           <Text style={[styles.sectionLabel, { color: base.gold }]}>GRAMMAR ARTICLE</Text>
                           <View style={[styles.articleCard, { backgroundColor: base.bg, borderColor: base.border }]}>
                             <Text style={[styles.articleTitle, { color: base.text }]}>{article.title}</Text>
-                            <Text style={[styles.articleSummary, { color: base.textDim }]} numberOfLines={3}>
+                            <Text style={[content.bodySm, { color: base.textDim }]} numberOfLines={3}>
                               {article.summary}
                             </Text>
                             {onArticlePress && (
@@ -227,11 +228,6 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.displayMedium,
     fontSize: 14,
     marginBottom: 4,
-  },
-  articleSummary: {
-    fontFamily: fontFamily.ui,
-    fontSize: 12,
-    lineHeight: 18,
   },
   readMoreBtn: {
     flexDirection: 'row',

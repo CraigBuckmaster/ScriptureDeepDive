@@ -8,7 +8,7 @@
 
 import React, { useMemo } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { useTheme, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily, useTypography } from '../../theme';
 import type { LitPanel } from '../../types';
 import { TabbedPanelRenderer } from './TabbedPanelRenderer';
 import type { TabConfig } from './TabbedPanelRenderer';
@@ -38,6 +38,7 @@ export function LiteraryStructurePanel({ data, defaultTab }: Props) {
 
 function StructureView({ data }: Props) {
   const { base, getPanelColors } = useTheme();
+  const { content } = useTypography();
   const colors = getPanelColors('lit');
 
   return (
@@ -53,13 +54,13 @@ function StructureView({ data }: Props) {
           <Text style={[styles.rowLabel, { color: colors.accent }]}>
             {row.label}
           </Text>
-          <Text style={[styles.rowText, { color: base.textDim }]}>
+          <Text style={[content.bodyMd, styles.rowText, { color: base.textDim }]}>
             {row.text}
           </Text>
         </View>
       ))}
       {data.note ? (
-        <Text style={[styles.note, { color: base.textMuted }]}>{data.note}</Text>
+        <Text style={[content.bodyItalic, { color: base.textMuted }]}>{data.note}</Text>
       ) : null}
     </View>
   );
@@ -85,13 +86,6 @@ const styles = StyleSheet.create({
     minWidth: 55,
   },
   rowText: {
-    fontFamily: fontFamily.body,
-    fontSize: 14,
     flex: 1,
-  },
-  note: {
-    fontFamily: fontFamily.bodyItalic,
-    fontSize: 13,
-    marginTop: spacing.xs,
   },
 });

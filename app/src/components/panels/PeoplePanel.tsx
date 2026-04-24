@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { TappableReference } from '../TappableReference';
-import { useTheme, spacing, radii, fontFamily } from '../../theme';
+import { useTheme, spacing, radii, fontFamily, useTypography } from '../../theme';
 import type { PeopleEntry, ParsedRef } from '../../types';
 
 interface Props {
@@ -12,6 +12,7 @@ interface Props {
 
 export function PeoplePanel({ entries, onPersonPress, onRefPress }: Props) {
   const { base, getPanelColors } = useTheme();
+  const { content } = useTypography();
   const colors = getPanelColors('ppl');
   return (
     <View style={styles.container}>
@@ -29,7 +30,7 @@ export function PeoplePanel({ entries, onPersonPress, onRefPress }: Props) {
             {p.role}
           </Text>
           {p.text ? (
-            <TappableReference text={p.text} style={[styles.personText, { color: base.textDim }]} onRefPress={onRefPress} />
+            <TappableReference text={p.text} style={[content.bodySm, styles.personText, { color: base.textDim }]} onRefPress={onRefPress} />
           ) : null}
         </View>
       ))}
@@ -59,8 +60,6 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   personText: {
-    fontSize: 12,
-    lineHeight: 18,
     marginTop: 4,
   },
 });

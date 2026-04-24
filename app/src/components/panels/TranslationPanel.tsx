@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { useTheme, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily, useTypography } from '../../theme';
 import type { TransPanel } from '../../types';
 
 interface TransRow {
@@ -74,6 +74,7 @@ function parseHtmlTable(html: string): TransRow[] {
 
 export function TranslationPanel({ data }: Props) {
   const { base, getPanelColors } = useTheme();
+  const { content } = useTypography();
   const colors = getPanelColors('trans');
 
   // Handle both structured data and legacy HTML strings
@@ -120,7 +121,7 @@ export function TranslationPanel({ data }: Props) {
               <Text style={[styles.versionLabel, { color: colors.accent }]}>
                 {t.version}
               </Text>
-              <Text style={[styles.transText, { color: base.textDim }]}>
+              <Text style={[content.bodyMd, styles.transText, { color: base.textDim }]}>
                 {t.text}
               </Text>
             </View>
@@ -161,8 +162,6 @@ const styles = StyleSheet.create({
     minWidth: 32,
   },
   transText: {
-    fontFamily: fontFamily.body,
-    fontSize: 14,
     flex: 1,
   },
 });

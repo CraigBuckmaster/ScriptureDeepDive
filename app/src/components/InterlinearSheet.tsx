@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import { X } from 'lucide-react-native';
 import { getInterlinearWords } from '../db/content';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, useTypography } from '../theme';
 import type { InterlinearWord } from '../types';
 import { LoadingSkeleton } from './LoadingSkeleton';
 import { GrammarSheet } from './GrammarSheet';
@@ -43,6 +43,7 @@ export function InterlinearSheet({
   onClose, onWordStudyPress, onConcordancePress, onLexiconPress, onGrammarArticlePress,
 }: Props) {
   const { base } = useTheme();
+  const { content } = useTypography();
   const [words, setWords] = useState<InterlinearWord[]>([]);
   const [loading, setLoading] = useState(true);
   const [grammarCode, setGrammarCode] = useState<string | null>(null);
@@ -174,7 +175,7 @@ export function InterlinearSheet({
 
                       {/* Gloss */}
                       {w.gloss ? (
-                        <Text style={[styles.gloss, { color: base.text }]} numberOfLines={2}>{w.gloss}</Text>
+                        <Text style={[content.bodySm, styles.gloss, { color: base.text }]} numberOfLines={2}>{w.gloss}</Text>
                       ) : null}
 
                       {/* Word study indicator */}
@@ -286,8 +287,6 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   gloss: {
-    fontFamily: fontFamily.ui,
-    fontSize: 11,
     textAlign: 'center',
   },
   wsIndicator: {

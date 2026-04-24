@@ -18,7 +18,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { ChevronLeft } from 'lucide-react-native';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, useTypography } from '../theme';
 import { useDebateTopic } from '../hooks/useDebateTopics';
 import { usePremium } from '../hooks/usePremium';
 import { UpgradePrompt } from '../components/UpgradePrompt';
@@ -33,6 +33,7 @@ type Route = ScreenRouteProp<'Explore', 'DebateDetail'>;
 
 function DebateDetailScreen() {
   const { base } = useTheme();
+  const { content } = useTypography();
   const navigation = useNavigation<Nav>();
   const route = useRoute<Route>();
   const { topicId } = route.params;
@@ -116,7 +117,7 @@ function DebateDetailScreen() {
         {/* Question card */}
         <View style={[styles.questionCard, { backgroundColor: base.bgElevated, borderLeftColor: base.gold }]}>
           <Text style={[styles.questionLabel, { color: base.textMuted }]}>THE QUESTION</Text>
-          <Text style={[styles.questionText, { color: base.text }]}>{topic.question}</Text>
+          <Text style={[content.bodyLg, { color: base.text }]}>{topic.question}</Text>
           {topic.passage ? (
             <Text style={[styles.passageText, { color: base.gold }]}>{topic.passage}</Text>
           ) : null}
@@ -126,7 +127,7 @@ function DebateDetailScreen() {
         {topic.context ? (
           <View style={styles.section}>
             <Text style={[styles.sectionLabel, { color: base.textMuted }]}>CONTEXT</Text>
-            <Text style={[styles.bodyText, { color: base.text }]}>{topic.context}</Text>
+            <Text style={[content.bodyMd, { color: base.text }]}>{topic.context}</Text>
           </View>
         ) : null}
 
@@ -176,7 +177,7 @@ function DebateDetailScreen() {
         {topic.synthesis ? (
           <View style={[styles.synthesisCard, { borderColor: base.gold + '40', backgroundColor: base.gold + '08' }]}>
             <Text style={[styles.synthesisLabel, { color: base.gold }]}>SYNTHESIS</Text>
-            <Text style={[styles.bodyText, { color: base.text }]}>{topic.synthesis}</Text>
+            <Text style={[content.bodyMd, { color: base.text }]}>{topic.synthesis}</Text>
           </View>
         ) : null}
 
@@ -259,11 +260,6 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     marginBottom: spacing.xs,
   },
-  questionText: {
-    fontFamily: fontFamily.displaySemiBold,
-    fontSize: 16,
-    lineHeight: 24,
-  },
   passageText: {
     fontFamily: fontFamily.ui,
     fontSize: 12,
@@ -278,11 +274,6 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     letterSpacing: 0.8,
     marginBottom: spacing.sm,
-  },
-  bodyText: {
-    fontFamily: fontFamily.ui,
-    fontSize: 14,
-    lineHeight: 22,
   },
   synthesisCard: {
     borderWidth: 1,

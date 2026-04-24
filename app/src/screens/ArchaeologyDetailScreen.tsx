@@ -30,12 +30,13 @@ import { MetadataPill } from '../components/MetadataPill';
 import { GoldSeparator } from '../components/GoldSeparator';
 import { useArchaeologyDetail } from '../hooks/useArchaeology';
 import { usePremium } from '../hooks/usePremium';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, useTypography } from '../theme';
 import type { ArchaeologyVerseLink } from '../types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 function ArchaeologyDetailScreen() {
   const { base } = useTheme();
+  const { content } = useTypography();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ArchaeologyDetail'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'ArchaeologyDetail'>>();
   const { discoveryId } = route.params;
@@ -99,13 +100,13 @@ function ArchaeologyDetailScreen() {
           {/* Significance — always visible */}
           <View style={[styles.significanceCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}>
             <DetailSectionTitle title="Significance" transform="uppercase" />
-            <Text style={[styles.significanceText, { color: base.text }]}>
+            <Text style={[content.bodyMd, styles.significanceText, { color: base.text }]}>
               {discovery.significance}
             </Text>
           </View>
 
           {/* Description */}
-          <Text style={[styles.bodyText, { color: base.text }]}>
+          <Text style={[content.bodyMd, styles.bodyText, { color: base.text }]}>
             {discovery.description}
           </Text>
 
@@ -124,7 +125,7 @@ function ArchaeologyDetailScreen() {
                       {vl.verse_ref}
                     </Text>
                     {vl.relevance && (
-                      <Text style={[styles.verseRelevance, { color: base.textDim }]}>
+                      <Text style={[content.bodySm, styles.verseRelevance, { color: base.textDim }]}>
                         {vl.relevance}
                       </Text>
                     )}
@@ -139,7 +140,7 @@ function ArchaeologyDetailScreen() {
             <View style={styles.sourceSection}>
               <GoldSeparator marginBottom={spacing.md} />
               <DetailSectionTitle title="Source" transform="uppercase" />
-              <Text style={[styles.sourceText, { color: base.textDim }]}>
+              <Text style={[content.bodySm, styles.sourceText, { color: base.textDim }]}>
                 {discovery.source}
               </Text>
             </View>
@@ -152,7 +153,7 @@ function ArchaeologyDetailScreen() {
               <Text style={[styles.gateTitle, { color: base.text }]}>
                 Full discovery details available with Companion+
               </Text>
-              <Text style={[styles.gateDesc, { color: base.textDim }]}>
+              <Text style={[content.bodySm, styles.gateDesc, { color: base.textDim }]}>
                 Unlock linked verses, source references, and more.
               </Text>
               <BadgeChip
@@ -200,14 +201,8 @@ const styles = StyleSheet.create({
     marginBottom: spacing.md,
   },
   significanceText: {
-    fontFamily: fontFamily.body,
-    fontSize: 15,
-    lineHeight: 25,
   },
   bodyText: {
-    fontFamily: fontFamily.body,
-    fontSize: 15,
-    lineHeight: 25,
     marginBottom: spacing.md,
   },
   verseCard: {
@@ -222,17 +217,11 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   verseRelevance: {
-    fontFamily: fontFamily.body,
-    fontSize: 13,
-    lineHeight: 20,
   },
   sourceSection: {
     marginTop: spacing.md,
   },
   sourceText: {
-    fontFamily: fontFamily.body,
-    fontSize: 13,
-    lineHeight: 20,
   },
   gateCard: {
     borderWidth: 1,
@@ -252,10 +241,7 @@ const styles = StyleSheet.create({
     marginBottom: spacing.xs,
   },
   gateDesc: {
-    fontFamily: fontFamily.body,
-    fontSize: 13,
     textAlign: 'center',
-    lineHeight: 20,
     marginBottom: spacing.md,
   },
   loadingPad: { padding: spacing.lg },

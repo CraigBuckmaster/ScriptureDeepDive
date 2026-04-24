@@ -18,7 +18,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { ChevronLeft } from 'lucide-react-native';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, useTypography } from '../theme';
 import { useDictionaryDetail } from '../hooks/useDictionary';
 import { DictionaryCrossLink } from '../components/DictionaryCrossLink';
 import { TappableRefs } from '../components/TappableRefs';
@@ -33,6 +33,7 @@ type Route = ScreenRouteProp<'Explore', 'DictionaryDetail'>;
 
 function DictionaryDetailScreen() {
   const { base } = useTheme();
+  const { content } = useTypography();
   const navigation = useNavigation<Nav>();
   const route = useRoute<Route>();
   const { entryId } = route.params;
@@ -146,7 +147,7 @@ function DictionaryDetailScreen() {
 
         {/* Definition with inline tappable refs */}
         <Text style={[styles.sectionLabel, { color: base.textMuted }]}>DEFINITION</Text>
-        <Text style={[styles.definition, { color: base.text }]}>
+        <Text style={[content.bodyMd, styles.definition, { color: base.text }]}>
           {segments.map((seg, i) =>
             seg.type === 'ref' ? (
               <Text
@@ -253,9 +254,6 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
   definition: {
-    fontFamily: fontFamily.ui,
-    fontSize: 14,
-    lineHeight: 22,
   },
   relatedRow: {
     flexDirection: 'row',

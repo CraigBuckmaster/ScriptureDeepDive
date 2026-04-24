@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { useTheme, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily, useTypography } from '../theme';
 import type { Verse, VHLGroup } from '../types';
 import { HighlightedText } from './HighlightedText';
 import { NoteIndicator } from './NoteIndicator';
@@ -17,7 +17,6 @@ interface Props {
   activeVhlGroups?: string[];
   notedVerses: Set<number>;
   sectionId: string;
-  fontSize?: number;
   onVhlWordPress?: (panelTypes: string[], sectionId: string) => void;
   onNotePress?: (verseNum: number) => void;
   onVerseLongPress?: (verseNum: number, text: string) => void;
@@ -39,16 +38,19 @@ interface Props {
 
 export const VerseBlock = React.memo(function VerseBlock({
   verses, vhlGroups, activeVhlGroups, notedVerses, sectionId,
-  fontSize = 16, onVhlWordPress, onNotePress, onVerseLongPress, onVerseNumPress, activeVerseNum,
+  onVhlWordPress, onNotePress, onVerseLongPress, onVerseNumPress, activeVerseNum,
   comparisonVerses, comparisonLabel, primaryLabel,
   redLetterVerses, onVerseLayout, highlightMap,
 }: Props) {
   const { base } = useTheme();
+  const { content } = useTypography();
   if (!verses.length) return null;
 
-  // Card #1362: 1.7× line-height per spec (was 1.6×) — improves reading ergonomics
-  // at the default 16px / 1.125× dynamic-type bump scales.
-  const lineHeight = fontSize * 1.7;
+  // Verse sizing now flows from useTypography (content.bodyLg) so OS
+  // Dynamic Type + reading-multiplier combine per epic #1639. Card #1362
+  // kept the 1.7× ratio inside the preset; the spread below preserves it.
+  const fontSize = content.bodyLg.fontSize;
+  const lineHeight = content.bodyLg.lineHeight ?? fontSize * 1.7;
   const numSize = Math.max(11, fontSize * 0.65);
   const isComparing = !!comparisonVerses && comparisonVerses.length > 0;
 

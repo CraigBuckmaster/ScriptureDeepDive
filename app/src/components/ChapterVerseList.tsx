@@ -97,7 +97,6 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
             activeVhlGroups={verse.activeVhlGroups}
             notedVerses={verse.notedVerses}
             activePanel={panel.activeSectionPanel}
-            fontSize={verse.fontSize}
             onPanelToggle={callbacks.handleSectionPanelToggle}
             onNotePress={callbacks.onNotePress}
             onVerseLongPress={callbacks.onVerseLongPress}

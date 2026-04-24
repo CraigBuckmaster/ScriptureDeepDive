@@ -5,7 +5,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Modal, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, useTypography } from '../theme';
 
 interface Props {
   visible: boolean;
@@ -14,6 +14,7 @@ interface Props {
 
 export function AuthorshipSheet({ visible, onClose }: Props) {
   const { base } = useTheme();
+  const { content } = useTypography();
   return (
     <Modal visible={visible} transparent animationType="slide">
       <TouchableOpacity style={styles.backdrop} activeOpacity={1} onPress={onClose} accessibilityRole="button" accessibilityLabel="Close about content" />
@@ -27,13 +28,13 @@ export function AuthorshipSheet({ visible, onClose }: Props) {
             About This Content
           </Text>
 
-          <Text style={[styles.bodyText, { color: base.textDim }]}>
+          <Text style={[content.bodyMd, { color: base.textDim }]}>
             Companion Study presents the Bible text alongside scholarly commentary from multiple traditions —
             evangelical, reformed, Jewish, critical, and patristic. Each chapter features Hebrew/Greek word studies,
             historical context, cross-references, and curated notes from recognized scholars.
           </Text>
 
-          <Text style={[styles.bodyText, styles.bodyGap, { color: base.textDim }]}>
+          <Text style={[content.bodyMd, styles.bodyGap, { color: base.textDim }]}>
             Verse text is from the NIV and ESV translations. Scholarly notes are curated summaries of published
             commentaries, not direct quotations. The theological themes radar chart uses keyword frequency analysis
             to visualize emphasis patterns.
@@ -72,11 +73,6 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.displayMedium,
     fontSize: 16,
     marginBottom: spacing.md,
-  },
-  bodyText: {
-    fontFamily: fontFamily.body,
-    fontSize: 14,
-    lineHeight: 24,
   },
   bodyGap: {
     marginTop: spacing.md,

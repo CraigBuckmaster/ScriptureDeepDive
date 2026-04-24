@@ -23,7 +23,7 @@ import { ContentImageGallery } from '../components/ContentImageGallery';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { BadgeChip } from '../components/BadgeChip';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, useTypography } from '../theme';
 import type { ProphecyChainLink } from '../types';
 import { logger } from '../utils/logger';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
@@ -77,6 +77,7 @@ function formatLinkRef(link: ProphecyChainLink): string {
 
 function ProphecyDetailScreen() {
   const { base, prophecyCategories, roles: roleColors, testament } = useTheme();
+  const { content } = useTypography();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ProphecyDetail'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'ProphecyDetail'>>();
   const { chainId } = route.params ?? {};
@@ -138,7 +139,7 @@ function ProphecyDetailScreen() {
         {/* Summary callout */}
         {chain.summary && (
           <View style={[styles.summaryBox, { backgroundColor: base.bgElevated, borderLeftColor: base.gold }]}>
-            <Text style={[styles.summaryText, { color: base.textDim }]}>{chain.summary}</Text>
+            <Text style={[content.bodySm, styles.summaryText, { color: base.textDim }]}>{chain.summary}</Text>
           </View>
         )}
 
@@ -236,9 +237,6 @@ const styles = StyleSheet.create({
     marginBottom: spacing.md,
   },
   summaryText: {
-    fontFamily: fontFamily.body,
-    fontSize: 14,
-    lineHeight: 22,
   },
   tagRow: {
     flexDirection: 'row',

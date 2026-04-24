@@ -9,7 +9,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { TappableReference } from '../TappableReference';
 import { ScholarTag } from '../ScholarTag';
-import { useTheme, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily, useTypography } from '../../theme';
 import type { CommentaryNote, ParsedRef } from '../../types';
 
 interface Props {
@@ -21,6 +21,7 @@ interface Props {
 
 export function CommentaryPanel({ notes, scholarId, onScholarPress, onRefPress }: Props) {
   const { base, getScholarColor } = useTheme();
+  const { content } = useTypography();
   const color = getScholarColor(scholarId);
 
   return (
@@ -37,7 +38,7 @@ export function CommentaryPanel({ notes, scholarId, onScholarPress, onRefPress }
           </Text>
           <TappableReference
             text={note.note}
-            style={[styles.noteText, { color: base.textDim }]}
+            style={[content.bodyMd, { color: base.textDim }]}
             onRefPress={onRefPress}
           />
         </View>
@@ -61,9 +62,5 @@ const styles = StyleSheet.create({
   noteRef: {
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 12,
-  },
-  noteText: {
-    fontSize: 14,
-    lineHeight: 22,
   },
 });
