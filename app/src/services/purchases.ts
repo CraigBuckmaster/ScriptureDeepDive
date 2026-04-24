@@ -66,6 +66,7 @@ export const PARTNER_PLUS_PLANS: PlanInfo[] = [
 // Platform-specific native module API - react-native-purchases SDK shape varies
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 let Purchases: any = null;
+let purchasesConfigured = false;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function getSDK(): any {
@@ -91,7 +92,13 @@ export async function initializePurchases(apiKey: string): Promise<void> {
     return;
   }
   try {
-    await sdk.configure({ apiKey });
+    const trimmedKey = apiKey.trim();
+    if (!trimmedKey) {
+      logger.warn('purchases', 'RevenueCat API key missing — purchases not initialized');
+      return;
+    }
+    await sdk.configure({ apiKey: trimmedKey });
+    purchasesConfigured = true;
     logger.info('purchases', 'RevenueCat configured');
     await syncPremiumStatus();
   } catch (err) {
@@ -156,7 +163,7 @@ export async function restorePurchases(): Promise<boolean> {
  */
 export async function syncPremiumStatus(): Promise<void> {
   const sdk = getSDK();
-  if (!sdk) return;
+  if (!sdk || !purchasesConfigured) return;
 
   try {
     const customerInfo = await sdk.getCustomerInfo();
@@ -197,4 +204,19 @@ function getFutureDate(plan: PurchaseType): string {
   if (plan === 'monthly') now.setMonth(now.getMonth() + 1);
   else if (plan === 'annual') now.setFullYear(now.getFullYear() + 1);
   return now.toISOString();
+}
+
+export async function getPurchasesAppUserID(): Promise<string | null> {
+  const sdk = getSDK();
+  if (!sdk || !purchasesConfigured) return null;
+
+  try {
+    const appUserID = await sdk.getAppUserID();
+    return typeof appUserID === 'string' && appUserID.trim().length > 0
+      ? appUserID.trim()
+      : null;
+  } catch (err) {
+    logger.warn('purchases', 'Failed to read RevenueCat app user id', err);
+    return null;
+  }
 }

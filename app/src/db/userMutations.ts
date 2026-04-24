@@ -6,6 +6,7 @@
  */
 
 import { serializeAmicusChapterRef, type AmicusEntryPoint } from '../services/amicus/context';
+import { emitAmicusUsageChanged } from '../services/amicus/usageEvents';
 import { logger } from '../utils/logger';
 import { nextIntervalAfter } from '../services/guidedStudy/review';
 import type { GuidedStudyStep } from '../types';
@@ -769,6 +770,7 @@ export async function clearAllAmicusData(): Promise<void> {
     await db.runAsync('DELETE FROM amicus_threads');
     await db.runAsync('DELETE FROM amicus_usage');
   });
+  emitAmicusUsageChanged();
   logger.info('Amicus', 'cleared all amicus data');
 }
 
@@ -778,6 +780,7 @@ export async function incrementAmicusUsage(): Promise<void> {
      VALUES (strftime('%Y-%m-%d', 'now'), 1)
      ON CONFLICT(day) DO UPDATE SET query_count = query_count + 1`,
   );
+  emitAmicusUsageChanged();
 }
 
 // ── Amicus daily prompt cache (#1465) ───────────────────────────────

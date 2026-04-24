@@ -280,7 +280,61 @@
         }
       ],
       "note": "The Siege Lifted — Lepers at the Gate"
-    }
+    },
+    "rec": [
+      {
+        "who": "Talmud, b. Sanhedrin 107b (allusive)",
+        "text": "The rabbinic tradition on the four lepers outside Samaria treats them as representatives of the principle that God often uses those outside the community of blessing to announce its salvation. The lepers' reasoning ('why sit here until we die?' v.3) is later used in midrashic homily as a prompt to risk faith when circumstances demand movement."
+      },
+      {
+        "who": "Augustine, City of God 17.21 (c. 413 CE)",
+        "text": "Augustine reads the unbelieving officer crushed at the gate (v.17) as the moral type of the cynic who mocks divine promise and dies without tasting its fulfilment. The text becomes, for Augustine, a standing warning against the 'wisdom' of despair: those who pronounce God's provision impossible do not live to see it refuted."
+      },
+      {
+        "who": "Terence E. Fretheim, First and Second Kings, Westminster Bible Companion (1999)",
+        "text": "Fretheim emphasises that the salvation of Samaria comes through four ritually-unclean outcasts — the very people the cultic code excluded from the community. God's rescue operates through socially discarded instruments; the king and his officers contribute nothing to their own salvation. Fretheim reads this as a proto-gospel principle: the Messiah-community will be built, structurally, on the cast-off."
+      }
+    ],
+    "src": [
+      {
+        "title": "Assyrian and Aramean siege-warfare documents",
+        "quote": "ANE military practice of siege-and-retreat: armies often broke camp overnight when surprise reinforcements were reported or feared, leaving supplies intact.",
+        "note": "The Aramean panicked flight (vv.6-7 — 'the LORD had caused the Arameans to hear the sound of chariots') fits standard ANE military behavior. The Hittites and Egyptians named by the Arameans (v.6) were rumored regional powers in the 9th century; the panic is contextually plausible. The miraculous element is the sound itself, divinely generated."
+      },
+      {
+        "title": "Economic texts — Samarian shekel weights",
+        "quote": "Ostraca from Samaria and other 9th/8th-century Israelite sites document standard grain prices; a seah of flour typically ranged 1-2 shekels.",
+        "note": "Elisha's oracle (v.1: 'a seah of flour will sell for a shekel') is a specific restoration of normal market price after the siege collapse. The verse is not pointing to luxury but to the return of baseline functionality — the miracle is that the economy of hunger is reversed to the economy of ordinary purchase."
+      }
+    ],
+    "tx": [
+      {
+        "ref": "7:13",
+        "title": "'Let some men take five of the remaining horses' — textual confusion",
+        "content": "MT verse is notoriously difficult, with multiple attempts at clarification via minor emendations. LXX abbreviates slightly but preserves the awkward syntax. Most modern translations (NIV, ESV) smooth the sentence structurally while staying close to MT.",
+        "note": "The difficulty is not theological but syntactic; no doctrinal weight hangs on the interpretation. Illustrates how the Kings narrator occasionally preserves rough paratactic Hebrew that later prophetic/poetic texts smooth out. Kings' prose style is not uniformly polished — it preserves administrative-archival rawness in places."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "סְאָה",
+        "tlit": "se'ah",
+        "gloss": "seah (dry measure)",
+        "note": "A seah is approximately 7-8 litres of grain (~7 kg of flour). The famine-price of 80 silver shekels for a donkey's head (6:25) had inverted the normal economy; Elisha's oracle promising 'a seah of flour for a shekel' (7:1, 16) reverses it dramatically. The measurement is concrete: the return of normal daily-food pricing is itself the miracle."
+      },
+      {
+        "word": "הַמְצֹרָעִים",
+        "tlit": "hamtsora'im",
+        "gloss": "the lepers",
+        "note": "From tsara'at — a broad category of skin disease, not exclusively Hansen's disease. Leviticus 13-14 required those afflicted to dwell outside the camp, making them the appropriate figures for the chapter's narrative: already outside the city walls when the Aramean camp emptied, they become the first witnesses and the reluctant messengers. Their social exclusion is the mechanism of their providential centrality."
+      },
+      {
+        "word": "הֲמוּלָה",
+        "tlit": "hamulah",
+        "gloss": "sound / rumbling",
+        "note": "Used here (7:6) of the sound of chariots and horses — a dense, confused auditory impression, not a clear musical tone. The word's rarity (hapax or near-hapax) suggests the narrator is describing something specifically eerie: the Arameans hear an army's approach-sound without any army. Divine auditory illusion as strategic weapon."
+      }
+    ]
   },
   "vhl_groups": [
     {
