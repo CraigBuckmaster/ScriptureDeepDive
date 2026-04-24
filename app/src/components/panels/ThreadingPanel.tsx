@@ -2,13 +2,14 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { TappableReference } from '../TappableReference';
 import { BadgeChip } from '../BadgeChip';
-import { useTheme, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily, useTypography } from '../../theme';
 import type { ThreadEntry, ParsedRef } from '../../types';
 
 interface Props { entries: ThreadEntry[]; onRefPress?: (ref: ParsedRef) => void; }
 
 export function ThreadingPanel({ entries, onRefPress }: Props) {
   const { base, getPanelColors } = useTheme();
+  const { content } = useTypography();
   const colors = getPanelColors('thread');
   return (
     <View style={[styles.container, { gap: spacing.md }]}>
@@ -24,7 +25,7 @@ export function ThreadingPanel({ entries, onRefPress }: Props) {
             </Text>
             {e.type ? <BadgeChip label={e.type} color={colors.accent} /> : null}
           </View>
-          <TappableReference text={e.text} style={[styles.bodyText, { color: base.textDim }]} onRefPress={onRefPress} />
+          <TappableReference text={e.text} style={[content.bodySm, { color: base.textDim }]} onRefPress={onRefPress} />
         </View>
       ))}
     </View>
@@ -47,9 +48,5 @@ const styles = StyleSheet.create({
   },
   arrowText: {
     fontSize: 14,
-  },
-  bodyText: {
-    fontSize: 13,
-    lineHeight: 20,
   },
 });

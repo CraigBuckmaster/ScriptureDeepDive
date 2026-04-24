@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { ArrowLeft, X, BookOpen, Search } from 'lucide-react-native';
 import { useLexicon } from '../hooks/useLexicon';
-import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET, panels } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET, panels, useTypography } from '../theme';
 import type { DefinitionJSON } from '../types/lexicon';
 import { LexiconDefinition } from './LexiconDefinition';
 import { RelatedWordCard } from './RelatedWordCard';
@@ -41,6 +41,7 @@ export function LexiconSheet({
   onWordStudyPress, onConcordancePress, wordStudyId,
 }: Props) {
   const { base } = useTheme();
+  const { content } = useTypography();
   const [strongsStack, setStrongsStack] = useState<string[]>([]);
 
   // Sync stack with prop changes
@@ -174,7 +175,7 @@ export function LexiconSheet({
                     {entry.etymology && (
                       <>
                         <Text style={[styles.sectionLabel, { color: base.gold }]}>ETYMOLOGY</Text>
-                        <Text style={[styles.etymology, { color: base.textDim }]}>{entry.etymology}</Text>
+                        <Text style={[content.bodySm, { color: base.textDim }]}>{entry.etymology}</Text>
                       </>
                     )}
 
@@ -317,11 +318,6 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     marginTop: spacing.md,
     marginBottom: spacing.xs,
-  },
-  etymology: {
-    fontFamily: fontFamily.body,
-    fontSize: 13,
-    lineHeight: 20,
   },
   relatedRow: {
     gap: spacing.sm,

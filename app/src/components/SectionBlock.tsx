@@ -21,7 +21,6 @@ interface Props {
   activeVhlGroups?: string[];
   notedVerses: Set<number>;
   activePanel: { sectionId: string; panelType: string } | null;
-  fontSize?: number;
   onPanelToggle: (sectionId: string, panelType: string) => void;
   onNotePress?: (verseNum: number) => void;
   onRefPress?: (ref: ParsedRef) => void;
@@ -49,7 +48,7 @@ interface Props {
 
 function SectionBlock({
   section, panels, verses, vhlGroups, activeVhlGroups,
-  notedVerses, activePanel, fontSize,
+  notedVerses, activePanel,
   onPanelToggle, onNotePress, onRefPress: _onRefPress, onVerseLongPress, onVerseNumPress, activeVerseNum,
   renderButtonRow, renderPanel,
   depthExplored, depthTotal, onDepthRecord,
@@ -95,7 +94,6 @@ function SectionBlock({
         activeVhlGroups={activeVhlGroups}
         notedVerses={notedVerses}
         sectionId={section.id}
-        fontSize={fontSize}
         onVhlWordPress={handleVhlWordPress}
         onNotePress={onNotePress}
         onVerseLongPress={onVerseLongPress}

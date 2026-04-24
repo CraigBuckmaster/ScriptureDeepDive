@@ -95,7 +95,6 @@ function ChapterScreen() {
     verseNum: initialVerseNum,
   } = route.params ?? {};
 
-  const fontSize = useSettingsStore((s) => s.fontSize);
   const translation = useSettingsStore((s) => s.translation);
   const comparisonTranslation = useSettingsStore((s) => s.comparisonTranslation);
   const setComparisonTranslation = useSettingsStore((s) => s.setComparisonTranslation);
@@ -484,7 +483,6 @@ function ChapterScreen() {
             vhlGroups,
             activeVhlGroups,
             notedVerses,
-            fontSize,
             redLetterVerses,
             highlightMap,
             activeVerseNum: ttsHook.activeVerseNum,

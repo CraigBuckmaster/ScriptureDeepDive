@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { useTheme, spacing, radii, fontFamily } from '../../theme';
+import { useTheme, spacing, radii, fontFamily, useTypography } from '../../theme';
 import type { TextualEntry } from '../../types';
 import { ManuscriptStoriesView } from './ManuscriptStoriesView';
 import type { ManuscriptStory } from './ManuscriptStoriesView';
@@ -9,6 +9,7 @@ interface Props { entries: TextualEntry[]; }
 
 export function TextualPanel({ entries }: Props) {
   const { base, getPanelColors } = useTheme();
+  const { content } = useTypography();
   const colors = getPanelColors('tx');
   return (
     <View style={styles.entryList}>
@@ -18,9 +19,9 @@ export function TextualPanel({ entries }: Props) {
             <Text style={[styles.entryRef, { color: colors.accent }]}>{e.ref}</Text>
             <Text style={[styles.entryTitle, { color: base.textDim }]}>{e.title}</Text>
           </View>
-          <Text style={[styles.entryContent, { color: base.textDim }]}>{e.content}</Text>
+          <Text style={[content.bodyMd, { color: base.textDim }]}>{e.content}</Text>
           {e.note ? (
-            <Text style={[styles.entryNote, { color: base.textMuted }]}>{e.note}</Text>
+            <Text style={[content.bodyItalic, { color: base.textMuted }]}>{e.note}</Text>
           ) : null}
         </View>
       ))}
@@ -110,16 +111,6 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.display,
     fontSize: 11,
   },
-  entryContent: {
-    fontFamily: fontFamily.body,
-    fontSize: 14,
-    lineHeight: 22,
-  },
-  entryNote: {
-    fontFamily: fontFamily.bodyItalic,
-    fontSize: 13,
-  },
-
   // Composite tab bar
   tabBar: {
     flexDirection: 'row',

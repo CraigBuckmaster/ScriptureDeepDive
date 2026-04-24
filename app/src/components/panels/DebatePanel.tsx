@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { useTheme, spacing, radii, fontFamily } from '../../theme';
+import { useTheme, spacing, radii, fontFamily, useTypography } from '../../theme';
 import type { DebateEntry } from '../../types';
 
 interface Props {
@@ -22,6 +22,7 @@ export function DebatePanel({
   onUpgradePress,
 }: Props) {
   const { base, getPanelColors } = useTheme();
+  const { content } = useTypography();
   const colors = getPanelColors('debate');
   if (!entries?.length) return null;
 
@@ -55,7 +56,7 @@ export function DebatePanel({
                       {sublabel}
                     </Text>
                   ) : null}
-                  <Text style={[styles.body, { color: base.textDim }]}>
+                  <Text style={[content.bodyMd, { color: base.textDim }]}>
                     {body}
                   </Text>
                 </View>
@@ -115,11 +116,6 @@ const styles = StyleSheet.create({
   sublabel: {
     fontFamily: fontFamily.bodyItalic,
     fontSize: 11,
-  },
-  body: {
-    fontFamily: fontFamily.body,
-    fontSize: 14,
-    lineHeight: 22,
   },
   debateModeCard: {
     borderWidth: 1,

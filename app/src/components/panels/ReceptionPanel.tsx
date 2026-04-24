@@ -1,13 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { TappableReference } from '../TappableReference';
-import { useTheme, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily, useTypography } from '../../theme';
 import type { ParsedRef, RecEntry } from '../../types';
 
 interface Props { entries: RecEntry[]; onRefPress?: (ref: ParsedRef) => void; }
 
 export function ReceptionPanel({ entries, onRefPress }: Props) {
   const { base, getPanelColors } = useTheme();
+  const { content } = useTypography();
   const colors = getPanelColors('rec');
   if (!entries?.length) {
     return (
@@ -33,12 +34,12 @@ export function ReceptionPanel({ entries, onRefPress }: Props) {
               </Text>
             ) : null}
             {body ? (
-              <Text style={[styles.quoteText, { color: base.textDim }]}>
+              <Text style={[content.bodyItalic, { color: base.textDim }]}>
                 {body}
               </Text>
             ) : null}
             {note ? (
-              <TappableReference text={note} style={[styles.noteText, { color: base.textMuted }]} onRefPress={onRefPress} />
+              <TappableReference text={note} style={[content.bodySm, { color: base.textMuted }]} onRefPress={onRefPress} />
             ) : null}
           </View>
         );
@@ -59,14 +60,5 @@ const styles = StyleSheet.create({
   headingText: {
     fontFamily: fontFamily.display,
     fontSize: 12,
-  },
-  quoteText: {
-    fontFamily: fontFamily.bodyItalic,
-    fontSize: 14,
-    lineHeight: 22,
-  },
-  noteText: {
-    fontSize: 13,
-    lineHeight: 20,
   },
 });

@@ -32,7 +32,7 @@ import {
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { ChevronLeft } from 'lucide-react-native';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, useTypography } from '../theme';
 import { usePremium } from '../hooks/usePremium';
 import { useExtraBiblicalEntry } from '../hooks/useExtraBiblicalEntry';
 import { UpgradePrompt } from '../components/UpgradePrompt';
@@ -54,6 +54,7 @@ type Route = ScreenRouteProp<'Explore', 'ExtraBiblicalDetail'>;
 
 function ExtraBiblicalDetailScreen() {
   const { base } = useTheme();
+  const { content } = useTypography();
   const navigation = useNavigation<Nav>();
   const route = useRoute<Route>();
   const { id } = route.params;
@@ -130,7 +131,7 @@ function ExtraBiblicalDetailScreen() {
       <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
         <ScreenHeader onBack={() => navigation.goBack()} title="Not Found" />
         <View style={styles.center}>
-          <Text style={[styles.bodyText, { color: base.textDim }]}>
+          <Text style={[content.bodyMd, styles.bodyText, { color: base.textDim }]}>
             Entry not found.
           </Text>
         </View>
@@ -151,7 +152,7 @@ function ExtraBiblicalDetailScreen() {
         {/* Section 2: Brief summary — free users get first paragraph only */}
         <View style={styles.section}>
           <Text style={[styles.sectionLabel, { color: base.textMuted }]}>SUMMARY</Text>
-          <Text style={[styles.bodyText, { color: base.text }]}>
+          <Text style={[content.bodyMd, styles.bodyText, { color: base.text }]}>
             {isPremium ? entry.brief_summary : firstParagraph}
           </Text>
         </View>
@@ -222,6 +223,7 @@ function PremiumSections({
   onExternalLink: (url: string) => void;
 }) {
   const { base } = useTheme();
+  const { content } = useTypography();
   return (
     <>
       {entry.nt_citations.length > 0 ? (
@@ -288,7 +290,7 @@ function PremiumSections({
 
       <Section label="FULL SUMMARY">
         {entry.full_summary ? (
-          <Text style={[styles.bodyText, { color: base.text }]}>
+          <Text style={[content.bodyMd, styles.bodyText, { color: base.text }]}>
             {entry.full_summary}
           </Text>
         ) : (
@@ -310,6 +312,7 @@ function PremiumSections({
 
 function LockedFooter({ onUpgrade }: { onUpgrade: () => void }) {
   const { base } = useTheme();
+  const { content } = useTypography();
   return (
     <TouchableOpacity
       onPress={onUpgrade}
@@ -324,7 +327,7 @@ function LockedFooter({ onUpgrade }: { onUpgrade: () => void }) {
       <Text style={[styles.lockedTitle, { color: base.gold }]}>
         {'✨ Unlock the full entry'}
       </Text>
-      <Text style={[styles.lockedDesc, { color: base.textDim }]}>
+      <Text style={[content.bodySm, styles.lockedDesc, { color: base.textDim }]}>
         NT citations, OT allusions, scholar voices, related debates,
         difficult passages, journeys, and further reading.
       </Text>
@@ -356,6 +359,7 @@ function NTCitationRow({
   onPress: (ref: string) => void;
 }) {
   const { base } = useTheme();
+  const { content } = useTypography();
   return (
     <TouchableOpacity
       onPress={() => onPress(cit.ref)}
@@ -365,7 +369,7 @@ function NTCitationRow({
       style={[styles.citationRow, { borderColor: base.gold + '30' }]}
     >
       <Text style={[styles.citationRef, { color: base.gold }]}>{cit.ref}</Text>
-      <Text style={[styles.citationCites, { color: base.textDim }]}>
+      <Text style={[content.bodySm, styles.citationCites, { color: base.textDim }]}>
         {'→ '}
         {cit.cites}
       </Text>
@@ -386,6 +390,7 @@ function OTAllusionRow({
   onPress: (ref: string) => void;
 }) {
   const { base } = useTheme();
+  const { content } = useTypography();
   return (
     <TouchableOpacity
       onPress={() => onPress(allusion.ref)}
@@ -397,7 +402,7 @@ function OTAllusionRow({
       <Text style={[styles.citationRef, { color: base.gold }]}>
         {allusion.ref}
       </Text>
-      <Text style={[styles.bodyText, { color: base.textDim }]}>
+      <Text style={[content.bodyMd, styles.bodyText, { color: base.textDim }]}>
         {allusion.connection}
       </Text>
     </TouchableOpacity>
@@ -412,6 +417,7 @@ function ScholarVoiceRow({
   onPress: (scholarId: string) => void;
 }) {
   const { base } = useTheme();
+  const { content } = useTypography();
   return (
     <View style={styles.voiceBlock}>
       <TouchableOpacity
@@ -423,7 +429,7 @@ function ScholarVoiceRow({
           {formatScholarLabel(voice.scholar_id)}
         </Text>
       </TouchableOpacity>
-      <Text style={[styles.bodyText, { color: base.textDim }]}>
+      <Text style={[content.bodyMd, styles.bodyText, { color: base.textDim }]}>
         {voice.position}
       </Text>
     </View>
@@ -607,9 +613,6 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   bodyText: {
-    fontFamily: fontFamily.body,
-    fontSize: 15,
-    lineHeight: 24,
   },
   citationRow: {
     borderWidth: 1,
@@ -623,8 +626,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   citationCites: {
-    fontFamily: fontFamily.body,
-    fontSize: 13,
   },
   citationType: {
     fontFamily: fontFamily.uiSemiBold,
@@ -693,9 +694,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   lockedDesc: {
-    fontFamily: fontFamily.body,
-    fontSize: 13,
-    lineHeight: 20,
     textAlign: 'center',
   },
 });

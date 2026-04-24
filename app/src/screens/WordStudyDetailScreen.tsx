@@ -14,13 +14,14 @@ import { ContentImageGallery } from '../components/ContentImageGallery';
 import { BadgeChip } from '../components/BadgeChip';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { useTheme, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily, useTypography } from '../theme';
 import type { WordStudy } from '../types';
 import { logger } from '../utils/logger';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 function WordStudyDetailScreen() {
   const { base, panels } = useTheme();
+  const { content } = useTypography();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'WordStudyDetail'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'WordStudyDetail'>>();
   const { wordId } = route.params ?? {};
@@ -107,7 +108,7 @@ function WordStudyDetailScreen() {
         {word.semantic_range && (
           <View style={styles.section}>
             <Text style={[styles.sectionLabel, { color: base.gold }]}>SEMANTIC RANGE</Text>
-            <Text style={[styles.bodyText, { color: base.textDim }]}>{word.semantic_range}</Text>
+            <Text style={[content.bodyMd, styles.bodyText, { color: base.textDim }]}>{word.semantic_range}</Text>
           </View>
         )}
 
@@ -115,7 +116,7 @@ function WordStudyDetailScreen() {
         {word.note && (
           <View style={styles.section}>
             <Text style={[styles.sectionLabel, { color: base.gold }]}>THEOLOGICAL NOTE</Text>
-            <Text style={[styles.bodyText, { color: base.textDim }]}>{word.note}</Text>
+            <Text style={[content.bodyMd, styles.bodyText, { color: base.textDim }]}>{word.note}</Text>
           </View>
         )}
 
@@ -129,7 +130,7 @@ function WordStudyDetailScreen() {
                   <BadgeChip label={occ.ref} color={base.textMuted} />
                   {occ.gloss ? <Text style={[styles.occurrenceGloss, { color: base.goldDim }]}>{occ.gloss}</Text> : null}
                 </View>
-                {occ.ctx ? <Text style={[styles.occurrenceCtx, { color: base.textDim }]}>{occ.ctx}</Text> : null}
+                {occ.ctx ? <Text style={[content.bodySm, styles.occurrenceCtx, { color: base.textDim }]}>{occ.ctx}</Text> : null}
               </View>
             ))}
           </View>
@@ -199,9 +200,6 @@ const styles = StyleSheet.create({
     marginTop: spacing.xs,
   },
   bodyText: {
-    fontFamily: fontFamily.body,
-    fontSize: 15,
-    lineHeight: 24,
     marginTop: spacing.xs,
   },
   occurrenceRow: {
@@ -219,9 +217,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   occurrenceCtx: {
-    fontFamily: fontFamily.body,
-    fontSize: 13,
-    lineHeight: 20,
     marginTop: 4,
   },
 });

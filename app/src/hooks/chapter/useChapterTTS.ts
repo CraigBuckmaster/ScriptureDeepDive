@@ -8,6 +8,7 @@ import { useState, useEffect, useCallback, type RefObject } from 'react';
 import type { ScrollView } from 'react-native';
 import { useTTS } from '../useTTS';
 import { useSettingsStore } from '../../stores';
+import { useTypography } from '../../theme';
 import type { Verse, Section } from '../../types';
 
 interface UseChapterTTSOptions {
@@ -30,7 +31,8 @@ export function useChapterTTS({
   chapterNum,
 }: UseChapterTTSOptions) {
   const ttsVoice = useSettingsStore((s) => s.ttsVoice);
-  const fontSize = useSettingsStore((s) => s.fontSize);
+  const { content } = useTypography();
+  const verseFontSize = content.bodyLg.fontSize;
   const tts = useTTS(verses, ttsVoice || undefined);
   const [ttsActive, setTtsActive] = useState(false);
 
@@ -57,7 +59,7 @@ export function useChapterTTS({
     const sectionY = sectionYMap.current[sec.id];
     if (sectionY == null) return;
     const verseIndex = verseNum - sec.verse_start;
-    const estimatedVerseHeight = fontSize * 1.6 + 16;
+    const estimatedVerseHeight = verseFontSize * 1.6 + 16;
     const verseOffsetY = 52 + verseIndex * estimatedVerseHeight;
 
     scrollRef.current?.scrollTo({
@@ -65,7 +67,7 @@ export function useChapterTTS({
       animated: true,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps -- scrollRef, sectionYMap, verseYMap are stable refs
-  }, [ttsActive, tts.currentVerse, verses, sections, fontSize]);
+  }, [ttsActive, tts.currentVerse, verses, sections, verseFontSize]);
 
   // Stop TTS on chapter change
   useEffect(() => {

@@ -15,7 +15,6 @@ interface VerseState {
   vhlGroups: VHLGroup[];
   activeVhlGroups: string[];
   notedVerses: Set<number>;
-  fontSize: number;
   redLetterVerses: Set<number>;
   highlightMap: Map<number, string>;
   comparisonVerses: Verse[] | undefined;

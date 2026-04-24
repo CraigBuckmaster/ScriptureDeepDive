@@ -21,11 +21,12 @@ import { useBookIntro } from '../hooks/useBookIntro';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { BadgeChip } from '../components/BadgeChip';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, useTypography } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 function BookIntroScreen() {
   const { base } = useTheme();
+  const { content } = useTypography();
   const navigation = useNavigation<ScreenNavProp<'Read', 'BookIntro'>>();
   const route = useRoute<ScreenRouteProp<'Read', 'BookIntro'>>();
   const { bookId } = route.params ?? {};
@@ -65,7 +66,7 @@ function BookIntroScreen() {
               ] as [string, string][]).map(([label, value]) => (
                 <View key={label} style={styles.atAGlanceCell}>
                   <Text style={[styles.atAGlanceCellLabel, { color: base.gold }]}>{label}</Text>
-                  <Text style={[styles.atAGlanceCellValue, { color: base.text }]}>{value}</Text>
+                  <Text style={[content.bodySm, styles.atAGlanceCellValue, { color: base.text }]}>{value}</Text>
                 </View>
               ))}
             </View>
@@ -127,7 +128,7 @@ function BookIntroScreen() {
                   style={[styles.keyVerseCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
                 >
                   <Text style={[styles.keyVerseRef, { color: base.gold }]}>{verse.ref}</Text>
-                  <Text style={[styles.keyVerseText, { color: base.text }]}>{verse.text}</Text>
+                  <Text style={[content.bodyItalic, styles.keyVerseText, { color: base.text }]}>{verse.text}</Text>
                   <Text style={[styles.keyVerseWhy, { color: base.textMuted }]}>{verse.why}</Text>
                 </TouchableOpacity>
               ))}
@@ -139,7 +140,7 @@ function BookIntroScreen() {
         {intro.christ_in && (
           <View style={[styles.christInBlock, { backgroundColor: base.gold + '0D', borderColor: base.gold + '30' }]}>
             <Text style={[styles.enrichLabel, { color: base.gold }]}>CHRIST IN THIS BOOK</Text>
-            <Text style={[styles.bodyText, { color: base.text }]}>{intro.christ_in}</Text>
+            <Text style={[content.bodyMd, styles.bodyText, { color: base.text }]}>{intro.christ_in}</Text>
           </View>
         )}
 
@@ -148,25 +149,25 @@ function BookIntroScreen() {
           <View style={[styles.authorshipBlock, { borderBottomColor: base.border }]}>
             <Text style={[styles.authorshipLabel, { color: base.gold }]}>AUTHORSHIP</Text>
             {typeof intro.authorship === 'string' ? (
-              <Text style={[styles.bodyText, { color: base.textDim }]}>{intro.authorship}</Text>
+              <Text style={[content.bodyMd, styles.bodyText, { color: base.textDim }]}>{intro.authorship}</Text>
             ) : (
               <View style={styles.authorshipDetails}>
                 {intro.authorship.author && (
                   <View>
                     <Text style={[styles.authorshipSubLabel, { color: base.gold }]}>Author</Text>
-                    <Text style={[styles.bodyText, { color: base.textDim }]}>{intro.authorship.author}</Text>
+                    <Text style={[content.bodyMd, styles.bodyText, { color: base.textDim }]}>{intro.authorship.author}</Text>
                   </View>
                 )}
                 {intro.authorship.date && (
                   <View>
                     <Text style={[styles.authorshipSubLabel, { color: base.gold }]}>Date</Text>
-                    <Text style={[styles.bodyText, { color: base.textDim }]}>{intro.authorship.date}</Text>
+                    <Text style={[content.bodyMd, styles.bodyText, { color: base.textDim }]}>{intro.authorship.date}</Text>
                   </View>
                 )}
                 {intro.authorship.prompt && (
                   <View>
                     <Text style={[styles.authorshipSubLabel, { color: base.gold }]}>Purpose</Text>
-                    <Text style={[styles.bodyText, { color: base.textDim }]}>{intro.authorship.prompt}</Text>
+                    <Text style={[content.bodyMd, styles.bodyText, { color: base.textDim }]}>{intro.authorship.prompt}</Text>
                   </View>
                 )}
               </View>
@@ -183,7 +184,7 @@ function BookIntroScreen() {
 
             {/* Prose content — field is "content" in JSON, not "body" */}
             {(section.content || section.body) && (
-              <Text style={[styles.bodyText, { color: base.textDim }]}>
+              <Text style={[content.bodyMd, styles.bodyText, { color: base.textDim }]}>
                 {section.content ?? section.body}
               </Text>
             )}
@@ -234,7 +235,7 @@ function BookIntroScreen() {
 
         {/* Fallback text (no sections) */}
         {!intro.sections && intro.text && (
-          <Text style={[styles.bodyText, { color: base.textDim }]}>{intro.text}</Text>
+          <Text style={[content.bodyMd, styles.bodyText, { color: base.textDim }]}>{intro.text}</Text>
         )}
       </ScrollView>
     </SafeAreaView>
@@ -287,9 +288,6 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   atAGlanceCellValue: {
-    fontFamily: fontFamily.body,
-    fontSize: 14,
-    lineHeight: 20,
   },
   outlineBar: {
     flexDirection: 'row',
@@ -325,9 +323,6 @@ const styles = StyleSheet.create({
     marginBottom: spacing.xs,
   },
   keyVerseText: {
-    fontFamily: fontFamily.bodyItalic ?? fontFamily.body,
-    fontSize: 15,
-    lineHeight: 24,
     marginBottom: spacing.xs,
   },
   keyVerseWhy: {
@@ -370,9 +365,6 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
   bodyText: {
-    fontFamily: fontFamily.body,
-    fontSize: 15,
-    lineHeight: 24,
   },
   outlineBlock: {
     marginTop: spacing.sm,

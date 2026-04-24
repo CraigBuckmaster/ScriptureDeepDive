@@ -37,7 +37,7 @@ import {
   useDifficultPassage,
   DifficultPassageResponse,
 } from '../hooks/useDifficultPassages';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, useTypography } from '../theme';
 import type { ExploreStackParamList } from '../navigation/types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
@@ -68,6 +68,7 @@ function ResponseCard({
   onScholarPress: (id: string) => void;
 }) {
   const { base, families } = useTheme();
+  const { content } = useTypography();
   const [expanded, setExpanded] = useState(defaultExpanded);
 
   const toggleExpanded = useCallback(() => {
@@ -118,7 +119,7 @@ function ResponseCard({
       )}
 
       {/* Summary */}
-      <Text style={[styles.summaryText, { color: base.textDim }]}>{response.summary}</Text>
+      <Text style={[content.bodySm, styles.summaryText, { color: base.textDim }]}>{response.summary}</Text>
 
       {/* Expand/Collapse toggle */}
       {hasAnalysis && (
@@ -179,6 +180,7 @@ function ResponseCard({
 
 function DifficultPassageDetailScreen() {
   const { base, categories: catColors, severity: sevColors } = useTheme();
+  const { content } = useTypography();
   const navigation = useNavigation<Nav>();
   const route = useRoute<Route>();
   const { passageId } = route.params;
@@ -278,7 +280,7 @@ function DifficultPassageDetailScreen() {
             <Text style={[styles.sectionTitle, { color: base.gold }]}>The Question</Text>
           </View>
           <View style={[styles.questionCard, { backgroundColor: base.bgElevated, borderLeftColor: base.gold }]}>
-            <Text style={[styles.questionText, { color: base.text }]}>{passage.question}</Text>
+            <Text style={[content.bodyMd, styles.questionText, { color: base.text }]}>{passage.question}</Text>
           </View>
         </View>
 
@@ -290,7 +292,7 @@ function DifficultPassageDetailScreen() {
               <Text style={[styles.sectionTitle, { color: base.gold }]}>Context</Text>
             </View>
             <View style={[styles.contextBlock, { borderLeftColor: base.border }]}>
-              <Text style={[styles.contextText, { color: base.textDim }]}>{passage.context}</Text>
+              <Text style={[content.bodySm, styles.contextText, { color: base.textDim }]}>{passage.context}</Text>
             </View>
           </View>
         ) : null}
@@ -508,9 +510,6 @@ const styles = StyleSheet.create({
     padding: spacing.md,
   },
   questionText: {
-    fontFamily: fontFamily.ui,
-    fontSize: 15,
-    lineHeight: 24,
     fontStyle: 'italic',
   },
 
@@ -520,9 +519,6 @@ const styles = StyleSheet.create({
     borderLeftWidth: 2,
   },
   contextText: {
-    fontFamily: fontFamily.ui,
-    fontSize: 13,
-    lineHeight: 21,
   },
 
   // Key Verses
@@ -623,9 +619,6 @@ const styles = StyleSheet.create({
     fontSize: 11,
   },
   summaryText: {
-    fontFamily: fontFamily.ui,
-    fontSize: 13,
-    lineHeight: 21,
   },
   expandToggle: {
     flexDirection: 'row',
