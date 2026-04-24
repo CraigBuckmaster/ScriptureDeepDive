@@ -52,6 +52,7 @@ jest.mock('@/services/notifications', () => ({
 }));
 
 jest.mock('@/services/purchases', () => ({
+  initializePurchases: jest.fn().mockResolvedValue(undefined),
   syncPremiumStatus: jest.fn(),
 }));
 
