@@ -26,6 +26,7 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { StreakBadge } from '../components/StreakBadge';
 import { ActivePlanCard } from '../components/ActivePlanCard';
 import AmicusHomeCard from '../components/AmicusHomeCard';
+import { HomeReviewDueCard } from '../components/guidedStudy';
 import { ContinueReadingHero } from '../components/ContinueReadingHero';
 import { ProgressRow } from '../components/ProgressRow';
 import { FeatureCard, CARD_WIDTH, type FeatureCardData } from '../components/FeatureCard';
@@ -36,23 +37,48 @@ import { useSettingsStore } from '../stores';
 import { shareVerse } from '../utils/shareVerse';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+import { usePremium } from '../hooks/usePremium';
+import { useReviewQueue } from '../hooks/useReviewQueue';
 
 // ── Static cards for new users ────────────────────────────────
 // These navigate cross-tab to ExploreStack screens. The color is
 // resolved at render time from the theme (see carouselCards below).
 const NEW_USER_CARDS: Omit<FeatureCardData, 'color'>[] = [
-  { title: 'People',       subtitle: 'Lives that shaped sacred history',        screen: 'ExploreTab', params: { screen: 'GenealogyTree' } },
-  { title: 'Timeline',     subtitle: 'The arc of redemption',                   screen: 'ExploreTab', params: { screen: 'Timeline' } },
-  { title: 'Scholars',     subtitle: 'Centuries of scholarship',                screen: 'ExploreTab', params: { screen: 'ScholarBrowse' } },
-  { title: 'Word Studies', subtitle: 'Meaning in the original languages',       screen: 'ExploreTab', params: { screen: 'WordStudyBrowse' } },
+  {
+    title: 'People',
+    subtitle: 'Lives that shaped sacred history',
+    screen: 'ExploreTab',
+    params: { screen: 'GenealogyTree' },
+  },
+  {
+    title: 'Timeline',
+    subtitle: 'The arc of redemption',
+    screen: 'ExploreTab',
+    params: { screen: 'Timeline' },
+  },
+  {
+    title: 'Scholars',
+    subtitle: 'Centuries of scholarship',
+    screen: 'ExploreTab',
+    params: { screen: 'ScholarBrowse' },
+  },
+  {
+    title: 'Word Studies',
+    subtitle: 'Meaning in the original languages',
+    screen: 'ExploreTab',
+    params: { screen: 'WordStudyBrowse' },
+  },
 ];
 
 function HomeScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Home', 'HomeMain'>>();
-  const { greeting, subtitle, verse, recentChapters, readingStats, isLoading, refresh } = useHomeData();
+  const { greeting, subtitle, verse, recentChapters, readingStats, isLoading, refresh } =
+    useHomeData();
   const translation = useSettingsStore((s) => s.translation);
   const { currentStreak, pendingMilestone, markMilestoneSeen } = useStreakData();
+  const { isPremium } = usePremium();
+  const { dueItems } = useReviewQueue();
   const recommendations = useRecommendations();
   const imageRegistry = useExploreImages();
   const [refreshing, setRefreshing] = useState(false);
@@ -65,10 +91,13 @@ function HomeScreen() {
     setRefreshing(false);
   }, [refresh]);
 
-  const handleNavigate = useCallback((screen: string, params?: object) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    navigation.navigate(screen as any, params as any);
-  }, [navigation]);
+  const handleNavigate = useCallback(
+    (screen: string, params?: object) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      navigation.navigate(screen as any, params as any);
+    },
+    [navigation],
+  );
 
   if (isLoading) {
     return (
@@ -85,7 +114,10 @@ function HomeScreen() {
 
   const handleContinuePress = () => {
     if (mostRecent) {
-      navigation.navigate('Chapter', { bookId: mostRecent.book_id, chapterNum: mostRecent.chapter_num });
+      navigation.navigate('Chapter', {
+        bookId: mostRecent.book_id,
+        chapterNum: mostRecent.chapter_num,
+      });
     } else {
       navigation.navigate('Chapter', { bookId: 'genesis', chapterNum: 1 });
     }
@@ -108,13 +140,13 @@ function HomeScreen() {
     params: r.params as Record<string, string> | undefined,
   }));
 
-  const carouselCards: FeatureCardData[] = chaptersRead > 0 && recCards.length > 0
-    ? recCards
-    : NEW_USER_CARDS.map((c) => ({ ...c, color: base.gold }));
+  const carouselCards: FeatureCardData[] =
+    chaptersRead > 0 && recCards.length > 0
+      ? recCards
+      : NEW_USER_CARDS.map((c) => ({ ...c, color: base.gold }));
 
-  const carouselLabel = chaptersRead > 0 && recCards.length > 0
-    ? 'FROM YOUR STUDY'
-    : 'START EXPLORING';
+  const carouselLabel =
+    chaptersRead > 0 && recCards.length > 0 ? 'FROM YOUR STUDY' : 'START EXPLORING';
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
@@ -131,12 +163,13 @@ function HomeScreen() {
           />
         }
       >
-
         {/* ── 1. Greeting ──────────────────────────────── */}
         <View style={styles.greetingSection}>
           <View style={styles.greetingRow}>
             <View style={styles.greetingLeft}>
-              <Text style={[styles.greetingText, { color: base.text }]} accessibilityRole="header">{greeting}</Text>
+              <Text style={[styles.greetingText, { color: base.text }]} accessibilityRole="header">
+                {greeting}
+              </Text>
               <Text style={[styles.greetingSubtitle, { color: base.textDim }]}>{subtitle}</Text>
             </View>
             <StreakBadge streak={currentStreak} />
@@ -149,20 +182,35 @@ function HomeScreen() {
         </View>
 
         {/* Major-zone divider: greeting + hero → scripture engagement */}
+        {isPremium && dueItems.length > 0 ? (
+          <View style={styles.sectionGap}>
+            <HomeReviewDueCard
+              count={dueItems.length}
+              onPress={() => handleNavigate('MoreTab', { screen: 'MyStudy' })}
+            />
+          </View>
+        ) : null}
+
         <GoldSeparator marginBottom={spacing.lg} />
 
         {/* ── 3. Verse of the Day (typography-forward) ──── */}
         <TouchableOpacity
           activeOpacity={0.7}
           onPress={handleVersePress}
-          style={[styles.verseCard, { backgroundColor: base.tintParchment, borderColor: base.gold + '14' }]}
+          style={[
+            styles.verseCard,
+            { backgroundColor: base.tintParchment, borderColor: base.gold + '14' },
+          ]}
           accessibilityRole="button"
           accessibilityLabel={`Verse of the day: ${verse.ref}. ${verse.text}. Tap to read in context`}
         >
           <View style={styles.verseCardHeader}>
             <Text style={[styles.verseCardLabel, { color: base.gold }]}>VERSE OF THE DAY</Text>
             <TouchableOpacity
-              onPress={(e) => { e.stopPropagation(); shareVerse(verse.text, verse.ref, translation); }}
+              onPress={(e) => {
+                e.stopPropagation();
+                shareVerse(verse.text, verse.ref, translation);
+              }}
               hitSlop={{ top: 8, right: 8, bottom: 8, left: 8 }}
               accessibilityRole="button"
               accessibilityLabel="Share verse of the day"
@@ -224,7 +272,6 @@ function HomeScreen() {
         <View style={styles.sectionGap}>
           <ProgressRow chaptersRead={chaptersRead} />
         </View>
-
       </ScrollView>
 
       <MilestoneToast message={pendingMilestone} onDismiss={markMilestoneSeen} />

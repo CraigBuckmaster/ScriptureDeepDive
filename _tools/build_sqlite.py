@@ -24,7 +24,7 @@ DB_MANIFEST_PATH = ROOT / 'app' / 'assets' / 'db-manifest.json'
 from build_sqlite_schema import create_schema
 from build_sqlite_loaders import (
     populate_books, populate_chapters, populate_verses,
-    populate_book_intros, populate_people, populate_scholars,
+    populate_book_intros, populate_proof_text_guards, populate_people, populate_scholars,
     populate_places, populate_map_stories, populate_ancient_borders,
     populate_word_studies,
     populate_synoptic, populate_topics, populate_debate_topics,
@@ -93,6 +93,7 @@ def main():
 
     print(f"  [OK] verses: {populate_verses(cur)} rows")
     print(f"  [OK] book_intros: {populate_book_intros(cur)} rows")
+    print(f"  [OK] proof_text_guards: {populate_proof_text_guards(cur)} rows")
     print(f"  [OK] people: {populate_people(cur)} rows")
     print(f"  [OK] scholars: {populate_scholars(cur)} rows")
     print(f"  [OK] places: {populate_places(cur)} rows")

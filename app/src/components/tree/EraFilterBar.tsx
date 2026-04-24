@@ -6,7 +6,7 @@
  * active pill visible.
  */
 
-import React, { useRef, useCallback } from 'react';
+import React, { useRef, useCallback, useEffect } from 'react';
 import {
   ScrollView,
   Text,
@@ -33,6 +33,14 @@ export function EraFilterBar({ activeEra, onSelect }: Props) {
   const { base } = useTheme();
   const scrollRef = useRef<ScrollView>(null);
   const chipLayouts = useRef<Record<string, { x: number; width: number }>>({});
+  const frameRef = useRef<number | null>(null);
+
+  useEffect(
+    () => () => {
+      if (frameRef.current != null) cancelAnimationFrame(frameRef.current);
+    },
+    [],
+  );
 
   /** Record each chip's position so we can scroll-to-active. */
   const handleChipLayout = useCallback(
@@ -50,7 +58,9 @@ export function EraFilterBar({ activeEra, onSelect }: Props) {
     (era: string) => {
       lightImpact();
       onSelect(era);
-      requestAnimationFrame(() => {
+      if (frameRef.current != null) cancelAnimationFrame(frameRef.current);
+      frameRef.current = requestAnimationFrame(() => {
+        frameRef.current = null;
         const layout = chipLayouts.current[era];
         if (layout && scrollRef.current) {
           scrollRef.current.scrollTo({
@@ -93,13 +103,8 @@ export function EraFilterBar({ activeEra, onSelect }: Props) {
               },
             ]}
           >
-            {era !== 'all' && (
-              <View style={[styles.dot, { backgroundColor: color }]} />
-            )}
-            <Text
-              style={[styles.label, { color: isActive ? color : base.gold }]}
-              numberOfLines={1}
-            >
+            {era !== 'all' && <View style={[styles.dot, { backgroundColor: color }]} />}
+            <Text style={[styles.label, { color: isActive ? color : base.gold }]} numberOfLines={1}>
               {label}
             </Text>
           </TouchableOpacity>

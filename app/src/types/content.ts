@@ -104,12 +104,19 @@ export interface BookIntro {
   intro_json: string;
 }
 
+export interface ProofTextGuard {
+  ref: string;
+  book_id: string;
+  chapter_num: number;
+  verse_num: number;
+  common_misreading: string;
+  actual_context_summary: string;
+  suggested_book_id: string;
+  suggested_chapter_num: number;
+}
+
 /** Non-genealogical link types from #1288. */
-export type AssociationType =
-  | 'disciple'
-  | 'contemporary'
-  | 'adversary'
-  | 'servant';
+export type AssociationType = 'disciple' | 'contemporary' | 'adversary' | 'servant';
 
 export interface Person {
   id: string;
@@ -163,7 +170,7 @@ export interface PersonJourneyStage {
   stage: string;
   era: string | null;
   book_dir: string | null;
-  chapters: string | null;   // JSON array
+  chapters: string | null; // JSON array
   verse_ref: string | null;
   summary: string | null;
   theme: string | null;
@@ -230,9 +237,9 @@ export interface RedemptiveAct {
   tagline: string | null;
   summary: string | null;
   key_verse: string | null;
-  era_ids: string | null;      // JSON array
+  era_ids: string | null; // JSON array
   book_range: string | null;
-  threads: string | null;      // JSON array
+  threads: string | null; // JSON array
   prophecy_chains: string | null; // JSON array
 }
 

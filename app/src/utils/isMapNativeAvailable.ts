@@ -59,7 +59,6 @@
  */
 
 import { TurboModuleRegistry, type TurboModule } from 'react-native';
-
 import { logger } from './logger';
 
 /**

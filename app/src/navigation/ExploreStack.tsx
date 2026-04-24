@@ -54,6 +54,7 @@ const SubmissionFlowScreen = lazySuspense(() => import('../screens/SubmissionFlo
 const SubmissionDetailScreen = lazySuspense(() => import('../screens/SubmissionDetailScreen'));
 const SubmissionFeedScreen = lazySuspense(() => import('../screens/SubmissionFeedScreen'));
 const ChapterScreen = lazySuspense(() => import('../screens/ChapterScreen'));
+const StudySessionScreen = lazySuspense(() => import('../screens/StudySessionScreen'));
 
 const Stack = createStackNavigator<ExploreStackParamList>();
 
@@ -69,10 +70,18 @@ export function ExploreStack() {
       }}
     >
       <Stack.Screen name="ExploreMenu" component={ExploreMenuScreen} />
-      <Stack.Screen name="GenealogyTree" component={GenealogyTreeScreen} options={{ gestureEnabled: false }} />
+      <Stack.Screen
+        name="GenealogyTree"
+        component={GenealogyTreeScreen}
+        options={{ gestureEnabled: false }}
+      />
       <Stack.Screen name="PersonDetail" component={PersonDetailScreen} />
       <Stack.Screen name="Map" component={MapScreen} options={{ gestureEnabled: false }} />
-      <Stack.Screen name="Timeline" component={TimelineScreen} options={{ gestureEnabled: false }} />
+      <Stack.Screen
+        name="Timeline"
+        component={TimelineScreen}
+        options={{ gestureEnabled: false }}
+      />
       <Stack.Screen name="Periods" component={PeriodsScreen} />
       <Stack.Screen name="RedemptiveArc" component={RedemptiveArcScreen} />
       <Stack.Screen name="JourneyBrowse" component={JourneyBrowseScreen} />
@@ -117,6 +126,7 @@ export function ExploreStack() {
       <Stack.Screen name="SubmissionDetail" component={SubmissionDetailScreen} />
       <Stack.Screen name="SubmissionFeed" component={SubmissionFeedScreen} />
       <Stack.Screen name="Chapter" component={ChapterScreen} />
+      <Stack.Screen name="StudySession" component={StudySessionScreen} />
     </Stack.Navigator>
   );
 }
