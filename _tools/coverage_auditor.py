@@ -122,7 +122,12 @@ class AuditReport:
 
     def summary(self) -> dict:
         tier_counts = Counter(v.tier for v in self.sections)
-        panel_counts = Counter(p.verdict for v in self.sections for p in v.panels)
+        # panel_verdicts spans every evaluated panel (sections + chapter panels).
+        # 'missing' is L3-only and not a panel verdict, so exclude it.
+        panel_counts: Counter = Counter(p.verdict for v in self.sections for p in v.panels)
+        for cp in self.chapter_panels:
+            if cp.verdict != "missing":
+                panel_counts[cp.verdict] += 1
         cp_counts = Counter(cp.verdict for cp in self.chapter_panels if cp.expected)
         finding_counts: Counter = Counter()
         for v in self.sections:
@@ -140,7 +145,10 @@ class AuditReport:
                 "adequate": tier_counts.get("adequate", 0),
                 "rich": tier_counts.get("rich", 0),
             },
-            "total_panels": sum(len(v.panels) for v in self.sections),
+            "total_panels": (
+                sum(len(v.panels) for v in self.sections)
+                + sum(1 for cp in self.chapter_panels if cp.verdict != "missing")
+            ),
             "panel_verdicts": {
                 "substantive": panel_counts.get("substantive", 0),
                 "empty": panel_counts.get("empty", 0),
@@ -459,6 +467,17 @@ def evaluate_chapter_panels(
                 book_id=book_id, chapter_num=chapter_num, panel_key=ptype,
                 verdict="substantive", expected=False, char_count=pv.char_count,
                 details="bonus (not in genre expected set)",
+            ))
+        elif pv.verdict in ("template", "placeholder"):
+            # Slight extension over epic §1.6: surface boilerplate on
+            # non-expected chapter panels too. Otherwise the 165 epistle
+            # `debate` templates would be silently dropped, defeating the
+            # purpose of L2 detection. Keep `expected=False` so emitters
+            # can rank these as informational rather than rubric failures.
+            out.append(ChapterPanelVerdict(
+                book_id=book_id, chapter_num=chapter_num, panel_key=ptype,
+                verdict=pv.verdict, expected=False, char_count=pv.char_count,
+                details=pv.details,
             ))
     return out
 

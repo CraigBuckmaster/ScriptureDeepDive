@@ -114,8 +114,23 @@ GENRE_EXPECTED_PANELS = {
 
 # Type-specific template patterns. Each value is a list of tuples; every
 # substring in a tuple must appear in the serialized panel JSON for a match.
-# Populated by the A3 curation pass (#1629); empty at refactor time.
-TEMPLATE_PATTERNS: dict[str, list[tuple[str, ...]]] = {}
+# Curated by the A3 pass (#1629). Err over-specific: false positives are
+# worse than false negatives here. Add new patterns only after a curation
+# log + manual review (do NOT silently expand from --template-candidates).
+TEMPLATE_PATTERNS: dict[str, list[tuple[str, ...]]] = {
+    "debate": [
+        # Boilerplate "Critical/Analytical vs Traditional/Confessional"
+        # pairing applied across 173 chapters in epistles + Leviticus +
+        # Numbers + minor prophets. All three substrings must appear.
+        # Confirmed substantive cases (Genesis 22, John 1, Matthew 5,
+        # 2 Corinthians 6) do NOT match.
+        (
+            "Critical/Analytical scholarship",
+            "Traditional/Confessional reading",
+            "Emphasises historical-critical",
+        ),
+    ],
+}
 
 
 # ─── Text extraction + density scoring ──────────────────────────────

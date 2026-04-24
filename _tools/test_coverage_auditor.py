@@ -308,6 +308,30 @@ class ChapterPanelTests(unittest.TestCase):
         finally:
             pt.TEMPLATE_PATTERNS.pop("discourse", None)
 
+    def test_non_expected_template_surfaces(self):
+        # `debate` is NOT in epistle's expected set, but a templated debate
+        # panel must still surface (with expected=False) so the 165 silently-
+        # dropped epistle templates aren't lost. See A3 curation note.
+        pt.TEMPLATE_PATTERNS["debate"] = [(
+            "Critical/Analytical scholarship",
+            "Traditional/Confessional reading",
+            "Emphasises historical-critical",
+        )]
+        try:
+            chapter = {"chapter_panels": {"debate": [[
+                "Q",
+                [["Critical/Analytical scholarship", "x" * 100, "Emphasises historical-critical."],
+                 ["Traditional/Confessional reading", "y" * 100, ""]],
+                "summary",
+            ]]}}
+            out = ca.evaluate_chapter_panels("romans", 9, chapter, "epistle")
+            debate = [cp for cp in out if cp.panel_key == "debate"]
+            self.assertEqual(len(debate), 1)
+            self.assertEqual(debate[0].verdict, "template")
+            self.assertFalse(debate[0].expected)
+        finally:
+            pt.TEMPLATE_PATTERNS.pop("debate", None)
+
     def test_bonus_panel(self):
         # poetry doesn't expect debate; if substantive debate present → bonus
         chapter = {"chapter_panels": {
