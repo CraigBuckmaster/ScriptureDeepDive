@@ -570,9 +570,64 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Covenant",
+          "score": 6
+        },
+        {
+          "label": "Providence",
+          "score": 9
+        },
+        {
+          "label": "Creation Order",
+          "score": 7
+        },
+        {
+          "label": "Nations",
+          "score": 10
+        },
+        {
+          "label": "Imago Dei",
+          "score": 7
+        },
+        {
+          "label": "Typology",
+          "score": 6
+        }
+      ],
+      "note": "Genesis 10 — the Table of Nations — is Scripture's fullest theological statement that ethnic diversity is providentially appointed. Seventy nations descended from Noah's three sons, each 'by their clans, their languages, their lands, and their nations' (vv.5, 20, 31) — the same fourfold formula Revelation 7:9 will use to describe the redeemed multitude before the throne. The chapter sits before Babel (ch.11) but narratively after it: the dispersion of nations is shown as God's good creational diversity before the chapter that explains how it happened. Nimrod's empire-building (vv.8-12) introduces the imperial archetype the prophets will later target. Israel's election in ch.12 is set against a richly populated, providentially-ordered world."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 10:1-32",
+        "target": "Acts 17:26",
+        "type": "Echo",
+        "text": "'From one man he made every nation of men, to inhabit the whole earth; and he determined the times set for them and the exact places where they should live.' Paul's Areopagus speech is a direct theological summary of the Table of Nations: ethnic diversity is providentially appointed, not accidental or hierarchical.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 10:5, 20, 31",
+        "target": "Rev 7:9",
+        "type": "Fulfilment",
+        "text": "The refrain 'by their clans, their languages, their lands, and their nations' in Gen 10 becomes the redemptive pattern of Rev 7:9: 'a great multitude... from every nation, tribe, people, and language.' The seventy nations of Genesis are gathered back to the throne in Revelation — the Table of Nations in reverse.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 10:8-12",
+        "target": "Mic 5:6",
+        "type": "Echo",
+        "text": "Nimrod, founder of Babel-Erech-Akkad and Nineveh — the great imperial cities of Mesopotamia — is named as the archetype of hubristic empire. Micah 5:6 calls Assyria 'the land of Nimrod,' a prophetic shorthand that reaches back to Gen 10 to frame every imperial power as a Babel-Nimrod echo.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 10:32",
+        "target": "Deut 32:8",
+        "type": "Echo",
+        "text": "'When the Most High divided to the nations their inheritance, when he separated the sons of Adam' (Deut 32:8) looks back to the Gen 10 dispersion and reads it theologically: the seventy nations of Gen 10 correspond to the seventy sons of Israel in Gen 46:27, the covenant people embedded as a microcosm of the world God has divided.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

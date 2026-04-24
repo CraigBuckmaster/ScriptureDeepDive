@@ -371,9 +371,64 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Covenant",
+          "score": 10
+        },
+        {
+          "label": "Providence",
+          "score": 10
+        },
+        {
+          "label": "Creation Order",
+          "score": 5
+        },
+        {
+          "label": "Faith & Obedience",
+          "score": 8
+        },
+        {
+          "label": "Worship",
+          "score": 9
+        },
+        {
+          "label": "Typology",
+          "score": 10
+        }
+      ],
+      "note": "Genesis 28 is the founding chapter of Jacob's personal encounter with the God of his fathers. Fleeing Esau's wrath, alone in the wilderness with a stone for a pillow, he sees the ladder/stairway with angels ascending and descending — and at the top, the LORD who renews the Abrahamic covenant directly to him. Jesus' direct self-identification with the ladder ('you will see heaven opened, and the angels of God ascending and descending on the Son of Man,' John 1:51) is the most explicit NT gloss on any Genesis vision. Bethel ('house of God') becomes the patriarchal sanctuary, and Jacob's vow — including the second tithe in Scripture — establishes this site as the center of his religious life until ch.35."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 28:12",
+        "target": "John 1:51",
+        "type": "Fulfilment",
+        "text": "'Truly, truly, I say to you, you will see heaven opened, and the angels of God ascending and descending on the Son of Man' — Jesus explicitly identifies himself as the ladder of Bethel. The Gen 28 vision of heaven-earth commerce terminates on the person of Christ.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 28:13-15",
+        "target": "Gen 12:1-3",
+        "type": "Echo",
+        "text": "The Bethel promise to Jacob is the Abrahamic promise explicitly re-granted: land, innumerable offspring, blessing of all the families of the earth. Covenant inheritance is passed through vision: what Abraham received on Ur's doorstep, Jacob receives on the road to exile.",
+        "direction": "back"
+      },
+      {
+        "anchor": "Gen 28:15",
+        "target": "Heb 13:5-6",
+        "type": "Echo",
+        "text": "'Behold, I am with you and will keep you wherever you go, and will bring you back to this land. For I will not leave you until I have done what I have promised you.' The LXX wording behind this verse feeds the promise cited in Heb 13:5 ('I will never leave you nor forsake you').",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 28:22",
+        "target": "Mal 3:10",
+        "type": "Echo",
+        "text": "Jacob's vow 'of all that you give me I will give a full tenth to you' is the second tithe scene in Genesis (after Abram-Melchizedek, 14:20), establishing tithing as a patriarchal practice centuries before Mosaic legislation institutionalises it in Mal 3:10.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

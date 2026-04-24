@@ -365,9 +365,64 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Fall & Redemption",
+          "score": 8
+        },
+        {
+          "label": "Covenant",
+          "score": 6
+        },
+        {
+          "label": "Providence",
+          "score": 9
+        },
+        {
+          "label": "Creation Order",
+          "score": 4
+        },
+        {
+          "label": "Faith & Obedience",
+          "score": 5
+        },
+        {
+          "label": "Typology",
+          "score": 7
+        }
+      ],
+      "note": "Genesis 16 is the chapter of the human shortcut. Faced with the apparent failure of God's promise — Sarai still barren a decade after the call — the patriarchal couple resorts to cultural ANE practice (surrogate childbearing through a slave). The result is generations of pain, beginning with Hagar's mistreatment and flight. Yet God's care is shown most tenderly here: the Angel of the LORD's first named appearance in Scripture is to a used Egyptian slave woman in the wilderness. She names God 'El-roi' — 'the God who sees me' — the first instance in Scripture of a person naming God. Paul's allegory in Galatians 4 will turn this episode into the type of works-righteousness over against the freedom of promise."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 16:7-13",
+        "target": "Exod 3:2-6",
+        "type": "Echo",
+        "text": "The Angel of the LORD's first named appearance in Scripture is to a used Egyptian slave woman in the wilderness — and speaks in the first person as God ('I will multiply your offspring,' v.10). The same figure appears to Moses at the burning bush, another wilderness theophany to a fugitive. Genesis 16 establishes the pattern.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 16:13",
+        "target": "Ps 139:7-12",
+        "type": "Echo",
+        "text": "Hagar names God 'El-roi,' 'the God who sees me' — the first time in Scripture a person names God. The psalmist's confession that there is no place one can flee from God's sight echoes Hagar's astonishment: even here, in the wilderness of Shur, he sees.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 16:15",
+        "target": "Gal 4:22-31",
+        "type": "Fulfilment",
+        "text": "Paul's Hagar-Sarah allegory in Galatians 4 turns on Gen 16 vs Gen 21: Ishmael born 'according to the flesh' represents slavery under the law; Isaac born 'through promise' represents the freedom of the new covenant. Genesis 16's shortcut becomes Paul's theological pivot.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 16:11-12",
+        "target": "Gen 25:12-18",
+        "type": "Fulfilment",
+        "text": "The prediction that Ishmael will be 'a wild donkey of a man,' dwelling east of his brothers, is fulfilled in the Ishmaelite genealogy of Gen 25 — twelve princes, settled 'from Havilah to Shur... before Egypt,' the nomadic desert peoples of the northern Arabian peninsula.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

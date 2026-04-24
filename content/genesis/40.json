@@ -386,7 +386,30 @@
         }
       ],
       "note": "Genesis 40 is the pivot chapter — the moment at which Joseph's gifts are first deployed in Egypt, and the moment at which human failure (the cupbearer's forgetting) extends the wait. The chapter's theology is the theology of divine timing: the right man with the right gift at the wrong human moment must wait for the right divine moment. Two years of prison after the cupbearer's restoration are not abandonment but preparation."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Gen 40:8",
+        "target": "Dan 2:27-28",
+        "type": "Echo",
+        "text": "'Do not interpretations belong to God?' Joseph's theological claim in the dungeon is Daniel's position before Nebuchadnezzar: 'no wise men, enchanters, magicians, or astrologers can show the king the mystery... but there is a God in heaven who reveals mysteries.' The Joseph-Daniel pattern is deliberate.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 40:14-15, 23",
+        "target": "Ps 105:17-19",
+        "type": "Echo",
+        "text": "The cupbearer's two-year forgetting of Joseph — 'yet the chief cupbearer did not remember Joseph, but forgot him' — is the narrative form of what Psalm 105 calls the 'testing of his word.' Providence works through apparent abandonment as much as through deliverance.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 40:20-22",
+        "target": "Matt 27:38",
+        "type": "Typology",
+        "text": "Two prisoners, one restored and one executed on the third day — a narrative many Fathers read as a distant shadow of the two crucified alongside Jesus (Luke 23:39-43), one taken into life and one not, on a day that was also the third day in the death-and-resurrection sequence.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

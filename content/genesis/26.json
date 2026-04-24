@@ -497,9 +497,64 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Covenant",
+          "score": 9
+        },
+        {
+          "label": "Providence",
+          "score": 9
+        },
+        {
+          "label": "Creation Order",
+          "score": 6
+        },
+        {
+          "label": "Faith & Obedience",
+          "score": 7
+        },
+        {
+          "label": "Worship",
+          "score": 7
+        },
+        {
+          "label": "Typology",
+          "score": 7
+        }
+      ],
+      "note": "Genesis 26 is Isaac's standalone chapter and shows the Abrahamic promise transferring intact to the next generation: land, multiplied seed, blessing of nations, all explicitly re-granted (vv.3-5) on the basis of Abraham's obedience. Isaac's well-reopening campaign (re-digging the wells stopped up by the Philistines) is covenant continuity in agricultural form: living water restored to the place. The chapter also features a third wife-sister deception (Isaac repeating his father's sin) and a third pagan-king-protected-by-God episode. Yet by the chapter's end Abimelech can confess 'we see plainly that the LORD has been with you' (v.28) — the patriarch's blessedness is unmistakable even to those outside the covenant."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 26:3-5",
+        "target": "Gen 22:16-18",
+        "type": "Echo",
+        "text": "The promise to Isaac — land, multiplied offspring, blessing of nations — is the exact Abrahamic promise transferred across generations. The wording consciously echoes the Moriah oath: 'because Abraham obeyed my voice and kept my charge.' The covenant passes on as an heirloom, not a renegotiation.",
+        "direction": "back"
+      },
+      {
+        "anchor": "Gen 26:12",
+        "target": "Mark 4:20",
+        "type": "Echo",
+        "text": "'Isaac sowed in that land and reaped in the same year a hundredfold' — the OT's most striking instance of the hundredfold blessing motif that Jesus's parable of the sower picks up in Mark 4:20. Abundant agricultural return as a covenant sign becomes a metaphor for kingdom fruitfulness.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 26:18-22",
+        "target": "Isa 12:3; John 7:37-38",
+        "type": "Echo",
+        "text": "Isaac's well-reopening program — re-digging his father's wells stopped up by the Philistines — is a stock covenant image: living water restored. Isaiah 12 ('you will draw water from the wells of salvation') and John 7 ('out of his belly shall flow rivers of living water') both draw on this well-theology.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 26:24",
+        "target": "Matt 28:20",
+        "type": "Echo",
+        "text": "'I am with you and will bless you' — the first time the divine 'I am with you' formula is spoken to Isaac. It runs through to Jacob (28:15; 31:3), Moses (Exod 3:12), Joshua (Josh 1:5), and culminates in Jesus' 'I am with you always, to the end of the age.' One sentence threading the whole canon.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

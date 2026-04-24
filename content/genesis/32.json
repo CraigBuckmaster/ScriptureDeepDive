@@ -438,7 +438,30 @@
         }
       ],
       "note": "Genesis 32 is the transformation chapter. The man who has lived by strategy and cunning — grasping heel, birthright, blessing, flocks — is reduced to prayer (v.9-12) and wounded by God (v.25), and emerges with a new name. Israel is defined not by moral perfection but by tenacious engagement with God. The chapter is simultaneously the most frightening and most hopeful in the Jacob narrative."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Gen 32:24-30",
+        "target": "Hos 12:3-4",
+        "type": "Echo",
+        "text": "'He strove with the angel and prevailed; he wept and sought his favor' — Hosea 12 is the OT's own reflection on the Peniel wrestling, reading it as the pattern for Israel's ongoing relation with God: prevailing through tearful supplication, not brute strength.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 32:28",
+        "target": "Gen 35:10",
+        "type": "Fulfilment",
+        "text": "'Your name shall no longer be called Jacob, but Israel, for you have striven with God and with men, and have prevailed.' The name change is confirmed publicly at Bethel in Gen 35:10. The hidden night-encounter produces the national name that every subsequent book of the OT will use.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 32:30",
+        "target": "John 1:18; Exod 33:20",
+        "type": "Echo",
+        "text": "'I have seen God face to face, and yet my life has been delivered.' The exceptional claim sits in tension with Exod 33:20 ('man shall not see me and live') and is finally resolved by John 1:18 — 'no one has ever seen God; the only God, who is at the Father's side, he has made him known.' Christ is the face Jacob glimpsed.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

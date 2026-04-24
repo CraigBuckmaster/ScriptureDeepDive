@@ -568,7 +568,30 @@
         }
       ],
       "note": "Genesis 50:20 is the theological thesis of the book of Genesis: \"You intended it for evil; God intended it for good.\" Every act of human sin and divine response in the fifty chapters has been building to this sentence. From the fall of Adam to the sale of Joseph, from the flood to the famine, the same pattern repeats: human malice and divine purpose operating on the same event; the divine purpose comprehending, redeeming, and overruling the human malice. Genesis ends with a coffin — and a promise."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Gen 50:20",
+        "target": "Rom 8:28; Acts 2:23",
+        "type": "Fulfilment",
+        "text": "'You meant evil against me, but God meant it for good.' The high-water mark of OT providence-theology. The exact logic Paul applies to the crucifixion ('delivered up according to the definite plan and foreknowledge of God, you crucified') and to the Christian's life ('all things work together for good') has its canonical foundation in this verse.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 50:24-26",
+        "target": "Exod 13:19; Heb 11:22",
+        "type": "Fulfilment",
+        "text": "'God will surely visit you, and you shall carry up my bones from here.' Joseph's deathbed faith in the future exodus is so explicit that Hebrews 11:22 singles it out as his defining act of faith, and Exod 13:19 records Moses carrying the bones. Genesis closes pointing to Exodus.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 50:19",
+        "target": "Rom 12:19",
+        "type": "Echo",
+        "text": "'Am I in the place of God?' Joseph's rhetorical refusal to retaliate — the last spoken words of the book to his brothers — anticipates Paul's 'never avenge yourselves... leave it to the wrath of God.' Genesis ends with a forgiveness practically indistinguishable from the cross's logic.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

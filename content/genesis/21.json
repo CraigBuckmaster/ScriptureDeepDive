@@ -51,8 +51,8 @@
           }
         ],
         "hist": {
-          "historical": "None",
-          "context": "None"
+          "historical": "Isaac's birth around 2066 BC on the standard biblical chronology caps a 25-year wait from the initial call of 12:1. The narrator's repeated emphasis — 'as he had said,' 'as he had promised,' 'at the very time God had promised' (21:1–2) — stacks three formulas of fulfilment in two verses, a density found nowhere else in the Abraham cycle. In an ANE culture where barrenness was read as divine disfavour, Sarah's conception at 90 is presented as a sign-event: the covenant future hangs on a womb that biology has closed, which makes the promise-keeper unambiguously God, not the patriarch. The name Isaac (yiṣḥāq, 'he laughs') freezes into the covenant line the laughter of both parents (17:17; 18:12) — disbelief transposed into praise.",
+          "context": "Isaac is the pivot of the Pentateuch. Without his birth, Genesis 12 fails and everything downstream collapses: no Jacob, no twelve tribes, no exodus, no Sinai. The NT reaches back to this moment with Paul (Rom 4:19–21; 9:9), who treats it as the textbook case of faith trusting God 'who gives life to the dead,' and with Hebrews (11:11–12), which reads it as eschatological prototype — one dead-as-good-as-dead body producing descendants as numerous as the stars. Luke frames the annunciations to Zechariah and Mary against this Genesis 21 template: the elderly-couple miracle and the virgin miracle are the bookends of redemptive history's impossible births."
         },
         "cross": {
           "refs": [
@@ -534,9 +534,64 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Fall & Redemption",
+          "score": 7
+        },
+        {
+          "label": "Covenant",
+          "score": 10
+        },
+        {
+          "label": "Providence",
+          "score": 10
+        },
+        {
+          "label": "Creation Order",
+          "score": 5
+        },
+        {
+          "label": "Faith & Obedience",
+          "score": 9
+        },
+        {
+          "label": "Typology",
+          "score": 9
+        }
+      ],
+      "note": "Genesis 21 is the chapter where God's promise materialises. Isaac is born exactly 'at the time of which God had spoken' (v.2) — the narrator stacks three formulas of fulfilment in two verses. Sarah's 'God has made laughter for me; everyone who hears will laugh with me' (v.6) transposes the earlier skeptical laughter (17:17; 18:12) into doxology. The chapter also stages the painful separation of Hagar and Ishmael — which Paul reads in Galatians 4 as the type of law-and-grace incompatibility. God's care for the rejected son is explicit: 'God heard the voice of the boy' (v.17), and Ishmael becomes a great nation in his own right. Romans 9 uses Isaac's birth as the textual proof of election by promise rather than flesh."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 21:1-7",
+        "target": "Rom 9:7-9",
+        "type": "Fulfilment",
+        "text": "'About this time next year I will return, and Sarah shall have a son' (quoting Gen 18:10, fulfilled in 21:2) is Paul's proof-text in Rom 9 that 'it is not the children of the flesh who are the children of God, but the children of the promise.' Isaac's birth is the category-creating event for election theology.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 21:12",
+        "target": "Heb 11:17-19",
+        "type": "Fulfilment",
+        "text": "'In Isaac shall your offspring be named' — quoted in Heb 11:18 as the very line Abraham is willing to sacrifice in ch.22. The promise's specificity creates the Akedah's tension: the covenant future and the sacrificial knife hang on the same boy.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 21:17-19",
+        "target": "Gen 16:7-13",
+        "type": "Echo",
+        "text": "Hagar's second wilderness rescue echoes her first. Both times she is sent out, both times the Angel of God speaks, both times she is given a son-promise. Gen 21 completes Gen 16: 'God heard the voice of the boy,' and the name Ishmael ('God hears') gets its second, explicit fulfilment.",
+        "direction": "back"
+      },
+      {
+        "anchor": "Gen 21:10",
+        "target": "Gal 4:28-31",
+        "type": "Fulfilment",
+        "text": "Sarah's demand 'cast out this slave woman with her son' is quoted verbatim by Paul in Gal 4:30 as the covenantal principle: law and grace cannot co-inherit. The narrative moment of a mother protecting her son becomes the apostolic warrant for the freedom of the gospel.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

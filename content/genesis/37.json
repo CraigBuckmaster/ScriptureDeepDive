@@ -550,7 +550,30 @@
         }
       ],
       "note": "Genesis 37 is the pivot chapter of Genesis. The Joseph cycle begins with the same themes that have driven the patriarchal narrative — favouritism, sibling rivalry, deception — but now with a scale and complexity that will carry the story all the way to Egypt. The dreams are the theological guarantee: what God has spoken cannot be stopped by hatred, a cistern, or a slave market. Providence uses the brothers' violence as its instrument."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Gen 37:28",
+        "target": "Matt 26:15",
+        "type": "Typology",
+        "text": "Twenty pieces of silver for Joseph by his brothers; thirty pieces of silver for Jesus by Judas ('what will you give me if I deliver him over to you?'). The NT deliberately signals that the betrayal-by-Judah pattern is being replayed: Judah-selling-Joseph is the first panel of a diptych the NT completes.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 37:24",
+        "target": "Ps 88:6; Acts 2:24",
+        "type": "Typology",
+        "text": "Joseph cast into the pit (bor) — the word for Sheol-pit throughout the Psalms — and then raised out to be sold is the Genesis prototype of death-and-deliverance that the psalms of lament elaborate and the resurrection definitively fulfils.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 37:5-11",
+        "target": "Dan 2:1-49; Matt 2:13-15",
+        "type": "Echo",
+        "text": "Joseph's prophetic dreams — eleven sheaves, eleven stars bowing down — establish the pattern that will run through Daniel and Matthew: God speaks the future through dreams to covenant figures in foreign lands, and dreams are validated by their later fulfilment.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

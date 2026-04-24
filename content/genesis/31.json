@@ -547,7 +547,30 @@
         }
       ],
       "note": "Genesis 31 brings the Haran episode to a close with a formal covenant that demarcates Jacob from Laban, Hebrew from Aramean, covenant people from the nations. The divine presence that was promised at Bethel (28:15) and reiterated at the departure (31:3) has been active throughout: restraining Laban (v.24), guiding Jacob's breeding strategy (vv.10-12), and overseeing the Mizpah covenant (v.49). The twenty-year sojourn was under God's watch from beginning to end."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Gen 31:3, 42",
+        "target": "Heb 13:5",
+        "type": "Echo",
+        "text": "'Return to the land of your fathers... I will be with you' (v.3), and Jacob's testimony 'if the God of my father, the God of Abraham and the Fear of Isaac, had not been on my side...' (v.42) — the 'God with me' theme runs through this chapter as the hinge of Jacob's courage to leave.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 31:19, 30-35",
+        "target": "Josh 24:14-15",
+        "type": "Echo",
+        "text": "The theft of Laban's household gods (teraphim) and Rachel's cunning concealment of them reveals that the patriarchal family still carries domestic idolatry. Joshua's closing call — 'put away the gods that your fathers served beyond the River' — names exactly this ancestral baggage and demands its final renunciation.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 31:49",
+        "target": "Mizpah benedictions",
+        "type": "Echo",
+        "text": "'The LORD watch between you and me, when we are out of one another's sight' — the Mizpah covenant. Ironically invoked as a parting blessing between estranged parties, the verse anchors a sober theology: God's watchfulness guarantees accountability even where humans cannot oversee each other.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

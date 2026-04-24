@@ -366,9 +366,64 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Fall & Redemption",
+          "score": 6
+        },
+        {
+          "label": "Covenant",
+          "score": 8
+        },
+        {
+          "label": "Providence",
+          "score": 10
+        },
+        {
+          "label": "Creation Order",
+          "score": 4
+        },
+        {
+          "label": "Faith & Obedience",
+          "score": 5
+        },
+        {
+          "label": "Typology",
+          "score": 7
+        }
+      ],
+      "note": "Genesis 20 is the second wife-sister deception — Abraham repeating in Gerar what he did in Egypt — and the second narrative where God protects the covenant promise through a pagan king's integrity rather than the patriarch's courage. The shock is that Abimelech behaves more righteously than Abraham. God speaks to Abimelech in a dream and calls Abraham 'a prophet' (v.7) — Scripture's first use of the word, applied paradoxically to the man who has just lied. The closing scene (vv.17-18) shows Abraham praying for Abimelech's household to be healed of barrenness — the same condition that defines his own household. The covenant is preserved by divine sovereignty working through unexpected channels."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 20:7",
+        "target": "1 Sam 9:9",
+        "type": "Echo",
+        "text": "'For he is a prophet (nabi) and he will pray for you' — the first use of the word 'prophet' in Scripture, applied surprisingly to Abraham. The prophet's defining function here is intercessory prayer (v.17), which 1 Samuel's note on the older term ('seer') implicitly confirms: the prophet is the one who stands between God and the people.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 20:3-7",
+        "target": "Ps 105:14-15",
+        "type": "Echo",
+        "text": "'He allowed no one to oppress them; he rebuked kings on their account: Do not touch my anointed ones; do my prophets no harm.' Psalm 105 explicitly turns Gen 20 (and 12, 26) into a theological precedent: God protects his covenant bearers even from the most powerful foreign rulers.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 20:11",
+        "target": "Rom 3:18",
+        "type": "Echo",
+        "text": "Abraham assumes 'there is no fear of God at all in this place' — and is wrong; Abimelech shows more fear of God than Abraham shows of truth. Paul's universal indictment in Rom 3:18 ('there is no fear of God before their eyes') takes a sharper edge when read against Gen 20's reversal: who is 'the people of God' and who is 'the nations' is never as tidy as insiders think.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 20:17-18",
+        "target": "Jas 5:16",
+        "type": "Echo",
+        "text": "'Abraham prayed to God, and God healed Abimelech.' The prophet-as-intercessor motif here is the earliest Scriptural datum for James's 'the prayer of a righteous person has great power as it is working.' Abraham prays and wombs open — the very mechanism that his own line depends on in the next chapter.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {
