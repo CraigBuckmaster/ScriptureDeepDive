@@ -423,7 +423,30 @@
         }
       ],
       "note": "Genesis 35 is structured around the paradox of covenant renewal and death. God reappears, confirms the name Israel, restates the full covenant promise — and yet the chapter is framed by three deaths. The covenant promises are being given to a people in the process of losing those who received them first. The faithfulness of God and the mortality of his servants are placed side by side without resolution."
-    }
+    },
+    "thread": [
+      {
+        "anchor": "Gen 35:1-7",
+        "target": "Josh 24:23",
+        "type": "Echo",
+        "text": "'Put away the foreign gods that are among you, and purify yourselves and change your garments' — Jacob's demand before returning to Bethel is Joshua's demand at Shechem: covenant renewal requires putting away household idolatries. Genesis 35 sets the liturgical pattern.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 35:10-12",
+        "target": "Exod 3:6, 15",
+        "type": "Echo",
+        "text": "The Bethel re-naming and re-promising consolidates 'the God of Abraham, Isaac, and Jacob' as the divine identity Exodus will use at the burning bush: 'the God of your fathers, the God of Abraham, the God of Isaac, and the God of Jacob, has sent me to you.'",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 35:18",
+        "target": "Jer 31:15; Matt 2:18",
+        "type": "Echo",
+        "text": "Rachel's death in childbirth near Bethlehem, naming Benjamin (son of sorrow / right hand), supplies the Jer 31:15 image Matthew quotes at Herod's slaughter: 'Rachel weeping for her children... because they are no more.' The matriarch's grave becomes the national mourning-site.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

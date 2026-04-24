@@ -355,9 +355,64 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Fall & Redemption",
+          "score": 6
+        },
+        {
+          "label": "Covenant",
+          "score": 8
+        },
+        {
+          "label": "Providence",
+          "score": 7
+        },
+        {
+          "label": "Creation Order",
+          "score": 4
+        },
+        {
+          "label": "Faith & Obedience",
+          "score": 9
+        },
+        {
+          "label": "Death & Promise",
+          "score": 10
+        }
+      ],
+      "note": "Genesis 23 dwells on a single piece of land — the cave of Machpelah — bought from Hittite owners as Sarah's burial plot. The legal detail of the negotiation (the only contract-cutting in Genesis recorded with such care) is theological: the first piece of Canaan Abraham actually possesses is a grave. Hebrews 11:13 reads it precisely this way — 'these all died in faith, not having received the things promised, but having seen them and greeted them from afar.' Abraham calls himself a 'sojourner and foreigner' (v.4) — the LXX phrasing Peter applies to all Christians (1 Pet 2:11). Machpelah will eventually hold Abraham, Isaac, Rebekah, Leah, and Jacob: the patriarchal land claim, for centuries, will be one cave."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 23:1-20",
+        "target": "Heb 11:13-16",
+        "type": "Echo",
+        "text": "The purchase of Machpelah — the first piece of Canaan Abraham actually owns is a burial plot — embodies the paradox Hebrews 11 names: he 'died in faith, not having received the things promised, but having seen them and greeted them from afar... seeking a homeland.' The promised land is possessed by faith from a grave, not by conquest.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 23:4",
+        "target": "1 Pet 2:11",
+        "type": "Echo",
+        "text": "'I am a sojourner and foreigner (ger wə-toshav) among you.' Abraham's self-description to the Hittites becomes the NT's standard posture for the people of God in the world: Peter addresses believers as 'sojourners and exiles' (paroikous kai parepidēmous), the LXX's translation of Abraham's phrase.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 23:17-20",
+        "target": "Gen 49:29-32; 50:13",
+        "type": "Echo",
+        "text": "Machpelah becomes the patriarchal tomb: Sarah here, then Abraham (25:9), Isaac and Rebekah (49:31), Leah (49:31), and Jacob (50:13). Genesis begins with a creation-wide scope and ends with a single family plot — the covenant's entire land-claim, for a generation, is one cave.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 23:4",
+        "target": "Phil 3:20",
+        "type": "Echo",
+        "text": "Paul's 'our citizenship (politeuma) is in heaven' recasts the Abrahamic sojourner identity: God's people on earth are always here on behalf of a homeland elsewhere, purchasing only what hope requires.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

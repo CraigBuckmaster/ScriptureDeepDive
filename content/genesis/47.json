@@ -545,9 +545,57 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Covenant",
+          "score": 8
+        },
+        {
+          "label": "Providence",
+          "score": 10
+        },
+        {
+          "label": "Creation Order",
+          "score": 6
+        },
+        {
+          "label": "Faith & Obedience",
+          "score": 8
+        },
+        {
+          "label": "Death & Promise",
+          "score": 9
+        },
+        {
+          "label": "Typology",
+          "score": 7
+        }
+      ],
+      "note": "Genesis 47 spans the practical settlement of Jacob's house in Goshen, Joseph's centralised famine economy that turns Egyptians into state-tenants of Pharaoh, and Jacob's deathbed insistence on burial in Canaan. Three theological notes dominate. First, Jacob — standing before Pharaoh — blesses him (vv.7, 10): the patriarchal lesser-blesses-greater inversion of normal protocol, a preview of Hebrews 7:7's logic. Second, Jacob's self-identification as a 'sojourner' (v.9) feeds the NT's pilgrim theology (Heb 11:13; 1 Pet 2:11). Third, the centralisation of Egyptian economic power that Joseph engineers will become — 'a new king arose who did not know Joseph' (Exod 1:8) — the structural setup for Israel's enslavement. Providence works in long arcs."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 47:9",
+        "target": "Heb 11:13; 1 Pet 2:11",
+        "type": "Echo",
+        "text": "'The days of the years of my sojourning are 130 years. Few and evil have been the days of the years of my life.' Jacob's self-identification as 'sojourner' before Pharaoh feeds directly into Hebrews 11's pilgrim theology and Peter's address to the church as 'sojourners and exiles.'",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 47:13-26",
+        "target": "Exod 1:8-14",
+        "type": "Echo",
+        "text": "Joseph's famine administration — Egyptians selling themselves to Pharaoh in exchange for grain, becoming state-dependent tenants — sets up the structural slavery of Exod 1. A new king who 'did not know Joseph' finds an already-centralised economy easy to turn against Israel.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 47:29-31",
+        "target": "Gen 49:29-33; Heb 11:21",
+        "type": "Echo",
+        "text": "Jacob's oath-bound demand that Joseph bury him in the ancestral ground — 'do not bury me in Egypt' — is the patriarchal refusal to let Egypt become the covenant's home. Heb 11:21 reads this as the culminating act of Jacob's faith: worship from a deathbed, eyes set on the promised land.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

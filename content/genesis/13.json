@@ -298,8 +298,8 @@
           }
         ],
         "hist": {
-          "historical": "None",
-          "context": "None"
+          "historical": "The triangle of Hebron, Mamre, and the nearby cave of Machpelah (23:17) becomes the patriarchal heartland. Hebron sits roughly 3,000 feet above sea level on the Judean ridge, a strategic high-country location on the watershed road — the main north–south artery of the hill country. The Middle Bronze Age layer at Tell Rumeida (biblical Hebron) shows substantial fortified occupation, consistent with the kind of settled Canaanite city-state culture Abram's tent-dwelling pastoralism moves alongside rather than inside. Mamre itself, about two miles north of the city, is identified with Ramat el-Khalil, where Herod later built a sacred enclosure around the traditional oak — evidence of how early and persistent the memory of Abraham's altar here became.",
+          "context": "The altar at Mamre is Abram's third (after Shechem 12:7 and Bethel 12:8) and it corresponds to the third, fullest land promise (13:14–17). The pattern is deliberate: God speaks, Abram marks the ground with worship. The land is possessed first by faith and altar-building long before it is possessed by political control — a priestly, liturgical claim rather than a military one. The chapter also silently reverses the Babel pattern: instead of humanity gathering to build a tower and make a name (11:4), Abram allows separation for peace and receives the promise that his name will be made by God (12:2)."
         },
         "cross": {
           "refs": [
@@ -506,9 +506,64 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Fall & Redemption",
+          "score": 6
+        },
+        {
+          "label": "Covenant",
+          "score": 9
+        },
+        {
+          "label": "Providence",
+          "score": 8
+        },
+        {
+          "label": "Creation Order",
+          "score": 5
+        },
+        {
+          "label": "Faith & Obedience",
+          "score": 8
+        },
+        {
+          "label": "Typology",
+          "score": 6
+        }
+      ],
+      "note": "Genesis 13 is a chapter about generosity making space for promise. Abram's voluntary deference to Lot — letting his nephew choose first, though as patriarch he had every right to the prime land — is the moral counter-image of Babel's self-grasping in ch.11. By yielding the apparent best (the well-watered Jordan plain, 'like the garden of the LORD,' v.10), Abram receives the actual best: the renewed land promise from God himself, surveyed in all four directions (vv.14-17). The chapter quietly sets up Sodom's coming destruction by introducing it as Eden-like; the irony will land in ch.19. Faith builds an altar (v.18) where it cannot yet build a city."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 13:8-9",
+        "target": "Phil 2:3-4",
+        "type": "Echo",
+        "text": "Abram's yielding of first-choice to Lot — though as patriarch he has every right to claim it — prefigures the cruciform deference Paul commands: 'in humility count others more significant than yourselves.' Abram loses the strategic high-ground and gains the promise.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 13:10",
+        "target": "Gen 2:8-10; 19:24-25",
+        "type": "Echo",
+        "text": "The Jordan plain is 'like the garden of the LORD, like the land of Egypt' — an Eden-echo laid down the very chapter before it will be destroyed (19). Genesis sets up Sodom's apparent paradise precisely so the fire-and-brimstone reversal lands as a second Eden-loss.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 13:14-15",
+        "target": "Eph 3:17-19",
+        "type": "Echo",
+        "text": "'Look from the place where you are northward and southward and eastward and westward... all the land that you see I will give to you and to your offspring forever.' The four-direction surveying of promised inheritance becomes the template for Paul's prayer that the Ephesians grasp 'the breadth and length and height and depth' of Christ's love — another covenantal inheritance measured in all directions.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 13:16",
+        "target": "Rom 4:16-17",
+        "type": "Fulfilment",
+        "text": "The promise that Abram's offspring will be 'like the dust of the earth' — uncountable — is the same promise Paul invokes when he calls Abraham 'the father of us all' in Rom 4:16. Gentile inclusion is not a later-day innovation; it was encoded in the dust-count of Gen 13.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {

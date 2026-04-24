@@ -687,9 +687,64 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
-    }
+      "scores": [
+        {
+          "label": "Fall & Redemption",
+          "score": 9
+        },
+        {
+          "label": "Covenant",
+          "score": 7
+        },
+        {
+          "label": "Providence",
+          "score": 8
+        },
+        {
+          "label": "Creation Order",
+          "score": 6
+        },
+        {
+          "label": "Faith & Obedience",
+          "score": 5
+        },
+        {
+          "label": "Typology",
+          "score": 8
+        }
+      ],
+      "note": "Genesis 11 is the primeval history's last word — and its darkest self-portrait. Babel is Eden's ambition writ civilisational: humanity gathering to 'make a name for ourselves, lest we be dispersed' (v.4) inverts both the creation mandate to fill the earth and the divine prerogative of name-giving. The judgment is precisely fitted to the sin: confused speech and forced scattering accomplish what willing obedience refused. Then the narrative pivots: the Shem genealogy moves through Eber, Peleg, Reu, Serug, Nahor, Terah — and lands on Abram. Sarai's barrenness (v.30) is the one-line obstacle the entire Bible's plot will hang on. The primeval problem (Babel) and the particular solution (Abram) are introduced in the same chapter."
+    },
+    "thread": [
+      {
+        "anchor": "Gen 11:4",
+        "target": "Gen 3:5",
+        "type": "Echo",
+        "text": "Babel's builders say 'let us make a name for ourselves, lest we be dispersed' — the same grasping self-elevation the serpent offered in Eden ('you will be like God'). Babel is Eden's sin replayed at civilisational scale: autonomy, ascent, self-naming.",
+        "direction": "back"
+      },
+      {
+        "anchor": "Gen 11:7-9",
+        "target": "Acts 2:4-11",
+        "type": "Fulfilment",
+        "text": "Pentecost is Babel reversed. Where Babel scattered one language into many as judgment, Pentecost gathers many languages into one gospel as grace. Luke's list of nations at Pentecost (Acts 2:9-11) is deliberately Babel-shaped — a Table-of-Nations-in-miniature now hearing, not babbling, the works of God.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 11:9",
+        "target": "Rev 18:2",
+        "type": "Echo",
+        "text": "'Babel' and 'Babylon' are the same Hebrew word (bavel). The Babel of Gen 11 becomes the Babylon of Revelation — the archetypal city of humanity-against-God — and its final fall ('fallen, fallen is Babylon the great,' Rev 18:2) is the last echo of the original confusion.",
+        "direction": "forward"
+      },
+      {
+        "anchor": "Gen 11:30",
+        "target": "Rom 4:19",
+        "type": "Fulfilment",
+        "text": "'Now Sarai was barren; she had no child' — the one-line obstacle the entire Bible's plot will hang on — is the text Paul treats in Rom 4 as the proving ground of Abraham's faith: he considered his body as good as dead and Sarah's womb as barren, yet believed the God who gives life to the dead.",
+        "direction": "forward"
+      }
+    ]
   },
   "vhl_groups": [
     {
