@@ -1,5 +1,13 @@
 import { useEffect, useState, useCallback, useMemo } from 'react';
-import { StyleSheet, View, Text, Text as RNText, ActivityIndicator, AppState } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  Text as RNText,
+  ActivityIndicator,
+  AppState,
+  Platform,
+} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { useFonts } from 'expo-font';
@@ -20,7 +28,7 @@ import { useSettingsStore, useAuthStore, usePremiumStore } from './src/stores';
 import { pruneEvents } from './src/services/analytics';
 import { checkAndScheduleReengagement } from './src/services/reengagement';
 import { rescheduleIfStale } from './src/services/notifications';
-import { syncPremiumStatus } from './src/services/purchases';
+import { initializePurchases, syncPremiumStatus } from './src/services/purchases';
 import { flushQueue } from './src/services/syncQueue';
 import { RootNavigator } from './src/navigation';
 import type { TabParamList } from './src/navigation/types';
@@ -185,6 +193,26 @@ async function hydrateAppState(): Promise<void> {
   pruneEvents(90); // Clean up old analytics (fire-and-forget)
 }
 
+/**
+ * Resolve the RevenueCat API key from env at call time.
+ * RevenueCat's client-side keys are designed to ship embedded in the app
+ * bundle (unlike a server secret), so `EXPO_PUBLIC_*` is the correct place.
+ * Prefers platform-specific keys, falls back to a shared one, then trims.
+ */
+function getRevenueCatApiKey(): string {
+  return (
+    Platform.select({
+      ios:
+        process.env.EXPO_PUBLIC_REVENUECAT_IOS_API_KEY ??
+        process.env.EXPO_PUBLIC_REVENUECAT_API_KEY,
+      android:
+        process.env.EXPO_PUBLIC_REVENUECAT_ANDROID_API_KEY ??
+        process.env.EXPO_PUBLIC_REVENUECAT_API_KEY,
+      default: process.env.EXPO_PUBLIC_REVENUECAT_API_KEY,
+    }) ?? ''
+  ).trim();
+}
+
 function App() {
   const [fontsLoaded] = useFonts(FONT_MAP);
   const [dbStatus, setDbStatus] = useState<'loading' | 'needs_download' | 'ready'>('loading');
@@ -206,6 +234,15 @@ function App() {
         }
 
         await hydrateAppState();
+        // Fire-and-forget: RevenueCat configure + syncPremiumStatus hits the
+        // network. Awaiting it here would stall the splash screen for as long
+        // as it takes for the customer-info fetch to resolve (10s+ worst case
+        // on a spotty connection). initializePurchases swallows its own
+        // errors and sets purchasesConfigured internally; syncPremiumStatus
+        // short-circuits until that flag flips. Downstream consumers
+        // (useAmicusAccess, premiumStore) already treat RC as async and
+        // refresh on events, so a delayed-ready RC is fine.
+        void initializePurchases(getRevenueCatApiKey());
         setDbStatus(status);
       } catch (e) {
         console.error('Init error:', e);
@@ -277,6 +314,8 @@ function App() {
                   // app tree, otherwise components can touch stores or
                   // analytics against partially-hydrated state.
                   await hydrateAppState();
+                  // Fire-and-forget — see rationale in the primary init above.
+                  void initializePurchases(getRevenueCatApiKey());
                   setDbStatus('ready');
                 } catch (e) {
                   console.error('Post-download init error:', e);

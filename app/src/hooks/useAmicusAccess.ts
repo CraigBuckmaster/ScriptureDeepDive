@@ -5,6 +5,7 @@
  */
 import { useEffect, useState } from 'react';
 import { getAmicusUsageThisMonth } from '../db/userQueries';
+import { subscribeAmicusUsageChanges } from '../services/amicus/usageEvents';
 import { isConnected, onConnectivityChange } from '../services/connectivity';
 import { useSettingsStore } from '../stores';
 import { usePremiumStore } from '../stores/premiumStore';
@@ -53,19 +54,26 @@ export function useAmicusAccess(): AmicusAccessState {
       ? 'partner_plus'
       : 'premium';
 
-  // Fetch monthly usage once per mount and refresh on entitlement changes.
   useEffect(() => {
     let cancelled = false;
-    void (async () => {
+
+    const refreshUsage = async (): Promise<void> => {
       try {
         const n = await getAmicusUsageThisMonth();
         if (!cancelled) setUsageThisMonth(n);
       } catch (err) {
         logger.warn('Amicus', 'usage fetch failed', err);
       }
-    })();
+    };
+
+    void refreshUsage();
+    const unsubscribe = subscribeAmicusUsageChanges(() => {
+      void refreshUsage();
+    });
+
     return () => {
       cancelled = true;
+      unsubscribe();
     };
   }, [entitlement]);
 
