@@ -2,16 +2,35 @@ import React from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, type NavigationProp, type ParamListBase } from '@react-navigation/native';
-import { ArrowLeft, Check, Clock } from 'lucide-react-native';
+import { ArrowLeft, Check, ChevronRight, Clock } from 'lucide-react-native';
 import { usePremium, useReviewQueue } from '../hooks';
 import { UpgradePrompt } from '../components/UpgradePrompt';
+import { formatChapterRef, getGuidedStudyStepLabel } from '../services/guidedStudy';
 import { fontFamily, radii, spacing, useTheme } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+
+function chapterRouteParams(chapterId: string, initialStep?: string) {
+  return {
+    bookId: chapterId.replace(/_\d+$/, ''),
+    chapterNum: Number(chapterId.match(/_(\d+)$/)?.[1] ?? 1),
+    ...(initialStep ? { initialStep } : {}),
+  };
+}
 
 function MyStudyScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<NavigationProp<ParamListBase>>();
-  const { dueItems, allItems, concepts, completeItem } = useReviewQueue();
+  const {
+    dueItems,
+    allItems,
+    concepts,
+    activeSessions,
+    openQuestions,
+    recentTakeaways,
+    nextAction,
+    completeItem,
+    resolveQuestion,
+  } = useReviewQueue();
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
 
   const locked = !isPremium;
@@ -37,18 +56,84 @@ function MyStudyScreen() {
               Review your study over time
             </Text>
             <Text style={[styles.body, { color: base.textDim }]}>
-              Spaced review prompts and concept vocabulary are included with Companion+.
+              Spaced review prompts, open questions, and concept vocabulary are included with
+              Companion+.
             </Text>
             <TouchableOpacity
               onPress={() => showUpgrade('feature', 'Guided Study Review')}
               style={[styles.primaryButton, { backgroundColor: base.gold }]}
             >
-              <Text style={styles.primaryText}>Unlock review</Text>
+              <Text style={styles.primaryText}>Unlock My Study</Text>
             </TouchableOpacity>
           </View>
         ) : (
           <>
-            <SectionTitle label="DUE FOR REVIEW" />
+            {nextAction ? (
+              <>
+                <SectionTitle label="NEXT STEP" />
+                <View
+                  style={[
+                    styles.emptyCard,
+                    { backgroundColor: base.bgElevated, borderColor: `${base.gold}30` },
+                  ]}
+                >
+                  <Text style={[styles.cardTitle, { color: base.text }]}>{nextAction.title}</Text>
+                  <Text style={[styles.body, { color: base.textDim }]}>{nextAction.subtitle}</Text>
+                  <TouchableOpacity
+                    onPress={() => {
+                      if (!nextAction.chapterId) return;
+                      navigation.navigate(
+                        'StudySession',
+                        chapterRouteParams(nextAction.chapterId, nextAction.initialStep),
+                      );
+                    }}
+                    style={[styles.primaryButton, { backgroundColor: base.gold }]}
+                  >
+                    <Text style={styles.primaryText}>{nextAction.ctaLabel}</Text>
+                  </TouchableOpacity>
+                </View>
+              </>
+            ) : null}
+
+            <SectionTitle label="CONTINUE STUDYING" />
+            {activeSessions.length === 0 ? (
+              <Text style={[styles.body, { color: base.textMuted }]}>
+                In-progress guided sessions will appear here.
+              </Text>
+            ) : (
+              <View
+                style={[
+                  styles.list,
+                  { backgroundColor: base.bgElevated, borderColor: base.border },
+                ]}
+              >
+                {activeSessions.map((session) => (
+                  <TouchableOpacity
+                    key={session.id}
+                    onPress={() =>
+                      navigation.navigate(
+                        'StudySession',
+                        chapterRouteParams(session.chapter_id, session.current_step),
+                      )
+                    }
+                    style={[styles.reviewRow, { borderBottomColor: `${base.border}55` }]}
+                  >
+                    <Clock size={16} color={base.gold} />
+                    <View style={styles.reviewText}>
+                      <Text style={[styles.reviewTitle, { color: base.text }]}>
+                        {formatChapterRef(session.chapter_id)}
+                      </Text>
+                      <Text style={[styles.reviewPrompt, { color: base.textDim }]}>
+                        Resume at {getGuidedStudyStepLabel(session.current_step)}
+                      </Text>
+                    </View>
+                    <ChevronRight size={16} color={base.textMuted} />
+                  </TouchableOpacity>
+                ))}
+              </View>
+            )}
+
+            <SectionTitle label="DUE TODAY" />
             {dueItems.length === 0 ? (
               <View
                 style={[
@@ -75,7 +160,9 @@ function MyStudyScreen() {
                   >
                     <Clock size={16} color={base.gold} />
                     <View style={styles.reviewText}>
-                      <Text style={[styles.reviewTitle, { color: base.text }]}>{item.title}</Text>
+                      <Text style={[styles.reviewTitle, { color: base.text }]}>
+                        {formatChapterRef(item.chapter_id)}
+                      </Text>
                       <Text style={[styles.reviewPrompt, { color: base.textDim }]}>
                         {item.prompt}
                       </Text>
@@ -92,7 +179,44 @@ function MyStudyScreen() {
               </View>
             )}
 
-            <SectionTitle label="CONCEPT VOCABULARY" />
+            <SectionTitle label="OPEN QUESTIONS" />
+            {openQuestions.length === 0 ? (
+              <Text style={[styles.body, { color: base.textMuted }]}>
+                Questions you want to return to will collect here.
+              </Text>
+            ) : (
+              <View
+                style={[
+                  styles.list,
+                  { backgroundColor: base.bgElevated, borderColor: base.border },
+                ]}
+              >
+                {openQuestions.map((question) => (
+                  <View
+                    key={question.id}
+                    style={[styles.reviewRow, { borderBottomColor: `${base.border}55` }]}
+                  >
+                    <View style={styles.reviewText}>
+                      <Text style={[styles.reviewTitle, { color: base.text }]}>
+                        {formatChapterRef(question.chapter_id)}
+                      </Text>
+                      <Text style={[styles.reviewPrompt, { color: base.textDim }]}>
+                        {question.question_text}
+                      </Text>
+                    </View>
+                    <TouchableOpacity
+                      onPress={() => resolveQuestion(question.id)}
+                      accessibilityLabel="Mark question resolved"
+                      style={[styles.checkButton, { borderColor: `${base.gold}40` }]}
+                    >
+                      <Check size={15} color={base.gold} />
+                    </TouchableOpacity>
+                  </View>
+                ))}
+              </View>
+            )}
+
+            <SectionTitle label="CONCEPTS GROWING" />
             {concepts.length === 0 ? (
               <Text style={[styles.body, { color: base.textMuted }]}>
                 Concepts you save from guided sessions will collect here.
@@ -102,11 +226,53 @@ function MyStudyScreen() {
                 {concepts.map((concept) => (
                   <View
                     key={`${concept.concept_id}:${concept.chapter_id}`}
-                    style={[styles.chip, { borderColor: `${base.gold}35` }]}
+                    style={[
+                      styles.conceptCard,
+                      {
+                        backgroundColor: base.bgElevated,
+                        borderColor: `${base.gold}35`,
+                      },
+                    ]}
                   >
                     <Text style={[styles.chipText, { color: base.gold }]}>
                       {concept.concept_label}
                     </Text>
+                    <Text style={[styles.conceptMeta, { color: base.textMuted }]}>
+                      Seen {concept.encounter_count} time{concept.encounter_count === 1 ? '' : 's'}
+                    </Text>
+                    <Text style={[styles.conceptMeta, { color: base.textDim }]}>
+                      Last seen in {formatChapterRef(concept.chapter_id)}
+                    </Text>
+                  </View>
+                ))}
+              </View>
+            )}
+
+            <SectionTitle label="RECENT TAKEAWAYS" />
+            {recentTakeaways.length === 0 ? (
+              <Text style={[styles.body, { color: base.textMuted }]}>
+                Save a guided study synthesis to create your first takeaway trail.
+              </Text>
+            ) : (
+              <View
+                style={[
+                  styles.list,
+                  { backgroundColor: base.bgElevated, borderColor: base.border },
+                ]}
+              >
+                {recentTakeaways.slice(0, 4).map((takeaway) => (
+                  <View
+                    key={`${takeaway.session_id}:${takeaway.updated_at}`}
+                    style={[styles.reviewRow, { borderBottomColor: `${base.border}55` }]}
+                  >
+                    <View style={styles.reviewText}>
+                      <Text style={[styles.reviewTitle, { color: base.text }]}>
+                        {formatChapterRef(takeaway.chapter_id)}
+                      </Text>
+                      <Text style={[styles.reviewPrompt, { color: base.textDim }]}>
+                        {takeaway.takeaway}
+                      </Text>
+                    </View>
                   </View>
                 ))}
               </View>
@@ -226,15 +392,21 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     gap: spacing.xs,
   },
-  chip: {
+  conceptCard: {
     borderWidth: 1,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     paddingHorizontal: spacing.sm,
-    paddingVertical: 5,
+    paddingVertical: spacing.sm,
+    minWidth: '47%',
   },
   chipText: {
     fontFamily: fontFamily.uiMedium,
     fontSize: 12,
+  },
+  conceptMeta: {
+    fontFamily: fontFamily.ui,
+    fontSize: 11,
+    marginTop: 3,
   },
 });
 

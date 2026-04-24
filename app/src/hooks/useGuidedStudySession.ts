@@ -7,6 +7,7 @@ import {
   completeGuidedStudySession,
   createGuidedReviewItems,
   recordConceptEncounter,
+  upsertGuidedStudyQuestion,
 } from '../db/userMutations';
 import {
   getGuidedStudyResponses,
@@ -104,12 +105,15 @@ export function useGuidedStudySession(chapterId: string | undefined) {
   const saveSynthesis = useCallback(
     async (next: GuidedSynthesisDraft) => {
       setSynthesis(next);
-      if (sessionId == null) return;
+      if (sessionId == null || !chapterId) return;
       await upsertGuidedStudySynthesis(sessionId, next).catch((err) =>
         logger.warn('useGuidedStudySession', 'Failed to save synthesis', err),
       );
+      await upsertGuidedStudyQuestion(sessionId, chapterId, next.open_question).catch((err) =>
+        logger.warn('useGuidedStudySession', 'Failed to save open question', err),
+      );
     },
-    [sessionId],
+    [chapterId, sessionId],
   );
 
   const savePremiumReview = useCallback(

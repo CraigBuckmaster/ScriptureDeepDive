@@ -40,6 +40,7 @@ export { usePremium } from './usePremium';
 export { useJourney } from './useJourney';
 export { useJourneyDetail } from './useJourneyDetail';
 export { useStudyDepth } from './useStudyDepth';
+export { useGuidedStudyChapterState } from './useGuidedStudyChapterState';
 export { useGuidedStudySession } from './useGuidedStudySession';
 export { useProofTextGuard } from './useProofTextGuard';
 export { useReviewQueue } from './useReviewQueue';

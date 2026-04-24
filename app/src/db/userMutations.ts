@@ -6,8 +6,8 @@
  */
 
 import { logger } from '../utils/logger';
-import type { GuidedStudyStep } from '../types';
 import { nextIntervalAfter } from '../services/guidedStudy/review';
+import type { GuidedStudyStep } from '../types';
 import { getUserDb } from './userDatabase';
 import type { ReadingPlan } from './userQueries';
 
@@ -406,6 +406,44 @@ export async function upsertGuidedStudySynthesis(
   );
 }
 
+export async function upsertGuidedStudyQuestion(
+  sessionId: number,
+  chapterId: string,
+  questionText: string,
+): Promise<void> {
+  const normalized = questionText.trim();
+  if (normalized.length === 0) {
+    await getUserDb().runAsync('DELETE FROM guided_study_questions WHERE session_id = ?', [
+      sessionId,
+    ]);
+    return;
+  }
+
+  await getUserDb().runAsync(
+    `INSERT INTO guided_study_questions
+       (session_id, chapter_id, question_text, status, resolved_at, updated_at)
+     VALUES (?, ?, ?, 'open', NULL, datetime('now'))
+     ON CONFLICT(session_id) DO UPDATE SET
+       chapter_id = excluded.chapter_id,
+       question_text = excluded.question_text,
+       status = 'open',
+       resolved_at = NULL,
+       updated_at = datetime('now')`,
+    [sessionId, chapterId, normalized],
+  );
+}
+
+export async function resolveGuidedStudyQuestion(id: number): Promise<void> {
+  await getUserDb().runAsync(
+    `UPDATE guided_study_questions
+     SET status = 'resolved',
+         resolved_at = datetime('now'),
+         updated_at = datetime('now')
+     WHERE id = ?`,
+    [id],
+  );
+}
+
 export async function createGuidedReviewItems(
   sessionId: number,
   chapterId: string,
@@ -429,15 +467,6 @@ export async function createGuidedReviewItems(
   });
 }
 
-/**
- * Marks a review item as completed and, if the ladder has more intervals,
- * schedules the next-interval row in the same transaction. Row identity is
- * preserved by copying source_session_id / chapter_id / title / prompt /
- * answer from the completed row.
- *
- * Intervals live in `services/guidedStudy/review.ts`. See that file for the
- * spaced-repetition design rationale.
- */
 export async function completeGuidedReviewItem(id: number): Promise<void> {
   const db = getUserDb();
   await db.withTransactionAsync(async () => {
@@ -556,6 +585,7 @@ export async function resetToNewUser(): Promise<void> {
   await db.runAsync('DELETE FROM reading_progress');
   await db.runAsync('DELETE FROM concept_encounters');
   await db.runAsync('DELETE FROM guided_review_items');
+  await db.runAsync('DELETE FROM guided_study_questions');
   await db.runAsync('DELETE FROM guided_study_synthesis');
   await db.runAsync('DELETE FROM guided_study_responses');
   await db.runAsync('DELETE FROM guided_study_sessions');

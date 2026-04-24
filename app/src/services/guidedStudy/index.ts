@@ -1,5 +1,6 @@
 export { getStudyDepthEstimate } from './estimate';
 export { buildGuidedStudyPlan } from './plan';
+export { buildGuidedStudyNextAction, formatChapterRef, getGuidedStudyStepLabel } from './personal';
 export { buildReviewItemsFromSynthesis, nextIntervalAfter, REVIEW_INTERVAL_DAYS } from './review';
 export {
   GUIDED_STUDY_MODE_OPTIONS,
@@ -20,3 +21,4 @@ export type {
   GuidedStudyStep,
   StudyDepthEstimate,
 } from './types';
+export type { GuidedStudyNextAction } from './personal';

@@ -49,14 +49,6 @@ export interface StudySessionEvent {
   metadata_json?: string;
 }
 
-/**
- * Canonical ordered list of guided study steps. Single source of truth — the
- * migration SQL `CHECK` constraint in `userDatabase.ts` must match this list,
- * and UI components (e.g. `StudySessionStepper`) pair it with label maps.
- * If you change this, update:
- *   1. The `CHECK` constraint on `guided_study_sessions.current_step` in userDatabase.ts
- *   2. `GUIDED_STUDY_STEP_LABELS` in `services/guidedStudy/types.ts`
- */
 export const GUIDED_STUDY_STEPS = ['scene', 'observe', 'explore', 'synthesize', 'review'] as const;
 
 export type GuidedStudyStep = (typeof GUIDED_STUDY_STEPS)[number];
@@ -86,6 +78,24 @@ export interface GuidedStudySynthesis {
   takeaway: string;
   open_question: string;
   key_connection: string;
+  updated_at: string;
+}
+
+export interface GuidedStudyQuestion {
+  id: number;
+  session_id: number;
+  chapter_id: string;
+  question_text: string;
+  status: 'open' | 'resolved';
+  created_at: string;
+  resolved_at: string | null;
+  updated_at: string;
+}
+
+export interface GuidedStudyTakeawaySummary {
+  session_id: number;
+  chapter_id: string;
+  takeaway: string;
   updated_at: string;
 }
 
