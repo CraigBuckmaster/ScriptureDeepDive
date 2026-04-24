@@ -18,7 +18,7 @@ import {
 } from 'react-native';
 import { Image } from 'expo-image';
 import { useNavigation } from '@react-navigation/native';
-import { ChevronLeft, ChevronRight, BookOpen, Scale, Map } from 'lucide-react-native';
+import { ChevronLeft, ChevronRight, BookOpen, Scale, Map, BookCopy, Languages } from 'lucide-react-native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { useExploreImages } from '../hooks/useExploreImages';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
@@ -54,13 +54,24 @@ function HowWeGotTheBibleLandingScreen() {
     navigation.navigate('CanonComparison' as any);
   }, [navigation]);
 
-  // JourneyBrowseScreen supports { tab?, filterLens? } today; filter-by-id
-  // for specific journeys is not yet wired in the browse screen, so we
-  // land on the full browse with the 'featured' tab (HWGTB-P3-02 / #1551
-  // and HWGTB-P4-01 / #1552 will surface canon-formation and
-  // text-and-translation via the FEATURED_IDS list).
-  const goGuidedJourneys = useCallback(() => {
-    navigation.navigate('JourneyBrowse', { tab: 'featured' });
+  // Direct navigation to the two HWGTB-specific journeys. The journey
+  // content already exists at content/meta/journeys/thematic/{slug}.json
+  // and JourneyDetail accepts { journeyId } per navigation/types.ts —
+  // so the bundle surfaces curated, specific destinations rather than
+  // bouncing the user back to the generic JourneyBrowse.
+  const goCanonFormationJourney = useCallback(() => {
+    navigation.navigate('JourneyDetail', { journeyId: 'canon-formation' });
+  }, [navigation]);
+
+  const goTextAndTranslationJourney = useCallback(() => {
+    navigation.navigate('JourneyDetail', { journeyId: 'text-and-translation' });
+  }, [navigation]);
+
+  // Escape hatch — for users whose interest was piqued by the topic
+  // and want to see the rest of the journey library. Default tab,
+  // no filter, so they get the full 60+ journeys.
+  const goAllJourneys = useCallback(() => {
+    navigation.navigate('JourneyBrowse', undefined);
   }, [navigation]);
 
   const entries: LandingEntry[] = [
@@ -73,7 +84,7 @@ function HowWeGotTheBibleLandingScreen() {
       onPress: goExtraBiblicalIndex,
     },
     {
-      key: 'canon',
+      key: 'canon-comparison',
       title: 'Canon Comparison',
       description:
         'Protestant, Catholic, Orthodox, and Ethiopian canons side by side — where traditions agree, where they differ, and why.',
@@ -81,12 +92,20 @@ function HowWeGotTheBibleLandingScreen() {
       onPress: canonComparisonReady ? goCanonComparison : undefined,
     },
     {
-      key: 'journeys',
-      title: 'Guided Journeys',
+      key: 'canon-formation',
+      title: 'Canon Formation',
       description:
-        'Canon formation from Moses to the Reformation, and the story of how the Bible was translated into every major language.',
-      Icon: Map,
-      onPress: goGuidedJourneys,
+        'A 12-stop journey from oral tradition to Trent — how the 66 (or 73, or 76, or 81) books were written, collected, debated, and recognized as Scripture.',
+      Icon: BookCopy,
+      onPress: goCanonFormationJourney,
+    },
+    {
+      key: 'text-and-translation',
+      title: 'Text & Translation',
+      description:
+        'From manuscripts to your Bible — 2,000 years of scribes, monks, printers, and reformers in 10 stops.',
+      Icon: Languages,
+      onPress: goTextAndTranslationJourney,
     },
   ];
 
@@ -144,8 +163,42 @@ function HowWeGotTheBibleLandingScreen() {
             <LandingEntryCard key={e.key} entry={e} />
           ))}
         </View>
+
+        <EscapeHatchRow onPress={goAllJourneys} />
       </ScrollView>
     </SafeAreaView>
+  );
+}
+
+/**
+ * Subtle "see more like this" affordance below the curated entries.
+ * Visually lighter than the primary cards so it reads as a contextual
+ * suggestion rather than a peer entry — for users whose interest in
+ * the topic warrants a look at the wider journey library.
+ */
+function EscapeHatchRow({ onPress }: { onPress: () => void }) {
+  const { base } = useTheme();
+  return (
+    <View
+      style={[
+        styles.escapeHatchSection,
+        { borderTopColor: base.gold + '20' },
+      ]}
+    >
+      <TouchableOpacity
+        onPress={onPress}
+        activeOpacity={0.7}
+        accessibilityRole="button"
+        accessibilityLabel="Browse all guided journeys"
+        style={styles.escapeHatch}
+      >
+        <Map size={14} color={base.textMuted} />
+        <Text style={[styles.escapeHatchText, { color: base.textMuted }]}>
+          Browse all guided journeys
+        </Text>
+        <ChevronRight size={14} color={base.textMuted} />
+      </TouchableOpacity>
+    </View>
   );
 }
 
@@ -309,6 +362,23 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 10,
     letterSpacing: 0.5,
+  },
+  escapeHatchSection: {
+    marginTop: spacing.md,
+    paddingTop: spacing.md,
+    borderTopWidth: StyleSheet.hairlineWidth,
+  },
+  escapeHatch: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: spacing.xs,
+    paddingVertical: spacing.sm,
+  },
+  escapeHatchText: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 12,
+    letterSpacing: 0.3,
   },
 });
 

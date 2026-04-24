@@ -32,6 +32,8 @@ jest.mock('lucide-react-native', () => ({
   BookOpen: () => null,
   Scale: () => null,
   Map: () => null,
+  BookCopy: () => null,
+  Languages: () => null,
 }));
 
 jest.mock('react-native-safe-area-context', () => ({
@@ -77,11 +79,17 @@ describe('HowWeGotTheBibleLandingScreen', () => {
     expect(getByText(/Evangelical in framing/)).toBeTruthy();
   });
 
-  it('renders all three landing entries', () => {
+  it('renders all four landing entries', () => {
     const { getByText } = renderWithProviders(<HowWeGotTheBibleLandingScreen />);
     expect(getByText('Extra-Biblical Literature')).toBeTruthy();
     expect(getByText('Canon Comparison')).toBeTruthy();
-    expect(getByText('Guided Journeys')).toBeTruthy();
+    expect(getByText('Canon Formation')).toBeTruthy();
+    expect(getByText('Text & Translation')).toBeTruthy();
+  });
+
+  it('renders the escape hatch row', () => {
+    const { getByLabelText } = renderWithProviders(<HowWeGotTheBibleLandingScreen />);
+    expect(getByLabelText('Browse all guided journeys')).toBeTruthy();
   });
 
   it('Canon Comparison shows "Coming soon" label (HWGTB-P3-01 not yet shipped)', () => {
@@ -95,12 +103,26 @@ describe('HowWeGotTheBibleLandingScreen', () => {
     expect(mockNavigate).toHaveBeenCalledWith('ExtraBiblicalIndex');
   });
 
-  it('tapping Guided Journeys navigates to JourneyBrowse with featured tab', () => {
+  it('tapping Canon Formation navigates to JourneyDetail with canon-formation id', () => {
     const { getByLabelText } = renderWithProviders(<HowWeGotTheBibleLandingScreen />);
-    fireEvent.press(getByLabelText('Open Guided Journeys'));
-    expect(mockNavigate).toHaveBeenCalledWith('JourneyBrowse', {
-      tab: 'featured',
+    fireEvent.press(getByLabelText('Open Canon Formation'));
+    expect(mockNavigate).toHaveBeenCalledWith('JourneyDetail', {
+      journeyId: 'canon-formation',
     });
+  });
+
+  it('tapping Text & Translation navigates to JourneyDetail with text-and-translation id', () => {
+    const { getByLabelText } = renderWithProviders(<HowWeGotTheBibleLandingScreen />);
+    fireEvent.press(getByLabelText('Open Text & Translation'));
+    expect(mockNavigate).toHaveBeenCalledWith('JourneyDetail', {
+      journeyId: 'text-and-translation',
+    });
+  });
+
+  it('tapping the escape hatch navigates to JourneyBrowse with no params', () => {
+    const { getByLabelText } = renderWithProviders(<HowWeGotTheBibleLandingScreen />);
+    fireEvent.press(getByLabelText('Browse all guided journeys'));
+    expect(mockNavigate).toHaveBeenCalledWith('JourneyBrowse', undefined);
   });
 
   it('Canon Comparison entry has no onPress handler (no navigation fired)', () => {
