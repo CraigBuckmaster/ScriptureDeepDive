@@ -4,16 +4,16 @@ import { useSettingsStore } from '@/stores/settingsStore';
 jest.mock('@/db/user', () => ({
   getPreference: jest.fn().mockResolvedValue(null),
   setPreference: jest.fn().mockResolvedValue(undefined),
+  deletePreference: jest.fn().mockResolvedValue(undefined),
 }));
 
-const { getPreference, setPreference } = require('@/db/user');
+const { getPreference, setPreference, deletePreference } = require('@/db/user');
 
 describe('settingsStore', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     useSettingsStore.setState({
       translation: 'kjv',
-      fontSize: 16,
       readingScale: 1.0,
       vhlEnabled: true,
       bookListMode: 'canonical',
@@ -26,7 +26,7 @@ describe('settingsStore', () => {
   it('starts with default state', () => {
     const state = useSettingsStore.getState();
     expect(state.translation).toBe('kjv');
-    expect(state.fontSize).toBe(16);
+    expect(state.readingScale).toBe(1.0);
     expect(state.theme).toBe('dark');
     expect(state.isHydrated).toBe(false);
   });
@@ -36,23 +36,6 @@ describe('settingsStore', () => {
       await useSettingsStore.getState().setTranslation('asv');
       expect(useSettingsStore.getState().translation).toBe('asv');
       expect(setPreference).toHaveBeenCalledWith('translation', 'asv');
-    });
-  });
-
-  describe('setFontSize', () => {
-    it('sets font size', async () => {
-      await useSettingsStore.getState().setFontSize(20);
-      expect(useSettingsStore.getState().fontSize).toBe(20);
-    });
-
-    it('clamps to minimum of 12', async () => {
-      await useSettingsStore.getState().setFontSize(8);
-      expect(useSettingsStore.getState().fontSize).toBe(12);
-    });
-
-    it('clamps to maximum of 24', async () => {
-      await useSettingsStore.getState().setFontSize(30);
-      expect(useSettingsStore.getState().fontSize).toBe(24);
     });
   });
 
@@ -80,7 +63,6 @@ describe('settingsStore', () => {
       getPreference.mockImplementation((key: string) => {
         const map: Record<string, string> = {
           translation: 'asv',
-          fontSize: '18',
           vhlEnabled: '1',
           bookListMode: 'canonical',
           studyCoachEnabled: '0',
@@ -92,7 +74,6 @@ describe('settingsStore', () => {
       await useSettingsStore.getState().hydrate();
       const state = useSettingsStore.getState();
       expect(state.translation).toBe('asv');
-      expect(state.fontSize).toBe(18);
       expect(state.vhlEnabled).toBe(true);
       expect(state.studyCoachEnabled).toBe(false);
       expect(state.theme).toBe('sepia');
@@ -103,7 +84,6 @@ describe('settingsStore', () => {
       getPreference.mockImplementation((key: string) => {
         const map: Record<string, string> = {
           translation: 'bad',
-          fontSize: 'NaN',
           theme: 'neon',
         };
         return Promise.resolve(map[key] ?? null);
@@ -112,7 +92,6 @@ describe('settingsStore', () => {
       await useSettingsStore.getState().hydrate();
       const state = useSettingsStore.getState();
       expect(state.translation).toBe('kjv');
-      expect(state.fontSize).toBe(16);
       expect(state.theme).toBe('dark');
     });
 
@@ -316,6 +295,33 @@ describe('settingsStore', () => {
       });
       await useSettingsStore.getState().hydrate();
       expect(useSettingsStore.getState().readingScale).toBeCloseTo(1.5, 5);
+    });
+
+    it('deletes the legacy fontSize preference after migration', async () => {
+      getPreference.mockImplementation((key: string) => {
+        if (key === 'fontSize') return Promise.resolve('20');
+        return Promise.resolve(null);
+      });
+      await useSettingsStore.getState().hydrate();
+      expect(deletePreference).toHaveBeenCalledWith('fontSize');
+    });
+
+    it('deletes legacy fontSize preference even if readingScale was already stored', async () => {
+      getPreference.mockImplementation((key: string) => {
+        const map: Record<string, string> = {
+          readingScale: '1.2',
+          fontSize: '18',
+        };
+        return Promise.resolve(map[key] ?? null);
+      });
+      await useSettingsStore.getState().hydrate();
+      expect(deletePreference).toHaveBeenCalledWith('fontSize');
+    });
+
+    it('does not delete fontSize when no legacy value is present', async () => {
+      getPreference.mockResolvedValue(null);
+      await useSettingsStore.getState().hydrate();
+      expect(deletePreference).not.toHaveBeenCalled();
     });
   });
 
