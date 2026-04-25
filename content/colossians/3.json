@@ -446,22 +446,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 3:14",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase syndesmos tēs teleiotētos (bond of perfection/unity) is debated: does love bind the community together, or does love bind the virtues toget…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The New Self and the Christian Household within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Colossians 3:18-4:1's household code: transformed or endorsed slave-master structure?",
+        "positions": [
+          {
+            "name": "Countercultural transformation through Christ-submission framework",
+            "proponents": "Moo (Pillar), Wright",
+            "argument": "Paul's Christianisation of the Haustafel (household code) is transformative — every party, including masters, receives ethical demand ('Masters, provide your slaves with what is right and fair, because you know that you also have a Master in heaven,' 4:1). The Christ-framework ('as to the Lord,' 3:23) radically reframes every relationship, not simply legitimating existing structures but reconstituting them under Christ's lordship."
+          },
+          {
+            "name": "Conservative endorsement of Roman household-structure",
+            "proponents": "Some critical / feminist readings",
+            "argument": "Paul's instructions to slaves (obey masters, work heartily) reinforce the Roman slavery structure without demanding systemic change. Whatever theological reframing Paul offers, the practical effect is to legitimise continued slavery and hierarchical marriage. The text has been used historically to justify oppressive structures."
+          },
+          {
+            "name": "Transformative-within-given-structure",
+            "proponents": "Pao (ZECNT), Thompson (Two Horizons)",
+            "argument": "Paul transforms relationships within existing structures without directly demanding structural change. The theological seed planted (masters are themselves under a Master) created space for later Christian abolitionist readings while not demanding immediate institutional overthrow. The text's complex reception history reflects its internal tension between transformation and accommodation."
+          }
+        ]
+      }
     ],
     "thread": [
       {
@@ -535,7 +539,8 @@
           "text": "Wives, submit to husbands. Husbands, love your wives. Children, obey parents. Fathers, do not provoke children. Bondservants, obey in everything — work heartily as for the Lord. Masters, treat bondservants justly."
         }
       ]
-    }
+    },
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Since, then, you have been raised with Christ, set your hearts on things above, where Christ is, seated at the right hand of God.</td></tr><tr><td class=\"t-label\">KJV</td><td>If ye then be risen with Christ, seek those things which are above, where Christ sitteth on the right hand of God.</td></tr><tr><td class=\"t-label\">NIV</td><td>Set your minds on things above, not on earthly things.</td></tr><tr><td class=\"t-label\">KJV</td><td>Set your affection on things above, not on things on the earth.</td></tr><tr><td class=\"t-label\">NIV</td><td>Here there is no Gentile or Jew, circumcised or uncircumcised, barbarian, Scythian, slave or free, but Christ is all, and is in all.</td></tr><tr><td class=\"t-label\">KJV</td><td>Where there is neither Greek nor Jew, circumcision nor uncircumcision, Barbarian, Scythian, bond nor free: but Christ is all, and in all.</td></tr><tr><td class=\"t-label\">NIV</td><td>Let the message of Christ dwell among you richly as you teach and admonish one another with all wisdom through psalms, hymns, and songs from the Spirit, singing to God with gratitude in your hearts.</td></tr><tr><td class=\"t-label\">KJV</td><td>Let the word of Christ dwell in you richly in all wisdom; teaching and admonishing one another in psalms and hymns and spiritual songs, singing with grace in your hearts to the Lord.</td></tr><tr><td class=\"t-label\">NIV</td><td>And whatever you do, whether in word or deed, do it all in the name of the Lord Jesus, giving thanks to God the Father through him.</td></tr><tr><td class=\"t-label\">KJV</td><td>And whatsoever ye do in word or deed, do all in the name of the Lord Jesus, giving thanks to God and the Father by him.</td></tr><tr><td class=\"t-label\">NIV</td><td>Whatever you do, work at it with all your heart, as working for the Lord, not for human masters,</td></tr><tr><td class=\"t-label\">KJV</td><td>And whatsoever ye do, do it heartily, as to the Lord, and not unto men;</td></tr>"
   },
   "vhl_groups": [
     {
