@@ -369,8 +369,33 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
+      "scores": [
+        {
+          "label": "Bronze Altar Constructed",
+          "score": 8
+        },
+        {
+          "label": "Bronze Laver",
+          "score": 7
+        },
+        {
+          "label": "Courtyard Construction",
+          "score": 7
+        },
+        {
+          "label": "Tabernacle Materials Inventory",
+          "score": 8
+        },
+        {
+          "label": "Half-Shekel-Tax Census Recorded",
+          "score": 7
+        },
+        {
+          "label": "Cost-Accounting of Sacred Project",
+          "score": 7
+        }
+      ],
+      "note": "Exodus 38 covers outer-tabernacle-construction (bronze altar, laver, courtyard). v.21-31's-detailed materials-inventory establishes accountability-for-sacred-funds. The half-shekel-census connection ties the tabernacle's-cost to communal-equal-participation: every-man twenty-and-up contributed equally."
     }
   },
   "vhl_groups": [

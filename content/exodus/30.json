@@ -512,8 +512,33 @@
       }
     ],
     "themes": {
-      "scores": [],
-      "note": ""
+      "scores": [
+        {
+          "label": "Altar of Incense",
+          "score": 8
+        },
+        {
+          "label": "Half-Shekel Census Tax",
+          "score": 7
+        },
+        {
+          "label": "Bronze Laver",
+          "score": 8
+        },
+        {
+          "label": "Anointing Oil Recipe",
+          "score": 7
+        },
+        {
+          "label": "Incense Recipe (Holy Smoke)",
+          "score": 8
+        },
+        {
+          "label": "Atonement-Money for Tabernacle Service",
+          "score": 7
+        }
+      ],
+      "note": "Exodus 30 covers tabernacle's-secondary-elements: incense-altar (incense as prayer-symbol), bronze-laver (priestly washing), half-shekel-census-tax (each-person's-equal-atonement), anointing-oil and incense-recipes. Each detail integrates-functional-with-symbolic-meaning."
     }
   },
   "vhl_groups": [
