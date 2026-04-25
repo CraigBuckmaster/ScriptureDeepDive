@@ -331,7 +331,41 @@
         }
       ],
       "note": "The Temple Built: Seven Years of Sacred Construction"
-    }
+    },
+    "rec": [
+      {
+        "who": "Josephus, Antiquities 8.3.1–9 (c. 93 CE)",
+        "text": "Josephus offers a meticulous architectural description of Solomon's temple, harmonising 1 Kgs 6 with 2 Chr 3 and supplementing both with details he claims derive from Tyrian archives. He gives particular attention to the inner sanctuary's gold overlay (vv.20–22) and the cherubim (vv.23–28), reading the temple as the apex of Israelite material culture and as a structure deliberately scaled to outdo Phoenician and Egyptian sanctuaries."
+      },
+      {
+        "who": "Bede, On the Temple (c. 729 CE)",
+        "text": "Bede's two-book commentary On the Temple of Solomon reads every architectural detail of 1 Kgs 6 typologically: cedar walls = the saints' incorruption; gold overlay = charity; the cherubim's outstretched wings = the unity of the two Testaments. Bede's typological method became the dominant medieval reading; his work shaped how Western Europe imagined sacred architecture for centuries."
+      },
+      {
+        "who": "Mordechai Cogan, 1 Kings, AB (2001)",
+        "text": "Cogan reads ch.6's measurements (long-list-with-cubits, vv.2–10, 15–28) as the Deuteronomistic Historian's quotation from a temple archive — likely a building inscription or dedication record. The 480-years figure (v.1) is theologically schematic (12 generations × 40 years) rather than chronologically precise. The chapter's architectural realism is the historian's argument that the temple is grounded in built fact, not merely projected ideology."
+      }
+    ],
+    "src": [
+      {
+        "title": "Tell Tayinat / 'Ain Dara temple plans (Iron Age Syria)",
+        "quote": "The temples at Tell Tayinat (8th c. BCE, North Syria) and 'Ain Dara (10th–8th c. BCE) share the long-room tripartite plan (porch–nave–inner-sanctum) described in 1 Kgs 6 — a regional Levantine type, not a unique Israelite invention.",
+        "note": "The temple's architectural plan (vulam, hekhal, debir) belongs to a recognised Syro-Levantine tradition. This is theologically significant: Yahweh's house is built in the regional vernacular, not a sui generis revealed plan. The biblical text never claims uniqueness of design — it claims uniqueness of the deity who is named there."
+      },
+      {
+        "title": "Phoenician cedar and stone-dressing techniques",
+        "quote": "Phoenician temple-construction is documented across the Iron Age Levant; the use of dressed ashlar masonry, cedar-beam ceilings, and gold leaf overlay is the standard high-end Phoenician package.",
+        "note": "Solomon's temple (vv.7, 9, 15, 22) follows this Phoenician high-end pattern, consistent with the Hiram-of-Tyre alliance of ch.5. Verse 7's note that 'no hammer or chisel … was heard at the temple while it was being built' reflects the practice of finishing dressed stone at the quarry, not on-site — a recognised Phoenician technique, not a magical fabrication."
+      }
+    ],
+    "tx": [
+      {
+        "ref": "6:1",
+        "title": "480 years from Exodus — MT vs LXX",
+        "content": "MT v.1: 'the 480th year after the Israelites came out of Egypt … the fourth year of Solomon's reign.' LXX (Vaticanus) reads '440 years.' Most scholars treat both numbers as theologically schematic (12 × 40 vs 11 × 40); neither is straightforwardly chronological. The Egyptian-archaeological data favours a 13th-c. BCE Exodus, which would give roughly 300 years to Solomon's 4th year (c. 967 BCE).",
+        "note": "The chapter's chronological note functions as the Deuteronomistic Historian's hinge between the wilderness/conquest era and the temple era — a literary-theological boundary, not a chronicler's date-stamp. Translators reproduce the MT/LXX difference but should not treat either figure as a direct historical datum."
+      }
+    ]
   },
   "vhl_groups": [
     {
