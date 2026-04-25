@@ -181,12 +181,12 @@ export default function AmicusThreadScreen(): React.ReactElement {
 
       const authToken = await getAmicusAuthToken();
       if (!authToken) {
-        logger.warn('Amicus', 'no auth token â€” aborting send');
+        logger.warn('Amicus', 'no auth token — aborting send');
         return;
       }
       const accepted = await requestAmicusConsent();
       if (!accepted) {
-        logger.info('Amicus', 'opt-in declined â€” not sending');
+        logger.info('Amicus', 'opt-in declined — not sending');
         return;
       }
       await persistThreadIntelligence(text, action);

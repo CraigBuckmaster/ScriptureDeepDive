@@ -134,18 +134,30 @@ export async function getTraditionDistribution(): Promise<Record<string, number>
 }
 
 export async function getGenreDistribution(): Promise<Record<string, number>> {
-  const rows = await getDb().getAllAsync<{ genre: string | null; n: number }>(
-    `SELECT b.genre AS genre, COUNT(*) AS n
-     FROM books b
-     JOIN reading_progress rp ON rp.book_id = b.id
-     WHERE rp.completed_at IS NOT NULL
-     GROUP BY b.genre`,
+  // `reading_progress` lives in user.db; `books` lives in scripture.db. SQLite
+  // cannot join across two separately-opened DB connections, so we query each
+  // side independently and merge in JS. This used to be a cross-DB SQL join
+  // and silently failed with `no such table: reading_progress`, which left
+  // every Amicus profile generation running with an empty genre distribution.
+  const completedRows = await getUserDb().getAllAsync<{ book_id: string; n: number }>(
+    `SELECT book_id, COUNT(*) AS n
+     FROM reading_progress
+     WHERE completed_at IS NOT NULL
+     GROUP BY book_id`,
   );
+  if (completedRows.length === 0) return {};
+
+  const bookRows = await getDb().getAllAsync<{ id: string; genre: string | null }>(
+    'SELECT id, genre FROM books',
+  );
+  const genreById = new Map(bookRows.map((r) => [r.id, r.genre]));
+
   const totals: Record<string, number> = {};
   let grand = 0;
-  for (const r of rows) {
-    if (!r.genre) continue;
-    totals[r.genre] = (totals[r.genre] ?? 0) + r.n;
+  for (const r of completedRows) {
+    const genre = genreById.get(r.book_id);
+    if (!genre) continue;
+    totals[genre] = (totals[genre] ?? 0) + r.n;
     grand += r.n;
   }
   if (grand === 0) return {};
