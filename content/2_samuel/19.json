@@ -702,7 +702,89 @@
         }
       ],
       "note": ""
-    }
+    },
+    "hebtext": [
+      {
+        "word": "הָאִישׁ",
+        "tlit": "ha-ish",
+        "gloss": "the man",
+        "note": "Joab's confrontation with David (19:5-7) repeatedly uses 'the man' — addressing David's grief-paralysed state rather than his royal office. Joab's blunt address ('you have made it clear today that commanders and officers mean nothing to you') targets the king who has forgotten he is king. The vocabulary-choice is socially remarkable: Joab speaks to David as man, not as monarch, when monarchy requires immediate action."
+      },
+      {
+        "word": "שָׁלוֹם",
+        "tlit": "shalom",
+        "gloss": "peace / wholeness",
+        "note": "Absalom ('father of shalom') dies in ch.18; ch.19's return-to-Jerusalem narrative is a shalom-restoration attempt with competing claims. The word appears multiple times (v.24 — Mephibosheth's state; v.30 — peace talks; v.42 — tribal disputes). The theological irony: shalom is invoked while tribal-political tensions multiply, setting up Sheba's rebellion in ch.20."
+      },
+      {
+        "word": "שִׁבְעָה יְמֵי הַבֶּכִי",
+        "tlit": "shiv'at yeme ha-bekhi",
+        "gloss": "seven days of weeping",
+        "note": "v.1's seven-day-weeping structure for Absalom parallels standard ANE mourning-cycles (cf. Gen 50:10 — Joseph's seven days for Jacob). David's excess grief for the rebellious son (relative to his restrained response at infant's death, 12:19-23) marks the passage's theological tension: parental love vs covenantal responsibility."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Josephus, Antiquities 7.11.1-4 (c. 93 CE)",
+        "text": "Josephus's retelling preserves the chapter's political-geographical detail with added dramatisation. He particularly extends Joab's confrontation of David (vv.5-7) into a full reasoned speech, treating it as one of the OT's crucial political-realism moments: the prophet-like courage needed to address a grieving monarch whose grief endangers the state."
+      },
+      {
+        "who": "Calvin, Sermons on 2 Samuel (1562-1563)",
+        "text": "Calvin's sermons on this chapter focus on David's restoration. For Calvin, the king who grieves too much for a rebellious son and then must be dragged back to duty models the danger of private emotion eclipsing public covenantal responsibility. The chapter's tribal-disputes closing (Judah vs Israel, vv.41-43) foreshadows the kingdom division that follows Solomon."
+      },
+      {
+        "who": "Robert Bergen, 1, 2 Samuel, NAC (1996)",
+        "text": "Bergen reads ch.19 as the narrative hinge between Absalom's rebellion and Sheba's. The chapter's three Return-to-Jerusalem sub-narratives (Shimei, Mephibosheth, Barzillai) test David's character under restoration-pressure. Mercy to Shimei vs justice-concern for Mephibosheth vs gratitude to Barzillai — Bergen: these three test-cases reveal David's post-crisis kingship disposition."
+      },
+      {
+        "who": "A. A. Anderson, 2 Samuel, WBC (1989)",
+        "text": "Anderson emphasises the chapter's political fragmentation: Judah's tribal claim on David (v.11-15), Benjamin's mixed allegiance (Shimei), the gathering inter-tribal tensions (vv.41-43). The chapter ends with Israel and Judah quarreling — the seed of the kingdom-division under Rehoboam fifty years later is planted here. Anderson's point: 2 Sam 19 is not epilogue but geopolitical setup."
+      }
+    ],
+    "src": [
+      {
+        "title": "ANE monarchic-succession parallels",
+        "quote": "Assyrian and Egyptian royal-succession narratives regularly preserve tribal/regional allegiance-tests during post-crisis restorations. The 'who escorts the returning king' question is diplomatically loaded across ANE monarchies.",
+        "note": "The 19:41-43 dispute — Judah claimed David as kinsman-king while northern-Israel demanded larger share in bringing him back — reflects standard ANE inter-tribal/regional competition for royal proximity. The text's preservation of the dispute (rather than erasure) marks 2 Samuel's honesty about the tribal-federation's fragility."
+      },
+      {
+        "title": "Mephibosheth-Ziba dispute parallels in ANE property-law",
+        "quote": "Old Babylonian and Hittite property-adjudication texts preserve cases of stewards claiming absent-owners' estates. The standard judicial response was land-division.",
+        "note": "David's v.29 judgment ('you and Ziba shall divide the land') parallels known ANE adjudication when full fact-finding is impossible. The narrative's preservation of this unsatisfying resolution (Mephibosheth surely deserves full restoration; Ziba surely deserves punishment) reflects the practical limitations of royal adjudication in uncertain-testimony cases."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "2 Sam 19:22",
+        "target": "Matt 18:21-35",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "David's refusal to execute Shimei on his restoration-day ('shall anyone be put to death in Israel today? For do I not know that I am this day king over Israel?') pairs with Jesus's parable of the unforgiving servant — a newly-restored king should practice the mercy he has received. David's chapter-long struggle with mercy vs justice anticipates the NT's covenantal forgiveness-theology."
+      },
+      {
+        "anchor": "2 Sam 19:32-40",
+        "target": "Phil 2:25-30",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "Barzillai's faithful provision of David's refugees finds its NT echo in Paul's praise of Epaphroditus (who 'risked his life to make up for the help you could not give me'). Covenant hospitality extended at personal cost to the suffering anointed figure is a cross-covenant ethical pattern."
+      },
+      {
+        "anchor": "2 Sam 19:41-43",
+        "target": "1 Kgs 12:16-20",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "The Judah-vs-Israel tribal tension narrated here becomes explicit kingdom-division fifty years later under Rehoboam. The 'we have ten shares in the king' claim (v.43) is the structural complaint the northern tribes will eventually act upon in rebellion. Ch.19's tribal dispute is the kingdom-division's remote cause."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Then Joab went into the house to the king and said, “Today you have humiliated all your men, who have just saved your life and the lives of your sons and daughters and the lives of your wives and concubines.</td></tr><tr><td class=\"t-label\">KJV</td><td>And Joab came into the house to the king, and said, Thou hast shamed this day the faces of all thy servants, which this day have saved thy life, and the lives of thy sons and of thy daughters, and the lives of thy wives, and the lives of thy concubines;</td></tr><tr><td class=\"t-label\">NIV</td><td>You love those who hate you and hate those who love you. You have made it clear today that the commanders and their men mean nothing to you. I see that you would be pleased if Absalom were alive today and all of us were dead.</td></tr><tr><td class=\"t-label\">KJV</td><td>In that thou lovest thine enemies, and hatest thy friends. For thou hast declared this day, that thou regardest neither princes nor servants: for this day I perceive, that if Absalom had lived, and all we had died this day, then it had pleased thee well.</td></tr><tr><td class=\"t-label\">NIV</td><td>Now go out and encourage your men. I swear by the Lord that if you don’t go out, not a man will be left with you by nightfall. This will be worse for you than all the calamities that have come on you from your youth till now.”</td></tr><tr><td class=\"t-label\">KJV</td><td>Now therefore arise, go forth, and speak comfortably unto thy servants: for I swear by the LORD, if thou go not forth, there will not tarry one with thee this night: and that will be worse unto thee than all the evil that befell thee from thy youth until now.</td></tr><tr><td class=\"t-label\">NIV</td><td>He won over the hearts of the men of Judah so that they were all of one mind. They sent word to the king, “Return, you and all your men.”</td></tr><tr><td class=\"t-label\">KJV</td><td>And he bowed the heart of all the men of Judah, even as the heart of one man; so that they sent this word unto the king, Return thou, and all thy servants.</td></tr><tr><td class=\"t-label\">NIV</td><td>David replied, “What does this have to do with you, you sons of Zeruiah? What right do you have to interfere? Should anyone be put to death in Israel today? Don’t I know that today I am king over Israel?”</td></tr><tr><td class=\"t-label\">KJV</td><td>And David said, What have I to do with you, ye sons of Zeruiah, that ye should this day be adversaries unto me? shall there any man be put to death this day in Israel? for do not I know that I am this day king over Israel?</td></tr><tr><td class=\"t-label\">NIV</td><td>Now Barzillai was very old, eighty years of age. He had provided for the king during his stay in Mahanaim, for he was a very wealthy man.</td></tr><tr><td class=\"t-label\">KJV</td><td>Now Barzillai was a very aged man, even fourscore years old: and he had provided the king of sustenance while he lay at Mahanaim; for he was a very great man.</td></tr><tr><td class=\"t-label\">NIV</td><td>Then the men of Israel answered the men of Judah, “We have ten shares in the king; so we have a greater claim on David than you have. Why then do you treat us with contempt? Weren’t we the first to speak of bringing back our king?” But the men of Judah pressed their claims even more forcefully than the men of Israel.</td></tr><tr><td class=\"t-label\">KJV</td><td>And the men of Israel answered the men of Judah, and said, We have ten parts in the king, and we have also more right in David than ye: why then did ye despise us, that our advice should not be first had in bringing back our king? And the words of the men of Judah were fiercer than the words of the men of Israel.</td></tr>",
+    "tx": [
+      {
+        "ref": "19:1 (Hebrew 19:2)",
+        "title": "Hebrew / English verse-numbering divergence",
+        "content": "Hebrew Bible numbers the weeping-report-to-Joab as 19:2 (MT); English translations start ch.19 one verse earlier by counting the chapter-transition differently. Verse references for Hebrew commentaries may be one-off from English Bibles throughout the chapter.",
+        "note": "Common feature in OT narratives — the chapter-verse division is post-biblical (medieval) and not always identical across MT-tradition and English-translation tradition. No textual substance difference; just numeration convention. Modern critical commentaries (BHQ, WBC) typically note both."
+      }
+    ]
   },
   "vhl_groups": [
     {
