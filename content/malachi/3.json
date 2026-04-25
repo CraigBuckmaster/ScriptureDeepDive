@@ -498,38 +498,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 3:1",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The relationship between 'my messenger' (malʼakhi), 'the Lord' (haʼadon), and 'the messenger of the covenant' (malʼakh habberit) is debated. The NET n…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Refining Messenger, Robbing God, and the Scroll of Remembrance within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 3:8",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The verb qavaʼ ('to rob') is extremely rare and carries strong legal connotations. The NET notes observe that the question 'Will a mere mortal rob God…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Refining Messenger, Robbing God, and the Scroll of Remembrance within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Malachi 3:1's 'messenger' and 'Lord coming to his temple': John the Baptist + Christ, two OT figures, or eschatological pair?",
+        "positions": [
+          {
+            "name": "John the Baptist + Christ (NT reception)",
+            "proponents": "Matt 11:10; Luke 7:27; Mark 1:2 — NT evangelists",
+            "argument": "All three Synoptics explicitly apply Mal 3:1's 'messenger preparing the way' to John the Baptist. The Gospels treat this as definitive Christological prophecy — John prepares the way for Jesus, 'the Lord you are seeking' who 'suddenly comes to his temple.' The NT reception is not allegorical application but stated fulfilment."
+          },
+          {
+            "name": "Two post-exilic figures (historical reading)",
+            "proponents": "Verhoef, Taylor-Clendenen",
+            "argument": "Some critical readings locate the 'messenger' as a post-exilic prophetic figure (possibly Malachi himself or a near-contemporary) and the 'Lord' as Yahweh's immediate covenant-enforcing visitation — not an eschatological projection. The NT application is subsequent theological extension; the original referents are historical."
+          },
+          {
+            "name": "Prophetic-telescoped fulfilment",
+            "proponents": "Hill, Stuart, Motyer",
+            "argument": "OT prophecy regularly operates on multiple horizons. Mal 3:1 has a proximate reference (post-exilic covenant visitation) that telescopes into the NT fulfilment (John-and-Jesus). The 'sudden coming' (v.1) and 'day of his coming' (v.2) imagery exceeds any immediate post-exilic event and points toward the messianic visitation the Gospels identify."
+          }
+        ]
+      }
     ],
     "thread": [
       {

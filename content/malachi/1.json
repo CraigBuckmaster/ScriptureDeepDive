@@ -388,38 +388,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 1:8",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The term pechah ('governor') refers to the Persian-appointed provincial governor. The NET notes observe that the comparison is devastating: the priest…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads God's Electing Love and the Contempt of His Name within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 1:11",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The syntactic structure of verse 11 is debated: the participle forms could indicate present reality ('my name is great') or future promise ('my name w…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads God's Electing Love and the Contempt of His Name within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Malachi 1:2-3's 'Jacob I loved, Esau I hated' — elective doctrine or rhetorical Hebraism?",
+        "positions": [
+          {
+            "name": "Rhetorical Hebraism: loved vs loved-less",
+            "proponents": "Hill (AB), Verhoef (NICOT)",
+            "argument": "Hebrew's love/hate binary is rhetorical contrast rather than absolute opposition (cf. Luke 14:26 — 'hate father and mother'; Gen 29:31-33 — Leah 'hated' vs Rachel 'loved'). In context (5th century BCE post-exile), Malachi answers 'how have you loved us?' with historical contrast: Yahweh's covenant-mercy to Jacob's descendants preserved them through exile while allowing Edom's (Esau's descendants') desolation."
+          },
+          {
+            "name": "Pauline doctrine of unconditional election (Rom 9:13)",
+            "proponents": "MacArthur; Reformed tradition via Rom 9",
+            "argument": "Paul quotes Mal 1:2-3 in Rom 9:13 as proof of God's sovereign electing choice 'before the twins had done anything good or bad' (Rom 9:11). The verse's canonical significance is established by NT reception: it grounds the doctrine of unconditional election. The rhetorical-Hebraism reading undersells the theological weight Paul gives it."
+          },
+          {
+            "name": "Both: rhetorical within its context, doctrinal within canon",
+            "proponents": "Stuart, Boda, Taylor-Clendenen (NAC)",
+            "argument": "The verse operates on two levels — Malachi's immediate rhetorical contrast between Jacob-preserved and Esau-judged, and Paul's theological development of the contrast into the doctrine of election. Both readings are legitimate at their respective levels; the canonical extension does not override the immediate meaning but deepens it."
+          }
+        ]
+      }
     ],
     "thread": [
       {
