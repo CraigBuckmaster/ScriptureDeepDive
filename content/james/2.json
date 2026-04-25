@@ -177,6 +177,19 @@
         },
         "hist": {
           "context": "This is the most debated passage in James. James insists that genuine faith produces works. Abraham faith was completed by his works when he offered Isaac."
+        },
+        "moo": {
+          "source": "Douglas J. Moo, James, Pillar (2000) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "2:14-26",
+              "note": "Moo's classic exposition of James-Paul tension: faith-and-works are not in conflict; James and Paul use 'works' differently. Paul's polemic targets Mosaic-Torah-works as righteousness-claim; James targets dead-faith-without-corresponding-action. Both writers affirm faith-grounded-righteousness expressed-through-faithful-action. The Jas-Paul integration is theologically rich."
+            },
+            {
+              "ref": "2:24",
+              "note": "Moo addresses 2:24's 'a person is justified by works and not by faith alone' — the verse Luther infamously labeled 'right strawy.' Moo's reading: 'justified' here is demonstration-justification (showing-the-faith-genuine), not initial-soteriological-justification. The verse complements rather than contradicts Pauline-justification-by-faith. The integration depends on careful-vocabulary-clarity."
+            }
+          ]
         }
       }
     }
@@ -287,7 +300,98 @@
         }
       ],
       "note": "James 2:14-26 is the most debated passage in the letter, often seen as tension with Paul. Both oppose dead faith; they define 'works' differently."
-    }
+    },
+    "hebtext": [
+      {
+        "word": "προσωπολημψίαις",
+        "tlit": "prosōpolēmpsiais",
+        "gloss": "favoritism / partiality",
+        "note": "v.1's compound noun: prosōpon (face) + lambanō (to receive). Literally 'face-receiving' — judging by appearance rather than character. The verb-form appears in Acts 10:34's 'God shows no partiality.' James applies divine-impartiality theology to ecclesial-community: rich-and-poor must receive equal-treatment in church-gathering."
+      },
+      {
+        "word": "νόμος βασιλικός",
+        "tlit": "nomos basilikos",
+        "gloss": "royal law",
+        "note": "v.8's distinctive phrase. The 'royal law' (love-your-neighbor) is foundational law of God's-kingdom. Following the royal-law fulfills the entire-law's intent. The vocabulary integrates kingdom-of-God theology with practical-ethical-instruction. James's 'royal' framing anticipates later kingdom-ethics theology."
+      },
+      {
+        "word": "πίστις χωρὶς ἔργων νεκρά ἐστιν",
+        "tlit": "pistis chōris ergōn nekra estin",
+        "gloss": "faith apart from works is dead",
+        "note": "v.26's chapter-summary formula. James's claim is not anti-Pauline but complementary — faith without corresponding-action-fruit is dead-faith. The vocabulary (nekros = dead, the corpse-metaphor) is severe: dead-faith is non-functional, separated-from-its-vital-source. The verse anchors Christian-formation theology of integral-faith-and-action."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "The poor person entering the synagogue / assembly",
+        "role": "Test-case for community-fairness (vv.2-4)",
+        "text": "James's hypothetical-poor-person in shabby-clothes enters Christian-assembly. The community's response (offering inferior seat) tests their commitment to faith-without-favoritism. The test-case is concrete-economic-social, not abstract-philosophical."
+      },
+      {
+        "name": "Abraham (the friend of God)",
+        "role": "OT-paradigm of faith-with-works (vv.21-24)",
+        "text": "James cites Abraham's offering-of-Isaac (Gen 22) as paradigm of faith-completing-itself-through-action. v.23 quotes Gen 15:6's 'Abraham believed God, and it was credited to him as righteousness' — the same verse Paul cites in Rom 4. Two NT writers cite the same verse for complementary-but-distinct theological points."
+      },
+      {
+        "name": "Rahab (the prostitute)",
+        "role": "OT-paradigm of Gentile-faith-with-action (v.25)",
+        "text": "v.25's surprising Rahab-citation alongside Abraham. Rahab's hospitality to Israelite-spies (Josh 2) is the action-evidence of her faith. The pairing of patriarch-Abraham + Gentile-prostitute Rahab as parallel-faith-with-works examples is theologically remarkable — James affirms cross-status faith-equivalence."
+      },
+      {
+        "name": "The demons",
+        "role": "Negative-example of belief-without-action (v.19)",
+        "text": "v.19's striking 'even the demons believe — and tremble!' uses spiritual-creatures as negative-example. Demons have orthodox-monotheistic-belief but not saving-faith. The example sharpens James's argument: cognitive-affirmation alone is not saving-faith."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Augustine, On Faith and Works (c. 413 CE)",
+        "text": "Augustine's treatise integrates Jas 2 with Pauline-justification carefully. His formula: 'true faith works through love' (paralleling Paul's Gal 5:6). Faith and works are not in conflict but inseparable in genuine-Christian-life. The integration became foundational for Western-Christian theology."
+      },
+      {
+        "who": "Calvin, Commentary on James 2 (1551)",
+        "text": "Calvin's careful Reformed-exposition: James and Paul use 'works' and 'justify' in different senses. Paul's polemic against Mosaic-Torah-works-righteousness; James against dead-orthodoxy-without-life. The Reformed integration became standard: James's 'justified by works' = demonstrated-justified by works' visible-fruit."
+      },
+      {
+        "who": "Joseph B. Mayor, The Epistle of St. James (1892)",
+        "text": "Mayor's classic commentary established the careful-historical-philological reading of James-Paul integration. His linguistic-analysis showed that James and Paul use 'pistis' and 'erga' with different referents. The work shaped 20th-century evangelical James-Paul reconciliation."
+      },
+      {
+        "who": "Douglas Moo, James, Pillar (2000)",
+        "text": "Moo's contemporary commentary integrates Jas 2 within evangelical-Reformed-theology. His exposition: faith that does not produce-works is not genuine-faith; works that don't flow from genuine-faith are not Christian-works. The integration is theologically consistent without requiring any reconciliation between supposedly-conflicting NT writers."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Jas 2:8",
+        "target": "Lev 19:18; Matt 22:39; Rom 13:9",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'Love your neighbor as yourself' as 'royal law' parallels Jesus's neighbor-love-as-second-greatest-commandment (Matt 22:39) and Paul's 'all the law is fulfilled in this' (Rom 13:9). Multiple NT writers identify Lev 19:18 as the law's-fulfillment-summary. The shared-OT-citation establishes James's continuity with broader NT theology."
+      },
+      {
+        "anchor": "Jas 2:13",
+        "target": "Matt 5:7; 6:14-15; 18:32-35",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'Mercy triumphs over judgment' parallels Jesus's beatitude-promise to the merciful (Matt 5:7) and his unforgiving-servant-parable (Matt 18:32-35). Jesus and James share the principle: those who show mercy will receive mercy; those who don't show mercy face strict-judgment."
+      },
+      {
+        "anchor": "Jas 2:21-23",
+        "target": "Gen 22; Gen 15:6; Rom 4",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Abraham's offering-of-Isaac (Gen 22) plus citation of Gen 15:6 — the same OT-text Paul uses in Rom 4 for justification-by-faith. The two NT writers integrate the Abraham narrative differently but both ground their theology in the same OT-text. Both readings preserve covenantal-continuity with OT-Abraham theology."
+      },
+      {
+        "anchor": "Jas 2:25",
+        "target": "Josh 2; Heb 11:31",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Rahab's faith-with-action is also cited in Heb 11:31. Two NT-writers cite the same OT-figure for complementary points — Hebrews emphasises her faith; James emphasises her faith-resulting-in-action. The Rahab-tradition operates as established Christian-formation reference."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>My brothers and sisters, believers in our glorious Lord Jesus Christ must not show favoritism.</td></tr><tr><td class=\"t-label\">KJV</td><td>My brethren, have not the faith of our Lord Jesus Christ, the Lord of glory, with respect of persons.</td></tr><tr><td class=\"t-label\">NIV</td><td>If you really keep the royal law found in Scripture, “Love your neighbor as yourself,” you are doing right.</td></tr><tr><td class=\"t-label\">KJV</td><td>If ye fulfil the royal law according to the scripture, Thou shalt love thy neighbour as thyself, ye do well:</td></tr><tr><td class=\"t-label\">NIV</td><td>For whoever keeps the whole law and yet stumbles at just one point is guilty of breaking all of it.</td></tr><tr><td class=\"t-label\">KJV</td><td>For whosoever shall keep the whole law, and yet offend in one point, he is guilty of all.</td></tr><tr><td class=\"t-label\">NIV</td><td>because judgment without mercy will be shown to anyone who has not been merciful. Mercy triumphs over judgment.</td></tr><tr><td class=\"t-label\">KJV</td><td>For he shall have judgment without mercy, that hath shewed no mercy; and mercy rejoiceth against judgment.</td></tr><tr><td class=\"t-label\">NIV</td><td>In the same way, faith by itself, if it is not accompanied by action, is dead.</td></tr><tr><td class=\"t-label\">KJV</td><td>Even so faith, if it hath not works, is dead, being alone.</td></tr><tr><td class=\"t-label\">NIV</td><td>You believe that there is one God. Good! Even the demons believe that—and shudder.</td></tr><tr><td class=\"t-label\">KJV</td><td>Thou believest that there is one God; thou doest well: the devils also believe, and tremble.</td></tr><tr><td class=\"t-label\">NIV</td><td>You see that a person is considered righteous by what they do and not by faith alone.</td></tr><tr><td class=\"t-label\">KJV</td><td>Ye see then how that by works a man is justified, and not by faith only.</td></tr><tr><td class=\"t-label\">NIV</td><td>As the body without the spirit is dead, so faith without deeds is dead.</td></tr><tr><td class=\"t-label\">KJV</td><td>For as the body without the spirit is dead, so faith without works is dead also.</td></tr>"
   },
   "vhl_groups": [
     {

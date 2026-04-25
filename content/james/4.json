@@ -169,6 +169,19 @@
         },
         "hist": {
           "context": "James addresses two sins: judging brothers and presumptuous planning. Life is a vapor. Right planning acknowledges if the Lord wills."
+        },
+        "moo": {
+          "source": "Douglas J. Moo, James, Pillar (2000) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "4:13-17",
+              "note": "Moo on the 'plans for tomorrow' passage: James targets specifically presumptuous-planning that ignores divine-providence. The proper alternative (v.15 — 'if the Lord wills') does not preclude planning but locates planning within God's-sovereign-orchestration. Christian-planning should be earnest and humble simultaneously."
+            },
+            {
+              "ref": "4:17",
+              "note": "Moo's exposition of v.17's 'sin of omission': 'whoever knows the right thing to do and fails to do it, for him it is sin.' James extends sin-definition beyond positive-violations to known-good-omitted. The verse carries pastoral weight in Christian-ethical formation."
+            }
+          ]
         }
       }
     }
@@ -279,7 +292,98 @@
         }
       ],
       "note": "The 'double-minded' language echoes 1:8. James returns to themes cyclically rather than linearly."
-    }
+    },
+    "hebtext": [
+      {
+        "word": "ἡδονή",
+        "tlit": "hēdonē",
+        "gloss": "pleasure / desire (Greek hedonism root)",
+        "note": "v.1's diagnostic word for the war within human-passion. Hēdonē appears 5 times in NT — Luke 8:14, Titus 3:3, James 4:1, 4:3, 2 Pet 2:13. James's diagnosis: passion-driven desire produces interpersonal-conflict. Christian-formation requires passion-discipleship, not passion-suppression."
+      },
+      {
+        "word": "μοιχαλίδες",
+        "tlit": "moichalides",
+        "gloss": "adulteresses",
+        "note": "v.4's striking address to readers as 'adulteresses' (feminine plural form). The image draws on OT-prophetic-tradition (Hosea, Isaiah, Ezekiel) of Israel's-unfaithfulness-as-adultery. James applies the marriage-covenant imagery to NT-believers' compromise-with-the-world. The vocabulary is deliberately-startling for pastoral-effect."
+      },
+      {
+        "word": "ἀντιτάσσεται",
+        "tlit": "antitassetai",
+        "gloss": "opposes / sets against",
+        "note": "v.6's military-grammatical term: God arrays-himself-in-battle-against the proud. The war-metaphor (parallel to v.1's war-within) characterises divine-disposition: pride is not minor-character-flaw but divine-opposition-evoking. The pairing of opposing-the-proud + giving-grace-to-humble (Prov 3:34 quotation) is foundational ethical-theology."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "The conflicted-believers (those at war within)",
+        "role": "Audience addressed at chapter opening",
+        "text": "vv.1-3 address Christians experiencing interpersonal-conflict and unfulfilled-prayer. James's diagnosis: the conflicts and prayer-frustrations both flow from same source — passion-driven desire. The audience is not external-opponents but believers struggling with internal-passions and external-relationships."
+      },
+      {
+        "name": "The humble vs the proud",
+        "role": "Two-categories of human-spiritual-orientation (vv.6-10)",
+        "text": "James develops the two-categories framework: God opposes the proud, gives grace to the humble. Concrete-humbling actions are commanded (submit to God, resist the devil, draw near to God, cleanse hands, weep and wail). The chapter's pastoral-program is humbling-pathway to grace-reception."
+      },
+      {
+        "name": "The slanderers / law-judges",
+        "role": "Negative-target of vv.11-12",
+        "text": "vv.11-12's targets: those who slander brothers and sit in judgment over the law itself (rather than receiving the law). James's argument: judging-the-law-itself is theologically-presumptuous. There is one Lawgiver and Judge; humans-judging-the-law claim God's-prerogative."
+      },
+      {
+        "name": "The presumptuous planners",
+        "role": "Negative-target of vv.13-17",
+        "text": "vv.13-17's targets: business-people planning future-economic-action without divine-providence acknowledgment. James's correction: 'if the Lord wills' (deo volente) acknowledgment recognises God's-sovereign-orchestration over future. The chapter's pastoral-burden: even planning-itself should be humbled before divine-sovereignty."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Augustine, Confessions Book 8 (c. 397 CE)",
+        "text": "Augustine's pre-conversion-meditation drew extensively on James 4's two-loves framework. The 'friendship with the world is enmity with God' (v.4) shaped Augustine's two-cities theology: love-of-self-against-God produces earthly-city; love-of-God-against-self produces heavenly-city. The chapter became foundational for Augustine's theological-political-vision."
+      },
+      {
+        "who": "Calvin, Commentary on James 4 (1551)",
+        "text": "Calvin's exposition emphasises the chapter's diagnosis-of-conflict-source: human-passions drive interpersonal-conflict + prayer-frustration. The chapter's pastoral-prescription (humble yourself before God) is the Reformed-Pietistic foundation. The verses anchor the broader sanctification-theology that opposes-self-righteousness."
+      },
+      {
+        "who": "Søren Kierkegaard, Works of Love (1847)",
+        "text": "Kierkegaard's existential-Christian-theology drew foundationally on James 4. His framework: love of God excludes-friendship-with-the-world; existential-decision between God-and-world is the foundational-Christian-decision. The chapter's pastoral-call to undivided-loyalty shaped Kierkegaard's broader-Christian-existentialism."
+      },
+      {
+        "who": "Douglas Moo, James, Pillar (2000)",
+        "text": "Moo's contemporary commentary frames the chapter's diagnosis as profoundly-pastoral: both interpersonal-conflict and prayer-frustration flow from same root (passion-driven desire). The integrated-diagnosis allows integrated-treatment: humble-pathway addresses both. The chapter's coherence is pastoral-theological."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Jas 4:6",
+        "target": "Prov 3:34; 1 Pet 5:5",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'God opposes the proud, gives grace to the humble' is verbatim quoted from Prov 3:34. Both James and 1 Peter quote this OT-text, establishing the proverb as foundational early-Christian-ethical-text. The OT-citation across two NT writers indicates wide-circulation of the proverb in early-Christian-formation."
+      },
+      {
+        "anchor": "Jas 4:7",
+        "target": "Eph 6:11-13; 1 Pet 5:8-9",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'Resist the devil and he will flee from you' parallels Pauline armor-of-God + 1 Peter's resist-the-devil. Three NT writers share resist-the-devil-from-faith framework. The shared theology: spiritual-warfare resistance is grounded in submission-to-God + faith, not autonomous-strength."
+      },
+      {
+        "anchor": "Jas 4:11-12",
+        "target": "Matt 7:1-5; Rom 14:4",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Don't-judge-others theology parallels Jesus's Sermon-on-the-Mount judging-warning and Pauline 'who are you to judge another's servant?' (Rom 14:4). Multiple NT writers establish judging-others as theologically-presumptuous (claiming God's-prerogative)."
+      },
+      {
+        "anchor": "Jas 4:13-15",
+        "target": "Prov 27:1; Luke 12:16-21",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Don't-presume-tomorrow theology parallels Prov 27:1's 'do not boast about tomorrow' and Jesus's rich-fool-parable (Luke 12:16-21). The shared-tomorrow-uncertainty theology spans wisdom-tradition + Synoptic-tradition + James. Christian-life-orientation requires acknowledgment of finitude."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>What causes fights and quarrels among you? Don’t they come from your desires that battle within you?</td></tr><tr><td class=\"t-label\">KJV</td><td>From whence come wars and fightings among you? come they not hence, even of your lusts that war in your members?</td></tr><tr><td class=\"t-label\">NIV</td><td>You adulterous people, don’t you know that friendship with the world means enmity against God? Therefore, anyone who chooses to be a friend of the world becomes an enemy of God.</td></tr><tr><td class=\"t-label\">KJV</td><td>Ye adulterers and adulteresses, know ye not that the friendship of the world is enmity with God? whosoever therefore will be a friend of the world is the enemy of God.</td></tr><tr><td class=\"t-label\">NIV</td><td>But he gives us more grace. That is why Scripture says: “God opposes the proud but shows favor to the humble.”</td></tr><tr><td class=\"t-label\">KJV</td><td>But he giveth more grace. Wherefore he saith, God resisteth the proud, but giveth grace unto the humble.</td></tr><tr><td class=\"t-label\">NIV</td><td>Submit yourselves, then, to God. Resist the devil, and he will flee from you.</td></tr><tr><td class=\"t-label\">KJV</td><td>Submit yourselves therefore to God. Resist the devil, and he will flee from you.</td></tr><tr><td class=\"t-label\">NIV</td><td>Come near to God and he will come near to you. Wash your hands, you sinners, and purify your hearts, you double-minded.</td></tr><tr><td class=\"t-label\">KJV</td><td>Draw nigh to God, and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded.</td></tr><tr><td class=\"t-label\">NIV</td><td>Brothers and sisters, do not slander one another. Anyone who speaks against a brother or sister or judges them speaks against the law and judges it. When you judge the law, you are not keeping it, but sitting in judgment on it.</td></tr><tr><td class=\"t-label\">KJV</td><td>Speak not evil one of another, brethren. He that speaketh evil of his brother, and judgeth his brother, speaketh evil of the law, and judgeth the law: but if thou judge the law, thou art not a doer of the law, but a judge.</td></tr><tr><td class=\"t-label\">NIV</td><td>Why, you do not even know what will happen tomorrow. What is your life? You are a mist that appears for a little while and then vanishes.</td></tr><tr><td class=\"t-label\">KJV</td><td>Whereas ye know not what shall be on the morrow. For what is your life? It is even a vapour, that appeareth for a little time, and then vanisheth away.</td></tr><tr><td class=\"t-label\">NIV</td><td>If anyone, then, knows the good they ought to do and doesn’t do it, it is sin for them.</td></tr><tr><td class=\"t-label\">KJV</td><td>Therefore to him that knoweth to do good, and doeth it not, to him it is sin.</td></tr>"
   },
   "vhl_groups": [
     {
