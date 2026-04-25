@@ -485,22 +485,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 6",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase hē koinōnia tēs pisteōs sou (the sharing/fellowship of your faith) is one of the most debated clauses in the letter. The NET translates it …",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads A Brother, No Longer a Slave within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Did Paul demand Philemon free Onesimus, or return him as still-enslaved brother?",
+        "positions": [
+          {
+            "name": "Implicit demand for manumission",
+            "proponents": "Barth, Fitzmyer, Bruce",
+            "argument": "Paul's language — 'no longer as a slave but as a beloved brother' (v.16) and 'knowing you will do more than I say' (v.21) — implicitly demands Onesimus be freed, even if Paul does not explicitly name manumission. Paul could not have expected the master-slave relationship to continue meaningfully once the brotherhood relationship was established. The letter's theological trajectory points toward freedom."
+          },
+          {
+            "name": "Return as still-enslaved but transformed",
+            "proponents": "Dunn, Wright (For Everyone)",
+            "argument": "Paul does not command manumission because the cultural-legal structures of Roman slavery were not Paul's immediate target. He transforms the master-slave relationship into the master-brother relationship without abolishing the legal form. Onesimus returns; Philemon's treatment of him becomes a test case of living-the-gospel within existing structures. This reading respects the letter's literal silence on manumission."
+          },
+          {
+            "name": "Deliberately ambiguous to let Philemon choose",
+            "proponents": "Longenecker, Thompson (BNTC)",
+            "argument": "Paul writes with intentional rhetorical pressure that leaves the decision formally with Philemon while making only one decision gospel-consistent. The letter is Paul's masterwork of applied ethics: moral suasion rather than commanded compliance, so that Philemon's choice can be genuinely free. The ambiguity is the pedagogy."
+          }
+        ]
+      }
     ],
     "thread": [
       {
@@ -545,7 +549,34 @@
         "type": "Connection",
         "text": "Paul’s ministry of reconciliation—God reconciling the world through Christ—finds its most concrete expression in Philemon, where Paul mediates reconciliation between Philemon and Onesimus."
       }
-    ]
+    ],
+    "discourse": {
+      "title": "Philemon — Paul's Appeal for Onesimus",
+      "thesis": "Paul, imprisoned, appeals to Philemon to receive the runaway slave Onesimus not as a slave but as a beloved brother, on the basis of Christian love rather than apostolic command.",
+      "nodes": [
+        {
+          "label": "Greeting + thanksgiving (vv.1-7)",
+          "text": "Paul, prisoner of Christ Jesus, to Philemon beloved fellow worker, Apphia, Archippus, and the church in your house. Grace and peace. Paul thanks God for Philemon's love and faith, which refreshes the saints' hearts. The thanksgiving establishes the relational ground for the appeal to come.",
+          "type": "thesis"
+        },
+        {
+          "label": "The appeal (vv.8-16)",
+          "text": "Paul could command but instead appeals out of love — he, the aged prisoner, pleads for Onesimus his child whom he fathered in chains. Formerly useless to Philemon, now useful to both. Paul sends him back — 'sending my very heart.' Philemon receives him no longer as a slave but as a beloved brother, both in the flesh and in the Lord.",
+          "type": "evidence"
+        },
+        {
+          "label": "The guarantee (vv.17-22)",
+          "text": "If you consider me a partner, welcome him as you would me. If he owes anything, charge it to my account. Paul writes with his own hand: 'I will repay' (deliberately unspoken: 'not to mention that you owe me your very self'). Confident in Philemon's obedience — knowing he will do more than asked. Prepare a guest room; Paul hopes to visit.",
+          "type": "evidence"
+        },
+        {
+          "label": "Final greetings (vv.23-25)",
+          "text": "Greetings from Epaphras, fellow prisoner, Mark, Aristarchus, Demas, Luke, Paul's fellow workers. The grace of the Lord Jesus Christ be with your spirit.",
+          "type": "conclusion"
+        }
+      ],
+      "note": "Philemon is the NT's shortest Pauline letter and its most concentrated case study in applied Christian ethics. Paul's refusal to command, his willing personal financial guarantee ('charge it to me'), and his delicate pressure ('you owe me your very self') model how apostolic authority operates pastorally when coercion is available but rejected. The letter became foundational for later Christian anti-slavery movements even as Paul does not explicitly demand manumission."
+    }
   },
   "vhl_groups": [
     {
