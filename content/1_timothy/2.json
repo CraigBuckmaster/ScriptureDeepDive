@@ -401,38 +401,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 2:12",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The verb αὐθεντεῖν is a hapax legomenon whose meaning is debated. It may mean ‘to exercise authority’ (neutral) or ‘to domineer/usurp authority’ (nega…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Prayer and Conduct in Worship within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 2:15",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The notoriously difficult statement about being ‘saved through childbearing’ has generated at least five major interpretive proposals: (1) preserved t…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Prayer and Conduct in Worship within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "1 Timothy 2:11-15: universal apostolic prohibition or contextual response to specific Ephesian situation?",
+        "positions": [
+          {
+            "name": "Universal complementarian teaching",
+            "proponents": "Mounce (WBC), Knight (NIGTC), Schreiner",
+            "argument": "Paul grounds the instruction in creation order (Adam formed first) and the fall (Eve deceived) — appealing to universals. The teaching applies cross-culturally because its theological grounding transcends cultural context. The verse establishes male teaching/authority leadership as ongoing church order."
+          },
+          {
+            "name": "Contextual response to Ephesian false-teaching",
+            "proponents": "Witherington, Belleville, Keener",
+            "argument": "1 Timothy targets a specific Ephesian crisis where particular women had been swept up into false teaching (cf. 5:13-15 — younger widows turning aside after Satan). Paul's prohibition addresses these specific deceived women, paralleling Eve's deception. The 'do not permit' (present continuous) describes Paul's current pastoral response, not timeless restriction. Acts and elsewhere shows women in teaching/authority roles (Priscilla, Phoebe, Junia)."
+          },
+          {
+            "name": "Mediating: principled but with culturally-shaped expression",
+            "proponents": "Towner (NICNT)",
+            "argument": "The teaching expresses a genuine theological principle (creation-order distinction in some leadership contexts) without specifying every modern application. The hermeneutical task involves identifying the abiding principle while permitting contextual variation in implementation. This avoids both treating the text as pure cultural artifact and applying it without exegetical care."
+          }
+        ]
+      }
     ],
     "thread": [
       {
@@ -477,7 +465,29 @@
         "type": "Connection",
         "text": "Paul’s declaration that in Christ there is neither male nor female stands in productive tension with the present passage, and how one relates these two texts largely determines one’s position on women’s roles in church leadership."
       }
-    ]
+    ],
+    "discourse": {
+      "title": "1 Timothy 2 — Prayer for All; Order in Worship",
+      "thesis": "Pray for all people including kings, because God desires all to be saved — there is one God and one mediator. Order in worship: men praying without anger, women learning quietly.",
+      "nodes": [
+        {
+          "label": "Universal prayer (vv.1-7)",
+          "text": "First of all, urge supplications, prayers, intercessions, thanksgivings be made for all people — for kings and all in high positions — that we may lead a peaceful and quiet life, godly and dignified. This is good and pleasing in God our Savior, who desires all to be saved and come to knowledge of truth. For there is one God and one mediator between God and men, Christ Jesus, who gave himself a ransom for all. For this I was appointed preacher and apostle, teacher of Gentiles in faith and truth.",
+          "type": "thesis"
+        },
+        {
+          "label": "Men praying without anger (v.8)",
+          "text": "I desire then that men in every place pray, lifting holy hands without anger or quarreling.",
+          "type": "evidence"
+        },
+        {
+          "label": "Women's adornment and learning (vv.9-15)",
+          "text": "Women should adorn themselves in respectable apparel with modesty and self-control, not braided hair, gold, pearls, costly attire — but with what is proper for women professing godliness, with good works. Let a woman learn quietly with all submissiveness. I do not permit a woman to teach or exercise authority over a man; she is to remain quiet. For Adam was formed first, then Eve; Adam was not deceived, but the woman was deceived and became a transgressor. Yet she will be saved through childbearing — if they continue in faith and love and holiness with self-control.",
+          "type": "conclusion"
+        }
+      ],
+      "note": "vv.11-15 are among the NT's most contested passages. The 'I do not permit' (epitrepō) is present-tense; whether this is universal apostolic command or contextual response to specific Ephesian-church situation is the central interpretive question."
+    }
   },
   "vhl_groups": [
     {

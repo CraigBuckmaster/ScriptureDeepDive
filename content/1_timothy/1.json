@@ -574,7 +574,34 @@
         "type": "Connection",
         "text": "Paul’s conversion on the Damascus road is the historical event underlying his self-description as the foremost of sinners who received mercy—a paradigm of sovereign grace."
       }
-    ]
+    ],
+    "discourse": {
+      "title": "1 Timothy 1 — Charge Against False Teachers; Paul's Mercy-Story",
+      "thesis": "Paul charges Timothy to silence those teaching different doctrine and recounts his own conversion as the paradigm of Christ's mercy.",
+      "nodes": [
+        {
+          "label": "Greeting + charge against false teachers (vv.1-7)",
+          "text": "Paul, apostle by command of God our Savior and Christ our hope, to Timothy, true child in faith. Charge certain persons not to teach different doctrine or devote themselves to myths and endless genealogies. The aim of charge is love from a pure heart, good conscience, sincere faith. Wandering away into vain discussion, desiring to be teachers but not understanding what they say.",
+          "type": "thesis"
+        },
+        {
+          "label": "Lawful use of the law (vv.8-11)",
+          "text": "The law is good if used lawfully, knowing that the law is not laid down for the just but for the lawless and disobedient — listing categories of sin (sexually immoral, slave traders, liars, perjurers) — contrary to sound doctrine in the gospel.",
+          "type": "evidence"
+        },
+        {
+          "label": "Paul's mercy-story (vv.12-17)",
+          "text": "Thanks to him who strengthened me — though I was once a blasphemer, persecutor, insolent opponent, I received mercy because I acted ignorantly in unbelief. The grace of our Lord overflowed for me with faith and love. Trustworthy saying: Christ Jesus came into the world to save sinners — of whom I am foremost. I received mercy that in me Christ might display perfect patience as example. Doxology: to the King of ages, immortal, invisible, the only God, be honor and glory forever.",
+          "type": "evidence"
+        },
+        {
+          "label": "Re-charge to Timothy (vv.18-20)",
+          "text": "Entrust this charge to you, child Timothy, in keeping with prophecies once made about you, that by them you may wage the good warfare, holding faith and good conscience. Some have rejected this and made shipwreck of their faith — Hymenaeus and Alexander, whom Paul handed over to Satan that they may learn not to blaspheme.",
+          "type": "conclusion"
+        }
+      ],
+      "note": "The chapter establishes 1 Timothy's recurring concerns — false-teaching threat, sound-doctrine maintenance, Paul's apostolic-conversion as testimony of Christ's mercy."
+    }
   },
   "vhl_groups": [
     {

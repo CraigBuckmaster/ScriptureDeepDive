@@ -576,7 +576,35 @@
         "type": "Connection",
         "text": "Paul’s farewell declaration that he has ‘fought the good fight, finished the race, kept the faith’ completes the charge begun here—Timothy must now carry the baton."
       }
-    ]
+    ],
+    "discourse": {
+      "title": "1 Timothy 6 — Slaves, Wealth, and the Good Confession",
+      "thesis": "Slaves honor masters; love of money is a root of evil; flee these things and pursue righteousness; fight the good fight; charge the rich to be generous, taking hold of true life.",
+      "nodes": [
+        {
+          "label": "Slaves and masters; false teachers (vv.1-5)",
+          "text": "Slaves under yoke regard masters as worthy of all honor — that name of God and teaching not be reviled. Believing-master servants do not despise them but serve better. Teach these things. Anyone teaching different doctrine, not agreeing with sound words of our Lord Jesus Christ, is puffed up with nothing — disputes about words, producing envy, dissension, slander. Imagining godliness as means of gain.",
+          "type": "thesis"
+        },
+        {
+          "label": "Contentment vs love of money (vv.6-10)",
+          "text": "Godliness with contentment is great gain. We brought nothing into the world; cannot take anything out. With food and clothing be content. Those who desire to be rich fall into temptation, snare, harmful desires that plunge into ruin and destruction. For love of money is a root of all kinds of evil — through this craving some have wandered from faith and pierced themselves with many sorrows.",
+          "type": "evidence"
+        },
+        {
+          "label": "Charge to Timothy + good confession (vv.11-16)",
+          "text": "But you, man of God, flee these things; pursue righteousness, godliness, faith, love, steadfastness, gentleness. Fight the good fight of faith. Take hold of eternal life to which you were called when you made the good confession in presence of many witnesses. I charge you in presence of God who gives life and Christ Jesus who in his testimony before Pontius Pilate made the good confession — keep the commandment unstained until appearing of our Lord Jesus Christ, which God will display at proper time — he who is the blessed and only Sovereign, King of kings, Lord of lords, who alone has immortality, dwelling in unapproachable light, whom no one has ever seen or can see.",
+          "type": "evidence"
+        },
+        {
+          "label": "Charge to the rich; closing (vv.17-21)",
+          "text": "Charge the rich in this present age not to be haughty or set hopes on uncertainty of riches but on God who richly provides everything to enjoy. Let them do good, be rich in good works, generous and ready to share, storing up treasure as good foundation for the future, taking hold of that which is truly life. O Timothy, guard the deposit (parathēkē) entrusted to you. Avoid irreverent babble and contradictions of what is falsely called knowledge — by professing it some have swerved from faith. Grace be with you.",
+          "type": "conclusion"
+        }
+      ],
+      "note": "vv.13-16's solemn charge climaxes 1 Timothy with one of the NT's most exalted doxological-Christological passages: Christ before Pilate as model of good confession."
+    },
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>But godliness with contentment is great gain.</td></tr><tr><td class=\"t-label\">KJV</td><td>But godliness with contentment is great gain.</td></tr><tr><td class=\"t-label\">NIV</td><td>For we brought nothing into the world, and we can take nothing out of it.</td></tr><tr><td class=\"t-label\">KJV</td><td>For we brought nothing into this world, and it is certain we can carry nothing out.</td></tr><tr><td class=\"t-label\">NIV</td><td>But if we have food and clothing, we will be content with that.</td></tr><tr><td class=\"t-label\">KJV</td><td>And having food and raiment let us be therewith content.</td></tr><tr><td class=\"t-label\">NIV</td><td>For the love of money is a root of all kinds of evil. Some people, eager for money, have wandered from the faith and pierced themselves with many griefs.</td></tr><tr><td class=\"t-label\">KJV</td><td>For the love of money is the root of all evil: which while some coveted after, they have erred from the faith, and pierced themselves through with many sorrows.</td></tr><tr><td class=\"t-label\">NIV</td><td>Fight the good fight of the faith. Take hold of the eternal life to which you were called when you made your good confession in the presence of many witnesses.</td></tr><tr><td class=\"t-label\">KJV</td><td>Fight the good fight of faith, lay hold on eternal life, whereunto thou art also called, and hast professed a good profession before many witnesses.</td></tr><tr><td class=\"t-label\">NIV</td><td>Command those who are rich in this present world not to be arrogant nor to put their hope in wealth, which is so uncertain, but to put their hope in God, who richly provides us with everything for our enjoyment.</td></tr><tr><td class=\"t-label\">KJV</td><td>Charge them that are rich in this world, that they be not highminded, nor trust in uncertain riches, but in the living God, who giveth us richly all things to enjoy;</td></tr>"
   },
   "vhl_groups": [
     {
