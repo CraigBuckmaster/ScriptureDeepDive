@@ -617,38 +617,31 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 2:2",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase 'by a prophecy or by a word or by a letter' suggests three possible sources of the false teaching: a prophetic utterance, an oral report, o…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Man of Lawlessness within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 2:15",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The word 'traditions' (paradoseis) is positive in Paul — it refers to authoritative apostolic teaching, not human customs. The same word appears negat…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Man of Lawlessness within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Who is 'the restrainer' (2 Thess 2:6-7)?",
+        "positions": [
+          {
+            "name": "The Roman state / government",
+            "proponents": "Tertullian, Calvin, mainstream historical-grammatical",
+            "argument": "The 'restrainer' is governmental authority — specifically the Roman Empire in Paul's day. The shift from neuter ('what is restraining,' v.6) to masculine ('he who restrains,' v.7) is the state-institution and the emperor who embodies it. This reading sees 2 Thess as a preliminary statement of Rom 13's authority-doctrine: civil order restrains full lawlessness."
+          },
+          {
+            "name": "The Holy Spirit / the church",
+            "proponents": "Classical dispensationalism, Walvoord, MacArthur",
+            "argument": "The restrainer is the Holy Spirit working through the church. The gender-shift (neuter to masculine) reflects the Spirit's distinct personality. The restrainer is 'taken out of the way' at the rapture; the lawless one is then revealed during the tribulation. This reading requires the dispensational eschatological framework."
+          },
+          {
+            "name": "The archangel Michael or a divine agent",
+            "proponents": "Some patristic / eastern readings",
+            "argument": "An older tradition identifies the restrainer with Michael the archangel (Dan 12:1) or an angelic agent of divine providence holding back eschatological evil until the appointed time. This reading preserves the text's mysterious cosmic framework without importing later eschatological schemes."
+          },
+          {
+            "name": "Deliberately unspecified divine providence",
+            "proponents": "Modern reserved commentary (Bruce, Marshall)",
+            "argument": "Paul deliberately writes elliptically — the Thessalonians knew what Paul meant ('you know what is restraining him'), so Paul does not spell it out. Later readers cannot recover the reference with certainty. Humility counsels treating the restrainer as a theological placeholder for divine providence holding back eschatological climax until the appointed time."
+          }
+        ]
+      }
     ],
     "thread": [
       {
@@ -693,7 +686,34 @@
         "type": "Connection",
         "text": "Paul urges the Philippians to 'stand firm in the Lord.' The verb and concept are standard Pauline paraenesis."
       }
-    ]
+    ],
+    "discourse": {
+      "title": "2 Thessalonians 2 — The Man of Lawlessness and the Day of the Lord",
+      "thesis": "The day of the Lord has not already come, because first the apostasy must happen and the man of lawlessness must be revealed — the one now restrained, to be overthrown by Christ's coming.",
+      "nodes": [
+        {
+          "label": "Correcting eschatological panic (2:1-3a)",
+          "text": "Paul urges the Thessalonians not to be shaken by reports — supposedly from him — claiming the day of the Lord has already come. That day will not come until certain events happen first.",
+          "type": "thesis"
+        },
+        {
+          "label": "The apostasy and the man of lawlessness (2:3b-7)",
+          "text": "First, the apostasy (falling away) must occur, and the man of lawlessness must be revealed — the son of destruction who opposes and exalts himself above every so-called god and takes his seat in the temple of God, proclaiming himself to be God. This mystery of lawlessness is already at work, but something is now restraining him until he is revealed at the proper time.",
+          "type": "evidence"
+        },
+        {
+          "label": "The restrainer and the revelation (2:8-12)",
+          "text": "Then the lawless one will be revealed, whom the Lord Jesus will slay with the breath of his mouth and bring to nothing by the appearance of his coming. His coming is by Satan's activity with all power and false signs and wonders and all wicked deception — because those perishing refused to love the truth and so be saved.",
+          "type": "evidence"
+        },
+        {
+          "label": "Thanksgiving and charge (2:13-17)",
+          "text": "Paul thanks God for choosing the Thessalonians as firstfruits for salvation through sanctification by the Spirit and belief in the truth. So stand firm, hold to the traditions taught by word or by letter. May the Lord Jesus and our Father comfort your hearts and establish them in every good work and word.",
+          "type": "conclusion"
+        }
+      ],
+      "note": "This chapter is one of the NT's most debated eschatological passages. The 'man of lawlessness,' the 'restrainer,' the 'apostasy,' and the 'breath of his mouth' slaying have generated centuries of interpretation — from Roman emperors (Nero) to Antichrist-traditions to papal-interpretations (Reformation) to futurist-dispensational schemes. Paul's pastoral burden is clear: the day has not come; something must happen first; stand firm."
+    }
   },
   "vhl_groups": [
     {

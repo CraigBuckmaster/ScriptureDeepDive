@@ -590,7 +590,30 @@
         "type": "Echo",
         "text": "Paul's instruction to 'not associate' with immoral believers provides a parallel to the discipline commanded here."
       }
-    ]
+    ],
+    "discourse": {
+      "title": "2 Thessalonians 3 — Discipline the Idle; Continue in Faithful Work",
+      "thesis": "Paul asks prayer for gospel-spread and protection, then addresses the Thessalonian problem of idle busybodies who refused to work and lived off others — commanding them to work and eat their own bread.",
+      "nodes": [
+        {
+          "label": "Request for prayer; confidence in the Lord (3:1-5)",
+          "text": "Finally, brothers, pray for us that the word of the Lord may speed ahead and be honored — that we may be delivered from wicked and evil men. The Lord is faithful; he will establish and guard you from the evil one. May the Lord direct your hearts into the love of God and steadfastness of Christ.",
+          "type": "thesis"
+        },
+        {
+          "label": "Discipline of the idle (3:6-13)",
+          "text": "Command in the name of the Lord Jesus: keep away from brothers walking in idleness and not according to the tradition received. Paul's own example — not eating anyone's bread without paying, working night and day — is the pattern. The rule: if anyone is not willing to work, let him not eat. Some are walking as busybodies, not busy workers. In the Lord, command them to do their work quietly and earn their own living.",
+          "type": "evidence"
+        },
+        {
+          "label": "Final instruction and blessing (3:14-18)",
+          "text": "If anyone does not obey this letter, take note of him, do not associate with him (so he may be ashamed) — yet not as an enemy but as a brother. May the Lord of peace give you peace at all times in every way. The greeting by my own hand, Paul — the sign of genuineness in every letter. The grace of our Lord Jesus Christ be with you all.",
+          "type": "conclusion"
+        }
+      ],
+      "note": "The 'if anyone will not work, let him not eat' principle (v.10) is not a callous policy on poverty but a disciplinary measure for those refusing to support themselves because of eschatological misapplication (if Christ is returning immediately, why work?). Paul pastorally ties faithful work to eschatological hope rather than opposing them."
+    },
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>But the Lord is faithful, and he will strengthen you and protect you from the evil one.</td></tr><tr><td class=\"t-label\">KJV</td><td>But the Lord is faithful, who shall stablish you, and keep you from evil.</td></tr><tr><td class=\"t-label\">NIV</td><td>May the Lord direct your hearts into God’s love and Christ’s perseverance.</td></tr><tr><td class=\"t-label\">KJV</td><td>And the Lord direct your hearts into the love of God, and into the patient waiting for Christ.</td></tr><tr><td class=\"t-label\">NIV</td><td>For even when we were with you, we gave you this rule: “The one who is unwilling to work shall not eat.”</td></tr><tr><td class=\"t-label\">KJV</td><td>For even when we were with you, this we commanded you, that if any would not work, neither should he eat.</td></tr><tr><td class=\"t-label\">NIV</td><td>Now may the Lord of peace himself give you peace at all times and in every way. The Lord be with all of you.</td></tr><tr><td class=\"t-label\">KJV</td><td>Now the Lord of peace himself give you peace always by all means. The Lord be with you all.</td></tr>"
   },
   "vhl_groups": [
     {
