@@ -114,15 +114,37 @@
         "st2": {
           "header": "Jannes and Jambres: Naming Pharaoh's Magicians",
           "body": "Exodus 7:11–12 tells us that when Moses performed the staff-to-serpent sign before Pharaoh, 'Pharaoh summoned his wise men and sorcerers — and the magicians of Egypt also did the same by their secret arts.' The magicians are unnamed. Exodus mentions them again several times through the first plagues without ever giving names; they finally fail at the gnats (8:18–19) and disappear from the narrative entirely after the boils (9:11). The Hebrew Bible nowhere names them.\n\nPaul does. At 2 Timothy 3:8 he writes: 'Just as Jannes and Jambres opposed Moses, so these people also oppose the truth' (antestēsan Iannēs kai Iambrēs). He uses the names without explanation — they are assumed to be familiar to Timothy and, presumably, to the wider Christian community in Ephesus. This is possible because the names had long since entered broader Jewish interpretive tradition.\n\nThe earliest attested naming appears in the Dead Sea Scrolls: the Damascus Document (CD 5:17–19) mentions 'Jannes and his brother' who 'Belial raised up against Moses and Aaron.' The Qumran community knew the tradition by the late 2nd or early 1st century BC. Targum Pseudo-Jonathan on Exodus 1:15 and 7:11 names them (Yohané and Mamré in the Aramaic), as does the Zadokite Fragments and later rabbinic literature (b. Menahot 85a, Exodus Rabbah 9:7). Pliny the Elder (Natural History 30.11) and Apuleius (Apology 90) both mention 'Iannes' among famous magicians of antiquity, suggesting the names had diffused beyond Jewish circles by the 1st century AD. A fragmentary pseudepigraphon known as the Book of Jannes and Jambres survives in small Greek and Ethiopic fragments; Origen (Commentary on Matthew 27:9) cites it, and the Decretum Gelasianum (6th century) lists it among rejected apocrypha. Whatever its exact relationship to Paul's source, the tradition about these two magicians was ancient, broadly diffused, and required no explanation by Paul's day.\n\nThe interpretive question Paul's usage raises is the same as for Jude and 2 Peter: does naming extra-biblical figures imply endorsing an extra-biblical book? Evangelical commentators (Mounce, Towner, Knight) consistently argue that it does not. Paul draws on an oral-literary tradition that Timothy shares; the reliability of 'Jannes and Jambres' as the magicians' names is not Paul's theological claim but his assumed cultural shorthand. The same logic governs Paul's citations of Greek poets (Aratus in Acts 17:28; Epimenides in Titus 1:12; Menander in 1 Corinthians 15:33) — he draws on culturally available tradition without canonizing its source.\n\nWhat Paul's naming does document is the permeability of Scripture's boundary with respected Jewish interpretive tradition at the moment the NT was being written. Extra-biblical tradition here functions as midrash — supplementary narrative that fills gaps in the Hebrew text without replacing or competing with it.",
-          "extrabiblical_ids": ["damascus_document"],
+          "extrabiblical_ids": [
+            "damascus_document"
+          ],
           "citation_refs": [
-            {"nt": "2 Timothy 3:8", "source": "Damascus Document (CD) 5:17-19; Targum Pseudo-Jonathan Exodus 1:15, 7:11; Book of Jannes and Jambres (fragmentary)", "type": "allusion"}
+            {
+              "nt": "2 Timothy 3:8",
+              "source": "Damascus Document (CD) 5:17-19; Targum Pseudo-Jonathan Exodus 1:15, 7:11; Book of Jannes and Jambres (fragmentary)",
+              "type": "allusion"
+            }
           ],
           "scholar_voices": [
-            {"scholar_id": "mounce", "tradition": "Evangelical Pastorals", "note": "Mounce (Word Biblical Commentary) treats Paul's naming as a straightforward appeal to shared Jewish tradition. The names were well established by the 1st century — the Damascus Document and the Targums show us why Timothy and the Ephesian community would recognize them without explanation — and Paul is neither endorsing a specific extra-biblical book nor making a claim about the historical accuracy of 'Jannes and Jambres' as birth names."},
-            {"scholar_id": "towner", "tradition": "Evangelical Pastorals", "note": "Towner (NICNT) sees Paul's typology as the primary point: the contemporary opponents are to Timothy what Jannes and Jambres were to Moses — resourceful impostors whose 'secret arts' ultimately fail before God's work. The naming is rhetorical, drawing on a cultural reservoir that reinforces the comparison."},
-            {"scholar_id": "vanderkam", "tradition": "Critical (DSS / Second Temple)", "note": "VanderKam's work on the Damascus Document places the Jannes-and-his-brother tradition in the Qumran community's reading of Exodus. The community read the biblical text through an interpretive framework that named anonymous figures and explained their opposition in terms of Belial's cosmic hostility — a framework Paul inherits and deploys in his typology."},
-            {"scholar_id": "nickelsburg", "tradition": "Critical (Second Temple)", "note": "Nickelsburg documents the Jannes and Jambres tradition as part of the broader Second Temple practice of filling biblical narrative gaps with named figures. The fragmentary Book of Jannes and Jambres (attested by Origen and Decretum Gelasianum) shows the tradition had sufficient weight to generate a dedicated pseudepigraphon by the late Second Temple period."}
+            {
+              "scholar_id": "mounce",
+              "tradition": "Evangelical Pastorals",
+              "note": "Mounce (Word Biblical Commentary) treats Paul's naming as a straightforward appeal to shared Jewish tradition. The names were well established by the 1st century — the Damascus Document and the Targums show us why Timothy and the Ephesian community would recognize them without explanation — and Paul is neither endorsing a specific extra-biblical book nor making a claim about the historical accuracy of 'Jannes and Jambres' as birth names."
+            },
+            {
+              "scholar_id": "towner",
+              "tradition": "Evangelical Pastorals",
+              "note": "Towner (NICNT) sees Paul's typology as the primary point: the contemporary opponents are to Timothy what Jannes and Jambres were to Moses — resourceful impostors whose 'secret arts' ultimately fail before God's work. The naming is rhetorical, drawing on a cultural reservoir that reinforces the comparison."
+            },
+            {
+              "scholar_id": "vanderkam",
+              "tradition": "Critical (DSS / Second Temple)",
+              "note": "VanderKam's work on the Damascus Document places the Jannes-and-his-brother tradition in the Qumran community's reading of Exodus. The community read the biblical text through an interpretive framework that named anonymous figures and explained their opposition in terms of Belial's cosmic hostility — a framework Paul inherits and deploys in his typology."
+            },
+            {
+              "scholar_id": "nickelsburg",
+              "tradition": "Critical (Second Temple)",
+              "note": "Nickelsburg documents the Jannes and Jambres tradition as part of the broader Second Temple practice of filling biblical narrative gaps with named figures. The fragmentary Book of Jannes and Jambres (attested by Origen and Decretum Gelasianum) shows the tradition had sufficient weight to generate a dedicated pseudepigraphon by the late Second Temple period."
+            }
           ],
           "takeaway": "Paul names Exodus's anonymous Egyptian magicians using a Jewish interpretive tradition already two centuries old by his day (Damascus Document, Targums, Jannes and Jambres pseudepigraphon). The names come from extra-biblical literature; the theological point — false teachers ultimately fail before God's truth — comes from typological reading of Scripture. NT citation of such tradition reflects the lived culture of 1st-century Jewish-Christian interpretation, not canonization of the source."
         }
@@ -423,7 +445,30 @@
         "type": "Connection",
         "text": "The persecutions at Antioch, Iconium, and Lystra are narrated in Acts and provide the historical referent for Paul's autobiographical reminder in v. 11."
       }
-    ]
+    ],
+    "discourse": {
+      "title": "2 Timothy 3 — Last-Days Apostasy; All Scripture Is God-Breathed",
+      "thesis": "In the last days difficult times will come because of widespread moral decay; but Timothy's foundation — the Scriptures breathed out by God — equips him for every good work.",
+      "nodes": [
+        {
+          "label": "Character catalog of the last days (3:1-9)",
+          "text": "In the last days there will be terrible times. People will be lovers of self, money, proud, arrogant, abusive, disobedient to parents, ungrateful, unholy, heartless, unappeasable, slanderous, without self-control, brutal, not loving good, treacherous, reckless, swollen with conceit, lovers of pleasure rather than lovers of God — having the appearance of godliness but denying its power. Avoid such people. They creep into households, capture weak women laden with sins, always learning, never arriving at knowledge of truth. As Jannes and Jambres opposed Moses, so these men oppose the truth — disqualified regarding the faith. But they will not get far; their folly will be plain to all.",
+          "type": "thesis"
+        },
+        {
+          "label": "Paul's example and Timothy's formation (3:10-15)",
+          "text": "You have followed my teaching, conduct, aim in life, faith, patience, love, steadfastness, persecutions, sufferings — what happened in Antioch, Iconium, Lystra — and from all the Lord rescued me. Indeed all who desire to live godly in Christ Jesus will be persecuted. Evil people will go on from bad to worse. But continue in what you have learned and firmly believed, knowing from whom you learned it and how from childhood you have known the sacred writings, which are able to make you wise for salvation through faith in Christ Jesus.",
+          "type": "evidence"
+        },
+        {
+          "label": "All Scripture God-breathed (3:16-17)",
+          "text": "All Scripture is breathed out by God (theopneustos) and profitable for teaching, for reproof, for correction, for training in righteousness — that the man of God may be complete, equipped for every good work.",
+          "type": "conclusion"
+        }
+      ],
+      "note": "v.16's theopneustos (only NT occurrence of the term) supplies the foundational vocabulary for Christian doctrine of Scripture's inspiration. The verse has anchored every major discussion of biblical authority from the patristic era through the Reformation to contemporary evangelical theology."
+    },
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>In fact, everyone who wants to live a godly life in Christ Jesus will be persecuted,</td></tr><tr><td class=\"t-label\">KJV</td><td>Yea, and all that will live godly in Christ Jesus shall suffer persecution.</td></tr><tr><td class=\"t-label\">NIV</td><td>But as for you, continue in what you have learned and have become convinced of, because you know those from whom you learned it,</td></tr><tr><td class=\"t-label\">KJV</td><td>But continue thou in the things which thou hast learned and hast been assured of, knowing of whom thou hast learned them;</td></tr><tr><td class=\"t-label\">NIV</td><td>and how from infancy you have known the Holy Scriptures, which are able to make you wise for salvation through faith in Christ Jesus.</td></tr><tr><td class=\"t-label\">KJV</td><td>And that from a child thou hast known the holy scriptures, which are able to make thee wise unto salvation through faith which is in Christ Jesus.</td></tr><tr><td class=\"t-label\">NIV</td><td>All Scripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness,</td></tr><tr><td class=\"t-label\">KJV</td><td>All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness:</td></tr><tr><td class=\"t-label\">NIV</td><td>so that the servant of God may be thoroughly equipped for every good work.</td></tr><tr><td class=\"t-label\">KJV</td><td>That the man of God may be perfect, throughly furnished unto all good works.</td></tr>"
   },
   "vhl_groups": [
     {

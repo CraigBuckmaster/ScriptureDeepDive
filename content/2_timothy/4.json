@@ -449,7 +449,30 @@
         "type": "Connection",
         "text": "Mark's earlier abandonment of Paul (during the first missionary journey) and Paul's subsequent refusal to take him on the second journey make Paul's request for Mark here (v. 11) a notable reconciliation."
       }
-    ]
+    ],
+    "discourse": {
+      "title": "2 Timothy 4 — Preach the Word; Paul's Farewell",
+      "thesis": "Paul charges Timothy solemnly to preach the word in season and out, then recounts his imminent departure, his fight finished, the crown of righteousness reserved for him.",
+      "nodes": [
+        {
+          "label": "Solemn charge to preach (4:1-5)",
+          "text": "In the presence of God and Christ Jesus who will judge the living and the dead, and by his appearing and kingdom, I solemnly charge you: preach the word. Be ready in season and out. Reprove, rebuke, exhort with complete patience and teaching. For the time is coming when people will not endure sound teaching but will gather teachers to suit their own passions, turning away from truth to myths. As for you, always be sober-minded, endure suffering, do the work of an evangelist, fulfill your ministry.",
+          "type": "thesis"
+        },
+        {
+          "label": "Paul's finished fight (4:6-8)",
+          "text": "I am already being poured out as a drink offering, and the time of my departure has come. I have fought the good fight, I have finished the race, I have kept the faith. Henceforth there is laid up for me the crown of righteousness, which the Lord, the righteous judge, will award to me on that day — and not only to me but to all who have loved his appearing.",
+          "type": "evidence"
+        },
+        {
+          "label": "Personal requests and final warnings (4:9-22)",
+          "text": "Come to me quickly; Demas has deserted me (loving this present world), Crescens gone to Galatia, Titus to Dalmatia. Only Luke is with me. Bring Mark — he is useful for ministry. Tychicus sent to Ephesus. Bring the cloak left at Troas, and the books, especially the parchments. Alexander did me great harm — the Lord will repay him. At my first defense no one came to my support; all deserted me. But the Lord stood by me and strengthened me, so that the message might be fully proclaimed and all the Gentiles might hear. The Lord will rescue me from every evil deed and bring me safely to his heavenly kingdom. To him be glory forever. Greet Prisca and Aquila, Onesiphorus's household. Do your best to come before winter. Grace be with you.",
+          "type": "conclusion"
+        }
+      ],
+      "note": "Paul's last surviving letter. The valedictory self-assessment ('I have fought the good fight...') is among the NT's most moving personal passages. The final practical requests — cloak, books, parchments, specifically Mark — humanise the apostolic figure in his final days."
+    },
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>In the presence of God and of Christ Jesus, who will judge the living and the dead, and in view of his appearing and his kingdom, I give you this charge:</td></tr><tr><td class=\"t-label\">KJV</td><td>I charge thee therefore before God, and the Lord Jesus Christ, who shall judge the quick and the dead at his appearing and his kingdom;</td></tr><tr><td class=\"t-label\">NIV</td><td>Preach the word; be prepared in season and out of season; correct, rebuke and encourage—with great patience and careful instruction.</td></tr><tr><td class=\"t-label\">KJV</td><td>Preach the word; be instant in season, out of season; reprove, rebuke, exhort with all longsuffering and doctrine.</td></tr><tr><td class=\"t-label\">NIV</td><td>For the time will come when people will not put up with sound doctrine. Instead, to suit their own desires, they will gather around them a great number of teachers to say what their itching ears want to hear.</td></tr><tr><td class=\"t-label\">KJV</td><td>For the time will come when they will not endure sound doctrine; but after their own lusts shall they heap to themselves teachers, having itching ears;</td></tr><tr><td class=\"t-label\">NIV</td><td>I have fought the good fight, I have finished the race, I have kept the faith.</td></tr><tr><td class=\"t-label\">KJV</td><td>I have fought a good fight, I have finished my course, I have kept the faith:</td></tr><tr><td class=\"t-label\">NIV</td><td>Now there is in store for me the crown of righteousness, which the Lord, the righteous Judge, will award to me on that day—and not only to me, but also to all who have longed for his appearing.</td></tr><tr><td class=\"t-label\">KJV</td><td>Henceforth there is laid up for me a crown of righteousness, which the Lord, the righteous judge, shall give me at that day: and not to me only, but unto all them also that love his appearing.</td></tr><tr><td class=\"t-label\">NIV</td><td>But the Lord stood at my side and gave me strength, so that through me the message might be fully proclaimed and all the Gentiles might hear it. And I was delivered from the lion’s mouth.</td></tr><tr><td class=\"t-label\">KJV</td><td>Notwithstanding the Lord stood with me, and strengthened me; that by me the preaching might be fully known, and that all the Gentiles might hear: and I was delivered out of the mouth of the lion.</td></tr>"
   },
   "vhl_groups": [
     {
