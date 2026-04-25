@@ -655,7 +655,38 @@
           "text": "Modern scholarship has focused on historical and archaeological verification of the geographical and demographic details."
         }
       ]
-    }
+    },
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Now these are the people of the province who came up from the captivity of the exiles, whom Nebuchadnezzar king of Babylon had taken captive to Babylon (they returned to Jerusalem and Judah, each to their own town,</td></tr><tr><td class=\"t-label\">ESV</td><td>Now these were the people of the province who came up out of the captivity of those exiles whom Nebuchadnezzar the king of Babylon had carried captive to Babylonia. They returned to Jerusalem and Judah, each to his own town.</td></tr><tr><td class=\"t-label\">NIV</td><td>in company with Zerubbabel, Joshua, Nehemiah, Seraiah, Reelaiah, Mordecai, Bilshan, Mispar, Bigvai, Rehum and Baanah): The list of the men of the people of Israel:</td></tr><tr><td class=\"t-label\">ESV</td><td>They came with Zerubbabel, Jeshua, Nehemiah, Seraiah, Reelaiah, Mordecai, Bilshan, Mispar, Bigvai, Rehum, and Baanah. The number of the men of the people of Israel:</td></tr><tr><td class=\"t-label\">NIV</td><td>The whole company numbered 42,360,</td></tr><tr><td class=\"t-label\">ESV</td><td>The whole assembly together was 42,360,</td></tr><tr><td class=\"t-label\">NIV</td><td>besides their 7,337 male and female slaves; and they also had 200 male and female singers.</td></tr><tr><td class=\"t-label\">ESV</td><td>besides their male and female servants, of whom there were 7,337, and they had 200 male and female singers.</td></tr><tr><td class=\"t-label\">NIV</td><td>When they arrived at the house of the Lord in Jerusalem, some of the heads of the families gave freewill offerings toward the rebuilding of the house of God on its site.</td></tr><tr><td class=\"t-label\">ESV</td><td>Some of the heads of families, when they came to the house of the LORD that is in Jerusalem, made freewill offerings for the house of God, to erect it on its site.</td></tr><tr><td class=\"t-label\">NIV</td><td>The priests, the Levites, the musicians, the gatekeepers and the temple servants settled in their own towns, along with some of the other people, and the rest of the Israelites settled in their towns.</td></tr><tr><td class=\"t-label\">ESV</td><td>Now the priests, the Levites, some of the people, the singers, the gatekeepers, and the temple servants lived in their towns, and all the rest of Israel in their towns.</td></tr>",
+    "thread": [
+      {
+        "anchor": "Ezra 2:1-2",
+        "target": "Neh 7:6-7",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "Nehemiah 7:6-73 preserves a near-verbatim parallel of Ezra's returnee-list. The duplication across two books reflects the list's load-bearing significance: the 42,360 returnees (Ezra 2:64) are the concrete identity of the post-exilic community, and Nehemiah cites the same census when re-establishing Jerusalem's population in his own day."
+      },
+      {
+        "anchor": "Ezra 2:2",
+        "target": "Hag 1:1; Zech 3:1",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "Zerubbabel and Jeshua (Joshua the high priest), named at the head of the returnee list, become the focal figures of Haggai and Zechariah's 520 BCE prophetic ministries. The Ezra-Haggai-Zechariah trio gives the post-exilic restoration its political and cultic leadership. Zerubbabel's Davidic lineage (1 Chr 3:17-19) is the canonical thread toward Matt 1:12's Messianic genealogy."
+      },
+      {
+        "anchor": "Ezra 2:64",
+        "target": "Ezek 40-48",
+        "type": "Echo",
+        "direction": "back",
+        "text": "The returnee census against Ezekiel's idealised temple-vision (Ezek 40-48) forms a canonical pair: Ezekiel imagined; Ezra reports the actual. The gap between vision and reality — Ezekiel's elaborate priestly-restoration vs Ezra's 42,360 returnees facing opposition and economic hardship — frames the OT's characteristic eschatological tension: partial fulfilment alongside ongoing hope."
+      },
+      {
+        "anchor": "Ezra 2:68-69",
+        "target": "Exod 35:4-29; 2 Cor 8-9",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "The freewill offerings for the temple echo the tabernacle-construction giving of Exod 35 and anticipate Paul's teaching on cheerful generosity in 2 Cor 8-9. The pattern — covenant people voluntarily funding God's house — runs from wilderness through return through the NT collection for Jerusalem."
+      }
+    ]
   },
   "vhl_groups": [
     {
