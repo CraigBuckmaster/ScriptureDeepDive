@@ -588,7 +588,89 @@
         }
       ],
       "note": ""
-    }
+    },
+    "hebtext": [
+      {
+        "word": "בַּעַל־בְּרִית",
+        "tlit": "ba'al-berit",
+        "gloss": "Baal-of-Covenant",
+        "note": "The deity invoked at Shechem (9:4, 46). Ba'al-berit combines Canaanite storm-god worship with covenant-treaty language — possibly reflecting the Shechem covenant-renewal tradition (Josh 24) now syncretistically fused with Baal worship. Archaeological finds at Shechem include a fortress-temple identified with Ba'al-berit's sanctuary."
+      },
+      {
+        "word": "שְׁכֶם",
+        "tlit": "shekhem",
+        "gloss": "Shechem",
+        "note": "The chapter's geographic focus. Shechem (Tel Balata) was one of the oldest Canaanite cult-centres, with archaeological evidence of continuous sanctuary use from Middle Bronze through Iron Age. Abimelech's attempt to establish kingship here — at Abraham's first Canaanite altar (Gen 12:6-7), Jacob's first Canaanite altar (Gen 33:18-20), Joshua's covenant renewal (Josh 24) — makes the sacrilege theologically acute."
+      },
+      {
+        "word": "אָלָה",
+        "tlit": "'alah",
+        "gloss": "curse / imprecation",
+        "note": "Jotham's parable-curse (9:20 — 'let fire come out of Abimelech... and consume') uses the covenantal-curse vocabulary. The narrative's climax realises the curse exactly (v.56-57 — 'thus God repaid the wickedness... the curse of Jotham came upon them'). The root 'alah links covenant-breaking with self-curse; Abimelech's violence activates the covenant mechanism he had invoked."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Josephus, Antiquities 5.7.2-5 (c. 93 CE)",
+        "text": "Josephus preserves the Abimelech narrative with added dramatic detail — specifically the 70-brothers massacre on a single stone, Jotham's escape, and the Shechem-Abimelech conflict's duration. Josephus frames Abimelech as Israel's first cautionary-example of tyrannical kingship pre-figuring the Saul-David dynamics centuries later."
+      },
+      {
+        "who": "Augustine, Quaestiones in Heptateuchum 7.47 (c. 420 CE)",
+        "text": "Augustine treats Jotham's tree-parable (9:7-15) as the OT's earliest political theology: the bramble's usurpation warns against choosing leaders who cannot provide genuine shade. Augustine reads this as universal political wisdom — the honest trees (olive, fig, vine) decline leadership because it interrupts their productive-fruitful calling; the bramble accepts because it has nothing else to offer. The text warns against political ambition masquerading as service."
+      },
+      {
+        "who": "Martin Luther, Lectures on Judges (1519-1520)",
+        "text": "Luther's exposition treats Abimelech as the paradigm of the false king — one who seeks office by murder and holds it by violence. The chapter's closing moral ('thus God repaid the wickedness,' v.56) is Luther's proof that political power operates under divine judicial oversight even when divine intervention is not immediately visible. The death-by-millstone (9:53) is poetic justice."
+      },
+      {
+        "who": "Barry Webb, The Book of Judges, NICOT (2012)",
+        "text": "Webb reads Judges 9 as the book's structural centre — the anti-kingship narrative that warns against monarchy while the book's overall arc moves toward monarchy's eventual necessity. Abimelech's failed kingship-by-violence prepares the reader to recognize Saul's later failure and appreciate David's better-though-still-flawed alternative. The chapter is pedagogically programmatic for the Deuteronomistic History's kingship theology."
+      }
+    ],
+    "src": [
+      {
+        "title": "Ancient Near Eastern fable-parables (Jotham's tree parable)",
+        "quote": "Mesopotamian and Hittite wisdom literature preserves numerous fable-style political parables (Tamarisk-and-Date-Palm debate; Reed-vs-River disputes). The tree-parable genre is well-attested across 2nd-1st millennium BCE.",
+        "note": "Jotham's 9:7-15 parable engages a recognizable ANE literary form. The parable's political-moral critique of unworthy leadership is a Near Eastern genre-commonplace; Jotham's innovation is applying the form to a specific historical crisis rather than abstract politics. The form's familiarity to the audience enhances the parable's immediate impact."
+      },
+      {
+        "title": "Middle Bronze / Iron Age Shechem archaeology",
+        "quote": "Excavations at Tel Balata (biblical Shechem) have uncovered Middle Bronze Age fortress-temple structures consistent with the 'temple of El-berith' / 'Ba'al-berith' (9:4, 46). Destruction layers dated to Iron Age I correspond to the narrative's 'fire consumed the tower' (9:49).",
+        "note": "Archaeological corroboration for Judges 9's specific setting. The fortress-temple that Abimelech destroys is not narrative fabrication; its presence and destruction are physically attested. The archaeological record supports the narrative's political-religious context in the Iron Age I transition."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Judg 9:7-15",
+        "target": "1 Sam 8; 1 Kgs 12:6-11",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "Jotham's fable of trees-seeking-a-king establishes the OT's critical-political wisdom tradition that reappears in the elders' warning against monarchy (1 Sam 8) and Rehoboam's disastrous rejection of wise counsel (1 Kgs 12). The thematic line: political leadership chosen unwisely becomes destructive fire rather than sheltering shade."
+      },
+      {
+        "anchor": "Judg 9:53",
+        "target": "2 Sam 11:21",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "Abimelech's death by woman's millstone from the wall becomes the proverbial reference Joab cites when reporting Uriah's death (2 Sam 11:21). The exact-memory citation (including the woman-killed-king detail) suggests Abimelech's death was legendary in OT military-tactical memory."
+      },
+      {
+        "anchor": "Judg 9:56-57",
+        "target": "Deut 27-28",
+        "type": "Echo",
+        "direction": "back",
+        "text": "The chapter's closing moral ('God repaid the wickedness') activates Deuteronomy's covenant-curse framework. Abimelech's rise by murder and fall by murder exemplifies the Deuteronomistic History's theology of covenant-justice operating in political events. Jotham's curse + narrative fulfillment = Deuteronomy's covenant mechanism in miniature."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>When Jotham was told about this, he climbed up on the top of Mount Gerizim and shouted to them, “Listen to me, citizens of Shechem, so that God may listen to you.</td></tr><tr><td class=\"t-label\">KJV</td><td>And when they told it to Jotham, he went and stood in the top of mount Gerizim, and lifted up his voice, and cried, and said unto them, Hearken unto me, ye men of Shechem, that God may hearken unto you.</td></tr><tr><td class=\"t-label\">NIV</td><td>One day the trees went out to anoint a king for themselves. They said to the olive tree, ‘Be our king.’</td></tr><tr><td class=\"t-label\">KJV</td><td>The trees went forth on a time to anoint a king over them; and they said unto the olive tree, Reign thou over us.</td></tr><tr><td class=\"t-label\">NIV</td><td>“Finally all the trees said to the thornbush, ‘Come and be our king.’</td></tr><tr><td class=\"t-label\">KJV</td><td>Then said all the trees unto the bramble, Come thou, and reign over us.</td></tr><tr><td class=\"t-label\">NIV</td><td>“The thornbush said to the trees, ‘If you really want to anoint me king over you, come and take refuge in my shade; but if not, then let fire come out of the thornbush and consume the cedars of Lebanon!’</td></tr><tr><td class=\"t-label\">KJV</td><td>And the bramble said unto the trees, If in truth ye anoint me king over you, then come and put your trust in my shadow: and if not, let fire come out of the bramble, and devour the cedars of Lebanon.</td></tr><tr><td class=\"t-label\">NIV</td><td>a woman dropped an upper millstone on his head and cracked his skull.</td></tr><tr><td class=\"t-label\">KJV</td><td>And a certain woman cast a piece of a millstone upon Abimelech's head, and all to brake his skull.</td></tr><tr><td class=\"t-label\">NIV</td><td>Thus God repaid the wickedness that Abimelek had done to his father by murdering his seventy brothers.</td></tr><tr><td class=\"t-label\">KJV</td><td>Thus God rendered the wickedness of Abimelech, which he did unto his father, in slaying his seventy brethren:</td></tr>",
+    "tx": [
+      {
+        "ref": "9:22",
+        "title": "'Ruled over' (sarar) — kingly or non-kingly authority?",
+        "content": "MT uses sarar (to rule, exercise authority) rather than malak (to reign as king). The verb choice is deliberate: Abimelech's authority was de facto but never fully kingly. Hebrew preserves the political-theological nuance that his three-year rule (v.22) was illegitimate monarchy, not covenantally-recognized kingship.",
+        "note": "The terminology-distinction matters theologically: Israel's first 'king' (Saul, with covenantal authorisation) comes later, explicitly announced as melek. Abimelech's sarar-rule is narrated in deliberately lower-grade vocabulary to mark its illegitimacy. Later royal-theology in Kings inherits this precision."
+      }
+    ]
   },
   "vhl_groups": [
     {
