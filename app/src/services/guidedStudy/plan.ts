@@ -179,13 +179,10 @@ function recommendationSubtitle(panel: SectionPanel, sectionHeader: string): str
   return sectionHeader ? `From ${sectionHeader}` : `Section ${panel.section_id}`;
 }
 
-function buildRecommendations(
+export function buildRecommendations(
   input: GuidedStudyPlanInput,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   panelWeights: Readonly<Record<string, number>> = {},
 ): GuidedPanelRecommendation[] {
-  // panelWeights is plumbed through but not yet applied — Phase 2.4 (#1733)
-  // wires the bias logic. Phase 1 keeps RECOMMENDATION_ORDER as the sort key.
   const recs: GuidedPanelRecommendation[] = [];
   const used = new Set<string>();
 
@@ -221,6 +218,10 @@ function buildRecommendations(
       confidence: chapterPanel.panel_type === 'debate' ? 'debated' : undefined,
     });
     used.add(`chapter:${chapterPanel.panel_type}`);
+  }
+
+  if (Object.keys(panelWeights).length > 0) {
+    recs.sort((a, b) => (panelWeights[b.panelType] ?? 0) - (panelWeights[a.panelType] ?? 0));
   }
 
   return recs;
