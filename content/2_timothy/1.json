@@ -516,38 +516,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 1:9",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The creedal fragment has a pre-Pauline character, using vocabulary uncommon in the undisputed letters.…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Fan into Flame the Gift of God within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 1:18",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The prayer for mercy 'on that day' has been debated: some take it as evidence Onesiphorus had died; others argue he was still alive.…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Fan into Flame the Gift of God within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "2 Tim 1:9's 'purpose and grace given us in Christ Jesus before the ages began': eternal decree or timeless divine intention?",
+        "positions": [
+          {
+            "name": "Unconditional eternal election",
+            "proponents": "Mounce (WBC), Knight (NIGTC), Reformed tradition",
+            "argument": "Paul's 'before the ages' (pro chronōn aiōniōn) locates God's electing purpose in eternity past — grace given in Christ before time began. This is one of Paul's most explicit pre-temporal election texts, parallel to Eph 1:4. The verse grounds salvation in God's unconditional eternal decision, not in foreseen human response."
+          },
+          {
+            "name": "Timeless divine character manifested in time",
+            "proponents": "Witherington, Mounce (alternate emphasis)",
+            "argument": "'Before the ages' need not specify chronological pre-temporality but rather the timeless character of God's gracious purpose. The emphasis is on grace as God's essential disposition, now 'manifested through the appearing of our Savior Christ Jesus.' The reading softens the strict decretal frame while preserving divine initiative."
+          },
+          {
+            "name": "Election-in-Christ rather than election-to-Christ",
+            "proponents": "Marshall (ICC), Wright",
+            "argument": "'In Christ Jesus' qualifies 'grace given' — grace is given in Christ as the electing mediator, not prior to Christ. The pre-temporal language locates the purpose in God's eternal intention to save through Christ; humans participate in election by union with Christ. This reading connects Paul's pre-temporal election language with his characteristic 'in Christ' theology."
+          }
+        ]
+      }
     ],
     "thread": [
       {
@@ -592,7 +580,29 @@
         "type": "Echo",
         "text": "The pre-temporal election language parallels the creedal fragment's 'before the beginning of time.'"
       }
-    ]
+    ],
+    "discourse": {
+      "title": "2 Timothy 1 — Paul's Last Charge: Guard the Deposit",
+      "thesis": "Paul, awaiting execution, charges Timothy to fan into flame the Spirit-gift, to share in suffering for the gospel, and to guard the good deposit with the Holy Spirit's help.",
+      "nodes": [
+        {
+          "label": "Greeting and thanksgiving (1:1-7)",
+          "text": "Paul, apostle by God's will, to Timothy, beloved child. Grace, mercy, peace. Paul thanks God, remembering Timothy constantly in prayer, longing to see him, recalling Timothy's sincere faith which lived first in his grandmother Lois and mother Eunice. Paul reminds him to fan into flame the gift of God received through laying-on-of-hands. God gave us a spirit not of fear but of power, love, and self-control.",
+          "type": "thesis"
+        },
+        {
+          "label": "Share in suffering for the gospel (1:8-12)",
+          "text": "Do not be ashamed of the Lord's testimony or of Paul's imprisonment, but share in suffering for the gospel by the power of God, who saved and called us to a holy calling — not because of our works but because of his own purpose and grace given in Christ Jesus before the ages began. Now manifested through the appearance of Christ Jesus, who abolished death and brought life and immortality to light. Paul was appointed preacher, apostle, and teacher — suffering for this reason but not ashamed.",
+          "type": "evidence"
+        },
+        {
+          "label": "Guard the deposit (1:13-18)",
+          "text": "Follow the pattern of sound words heard from me, in faith and love in Christ Jesus. Guard (phylaxon) the good deposit (parathēkēn) entrusted to you — with the Holy Spirit dwelling in us. Paul notes that all in Asia have turned away (including Phygelus and Hermogenes); Onesiphorus's household, however, showed mercy by seeking Paul in Rome and not being ashamed of his chain.",
+          "type": "conclusion"
+        }
+      ],
+      "note": "The chapter establishes 2 Timothy's dominant theme: the apostolic faith as deposit (parathēkē) that Timothy must guard and transmit in a setting where many are defecting. The Onesiphorus note is both practical thanksgiving and pastoral example."
+    }
   },
   "vhl_groups": [
     {
