@@ -485,22 +485,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 2:18",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase thelōn en tapeinophrosynē kai thrēskeia tōn aggelōn (delighting in false humility and the worship of angels) is debated: does it mean worsh…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Fullness in Christ, Freedom from False Teaching within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "What was the 'Colossian heresy'? Jewish-ascetic, Gnostic proto-philosophy, or Phrygian syncretism?",
+        "positions": [
+          {
+            "name": "Jewish-ascetic practice (circumcision, food laws, festivals)",
+            "proponents": "Dunn (NIGTC), Moo (Pillar)",
+            "argument": "Paul's explicit targets — circumcision (2:11), food-and-drink regulations (2:16), new moon and sabbath (2:16), 'self-imposed worship, asceticism, severe treatment of the body' (2:23) — map to Jewish Torah-observance pressed on Gentile believers. The 'Colossian heresy' is a Judaizing variant specific to the region's diaspora synagogue context."
+          },
+          {
+            "name": "Proto-Gnostic philosophical speculation",
+            "proponents": "Lightfoot (older), some commentators",
+            "argument": "The 'philosophy and empty deceit' (2:8), 'worship of angels' (2:18), and 'principalities and powers' language suggest Gnostic-style speculation about intermediary spiritual beings. Paul's Christological centrality response (1:15-20; 2:9-10) is the doctrinal corrective to dualist emanation-theology."
+          },
+          {
+            "name": "Phrygian-regional syncretism blending multiple strands",
+            "proponents": "Arnold (Colossian Syncretism), mainstream contemporary",
+            "argument": "Arnold's detailed study of regional Phrygian religion argues for a syncretistic blend of Jewish ascetic practice, local magical-angelic speculation, and mystery-religion elements. This accounts for Paul's otherwise varied targets (Torah-observance plus angel-worship plus ascetic visions) without requiring one unified system."
+          }
+        ]
+      }
     ],
     "thread": [
       {

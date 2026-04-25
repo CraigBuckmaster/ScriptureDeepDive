@@ -531,38 +531,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 1:7",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase kathōs emathete apo Epaphra (just as you learned from Epaphras) establishes Epaphras as the authoritative teacher. The preposition apo indi…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Supremacy of Christ over All Creation within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 1:13",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The noun exousia (authority, domain, dominion) applied to darkness personifies it as a ruling power. The transfer from darkness’s domain to the Son’s …",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Supremacy of Christ over All Creation within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Colossians 1:15-20 (the Christ Hymn): pre-Pauline hymn or Pauline composition?",
+        "positions": [
+          {
+            "name": "Pre-Pauline hymn adapted by Paul",
+            "proponents": "Wright (NTfE), Dunn, Lohse (Hermeneia)",
+            "argument": "The passage's elevated vocabulary ('firstborn,' 'image,' 'thrones and powers'), parallel structure (creation in vv.15-17, redemption in vv.18-20), and distinct theological emphasis suggest a pre-Pauline hymn Paul adapts for his Colossian argument. Wright particularly emphasises the Wisdom-tradition parallels (Prov 8; Sirach 24) as the hymn's background."
+          },
+          {
+            "name": "Pauline composition for Colossian context",
+            "proponents": "Moo (Pillar), Beale (BECNT)",
+            "argument": "The passage fits Paul's theological vocabulary and addresses Colossians' specific Christological crisis directly. The 'hymn' label overdetermines the genre; structured-Christological prose is within Paul's range (cf. Rom 11:33-36; 1 Tim 3:16). No external evidence of a pre-existing hymn exists; the suggestion is conjectural."
+          },
+          {
+            "name": "Pauline composition drawing on pre-existing Christological material",
+            "proponents": "Pao (ZECNT)",
+            "argument": "Paul may have composed the passage while drawing on early Christian confessional language already in liturgical use. The either/or is too sharp; Paul's Christology developed in conversation with early Christian worship, and his writing participates in its patterns."
+          }
+        ]
+      }
     ],
     "thread": [
       {
