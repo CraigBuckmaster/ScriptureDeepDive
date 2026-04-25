@@ -429,38 +429,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 5:1",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The 'scroll' (biblion) with seven seals has been compared to Roman legal documents. A testamentum (will) was sealed with seven witnesses' seals and co…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Scroll and the Lamb within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 5:13",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase 'every creature' (pan ktisma) universalizes the worship to include all of creation—the four domains (heaven, earth, under earth, sea) echo …",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Scroll and the Lamb within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Revelation 5's lion-becoming-lamb: rhetorical reversal, literal-Christological identification, or apocalyptic-typological compression?",
+        "positions": [
+          {
+            "name": "Rhetorical reversal central to Christology",
+            "proponents": "Bauckham (Theology of Revelation), Boring",
+            "argument": "John 'hears' lion (v.5) but 'sees' lamb (v.6). The rhetorical reversal is theologically programmatic: the conquering-lion-of-Judah conquers as slaughtered-lamb. Christ's victory occurs through self-giving sacrifice, not through warrior-violence. This is Revelation's central Christological move."
+          },
+          {
+            "name": "Literal-typological identification",
+            "proponents": "Mainstream evangelical",
+            "argument": "Christ literally fulfills both Lion-of-Judah (Davidic-Messianic-warrior, Gen 49:9-10) and slaughtered-Lamb (Passover/Isa 53). Revelation does not collapse one into the other but holds both — Christ is genuinely the conquering-warrior-king-Messiah accomplishing victory through his sacrificial-death. Both typologies apply truly."
+          },
+          {
+            "name": "Both: dialectical Christology of victory-through-suffering",
+            "proponents": "Beale, Mounce",
+            "argument": "Bauckham's reversal-emphasis is partially-correct but should not displace literal-typological identification. Christ is both Lion and Lamb; his victory operates through suffering. The dialectical Christology preserves both registers — Christ's-victory is real (as Lion suggests) but accomplished-through-sacrificial-death (as Lamb suggests)."
+          }
+        ]
+      }
     ],
     "thread": [
       {

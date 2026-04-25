@@ -461,38 +461,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 18:6",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The imperative diplasate (double) followed by ta dipla (the double portion) creates emphatic repetition. Some interpreters read this as a judicial for…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Fall of Babylon within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 18:20",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The imperative euphrainou (rejoice) is followed by three vocatives: ourane (heaven), hagioi (saints), apostoloi (apostles), prophētai (prophets). The …",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Fall of Babylon within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Revelation 18's 'Babylon' fall: literal Rome's-fall, Roman-imperial-system-broadly, or eschatological-evil-system?",
+        "positions": [
+          {
+            "name": "Literal Rome / Roman-imperial system",
+            "proponents": "Beale, Bauckham, preterist + mainstream evangelical",
+            "argument": "Babylon = Rome (cf. 1 Pet 5:13's similar code). The chapter denounces Rome's specific commercial-imperial-political system. Christians witnessing Rome's eventual-fall fulfill the chapter's prophecy. The Babylon-naming preserves political-prudence (could not directly attack 'Rome' in a circulating text)."
+          },
+          {
+            "name": "Eschatological evil-system to come",
+            "proponents": "MacArthur, Walvoord",
+            "argument": "Babylon represents future-eschatological evil-system that will dominate global-economic-political life during tribulation. The merchants' specific-list (v.12-13) describes future-global-trade. The system's-fall is literal-future event preceding final eschatological-judgment."
+          },
+          {
+            "name": "Recurring imperial-pattern with eschatological-climax",
+            "proponents": "Mounce, Hays",
+            "argument": "Babylon is paradigmatic — every imperial-economic-system that opposes God's kingdom participates in 'Babylon's' character. Rome was paradigmatic-Babylon in John's day; subsequent imperial-systems (medieval, modern) also exhibit Babylon-pattern. The chapter's prophetic-warning operates trans-historically with eschatological-climax."
+          }
+        ]
+      }
     ],
     "thread": [
       {
@@ -537,7 +525,8 @@
         "type": "Connection",
         "text": "Jeremiah instructed Seraiah to tie a stone to the scroll of Babylon's prophecy and throw it into the Euphrates, saying, 'So will Babylon sink to rise no more.' Revelation 18:21 translates this prophetic sign-act into eschatological reality: a mighty …"
       }
-    ]
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>With a mighty voice he shouted: “ ‘Fallen! Fallen is Babylon the Great!’ She has become a dwelling for demons and a haunt for every impure spirit, a haunt for every unclean bird, a haunt for every unclean and detestable animal.</td></tr><tr><td class=\"t-label\">KJV</td><td>And he cried mightily with a strong voice, saying, Babylon the great is fallen, is fallen, and is become the habitation of devils, and the hold of every foul spirit, and a cage of every unclean and hateful bird.</td></tr><tr><td class=\"t-label\">NIV</td><td>Then I heard another voice from heaven say: “ ‘Come out of her, my people,’ so that you will not share in her sins, so that you will not receive any of her plagues;</td></tr><tr><td class=\"t-label\">KJV</td><td>And I heard another voice from heaven, saying, Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues.</td></tr><tr><td class=\"t-label\">NIV</td><td>Therefore in one day her plagues will overtake her: death, mourning and famine. She will be consumed by fire, for mighty is the Lord God who judges her.</td></tr><tr><td class=\"t-label\">KJV</td><td>Therefore shall her plagues come in one day, death, and mourning, and famine; and she shall be utterly burned with fire: for strong is the Lord God who judgeth her.</td></tr><tr><td class=\"t-label\">NIV</td><td>Then a mighty angel picked up a boulder the size of a large millstone and threw it into the sea, and said: “With such violence the great city of Babylon will be thrown down, never to be found again.</td></tr><tr><td class=\"t-label\">KJV</td><td>And a mighty angel took up a stone like a great millstone, and cast it into the sea, saying, Thus with violence shall that great city Babylon be thrown down, and shall be found no more at all.</td></tr><tr><td class=\"t-label\">NIV</td><td>In her was found the blood of prophets and of God’s holy people, of all who have been slaughtered on the earth.”</td></tr><tr><td class=\"t-label\">KJV</td><td>And in her was found the blood of prophets, and of saints, and of all that were slain upon the earth.</td></tr>"
   },
   "vhl_groups": [
     {

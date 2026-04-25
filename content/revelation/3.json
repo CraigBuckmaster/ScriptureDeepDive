@@ -468,38 +468,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 3:10",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The prepositional phrase tērēsō ek ('keep from') is grammatically ambiguous. The verb tēreō with ek can mean either 'preserve from entering into' or '…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Letters to Three Churches within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 3:14",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The title 'the ruler of God's creation' (hē archē tēs ktiseōs tou theou) translates archē as 'ruler' or 'origin/source.' The term can mean 'beginning'…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Letters to Three Churches within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Revelation 3:14-22's Laodicea: lukewarm-spirituality critique or literal-water-temperature contextual critique?",
+        "positions": [
+          {
+            "name": "Literal water-temperature analogy",
+            "proponents": "Beasley-Murray, Mounce",
+            "argument": "Laodicea's water-supply was an aqueduct from Hierapolis (hot, mineral-laden) and Colossae (cold, fresh). By the time Laodicea received the water, both had become lukewarm — useless for medicinal-bath or refreshing-drink. Christ-as-Laodicea's-knowing-physician uses this concrete-civic reality: the church is both useless ways at once."
+          },
+          {
+            "name": "Spiritual-temperature metaphor",
+            "proponents": "Traditional homiletical reading",
+            "argument": "Hot = spiritual-zeal; cold = open-rejection; lukewarm = uncommitted-half-hearted Christianity. Christ prefers either zeal or open-rejection over uncommitted-mediocrity. The lukewarm-condition is most-spiritually-dangerous because it cannot be addressed through normal-conversion."
+          },
+          {
+            "name": "Both: literal context illuminates spiritual diagnosis",
+            "proponents": "Beale",
+            "argument": "The concrete-water context informs the spiritual diagnosis. Just as Laodicea's actual-water was practically-useless (neither hot for healing nor cold for refreshment), so the church's spiritual-life was practically-useless. The literal-context grounds and intensifies the spiritual-application."
+          }
+        ]
+      }
     ],
     "thread": [
       {

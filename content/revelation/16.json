@@ -494,38 +494,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 16:1",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The Greek phonēs megalēs (loud voice) from the temple emphasizes divine authority. The aorist imperative ekcheate (pour out) conveys urgency and final…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Seven Bowls of God's Wrath within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 16:16",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The textual tradition shows variants: Harmagedōn (majority), Armagedōn (some minuscules), and Maggedōn. The prefixed Har- (Hebrew har, mountain) is pu…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Seven Bowls of God's Wrath within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Revelation 16's seven bowls: literal-future cosmic-events, recapitulating-judgment, or theological-completion?",
+        "positions": [
+          {
+            "name": "Literal-future eschatological events",
+            "proponents": "MacArthur, classical dispensationalism",
+            "argument": "The seven bowls describe literal-future-cosmic-disturbances: oceans-becoming-blood, water-source-poisoning, scorching-sun, plague-darkness, Euphrates-drying, Armageddon, climactic-earthquake. These will literally occur in eschatological tribulation."
+          },
+          {
+            "name": "Recapitulation of seals + trumpets at greater intensity",
+            "proponents": "Beale, mainstream amillennial",
+            "argument": "The bowls recapitulate the same eschatological-period-judgments as seals + trumpets, now at maximum-intensity. The seven-fold structure across three septets is theological-deepening of judgment-imagery rather than chronological-progression. Each septet shows the entire-judgment-period from increasing-intensity vantage."
+          },
+          {
+            "name": "Theological-completion of judgment-pattern",
+            "proponents": "Bauckham, Caird",
+            "argument": "The bowls represent theological-completion of God's judgments (seven = completeness). They symbolise the totality of divine-wrath against persistent-evil rather than literal-future-cosmic-physics events. Apocalyptic-language genre conventions support symbolic over literal-physics reading."
+          }
+        ]
+      }
     ],
     "thread": [
       {
@@ -570,7 +558,8 @@
         "type": "Connection",
         "text": "Zechariah prophesied great mourning 'in the plain of Megiddo,' linking the geographical location to eschatological grief. John transforms this mourning-place into Armageddon—the gathering point for the final battle, where the nations' grief will be n…"
       }
-    ]
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>They were seared by the intense heat and they cursed the name of God, who had control over these plagues, but they refused to repent and glorify him.</td></tr><tr><td class=\"t-label\">KJV</td><td>And men were scorched with great heat, and blasphemed the name of God, which hath power over these plagues: and they repented not to give him glory.</td></tr><tr><td class=\"t-label\">NIV</td><td>“Look, I come like a thief! Blessed is the one who stays awake and remains clothed, so as not to go naked and be shamefully exposed.”</td></tr><tr><td class=\"t-label\">KJV</td><td>Behold, I come as a thief. Blessed is he that watcheth, and keepeth his garments, lest he walk naked, and they see his shame.</td></tr><tr><td class=\"t-label\">NIV</td><td>The seventh angel poured out his bowl into the air, and out of the temple came a loud voice from the throne, saying, “It is done!”</td></tr><tr><td class=\"t-label\">KJV</td><td>And the seventh angel poured out his vial into the air; and there came a great voice out of the temple of heaven, from the throne, saying, It is done.</td></tr>"
   },
   "vhl_groups": [
     {

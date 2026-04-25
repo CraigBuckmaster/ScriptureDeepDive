@@ -582,38 +582,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 2:2",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase 'tested those who claim to be apostles but are not' indicates that itinerant teachers claiming apostolic authority visited Ephesus and were…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Letters to Four Churches within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 2:9",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase 'synagogue of Satan' (synagōgē tou satana) is paralleled in 3:9 (Philadelphia). It describes Jewish communities that actively opposed and p…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Letters to Four Churches within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Revelation 2's seven-letters: literal historical churches, sequential church-ages, or paradigmatic types?",
+        "positions": [
+          {
+            "name": "Literal historical churches",
+            "proponents": "Mainstream evangelical scholarship",
+            "argument": "The seven churches were real first-century churches in western Asia Minor. The letters address specific-historical situations in each. Modern archaeology has illuminated each city's distinctive context (Ephesus's idolatry-economy, Pergamum's emperor-cult, Laodicea's lukewarm-water and banking, etc.). Reading literally honors the text's historical specificity."
+          },
+          {
+            "name": "Sequential church-ages prophecy",
+            "proponents": "Classical dispensationalism (Scofield), Walvoord",
+            "argument": "The seven letters represent successive periods of church history — Ephesus = apostolic age, Smyrna = persecution age, etc., to Laodicea = end-time apostate church. This reading provides a prophetic-historical-survey of the entire church age."
+          },
+          {
+            "name": "Paradigmatic types of all churches",
+            "proponents": "Beale, Bauckham",
+            "argument": "While addressed to historical churches, the letters function paradigmatically — every church across history exhibits some pattern of these seven. Beale particularly emphasises the seven-fold completeness as the literary-rhetorical structure indicating universal-applicability through specific-instance."
+          }
+        ]
+      }
     ],
     "thread": [
       {
