@@ -45,12 +45,22 @@ describe('MODE_DEFINITIONS', () => {
   });
 
   it.each(GUIDED_STUDY_MODES)(
-    '%s has empty panelWeights and empty step prompts in Phase 1',
+    '%s has empty panelWeights through Phase 2.1 (filled in #1733)',
+    (mode) => {
+      expect(MODE_DEFINITIONS[mode].panelWeights).toEqual({});
+    },
+  );
+
+  it.each(GUIDED_STUDY_MODES)(
+    '%s has at least one prompt at every step after Phase 2.1',
     (mode) => {
       const def = MODE_DEFINITIONS[mode];
-      expect(def.panelWeights).toEqual({});
-      for (const step of Object.values(def.steps)) {
-        expect(step.prompts).toEqual([]);
+      for (const [stepKey, step] of Object.entries(def.steps)) {
+        expect(step.prompts.length).toBeGreaterThan(0);
+        for (const prompt of step.prompts) {
+          expect(prompt.key).toMatch(new RegExp(`^${mode}-${stepKey}-`));
+          expect(prompt.text.trim().length).toBeGreaterThan(0);
+        }
       }
     },
   );

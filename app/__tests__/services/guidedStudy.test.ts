@@ -125,7 +125,7 @@ describe('guided study services', () => {
       'Original audience context',
       'Purpose',
     ]);
-    expect(plan.prompts).toHaveLength(2);
+    expect(plan.legacyPrompts).toHaveLength(2);
     expect(plan.recommendations.map((rec) => rec.panelType)).toEqual([
       'ctx',
       'heb',
@@ -217,7 +217,7 @@ describe('guided study services', () => {
       chapterPanels,
       verses,
     });
-    const genrePromptText = plan.prompts.find((p) => p.key === 'genre-observation')?.text ?? '';
+    const genrePromptText = plan.legacyPrompts.find((p) => p.key === 'genre-observation')?.text ?? '';
     expect(genrePromptText).toBe(
       'What does the passage emphasize before you open any study panels?',
     );
@@ -230,7 +230,7 @@ describe('guided study services', () => {
       chapterPanels,
       verses,
     });
-    expect(plan2.prompts.find((p) => p.key === 'genre-observation')?.text).toBe(
+    expect(plan2.legacyPrompts.find((p) => p.key === 'genre-observation')?.text).toBe(
       'What does the passage emphasize before you open any study panels?',
     );
   });
@@ -251,7 +251,7 @@ describe('guided study services', () => {
         chapterPanels,
         verses,
       });
-      expect(plan.prompts.find((p) => p.key === 'genre-observation')?.text).toBe(expected);
+      expect(plan.legacyPrompts.find((p) => p.key === 'genre-observation')?.text).toBe(expected);
     }
   });
 
@@ -319,7 +319,7 @@ describe('guided study services', () => {
     expect(plan.title).toBe('The Creation of the Heaven and the Earth');
     expect(plan.recommendations).toHaveLength(0);
     // Section prompt falls back to the generic chapter-level prompt
-    expect(plan.prompts.some((p) => p.text.includes('chapter on its own terms'))).toBe(true);
+    expect(plan.legacyPrompts.some((p) => p.text.includes('chapter on its own terms'))).toBe(true);
   });
 
   it('reads concept haystack from bookIntro fields (purpose, key_theme, key_word)', () => {

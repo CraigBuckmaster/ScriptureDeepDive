@@ -170,7 +170,7 @@ function StudySessionScreen() {
   const savePromptDrafts = useCallback(async () => {
     if (!plan) return;
     await Promise.all(
-      plan.prompts.map((prompt) =>
+      plan.legacyPrompts.map((prompt) =>
         session.saveResponse(prompt.key, prompt.text, responseDrafts[prompt.key] ?? ''),
       ),
     );
@@ -291,7 +291,7 @@ function StudySessionScreen() {
         {session.currentStep === 'observe' && (
           <View style={styles.section}>
             <Text style={[styles.heading, { color: base.text }]}>Observe</Text>
-            {plan.prompts.map((prompt) => (
+            {plan.legacyPrompts.map((prompt) => (
               <View key={prompt.key} style={styles.promptBlock}>
                 <Text style={[styles.promptText, { color: base.text }]}>{prompt.text}</Text>
                 <TextInput
