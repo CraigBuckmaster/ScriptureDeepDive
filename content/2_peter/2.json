@@ -224,15 +224,37 @@
         "st2": {
           "header": "The Bound Angels and the Book of the Watchers",
           "body": "Peter's summary in verse 4 — that God 'did not spare angels when they sinned, but cast them into Tartarus and committed them to chains of gloomy darkness to be kept until the judgment' — has no direct analogue in Genesis. The OT narrates no binding, no Tartarus, no chains. The whole theological vocabulary belongs to the expansive angelic mythology developed in Second Temple Jewish literature, and specifically to the Book of the Watchers preserved in 1 Enoch chapters 1–36.\n\nIn 1 Enoch the watchers are a class of angels who descend in the days before the Flood (a reading of Genesis 6:1–4), take human wives, and reveal forbidden knowledge — metallurgy, magic, cosmetics, warfare. Their leaders, Shemihazah and Azazel, corrupt humanity, and their offspring become the violent Nephilim. In response, the archangels petition God, who binds the watchers in a dark valley 'until the day of their great judgment' (1 Enoch 10:12–14) and sends the Flood to cleanse the earth. Peter's language — 'cast them into Tartarus' (tartarōsas, the one NT occurrence), 'committed to chains' (seirais zophou paradōken), 'kept until the judgment' (eis krisin tēroumenous) — tracks the vocabulary of the Watcher tradition point for point. The word 'Tartarus' itself is Greek, not Hebrew, and is used in the Septuagint form of 1 Enoch (e.g., Codex Panopolitanus fragments) for the place of the bound angels.\n\nWhether Peter read 1 Enoch directly or through a broader oral-literary tradition that had absorbed its imagery is debated. Davids and Bauckham argue for direct literary knowledge; Schreiner and Moo allow for tradition-dependency without requiring Peter to endorse the Watcher narrative in all its detail. What is not debated is that Peter speaks the vocabulary his audience speaks: binding, chains, Tartarus, future judgment day. He assumes the imagery is known and deploys it as a settled fact of Jewish-Christian cosmology. The parallel with Jude 6 ('angels who did not stay within their proper position of authority, but left their own dwelling, he has kept in eternal chains under gloomy darkness') is very close, suggesting shared access to the same Watcher-tradition pool.\n\nThe canonical question that follows — does Peter thereby 'endorse' 1 Enoch? — is answered the same way as for Jude. The NT authors write within a thought-world shaped by Second Temple Jewish literature and they draw on it freely for theological categories, without the later technical sense in which 'canon' means 'inspired norm excluding all other texts.' Peter's use documents the permeable membrane between Scripture and respected extra-biblical tradition at the moment the NT was being written.",
-          "extrabiblical_ids": ["1_enoch"],
+          "extrabiblical_ids": [
+            "1_enoch"
+          ],
           "citation_refs": [
-            {"nt": "2 Peter 2:4", "source": "1 Enoch 10:4-6, 10:12-14 (Book of the Watchers)", "type": "allusion"}
+            {
+              "nt": "2 Peter 2:4",
+              "source": "1 Enoch 10:4-6, 10:12-14 (Book of the Watchers)",
+              "type": "allusion"
+            }
           ],
           "scholar_voices": [
-            {"scholar_id": "davids", "tradition": "Evangelical NT", "note": "Davids argues (Pillar commentary) that Peter's language is too close to 1 Enoch to be coincidence. The shared vocabulary — binding, gloomy darkness, chains, judgment-day custody — reflects direct literary dependence on the Watcher tradition, not merely on Genesis 6."},
-            {"scholar_id": "schreiner", "tradition": "Evangelical NT", "note": "Schreiner is more cautious: Peter's audience would have been shaped by Second Temple Jewish traditions whether or not Peter himself read 1 Enoch directly. The theological point — God judges rebellion, even angelic rebellion — is drawn from an available tradition pool and deployed as settled fact."},
-            {"scholar_id": "nickelsburg", "tradition": "Critical (Second Temple)", "note": "Nickelsburg's Hermeneia commentary on 1 Enoch establishes the vocabulary overlap in detail. The Greek word 'Tartarus' (tartaroō) appears in the Panopolitanus Greek fragments of 1 Enoch for the place of the bound watchers, and nowhere in the OT — a strong marker of Peter's debt to the Enochic tradition rather than Genesis directly."},
-            {"scholar_id": "vanderkam", "tradition": "Critical (DSS / Enochic)", "note": "VanderKam notes that the Watcher tradition was broadly diffused across Second Temple Judaism — Jubilees, the Damascus Document, Genesis Apocryphon all assume it. Peter does not need to have read 1 Enoch specifically; he inherits a Jewish cosmology in which the Watchers' binding is common knowledge."}
+            {
+              "scholar_id": "davids",
+              "tradition": "Evangelical NT",
+              "note": "Davids argues (Pillar commentary) that Peter's language is too close to 1 Enoch to be coincidence. The shared vocabulary — binding, gloomy darkness, chains, judgment-day custody — reflects direct literary dependence on the Watcher tradition, not merely on Genesis 6."
+            },
+            {
+              "scholar_id": "schreiner",
+              "tradition": "Evangelical NT",
+              "note": "Schreiner is more cautious: Peter's audience would have been shaped by Second Temple Jewish traditions whether or not Peter himself read 1 Enoch directly. The theological point — God judges rebellion, even angelic rebellion — is drawn from an available tradition pool and deployed as settled fact."
+            },
+            {
+              "scholar_id": "nickelsburg",
+              "tradition": "Critical (Second Temple)",
+              "note": "Nickelsburg's Hermeneia commentary on 1 Enoch establishes the vocabulary overlap in detail. The Greek word 'Tartarus' (tartaroō) appears in the Panopolitanus Greek fragments of 1 Enoch for the place of the bound watchers, and nowhere in the OT — a strong marker of Peter's debt to the Enochic tradition rather than Genesis directly."
+            },
+            {
+              "scholar_id": "vanderkam",
+              "tradition": "Critical (DSS / Enochic)",
+              "note": "VanderKam notes that the Watcher tradition was broadly diffused across Second Temple Judaism — Jubilees, the Damascus Document, Genesis Apocryphon all assume it. Peter does not need to have read 1 Enoch specifically; he inherits a Jewish cosmology in which the Watchers' binding is common knowledge."
+            }
           ],
           "takeaway": "Peter reaches for a theological vocabulary — Tartarus, chains, bound angels awaiting judgment — that comes not from Genesis but from the Watcher tradition crystallized in 1 Enoch 1–36. The imagery was the common currency of 1st-century Jewish-Christian cosmology; Peter speaks it fluently. His usage illustrates how deeply the NT authors are formed by Second Temple literature without that formation being a claim about the canonical status of the source texts."
         }
@@ -414,7 +436,125 @@
         }
       ],
       "note": "Judgment dominates: God judged angels, the flood generation, and Sodom. Justice appears in certain punishment for false teachers."
-    }
+    },
+    "discourse": {
+      "title": "2 Peter 2 — False Teachers Identified, Indicted, and Sentenced",
+      "thesis": "False teachers will arise, denying the Master who bought them. Their judgment is certain — Peter rehearses three OT precedents (rebellious angels, Noah's flood, Sodom-Gomorrah) and indicts the false teachers' immorality.",
+      "nodes": [
+        {
+          "label": "Predicted false-teacher arrival (2:1-3)",
+          "text": "Just as false prophets arose among the people, so among you also there will be false teachers. They will secretly bring in destructive heresies, even denying the Master who bought them, bringing on themselves swift destruction. Many will follow their depravity and bring the way of truth into disrepute. In their greed, with feigned words, they will exploit you.",
+          "type": "thesis"
+        },
+        {
+          "label": "Three precedents for divine judgment (2:4-10a)",
+          "text": "If God did not spare the angels who sinned but cast them into hell (Tartarus), reserving them in chains of darkness for judgment; and did not spare the ancient world but preserved Noah, herald of righteousness, with seven others when he brought the flood on the ungodly; and reduced Sodom and Gomorrah to ashes, condemning them as example of what is to happen to the ungodly, while rescuing righteous Lot — then the Lord knows how to rescue the godly from trials and to keep the unrighteous under punishment for the day of judgment.",
+          "type": "evidence"
+        },
+        {
+          "label": "Indictment of false teachers (2:10b-22)",
+          "text": "Bold and arrogant, they are not afraid to slander glorious beings, while even angels do not bring slanderous accusations against them before the Lord. These men blaspheme what they do not understand. They will be destroyed like brute beasts. They have eyes full of adultery, never stopping from sin. They have left the straight way and followed the way of Balaam — who loved the wages of unrighteousness but was rebuked by his donkey. These men are springs without water, mists driven by storms. They entice unstable souls; their hearts are trained in greed. The dog returns to its vomit; the washed sow to the mire (cf. Prov 26:11).",
+          "type": "conclusion"
+        }
+      ],
+      "note": "The chapter contains some of the NT's most severe rhetoric against false teachers. Verse 22's twin proverb (dog/vomit + sow/mire) summarises the false teachers' final state — temporarily-cleaned but inwardly-unchanged, returning to corruption. The chapter parallels Jude extensively, with both books drawing on common early-Christian polemic-tradition."
+    },
+    "hebtext": [
+      {
+        "word": "ψευδοδιδάσκαλοι",
+        "tlit": "pseudodidaskaloi",
+        "gloss": "false teachers",
+        "note": "v.1's hapax (only NT occurrence) compound noun — pseudo + didaskalos. Peter coins or specially-deploys this term to name the chapter's primary target. The compound's directness signals the gravity: these are not merely teachers-with-errors but counterfeit-teachers whose entire teaching-office is false. The term anchors the letter's anti-heresy rhetoric."
+      },
+      {
+        "word": "δεσπότην ἀρνούμενοι",
+        "tlit": "despotēn arnoumenoi",
+        "gloss": "denying the Master",
+        "note": "v.1's central indictment. Despotēs (master/owner) is a stronger ownership-term than kyrios (lord). The false teachers' core offense is denying the very Master who 'bought' them — denying the redeemer-relationship that constitutes their existence. Calvinist readings argue this language entails 'unlimited atonement scope, limited atonement application'; the issue remains exegetically contested."
+      },
+      {
+        "word": "Τάρταρος",
+        "tlit": "Tartaros",
+        "gloss": "Tartarus",
+        "note": "v.4's hapax (only NT occurrence) for the angel-imprisonment realm. Tartaros is Greek mythology's deepest underworld region — used here for the chained-angels described in 1 Enoch's elaboration of Gen 6:1-4. Peter adopts Greek mythological vocabulary while filling it with Jewish-apocalyptic content. The verse parallels Jude 6's similar tradition."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "The false teachers (anonymous)",
+        "role": "Chapter's primary target",
+        "text": "The chapter's anonymity is significant — Peter targets a recognisable type rather than specific named opponents. The descriptive markers (denying Christ-as-Master, sexual immorality, greed, slander, false-prophecy patterns) match early-Christian polemical-traditions against itinerant false teachers documented in Didache 11-13 and Jude. Peter writes for ongoing-detection rather than specific-personal-attack."
+      },
+      {
+        "name": "The fallen angels (2:4)",
+        "role": "First OT-judgment precedent",
+        "text": "Peter (with Jude 6) refers to angels who 'sinned' (ēmarton) — likely the 'sons of God' tradition of Gen 6:1-4 elaborated in 1 Enoch. The angels are now in Tartarus chains awaiting judgment. The reference is part of the early Christian appropriation of Second-Temple-Jewish apocalyptic tradition for theological-polemical purposes."
+      },
+      {
+        "name": "Noah, 'herald of righteousness' (2:5)",
+        "role": "Second precedent — preservation amid judgment",
+        "text": "Peter's distinctive title 'herald (kēryx) of righteousness' — appearing only here in NT — characterizes Noah as proclaiming-warning preacher during the long ark-construction. The detail suggests Peter knew Jewish-traditional elaborations of Noah-as-preacher (developed in 1 Enoch and Sib. Or.). Noah's preservation amid judgment is Peter's example: God knows how to rescue the godly while judging the wicked."
+      },
+      {
+        "name": "Lot, 'righteous in his soul' (2:7-8)",
+        "role": "Third precedent — vexed-righteous in wicked context",
+        "text": "Peter's surprising characterization of Lot as righteous (given Genesis 19's morally complex portrait) reflects Jewish-traditional Lot-rehabilitation. The point: Lot was 'tormented in his righteous soul' by Sodom's wickedness — model for believers oppressed by surrounding-immoral-culture. Peter's pastoral aim: God knows how to rescue righteous-but-vexed believers."
+      },
+      {
+        "name": "Balaam (2:15)",
+        "role": "Type of greed-driven false prophet",
+        "text": "Balaam (Num 22-24) functions in Peter's polemic as the archetypal-prophet-for-hire. His rebuke by his donkey (mentioned in v.16) is theologically humiliating — even an animal recognized what the prophet missed. Jude 11 also cites Balaam in the same false-teacher polemical context. Both letters draw on shared early-Christian use of Balaam-typology."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Origen, Commentary on Matthew (c. 245 CE)",
+        "text": "Origen draws on 2 Pet 2's false-teacher polemic in his anti-Gnostic writings. The chapter's particular emphasis on 'denying the Master who bought them' becomes Origen's diagnostic for second-century Gnostic systems that subordinated Christ to a higher unknown deity. The chapter's rhetorical force shapes patristic anti-heresy discourse."
+      },
+      {
+        "who": "Calvin, Commentary on 2 Peter (1551)",
+        "text": "Calvin's exposition of v.1's 'denying the Master who bought them' has been a contested text in Reformed soteriology. Calvin interprets it as referring to outward-covenantal-membership (visible church) rather than effectual-redemption, preserving definite-atonement doctrine. The verse remains exegetically debated within Reformed-Arminian discussions."
+      },
+      {
+        "who": "Richard Bauckham, Jude, 2 Peter, WBC (1983)",
+        "text": "Bauckham's commentary established the strong literary-relationship between 2 Peter 2 and Jude — likely 2 Peter dependent on Jude or both drawing from shared early-Christian polemical tradition. The chapter's traditional-polemic character (rather than personal-attack-specific-opponents) emerges through Bauckham's careful study of the shared-vocabulary patterns."
+      },
+      {
+        "who": "Modern character-formation theology (Wells, Vanhoozer)",
+        "text": "Recent evangelical theology has read 2 Pet 2 alongside ch 1 as paired-positive-and-negative discipleship discourse. Where ch 1 displays the chain-of-virtues, ch 2 displays the moral-disintegration of those who reject the apostolic gospel. The contrast functions as discipleship-formation: this is the alternative to the chain-of-virtues."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "2 Pet 2:1-3",
+        "target": "Jude 4-13",
+        "type": "Echo",
+        "direction": "back",
+        "text": "2 Peter 2 and Jude 4-13 share extensive vocabulary (false teachers, denying the Master, fallen angels, Sodom, Balaam, brute beasts, springs without water). The literary relationship — likely 2 Peter using Jude — establishes both letters as drawing on shared early-Christian polemical traditions. The cross-reference is one of the NT's clearest cases of inter-textual dependence."
+      },
+      {
+        "anchor": "2 Pet 2:4",
+        "target": "Jude 6; 1 Enoch 10:4-6",
+        "type": "Echo",
+        "direction": "back",
+        "text": "The fallen-angels-in-chains tradition derives from Jewish-apocalyptic elaboration of Gen 6:1-4 in 1 Enoch. Both 2 Peter and Jude draw on the tradition, illustrating how early-Christian polemic engaged Second-Temple-Jewish apocalyptic frameworks. The shared use suggests common-tradition rather than direct dependence."
+      },
+      {
+        "anchor": "2 Pet 2:6",
+        "target": "Gen 19; Luke 17:28-30; Jude 7",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Sodom-Gomorrah's destruction as judgment-typology is shared across NT writers. Peter, Jude, and Jesus all use Sodom as the archetypal example of divine judgment on persistent immorality. The shared use establishes Sodom as standing typology for eschatological-judgment patterns."
+      },
+      {
+        "anchor": "2 Pet 2:22",
+        "target": "Prov 26:11",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Peter's twin-proverb closing (dog returns to vomit; washed sow returns to mud) draws Prov 26:11's first half explicitly. The second half (sow-to-mud) may be Peter's expansion or another proverb-tradition. The closing-proverb anchors the chapter's diagnosis: false teachers' apparent-cleansing was external; their inward-orientation remained corrupt."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>But there were also false prophets among the people, just as there will be false teachers among you. They will secretly introduce destructive heresies, even denying the sovereign Lord who bought them—bringing swift destruction on themselves.</td></tr><tr><td class=\"t-label\">KJV</td><td>But there were false prophets also among the people, even as there shall be false teachers among you, who privily shall bring in damnable heresies, even denying the Lord that bought them, and bring upon themselves swift destruction.</td></tr><tr><td class=\"t-label\">NIV</td><td>For if God did not spare angels when they sinned, but sent them to hell, putting them in chains of darkness to be held for judgment;</td></tr><tr><td class=\"t-label\">KJV</td><td>For if God spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;</td></tr><tr><td class=\"t-label\">NIV</td><td>if this is so, then the Lord knows how to rescue the godly from trials and to hold the unrighteous for punishment on the day of judgment.</td></tr><tr><td class=\"t-label\">KJV</td><td>The Lord knoweth how to deliver the godly out of temptations, and to reserve the unjust unto the day of judgment to be punished:</td></tr><tr><td class=\"t-label\">NIV</td><td>They have left the straight way and wandered off to follow the way of Balaam son of Bezer, who loved the wages of wickedness.</td></tr><tr><td class=\"t-label\">KJV</td><td>Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;</td></tr><tr><td class=\"t-label\">NIV</td><td>They promise them freedom, while they themselves are slaves of depravity—for “people are slaves to whatever has mastered them.”</td></tr><tr><td class=\"t-label\">KJV</td><td>While they promise them liberty, they themselves are the servants of corruption: for of whom a man is overcome, of the same is he brought in bondage.</td></tr><tr><td class=\"t-label\">NIV</td><td>Of them the proverbs are true: “A dog returns to its vomit,” and, “A sow that is washed returns to her wallowing in the mud.”</td></tr><tr><td class=\"t-label\">KJV</td><td>But it is happened unto them according to the true proverb, The dog is turned to his own vomit again; and the sow that was washed to her wallowing in the mire.</td></tr>"
   },
   "vhl_groups": [
     {
