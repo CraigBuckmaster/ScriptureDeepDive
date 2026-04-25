@@ -426,7 +426,98 @@
         }
       ],
       "note": "The 'seed' of God (3:9) introduces the idea of transformation so fundamental that habitual sin becomes incongruous."
-    }
+    },
+    "hebtext": [
+      {
+        "word": "τέκνα θεοῦ",
+        "tlit": "tekna theou",
+        "gloss": "children of God",
+        "note": "v.1's signature title for believers. Tekna (children) emphasises shared-life and family-membership rather than mere legal-status. The chapter develops Christian-identity from this children-of-God foundation: 'see what kind of love the Father has given us.'"
+      },
+      {
+        "word": "πᾶς ὁ ποιῶν τὴν ἁμαρτίαν τὴν ἀνομίαν ποιεῖ",
+        "tlit": "pas ho poiōn tēn hamartian tēn anomian poiei",
+        "gloss": "everyone who makes sin commits lawlessness",
+        "note": "v.4's identification of sin with lawlessness (anomia). The Greek wordplay is striking — sin is fundamentally lawlessness against God's order. The verse anchors 1 John's ethical-theology: sin is not merely external-act but underlying covenantal-rebellion."
+      },
+      {
+        "word": "ἁγνίζει ἑαυτόν",
+        "tlit": "hagnizei heauton",
+        "gloss": "purifies himself",
+        "note": "v.3's reflexive verb for self-purification grounded in eschatological-hope. The future-Christ-vision motivates present-purification. The pattern: future-orientation produces present-ethical-formation. Christian-eschatology shapes Christian-ethics organically, not legalistically."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "The children of God",
+        "role": "Primary-identity of believers",
+        "text": "The chapter's identity-frame: believers are God's children now (v.1) with future-revelation pending (v.2). The 'we shall be like him, for we shall see him as he is' (v.2) establishes eschatological-transformation as believers' future. The chapter's ethical-imperative ('purifies himself,' v.3) flows from this identity."
+      },
+      {
+        "name": "Cain (the murderous brother)",
+        "role": "OT exemplar of unrighteous-hatred (v.12)",
+        "text": "v.12's 'do not be like Cain who was of the evil one and murdered his brother' uses the foundational-OT-fratricide as paradigm of hatred-as-murder. John's argument: love-vs-hate is not abstract-emotion but covenantal-life-or-death pattern. Cain's hatred for righteous-Abel becomes the type of all-Christian-community-hatred."
+      },
+      {
+        "name": "The world (kosmos)",
+        "role": "Source of Christian-hatred-experience (v.13)",
+        "text": "v.13's 'do not be surprised, brothers, that the world hates you' parallels Jesus's John 15:18-19 prediction. The world's hatred for Christians is not aberration but expected-pattern given the kosmos-against-God orientation. The chapter contextualises Christian-suffering within this larger-cosmic conflict."
+      },
+      {
+        "name": "Christ as paradigm of self-giving love",
+        "role": "Center of love-definition (vv.16-18)",
+        "text": "v.16's 'by this we know love, that he laid down his life for us' establishes Christ-cross as the love-definition. Christian-love is not sentimental-affection but cruciform-self-giving. v.18's 'let us love not in word or talk but in deed and in truth' grounds this in concrete-action."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Augustine, Tractate 5 on 1 John (c. 407 CE)",
+        "text": "Augustine's exposition of 'we shall be like him' (v.2) shaped Western-Christian theology of beatific-vision and resurrection-glory. The chapter's eschatological-Christian-formation theology has anchored Christian theology of glorification across traditions."
+      },
+      {
+        "who": "Bernard of Clairvaux, On Loving God (c. 1130 CE)",
+        "text": "Bernard's classic monastic-spiritual-theology drew extensively on 1 John 3's love-of-God / hatred-of-the-world framework. The chapter's love-criterion shaped medieval-monastic spirituality's framework of cruciform-love over against worldly-attachment."
+      },
+      {
+        "who": "Calvin, Commentary on 1 John 3:9 (1551)",
+        "text": "Calvin's exposition of 'no one born of God commits sin... cannot continue to sin' (v.9) wrestled extensively with apparent-contradiction with 1:8-10's affirmation that all believers continue to need confession. Calvin's resolution: v.9 addresses settled-orientation rather than every-act; the regenerate cannot live in unrepentant-pattern of sin while being-regenerate. The interpretation became standard Reformed-perfectionism response."
+      },
+      {
+        "who": "Raymond Brown, Epistles of John (AB, 1982)",
+        "text": "Brown's exegetical analysis of 3:6-9 shows John's pattern of present-tense + intensive-imperfective verbs to describe characteristic-orientation, not exhaustive-individual-acts. The chapter is not making perfectionist-claim but establishing settled-orientation criteria that distinguish believers from non-believers."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "1 Jn 3:1",
+        "target": "John 1:12; Rom 8:14-17; Gal 4:5-7",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Children-of-God identity parallels Johannine-Pauline traditions: John 1:12's 'right to become children of God,' Rom 8:14-17's 'spirit of adoption,' Gal 4:5-7's 'sonship' through Spirit. Multiple NT writers converge on adoption-Christology theology."
+      },
+      {
+        "anchor": "1 Jn 3:8",
+        "target": "Gen 3:1-15; John 8:44; Heb 2:14",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'The reason the Son of God appeared was to destroy the works of the devil' connects Christ's incarnation explicitly to the Genesis 3 protoevangelium-trajectory. John's Christology operates within Genesis-to-revelation framework of cosmic-conflict resolution through Christ."
+      },
+      {
+        "anchor": "1 Jn 3:11-12",
+        "target": "Gen 4:1-16",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Cain-Abel reference is the chapter's structural-OT exemplar. John uses the foundational-fratricide to anchor his love-or-hatred ethical-theology in covenantal-history. The OT is not abandoned but interpretively-foundational."
+      },
+      {
+        "anchor": "1 Jn 3:16",
+        "target": "John 15:13; Rom 5:8",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'Laying down one's life for one's friends' parallels Jesus's John 15:13 saying and Pauline Rom 5:8's 'while we were sinners, Christ died for us.' Christ-cross-as-love-definition is consistent across Johannine-Pauline-Christology."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>See what great love the Father has lavished on us, that we should be called children of God! And that is what we are! The reason the world does not know us is that it did not know him.</td></tr><tr><td class=\"t-label\">KJV</td><td>Behold, what manner of love the Father hath bestowed upon us, that we should be called the sons of God: therefore the world knoweth us not, because it knew him not.</td></tr><tr><td class=\"t-label\">NIV</td><td>Dear friends, now we are children of God, and what we will be has not yet been made known. But we know that when Christ appears, we shall be like him, for we shall see him as he is.</td></tr><tr><td class=\"t-label\">KJV</td><td>Beloved, now are we the sons of God, and it doth not yet appear what we shall be: but we know that, when he shall appear, we shall be like him; for we shall see him as he is.</td></tr><tr><td class=\"t-label\">NIV</td><td>The one who does what is sinful is of the devil, because the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the devil’s work.</td></tr><tr><td class=\"t-label\">KJV</td><td>He that committeth sin is of the devil; for the devil sinneth from the beginning. For this purpose the Son of God was manifested, that he might destroy the works of the devil.</td></tr><tr><td class=\"t-label\">NIV</td><td>No one who is born of God will continue to sin, because God’s seed remains in them; they cannot go on sinning, because they have been born of God.</td></tr><tr><td class=\"t-label\">KJV</td><td>Whosoever is born of God doth not commit sin; for his seed remaineth in him: and he cannot sin, because he is born of God.</td></tr><tr><td class=\"t-label\">NIV</td><td>Do not be like Cain, who belonged to the evil one and murdered his brother. And why did he murder him? Because his own actions were evil and his brother’s were righteous.</td></tr><tr><td class=\"t-label\">KJV</td><td>Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother's righteous.</td></tr><tr><td class=\"t-label\">NIV</td><td>This is how we know what love is: Jesus Christ laid down his life for us. And we ought to lay down our lives for our brothers and sisters.</td></tr><tr><td class=\"t-label\">KJV</td><td>Hereby perceive we the love of God, because he laid down his life for us: and we ought to lay down our lives for the brethren.</td></tr><tr><td class=\"t-label\">NIV</td><td>Dear children, let us not love with words or speech but with actions and in truth.</td></tr><tr><td class=\"t-label\">KJV</td><td>My little children, let us not love in word, neither in tongue; but in deed and in truth.</td></tr>"
   },
   "vhl_groups": [
     {

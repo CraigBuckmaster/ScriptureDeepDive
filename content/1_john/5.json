@@ -477,7 +477,98 @@
         }
       ],
       "note": "The letter ends abruptly with 'keep yourselves from idols' — possibly referencing the secessionists' Christology as idolatrous distortion."
-    }
+    },
+    "hebtext": [
+      {
+        "word": "ζωὴν αἰώνιον",
+        "tlit": "zōēn aiōnion",
+        "gloss": "eternal life",
+        "note": "vv.11, 13, 20's repeated phrase. 1 John concludes by declaring its purpose: 'I write so that you may know you have eternal life' (v.13). The chapter's epistemological-confidence (we know — repeated 7 times in vv.13-20) anchors believer-assurance in God's-self-revelation through Christ."
+      },
+      {
+        "word": "ὁ διʼ ὕδατος καὶ αἵματος",
+        "tlit": "ho di hydatos kai haimatos",
+        "gloss": "by water and blood",
+        "note": "v.6's interpretively-debated phrase. Christ 'came by water and blood — not by water only but by water and blood.' Most readings: water = baptism, blood = crucifixion. The verse may polemicize against gnostic-secessionist views that affirmed Christ-at-baptism but denied Christ-at-cross. The verse anchors Christian Christology of full-incarnation through entire-life-and-death."
+      },
+      {
+        "word": "Ἰωάννειον κόμμα (Comma Johanneum)",
+        "tlit": "Iōanneion komma",
+        "gloss": "Johannine Comma",
+        "note": "v.7's textual-criticism issue. The longer-version of vv.7-8 ('there are three that bear record in heaven, the Father, the Word, and the Holy Ghost: and these three are one') appears in late Greek manuscripts and Vulgate but is absent from earliest Greek manuscripts. Modern critical-editions and most modern translations omit. The 'Comma Johanneum' is the technical name."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "Believers (overcomers of the world)",
+        "role": "Identity-frame (vv.1-5)",
+        "text": "vv.1-5 establish believer-identity as those born-of-God who overcome the world through faith. The chapter's overcomer-language echoes Revelation's frequent use. The means of overcoming: faith in Jesus as Son of God. The chapter's pastoral-confidence rests on this identity-foundation."
+      },
+      {
+        "name": "Christ (the Son of God)",
+        "role": "Object of saving-faith and source of life",
+        "text": "Christ-as-Son-of-God is the chapter's central Christological-confession. v.5's 'who is the one who overcomes the world but he who believes that Jesus is the Son of God?' connects Christological-confession with overcoming-power. The chapter's Christology is direct and confessional rather than philosophical-speculative."
+      },
+      {
+        "name": "The Spirit, water, and blood (the three witnesses)",
+        "role": "Triple-testimony figures (vv.6-8)",
+        "text": "vv.6-8's three witnesses (Spirit, water, blood) testify together to Christ's incarnation and atonement. The verse's textual-history is complicated by the medieval-Vulgate's added Trinitarian-formula (the 'Comma Johanneum' — three heavenly + three earthly witnesses). Modern textual criticism affirms only the earthly-three, but the witness-theology operates either way."
+      },
+      {
+        "name": "The 'sin unto death' figure (v.16)",
+        "role": "Mysterious sinning-believer-figure",
+        "text": "v.16's 'sin not unto death' / 'sin unto death' has occupied centuries of interpretation. Options: (a) physical-death from severe-sin (cf. 1 Cor 11:30); (b) apostasy / persistent-unrepentance disqualifying for salvation; (c) specific-blasphemy of the Spirit (cf. Mark 3:29). John commands intercession for the former but does not command it for the latter. The verse's interpretive ambiguity has shaped Christian theology of intercession-limits."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Augustine, Tractate 10 on 1 John (c. 407 CE)",
+        "text": "Augustine's homily on 1 John 5 emphasises the chapter's victory-theology: faith-in-Christ as overcoming-the-world. His pastoral application: present believer-difficulties are real but penultimate; Christ's victory through faith is the determinative reality. Augustine's reading shapes Western-Christian theology of perseverance."
+      },
+      {
+        "who": "Erasmus, Annotations on 1 John 5:7 (1516)",
+        "text": "Erasmus's editorial decision to omit the Comma Johanneum from his first two Greek-NT editions provoked controversy. His subsequent inclusion (after pressure) under stipulation of finding-Greek-manuscript-support generated major textual-criticism debate. Modern critical editions follow Erasmus's original judgment; the Comma is not in earliest manuscripts."
+      },
+      {
+        "who": "Calvin, Commentary on 1 John 5:6-8 (1551)",
+        "text": "Calvin's textual-critical commentary discussed the Comma Johanneum's questionable manuscript-evidence cautiously. His broader exposition of vv.6-8 emphasises the threefold-witness as confirming Christ's full-incarnation against any docetic-spiritualizing reading. Even without the Comma, the threefold-earthly-witness structure provides theological substance."
+      },
+      {
+        "who": "Raymond Brown, Epistles of John (AB, 1982)",
+        "text": "Brown's commentary integrates careful textual-criticism (rejecting Comma Johanneum) with theological exegesis. His discussion of v.16's 'sin unto death' surveys patristic-and-modern options without forcing closure; the verse's interpretive complexity is preserved as theologically-important rather than resolved-too-quickly."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "1 Jn 5:1",
+        "target": "John 1:12-13; 3:3-7",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Born-of-God language parallels Fourth Gospel's John 1:12-13 (becoming-children-of-God) and John 3:3-7 (born-again / from-above). The Johannine-corpus's regeneration-theology is consistent across Gospel and epistle."
+      },
+      {
+        "anchor": "1 Jn 5:4-5",
+        "target": "John 16:33; Rev 2:7, 11, 17 etc",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Overcoming-the-world language parallels John 16:33's 'I have overcome the world' and Revelation's repeated 'to the one who overcomes' promises. Johannine-theology of overcoming-through-faith operates across Gospel, epistles, and Revelation."
+      },
+      {
+        "anchor": "1 Jn 5:6-8",
+        "target": "John 19:34",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Water and blood imagery may echo John 19:34's 'water and blood came out' from Christ's pierced side. The Johannine-corpus's sacramental-theology connects baptism (water) and atonement (blood) consistently across Gospel and 1 John."
+      },
+      {
+        "anchor": "1 Jn 5:13",
+        "target": "John 20:31",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'I have written these things... that you may know you have eternal life' parallels John 20:31's Gospel-purpose-statement ('these things were written that you may believe... and that believing you may have life'). The two purpose-statements bracket the Johannine-corpus with parallel-pastoral-aim."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Everyone who believes that Jesus is the Christ is born of God, and everyone who loves the father loves his child as well.</td></tr><tr><td class=\"t-label\">KJV</td><td>Whosoever believeth that Jesus is the Christ is born of God: and every one that loveth him that begat loveth him also that is begotten of him.</td></tr><tr><td class=\"t-label\">NIV</td><td>for everyone born of God overcomes the world. This is the victory that has overcome the world, even our faith.</td></tr><tr><td class=\"t-label\">KJV</td><td>For whatsoever is born of God overcometh the world: and this is the victory that overcometh the world, even our faith.</td></tr><tr><td class=\"t-label\">NIV</td><td>And this is the testimony: God has given us eternal life, and this life is in his Son.</td></tr><tr><td class=\"t-label\">KJV</td><td>And this is the record, that God hath given to us eternal life, and this life is in his Son.</td></tr><tr><td class=\"t-label\">NIV</td><td>I write these things to you who believe in the name of the Son of God so that you may know that you have eternal life.</td></tr><tr><td class=\"t-label\">KJV</td><td>These things have I written unto you that believe on the name of the Son of God; that ye may know that ye have eternal life, and that ye may believe on the name of the Son of God.</td></tr><tr><td class=\"t-label\">NIV</td><td>This is the confidence we have in approaching God: that if we ask anything according to his will, he hears us.</td></tr><tr><td class=\"t-label\">KJV</td><td>And this is the confidence that we have in him, that, if we ask any thing according to his will, he heareth us:</td></tr><tr><td class=\"t-label\">NIV</td><td>We know that we are children of God, and that the whole world is under the control of the evil one.</td></tr><tr><td class=\"t-label\">KJV</td><td>And we know that we are of God, and the whole world lieth in wickedness.</td></tr><tr><td class=\"t-label\">NIV</td><td>We know also that the Son of God has come and has given us understanding, so that we may know him who is true. And we are in him who is true by being in his Son Jesus Christ. He is the true God and eternal life.</td></tr><tr><td class=\"t-label\">KJV</td><td>And we know that the Son of God is come, and hath given us an understanding, that we may know him that is true, and we are in him that is true, even in his Son Jesus Christ. This is the true God, and eternal life.</td></tr>"
   },
   "vhl_groups": [
     {
