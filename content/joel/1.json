@@ -340,22 +340,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 1:4",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The four locust terms (gazam, arbeh, yeleq, hasil) may refer to four species, four stages of locust development (egg, larva, nymph, adult), or may be …",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Day of Desolation within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Was Joel's locust plague (1:4) literal, symbolic, or a mixed reference?",
+        "positions": [
+          {
+            "name": "Literal locust disaster",
+            "proponents": "Stuart (WBC), Allen (NICOT)",
+            "argument": "Ancient Near Eastern agriculture was routinely devastated by locust swarms; Joel's four-wave description (chewing, swarming, hopping, destroying) matches the life cycle of Schistocerca gregaria. The detailed agricultural damage — wine, figs, pomegranates, palms, apples — points to a real historical disaster. Joel's prophecy begins with observable catastrophe and builds theological meaning from it."
+          },
+          {
+            "name": "Symbolic of invading armies",
+            "proponents": "Patristic tradition; Garrett (NAC)",
+            "argument": "The four locust types were read symbolically in early Christian exegesis as successive foreign invaders (Babylon, Persia, Greece, Rome — in the Christian reading; or Assyria, Babylon, Persia, Greece in others). Joel 2's shift to explicit military imagery ('an army... they run like warriors') supports treating the locust-plague as apocalyptic symbol."
+          },
+          {
+            "name": "Literal starting-point developed symbolically",
+            "proponents": "Crenshaw (AB), Barker-Bailey (NAC)",
+            "argument": "Joel begins with actual locust disaster (ch.1) and progressively develops it into 'day of the LORD' imagery (ch.2) until the two are narratively fused. The locusts are both literal and proto-symbolic — actual historical affliction that becomes the lens for interpreting future-judgment-of-nations. Prophetic realism and apocalyptic symbolism coexist."
+          }
+        ]
+      }
     ],
     "thread": [
       {
