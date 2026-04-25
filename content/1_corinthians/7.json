@@ -587,38 +587,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 7:26",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase tēn enestōsan anankēn (‘the present crisis’ or ‘the impending distress’) is debated: does enestōsan mean ‘present’ (already here) or ‘impen…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Marriage, Singleness, and the Present Crisis within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 7:36",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The identity of the ‘man’ (tis) and his ‘virgin’ (parthenos) is the most debated interpretive question in the chapter. The NIV translates as ‘the virg…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Marriage, Singleness, and the Present Crisis within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "1 Cor 7's marriage / celibacy / divorce instruction: timeless principle or context-specific advice for impending-crisis?",
+        "positions": [
+          {
+            "name": "Context-specific 'present distress' advice",
+            "proponents": "Fee, Garland",
+            "argument": "v.26 explicitly grounds Paul's advice in 'the present distress' (eschatological-imminent crisis) — likely persecution, social upheaval, or eschatological-tension. Paul's celibacy-preference is pragmatic counsel for crisis-conditions, not timeless devaluation of marriage. The chapter must be read as context-bound."
+          },
+          {
+            "name": "Timeless principles with situational application",
+            "proponents": "Schreiner, MacArthur",
+            "argument": "Paul articulates lasting Christian-marriage principles (mutual-conjugal-rights, divorce-prohibitions, mixed-marriage guidance) that transcend the specific Corinthian context. The 'present distress' affects emphasis but not substance. Paul's instructions remain theologically-binding across Christian history."
+          },
+          {
+            "name": "Layered: timeless principles within context-specific advice",
+            "proponents": "Thiselton, Witherington",
+            "argument": "The chapter combines genuine timeless-principles (Christian marriage-ethics) with context-specific applications (celibacy-preference for the imminent crisis). Reading at one register without the other distorts: pure-timelessness misreads the explicit context-markers; pure-contextualism dismisses durable Christian-ethical content."
+          }
+        ]
+      }
     ],
     "thread": [
       {
