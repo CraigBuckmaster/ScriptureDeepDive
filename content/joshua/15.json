@@ -594,7 +594,46 @@
           "text": "Modern scholarship has focused on historical and archaeological verification of the geographical and demographic details."
         }
       ]
-    }
+    },
+    "hebtext": [
+      {
+        "word": "גְּבוּל",
+        "tlit": "gevul",
+        "gloss": "boundary",
+        "note": "Joshua 15's most-frequent word, used 50+ times. The boundary-language operates on dual register: physical-geographical demarcation + covenantal-allotment from Yahweh. The book's careful boundary-tracing reflects ANE land-grant documentation traditions; Yahweh as suzerain grants specific portions to vassal-tribes."
+      },
+      {
+        "word": "נַחֲלָה",
+        "tlit": "naḥalah",
+        "gloss": "inheritance",
+        "note": "The covenantal-inheritance term distinguishes covenantal-grant from mere geographic-occupation. Each tribe's naḥalah is gift from Yahweh, not earned through conquest-merit. The term carries forward to NT theology of believers' eschatological inheritance (1 Pet 1:4 — imperishable, undefiled, unfading inheritance kept in heaven)."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Josh 15:13-14",
+        "target": "Num 13:22-23, 33; Judg 1:10-15",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Caleb's gift of Hebron + dispossession of Anakim brothers fulfills the wilderness-promise of Num 14:24 ('but my servant Caleb will inherit the land he set foot on'). The Anakim defeat reverses the spies' fearful report. Judges 1 retells the same scene with additional Othniel-Achsah marriage detail."
+      },
+      {
+        "anchor": "Josh 15:63",
+        "target": "Judg 1:21; 2 Sam 5:6-9",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The Jebusites, the inhabitants of Jerusalem, the Judahites could not drive them out' acknowledges incomplete-conquest. Jerusalem remains Jebusite until David's capture (2 Sam 5:6-9). The verse's honest acknowledgment of conquest-incompleteness is preserved in canon and explains Jerusalem's later prominence as David's neutral-ground capital."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>The allotment for the tribe of Judah, according to its clans, extended down to the territory of Edom, to the Desert of Zin in the extreme south.</td></tr><tr><td class=\"t-label\">KJV</td><td>This then was the lot of the tribe of the children of Judah by their families; even to the border of Edom the wilderness of Zin southward was the uttermost part of the south coast.</td></tr><tr><td class=\"t-label\">NIV</td><td>In accordance with the Lord’s command to him, Joshua gave to Caleb son of Jephunneh a portion in Judah—Kiriath Arba, that is, Hebron. (Arba was the forefather of Anak.)</td></tr><tr><td class=\"t-label\">KJV</td><td>And unto Caleb the son of Jephunneh he gave a part among the children of Judah, according to the commandment of the LORD to Joshua, even the city of Arba the father of Anak, which city is Hebron.</td></tr><tr><td class=\"t-label\">NIV</td><td>From Hebron Caleb drove out the three Anakites—Sheshai, Ahiman and Talmai, the sons of Anak.</td></tr><tr><td class=\"t-label\">KJV</td><td>And Caleb drove thence the three sons of Anak, Sheshai, and Ahiman, and Talmai, the children of Anak.</td></tr><tr><td class=\"t-label\">NIV</td><td>And Caleb said, “I will give my daughter Aksah in marriage to the man who attacks and captures Kiriath Sepher.”</td></tr><tr><td class=\"t-label\">KJV</td><td>And Caleb said, He that smiteth Kirjathsepher, and taketh it, to him will I give Achsah my daughter to wife.</td></tr><tr><td class=\"t-label\">NIV</td><td>She replied, “Do me a special favor. Since you have given me land in the Negev, give me also springs of water.” So Caleb gave her the upper and lower springs.</td></tr><tr><td class=\"t-label\">KJV</td><td>Who answered, Give me a blessing; for thou hast given me a south land; give me also springs of water. And he gave her the upper springs, and the nether springs.</td></tr><tr><td class=\"t-label\">NIV</td><td>Judah could not dislodge the Jebusites, who were living in Jerusalem; to this day the Jebusites live there with the people of Judah.</td></tr><tr><td class=\"t-label\">KJV</td><td>As for the Jebusites the inhabitants of Jerusalem, the children of Judah could not drive them out: but the Jebusites dwell with the children of Judah at Jerusalem unto this day.</td></tr>",
+    "tx": [
+      {
+        "ref": "15:8-9",
+        "title": "Boundary-description geographical specificity",
+        "content": "MT preserves detailed Judah-Benjamin border using local landmarks (Valley of Hinnom, Nephtoah, etc.). LXX has minor variations in some place-names but preserves the sequence. The boundaries are archaeologically traceable.",
+        "note": "Hebrew boundary-descriptions in Josh 15 are among the OT's most archaeologically-verifiable texts. Modern atlases reconstruct the borders from these verses with high confidence. The text's preservation of place-name detail across MT-LXX traditions reflects its administrative-document origin."
+      }
+    ]
   },
   "vhl_groups": [
     {
