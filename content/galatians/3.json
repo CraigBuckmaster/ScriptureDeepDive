@@ -610,38 +610,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 3:2",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase ex akoēs pisteōs is debated. The NET translators favour ‘by hearing with faith,’ emphasising the human response of believing in the proclai…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Law, the Promise, and Faith within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 3:13",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The verb exagorazō connotes the slave market: Christ purchased believers out of the curse’s domain. First-century Jewish interpreters also applied the…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Law, the Promise, and Faith within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Galatians 3:16's 'seed' (singular) for Christ: legitimate Hebrew grammatical move or forced midrashic reading?",
+        "positions": [
+          {
+            "name": "Legitimate Pauline exegesis of collective-singular",
+            "proponents": "Moo (BECNT), Silva, traditional Reformed",
+            "argument": "Hebrew zera' and Greek sperma are collective singulars — grammatically singular but semantically plural. Paul's argument is not merely grammatical but typological: the promise made to Abraham's 'seed' terminates on one particular representative seed, Christ, through whom all Abraham's offspring inherit. The exegesis respects the text's grammatical ambiguity while privileging the typological fulfillment."
+          },
+          {
+            "name": "Creative midrashic / rabbinic reading",
+            "proponents": "Dunn (NTL), Longenecker",
+            "argument": "Paul employs rabbinic exegetical techniques common in 1st-century Judaism — finding significance in grammatical particulars (singular vs plural) that the original text did not necessarily intend. The argument works rhetorically and theologically but would not convince a modern grammarian of the OT text. This is creative Christological application, not literal-historical exegesis."
+          },
+          {
+            "name": "Canonical-Christological reading legitimated by Spirit",
+            "proponents": "Hays, Wright",
+            "argument": "Paul reads Abraham's promise backwards from Christ — the Christ-event reveals what the promise always meant. This is neither forced nor bare midrash but Spirit-led canonical interpretation. The Old Testament's own hints of messianic individualisation of 'seed' (Gen 22:18; 2 Sam 7:12) create legitimate canonical space for Paul's christological reading."
+          }
+        ]
+      }
     ],
     "thread": [
       {
