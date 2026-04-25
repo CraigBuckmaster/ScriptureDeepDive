@@ -3,7 +3,7 @@
  * linking to related Explore features for the current chapter.
  *
  * Replaces ContinueExploringFooter with content_images support.
- * Hidden when focusMode is active or no related content exists.
+ * Hidden in Read mode or when no related content exists.
  *
  * Part of Epic #1130.
  */

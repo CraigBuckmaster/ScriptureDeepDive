@@ -112,7 +112,7 @@ jest.mock('@/stores', () => ({
       setTranslation: jest.fn(),
       gettingStartedDone: new Set(),
     }),
-    { getState: () => ({ markGettingStartedDone: jest.fn(), focusMode: false, gettingStartedDone: new Set() }) },
+    { getState: () => ({ markGettingStartedDone: jest.fn(), chapterMode: 'study', gettingStartedDone: new Set() }) },
   ),
   useReaderStore: (sel: any) => sel({
     activePanel: null,

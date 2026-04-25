@@ -53,8 +53,8 @@ function SettingsScreen() {
   const setRedLetterEnabled = useSettingsStore((s) => s.setRedLetterEnabled);
   const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
   const setStudyCoachEnabled = useSettingsStore((s) => s.setStudyCoachEnabled);
-  const focusMode = useSettingsStore((s) => s.focusMode);
-  const toggleFocusMode = useSettingsStore((s) => s.toggleFocusMode);
+  const chapterMode = useSettingsStore((s) => s.chapterMode);
+  const setChapterMode = useSettingsStore((s) => s.setChapterMode);
   const theme = useSettingsStore((s) => s.theme);
   const setTheme = useSettingsStore((s) => s.setTheme);
   const amicusEnabled = useSettingsStore((s) => s.amicusEnabled);
@@ -98,8 +98,8 @@ function SettingsScreen() {
           setRedLetterEnabled={setRedLetterEnabled}
           studyCoachEnabled={studyCoachEnabled}
           setStudyCoachEnabled={setStudyCoachEnabled}
-          focusMode={focusMode}
-          toggleFocusMode={toggleFocusMode}
+          chapterMode={chapterMode}
+          setChapterMode={setChapterMode}
         />
 
         <VoicePicker base={base} />

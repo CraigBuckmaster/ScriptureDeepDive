@@ -22,6 +22,10 @@ type ThemePreference = 'dark' | 'sepia' | 'light' | 'system';
 
 const VALID_THEMES: ThemePreference[] = ['dark', 'sepia', 'light', 'system'];
 
+export type ChapterMode = 'read' | 'study' | 'deep';
+
+const VALID_CHAPTER_MODES: ChapterMode[] = ['read', 'study', 'deep'];
+
 interface SettingsState {
   translation: string;
   readingScale: number;
@@ -32,7 +36,7 @@ interface SettingsState {
   ttsVoice: string;
   comparisonTranslation: string | null;
   redLetterEnabled: boolean;
-  focusMode: boolean;
+  chapterMode: ChapterMode;
   amicusEnabled: boolean;
   gettingStartedDone: Set<string>;
   isHydrated: boolean;
@@ -47,7 +51,7 @@ interface SettingsState {
   setComparisonTranslation: (t: string | null) => void;
   setRedLetterEnabled: (v: boolean) => void;
   setAmicusEnabled: (v: boolean) => void;
-  toggleFocusMode: () => void;
+  setChapterMode: (mode: ChapterMode) => void;
   markGettingStartedDone: (key: string) => void;
   hydrate: () => Promise<void>;
 }
@@ -62,7 +66,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   ttsVoice: '',
   comparisonTranslation: null,
   redLetterEnabled: true,
-  focusMode: false,
+  chapterMode: 'study',
   amicusEnabled: true,
   gettingStartedDone: new Set<string>(),
   isHydrated: false,
@@ -113,10 +117,9 @@ export const useSettingsStore = create<SettingsState>((set) => ({
     setPreference('amicusEnabled', v ? '1' : '0').catch((err) => { logger.warn('settingsStore', 'Failed to persist amicusEnabled', err); });
   },
 
-  toggleFocusMode: () => {
-    const next = !useSettingsStore.getState().focusMode;
-    set({ focusMode: next });
-    setPreference('focusMode', next ? '1' : '0').catch((err) => { logger.warn('settingsStore', 'Failed to persist focusMode', err); });
+  setChapterMode: (mode) => {
+    set({ chapterMode: mode });
+    setPreference('chapter_mode', mode).catch((err) => { logger.warn('settingsStore', 'Failed to persist chapter_mode', err); });
   },
 
   markGettingStartedDone: (key: string) => {
@@ -145,7 +148,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
       const voice = await getPreference('ttsVoice');
       const comp = await getPreference('comparisonTranslation');
       const rl = await getPreference('redLetterEnabled');
-      const fm = await getPreference('focusMode');
+      const cm = await getPreference('chapter_mode');
       const amicus = await getPreference('amicusEnabled');
       const gs = await getPreference('getting_started');
 
@@ -191,7 +194,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
         ttsVoice: voice ?? '',
         comparisonTranslation: (comp && TRANSLATION_MAP.has(comp)) ? comp : null,
         redLetterEnabled: rl !== '0',
-        focusMode: fm === '1',
+        chapterMode: (VALID_CHAPTER_MODES.includes(cm as ChapterMode) ? cm : 'study') as ChapterMode,
         amicusEnabled: amicus !== '0',
         gettingStartedDone: gsDone,
         isHydrated: true,

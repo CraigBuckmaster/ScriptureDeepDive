@@ -1,10 +1,13 @@
 import React from 'react';
-import { Switch } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Switch } from 'react-native';
 import type { BaseColors } from '../../theme/palettes';
 import type { DropdownOption } from '../../components/CompactDropdown';
 import { CompactDropdown } from '../../components/CompactDropdown';
 import { ThemePicker } from '../../components/ThemePicker';
 import { ReadingScaleEditor } from '../../components/settings/ReadingScaleEditor';
+import { spacing, radii, fontFamily } from '../../theme';
+import type { ChapterMode } from '../../stores/settingsStore';
+import { MODE_META } from '../../components/onboarding/ModeChoiceCard';
 import { SectionLabel } from './SectionLabel';
 import { SettingsRow } from './SettingsRow';
 
@@ -23,8 +26,8 @@ interface PreferencesSectionProps {
   setRedLetterEnabled: (v: boolean) => void;
   studyCoachEnabled: boolean;
   setStudyCoachEnabled: (v: boolean) => void;
-  focusMode: boolean;
-  toggleFocusMode: () => void;
+  chapterMode: ChapterMode;
+  setChapterMode: (mode: ChapterMode) => void;
 }
 
 export function PreferencesSection({
@@ -40,8 +43,8 @@ export function PreferencesSection({
   setRedLetterEnabled,
   studyCoachEnabled,
   setStudyCoachEnabled,
-  focusMode,
-  toggleFocusMode,
+  chapterMode,
+  setChapterMode,
 }: PreferencesSectionProps) {
   return (
     <>
@@ -92,15 +95,66 @@ export function PreferencesSection({
         />
       </SettingsRow>
 
-      {/* Focus / Reading Mode */}
-      <SettingsRow label="Focus Mode" base={base}>
-        <Switch
-          value={focusMode}
-          onValueChange={toggleFocusMode}
-          trackColor={{ false: base.bgSurface, true: base.gold + '60' }}
-          thumbColor={focusMode ? base.gold : base.textMuted}
-        />
-      </SettingsRow>
+      {/* Chapter Reading Mode — 3-segment control */}
+      <View style={[styles.modeBlock, { borderBottomColor: base.border + '40' }]}>
+        <Text style={[styles.modeLabel, { color: base.text }]}>Chapter Reading Mode</Text>
+        <View style={[styles.segments, { borderColor: base.border, backgroundColor: base.bgSurface }]}>
+          {MODE_META.map((meta) => {
+            const active = meta.mode === chapterMode;
+            return (
+              <TouchableOpacity
+                key={meta.mode}
+                onPress={() => setChapterMode(meta.mode)}
+                accessibilityRole="radio"
+                accessibilityState={{ selected: active }}
+                accessibilityLabel={meta.label}
+                style={[
+                  styles.segment,
+                  active && { backgroundColor: base.gold + '25' },
+                ]}
+              >
+                <Text
+                  style={[
+                    styles.segmentText,
+                    { color: active ? base.gold : base.textMuted },
+                  ]}
+                  numberOfLines={1}
+                >
+                  {meta.label}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+      </View>
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  modeBlock: {
+    paddingVertical: spacing.md,
+    borderBottomWidth: 1,
+  },
+  modeLabel: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 14,
+    marginBottom: spacing.sm,
+  },
+  segments: {
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderRadius: radii.md,
+    overflow: 'hidden',
+  },
+  segment: {
+    flex: 1,
+    paddingVertical: spacing.sm,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  segmentText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 13,
+  },
+});

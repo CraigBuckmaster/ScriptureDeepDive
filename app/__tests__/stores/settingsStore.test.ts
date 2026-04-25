@@ -101,13 +101,13 @@ describe('settingsStore', () => {
       expect(useSettingsStore.getState().isHydrated).toBe(true);
     });
 
-    it('hydrates ttsVoice, comparisonTranslation, redLetterEnabled, focusMode', async () => {
+    it('hydrates ttsVoice, comparisonTranslation, redLetterEnabled, chapterMode', async () => {
       getPreference.mockImplementation((key: string) => {
         const map: Record<string, string> = {
           ttsVoice: 'en-US-voice-1',
           comparisonTranslation: 'asv',
           redLetterEnabled: '0',
-          focusMode: '1',
+          chapter_mode: 'deep',
         };
         return Promise.resolve(map[key] ?? null);
       });
@@ -117,7 +117,7 @@ describe('settingsStore', () => {
       expect(state.ttsVoice).toBe('en-US-voice-1');
       expect(state.comparisonTranslation).toBe('asv');
       expect(state.redLetterEnabled).toBe(false);
-      expect(state.focusMode).toBe(true);
+      expect(state.chapterMode).toBe('deep');
     });
 
     it('hydrates gettingStartedDone from JSON', async () => {
@@ -196,16 +196,60 @@ describe('settingsStore', () => {
     });
   });
 
-  describe('toggleFocusMode', () => {
-    it('toggles focusMode and persists', () => {
-      useSettingsStore.setState({ focusMode: false });
-      useSettingsStore.getState().toggleFocusMode();
-      expect(useSettingsStore.getState().focusMode).toBe(true);
-      expect(setPreference).toHaveBeenCalledWith('focusMode', '1');
+  describe('chapterMode', () => {
+    it('starts as "study" before hydrate', () => {
+      useSettingsStore.setState({ chapterMode: 'study' });
+      expect(useSettingsStore.getState().chapterMode).toBe('study');
+    });
 
-      useSettingsStore.getState().toggleFocusMode();
-      expect(useSettingsStore.getState().focusMode).toBe(false);
-      expect(setPreference).toHaveBeenCalledWith('focusMode', '0');
+    it('setChapterMode("read") updates state and persists chapter_mode', () => {
+      useSettingsStore.getState().setChapterMode('read');
+      expect(useSettingsStore.getState().chapterMode).toBe('read');
+      expect(setPreference).toHaveBeenCalledWith('chapter_mode', 'read');
+    });
+
+    it('setChapterMode("deep") updates state and persists chapter_mode', () => {
+      useSettingsStore.getState().setChapterMode('deep');
+      expect(useSettingsStore.getState().chapterMode).toBe('deep');
+      expect(setPreference).toHaveBeenCalledWith('chapter_mode', 'deep');
+    });
+
+    it('hydrate reads chapter_mode="read"', async () => {
+      getPreference.mockImplementation((key: string) =>
+        Promise.resolve(key === 'chapter_mode' ? 'read' : null),
+      );
+      await useSettingsStore.getState().hydrate();
+      expect(useSettingsStore.getState().chapterMode).toBe('read');
+    });
+
+    it('hydrate reads chapter_mode="study"', async () => {
+      getPreference.mockImplementation((key: string) =>
+        Promise.resolve(key === 'chapter_mode' ? 'study' : null),
+      );
+      await useSettingsStore.getState().hydrate();
+      expect(useSettingsStore.getState().chapterMode).toBe('study');
+    });
+
+    it('hydrate reads chapter_mode="deep"', async () => {
+      getPreference.mockImplementation((key: string) =>
+        Promise.resolve(key === 'chapter_mode' ? 'deep' : null),
+      );
+      await useSettingsStore.getState().hydrate();
+      expect(useSettingsStore.getState().chapterMode).toBe('deep');
+    });
+
+    it('hydrate falls back to "study" when chapter_mode is absent', async () => {
+      getPreference.mockResolvedValue(null);
+      await useSettingsStore.getState().hydrate();
+      expect(useSettingsStore.getState().chapterMode).toBe('study');
+    });
+
+    it('hydrate falls back to "study" when chapter_mode is invalid', async () => {
+      getPreference.mockImplementation((key: string) =>
+        Promise.resolve(key === 'chapter_mode' ? 'garbage' : null),
+      );
+      await useSettingsStore.getState().hydrate();
+      expect(useSettingsStore.getState().chapterMode).toBe('study');
     });
   });
 

@@ -8,6 +8,7 @@
 import React, { createContext, useContext, type ReactNode } from 'react';
 import type { Verse, VHLGroup, CoachingTip, ChapterCoaching } from '../types';
 import type { OpenPanelParam } from '../navigation/types';
+import type { ChapterMode } from '../stores/settingsStore';
 
 // ── Verse rendering state ──
 interface VerseState {
@@ -61,7 +62,7 @@ interface CoachingState {
 
 // ── Display state ──
 interface DisplayState {
-  focusMode: boolean;
+  tier: ChapterMode;
 }
 
 export interface ChapterReaderContextValue {

@@ -52,6 +52,10 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
 }: Props) {
   const { base } = useTheme();
   const { verse, panel, callbacks, layout, coaching, display } = useChapterReader();
+  // PR 1 parity bridge: `isFocus` mirrors the prior boolean focusMode
+  // behavior. PR 2 replaces these checks with helper calls from
+  // utils/chapterMode.ts that distinguish 'study' vs 'deep'.
+  const isFocus = display.tier === 'read';
   const relatedItems = useRelatedContent(chapterMeta, chapterPanels);
   const { chipData } = useMapChipData(chapterMeta?.map_story_link_id);
   const navigation = useNavigation();
@@ -102,8 +106,8 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
             onVerseLongPress={callbacks.onVerseLongPress}
             onVerseNumPress={callbacks.onInterlinearPress}
             activeVerseNum={verse.activeVerseNum}
-            depthExplored={display.focusMode ? undefined : panel.depthMap.get(sec.id)?.explored}
-            depthTotal={display.focusMode ? undefined : panel.depthMap.get(sec.id)?.total}
+            depthExplored={isFocus ? undefined : panel.depthMap.get(sec.id)?.explored}
+            depthTotal={isFocus ? undefined : panel.depthMap.get(sec.id)?.total}
             onDepthRecord={callbacks.recordOpen}
             comparisonVerses={verse.comparisonVerses}
             comparisonLabel={verse.comparisonLabel}
@@ -113,7 +117,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
             onVerseLayout={(verseNum, y, sectionId) => {
               layout.onVerseLayout(verseNum, y, sectionId);
             }}
-            renderButtonRow={display.focusMode ? undefined : (panels, sectionId) => (
+            renderButtonRow={isFocus ? undefined : (panels, sectionId) => (
               <View onLayout={(e) => {
                 layout.onBtnRowLayout(sectionId, 0, e.nativeEvent.layout.y);
               }}>
@@ -129,7 +133,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
                 />
               </View>
             )}
-            renderPanel={display.focusMode ? undefined : (p) => (
+            renderPanel={isFocus ? undefined : (p) => (
               <PanelContainer
                 panelType={p.panel_type}
                 contentJson={p.content_json}
@@ -148,7 +152,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
       );
 
       // Inject coaching card after this section if applicable (hidden in focus mode)
-      if (!display.focusMode && coaching.studyCoachEnabled && coaching.coachingTips.length > 0) {
+      if (!isFocus && coaching.studyCoachEnabled && coaching.coachingTips.length > 0) {
         const tip = coaching.coachingTips.find((t) => t.after_section === sec.section_num);
         if (tip && !coaching.dismissedTips.has(tip.after_section)) {
           elements.push(
@@ -164,14 +168,14 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
 
       return elements;
     });
-  }, [sections, verse, panel, callbacks, layout, coaching, display, handlePanelLongPress]);
+  }, [sections, verse, panel, callbacks, layout, coaching, isFocus, handlePanelLongPress]);
 
   return (
     <>
       {sectionElements}
 
       {/* Chapter-level scholarly block (hidden in focus mode) */}
-      {!display.focusMode && (
+      {!isFocus && (
         <ScholarlyBlock
           chapterPanels={chapterPanels}
           activePanel={panel.activeChapterPanelType}
@@ -188,14 +192,14 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
       )}
 
       {/* Scholar disclaimer */}
-      {!display.focusMode && (
+      {!isFocus && (
         <Text style={[styles.scholarDisclaimer, { color: base.textMuted }]}>
           Scholar commentary panels present paraphrased summaries of positions found in published works and are not direct quotations. For exact wording, consult the original sources cited.
         </Text>
       )}
 
       {/* Chapter-level coaching (study guide) */}
-      {!display.focusMode && coaching.studyCoachEnabled && coaching.chapterCoaching ? (
+      {!isFocus && coaching.studyCoachEnabled && coaching.chapterCoaching ? (
         <ChapterCoachingCard coaching={coaching.chapterCoaching} />
       ) : null}
 
@@ -206,7 +210,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
       {prayerPrompt ? <PrayerPromptCard prompt={prayerPrompt} /> : null}
 
       {/* Inline map chip for chapters with a map_story_link (#1322). */}
-      {!display.focusMode && chipData ? (
+      {!isFocus && chipData ? (
         <MapChip
           story={chipData.story}
           places={chipData.places}
@@ -221,7 +225,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
       ) : null}
 
       {/* Related Content carousel (hidden in focus mode) */}
-      {!display.focusMode && <RelatedContentCarousel items={relatedItems} />}
+      {!isFocus && <RelatedContentCarousel items={relatedItems} />}
 
       {/* Panel info tooltip (long-press) */}
       <PanelInfoSheet
