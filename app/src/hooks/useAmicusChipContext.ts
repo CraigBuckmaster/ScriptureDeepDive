@@ -2,26 +2,27 @@
  * hooks/useAmicusChipContext.ts — resolve the current Amicus chip
  * context from React Navigation state.
  *
- * Uses `useNavigationState` internally, but wraps it in try/catch so
- * components can call this hook from anywhere in the tree — including
- * during the render pass before NavigationContainer has populated its
- * initial state. Without that guard, `useNavigationState` throws
- * "Couldn't get the navigation state. Is your component inside a
- * navigator?" on first mount, which ErrorBoundary catches and logs as
- * a spurious error. See:
- *   - AmicusFab.tsx (same guard pattern around `useNavigation()`)
- *   - the ErrorBoundary trace that motivated this hook
+ * Defense in depth against "Couldn't get the navigation state. Is your
+ * component inside a navigator?":
  *
- * The try/catch technically violates the Rules of Hooks (a hook call
- * under a conditional-catch branch). In practice React runs the hook
- * body every render because the internal `useContext` call at the top
- * of `useNavigationState` runs before the throw, so hook order is
- * stable. The rule exists to prevent a subtler class of bug than this
- * one; the eslint-disable is intentional and documented.
+ *   1. The selector passed to `useNavigationState` is itself wrapped in
+ *      try/catch. The selector runs on every nav state change, including
+ *      transient inconsistent states during Fabric layout commits. If
+ *      the selector throws, the throw escapes into the layout-effect
+ *      phase and ErrorBoundary catches it (which silently kills the
+ *      FAB until app relaunch — see the Sentry trace for release
+ *      1.0.7+1).
  *
- * Pure-logic half of the resolution lives in `utils/routeContext.ts`
- * (`findDeepestRoute` + `routeToChipContext`) so it can be unit tested
- * without a navigation container.
+ *   2. The outer try/catch around the hook call protects the *initial*
+ *      synchronous call when no NavigationContainer ancestor exists
+ *      yet (during pre-mount).
+ *
+ *   3. The eslint-disable for rules-of-hooks remains intentional — the
+ *      hook order is stable because `useNavigationState`'s `useContext`
+ *      runs before any throw.
+ *
+ * Pure-logic half lives in `utils/routeContext.ts` and is unit testable
+ * without a NavigationContainer.
  */
 
 import { useMemo } from 'react';
@@ -35,11 +36,28 @@ function isNavigationStateUnavailable(error: unknown): boolean {
   return /Couldn't get the navigation state/i.test(error.message);
 }
 
+/**
+ * Selector wrapper. `useNavigationState` calls this on every nav state
+ * change, including during layout-commit transients. If we return the
+ * raw state from a partially-mounted container, downstream consumers
+ * may also throw. So we defensively return `null` if anything is off.
+ *
+ * Returning `null` is treated equivalently to "no nav state yet" by
+ * `findDeepestRoute`/`routeToChipContext`.
+ */
+function safeSelector(state: unknown): unknown | null {
+  try {
+    return state ?? null;
+  } catch {
+    return null;
+  }
+}
+
 export function useAmicusChipContext(): ChipContext {
   let state: unknown = undefined;
   try {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    state = useNavigationState((s) => s);
+    state = useNavigationState(safeSelector);
   } catch (e) {
     // Pre-mount or outside NavigationContainer. Degrade to {kind: 'none'}
     // rather than crash; Amicus simply won't have route-scoped chips

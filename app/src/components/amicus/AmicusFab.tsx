@@ -139,19 +139,21 @@ export default function AmicusFab(): React.ReactElement | null {
         )}
       </Pressable>
 
-      <AmicusPeekSheet
-        isOpen={peekOpen}
-        onClose={() => setPeekOpen(false)}
-        context={chipContext}
-        onContinueInTab={handleContinueInTab}
-        handoffInProgress={handoffInProgress}
-        existingStudyThreadLabel={
-          existingStudyThreadId && chapterRef
-            ? `Open your ${formatAmicusContextLabel(chapterRef) ?? 'current chapter'} study thread`
-            : null
-        }
-        onOpenExistingThread={existingStudyThreadId ? handleOpenExistingThread : undefined}
-      />
+      {peekOpen && (
+        <AmicusPeekSheet
+          isOpen={peekOpen}
+          onClose={() => setPeekOpen(false)}
+          context={chipContext}
+          onContinueInTab={handleContinueInTab}
+          handoffInProgress={handoffInProgress}
+          existingStudyThreadLabel={
+            existingStudyThreadId && chapterRef
+              ? `Open your ${formatAmicusContextLabel(chapterRef) ?? 'current chapter'} study thread`
+              : null
+          }
+          onOpenExistingThread={existingStudyThreadId ? handleOpenExistingThread : undefined}
+        />
+      )}
     </View>
   );
 }
