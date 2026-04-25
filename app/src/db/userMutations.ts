@@ -613,7 +613,7 @@ export async function resetToNewUser(): Promise<void> {
   await db.runAsync('DELETE FROM study_session_events');
   await db.runAsync('DELETE FROM study_sessions');
   await db.runAsync(
-    "DELETE FROM user_preferences WHERE key IN ('onboarding_complete', 'focusMode', 'getting_started', 'startHereDismissed', 'lastStreakDate', 'currentStreak', 'longestStreak', 'studyMaturityOverride', 'panelOpenSet', 'lastSeenLevel')",
+    "DELETE FROM user_preferences WHERE key IN ('onboarding_complete', 'chapter_mode', 'getting_started', 'startHereDismissed', 'lastStreakDate', 'currentStreak', 'longestStreak', 'studyMaturityOverride', 'panelOpenSet', 'lastSeenLevel')",
   );
   await db.runAsync('DELETE FROM plan_progress');
   await db.runAsync(

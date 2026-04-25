@@ -53,6 +53,7 @@ import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 import { ChapterVerseList } from '../components/ChapterVerseList';
 import { ChapterReaderProvider } from '../components/ChapterReaderContext';
 import { ChapterPanelSheet } from '../components/ChapterPanelSheet';
+import { ChapterModePicker } from '../components/ChapterModePicker';
 import { useChapterTTS } from '../hooks/chapter/useChapterTTS';
 import { useChapterHighlights } from '../hooks/chapter/useChapterHighlights';
 import { useChapterCoaching } from '../hooks/chapter/useChapterCoaching';
@@ -102,8 +103,11 @@ function ChapterScreen() {
   const { checkAndPrompt } = useStoreReview();
   const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
   const vhlEnabled = useSettingsStore((s) => s.vhlEnabled);
-  const focusMode = useSettingsStore((s) => s.focusMode);
-  const toggleFocusMode = useSettingsStore((s) => s.toggleFocusMode);
+  const chapterMode = useSettingsStore((s) => s.chapterMode);
+  // PR 1 parity bridge: `isFocus` mirrors the prior boolean focusMode
+  // behavior. PR 2 replaces these checks with helper calls from
+  // utils/chapterMode.ts that distinguish 'study' vs 'deep'.
+  const isFocus = chapterMode === 'read';
   const qnavOpen = useReaderStore((s) => s.qnavOpen);
   const toggleQnav = useReaderStore((s) => s.toggleQnav);
   const notesOverlayOpen = useReaderStore((s) => s.notesOverlayOpen);
@@ -115,6 +119,7 @@ function ChapterScreen() {
   const [activeLens, setActiveLens] = useState<string | null>(null);
   const [bookData, setBookData] = useState<Book | null>(null);
   const [showBreadcrumb, setShowBreadcrumb] = useState(!!openPanel);
+  const [modePickerOpen, setModePickerOpen] = useState(false);
 
   const {
     chapter,
@@ -233,8 +238,8 @@ function ChapterScreen() {
 
   // Clear active panels when focus mode is enabled
   useEffect(() => {
-    if (focusMode) panels.clearActivePanel();
-  }, [focusMode]); // eslint-disable-line react-hooks/exhaustive-deps
+    if (isFocus) panels.clearActivePanel();
+  }, [isFocus]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Reset breadcrumb + lens on chapter change
   useEffect(() => {
@@ -259,8 +264,8 @@ function ChapterScreen() {
 
   // VHL highlights — controlled by Settings toggle; disabled in focus mode
   const activeVhlGroups = useMemo(
-    () => (vhlEnabled && !focusMode ? vhlGroups.map((g) => g.group_name) : []),
-    [vhlGroups, vhlEnabled, focusMode],
+    () => (vhlEnabled && !isFocus ? vhlGroups.map((g) => g.group_name) : []),
+    [vhlGroups, vhlEnabled, isFocus],
   );
 
   // Callbacks
@@ -337,8 +342,8 @@ function ChapterScreen() {
         comparisonTranslation={comparisonTranslation}
         onCompareStart={setComparisonTranslation}
         onCompareEnd={() => setComparisonTranslation(null)}
-        focusMode={focusMode}
-        onFocusToggle={toggleFocusMode}
+        chapterMode={chapterMode}
+        onModePress={() => setModePickerOpen(true)}
       />
 
       {showBreadcrumb && openPanel && (
@@ -354,7 +359,7 @@ function ChapterScreen() {
         </TouchableOpacity>
       )}
 
-      {!focusMode && availableLenses.length > 0 && (
+      {!isFocus && availableLenses.length > 0 && (
         <LensToggleBar
           lenses={availableLenses}
           activeLensId={activeLens}
@@ -362,7 +367,7 @@ function ChapterScreen() {
         />
       )}
 
-      {!focusMode && comparisonTranslation && (
+      {!isFocus && comparisonTranslation && (
         <CompareBar
           primaryLabel={TRANSLATION_MAP.get(translation)?.label ?? translation.toUpperCase()}
           comparisonLabel={
@@ -444,7 +449,7 @@ function ChapterScreen() {
           }
         />
 
-        {!focusMode && proofTextGuard ? (
+        {!isFocus && proofTextGuard ? (
           <ContextGuardBanner
             guard={proofTextGuard}
             onReadContext={() =>
@@ -456,7 +461,7 @@ function ChapterScreen() {
           />
         ) : null}
 
-        {!focusMode ? (
+        {!isFocus ? (
           <StudySessionCTA
             estimate={studyEstimate}
             mode={guidedStudyState.mode}
@@ -473,7 +478,7 @@ function ChapterScreen() {
           />
         ) : null}
 
-        {!focusMode && bookData?.genre_label && bookData?.genre_guidance ? (
+        {!isFocus && bookData?.genre_label && bookData?.genre_guidance ? (
           <GenreBanner genreLabel={bookData.genre_label} genreGuidance={bookData.genre_guidance} />
         ) : null}
 
@@ -520,7 +525,7 @@ function ChapterScreen() {
             dismissedTips,
             onDismissTip: handleDismissTip,
           }}
-          display={{ focusMode }}
+          display={{ tier: chapterMode }}
         >
           <ChapterVerseList
             sections={sections}
@@ -613,6 +618,12 @@ function ChapterScreen() {
         loadHighlights={loadHighlights}
         upgradeRequest={upgradeRequest}
         dismissUpgrade={dismissUpgrade}
+      />
+
+      <ChapterModePicker
+        visible={modePickerOpen}
+        currentMode={chapterMode}
+        onClose={() => setModePickerOpen(false)}
       />
     </View>
   );

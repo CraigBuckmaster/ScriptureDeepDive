@@ -1,12 +1,13 @@
 /**
- * OnboardingScreen — 3-page carousel shown on first launch only.
+ * OnboardingScreen — 4-page carousel shown on first launch only.
  *
  * Page 1: App thesis
  * Page 2: Chapter reading experience (panel buttons demo)
  * Page 3: Explore tools overview
+ * Page 4: Mode choice — required tap before "Get Started"
  *
- * After completing or skipping, marks onboarding done and navigates
- * to Genesis 1 to start the user's reading journey.
+ * After completing or skipping (skip is hidden on the final page), marks
+ * onboarding done and navigates to Genesis 1.
  */
 
 import React, { useState, useRef, useMemo, useCallback } from 'react';
@@ -24,8 +25,16 @@ import { BookOpen, Layers, Map, Clock, Users, Search } from 'lucide-react-native
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { OnboardingDemo } from '../components/OnboardingDemo';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+import { useSettingsStore, type ChapterMode } from '../stores/settingsStore';
+import {
+  ModeChoiceCard,
+  MODE_META,
+  RECOMMENDED_MODE,
+} from '../components/onboarding/ModeChoiceCard';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
+
+const MODE_CHOICE_KEY = 'modeChoice';
 
 interface Props {
   onComplete: () => void;
@@ -77,7 +86,7 @@ const PAGES: PageData[] = [
     key: 'explore',
     title: 'Explore Tools',
     subtitle: 'Tools that connect the dots across Scripture.',
-    body: 'Follow Abraham\u2019s journey on a map. Trace a Hebrew word through every book. See how an Old Testament promise finds its fulfillment. All offline, all free.',
+    body: 'Follow Abraham’s journey on a map. Trace a Hebrew word through every book. See how an Old Testament promise finds its fulfillment. All offline, all free.',
     renderContent: (base) => (
       <View style={styles.toolGrid}>
         <ToolIcon Icon={Users} label="People" base={base} />
@@ -89,13 +98,23 @@ const PAGES: PageData[] = [
       </View>
     ),
   },
+  {
+    key: MODE_CHOICE_KEY,
+    title: 'Choose how you read.',
+    subtitle: 'You can change this any time from the chapter screen.',
+    body: '',
+    renderContent: () => null,
+  },
 ];
 
 function OnboardingScreen({ onComplete }: Props) {
   const { base } = useTheme();
   const [currentPage, setCurrentPage] = useState(0);
+  const [selectedMode, setSelectedMode] = useState<ChapterMode | null>(null);
+  const setChapterMode = useSettingsStore((s) => s.setChapterMode);
   const flatListRef = useRef<FlatList>(null);
   const isLastPage = currentPage === PAGES.length - 1;
+  const ctaDisabled = isLastPage && selectedMode === null;
 
   const onViewableItemsChanged = useCallback(
     ({ viewableItems }: { viewableItems: ViewToken[] }) => {
@@ -108,7 +127,16 @@ function OnboardingScreen({ onComplete }: Props) {
 
   const viewabilityConfig = useMemo(() => ({ viewAreaCoveragePercentThreshold: 50 }), []);
 
+  const handleSelectMode = useCallback(
+    (mode: ChapterMode) => {
+      setSelectedMode(mode);
+      setChapterMode(mode);
+    },
+    [setChapterMode],
+  );
+
   const handleNext = () => {
+    if (ctaDisabled) return;
     if (isLastPage) {
       onComplete();
     } else {
@@ -116,27 +144,53 @@ function OnboardingScreen({ onComplete }: Props) {
     }
   };
 
-  const renderPage = ({ item }: { item: PageData }) => (
-    <View style={[styles.page, { width: SCREEN_WIDTH }]}>
-      {item.renderContent(base)}
-      <Text style={[styles.pageTitle, { color: base.gold }]}>{item.title}</Text>
-      <Text style={[styles.pageSubtitle, { color: base.text }]}>{item.subtitle}</Text>
-      <Text style={[styles.pageBody, { color: base.textDim }]}>{item.body}</Text>
-    </View>
-  );
+  const renderPage = ({ item }: { item: PageData }) => {
+    if (item.key === MODE_CHOICE_KEY) {
+      return (
+        <View style={[styles.page, { width: SCREEN_WIDTH }]}>
+          <Text style={[styles.pageTitle, { color: base.gold }]}>{item.title}</Text>
+          <Text style={[styles.pageSubtitle, { color: base.text }]}>{item.subtitle}</Text>
+          <View style={styles.modeList}>
+            {MODE_META.map((meta) => (
+              <ModeChoiceCard
+                key={meta.mode}
+                mode={meta.mode}
+                selected={selectedMode === meta.mode}
+                recommended={meta.mode === RECOMMENDED_MODE}
+                onPress={() => handleSelectMode(meta.mode)}
+              />
+            ))}
+          </View>
+        </View>
+      );
+    }
+    return (
+      <View style={[styles.page, { width: SCREEN_WIDTH }]}>
+        {item.renderContent(base)}
+        <Text style={[styles.pageTitle, { color: base.gold }]}>{item.title}</Text>
+        <Text style={[styles.pageSubtitle, { color: base.text }]}>{item.subtitle}</Text>
+        <Text style={[styles.pageBody, { color: base.textDim }]}>{item.body}</Text>
+      </View>
+    );
+  };
+
+  const ctaBg = ctaDisabled ? base.bgSurface : base.gold;
+  const ctaColor = ctaDisabled ? base.textMuted : base.bg;
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      {/* Skip button */}
+      {/* Skip button — hidden on the final mode-choice page */}
       <View style={styles.skipRow}>
-        <TouchableOpacity
-          onPress={onComplete}
-          hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
-          accessibilityLabel="Skip onboarding"
-          accessibilityRole="button"
-        >
-          <Text style={[styles.skipText, { color: base.textMuted }]}>Skip</Text>
-        </TouchableOpacity>
+        {!isLastPage ? (
+          <TouchableOpacity
+            onPress={onComplete}
+            hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
+            accessibilityLabel="Skip onboarding"
+            accessibilityRole="button"
+          >
+            <Text style={[styles.skipText, { color: base.textMuted }]}>Skip</Text>
+          </TouchableOpacity>
+        ) : null}
       </View>
 
       {/* Carousel */}
@@ -173,11 +227,13 @@ function OnboardingScreen({ onComplete }: Props) {
 
         <TouchableOpacity
           onPress={handleNext}
-          style={[styles.ctaButton, { backgroundColor: base.gold }]}
+          disabled={ctaDisabled}
+          style={[styles.ctaButton, { backgroundColor: ctaBg }]}
           accessibilityLabel={isLastPage ? 'Get Started' : 'Next'}
           accessibilityRole="button"
+          accessibilityState={{ disabled: ctaDisabled }}
         >
-          <Text style={[styles.ctaText, { color: base.bg }]}>
+          <Text style={[styles.ctaText, { color: ctaColor }]}>
             {isLastPage ? 'Get Started' : 'Next'}
           </Text>
         </TouchableOpacity>
@@ -195,6 +251,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     paddingHorizontal: spacing.md,
     paddingTop: spacing.sm,
+    minHeight: 32,
   },
   skipText: {
     fontFamily: fontFamily.uiMedium,
@@ -276,6 +333,10 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.ui,
     fontSize: 10,
     textAlign: 'center',
+  },
+  modeList: {
+    width: '100%',
+    marginTop: spacing.lg,
   },
   footer: {
     alignItems: 'center',

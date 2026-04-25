@@ -12,10 +12,11 @@
 import React, { useCallback, useState } from 'react';
 import { View, Text, TouchableOpacity, Modal, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ArrowLeft, ChevronLeft, ChevronRight, Info, Volume2, Check, BookOpen, Eye } from 'lucide-react-native';
+import { ArrowLeft, ChevronLeft, ChevronRight, Info, Volume2, Check, Layers } from 'lucide-react-native';
 import { lightImpact, selectionFeedback } from '../utils/haptics';
 import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import { TRANSLATIONS } from '../db/translationRegistry';
+import type { ChapterMode } from '../stores/settingsStore';
 import { CompactDropdown, type DropdownOption } from './CompactDropdown';
 
 const TRANSLATION_OPTIONS: DropdownOption[] = TRANSLATIONS.map((t) => ({
@@ -40,8 +41,8 @@ interface Props {
   comparisonTranslation: string | null;
   onCompareStart: (t: string) => void;
   onCompareEnd: () => void;
-  focusMode?: boolean;
-  onFocusToggle?: () => void;
+  chapterMode?: ChapterMode;
+  onModePress?: () => void;
 }
 
 export function ChapterNavBar({
@@ -49,7 +50,7 @@ export function ChapterNavBar({
   onPrev, onNext, onQnav, onBack, onIntroPress, onTTSPress, ttsActive,
   translation, onTranslationChange,
   comparisonTranslation, onCompareStart, onCompareEnd,
-  focusMode, onFocusToggle,
+  chapterMode, onModePress,
 }: Props) {
   const { base } = useTheme();
   const [comparePicker, setComparePicker] = useState(false);
@@ -148,18 +149,16 @@ export function ChapterNavBar({
           </TouchableOpacity>
         </View>
 
-        {/* Right: Focus + TTS + ⓘ */}
+        {/* Right: Mode picker + TTS + ⓘ */}
         <View style={[styles.sideSection, styles.sideSectionRight]}>
-          {onFocusToggle ? (
+          {onModePress ? (
             <TouchableOpacity
-              onPress={onFocusToggle}
-              accessibilityLabel={focusMode ? 'Exit reading mode' : 'Enter reading mode'}
+              onPress={onModePress}
+              accessibilityLabel={chapterMode ? `Chapter reading mode: ${chapterMode}. Tap to change.` : 'Chapter reading mode'}
               accessibilityRole="button"
               style={styles.actionButton}
             >
-              {focusMode
-                ? <BookOpen size={18} color={base.gold} />
-                : <Eye size={18} color={base.textMuted} />}
+              <Layers size={18} color={base.textMuted} />
             </TouchableOpacity>
           ) : null}
           {onTTSPress ? (
