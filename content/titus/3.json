@@ -371,22 +371,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 3:8",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "This is the fifth and final 'trustworthy saying' in the Pastoral Epistles. Some scholars debate whether it refers forward (to the devotion-to-good-wor…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Saved by Grace, Devoted to Good Works within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Titus 3:5's 'washing of regeneration' (loutron palingenesias): baptismal or metaphorical?",
+        "positions": [
+          {
+            "name": "Sacramental / baptismal interpretation",
+            "proponents": "Patristic tradition (Augustine, Chrysostom); Roman Catholic / Eastern Orthodox",
+            "argument": "The early church unanimously read 'washing of regeneration' as baptism — the sacrament in which new birth is effected by the Spirit combined with the covenant sign of water. Augustine's baptismal theology grounds itself in Titus 3:5. The NT elsewhere pairs water and Spirit (John 3:5) and attaches regeneration to baptism (Acts 2:38; 1 Pet 3:21)."
+          },
+          {
+            "name": "Metaphorical: the Spirit's work symbolised by baptism",
+            "proponents": "Reformed tradition (Calvin, Mounce WBC, Knight NIGTC)",
+            "argument": "The 'washing' is metaphorical for the Spirit's regenerating work — baptism signifies what the Spirit has already accomplished rather than causing regeneration. Calvin's Institutes 4.15-16 treats Titus 3:5 as symbol-and-reality: the washing is the Spirit's; baptism is its outward sign."
+          },
+          {
+            "name": "Sacramental-symbolic unity",
+            "proponents": "Lutheran tradition; Towner (PNTC)",
+            "argument": "A mediating position holds that baptism and the Spirit's regenerative work are not identical but covenantally bound: the outward sign and the inward reality are treated together in NT theology because God has attached them. Titus 3:5's force depends on neither collapsing them nor separating them."
+          }
+        ]
+      }
     ],
     "thread": [
       {
@@ -468,7 +472,8 @@
         }
       ],
       "note": "Titus 3:4-7 is often called a 'faithful saying' — a compact creedal formula summarizing salvation by grace through regeneration."
-    }
+    },
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>But when the kindness and love of God our Savior appeared,</td></tr><tr><td class=\"t-label\">KJV</td><td>But after that the kindness and love of God our Saviour toward man appeared,</td></tr><tr><td class=\"t-label\">NIV</td><td>he saved us, not because of righteous things we had done, but because of his mercy. He saved us through the washing of rebirth and renewal by the Holy Spirit,</td></tr><tr><td class=\"t-label\">KJV</td><td>Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Holy Ghost;</td></tr><tr><td class=\"t-label\">NIV</td><td>whom he poured out on us generously through Jesus Christ our Savior,</td></tr><tr><td class=\"t-label\">KJV</td><td>Which he shed on us abundantly through Jesus Christ our Saviour;</td></tr><tr><td class=\"t-label\">NIV</td><td>so that, having been justified by his grace, we might become heirs having the hope of eternal life.</td></tr><tr><td class=\"t-label\">KJV</td><td>That being justified by his grace, we should be made heirs according to the hope of eternal life.</td></tr><tr><td class=\"t-label\">NIV</td><td>This is a trustworthy saying. And I want you to stress these things, so that those who have trusted in God may be careful to devote themselves to doing what is good. These things are excellent and profitable for everyone.</td></tr><tr><td class=\"t-label\">KJV</td><td>This is a faithful saying, and these things I will that thou affirm constantly, that they which have believed in God might be careful to maintain good works. These things are good and profitable unto men.</td></tr>"
   },
   "vhl_groups": [
     {
