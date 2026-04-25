@@ -433,22 +433,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 38:2",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The debate over 'chief prince' vs. 'prince of Rosh' hinges on whether rosh functions as a title (adjective, 'chief') or a place name (noun, 'Rosh'). T…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Gog of the Land of Magog within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Identifying Gog of Magog (38:2): historical figure, eschatological adversary, or symbolic archetype?",
+        "positions": [
+          {
+            "name": "Eschatological end-times invader",
+            "proponents": "MacArthur, Walvoord, classical dispensationalism",
+            "argument": "Ezekiel 38-39 describes a post-Israel-restored future invasion (38:8: 'after many days, in the latter years') by a coalition led by Gog from the far north. Revelation 20:8 explicitly picks up 'Gog and Magog' as a final-eschatological enemy after the millennium. The historical referent has not occurred; the prophecy awaits a literal future fulfillment in the eschatological framework."
+          },
+          {
+            "name": "Symbolic-archetypal hostile-nations coalition",
+            "proponents": "Block (NICOT), Wright (BST)",
+            "argument": "Gog is not a specific historical or eschatological individual but the literary-archetypal embodiment of all hostile gentile powers conspiring against the restored covenant community. The chapter's geographic vagueness ('far north,' 'distant lands') and partner-list (Persia, Cush, Put, Gomer, Beth-togarmah) signal apocalyptic universalism rather than political identification. Revelation extends this archetypal use rather than locating a specific endpoint."
+          },
+          {
+            "name": "Historical Antiochus IV / Hellenistic warning",
+            "proponents": "Greenberg (AB), Zimmerli, modern critical readings",
+            "argument": "Some critical readings locate the oracle's referent in the late-Persian or early-Hellenistic period — possibly anticipating Antiochus IV Epiphanes' 167 BCE attack on Jerusalem. The 'after many days' temporal language and the specificity of military details fit a centuries-later Seleucid threat. On this reading, the oracle was Pseudepigrapha-style projection (a vaticinium ex eventu) to encourage the post-exilic community."
+          }
+        ]
+      }
     ],
     "thread": [
       {

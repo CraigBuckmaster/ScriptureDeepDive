@@ -519,22 +519,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 44:10-14",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The NET observes that the distinction between faithful Zadokites and unfaithful Levites may reflect post-exilic tensions between priestly families com…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Closed Gate and the Zadokite Priesthood within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Levites demoted to non-altar service (44:10-14): historical retrojection or theological pronouncement?",
+        "positions": [
+          {
+            "name": "Wellhausenian historical-development reading",
+            "proponents": "Greenberg (AB), critical scholarship since Wellhausen",
+            "argument": "Julius Wellhausen's 19th-century thesis read Ezekiel 44 as the documentary hinge: post-exile, the Zadokite priests successfully claimed altar-monopoly while demoting the broader Levitical line to subordinate temple-service. The 'demotion' is presented in Ezekiel as judgment-for-idolatry but functioned politically as the Zadokite consolidation that produced the post-exilic priestly hierarchy known from P-source. The chapter is partisan post-exilic priestly literature."
+          },
+          {
+            "name": "Genuine prophetic theology of priestly accountability",
+            "proponents": "Block (NICOT), Duguid, Wright (BST)",
+            "argument": "Ezekiel's distinction between Zadokite priests (faithful) and broader Levites (compromised by high-place service) is a theological judgment, not partisan retrojection. The pattern matches Numbers 18 (Aaronic-priestly distinction from Levitical service) and the historical record of pre-exilic syncretism among non-Zadokite priestly families. The chapter applies Numbers' distinction to a specific historical situation. Reading it as Zadokite politicking misses the ethical seriousness of the prophet's diagnosis."
+          },
+          {
+            "name": "Symbolic of NT priest-of-all-believers theology",
+            "proponents": "MacArthur",
+            "argument": "The Zadokite-Levitical hierarchy of Ezk 44 is fulfilled and abolished in Christ's high-priesthood — Hebrews 7's 'change of priesthood' moves beyond all OT levitical distinctions. The chapter's hierarchical apparatus serves theological-pedagogical purpose in pointing toward Christ's once-for-all access; under the new covenant, all believers are priests (1 Pet 2:9; Rev 1:6)."
+          }
+        ]
+      }
     ],
     "thread": [
       {

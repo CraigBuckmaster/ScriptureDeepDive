@@ -430,38 +430,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 26:1",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The date formula lacks the month, which is unusual. Some scholars suggest the month was accidentally lost in transmission; others date it to the 11th …",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Oracle Against Tyre within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 26:12",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The grammatical shift from 3rd person singular to 3rd person plural is debated: some see it as a reference to multiple invasions (Babylonian + later),…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Oracle Against Tyre within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Was Ezekiel's Tyre prophecy literally fulfilled? Nebuchadnezzar's siege vs Alexander's destruction",
+        "positions": [
+          {
+            "name": "Composite fulfilment: Nebuchadnezzar then Alexander",
+            "proponents": "Block (NICOT), MacArthur, Duguid",
+            "argument": "Nebuchadnezzar's 13-year siege (586-573 BCE) destroyed mainland Tyre, conforming to vv.7-11. Alexander the Great's 332 BCE causeway-siege destroyed island Tyre by literally throwing the city's stones, timbers, and rubble into the sea (v.12: 'they will throw your stones, timber and rubble into the sea') — fulfilling the more striking imagery. Ezekiel 29:18 explicitly notes Nebuchadnezzar did not collect his expected wages from Tyre (the island survived him), implicitly framing Alexander as the prophecy's completion. Composite fulfilment of long-range prophecy is the pattern."
+          },
+          {
+            "name": "Substantial but not exhaustive fulfilment in Nebuchadnezzar",
+            "proponents": "Greenberg (AB), Zimmerli",
+            "argument": "Nebuchadnezzar's siege accomplished the prophecy's substantial intent: Tyre was humbled, its mainland destroyed, its commercial dominance broken. Hyperliteralist demand for every detail to be reproduced in one historical moment misreads prophetic genre. The Hebrew prophets routinely employ rhetorical hyperbole that is satisfied by major-event fulfilment, not detail-by-detail re-enactment."
+          },
+          {
+            "name": "Type / archetype reading",
+            "proponents": "Wright (BST)",
+            "argument": "Tyre stands for any commercial empire that mistakes its prosperity for divine favor. Both Nebuchadnezzar and Alexander partially fulfilled the oracle; Revelation 18's Babylon-the-Great recapitulates it eschatologically. The chapter operates simultaneously as historical prediction and theological archetype — a prophetic pattern that finds completion in multiple horizons."
+          }
+        ]
+      }
     ],
     "thread": [
       {

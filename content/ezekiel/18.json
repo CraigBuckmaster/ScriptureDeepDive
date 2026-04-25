@@ -353,22 +353,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 18:23",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The rhetorical question expects the answer 'No' — God emphatically does not desire death. The oracle transforms from legal verdict into passionate app…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Soul Who Sins Shall Die within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Does Ezekiel 18 abolish corporate accountability or qualify it?",
+        "positions": [
+          {
+            "name": "Decisive break with corporate guilt",
+            "proponents": "Greenberg (AB), Eichrodt",
+            "argument": "The chapter's threefold rejection of the proverb 'the fathers eat sour grapes and the children's teeth are set on edge' (v.2) is a watershed moment in OT theology — exilic-era Israel definitively breaks with the corporate-guilt logic of Exod 20:5 (visiting iniquity to the third and fourth generation). Ezekiel makes individual moral agency the only basis for divine judgment. The abandonment is intentional and total."
+          },
+          {
+            "name": "Pastoral correction, not theological revolution",
+            "proponents": "Block (NICOT), Duguid",
+            "argument": "Ezekiel 18 corrects a specific exilic distortion — the fatalistic complaint that the present generation is being punished for ancestors' sins with no possibility of personal response. The chapter restores hope: every generation, every individual stands before God on their own. Corporate solidarity (national covenant blessings/curses) remains in OT theology; what's abolished is fatalism, not corporateness."
+          },
+          {
+            "name": "The chapter is preached, not propositional",
+            "proponents": "Wright (BST), Zimmerli",
+            "argument": "Ezekiel 18 is a prophetic disputation, not a systematic theology lecture. Its argument is rhetorically shaped to dismantle defeatism in the exile, not to formulate a comprehensive theory of moral agency. Reading it as a systematic critique of Exod 20:5 misses the genre. The two texts function in different theological registers — both true, both pastorally appropriate to different settings."
+          }
+        ]
+      }
     ],
     "thread": [
       {
