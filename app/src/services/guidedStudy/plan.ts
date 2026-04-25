@@ -1,6 +1,6 @@
 import type { SectionPanel } from '../../types';
+import { getModeDefinition } from './modes/definitions';
 import {
-  GUIDED_STUDY_MODE_OPTIONS,
   type ConfidenceLevel,
   type GuidedConceptChip,
   type GuidedEvidenceTrailItem,
@@ -10,8 +10,6 @@ import {
   type GuidedStudyPlan,
   type GuidedStudyPlanInput,
 } from './types';
-
-const DEFAULT_MODE: GuidedStudyMode = 'deep';
 
 const RECOMMENDATION_ORDER = [
   'hist',
@@ -40,13 +38,6 @@ const PANEL_LABELS: Record<string, string> = {
   lit: 'Literary Structure',
   thread: 'Intertextual Threading',
   discourse: 'Argument Flow',
-};
-
-const MODE_RECOMMENDATION_LIMIT: Record<GuidedStudyMode, number> = {
-  quick: 3,
-  deep: 5,
-  teaching: 5,
-  devotional: 3,
 };
 
 // TODO(#1584): Replace with labels from content/meta/concepts.json via
@@ -140,13 +131,6 @@ const EVIDENCE_TRAIL_DEFINITIONS: Record<EvidenceTrailKind, EvidenceTrailDefinit
   },
 };
 
-const MODE_TRAIL_ORDER: Record<GuidedStudyMode, EvidenceTrailKind[]> = {
-  quick: ['context', 'language', 'scripture'],
-  deep: ['context', 'language', 'scripture', 'debate'],
-  teaching: ['context', 'structure', 'scripture', 'debate'],
-  devotional: ['context', 'scripture', 'language'],
-};
-
 function compact(value: string | null | undefined): string | null {
   if (!value) return null;
   const cleaned = value.replace(/\s+/g, ' ').trim();
@@ -166,13 +150,11 @@ function displayChapter(input: GuidedStudyPlanInput): string {
 }
 
 function normalizeMode(mode?: GuidedStudyMode): GuidedStudyMode {
-  return GUIDED_STUDY_MODE_OPTIONS.some((option) => option.key === mode)
-    ? mode ?? DEFAULT_MODE
-    : DEFAULT_MODE;
+  return getModeDefinition((mode ?? 'deep') as GuidedStudyMode).key;
 }
 
 function modeLabel(mode: GuidedStudyMode): string {
-  return GUIDED_STUDY_MODE_OPTIONS.find((option) => option.key === mode)?.label ?? 'Deep study';
+  return getModeDefinition(mode).label;
 }
 
 function genrePrompt(genreLabel?: string): string {
@@ -185,17 +167,10 @@ function genrePrompt(genreLabel?: string): string {
   );
 }
 
-function betterQuestionPrompt(input: GuidedStudyPlanInput, mode: GuidedStudyMode): string {
+// Mode-specific better-question prompts move into MODE_DEFINITIONS in #1730
+// (Phase 2.1). For Phase 1 this is intentionally not mode-aware.
+function betterQuestionPrompt(input: GuidedStudyPlanInput): string {
   const first = input.sections[0];
-  if (mode === 'quick') {
-    return 'What is the one question you should answer before moving on?';
-  }
-  if (mode === 'teaching') {
-    return 'What would someone need clarified before they could teach this passage responsibly?';
-  }
-  if (mode === 'devotional') {
-    return 'What does the chapter emphasize before you ask how it applies to me?';
-  }
   if (!first) return 'What question would help you understand this chapter on its own terms?';
   return `What do verses ${first.verse_start}-${first.verse_end} ask you to notice about the original audience, not just yourself?`;
 }
@@ -204,7 +179,13 @@ function recommendationSubtitle(panel: SectionPanel, sectionHeader: string): str
   return sectionHeader ? `From ${sectionHeader}` : `Section ${panel.section_id}`;
 }
 
-function buildRecommendations(input: GuidedStudyPlanInput): GuidedPanelRecommendation[] {
+function buildRecommendations(
+  input: GuidedStudyPlanInput,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  panelWeights: Readonly<Record<string, number>> = {},
+): GuidedPanelRecommendation[] {
+  // panelWeights is plumbed through but not yet applied — Phase 2.4 (#1733)
+  // wires the bias logic. Phase 1 keeps RECOMMENDATION_ORDER as the sort key.
   const recs: GuidedPanelRecommendation[] = [];
   const used = new Set<string>();
 
@@ -251,7 +232,7 @@ function buildEvidenceTrail(
 ): GuidedEvidenceTrailItem[] {
   const items: GuidedEvidenceTrailItem[] = [];
 
-  for (const kind of MODE_TRAIL_ORDER[mode]) {
+  for (const kind of getModeDefinition(mode).trailOrder) {
     const definition = EVIDENCE_TRAIL_DEFINITIONS[kind];
     const recommendation = recommendations.find((rec) =>
       definition.candidatePanelTypes.includes(rec.panelType),
@@ -314,8 +295,9 @@ export function buildGuidedStudyPlan(input: GuidedStudyPlanInput): GuidedStudyPl
   const guidance = compact(input.book?.genre_guidance);
   const audienceContext =
     compact(input.bookIntro?.era) ?? compact(input.bookIntro?.at_a_glance?.chapters?.toString());
-  const allRecommendations = buildRecommendations(input);
-  const betterQuestion = betterQuestionPrompt(input, mode);
+  const def = getModeDefinition(mode);
+  const allRecommendations = buildRecommendations(input, def.panelWeights);
+  const betterQuestion = betterQuestionPrompt(input);
 
   const prompts: GuidedPrompt[] = [
     {
@@ -345,7 +327,7 @@ export function buildGuidedStudyPlan(input: GuidedStudyPlanInput): GuidedStudyPl
       },
     ],
     prompts,
-    recommendations: allRecommendations.slice(0, MODE_RECOMMENDATION_LIMIT[mode]),
+    recommendations: allRecommendations.slice(0, def.recommendationLimit),
     evidenceTrail: buildEvidenceTrail(mode, allRecommendations),
     betterQuestionPrompt: betterQuestion,
     conceptChips: buildConceptChips(input),
