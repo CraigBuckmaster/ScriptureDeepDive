@@ -401,38 +401,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 13:2",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase zovhey adam agalim yishshaqun ('those who offer human sacrifice kiss calf-idols') is notoriously difficult. The NET notes consider several …",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Death of Ephraim within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 13:14",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The verb forms in v. 14 are ambiguous: 'I will ransom' (efdekhem) and 'I will redeem' (eg'alekhem) could be read as promises (cohortatives) or as rhet…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Death of Ephraim within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Hosea 13:14's 'O death, where are your plagues?': promise of resurrection or rhetorical mockery of death's power?",
+        "positions": [
+          {
+            "name": "Genuine resurrection promise",
+            "proponents": "Paul in 1 Cor 15:55; classical Christian reading",
+            "argument": "Paul quotes Hos 13:14 in 1 Cor 15:55 at the climax of his resurrection chapter — 'O death, where is your victory? O grave, where is your sting?' Paul treats the verse as genuine OT resurrection-anticipation. The Christian-canonical reading follows: Hosea glimpses the death-defeat that Christ accomplishes."
+          },
+          {
+            "name": "Rhetorical challenge — death still has sting in context",
+            "proponents": "Mays, Andersen-Freedman (critical mainstream)",
+            "argument": "In context (vv.9-13 announce Ephraim's coming destruction), the verse is rhetorical summoning of death's plagues to carry out judgment, not their defeat. The surrounding material makes Paul's reading appear decontextualised; Paul creatively applies the verse beyond its original oracular-judgment function."
+          },
+          {
+            "name": "OT seed-text, NT full flower",
+            "proponents": "Stuart, Dearman, Garrett",
+            "argument": "The verse's OT meaning may be closer to the mocking-judgment reading, but the verse participates in an OT-to-NT trajectory that Paul legitimately reads back from Christ's resurrection. Hosea's language offers the canonical seed Paul uses to articulate resurrection's victory; neither reading exhausts the other."
+          }
+        ]
+      }
     ],
     "thread": [
       {

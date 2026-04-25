@@ -517,22 +517,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 1:6",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The verb form weloruhamah is a weqatal construction functioning as a proper name. The absence of the suffix 'him' (lo, referring to Hosea) after 'she …",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Prophetic Marriage and Symbolic Children within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Hosea's marriage to Gomer (Hosea 1:2-3): literal marriage, prophetic vision, or allegorical parable?",
+        "positions": [
+          {
+            "name": "Literal historical marriage",
+            "proponents": "Stuart (WBC), Andersen-Freedman (AB), MacArthur",
+            "argument": "The narrative presents Hosea's marriage as historically real — named wife (Gomer daughter of Diblaim), named children (Jezreel, Lo-Ruhamah, Lo-Ammi), concrete events (going after lovers, ch 3's repurchase). The prophetic sign-act tradition (Isaiah walking naked, Jeremiah's broken pot, Ezekiel eating the scroll) supports real embodied prophecy. Most evangelical and mainstream scholars take the marriage as literal."
+          },
+          {
+            "name": "Visionary / allegorical presentation",
+            "proponents": "Calvin (cautious), some Jewish exegesis (Ibn Ezra)",
+            "argument": "An older tradition (articulated by Calvin among others) read the marriage as visionary rather than literal — God would not actually command a prophet to marry a prostitute; the scenario is divinely-communicated parable. Jewish commentators including Ibn Ezra preferred this reading for similar theological-propriety reasons."
+          },
+          {
+            "name": "Hosea married a faithful woman who became unfaithful",
+            "proponents": "Some modern evangelical commentators",
+            "argument": "A mediating view holds that Gomer was not a practising prostitute at marriage but later became unfaithful — vindicating the theological analogy (Israel was faithful at Sinai but unfaithful later) without the moral difficulty of God commanding marriage to a current prostitute. The 'wife of whoredom' designation (1:2) describes her subsequent character or her origin in a whoring context, not her state at wedding."
+          }
+        ]
+      }
     ],
     "thread": [
       {
