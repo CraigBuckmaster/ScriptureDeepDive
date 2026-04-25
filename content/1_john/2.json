@@ -622,7 +622,98 @@
         }
       ],
       "note": "The spiral intensifies: knowing God → keeping commandments → loving brothers → rejecting the world → resisting antichrists."
-    }
+    },
+    "hebtext": [
+      {
+        "word": "παράκλητος",
+        "tlit": "paraklētos",
+        "gloss": "advocate / helper",
+        "note": "v.1's term for Jesus Christ as advocate-with-the-Father. The same word in the Fourth Gospel (John 14:16, 26) refers to the Holy Spirit. 1 John 2:1 thus identifies Christ as one paraklētos and the Spirit as 'another' paraklētos. Christian-Trinitarian theology develops from this dual-paraklētos framework."
+      },
+      {
+        "word": "ἱλασμός",
+        "tlit": "hilasmos",
+        "gloss": "propitiation / expiation",
+        "note": "v.2's word for Christ's-atoning-work. Like Rom 3:25's hilastērion, the term carries both 'wrath-aversion' (propitiation) and 'sin-cleansing' (expiation) registers. v.2 extends the atonement's scope: 'not only for ours but for the whole world' — a verse central to Calvinist-Arminian discussions of atonement-extent."
+      },
+      {
+        "word": "ἀντίχριστοι",
+        "tlit": "antichristoi",
+        "gloss": "antichrists",
+        "note": "v.18's plural form of the term that gives the Christian-eschatological-figure his name. Note the plural — 'many antichrists have come.' For John, antichrist is not exclusively eschatological-individual but ongoing-pattern of Christ-denial. The plural-present coexists with the singular-eschatological-coming. Both registers operate."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "Christ as paraklētos / advocate",
+        "role": "Heavenly intercessor (v.1)",
+        "text": "Christ as advocate continues his earthly-incarnation work into heavenly-intercessory ministry. The picture: believer sins (which happens), Christ-as-advocate appeals to the Father, his already-shed-blood-atonement is the basis of forgiveness. The chapter's pastoral-comfort is grounded in this ongoing-Christological-mediation."
+      },
+      {
+        "name": "'Children, fathers, young men'",
+        "role": "Audience trinity addressed (vv.12-14)",
+        "text": "The chapter's distinctive triple-audience-address (children, fathers, young men) repeated twice has been variously interpreted: literal-age categories, spiritual-maturity stages, or rhetorical-comprehensive address. Most contemporary commentators read these as spiritual-maturity stages (children — beginning believers; young men — engaged warriors; fathers — long-time-faithful). The threefold structure embraces full-Christian-community."
+      },
+      {
+        "name": "'The world'",
+        "role": "Negative-pole opponent (vv.15-17)",
+        "text": "vv.15-17 establish 1 John's distinctive 'world' (kosmos) theology. The 'world' is not the created-order but the human-society-organised-against-God. Three lust-categories (flesh, eyes, life-pride) characterise the world's seductive-orientation. The world is passing away; God's-will-doer endures."
+      },
+      {
+        "name": "Antichrists (deceivers / deniers of Christ)",
+        "role": "Eschatological-and-present opponents (vv.18-23)",
+        "text": "vv.18-23 introduce the chapter's most-distinctive theological category. The antichrists are former-community-members who now deny that Jesus is the Christ. John's diagnosis: their departure manifests their never-having-truly-belonged. The verses anchor John's theology of perseverance + community-discernment."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Athanasius, Letter on Decree of Nicaea (c. 350 CE)",
+        "text": "Athanasius extensively cited 1 John 2:22-23 ('whoever denies the Son does not have the Father') in his anti-Arian polemics. The verse's clear connection of Christological-orthodoxy with Trinitarian-relations made it a foundational text in 4th-century controversies. Christian-orthodox theology builds substantially on this verse."
+      },
+      {
+        "who": "Augustine, Tractate 4 on 1 John (c. 407 CE)",
+        "text": "Augustine's exposition of 1 John 2:15 ('do not love the world') established Western-Christian theology of right-ordered love. His distinction: love the world's-goodness as God's creation; reject the world's-organisation-against-God. This distinction shaped Christian-cultural engagement across subsequent centuries."
+      },
+      {
+        "who": "Calvin, Commentary on 1 John 2:2 (1551)",
+        "text": "Calvin's treatment of 'propitiation for the sins of the whole world' (v.2) became one of the most-debated texts in Calvinist-Arminian discussions of atonement-extent. Calvin himself read 'whole world' as 'sins of all believers everywhere' (preserving definite-atonement); Arminians read it as universal-atonement-scope. The verse remains hermeneutically loaded."
+      },
+      {
+        "who": "Raymond Brown, The Epistles of John (AB, 1982)",
+        "text": "Brown's analysis of vv.18-23's antichrist-passage shaped contemporary scholarship on the Johannine-community-secession. The 'antichrists' are former-members who 'went out from us' over Christological-disagreement. The chapter documents the early-Christian community-formation through theological-controversy."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "1 Jn 2:1",
+        "target": "Heb 7:25; Rom 8:34",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Christ as advocate parallels Heb 7:25's 'always lives to make intercession' and Rom 8:34's Christ at God's right-hand interceding. Three NT writings develop the heavenly-Christological-intercession theology — Hebrews-Pauline-Johannine convergence on this Christological theme."
+      },
+      {
+        "anchor": "1 Jn 2:6",
+        "target": "Phil 2:5-8; Rom 6:4",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'Walking as Jesus walked' parallels Pauline 'have this mind in you which was also in Christ Jesus' (Phil 2:5) and 'walk in newness of life' (Rom 6:4). The walking-as-Christ-walked imitative-Christology is shared across NT writings; ethical-formation occurs through Christ-image-conformation."
+      },
+      {
+        "anchor": "1 Jn 2:18",
+        "target": "2 Thess 2:3-12; Rev 13",
+        "type": "Echo",
+        "direction": "back",
+        "text": "John's antichrist-tradition parallels Pauline 'man of lawlessness' (2 Thess 2) and Revelation's beast-figures. The shared-eschatological-figure motif is consistent across NT writings; specific-applications vary while core-theological-framework remains stable."
+      },
+      {
+        "anchor": "1 Jn 2:27",
+        "target": "John 14:26; 16:13",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'The anointing teaches you about all things' parallels the Fourth Gospel's promised-Spirit-as-teacher (John 14:26's 'will teach you all things'; 16:13's 'will guide you into all truth'). The Johannine-corpus's pneumatology of Spirit-as-teacher operates consistently across Gospel and epistle."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>My dear children, I write this to you so that you will not sin. But if anybody does sin, we have an advocate with the Father—Jesus Christ, the Righteous One.</td></tr><tr><td class=\"t-label\">KJV</td><td>My little children, these things write I unto you, that ye sin not. And if any man sin, we have an advocate with the Father, Jesus Christ the righteous:</td></tr><tr><td class=\"t-label\">NIV</td><td>He is the atoning sacrifice for our sins, and not only for ours but also for the sins of the whole world.</td></tr><tr><td class=\"t-label\">KJV</td><td>And he is the propitiation for our sins: and not for ours only, but also for the sins of the whole world.</td></tr><tr><td class=\"t-label\">NIV</td><td>Whoever claims to live in him must live as Jesus did.</td></tr><tr><td class=\"t-label\">KJV</td><td>He that saith he abideth in him ought himself also so to walk, even as he walked.</td></tr><tr><td class=\"t-label\">NIV</td><td>Do not love the world or anything in the world. If anyone loves the world, love for the Father is not in them.</td></tr><tr><td class=\"t-label\">KJV</td><td>Love not the world, neither the things that are in the world. If any man love the world, the love of the Father is not in him.</td></tr><tr><td class=\"t-label\">NIV</td><td>Dear children, this is the last hour; and as you have heard that the antichrist is coming, even now many antichrists have come. This is how we know it is the last hour.</td></tr><tr><td class=\"t-label\">KJV</td><td>Little children, it is the last time: and as ye have heard that antichrist shall come, even now are there many antichrists; whereby we know that it is the last time.</td></tr><tr><td class=\"t-label\">NIV</td><td>Who is the liar? It is whoever denies that Jesus is the Christ. Such a person is the antichrist—denying the Father and the Son.</td></tr><tr><td class=\"t-label\">KJV</td><td>Who is a liar but he that denieth that Jesus is the Christ? He is antichrist, that denieth the Father and the Son.</td></tr><tr><td class=\"t-label\">NIV</td><td>As for you, the anointing you received from him remains in you, and you do not need anyone to teach you. But as his anointing teaches you about all things and as that anointing is real, not counterfeit—just as it has taught you, remain in him.</td></tr><tr><td class=\"t-label\">KJV</td><td>But the anointing which ye have received of him abideth in you, and ye need not that any man teach you: but as the same anointing teacheth you of all things, and is truth, and is no lie, and even as it hath taught you, ye shall abide in him.</td></tr>"
   },
   "vhl_groups": [
     {

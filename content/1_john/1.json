@@ -331,7 +331,98 @@
         }
       ],
       "note": "The prologue echoes John's Gospel prologue but emphasizes tactile witness — they touched the Word. The spiral of light, sin, and fellowship begins."
-    }
+    },
+    "hebtext": [
+      {
+        "word": "ὁ Λόγος τῆς ζωῆς",
+        "tlit": "ho Logos tēs zōēs",
+        "gloss": "the Word of life",
+        "note": "v.1's signature phrase echoing the Fourth Gospel's prologue. The Logos-Christology grounds 1 John's anti-docetic emphasis — the Word was 'heard, seen with eyes, looked at, touched with hands.' The fivefold sensory verbs deny any docetic-spiritual-only Christology."
+      },
+      {
+        "word": "κοινωνία",
+        "tlit": "koinōnia",
+        "gloss": "fellowship / participation",
+        "note": "v.3's foundational term for Christian community. Koinōnia is not mere social-association but participation-sharing-in-life-together. The double-direction is theologically loaded: fellowship 'with us' (apostolic-tradition) and 'with the Father and his Son Jesus Christ' (divine-koinōnia). Both vertical and horizontal koinōnia are inseparable."
+      },
+      {
+        "word": "ἁμαρτίαν οὐκ ἔχομεν",
+        "tlit": "hamartian ouk echomen",
+        "gloss": "we have no sin",
+        "note": "v.8's targeted phrase against perfectionist-claims. The proto-Gnostic teachers may have claimed sinless-experience based on spiritual-enlightenment. John's response: claiming sinlessness deceives self and absents truth. The verse establishes Christian-anthropology of ongoing-confession rather than achieved-perfection."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "John the apostle (likely author)",
+        "role": "Author / 'we' eyewitness voice",
+        "text": "Tradition identifies the author as John son of Zebedee, the apostle. The opening 'we' draws on apostolic-eyewitness authority — those who 'heard, saw, touched.' The letter's style and theology align with the Fourth Gospel and 2-3 John, supporting Johannine-corpus authorship even where directly-Petrine-style differs."
+      },
+      {
+        "name": "The 'we' eyewitness apostolic group",
+        "role": "Foundation of testified message",
+        "text": "vv.1-3's 'we' is the apostolic-eyewitness group. The plural authority claims are not Johannine-individual but apostolic-collective. The recipients are invited to share fellowship that ultimately rests on this apostolic-witness — the mediated-tradition is the foundation of new-covenant community."
+      },
+      {
+        "name": "The opponents (anti-Christ proto-docetists)",
+        "role": "Implied audience-against-whom",
+        "text": "Though not explicitly named in ch 1, the chapter's emphasis on physical-Christ ('heard with our ears, touched with our hands') anticipates 2:18's 'antichrists' and 4:1-3's denial that Jesus has come in the flesh. Already in ch 1, the polemic-context shapes the apostolic-witness emphasis."
+      },
+      {
+        "name": "God the Father (the light without darkness)",
+        "role": "Subject of the central message",
+        "text": "v.5's 'God is light, in him there is no darkness at all' is the chapter's central theological declaration. The light-darkness binary becomes the chapter's organising-framework for ethical-moral living. Walking in light = fellowship with God; walking in darkness = self-deception."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Augustine, Tractates on the First Epistle of John (c. 407 CE)",
+        "text": "Augustine's ten homilies on 1 John remain among the most-influential patristic-commentaries on the letter. His exposition of light-darkness, love-hate dialectics shaped Western-Christian moral theology profoundly. Augustine particularly emphasises that genuine-knowledge of God produces genuine-love-of-neighbour."
+      },
+      {
+        "who": "Calvin, Commentary on 1 John (1551)",
+        "text": "Calvin's exposition of 1 John 1:8-10 anchored Reformed-Protestant theology of perpetual-confession. His insistence that even regenerate-believers continue to need confession-of-sin (against any perfectionist-claims) drew directly on this chapter. The verses are foundational for Reformed-confessional liturgical-practice."
+      },
+      {
+        "who": "Raymond Brown, The Epistles of John (AB, 1982)",
+        "text": "Brown's monumental commentary frames 1 John as response to a community-split — proto-docetist secessionists left the Johannine-community over Christological-disagreement. The chapter's 'we have heard / seen / touched' polemic targets specifically those denying Christ's full-incarnation. Brown's reading shapes contemporary scholarship on the Johannine-community-history."
+      },
+      {
+        "who": "Karen Jobes, 1, 2, & 3 John (ZECNT, 2014)",
+        "text": "Jobes provides accessible-evangelical commentary integrating exegetical-careful reading with pastoral application. Her treatment of 1:5-10's walking-in-light theology shows how 1 John's ethical-criteria operate not as legalism but as evidence of genuine-fellowship-with-God."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "1 Jn 1:1-4",
+        "target": "John 1:1-18",
+        "type": "Echo",
+        "direction": "back",
+        "text": "The opening's 'Word of life' / 'in the beginning' / 'eyewitness' theme deliberately echoes John's Gospel prologue. Both texts grapple with eternal-Word-becoming-flesh; the epistle adds tactile-eyewitness emphasis where the Gospel's prologue is more cosmic. The two prologues are mutually-illuminating."
+      },
+      {
+        "anchor": "1 Jn 1:5",
+        "target": "John 8:12; 1 Tim 6:16; Jas 1:17",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'God is light' parallels Jesus's 'I am the light of the world' (John 8:12) and 1 Tim 6:16's 'unapproachable light.' The light-of-God-and-Christ identification is consistent across NT writings — Father-Son-light continuity is theologically programmatic."
+      },
+      {
+        "anchor": "1 Jn 1:7",
+        "target": "Heb 9:14; Rev 7:14",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'The blood of Jesus cleanses us from all sin' parallels Hebrews's blood-atonement theology and Revelation's washed-in-the-blood imagery. The blood-cleansing motif is shared across Hebrews-Petrine-Johannine traditions — atonement language is consistent across NT diversity."
+      },
+      {
+        "anchor": "1 Jn 1:9",
+        "target": "Ps 32:5; Prov 28:13",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'If we confess our sins, he is faithful and just to forgive' echoes OT-confession-forgiveness-pattern (Ps 32:5; Prov 28:13). The OT-NT continuity in confession-as-route-to-forgiveness is theologically substantial. Christian-confession draws on established OT-pattern, now centred in Christ's atonement."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>That which was from the beginning, which we have heard, which we have seen with our eyes, which we have looked at and our hands have touched—this we proclaim concerning the Word of life.</td></tr><tr><td class=\"t-label\">KJV</td><td>That which was from the beginning, which we have heard, which we have seen with our eyes, which we have looked upon, and our hands have handled, of the Word of life;</td></tr><tr><td class=\"t-label\">NIV</td><td>We proclaim to you what we have seen and heard, so that you also may have fellowship with us. And our fellowship is with the Father and with his Son, Jesus Christ.</td></tr><tr><td class=\"t-label\">KJV</td><td>That which we have seen and heard declare we unto you, that ye also may have fellowship with us: and truly our fellowship is with the Father, and with his Son Jesus Christ.</td></tr><tr><td class=\"t-label\">NIV</td><td>This is the message we have heard from him and declare to you: God is light; in him there is no darkness at all.</td></tr><tr><td class=\"t-label\">KJV</td><td>This then is the message which we have heard of him, and declare unto you, that God is light, and in him is no darkness at all.</td></tr><tr><td class=\"t-label\">NIV</td><td>But if we walk in the light, as he is in the light, we have fellowship with one another, and the blood of Jesus, his Son, purifies us from all sin.</td></tr><tr><td class=\"t-label\">KJV</td><td>But if we walk in the light, as he is in the light, we have fellowship one with another, and the blood of Jesus Christ his Son cleanseth us from all sin.</td></tr><tr><td class=\"t-label\">NIV</td><td>If we claim to be without sin, we deceive ourselves and the truth is not in us.</td></tr><tr><td class=\"t-label\">KJV</td><td>If we say that we have no sin, we deceive ourselves, and the truth is not in us.</td></tr><tr><td class=\"t-label\">NIV</td><td>If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness.</td></tr><tr><td class=\"t-label\">KJV</td><td>If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.</td></tr>"
   },
   "vhl_groups": [
     {
