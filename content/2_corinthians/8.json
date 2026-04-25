@@ -405,22 +405,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 8:18",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The NET note discusses the identity of ‘the brother who is praised by all the churches’: candidates include Luke (Origen, Jerome), Barnabas, Tychicus,…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Grace of Giving within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "2 Corinthians 8's collection-for-Jerusalem: theological-symbol or pragmatic financial assistance?",
+        "positions": [
+          {
+            "name": "Pragmatic financial assistance",
+            "proponents": "Most commentators",
+            "argument": "Jerusalem church faced economic hardship; Paul organizes practical-financial relief. Macedonian generosity (vv.1-5) and Corinthian-promised giving demonstrate genuine economic solidarity. The theological framing (Christ's poverty enriching us, v.9) supports rather than overrides the pragmatic reality."
+          },
+          {
+            "name": "Symbolic act of Jew-Gentile unity",
+            "proponents": "Wright, Witherington",
+            "argument": "Beyond financial aid, the collection symbolizes Gentile-believers' acknowledgment that Israel is the gospel's mother-church. Paying physical-tribute to Jerusalem-saints enacts Rom 15:27's principle. The theological-political dimension is primary; financial relief is its concrete form."
+          },
+          {
+            "name": "Both: symbolic significance through practical action",
+            "proponents": "Harris, Garland",
+            "argument": "The collection's theological symbolism cannot be separated from its practical reality. The act of Gentile-giving to Jerusalem-poor accomplishes both purposes simultaneously — financial relief and ecclesial-unity demonstration."
+          }
+        ]
+      }
     ],
     "thread": [
       {
@@ -500,7 +504,8 @@
           "text": "Titus is eager to come. The brother sent with him is famous for preaching. We are taking care to be honorable in the Lord's sight and in human sight."
         }
       ]
-    }
+    },
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>For you know the grace of our Lord Jesus Christ, that though he was rich, yet for your sake he became poor, so that you through his poverty might become rich.</td></tr><tr><td class=\"t-label\">KJV</td><td>For ye know the grace of our Lord Jesus Christ, that, though he was rich, yet for your sakes he became poor, that ye through his poverty might be rich.</td></tr><tr><td class=\"t-label\">NIV</td><td>For if the willingness is there, the gift is acceptable according to what one has, not according to what one does not have.</td></tr><tr><td class=\"t-label\">KJV</td><td>For if there be first a willing mind, it is accepted according to that a man hath, and not according to that he hath not.</td></tr><tr><td class=\"t-label\">NIV</td><td>At the present time your plenty will supply what they need, so that in turn their plenty will supply what you need. The goal is equality,</td></tr><tr><td class=\"t-label\">KJV</td><td>But by an equality, that now at this time your abundance may be a supply for their want, that their abundance also may be a supply for your want: that there may be equality:</td></tr>"
   },
   "vhl_groups": [
     {

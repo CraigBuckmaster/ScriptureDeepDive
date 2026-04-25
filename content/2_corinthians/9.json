@@ -404,22 +404,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 9:9",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The NET note on the Psalm 112:9 citation explains that the ‘scattering’ metaphor envisions a generous, even lavish distribution of resources—like a so…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Cheerful Giver within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "2 Corinthians 9:6-7's 'God loves a cheerful giver': transactional prosperity-promise or relational covenantal principle?",
+        "positions": [
+          {
+            "name": "Relational covenantal principle",
+            "proponents": "Mainstream evangelical; Garland, Harris",
+            "argument": "Paul's principle is covenantal: those who give generously experience God's generous provision in turn. This is not mechanical prosperity-formula but relational-covenantal pattern — God responds to faithful generosity with sufficient provision for continued generosity. The point is sustainable Christian-economic ethics."
+          },
+          {
+            "name": "Anti-prosperity-gospel reading",
+            "proponents": "Carson, popular reformed",
+            "argument": "Paul carefully avoids prosperity-formula. The 'enriched in every way for all generosity' (v.11) targets enabling further giving, not personal accumulation. The chapter's pattern is generosity-producing-generosity, not give-to-get-rich. Modern prosperity-gospel misreads Paul's agricultural-metaphor."
+          },
+          {
+            "name": "Both: covenant-promise distinct from prosperity-formula",
+            "proponents": "Hafemann, Witherington",
+            "argument": "Paul holds both: real covenant-promise of God's response to generosity, while distinguishing this from pagan-style transactional give-to-receive religion. The chapter teaches generous economic-discipleship grounded in covenantal-trust."
+          }
+        ]
+      }
     ],
     "thread": [
       {
@@ -493,7 +497,8 @@
           "text": "This ministry supplies the needs of the saints and overflows in thanksgiving to God. They glorify God for your obedience and generosity. Thanks be to God for his inexpressible gift!"
         }
       ]
-    }
+    },
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Remember this: Whoever sows sparingly will also reap sparingly, and whoever sows generously will also reap generously.</td></tr><tr><td class=\"t-label\">KJV</td><td>But this I say, He which soweth sparingly shall reap also sparingly; and he which soweth bountifully shall reap also bountifully.</td></tr><tr><td class=\"t-label\">NIV</td><td>Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver.</td></tr><tr><td class=\"t-label\">KJV</td><td>Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver.</td></tr><tr><td class=\"t-label\">NIV</td><td>And God is able to bless you abundantly, so that in all things at all times, having all that you need, you will abound in every good work.</td></tr><tr><td class=\"t-label\">KJV</td><td>And God is able to make all grace abound toward you; that ye, always having all sufficiency in all things, may abound to every good work:</td></tr><tr><td class=\"t-label\">NIV</td><td>You will be enriched in every way so that you can be generous on every occasion, and through us your generosity will result in thanksgiving to God.</td></tr><tr><td class=\"t-label\">KJV</td><td>Being enriched in every thing to all bountifulness, which causeth through us thanksgiving to God.</td></tr><tr><td class=\"t-label\">NIV</td><td>Thanks be to God for his indescribable gift!</td></tr><tr><td class=\"t-label\">KJV</td><td>Thanks be unto God for his unspeakable gift.</td></tr>"
   },
   "vhl_groups": [
     {
