@@ -532,22 +532,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 5:23",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase 'spirit, soul, and body' has generated debate about Paul's anthropology. Most scholars see this as rhetorical emphasis (the whole person) r…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Day of the Lord and Final Instructions within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "1 Thess 5:2's 'day of the LORD comes like a thief in the night' — apocalyptic certainty or divine surprise?",
+        "positions": [
+          {
+            "name": "Warning to the unwatchful",
+            "proponents": "Fee, Wanamaker",
+            "argument": "The thief-metaphor targets those who are 'in darkness' (v.4) — unprepared. For believers, the day will not surprise them because they are 'children of the light.' The metaphor's force is ethical: stay awake, live as people of the day, so that the coming is not catastrophic intrusion."
+          },
+          {
+            "name": "Certain chronological uncertainty for all",
+            "proponents": "Green, Morris",
+            "argument": "The metaphor emphasises that no one — not even believers — knows when the day will come. 'Times and dates' (v.1) are not given. Paul's pastoral comfort is that the day's uncertainty is not abandonment: it is God's sovereignty over timing. Even the well-prepared believer does not know the hour, but the believer is nonetheless safe because their relationship to the day is light-to-light, not dark-to-light."
+          },
+          {
+            "name": "Both: different aspects of the same reality",
+            "proponents": "Bruce, Shogren (BECNT)",
+            "argument": "The day is chronologically unknown to all (including believers) but not equally-surprising to all. The ethical-ecclesial application (light vs darkness) does not erase the literal unknowability; it transforms its meaning. Believers cannot predict but can prepare; unbelievers cannot prepare."
+          }
+        ]
+      }
     ],
     "thread": [
       {
@@ -619,7 +623,8 @@
         }
       ],
       "note": "The rapid-fire exhortations (5:16-22) are among the most quoted ethical summaries in Paul."
-    }
+    },
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>for you know very well that the day of the Lord will come like a thief in the night.</td></tr><tr><td class=\"t-label\">KJV</td><td>For yourselves know perfectly that the day of the Lord so cometh as a thief in the night.</td></tr><tr><td class=\"t-label\">NIV</td><td>While people are saying, “Peace and safety,” destruction will come on them suddenly, as labor pains on a pregnant woman, and they will not escape.</td></tr><tr><td class=\"t-label\">KJV</td><td>For when they shall say, Peace and safety; then sudden destruction cometh upon them, as travail upon a woman with child; and they shall not escape.</td></tr><tr><td class=\"t-label\">NIV</td><td>For God did not appoint us to suffer wrath but to receive salvation through our Lord Jesus Christ.</td></tr><tr><td class=\"t-label\">KJV</td><td>For God hath not appointed us to wrath, but to obtain salvation by our Lord Jesus Christ,</td></tr><tr><td class=\"t-label\">NIV</td><td>Rejoice always,</td></tr><tr><td class=\"t-label\">KJV</td><td>Rejoice evermore.</td></tr><tr><td class=\"t-label\">NIV</td><td>pray continually,</td></tr><tr><td class=\"t-label\">KJV</td><td>Pray without ceasing.</td></tr><tr><td class=\"t-label\">NIV</td><td>give thanks in all circumstances; for this is God’s will for you in Christ Jesus.</td></tr><tr><td class=\"t-label\">KJV</td><td>In every thing give thanks: for this is the will of God in Christ Jesus concerning you.</td></tr><tr><td class=\"t-label\">NIV</td><td>May God himself, the God of peace, sanctify you through and through. May your whole spirit, soul and body be kept blameless at the coming of our Lord Jesus Christ.</td></tr><tr><td class=\"t-label\">KJV</td><td>And the very God of peace sanctify you wholly; and I pray God your whole spirit and soul and body be preserved blameless unto the coming of our Lord Jesus Christ.</td></tr>"
   },
   "vhl_groups": [
     {
