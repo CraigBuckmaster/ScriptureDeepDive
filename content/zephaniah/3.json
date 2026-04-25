@@ -486,38 +486,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 3:3",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The image of officials as 'evening wolves' (zeʼevei ʼerev) who 'leave nothing for the morning' describes complete consumption: the predatory elite dev…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Woe, Purification, and Restoration within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 3:17",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The Hebrew yacharish beʼahavato is debated: 'he will quiet you with his love' (reading charash, 'to be silent') or 'he will renew you in his love' (re…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Woe, Purification, and Restoration within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Zephaniah 3:9-20: full-eschatological fulfilment, or first-exilic-return fulfilment?",
+        "positions": [
+          {
+            "name": "Fulfilled in the post-exilic return",
+            "proponents": "Baker, Stuart",
+            "argument": "Verses 14-20's joyful restoration ('Sing, Daughter Zion; shout aloud, Israel! Be glad and rejoice with all your heart') were substantially fulfilled in the Ezra-Nehemiah return and community re-establishment. The 'shame' removed and the 'remnant restored' have clear post-exilic historical referents."
+          },
+          {
+            "name": "Messianic / eschatological",
+            "proponents": "Robertson, MacArthur",
+            "argument": "The universal-language ('on that day... I will gather you,' 3:20) and the inner-transformation promise ('I will purify the lips of the peoples, that all of them may call on the name of the LORD,' 3:9) exceed the post-exilic return. These promises await Christ's work and final consummation. Particular emphasis: 3:17's 'the LORD your God is with you... he will take great delight in you; he will rejoice over you with singing' is quoted in patristic and contemporary devotional theology as Christ's posture toward the church."
+          },
+          {
+            "name": "Inaugurated-awaiting-consummation",
+            "proponents": "Bruckner, Wright",
+            "argument": "The promises begin in the post-exile, climax in Christ's first coming (universal gospel-language of 3:9-10 fulfilled in Pentecost/mission), and await full consummation in the New Jerusalem (3:11-20's complete shame-removal and joyful presence). The arc is real, not either-or."
+          }
+        ]
+      }
     ],
     "thread": [
       {

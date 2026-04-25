@@ -492,38 +492,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 1:5",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The identity of Molek (Hebrew malkam) is debated: it could refer to the Ammonite deity Molek or to 'their king' (malkam) as a title for Baal. Either r…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Day of the LORD Against Judah within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 1:9",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase 'those who avoid stepping on the threshold' is debated. It may refer to the Philistine custom described in 1 Samuel 5:5 or to a superstitio…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Day of the LORD Against Judah within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "The 'day of the LORD' in Zephaniah 1:14-18: near-term or eschatological?",
+        "positions": [
+          {
+            "name": "Near-historical: 586 BCE Jerusalem fall",
+            "proponents": "Baker (TOTC), Stuart (WBC)",
+            "argument": "Zephaniah ministers during Josiah's reign (1:1 — c. 640-609 BCE). The 'day of the LORD' (yom YHWH) imagery targets the imminent Babylonian destruction of Jerusalem in 586 BCE. The specific targets — Judah's leaders, syncretistic worshipers, complacent merchants — fit the pre-exilic historical moment rather than eschatological projection."
+          },
+          {
+            "name": "Eschatological day-of-judgment",
+            "proponents": "Robertson (NICOT), MacArthur",
+            "argument": "The cosmic-scale language ('I will sweep everything from the face of the earth,' 1:2; 'in the fire of his jealousy the whole earth will be consumed,' 1:18) reaches beyond any single historical event. Zephaniah's day-of-the-LORD telescopes from 586 BCE through the eschatological final-day (echoing Joel 2; 2 Pet 3:10)."
+          },
+          {
+            "name": "Telescoped — both at once",
+            "proponents": "Bruckner (NIVAC), Barker-Bailey (NAC)",
+            "argument": "OT prophetic 'day of the LORD' language regularly operates on multiple horizons simultaneously. Zephaniah's near-historical targets (Judah's 586 fall, Assyria's 612 fall) are genuine; so is the cosmic-eschatological horizon into which they merge. Reading either horizon without the other impoverishes the text."
+          }
+        ]
+      }
     ],
     "thread": [
       {
