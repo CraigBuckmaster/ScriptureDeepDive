@@ -398,7 +398,125 @@
         }
       ],
       "note": "3 John is a personal letter addressing hospitality and leadership. Gaius is commended, Diotrephes is rebuked, Demetrius is endorsed."
-    }
+    },
+    "discourse": {
+      "title": "3 John — Hospitality Commended, Diotrephes Exposed, Demetrius Endorsed",
+      "thesis": "The elder commends Gaius for supporting traveling Christian missionaries, rebukes Diotrephes for refusing them and excluding those who welcome them, and endorses Demetrius as trustworthy.",
+      "nodes": [
+        {
+          "label": "Greeting and prayer for Gaius (vv.1-4)",
+          "text": "The elder to the beloved Gaius, whom he loves in truth. Praying for Gaius's prosperity and health as his soul prospers. The elder rejoiced greatly when brothers came and testified to Gaius's truth — his walking in truth. No greater joy than to hear his children walking in truth.",
+          "type": "thesis"
+        },
+        {
+          "label": "Commendation of Gaius's hospitality (vv.5-8)",
+          "text": "Gaius acts faithfully whenever he serves the brothers — even strangers. They have testified to Gaius's love before the church. He will do well to send them on their way worthy of God. For they went out for the sake of the Name, accepting nothing from pagans. We ought to support such people, that we may be fellow workers in the truth.",
+          "type": "evidence"
+        },
+        {
+          "label": "Rebuke of Diotrephes (vv.9-11)",
+          "text": "The elder wrote to the church, but Diotrephes — who loves to be first — does not acknowledge us. So if I come, I will bring up what he is doing: spreading malicious nonsense, refusing to welcome the brothers, stopping those who want to, and putting them out of the church. Beloved, do not imitate evil but imitate good. The one who does good is from God; the one who does evil has not seen God.",
+          "type": "evidence"
+        },
+        {
+          "label": "Endorsement of Demetrius and closing (vv.12-15)",
+          "text": "Demetrius is well spoken of by everyone — and by the truth itself. We also speak well of him, and you know our testimony is true. The elder had much to write but prefers to see Gaius in person. Peace to you. The friends here send greetings. Greet the friends there by name.",
+          "type": "conclusion"
+        }
+      ],
+      "note": "3 John's 15 verses preserve the NT's most concrete glimpse of itinerant-missionary economics in the late first century. Traveling Christian teachers depended on hospitality from settled house-churches; refusal to receive them (Diotrephes's fault) was both theologically and practically destructive. The letter also witnesses a local-power conflict: Diotrephes may be the first documented Christian bishop-figure refusing wider apostolic authority."
+    },
+    "hebtext": [
+      {
+        "word": "φιλοπρωτεύων",
+        "tlit": "philoprōteuōn",
+        "gloss": "loves-to-be-first",
+        "note": "v.9's hapax legomenon (unique-to-Scripture) compound noun for Diotrephes's defining flaw. The word denotes status-craving — love of primacy — which the elder identifies as the root of Diotrephes's refusal to receive the apostolic mission. The diagnosis is remarkable: the problem is not heterodox belief or moral lapse but ecclesiastical status-seeking."
+      },
+      {
+        "word": "ἐκβάλλει ἐκ τῆς ἐκκλησίας",
+        "tlit": "ekballei ek tēs ekklēsias",
+        "gloss": "casts out from the church",
+        "note": "v.10's strong verb for Diotrephes's excommunicatory action. Ekballō (literally 'throw out') is the verb used of Jesus driving out demons and throwing traders from the temple. The elder uses strong language to mark Diotrephes's disciplinary action as itself theologically distortive — using ecclesial discipline to protect his own authority rather than the gospel."
+      },
+      {
+        "word": "συνεργοὶ τῇ ἀληθείᾳ",
+        "tlit": "synergoi tē alētheia",
+        "gloss": "fellow workers with the truth",
+        "note": "v.8's vocation-description for those who support missionaries: they become synergoi (co-workers) not with the missionaries but with 'the truth' itself. The phrase elevates ordinary hospitality to the theological plane — material support of gospel-labor is itself participation in the gospel's forward movement."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "The Elder (Author)",
+        "role": "Author; likely John the apostle",
+        "text": "The author identifies only as 'the elder' (ho presbyteros) — the same self-designation as 2 John. Early church tradition unanimously identifies him with John the apostle writing late in life from Ephesus. The letter's compressed style, its family language ('children walking in truth'), and its concern with itinerant-missionary support align with John's other late-century writings."
+      },
+      {
+        "name": "Gaius",
+        "role": "Beloved addressee",
+        "text": "A house-church leader whose name was common (other NT Gaii in Rom 16:23, 1 Cor 1:14, Acts 19:29, 20:4) — this one likely distinct from those. Identified four times as 'beloved.' He has shown exemplary hospitality to traveling missionaries; the elder writes to commend him and to provide him a countermeasure to Diotrephes's exclusionary practice."
+      },
+      {
+        "name": "Diotrephes",
+        "role": "Disciplinary target",
+        "text": "A local church leader whose 'love to be first' has led him to refuse the elder's authority, slander the elder and his circle, refuse hospitality to traveling missionaries, and excommunicate those who welcome them. The letter's occasion is largely Diotrephes's conduct; the elder's coming visit (v.10) carries disciplinary intent. One of the NT's clearest examples of church-leadership gone wrong."
+      },
+      {
+        "name": "Demetrius",
+        "role": "Endorsed emissary (likely letter-carrier)",
+        "text": "Probably the letter's carrier, whose reputation needs vouching in the hostile Diotrephes-controlled context. The elder's threefold attestation ('well spoken of by everyone, by the truth itself, by us') gives Gaius grounds to receive him over Diotrephes's likely objection. Early tradition sometimes identified him with the silversmith Demetrius of Acts 19, but this identification is speculative."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Eusebius, Ecclesiastical History 3.25.3; 7.25.7 (c. 325 CE)",
+        "text": "Eusebius classifies 3 John among the 'disputed' (antilegomena) writings — accepted by some but questioned by others, partly because of its brevity and private-letter character. The letter's canonical status was secured by the 4th century but never reached the prominence of longer NT writings. Jerome's treatment parallels Eusebius's."
+      },
+      {
+        "who": "Westcott, Epistles of St John (1883)",
+        "text": "Westcott's classical commentary argued for unity of authorship between 1-2-3 John on stylistic and theological grounds. The 'elder' of 2 and 3 John is the same figure; the shared vocabulary (truth, love, walking, children, abiding) ties the three letters into a single theological voice. This argument has largely held in subsequent scholarship."
+      },
+      {
+        "who": "Judith Lieu, The Second and Third Epistles of John (1986)",
+        "text": "Lieu's focused study read 3 John as early Christian evidence of conflict between itinerant-charismatic authority (the 'elder' and his missionary circle) and settled-local authority (Diotrephes's house-church). The letter documents a period when the NT's apostolic charism is transitioning into institutional ecclesial structure; Diotrephes's refusal of itinerant authority prefigures the bishop-monarchical ecclesiology of the 2nd century."
+      },
+      {
+        "who": "Colin Kruse, The Letters of John, Pillar (2000)",
+        "text": "Kruse's evangelical commentary emphasises 3 John as a pastoral case study: the letter shows how apostolic authority operates in hostile conditions — commending, writing personally, announcing a visit, trusting in-person encounter. The pastoral strategy of the elder is not formal discipline-at-a-distance but relational-presence combined with written testimony to the truth."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "3 Jn 3-4",
+        "target": "2 Jn 4; 1 Jn 1:6-7",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'Walking in truth' is the Johannine corpus's signature phrase. 2 John 4 and 3 John 3-4 use near-identical formulations; 1 John 1:6-7 develops the same image as 'walking in the light.' The phrase unites ethical conduct with doctrinal fidelity in characteristic Johannine fashion."
+      },
+      {
+        "anchor": "3 Jn 5-8",
+        "target": "Matt 10:40-42",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "Hospitality to traveling missionaries as participation in their work echoes Jesus's 'whoever receives you receives me' (Matt 10:40-42). The theological principle — welcoming gospel-bearers unites the welcomer with the gospel mission — is continuous from Jesus's sending to 3 John's commendation."
+      },
+      {
+        "anchor": "3 Jn 9-10",
+        "target": "Matt 20:25-28; Mark 10:42-45",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "Diotrephes's 'loving to be first' inverts Jesus's teaching that 'whoever would be first among you must be your slave.' The NT's servant-leadership principle receives its sharpest negative instance in 3 John — Diotrephes is the type of church leader the Gospels warned against."
+      },
+      {
+        "anchor": "3 Jn 11",
+        "target": "1 Jn 3:6-10",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'The one who does good is from God; the one who does evil has not seen God' restates 1 John's repeated test: conduct reveals true spiritual condition. The Johannine insistence that right-relation-to-God produces right-doing is compressed here into a single ethical criterion."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>It gave me great joy when some believers came and testified about your faithfulness to the truth, telling how you continue to walk in it.</td></tr><tr><td class=\"t-label\">KJV</td><td>For I rejoiced greatly, when the brethren came and testified of the truth that is in thee, even as thou walkest in the truth.</td></tr><tr><td class=\"t-label\">NIV</td><td>I have no greater joy than to hear that my children are walking in the truth.</td></tr><tr><td class=\"t-label\">KJV</td><td>I have no greater joy than to hear that my children walk in truth.</td></tr><tr><td class=\"t-label\">NIV</td><td>It was for the sake of the Name that they went out, receiving no help from the pagans.</td></tr><tr><td class=\"t-label\">KJV</td><td>Because that for his name's sake they went forth, taking nothing of the Gentiles.</td></tr><tr><td class=\"t-label\">NIV</td><td>We ought therefore to show hospitality to such people so that we may work together for the truth.</td></tr><tr><td class=\"t-label\">KJV</td><td>We therefore ought to receive such, that we might be fellowhelpers to the truth.</td></tr><tr><td class=\"t-label\">NIV</td><td>Dear friend, do not imitate what is evil but what is good. Anyone who does what is good is from God. Anyone who does what is evil has not seen God.</td></tr><tr><td class=\"t-label\">KJV</td><td>Beloved, follow not that which is evil, but that which is good. He that doeth good is of God: but he that doeth evil hath not seen God.</td></tr><tr><td class=\"t-label\">NIV</td><td>I hope to see you soon, and we will talk face to face.</td></tr><tr><td class=\"t-label\">KJV</td><td>But I trust I shall shortly see thee, and we shall speak face to face.</td></tr><tr><td class=\"t-label\">NIV</td><td>Peace to you. The friends here send their greetings. Greet the friends there by name.</td></tr><tr><td class=\"t-label\">KJV</td><td>Peace be to thee. Our friends salute thee. Greet the friends by name.</td></tr>"
   },
   "vhl_groups": [
     {
