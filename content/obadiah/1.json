@@ -472,22 +472,41 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 1:1",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The relationship between Obadiah 1-4 and Jeremiah 49:14-16 is debated. Both texts share extensive verbal parallels, suggesting either literary depende…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Doom of Edom and the Day of the LORD within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "The Obadiah-Jeremiah parallel (Obad 1-4 ≈ Jer 49:14-16): literary dependence, common source, or independent composition?",
+        "positions": [
+          {
+            "name": "Jeremiah dependent on Obadiah",
+            "proponents": "Raabe (AB), Block, Stuart",
+            "argument": "Obadiah is typically the shorter, sharper form; Jeremiah 49's longer oracle reads as expansion. If Obadiah is pre-exilic (responding to 586 BCE Edomite betrayal) or early-exilic, Jeremiah's 593 BCE oracle against Edom could draw on Obadiah's already-circulating oracle. The consensus leans this direction, making Obadiah the OT's earliest surviving post-Jerusalem-fall prophetic voice."
+          },
+          {
+            "name": "Obadiah dependent on Jeremiah",
+            "proponents": "Wolff (Hermeneia)",
+            "argument": "Some critical scholars reverse the direction: Jeremiah's oracle comes first, and Obadiah is a post-exilic reflection that draws on Jeremiah's earlier Edom-oracle. Proponents emphasise that Obadiah's focus on the 'day of the LORD' language (vv.15-21) fits a later apocalyptic-inflected stage of OT prophecy."
+          },
+          {
+            "name": "Both drawing on a shared oracle tradition",
+            "proponents": "Allen (NICOT), Baker (TOTC)",
+            "argument": "The parallels may reflect a shared oracle-tradition against Edom circulating in prophetic circles after 586 BCE — neither book dependent on the other, both drawing on the common pool. This explains the shared vocabulary without requiring textual dependence and accounts for the small but consistent variations between the two passages."
+          }
+        ]
+      },
+      {
+        "title": "'The Day of the LORD' in Obadiah 15: historical-imminent, eschatological-final, or both?",
+        "positions": [
+          {
+            "name": "Historical day-of-Yahweh against Edom",
+            "proponents": "Stuart (WBC), Block",
+            "argument": "Obadiah 15-18's 'day of the LORD' is the concrete coming-judgment against Edom and the surrounding hostile nations — fulfilled historically in Edom's decline during the Nabatean conquests (6th-2nd c. BCE). The near-term political referent fits the book's Edom-specific frame."
+          },
+          {
+            "name": "Eschatological Day merging nations' judgment",
+            "proponents": "Raabe, Allen (NICOT)",
+            "argument": "Verse 15's 'the day of the LORD is near for all nations' expands the Edom-specific judgment into a universal final-day reckoning. The closing vision (vv.21 — 'saviors will go up on Mount Zion... the kingdom will be the LORD's') is explicitly eschatological. The book telescopes from the historical betrayal to the cosmic consummation."
+          }
+        ]
+      }
     ],
     "thread": [
       {
