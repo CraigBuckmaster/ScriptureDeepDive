@@ -309,22 +309,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 42:20",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The purpose clause lehavdil ben haqqodesh lachol uses the same vocabulary as Leviticus 10:10 and Ezekiel 44:23. The NET translators note this as the i…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Priests' Chambers and Outer Measurements within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Ezekiel's temple vision (chs. 40-48, including ch. 42): future literal temple, symbolic ideal, or already-fulfilled blueprint?",
+        "positions": [
+          {
+            "name": "Future literal millennial temple",
+            "proponents": "MacArthur, Walvoord, classical dispensationalism",
+            "argument": "The architectural specificity (precise measurements in cubits, room counts, chamber dimensions) is uncharacteristic for symbolic literature. Ezekiel describes a building plan; the natural reading is that this temple will be literally constructed in the messianic age. Differences from the second temple (which Ezra-Nehemiah did not match these specifications) and the future-tense framing throughout chs. 40-48 confirm the prophecy awaits literal future fulfillment."
+          },
+          {
+            "name": "Symbolic-ideal vision (Christ-fulfilled)",
+            "proponents": "Block (NICOT), Duguid, classical Reformed reading",
+            "argument": "The vision is theological architecture — a symbolic representation of the restored covenant community, the renewed presence-of-God-with-his-people. Christ's body (John 2:19-22) and the church (1 Cor 3:16; Eph 2:19-22) are the new-covenant temples; Revelation's New Jerusalem ('I saw no temple in the city, because the Lord God Almighty and the Lamb are its temple,' Rev 21:22) makes explicit that any literal Ezekielian temple-building is theologically obsolete. Ezekiel paints in temple-shaped imagery what is fulfilled in Christ-shaped reality."
+          },
+          {
+            "name": "Idealised blueprint not realised but theologically didactic",
+            "proponents": "Greenberg (AB), Zimmerli",
+            "argument": "Ezekiel sketches an idealised temple-vision that even the post-exilic community did not implement and was unlikely to. The vision functions theologically — instructing the exiles in what restored worship requires (proper priesthood, rightly-ordered space, regulated access to holiness) without claiming to be a construction blueprint. The architectural detail is rhetorical rather than directive."
+          }
+        ]
+      }
     ],
     "thread": [
       {

@@ -373,22 +373,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 24:1-2",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The date formula corresponds to January 15, 588 BC in the Babylonian calendar.…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Boiling Pot within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "The death of Ezekiel's wife as sign-act (24:15-27): is the prophetic command ethically intelligible?",
+        "positions": [
+          {
+            "name": "Permissive interpretation: Yahweh foreknew, did not cause",
+            "proponents": "Block (NICOT), Duguid",
+            "argument": "The Hebrew narrates Yahweh's announcement of the impending death (v.16) and the prophetic prohibition against mourning (v.17), but does not necessarily attribute causation to Yahweh. Ezekiel's wife dies of natural causes; Yahweh foretells the death and turns it to prophetic use. The ethical sting — God using human grief as sign — remains, but the chapter does not assert divine homicide. The sign-act employs already-occurring suffering pedagogically."
+          },
+          {
+            "name": "Hard reading: God causes the death for sign-purposes",
+            "proponents": "Greenberg (AB), Zimmerli",
+            "argument": "The grammar of v.16 ('I am about to take from you the delight of your eyes with one blow') and the immediate fulfilment in v.18 ('she died') reads most naturally as Yahweh's direct action. The book of Ezekiel is unflinching: the prophet's body, family, and emotions are instruments. The chapter participates in the OT's hardest theological tension — divine sovereignty extending into the prophet's most personal losses."
+          },
+          {
+            "name": "Reading the prophet's silence as compassionate restraint",
+            "proponents": "Wright (BST)",
+            "argument": "Ezekiel's silent grief (v.17, 22-23) is the chapter's pastoral heart. The sign-act enacts the exiles' coming reality — when news of Jerusalem's fall reaches them, public mourning will be inadequate to the scale of loss. The prophet's wife is mourned silently and privately, modelling a grief too deep for cultural ritual. Ezekiel's silence is not stoic but covenantal: he carries the people's grief in his own body before they know they will need to."
+          }
+        ]
+      }
     ],
     "thread": [
       {

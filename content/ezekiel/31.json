@@ -363,22 +363,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 31:3",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The Hebrew text of v. 3 is debated. The MT reads 'Assyria was a cedar in Lebanon' (ashshur erez ba-lebanon), but some scholars emend to te'ashshur ('c…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Great Cedar within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "The 'cedar in Lebanon' (31:3): is Pharaoh the cedar, or is Assyria the original referent?",
+        "positions": [
+          {
+            "name": "Assyria as the cedar — Egypt as the implied parallel",
+            "proponents": "Block (NICOT), Zimmerli",
+            "argument": "The chapter's grammar (vv.3-9) describes a magnificent tree felled by Yahweh — historically Assyria, fallen in 612 BCE to the Medo-Babylonian coalition. The oracle is addressed to Pharaoh as warning: 'whom are you like in your greatness?' (v.2). Egypt is told to look at Assyria's fate as her own coming reality. The cedar is not Pharaoh — Pharaoh is the audience being shown Assyria's corpse."
+          },
+          {
+            "name": "Pharaoh as the cedar (direct allegory)",
+            "proponents": "Greenberg (AB), MacArthur",
+            "argument": "The chapter's direct address ('to Pharaoh king of Egypt and his hordes,' v.2) and the closing application ('this is Pharaoh and all his hordes,' v.18) frame the entire cedar imagery as Pharaoh-allegory. The Lebanon-cedar is Pharaoh; the Assyria-comparison is a parenthetical contextualisation. The chapter's rhetorical force depends on Pharaoh seeing himself in the felled tree."
+          },
+          {
+            "name": "Both: Assyria as warning-template applied to Pharaoh",
+            "proponents": "Wright (BST), Duguid",
+            "argument": "The chapter's literary architecture supports both readings simultaneously: vv.3-9 describe historical Assyria; vv.10-18 apply the pattern to Pharaoh. The cedar-imagery is doubly inhabited — historically Assyria, prophetically Egypt. The point is that imperial pride takes the same fall regardless of nationality. The intentional ambiguity is the rhetorical force."
+          }
+        ]
+      }
     ],
     "thread": [
       {

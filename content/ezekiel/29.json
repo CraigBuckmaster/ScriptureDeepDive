@@ -476,22 +476,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 29:17",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The date formula corresponds to April 26, 571 BC. This is the latest dated oracle in the book, placed here for thematic rather than chronological reas…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Oracle Against Egypt within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Egypt's 40-year desolation (29:11-13): historical fulfilment or rhetorical figure?",
+        "positions": [
+          {
+            "name": "Symbolic period of judgment, not 40 calendar years",
+            "proponents": "Greenberg (AB), Block (NICOT), Zimmerli",
+            "argument": "No archaeological or historical record attests a literal 40-year complete depopulation of Egypt. The number 40 is OT's standing symbol of a generation-of-judgment (wilderness wandering, Goliath's 40-day taunt, Eli's 40-year priesthood). Ezekiel's prophecy projects a sustained period of subjugation under Babylonian dominance during which Egypt loses regional significance — historically true at the macro level (Egypt's 6th-century decline under Nebuchadnezzar) without requiring a specific quadragenary count."
+          },
+          {
+            "name": "Literal 40 years from Nebuchadnezzar's 568 BCE invasion",
+            "proponents": "MacArthur, traditional pre-critical reading",
+            "argument": "Nebuchadnezzar's 568 BCE Egyptian campaign (attested in Babylonian fragments: BM 33041) inaugurated a 40-year period of Babylonian-Persian dominance ending roughly with Cyrus's 525 BCE consolidation under Cambyses. The exilic-period 40 years from Egyptian humiliation to restored autonomy under late Achaemenid rule corresponds reasonably to the prophetic timeframe."
+          },
+          {
+            "name": "Conditional / contingent prophecy",
+            "proponents": "Duguid (NIVAC)",
+            "argument": "OT prophecy regularly carries implicit conditions — Jonah's Nineveh prophecy (40 days) was averted by repentance; Jeremiah explicitly articulates this principle (Jer 18:7-10). Ezekiel's 40-year Egypt oracle may be similarly conditional: the projected duration was the maximum if Egypt did not turn. Historical realisation can be partial without falsifying the prophetic word."
+          }
+        ]
+      }
     ],
     "thread": [
       {

@@ -471,38 +471,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 30:3",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The Hebrew yom le-YHWH (literally 'a day belonging to the LORD') indicates a time when God asserts his sovereign authority through decisive action. Th…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Day of the LORD Against Egypt within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 30:5",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The identity of 'the people of the covenant land' (bene erets habberit) is debated. It may refer to Jewish mercenaries in Egypt, allied peoples under …",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Day of the LORD Against Egypt within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "The 'day of the LORD' (30:3) against Egypt: near-historical event or eschatological projection?",
+        "positions": [
+          {
+            "name": "Near-historical day-of-Yahweh",
+            "proponents": "Block (NICOT), Greenberg (AB)",
+            "argument": "Ezekiel's day-of-the-LORD oracles consistently target near-term political events: in this chapter, Nebuchadnezzar's coming Egyptian campaigns. The phrase functions as Hebrew prophetic shorthand for Yahweh's intervention in history through human-political instruments. The chapter's geographical specificity (Cush, Put, Lud, Arabia, Libya — all Egyptian allies) confirms a near-event referent."
+          },
+          {
+            "name": "Telescoped near-and-far horizons",
+            "proponents": "Wright (BST), MacArthur",
+            "argument": "Prophetic 'day of the LORD' language characteristically operates on multiple time-horizons simultaneously — a near event prefiguring a final eschatological day. Ezekiel's Egypt oracle has a 6th-century BCE referent (Nebuchadnezzar's campaigns) and a final-day extension (Joel 3, Zech 14, Rev 16's day of Almighty God). The two are theologically continuous, not competing."
+          },
+          {
+            "name": "Proto-apocalyptic literary form",
+            "proponents": "Duguid (NIVAC), Zimmerli",
+            "argument": "The day-of-Yahweh language in Ezk 30 belongs to the developing prophetic-apocalyptic genre — using cosmic-cataclysm imagery (clouds, gloom, time of the heathen) to dignify ordinary historical-political events with theological weight. The form is more important than the chronological referent: this is how Israelite prophecy declares that Yahweh, not Nebuchadnezzar, is acting."
+          }
+        ]
+      }
     ],
     "thread": [
       {

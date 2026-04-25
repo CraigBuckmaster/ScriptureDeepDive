@@ -380,22 +380,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 14:14",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The spelling 'Daniel' here (dan'el, without the yod) differs from the book of Daniel (daniyye'l) and matches the Ugaritic hero Dan'el from the Aqhat e…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Idolatrous Elders and the Three Righteous Men within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Who is the 'Daniel' of 14:14, 20? Biblical Daniel, ancient Danel, or a third figure?",
+        "positions": [
+          {
+            "name": "The biblical Daniel (Ezekiel's contemporary)",
+            "proponents": "Block (NICOT), MacArthur, Duguid",
+            "argument": "Daniel was deported in 605 BCE — six years before Ezekiel's call (593 BCE) — and rose rapidly to prominence in Babylon. By the time Ezekiel writes (c. 593-571 BCE), Daniel's reputation as a wise and righteous figure in the imperial court would be widely known among Babylonian exiles. The natural reading is the contemporary Daniel; the unusual spelling (Dani'el / Danʾel) is a defective Hebrew form, not a different name."
+          },
+          {
+            "name": "Ancient Ugaritic / Phoenician Danel",
+            "proponents": "Greenberg (AB), Zimmerli, modern critical consensus",
+            "argument": "The Ugaritic Aqhat epic features a king Danel famed for righteous judgment — 'judging the cause of the widow, defending the rights of the orphan' (KTU 1.17). The Hebrew defective spelling Danʾel matches the Ugaritic. Ezekiel pairs three legendary ancient figures (Noah, Danel, Job) — pairing his junior contemporary with two patriarchs would be incongruous. The Aqhat-Danel reading explains the unusual spelling and the legendary cohort."
+          },
+          {
+            "name": "Either reading works theologically",
+            "proponents": "Wright (BST)",
+            "argument": "The point of the passage does not turn on which Daniel: even three legendary intercessors cannot avert covenant judgment when sin is sufficient. Whether Ezekiel intends the contemporary Daniel or the Ugaritic Danel, the rhetorical force is identical. Modern commentaries can hold both views without compromising exegesis of the chapter's main argument."
+          }
+        ]
+      }
     ],
     "thread": [
       {

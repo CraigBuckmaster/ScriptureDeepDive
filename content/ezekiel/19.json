@@ -336,22 +336,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 19:2",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The question 'What was your mother?' introduces the lioness metaphor. The feminine imagery for the dynasty is notable — the mother, not the father, is…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads A Lament for the Princes of Israel within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Identifying the lioness's three princes (19:1-9): which Davidic kings?",
+        "positions": [
+          {
+            "name": "Jehoahaz and Jehoiachin (Greenberg, Block consensus)",
+            "proponents": "Greenberg (AB), Block (NICOT), Zimmerli",
+            "argument": "Most commentators identify the first young lion as Jehoahaz (taken to Egypt by Pharaoh Necho, 2 Kgs 23:33-34) and the second as Jehoiachin (taken to Babylon by Nebuchadnezzar, 2 Kgs 24:15). The geographical destinations match: 'they brought him with hooks to the land of Egypt' (v.4) and 'they brought him to the king of Babylon' (v.9). Jehoiakim is omitted because he died in Jerusalem rather than being deported."
+          },
+          {
+            "name": "Including Jehoiakim (Duguid alternative)",
+            "proponents": "Duguid (NIVAC), MacArthur",
+            "argument": "An alternative reading takes the first lion as Jehoahaz (Egypt) and the second as Jehoiakim (whose vassalage to Babylon and rebellious death anticipated Jehoiachin's fate). On this reading, Ezekiel's lament focuses on the line's progressive degradation rather than the two deportees. The destination references can be read symbolically."
+          },
+          {
+            "name": "Symbolic-archetypal Davidic critique",
+            "proponents": "Christopher Wright (BST)",
+            "argument": "The chapter's primary aim is theological lament over the Davidic line's collective failure, not specific identification. The lioness-mother is Judah herself; the lions are paradigmatic of the late-monarchic kings as a class. Pinpointing individual kings is less interpretively important than recognising the collapse of the royal house — a lament with eschatological undertones (cf. v.14: 'no strong sceptre to rule with')."
+          }
+        ]
+      }
     ],
     "thread": [
       {
