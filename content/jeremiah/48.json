@@ -322,22 +322,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 48:1",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The Moabite cities mentioned correspond to locations east of the Dead Sea in modern Jordan. Many are identifiable from the Mesha Stele and other ancie…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Oracle Against Moab within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Jeremiah 48's extended Moab-oracle: vengeance-rhetoric or theological lament for fallen humanity?",
+        "positions": [
+          {
+            "name": "Theological lament with judgment-content",
+            "proponents": "Lundbom, Brueggemann",
+            "argument": "Jer 48 mixes severe-judgment language with explicit-lament ('therefore my heart wails for Moab,' v.31; 'therefore I lament for Moab,' v.36). The chapter is not pure-vengeance but theologically-complex grief over Moab's fall. The prophet weeps for Moab even while announcing Yahweh's judgment. The chapter shapes a non-triumphalist theology of judgment."
+          },
+          {
+            "name": "Standard ANE oracle-against-nations rhetoric",
+            "proponents": "Critical mainstream",
+            "argument": "The chapter follows ANE prophetic-rhetorical patterns of vengeance-oracle against neighboring nations. Isaiah 15-16, Ezekiel 25, and other prophetic Moab-oracles share the vocabulary and emotional register. The 'lament' is rhetorical convention rather than genuine grief."
+          },
+          {
+            "name": "Genuine prophetic compassion within judgment-pronouncement",
+            "proponents": "Wright",
+            "argument": "Jeremiah's lament for Moab is theologically-significant — the prophet does not exempt himself from grief over judgment-recipients. The chapter models prophetic-pastoral integrity: announce judgment truthfully while grieving its execution honestly. The both-and is genuine, not contradictory."
+          }
+        ]
+      }
     ],
     "thread": [
       {
@@ -375,7 +379,8 @@
         "type": "Connection",
         "text": "Edom's pride receives the same treatment: \"The pride of your heart has deceived you.\" National arrogance is a universal prophetic target."
       }
-    ]
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Concerning Moab: This is what the Lord Almighty, the God of Israel, says: “Woe to Nebo, for it will be ruined. Kiriathaim will be disgraced and captured; the stronghold will be disgraced and shattered.</td></tr><tr><td class=\"t-label\">KJV</td><td>Against Moab thus saith the LORD of hosts, the God of Israel; Woe unto Nebo! for it is spoiled: Kiriathaim is confounded and taken: Misgab is confounded and dismayed.</td></tr><tr><td class=\"t-label\">NIV</td><td>Since you trust in your deeds and riches, you too will be taken captive, and Chemosh will go into exile, together with his priests and officials.</td></tr><tr><td class=\"t-label\">KJV</td><td>For because thou hast trusted in thy works and in thy treasures, thou shalt also be taken: and Chemosh shall go forth into captivity with his priests and his princes together.</td></tr><tr><td class=\"t-label\">NIV</td><td>“Moab has been at rest from youth, like wine left on its dregs, not poured from one jar to another— she has not gone into exile. So she tastes as she did, and her aroma is unchanged.</td></tr><tr><td class=\"t-label\">KJV</td><td>Moab hath been at ease from his youth, and he hath settled on his lees, and hath not been emptied from vessel to vessel, neither hath he gone into captivity: therefore his taste remained in him, and his scent is not changed.</td></tr><tr><td class=\"t-label\">NIV</td><td>Therefore I wail over Moab, for all Moab I cry out, I moan for the people of Kir Hareseth.</td></tr><tr><td class=\"t-label\">KJV</td><td>Therefore will I howl for Moab, and I will cry out for all Moab; mine heart shall mourn for the men of Kirheres.</td></tr><tr><td class=\"t-label\">NIV</td><td>“Yet I will restore the fortunes of Moab in days to come,” declares the Lord. Here ends the judgment on Moab.</td></tr><tr><td class=\"t-label\">KJV</td><td>Yet will I bring again the captivity of Moab in the latter days, saith the LORD. Thus far is the judgment of Moab.</td></tr>"
   },
   "vhl_groups": [
     {

@@ -359,22 +359,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 25:11",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The \"seventy years\" has been interpreted variously: a round number for a lifetime (Ps 90:10), the literal span 605-538 BC, or the temple gap 586-516 B…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Seventy Years and the Cup of Wrath within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Jeremiah 25:11-12's 'seventy years' for Babylon: literal calendar count or symbolic completeness?",
+        "positions": [
+          {
+            "name": "Literal seventy-year period",
+            "proponents": "Lundbom, MacArthur",
+            "argument": "Counting from 605 BCE (Babylon's regional dominance / first deportation) to 539 BCE (Cyrus's decree / temple-restart) yields 66-67 years — close to the prophesied 70. Alternative counting from 586 BCE (Jerusalem's fall) to 516 BCE (second temple completion) yields exactly 70. The prophecy was substantially literal-historical."
+          },
+          {
+            "name": "Symbolic-completeness number",
+            "proponents": "Critical mainstream",
+            "argument": "Seventy in Hebrew tradition signifies completeness (10 × 7). The prophecy uses symbolic-number rather than precise calendar measurement. The fulfillment-period (whatever exactly it was) honored the prophecy by completing-the-cycle of judgment-period. The number's force is theological-symbolic."
+          },
+          {
+            "name": "Substantially literal with theological-completeness overtones",
+            "proponents": "Wright",
+            "argument": "The prophecy is both substantially literal (a measurable historical period) and theologically-symbolic (completeness of judgment-cycle). The two readings are not opposed; the historical-fulfillment honors both the literal-count and the theological-completeness. Daniel 9 explicitly counts the 70 years as historical reality."
+          }
+        ]
+      }
     ],
     "thread": [
       {
