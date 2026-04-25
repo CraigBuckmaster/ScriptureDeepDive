@@ -100,7 +100,16 @@ export interface GuidedStudyPlan {
   mode: GuidedStudyMode;
   modeLabel: string;
   sceneRows: GuidedSceneRow[];
-  prompts: GuidedPrompt[];
+  /**
+   * Mode-specific prompts keyed by step. Filled from
+   * `MODE_DEFINITIONS[mode].steps[step].prompts`.
+   */
+  stepPrompts: Record<GuidedStudyStep, GuidedPrompt[]>;
+  /**
+   * Pre-Phase-2 genre-observation + better-question pair. Retired by
+   * #1736 (Phase 2.7) once the screen consumes `stepPrompts` directly.
+   */
+  legacyPrompts: GuidedPrompt[];
   recommendations: GuidedPanelRecommendation[];
   evidenceTrail: GuidedEvidenceTrailItem[];
   betterQuestionPrompt: string;

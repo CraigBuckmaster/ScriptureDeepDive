@@ -8,11 +8,46 @@ export const DEVOTIONAL_MODE: ModeDefinition = {
   blurb: 'Observe the text carefully before moving toward prayerful response.',
   marketingPromise: "A prayer in the chapter's own language.",
   steps: {
-    scene: { prompts: [] },
-    observe: { prompts: [] },
-    explore: { prompts: [] },
-    synthesize: { prompts: [] },
-    review: { prompts: [] },
+    scene: {
+      prompts: [
+        {
+          key: 'devotional-scene-arrival',
+          text: 'How did you arrive at this chapter today? What are you bringing with you?',
+        },
+      ],
+    },
+    observe: {
+      prompts: [
+        {
+          key: 'devotional-observe-meeting',
+          text: 'What word, phrase, or image is meeting you in this chapter?',
+        },
+      ],
+    },
+    explore: {
+      prompts: [
+        {
+          key: 'devotional-explore-deepen',
+          text: "Which panel deepens what's meeting you?",
+        },
+      ],
+    },
+    synthesize: {
+      prompts: [
+        {
+          key: 'devotional-synthesize-prayer',
+          text: 'What might God be saying? Pray it back in your own words.',
+        },
+      ],
+    },
+    review: {
+      prompts: [
+        {
+          key: 'devotional-review-carry',
+          text: 'What will you carry into the rest of your day?',
+        },
+      ],
+    },
   },
   trailOrder: ['context', 'scripture', 'language'],
   recommendationLimit: 3,

@@ -1,6 +1,7 @@
 import type { SectionPanel } from '../../types';
 import { getModeDefinition } from './modes/definitions';
 import {
+  GUIDED_STUDY_STEPS,
   type ConfidenceLevel,
   type GuidedConceptChip,
   type GuidedEvidenceTrailItem,
@@ -9,6 +10,7 @@ import {
   type GuidedStudyMode,
   type GuidedStudyPlan,
   type GuidedStudyPlanInput,
+  type GuidedStudyStep,
 } from './types';
 
 const RECOMMENDATION_ORDER = [
@@ -300,13 +302,21 @@ export function buildGuidedStudyPlan(input: GuidedStudyPlanInput): GuidedStudyPl
   const allRecommendations = buildRecommendations(input, def.panelWeights);
   const betterQuestion = betterQuestionPrompt(input);
 
-  const prompts: GuidedPrompt[] = [
+  const legacyPrompts: GuidedPrompt[] = [
     {
       key: 'genre-observation',
       text: genrePrompt(input.book?.genre_label ?? input.bookIntro?.at_a_glance?.genre),
     },
     { key: 'better-question', text: betterQuestion },
   ];
+
+  const stepPrompts = GUIDED_STUDY_STEPS.reduce<Record<GuidedStudyStep, GuidedPrompt[]>>(
+    (acc, step) => {
+      acc[step] = def.steps[step].prompts;
+      return acc;
+    },
+    {} as Record<GuidedStudyStep, GuidedPrompt[]>,
+  );
 
   return {
     chapterId: input.chapter.id,
@@ -327,7 +337,8 @@ export function buildGuidedStudyPlan(input: GuidedStudyPlanInput): GuidedStudyPl
         value: purpose ?? 'Read the chapter first, then let the study panels sharpen the context.',
       },
     ],
-    prompts,
+    stepPrompts,
+    legacyPrompts,
     recommendations: allRecommendations.slice(0, def.recommendationLimit),
     evidenceTrail: buildEvidenceTrail(mode, allRecommendations),
     betterQuestionPrompt: betterQuestion,
