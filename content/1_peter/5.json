@@ -420,7 +420,98 @@
           "text": "By Silvanus, Peter writes briefly, exhorting and declaring this is the true grace of God — stand firm in it. The church in Babylon sends greetings, and so does Mark. Greet one another with a kiss of love. Peace to all who are in Christ."
         }
       ]
-    }
+    },
+    "hebtext": [
+      {
+        "word": "ποιμάνατε",
+        "tlit": "poimanate",
+        "gloss": "shepherd",
+        "note": "v.2's verb for elder-pastoral ministry. The shepherd-imagery draws on Jesus's John 10 good-shepherd discourse and ultimately on OT shepherd-imagery (Ezek 34, Ps 23). Peter himself received the 'feed my sheep' commission (John 21:15-17). The vocabulary connects elder-ministry to Christ's own shepherding."
+      },
+      {
+        "word": "ταπεινοφροσύνην",
+        "tlit": "tapeinophrosynēn",
+        "gloss": "humility / lowly-mindedness",
+        "note": "v.5's compound noun (tapeinos + phrēn — low + mind). The humility-imperative governs both younger-elder relations and ecclesial-community relations broadly. The verse's quotation of Prov 3:34 ('God opposes the proud, gives grace to the humble') grounds the imperative in OT-wisdom tradition."
+      },
+      {
+        "word": "ἀντίδικος",
+        "tlit": "antidikos",
+        "gloss": "adversary / legal-opposer",
+        "note": "v.8's term for the devil. The legal-courtroom term (antidikos = opposing-counsel in legal proceedings) frames spiritual conflict as judicial-prosecution. The devil functions as accuser, not random-evil-force. Christian-resistance is properly framed as legal-defense rather than military-engagement."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "Christian elders (presbyteroi)",
+        "role": "Primary audience of vv.1-4",
+        "text": "Peter writes to the elders as fellow-elder (sympresbyteros, v.1) — emphasising shared-office rather than apostolic-superiority. The instruction is concrete: shepherd willingly not by compulsion, eagerly not for shameful gain, examples not domineering. The pastoral-ethics distill the chapter's elder-leadership principles."
+      },
+      {
+        "name": "Younger members of the community",
+        "role": "Secondary audience of vv.5-7",
+        "text": "v.5 addresses 'younger ones' (neōteroi) — likely younger-aged-adults rather than children — calling for submission to elders. The pastoral-instruction generalises to all-community-relations: 'all of you, clothe yourselves with humility.' The chapter's leadership-and-followership instruction is integrated, not divorced."
+      },
+      {
+        "name": "The devil as roaring lion",
+        "role": "Spiritual-adversary figure",
+        "text": "v.8's vivid 'devil prowls around like a roaring lion seeking someone to devour' is among NT's most-graphic Satanological-passages. The lion-imagery may echo Ps 22:13 + Ezek 22:25. The pastoral instruction is sober-watchfulness, with comfort that other-Christian-brothers globally share the same suffering experiences."
+      },
+      {
+        "name": "Silvanus (Silas), Mark, and 'she who is in Babylon'",
+        "role": "Closing-greeting figures (vv.12-13)",
+        "text": "Silvanus likely served as letter-bearer/secretary (Acts 15:22-40 records his Pauline collaboration). Mark is identified as Peter's 'son' — the Gospel-writer of Mark, whose Gospel tradition treats as Petrine-tradition-recorded. 'She who is in Babylon' likely refers to the church in Rome (using Babylon as code for the imperial capital — cf. Rev 17-18's similar usage)."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Origen, Commentary on Matthew 16 (c. 246 CE)",
+        "text": "Origen's discussion of Petrine-pastoral authority frequently engages 1 Peter 5's elder-instruction. The chapter's emphasis on humble-elder-leadership has shaped Christian theology of pastoral-office across traditions, balancing genuine-authority with non-domineering character."
+      },
+      {
+        "who": "Augustine, Sermon 46 on Pastors (c. 410 CE)",
+        "text": "Augustine's classic 'Sermon on Pastors' draws extensively on 1 Peter 5's pastoral instruction (alongside Ezekiel 34 and John 10). The chapter became foundational for Western pastoral theology, particularly the warnings against shepherds who feed themselves rather than the flock."
+      },
+      {
+        "who": "Calvin, Commentary on 1 Peter 5 (1551)",
+        "text": "Calvin's exposition emphasises the chapter's connection between humility and grace ('God opposes the proud, gives grace to the humble'). The Reformer treats this as pastorally-foundational principle — pride is the consistent obstacle to receiving God's grace; humility is the consistent disposition that opens reception. The principle anchors Calvin's broader sanctification-theology."
+      },
+      {
+        "who": "Eugene Peterson, A Long Obedience in the Same Direction (1980)",
+        "text": "Peterson's contemporary pastoral-theology drew extensively on 1 Peter 5's elder-pastoral framework. The chapter shaped Peterson's vision of pastoral-ministry as long-term-faithful-service rather than charismatic-celebrity-leadership. His widely-influential reading retrieved the chapter for late-20th-century evangelical pastoral self-understanding."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "1 Pet 5:5",
+        "target": "Prov 3:34; Jas 4:6",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'God opposes the proud, gives grace to the humble' is quoted verbatim by both Peter and James from Prov 3:34. The shared OT-citation across two NT writers establishes the proverb as foundational early-Christian-ethical text. The verse is among the most-cited OT-quotations in the NT epistles."
+      },
+      {
+        "anchor": "1 Pet 5:7",
+        "target": "Ps 55:22; Matt 6:25-34",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'Casting all your anxieties on him' echoes Ps 55:22's casting-cares language and parallels Jesus's Sermon-on-the-Mount don't-be-anxious teaching. The shared-anxiety-theology across OT and NT establishes that Christian-anxiety-management is genuine theological discipline grounded in trusting-divine-providence."
+      },
+      {
+        "anchor": "1 Pet 5:8-9",
+        "target": "Eph 6:11-13; Jas 4:7",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Peter's 'resist the devil, firm in faith' parallels Pauline armor-of-God + James's resist-the-devil instruction. Three NT writers share the resist-the-devil framework. The shared theology: resistance-not-flight is the proper Christian response to demonic-attack, but resistance is grounded in faith's stability, not autonomous-strength."
+      },
+      {
+        "anchor": "1 Pet 5:13",
+        "target": "Rev 14:8; 17-18",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'She who is in Babylon, chosen together with you' uses Babylon as cryptic-code for Rome. Revelation's apocalyptic-Babylon (Rev 14:8; 17-18) develops the same code more elaborately. The shared-cryptic-naming reflects early-Christian self-understanding within hostile-imperial context."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Be shepherds of God’s flock that is under your care, watching over them—not because you must, but because you are willing, as God wants you to be; not pursuing dishonest gain, but eager to serve;</td></tr><tr><td class=\"t-label\">KJV</td><td>Feed the flock of God which is among you, taking the oversight thereof, not by constraint, but willingly; not for filthy lucre, but of a ready mind;</td></tr><tr><td class=\"t-label\">NIV</td><td>In the same way, you who are younger, submit yourselves to your elders. All of you, clothe yourselves with humility toward one another, because, “God opposes the proud but shows favor to the humble.”</td></tr><tr><td class=\"t-label\">KJV</td><td>Likewise, ye younger, submit yourselves unto the elder. Yea, all of you be subject one to another, and be clothed with humility: for God resisteth the proud, and giveth grace to the humble.</td></tr><tr><td class=\"t-label\">NIV</td><td>Humble yourselves, therefore, under God’s mighty hand, that he may lift you up in due time.</td></tr><tr><td class=\"t-label\">KJV</td><td>Humble yourselves therefore under the mighty hand of God, that he may exalt you in due time:</td></tr><tr><td class=\"t-label\">NIV</td><td>Cast all your anxiety on him because he cares for you.</td></tr><tr><td class=\"t-label\">KJV</td><td>Casting all your care upon him; for he careth for you.</td></tr><tr><td class=\"t-label\">NIV</td><td>Be alert and of sober mind. Your enemy the devil prowls around like a roaring lion looking for someone to devour.</td></tr><tr><td class=\"t-label\">KJV</td><td>Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour:</td></tr><tr><td class=\"t-label\">NIV</td><td>And the God of all grace, who called you to his eternal glory in Christ, after you have suffered a little while, will himself restore you and make you strong, firm and steadfast.</td></tr><tr><td class=\"t-label\">KJV</td><td>But the God of all grace, who hath called us unto his eternal glory by Christ Jesus, after that ye have suffered a while, make you perfect, stablish, strengthen, settle you.</td></tr>"
   },
   "vhl_groups": [
     {
