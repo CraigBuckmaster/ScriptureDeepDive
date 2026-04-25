@@ -296,16 +296,43 @@
         "st2": {
           "header": "Jude's Use of Second Temple Literature",
           "body": "In the twelve verses of this section Jude draws on two works outside the Hebrew canon: the Assumption of Moses (v. 9) and 1 Enoch (vv. 14–15). No other NT book concentrates extra-biblical citations so densely, and the resulting interpretive question — did Jude treat these works as Scripture? — is one of the most-discussed issues in the canon-formation conversation.\n\nAt verse 9 Jude invokes a scene unknown to the OT: Michael the archangel disputing with Satan over the body of Moses and, instead of railing, responding 'The Lord rebuke you.' Origen (De Principiis 3.2.1) and Clement of Alexandria both identify the source as the Assumption of Moses (also titled the Testament of Moses in some manuscripts), a 1st-century Jewish work that narrates Moses' death, burial, and heavenly ascent. The relevant ending of the book is lost, but the church fathers' attestation plus thematic fit make this the near-unanimous identification today. Jude uses the episode as a rhetorical a fortiori: if even Michael — confronting the devil himself — deferred judgment to God, the opponents' casual blaspheming of 'glorious ones' (likely angelic powers) is grotesque presumption.\n\nAt verses 14–15 Jude goes further — a direct, formula-introduced quotation: 'Enoch, the seventh from Adam, prophesied saying, Behold, the Lord comes with myriads of his holy ones to execute judgment on all and to convict all the ungodly.' The wording closely matches 1 Enoch 1:9, a text well-attested in Aramaic among the Qumran fragments (4Q204, 4Q212) and preserved complete only in Ethiopic Geʽez. The introduction formula ('prophesied') is exactly the language Jude would use of any prophet. He takes the content as authoritative and fulfilled in the coming judgment on his opponents.\n\nHow to read Jude's usage is contested. Patristic voices diverge: Tertullian (De Cultu Feminarum 1.3) argued on this basis that 1 Enoch should be received as Scripture, reasoning that an apostolic text's quotation validates its source. Jerome (De Viris Illustribus 4) acknowledged Jude's citation but treated 1 Enoch as apocryphal and used Jude's link with it as one reason some in his day questioned Jude itself — a dispute Jerome ultimately resolved in Jude's favor. Modern evangelical scholarship (Bruce, Schreiner, Davids) typically holds that Jude's use shows he regarded the quoted passage as true — a genuine prophecy — without implying the whole book is canonical, much as Paul cites Greek poets (Acts 17:28, Titus 1:12) without canonizing Aratus or Epimenides. Critical scholars (Nickelsburg, Bauckham) emphasize the interpretive continuity: Jude participates in a vibrant 1st-century Jewish and early Christian reading culture in which 1 Enoch was widely honored and frequently cited, with canonical status undetermined at the edges.\n\nThe Ethiopian Tewahedo Church, which preserved 1 Enoch when it was lost to the Greek and Latin traditions for over a millennium, includes it in its 81-book canon — a direct continuation of the honor Jude shows the book. Most other Christian traditions do not, but none have argued that Jude's citation is illegitimate.",
-          "extrabiblical_ids": ["1_enoch", "assumption_of_moses"],
+          "extrabiblical_ids": [
+            "1_enoch",
+            "assumption_of_moses"
+          ],
           "citation_refs": [
-            {"nt": "Jude 14-15", "source": "1 Enoch 1:9", "type": "direct_quotation"},
-            {"nt": "Jude 9", "source": "Assumption of Moses (lost ending; attested by Origen, Clement)", "type": "allusion"}
+            {
+              "nt": "Jude 14-15",
+              "source": "1 Enoch 1:9",
+              "type": "direct_quotation"
+            },
+            {
+              "nt": "Jude 9",
+              "source": "Assumption of Moses (lost ending; attested by Origen, Clement)",
+              "type": "allusion"
+            }
           ],
           "scholar_voices": [
-            {"scholar_id": "bruce", "tradition": "Evangelical NT", "note": "Bruce argues that Jude's citation formula ('prophesied') treats the content of 1 Enoch 1:9 as a genuine prophetic utterance without extending inspiration to the whole book. The pattern parallels Paul's quotation of Greek poets: the quoted matter is affirmed as true; the source's canonical status is a separate question the NT does not settle."},
-            {"scholar_id": "schreiner", "tradition": "Evangelical NT", "note": "Schreiner observes that Jude's rhetorical strategy requires shared ground with his readers — they must already recognize the Enoch citation and the Michael tradition. This tells us about the reception of these Second Temple writings in early Christian communities: widely known, respected, not formally canonical in the later technical sense."},
-            {"scholar_id": "nickelsburg", "tradition": "Critical (Second Temple)", "note": "Nickelsburg's Hermeneia commentary treats 1 Enoch 1:9 as the programmatic oracle of the Book of the Watchers (1 Enoch 1–36). Jude's selection of this verse — the theophanic opening — shows he reads the book as authoritative prophetic literature, interpreting his opponents within its framework of cosmic judgment on the ungodly."},
-            {"scholar_id": "tertullian", "tradition": "Patristic (Latin)", "note": "Tertullian (De Cultu Feminarum 1.3) argued that Jude's citation proves 1 Enoch's authority, reasoning that 'Scripture quoting Scripture' implies canonicity. This view was disputed in his own day and did not prevail in the Western canon, but it remains the strongest patristic argument for 1 Enoch's inclusion — and shaped how the Ethiopian tradition handled the book."}
+            {
+              "scholar_id": "bruce",
+              "tradition": "Evangelical NT",
+              "note": "Bruce argues that Jude's citation formula ('prophesied') treats the content of 1 Enoch 1:9 as a genuine prophetic utterance without extending inspiration to the whole book. The pattern parallels Paul's quotation of Greek poets: the quoted matter is affirmed as true; the source's canonical status is a separate question the NT does not settle."
+            },
+            {
+              "scholar_id": "schreiner",
+              "tradition": "Evangelical NT",
+              "note": "Schreiner observes that Jude's rhetorical strategy requires shared ground with his readers — they must already recognize the Enoch citation and the Michael tradition. This tells us about the reception of these Second Temple writings in early Christian communities: widely known, respected, not formally canonical in the later technical sense."
+            },
+            {
+              "scholar_id": "nickelsburg",
+              "tradition": "Critical (Second Temple)",
+              "note": "Nickelsburg's Hermeneia commentary treats 1 Enoch 1:9 as the programmatic oracle of the Book of the Watchers (1 Enoch 1–36). Jude's selection of this verse — the theophanic opening — shows he reads the book as authoritative prophetic literature, interpreting his opponents within its framework of cosmic judgment on the ungodly."
+            },
+            {
+              "scholar_id": "tertullian",
+              "tradition": "Patristic (Latin)",
+              "note": "Tertullian (De Cultu Feminarum 1.3) argued that Jude's citation proves 1 Enoch's authority, reasoning that 'Scripture quoting Scripture' implies canonicity. This view was disputed in his own day and did not prevail in the Western canon, but it remains the strongest patristic argument for 1 Enoch's inclusion — and shaped how the Ethiopian tradition handled the book."
+            }
           ],
           "takeaway": "Jude quotes 1 Enoch as prophecy and alludes to the Assumption of Moses as authoritative narrative — but NT citation does not equal canonicity. The early church honored these books while recognizing they sat outside the Hebrew and Greek scriptural core. Jude's usage documents the genuinely permeable edge of Scripture in the 1st century; later canonical boundaries would be drawn more firmly, but never by denying Jude's legitimate use."
         }
@@ -644,7 +671,132 @@
         }
       ],
       "note": "Judgment dominates through the OT examples. Sovereignty is strong in the keeping doxology. Faith must be defended. Mercy characterizes the response to the wavering."
-    }
+    },
+    "discourse": {
+      "title": "Jude — Contend for the Faith Against False Teachers",
+      "thesis": "Certain people have crept in, perverting grace into license and denying Christ. Contend earnestly for the faith once delivered; judgment comes as surely as on the ancient rebels.",
+      "nodes": [
+        {
+          "label": "Greeting and reason for writing (vv.1-4)",
+          "text": "Jude, brother of James, servant of Jesus Christ, to those called, loved by God, kept for Jesus Christ. Though Jude wanted to write about common salvation, necessity compelled him to urge them to contend for the faith once delivered. Certain people have crept in — long ago marked for condemnation — ungodly people who pervert grace into license and deny Jesus Christ.",
+          "type": "thesis"
+        },
+        {
+          "label": "Triad of OT judgment-examples (vv.5-7)",
+          "text": "Three examples of divine judgment: the LORD destroyed those who did not believe after rescuing Israel from Egypt; angels who abandoned their position are kept in chains for judgment; Sodom and Gomorrah are an example of eternal fire's punishment. The pattern: rescue, rebellion, judgment.",
+          "type": "evidence"
+        },
+        {
+          "label": "Indictment of the intruders (vv.8-16)",
+          "text": "These dreamers defile flesh, reject authority, slander glorious beings. Michael the archangel did not dare bring slanderous accusation against the devil, but these speak blasphemously. Woe — they have gone the way of Cain, Balaam's error, Korah's rebellion. They are hidden reefs, fruitless autumn trees, wild waves foaming up their shame, wandering stars. Enoch (seventh from Adam) prophesied against them: the Lord comes with myriads of holy ones to execute judgment.",
+          "type": "evidence"
+        },
+        {
+          "label": "Exhortation and doxology (vv.17-25)",
+          "text": "Remember the apostolic predictions — in the last times scoffers will come, following their own ungodly desires. Build yourselves up in holy faith, pray in the Holy Spirit, keep yourselves in God's love, wait for Christ's mercy. Have mercy on those who doubt; save others by snatching them from the fire; to others show mercy with fear. To him who is able to keep you from stumbling and present you blameless before his glorious presence with great joy — to the only God our Savior, through Jesus Christ our Lord, be glory, majesty, power, and authority, before all time and now and forevermore. Amen.",
+          "type": "conclusion"
+        }
+      ],
+      "note": "Jude's 25 verses are among the NT's densest — prophetic denunciation, apocalyptic imagery, doxological climax in swift succession. The letter's citation of 1 Enoch and the Assumption of Moses (v.9) raises questions about Jude's use of non-canonical literature that have occupied interpreters from the early church to the present."
+    },
+    "hebtext": [
+      {
+        "word": "ἅπαξ παραδοθείσῃ",
+        "tlit": "hapax paradotheisē",
+        "gloss": "once-for-all delivered",
+        "note": "v.3's signature phrase for the apostolic faith: delivered once for all, not subject to later revision or innovation. The Greek hapax denotes decisive completeness, not mere singularity. The phrase becomes foundational in later debates about the development of doctrine and the authority of tradition vs ongoing revelation."
+      },
+      {
+        "word": "ἐπαγωνίζεσθαι",
+        "tlit": "epagōnizesthai",
+        "gloss": "to contend earnestly",
+        "note": "v.3's verb for the defensive-theological posture — an intensified form of agōnizomai (struggle, wrestle). The image is athletic-competitive, not violent. The object of contention is 'the faith' (pistis, objective sense) — the content of apostolic doctrine, not merely personal faith-response. Jude's verb calls for theological intellectual struggle on behalf of inherited truth."
+      },
+      {
+        "word": "ἀσέβεια / ἀσεβεῖς",
+        "tlit": "asebeia / asebeis",
+        "gloss": "ungodliness / ungodly",
+        "note": "Jude uses asebe- cognates six times — a densely concentrated vocabulary for godlessness that pre-exists Christian Greek but Jude deploys with prophetic force. The intruders' core problem is not heterodox belief (intellectual error) but asebeia — practical rejection of divine reverence that manifests as moral license."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "Jude (Judas)",
+        "role": "Author, brother of James",
+        "text": "Most likely the brother of James (and therefore half-brother of Jesus — Matt 13:55; Gal 1:19 refers to James as 'the Lord's brother'). Jude identifies himself by relation to James rather than to Jesus, likely out of humility. His designation of himself as 'servant of Jesus Christ' and 'brother of James' is the letter's only personal information about the author."
+      },
+      {
+        "name": "The false teachers / intruders",
+        "role": "Target of polemic",
+        "text": "Unnamed but characterised with precision: 'ungodly people who turn grace into license' (v.4), 'dreamers' defiling bodies and rejecting authority (v.8), followers of Cain, Balaam, and Korah (v.11). Scholars debate identification — proto-Gnostics, libertine pneumatics, or first-century Christian antinomians. Jude's concern is less sociological precision than theological identification: they deny Jesus Christ and pervert grace."
+      },
+      {
+        "name": "Michael the archangel",
+        "role": "OT-intertestamental figure cited",
+        "text": "Jude's v.9 references Michael's dispute with the devil over Moses's body — a tradition not in canonical Scripture but in the Assumption of Moses. Michael's restrained response ('the Lord rebuke you!') is Jude's example: even the archangel does not presume to pronounce slanderous judgment against the devil; the intruders arrogantly speak against what they do not understand."
+      },
+      {
+        "name": "Enoch",
+        "role": "Prophetic source quoted",
+        "text": "Jude v.14-15 quotes 1 Enoch 1:9 directly — the oldest non-canonical Jewish apocalyptic literature. The citation formula ('Enoch, seventh from Adam, prophesied') uses Genesis 5's generational count. Jude's use of 1 Enoch has been read variously: as treating it as inspired (older view), as citing widely-known tradition for rhetorical weight, or as sanctifying that specific prophecy while not endorsing the whole book. NT scholars' consensus: Jude cites authoritatively but does not canonise 1 Enoch."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Eusebius, Ecclesiastical History 2.23.25; 3.25.3 (c. 325 CE)",
+        "text": "Eusebius records that Jude was among the 'disputed' books (antilegomena) in the early church — widely accepted but sometimes questioned because of its citation of 1 Enoch and the Assumption of Moses (both non-canonical). The letter achieved uncontested canonical status by the 4th century but the debate around its non-canonical citations never fully quieted."
+      },
+      {
+        "who": "Jerome, De Viris Illustribus 4 (c. 392 CE)",
+        "text": "Jerome notes that Jude was 'rejected by very many' precisely because of the 1 Enoch citation, and he lists it among the seven 'general' (catholic) epistles whose authority was regionally uneven. Jerome's own position accepts Jude but with characteristic caution about its non-canonical sources."
+      },
+      {
+        "who": "Martin Luther, Preface to Jude (1522)",
+        "text": "Luther questioned Jude's apostolic authority in his German Bible prefaces, partly because of the non-canonical citations and partly because Jude reads as derivative from 2 Peter. Luther did not remove Jude from his canon but placed it (with Hebrews, James, Revelation) at the end, signalling reduced authority. Most Protestant traditions have not followed Luther's skepticism."
+      },
+      {
+        "who": "Richard Bauckham, Jude, 2 Peter, WBC (1983)",
+        "text": "Bauckham's landmark commentary defended Jude's authenticity, theological substance, and early-Jewish-Christian character. Contra Luther and modern critical skepticism, Bauckham showed Jude draws extensively on the Palestinian-Jewish apocalyptic tradition and represents an early-Christian theological voice distinct from, not derivative of, 2 Peter. His work rehabilitated Jude's scholarly standing."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Jude 3",
+        "target": "1 Tim 6:20; 2 Tim 1:14",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'The faith once for all delivered to the saints' (hapax paradotheisē) parallels Paul's 'the good deposit' (parathēkē) to Timothy. Both framings present apostolic teaching as received trust to be guarded against innovation and loss."
+      },
+      {
+        "anchor": "Jude 6",
+        "target": "2 Pet 2:4; Gen 6:1-4",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "The angels who 'abandoned their proper dwelling' pair with 2 Pet 2:4's fallen-angels chaining. Both likely allude to Gen 6:1-4's 'sons of God' tradition, which was extensively elaborated in 1 Enoch. The shared framework indicates Jude and 2 Peter draw on common early-Christian apocalyptic tradition."
+      },
+      {
+        "anchor": "Jude 9",
+        "target": "Zech 3:2",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Michael's 'the Lord rebuke you!' to the devil echoes Zechariah 3:2's angelic rebuke of Satan over Joshua the high priest. The rebuke-formula is preserved across OT visionary and NT polemical contexts as the divine prerogative — not to be appropriated by creatures presuming to judge."
+      },
+      {
+        "anchor": "Jude 11",
+        "target": "Gen 4:1-8; Num 22-24; Num 16",
+        "type": "Echo",
+        "direction": "back",
+        "text": "The triad 'Cain — Balaam — Korah' compresses three OT apostasy-archetypes: violence-from-envy (Cain), greed-driven prophecy (Balaam), rebellion against appointed leadership (Korah). The false teachers repeat the patterns; the triad becomes Christian-tradition's standing triplet for false-teacher diagnosis."
+      },
+      {
+        "anchor": "Jude 14-15",
+        "target": "1 Enoch 1:9",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Jude cites 1 Enoch 1:9 with 'Enoch, seventh from Adam, prophesied' — the clearest NT citation of 1 Enoch. The citation does not canonise 1 Enoch as Scripture but treats the cited prophecy as authentic divine word. The move has occupied canon-theological discussion from the patristic era to the present."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Dear friends, although I was very eager to write to you about the salvation we share, I felt compelled to write and urge you to contend for the faith that was once for all entrusted to God’s holy people.</td></tr><tr><td class=\"t-label\">KJV</td><td>Beloved, when I gave all diligence to write unto you of the common salvation, it was needful for me to write unto you, and exhort you that ye should earnestly contend for the faith which was once delivered unto the saints.</td></tr><tr><td class=\"t-label\">NIV</td><td>For certain individuals whose condemnation was written about long ago have secretly slipped in among you. They are ungodly people, who pervert the grace of our God into a license for immorality and deny Jesus Christ our only Sovereign and Lord.</td></tr><tr><td class=\"t-label\">KJV</td><td>For there are certain men crept in unawares, who were before of old ordained to this condemnation, ungodly men, turning the grace of our God into lasciviousness and denying the only Lord God, and our Lord Jesus Christ.</td></tr><tr><td class=\"t-label\">NIV</td><td>But even the archangel Michael, when he was disputing with the devil about the body of Moses, did not himself dare to condemn him for slander but said, “The Lord rebuke you!”</td></tr><tr><td class=\"t-label\">KJV</td><td>Yet Michael the archangel, when contending with the devil he disputed about the body of Moses, durst not bring against him a railing accusation, but said, The Lord rebuke thee.</td></tr><tr><td class=\"t-label\">NIV</td><td>Enoch, the seventh from Adam, prophesied about them: “See, the Lord is coming with thousands upon thousands of his holy ones</td></tr><tr><td class=\"t-label\">KJV</td><td>And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, the Lord cometh with ten thousands of his saints,</td></tr><tr><td class=\"t-label\">NIV</td><td>keep yourselves in God’s love as you wait for the mercy of our Lord Jesus Christ to bring you to eternal life.</td></tr><tr><td class=\"t-label\">KJV</td><td>Keep yourselves in the love of God, looking for the mercy of our Lord Jesus Christ unto eternal life.</td></tr><tr><td class=\"t-label\">NIV</td><td>To him who is able to keep you from stumbling and to present you before his glorious presence without fault and with great joy—</td></tr><tr><td class=\"t-label\">KJV</td><td>Now unto him that is able to keep you from falling, and to present you faultless before the presence of his glory with exceeding joy,</td></tr><tr><td class=\"t-label\">NIV</td><td>to the only God our Savior be glory, majesty, power and authority, through Jesus Christ our Lord, before all ages, now and forevermore! Amen.</td></tr><tr><td class=\"t-label\">KJV</td><td>To the only wise God, our Saviour, be glory and majesty, dominion and power, both now and ever. Amen.</td></tr>"
   },
   "vhl_groups": [
     {
