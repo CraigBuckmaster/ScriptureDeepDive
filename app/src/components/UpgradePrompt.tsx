@@ -49,6 +49,10 @@ const FEATURE_DESCRIPTIONS: Record<string, string> = {
   'The Story of the Bible': 'Trace the 8-act redemptive narrative from Creation to Restoration — see how every chapter fits into God\'s story.',
   'Person Journey': 'Follow key biblical figures across multiple books — see their full arc from calling to legacy.',
   'Guided Study Review': 'Save your synthesis, build concept vocabulary, and revisit key insights with spaced review.',
+  'Extra-Biblical Literature': 'Scholarly entries on 1 Enoch, Jubilees, the Apocrypha, Dead Sea Scrolls — what they are, what they contain, and why traditions treated them differently.',
+  'Canon Comparison': 'Side-by-side Protestant, Catholic, Orthodox, and Ethiopian canons — see what each includes and why.',
+  'How We Got The Bible': 'Two deep journeys tracing canon formation and textual transmission, from oral tradition to modern English translations.',
+  'Second Temple Context': 'Intertestamental literature background on NT passages that cite or allude to 1 Enoch, Jubilees, and other extra-biblical sources.',
 };
 
 export function UpgradePrompt({ visible, onClose, variant, featureName }: Props) {

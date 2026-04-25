@@ -8,9 +8,11 @@
  * background rather than mainstream commentary.
  *
  * Schema: HWGTB-P1-03 (#1540). Content: HWGTB-P1-06 (#1543).
- * Premium gating follows the DebatePanel.tsx convention — props-based,
- * parent (ChapterScreen) wires `isPremium` + `onUpgradePress` from the
- * `usePremium()` hook. The panel stays decoupled from the premium store.
+ *
+ * Premium gating is self-contained (HWGTB-P5-01 / #1555): the panel calls
+ * `usePremium()` directly and renders its own `UpgradePrompt` rather than
+ * relying on parent prop-drilling. Upgrade variant: 'explore' (matches
+ * the rest of the HWGTB content surfaces — ExtraBiblicalIndex/Detail).
  */
 
 import React, { useCallback, useState } from 'react';
@@ -25,6 +27,8 @@ import {
 import { ChevronDown, ChevronRight, ScrollText } from 'lucide-react-native';
 import { useTheme, spacing, radii, fontFamily } from '../../theme';
 import { TappableReference } from '../TappableReference';
+import { UpgradePrompt } from '../UpgradePrompt';
+import { usePremium } from '../../hooks/usePremium';
 import type {
   ParsedRef,
   SecondTemplePanelPayload,
@@ -37,9 +41,6 @@ interface Props {
   onRefPress?: (ref: ParsedRef) => void;
   onScholarPress?: (scholarId: string) => void;
   onExtraBiblicalPress?: (extrabiblicalId: string) => void;
-  /** Free-tier sees header + 2-line body teaser with a fade overlay. */
-  isPremium?: boolean;
-  onUpgradePress?: () => void;
 }
 
 export function SecondTemplePanel({
@@ -47,12 +48,11 @@ export function SecondTemplePanel({
   onRefPress,
   onScholarPress,
   onExtraBiblicalPress,
-  isPremium = true,
-  onUpgradePress,
 }: Props) {
   const { base, getPanelColors } = useTheme();
   const colors = getPanelColors('st2');
   const [expanded, setExpanded] = useState(true);
+  const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
 
   const toggleExpand = useCallback(() => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
@@ -62,60 +62,70 @@ export function SecondTemplePanel({
   const locked = !isPremium;
 
   const handleUpgradeTap = useCallback(() => {
-    onUpgradePress?.();
-  }, [onUpgradePress]);
+    showUpgrade('explore', 'Second Temple Context');
+  }, [showUpgrade]);
 
   return (
-    <View
-      style={[
-        styles.container,
-        { backgroundColor: colors.bg, borderColor: colors.border },
-      ]}
-    >
-      <TouchableOpacity
-        onPress={toggleExpand}
-        activeOpacity={0.7}
-        accessibilityRole="button"
-        accessibilityLabel={
-          expanded ? 'Collapse Second Temple Context' : 'Expand Second Temple Context'
-        }
-        style={styles.header}
+    <>
+      <View
+        style={[
+          styles.container,
+          { backgroundColor: colors.bg, borderColor: colors.border },
+        ]}
       >
-        <ScrollText size={16} color={colors.accent} />
-        <Text style={[styles.headerTitle, { color: colors.accent }]} numberOfLines={1}>
-          {data.header}
-        </Text>
-        {expanded ? (
-          <ChevronDown size={14} color={base.textMuted} />
-        ) : (
-          <ChevronRight size={14} color={base.textMuted} />
-        )}
-      </TouchableOpacity>
+        <TouchableOpacity
+          onPress={toggleExpand}
+          activeOpacity={0.7}
+          accessibilityRole="button"
+          accessibilityLabel={
+            expanded ? 'Collapse Second Temple Context' : 'Expand Second Temple Context'
+          }
+          style={styles.header}
+        >
+          <ScrollText size={16} color={colors.accent} />
+          <Text style={[styles.headerTitle, { color: colors.accent }]} numberOfLines={1}>
+            {data.header}
+          </Text>
+          {expanded ? (
+            <ChevronDown size={14} color={base.textMuted} />
+          ) : (
+            <ChevronRight size={14} color={base.textMuted} />
+          )}
+        </TouchableOpacity>
 
-      {expanded ? (
-        locked ? (
-          <LockedBody
-            text={data.body}
-            onPress={handleUpgradeTap}
-            accent={colors.accent}
-            bg={colors.bg}
-            textColor={base.textDim}
-            mutedColor={base.textMuted}
-          />
-        ) : (
-          <UnlockedBody
-            data={data}
-            accent={colors.accent}
-            textColor={base.textDim}
-            mutedColor={base.textMuted}
-            goldColor={base.gold}
-            onRefPress={onRefPress}
-            onScholarPress={onScholarPress}
-            onExtraBiblicalPress={onExtraBiblicalPress}
-          />
-        )
+        {expanded ? (
+          locked ? (
+            <LockedBody
+              text={data.body}
+              onPress={handleUpgradeTap}
+              accent={colors.accent}
+              bg={colors.bg}
+              textColor={base.textDim}
+              mutedColor={base.textMuted}
+            />
+          ) : (
+            <UnlockedBody
+              data={data}
+              accent={colors.accent}
+              textColor={base.textDim}
+              mutedColor={base.textMuted}
+              goldColor={base.gold}
+              onRefPress={onRefPress}
+              onScholarPress={onScholarPress}
+              onExtraBiblicalPress={onExtraBiblicalPress}
+            />
+          )
+        ) : null}
+      </View>
+      {upgradeRequest ? (
+        <UpgradePrompt
+          visible
+          variant={upgradeRequest.variant}
+          featureName={upgradeRequest.featureName}
+          onClose={dismissUpgrade}
+        />
       ) : null}
-    </View>
+    </>
   );
 }
 
