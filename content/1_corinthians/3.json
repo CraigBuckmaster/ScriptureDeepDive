@@ -486,22 +486,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 3:16",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The question ouk oidate (‘don’t you know?’) appears ten times in 1 Corinthians and consistently introduces truths the Corinthians should know but are …",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Foundation and the Temple within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "1 Cor 3:10-15's 'fire that tests each one's work': believers' final judgment, purgatory-doctrine, or Christian-pastoral teaching?",
+        "positions": [
+          {
+            "name": "Believers' rewards-judgment (post-salvation)",
+            "proponents": "Reformed mainstream; Schreiner, Garland",
+            "argument": "Paul describes believers being saved 'as through fire' — already-saved persons whose works are tested for reward purposes. The judgment-of-works does not concern salvation (which is secured by Christ) but reward-quality. The text supports the doctrine of differentiated heavenly-rewards based on faithful-service."
+          },
+          {
+            "name": "Purgatory doctrine (post-mortem purification)",
+            "proponents": "Roman Catholic tradition (citing this text)",
+            "argument": "Catholic theology has historically read 'saved through fire' as suggesting post-mortem purification from sins. The believer is saved but undergoes fire-purification before final beatitude. This reading became one of the central proof-texts for purgatory doctrine in medieval Catholic theology."
+          },
+          {
+            "name": "Pastoral-corporate teaching about ministry-quality",
+            "proponents": "Fee, Witherington",
+            "argument": "The immediate context (Corinthian factionalism over apostolic-leaders) addresses ministry-quality, not individual-believers' afterlife. Paul targets specifically the Corinthian apostles/teachers ('let each one take care how he builds') warning against shoddy ecclesiastical-construction. The 'fire' tests teachers' work-quality; the 'saved through fire' refers to faithful-but-faulty teachers themselves being preserved."
+          }
+        ]
+      }
     ],
     "thread": [
       {

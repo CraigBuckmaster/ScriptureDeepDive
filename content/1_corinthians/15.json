@@ -767,22 +767,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 15:29",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The NET note surveys major options and leaves the question open, noting Paul's argument works regardless of which interpretation is correct.…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Resurrection of the Dead within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "1 Cor 15:29's 'baptism for the dead': Mormon-style proxy baptism, generic vicarious practice, or rhetorical observation?",
+        "positions": [
+          {
+            "name": "Rhetorical observation, not endorsement",
+            "proponents": "Mainstream evangelical; Garland, Fee",
+            "argument": "Paul's 'they' (third person) about baptism-for-the-dead distances Paul from the practice. He uses the practice (whatever it was) as ad-hominem argument against resurrection-deniers: even those who practice this are inconsistent if they deny resurrection. Paul does not endorse the practice; he uses it argumentatively. Christian theology has not generally adopted proxy-baptism."
+          },
+          {
+            "name": "Mormon proxy-baptism (LDS reading)",
+            "proponents": "Latter-day Saints theology",
+            "argument": "LDS theology reads the verse as Paul's reference to a real, divinely-sanctioned proxy-baptism practice for deceased relatives. The LDS Temple practice of baptism-for-the-dead is grounded in this verse. Paul's ad-hominem use is read as implicit endorsement."
+          },
+          {
+            "name": "Some early Christian practice Paul tolerated but did not commend",
+            "proponents": "Critical mainstream",
+            "argument": "Some 1st-century Christians (perhaps Corinthian sub-group) practiced baptism-for-deceased catechumens or recently-converted-but-died-before-baptism family members. Paul mentions the practice without explicit endorsement. The practice did not become broadly-Christian; the verse remains evidence of a now-lost early-Christian practice."
+          }
+        ]
+      }
     ],
     "thread": [
       {
