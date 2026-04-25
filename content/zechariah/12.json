@@ -339,38 +339,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 12:10",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The alternation between 'me' and 'him' in this verse ('they will look on me, the one they have pierced, and they will mourn for him') has generated ex…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Jerusalem Under Siege and the Spirit of Grace within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 12:11",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "Hadad Rimmon is likely a location in the Jezreel Valley near Megiddo, associated with mourning rites. Some scholars identify it with the Canaanite dei…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Jerusalem Under Siege and the Spirit of Grace within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Zechariah 12:10's 'they will look on me whom they have pierced': individual future event or corporate-eschatological repentance?",
+        "positions": [
+          {
+            "name": "Individual crucifixion-prophecy (Christ-fulfilled)",
+            "proponents": "John 19:37; MacArthur, classical Christian",
+            "argument": "John 19:37 explicitly applies Zech 12:10 to Jesus's crucifixion (the Roman soldier piercing Jesus's side). The pierced-one is Christ; the later looking-and-mourning is Israel's eschatological recognition of the rejected Messiah. Rev 1:7's 'those who pierced him' (present-participle continues the force) supports this reading."
+          },
+          {
+            "name": "National-corporate repentance (Rom 11 fulfilment)",
+            "proponents": "Boda, Petterson",
+            "argument": "The context emphasises national Israel ('the house of David... inhabitants of Jerusalem'). The pierced-one's identity is the immediate question; the corporate-national mourning is the certain outcome. Rom 11's 'all Israel will be saved' is the eventual fulfilment when ethnic Israel mourns its Messiah-rejection."
+          },
+          {
+            "name": "Telescoped: crucifixion + eschatological national recognition",
+            "proponents": "Meyers-Meyers, McComiskey",
+            "argument": "The prophecy has both dimensions — Christ's crucifixion fulfilled the piercing; ethnic-Israel's eschatological recognition will fulfil the looking-and-mourning. The two are theologically continuous; Zech 12:10 spans from the cross to the parousia."
+          }
+        ]
+      }
     ],
     "thread": [
       {

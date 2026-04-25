@@ -434,38 +434,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 9:1",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The identification of Hadrach is debated. The NET notes identify it with a region in northern Syria mentioned in Assyrian records. The oracle's geogra…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Coming King within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 9:10",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The verb dikber ('he will proclaim') is a Piel intensive form, indicating authoritative royal speech. The 'peace' (shalom) proclaimed is not merely ab…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Coming King within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Zechariah 9:9's 'your king comes, humble and riding on a donkey': historical post-exilic ruler or messianic prophecy?",
+        "positions": [
+          {
+            "name": "Messianic prophecy (Christ-fulfilled)",
+            "proponents": "Matt 21:4-5; John 12:14-15; classical Christian",
+            "argument": "Matthew and John explicitly apply Zech 9:9 to Jesus's triumphal entry. The NT gospels treat this as precise-prophecy fulfillment — the donkey-riding humble king is unambiguously messianic. The verse's Christological clarity becomes one of the most-cited messianic prophecies in Christian apologetics."
+          },
+          {
+            "name": "Post-exilic historical figure (possibly Zerubbabel)",
+            "proponents": "Meyers-Meyers, Petersen (critical mainstream)",
+            "argument": "In the immediate post-exilic context, the humble king contrasts with the Greek kings' military pomp. The reference may be to an idealised Davidic ruler (Zerubbabel or successor) or a theological ideal without specific identification. Christian application to Jesus draws on typological possibility but was not necessarily the original prophetic referent."
+          },
+          {
+            "name": "Typological — historical ideal fulfilled in Christ",
+            "proponents": "Boda, Petterson",
+            "argument": "The prophecy's near-horizon historical-ideal finds its only adequate fulfilment in Christ. The humble-king-on-donkey imagery had no post-exilic instantiation; the prophecy was recognizably messianic-awaiting even within its original redemptive-historical moment. Christ's triumphal entry fulfils a prophecy that had been waiting."
+          }
+        ]
+      }
     ],
     "thread": [
       {
