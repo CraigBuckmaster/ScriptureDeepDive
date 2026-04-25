@@ -61,6 +61,12 @@ export interface GuidedStudySession {
   started_at: string;
   completed_at: string | null;
   updated_at: string;
+  /** Phase 2.2 (#1731). NULL for pre-migration rows. */
+  captured_inputs_json?: string | null;
+  /** Phase 2.2 (#1731). NULL for pre-migration rows. */
+  mode_artifact_json?: string | null;
+  /** Phase 2.2 (#1731). NULL for pre-migration rows. */
+  synthesis_strategy?: string | null;
 }
 
 export interface GuidedStudyResponse {

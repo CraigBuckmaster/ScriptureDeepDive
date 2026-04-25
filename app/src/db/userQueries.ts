@@ -7,6 +7,7 @@
 
 import { chapterPrefix, formatVerseRef } from '../utils/verseRef';
 import { escapeLike } from '../utils/escapeLike';
+import { logger } from '../utils/logger';
 import type {
   UserNote,
   ReadingProgress,
@@ -27,6 +28,12 @@ import type {
   GuidedStudySynthesis,
   GuidedStudyTakeawaySummary,
 } from '../types';
+import {
+  emptyCapturedInputs,
+  safeParseCapturedInputs,
+  type CapturedInputs,
+  type SynthesisStrategyKind,
+} from '../services/guidedStudy/capturedInputs';
 import { getDb } from './database';
 import { getUserDb } from './userDatabase';
 
@@ -479,6 +486,43 @@ export async function getGuidedStudySynthesis(
     'SELECT * FROM guided_study_synthesis WHERE session_id = ?',
     [sessionId],
   );
+}
+
+export async function getCapturedInputs(sessionId: number): Promise<CapturedInputs> {
+  const row = await getUserDb().getFirstAsync<{ captured_inputs_json: string | null }>(
+    'SELECT captured_inputs_json FROM guided_study_sessions WHERE id = ?',
+    [sessionId],
+  );
+  if (!row) return emptyCapturedInputs();
+  return safeParseCapturedInputs(row.captured_inputs_json);
+}
+
+export async function getModeArtifact(sessionId: number): Promise<unknown> {
+  const row = await getUserDb().getFirstAsync<{ mode_artifact_json: string | null }>(
+    'SELECT mode_artifact_json FROM guided_study_sessions WHERE id = ?',
+    [sessionId],
+  );
+  if (!row || row.mode_artifact_json == null) return null;
+  try {
+    return JSON.parse(row.mode_artifact_json) as unknown;
+  } catch (err) {
+    logger.warn('GuidedStudy', 'modeArtifact JSON parse failed', err);
+    return null;
+  }
+}
+
+export async function getSynthesisStrategy(
+  sessionId: number,
+): Promise<SynthesisStrategyKind | null> {
+  const row = await getUserDb().getFirstAsync<{ synthesis_strategy: string | null }>(
+    'SELECT synthesis_strategy FROM guided_study_sessions WHERE id = ?',
+    [sessionId],
+  );
+  const value = row?.synthesis_strategy;
+  if (value === 'free' || value === 'premium_structured' || value === 'premium_amicus') {
+    return value;
+  }
+  return null;
 }
 
 export async function getDueGuidedReviewItems(limit: number = 20): Promise<GuidedReviewItem[]> {

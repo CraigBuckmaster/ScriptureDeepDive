@@ -762,6 +762,16 @@ const MIGRATIONS: Migration[] = [
         ON amicus_thread_context(updated_at DESC);
     `,
   },
+  {
+    version: 24,
+    description:
+      'Guided study captured inputs — append captured_inputs_json + mode_artifact_json + synthesis_strategy to guided_study_sessions',
+    sql: `
+      ALTER TABLE guided_study_sessions ADD COLUMN captured_inputs_json TEXT;
+      ALTER TABLE guided_study_sessions ADD COLUMN mode_artifact_json TEXT;
+      ALTER TABLE guided_study_sessions ADD COLUMN synthesis_strategy TEXT;
+    `,
+  },
 ];
 
 /**
