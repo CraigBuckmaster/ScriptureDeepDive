@@ -344,7 +344,41 @@
         }
       ],
       "note": "Alliance with Hiram; Preparing for the Temple"
-    }
+    },
+    "rec": [
+      {
+        "who": "Josephus, Antiquities 8.2.6–8 (c. 93 CE)",
+        "text": "Josephus quotes (or claims to quote) the diplomatic correspondence between Solomon and Hiram of Tyre (vv.2–6, 7–9), citing Tyrian archives as his source. Whatever the historical reliability of the quoted documents, Josephus's interest is to present the Solomon-Hiram alliance as a foundational moment of Levantine cooperation — temple construction as a pan-regional project drawing Phoenician materials and labour into a Yahwistic enterprise."
+      },
+      {
+        "who": "John Calvin, Sermons on 1 Kings (1561)",
+        "text": "Calvin treats Solomon's letter to Hiram (vv.3–6) as the model for how God's people may legitimately engage pagan rulers in cooperative enterprise: the request is framed in terms of God's promise to David (v.5), and the alliance is for the explicit purpose of building God's house. For Calvin this distinguishes legitimate political cooperation from compromising entanglement (cf. ch.11)."
+      },
+      {
+        "who": "Mordechai Cogan, 1 Kings, AB (2001)",
+        "text": "Cogan reads the Solomon-Hiram treaty in ANE-comparative perspective: the food-for-timber arrangement (vv.10–11) is a standard parity-treaty exchange, not a tribute relationship. Hiram is the senior partner technically (his craftsmen are named indispensable, vv.6, 18) but the junior partner economically (he depends on Israelite grain). The treaty's stability for two reigns reflects genuine mutual benefit."
+      }
+    ],
+    "src": [
+      {
+        "title": "Phoenician-cedar trade (Wenamun, c. 1075 BCE)",
+        "quote": "The Egyptian narrative The Report of Wenamun documents the difficulties of an Egyptian envoy negotiating cedar from Byblos: the Phoenician city-states maintained tight control over Lebanese cedar export, charging substantial fees in goods.",
+        "note": "Wenamun's frustrations with Byblos help us read 1 Kgs 5: a smooth, multi-year cedar supply (vv.10–11) was not the default in this trade — it required either coercion or a robust cooperative treaty. The biblical text presents the latter, and the food-payment scale (20,000 cors of wheat, 20 cors of pure oil annually, v.11) fits the recognised regional price levels."
+      },
+      {
+        "title": "Phoenician temple-building expertise (Tyre, Byblos, Ugarit)",
+        "quote": "Phoenician craftsmen were the dominant ANE temple-builders of the Iron Age; the fame of their architecture and metalwork is attested in inscriptions from Egypt to Mesopotamia.",
+        "note": "Solomon's reliance on 'Sidonians' for skilled timber work (v.6) and later (1 Kgs 7:13–14) on the bronze-master Hiram of Tyre is historically credible — local Israelite tradition lacked the temple-building craft tradition. The text is straightforward about this and treats it as no theological compromise."
+      }
+    ],
+    "tx": [
+      {
+        "ref": "5:11",
+        "title": "20 cors of pure oil — MT vs LXX",
+        "content": "MT v.11: '20 cors of pure-pressed oil.' LXX (and parallel 2 Chr 2:10) reads '20,000 baths of oil.' A cor ≈ 220 litres; a bath ≈ 22 litres; so 20 cors = 4,400 L vs 20,000 baths = 440,000 L. The MT figure looks anomalously low against the wheat figure (20,000 cors), suggesting the original may have read '20,000 baths' and a copyist conflated units (cor for bath) producing the much smaller MT number.",
+        "note": "The LXX/Chronicles reading produces a balanced wheat-for-oil exchange (20,000 cors : 20,000 baths), which is more credible economically. Most modern critical translations note both figures; some adopt the larger Chronicles number."
+      }
+    ]
   },
   "vhl_groups": [
     {
