@@ -7,6 +7,11 @@
 
 import { serializeAmicusChapterRef, type AmicusEntryPoint } from '../services/amicus/context';
 import { emitAmicusUsageChanged } from '../services/amicus/usageEvents';
+import {
+  serializeCapturedInputs,
+  type CapturedInputs,
+  type SynthesisStrategyKind,
+} from '../services/guidedStudy/capturedInputs';
 import { logger } from '../utils/logger';
 import { nextIntervalAfter } from '../services/guidedStudy/review';
 import type { GuidedStudyStep } from '../types';
@@ -365,6 +370,40 @@ export async function completeGuidedStudySession(sessionId: number): Promise<voi
          updated_at = datetime('now')
      WHERE id = ?`,
     [sessionId],
+  );
+}
+
+export async function setCapturedInputs(
+  sessionId: number,
+  inputs: CapturedInputs,
+): Promise<void> {
+  await getUserDb().runAsync(
+    `UPDATE guided_study_sessions
+     SET captured_inputs_json = ?, updated_at = datetime('now')
+     WHERE id = ?`,
+    [serializeCapturedInputs(inputs), sessionId],
+  );
+}
+
+export async function setModeArtifact(sessionId: number, artifact: unknown): Promise<void> {
+  const serialized = artifact == null ? null : JSON.stringify(artifact);
+  await getUserDb().runAsync(
+    `UPDATE guided_study_sessions
+     SET mode_artifact_json = ?, updated_at = datetime('now')
+     WHERE id = ?`,
+    [serialized, sessionId],
+  );
+}
+
+export async function setSynthesisStrategy(
+  sessionId: number,
+  kind: SynthesisStrategyKind,
+): Promise<void> {
+  await getUserDb().runAsync(
+    `UPDATE guided_study_sessions
+     SET synthesis_strategy = ?, updated_at = datetime('now')
+     WHERE id = ?`,
+    [kind, sessionId],
   );
 }
 
