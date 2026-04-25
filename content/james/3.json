@@ -373,7 +373,98 @@
         }
       ],
       "note": "The two-wisdom contrast (3:13-18) provides the theological basis for the ethical exhortations throughout the letter."
-    }
+    },
+    "hebtext": [
+      {
+        "word": "γλῶσσα",
+        "tlit": "glōssa",
+        "gloss": "tongue",
+        "note": "Ch 3's central word, used 9 times. James develops the most-sustained NT treatment of speech-ethics. The tongue is small-but-powerful (rudder, bit, fire-spark images). Its dual-capability for blessing-and-cursing reveals deep-character integration. The vocabulary is theologically loaded: speech is not periphery but core of human-spiritual-life."
+      },
+      {
+        "word": "ἀκαταστασία",
+        "tlit": "akatastasia",
+        "gloss": "disorder / instability",
+        "note": "v.16's term for unsettled-restless-confusion. James contrasts heavenly-wisdom (peaceable, orderly) with earthly-wisdom (jealous, ambitious, producing akatastasia). The vocabulary describes the human-political-ecclesial chaos that flows from earthly-wisdom. The contrast frames Christian-formation as wisdom-character development."
+      },
+      {
+        "word": "σοφία ἄνωθεν κατερχομένη",
+        "tlit": "sophia anōthen katerchomenē",
+        "gloss": "wisdom from above descending",
+        "note": "v.17's beautiful description of heavenly-wisdom. The 'from above descending' (anōthen katerchomenē) parallels Jesus's John 3 'born from above' (gennaō anōthen). Heavenly-wisdom is gift-from-God, not autonomous-human-achievement. The seven-fold-character-list (pure, peaceable, gentle, etc.) defines wisdom by character rather than by content-knowledge."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "Christian teachers / would-be teachers",
+        "role": "Primary audience of vv.1-2",
+        "text": "v.1's 'not many should become teachers' addresses ambition for teaching-office. James warns: teachers face stricter-judgment because their words have wider-impact. The pastoral-concern: teaching-vocation should not be sought casually because of accountability-weight."
+      },
+      {
+        "name": "The tongue itself",
+        "role": "Personified moral agent (vv.5-12)",
+        "text": "vv.5-12's extended treatment personifies the tongue as moral agent — restless evil, full of deadly poison, a fire from hell, untamable. The personification is rhetorically powerful: speech-ethics is so weighty that James gives the tongue its own moral-agency. The chapter's pastoral-burden: speech is character-formed-and-character-forming."
+      },
+      {
+        "name": "The earthly-wisdom-bearers",
+        "role": "Negative example (vv.14-16)",
+        "text": "Those who have 'bitter envy and selfish ambition' produce earthly-wisdom that is 'unspiritual, demonic.' James's diagnostic: jealousy and ambition are not innocent-personality-traits but theological-categories revealing demonic-influence. The contrast frames Christian-character formation as spiritual-warfare."
+      },
+      {
+        "name": "The heavenly-wisdom-bearers",
+        "role": "Positive example (vv.17-18)",
+        "text": "v.17-18's seven-fold-character of heavenly-wisdom: pure, peaceable, gentle, open to reason, full of mercy and good fruits, impartial, sincere. The chapter's positive-paradigm. The seven-fold-list embraces full-Christian-character as integrated-development through wisdom-formation."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Augustine, Sermons on James (c. 410-415 CE)",
+        "text": "Augustine's exposition of Jas 3:2's 'we all stumble in many ways' became foundational for Western-Christian theology of universal-sinfulness. Even-mature-believers continue to need ongoing-grace; James's pastoral-realism shaped Augustine's broader theological-anthropology of remaining-corruption alongside grace's renewal."
+      },
+      {
+        "who": "John Chrysostom, Homilies on James (c. 390 CE)",
+        "text": "Chrysostom's homilies developed extended-application of James 3 for clergy-tongue-discipline. His pastoral-wisdom: those who speak-publicly-for-the-church bear special-responsibility for tongue-control. His emphasis on speech-discipline shaped Eastern Christian-pastoral theology."
+      },
+      {
+        "who": "Calvin, Commentary on James 3 (1551)",
+        "text": "Calvin's exposition emphasises the chapter's pastoral-application to gossip, slander, and false-witness in church-community. His view: tongue-discipline is not legalistic-restraint but Spirit-formed-character. The chapter's force depends on understanding speech as character-revelation rather than peripheral-behavior."
+      },
+      {
+        "who": "Douglas Moo, James, Pillar (2000)",
+        "text": "Moo's contemporary commentary integrates Jas 3's wisdom-tradition with broader NT-pastoral-theology. His exposition emphasises the chapter's two-wisdoms framework as evaluative-criterion: assess-teachings + practices by which-wisdom they reflect. The framework provides Christian-discernment grid for evaluating-claimed-spiritual-teaching."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Jas 3:1-12",
+        "target": "Prov 10:11, 19, 21; 12:13, 18-19; 13:3",
+        "type": "Echo",
+        "direction": "back",
+        "text": "James's tongue-ethics extends OT-wisdom-tradition's extensive speech-instruction. Proverbs has dozens of speech-related sayings; James compresses and intensifies the OT-tradition. The shared-vocabulary establishes James's continuity with OT-wisdom-formation."
+      },
+      {
+        "anchor": "Jas 3:9",
+        "target": "Gen 1:26-27; 5:1; 9:6",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'Cursing humans made in God's likeness' grounds in Genesis's image-of-God anthropology. James's argument-form: imago-Dei makes verbal-cursing-of-humans theologically equivalent to verbal-cursing-of-God. The grounding is theologically deep — speech-ethics derives from creation-anthropology."
+      },
+      {
+        "anchor": "Jas 3:13-18",
+        "target": "Prov 1-9; Sirach (deuterocanonical Wisdom)",
+        "type": "Echo",
+        "direction": "back",
+        "text": "The two-wisdoms framework parallels Proverbs 1-9's wisdom-vs-folly contrast and Sirach's wisdom-tradition. James's NT-wisdom-tradition continues OT-deuterocanonical-wisdom development. The continuity preserves Jewish-wisdom-formation as foundation for Christian-formation."
+      },
+      {
+        "anchor": "Jas 3:18",
+        "target": "Matt 5:9; Heb 12:11",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "'Peacemakers sowing in peace reap a harvest of righteousness' parallels Jesus's beatitude (Matt 5:9 — 'blessed are the peacemakers') and Hebrews's 'peaceable fruit of righteousness' (Heb 12:11). Multiple NT writers connect peacemaking with righteousness-harvest. The shared-theology establishes peacemaking as Christian-character priority."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Not many of you should become teachers, my fellow believers, because you know that we who teach will be judged more strictly.</td></tr><tr><td class=\"t-label\">KJV</td><td>My brethren, be not many masters, knowing that we shall receive the greater condemnation.</td></tr><tr><td class=\"t-label\">NIV</td><td>We all stumble in many ways. Anyone who is never at fault in what they say is perfect, able to keep their whole body in check.</td></tr><tr><td class=\"t-label\">KJV</td><td>For in many things we offend all. If any man offend not in word, the same is a perfect man, and able also to bridle the whole body.</td></tr><tr><td class=\"t-label\">NIV</td><td>but no human being can tame the tongue. It is a restless evil, full of deadly poison.</td></tr><tr><td class=\"t-label\">KJV</td><td>But the tongue can no man tame; it is an unruly evil, full of deadly poison.</td></tr><tr><td class=\"t-label\">NIV</td><td>With the tongue we praise our Lord and Father, and with it we curse human beings, who have been made in God’s likeness.</td></tr><tr><td class=\"t-label\">KJV</td><td>Therewith bless we God, even the Father; and therewith curse we men, which are made after the similitude of God.</td></tr><tr><td class=\"t-label\">NIV</td><td>Who is wise and understanding among you? Let them show it by their good life, by deeds done in the humility that comes from wisdom.</td></tr><tr><td class=\"t-label\">KJV</td><td>Who is a wise man and endued with knowledge among you? let him shew out of a good conversation his works with meekness of wisdom.</td></tr><tr><td class=\"t-label\">NIV</td><td>But the wisdom that comes from heaven is first of all pure; then peace-loving, considerate, submissive, full of mercy and good fruit, impartial and sincere.</td></tr><tr><td class=\"t-label\">KJV</td><td>But the wisdom that is from above is first pure, then peaceable, gentle, and easy to be intreated, full of mercy and good fruits, without partiality, and without hypocrisy.</td></tr><tr><td class=\"t-label\">NIV</td><td>Peacemakers who sow in peace reap a harvest of righteousness.</td></tr><tr><td class=\"t-label\">KJV</td><td>And the fruit of righteousness is sown in peace of them that make peace.</td></tr>"
   },
   "vhl_groups": [
     {

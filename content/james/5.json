@@ -509,7 +509,98 @@
         }
       ],
       "note": "The letter ends without formal closing — abruptly calling the community to mutual care for the wandering."
-    }
+    },
+    "hebtext": [
+      {
+        "word": "ἐθησαυρίσατε ἐν ἐσχάταις ἡμέραις",
+        "tlit": "ethēsaurisate en eschatais hēmerais",
+        "gloss": "you stored up treasure in the last days",
+        "note": "v.3's bitter eschatological-irony. The rich oppressors think they're securing their future; James reveals they're storing up wrath for eschatological-judgment day. The 'last days' framework treats the present-moment as already-eschatological. The verse anchors James's broader eschatology: present injustice has eschatological-judgment as its visible-trajectory."
+      },
+      {
+        "word": "μακροθυμήσατε",
+        "tlit": "makrothymēsate",
+        "gloss": "be patient (long-suffering)",
+        "note": "v.7's verb (cognate adjective in v.10) commanding eschatological-patience. The compound noun (long + thymos = patience-of-spirit) describes endurance until the parousia. James's farmer + early-late-rains image (v.7) grounds patience in agricultural-realism: harvest comes in its time."
+      },
+      {
+        "word": "εὐχή πίστεως",
+        "tlit": "euchē pisteōs",
+        "gloss": "prayer of faith",
+        "note": "v.15's distinctive phrase. The faith-prayer accomplishes physical-and-spiritual healing. James's pastoral-instruction integrates physical-healing-ministry with corporate-Christian-confession. The vocabulary preserves the deep-NT-connection between bodily-healing and Spirit-empowered-faith. Christian-pastoral-care addresses whole-person."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "The wealthy oppressors",
+        "role": "Indicted target of vv.1-6",
+        "text": "vv.1-6's prophetic-style judgment-oracle against rich-employers who cheat day-laborers, live in luxury, condemn-and-murder the righteous. James's prophetic-tradition continues OT-prophetic-judgment of economic-oppression (Amos, Isaiah). The chapter's harsh-wealth-judgment language is theologically-coherent with broader OT-NT prophetic-economic theology."
+      },
+      {
+        "name": "The farmer (paradigm of patience)",
+        "role": "Image of eschatological-waiting (v.7)",
+        "text": "The farmer's-patience for early-and-late-rains parallels Christian-eschatological-waiting. Like the farmer, believers cannot accelerate the harvest's arrival but must wait through-time-of-uncertainty. The agricultural-image grounds patience in concrete-rural-life recognition."
+      },
+      {
+        "name": "Job (paradigm of perseverance)",
+        "role": "OT-paradigm of suffering-perseverance (v.11)",
+        "text": "v.11's 'you have heard of the perseverance of Job' grounds Christian-suffering-endurance in OT-paradigm. Job's perseverance produced God's-eventual-restoration. The OT-paradigm provides hope-anchor for present-Christian-suffering. The reference assumes general-Jewish-Christian familiarity with Job-narrative."
+      },
+      {
+        "name": "Elijah (paradigm of effective-prayer)",
+        "role": "OT-paradigm of intercessory-prayer (vv.17-18)",
+        "text": "Elijah's prayer-stopping-and-restarting-rain (1 Kgs 17-18) grounds James's claim about intercessory-prayer's-effectiveness. James's framework: Elijah was 'a man with a nature like ours' — prayer-effectiveness is not reserved for super-spiritual figures but available to ordinary-believers."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Augustine, Sermons on James 5:14-16 (c. 410 CE)",
+        "text": "Augustine treated the elder-anointing-prayer practice as foundation for Christian sacramental-theology of physical-spiritual-healing. The chapter's integration of bodily-healing with sin-confession became foundational for Catholic doctrine of Anointing of the Sick (Extreme Unction). The interpretive history is significant for understanding sacramental-development."
+      },
+      {
+        "who": "Calvin, Commentary on James 5 (1551)",
+        "text": "Calvin's exposition rejected medieval-Catholic application of vv.14-16 to last-rites-for-dying. He argued the chapter addresses ordinary-pastoral-care for sick-believers, not deathbed-anointing. Calvin's reading: the elder-anointing-prayer is for genuine-recovery-prayer, not preparation-for-death. The reading shaped Reformed-Protestant rejection of Extreme Unction sacrament."
+      },
+      {
+        "who": "Pentecostal-Charismatic interpretive tradition",
+        "text": "20th-century Pentecostal/Charismatic theology drew foundationally on James 5:14-16 for healing-ministry-theology. The chapter's straightforward-instruction (call elders, anoint, pray, sins-forgiven) became liturgical-foundation. Contemporary cessationist-continuationist debates over physical-healing's continuance often centre on this passage."
+      },
+      {
+        "who": "Douglas Moo, James, Pillar (2000)",
+        "text": "Moo's careful exposition addresses both Catholic-and-Protestant readings of vv.14-16. His position: the chapter addresses ordinary-Christian-pastoral-care for physical-sickness with integrated-spiritual-confession. The chapter does not establish-or-reject specific liturgical-form; it preserves the integration of physical-spiritual-care that should characterize Christian community."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Jas 5:1-6",
+        "target": "Amos 5:11-12; Isa 5:8-10; Mic 2:1-5",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Prophetic judgment against rich-oppressors parallels OT-prophetic tradition extensively. James 5 continues Amos-Isaiah-Micah's economic-justice oracles. The OT-NT continuity preserves consistent biblical-economic-ethics: oppression of laborers + luxurious-self-indulgence brings divine judgment."
+      },
+      {
+        "anchor": "Jas 5:7-8",
+        "target": "Matt 24:32-44; 1 Cor 16:22; Rev 22:20",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'The Lord's coming is near' parallels NT-wide eschatological-imminence theology. Multiple NT writers (Jesus, Paul, John) share the imminent-return framework. The shared-eschatology shapes Christian-patience as not-vague-hope but specific-trust in announced-future-event."
+      },
+      {
+        "anchor": "Jas 5:11",
+        "target": "Job 1-2, 42; Heb 11:7",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Job's perseverance + God's-eventual-restoration is established Christian-formation example. The reference assumes shared knowledge of Job-narrative. James's brief-citation indicates Job was already-paradigmatic in early-Christian formation literature."
+      },
+      {
+        "anchor": "Jas 5:16-18",
+        "target": "1 Kgs 17:1; 18:42-45",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Elijah's-prayer-effectiveness grounds in Kings-narrative. James adds the rain's-3-and-a-half-year-cessation duration (matching 1 Kgs 18:1's 'in the third year') consistent with Jewish-tradition's reading. The verses anchor Christian-prayer theology in OT-paradigm."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Now listen, you rich people, weep and wail because of the misery that is coming on you.</td></tr><tr><td class=\"t-label\">KJV</td><td>Go to now, ye rich men, weep and howl for your miseries that shall come upon you.</td></tr><tr><td class=\"t-label\">NIV</td><td>Be patient, then, brothers and sisters, until the Lord’s coming. See how the farmer waits for the land to yield its valuable crop, patiently waiting for the autumn and spring rains.</td></tr><tr><td class=\"t-label\">KJV</td><td>Be patient therefore, brethren, unto the coming of the Lord. Behold, the husbandman waiteth for the precious fruit of the earth, and hath long patience for it, until he receive the early and latter rain.</td></tr><tr><td class=\"t-label\">NIV</td><td>You too, be patient and stand firm, because the Lord’s coming is near.</td></tr><tr><td class=\"t-label\">KJV</td><td>Be ye also patient; stablish your hearts: for the coming of the Lord draweth nigh.</td></tr><tr><td class=\"t-label\">NIV</td><td>As you know, we count as blessed those who have persevered. You have heard of Job’s perseverance and have seen what the Lord finally brought about. The Lord is full of compassion and mercy.</td></tr><tr><td class=\"t-label\">KJV</td><td>Behold, we count them happy which endure. Ye have heard of the patience of Job, and have seen the end of the Lord; that the Lord is very pitiful, and of tender mercy.</td></tr><tr><td class=\"t-label\">NIV</td><td>Is anyone among you in trouble? Let them pray. Is anyone happy? Let them sing songs of praise.</td></tr><tr><td class=\"t-label\">KJV</td><td>Is any among you afflicted? let him pray. Is any merry? let him sing psalms.</td></tr><tr><td class=\"t-label\">NIV</td><td>Is anyone among you sick? Let them call the elders of the church to pray over them and anoint them with oil in the name of the Lord.</td></tr><tr><td class=\"t-label\">KJV</td><td>Is any sick among you? let him call for the elders of the church; and let them pray over him, anointing him with oil in the name of the Lord:</td></tr><tr><td class=\"t-label\">NIV</td><td>Therefore confess your sins to each other and pray for each other so that you may be healed. The prayer of a righteous person is powerful and effective.</td></tr><tr><td class=\"t-label\">KJV</td><td>Confess your faults one to another, and pray one for another, that ye may be healed. The effectual fervent prayer of a righteous man availeth much.</td></tr><tr><td class=\"t-label\">NIV</td><td>remember this: Whoever turns a sinner from the error of their way will save them from death and cover over a multitude of sins.</td></tr><tr><td class=\"t-label\">KJV</td><td>Let him know, that he which converteth the sinner from the error of his way shall save a soul from death, and shall hide a multitude of sins.</td></tr>"
   },
   "vhl_groups": [
     {

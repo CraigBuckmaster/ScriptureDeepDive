@@ -160,6 +160,19 @@
         },
         "hist": {
           "context": "This brief section introduces James critique of wealth that will intensify throughout the letter. The poor brother boasts in exaltation; the rich brother boasts in humiliation."
+        },
+        "moo": {
+          "source": "Douglas J. Moo, James, Pillar (2000) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "1:9-11",
+              "note": "Moo identifies the rich-poor reversal as one of James's signature themes. The poor brother boasts in elevation; the rich brother in humiliation. Moo's exegesis: the boasting is paradoxical — both find their true status in eschatological-reality rather than present-circumstance. The chapter's ethical-economic theology grounds in eschatological reversal."
+            },
+            {
+              "ref": "1:11",
+              "note": "Moo: the wildflower-and-grass imagery (echoing Isa 40:6-8) strikes at the heart of mediterranean-summer realities. Mediterranean-grass burns out within hours under scorching sun. The image's force is its concreteness — wealth's evaporation is as quick as a flower's withering. Believers should not orient their lives around such ephemerality."
+            }
+          ]
         }
       }
     },
@@ -216,6 +229,19 @@
         },
         "hist": {
           "context": "James now addresses the source of temptation. God is not the author of evil; each person is tempted by their own desire. But God gives only good gifts."
+        },
+        "moo": {
+          "source": "Douglas J. Moo, James, Pillar (2000) — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "1:13-15",
+              "note": "Moo on temptation-anatomy: James precisely tracks the inner-process — desire, conception, sin's birth, sin's-maturation-in-death. The sequence is theologically significant: temptation is not external-event but internal-desire-process. Moo: this is among NT's most sophisticated treatments of temptation's psychology."
+            },
+            {
+              "ref": "1:17-18",
+              "note": "Moo on 'every good and perfect gift': the rhetoric is poetic-theological. God's gift-giving consistency is contrasted with creation's-shifting-shadows. v.18's 'firstfruits' identifies believers as inaugural-harvest of God's-redemptive-purposes for all-creation. James's eschatology operates broadly here."
+            }
+          ]
         }
       }
     },
@@ -401,7 +427,98 @@
         }
       ],
       "note": "Chapter 1 introduces nearly every theme James will develop: trials, wisdom, rich/poor, speech, doing, care for vulnerable."
-    }
+    },
+    "hebtext": [
+      {
+        "word": "πειρασμοῖς",
+        "tlit": "peirasmois",
+        "gloss": "trials / testings",
+        "note": "v.2's term covering external-circumstance-trials (the chapter's primary referent — diaspora-Christian-suffering). Same word's verbal form (peirazō) in v.13 covers internal-temptation-to-evil. James plays on the dual-meaning: external-trials test character; internal-temptations test response. The single word's range carries the chapter's argument."
+      },
+      {
+        "word": "ὁ νόμος τῆς ἐλευθερίας",
+        "tlit": "ho nomos tēs eleutherias",
+        "gloss": "the law of liberty",
+        "note": "vv.25's distinctive phrase. The Christian relates to the law not as bondage but as liberty — fulfilled-Mosaic-Torah-trajectory in Christ produces freedom rather than slavery. James reuses the phrase in 2:12. The vocabulary balances NT's faith-vs-law tensions with affirmation of law's-positive-function."
+      },
+      {
+        "word": "θρησκεία",
+        "tlit": "thrēskeia",
+        "gloss": "religion",
+        "note": "vv.26-27's term for religious-observance. James contrasts 'pure' / 'undefiled' religion (caring for orphans-and-widows + keeping unstained from world) with worthless-self-deceived religion. The vocabulary is rare in NT (used only here in James and in Acts 26:5). James's compact-religion-definition is among NT's most-cited ethical-formulas."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "James, brother of the Lord",
+        "role": "Author",
+        "text": "Most likely James the brother of Jesus (Gal 1:19; Acts 12:17, 15:13, 21:18) — leader of the Jerusalem church, not the apostle James (son of Zebedee) who was martyred earlier (Acts 12:2). James writes with apostolic-equivalent authority despite not being among the Twelve. His Jewish-Christian identity informs the letter's strong OT-wisdom-tradition character."
+      },
+      {
+        "name": "The twelve tribes scattered abroad",
+        "role": "Audience",
+        "text": "v.1's address to 'the twelve tribes in the dispersion' — likely Jewish-Christian-believers spread through Diaspora-Mediterranean-region. The letter assumes Jewish-Christian-context: synagogue-references (2:2 — 'meeting' is sunagōgē), OT-wisdom-tradition strongly present, no extensive Christological-exposition (assumed shared)."
+      },
+      {
+        "name": "Abraham (called the LORD's friend)",
+        "role": "OT-paradigm of faith-with-works (referenced 2:21-23 but established as the chapter's wisdom-tradition baseline)",
+        "text": "James's broader-letter Abraham-references operate within the chapter's wisdom-formation framework — Abraham embodies the believer-pattern James commends. The Pentateuchal-OT typology grounds James's broader-Christian-formation theology."
+      },
+      {
+        "name": "Christ Jesus the Lord",
+        "role": "Messianic identification (1:1)",
+        "text": "v.1's 'Lord Jesus Christ' is one of the letter's two explicit Christological references (also 2:1). James's Christology is implicit-pervasive rather than expositional-extensive — the assumed-Christological-foundation supports practical-ethical-instruction as the letter's primary content."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Eusebius, Ecclesiastical History 2.23 (c. 325 CE)",
+        "text": "Eusebius classifies James among the 'disputed' (antilegomena) writings. The letter's eventual canonical-acceptance came after extensive deliberation. Eusebius preserves Hegesippus's account of James's martyrdom in Jerusalem (62 CE) — thrown from the temple-pinnacle and stoned. The author's status as Jerusalem's first-bishop and brother of Jesus established his authority despite later canonical questions."
+      },
+      {
+        "who": "Martin Luther, Preface to James (1522)",
+        "text": "Luther's notorious 'right strawy epistle' assessment treated James as theologically-secondary to Pauline-letters. Luther's complaint: James's 'faith without works is dead' contradicts Pauline justification-by-faith-alone. Subsequent Lutheran theology has typically softened Luther's verdict, integrating James's faith-with-works framework alongside Pauline justification-by-faith."
+      },
+      {
+        "who": "Calvin, Commentary on James (1551)",
+        "text": "Calvin's exposition rehabilitated James for Reformed theology. He read James and Paul as complementary: Paul targets Torah-works-as-righteousness; James targets dead-faith-without-faith-fruit. The two NT-writers address different errors with consistent-theological substance. Calvin's reading became standard Reformed integration of James-Paul."
+      },
+      {
+        "who": "Douglas Moo, James, Pillar (2000)",
+        "text": "Moo's contemporary commentary develops careful-Pauline-Jamesian integration. He reads ch 1 as wisdom-formation-program: the faith-tested-by-trials-and-temptations produces mature-Christian-character. The chapter's wisdom-tradition orientation (paralleling Proverbs and Ben Sira) shapes the letter's broader-pastoral approach."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Jas 1:2-4",
+        "target": "Rom 5:3-5; 1 Pet 1:6-7",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Trials-produce-perseverance theology parallels Paul's 'tribulation produces perseverance' (Rom 5:3-5) and Peter's 'fire-tested faith' (1 Pet 1:6-7). The shared-trial-formation theology operates across Pauline-Petrine-Jacobine writings — early-Christian sufferings produce mature-Christian-character."
+      },
+      {
+        "anchor": "Jas 1:5",
+        "target": "Prov 2:3-5; 1 Kgs 3:9-12",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Asking-God-for-wisdom theology grounds in OT-wisdom-tradition: Solomon's request (1 Kgs 3:9-12) and Proverbs' ongoing-wisdom-pursuit. James's NT-wisdom-tradition extends OT-wisdom-tradition; Christian-wisdom-formation continues OT-wisdom-pursuit pattern."
+      },
+      {
+        "anchor": "Jas 1:17",
+        "target": "Mal 3:6; Heb 13:8",
+        "type": "Echo",
+        "direction": "back",
+        "text": "God's-unchangeable-character ('no shifting shadow') parallels Mal 3:6's 'I the LORD do not change' and Heb 13:8's 'Jesus Christ, the same yesterday, today, and forever.' Multiple OT-NT writers affirm divine-immutability as foundational character — God's reliability anchors Christian-faith-stability."
+      },
+      {
+        "anchor": "Jas 1:22-25",
+        "target": "Matt 7:24-27",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Hearing-not-doing parallels Jesus's wise-and-foolish-builders parable. The shared theology: hearing alone is insufficient; only action-doing demonstrates genuine reception. The Synoptic-Jamesian convergence on this teaching anchors Christian-ethical-formation."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Consider it pure joy, my brothers and sisters, whenever you face trials of many kinds,</td></tr><tr><td class=\"t-label\">KJV</td><td>My brethren, count it all joy when ye fall into divers temptations;</td></tr><tr><td class=\"t-label\">NIV</td><td>If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you.</td></tr><tr><td class=\"t-label\">KJV</td><td>If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.</td></tr><tr><td class=\"t-label\">NIV</td><td>Blessed is the one who perseveres under trial because, having stood the test, that person will receive the crown of life that the Lord has promised to those who love him.</td></tr><tr><td class=\"t-label\">KJV</td><td>Blessed is the man that endureth temptation: for when he is tried, he shall receive the crown of life, which the Lord hath promised to them that love him.</td></tr><tr><td class=\"t-label\">NIV</td><td>Every good and perfect gift is from above, coming down from the Father of the heavenly lights, who does not change like shifting shadows.</td></tr><tr><td class=\"t-label\">KJV</td><td>Every good gift and every perfect gift is from above, and cometh down from the Father of lights, with whom is no variableness, neither shadow of turning.</td></tr><tr><td class=\"t-label\">NIV</td><td>Do not merely listen to the word, and so deceive yourselves. Do what it says.</td></tr><tr><td class=\"t-label\">KJV</td><td>But be ye doers of the word, and not hearers only, deceiving your own selves.</td></tr><tr><td class=\"t-label\">NIV</td><td>Religion that God our Father accepts as pure and faultless is this: to look after orphans and widows in their distress and to keep oneself from being polluted by the world.</td></tr><tr><td class=\"t-label\">KJV</td><td>Pure religion and undefiled before God and the Father is this, To visit the fatherless and widows in their affliction, and to keep himself unspotted from the world.</td></tr>"
   },
   "vhl_groups": [
     {
