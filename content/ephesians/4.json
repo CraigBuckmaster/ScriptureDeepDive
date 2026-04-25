@@ -477,38 +477,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 4:8",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The quotation of Ps 68:18 involves a significant textual adaptation: the MT reads ‘you received’ (laqahta) while Paul writes ‘he gave’ (edoken). The N…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Unity of the Body and the New Self within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 4:9",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase eis ta katōtera merē tēs gēs (into the lower parts of the earth) is debated: it could refer to the incarnation (descent to earth), the buri…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Unity of the Body and the New Self within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Ephesians 4:8's quotation of Ps 68:18: 'gave gifts' vs 'received gifts' — Paul's Christological adaptation",
+        "positions": [
+          {
+            "name": "Paul deliberately alters the OT text",
+            "proponents": "Hoehner (commentary), Arnold (ZECNT)",
+            "argument": "Psalm 68:18 has God 'receiving gifts from men'; Paul quotes it as Christ 'giving gifts to men.' This is Paul's deliberate Christological adaptation — the conquering king receives tribute so he can distribute gifts to his people. The change is authorial and theological, not misquotation."
+          },
+          {
+            "name": "Paul follows an existing Aramaic Targum / rabbinic tradition",
+            "proponents": "Lincoln (WBC), Thielman (BECNT)",
+            "argument": "The Targum of Psalms renders 68:18 with the 'gave' verb — reflecting a rabbinic reading tradition Paul draws on. Paul is not creatively altering MT but adopting an existing Jewish interpretive tradition that read the ascended one as benefactor. This places Paul's move within a recognised hermeneutical stream."
+          },
+          {
+            "name": "Both — targumic tradition + Christological application",
+            "proponents": "Harris, Moritz",
+            "argument": "Paul likely knew the Aramaic Targum reading and adapted it further for his Christological argument. The result is a uniquely Pauline application within a recognised interpretive tradition — not pure innovation, not simple adoption. Either direction reaches the same theological conclusion: the ascended Christ gifts the church."
+          }
+        ]
+      }
     ],
     "thread": [
       {

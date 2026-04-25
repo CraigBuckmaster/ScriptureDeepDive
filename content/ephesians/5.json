@@ -450,22 +450,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 5:19",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The three terms—psalmois, hymnois, odais pneumatikais—may denote OT psalms, Christian hymns, and Spirit-inspired songs respectively, though the distin…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Walking in Love and Light within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Ephesians 5:21-33's marriage-household code: egalitarian-mutuality or complementarian-hierarchy?",
+        "positions": [
+          {
+            "name": "Mutual-submission / egalitarian reading",
+            "proponents": "Keener, Witherington",
+            "argument": "v.21's 'submit to one another out of reverence for Christ' governs what follows. The subsequent instructions (wives to husbands, children to parents, slaves to masters) are specific cases of mutual Christian submission, not hierarchical authority structure. The headship-language of v.23 is reinterpreted Christologically — Christ's headship is self-sacrificial (v.25-27), so the husband's 'headship' is redefined as cruciform service, not authority."
+          },
+          {
+            "name": "Complementarian — headship with sacrificial love",
+            "proponents": "MacArthur, Hoehner, Grudem",
+            "argument": "v.21's mutual submission introduces the pattern but does not erase the asymmetric instructions that follow. The husband is 'head' (v.23) in a real ordering sense, though headship is defined by Christ-like sacrificial love (v.25). Wives submit; husbands love sacrificially; the roles are distinct though complementary. The structure parallels Christ-and-church (v.32)."
+          },
+          {
+            "name": "First-century household-code transformation",
+            "proponents": "Lincoln (WBC), Arnold (ZECNT)",
+            "argument": "Paul engages the ANE Haustafel (household-code) tradition and transforms it by Christianising it: every party receives ethical demand, not just the subordinates. This is culturally revolutionary for its time while preserving some structural ordering. The text's force is its transformation of its context, not a timeless gender theology."
+          }
+        ]
+      }
     ],
     "thread": [
       {
@@ -583,7 +587,8 @@
         }
       ],
       "note": "Ephesians 5 weaves together imitation ethics (vv. 1-2), purity ethics (vv. 3-14), wisdom ethics (vv. 15-21), and relational ethics (vv. 22-33). The household code is not a concession to Roman social order but a transformation of it: the husband's love is defined by Christ's self-giving, not Roman paterfamilias authority. The mutual submission of v. 21 governs the entire code."
-    }
+    },
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Follow God’s example, therefore, as dearly loved children</td></tr><tr><td class=\"t-label\">KJV</td><td>Be ye therefore followers of God, as dear children;</td></tr><tr><td class=\"t-label\">NIV</td><td>and walk in the way of love, just as Christ loved us and gave himself up for us as a fragrant offering and sacrifice to God.</td></tr><tr><td class=\"t-label\">KJV</td><td>And walk in love, as Christ also hath loved us, and hath given himself for us an offering and a sacrifice to God for a sweetsmelling savour.</td></tr><tr><td class=\"t-label\">NIV</td><td>Do not get drunk on wine, which leads to debauchery. Instead, be filled with the Spirit,</td></tr><tr><td class=\"t-label\">KJV</td><td>And be not drunk with wine, wherein is excess; but be filled with the Spirit;</td></tr><tr><td class=\"t-label\">NIV</td><td>Submit to one another out of reverence for Christ.</td></tr><tr><td class=\"t-label\">KJV</td><td>Submitting yourselves one to another in the fear of God.</td></tr><tr><td class=\"t-label\">NIV</td><td>Wives, submit yourselves to your own husbands as you do to the Lord.</td></tr><tr><td class=\"t-label\">KJV</td><td>Wives, submit yourselves unto your own husbands, as unto the Lord.</td></tr><tr><td class=\"t-label\">NIV</td><td>Husbands, love your wives, just as Christ loved the church and gave himself up for her</td></tr><tr><td class=\"t-label\">KJV</td><td>Husbands, love your wives, even as Christ also loved the church, and gave himself for it;</td></tr><tr><td class=\"t-label\">NIV</td><td>This is a profound mystery—but I am talking about Christ and the church.</td></tr><tr><td class=\"t-label\">KJV</td><td>This is a great mystery: but I speak concerning Christ and the church.</td></tr>"
   },
   "vhl_groups": [
     {

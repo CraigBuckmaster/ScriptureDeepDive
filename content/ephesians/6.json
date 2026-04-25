@@ -491,38 +491,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 6:2",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase hētis estin entolē prōtē en epaggelia (which is the first commandment with a promise) has been debated: is it the first in sequence, the fi…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Household Duties and the Armour of God within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 6:12",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The four terms for cosmic powers—archas (rulers), exousias (authorities), kosmokratoras (world rulers), pneumatika tēs ponērias (spiritual forces of e…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Household Duties and the Armour of God within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Ephesians 6:10-17's 'armor of God': literal demonic combat or rhetorical moral-ethics figure?",
+        "positions": [
+          {
+            "name": "Genuine spiritual warfare against demonic powers",
+            "proponents": "Arnold (ZECNT specialist on Ephesian magic), MacArthur",
+            "argument": "Ephesus in Paul's day was a centre of magical practices (Acts 19:19's book-burning). The Ephesian audience understood 'principalities and powers, rulers of this dark world, spiritual forces of evil in the heavenly realms' (v.12) concretely. Paul is not using spiritual-combat as ethics-metaphor but treating it as real spiritual engagement. The armor-list is prescribed for actual spiritual combat."
+          },
+          {
+            "name": "Rhetorical moral-ethics figure",
+            "proponents": "Some critical readings",
+            "argument": "Paul deploys Isaiah's warrior-imagery (Isa 59:17) and Roman-soldier armor to dramatise the church's ethical formation. 'Truth belt,' 'righteousness breastplate,' 'peace-shoes' are virtues personified as armor. The passage's pastoral burden is moral resilience, not literal spiritual-combat technique."
+          },
+          {
+            "name": "Both: genuine spiritual reality described metaphorically",
+            "proponents": "Lincoln, Hoehner",
+            "argument": "Paul believes in real spiritual powers arrayed against the church (not metaphor) and deploys vivid armor-language to describe the Christian's virtues and disciplines as the defense (not literal armor). The spiritual reality is real; the armor-description is figurative. The passage functions on both levels."
+          }
+        ]
+      }
     ],
     "thread": [
       {
@@ -636,7 +624,8 @@
         }
       ],
       "note": "Ephesians 6 completes the household code (vv. 1-9) and then dramatically reframes the entire ethical section by revealing its ultimate context: the battle is cosmic, not merely domestic. The armor passage (vv. 10-17) is the eschatological frame for all the preceding ethics — the virtues Paul has urged (humility, love, truth-speaking, forgiveness) are the very armor of God. The letter ends with prayer as the capstone of the armor, and with Tychicus as the living letter alongside the written one."
-    }
+    },
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Children, obey your parents in the Lord, for this is right.</td></tr><tr><td class=\"t-label\">KJV</td><td>Children, obey your parents in the Lord: for this is right.</td></tr><tr><td class=\"t-label\">NIV</td><td>Fathers, do not exasperate your children; instead, bring them up in the training and instruction of the Lord.</td></tr><tr><td class=\"t-label\">KJV</td><td>And, ye fathers, provoke not your children to wrath: but bring them up in the nurture and admonition of the Lord.</td></tr><tr><td class=\"t-label\">NIV</td><td>Finally, be strong in the Lord and in his mighty power.</td></tr><tr><td class=\"t-label\">KJV</td><td>Finally, my brethren, be strong in the Lord, and in the power of his might.</td></tr><tr><td class=\"t-label\">NIV</td><td>Put on the full armor of God, so that you can take your stand against the devil’s schemes.</td></tr><tr><td class=\"t-label\">KJV</td><td>Put on the whole armour of God, that ye may be able to stand against the wiles of the devil.</td></tr><tr><td class=\"t-label\">NIV</td><td>For our struggle is not against flesh and blood, but against the rulers, against the authorities, against the powers of this dark world and against the spiritual forces of evil in the heavenly realms.</td></tr><tr><td class=\"t-label\">KJV</td><td>For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places.</td></tr><tr><td class=\"t-label\">NIV</td><td>Take the helmet of salvation and the sword of the Spirit, which is the word of God.</td></tr><tr><td class=\"t-label\">KJV</td><td>And take the helmet of salvation, and the sword of the Spirit, which is the word of God:</td></tr>"
   },
   "vhl_groups": [
     {
