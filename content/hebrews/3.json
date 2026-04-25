@@ -366,38 +366,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 3:1",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The title ἀπόστολος (apostle) applied to Jesus is unique in the NT. It corresponds to Moses’ role as God’s authorized representative (‘sent one’) to I…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Jesus Greater Than Moses within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 3:7",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The author attributes Psalm 95 directly to the Holy Spirit, reflecting the early Christian conviction that Scripture’s ultimate author is God himself,…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Jesus Greater Than Moses within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Hebrews 3:7-19's wilderness-warning: salvation-loss possibility or covenant-membership-test?",
+        "positions": [
+          {
+            "name": "Genuine apostasy possibility (Arminian)",
+            "proponents": "Wesleyan + Arminian traditions",
+            "argument": "The warning addresses genuine-believers facing real-apostasy-possibility. The 'be careful, brothers, that none of you has a sinful, unbelieving heart that turns away from the living God' (v.12) targets-Christians as Christians. Apostasy is-possible for genuine-believers; the warning-passages must be heeded, not explained-away."
+          },
+          {
+            "name": "Test of genuine-faith-vs-mere-profession (Reformed)",
+            "proponents": "Reformed mainstream",
+            "argument": "The warning operates-as-test-criterion: those who-fail-the-test-prove-they-were-never-truly-saved. The wilderness-Israelites who-fell-away show-that-merely-being-among-the-covenant-people doesn't-equal-genuine-saving-faith. Apparent-believer-apostasy reveals-original-non-genuineness, not loss-of-genuine-salvation."
+          },
+          {
+            "name": "Pastoral-warning-functioning-genuinely (Mediating)",
+            "proponents": "Mainstream evangelical",
+            "argument": "The warning is genuine-warning that-functions-pastorally to-keep-believers-from-falling-away. Whether the apostates-were-ever-genuinely-saved is not-the-warning's-primary-question. The warning's-pastoral-function operates-effectively for-its-stated-purpose: keeping-believers-faithful."
+          }
+        ]
+      }
     ],
     "thread": [
       {

@@ -825,13 +825,33 @@
           "body": "The roll call of faith in Hebrews 11 slows at verse 35 and turns dark. 'Others were tortured (etumpanisthēsan), refusing to accept release, so that they might rise again to a better life. Others suffered mocking and flogging, and even chains and imprisonment. They were stoned, they were sawn in two (epristhēsan), they were killed with the sword.' Each of these verbs triggers a name or a story in Jewish martyr tradition — but 'sawn in two' is the most striking, because the Hebrew Bible nowhere records anyone being sawn in two.\n\nThe tradition behind the phrase is the Martyrdom of Isaiah, a Jewish pseudepigraphon probably composed in the 1st century BC or AD (the full work, the Ascension of Isaiah, is a composite Christian expansion preserved in Ethiopic, with the Jewish Martyrdom as its first five chapters). The text narrates the death of the prophet Isaiah under King Manasseh, who — at the incitement of the false prophet Belkira and demonic accusers — orders Isaiah sawn in two with a wooden saw. Isaiah does not cry out or weep; his mouth converses with the Holy Spirit until the saw completes its work. The story is summarized in the Talmud (b. Yevamot 49b; b. Sanhedrin 103b) and presupposed in the Lives of the Prophets (a 1st-century Jewish work): 'Isaiah was sawn in two by Manasseh and was buried under the oak Rogel.' By the 2nd century the tradition is treated as common knowledge in both Jewish and Christian sources.\n\nThe plural 'others were sawn in two' in Hebrews does not name Isaiah explicitly, but the unusual verb (priō, to saw) and the absence of any OT precedent strongly suggest the Isaiah-tradition is the primary referent, perhaps with the line of prophets in view more broadly. Patristic interpreters took this identification for granted: Justin Martyr (Dialogue 120), Tertullian (De Patientia 14, Scorpiace 8), Origen (Epistle to Julius Africanus 9, Commentary on Matthew 23:37), and Jerome all identify the Hebrews reference with Isaiah. Origen specifically defends the tradition as reliable history, appealing to its consistent attestation.\n\nOther verbs in Hebrews 11:35–38 carry similar Second Temple weight. 'Tortured' (etumpanisthēsan, literally 'stretched on a drum-shaped rack') evokes the mother and her seven sons of 2 Maccabees 7 and 4 Maccabees 8–17, whose refusal to eat unclean food under Antiochus IV stands as the paradigm Jewish martyrdom. 'Killed with the sword' points to the prophets Jezebel killed (1 Kings 18:4, 19:10), but also to continuing persecution in the Hellenistic period. 'Mountains and dens and caves' evokes Elijah's flight, but also the Maccabean families who hid in the Judean wilderness (1 Maccabees 2:27–38).\n\nHebrews is composing a catena of exemplars drawn from the whole sweep of Jewish tradition — canonical OT history, plus the extra-biblical martyrologies that gave 1st-century Jewish and Christian readers their vocabulary for faithful suffering unto death. The author assumes access to this broader tradition; the assumption itself tells us how the early Christian imagination was formed.",
           "extrabiblical_ids": [],
           "citation_refs": [
-            {"nt": "Hebrews 11:35", "source": "2 Maccabees 7 (mother and seven sons); 4 Maccabees 8-17", "type": "allusion"},
-            {"nt": "Hebrews 11:37", "source": "Martyrdom of Isaiah (preserved in Ascension of Isaiah 1-5); Lives of the Prophets", "type": "allusion"}
+            {
+              "nt": "Hebrews 11:35",
+              "source": "2 Maccabees 7 (mother and seven sons); 4 Maccabees 8-17",
+              "type": "allusion"
+            },
+            {
+              "nt": "Hebrews 11:37",
+              "source": "Martyrdom of Isaiah (preserved in Ascension of Isaiah 1-5); Lives of the Prophets",
+              "type": "allusion"
+            }
           ],
           "scholar_voices": [
-            {"scholar_id": "cockerill", "tradition": "Evangelical Hebrews", "note": "Cockerill (NICNT) argues that the author of Hebrews 11 deliberately extends the roll of faithful witnesses beyond the OT corpus because the theme of faithful suffering unto promised vindication required it. Canonical OT history gave the author many martyrs but not the literary intensity Second Temple martyrology developed. The blending is purposeful and catechetically assumes the broader Jewish tradition was known to readers."},
-            {"scholar_id": "lane", "tradition": "Evangelical Hebrews (Word Biblical)", "note": "Lane's commentary identifies the Martyrdom of Isaiah tradition as the probable referent for 'sawn in two' and notes its continuous attestation from pre-Christian Jewish sources through the earliest patristic interpreters. The author of Hebrews moves across the boundary of canonical and extra-canonical history without comment — evidence that his audience shared the cultural reading."},
-            {"scholar_id": "nickelsburg", "tradition": "Critical (Second Temple)", "note": "Nickelsburg's Resurrection, Immortality, and Eternal Life in Intertestamental Judaism documents how Maccabean and related martyr traditions shaped Second Temple eschatology: resurrection hope emerges within persecuted communities as vindication for those who 'refuse release' (Heb 11:35). Hebrews' theology of faithful-unto-death draws directly on this Jewish tradition-stream."}
+            {
+              "scholar_id": "cockerill",
+              "tradition": "Evangelical Hebrews",
+              "note": "Cockerill (NICNT) argues that the author of Hebrews 11 deliberately extends the roll of faithful witnesses beyond the OT corpus because the theme of faithful suffering unto promised vindication required it. Canonical OT history gave the author many martyrs but not the literary intensity Second Temple martyrology developed. The blending is purposeful and catechetically assumes the broader Jewish tradition was known to readers."
+            },
+            {
+              "scholar_id": "lane",
+              "tradition": "Evangelical Hebrews (Word Biblical)",
+              "note": "Lane's commentary identifies the Martyrdom of Isaiah tradition as the probable referent for 'sawn in two' and notes its continuous attestation from pre-Christian Jewish sources through the earliest patristic interpreters. The author of Hebrews moves across the boundary of canonical and extra-canonical history without comment — evidence that his audience shared the cultural reading."
+            },
+            {
+              "scholar_id": "nickelsburg",
+              "tradition": "Critical (Second Temple)",
+              "note": "Nickelsburg's Resurrection, Immortality, and Eternal Life in Intertestamental Judaism documents how Maccabean and related martyr traditions shaped Second Temple eschatology: resurrection hope emerges within persecuted communities as vindication for those who 'refuse release' (Heb 11:35). Hebrews' theology of faithful-unto-death draws directly on this Jewish tradition-stream."
+            }
           ],
           "takeaway": "The heroes of faith in Hebrews 11 include figures and stories from extra-biblical tradition — the tortured mother and sons of 2 and 4 Maccabees, and Isaiah 'sawn in two' as recounted in the Martyrdom of Isaiah. The author assumes his readers know these stories. The inspired text draws on a wider literary culture than the 39-book Protestant OT, which does not settle canonical questions about the source texts but does reveal how deeply Second Temple Jewish literature shaped the Christian imagination of faithful suffering."
         }
@@ -982,7 +1002,76 @@
         }
       ],
       "note": "Hebrews 11 is a masterpiece of rhetorical epideixis (demonstrating virtue through examples). The repeated 'by faith... by faith' anaphora builds to a crescendo. The chapter's critical pastoral move is vv. 39-40: the OT saints are not merely models but participants — they remain incomplete until the completion of the community that includes the letter's recipients. This creates profound obligation: to abandon faith is to let down the whole cloud of witnesses."
-    }
+    },
+    "hebtext": [
+      {
+        "word": "πίστις",
+        "tlit": "pistis",
+        "gloss": "faith",
+        "note": "Ch 11's signature word, used 24 times. v.1's 'now faith is the substance of things hoped for' (ESV: 'assurance') uses hypostasis — substantiating-confidence rather than mere-belief. The chapter establishes faith-as-assurance, not-mere-cognitive-affirmation."
+      },
+      {
+        "word": "ἀρχηγόν τῆς πίστεως",
+        "tlit": "archēgon tēs pisteōs",
+        "gloss": "founder of faith",
+        "note": "12:2's 'Jesus the founder and perfecter of faith' (technically ch 12 but ch 11's-faith-procession-leads-to-Christ). Christ as archēgos is faith's-pioneer + foundation. The faith-chapter ends pointing-toward Jesus, who-perfected the faith-he-pioneered."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "Abel, Enoch, Noah",
+        "role": "Pre-patriarchal faith-figures (vv.4-7)",
+        "text": "The chapter opens with three pre-patriarchal exemplars: Abel's-faithful-sacrifice, Enoch's-faithful-walk, Noah's-faithful-ark-building. Each embodies-faith-without-seeing-fulfillment. The pre-patriarchal-trio establishes-faith-pattern preceding-Abrahamic-covenant."
+      },
+      {
+        "name": "Abraham (the friend of God)",
+        "role": "Central patriarchal figure (vv.8-19)",
+        "text": "Abraham's-faith-arc receives the chapter's most extensive treatment. His leaving-country, sojourning, offering-Isaac all embody trust-without-fully-seeing. Abraham as faith-paradigm is shared across NT (Rom 4; Gal 3; James 2)."
+      },
+      {
+        "name": "Moses, Rahab, the post-conquest figures",
+        "role": "Continuing faith-line (vv.23-31)",
+        "text": "Moses's faith-by-leaving-Egypt; Rahab's faith-receiving-spies; the post-conquest figures (Gideon, Barak, Samson, etc.). The chapter's faith-procession spans OT-history. Each-figure embodies faith-without-fully-seeing-fulfillment, anticipating Christ's-completion."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Augustine, On the Predestination of the Saints (c. 429 CE)",
+        "text": "Augustine's exposition of Heb 11 grounds his doctrine of-faith-as-divine-gift. The chapter's-faith-figures all received faith-as-gift, not autonomous-virtue. Augustine's reading shaped Western-theology of grace-and-faith."
+      },
+      {
+        "who": "Calvin, Commentary on Hebrews 11 (1549)",
+        "text": "Calvin's reading establishes Reformed-theology of progressive-faith-revelation. The OT-faithful-figures believed-in-coming-Messiah even-without-seeing-the-fulfillment. The faith of-OT-saints is theologically-continuous with NT-faith — both pointing-to-Christ."
+      },
+      {
+        "who": "F. F. Bruce, Hebrews, NICNT (1990)",
+        "text": "Bruce's commentary surveys the chapter's careful selection of OT-figures. The chapter is theologically-curated, not exhaustive — the figures collectively-establish faith's-pattern across redemptive-history. The chapter's pastoral-purpose: encouraging-perseverance through OT-faithful-example."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Heb 11:1-2",
+        "target": "2 Cor 5:7; Rom 4",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Faith's-substance-not-sight character parallels 2 Cor 5:7 ('we walk by faith, not by sight') and Pauline faith-theology (Rom 4). Multiple NT-writers converge on-faith-as-confident-trust beyond sense-perception."
+      },
+      {
+        "anchor": "Heb 11:13",
+        "target": "1 Pet 2:11; Phil 3:20",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "OT-saints as-strangers-and-pilgrims-on-the-earth parallels 1 Peter's pilgrim-Christianity and Paul's heavenly-citizenship. The pilgrim-identity unites-OT-and-NT-believers."
+      },
+      {
+        "anchor": "Heb 11:31",
+        "target": "Josh 2; James 2:25",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Rahab's faith parallels James 2:25's-citation of same-figure. Two NT-writers cite Rahab for-faith-with-action. The Rahab-tradition was established Christian-formation-reference."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Now faith is confidence in what we hope for and assurance about what we do not see.</td></tr><tr><td class=\"t-label\">KJV</td><td>Now faith is the substance of things hoped for, the evidence of things not seen.</td></tr><tr><td class=\"t-label\">NIV</td><td>And without faith it is impossible to please God, because anyone who comes to him must believe that he exists and that he rewards those who earnestly seek him.</td></tr><tr><td class=\"t-label\">KJV</td><td>But without faith it is impossible to please him: for he that cometh to God must believe that he is, and that he is a rewarder of them that diligently seek him.</td></tr><tr><td class=\"t-label\">NIV</td><td>By faith Abraham, when called to go to a place he would later receive as his inheritance, obeyed and went, even though he did not know where he was going.</td></tr><tr><td class=\"t-label\">KJV</td><td>By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went.</td></tr><tr><td class=\"t-label\">NIV</td><td>All these people were still living by faith when they died. They did not receive the things promised; they only saw them and welcomed them from a distance, admitting that they were foreigners and strangers on earth.</td></tr><tr><td class=\"t-label\">KJV</td><td>These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them, and confessed that they were strangers and pilgrims on the earth.</td></tr><tr><td class=\"t-label\">NIV</td><td>Instead, they were longing for a better country—a heavenly one. Therefore God is not ashamed to be called their God, for he has prepared a city for them.</td></tr><tr><td class=\"t-label\">KJV</td><td>But now they desire a better country, that is, an heavenly: wherefore God is not ashamed to be called their God: for he hath prepared for them a city.</td></tr><tr><td class=\"t-label\">NIV</td><td>These were all commended for their faith, yet none of them received what had been promised,</td></tr><tr><td class=\"t-label\">KJV</td><td>And these all, having obtained a good report through faith, received not the promise:</td></tr>"
   },
   "vhl_groups": [
     {

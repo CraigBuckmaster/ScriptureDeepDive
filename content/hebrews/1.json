@@ -497,38 +497,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 1:2",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase 'in these last days' (ἐπ’ ἐσχάτου τῶν ἡμερῶν) signals the author’s inaugurated eschatology: the final era has begun with the Son’s appearan…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Supremacy of the Son Over Angels within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 1:8–9",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "Psalm 45:6–7 addresses the king as θεός (God). Whether the original psalm intended a divine title for the king is debated, but the author of Hebrews u…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Supremacy of the Son Over Angels within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Hebrews 1's Christology: pre-existence + incarnation + supremacy over angels — what's the polemical context?",
+        "positions": [
+          {
+            "name": "Jewish-Christian readers tempted to revert to Judaism",
+            "proponents": "Bruce, Lane",
+            "argument": "The opening's emphasis on Christ's-superiority-to-angels addresses Jewish-Christians valuing angelic-mediation in Mosaic-revelation. Hebrews argues: Christ's-direct-revelation supersedes angelic-mediated-Mosaic-revelation. The polemic targets Jewish-Christian-temptation to revert to Mosaic-priority."
+          },
+          {
+            "name": "Anti-Gnostic / proto-Christological clarification",
+            "proponents": "Some critical readings",
+            "argument": "The chapter's careful Christological-language (Son superior-to-angels, exact-imprint of God's-being) addresses early-Christological-debates about Christ's-nature relative to angelic/intermediary-beings. Hebrews provides theological-clarity against speculative-tendencies."
+          },
+          {
+            "name": "General-Christian-formation rather than specific-polemic",
+            "proponents": "Mainstream evangelical",
+            "argument": "The chapter's Christological-argument grounds-positive-Christian-formation rather than specific-anti-heretical-polemic. Christ's-supremacy is established as foundation for the letter's ongoing-arguments. Reading the chapter primarily-polemically may misframe the broader-pastoral-aim."
+          }
+        ]
+      }
     ],
     "thread": [
       {

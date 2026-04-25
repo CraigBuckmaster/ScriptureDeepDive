@@ -776,7 +776,76 @@
         }
       ],
       "note": "Hebrews 12 is the pastoral climax of the letter. The race metaphor (vv. 1-3), the discipline argument (vv. 4-11), and the two mountains (vv. 18-29) all press toward the same goal: endurance in faith. The Sinai/Zion contrast summarizes the entire letter's argument — the old order was terrible but preparatory; the new order is glorious and final. To turn back is not to escape to safety but to refuse the speaking God himself."
-    }
+    },
+    "hebtext": [
+      {
+        "word": "νέφος μαρτύρων",
+        "tlit": "nephos martyrōn",
+        "gloss": "cloud of witnesses",
+        "note": "v.1's image of the OT-faithful-believers as cloud-of-witnesses surrounding the running-believer. The 'cloud' is large-many-membered crowd; the 'witnesses' (martyrōn) are testifying-spectators. The image grounds Christian-perseverance in awareness of OT-faithful-precedents."
+      },
+      {
+        "word": "παιδείας",
+        "tlit": "paideias",
+        "gloss": "discipline / training",
+        "note": "v.7's term for parental-disciplinary training. Paideia in Greek-tradition encompassed full-formation: instruction + correction + character-formation. Hebrews applies the term to God's-disciplinary-relationship with believers — sanctifying-discipline as fatherly-training, not punitive-anger."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "Jesus the founder and perfecter of faith",
+        "role": "Christological focus (v.2)",
+        "text": "v.2's identification of Jesus as faith's-pioneer + completion. Christ pioneered-faith by-his-cross-and-resurrection-trust + perfected-faith by-his-completed-redemption. Believers running-with-perseverance look-to-Christ as faith-foundation + faith-completion."
+      },
+      {
+        "name": "The Father (the disciplining-loving-Father)",
+        "role": "Disciplinarian-Father figure (vv.5-11)",
+        "text": "The Father's-discipline-of-children (Prov 3:11-12 quoted) shapes Christian-formation-theology. Discipline is genuine-suffering but motivated by genuine-love. Believers' suffering-experiences are reframed as Father's-loving-formation."
+      },
+      {
+        "name": "Esau (the negative example)",
+        "role": "Warning-figure (vv.16-17)",
+        "text": "Esau-selling-his-birthright for a meal becomes the negative-paradigm of profane-shortsightedness. His later-tearful-regret could-not-reverse the choice. Hebrews uses Esau as cautionary-example for those-tempted-to-trade-eschatological-inheritance for-immediate-satisfaction."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Augustine, City of God 21",
+        "text": "Augustine's eschatological theology drew on Heb 12:18-29's contrast between Sinai (terror-revelation) and Zion (graceful-revelation). The chapter became foundational for Augustinian-theology of revelation's-progression from law to grace."
+      },
+      {
+        "who": "Calvin, Commentary on Hebrews 12 (1549)",
+        "text": "Calvin's exposition of vv.5-11's discipline-passage shaped Reformed pastoral-theology of suffering-as-divine-formation. His view: every-Christian-suffering operates within Father-disciplinary-framework, not arbitrary-divine-anger. The pastoral-implication: trust-the-disciplining-Father even amid suffering."
+      },
+      {
+        "who": "Tom Long, Hebrews, Interpretation (1997)",
+        "text": "Long's pastoral-theological commentary develops the chapter's running-imagery. The Christian-life is not-sprint but-marathon requiring-perseverance through-suffering. The chapter's pastoral-encouragement: persevere because Christ-pioneered-the-course + cloud-of-faithful-precedent witnesses."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Heb 12:5-6",
+        "target": "Prov 3:11-12",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Direct quotation of Prov 3:11-12. The Father's-disciplinary-love is foundational OT-wisdom-tradition that Hebrews extends to-Christian-formation."
+      },
+      {
+        "anchor": "Heb 12:18-21",
+        "target": "Exod 19; 20:18-21",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Mount Sinai's terror-revelation contrasted with Mount Zion's grace-revelation. Hebrews's typological-contrast establishes new-covenant-superiority while preserving-OT-revelation's reality."
+      },
+      {
+        "anchor": "Heb 12:24",
+        "target": "Gen 4:10",
+        "type": "Echo",
+        "direction": "back",
+        "text": "Christ's-blood speaking-better-thing than Abel's-blood. Abel's-blood cried-for-justice; Christ's-blood speaks-of-mercy. The Genesis-typology establishes the cross's-message as decisively-different from-OT-blood-cries."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off everything that hinders and the sin that so easily entangles. And let us run with perseverance the race marked out for us,</td></tr><tr><td class=\"t-label\">KJV</td><td>Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight, and the sin which doth so easily beset us, and let us run with patience the race that is set before us,</td></tr><tr><td class=\"t-label\">NIV</td><td>fixing our eyes on Jesus, the pioneer and perfecter of faith. For the joy set before him he endured the cross, scorning its shame, and sat down at the right hand of the throne of God.</td></tr><tr><td class=\"t-label\">KJV</td><td>Looking unto Jesus the author and finisher of our faith; who for the joy that was set before him endured the cross, despising the shame, and is set down at the right hand of the throne of God.</td></tr><tr><td class=\"t-label\">NIV</td><td>because the Lord disciplines the one he loves, and he chastens everyone he accepts as his son.”</td></tr><tr><td class=\"t-label\">KJV</td><td>For whom the Lord loveth he chasteneth, and scourgeth every son whom he receiveth.</td></tr><tr><td class=\"t-label\">NIV</td><td>No discipline seems pleasant at the time, but painful. Later on, however, it produces a harvest of righteousness and peace for those who have been trained by it.</td></tr><tr><td class=\"t-label\">KJV</td><td>Now no chastening for the present seemeth to be joyous, but grievous: nevertheless afterward it yieldeth the peaceable fruit of righteousness unto them which are exercised thereby.</td></tr><tr><td class=\"t-label\">NIV</td><td>Make every effort to live in peace with everyone and to be holy; without holiness no one will see the Lord.</td></tr><tr><td class=\"t-label\">KJV</td><td>Follow peace with all men, and holiness, without which no man shall see the Lord:</td></tr><tr><td class=\"t-label\">NIV</td><td>Therefore, since we are receiving a kingdom that cannot be shaken, let us be thankful, and so worship God acceptably with reverence and awe,</td></tr><tr><td class=\"t-label\">KJV</td><td>Wherefore we receiving a kingdom which cannot be moved, let us have grace, whereby we may serve God acceptably with reverence and godly fear:</td></tr><tr><td class=\"t-label\">NIV</td><td>for our “God is a consuming fire.”</td></tr><tr><td class=\"t-label\">KJV</td><td>For our God is a consuming fire.</td></tr>"
   },
   "vhl_groups": [
     {

@@ -407,7 +407,69 @@
         }
       ],
       "note": "Hebrews 8 pivots from the person of the priest (chs. 5-7) to his ministry. The Platonic-sounding language of 'copy and shadow' is actually rooted in Exodus 25:40 — the contrast is biblical, not philosophical. The Jeremiah 31 citation (the longest OT quotation in the NT) is devastating to any covenant-continuity argument: the new covenant's superiority is announced within the Old Testament itself."
-    }
+    },
+    "hebtext": [
+      {
+        "word": "διαθήκη",
+        "tlit": "diathēkē",
+        "gloss": "covenant",
+        "note": "v.6's term for new-covenant. Diathēkē in Hellenistic-Greek covered both 'covenant' (between-parties) and 'last-will-and-testament.' Hebrews uses the dual-meaning theologically: Christ's-death-as-covenant-ratifying + as testament-bequeathing-inheritance. The double-meaning grounds Christ's-once-for-all-atonement."
+      },
+      {
+        "word": "ἀρχιερεὺς",
+        "tlit": "archiereus",
+        "gloss": "high priest",
+        "note": "Hebrews's signature term for Christ's-priestly-office. Used 17 times in the letter, vs only 5 times in the rest of NT combined. The high-priest-Christology is Hebrews's distinctive contribution to NT-doctrine. v.1's 'such a high priest' summarizes the chapters-leading-up-to-this point."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "Christ as high priest",
+        "role": "Central Christological figure",
+        "text": "Hebrews 8 introduces the new-covenant high-priesthood Christ-occupies. Christ is high-priest who-sits at the right-hand of the Majesty (v.1) — a posture that distinguishes him from-Levitical-priests-who-stood-while-serving. His seated-position signals completed-once-for-all-priestly-work."
+      },
+      {
+        "name": "Jeremiah",
+        "role": "Quoted prophet (vv.8-12)",
+        "text": "Hebrews quotes Jer 31:31-34 (the OT's longest direct-NT-citation). The new-covenant-promise is shown-fulfilled in Christ's high-priestly-work. Jeremiah's-prophecy gives Hebrews-author the canonical-OT foundation for new-covenant-claims."
+      },
+      {
+        "name": "The Father (the Majesty in heaven)",
+        "role": "Throne-receiving-Christ figure",
+        "text": "v.1's 'Majesty in heaven' identifies the Father as the one before-whom Christ ministers. The new-covenant-priesthood operates within Father-Son-relationship, not in earthly-temple. The vocabulary preserves transcendent-divine-priesthood framework."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Augustine, Letters and Sermons",
+        "text": "Augustine's exposition of Heb 8 emphasizes the new-covenant's-internal-character: law written-on-hearts vs external-tablets. The chapter became foundational for Augustine's-theology of grace + Spirit's-internal-work."
+      },
+      {
+        "who": "Calvin, Commentary on Hebrews (1549)",
+        "text": "Calvin's exposition develops Reformed new-covenant-theology. The chapter establishes-Christ's-superior-priesthood in heavenly-tabernacle vs earthly-Levitical-tabernacle. Calvin's reading shapes Reformed theology of Christ's-priesthood."
+      },
+      {
+        "who": "F. F. Bruce, Hebrews, NICNT (1990)",
+        "text": "Bruce's commentary integrates careful exegesis with theological development. The chapter's Jer 31 citation establishes Hebrews-author's canonical-Christological-method: OT-prophetic-promise fulfilled-in-Christ."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Heb 8:8-12",
+        "target": "Jer 31:31-34",
+        "type": "Fulfilment",
+        "direction": "back",
+        "text": "Heb 8 quotes Jer 31's new-covenant-promise as fulfilled in Christ. The longest-OT-quotation in Hebrews (and one of the longest in NT) anchors Christ's-new-covenant-priesthood in OT-prophetic-promise."
+      },
+      {
+        "anchor": "Heb 8:1-5",
+        "target": "Exod 25:40",
+        "type": "Echo",
+        "direction": "back",
+        "text": "v.5's 'see that you make everything according to the pattern shown you on the mountain' quotes Exod 25:40. The earthly-tabernacle-pattern reflects-heavenly-original. Christ ministers in the heavenly-original; Levitical-priests served-the-shadow."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Now the main point of what we are saying is this: We do have such a high priest, who sat down at the right hand of the throne of the Majesty in heaven,</td></tr><tr><td class=\"t-label\">KJV</td><td>Now of the things which we have spoken this is the sum: We have such an high priest, who is set on the right hand of the throne of the Majesty in the heavens;</td></tr><tr><td class=\"t-label\">NIV</td><td>But in fact the ministry Jesus has received is as superior to theirs as the covenant of which he is mediator is superior to the old one, since the new covenant is established on better promises.</td></tr><tr><td class=\"t-label\">KJV</td><td>But now hath he obtained a more excellent ministry, by how much also he is the mediator of a better covenant, which was established upon better promises.</td></tr><tr><td class=\"t-label\">NIV</td><td>But God found fault with the people and said: “The days are coming, declares the Lord, when I will make a new covenant with the people of Israel and with the people of Judah.</td></tr><tr><td class=\"t-label\">KJV</td><td>For finding fault with them, he saith, Behold, the days come, saith the Lord, when I will make a new covenant with the house of Israel and with the house of Judah:</td></tr><tr><td class=\"t-label\">NIV</td><td>This is the covenant I will establish with the people of Israel after that time, declares the Lord. I will put my laws in their minds and write them on their hearts. I will be their God, and they will be my people.</td></tr><tr><td class=\"t-label\">KJV</td><td>For this is the covenant that I will make with the house of Israel after those days, saith the Lord; I will put my laws into their mind, and write them in their hearts: and I will be to them a God, and they shall be to me a people:</td></tr><tr><td class=\"t-label\">NIV</td><td>For I will forgive their wickedness and will remember their sins no more.”</td></tr><tr><td class=\"t-label\">KJV</td><td>For I will be merciful to their unrighteousness, and their sins and their iniquities will I remember no more.</td></tr><tr><td class=\"t-label\">NIV</td><td>By calling this covenant “new,” he has made the first one obsolete; and what is obsolete and outdated will soon disappear.</td></tr><tr><td class=\"t-label\">KJV</td><td>In that he saith, A new covenant, he hath made the first old. Now that which decayeth and waxeth old is ready to vanish away.</td></tr>"
   },
   "vhl_groups": [
     {
