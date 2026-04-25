@@ -464,22 +464,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 7:3",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The argument from Genesis’s silence about Melchizedek’s origins is typological, not ontological: the author does not claim Melchizedek was literally e…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Melchizedek Priesthood and the End of the Levitical Order within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Hebrews 7's Melchizedek priest-king: historical-figure, christological-type, or angelic-being?",
+        "positions": [
+          {
+            "name": "Historical figure functioning as christological type",
+            "proponents": "Mainstream evangelical, Bruce, Lane",
+            "argument": "Melchizedek (Gen 14) was historical-priest-king of Salem (Jerusalem). His unique-double-office (priest + king) and absence-of-genealogical-record provide christological-typology — Christ as priest-after-Melchizedek's-order combines-priestly-kingly-offices. The historical-figure typifies Christ's-offices."
+          },
+          {
+            "name": "Symbolic figure (perhaps non-historical)",
+            "proponents": "Some critical readings",
+            "argument": "The Genesis-Melchizedek may-be-stylized-figure rather-than-strict-historical-person. The 'without father, without mother, without genealogy' (v.3) language is-stylized-typological-description. Historical-vs-symbolic-status is-secondary to-typological-function."
+          },
+          {
+            "name": "Angelic / heavenly being (Qumran-influenced)",
+            "proponents": "Some Qumran scholars",
+            "argument": "Some Qumran-texts (11Q13) treat Melchizedek as heavenly-figure or angelic-being. Hebrews may-engage similar-traditions while-using-them-Christologically. Christ as Melchizedek-fulfillment may-presume some-angelic-figure-tradition that Christ-supersedes."
+          }
+        ]
+      }
     ],
     "thread": [
       {

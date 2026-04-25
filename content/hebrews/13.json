@@ -569,7 +569,76 @@
         }
       ],
       "note": "Hebrews 13 grounds the letter's elevated theology in ordinary community life: money, sex, hospitality, leadership, worship. The 'outside the camp' command (v. 13) is the ethical equivalent of the whole letter's argument — as Jesus stepped outside the religious system to accomplish redemption, so believers must be willing to bear social reproach rather than retreat to religious security. The magnificent benediction (vv. 20-21) is the liturgical seal of the entire argument."
-    }
+    },
+    "hebtext": [
+      {
+        "word": "φιλαδελφία... φιλοξενία",
+        "tlit": "philadelphia... philoxenia",
+        "gloss": "brotherly love... love of strangers",
+        "note": "vv.1-2's paired-love-imperatives. Philadelphia (love-of-brothers, intra-Christian) + philoxenia (love-of-strangers, hospitality) together establish full-Christian-love-scope. The chapter opens with-these-paired-love-commands as foundation for ongoing-Christian-conduct."
+      },
+      {
+        "word": "ἔξω τῆς παρεμβολῆς",
+        "tlit": "exō tēs parembolēs",
+        "gloss": "outside the camp",
+        "note": "v.13's call to go-outside-the-camp to Christ. Echoes Lev 16's outside-the-camp-disposition of sacrifices and Christ's-crucifixion outside-Jerusalem-walls. Christian-discipleship participates in Christ's-outside-the-camp-pattern: bearing-his-reproach away-from-respectable-society."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "Christian leaders/elders",
+        "role": "Honored figures (vv.7, 17, 24)",
+        "text": "The chapter's three-fold reference to leaders (remember-deceased-leaders v.7; obey-living-leaders v.17; greet-leaders v.24) establishes ecclesial-leadership-respect framework. The leaders' character (those-who-spoke-the-word-of-God, faithful-conduct) supports the call-to-imitation."
+      },
+      {
+        "name": "Christ as eternal-unchanging Lord (v.8)",
+        "role": "Foundation of Christian stability",
+        "text": "v.8's 'Jesus Christ is the same yesterday, today, and forever' provides stable-foundation amid-changing-circumstances. The chapter's-frequent-pastoral-reminders ground in Christ's-unchanging-character. Christ's-immutability is foundation for Christian-perseverance."
+      },
+      {
+        "name": "Timothy (the author's-traveling-companion)",
+        "role": "Mentioned in closing (v.23)",
+        "text": "v.23's reference to Timothy's release suggests Pauline-circle-authorship of Hebrews. Whether Paul-himself or Pauline-associate (Apollos, Barnabas, etc.), the author shared the broader-Pauline-mission-context. The reference preserves historical-personal-detail in the otherwise-formal letter."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Origen, Letter to Africanus (c. 240 CE)",
+        "text": "Origen's famous comment about Hebrews-authorship: 'who actually wrote the epistle, only God knows.' He acknowledged Pauline-content + theological-substance while questioning-direct-Pauline-authorship. Origen's careful-reception preserves the letter's authority while preserving careful-textual-criticism."
+      },
+      {
+        "who": "Calvin, Commentary on Hebrews 13 (1549)",
+        "text": "Calvin's exposition emphasizes the chapter's pastoral-practical-applications: hospitality, marriage-honor, contentment, leader-respect. The chapter's everyday-practical-emphasis grounds Reformed-Protestant theology of ordinary-life-as-Christian-vocation."
+      },
+      {
+        "who": "F. F. Bruce, Hebrews, NICNT (1990)",
+        "text": "Bruce's commentary integrates the chapter's seemingly-disconnected exhortations: each ethical-imperative grows-from the-letter's-broader theological-foundation. The pastoral-applications are not appended-afterthoughts but theological-implications of Christ's-priesthood."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Heb 13:5",
+        "target": "Deut 31:6, 8; Josh 1:5",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'I will never leave you nor forsake you' quotes/echoes Deuteronomy + Joshua's covenantal-presence-promises. Hebrews applies God's-promise-to-Joshua to Christian-believers facing economic-difficulty. The continuity grounds Christian-content in OT-covenantal promise."
+      },
+      {
+        "anchor": "Heb 13:8",
+        "target": "Mal 3:6; Jas 1:17",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'Same yesterday, today, and forever' parallels Mal 3:6's divine-immutability and James 1:17's-no-shifting-shadow. Multiple OT-NT writers affirm divine-changelessness as foundational-character. Hebrews applies the divine-attribute specifically to Christ."
+      },
+      {
+        "anchor": "Heb 13:13-14",
+        "target": "Lev 16:27; Phil 3:20",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'Outside the camp... no continuing city here' integrates Lev 16's sacrifice-outside-camp + Pauline heavenly-citizenship. Christian pilgrim-identity operates outside-respectable-society while-anticipating-future-city. The integration preserves multiple-strand of NT pilgrim-theology."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>Keep on loving one another as brothers and sisters.</td></tr><tr><td class=\"t-label\">KJV</td><td>Let brotherly love continue.</td></tr><tr><td class=\"t-label\">NIV</td><td>Keep your lives free from the love of money and be content with what you have, because God has said, “Never will I leave you; never will I forsake you.”</td></tr><tr><td class=\"t-label\">KJV</td><td>Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.</td></tr><tr><td class=\"t-label\">NIV</td><td>Jesus Christ is the same yesterday and today and forever.</td></tr><tr><td class=\"t-label\">KJV</td><td>Jesus Christ the same yesterday, and to day, and for ever.</td></tr><tr><td class=\"t-label\">NIV</td><td>Let us, then, go to him outside the camp, bearing the disgrace he bore.</td></tr><tr><td class=\"t-label\">KJV</td><td>Let us go forth therefore unto him without the camp, bearing his reproach.</td></tr><tr><td class=\"t-label\">NIV</td><td>And do not forget to do good and to share with others, for with such sacrifices God is pleased.</td></tr><tr><td class=\"t-label\">KJV</td><td>But to do good and to communicate forget not: for with such sacrifices God is well pleased.</td></tr><tr><td class=\"t-label\">NIV</td><td>Now may the God of peace, who through the blood of the eternal covenant brought back from the dead our Lord Jesus, that great Shepherd of the sheep,</td></tr><tr><td class=\"t-label\">KJV</td><td>Now the God of peace, that brought again from the dead our Lord Jesus, that great shepherd of the sheep, through the blood of the everlasting covenant,</td></tr><tr><td class=\"t-label\">NIV</td><td>equip you with everything good for doing his will, and may he work in us what is pleasing to him, through Jesus Christ, to whom be glory for ever and ever. Amen.</td></tr><tr><td class=\"t-label\">KJV</td><td>Make you perfect in every good work to do his will, working in you that which is wellpleasing in his sight, through Jesus Christ; to whom be glory for ever and ever. Amen.</td></tr>"
   },
   "vhl_groups": [
     {

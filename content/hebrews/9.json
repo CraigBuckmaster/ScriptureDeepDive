@@ -666,7 +666,71 @@
         }
       ],
       "note": "Hebrews 9 is the architectural center of the letter's argument — both physically (middle of 13 chapters) and theologically. The tabernacle, the Day of Atonement ritual, and the covenant inauguration sacrifice are all read as typological pointers to Christ's once-for-all sacrifice. The Yom Kippur liturgy was designed to teach the people that access to God required blood — and what it taught in shadow, Christ accomplished in reality."
-    }
+    },
+    "hebtext": [
+      {
+        "word": "ἁγίων",
+        "tlit": "hagiōn",
+        "gloss": "holy places",
+        "note": "Ch 9 distinguishes hagia (Holy Place) from hagia hagiōn (Holy of Holies) and uses the broader hagia for both. The chapter's tabernacle-architecture forms the basis of Christ's-greater-priestly-ministry. Christ entered-the-true-Holy-Place: heaven itself."
+      },
+      {
+        "word": "ἐφάπαξ",
+        "tlit": "ephapax",
+        "gloss": "once for all",
+        "note": "vv.12, 26-28's signature term for Christ's-non-repeatable-atonement. Ephapax (= eph + hapax) intensifies the once-only-character. Christ's atonement happened-one-time, achieved-final-result, requires-no-repetition. The vocabulary anchors Christian-doctrine of definitive-atonement."
+      }
+    ],
+    "ppl": [
+      {
+        "name": "Christ as new-covenant high priest",
+        "role": "Central figure of vv.11-28",
+        "text": "Christ enters-the-greater-tabernacle (heaven) once-for-all with his-own-blood. His priestly-mediation establishes-the-new-covenant. The verses ground Christological-soteriology of substitutionary-once-for-all atonement."
+      },
+      {
+        "name": "The first-covenant believers",
+        "role": "Beneficiaries of Christ's-retroactive-atonement (v.15)",
+        "text": "v.15's 'those called might receive the eternal inheritance' includes-OT-saints. Christ's-death extends-retroactively to OT-believers whose first-covenant sacrifices anticipated-but-could-not-effect final-atonement. Christ's atonement covers-the-entire-redemptive-historical-people."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Augustine, On Christian Doctrine (c. 397 CE)",
+        "text": "Augustine's exposition of OT-NT-relationship draws extensively on Heb 9. The chapter's shadow-vs-substance framework shaped Augustine's broader theology of Christ-as-fulfillment of OT-types."
+      },
+      {
+        "who": "Calvin, Commentary on Hebrews 9 (1549)",
+        "text": "Calvin's-exposition emphasizes the once-for-all character of Christ's-atonement against Roman-Catholic-eucharistic theology of repeated-sacrifice. The chapter became foundational Reformed text against transubstantiation-sacrificial theology."
+      },
+      {
+        "who": "William Lane, Hebrews 9-13, WBC (1991)",
+        "text": "Lane's careful exegesis integrates the chapter's complex argument: typology, sacrifice, mediation, eschatology all converge in Christ's-priesthood. The integration is theologically-rich and textually-grounded."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "Heb 9:11-14",
+        "target": "Lev 16",
+        "type": "Fulfilment",
+        "direction": "back",
+        "text": "Christ as high-priest entering the heavenly-Holy-Place fulfills Lev 16's Day of Atonement. Christ enters once-for-all; Levitical-high-priests entered annually. The OT-pattern is-now-completely fulfilled."
+      },
+      {
+        "anchor": "Heb 9:22",
+        "target": "Lev 17:11",
+        "type": "Echo",
+        "direction": "back",
+        "text": "'Without shedding of blood there is no forgiveness' echoes Lev 17:11's blood-atonement principle. Hebrews integrates Pentateuchal-blood-theology with Christological-fulfillment."
+      },
+      {
+        "anchor": "Heb 9:27-28",
+        "target": "Acts 1:11; 1 Thess 4:16-17",
+        "type": "Echo",
+        "direction": "forward",
+        "text": "Christ's-second-appearance-without-sin parallels NT-eschatological return-of-Christ. Hebrews integrates Christ's-priestly-ministry with parousia-eschatology — same-Christ who-died-once-for-sins will-appear-second-time-without-sin to those waiting."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>He did not enter by means of the blood of goats and calves; but he entered the Most Holy Place once for all by his own blood, thus obtaining eternal redemption.</td></tr><tr><td class=\"t-label\">KJV</td><td>Neither by the blood of goats and calves, but by his own blood he entered in once into the holy place, having obtained eternal redemption for us.</td></tr><tr><td class=\"t-label\">NIV</td><td>How much more, then, will the blood of Christ, who through the eternal Spirit offered himself unblemished to God, cleanse our consciences from acts that lead to death, so that we may serve the living God!</td></tr><tr><td class=\"t-label\">KJV</td><td>How much more shall the blood of Christ, who through the eternal Spirit offered himself without spot to God, purge your conscience from dead works to serve the living God?</td></tr><tr><td class=\"t-label\">NIV</td><td>In fact, the law requires that nearly everything be cleansed with blood, and without the shedding of blood there is no forgiveness.</td></tr><tr><td class=\"t-label\">KJV</td><td>And almost all things are by the law purged with blood; and without shedding of blood is no remission.</td></tr><tr><td class=\"t-label\">NIV</td><td>For Christ did not enter a sanctuary made with human hands that was only a copy of the true one; he entered heaven itself, now to appear for us in God’s presence.</td></tr><tr><td class=\"t-label\">KJV</td><td>For Christ is not entered into the holy places made with hands, which are the figures of the true; but into heaven itself, now to appear in the presence of God for us:</td></tr><tr><td class=\"t-label\">NIV</td><td>Just as people are destined to die once, and after that to face judgment,</td></tr><tr><td class=\"t-label\">KJV</td><td>And as it is appointed unto men once to die, but after this the judgment:</td></tr><tr><td class=\"t-label\">NIV</td><td>so Christ was sacrificed once to take away the sins of many; and he will appear a second time, not to bear sin, but to bring salvation to those who are waiting for him.</td></tr><tr><td class=\"t-label\">KJV</td><td>So Christ was once offered to bear the sins of many; and unto them that look for him shall he appear the second time without sin unto salvation.</td></tr>"
   },
   "vhl_groups": [
     {
