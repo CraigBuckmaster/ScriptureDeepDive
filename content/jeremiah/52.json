@@ -364,38 +364,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 52:12",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The date -- \"seventh day of the fifth month in the nineteenth year of Nebuchadnezzar\" -- corresponds to August 586 BC. 2 Kings 25:8 gives the date as …",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Historical Appendix within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 52:31",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "Evil-Merodach (Amel-Marduk) succeeded Nebuchadnezzar in 562 BC and reigned only two years before being assassinated. His release of Jehoiachin may hav…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Historical Appendix within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Jeremiah 52: original Jeremianic conclusion or late editorial appendix from 2 Kings 24-25?",
+        "positions": [
+          {
+            "name": "Late editorial appendix from 2 Kings",
+            "proponents": "Mainstream critical scholarship",
+            "argument": "Jer 52 is near-verbatim parallel of 2 Kgs 24:18-25:30. The chapter is widely regarded as editorial-conclusion appended to give the book historical-completeness. Jeremiah himself was likely dead before some of the events recorded (v.31's Jehoiachin's release in 561 BCE postdates Jeremiah's likely lifetime)."
+          },
+          {
+            "name": "Jeremianic-tradition conclusion",
+            "proponents": "MacArthur, traditional reading",
+            "argument": "The chapter's content (Jerusalem's fall, exile-completion) directly fulfills Jeremiah's prophecies; placing the historical fulfillment-record at book's end is theologically appropriate. Whether Jeremiah personally compiled it or his disciples (Baruch's circle) finished the book preserves the chapter's Jeremianic-tradition origin."
+          },
+          {
+            "name": "Editorial inclusion of pre-existing historical material",
+            "proponents": "Wright, Lundbom",
+            "argument": "The chapter is editorial-conclusion drawing on the same historical-records that informed 2 Kings. Whether the editor was Baruch or later compiler, the inclusion serves canonical-purpose of completing Jeremiah's prophetic-trajectory with fulfillment-narrative. Authenticity question is separate from canonical-function question."
+          }
+        ]
+      }
     ],
     "thread": [
       {

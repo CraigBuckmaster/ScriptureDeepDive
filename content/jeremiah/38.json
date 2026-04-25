@@ -347,22 +347,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 38:11",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The \"storeroom beneath the treasury\" where the rags are found suggests Ebed-Melech had access to palace storage -- he held a position of some authorit…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Jeremiah in the Cistern within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Jeremiah 38:6's pit-throwing: literal historical-event or literary-typological figure?",
+        "positions": [
+          {
+            "name": "Literal historical event",
+            "proponents": "Lundbom, Brueggemann",
+            "argument": "The narrative provides specific detail — Malkijah son of the king's pit, in the courtyard of the guard, with no water but mud, lowered with ropes. The detail-specificity, integration with Babylonian-siege chronology, and Ebed-melech's rescue all fit historical-narrative. This is reportive-prophetic-narrative."
+          },
+          {
+            "name": "Typological-anticipation of Christ's burial",
+            "proponents": "Patristic typological reading",
+            "argument": "The patristic tradition read Jeremiah's pit-experience as type of Christ's tomb — innocent prophet thrown into pit by his own people, rescued by gentile-believer (Ebed-melech is Cushite/Ethiopian). The typology is rich: prophet-savior-figure, false-condemnation, pit-and-rescue. The Christian-typological reading does not negate historicity but adds layered-meaning."
+          },
+          {
+            "name": "Historical event with legitimate typological resonance",
+            "proponents": "Wright",
+            "argument": "The event is historical; Christian-typological reading adds legitimate canonical-resonance. Both readings honor the text's character. The pit-and-rescue pattern is one of OT's anticipations of Christ-pattern, but operating through historical reality, not typological-fiction."
+          }
+        ]
+      }
     ],
     "thread": [
       {
