@@ -466,7 +466,29 @@
         "type": "Connection",
         "text": "Isaiah's vision of God coming 'with fire, and his chariots like a whirlwind, to render his anger with fury' provides OT background for Paul's imagery."
       }
-    ]
+    ],
+    "discourse": {
+      "title": "2 Thessalonians 1 — Suffering Now, Vindication at Christ's Revelation",
+      "thesis": "Paul assures the persecuted Thessalonians that their suffering is counted worthy of God's kingdom, and that Christ will reveal himself in flaming fire to repay affliction with relief and judgment.",
+      "nodes": [
+        {
+          "label": "Greeting and thanksgiving (1:1-4)",
+          "text": "Paul, Silas, and Timothy to the church of the Thessalonians in God our Father and the Lord Jesus Christ. Grace and peace. Paul gives thanks for their growing faith and increasing love for one another, and boasts among other churches of their perseverance under persecution and trials.",
+          "type": "thesis"
+        },
+        {
+          "label": "The worthiness-of-suffering framework (1:5-10)",
+          "text": "Their perseverance is evidence of God's righteous judgment, counting them worthy of the kingdom for which they suffer. God will repay: affliction on those who afflict them, relief to them, when the Lord Jesus is revealed from heaven with his mighty angels in flaming fire, inflicting vengeance on those who do not know God and do not obey the gospel. They will suffer eternal destruction, away from the Lord's presence — while the Lord comes to be glorified in his saints.",
+          "type": "evidence"
+        },
+        {
+          "label": "Intercessory prayer (1:11-12)",
+          "text": "To this end we always pray for you, that our God may count you worthy of his calling, and by his power may fulfill every good purpose of yours and every act prompted by faith — so that the name of our Lord Jesus may be glorified in you and you in him.",
+          "type": "conclusion"
+        }
+      ],
+      "note": "The chapter's grim satisfaction in eschatological vengeance has unsettled some modern readers but reflects Paul's pastoral aim — giving persecuted believers a theological framework for their suffering. Their pain is not random; it is within God's judicial economy."
+    }
   },
   "vhl_groups": [
     {
