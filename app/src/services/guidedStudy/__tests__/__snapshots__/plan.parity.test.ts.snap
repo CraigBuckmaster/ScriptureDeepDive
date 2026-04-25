@@ -1,0 +1,2239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`plan parity for mode=deep chapter gen_1 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-5 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "gen_1",
+  "conceptChips": [
+    {
+      "id": "genre:theological-narrative",
+      "label": "Theological Narrative",
+    },
+    {
+      "id": "creation",
+      "label": "Creation",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:gen_1_1:hist",
+      "panelType": "hist",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "language:gen_1_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "Key words, translation choices, and repeated phrases",
+      "title": "Check the language",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:gen_1_1:cross",
+      "panelType": "cross",
+      "sectionNum": 1,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+    {
+      "badge": "Debated",
+      "confidence": "debated",
+      "key": "debate:chapter:debate",
+      "panelType": "debate",
+      "subtitle": "Where careful interpreters differ",
+      "title": "If unclear, weigh debate",
+    },
+  ],
+  "mode": "deep",
+  "modeLabel": "Deep study",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What tension, movement, or turning point do you notice in this scene?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-5 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "gen_1_1:hist",
+      "panelType": "hist",
+      "sectionNum": 1,
+      "subtitle": "From Light",
+      "title": "Historical Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "gen_1_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "From Light",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "gen_1_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "From Light",
+      "title": "Original-Language Study",
+    },
+    {
+      "confidence": undefined,
+      "key": "gen_1_1:cross",
+      "panelType": "cross",
+      "sectionNum": 1,
+      "subtitle": "From Light",
+      "title": "Cross-References",
+    },
+    {
+      "confidence": undefined,
+      "key": "chapter:lit",
+      "panelType": "lit",
+      "subtitle": "Chapter-level study",
+      "title": "Literary Structure",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Theological Narrative: Read for who and why before how and when.",
+    },
+    {
+      "label": "Moment",
+      "value": "Creation ordered by speech",
+    },
+    {
+      "label": "Original audience context",
+      "value": "Primeval",
+    },
+    {
+      "label": "Purpose",
+      "value": "Explain beginnings and covenant hope.",
+    },
+  ],
+  "title": "The Creation of the Heaven and the Earth",
+}
+`;
+
+exports[`plan parity for mode=deep chapter isa_53 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-3 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "isa_53",
+  "conceptChips": [
+    {
+      "id": "genre:prophecy",
+      "label": "Prophecy",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+    {
+      "id": "judgment",
+      "label": "Judgment",
+    },
+    {
+      "id": "suffering",
+      "label": "Suffering",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:isa_53_1:hist",
+      "panelType": "hist",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "language:isa_53_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "Key words, translation choices, and repeated phrases",
+      "title": "Check the language",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:isa_53_3:cross",
+      "panelType": "cross",
+      "sectionNum": 3,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+    {
+      "badge": "Debated",
+      "confidence": "debated",
+      "key": "debate:chapter:debate",
+      "panelType": "debate",
+      "subtitle": "Where careful interpreters differ",
+      "title": "If unclear, weigh debate",
+    },
+  ],
+  "mode": "deep",
+  "modeLabel": "Deep study",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What covenant problem is the prophet confronting?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-3 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "isa_53_1:hist",
+      "panelType": "hist",
+      "sectionNum": 1,
+      "subtitle": "From No form or comeliness",
+      "title": "Historical Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "isa_53_2:ctx",
+      "panelType": "ctx",
+      "sectionNum": 2,
+      "subtitle": "From Stricken",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "isa_53_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "From No form or comeliness",
+      "title": "Original-Language Study",
+    },
+    {
+      "confidence": undefined,
+      "key": "isa_53_3:cross",
+      "panelType": "cross",
+      "sectionNum": 3,
+      "subtitle": "From Vindication",
+      "title": "Cross-References",
+    },
+    {
+      "confidence": undefined,
+      "key": "isa_53_2:src",
+      "panelType": "src",
+      "sectionNum": 2,
+      "subtitle": "From Stricken",
+      "title": "Cross-Testament Echoes",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Prophecy: Listen for the covenant lawsuit.",
+    },
+    {
+      "label": "Moment",
+      "value": "Stricken for the people",
+    },
+    {
+      "label": "Original audience context",
+      "value": "Divided monarchy",
+    },
+    {
+      "label": "Purpose",
+      "value": "Comfort and confront a covenant people facing judgment.",
+    },
+  ],
+  "title": "The Suffering Servant",
+}
+`;
+
+exports[`plan parity for mode=deep chapter prov_3 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-12 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "prov_3",
+  "conceptChips": [
+    {
+      "id": "genre:wisdom",
+      "label": "Wisdom",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+    {
+      "id": "wisdom",
+      "label": "Wisdom",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:prov_3_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "language:prov_3_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "Key words, translation choices, and repeated phrases",
+      "title": "Check the language",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:prov_3_2:cross",
+      "panelType": "cross",
+      "sectionNum": 2,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+  ],
+  "mode": "deep",
+  "modeLabel": "Deep study",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What pattern of wise or foolish living is being exposed?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-12 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "prov_3_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "From Trust",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "prov_3_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "From Trust",
+      "title": "Original-Language Study",
+    },
+    {
+      "confidence": undefined,
+      "key": "prov_3_2:cross",
+      "panelType": "cross",
+      "sectionNum": 2,
+      "subtitle": "From Wisdom’s worth",
+      "title": "Cross-References",
+    },
+    {
+      "confidence": undefined,
+      "key": "chapter:lit",
+      "panelType": "lit",
+      "subtitle": "Chapter-level study",
+      "title": "Literary Structure",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Wisdom: Read as observed regularities, not iron promises.",
+    },
+    {
+      "label": "Moment",
+      "value": "Wisdom’s value and ways",
+    },
+    {
+      "label": "Original audience context",
+      "value": "United monarchy onward",
+    },
+    {
+      "label": "Purpose",
+      "value": "Form covenant character through observed wisdom.",
+    },
+  ],
+  "title": "Trust in the LORD",
+}
+`;
+
+exports[`plan parity for mode=deep chapter psa_23 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-3 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "psa_23",
+  "conceptChips": [
+    {
+      "id": "genre:psalm",
+      "label": "Psalm",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:psa_23_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "language:psa_23_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "Key words, translation choices, and repeated phrases",
+      "title": "Check the language",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:psa_23_2:cross",
+      "panelType": "cross",
+      "sectionNum": 2,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+    {
+      "badge": "Debated",
+      "confidence": "debated",
+      "key": "debate:chapter:com",
+      "panelType": "com",
+      "subtitle": "Where careful interpreters differ",
+      "title": "If unclear, weigh debate",
+    },
+  ],
+  "mode": "deep",
+  "modeLabel": "Deep study",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What emotional movement do you notice from the opening line to the close?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-3 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "psa_23_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "From Shepherd",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "psa_23_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "From Shepherd",
+      "title": "Original-Language Study",
+    },
+    {
+      "confidence": undefined,
+      "key": "psa_23_2:cross",
+      "panelType": "cross",
+      "sectionNum": 2,
+      "subtitle": "From Valley",
+      "title": "Cross-References",
+    },
+    {
+      "confidence": undefined,
+      "key": "chapter:lit",
+      "panelType": "lit",
+      "subtitle": "Chapter-level study",
+      "title": "Literary Structure",
+    },
+    {
+      "confidence": undefined,
+      "key": "chapter:com",
+      "panelType": "com",
+      "subtitle": "Chapter-level study",
+      "title": "Scholar Commentary",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Psalm: Trace the emotional arc.",
+    },
+    {
+      "label": "Moment",
+      "value": "Trust through the valley",
+    },
+    {
+      "label": "Original audience context",
+      "value": "Monarchy",
+    },
+    {
+      "label": "Purpose",
+      "value": "Anthology of Israel’s prayer and praise.",
+    },
+  ],
+  "title": "The LORD Is My Shepherd",
+}
+`;
+
+exports[`plan parity for mode=deep chapter rom_8 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-11 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "rom_8",
+  "conceptChips": [
+    {
+      "id": "genre:letter",
+      "label": "Letter",
+    },
+    {
+      "id": "spirit",
+      "label": "Spirit",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:rom_8_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "language:rom_8_1:greek",
+      "panelType": "greek",
+      "sectionNum": 1,
+      "subtitle": "Key words, translation choices, and repeated phrases",
+      "title": "Check the language",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:rom_8_1:cross",
+      "panelType": "cross",
+      "sectionNum": 1,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+    {
+      "badge": "Debated",
+      "confidence": "debated",
+      "key": "debate:rom_8_2:com",
+      "panelType": "com",
+      "sectionNum": 2,
+      "subtitle": "Where careful interpreters differ",
+      "title": "If unclear, weigh debate",
+    },
+  ],
+  "mode": "deep",
+  "modeLabel": "Deep study",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What problem or question is this paragraph answering?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-11 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "rom_8_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "From No condemnation",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "rom_8_1:greek",
+      "panelType": "greek",
+      "sectionNum": 1,
+      "subtitle": "From No condemnation",
+      "title": "Original-Language Study",
+    },
+    {
+      "confidence": undefined,
+      "key": "rom_8_1:cross",
+      "panelType": "cross",
+      "sectionNum": 1,
+      "subtitle": "From No condemnation",
+      "title": "Cross-References",
+    },
+    {
+      "confidence": "majority",
+      "key": "rom_8_2:com",
+      "panelType": "com",
+      "sectionNum": 2,
+      "subtitle": "From Children and heirs",
+      "title": "Scholar Commentary",
+    },
+    {
+      "confidence": "debated",
+      "key": "rom_8_2:debate",
+      "panelType": "debate",
+      "sectionNum": 2,
+      "subtitle": "From Children and heirs",
+      "title": "Scholar Debate",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Letter: Trace the argument paragraph by paragraph.",
+    },
+    {
+      "label": "Moment",
+      "value": "No condemnation, no separation",
+    },
+    {
+      "label": "Original audience context",
+      "value": "Apostolic",
+    },
+    {
+      "label": "Purpose",
+      "value": "Defend the gospel for Jew and Gentile alike.",
+    },
+  ],
+  "title": "Life in the Spirit",
+}
+`;
+
+exports[`plan parity for mode=devotional chapter gen_1 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-5 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "gen_1",
+  "conceptChips": [
+    {
+      "id": "genre:theological-narrative",
+      "label": "Theological Narrative",
+    },
+    {
+      "id": "creation",
+      "label": "Creation",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:gen_1_1:hist",
+      "panelType": "hist",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:gen_1_1:cross",
+      "panelType": "cross",
+      "sectionNum": 1,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+    {
+      "badge": "Helpful",
+      "key": "language:gen_1_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "Key words, translation choices, and repeated phrases",
+      "title": "Check the language",
+    },
+  ],
+  "mode": "devotional",
+  "modeLabel": "Devotional",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What tension, movement, or turning point do you notice in this scene?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-5 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "gen_1_1:hist",
+      "panelType": "hist",
+      "sectionNum": 1,
+      "subtitle": "From Light",
+      "title": "Historical Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "gen_1_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "From Light",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "gen_1_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "From Light",
+      "title": "Original-Language Study",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Theological Narrative: Read for who and why before how and when.",
+    },
+    {
+      "label": "Moment",
+      "value": "Creation ordered by speech",
+    },
+    {
+      "label": "Original audience context",
+      "value": "Primeval",
+    },
+    {
+      "label": "Purpose",
+      "value": "Explain beginnings and covenant hope.",
+    },
+  ],
+  "title": "The Creation of the Heaven and the Earth",
+}
+`;
+
+exports[`plan parity for mode=devotional chapter isa_53 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-3 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "isa_53",
+  "conceptChips": [
+    {
+      "id": "genre:prophecy",
+      "label": "Prophecy",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+    {
+      "id": "judgment",
+      "label": "Judgment",
+    },
+    {
+      "id": "suffering",
+      "label": "Suffering",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:isa_53_1:hist",
+      "panelType": "hist",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:isa_53_3:cross",
+      "panelType": "cross",
+      "sectionNum": 3,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+    {
+      "badge": "Helpful",
+      "key": "language:isa_53_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "Key words, translation choices, and repeated phrases",
+      "title": "Check the language",
+    },
+  ],
+  "mode": "devotional",
+  "modeLabel": "Devotional",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What covenant problem is the prophet confronting?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-3 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "isa_53_1:hist",
+      "panelType": "hist",
+      "sectionNum": 1,
+      "subtitle": "From No form or comeliness",
+      "title": "Historical Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "isa_53_2:ctx",
+      "panelType": "ctx",
+      "sectionNum": 2,
+      "subtitle": "From Stricken",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "isa_53_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "From No form or comeliness",
+      "title": "Original-Language Study",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Prophecy: Listen for the covenant lawsuit.",
+    },
+    {
+      "label": "Moment",
+      "value": "Stricken for the people",
+    },
+    {
+      "label": "Original audience context",
+      "value": "Divided monarchy",
+    },
+    {
+      "label": "Purpose",
+      "value": "Comfort and confront a covenant people facing judgment.",
+    },
+  ],
+  "title": "The Suffering Servant",
+}
+`;
+
+exports[`plan parity for mode=devotional chapter prov_3 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-12 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "prov_3",
+  "conceptChips": [
+    {
+      "id": "genre:wisdom",
+      "label": "Wisdom",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+    {
+      "id": "wisdom",
+      "label": "Wisdom",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:prov_3_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:prov_3_2:cross",
+      "panelType": "cross",
+      "sectionNum": 2,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+    {
+      "badge": "Helpful",
+      "key": "language:prov_3_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "Key words, translation choices, and repeated phrases",
+      "title": "Check the language",
+    },
+  ],
+  "mode": "devotional",
+  "modeLabel": "Devotional",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What pattern of wise or foolish living is being exposed?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-12 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "prov_3_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "From Trust",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "prov_3_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "From Trust",
+      "title": "Original-Language Study",
+    },
+    {
+      "confidence": undefined,
+      "key": "prov_3_2:cross",
+      "panelType": "cross",
+      "sectionNum": 2,
+      "subtitle": "From Wisdom’s worth",
+      "title": "Cross-References",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Wisdom: Read as observed regularities, not iron promises.",
+    },
+    {
+      "label": "Moment",
+      "value": "Wisdom’s value and ways",
+    },
+    {
+      "label": "Original audience context",
+      "value": "United monarchy onward",
+    },
+    {
+      "label": "Purpose",
+      "value": "Form covenant character through observed wisdom.",
+    },
+  ],
+  "title": "Trust in the LORD",
+}
+`;
+
+exports[`plan parity for mode=devotional chapter psa_23 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-3 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "psa_23",
+  "conceptChips": [
+    {
+      "id": "genre:psalm",
+      "label": "Psalm",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:psa_23_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:psa_23_2:cross",
+      "panelType": "cross",
+      "sectionNum": 2,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+    {
+      "badge": "Helpful",
+      "key": "language:psa_23_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "Key words, translation choices, and repeated phrases",
+      "title": "Check the language",
+    },
+  ],
+  "mode": "devotional",
+  "modeLabel": "Devotional",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What emotional movement do you notice from the opening line to the close?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-3 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "psa_23_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "From Shepherd",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "psa_23_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "From Shepherd",
+      "title": "Original-Language Study",
+    },
+    {
+      "confidence": undefined,
+      "key": "psa_23_2:cross",
+      "panelType": "cross",
+      "sectionNum": 2,
+      "subtitle": "From Valley",
+      "title": "Cross-References",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Psalm: Trace the emotional arc.",
+    },
+    {
+      "label": "Moment",
+      "value": "Trust through the valley",
+    },
+    {
+      "label": "Original audience context",
+      "value": "Monarchy",
+    },
+    {
+      "label": "Purpose",
+      "value": "Anthology of Israel’s prayer and praise.",
+    },
+  ],
+  "title": "The LORD Is My Shepherd",
+}
+`;
+
+exports[`plan parity for mode=devotional chapter rom_8 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-11 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "rom_8",
+  "conceptChips": [
+    {
+      "id": "genre:letter",
+      "label": "Letter",
+    },
+    {
+      "id": "spirit",
+      "label": "Spirit",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:rom_8_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:rom_8_1:cross",
+      "panelType": "cross",
+      "sectionNum": 1,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+    {
+      "badge": "Helpful",
+      "key": "language:rom_8_1:greek",
+      "panelType": "greek",
+      "sectionNum": 1,
+      "subtitle": "Key words, translation choices, and repeated phrases",
+      "title": "Check the language",
+    },
+  ],
+  "mode": "devotional",
+  "modeLabel": "Devotional",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What problem or question is this paragraph answering?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-11 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "rom_8_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "From No condemnation",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "rom_8_1:greek",
+      "panelType": "greek",
+      "sectionNum": 1,
+      "subtitle": "From No condemnation",
+      "title": "Original-Language Study",
+    },
+    {
+      "confidence": undefined,
+      "key": "rom_8_1:cross",
+      "panelType": "cross",
+      "sectionNum": 1,
+      "subtitle": "From No condemnation",
+      "title": "Cross-References",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Letter: Trace the argument paragraph by paragraph.",
+    },
+    {
+      "label": "Moment",
+      "value": "No condemnation, no separation",
+    },
+    {
+      "label": "Original audience context",
+      "value": "Apostolic",
+    },
+    {
+      "label": "Purpose",
+      "value": "Defend the gospel for Jew and Gentile alike.",
+    },
+  ],
+  "title": "Life in the Spirit",
+}
+`;
+
+exports[`plan parity for mode=quick chapter gen_1 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-5 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "gen_1",
+  "conceptChips": [
+    {
+      "id": "genre:theological-narrative",
+      "label": "Theological Narrative",
+    },
+    {
+      "id": "creation",
+      "label": "Creation",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:gen_1_1:hist",
+      "panelType": "hist",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "language:gen_1_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "Key words, translation choices, and repeated phrases",
+      "title": "Check the language",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:gen_1_1:cross",
+      "panelType": "cross",
+      "sectionNum": 1,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+  ],
+  "mode": "quick",
+  "modeLabel": "Quick pass",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What tension, movement, or turning point do you notice in this scene?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-5 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "gen_1_1:hist",
+      "panelType": "hist",
+      "sectionNum": 1,
+      "subtitle": "From Light",
+      "title": "Historical Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "gen_1_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "From Light",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "gen_1_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "From Light",
+      "title": "Original-Language Study",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Theological Narrative: Read for who and why before how and when.",
+    },
+    {
+      "label": "Moment",
+      "value": "Creation ordered by speech",
+    },
+    {
+      "label": "Original audience context",
+      "value": "Primeval",
+    },
+    {
+      "label": "Purpose",
+      "value": "Explain beginnings and covenant hope.",
+    },
+  ],
+  "title": "The Creation of the Heaven and the Earth",
+}
+`;
+
+exports[`plan parity for mode=quick chapter isa_53 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-3 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "isa_53",
+  "conceptChips": [
+    {
+      "id": "genre:prophecy",
+      "label": "Prophecy",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+    {
+      "id": "judgment",
+      "label": "Judgment",
+    },
+    {
+      "id": "suffering",
+      "label": "Suffering",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:isa_53_1:hist",
+      "panelType": "hist",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "language:isa_53_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "Key words, translation choices, and repeated phrases",
+      "title": "Check the language",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:isa_53_3:cross",
+      "panelType": "cross",
+      "sectionNum": 3,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+  ],
+  "mode": "quick",
+  "modeLabel": "Quick pass",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What covenant problem is the prophet confronting?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-3 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "isa_53_1:hist",
+      "panelType": "hist",
+      "sectionNum": 1,
+      "subtitle": "From No form or comeliness",
+      "title": "Historical Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "isa_53_2:ctx",
+      "panelType": "ctx",
+      "sectionNum": 2,
+      "subtitle": "From Stricken",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "isa_53_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "From No form or comeliness",
+      "title": "Original-Language Study",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Prophecy: Listen for the covenant lawsuit.",
+    },
+    {
+      "label": "Moment",
+      "value": "Stricken for the people",
+    },
+    {
+      "label": "Original audience context",
+      "value": "Divided monarchy",
+    },
+    {
+      "label": "Purpose",
+      "value": "Comfort and confront a covenant people facing judgment.",
+    },
+  ],
+  "title": "The Suffering Servant",
+}
+`;
+
+exports[`plan parity for mode=quick chapter prov_3 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-12 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "prov_3",
+  "conceptChips": [
+    {
+      "id": "genre:wisdom",
+      "label": "Wisdom",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+    {
+      "id": "wisdom",
+      "label": "Wisdom",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:prov_3_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "language:prov_3_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "Key words, translation choices, and repeated phrases",
+      "title": "Check the language",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:prov_3_2:cross",
+      "panelType": "cross",
+      "sectionNum": 2,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+  ],
+  "mode": "quick",
+  "modeLabel": "Quick pass",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What pattern of wise or foolish living is being exposed?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-12 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "prov_3_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "From Trust",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "prov_3_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "From Trust",
+      "title": "Original-Language Study",
+    },
+    {
+      "confidence": undefined,
+      "key": "prov_3_2:cross",
+      "panelType": "cross",
+      "sectionNum": 2,
+      "subtitle": "From Wisdom’s worth",
+      "title": "Cross-References",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Wisdom: Read as observed regularities, not iron promises.",
+    },
+    {
+      "label": "Moment",
+      "value": "Wisdom’s value and ways",
+    },
+    {
+      "label": "Original audience context",
+      "value": "United monarchy onward",
+    },
+    {
+      "label": "Purpose",
+      "value": "Form covenant character through observed wisdom.",
+    },
+  ],
+  "title": "Trust in the LORD",
+}
+`;
+
+exports[`plan parity for mode=quick chapter psa_23 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-3 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "psa_23",
+  "conceptChips": [
+    {
+      "id": "genre:psalm",
+      "label": "Psalm",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:psa_23_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "language:psa_23_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "Key words, translation choices, and repeated phrases",
+      "title": "Check the language",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:psa_23_2:cross",
+      "panelType": "cross",
+      "sectionNum": 2,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+  ],
+  "mode": "quick",
+  "modeLabel": "Quick pass",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What emotional movement do you notice from the opening line to the close?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-3 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "psa_23_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "From Shepherd",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "psa_23_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "From Shepherd",
+      "title": "Original-Language Study",
+    },
+    {
+      "confidence": undefined,
+      "key": "psa_23_2:cross",
+      "panelType": "cross",
+      "sectionNum": 2,
+      "subtitle": "From Valley",
+      "title": "Cross-References",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Psalm: Trace the emotional arc.",
+    },
+    {
+      "label": "Moment",
+      "value": "Trust through the valley",
+    },
+    {
+      "label": "Original audience context",
+      "value": "Monarchy",
+    },
+    {
+      "label": "Purpose",
+      "value": "Anthology of Israel’s prayer and praise.",
+    },
+  ],
+  "title": "The LORD Is My Shepherd",
+}
+`;
+
+exports[`plan parity for mode=quick chapter rom_8 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-11 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "rom_8",
+  "conceptChips": [
+    {
+      "id": "genre:letter",
+      "label": "Letter",
+    },
+    {
+      "id": "spirit",
+      "label": "Spirit",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:rom_8_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "language:rom_8_1:greek",
+      "panelType": "greek",
+      "sectionNum": 1,
+      "subtitle": "Key words, translation choices, and repeated phrases",
+      "title": "Check the language",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:rom_8_1:cross",
+      "panelType": "cross",
+      "sectionNum": 1,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+  ],
+  "mode": "quick",
+  "modeLabel": "Quick pass",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What problem or question is this paragraph answering?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-11 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "rom_8_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "From No condemnation",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "rom_8_1:greek",
+      "panelType": "greek",
+      "sectionNum": 1,
+      "subtitle": "From No condemnation",
+      "title": "Original-Language Study",
+    },
+    {
+      "confidence": undefined,
+      "key": "rom_8_1:cross",
+      "panelType": "cross",
+      "sectionNum": 1,
+      "subtitle": "From No condemnation",
+      "title": "Cross-References",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Letter: Trace the argument paragraph by paragraph.",
+    },
+    {
+      "label": "Moment",
+      "value": "No condemnation, no separation",
+    },
+    {
+      "label": "Original audience context",
+      "value": "Apostolic",
+    },
+    {
+      "label": "Purpose",
+      "value": "Defend the gospel for Jew and Gentile alike.",
+    },
+  ],
+  "title": "Life in the Spirit",
+}
+`;
+
+exports[`plan parity for mode=teaching chapter gen_1 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-5 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "gen_1",
+  "conceptChips": [
+    {
+      "id": "genre:theological-narrative",
+      "label": "Theological Narrative",
+    },
+    {
+      "id": "creation",
+      "label": "Creation",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:gen_1_1:hist",
+      "panelType": "hist",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "structure:chapter:lit",
+      "panelType": "lit",
+      "subtitle": "How the chapter is arranged and argued",
+      "title": "Trace the structure",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:gen_1_1:cross",
+      "panelType": "cross",
+      "sectionNum": 1,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+    {
+      "badge": "Debated",
+      "confidence": "debated",
+      "key": "debate:chapter:debate",
+      "panelType": "debate",
+      "subtitle": "Where careful interpreters differ",
+      "title": "If unclear, weigh debate",
+    },
+  ],
+  "mode": "teaching",
+  "modeLabel": "Teaching prep",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What tension, movement, or turning point do you notice in this scene?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-5 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "gen_1_1:hist",
+      "panelType": "hist",
+      "sectionNum": 1,
+      "subtitle": "From Light",
+      "title": "Historical Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "gen_1_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "From Light",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "gen_1_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "From Light",
+      "title": "Original-Language Study",
+    },
+    {
+      "confidence": undefined,
+      "key": "gen_1_1:cross",
+      "panelType": "cross",
+      "sectionNum": 1,
+      "subtitle": "From Light",
+      "title": "Cross-References",
+    },
+    {
+      "confidence": undefined,
+      "key": "chapter:lit",
+      "panelType": "lit",
+      "subtitle": "Chapter-level study",
+      "title": "Literary Structure",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Theological Narrative: Read for who and why before how and when.",
+    },
+    {
+      "label": "Moment",
+      "value": "Creation ordered by speech",
+    },
+    {
+      "label": "Original audience context",
+      "value": "Primeval",
+    },
+    {
+      "label": "Purpose",
+      "value": "Explain beginnings and covenant hope.",
+    },
+  ],
+  "title": "The Creation of the Heaven and the Earth",
+}
+`;
+
+exports[`plan parity for mode=teaching chapter isa_53 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-3 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "isa_53",
+  "conceptChips": [
+    {
+      "id": "genre:prophecy",
+      "label": "Prophecy",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+    {
+      "id": "judgment",
+      "label": "Judgment",
+    },
+    {
+      "id": "suffering",
+      "label": "Suffering",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:isa_53_1:hist",
+      "panelType": "hist",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:isa_53_3:cross",
+      "panelType": "cross",
+      "sectionNum": 3,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+    {
+      "badge": "Debated",
+      "confidence": "debated",
+      "key": "debate:chapter:debate",
+      "panelType": "debate",
+      "subtitle": "Where careful interpreters differ",
+      "title": "If unclear, weigh debate",
+    },
+  ],
+  "mode": "teaching",
+  "modeLabel": "Teaching prep",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What covenant problem is the prophet confronting?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-3 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "isa_53_1:hist",
+      "panelType": "hist",
+      "sectionNum": 1,
+      "subtitle": "From No form or comeliness",
+      "title": "Historical Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "isa_53_2:ctx",
+      "panelType": "ctx",
+      "sectionNum": 2,
+      "subtitle": "From Stricken",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "isa_53_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "From No form or comeliness",
+      "title": "Original-Language Study",
+    },
+    {
+      "confidence": undefined,
+      "key": "isa_53_3:cross",
+      "panelType": "cross",
+      "sectionNum": 3,
+      "subtitle": "From Vindication",
+      "title": "Cross-References",
+    },
+    {
+      "confidence": undefined,
+      "key": "isa_53_2:src",
+      "panelType": "src",
+      "sectionNum": 2,
+      "subtitle": "From Stricken",
+      "title": "Cross-Testament Echoes",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Prophecy: Listen for the covenant lawsuit.",
+    },
+    {
+      "label": "Moment",
+      "value": "Stricken for the people",
+    },
+    {
+      "label": "Original audience context",
+      "value": "Divided monarchy",
+    },
+    {
+      "label": "Purpose",
+      "value": "Comfort and confront a covenant people facing judgment.",
+    },
+  ],
+  "title": "The Suffering Servant",
+}
+`;
+
+exports[`plan parity for mode=teaching chapter prov_3 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-12 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "prov_3",
+  "conceptChips": [
+    {
+      "id": "genre:wisdom",
+      "label": "Wisdom",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+    {
+      "id": "wisdom",
+      "label": "Wisdom",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:prov_3_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "structure:chapter:lit",
+      "panelType": "lit",
+      "subtitle": "How the chapter is arranged and argued",
+      "title": "Trace the structure",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:prov_3_2:cross",
+      "panelType": "cross",
+      "sectionNum": 2,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+  ],
+  "mode": "teaching",
+  "modeLabel": "Teaching prep",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What pattern of wise or foolish living is being exposed?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-12 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "prov_3_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "From Trust",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "prov_3_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "From Trust",
+      "title": "Original-Language Study",
+    },
+    {
+      "confidence": undefined,
+      "key": "prov_3_2:cross",
+      "panelType": "cross",
+      "sectionNum": 2,
+      "subtitle": "From Wisdom’s worth",
+      "title": "Cross-References",
+    },
+    {
+      "confidence": undefined,
+      "key": "chapter:lit",
+      "panelType": "lit",
+      "subtitle": "Chapter-level study",
+      "title": "Literary Structure",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Wisdom: Read as observed regularities, not iron promises.",
+    },
+    {
+      "label": "Moment",
+      "value": "Wisdom’s value and ways",
+    },
+    {
+      "label": "Original audience context",
+      "value": "United monarchy onward",
+    },
+    {
+      "label": "Purpose",
+      "value": "Form covenant character through observed wisdom.",
+    },
+  ],
+  "title": "Trust in the LORD",
+}
+`;
+
+exports[`plan parity for mode=teaching chapter psa_23 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-3 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "psa_23",
+  "conceptChips": [
+    {
+      "id": "genre:psalm",
+      "label": "Psalm",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:psa_23_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "structure:chapter:lit",
+      "panelType": "lit",
+      "subtitle": "How the chapter is arranged and argued",
+      "title": "Trace the structure",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:psa_23_2:cross",
+      "panelType": "cross",
+      "sectionNum": 2,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+    {
+      "badge": "Debated",
+      "confidence": "debated",
+      "key": "debate:chapter:com",
+      "panelType": "com",
+      "subtitle": "Where careful interpreters differ",
+      "title": "If unclear, weigh debate",
+    },
+  ],
+  "mode": "teaching",
+  "modeLabel": "Teaching prep",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What emotional movement do you notice from the opening line to the close?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-3 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "psa_23_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "From Shepherd",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "psa_23_1:heb",
+      "panelType": "heb",
+      "sectionNum": 1,
+      "subtitle": "From Shepherd",
+      "title": "Original-Language Study",
+    },
+    {
+      "confidence": undefined,
+      "key": "psa_23_2:cross",
+      "panelType": "cross",
+      "sectionNum": 2,
+      "subtitle": "From Valley",
+      "title": "Cross-References",
+    },
+    {
+      "confidence": undefined,
+      "key": "chapter:lit",
+      "panelType": "lit",
+      "subtitle": "Chapter-level study",
+      "title": "Literary Structure",
+    },
+    {
+      "confidence": undefined,
+      "key": "chapter:com",
+      "panelType": "com",
+      "subtitle": "Chapter-level study",
+      "title": "Scholar Commentary",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Psalm: Trace the emotional arc.",
+    },
+    {
+      "label": "Moment",
+      "value": "Trust through the valley",
+    },
+    {
+      "label": "Original audience context",
+      "value": "Monarchy",
+    },
+    {
+      "label": "Purpose",
+      "value": "Anthology of Israel’s prayer and praise.",
+    },
+  ],
+  "title": "The LORD Is My Shepherd",
+}
+`;
+
+exports[`plan parity for mode=teaching chapter rom_8 1`] = `
+{
+  "betterQuestionPrompt": "What do verses 1-11 ask you to notice about the original audience, not just yourself?",
+  "chapterId": "rom_8",
+  "conceptChips": [
+    {
+      "id": "genre:letter",
+      "label": "Letter",
+    },
+    {
+      "id": "spirit",
+      "label": "Spirit",
+    },
+  ],
+  "evidenceTrail": [
+    {
+      "badge": "Required",
+      "key": "context:rom_8_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "Ancient audience, genre, and setting",
+      "title": "Start with context",
+    },
+    {
+      "badge": "Helpful",
+      "key": "structure:chapter:discourse",
+      "panelType": "discourse",
+      "subtitle": "How the chapter is arranged and argued",
+      "title": "Trace the structure",
+    },
+    {
+      "badge": "Helpful",
+      "key": "scripture:rom_8_1:cross",
+      "panelType": "cross",
+      "sectionNum": 1,
+      "subtitle": "Echoes, cross-references, and canonical connections",
+      "title": "Compare Scripture",
+    },
+    {
+      "badge": "Debated",
+      "confidence": "debated",
+      "key": "debate:rom_8_2:com",
+      "panelType": "com",
+      "sectionNum": 2,
+      "subtitle": "Where careful interpreters differ",
+      "title": "If unclear, weigh debate",
+    },
+  ],
+  "mode": "teaching",
+  "modeLabel": "Teaching prep",
+  "prompts": [
+    {
+      "key": "genre-observation",
+      "text": "What problem or question is this paragraph answering?",
+    },
+    {
+      "key": "better-question",
+      "text": "What do verses 1-11 ask you to notice about the original audience, not just yourself?",
+    },
+  ],
+  "recommendations": [
+    {
+      "confidence": undefined,
+      "key": "rom_8_1:ctx",
+      "panelType": "ctx",
+      "sectionNum": 1,
+      "subtitle": "From No condemnation",
+      "title": "Context",
+    },
+    {
+      "confidence": undefined,
+      "key": "rom_8_1:greek",
+      "panelType": "greek",
+      "sectionNum": 1,
+      "subtitle": "From No condemnation",
+      "title": "Original-Language Study",
+    },
+    {
+      "confidence": undefined,
+      "key": "rom_8_1:cross",
+      "panelType": "cross",
+      "sectionNum": 1,
+      "subtitle": "From No condemnation",
+      "title": "Cross-References",
+    },
+    {
+      "confidence": "majority",
+      "key": "rom_8_2:com",
+      "panelType": "com",
+      "sectionNum": 2,
+      "subtitle": "From Children and heirs",
+      "title": "Scholar Commentary",
+    },
+    {
+      "confidence": "debated",
+      "key": "rom_8_2:debate",
+      "panelType": "debate",
+      "sectionNum": 2,
+      "subtitle": "From Children and heirs",
+      "title": "Scholar Debate",
+    },
+  ],
+  "sceneRows": [
+    {
+      "label": "Genre",
+      "value": "Letter: Trace the argument paragraph by paragraph.",
+    },
+    {
+      "label": "Moment",
+      "value": "No condemnation, no separation",
+    },
+    {
+      "label": "Original audience context",
+      "value": "Apostolic",
+    },
+    {
+      "label": "Purpose",
+      "value": "Defend the gospel for Jew and Gentile alike.",
+    },
+  ],
+  "title": "Life in the Spirit",
+}
+`;
