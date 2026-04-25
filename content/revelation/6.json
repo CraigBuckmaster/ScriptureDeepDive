@@ -463,38 +463,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 6:2",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The identity of the first horseman remains one of the most contested interpretive questions in Revelation. Key differences from the rider in 19:11-16:…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Six Seals within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 6:6",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The command 'do not damage the oil and the wine' is enigmatic. Some interpret it as divine restraint on the severity of famine; others see social crit…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Six Seals within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Revelation 6's seven seals: chronological-future-eschatological events, recapitulating-cycles, or theological-symbolic representation?",
+        "positions": [
+          {
+            "name": "Chronological-future-eschatological",
+            "proponents": "MacArthur, Walvoord, classical dispensationalism",
+            "argument": "The seven seals describe sequential-tribulation-period events (war, famine, death, etc.) that will literally unfold in chronological succession during the final tribulation. The four horsemen, martyrs' cry, cosmic-disturbance correspond to specific-historical-events to occur."
+          },
+          {
+            "name": "Recapitulation: same period under different symbolism",
+            "proponents": "Beale, Bauckham, mainstream amillennial",
+            "argument": "Seven seals + seven trumpets + seven bowls don't describe sequential-events but recapitulate the same eschatological-period under intensifying-imagery. Each septet shows the entire-church-age judgments from different vantage. The book's structure is theological-deepening, not chronological-progression."
+          },
+          {
+            "name": "Theological-symbolic of all-history",
+            "proponents": "Beasley-Murray",
+            "argument": "The seals depict perennial-historical patterns operating throughout all-human history (war, famine, death, persecution). The eschatological-tribulation intensifies these but does not introduce them. The seals' meaning extends beyond any single chronological-eschatological-period."
+          }
+        ]
+      }
     ],
     "thread": [
       {

@@ -598,38 +598,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 1:1",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase 'what must soon take place' (ha dei genesthai en tachei) is a direct allusion to Dan 2:28 LXX. The word tachei can mean 'quickly, without d…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Revelation of Jesus Christ within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 1:10",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase 'on the Lord's Day' (en tē kyriakē hēmera) is the earliest unambiguous reference to Sunday as a distinctively Christian day of worship. The…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads The Revelation of Jesus Christ within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Revelation 1's structure: vision-report or apocalyptic-letter?",
+        "positions": [
+          {
+            "name": "Apocalyptic-letter genre",
+            "proponents": "Beale (NIGTC), Aune (WBC)",
+            "argument": "Revelation combines apocalyptic-vision form with epistolary-letter framework. Ch 1's opening (vv.4-5: typical Pauline-style epistolary greeting) and the seven-letters-to-churches (chs 2-3) establish letter-genre. The book is sent to specific churches with concrete-pastoral concerns; reading it without the letter-frame distorts its function."
+          },
+          {
+            "name": "Apocalyptic-vision genre primarily",
+            "proponents": "Mounce, Schreiner",
+            "argument": "Revelation's primary genre is apocalyptic-vision, with the letter-frame as secondary-pastoral wrapping. The book's central content is visionary-cosmic disclosure; the seven-letters function as application of the broader vision to specific churches."
+          },
+          {
+            "name": "Tri-genre: apocalyptic + prophetic + epistolary",
+            "proponents": "Bauckham (Theology of Revelation)",
+            "argument": "Revelation explicitly identifies as all three genres (1:1 — 'revelation' / apocalypse; 1:3 — 'words of this prophecy'; 1:4 — 'to the seven churches'). The book operates simultaneously across all three genre-conventions; reading it through any single genre distorts."
+          }
+        ]
+      }
     ],
     "thread": [
       {
