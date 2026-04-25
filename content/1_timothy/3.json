@@ -460,22 +460,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 3:1",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "Whether πιστός ὁ λόγος here introduces the overseer saying or closes the preceding section (2:15) is debated. Most scholars attach it to what follows.…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Qualifications for Overseers and Deacons within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "1 Timothy 3:11's 'women' (gunaikas): wives of deacons or female deacons (deaconesses)?",
+        "positions": [
+          {
+            "name": "Wives of deacons",
+            "proponents": "Older translations (KJV); Knight",
+            "argument": "The Greek gunē can mean 'woman' or 'wife.' Reading 'wives' fits the context's qualifications-for-deacons (their wives must also be reputable). Some translations explicitly render 'their wives.'"
+          },
+          {
+            "name": "Female deacons (deaconesses)",
+            "proponents": "Mounce, Towner, Witherington",
+            "argument": "The verse stands within the deacon-qualifications list (between general deacon-qualifications and the closing 'one wife' qualification of v.12). The shift from 'deacons likewise' (v.8) to 'gunaikas likewise' (v.11) marks parallel office, not deacon-wives. Phoebe is explicitly called 'deacon (diakonos) of the church at Cenchreae' (Rom 16:1), establishing female-deacon office in NT churches."
+          },
+          {
+            "name": "Either reading textually plausible",
+            "proponents": "Mainstream cautious commentary",
+            "argument": "Greek grammar permits both readings. Modern translations vary. The historical reality of female deacons in early-church contexts (witnessed by Pliny's 110 CE letter mentioning 'two female slaves who were called deacons') makes the deaconess reading historically likely, but textual ambiguity prevents certainty."
+          }
+        ]
+      }
     ],
     "thread": [
       {
@@ -557,6 +561,28 @@
           "significance": "This variant illustrates how theology could shape textual transmission. 'God manifested in the flesh' makes a stronger christological statement. Scribes — consciously or unconsciously — clarified an ambiguous relative pronoun into an explicit affirmation of Christ's deity."
         }
       ]
+    },
+    "discourse": {
+      "title": "1 Timothy 3 — Qualifications for Overseers and Deacons",
+      "thesis": "Detailed character qualifications for the offices of overseer (episkopos) and deacon (diakonos) — emphasising household management, reputation, and theological soundness.",
+      "nodes": [
+        {
+          "label": "Office of overseer (vv.1-7)",
+          "text": "Trustworthy saying: whoever aspires to overseer, desires a noble task. Overseer must be above reproach, husband of one wife, sober-minded, self-controlled, respectable, hospitable, able to teach, not drunkard, not violent but gentle, not quarrelsome, not lover of money. Must manage own household well — if he cannot manage his own household, how care for God's church? Not recent convert (lest puffed up). Must have good reputation with outsiders.",
+          "type": "thesis"
+        },
+        {
+          "label": "Office of deacon (vv.8-13)",
+          "text": "Deacons likewise dignified, not double-tongued, not addicted to wine or greedy, holding the mystery of faith with clear conscience. Tested first, then if blameless serve. Women likewise [or 'their wives'] dignified, not slanderers, sober-minded, faithful in all things. Deacons husband of one wife, managing children and households well. Those who serve well gain good standing and great confidence in faith.",
+          "type": "evidence"
+        },
+        {
+          "label": "The household of God / the mystery of godliness (vv.14-16)",
+          "text": "I write so that you may know how to behave in the household of God, the church of the living God, pillar and buttress of truth. Great indeed is the mystery of godliness: he was manifested in the flesh, vindicated by the Spirit, seen by angels, proclaimed among the nations, believed on in the world, taken up in glory.",
+          "type": "conclusion"
+        }
+      ],
+      "note": "vv.16's six-line Christ-hymn — likely an early Christian liturgical formula Paul incorporates — is among the NT's earliest creedal-confessional fragments."
     }
   },
   "vhl_groups": [
