@@ -458,22 +458,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 3:19",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The final question is rhetorical and expects a universal negative: no one has escaped Assyria's cruelty. The word raʻa ('cruelty' or 'evil') encompass…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Woe to the City of Blood within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Does Nahum's judgment oracle on Nineveh (ch 3) represent legitimate prophetic speech or nationalistic triumphalism?",
+        "positions": [
+          {
+            "name": "Legitimate prophetic judgment on empire",
+            "proponents": "Longman (NICOT), Robertson (NICOT Minor Prophets), Stuart",
+            "argument": "Nahum's graphic judgment oracle (the city sacked, harlot-Nineveh stripped, chariots stampeding through streets) is theologically continuous with the broader prophetic tradition of oracles against nations (Isa 13-23; Jer 46-51; Ezek 25-32). Assyria's atrocities — particularly under Sennacherib and Ashurbanipal — are among the ANE's most thoroughly documented instances of systemic imperial cruelty. Nahum speaks not for Judah's ethnic advantage but for divine justice against a century-long torturer of nations. Robertson calls Nahum 'the OT's clearest affirmation that God holds empires accountable.'"
+          },
+          {
+            "name": "Ideologically problematic nationalism",
+            "proponents": "Floyd, Brueggemann (minority critical reading)",
+            "argument": "A minority critical tradition reads Nahum as Judean nationalistic triumphalism lacking prophetic self-critique. Unlike Amos's oracle against Israel itself or Habakkuk's wrestling with divine use of Babylon, Nahum never turns the critical gaze back on Judah. The lack of covenantal self-examination leaves the book vulnerable to reading as tribal rivalry elevated to theology."
+          },
+          {
+            "name": "Canonically balanced by Jonah",
+            "proponents": "Longman, Christensen",
+            "argument": "The canonical placement of Jonah (Nineveh repents, receives mercy) and Nahum (Nineveh destroyed, ~150 years later) in the Book of the Twelve provides theological symmetry. Yahweh's mercy to Nineveh was real in Jonah's time; Nineveh's subsequent return to imperial atrocity occasioned Nahum's judgment. The two books together show God's consistent character: slow to anger but unwavering in eventual justice (Nah 1:3 echoes Exod 34:6-7's credal formula)."
+          }
+        ]
+      }
     ],
     "thread": [
       {
