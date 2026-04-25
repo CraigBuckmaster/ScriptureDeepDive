@@ -355,38 +355,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 4:4",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The question hayyēṭēb ḥarah lak ('is it right for you to be angry?') uses the same root (yrh, Hiphil) as the narrator's description of Jonah's displea…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Jonah's Anger and God's Compassion within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 4:11",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase 'who cannot tell their right hand from their left' is debated: it may refer to young children (under the age of moral accountability), to m…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Jonah's Anger and God's Compassion within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Jonah 4's unresolved ending: prophetic transformation, narrative irony, or reader-invitation?",
+        "positions": [
+          {
+            "name": "Prophet's refusal left as warning",
+            "proponents": "Stuart, Allen (NICOT)",
+            "argument": "The narrative deliberately leaves Jonah's response unrecorded — the prophet never answers God's final question ('should I not be concerned about that great city?'). The silence is theologically loaded: Jonah's refusal stands as perpetual warning against religious-ethnic-exclusivity."
+          },
+          {
+            "name": "Reader-invitation to personal response",
+            "proponents": "Sasson, Limburg",
+            "argument": "The ending is rhetorical invitation — the reader must complete what Jonah refuses. God's question addresses the reader as much as the prophet. The narrative's pastoral power depends on this open-endedness: every reader must choose whether to join God's mercy-compassion or persist in Jonah-like resistance."
+          },
+          {
+            "name": "Implied eventual repentance (not recorded)",
+            "proponents": "MacArthur, some Jewish traditions",
+            "argument": "Jonah's authorship of the book (presuming traditional attribution) implies his eventual theological transformation — he tells the story of his own failure as testimony. The book's existence as written record is Jonah's eventual repentance. The silence at the end is literary, not biographical."
+          }
+        ]
+      }
     ],
     "thread": [
       {
@@ -430,6 +418,26 @@
         "target": "Isa 55:8-9",
         "type": "Connection",
         "text": "'My thoughts are not your thoughts, neither are your ways my ways' — the principle that Jonah's story dramatizes: God's mercy exceeds human categories."
+      }
+    ],
+    "src": [
+      {
+        "title": "Babylonian Diaologue of Pessimism",
+        "quote": "Mesopotamian wisdom literature preserves dialogical compositions where servants and masters, humans and deities, discuss life's ethical complexities. The Babylonian 'Dialogue of Pessimism' and 'Ludlul bel nemeqi' are closest parallels.",
+        "note": "Jonah 4's God-and-prophet dialogue belongs to the broader ANE wisdom-dialogue tradition. The prophet's complaint + God's probing question pattern (vv.4, 9) parallels dialogical forms in other ANE literatures. Jonah's unique theological move is the resolved-but-open ending (God's final question remains unanswered by Jonah)."
+      },
+      {
+        "title": "Castor-bean plant (qiqayon) botanical identification",
+        "quote": "The qiqayon (4:6-10) has been identified variously as castor-oil plant (Ricinus communis), gourd-vine (older translations), or a specific Mesopotamian fast-growing plant.",
+        "note": "The plant-identification debate has a long history — Jerome's Latin Vulgate used 'gourd' (hedera), Greek traditions used 'castor,' modern Hebrew ambiguity persists. The theological-point does not turn on species identification; the plant's rapid growth and rapid withering parallel Nineveh's rapid-salvation-then-threatened-judgment cycle. The botanical ambiguity is narrative-theological, not interpretive-critical."
+      }
+    ],
+    "tx": [
+      {
+        "ref": "4:11",
+        "title": "'More than 120,000 persons who cannot discern right from left'",
+        "content": "MT: me'ah-w'esrim ribbo (120,000) + bahemah rabbah (much cattle). The 'cannot discern right from left' phrase likely refers to young children, extending by idiom to all residents + livestock.",
+        "note": "Recent estimates of Nineveh's population during Sennacherib/Ashurbanipal (c. 700-650 BCE) range from 100,000-175,000. The 'more than 120,000' datum fits upper-estimate archaeological population reconstructions. The text's population-datum is archaeologically plausible, reinforcing the narrative's historical setting."
       }
     ]
   },
