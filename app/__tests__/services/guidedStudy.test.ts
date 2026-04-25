@@ -141,7 +141,7 @@ describe('guided study services', () => {
     expect(plan.conceptChips.map((chip) => chip.label)).toContain('Theological Narrative');
   });
 
-  it('adapts recommendation depth and better questions by study mode', () => {
+  it('adapts recommendation depth by study mode', () => {
     const quick = buildGuidedStudyPlan({
       book,
       chapter,
@@ -171,11 +171,10 @@ describe('guided study services', () => {
     });
 
     expect(quick.recommendations).toHaveLength(3);
-    expect(quick.betterQuestionPrompt).toContain('one question');
-    expect(teaching.betterQuestionPrompt).toContain('teach this passage');
-    expect(devotional.betterQuestionPrompt).toBe(
-      'What does the chapter emphasize before you ask how it applies to me?',
-    );
+    expect(teaching.recommendations.length).toBeLessThanOrEqual(5);
+    expect(devotional.recommendations).toHaveLength(3);
+    // Mode-specific betterQuestionPrompt strings move to MODE_DEFINITIONS in
+    // #1730 (Phase 2.1). After Phase 1.2 the prompt is mode-agnostic.
   });
 
   it('schedules one row per populated synthesis field at the first interval', () => {
