@@ -416,22 +416,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 5:12",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The phrase eph hō (‘because’) has been interpreted as ‘in whom’ (all sinned in Adam, Augustine’s Latin reading), ‘because’ (all sinned individually), …",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Peace with God Through Our Lord Jesus Christ within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Romans 5:12's 'because all sinned': inherited sin (Augustinian original sin) or each-personally-sinned (Pelagian)?",
+        "positions": [
+          {
+            "name": "Inherited corporate sin (Augustinian)",
+            "proponents": "Augustine; Moo, Cranfield, Reformed mainstream",
+            "argument": "Paul's argument from one-man-Adam to one-man-Christ requires representational headship. 'All sinned' refers to humanity's corporate sin in Adam — all sinned in Adam's representative act. Without this reading, the Adam-Christ parallel collapses. Augustine's original-sin doctrine is the correct exegetical implication."
+          },
+          {
+            "name": "Each-personally-sinned",
+            "proponents": "Pelagius; some Eastern Orthodox readings",
+            "argument": "Greek eph hō pantes hēmarton can be read 'because all sinned' (each individually). The verse describes the universal condition of sin — every person sins because of mortality entered through Adam, but each is responsible for their own sins, not Adam's. Eastern Orthodox theology has historically resisted strong original-sin formulations."
+          },
+          {
+            "name": "Both: imputed Adamic guilt + personal participation",
+            "proponents": "Schreiner, Wright (with nuance)",
+            "argument": "Paul's argument requires both — humanity inherits the Adamic situation (death, alienation) and each person also actually sins, ratifying the inherited situation. The reading honors the corporate-representative dimension while preserving personal moral responsibility. Romans 5:12-21's force depends on both being true."
+          }
+        ]
+      }
     ],
     "thread": [
       {

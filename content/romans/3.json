@@ -494,38 +494,26 @@
       }
     ],
     "debate": [
-      [
-        "Interpretive Question: 3:2",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The word logia (‘oracles’) refers broadly to God’s revealed words, encompassing law, prophecy, and covenant promises. The term carries connotations of…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Righteousness Through Faith within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ],
-      [
-        "Interpretive Question: 3:9",
-        [
-          [
-            "Critical/Analytical scholarship",
-            "The verb proechometha is debated: ‘are we [Jews] any better off?’ or ‘do we have any advantage?’ Paul’s answer (‘not at all’) qualifies the ‘much in e…",
-            "Emphasises historical-critical, literary, or text-critical analysis."
-          ],
-          [
-            "Traditional/Confessional reading",
-            "Reads Righteousness Through Faith within the canonical framework of fulfilled prophecy and covenant theology.",
-            "Represented by Calvin, MacArthur, and the evangelical tradition."
-          ]
-        ],
-        "Both readings engage the text seriously; they differ primarily in their hermeneutical starting points and assumptions about authorship and historical context."
-      ]
+      {
+        "title": "Romans 3:25's hilastērion: propitiation, expiation, or mercy-seat?",
+        "positions": [
+          {
+            "name": "Propitiation (wrath-averting)",
+            "proponents": "Moo (NICNT), Schreiner, Cranfield",
+            "argument": "Hilastērion in Hellenistic-Greek and LXX usage carries propitiation force — Christ's death turns away divine wrath against sin. Paul's argument in 1:18-3:20 has built up divine wrath (orgē) as the problem; 3:25's solution must address that wrath. The classical Reformation reading is grammatically and contextually defensible."
+          },
+          {
+            "name": "Expiation (sin-cleansing) without wrath-averting",
+            "proponents": "Dodd; some critical scholarship",
+            "argument": "Dodd's influential argument: NT theology does not require divine wrath to be 'turned away' by sacrifice; rather, sin is 'covered' (expiated). The hilastērion language refers to sin-cleansing without anthropomorphic divine-anger placation. This reading became influential in mid-20th-century scholarship."
+          },
+          {
+            "name": "Mercy-seat (Lev 16 typology)",
+            "proponents": "Wright, Bailey, Hays",
+            "argument": "Hilastērion is the LXX's translation of kapporet (the ark's mercy-seat). Paul presents Christ as the new mercy-seat — the place where atonement is made. This typological reading combines propitiation and expiation by recovering the OT-cultic substrate of the term. Both wrath-averting and sin-covering occur at the mercy-seat."
+          }
+        ]
+      }
     ],
     "thread": [
       {
