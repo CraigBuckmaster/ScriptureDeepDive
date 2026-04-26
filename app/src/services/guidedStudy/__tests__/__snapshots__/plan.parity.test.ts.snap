@@ -106,18 +106,22 @@ exports[`plan parity for mode=deep chapter gen_1 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Theological Narrative: Read for who and why before how and when.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "Creation ordered by speech",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "Primeval",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Explain beginnings and covenant hope.",
     },
@@ -277,18 +281,22 @@ exports[`plan parity for mode=deep chapter isa_53 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Prophecy: Listen for the covenant lawsuit.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "Stricken for the people",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "Divided monarchy",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Comfort and confront a covenant people facing judgment.",
     },
@@ -428,18 +436,22 @@ exports[`plan parity for mode=deep chapter prov_3 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Wisdom: Read as observed regularities, not iron promises.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "Wisdom’s value and ways",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "United monarchy onward",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Form covenant character through observed wisdom.",
     },
@@ -586,18 +598,22 @@ exports[`plan parity for mode=deep chapter psa_23 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Psalm: Trace the emotional arc.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "Trust through the valley",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "Monarchy",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Anthology of Israel’s prayer and praise.",
     },
@@ -749,18 +765,22 @@ exports[`plan parity for mode=deep chapter rom_8 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Letter: Trace the argument paragraph by paragraph.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "No condemnation, no separation",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "Apostolic",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Defend the gospel for Jew and Gentile alike.",
     },
@@ -893,20 +913,30 @@ exports[`plan parity for mode=devotional chapter gen_1 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Theological Narrative: Read for who and why before how and when.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "Creation ordered by speech",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "Primeval",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Explain beginnings and covenant hope.",
+    },
+    {
+      "capturedKey": "arrival",
+      "kind": "input",
+      "label": "What you bring",
+      "placeholder": "How did you arrive at this chapter today?",
     },
   ],
   "stepPrompts": {
@@ -1032,20 +1062,30 @@ exports[`plan parity for mode=devotional chapter isa_53 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Prophecy: Listen for the covenant lawsuit.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "Stricken for the people",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "Divided monarchy",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Comfort and confront a covenant people facing judgment.",
+    },
+    {
+      "capturedKey": "arrival",
+      "kind": "input",
+      "label": "What you bring",
+      "placeholder": "How did you arrive at this chapter today?",
     },
   ],
   "stepPrompts": {
@@ -1167,20 +1207,30 @@ exports[`plan parity for mode=devotional chapter prov_3 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Wisdom: Read as observed regularities, not iron promises.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "Wisdom’s value and ways",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "United monarchy onward",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Form covenant character through observed wisdom.",
+    },
+    {
+      "capturedKey": "arrival",
+      "kind": "input",
+      "label": "What you bring",
+      "placeholder": "How did you arrive at this chapter today?",
     },
   ],
   "stepPrompts": {
@@ -1294,20 +1344,30 @@ exports[`plan parity for mode=devotional chapter psa_23 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Psalm: Trace the emotional arc.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "Trust through the valley",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "Monarchy",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Anthology of Israel’s prayer and praise.",
+    },
+    {
+      "capturedKey": "arrival",
+      "kind": "input",
+      "label": "What you bring",
+      "placeholder": "How did you arrive at this chapter today?",
     },
   ],
   "stepPrompts": {
@@ -1426,20 +1486,30 @@ exports[`plan parity for mode=devotional chapter rom_8 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Letter: Trace the argument paragraph by paragraph.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "No condemnation, no separation",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "Apostolic",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Defend the gospel for Jew and Gentile alike.",
+    },
+    {
+      "capturedKey": "arrival",
+      "kind": "input",
+      "label": "What you bring",
+      "placeholder": "How did you arrive at this chapter today?",
     },
   ],
   "stepPrompts": {
@@ -1562,18 +1632,22 @@ exports[`plan parity for mode=quick chapter gen_1 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Theological Narrative: Read for who and why before how and when.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "Creation ordered by speech",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "Primeval",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Explain beginnings and covenant hope.",
     },
@@ -1702,18 +1776,22 @@ exports[`plan parity for mode=quick chapter isa_53 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Prophecy: Listen for the covenant lawsuit.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "Stricken for the people",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "Divided monarchy",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Comfort and confront a covenant people facing judgment.",
     },
@@ -1837,18 +1915,22 @@ exports[`plan parity for mode=quick chapter prov_3 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Wisdom: Read as observed regularities, not iron promises.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "Wisdom’s value and ways",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "United monarchy onward",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Form covenant character through observed wisdom.",
     },
@@ -1964,18 +2046,22 @@ exports[`plan parity for mode=quick chapter psa_23 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Psalm: Trace the emotional arc.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "Trust through the valley",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "Monarchy",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Anthology of Israel’s prayer and praise.",
     },
@@ -2096,18 +2182,22 @@ exports[`plan parity for mode=quick chapter rom_8 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Letter: Trace the argument paragraph by paragraph.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "No condemnation, no separation",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "Apostolic",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Defend the gospel for Jew and Gentile alike.",
     },
@@ -2253,20 +2343,36 @@ exports[`plan parity for mode=teaching chapter gen_1 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Theological Narrative: Read for who and why before how and when.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "Creation ordered by speech",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "Primeval",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Explain beginnings and covenant hope.",
+    },
+    {
+      "capturedKey": "audience",
+      "kind": "input",
+      "label": "Audience",
+      "placeholder": "Who are you teaching? What do they already know?",
+    },
+    {
+      "capturedKey": "setting",
+      "kind": "input",
+      "label": "Setting",
+      "placeholder": "Sermon, small group, classroom, one-on-one…",
     },
   ],
   "stepPrompts": {
@@ -2416,20 +2522,36 @@ exports[`plan parity for mode=teaching chapter isa_53 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Prophecy: Listen for the covenant lawsuit.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "Stricken for the people",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "Divided monarchy",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Comfort and confront a covenant people facing judgment.",
+    },
+    {
+      "capturedKey": "audience",
+      "kind": "input",
+      "label": "Audience",
+      "placeholder": "Who are you teaching? What do they already know?",
+    },
+    {
+      "capturedKey": "setting",
+      "kind": "input",
+      "label": "Setting",
+      "placeholder": "Sermon, small group, classroom, one-on-one…",
     },
   ],
   "stepPrompts": {
@@ -2566,20 +2688,36 @@ exports[`plan parity for mode=teaching chapter prov_3 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Wisdom: Read as observed regularities, not iron promises.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "Wisdom’s value and ways",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "United monarchy onward",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Form covenant character through observed wisdom.",
+    },
+    {
+      "capturedKey": "audience",
+      "kind": "input",
+      "label": "Audience",
+      "placeholder": "Who are you teaching? What do they already know?",
+    },
+    {
+      "capturedKey": "setting",
+      "kind": "input",
+      "label": "Setting",
+      "placeholder": "Sermon, small group, classroom, one-on-one…",
     },
   ],
   "stepPrompts": {
@@ -2723,20 +2861,36 @@ exports[`plan parity for mode=teaching chapter psa_23 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Psalm: Trace the emotional arc.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "Trust through the valley",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "Monarchy",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Anthology of Israel’s prayer and praise.",
+    },
+    {
+      "capturedKey": "audience",
+      "kind": "input",
+      "label": "Audience",
+      "placeholder": "Who are you teaching? What do they already know?",
+    },
+    {
+      "capturedKey": "setting",
+      "kind": "input",
+      "label": "Setting",
+      "placeholder": "Sermon, small group, classroom, one-on-one…",
     },
   ],
   "stepPrompts": {
@@ -2885,20 +3039,36 @@ exports[`plan parity for mode=teaching chapter rom_8 1`] = `
   ],
   "sceneRows": [
     {
+      "kind": "display",
       "label": "Genre",
       "value": "Letter: Trace the argument paragraph by paragraph.",
     },
     {
+      "kind": "display",
       "label": "Moment",
       "value": "No condemnation, no separation",
     },
     {
+      "kind": "display",
       "label": "Original audience context",
       "value": "Apostolic",
     },
     {
+      "kind": "display",
       "label": "Purpose",
       "value": "Defend the gospel for Jew and Gentile alike.",
+    },
+    {
+      "capturedKey": "audience",
+      "kind": "input",
+      "label": "Audience",
+      "placeholder": "Who are you teaching? What do they already know?",
+    },
+    {
+      "capturedKey": "setting",
+      "kind": "input",
+      "label": "Setting",
+      "placeholder": "Sermon, small group, classroom, one-on-one…",
     },
   ],
   "stepPrompts": {

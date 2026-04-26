@@ -15,6 +15,7 @@ export type {
   GuidedPanelRecommendation,
   GuidedPrompt,
   GuidedSceneRow,
+  SceneInputKey,
   GuidedStudyMode,
   GuidedStudyModeOption,
   GuidedStudyPlan,
