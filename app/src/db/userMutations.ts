@@ -526,6 +526,32 @@ export async function createGuidedReviewItems(
   });
 }
 
+/**
+ * Idempotent variant of createGuidedReviewItems — clears any previously
+ * scheduled rows for this session before inserting the new set. Used by
+ * premiumStructured (#1740) so re-running synthesis on the same session
+ * updates rather than duplicates the queued review items.
+ */
+export async function replaceGuidedReviewItems(
+  sessionId: number,
+  chapterId: string,
+  title: string,
+  items: Array<{ prompt: string; answer: string; intervalDays: number }>,
+): Promise<void> {
+  const db = getUserDb();
+  await db.withTransactionAsync(async () => {
+    await db.runAsync('DELETE FROM guided_review_items WHERE source_session_id = ?', [sessionId]);
+    for (const item of items) {
+      await db.runAsync(
+        `INSERT INTO guided_review_items
+          (source_session_id, chapter_id, title, prompt, answer, due_date, interval_days)
+         VALUES (?, ?, ?, ?, ?, date('now', ?))`,
+        [sessionId, chapterId, title, item.prompt, item.answer, `+${item.intervalDays} days`],
+      );
+    }
+  });
+}
+
 export async function completeGuidedReviewItem(id: number): Promise<void> {
   const db = getUserDb();
   await db.withTransactionAsync(async () => {

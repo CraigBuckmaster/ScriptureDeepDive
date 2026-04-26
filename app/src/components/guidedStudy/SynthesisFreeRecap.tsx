@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
 import * as Sharing from 'expo-sharing';
 import * as FileSystem from 'expo-file-system/legacy';
-import { ChevronRight, Copy, Share2 } from 'lucide-react-native';
+import { ArrowRight, CheckCircle2, ChevronRight, Copy, Share2 } from 'lucide-react-native';
 import { fontFamily, radii, spacing, useTheme } from '../../theme';
 import type { SynthesisOutputBlock } from '../../services/guidedStudy/synthesis/strategy';
 import { logger } from '../../utils/logger';
@@ -18,6 +18,9 @@ export interface SynthesisFreeRecapProps {
   /** Fired when a cta_button with action='upgrade' is tapped, OR when the
    *  flag-aware footer note is tapped. */
   onUpgradeNudgePress?: () => void;
+  /** Fired when a cta_button with action='view_my_study' is tapped
+   *  (premium_structured path, #1740). */
+  onViewMyStudy?: () => void;
 }
 
 function buildPlainText(
@@ -35,6 +38,7 @@ export function SynthesisFreeRecap({
   blocks,
   chapterTitle,
   onUpgradeNudgePress,
+  onViewMyStudy,
 }: SynthesisFreeRecapProps) {
   const { base } = useTheme();
   const [copied, setCopied] = useState(false);
@@ -80,12 +84,13 @@ export function SynthesisFreeRecap({
   }, [plainText]);
 
   const handleAction = useCallback(
-    (action: 'copy' | 'share' | 'upgrade') => {
+    (action: 'copy' | 'share' | 'upgrade' | 'view_my_study') => {
       if (action === 'copy') void onCopy();
       else if (action === 'share') void onShare();
+      else if (action === 'view_my_study') onViewMyStudy?.();
       else onUpgradeNudgePress?.();
     },
-    [onCopy, onShare, onUpgradeNudgePress],
+    [onCopy, onShare, onUpgradeNudgePress, onViewMyStudy],
   );
 
   if (blocks.length === 0) return null;
@@ -105,30 +110,52 @@ export function SynthesisFreeRecap({
               </View>
             );
           case 'cta_button': {
-            const Icon = block.action === 'copy' ? Copy : Share2;
+            const Icon =
+              block.action === 'copy'
+                ? Copy
+                : block.action === 'share'
+                  ? Share2
+                  : block.action === 'view_my_study'
+                    ? ArrowRight
+                    : null;
             const label =
               block.action === 'copy' && copied ? 'Copied' : block.label;
+            const a11yLabel =
+              block.action === 'copy'
+                ? copied
+                  ? 'Copied to clipboard'
+                  : 'Copy recap to clipboard'
+                : block.action === 'share'
+                  ? 'Share recap'
+                  : block.action === 'view_my_study'
+                    ? 'View saved review in My Study'
+                    : 'Upgrade';
             return (
               <TouchableOpacity
                 key={`${block.action}-${idx}`}
                 onPress={() => handleAction(block.action)}
                 accessibilityRole="button"
-                accessibilityLabel={
-                  block.action === 'copy'
-                    ? copied
-                      ? 'Copied to clipboard'
-                      : 'Copy recap to clipboard'
-                    : block.action === 'share'
-                      ? 'Share recap'
-                      : 'Upgrade'
-                }
+                accessibilityLabel={a11yLabel}
                 style={[styles.actionButton, { borderColor: base.border }]}
               >
-                {block.action !== 'upgrade' ? <Icon size={14} color={base.text} /> : null}
+                {Icon ? <Icon size={14} color={base.text} /> : null}
                 <Text style={[styles.actionLabel, { color: base.text }]}>{label}</Text>
               </TouchableOpacity>
             );
           }
+          case 'confirmation':
+            return (
+              <View
+                key={`confirmation-${idx}`}
+                style={[
+                  styles.confirmation,
+                  { borderColor: `${base.gold}30`, backgroundColor: `${base.gold}10` },
+                ]}
+              >
+                <CheckCircle2 size={14} color={base.gold} />
+                <Text style={[styles.confirmationText, { color: base.text }]}>{block.text}</Text>
+              </View>
+            );
           case 'footer_note':
             return (
               <TouchableOpacity
@@ -144,7 +171,7 @@ export function SynthesisFreeRecap({
             );
           case 'streaming_placeholder':
           case 'amicus_text':
-            // Phase 4 (#1745) renders these. Skip in the free path.
+            // Phase 4 (#1745) renders these. Skip in the structured paths.
             return null;
           default:
             return null;
@@ -193,6 +220,21 @@ const styles = StyleSheet.create({
   actionLabel: {
     fontFamily: fontFamily.uiMedium,
     fontSize: 12,
+  },
+  confirmation: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    borderWidth: 1,
+    borderRadius: radii.sm,
+    paddingHorizontal: spacing.sm,
+    paddingVertical: 6,
+  },
+  confirmationText: {
+    flex: 1,
+    fontFamily: fontFamily.body,
+    fontSize: 13,
+    lineHeight: 18,
   },
   footer: {
     flexDirection: 'row',

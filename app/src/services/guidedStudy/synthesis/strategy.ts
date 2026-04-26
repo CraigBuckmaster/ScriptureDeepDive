@@ -36,18 +36,51 @@ export interface CitationRef {
   snippet?: string;
 }
 
-export interface ReviewArtifact {
-  kind: 'memory_verse' | 'analytical_claim' | 'teaching_outline' | 'returning_prayer';
-  title: string;
-  body: string;
-}
+/**
+ * Mode-shaped artifact persisted into guided_study_sessions.mode_artifact_json
+ * and surfaced by the spaced review queue. One of four discriminated shapes
+ * (one per ReviewArtifactType in MODE_DEFINITIONS).
+ */
+export type ReviewArtifact =
+  | {
+      type: 'memory_verse';
+      verseRef: string;
+      verseText: string;
+      takeaway: string;
+    }
+  | {
+      type: 'analytical_claim';
+      claim: string;
+      evidence: string;
+      tension: string | null;
+    }
+  | {
+      type: 'teaching_outline';
+      audience: string;
+      mainPoint: string;
+      moves: string[];
+      application: string;
+      discussionQuestion: string;
+    }
+  | {
+      type: 'returning_prayer';
+      arrival: string;
+      wordOrPhrase: string;
+      prayer: string;
+      carryForward: string;
+    };
 
 export type SynthesisOutputBlock =
   | { type: 'recap_section'; label: string; content: string }
-  | { type: 'cta_button'; label: string; action: 'copy' | 'share' | 'upgrade' }
+  | {
+      type: 'cta_button';
+      label: string;
+      action: 'copy' | 'share' | 'upgrade' | 'view_my_study';
+    }
   | { type: 'streaming_placeholder' }
   | { type: 'amicus_text'; html: string; citations: CitationRef[] }
-  | { type: 'footer_note'; text: string };
+  | { type: 'footer_note'; text: string }
+  | { type: 'confirmation'; text: string };
 
 export interface SynthesisRunResult {
   kind: SynthesisStrategyKind;
