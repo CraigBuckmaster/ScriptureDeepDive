@@ -25,6 +25,7 @@ import {
   StudyModeSelector,
   StudySessionStepper,
   SynthesisFreeRecap,
+  SynthesisPremiumDraft,
 } from '../components/guidedStudy';
 import { UpgradePrompt } from '../components/UpgradePrompt';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
@@ -268,10 +269,17 @@ function StudySessionScreen() {
   );
 
   const [synthesisResult, setSynthesisResult] = useState<SynthesisRunResult | null>(null);
+  // premium_amicus streaming UI state — only used when strategy.kind ===
+  // 'premium_amicus'. Tokens accumulate in amicusStreamingText; the
+  // strategy completes (or errors) into setSynthesisResult.
+  const [amicusStreamingText, setAmicusStreamingText] = useState('');
+  const [amicusIsStreaming, setAmicusIsStreaming] = useState(false);
+  const [amicusError, setAmicusError] = useState<Error | null>(null);
+
+  // Free + premium_structured: both resolve synchronously, run on
+  // capturedInputs change so the recap reflects the latest writes.
   useEffect(() => {
     if (!plan || synthesisStrategy.kind === 'premium_amicus') {
-      // The amicus path streams; #1745 wires its own runner. Free and
-      // premium_structured both resolve synchronously through this effect.
       setSynthesisResult(null);
       return;
     }
@@ -292,6 +300,59 @@ function StudySessionScreen() {
       cancelled = true;
     };
   }, [synthesisStrategy, plan, capturedInputs, sessionId, bookId, chapterNum]);
+
+  // premium_amicus: stream once when the user lands on the synthesize
+  // step. Re-runs only if the strategy itself changes (e.g. cap was
+  // exhausted mid-session and chooseStrategy now returns structured).
+  useEffect(() => {
+    if (!plan || synthesisStrategy.kind !== 'premium_amicus') {
+      setAmicusStreamingText('');
+      setAmicusIsStreaming(false);
+      setAmicusError(null);
+      return;
+    }
+    if (currentStep !== 'synthesize') return;
+    let cancelled = false;
+    setAmicusStreamingText('');
+    setAmicusError(null);
+    setAmicusIsStreaming(true);
+    setSynthesisResult(null);
+    void synthesisStrategy
+      .run(
+        { plan, captured: capturedInputs, sessionId, bookId, chapterNum },
+        {
+          onAmicusDelta: (token) => {
+            if (cancelled) return;
+            setAmicusStreamingText((prev) => prev + token);
+          },
+          onAmicusComplete: () => {
+            if (cancelled) return;
+            setAmicusIsStreaming(false);
+          },
+          onError: (err) => {
+            if (cancelled) return;
+            setAmicusError(err);
+            setAmicusIsStreaming(false);
+          },
+        },
+      )
+      .then((r) => {
+        if (cancelled) return;
+        setSynthesisResult(r);
+        setAmicusIsStreaming(false);
+      })
+      .catch((err) => {
+        if (cancelled) return;
+        setAmicusIsStreaming(false);
+        logger.warn('StudySessionScreen', 'amicus synthesis run failed', err);
+      });
+    return () => {
+      cancelled = true;
+    };
+    // capturedInputs / sessionId intentionally omitted from deps so
+    // the stream doesn't restart on every keystroke once it's running.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [synthesisStrategy, plan, currentStep]);
 
   const synthesisBlocks: SynthesisOutputBlock[] = synthesisResult?.output ?? [];
 
@@ -552,17 +613,31 @@ function StudySessionScreen() {
               <Text style={[styles.amicusText, { color: base.text }]}>{amicusLabel}</Text>
             </TouchableOpacity>
             <PrimaryButton label="Save to My Study" onPress={saveToMyStudy} />
-            <SynthesisFreeRecap
-              title={recapTitleFor(plan.mode)}
-              chapterTitle={plan.title}
-              blocks={synthesisBlocks}
-              onUpgradeNudgePress={() =>
-                showUpgrade('feature', 'Companion Study Partner')
-              }
-              onViewMyStudy={() =>
-                navigation.getParent()?.navigate('MoreTab', { screen: 'MyStudy' })
-              }
-            />
+            {synthesisStrategy.kind === 'premium_amicus' ? (
+              <SynthesisPremiumDraft
+                title={recapTitleFor(plan.mode)}
+                streamingText={amicusStreamingText}
+                isStreaming={amicusIsStreaming}
+                artifact={synthesisResult?.artifact ?? null}
+                error={amicusError}
+                onOpenInAmicus={askAmicus}
+                onViewMyStudy={() =>
+                  navigation.getParent()?.navigate('MoreTab', { screen: 'MyStudy' })
+                }
+              />
+            ) : (
+              <SynthesisFreeRecap
+                title={recapTitleFor(plan.mode)}
+                chapterTitle={plan.title}
+                blocks={synthesisBlocks}
+                onUpgradeNudgePress={() =>
+                  showUpgrade('feature', 'Companion Study Partner')
+                }
+                onViewMyStudy={() =>
+                  navigation.getParent()?.navigate('MoreTab', { screen: 'MyStudy' })
+                }
+              />
+            )}
           </View>
         )}
 

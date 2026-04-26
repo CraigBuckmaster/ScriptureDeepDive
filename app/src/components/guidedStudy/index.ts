@@ -10,3 +10,4 @@ export { StudyModeSelector } from './StudyModeSelector';
 export { StudySessionCTA } from './StudySessionCTA';
 export { StudySessionStepper } from './StudySessionStepper';
 export { SynthesisFreeRecap } from './SynthesisFreeRecap';
+export { SynthesisPremiumDraft } from './SynthesisPremiumDraft';
