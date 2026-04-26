@@ -60,6 +60,13 @@ export const PROMPT_BINDINGS: Record<string, CapturedTextRef> = {
   // Devotional
   'devotional-observe-meeting': { step: 'observe', key: 'primary' },
   'devotional-synthesize-prayer': { step: 'synthesize', key: 'takeaway' },
+
+  // Review-step prompts (#1736 — feed SynthesisFreeRecap). Each mode's
+  // review prompt persists into the closest reusable synthesize slot.
+  'quick-review-carry': { step: 'synthesize', key: 'key_connection' },
+  'deep-review-connection': { step: 'synthesize', key: 'key_connection' },
+  'teaching-review-check': { step: 'synthesize', key: 'open_question' },
+  'devotional-review-carry': { step: 'synthesize', key: 'key_connection' },
 };
 
 export function getPromptBinding(promptKey: string): CapturedTextRef | undefined {

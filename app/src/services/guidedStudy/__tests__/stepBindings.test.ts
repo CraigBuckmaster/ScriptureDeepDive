@@ -27,8 +27,27 @@ describe('getPromptBinding', () => {
   it('returns undefined for prompts without a binding (e.g. explore-step prompts)', () => {
     expect(getPromptBinding('quick-explore-priority')).toBeUndefined();
     expect(getPromptBinding('deep-explore-evidence')).toBeUndefined();
-    expect(getPromptBinding('quick-review-carry')).toBeUndefined();
+    expect(getPromptBinding('teaching-explore-supports')).toBeUndefined();
     expect(getPromptBinding('not-a-real-key')).toBeUndefined();
+  });
+
+  it('binds review-step prompts to synthesize-bucket fields (#1736)', () => {
+    expect(getPromptBinding('quick-review-carry')).toEqual({
+      step: 'synthesize',
+      key: 'key_connection',
+    });
+    expect(getPromptBinding('deep-review-connection')).toEqual({
+      step: 'synthesize',
+      key: 'key_connection',
+    });
+    expect(getPromptBinding('teaching-review-check')).toEqual({
+      step: 'synthesize',
+      key: 'open_question',
+    });
+    expect(getPromptBinding('devotional-review-carry')).toEqual({
+      step: 'synthesize',
+      key: 'key_connection',
+    });
   });
 });
 

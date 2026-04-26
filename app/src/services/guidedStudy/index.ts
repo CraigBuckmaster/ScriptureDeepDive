@@ -11,6 +11,7 @@ export {
   stepsWithCarryForward,
   type CapturedTextRef,
 } from './stepBindings';
+export { getNextChapter, type NextChapterRef } from './nextChapter';
 export {
   GUIDED_STUDY_MODE_OPTIONS,
   GUIDED_STUDY_MODES,
