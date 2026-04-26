@@ -56,7 +56,20 @@ export const DEEP_MODE: ModeDefinition = {
   },
   trailOrder: ['context', 'language', 'scripture', 'debate'],
   recommendationLimit: 5,
-  panelWeights: {},
+  // Deep — structure + language + debate lead, context still strong.
+  panelWeights: {
+    heb: 10,
+    greek: 10,
+    lit: 9,
+    discourse: 9,
+    tx: 7,
+    debate: 6,
+    hist: 5,
+    ctx: 5,
+    cross: 4,
+    trans: 3,
+    com: 2,
+  },
   synthesisTemplate: 'claim_evidence_tension',
   reviewArtifact: 'analytical_claim',
 };

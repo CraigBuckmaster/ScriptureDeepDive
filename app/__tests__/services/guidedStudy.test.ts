@@ -126,11 +126,14 @@ describe('guided study services', () => {
       'Purpose',
     ]);
     expect(plan.legacyPrompts).toHaveLength(2);
+    // Deep mode panel weights (#1733) push heb to the front and debate
+    // ahead of ctx/cross. Updated when MODE_DEFINITIONS.deep.panelWeights
+    // landed.
     expect(plan.recommendations.map((rec) => rec.panelType)).toEqual([
-      'ctx',
       'heb',
-      'cross',
       'debate',
+      'ctx',
+      'cross',
     ]);
     expect(plan.evidenceTrail.map((item) => item.title)).toEqual([
       'Start with context',
