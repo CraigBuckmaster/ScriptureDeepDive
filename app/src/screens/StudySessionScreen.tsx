@@ -53,6 +53,14 @@ import {
   type GuidedStudyStep,
   type SceneInputKey,
 } from '../services/guidedStudy';
+import { chooseStrategy } from '../services/guidedStudy/synthesis/strategy';
+import { recapTitleFor } from '../services/guidedStudy/synthesis/freeStrategy';
+import type {
+  SynthesisOutputBlock,
+  SynthesisRunResult,
+} from '../services/guidedStudy/synthesis/strategy';
+import { isFlagEnabled } from '../config/featureFlags';
+import { useAmicusAccess } from '../hooks/useAmicusAccess';
 import type { CapturedInputs } from '../services/guidedStudy/capturedInputs';
 import { launchAmicusStudyThread } from '../services/amicus';
 import { useSettingsStore } from '../stores';
@@ -66,7 +74,7 @@ import type {
   SectionPanel,
   Verse,
 } from '../types';
-import { safeParse } from '../utils/logger';
+import { logger, safeParse } from '../utils/logger';
 
 interface RouteParams {
   bookId: string;
@@ -83,6 +91,7 @@ function StudySessionScreen() {
   const translation = useSettingsStore((s) => s.translation);
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
   const { liveBooks } = useBooks();
+  const amicusAccess = useAmicusAccess();
 
   const [book, setBook] = useState<Book | null>(null);
   const [chapter, setChapter] = useState<Chapter | null>(null);
@@ -229,6 +238,44 @@ function StudySessionScreen() {
       mode: studyMode,
     });
   }, [book, chapter, sections, chapterPanels, verses, bookIntro, studyMode]);
+
+  const synthesisStrategy = useMemo(
+    () =>
+      chooseStrategy({
+        isPremium,
+        amicusFlagEnabled: isFlagEnabled('GUIDED_STUDY_AMICUS_SYNTHESIS'),
+        amicusCanUse: amicusAccess.canUse,
+      }),
+    [isPremium, amicusAccess.canUse],
+  );
+
+  const [synthesisResult, setSynthesisResult] = useState<SynthesisRunResult | null>(null);
+  useEffect(() => {
+    if (!plan || synthesisStrategy.kind !== 'free') {
+      // Premium paths plug in starting at #1740. Until then the screen
+      // only renders the free path's output.
+      setSynthesisResult(null);
+      return;
+    }
+    let cancelled = false;
+    void synthesisStrategy
+      .run({
+        plan,
+        captured: capturedInputs,
+        sessionId,
+        bookId,
+        chapterNum,
+      })
+      .then((r) => {
+        if (!cancelled) setSynthesisResult(r);
+      })
+      .catch((err) => logger.warn('StudySessionScreen', 'synthesis run failed', err));
+    return () => {
+      cancelled = true;
+    };
+  }, [synthesisStrategy, plan, capturedInputs, sessionId, bookId, chapterNum]);
+
+  const synthesisBlocks: SynthesisOutputBlock[] = synthesisResult?.output ?? [];
 
   const savePromptDrafts = useCallback(async () => {
     if (!plan) return;
@@ -488,9 +535,9 @@ function StudySessionScreen() {
             </TouchableOpacity>
             <PrimaryButton label="Save to My Study" onPress={saveToMyStudy} />
             <SynthesisFreeRecap
-              mode={plan.mode}
+              title={recapTitleFor(plan.mode)}
               chapterTitle={plan.title}
-              capturedInputs={capturedInputs}
+              blocks={synthesisBlocks}
               onUpgradeNudgePress={() =>
                 showUpgrade('feature', 'Companion Study Partner')
               }

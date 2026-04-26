@@ -3,7 +3,7 @@ import { fireEvent, waitFor } from '@testing-library/react-native';
 import * as Clipboard from 'expo-clipboard';
 import { renderWithProviders } from '../../../../__tests__/helpers/renderWithProviders';
 import { SynthesisFreeRecap } from '../SynthesisFreeRecap';
-import type { CapturedInputs } from '../../../services/guidedStudy/capturedInputs';
+import type { SynthesisOutputBlock } from '../../../services/guidedStudy/synthesis/strategy';
 
 const setStringAsync = Clipboard.setStringAsync as jest.Mock;
 
@@ -11,105 +11,45 @@ beforeEach(() => {
   setStringAsync.mockReset();
 });
 
-describe('SynthesisFreeRecap', () => {
-  it('renders null when nothing has been captured', () => {
+const sampleBlocks: SynthesisOutputBlock[] = [
+  { type: 'recap_section', label: 'Takeaway', content: 'Creation is ordered by speech.' },
+  { type: 'recap_section', label: 'Verse to remember', content: 'In the beginning, God.' },
+  { type: 'cta_button', label: 'Copy to clipboard', action: 'copy' },
+  { type: 'cta_button', label: 'Share', action: 'share' },
+  {
+    type: 'footer_note',
+    text: 'Companion+ saves this for spaced review and brings it back when it matters.',
+  },
+];
+
+describe('SynthesisFreeRecap (block-driven)', () => {
+  it('renders null when blocks is empty', () => {
     const { toJSON } = renderWithProviders(
-      <SynthesisFreeRecap
-        mode="quick"
-        chapterTitle="Genesis 1"
-        capturedInputs={{}}
-      />,
+      <SynthesisFreeRecap title="Your Quick Pass" chapterTitle="Genesis 1" blocks={[]} />,
     );
     expect(toJSON()).toBeNull();
   });
 
-  it('quick mode shows takeaway + verse-to-remember sections', () => {
-    const captured: CapturedInputs = {
-      synthesize: {
-        takeaway: 'Creation is ordered by speech.',
-        key_connection: 'In the beginning, God.',
-        open_question: '',
-      },
-    };
+  it('renders title and recap_section blocks with uppercase labels', () => {
     const { getByText } = renderWithProviders(
-      <SynthesisFreeRecap mode="quick" chapterTitle="Genesis 1" capturedInputs={captured} />,
+      <SynthesisFreeRecap
+        title="Your Quick Pass"
+        chapterTitle="Genesis 1"
+        blocks={sampleBlocks}
+      />,
     );
     expect(getByText('Your Quick Pass')).toBeTruthy();
     expect(getByText('TAKEAWAY')).toBeTruthy();
     expect(getByText('Creation is ordered by speech.')).toBeTruthy();
     expect(getByText('VERSE TO REMEMBER')).toBeTruthy();
-    expect(getByText('In the beginning, God.')).toBeTruthy();
   });
 
-  it('hides empty sections — partial sessions only show populated fields', () => {
-    const captured: CapturedInputs = {
-      synthesize: { takeaway: 'Creation is ordered.', open_question: '', key_connection: '' },
-    };
-    const { getByText, queryByText } = renderWithProviders(
-      <SynthesisFreeRecap mode="quick" chapterTitle="Genesis 1" capturedInputs={captured} />,
-    );
-    expect(getByText('TAKEAWAY')).toBeTruthy();
-    expect(queryByText('VERSE TO REMEMBER')).toBeNull();
-  });
-
-  it('teaching mode renders six labeled outline sections', () => {
-    const captured: CapturedInputs = {
-      scene: { audience: 'College small group', setting: 'small group' },
-      observe: { main_point: 'Order from chaos.', clarification: 'Not a science manual.' },
-      synthesize: {
-        takeaway: 'Hook → main point → moves → application.',
-        open_question: 'How does this frame John 1?',
-        key_connection: '',
-      },
-    };
-    const { getByText } = renderWithProviders(
-      <SynthesisFreeRecap
-        mode="teaching"
-        chapterTitle="Genesis 1"
-        capturedInputs={captured}
-      />,
-    );
-    expect(getByText('Your Teaching Outline')).toBeTruthy();
-    for (const label of [
-      'AUDIENCE',
-      'SETTING',
-      'MAIN POINT',
-      'CLARIFICATION',
-      'OUTLINE',
-      'DISCUSSION QUESTION',
-    ]) {
-      expect(getByText(label)).toBeTruthy();
-    }
-  });
-
-  it('devotional mode title and prayer label appear', () => {
-    const captured: CapturedInputs = {
-      synthesize: {
-        takeaway: 'Lord, you walk with me.',
-        open_question: '',
-        key_connection: '',
-      },
-    };
-    const { getByText } = renderWithProviders(
-      <SynthesisFreeRecap
-        mode="devotional"
-        chapterTitle="Psalm 23"
-        capturedInputs={captured}
-      />,
-    );
-    expect(getByText('Your Devotional')).toBeTruthy();
-    expect(getByText('YOUR PRAYER')).toBeTruthy();
-  });
-
-  it('Copy button writes the plain-text recap to the clipboard', async () => {
-    const captured: CapturedInputs = {
-      synthesize: { takeaway: 'A.', key_connection: 'B.', open_question: '' },
-    };
+  it('Copy CTA writes the plain-text recap to the clipboard', async () => {
     const { getByLabelText } = renderWithProviders(
       <SynthesisFreeRecap
-        mode="quick"
+        title="Your Quick Pass"
         chapterTitle="Genesis 1"
-        capturedInputs={captured}
+        blocks={sampleBlocks}
       />,
     );
     fireEvent.press(getByLabelText('Copy recap to clipboard'));
@@ -117,41 +57,35 @@ describe('SynthesisFreeRecap', () => {
     const arg = setStringAsync.mock.calls[0][0] as string;
     expect(arg).toContain('Genesis 1 — Your Quick Pass');
     expect(arg).toContain('Takeaway:');
-    expect(arg).toContain('A.');
-    expect(arg).toContain('Verse to remember:');
-    expect(arg).toContain('B.');
+    expect(arg).toContain('Creation is ordered by speech.');
   });
 
-  it('renders the flag-off footer copy when GUIDED_STUDY_AMICUS_SYNTHESIS=false', () => {
-    const captured: CapturedInputs = {
-      synthesize: { takeaway: 'A.', open_question: '', key_connection: '' },
-    };
-    const { getByText } = renderWithProviders(
+  it('renders the footer_note text and fires onUpgradeNudgePress on tap', () => {
+    const onUpgradeNudgePress = jest.fn();
+    const { getByLabelText, getByText } = renderWithProviders(
       <SynthesisFreeRecap
-        mode="quick"
+        title="Your Quick Pass"
         chapterTitle="Genesis 1"
-        capturedInputs={captured}
+        blocks={sampleBlocks}
+        onUpgradeNudgePress={onUpgradeNudgePress}
       />,
     );
     expect(
       getByText('Companion+ saves this for spaced review and brings it back when it matters.'),
     ).toBeTruthy();
-  });
-
-  it('fires onUpgradeNudgePress when the footer is tapped', () => {
-    const onUpgradeNudgePress = jest.fn();
-    const captured: CapturedInputs = {
-      synthesize: { takeaway: 'A.', open_question: '', key_connection: '' },
-    };
-    const { getByLabelText } = renderWithProviders(
-      <SynthesisFreeRecap
-        mode="quick"
-        chapterTitle="Genesis 1"
-        capturedInputs={captured}
-        onUpgradeNudgePress={onUpgradeNudgePress}
-      />,
-    );
     fireEvent.press(getByLabelText('Learn about Companion Study Partner'));
     expect(onUpgradeNudgePress).toHaveBeenCalledTimes(1);
+  });
+
+  it('renders each cta_button block with its label', () => {
+    const { getByLabelText } = renderWithProviders(
+      <SynthesisFreeRecap
+        title="Your Quick Pass"
+        chapterTitle="Genesis 1"
+        blocks={sampleBlocks}
+      />,
+    );
+    expect(getByLabelText('Copy recap to clipboard')).toBeTruthy();
+    expect(getByLabelText('Share recap')).toBeTruthy();
   });
 });
