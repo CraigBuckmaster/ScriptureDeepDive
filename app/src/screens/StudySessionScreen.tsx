@@ -20,9 +20,11 @@ import { ArrowLeft, MessageSquare } from 'lucide-react-native';
 import {
   CarriedForwardBanner,
   EvidenceTrailRow,
+  NextChapterNudge,
   PanelRecommendationRow,
   StudyModeSelector,
   StudySessionStepper,
+  SynthesisFreeRecap,
 } from '../components/guidedStudy';
 import { UpgradePrompt } from '../components/UpgradePrompt';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
@@ -37,7 +39,8 @@ import {
 } from '../db/content';
 import { getCapturedInputs, getGuidedStudyQuestionForSession } from '../db/userQueries';
 import { setCapturedInputs } from '../db/userMutations';
-import { useGuidedStudySession, usePremium } from '../hooks';
+import { useBooks, useGuidedStudySession, usePremium } from '../hooks';
+import { completeGuidedStudySession } from '../db/userMutations';
 import {
   buildCarryForwardItems,
   buildGuidedStudyPlan,
@@ -79,6 +82,7 @@ function StudySessionScreen() {
   const { bookId, chapterNum, initialStep } = route.params;
   const translation = useSettingsStore((s) => s.translation);
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
+  const { liveBooks } = useBooks();
 
   const [book, setBook] = useState<Book | null>(null);
   const [chapter, setChapter] = useState<Chapter | null>(null);
@@ -483,6 +487,14 @@ function StudySessionScreen() {
               <Text style={[styles.amicusText, { color: base.text }]}>{amicusLabel}</Text>
             </TouchableOpacity>
             <PrimaryButton label="Save to My Study" onPress={saveToMyStudy} />
+            <SynthesisFreeRecap
+              mode={plan.mode}
+              chapterTitle={plan.title}
+              capturedInputs={capturedInputs}
+              onUpgradeNudgePress={() =>
+                showUpgrade('feature', 'Companion Study Partner')
+              }
+            />
           </View>
         )}
 
@@ -508,6 +520,24 @@ function StudySessionScreen() {
             <PrimaryButton
               label="Open My Study"
               onPress={() => navigation.getParent()?.navigate('MoreTab', { screen: 'MyStudy' })}
+            />
+            <NextChapterNudge
+              bookId={bookId}
+              chapterNum={chapterNum}
+              books={liveBooks}
+              onOpenNext={(next) =>
+                navigation.navigate('Chapter', {
+                  bookId: next.bookId,
+                  chapterNum: next.chapterNum,
+                })
+              }
+              onMarkComplete={() => {
+                if (sessionId != null) void completeGuidedStudySession(sessionId);
+                navigation.goBack();
+              }}
+              onRestart={() =>
+                navigation.navigate('Chapter', { bookId: 'genesis', chapterNum: 1 })
+              }
             />
           </View>
         )}
