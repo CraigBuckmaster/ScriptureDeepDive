@@ -44,12 +44,46 @@ describe('MODE_DEFINITIONS', () => {
     expect(MODE_DEFINITIONS[mode].marketingPromise.trim().length).toBeGreaterThan(0);
   });
 
-  it.each(GUIDED_STUDY_MODES)(
-    '%s has empty panelWeights through Phase 2.1 (filled in #1733)',
-    (mode) => {
-      expect(MODE_DEFINITIONS[mode].panelWeights).toEqual({});
-    },
-  );
+  it.each(GUIDED_STUDY_MODES)('%s has non-empty panelWeights after Phase 2.4', (mode) => {
+    const weights = MODE_DEFINITIONS[mode].panelWeights;
+    expect(Object.keys(weights).length).toBeGreaterThan(0);
+  });
+
+  it('quick mode prefers context + cross-references and deprioritizes technical panels', () => {
+    const quick = MODE_DEFINITIONS.quick.panelWeights;
+    expect(quick.hist).toBeGreaterThan(0);
+    expect(quick.ctx).toBeGreaterThan(0);
+    expect(quick.cross).toBeGreaterThan(0);
+    expect(quick.heb ?? 0).toBeLessThan(0);
+    expect(quick.greek ?? 0).toBeLessThan(0);
+    expect(quick.debate ?? 0).toBeLessThan(0);
+  });
+
+  it('deep mode prefers original-language and structural panels', () => {
+    const deep = MODE_DEFINITIONS.deep.panelWeights;
+    expect(deep.heb).toBeGreaterThan(deep.com ?? 0);
+    expect(deep.greek).toBeGreaterThan(deep.com ?? 0);
+    expect(deep.lit).toBeGreaterThan(deep.com ?? 0);
+  });
+
+  it('teaching mode leads with literary structure', () => {
+    const teaching = MODE_DEFINITIONS.teaching.panelWeights;
+    const lit = teaching.lit ?? 0;
+    for (const [type, weight] of Object.entries(teaching)) {
+      if (type === 'lit') continue;
+      expect(weight).toBeLessThanOrEqual(lit);
+    }
+  });
+
+  it('devotional mode leads with context and canonical echoes; pushes technical panels below zero', () => {
+    const devotional = MODE_DEFINITIONS.devotional.panelWeights;
+    expect(devotional.ctx).toBeGreaterThan(0);
+    expect(devotional.cross).toBeGreaterThan(0);
+    expect(devotional.com).toBeGreaterThan(0);
+    expect(devotional.heb ?? 0).toBeLessThan(0);
+    expect(devotional.greek ?? 0).toBeLessThan(0);
+    expect(devotional.tx ?? 0).toBeLessThan(0);
+  });
 
   it.each(GUIDED_STUDY_MODES)(
     '%s has at least one prompt at every step after Phase 2.1',

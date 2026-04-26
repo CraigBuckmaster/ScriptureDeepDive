@@ -51,7 +51,20 @@ export const DEVOTIONAL_MODE: ModeDefinition = {
   },
   trailOrder: ['context', 'scripture', 'language'],
   recommendationLimit: 3,
-  panelWeights: {},
+  // Devotional — context + canonical echo + scholar reflection. Technical
+  // panels actively pushed down so the experience stays receptive.
+  panelWeights: {
+    ctx: 10,
+    cross: 9,
+    com: 8,
+    src: 7,
+    hist: 6,
+    lit: 3,
+    trans: -1,
+    heb: -3,
+    greek: -3,
+    tx: -3,
+  },
   synthesisTemplate: 'prayer_and_carry',
   reviewArtifact: 'returning_prayer',
 };

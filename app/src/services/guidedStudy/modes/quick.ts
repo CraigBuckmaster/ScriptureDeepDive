@@ -51,7 +51,18 @@ export const QUICK_MODE: ModeDefinition = {
   },
   trailOrder: ['context', 'language', 'scripture'],
   recommendationLimit: 3,
-  panelWeights: {},
+  // Quick — context + connection. Technical panels deprioritized so a
+  // 5-minute pass lands on the framing, not the apparatus.
+  panelWeights: {
+    hist: 10,
+    ctx: 10,
+    cross: 8,
+    trans: 3,
+    src: 3,
+    heb: -2,
+    greek: -2,
+    debate: -2,
+  },
   synthesisTemplate: 'paragraph_plus_verse',
   reviewArtifact: 'memory_verse',
 };

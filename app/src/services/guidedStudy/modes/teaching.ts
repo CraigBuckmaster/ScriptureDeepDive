@@ -59,7 +59,20 @@ export const TEACHING_MODE: ModeDefinition = {
   },
   trailOrder: ['context', 'structure', 'scripture', 'debate'],
   recommendationLimit: 5,
-  panelWeights: {},
+  // Teaching — structure leads (you teach a shape), debate for fairness.
+  panelWeights: {
+    lit: 10,
+    discourse: 9,
+    hist: 8,
+    ctx: 8,
+    cross: 7,
+    debate: 6,
+    com: 5,
+    src: 5,
+    heb: 4,
+    greek: 4,
+    trans: 4,
+  },
   synthesisTemplate: 'teaching_outline',
   reviewArtifact: 'teaching_outline',
 };
