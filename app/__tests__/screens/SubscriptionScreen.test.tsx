@@ -48,8 +48,38 @@ describe('SubscriptionScreen', () => {
     expect(getByText('Companion+')).toBeTruthy();
   });
 
-  it('renders the subtitle', () => {
+  it('renders the new tagline subtitle (#1746)', () => {
     const { getByText } = renderWithProviders(<SubscriptionScreen />);
-    expect(getByText('Every Perspective. Every Tool.')).toBeTruthy();
+    expect(getByText('From reading to understanding.')).toBeTruthy();
+  });
+
+  it('renders the WHAT YOU GET partner section heading (#1746)', () => {
+    const { getByText } = renderWithProviders(<SubscriptionScreen />);
+    expect(getByText('WHAT YOU GET')).toBeTruthy();
+  });
+
+  it.each([
+    'Helps you study more deeply',
+    'Remembers what you have learned',
+    'Reads the original languages with you',
+    'Traces ideas across Scripture',
+    'Brings 269 study articles',
+    'Syncs across your devices',
+  ])('renders the %s partner row (#1746)', (title) => {
+    const { getByText } = renderWithProviders(<SubscriptionScreen />);
+    expect(getByText(title)).toBeTruthy();
+  });
+
+  it('renders the flag-off copy for the synthesis row (Captures, not Drafts)', () => {
+    const { getByText, queryByText } = renderWithProviders(<SubscriptionScreen />);
+    expect(getByText('Captures what you discovered')).toBeTruthy();
+    expect(queryByText('Drafts what you discovered')).toBeNull();
+  });
+
+  it('renders the trust footer copy (#1746)', () => {
+    const { getByText } = renderWithProviders(<SubscriptionScreen />);
+    expect(
+      getByText(/Every claim cited\. Every scholar named\./),
+    ).toBeTruthy();
   });
 });
