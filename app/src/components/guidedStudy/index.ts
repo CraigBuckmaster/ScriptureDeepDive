@@ -1,3 +1,5 @@
+export { CarriedForwardBanner } from './CarriedForwardBanner';
+export type { CarriedForwardItem } from './CarriedForwardBanner';
 export { ConfidenceBadge } from './ConfidenceBadge';
 export { ContextGuardBanner } from './ContextGuardBanner';
 export { EvidenceTrailRow } from './EvidenceTrailRow';
