@@ -23,6 +23,7 @@ export const QUICK_MODE: ModeDefinition = {
           text: "What's the one thing you'd want to remember from this chapter?",
         },
       ],
+      carryForward: ['scene'],
     },
     explore: {
       prompts: [
@@ -39,6 +40,7 @@ export const QUICK_MODE: ModeDefinition = {
           text: 'In one sentence: what does this chapter say?',
         },
       ],
+      carryForward: ['observe'],
     },
     review: {
       prompts: [
@@ -47,6 +49,7 @@ export const QUICK_MODE: ModeDefinition = {
           text: 'What verse or phrase will you carry with you today?',
         },
       ],
+      carryForward: ['synthesize'],
     },
   },
   trailOrder: ['context', 'language', 'scripture'],

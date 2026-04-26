@@ -23,6 +23,7 @@ export const DEVOTIONAL_MODE: ModeDefinition = {
           text: 'What word, phrase, or image is meeting you in this chapter?',
         },
       ],
+      carryForward: ['scene'],
     },
     explore: {
       prompts: [
@@ -39,6 +40,7 @@ export const DEVOTIONAL_MODE: ModeDefinition = {
           text: 'What might God be saying? Pray it back in your own words.',
         },
       ],
+      carryForward: ['scene', 'observe'],
     },
     review: {
       prompts: [
@@ -47,6 +49,7 @@ export const DEVOTIONAL_MODE: ModeDefinition = {
           text: 'What will you carry into the rest of your day?',
         },
       ],
+      carryForward: ['synthesize'],
     },
   },
   trailOrder: ['context', 'scripture', 'language'],

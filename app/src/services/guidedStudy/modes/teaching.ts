@@ -31,6 +31,7 @@ export const TEACHING_MODE: ModeDefinition = {
           text: "What would they get wrong if you didn't clarify it?",
         },
       ],
+      carryForward: ['scene'],
     },
     explore: {
       prompts: [
@@ -39,6 +40,7 @@ export const TEACHING_MODE: ModeDefinition = {
           text: 'Which structural and contextual panels support your main point?',
         },
       ],
+      carryForward: ['observe'],
     },
     synthesize: {
       prompts: [
@@ -47,6 +49,7 @@ export const TEACHING_MODE: ModeDefinition = {
           text: 'Build the outline: hook, main point, two or three moves, application, a clarifying question for discussion.',
         },
       ],
+      carryForward: ['scene', 'observe'],
     },
     review: {
       prompts: [
@@ -55,6 +58,7 @@ export const TEACHING_MODE: ModeDefinition = {
           text: "What's one question you'll ask your audience to check understanding?",
         },
       ],
+      carryForward: ['synthesize'],
     },
   },
   trailOrder: ['context', 'structure', 'scripture', 'debate'],

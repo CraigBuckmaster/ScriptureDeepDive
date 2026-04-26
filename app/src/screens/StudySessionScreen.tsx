@@ -18,6 +18,7 @@ import {
 } from '@react-navigation/native';
 import { ArrowLeft, MessageSquare } from 'lucide-react-native';
 import {
+  CarriedForwardBanner,
   EvidenceTrailRow,
   PanelRecommendationRow,
   StudyModeSelector,
@@ -38,8 +39,13 @@ import { getCapturedInputs, getGuidedStudyQuestionForSession } from '../db/userQ
 import { setCapturedInputs } from '../db/userMutations';
 import { useGuidedStudySession, usePremium } from '../hooks';
 import {
+  buildCarryForwardItems,
   buildGuidedStudyPlan,
   formatChapterRef,
+  getPromptBinding,
+  setCapturedText,
+  stepsWithCarryForward,
+  type CapturedTextRef,
   type GuidedStudyMode,
   type GuidedStudyStep,
   type SceneInputKey,
@@ -167,14 +173,11 @@ function StudySessionScreen() {
     };
   }, []);
 
-  const updateSceneInput = useCallback(
-    (key: SceneInputKey, value: string) => {
+  const updateCapturedField = useCallback(
+    (ref: CapturedTextRef, value: string) => {
       const sid = sessionId;
       setCapturedInputsState((prev) => {
-        const next: CapturedInputs = {
-          ...prev,
-          scene: { ...prev.scene, [key]: value },
-        };
+        const next = setCapturedText(prev, ref, value);
         if (sid != null) {
           if (captureSaveTimerRef.current) clearTimeout(captureSaveTimerRef.current);
           captureSaveTimerRef.current = setTimeout(() => {
@@ -185,6 +188,11 @@ function StudySessionScreen() {
       });
     },
     [sessionId],
+  );
+
+  const updateSceneInput = useCallback(
+    (key: SceneInputKey, value: string) => updateCapturedField({ step: 'scene', key }, value),
+    [updateCapturedField],
   );
 
   // Preserves #1654. The codex branch (codex/amicus-auth-access-hardening)
@@ -320,12 +328,18 @@ function StudySessionScreen() {
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
-        <StudySessionStepper activeStep={session.currentStep} onSelect={goStep} />
+        <StudySessionStepper
+          activeStep={session.currentStep}
+          onSelect={goStep}
+          carryForwardSteps={stepsWithCarryForward(plan.mode, capturedInputs)}
+        />
         <StudyModeSelector value={studyMode} onChange={setStudyMode} />
 
         {session.currentStep === 'scene' && (
           <View style={styles.section}>
             <Text style={[styles.heading, { color: base.text }]}>Set the Scene</Text>
+            <StepBanner step="scene" />
+            <ModePromptList step="scene" />
             {plan.sceneRows.map((row) => (
               <View
                 key={row.label}
@@ -359,6 +373,8 @@ function StudySessionScreen() {
         {session.currentStep === 'observe' && (
           <View style={styles.section}>
             <Text style={[styles.heading, { color: base.text }]}>Observe</Text>
+            <StepBanner step="observe" />
+            <ModePromptList step="observe" />
             {plan.legacyPrompts.map((prompt) => (
               <View key={prompt.key} style={styles.promptBlock}>
                 <Text style={[styles.promptText, { color: base.text }]}>{prompt.text}</Text>
@@ -384,6 +400,8 @@ function StudySessionScreen() {
         {session.currentStep === 'explore' && (
           <View style={styles.section}>
             <Text style={[styles.heading, { color: base.text }]}>Evidence Trail</Text>
+            <StepBanner step="explore" />
+            <ModePromptList step="explore" />
             <Text style={[styles.sectionIntro, { color: base.textDim }]}>
               Open the panels in this order to build context before conclusions.
             </Text>
@@ -432,6 +450,8 @@ function StudySessionScreen() {
         {session.currentStep === 'synthesize' && (
           <View style={styles.section}>
             <Text style={[styles.heading, { color: base.text }]}>Synthesize</Text>
+            <StepBanner step="synthesize" />
+            <ModePromptList step="synthesize" />
             <SynthesisInput
               label="My takeaway"
               value={synthesisDraft.takeaway}
@@ -469,6 +489,8 @@ function StudySessionScreen() {
         {session.currentStep === 'review' && (
           <View style={styles.section}>
             <Text style={[styles.heading, { color: base.text }]}>Review</Text>
+            <StepBanner step="review" />
+            <ModePromptList step="review" />
             <Text style={[styles.body, { color: base.textDim }]}>
               {reviewSaved
                 ? 'Saved. Your review prompts and concept vocabulary are ready in My Study.'
@@ -526,6 +548,52 @@ function StudySessionScreen() {
           ]}
         />
       </View>
+    );
+  }
+
+  function StepBanner({ step }: { step: GuidedStudyStep }) {
+    if (!plan) return null;
+    const items = buildCarryForwardItems(plan.mode, step, capturedInputs);
+    return <CarriedForwardBanner items={items} />;
+  }
+
+  function ModePromptList({ step }: { step: GuidedStudyStep }) {
+    if (!plan) return null;
+    const prompts = plan.stepPrompts[step] ?? [];
+    if (prompts.length === 0) return null;
+    return (
+      <>
+        {prompts.map((prompt) => {
+          const binding = getPromptBinding(prompt.key);
+          if (!binding) {
+            return (
+              <View key={prompt.key} style={styles.promptBlock}>
+                <Text style={[styles.modePromptText, { color: base.textDim }]}>
+                  {prompt.text}
+                </Text>
+              </View>
+            );
+          }
+          const value =
+            (capturedInputs[binding.step] as Record<string, unknown> | undefined)?.[binding.key];
+          return (
+            <View key={prompt.key} style={styles.promptBlock}>
+              <Text style={[styles.modePromptText, { color: base.text }]}>{prompt.text}</Text>
+              <TextInput
+                value={typeof value === 'string' ? value : ''}
+                onChangeText={(text) => updateCapturedField(binding, text)}
+                placeholder="Capture your thinking..."
+                placeholderTextColor={base.textMuted}
+                multiline
+                style={[
+                  styles.input,
+                  { color: base.text, borderColor: base.border, backgroundColor: base.bgSurface },
+                ]}
+              />
+            </View>
+          );
+        })}
+      </>
     );
   }
 
@@ -612,6 +680,12 @@ const styles = StyleSheet.create({
   promptText: {
     fontFamily: fontFamily.uiMedium,
     fontSize: 14,
+    marginBottom: spacing.xs,
+  },
+  modePromptText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 14,
+    lineHeight: 21,
     marginBottom: spacing.xs,
   },
   input: {
