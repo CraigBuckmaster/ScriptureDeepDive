@@ -4,13 +4,13 @@
 Companion Study
 
 ## Subtitle (30 chars)
-Logos & Letters, Deep Study
+From reading to understanding.
 
 ## Promotional Text (170 chars)
-Don't just read the Bible. Learn to read it the way it was written. 45+ scholars, Hebrew & Greek interlinear, and 8 features no other app offers. Free.
+Four guided study modes. Scholar-attributed depth. A study partner that remembers what you have learned and brings it back when it matters.
 
 ## Description
-Don't just read the Bible. Learn to read it the way it was written.
+Companion Study is a Bible study app for people who want to go from reading to understanding.
 
 Companion Study is the only Bible app that bridges the gap between reading scripture and understanding ancient literature. It's free, offline, and delivers seminary-level depth without requiring you to know how to use academic tools.
 

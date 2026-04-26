@@ -206,7 +206,7 @@ Same verification steps as iPhone.
 In App Store Connect, on your app's page:
 
 **App Information tab:**
-- Subtitle: `Scholarly Bible Study`
+- Subtitle: `From reading to understanding.`
 - Category: `Reference` → subcategory: leave blank (no Bible Study subcategory — Reference is correct)
 - Content Rights: "This app does not contain third-party content" → select and acknowledge
 
@@ -237,7 +237,7 @@ bible study,commentary,hebrew,greek,word study,devotional,NIV,ESV,genealogy,map,
 
 **Promotional Text:**
 ```
-Explore the Bible with 40+ scholars, Hebrew & Greek word studies, an interactive family tree, a biblical world map, and verse-by-verse commentary. Offline. Free.
+Four guided study modes. Scholar-attributed depth. A study partner that remembers what you have learned and brings it back when it matters.
 ```
 
 **Support URL:** `https://github.com/CraigBuckmaster/ScriptureDeepDive/issues`
@@ -284,7 +284,7 @@ Complete the questionnaire:
 
 Go to **Grow → Store presence → Main store listing:**
 
-- **Short description:** `Scholarly Bible study with 40+ commentators, word studies, maps, and timelines.`
+- **Short description:** `From reading to understanding. Scholarly Bible study, free and offline.`
 - **Full description:** Copy from `app/store-metadata/android.md` → Full Description section
 - **App icon:** Upload `app/assets/images/icon-512.png` (Google requires 512×512)
 - **Feature graphic:** You'll need to create a 1024×500 banner image (see Phase 7)
@@ -351,7 +351,7 @@ You need a 1024×500 banner image. Create one using:
 - [Canva](https://canva.com) (free)
 - Dark background `#0c0a07`
 - App name "Companion Study" in gold
-- Tagline "Scholarly Bible Study"
+- Tagline "From reading to understanding."
 - Optional: small screenshots or the app icon
 
 ---
