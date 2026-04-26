@@ -161,23 +161,12 @@ describe('buildFreeSynthesisBlocks per mode', () => {
 });
 
 describe('premium strategies', () => {
-  // premium_structured is implemented by #1740; round-trip covered in
-  // premiumStructured.test.ts. Keep a smoke check on its kind here so the
-  // strategy.ts switch never silently regresses.
+  // Both premium implementations have their own dedicated round-trip
+  // tests (premiumStructured.test.ts, premiumAmicus.test.ts). Keep
+  // smoke checks here so the strategy.ts dispatch never silently
+  // regresses on `kind`.
   it('premium_structured reports its kind', () => {
     expect(premiumStructuredStrategy.kind).toBe('premium_structured');
-  });
-
-  it('premium_amicus throws not-implemented (filled in by #1745)', async () => {
-    await expect(
-      premiumAmicusStrategy.run({
-        plan: planFor('deep'),
-        captured: {},
-        sessionId: null,
-        bookId: 'gen',
-        chapterNum: 1,
-      }),
-    ).rejects.toThrow(/not implemented/);
   });
 
   it('premium_amicus reports its kind', () => {
