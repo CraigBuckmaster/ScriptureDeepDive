@@ -308,7 +308,7 @@ function StudySessionScreen() {
 
   const askAmicus = useCallback(async () => {
     if (!isPremium) {
-      showUpgrade('feature', 'Guided Study Review');
+      showUpgrade('feature', 'Companion Study Partner');
       return;
     }
     await session.saveSynthesis(synthesisDraft);
@@ -343,7 +343,7 @@ function StudySessionScreen() {
   const saveToMyStudy = useCallback(async () => {
     if (!plan) return;
     if (!isPremium) {
-      showUpgrade('feature', 'Guided Study Review');
+      showUpgrade('feature', 'Companion Study Partner');
       return;
     }
     await savePromptDrafts();

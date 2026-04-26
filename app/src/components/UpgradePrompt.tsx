@@ -48,7 +48,13 @@ const FEATURE_DESCRIPTIONS: Record<string, string> = {
   'Bible Periods': 'Explore all 12 eras of biblical history with key people, books, themes, and the redemptive thread connecting each period.',
   'The Story of the Bible': 'Trace the 8-act redemptive narrative from Creation to Restoration — see how every chapter fits into God\'s story.',
   'Person Journey': 'Follow key biblical figures across multiple books — see their full arc from calling to legacy.',
-  'Guided Study Review': 'Save your synthesis, build concept vocabulary, and revisit key insights with spaced review.',
+  // TODO(#1749): when GUIDED_STUDY_AMICUS_SYNTHESIS flips to true, swap
+  // the description for the Amicus-aware copy:
+  //   'Companion Study Partner': 'Your study partner. Amicus drafts your
+  //    takeaway, outline, or prayer from what you discovered, saves it for
+  //    spaced review, and brings it back when it matters most.'
+  'Companion Study Partner':
+    'Your study, captured. We save your synthesis, build a spaced review queue, and bring insights back when they matter most.',
   'Extra-Biblical Literature': 'Scholarly entries on 1 Enoch, Jubilees, the Apocrypha, Dead Sea Scrolls — what they are, what they contain, and why traditions treated them differently.',
   'Canon Comparison': 'Side-by-side Protestant, Catholic, Orthodox, and Ethiopian canons — see what each includes and why.',
   'How We Got The Bible': 'Two deep journeys tracing canon formation and textual transmission, from oral tradition to modern English translations.',

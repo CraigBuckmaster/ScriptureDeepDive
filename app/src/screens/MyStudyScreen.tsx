@@ -46,7 +46,7 @@ function MyStudyScreen() {
 
   async function openQuestionWithAmicus(question: GuidedStudyQuestion) {
     if (locked) {
-      showUpgrade('feature', 'Guided Study Review');
+      showUpgrade('feature', 'Companion Study Partner');
       return;
     }
     await launchAmicusStudyThread(navigation, {
@@ -62,7 +62,7 @@ function MyStudyScreen() {
 
   async function refineTakeawayWithAmicus(takeaway: GuidedStudyTakeawaySummary) {
     if (locked) {
-      showUpgrade('feature', 'Guided Study Review');
+      showUpgrade('feature', 'Companion Study Partner');
       return;
     }
     await launchAmicusStudyThread(navigation, {
@@ -81,7 +81,7 @@ function MyStudyScreen() {
     takeaway?: GuidedStudyTakeawaySummary | null,
   ) {
     if (locked) {
-      showUpgrade('feature', 'Guided Study Review');
+      showUpgrade('feature', 'Companion Study Partner');
       return;
     }
     await launchAmicusStudyThread(navigation, {
@@ -125,7 +125,7 @@ function MyStudyScreen() {
               Companion+.
             </Text>
             <TouchableOpacity
-              onPress={() => showUpgrade('feature', 'Guided Study Review')}
+              onPress={() => showUpgrade('feature', 'Companion Study Partner')}
               style={[styles.primaryButton, { backgroundColor: base.gold }]}
             >
               <Text style={styles.primaryText}>Unlock My Study</Text>
