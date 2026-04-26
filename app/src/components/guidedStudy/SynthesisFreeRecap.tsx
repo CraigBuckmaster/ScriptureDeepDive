@@ -5,16 +5,12 @@ import * as Sharing from 'expo-sharing';
 import * as FileSystem from 'expo-file-system/legacy';
 import { ChevronRight, Copy, Share2 } from 'lucide-react-native';
 import { fontFamily, radii, spacing, useTheme } from '../../theme';
+import { isFlagEnabled } from '../../config/featureFlags';
 import type { CapturedInputs } from '../../services/guidedStudy/capturedInputs';
 import type { CapturedTextRef } from '../../services/guidedStudy/stepBindings';
 import { getCapturedText } from '../../services/guidedStudy/stepBindings';
 import type { GuidedStudyMode } from '../../services/guidedStudy/types';
 import { logger } from '../../utils/logger';
-
-// Phase 3.1 (#1738) replaces this inline constant with an import from a
-// dedicated feature-flags module. Until then the flag stays off so the
-// premium-nudge footer copy reflects the structured (non-Amicus) path.
-const GUIDED_STUDY_AMICUS_SYNTHESIS = false;
 
 interface RecapSection {
   label: string;
@@ -152,7 +148,7 @@ export function SynthesisFreeRecap({
 
   if (sections.length === 0) return null;
 
-  const footerCopy = GUIDED_STUDY_AMICUS_SYNTHESIS
+  const footerCopy = isFlagEnabled('GUIDED_STUDY_AMICUS_SYNTHESIS')
     ? PREMIUM_FOOTER_AMICUS_ON
     : PREMIUM_FOOTER_AMICUS_OFF;
 
