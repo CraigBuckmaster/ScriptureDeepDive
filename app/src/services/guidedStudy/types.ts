@@ -58,10 +58,21 @@ export interface StudyDepthEstimate {
   deepMin: number;
 }
 
-export interface GuidedSceneRow {
-  label: string;
-  value: string;
-}
+/**
+ * Subset of `CapturedInputs['scene']` keys whose stored shape is a string
+ * (and therefore can back a single-line `TextInput`). Phase 2.5 (#1734)
+ * scene input rows bind to one of these.
+ */
+export type SceneInputKey = 'audience' | 'setting' | 'arrival';
+
+export type GuidedSceneRow =
+  | { kind: 'display'; label: string; value: string }
+  | {
+      kind: 'input';
+      label: string;
+      placeholder: string;
+      capturedKey: SceneInputKey;
+    };
 
 export interface GuidedPrompt {
   key: string;

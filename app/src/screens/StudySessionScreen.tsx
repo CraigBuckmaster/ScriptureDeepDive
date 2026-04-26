@@ -34,14 +34,17 @@ import {
   getSectionPanels,
   getVerses,
 } from '../db/content';
-import { getGuidedStudyQuestionForSession } from '../db/userQueries';
+import { getCapturedInputs, getGuidedStudyQuestionForSession } from '../db/userQueries';
+import { setCapturedInputs } from '../db/userMutations';
 import { useGuidedStudySession, usePremium } from '../hooks';
 import {
   buildGuidedStudyPlan,
   formatChapterRef,
   type GuidedStudyMode,
   type GuidedStudyStep,
+  type SceneInputKey,
 } from '../services/guidedStudy';
+import type { CapturedInputs } from '../services/guidedStudy/capturedInputs';
 import { launchAmicusStudyThread } from '../services/amicus';
 import { useSettingsStore } from '../stores';
 import { fontFamily, radii, spacing, useTheme } from '../theme';
@@ -87,6 +90,8 @@ function StudySessionScreen() {
   const [synthesisDraft, setSynthesisDraft] = useState(session.synthesis);
   const [reviewSaved, setReviewSaved] = useState(false);
   const [studyMode, setStudyMode] = useState<GuidedStudyMode>('deep');
+  const [capturedInputs, setCapturedInputsState] = useState<CapturedInputs>({});
+  const captureSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -135,6 +140,52 @@ function StudySessionScreen() {
   useEffect(() => {
     setSynthesisDraft(session.synthesis);
   }, [session.synthesis]);
+
+  // Load persisted CapturedInputs once per session so scene input rows
+  // (#1734) rehydrate after the user reopens the chapter.
+  useEffect(() => {
+    if (sessionId == null) {
+      setCapturedInputsState({});
+      return;
+    }
+    let cancelled = false;
+    void (async () => {
+      const loaded = await getCapturedInputs(sessionId);
+      if (!cancelled) setCapturedInputsState(loaded);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [sessionId]);
+
+  // Flush any pending debounced save when leaving the screen.
+  useEffect(() => {
+    return () => {
+      if (captureSaveTimerRef.current) {
+        clearTimeout(captureSaveTimerRef.current);
+      }
+    };
+  }, []);
+
+  const updateSceneInput = useCallback(
+    (key: SceneInputKey, value: string) => {
+      const sid = sessionId;
+      setCapturedInputsState((prev) => {
+        const next: CapturedInputs = {
+          ...prev,
+          scene: { ...prev.scene, [key]: value },
+        };
+        if (sid != null) {
+          if (captureSaveTimerRef.current) clearTimeout(captureSaveTimerRef.current);
+          captureSaveTimerRef.current = setTimeout(() => {
+            void setCapturedInputs(sid, next);
+          }, 500);
+        }
+        return next;
+      });
+    },
+    [sessionId],
+  );
 
   // Preserves #1654. The codex branch (codex/amicus-auth-access-hardening)
   // was cut before #1654 merged and reverts this guard. Do NOT remove it
@@ -281,7 +332,24 @@ function StudySessionScreen() {
                 style={[styles.sceneRow, { borderBottomColor: `${base.border}55` }]}
               >
                 <Text style={[styles.sceneLabel, { color: base.gold }]}>{row.label}</Text>
-                <Text style={[styles.sceneValue, { color: base.textDim }]}>{row.value}</Text>
+                {row.kind === 'display' ? (
+                  <Text style={[styles.sceneValue, { color: base.textDim }]}>{row.value}</Text>
+                ) : (
+                  <TextInput
+                    value={capturedInputs.scene?.[row.capturedKey] ?? ''}
+                    onChangeText={(text) => updateSceneInput(row.capturedKey, text)}
+                    placeholder={row.placeholder}
+                    placeholderTextColor={base.textMuted}
+                    style={[
+                      styles.sceneInput,
+                      {
+                        color: base.text,
+                        borderColor: base.border,
+                        backgroundColor: base.bgSurface,
+                      },
+                    ]}
+                  />
+                )}
               </View>
             ))}
             <PrimaryButton label="Begin observing" onPress={() => goStep('observe')} />
@@ -522,6 +590,16 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     letterSpacing: 0.5,
     marginBottom: 3,
+  },
+  sceneInput: {
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    lineHeight: 21,
+    borderWidth: 1,
+    borderRadius: radii.sm,
+    paddingHorizontal: spacing.sm,
+    paddingVertical: spacing.xs,
+    marginTop: 4,
   },
   sceneValue: {
     fontFamily: fontFamily.body,

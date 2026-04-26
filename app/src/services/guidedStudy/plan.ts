@@ -7,6 +7,7 @@ import {
   type GuidedEvidenceTrailItem,
   type GuidedPanelRecommendation,
   type GuidedPrompt,
+  type GuidedSceneRow,
   type GuidedStudyMode,
   type GuidedStudyPlan,
   type GuidedStudyPlanInput,
@@ -318,25 +319,53 @@ export function buildGuidedStudyPlan(input: GuidedStudyPlanInput): GuidedStudyPl
     {} as Record<GuidedStudyStep, GuidedPrompt[]>,
   );
 
+  const sceneRows: GuidedSceneRow[] = [
+    { kind: 'display', label: 'Genre', value: guidance ? `${genre}: ${guidance}` : genre },
+    { kind: 'display', label: 'Moment', value: moment },
+    {
+      kind: 'display',
+      label: 'Original audience context',
+      value:
+        audienceContext ??
+        'Use the book intro and panels to ask what this first meant in its ancient setting.',
+    },
+    {
+      kind: 'display',
+      label: 'Purpose',
+      value: purpose ?? 'Read the chapter first, then let the study panels sharpen the context.',
+    },
+  ];
+
+  if (mode === 'teaching') {
+    sceneRows.push(
+      {
+        kind: 'input',
+        label: 'Audience',
+        placeholder: 'Who are you teaching? What do they already know?',
+        capturedKey: 'audience',
+      },
+      {
+        kind: 'input',
+        label: 'Setting',
+        placeholder: 'Sermon, small group, classroom, one-on-one…',
+        capturedKey: 'setting',
+      },
+    );
+  } else if (mode === 'devotional') {
+    sceneRows.push({
+      kind: 'input',
+      label: 'What you bring',
+      placeholder: 'How did you arrive at this chapter today?',
+      capturedKey: 'arrival',
+    });
+  }
+
   return {
     chapterId: input.chapter.id,
     title: chapterTitle,
     mode,
     modeLabel: modeLabel(mode),
-    sceneRows: [
-      { label: 'Genre', value: guidance ? `${genre}: ${guidance}` : genre },
-      { label: 'Moment', value: moment },
-      {
-        label: 'Original audience context',
-        value:
-          audienceContext ??
-          'Use the book intro and panels to ask what this first meant in its ancient setting.',
-      },
-      {
-        label: 'Purpose',
-        value: purpose ?? 'Read the chapter first, then let the study panels sharpen the context.',
-      },
-    ],
+    sceneRows,
     stepPrompts,
     legacyPrompts,
     recommendations: allRecommendations.slice(0, def.recommendationLimit),
