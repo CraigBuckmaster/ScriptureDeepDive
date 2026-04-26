@@ -36,6 +36,7 @@ export const DEEP_MODE: ModeDefinition = {
           text: 'Which panels speak to what you noticed above?',
         },
       ],
+      carryForward: ['observe'],
     },
     synthesize: {
       prompts: [
@@ -44,6 +45,7 @@ export const DEEP_MODE: ModeDefinition = {
           text: "State your claim. What's the evidence? What tension remains?",
         },
       ],
+      carryForward: ['observe', 'explore'],
     },
     review: {
       prompts: [
@@ -52,6 +54,7 @@ export const DEEP_MODE: ModeDefinition = {
           text: 'Which connection is worth carrying into your next study?',
         },
       ],
+      carryForward: ['synthesize'],
     },
   },
   trailOrder: ['context', 'language', 'scripture', 'debate'],

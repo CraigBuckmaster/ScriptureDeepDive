@@ -4,6 +4,14 @@ export { buildGuidedStudyPlan } from './plan';
 export { buildGuidedStudyNextAction, formatChapterRef, getGuidedStudyStepLabel } from './personal';
 export { buildReviewItemsFromSynthesis, nextIntervalAfter, REVIEW_INTERVAL_DAYS } from './review';
 export {
+  buildCarryForwardItems,
+  getCapturedText,
+  getPromptBinding,
+  setCapturedText,
+  stepsWithCarryForward,
+  type CapturedTextRef,
+} from './stepBindings';
+export {
   GUIDED_STUDY_MODE_OPTIONS,
   GUIDED_STUDY_MODES,
   GUIDED_STUDY_STEP_LABELS,

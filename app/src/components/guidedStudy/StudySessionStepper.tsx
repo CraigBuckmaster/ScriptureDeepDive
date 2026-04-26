@@ -10,9 +10,18 @@ import {
 interface Props {
   activeStep: GuidedStudyStep;
   onSelect: (step: GuidedStudyStep) => void;
+  /**
+   * Steps that have carry-forward content available right now. Phase 2.6
+   * (#1735) renders a small filled dot next to those step labels.
+   */
+  carryForwardSteps?: ReadonlySet<GuidedStudyStep>;
 }
 
-export function StudySessionStepper({ activeStep, onSelect }: Props) {
+export function StudySessionStepper({
+  activeStep,
+  onSelect,
+  carryForwardSteps,
+}: Props) {
   const { base } = useTheme();
 
   return (
@@ -20,6 +29,7 @@ export function StudySessionStepper({ activeStep, onSelect }: Props) {
       {GUIDED_STUDY_STEPS.map((key) => {
         const active = key === activeStep;
         const label = GUIDED_STUDY_STEP_LABELS[key];
+        const hasCarry = carryForwardSteps?.has(key) ?? false;
         return (
           <TouchableOpacity
             key={key}
@@ -32,10 +42,19 @@ export function StudySessionStepper({ activeStep, onSelect }: Props) {
                 backgroundColor: active ? `${base.gold}18` : base.bgSurface,
               },
             ]}
+            accessibilityState={{ selected: active }}
+            accessibilityLabel={
+              hasCarry ? `${label}, carried forward content available` : label
+            }
           >
-            <Text style={[styles.label, { color: active ? base.gold : base.textMuted }]}>
-              {label}
-            </Text>
+            <View style={styles.labelRow}>
+              <Text style={[styles.label, { color: active ? base.gold : base.textMuted }]}>
+                {label}
+              </Text>
+              {hasCarry ? (
+                <View style={[styles.carryDot, { backgroundColor: base.gold }]} />
+              ) : null}
+            </View>
           </TouchableOpacity>
         );
       })}
@@ -57,8 +76,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.sm,
     paddingVertical: 5,
   },
+  labelRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+  },
   label: {
     fontFamily: fontFamily.uiMedium,
     fontSize: 11,
+  },
+  carryDot: {
+    width: 5,
+    height: 5,
+    borderRadius: 999,
   },
 });
