@@ -5,118 +5,51 @@ import * as Sharing from 'expo-sharing';
 import * as FileSystem from 'expo-file-system/legacy';
 import { ChevronRight, Copy, Share2 } from 'lucide-react-native';
 import { fontFamily, radii, spacing, useTheme } from '../../theme';
-import { isFlagEnabled } from '../../config/featureFlags';
-import type { CapturedInputs } from '../../services/guidedStudy/capturedInputs';
-import type { CapturedTextRef } from '../../services/guidedStudy/stepBindings';
-import { getCapturedText } from '../../services/guidedStudy/stepBindings';
-import type { GuidedStudyMode } from '../../services/guidedStudy/types';
+import type { SynthesisOutputBlock } from '../../services/guidedStudy/synthesis/strategy';
 import { logger } from '../../utils/logger';
 
-interface RecapSection {
-  label: string;
-  ref: CapturedTextRef;
-}
-
-interface RecapConfig {
+export interface SynthesisFreeRecapProps {
+  /** Card heading — e.g. 'Your Quick Pass'. Free path is mode-shaped. */
   title: string;
-  sections: RecapSection[];
-}
-
-const RECAP_BY_MODE: Record<GuidedStudyMode, RecapConfig> = {
-  quick: {
-    title: 'Your Quick Pass',
-    sections: [
-      { label: 'Takeaway', ref: { step: 'synthesize', key: 'takeaway' } },
-      { label: 'Verse to remember', ref: { step: 'synthesize', key: 'key_connection' } },
-    ],
-  },
-  deep: {
-    title: 'Your Deep Study',
-    sections: [
-      { label: 'Claim', ref: { step: 'synthesize', key: 'takeaway' } },
-      { label: 'Evidence', ref: { step: 'synthesize', key: 'key_connection' } },
-      { label: 'Tension still unresolved', ref: { step: 'synthesize', key: 'open_question' } },
-    ],
-  },
-  teaching: {
-    title: 'Your Teaching Outline',
-    sections: [
-      { label: 'Audience', ref: { step: 'scene', key: 'audience' } },
-      { label: 'Setting', ref: { step: 'scene', key: 'setting' } },
-      { label: 'Main point', ref: { step: 'observe', key: 'main_point' } },
-      { label: 'Clarification', ref: { step: 'observe', key: 'clarification' } },
-      { label: 'Outline', ref: { step: 'synthesize', key: 'takeaway' } },
-      { label: 'Discussion question', ref: { step: 'synthesize', key: 'open_question' } },
-    ],
-  },
-  devotional: {
-    title: 'Your Devotional',
-    sections: [
-      { label: 'What met you', ref: { step: 'observe', key: 'primary' } },
-      { label: 'Your prayer', ref: { step: 'synthesize', key: 'takeaway' } },
-      { label: 'Carrying forward', ref: { step: 'synthesize', key: 'key_connection' } },
-    ],
-  },
-};
-
-interface PopulatedSection {
-  label: string;
-  content: string;
-}
-
-function populatedSections(
-  mode: GuidedStudyMode,
-  captured: CapturedInputs,
-): { title: string; sections: PopulatedSection[] } {
-  const cfg = RECAP_BY_MODE[mode];
-  const sections: PopulatedSection[] = [];
-  for (const section of cfg.sections) {
-    const content = getCapturedText(captured, section.ref).trim();
-    if (!content) continue;
-    sections.push({ label: section.label, content });
-  }
-  return { title: cfg.title, sections };
+  /** Renderable descriptors from a SynthesisStrategy.run() result. */
+  blocks: SynthesisOutputBlock[];
+  /** Plain-text label for the source — included in clipboard/share output. */
+  chapterTitle: string;
+  /** Fired when a cta_button with action='upgrade' is tapped, OR when the
+   *  flag-aware footer note is tapped. */
+  onUpgradeNudgePress?: () => void;
 }
 
 function buildPlainText(
   chapterTitle: string,
-  modeTitle: string,
-  sections: PopulatedSection[],
+  title: string,
+  recapSections: { label: string; content: string }[],
 ): string {
-  const header = `${chapterTitle} — ${modeTitle}`;
-  const body = sections.map((s) => `${s.label}:\n${s.content}`).join('\n\n');
+  const header = `${chapterTitle} — ${title}`;
+  const body = recapSections.map((s) => `${s.label}:\n${s.content}`).join('\n\n');
   return `${header}\n\n${body}`;
 }
 
-const PREMIUM_FOOTER_AMICUS_ON =
-  'Companion+ drafts this for you and saves it for spaced review.';
-const PREMIUM_FOOTER_AMICUS_OFF =
-  'Companion+ saves this for spaced review and brings it back when it matters.';
-
-export interface SynthesisFreeRecapProps {
-  mode: GuidedStudyMode;
-  chapterTitle: string;
-  capturedInputs: CapturedInputs;
-  onUpgradeNudgePress?: () => void;
-}
-
 export function SynthesisFreeRecap({
-  mode,
+  title,
+  blocks,
   chapterTitle,
-  capturedInputs,
   onUpgradeNudgePress,
 }: SynthesisFreeRecapProps) {
   const { base } = useTheme();
   const [copied, setCopied] = useState(false);
 
-  const { title, sections } = useMemo(
-    () => populatedSections(mode, capturedInputs),
-    [mode, capturedInputs],
+  const recapSections = useMemo(
+    () =>
+      blocks.flatMap((b) =>
+        b.type === 'recap_section' ? [{ label: b.label, content: b.content }] : [],
+      ),
+    [blocks],
   );
 
   const plainText = useMemo(
-    () => buildPlainText(chapterTitle, title, sections),
-    [chapterTitle, title, sections],
+    () => buildPlainText(chapterTitle, title, recapSections),
+    [chapterTitle, title, recapSections],
   );
 
   const onCopy = useCallback(async () => {
@@ -146,52 +79,77 @@ export function SynthesisFreeRecap({
     }
   }, [plainText]);
 
-  if (sections.length === 0) return null;
+  const handleAction = useCallback(
+    (action: 'copy' | 'share' | 'upgrade') => {
+      if (action === 'copy') void onCopy();
+      else if (action === 'share') void onShare();
+      else onUpgradeNudgePress?.();
+    },
+    [onCopy, onShare, onUpgradeNudgePress],
+  );
 
-  const footerCopy = isFlagEnabled('GUIDED_STUDY_AMICUS_SYNTHESIS')
-    ? PREMIUM_FOOTER_AMICUS_ON
-    : PREMIUM_FOOTER_AMICUS_OFF;
+  if (blocks.length === 0) return null;
 
   return (
     <View style={[styles.card, { backgroundColor: base.bgElevated, borderColor: `${base.gold}30` }]}>
       <Text style={[styles.title, { color: base.gold }]}>{title}</Text>
-      {sections.map((s) => (
-        <View key={s.label} style={styles.section}>
-          <Text style={[styles.label, { color: base.textMuted }]}>{s.label.toUpperCase()}</Text>
-          <Text style={[styles.body, { color: base.text }]}>{s.content}</Text>
-        </View>
-      ))}
-      <View style={styles.actionRow}>
-        <TouchableOpacity
-          onPress={onCopy}
-          accessibilityRole="button"
-          accessibilityLabel={copied ? 'Copied to clipboard' : 'Copy recap to clipboard'}
-          style={[styles.actionButton, { borderColor: base.border }]}
-        >
-          <Copy size={14} color={base.text} />
-          <Text style={[styles.actionLabel, { color: base.text }]}>
-            {copied ? 'Copied' : 'Copy'}
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={onShare}
-          accessibilityRole="button"
-          accessibilityLabel="Share recap"
-          style={[styles.actionButton, { borderColor: base.border }]}
-        >
-          <Share2 size={14} color={base.text} />
-          <Text style={[styles.actionLabel, { color: base.text }]}>Share</Text>
-        </TouchableOpacity>
-      </View>
-      <TouchableOpacity
-        onPress={onUpgradeNudgePress}
-        accessibilityRole="button"
-        accessibilityLabel="Learn about Companion Study Partner"
-        style={[styles.footer, { borderTopColor: `${base.gold}25` }]}
-      >
-        <Text style={[styles.footerText, { color: base.gold }]}>{footerCopy}</Text>
-        <ChevronRight size={14} color={base.gold} />
-      </TouchableOpacity>
+      {blocks.map((block, idx) => {
+        switch (block.type) {
+          case 'recap_section':
+            return (
+              <View key={`${block.label}-${idx}`} style={styles.section}>
+                <Text style={[styles.label, { color: base.textMuted }]}>
+                  {block.label.toUpperCase()}
+                </Text>
+                <Text style={[styles.body, { color: base.text }]}>{block.content}</Text>
+              </View>
+            );
+          case 'cta_button': {
+            const Icon = block.action === 'copy' ? Copy : Share2;
+            const label =
+              block.action === 'copy' && copied ? 'Copied' : block.label;
+            return (
+              <TouchableOpacity
+                key={`${block.action}-${idx}`}
+                onPress={() => handleAction(block.action)}
+                accessibilityRole="button"
+                accessibilityLabel={
+                  block.action === 'copy'
+                    ? copied
+                      ? 'Copied to clipboard'
+                      : 'Copy recap to clipboard'
+                    : block.action === 'share'
+                      ? 'Share recap'
+                      : 'Upgrade'
+                }
+                style={[styles.actionButton, { borderColor: base.border }]}
+              >
+                {block.action !== 'upgrade' ? <Icon size={14} color={base.text} /> : null}
+                <Text style={[styles.actionLabel, { color: base.text }]}>{label}</Text>
+              </TouchableOpacity>
+            );
+          }
+          case 'footer_note':
+            return (
+              <TouchableOpacity
+                key={`footer-${idx}`}
+                onPress={onUpgradeNudgePress}
+                accessibilityRole="button"
+                accessibilityLabel="Learn about Companion Study Partner"
+                style={[styles.footer, { borderTopColor: `${base.gold}25` }]}
+              >
+                <Text style={[styles.footerText, { color: base.gold }]}>{block.text}</Text>
+                <ChevronRight size={14} color={base.gold} />
+              </TouchableOpacity>
+            );
+          case 'streaming_placeholder':
+          case 'amicus_text':
+            // Phase 4 (#1745) renders these. Skip in the free path.
+            return null;
+          default:
+            return null;
+        }
+      })}
     </View>
   );
 }
@@ -222,14 +180,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 21,
   },
-  actionRow: {
-    flexDirection: 'row',
-    gap: spacing.sm,
-    marginTop: spacing.xs,
-  },
   actionButton: {
     flexDirection: 'row',
     alignItems: 'center',
+    alignSelf: 'flex-start',
     gap: 6,
     borderWidth: 1,
     borderRadius: radii.sm,
