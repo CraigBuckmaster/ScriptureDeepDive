@@ -251,9 +251,9 @@ function StudySessionScreen() {
 
   const [synthesisResult, setSynthesisResult] = useState<SynthesisRunResult | null>(null);
   useEffect(() => {
-    if (!plan || synthesisStrategy.kind !== 'free') {
-      // Premium paths plug in starting at #1740. Until then the screen
-      // only renders the free path's output.
+    if (!plan || synthesisStrategy.kind === 'premium_amicus') {
+      // The amicus path streams; #1745 wires its own runner. Free and
+      // premium_structured both resolve synchronously through this effect.
       setSynthesisResult(null);
       return;
     }
@@ -540,6 +540,9 @@ function StudySessionScreen() {
               blocks={synthesisBlocks}
               onUpgradeNudgePress={() =>
                 showUpgrade('feature', 'Companion Study Partner')
+              }
+              onViewMyStudy={() =>
+                navigation.getParent()?.navigate('MoreTab', { screen: 'MyStudy' })
               }
             />
           </View>
