@@ -1,6 +1,6 @@
 # Companion Study
 
-*Don't just read the Bible. Learn to read it the way it was written.*
+*From reading to understanding.*
 
 **The only Bible app that bridges the gap between reading scripture and understanding ancient literature.** 70+ scholars, interlinear Hebrew & Greek, and features no other app offers — seminary-level depth, entirely offline, and free.
 
