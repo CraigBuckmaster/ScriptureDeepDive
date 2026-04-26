@@ -5,13 +5,23 @@
  * Shows plan cards, feature list, purchase button, restore link.
  */
 
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import {
   View, Text, TouchableOpacity, ScrollView, Alert, ActivityIndicator, StyleSheet,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import {
+  BookOpen,
+  Languages,
+  Library,
+  Network,
+  RefreshCw,
+  Repeat,
+  Sparkles,
+} from 'lucide-react-native';
 import { ScreenHeader } from '../components/ScreenHeader';
+import { isFlagEnabled } from '../config/featureFlags';
 import { usePremiumStore } from '../stores/premiumStore';
 import {
   PARTNER_PLUS_PLANS,
@@ -25,21 +35,58 @@ import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const GOLD_BUTTON_DARK = '#1a1a1a'; // data-color: intentional (dark text/elements on gold CTA button)
 
-const FEATURES = [
-  'Interlinear Hebrew & Greek',
-  'Concordance search',
-  'Content library (269 articles)',
-  'Cross-reference threading',
-  'Word study depth + lexicon',
-  'Prophecy chain detail',
-  'Concept explorer depth',
-  'Chiasm visualization',
-  'Discourse analysis',
-  'All 10 reading plans',
-  'Cross-device sync',
-  'Premium TTS voices',
-  'PDF study export',
-];
+interface PartnerCapability {
+  Icon: typeof BookOpen;
+  title: string;
+  subtitle: string;
+}
+
+function buildPartnerCapabilities(amicusFlagOn: boolean): PartnerCapability[] {
+  return [
+    {
+      Icon: BookOpen,
+      title: 'Helps you study more deeply',
+      subtitle:
+        'Four guided study modes — Quick, Deep, Teaching, Devotional — with steps that build on each other.',
+    },
+    {
+      Icon: Sparkles,
+      title: amicusFlagOn ? 'Drafts what you discovered' : 'Captures what you discovered',
+      subtitle: amicusFlagOn
+        ? 'Amicus turns your study into a takeaway, an outline, or a prayer — in your voice, citing what you opened.'
+        : 'Saves your synthesis in mode-specific shape — takeaway, outline, or prayer.',
+    },
+    {
+      Icon: Repeat,
+      title: 'Remembers what you have learned',
+      subtitle: 'Spaced review brings your insights back when they matter most.',
+    },
+    {
+      Icon: Languages,
+      title: 'Reads the original languages with you',
+      subtitle: 'Hebrew and Greek interlinear, lexicon depth, and word study journeys.',
+    },
+    {
+      Icon: Network,
+      title: 'Traces ideas across Scripture',
+      subtitle:
+        'Cross-references, thread navigation, and concordance across the whole canon.',
+    },
+    {
+      Icon: Library,
+      title: 'Brings 269 study articles',
+      subtitle: 'Discourse analysis, manuscript history, chiastic structure, and more.',
+    },
+    {
+      Icon: RefreshCw,
+      title: 'Syncs across your devices',
+      subtitle: 'Notes, highlights, progress — wherever you study next.',
+    },
+  ];
+}
+
+const TRUST_FOOTER_TEXT =
+  "Every claim cited. Every scholar named. No hallucinations — we will tell you when we don't know.";
 
 function SubscriptionScreen() {
   const { base } = useTheme();
@@ -49,6 +96,11 @@ function SubscriptionScreen() {
   const [selectedPlan, setSelectedPlan] = useState<PlanInfo>(PLANS[1]); // Default to annual
   const [purchasing, setPurchasing] = useState(false);
   const [restoring, setRestoring] = useState(false);
+
+  const partnerCapabilities = useMemo(
+    () => buildPartnerCapabilities(isFlagEnabled('GUIDED_STUDY_AMICUS_SYNTHESIS')),
+    [],
+  );
 
   const handlePurchase = async () => {
     setPurchasing(true);
@@ -89,7 +141,7 @@ function SubscriptionScreen() {
           <Text style={[styles.heroIcon, { color: base.gold }]}>✦</Text>
           <Text style={[styles.heroTitle, { color: base.gold }]}>Companion+</Text>
           <Text style={[styles.heroSubtitle, { color: base.textDim }]}>
-            Every Perspective. Every Tool.
+            From reading to understanding.
           </Text>
         </View>
 
@@ -188,17 +240,31 @@ function SubscriptionScreen() {
           </>
         )}
 
-        {/* Feature list */}
+        {/* Partner-led capability rows (#1746) — replaces the old flat
+            13-feature list. Verb-led, mode-aware copy on the second row
+            switches between "Captures" (flag off) and "Drafts" (flag on,
+            via #1749 in production). */}
         <View style={styles.featureSection}>
           <Text style={[styles.featureSectionLabel, { color: base.gold }]}>
-            INCLUDED WITH COMPANION+
+            WHAT YOU GET
           </Text>
-          {FEATURES.map((f) => (
-            <View key={f} style={styles.featureRow}>
-              <Text style={[styles.featureCheck, { color: base.gold }]}>✓</Text>
-              <Text style={[styles.featureText, { color: base.text }]}>{f}</Text>
+          {partnerCapabilities.map((cap) => (
+            <View key={cap.title} style={styles.partnerRow}>
+              <cap.Icon size={24} color={base.gold} style={styles.partnerRowIcon} />
+              <View style={styles.partnerRowText}>
+                <Text style={[styles.partnerRowTitle, { color: base.text }]}>{cap.title}</Text>
+                <Text style={[styles.partnerRowSubtitle, { color: base.textDim }]}>
+                  {cap.subtitle}
+                </Text>
+              </View>
             </View>
           ))}
+          <Text
+            style={[styles.trustFooter, { color: base.textMuted }]}
+            accessibilityLabel="Trust statement"
+          >
+            {TRUST_FOOTER_TEXT}
+          </Text>
         </View>
 
         {/* Partner+ tier (#1472) — compact upsell card for AI-heavy users. */}
@@ -417,6 +483,36 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.uiMedium,
     fontSize: 14,
     flex: 1,
+  },
+  partnerRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: spacing.sm,
+    paddingVertical: spacing.sm,
+  },
+  partnerRowIcon: {
+    marginTop: 2,
+  },
+  partnerRowText: {
+    flex: 1,
+    gap: 2,
+  },
+  partnerRowTitle: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 15,
+    lineHeight: 20,
+  },
+  partnerRowSubtitle: {
+    fontFamily: fontFamily.body,
+    fontSize: 13,
+    lineHeight: 19,
+  },
+  trustFooter: {
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 12,
+    lineHeight: 17,
+    marginTop: spacing.md,
+    paddingHorizontal: spacing.xs,
   },
   finePrint: {
     fontFamily: fontFamily.ui,
