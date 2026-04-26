@@ -27,6 +27,12 @@ export interface SynthesisRunContext {
   sessionId: number | null;
   bookId: string;
   chapterNum: number;
+  /**
+   * Optional abort signal for streaming strategies (premium_amicus).
+   * When the signal aborts mid-stream, the strategy should reject without
+   * persisting any artifact (#1748).
+   */
+  abortSignal?: AbortSignal;
 }
 
 export interface CitationRef {

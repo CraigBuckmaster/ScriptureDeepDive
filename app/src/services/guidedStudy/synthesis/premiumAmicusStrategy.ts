@@ -30,6 +30,7 @@ import { REVIEW_INTERVAL_DAYS } from '../review';
 import type { CapturedInputs } from '../capturedInputs';
 import type { GuidedStudyMode } from '../types';
 import type {
+  CitationRef,
   ReviewArtifact,
   SynthesisOutputBlock,
   SynthesisStrategy,
@@ -163,10 +164,11 @@ export function parseModeArtifact(
 export function buildAmicusOutputBlocks(
   fullText: string,
   artifact: ReviewArtifact,
+  citations: CitationRef[] = [],
 ): SynthesisOutputBlock[] {
   const blocks: SynthesisOutputBlock[] = [];
   if (fullText.trim().length > 0) {
-    blocks.push({ type: 'amicus_text', html: fullText, citations: [] });
+    blocks.push({ type: 'amicus_text', html: fullText, citations });
   }
   blocks.push({
     type: 'confirmation',
@@ -188,6 +190,7 @@ interface AmicusStreamRunner {
     chapterNum: number;
     abortSignal?: AbortSignal;
     callbacks?: SynthesisStrategyCallbacks;
+    onCitation?: (citation: CitationRef) => void;
   }): Promise<string>;
 }
 
@@ -199,7 +202,8 @@ const defaultRunner: AmicusStreamRunner = {
     }
     const controller = new AbortController();
     if (args.abortSignal) {
-      args.abortSignal.addEventListener('abort', () => controller.abort());
+      if (args.abortSignal.aborted) controller.abort();
+      else args.abortSignal.addEventListener('abort', () => controller.abort());
     }
     return await new Promise<string>((resolve, reject) => {
       let acc = '';
@@ -217,10 +221,13 @@ const defaultRunner: AmicusStreamRunner = {
           acc += token;
           args.callbacks?.onAmicusDelta?.(token);
         },
-        onCitation: () => {
-          // Citation pills are surfaced through the streaming UI; the
-          // strategy doesn't aggregate them here. SynthesisPremiumDraft
-          // renders them when present.
+        onCitation: (pill) => {
+          // Map the streaming-pill shape onto our typed CitationRef so
+          // downstream blocks stay decoupled from streamParser internals.
+          args.onCitation?.({
+            panelType: pill.source_type,
+            snippet: pill.display_label,
+          });
         },
         onGapSignal: () => {
           // Gap signals are an Amicus internal hint; not relevant to
@@ -260,6 +267,8 @@ export const premiumAmicusStrategy: SynthesisStrategy = {
       modeSpecificContext: extractModeContext(ctx.plan.mode, ctx.captured),
     });
 
+
+    const citations: CitationRef[] = [];
     let fullText = '';
     try {
       fullText = await activeRunner.run({
@@ -267,11 +276,21 @@ export const premiumAmicusStrategy: SynthesisStrategy = {
         threadId: synthesisThreadId(ctx.sessionId),
         bookId: ctx.bookId,
         chapterNum: ctx.chapterNum,
+        abortSignal: ctx.abortSignal,
         callbacks,
+        onCitation: (citation) => {
+          citations.push(citation);
+        },
       });
     } catch (err) {
       logger.warn('premiumAmicus', 'stream failed', err);
       throw err;
+    }
+
+    if (ctx.abortSignal?.aborted) {
+      // Caller cancelled mid-stream. Do not persist anything; surface the
+      // abort to the caller via a rejection so state stays consistent.
+      throw new Error('premiumAmicus: aborted');
     }
 
     const artifact = parseModeArtifact(ctx.plan.mode, fullText, ctx.captured, ctx.plan.title);
@@ -292,7 +311,7 @@ export const premiumAmicusStrategy: SynthesisStrategy = {
 
     return {
       kind: 'premium_amicus',
-      output: buildAmicusOutputBlocks(fullText, artifact),
+      output: buildAmicusOutputBlocks(fullText, artifact, citations),
       artifact,
     };
   },
