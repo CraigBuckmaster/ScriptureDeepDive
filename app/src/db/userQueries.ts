@@ -525,6 +525,18 @@ export async function getSynthesisStrategy(
   return null;
 }
 
+/**
+ * Number of guided study sessions the user has marked completed. Used by
+ * the soft "after 3 sessions" upgrade prompt (#1742). Counts every
+ * session ever completed regardless of mode or chapter.
+ */
+export async function getCompletedGuidedSessionCount(): Promise<number> {
+  const row = await getUserDb().getFirstAsync<{ count: number }>(
+    "SELECT COUNT(*) AS count FROM guided_study_sessions WHERE status = 'completed'",
+  );
+  return row?.count ?? 0;
+}
+
 export async function getDueGuidedReviewItems(limit: number = 20): Promise<GuidedReviewItem[]> {
   return getUserDb().getAllAsync<GuidedReviewItem>(
     `SELECT * FROM guided_review_items

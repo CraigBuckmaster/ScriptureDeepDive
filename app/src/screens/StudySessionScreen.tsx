@@ -59,6 +59,7 @@ import type {
   SynthesisOutputBlock,
   SynthesisRunResult,
 } from '../services/guidedStudy/synthesis/strategy';
+import { markSoftPromptSeen, shouldShowSoftPrompt } from '../services/guidedStudy/softPrompt';
 import { isFlagEnabled } from '../config/featureFlags';
 import { useAmicusAccess } from '../hooks/useAmicusAccess';
 import type { CapturedInputs } from '../services/guidedStudy/capturedInputs';
@@ -225,6 +226,23 @@ function StudySessionScreen() {
       void setSessionStep(initialStep);
     }
   }, [currentStep, initialStep, sessionId, setSessionStep]);
+
+  // Soft "after 3 sessions" upgrade nudge (#1742). Fires once per device
+  // for free users who reach the review step with >= 3 completed sessions.
+  // markSoftPromptSeen runs before the modal so re-entering the review step
+  // can't double-fire.
+  useEffect(() => {
+    if (currentStep !== 'review') return;
+    let cancelled = false;
+    void shouldShowSoftPrompt({ isPremium }).then((show) => {
+      if (cancelled || !show) return;
+      void markSoftPromptSeen();
+      showUpgrade('feature', 'Companion Study Partner');
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [currentStep, isPremium, showUpgrade]);
 
   const plan = useMemo(() => {
     if (!chapter) return null;
