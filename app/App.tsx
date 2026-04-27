@@ -37,6 +37,7 @@ import { ErrorBoundary } from './src/components/ErrorBoundary';
 import { closeAllTranslationDbs } from './src/db/translationManager';
 import { ContentUpdateProvider } from './src/providers/ContentUpdateProvider';
 import { AmicusConsentProvider } from './src/services/amicus/consent';
+import type { PromotePeekResult } from './src/services/amicus';
 import { AmicusFabProvider } from './src/contexts/AmicusFabContext';
 import AmicusFab from './src/components/amicus/AmicusFab';
 import { AmicusFabErrorFallback } from './src/components/amicus/AmicusFabErrorFallback';
@@ -154,6 +155,35 @@ function AppShell() {
     };
   }, [themeBase, mode]);
 
+  // ── Amicus peek-to-thread handoff (#1464) ─────────────────────────────
+  // Centralizes navigation tree shape in App.tsx. The FAB calls a
+  // navigation-agnostic service that returns a PromotePeekResult; this
+  // callback maps each result kind to the correct screen + params. If the
+  // navigators are ever restructured, this is the single call site that
+  // needs to change — the service and the FAB stay untouched.
+  const handleAmicusContinueInTab = useCallback((result: PromotePeekResult) => {
+    if (!navigationRef.isReady()) return;
+    if (result.kind === 'existing') {
+      navigationRef.navigate('AmicusTab', {
+        screen: 'Thread',
+        params: {
+          threadId: result.threadId,
+          seedChapterRef: result.seedChapterRef,
+          seedGuidedContext: result.seedGuidedContext,
+        },
+      });
+    } else {
+      navigationRef.navigate('AmicusTab', {
+        screen: 'NewThread',
+        params: {
+          seedChapterRef: result.seedChapterRef,
+          promotedMessages: result.promotedMessages,
+          seedGuidedContext: result.seedGuidedContext,
+        },
+      });
+    }
+  }, []);
+
   return (
     <>
       <NavigationContainer ref={navigationRef} theme={navTheme} linking={linking}>
@@ -161,7 +191,7 @@ function AppShell() {
           <RootNavigator />
         </ErrorBoundary>
         <ErrorBoundary renderFallback={AmicusFabErrorFallback}>
-          <AmicusFab />
+          <AmicusFab onContinueInTab={handleAmicusContinueInTab} />
         </ErrorBoundary>
       </NavigationContainer>
       <StatusBar style={statusBarStyle === 'light-content' ? 'light' : 'dark'} />

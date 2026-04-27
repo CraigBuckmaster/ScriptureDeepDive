@@ -18,7 +18,7 @@ import { useAmicusAccess } from '../../hooks/useAmicusAccess';
 import { useAmicusChipContext } from '../../hooks/useAmicusChipContext';
 import { useAmicusGuidedRouteContext } from '../../hooks/useAmicusGuidedRouteContext';
 import { chapterRefFromChipContext, formatAmicusContextLabel } from '../../services/amicus/context';
-import { promotePeekToAmicusThread } from '../../services/amicus';
+import { promotePeekToThread, type PromotePeekResult } from '../../services/amicus';
 import type { AmicusDraftMessage } from '../../types';
 import { logger } from '../../utils/logger';
 import AmicusPeekSheet from './AmicusPeekSheet';
@@ -28,7 +28,21 @@ const TAB_BAR_HEIGHT = 56; // matches React Navigation bottom-tab default
 const BOTTOM_MARGIN = 16;
 const RIGHT_MARGIN = 16;
 
-export default function AmicusFab(): React.ReactElement | null {
+export interface AmicusFabProps {
+  /**
+   * Optional callback invoked after peek messages have been promoted to a
+   * thread (#1464). Receives a navigation-agnostic `PromotePeekResult` and
+   * is responsible for performing the actual `navigate(...)` call. When
+   * provided, replaces the FAB's internal navigation entirely.
+   *
+   * Typically wired in `App.tsx` against `navigationRef`, so the FAB is
+   * decoupled from React Navigation's tab/tree shape. When absent, the
+   * FAB falls back to its own `useNavigation()` for backward compatibility.
+   */
+  onContinueInTab?: (result: PromotePeekResult) => void;
+}
+
+export default function AmicusFab(props: AmicusFabProps = {}): React.ReactElement | null {
   const { base } = useTheme();
   const insets = useSafeAreaInsets();
   // Defensive: useNavigation throws synchronously if no NavigationContainer
@@ -82,20 +96,56 @@ export default function AmicusFab(): React.ReactElement | null {
 
   const handleContinueInTab = useCallback(
     async (snapshot: AmicusDraftMessage[]) => {
-      if (!navigation) return;
       setHandoffInProgress(true);
       try {
-        await promotePeekToAmicusThread(navigation, {
+        const result = await promotePeekToThread({
           messages: snapshot,
           chapterRef,
           guidedContext: guidedRouteContext,
         });
+
+        // Prefer the parent-provided callback (the new pattern from #1464).
+        // It owns the navigation tree shape — service stays navigation-agnostic.
+        if (props.onContinueInTab) {
+          props.onContinueInTab(result);
+          setPeekOpen(false);
+          return;
+        }
+
+        // Fallback: the FAB navigates itself. Kept so the component remains
+        // usable even when a parent forgets to wire the callback (e.g. tests
+        // that mount AmicusFab directly without App.tsx).
+        if (!navigation) return;
+        const parent = navigation.getParent<NavigationProp<ParamListBase>>();
+        if (!parent) {
+          logger.warn('AmicusFab', 'no parent navigator for peek promotion fallback');
+          return;
+        }
+        if (result.kind === 'existing') {
+          parent.navigate('AmicusTab', {
+            screen: 'Thread',
+            params: {
+              threadId: result.threadId,
+              seedChapterRef: result.seedChapterRef,
+              seedGuidedContext: result.seedGuidedContext,
+            },
+          });
+        } else {
+          parent.navigate('AmicusTab', {
+            screen: 'NewThread',
+            params: {
+              seedChapterRef: result.seedChapterRef,
+              promotedMessages: result.promotedMessages,
+              seedGuidedContext: result.seedGuidedContext,
+            },
+          });
+        }
         setPeekOpen(false);
       } finally {
         setHandoffInProgress(false);
       }
     },
-    [chapterRef, guidedRouteContext, navigation],
+    [chapterRef, guidedRouteContext, navigation, props],
   );
 
   const handleOpenExistingThread = useCallback(() => {
