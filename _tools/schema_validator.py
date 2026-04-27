@@ -199,6 +199,23 @@ def main():
             if sv != CURRENT_SCHEMA_VERSION:
                 stale_schema_count += 1
 
+            # Per-chapter genre override (#1724) — atomic both-or-neither.
+            # If a chapter sets one of (chapter_genre_label, chapter_genre_guidance)
+            # it must set the other; otherwise the resolver in app code falls
+            # through to book-level entirely (mismatched mixing is forbidden).
+            has_label = 'chapter_genre_label' in data
+            has_guidance = 'chapter_genre_guidance' in data
+            if has_label != has_guidance:
+                check(f"{json_file.name} chapter genre fields paired", False,
+                      "must set both chapter_genre_label and chapter_genre_guidance, or neither")
+            elif has_label and has_guidance:
+                lbl = data['chapter_genre_label']
+                gdc = data['chapter_genre_guidance']
+                if not isinstance(lbl, str) or not lbl.strip():
+                    check(f"{json_file.name} chapter_genre_label non-empty string", False)
+                if not isinstance(gdc, str) or not gdc.strip():
+                    check(f"{json_file.name} chapter_genre_guidance non-empty string", False)
+
             sections = data.get('sections', [])
             check(f"{json_file.name} has sections", len(sections) >= 1,
                   f"got {len(sections)}")
