@@ -141,9 +141,9 @@ TARGETS: list[ArtTarget] = [
         description='Prophecy/suffering_servant — Michelangelo: Prophet Isaiah',
     ),
     ArtTarget(
-        r2_filename='michelangelo-daniel.jpg',
-        source_url='https://upload.wikimedia.org/wikipedia/commons/1/16/Michelangelo%2C_profeti%2C_Daniel_03.jpg',
-        description='Prophecy/son_of_man — Michelangelo: Prophet Daniel',
+        r2_filename='dore-daniel-four-beasts.jpg',
+        source_url='https://upload.wikimedia.org/wikipedia/commons/5/5b/132.Daniel%27s_Vision_of_the_Four_Beasts.jpg',
+        description='Prophecy/son_of_man — Doré: Daniel\'s Vision of the Four Beasts (1866)',
     ),
     ArtTarget(
         r2_filename='michelangelo-jeremiah.jpg',

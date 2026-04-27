@@ -105,13 +105,13 @@ SUBJECTS = [
         'name_should_include': ['michelangelo', 'sistine'],
     },
     {
-        'r2_filename': 'michelangelo-daniel.jpg',
+        'r2_filename': 'dore-daniel-four-beasts.jpg',
         'first_guesses': [
-            'Michelangelo, profeti, Daniel 03.jpg',
+            "132.Daniel's Vision of the Four Beasts.jpg",
         ],
-        'search': 'Daniel Sistine Chapel Michelangelo prophet',
+        'search': "Daniel's Vision of the Four Beasts Doré",
         'name_must_include': ['daniel'],
-        'name_should_include': ['michelangelo', 'sistine'],
+        'name_should_include': ['four', 'beasts'],
     },
     {
         'r2_filename': 'michelangelo-jeremiah.jpg',
