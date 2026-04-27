@@ -30,6 +30,7 @@ import { useNotedVerses } from '../hooks/useNotedVerses';
 import { useSettingsStore, useReaderStore } from '../stores';
 import { recordVisit } from '../db/user';
 import { GenreBanner } from '../components/GenreBanner';
+import { resolveGenre } from '../utils/genre';
 import { useTranslationSwitch } from '../hooks/useTranslationSwitch';
 import { useStoreReview } from '../hooks/useStoreReview';
 import { logEvent } from '../services/analytics';
@@ -478,9 +479,13 @@ function ChapterScreen() {
           />
         ) : null}
 
-        {!isFocus && bookData?.genre_label && bookData?.genre_guidance ? (
-          <GenreBanner genreLabel={bookData.genre_label} genreGuidance={bookData.genre_guidance} />
-        ) : null}
+        {(() => {
+          if (isFocus) return null;
+          const genre = resolveGenre(bookData, chapter);
+          return genre ? (
+            <GenreBanner genreLabel={genre.label} genreGuidance={genre.guidance} />
+          ) : null;
+        })()}
 
         <ChapterReaderProvider
           verse={{

@@ -1,4 +1,5 @@
 import type { SectionPanel } from '../../types';
+import { resolveGenre } from '../../utils/genre';
 import { getModeDefinition } from './modes/definitions';
 import {
   GUIDED_STUDY_STEPS,
@@ -260,7 +261,9 @@ function buildEvidenceTrail(
 
 function buildConceptChips(input: GuidedStudyPlanInput): GuidedConceptChip[] {
   const chips: GuidedConceptChip[] = [];
-  const genre = compact(input.book?.genre_label) ?? compact(input.bookIntro?.at_a_glance?.genre);
+  // #1724 — chapter override wins, then book-level, then bookIntro fallback.
+  const resolved = resolveGenre(input.book, input.chapter);
+  const genre = resolved?.label ?? compact(input.bookIntro?.at_a_glance?.genre);
   if (genre) {
     chips.push({ id: `genre:${genre.toLowerCase().replace(/\s+/g, '-')}`, label: genre });
   }
@@ -292,11 +295,13 @@ export function buildGuidedStudyPlan(input: GuidedStudyPlanInput): GuidedStudyPl
   const purpose = firstSentence(input.bookIntro?.purpose);
   const moment =
     compact(input.chapter.subtitle) ?? compact(input.chapter.title) ?? displayChapter(input);
+  // #1724 — chapter override wins, then book-level, then bookIntro fallback.
+  const resolvedGenre = resolveGenre(input.book, input.chapter);
   const genre =
-    compact(input.book?.genre_label) ??
+    resolvedGenre?.label ??
     compact(input.bookIntro?.at_a_glance?.genre) ??
     'Biblical literature';
-  const guidance = compact(input.book?.genre_guidance);
+  const guidance = resolvedGenre?.guidance;
   const audienceContext =
     compact(input.bookIntro?.era) ?? compact(input.bookIntro?.at_a_glance?.chapters?.toString());
   const def = getModeDefinition(mode);
@@ -306,7 +311,7 @@ export function buildGuidedStudyPlan(input: GuidedStudyPlanInput): GuidedStudyPl
   const legacyPrompts: GuidedPrompt[] = [
     {
       key: 'genre-observation',
-      text: genrePrompt(input.book?.genre_label ?? input.bookIntro?.at_a_glance?.genre),
+      text: genrePrompt(resolvedGenre?.label ?? input.bookIntro?.at_a_glance?.genre),
     },
     { key: 'better-question', text: betterQuestion },
   ];

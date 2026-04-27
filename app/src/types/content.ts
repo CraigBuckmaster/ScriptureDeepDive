@@ -30,6 +30,16 @@ export interface Chapter {
   prayer_prompt?: string | null;
   related_life_topics_json?: string | null;
   redemptive_act?: string | null;
+  /**
+   * Per-chapter genre override (#1724). Atomic with `chapter_genre_guidance`:
+   * both populated, or both null. When present, overrides book-level
+   * `genre_label` / `genre_guidance` in the GenreBanner and Guided Study
+   * mode prompts. Use `resolveGenre()` from `utils/genre.ts` rather than
+   * reading these directly so the both-or-neither rule is honored.
+   */
+  chapter_genre_label?: string | null;
+  /** See `chapter_genre_label`. Atomic pair — both or neither. */
+  chapter_genre_guidance?: string | null;
 }
 
 export interface CoachingTip {
