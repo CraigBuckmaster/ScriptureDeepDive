@@ -16,7 +16,8 @@ export {
   serializeAmicusChapterRef,
 } from './context';
 export { buildStudyActionSeeds } from './studyActions';
-export { launchAmicusStudyThread, promotePeekToAmicusThread } from './studyLaunch';
+export { launchAmicusStudyThread } from './studyLaunch';
+export { promotePeekToThread } from './promotePeekToThread';
 export {
   deriveThreadIntelligence,
   shouldAutoRenameThread,
@@ -25,7 +26,8 @@ export {
 export { formatTrustStanceLabel, summarizeAmicusTrust } from './trust';
 export type { AmicusContextEnvelope, AmicusEntryPoint, AmicusGuidedStudyContext } from './context';
 export type { AmicusStudyActionKey, AmicusStudyActionSeed } from './studyActions';
-export type { LaunchAmicusStudyThreadInput, PromotePeekToStudyThreadInput } from './studyLaunch';
+export type { LaunchAmicusStudyThreadInput } from './studyLaunch';
+export type { PromotePeekResult, PromotePeekToThreadInput } from './promotePeekToThread';
 export type { DerivedThreadIntelligence } from './threadIntelligence';
 export type { AmicusTrustStance, AmicusTrustSummary } from './trust';
 export { AmicusError } from './types';
