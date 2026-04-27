@@ -281,6 +281,8 @@ export interface HermeneuticLens {
   id: string;
   name: string;
   description: string;
+  /** Long-form explanation rendered on the lens browse card detail. */
+  long_description?: string;
   icon?: string;
   display_order: number;
 }

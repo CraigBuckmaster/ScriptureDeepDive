@@ -1,0 +1,79 @@
+{
+  "_comment": "Per-lens rubric tokens for lens_quality_scorer.py. Soft scoring: at least one token from `must_have_one_of` should appear in guidance to score full points on the Completeness dimension. `should_avoid` patterns trigger Relevance penalties. Edit freely; the scorer reloads on every run.",
+  "grammatical": {
+    "must_have_one_of": [
+      "grammar", "syntax", "verb", "noun", "imperative", "participle", "tense",
+      "aspect", "wordplay", "Hebrew", "Greek", "literal", "audience", "original",
+      "context", "background", "first hearers", "ancient", "rhetorical"
+    ],
+    "should_avoid": [
+      "modern application", "applies to us today", "this means for us"
+    ]
+  },
+  "literary": {
+    "must_have_one_of": [
+      "structure", "chiasm", "chiastic", "parallel", "parallelism", "inclusio",
+      "narrative", "poetry", "genre", "form", "repetition", "refrain", "motif",
+      "imagery", "symbol", "rhythm", "framing", "bookend", "envelope"
+    ],
+    "should_avoid": [
+      "the lens reveals", "this lens shows"
+    ]
+  },
+  "typological": {
+    "must_have_one_of": [
+      "type", "antitype", "foreshadow", "shadow", "pattern", "fulfillment",
+      "fulfilled", "anticipates", "prefigures", "points to Christ", "points forward",
+      "echoes", "preview", "model"
+    ],
+    "should_avoid": [
+      "merely historical", "no Christological"
+    ]
+  },
+  "redemptive": {
+    "must_have_one_of": [
+      "redemption", "redemptive", "salvation", "covenant", "promise",
+      "story of God", "story of redemption", "unfolding", "arc", "biblical theology",
+      "creation", "fall", "exodus", "exile", "restoration", "new creation",
+      "kingdom", "plan"
+    ],
+    "should_avoid": []
+  },
+  "christocentric": {
+    "must_have_one_of": [
+      "Christ", "Jesus", "Messiah", "Son of God", "Son of Man", "Lord",
+      "Savior", "fulfilled in Christ", "points to", "anticipates Christ",
+      "gospel", "cross", "resurrection", "incarnation"
+    ],
+    "should_avoid": [
+      "moralism", "merely an example"
+    ]
+  },
+  "canonical": {
+    "must_have_one_of": [
+      "canon", "canonical", "echoes", "echoed", "intertextual", "thread",
+      "throughout Scripture", "across Scripture", "elsewhere", "later",
+      "earlier", "compare", "alludes", "allusion", "Old Testament",
+      "New Testament", "whole Bible"
+    ],
+    "should_avoid": []
+  },
+  "devotional": {
+    "must_have_one_of": [
+      "pray", "prayer", "worship", "trust", "obey", "obedience", "repent",
+      "confess", "hope", "comfort", "heart", "today", "live", "respond",
+      "believe", "faith", "rest in", "draw near"
+    ],
+    "should_avoid": [
+      "merely emotional", "no doctrinal"
+    ]
+  },
+  "mission": {
+    "must_have_one_of": [
+      "mission", "missional", "nations", "witness", "send", "sent",
+      "outward", "the world", "every people", "gospel proclamation",
+      "evangelism", "ends of the earth", "calling", "vocation", "neighbor"
+    ],
+    "should_avoid": []
+  }
+}

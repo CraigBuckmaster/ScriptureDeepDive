@@ -6,6 +6,10 @@
  * Card #1359 (UI polish phase 2): migrated from a raw ScrollView to the
  * BrowseScreenTemplate (FlatList). The intro paragraph is rendered via the
  * template's flatListProps.ListHeaderComponent so it scrolls with the list.
+ *
+ * Epic #820 / Phase 0: removed the hardcoded LENS_DETAILS map. Long-form
+ * lens descriptions now live in the `hermeneutic_lenses.long_description`
+ * column and are sourced from content/hermeneutic_lenses/lenses.json.
  */
 
 import React, { useCallback } from 'react';
@@ -21,19 +25,6 @@ import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 /** Sample chapter to navigate to for trying a lens. */
 const SAMPLE_CHAPTER = { bookId: 'genesis', chapterNum: 1 };
-
-const LENS_DETAILS: Record<string, string> = {
-  'historical-grammatical':
-    'Seeks the original meaning of the text by analyzing grammar, syntax, and historical context. This approach asks: "What did the author intend, and what did the original audience understand?"',
-  'redemptive-historical':
-    'Reads every passage within the grand story of God\'s plan of redemption unfolding across Scripture. Traces how each text contributes to the arc from creation to new creation.',
-  literary:
-    'Focuses on the literary artistry of the text: genre, structure, chiasm, parallelism, and narrative technique. Asks how the form of the text shapes its meaning.',
-  typological:
-    'Identifies patterns (types) in earlier Scripture that find their fulfillment (antitypes) in later revelation. Traces shadows and substance across the testaments.',
-  canonical:
-    'Reads each passage in light of the whole canon of Scripture, asking how earlier and later books illuminate and qualify one another. Emphasizes intertextual connections.',
-};
 
 function LensBrowseScreen() {
   const { base } = useTheme();
@@ -62,11 +53,11 @@ function LensBrowseScreen() {
       <Text style={[styles.cardDescription, { color: base.textDim }]}>
         {lens.description}
       </Text>
-      {LENS_DETAILS[lens.id] && (
+      {lens.long_description ? (
         <Text style={[styles.cardDetail, { color: base.textMuted }]}>
-          {LENS_DETAILS[lens.id]}
+          {lens.long_description}
         </Text>
-      )}
+      ) : null}
       <TouchableOpacity
         onPress={() => handleTry(lens.id)}
         activeOpacity={0.7}

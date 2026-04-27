@@ -21,6 +21,17 @@ PROOF_TEXT_GUARDS_PATH = META / 'proof-text-guards.json'
 AVAILABLE_TRANSLATIONS = {'kjv', 'asv'}
 BUNDLED_TRANSLATIONS = {'kjv', 'asv'}
 
+# Subdirectories of content/ that are NOT books — must be skipped by every
+# chapter-walk loop. Kept as a single source of truth to prevent the bug
+# where adding a new content directory (e.g. hermeneutic_lenses) silently
+# breaks loaders that don't get the skip-set updated. Mirrors the constant
+# of the same name in schema_validator.py and lens_quality_scorer.py.
+NON_BOOK_DIRS = frozenset({
+    'meta', 'verses', 'interlinear', 'archaeology', 'life_topics',
+    'historical_interpretations', 'grammar', 'map-styles',
+    'hermeneutic_lenses',
+})
+
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -218,7 +229,7 @@ def populate_chapters(cur):
 
     content_dir = ROOT / 'content'
     for book_dir in sorted(content_dir.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
+        if not book_dir.is_dir() or book_dir.name in NON_BOOK_DIRS:
             continue
         book_id = book_dir.name
         for json_file in sorted(book_dir.glob('*.json')):
@@ -1338,9 +1349,10 @@ def populate_hermeneutic_lenses(cur):
             assert 'id' in lens and 'name' in lens and 'description' in lens, \
                 f"Lens missing required fields: {lens}"
             cur.execute(
-                'INSERT INTO hermeneutic_lenses (id, name, description, icon, display_order) '
-                'VALUES (?, ?, ?, ?, ?)',
+                'INSERT INTO hermeneutic_lenses (id, name, description, long_description, icon, display_order) '
+                'VALUES (?, ?, ?, ?, ?, ?)',
                 (lens['id'], lens['name'], lens['description'],
+                 lens.get('long_description'),
                  lens.get('icon'), lens.get('display_order', 0))
             )
             lens_count += 1
@@ -1549,7 +1561,7 @@ def populate_content_library(cur):
     count = 0
     content_dir = ROOT / 'content'
     for book_dir in sorted(content_dir.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
+        if not book_dir.is_dir() or book_dir.name in NON_BOOK_DIRS:
             continue
         book_id = book_dir.name
         info = book_info.get(book_id)

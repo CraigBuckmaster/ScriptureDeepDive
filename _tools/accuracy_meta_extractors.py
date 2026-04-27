@@ -55,6 +55,7 @@ class MetaClaimExtractor:
         claims.extend(self.extract_cross_refs())
         claims.extend(self.extract_extrabiblical())
         claims.extend(self.extract_canon_traditions())
+        claims.extend(self.extract_hermeneutic_lenses())
         return claims
 
     def _load(self, filename: str):
@@ -1149,4 +1150,63 @@ class MetaClaimExtractor:
                         verification_tier=2,
                     ))
 
+        return claims
+
+    # ── Hermeneutic Lenses (Epic #820) ─────────────────────────
+
+    def extract_hermeneutic_lenses(self) -> list[Claim]:
+        """Extract claims from content/hermeneutic_lenses/chapters/*.json.
+
+        Each (chapter, lens) entry produces one Tier-2 claim. The verifier
+        is asked to confirm the guidance reflects a position the named
+        hermeneutical school genuinely advocates — not a fabricated framework.
+
+        claim_type='historical' is the catch-all bucket for general assertions
+        (matches how topics.json descriptions are extracted). Adding a new
+        'hermeneutical' claim_type would require updating SCORING_WEIGHTS
+        in accuracy_config.py, which is out of scope for the extractor.
+        """
+        # Lenses live outside content/meta — walk up to ROOT/content/hermeneutic_lenses.
+        # self.meta_dir is content/meta, so its parent is content/.
+        lens_dir = self.meta_dir.parent / 'hermeneutic_lenses'
+        chapters_dir = lens_dir / 'chapters'
+        if not chapters_dir.is_dir():
+            return []
+
+        # Build lens name lookup so the prompt to the verifier mentions
+        # human-readable lens names (e.g. "Grammatical-Historical"), not IDs.
+        lens_names: dict[str, str] = {}
+        lenses_path = lens_dir / 'lenses.json'
+        if lenses_path.exists():
+            try:
+                for lens in json.load(open(lenses_path, encoding='utf-8')):
+                    lens_names[lens['id']] = lens.get('name', lens['id'])
+            except (json.JSONDecodeError, KeyError, OSError):
+                pass
+
+        claims = []
+        for json_file in sorted(chapters_dir.glob('*.json')):
+            chapter_id = json_file.stem
+            try:
+                data = json.load(open(json_file, encoding='utf-8'))
+            except (json.JSONDecodeError, OSError):
+                continue
+            for j, entry in enumerate(data.get('lenses', []) or []):
+                lens_id = entry.get('lens_id', '')
+                guidance = entry.get('guidance', '')
+                if not lens_id or len(guidance) < 30:
+                    continue
+                lens_name = lens_names.get(lens_id, lens_id)
+                claims.append(Claim(
+                    id=_meta_id('lens', f"{chapter_id}-{lens_id}", j),
+                    chapter_id=f"meta_lens_{chapter_id}",
+                    book_dir='meta',
+                    section_num=None,
+                    panel_type='hermeneutic_lens',
+                    claim_type='historical',
+                    claim_text=f"[{lens_name} lens, {chapter_id}] {guidance}",
+                    source_attribution=lens_name,
+                    verse_ref=None,
+                    verification_tier=2,
+                ))
         return claims

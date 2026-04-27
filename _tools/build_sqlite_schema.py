@@ -554,6 +554,7 @@ CREATE TABLE IF NOT EXISTS hermeneutic_lenses (
   id TEXT PRIMARY KEY,
   name TEXT NOT NULL,
   description TEXT NOT NULL,
+  long_description TEXT,
   icon TEXT,
   display_order INTEGER NOT NULL
 );

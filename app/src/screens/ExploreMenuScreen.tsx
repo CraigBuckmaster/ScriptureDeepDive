@@ -105,7 +105,7 @@ const SECTIONS: FeatureSection[] = [
   {
     id: 'deep-dive', label: 'Deep Dive', subtitle: 'Advanced study tools',
     features: [
-      { title: 'Hermeneutic Lenses', subtitle: 'Feminist, liberation, canonical & more',                color: '#BA68C8', screen: 'LensBrowse' }, // data-color: intentional
+      { title: 'Hermeneutic Lenses', subtitle: 'Read Scripture through 8 interpretive frameworks',     color: '#BA68C8', screen: 'LensBrowse' }, // data-color: intentional
       { title: 'Archaeology',        subtitle: 'Real artifacts that illuminate the text',                color: '#b07d4f', screen: 'ArchaeologyBrowse' }, // data-color: intentional
       { title: 'Time-Travel Reader', subtitle: 'Augustine, Luther & modern scholars',                   color: '#8a6a3a', screen: 'TimeTravelBrowse' }, // data-color: intentional
       { title: 'Grammar',            subtitle: 'Verb forms & syntax in plain English',                  color: '#7a9ab0', screen: 'GrammarBrowse' }, // data-color: intentional
