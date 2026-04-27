@@ -86,7 +86,10 @@ def _validate_meta_faq():
         return
 
     print("\n--- 20. META-FAQ ---")
-    articles = sorted(faq_dir.glob('*.md'))
+    # PLAYBOOK.md documents the meta-faq track; it's not itself an article.
+    # Skip it (and any future ALL-CAPS .md docs) — articles have lowercase
+    # snake_case filenames matching their frontmatter `id`.
+    articles = sorted(md for md in faq_dir.glob('*.md') if md.stem.islower())
     check(f"meta_faq directory present with {len(articles)} articles",
           len(articles) >= 1, f"got {len(articles)}")
 
@@ -936,7 +939,22 @@ def main():
                     check(f"topic {tid} verse [{j}] has '{vk}'", vk in v,
                           f"missing '{vk}'")
 
+        # Known-unauthored canonical topical-Bible categories. References to
+        # these IDs from existing topics are tracked as warnings rather than
+        # failures — they're a roadmap, not typos. Unknown IDs outside this
+        # set still hard-fail to catch genuine misspellings.
+        # When a topic file is added for any of these IDs, remove from this set.
+        UNAUTHORED_TOPIC_IDS = {
+            'adoption', 'belonging', 'commitment', 'community', 'contentment',
+            'courage', 'discipline', 'faith', 'faithfulness', 'family',
+            'generosity', 'grace', 'gratitude', 'hope', 'humility',
+            'image_of_god', 'loss', 'love', 'loyalty', 'mental_renewal',
+            'patience', 'peace', 'purity', 'purpose', 'reconciliation',
+            'rest', 'sabbath', 'temptation', 'trust', 'wisdom', 'work',
+        }
+
         # Related topic refs point to known topic IDs
+        unauthored_refs: dict[str, list[str]] = {}
         for json_file in topic_files:
             try:
                 t = json.loads(json_file.read_text(encoding='utf-8'))
@@ -944,9 +962,21 @@ def main():
                 continue
             tid = t.get('id', json_file.stem)
             for rel in t.get('related', []):
-                check(f"topic {tid} related '{rel}' references valid topic",
-                      rel in topic_ids,
-                      f"'{rel}' not found among topic files")
+                if rel in topic_ids:
+                    check(f"topic {tid} related '{rel}' references valid topic",
+                          True)
+                elif rel in UNAUTHORED_TOPIC_IDS:
+                    unauthored_refs.setdefault(rel, []).append(tid)
+                else:
+                    check(f"topic {tid} related '{rel}' references valid topic",
+                          False,
+                          f"'{rel}' not found among topic files and not on the unauthored allowlist")
+
+        if unauthored_refs:
+            total_refs = sum(len(srcs) for srcs in unauthored_refs.values())
+            warn(f"{len(unauthored_refs)} canonical topical-Bible categories referenced "
+                 f"but not yet authored ({total_refs} total references)",
+                 ", ".join(sorted(unauthored_refs.keys())))
 
         print(f"  topics: {len(topic_files)}")
 
@@ -1106,13 +1136,30 @@ def main():
 
             chapter_range = era.get('chapter_range')
             if chapter_range is not None:
-                check(f"era_config {era_key} chapter_range is string",
-                      isinstance(chapter_range, str))
+                # Shape: {book_id: [start_chapter, end_chapter], ...}
+                # Eras can span multiple books (divided_kingdom -> 1kings + 2kings, etc.)
+                ok = isinstance(chapter_range, dict) and all(
+                    isinstance(k, str)
+                    and isinstance(v, list) and len(v) == 2
+                    and all(isinstance(n, int) and n > 0 for n in v)
+                    for k, v in chapter_range.items()
+                )
+                check(f"era_config {era_key} chapter_range shape",
+                      ok,
+                      "expected {book_id: [start_ch, end_ch], ...} with positive ints")
 
             geographic_center = era.get('geographic_center')
             if geographic_center is not None:
-                check(f"era_config {era_key} geographic_center is string",
-                      isinstance(geographic_center, str))
+                # Shape: {"region": str, "place_ids": [str, ...]}
+                ok = (
+                    isinstance(geographic_center, dict)
+                    and isinstance(geographic_center.get('region'), str)
+                    and isinstance(geographic_center.get('place_ids'), list)
+                    and all(isinstance(p, str) for p in geographic_center.get('place_ids', []))
+                )
+                check(f"era_config {era_key} geographic_center shape",
+                      ok,
+                      "expected {region: str, place_ids: [str, ...]}")
 
             redemptive_thread = era.get('redemptive_thread')
             if redemptive_thread is not None:
@@ -1121,8 +1168,16 @@ def main():
 
             transition_to_next = era.get('transition_to_next')
             if transition_to_next is not None:
-                check(f"era_config {era_key} transition_to_next non-empty",
-                      isinstance(transition_to_next, str) and len(transition_to_next.strip()) > 0)
+                # Empty string is valid for the terminal era (apocalyptic) —
+                # nothing comes after Revelation. Only enforce string type and
+                # non-empty for non-terminal eras.
+                if not isinstance(transition_to_next, str):
+                    check(f"era_config {era_key} transition_to_next is string",
+                          False, "expected string")
+                elif era_key != 'apocalyptic' and len(transition_to_next.strip()) == 0:
+                    check(f"era_config {era_key} transition_to_next non-empty",
+                          False,
+                          "non-terminal era must describe transition to next era")
 
             has_enrichment = any(era.get(f) is not None for f in
                                 ('summary', 'narrative', 'key_themes', 'key_people',
