@@ -38,7 +38,12 @@ CREATE TABLE chapters (
   difficulty INTEGER,
   prayer_prompt TEXT,
   related_life_topics TEXT,
-  redemptive_act TEXT
+  redemptive_act TEXT,
+  -- Per-chapter genre overrides (#1724). Atomic: both fields populated, or
+  -- both null. When present, override book-level genre_label/genre_guidance
+  -- in the GenreBanner and Guided Study mode prompts.
+  chapter_genre_label TEXT,
+  chapter_genre_guidance TEXT
 );
 
 CREATE TABLE sections (
