@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "Jacob's silence brackets the chapter — when Dinah is violated (v 5) and when the brothers act (v 30) he speaks only to register social cost, never moral judgement. The narrative repetition of his silence is the chapter's verdict.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Levi and Simeon's circumcision-deception (vv 13-17, 25-26) is judged later in Jacob's blessing (49:5-7) and echoed in Judges 19-21's covenant-people violence — a thread running throughout Scripture warning against weaponised identity.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The covenant sign — circumcision — is used to disable victims in vv 13-25. The narrative is a fall within the chosen line, demanding a redemption that no marker of identity can supply, only a renewed heart (cf. Deut 30:6).",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

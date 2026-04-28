@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "Joseph's robe carries the chapter — given (v 3), stripped (v 23), bloodied (vv 31-33). The garment motif bookends his fall and recalls Jacob's own deceiving robe in 27:15. Cloth structures Genesis betrayals.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Joseph fits a typological pattern: beloved son sent by the father (v 13), hated without cause (v 4), sold for silver (v 28), reported dead (v 33). The shape anticipates Christ — rejection by his own becomes the engine of rescue.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The dreams of vv 5-11 are the theological key: God has spoken, and no pit (v 24), caravan (v 28), or grieving father (v 35) can revoke the promise. The covenant arc bends through brotherly violence rather than around it.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Joseph is sold for twenty pieces of silver (v 28) by his brothers; Jesus is sold for thirty (Mt 26:15) by one of his own (Acts 7:9-10 reads the parallel). The beloved son rejected by his own is the gospel's deep grammar.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Reuben's failed rescue (vv 21-22) and Judah's profit motive (vv 26-27) both reverse later — Reuben's offer of his sons (42:37), Judah's substitution speech (44:18-34). The chapter plants two canonical seeds of reversal.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

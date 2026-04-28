@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "Esau running and embracing (v 4) inverts the deception of gen 27 — the brother Jacob feared most becomes the brother who weeps on his neck. The narrative structure makes reconciliation the climactic reversal of the cycle.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Twenty years of fear collapse in v 4's embrace. The covenant promise of land and seed (28:13-15) advances by way of unmerited reconciliation with the wronged brother — grace, not strategy, returns Jacob to Canaan.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Esau runs to embrace the deceiver (v 4), foreshadowing the father in Luke 15:20 who runs to the prodigal — and behind it, Christ who reconciles by absorbing the wrong rather than collecting it. Mercy outruns merit.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "'I have seen your face as one sees the face of God' (v 10) — Jacob reads the night wrestling and Esau's mercy as the same grace. Worship today by naming where God has met you in the face of an unexpected reconciliation.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}
