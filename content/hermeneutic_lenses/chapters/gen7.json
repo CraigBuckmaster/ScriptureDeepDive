@@ -1,0 +1,28 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "The waters that destroy the wicked also bear the ark — the same flood is judgment for some and salvation for others. 1 Peter 3:20-21 names this dual aspect as the type of baptism: passage through judgment-waters into a new life.",
+      "panel_filter": ["cross", "thread", "themes", "calvin"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The thoroughness of the judgment (vv 21-23: 'every living thing… was wiped out') sets the scale of God's response to sin. Yet the chapter's redemption pivots on v 16's gentle clause: 'and the LORD shut him in' — judgment and rescue held together by the same divine hand.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Jesus draws the parallel himself at Matthew 24:37-39: the days of Noah are the days of the Son of Man. The ark, into which God shut his people for safety, prefigures Christ in whom believers are hidden (Col 3:3) until the day of judgment passes.",
+      "panel_filter": ["cross", "thread", "calvin", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The flood reappears as canonical paradigm: Mt 24, Lk 17, 2 Pet 2:5, 2 Pet 3:5-6, Heb 11:7. Each picks up a different facet — eschatological warning, divine patience, faith of the rescued — but all read this chapter as foundational, not merely historical.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}

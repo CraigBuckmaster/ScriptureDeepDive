@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "The serpent's question 'did God really say…?' (v 1) twists God's actual command from 2:16-17. The Hebrew arum (crafty, v 1) wordplays with arummim (naked, 2:25), tying the serpent's craft to the couple's vulnerability.",
+      "panel_filter": ["heb", "hist", "ctx", "sarna", "alter", "net"],
+      "panel_order": ["heb", "alter", "sarna", "net", "ctx", "hist"]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "The 'seed of the woman' who will crush the serpent's head (v 15) is the protoevangelium — the first gospel promise, fulfilled in Christ. Paul reads him as that seed (Gal 3:16; Rom 16:20), with the cross as the serpent-crushing victory. The skins of v 21 prefigure substitution.",
+      "panel_filter": ["cross", "thread", "themes", "calvin"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The fall in vv 1-7 ruptures the creation order; vv 14-19 announce the curses; v 15 announces the redemption that the rest of Scripture will trace. Every later promise — to Abraham, to David, to the prophets — flows from this verse.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Christ is the seed of the woman who will bruise the serpent (v 15). Where Adam fails the test in the garden, Christ succeeds in the wilderness (Mt 4) and Gethsemane. The skins of v 21 anticipate the substitutionary death by which sinners are clothed in Christ's righteousness.",
+      "panel_filter": ["cross", "thread", "calvin", "mac", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "mac", "themes"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Genesis 3 is the wound the rest of the canon labors to heal. Romans 5:12-21 traces death's reign back to v 6; Romans 16:20 echoes v 15; Revelation 12:9 names the serpent as 'that ancient serpent'; Revelation 22:3 announces 'no more curse'.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}
