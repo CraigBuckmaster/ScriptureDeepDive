@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "Verse 6 is one of the most quoted in the NT. The Hebrew syntax is precise: Abram he'emin (he believed) the LORD, and it was credited (chashav) to him as righteousness (tsedaqah). 'Credited' is reckoning language — accounting, not earning. The verbs ground justification doctrine.",
+      "panel_filter": ["heb", "hist", "ctx", "sarna", "alter", "net"],
+      "panel_order": ["heb", "alter", "sarna", "net", "ctx", "hist"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Vv 7-21 ratify the Abrahamic covenant by ancient ritual: animals divided, parties walking between the pieces (cf. Jer 34:18-20). But here only God passes through (the smoking firepot, v 17) — the covenant is unconditional, secured by God alone. The redemptive bedrock of the OT.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Romans 4:3, 9, 22 quotes v 6 to ground justification by faith — and applies it to those who believe in Jesus (Rom 4:24). Galatians 3:6-9 reads it the same way. The chapter's covenant-by-divine-self-binding (v 17) anticipates the cross, where God alone bears covenant penalty.",
+      "panel_filter": ["cross", "thread", "calvin", "mac", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "mac", "themes"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Verse 6 echoes through the canon: Romans 4:3, Galatians 3:6, and James 2:23 — the three NT loci of the faith-and-works debate. James and Paul agree this verse is foundational; they read it through different problems. Hebrews 11:8-12 names Abraham's faith as exemplary.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Abram brings real doubt to God ('what can you give me, since I remain childless?', v 2). God answers not with rebuke but with promise (vv 4-5) and reassurance (v 1: 'do not be afraid, Abram'). The chapter models trust that holds promise and present uncertainty together.",
+      "panel_filter": ["themes", "cross", "calvin"],
+      "panel_order": ["themes", "cross", "calvin"]
+    }
+  ]
+}

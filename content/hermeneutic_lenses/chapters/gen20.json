@@ -1,0 +1,22 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "God names Abraham 'a prophet' at v 7 — the first occurrence of nabi in the Hebrew Bible. The grammatical form ties prayer ('he will pray for you') to prophetic office: the prophet is one who intercedes for those who have wronged him, not just one who delivers oracles.",
+      "panel_filter": ["heb", "hist", "ctx", "sarna", "alter", "net"],
+      "panel_order": ["heb", "alter", "sarna", "net", "ctx", "hist"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Abraham's repeated failure (Sarai-as-sister appears in 12:10-20 and again here) does not derail the redemptive promise. God protects Sarah from defilement (vv 3-7) so the line of Isaac stays uncompromised. Grace runs ahead of Abraham's faithfulness to keep the covenant on track.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The 'sister' deception recurs at 12:10-20 and 26:6-11, forming a triple pattern of covenant-bearer failure and divine protection. The motif anticipates the canonical truth that the covenant's preservation rests on God's faithfulness, not the patriarchs' (cf. 2 Tim 2:13).",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "Hagar names God 'El Roi' — 'the God who sees me' (v 13) — the only person in the OT to give God a name. The verb root r'h (to see) recurs four times in vv 13-14, framing the chapter's theological center: the marginalized Egyptian slave is seen, named, and addressed by God.",
+      "panel_filter": ["heb", "hist", "ctx", "sarna", "alter", "net"],
+      "panel_order": ["heb", "alter", "sarna", "net", "ctx", "hist"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Sarai's plan to secure the promise through Hagar (vv 1-4) is faithlessness disguised as initiative. Yet the chapter does not abandon the redemptive arc — God meets Hagar in the wilderness (vv 7-12) and continues toward the promise of Isaac. Grace persists where faith fails.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Galatians 4:21-31 echoes this chapter allegorically — Hagar = Sinai/slavery, Sarah = the Jerusalem above/freedom. Paul's argument depends on this chapter's contrast between flesh-engineered offspring (Ishmael) and promise-given offspring (Isaac, ch 21).",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "The chapter shows God seeing those whom others use and discard. Hagar is fleeing toward Egypt; God meets her, names her son (v 11 — 'Ishmael' means 'God hears'), and sends her back with hope. The God who sees Hagar is the God who sees every overlooked believer.",
+      "panel_filter": ["themes", "cross", "calvin"],
+      "panel_order": ["themes", "cross", "calvin"]
+    }
+  ]
+}

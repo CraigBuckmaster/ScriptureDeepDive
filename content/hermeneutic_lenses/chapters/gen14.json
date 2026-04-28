@@ -1,0 +1,28 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "Melchizedek (vv 18-20) is the OT's most striking type of Christ. Hebrews 7 reads him as a priest-king without recorded genealogy, blessing Abraham and receiving tithes — a pattern that prefigures Christ's eternal priesthood after the order of Melchizedek (Ps 110:4; Heb 7:1-17).",
+      "panel_filter": ["cross", "thread", "themes", "calvin"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Christ is the priest 'after the order of Melchizedek' (Ps 110:4 quoted at Heb 5:6, 7:17). Where Aaron's priesthood passes father to son and dies, Christ holds an eternal priesthood that ends Levitical sacrifice (Heb 7:23-25). The bread and wine of v 18 anticipate the eucharist.",
+      "panel_filter": ["cross", "thread", "calvin", "mac", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "mac", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The priest-king pattern Melchizedek embodies (vv 18-20) is the redemptive office that the rest of Scripture searches for: not Aaron's priesthood, not David's kingship, but the union of both in one person. Hebrews 7 names that fulfillment as Christ.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Melchizedek appears only here in the Pentateuch, then once in Psalm 110:4, then receives an entire chapter (Heb 7) explaining how Christ fulfils the type. The canon's three-stage development — narrative seed, Davidic prophecy, NT exposition — is unique to this figure.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}

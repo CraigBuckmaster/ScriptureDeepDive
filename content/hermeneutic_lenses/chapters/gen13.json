@@ -1,0 +1,28 @@
+{
+  "lenses": [
+    {
+      "lens_id": "redemptive",
+      "guidance": "Lot's choice 'by sight' (v 10 — he 'looked up and saw' the well-watered Jordan plain) contrasts with Abram, who responds to God's promise without grasping. The faith-vs-sight pattern runs through the canon to 2 Cor 5:7. Lot's choice positions him for the disaster of ch 19.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Hebrews 11:9-10 reads Abram's tent-dwelling life in Canaan (v 18) as evidence he was 'looking forward to the city with foundations, whose architect and builder is God' — a forward-look that finds its rest in Christ and the new Jerusalem (Rev 21:2).",
+      "panel_filter": ["cross", "thread", "calvin", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Abram lets Lot, the younger man, choose first (vv 8-9). His generosity is grounded in God's promise — he can afford to be open-handed because his future doesn't depend on the best land. The chapter models trust that frees the believer from grasping.",
+      "panel_filter": ["themes", "cross", "calvin"],
+      "panel_order": ["themes", "cross", "calvin"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The dust-of-the-earth language at v 16 echoes through later promise renewals (15:5, 22:17, 32:12) and finally Revelation 7:9's unnumbered multitude. 'Walk through the length and breadth of the land' (v 17) is taken up at Joshua's conquest as the promise begins to be claimed.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}

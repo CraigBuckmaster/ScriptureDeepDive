@@ -1,0 +1,40 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "The five-fold blessing of vv 2-3 is unmistakable in Hebrew: 'I will make…I will bless…I will make great…I will bless…I will curse'. Seven verbs form a covenant pledge, climaxing in the passive 'will be blessed' — extending blessing through Abram to 'all peoples on earth'.",
+      "panel_filter": ["heb", "hist", "ctx", "sarna", "alter", "net"],
+      "panel_order": ["heb", "alter", "sarna", "net", "ctx", "hist"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "This is the redemptive turning point of the Old Testament. Where Genesis 1-11 ends with scattered nations (Babel), 12:1-3 begins God's plan to bless all nations through one chosen man and his seed. Every later covenant — Sinai, Davidic, new — extends this Abrahamic charter.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Galatians 3:16 reads the singular 'seed' (v 7) as Christ: 'the promises were spoken to Abraham and to his seed… meaning one person, who is Christ.' Christ is the true offspring of Abraham in whom 'all peoples on earth will be blessed' (v 3) — the missional engine of the gospel.",
+      "panel_filter": ["cross", "thread", "calvin", "mac", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "mac", "themes"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Abraham becomes the canon's paradigmatic believer: Romans 4 reads his faith as the model of justification; Galatians 3 grounds Gentile inclusion in the Abrahamic promise; Hebrews 11:8 names his obedience first in the hall of faith. Acts 3:25 reads v 3 as fulfilled in the Messiah.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Abram believes God enough to leave Ur for a land 'I will show you' (v 1). The chapter sermons trust that responds to a call before all the details are visible. Hebrews 11:8 holds him up as the model: 'he obeyed and went, even though he did not know where he was going'.",
+      "panel_filter": ["themes", "cross", "calvin"],
+      "panel_order": ["themes", "cross", "calvin"]
+    },
+    {
+      "lens_id": "mission",
+      "guidance": "Verse 3 — 'all peoples on earth will be blessed through you' — is the missional charter of the Old Testament. Israel is chosen for the world, not against it. Paul reads it as 'announcing the gospel in advance' (Gal 3:8). Every act of Christian witness traces back to this verse.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}

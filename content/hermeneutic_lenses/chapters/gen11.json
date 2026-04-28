@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "The chapter pivots on Hebrew wordplay: 'Babel' (v 9) puns with balal ('confuse') — the city's proud name becomes the proof of its judgment. Note also the ironic reversal in v 5: humans build to reach heaven, but God 'came down' to see — the tower fell short of his notice.",
+      "panel_filter": ["heb", "hist", "ctx", "sarna", "alter", "net"],
+      "panel_order": ["heb", "alter", "sarna", "net", "ctx", "hist"]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "Vv 1-9 form a chiasm centered on God's descent (v 5). The verse-pair structure inverts: 'all the earth had one language' (v 1) → 'the LORD confused the language of the whole earth' (v 9). The form sermons the content — human unity in pride is dismantled by divine speech.",
+      "panel_filter": ["lit", "themes", "alter"],
+      "panel_order": ["lit", "alter", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The chapter has two halves: Babel's judgment (vv 1-9) and the genealogy of promise (vv 10-26) that narrows to Abram. Where humans 'make a name for ourselves' (v 4) and are scattered, God will make Abram's name great (12:2) and bless all nations through him.",
+      "panel_filter": ["themes", "thread", "cross"],
+      "panel_order": ["themes", "thread", "cross"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Babel's scattering of languages is reversed at Pentecost (Acts 2:5-11) where the Spirit gathers people of every tongue to hear one gospel. 'Babylon' resurfaces as the canonical name for proud human empire (Isa 13-14, Rev 17-18) — its fall in Rev 18 echoes Gen 11's lesson.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    },
+    {
+      "lens_id": "mission",
+      "guidance": "Babel's scattering (v 9) creates the world of nations and tongues that the rest of Scripture's mission addresses. Pentecost (Acts 2) reverses Babel; Revelation 7:9 shows the consummation — every tribe, tongue, and nation gathered. The scattering was never God's last word.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}
