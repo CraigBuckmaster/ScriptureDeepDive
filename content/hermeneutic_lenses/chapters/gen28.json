@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "The ladder bridging earth and heaven (vv 12-13) is the type Jesus claims at John 1:51: 'you will see heaven open, and the angels of God ascending and descending on the Son of Man'. Christ is the ladder — the connection between God and humanity that Jacob saw in dream-shadow.",
+      "panel_filter": ["cross", "thread", "themes", "calvin"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "John 1:51 makes the Christological reading explicit. The place where Jacob meets God ('the gate of heaven', v 17) anticipates where heaven meets earth in Christ's incarnation. The Bethel covenant promise (vv 13-15) extends the Abrahamic line forward to its messianic fulfillment.",
+      "panel_filter": ["cross", "thread", "calvin", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "God meets the deceiver as he flees. The Abrahamic promise — land, seed, blessing to nations (vv 13-14) — is reaffirmed without prerequisites. Grace finds Jacob asleep on a stone. The redemptive trajectory does not pause for moral repair before continuing.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Jacob wakes and confesses, 'surely the LORD is in this place, and I was not aware of it' (v 16). The chapter teaches that God meets people in the unexpected place — the wilderness, the stone-pillow, the moment of running away. Devotion begins where presumption ends.",
+      "panel_filter": ["themes", "cross", "calvin"],
+      "panel_order": ["themes", "cross", "calvin"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Bethel returns at Gen 35:1-15 (Jacob's vow fulfilled), Hosea 12:4 (the prophet remembers this very event), and supremely at John 1:51 where Jesus identifies as the ladder. The 'house of God' / 'gate of heaven' imagery threads forward to Revelation 21:3.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}

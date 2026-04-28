@@ -1,0 +1,40 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "Wordplay carries the chapter. Abraham names the place Yahweh-yireh ('the LORD will provide/see', v 14), echoing his earlier reply to Isaac: 'God will provide (yir'eh) for himself the lamb' (v 8). The verb r'h binds testing, providence, and revelation in one root.",
+      "panel_filter": ["heb", "hist", "ctx", "sarna", "alter", "net"],
+      "panel_order": ["heb", "alter", "sarna", "net", "ctx", "hist"]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "The Akedah is the OT's most concentrated type of Christ. The beloved son (v 2) carries wood for his sacrifice (v 6); a substitute ram dies in his place (v 13); the site is Mount Moriah, the future temple mount (2 Chr 3:1). Hebrews 11:17-19 reads it as resurrection foreshadowed.",
+      "panel_filter": ["cross", "thread", "themes", "calvin"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Verse 18 reaffirms the Abrahamic promise — 'through your offspring all nations on earth will be blessed' — now sworn by oath (v 16) after the test. The covenant survives its sharpest threat. The promise of Christ runs through this hill.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Romans 8:32 reads this chapter as the shadow of God's gift: 'he who did not spare his own Son, but gave him up for us all' echoes Genesis 22's not-sparing language. Where Abraham's hand is stayed, the Father's is not — Christ becomes the lamb God provides (v 8; cf. John 1:29).",
+      "panel_filter": ["cross", "thread", "calvin", "mac", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "mac", "themes"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The chapter echoes through Hebrews 11:17-19 (faith and resurrection), Romans 8:32 (Father not sparing), James 2:21-23 (faith proven by works), and John 8:56 ('Abraham rejoiced to see my day'). The Mount Moriah location ties to 2 Chr 3:1's temple — the place of substitution.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "The chapter teaches that the deepest test asks for what God himself gave. Abraham obeys without bargaining (vv 3-6) — having seen God provide before, he trusts him to provide again. Hebrews 11:19 names the trust: he 'reasoned that God could even raise the dead'.",
+      "panel_filter": ["themes", "cross", "calvin"],
+      "panel_order": ["themes", "cross", "calvin"]
+    }
+  ]
+}

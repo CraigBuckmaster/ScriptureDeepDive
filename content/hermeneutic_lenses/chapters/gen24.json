@@ -1,0 +1,22 @@
+{
+  "lenses": [
+    {
+      "lens_id": "redemptive",
+      "guidance": "Providence is the chapter's heart. The servant prays (vv 12-14), the answer arrives before he finishes (v 15), and he marvels: 'the LORD has led me' (v 27). The redemptive line continues by divine arrangement, not engineering — the chapter sermons quiet trust in God's ordering.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "The servant's prayer (vv 12-14) is a model. He asks specifically, ties his request to God's covenant kindness (chesed), and acts in faith while waiting for the answer. When it comes, he worships immediately (v 26) — devotion that bookends petition with praise.",
+      "panel_filter": ["themes", "cross", "calvin"],
+      "panel_order": ["themes", "cross", "calvin"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The bride-sought-for-the-son pattern echoes through Scripture: Moses meets Zipporah at a well (Ex 2:15-21), Jacob meets Rachel at a well (Gen 29:1-12), Christ meets the Samaritan woman at a well (John 4) — the bridegroom imagery culminates at Revelation 19:7.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}

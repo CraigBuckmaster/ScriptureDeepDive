@@ -1,0 +1,16 @@
+{
+  "lenses": [
+    {
+      "lens_id": "redemptive",
+      "guidance": "The twelve tribes form here amid bitter rivalry: Bilhah's two sons, Zilpah's two, Leah's last two, then finally Rachel's Joseph (v 24). Through bargaining over mandrakes and Jacob's flocks, the redemptive line broadens — God forms the nation of Israel through human chaos.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Joseph, born here (v 24), and Judah, named in 29:35, are the two messianic lines the rest of Genesis traces. Joseph prefigures Christ as suffering deliverer (chs 37-50); Judah supplies the royal line (Mt 1:2). Both branches of OT messianic typology trace back to this household.",
+      "panel_filter": ["cross", "thread", "calvin", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "Hebrew wordplay names Jacob: 'his hand grasping Esau's heel' (yad ahaz be'aqev — v 26) becomes ya'aqov ('Jacob/heel-grabber'). The name will brand him through the deception cycles to come, until Peniel (32:28) renames him Israel.",
+      "panel_filter": ["heb", "hist", "ctx", "sarna", "alter"],
+      "panel_order": ["heb", "alter", "sarna", "ctx", "hist"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The oracle of v 23 — 'two nations are in your womb… the older will serve the younger' — reverses primogeniture and announces that the redemptive line runs through divine election, not birth-order. Esau then sells the birthright cheap (vv 29-34); election and despising converge.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Romans 9:10-13 reads vv 21-23 directly to ground God's elective purpose: 'before the twins were born or had done anything good or bad… the older will serve the younger'. The election that culminates in Christ is announced here, in the womb of Rebekah.",
+      "panel_filter": ["cross", "thread", "calvin", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The Esau-Jacob oracle (v 23) is invoked at Malachi 1:2-3 ('Jacob I loved, Esau I hated') and quoted at Romans 9:13. Hebrews 12:16 names Esau as the cautionary type of one who despises his birthright. The chapter's election theme threads through the canon's doctrine of grace.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}
