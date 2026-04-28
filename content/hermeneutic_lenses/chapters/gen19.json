@@ -1,0 +1,28 @@
+{
+  "lenses": [
+    {
+      "lens_id": "redemptive",
+      "guidance": "Judgment with salvation: Sodom is destroyed (vv 24-25) but Lot is delivered (v 16 — 'when he hesitated, the men grasped his hand'). Grace pulling the unworthy out mid-judgment recurs throughout Scripture. 2 Peter 2:7-9 reads it as God's signature pattern of rescue from trial.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Lot's wife looking back (v 26) becomes Jesus' shorthand for apostasy: 'remember Lot's wife' (Lk 17:32). The pillar of salt fulfills the warning pattern that the half-rescued who cling to the condemned city share its fate. The type frames every NT call to forsake the world.",
+      "panel_filter": ["cross", "thread", "themes", "calvin"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Sodom becomes the canon's most invoked example of judgment: Mt 10:15, 11:23-24, Lk 10:12 (Jesus' warnings to unrepentant cities), 2 Pet 2:6, Jude 7 ('serving as an example of those who suffer the punishment of eternal fire'), Rev 11:8 (Jerusalem 'spiritually called Sodom').",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Jesus draws the devotional point in Luke 17:32: 'remember Lot's wife'. The chapter warns against half-hearted obedience — fleeing judgment with the heart in the doomed city. The mercy of v 16 (the angels grasp Lot's hand) shows grace can be insistent when faith is reluctant.",
+      "panel_filter": ["themes", "cross", "calvin"],
+      "panel_order": ["themes", "cross", "calvin"]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "The three visitors (vv 1-2) function as a theophany — 'the LORD' speaks through them (vv 13-14). Hebrews 13:2 invokes this scene: 'some have entertained angels without knowing it'. Patristic readers saw a Trinitarian foreshadowing of God's presence with humanity.",
+      "panel_filter": ["cross", "thread", "themes", "calvin"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Abraham's bold intercession for Sodom (vv 22-33) anticipates Christ as the perfect intercessor. Where Abraham asks 'will you sweep away the righteous with the wicked?' (v 23), Christ secures rescue not by counting the righteous but by becoming the only righteous one (Heb 7:25).",
+      "panel_filter": ["cross", "thread", "calvin", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The chapter pivots on God's question at v 17: 'shall I hide from Abraham what I am about to do?' God draws his covenant partner into the moral logic of judgment. The pattern — God reveals, the friend intercedes, justice and mercy meet — runs through the prophets to Christ.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Abraham's prayer for Sodom (vv 22-33) models bold intercession. He persists: fifty, forty-five, forty, thirty, twenty, ten — six rounds of pleading, each grounded in God's character ('shall not the Judge of all the earth do right?', v 25). Prayer that argues from God's nature.",
+      "panel_filter": ["themes", "cross", "calvin"],
+      "panel_order": ["themes", "cross", "calvin"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Abraham's intercession echoes through Moses pleading for Israel (Ex 32:11-14, Num 14:13-19), Samuel's prayers (1 Sam 12:23), and the Servant 'making intercession for the transgressors' (Isa 53:12). The pattern culminates at Romans 8:34 — Christ 'is interceding for us'.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}

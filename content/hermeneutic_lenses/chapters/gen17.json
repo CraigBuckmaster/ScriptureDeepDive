@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "The covenant formula in vv 1-21 is fixed by Hebrew syntax: 'I will establish my covenant'. Name changes mark transformation: Abram ('exalted father') becomes Abraham ('father of many', v 5); Sarai ('my princess') becomes Sarah ('princess', v 15) — anticipating the multitude.",
+      "panel_filter": ["heb", "hist", "ctx", "sarna", "alter", "net"],
+      "panel_order": ["heb", "alter", "sarna", "net", "ctx", "hist"]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Circumcision as covenant sign (vv 9-14) is the type that Colossians 2:11-12 reads as fulfilled in baptism: 'in him you were also circumcised with a circumcision not performed by human hands'. The outward sign points to the inner reality of covenant belonging.",
+      "panel_filter": ["cross", "thread", "themes", "calvin"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The covenant is renewed and enlarged: 'kings will come from you' (v 6) — anticipating the Davidic monarchy and ultimately the King-Messiah. The 'everlasting covenant' (v 7) language secures the promise's permanence beyond any single generation's faithfulness.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Romans 2:28-29 contrasts external circumcision with circumcision 'of the heart, by the Spirit' — the inner reality fulfilled in Christ. Paul argues at Rom 4:11 that Abraham was justified before circumcision, making him father of all who believe — Jew or Gentile.",
+      "panel_filter": ["cross", "thread", "calvin", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Circumcision recurs canonically as a battleground: Joshua 5 (renewed before conquest), Romans 4 (precedes justification), Galatians 5 (no longer required), Philippians 3:3 ('we are the circumcision'). The chapter's sign is the canon's most argued-over symbol.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}
