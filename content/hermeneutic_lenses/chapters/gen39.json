@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "'The LORD was with Joseph' frames the chapter as a refrain (vv 2, 3, 21, 23) — bookending success in Potiphar's house and prison alike. The repetition makes divine presence the constant under every changed circumstance.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Joseph's prosperity under Potiphar (vv 2-6) and his unjust imprisonment (vv 19-20) both serve the covenant arc. Promise advances through faithful obedience and through false accusation — God's plan does not flinch at injustice.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "'How then can I do this great wickedness, and sin against God?' (v 9) — Joseph's refusal is theological, not merely prudential. Obey God when no one will know; trust the long arc; daily faithfulness in hidden places matters.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Innocent Joseph falsely accused on the word of a single witness (vv 13-18), bound and led to prison (v 20), foreshadows Christ falsely accused, bound, and condemned. The pattern of righteous suffering toward exaltation begins.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

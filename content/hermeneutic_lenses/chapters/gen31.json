@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "Mizpah at v 49 plays on the Hebrew yitsep ('he watches') — Laban names the cairn for God's surveillance over both parties. The shared meal (v 54) and stone heap (vv 45-47) are ancient Near Eastern boundary-treaty grammar.",
+      "panel_filter": [
+        "heb",
+        "hist",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "sarna",
+        "alter",
+        "hist"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "God's appearance to Laban in a dream (v 24) restrains the threat just as the covenant promise needs to leave Haran. The twenty-year arc closes: divine guidance (vv 10-13) and divine restraint together carry the promise toward Canaan.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The Mizpah/Galeed cairn (vv 45-49) anticipates Israel's later boundary stones — Joshua's witness stone (Josh 24:27), Samuel's Ebenezer (1 Sam 7:12). Stone-witnesses recur throughout Scripture as memorials of covenanted speech.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Jacob's testimony to his wives at v 5 — 'the God of my father has been with me' — and the recital of vv 38-42 model how to remember God's faithfulness when circumstances finally allow honest speech. Trust grows by retelling.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

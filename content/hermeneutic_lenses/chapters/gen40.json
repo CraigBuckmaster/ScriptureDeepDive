@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The 'three days' refrain (vv 12, 18, 20) structures the prison scene — restoration on the third day for the cupbearer, judgement on the third day for the baker. The numeric repetition rehearses what gen 41 will hear from Pharaoh.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "'Do not interpretations belong to God?' (v 8) names where wisdom finally lives. Trust God with the meaning of your life when the dream is dark; respond by serving where you are placed, even in prison.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The cupbearer's forgetting (v 23) extends Joseph's wait by two more years (cf. 41:1) — covenant timing diverges from human timing. The promise advances on God's calendar, never the prisoner's, and the delay turns out to be preparation.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

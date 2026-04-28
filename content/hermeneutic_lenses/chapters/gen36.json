@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "canonical",
+      "guidance": "Esau's full genealogy (vv 1-43) parallels Cain (Gen 4:17-24) and Ishmael (Gen 25:12-18) — the non-elect brother always receives a complete account before the canonical narrative narrows. Compare Edom's later prominence in the prophets.",
+      "panel_filter": [
+        "thread",
+        "cross",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Edom's kings 'before any king reigned over the Israelites' (v 31) shows Abraham's promise of kings (17:6) advancing first on the rejected line — God's redemptive plan unfolds across both branches before settling on Judah.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

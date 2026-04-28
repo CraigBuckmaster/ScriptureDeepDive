@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "God renames Jacob Israel at v 10 — a public confirmation of the Peniel naming (32:28) — and self-discloses as El Shaddai at v 11. The Hebrew formula links name and covenant promise: identity given, fruitfulness commanded.",
+      "panel_filter": [
+        "heb",
+        "hist",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "sarna",
+        "alter",
+        "hist"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The return to Bethel (vv 1, 7) closes the pilgrimage opened at 28:10-22: same God, same place, same covenant promise — now spoken to a renamed man with a household in tow. The arc of departure and return is complete.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The pillar at Bethel (v 14) is later corrupted by Jeroboam's calf at the same site (1 Kgs 12:28-29) and denounced by Hosea (Hos 4:15). Bethel becomes a thread of fidelity and apostasy running throughout Scripture.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "'Put away the foreign gods that are among you' (v 2) precedes the worship at Bethel. Repent before you build the altar — household idols (vv 2-4) buried under the oak make space for a genuine encounter with God.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

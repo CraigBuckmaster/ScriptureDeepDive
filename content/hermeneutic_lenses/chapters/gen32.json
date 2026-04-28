@@ -1,0 +1,100 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "The name Israel (v 28) puns on sarah ('to strive') with El; Peniel/Penuel (vv 30-31) means 'face of God'. Hebrew wordplay binds limp, name, and place into a single etymological scar — a covenant identity marked by struggle.",
+      "panel_filter": [
+        "heb",
+        "hist",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "sarna",
+        "alter",
+        "hist"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "Mahanaim (v 2) and Peniel (v 30) bookend the chapter — angelic encounter at the threshold, divine wrestler at the river. The structure frames Jacob's last night as a liminal crossing where a name and a body are remade.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "The night-wrestler at the Jabbok (vv 24-30) prefigures Gethsemane's struggle: a son who pleads, a body marked by the encounter, a blessing carried through wound. Israel's limp foreshadows the pattern of victory through scar.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Jacob's prayer at vv 9-12 names the covenant promise back to God before the wrestling. The name change to Israel (v 28) marks the redemptive turn: the supplanter is reconstituted as the people through whom the promise will run.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Hosea 12:3-4 reads vv 24-30 as Jacob 'striving' yet 'weeping' for grace — an arc completed in Christ, who wrestled in Gethsemane and prevailed through the cross, securing the blessing his people could only beg for.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "'I will not let you go unless you bless me' (v 26) defines persevering prayer. The dawn-blessing comes with a permanent limp (v 31) — God-given dependence, not God-given strength, becomes Israel's mark. Trust costs.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}
