@@ -14,16 +14,27 @@ import {
   applyLensToKeys,
 } from '@/utils/lensPanelFilter';
 
+// Mock the logger module per project convention (see e.g.
+// useAmicusChipContext.test.tsx). Spying on console.warn doesn't work
+// reliably in CI because the project's jest setup may silence or replace
+// the global console.
+jest.mock('@/utils/logger', () => ({
+  logger: {
+    info: jest.fn(),
+    warn: jest.fn(),
+    error: jest.fn(),
+  },
+}));
+
+// Pull the mocked logger so individual tests can assert on its calls.
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const { logger: mockLogger } = require('@/utils/logger') as {
+  logger: { info: jest.Mock; warn: jest.Mock; error: jest.Mock };
+};
+
 describe('lensPanelFilter', () => {
-  // Silence the warn() calls during the malformed-JSON branch tests so the
-  // jest output stays clean. Restore after each test to avoid leak between
-  // suites.
-  let warnSpy: jest.SpyInstance;
   beforeEach(() => {
-    warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => undefined);
-  });
-  afterEach(() => {
-    warnSpy.mockRestore();
+    jest.clearAllMocks();
   });
 
   describe('parseLensJson', () => {
@@ -43,7 +54,7 @@ describe('lensPanelFilter', () => {
 
     it('returns undefined and logs on malformed JSON', () => {
       expect(parseLensJson('not json')).toBeUndefined();
-      expect(warnSpy).toHaveBeenCalled();
+      expect(mockLogger.warn).toHaveBeenCalled();
     });
 
     it('returns undefined when JSON parses to a non-array', () => {
@@ -54,7 +65,7 @@ describe('lensPanelFilter', () => {
 
     it('drops non-string entries and warns', () => {
       expect(parseLensJson('["heb",1,"cross",null]')).toEqual(['heb', 'cross']);
-      expect(warnSpy).toHaveBeenCalled();
+      expect(mockLogger.warn).toHaveBeenCalled();
     });
   });
 
