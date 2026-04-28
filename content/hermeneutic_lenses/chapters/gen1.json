@@ -1,0 +1,40 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "The sevenfold formula 'and there was evening, and there was morning' (vv 5, 8, 13, 19, 23, 31) marks each day; 'God said' opens each act of creation; 'it was good' closes each (climaxing in 'very good', v 31). The Hebrew bara (create) bookends the chapter at v 1 and v 27.",
+      "panel_filter": ["heb", "hist", "ctx", "sarna", "alter", "net"],
+      "panel_order": ["heb", "alter", "sarna", "net", "ctx", "hist"]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "Days 1-3 form three realms (light/dark, sky/sea, land); Days 4-6 fill them in matching order (luminaries, fish/birds, animals/humans). The forming-filling pattern is structural, not chronological narration — the chapter sermons that creation is an ordered cosmos, not chaos.",
+      "panel_filter": ["lit", "themes", "heb", "alter"],
+      "panel_order": ["lit", "alter", "heb", "themes"]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "The Spirit hovering over the waters (v 2) prefigures the Spirit's work in new creation (2 Cor 5:17). The seventh-day rest (Gen 2:1-3) becomes the type for the Sabbath rest awaiting God's people (Heb 4:9-11). Light's separation from darkness foreshadows Revelation 21.",
+      "panel_filter": ["cross", "thread", "themes", "calvin"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Creation's good order (vv 1-31) sets the baseline that the fall will mar and that redemption will restore. The image-of-God commission to rule (vv 26-28) defines the human vocation that Israel, then Christ as the true image (Col 1:15), recovers and fulfils.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "John 1:1-3 reads Genesis 1 through the eternal Word, who is Christ: 'in the beginning was the Word, through him all things were made.' Colossians 1:16 makes the agency explicit. The divine speech summoning light in v 3 is the same Word who later becomes flesh (John 1:14).",
+      "panel_filter": ["cross", "thread", "calvin", "mac", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "mac", "themes"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Creation by speech echoes through Psalm 33:6, John 1:3, Hebrews 11:3, and 2 Peter 3:5. 'Image of God' (vv 26-27) is taken up at 1 Cor 11:7 and Col 3:10 for renewed humanity. Revelation 21-22 closes the canon by recapitulating Genesis 1-2 in a glorified key.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}

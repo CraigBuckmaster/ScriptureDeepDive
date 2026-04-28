@@ -82,7 +82,14 @@ FILLER_PATTERNS = [
     re.compile(r"\bin this chapter we (see|learn)\b", re.IGNORECASE),
 ]
 
-VERSE_REF_RE = re.compile(r"\b(?:vv?\.?\s*)?(\d{1,3})(?:[\u2013\u2014:\-](\d{1,3}))?\b")
+# In-chapter verse ref: requires explicit `v` or `vv` prefix to disambiguate
+# from cross-book citations like "Psalm 33:6" or "Heb 4:9-11" where the digits
+# after the colon are NOT verses of the current chapter. Bare-number refs
+# elsewhere in the guidance are not validated for chapter-bounds.
+VERSE_REF_RE = re.compile(r"\bvv?\.?\s*(\d{1,3})(?:[\u2013\u2014\-](\d{1,3}))?\b")
+# Loose density-anchor pattern: catches verse refs in any form for the
+# Density check ('does this guidance reference a verse at all?').
+ANY_VERSE_PATTERN = re.compile(r"\b(?:vv?\.?\s*)?(\d{1,3})(?:[\u2013\u2014:\-](\d{1,3}))?\b")
 PROPER_NOUN_RE = re.compile(r"\b[A-Z][a-z]{2,}\b")
 
 
@@ -197,7 +204,7 @@ def score_density(guidance: str) -> tuple[int, list[Finding]]:
                                 f'guidance too long ({len(guidance)} > {GUIDANCE_MAX_LEN})'))
         score -= 5
 
-    has_verse_ref = bool(VERSE_REF_RE.search(guidance))
+    has_verse_ref = bool(ANY_VERSE_PATTERN.search(guidance))
     has_proper_noun = bool(PROPER_NOUN_RE.search(guidance))
 
     if not (has_verse_ref or has_proper_noun):
