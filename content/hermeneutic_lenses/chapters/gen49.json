@@ -1,0 +1,100 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "'Until Shiloh comes' (v 10) is Genesis's most contested crux — the Hebrew may read 'until tribute comes to him' or 'until he comes to whom it belongs'. The grammar's reach toward an unnamed sceptre-bearer is the prophecy's force.",
+      "panel_filter": [
+        "heb",
+        "hist",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "sarna",
+        "alter",
+        "hist"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "Reuben loses (vv 3-4), Simeon and Levi are scattered (vv 5-7), Judah ascends to lion-status (vv 8-12) — the structure inverts birth-order with moral reckoning. Tribal destinies follow the chapters' moral arc, not the genealogy.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "The 'lion's cub' of Judah (v 9) and 'the sceptre' (v 10) prefigure the Davidic monarch and beyond — the Lion of the tribe of Judah of Revelation 5:5. The chapter is the anchor pattern for two millennia of messianic reading.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Judah's blessing (vv 8-12) is the chapter's redemptive heart. The tribe that produced Judah-of-Tamar — the tribe Jacob refused to favour at its head — becomes the covenant line through which kingship and salvation arrive.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "'The obedience of the peoples shall be his' (v 10) is named Christological data by Hebrews 7:14 — 'our Lord descended from Judah' — and Revelation 5:5 closes the loop. The Shiloh verse points to Jesus across a thousand years.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The Joseph blessings (vv 22-26) invoke 'the God of your father' alongside 'the Almighty' with imagery of 'everlasting hills' — a canonical bridge between patriarchal naming and Sinai's covenant titles, threading Scripture.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

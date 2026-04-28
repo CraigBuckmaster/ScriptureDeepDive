@@ -1,0 +1,64 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "Jacob blesses Pharaoh on entrance (v 7) and again on exit (v 10) — the patriarch frames his audience with the empire. The 'lesser blesses greater' narrative structure prepares Hebrews 7:7's later argument about Melchizedek and Christ.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Jacob calls his life 'few and difficult' and a sojourn (v 9) — covenant identity is the identity of pilgrims, not residents. The redemptive arc bends toward homecoming, not settlement; promise is held open, never closed.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Jacob's 'few and evil' pilgrim self-description (v 9) is later canonised by Hebrews 11:13 ('strangers and exiles on the earth') and 1 Peter 2:11 — sojourner identity becomes a thread across Scripture defining the church.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Jacob worships at his bed-head when Joseph swears to bury him in Canaan (v 31) — Hebrews 11:21 names this his final act of faith. Worship in the small mortal moments; faith carries you to the last word.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

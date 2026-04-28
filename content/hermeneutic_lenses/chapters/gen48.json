@@ -1,0 +1,52 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "Jacob crosses his hands so the younger Ephraim receives the right-hand blessing (vv 13-14, 17-19) — the pattern that runs Abel-over-Cain, Isaac-over-Ishmael, Jacob-over-Esau, anticipating Christ as divine election against expectation.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Jacob's 'the God who has been my shepherd all my life long, the angel who has redeemed me from all evil' (vv 15-16) gathers the patriarchal experience under the language of covenant redemption. The arc ends with the patriarch's confession.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Jacob blesses through the second-born (v 19) — a Genesis-long pattern climaxing here in the covenant family, foreshadowing Christ the Last Adam (1 Cor 15:45) whose precedence comes by divine election, not chronological birth.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

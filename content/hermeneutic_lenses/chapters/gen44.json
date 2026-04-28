@@ -1,0 +1,100 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "Judah's plea (vv 18-34) is the longest single speech in Genesis — fourteen times he names 'my father' in a sustained Hebrew rhetorical climax. The grammar binds father, brother, and self into one web of substitution.",
+      "panel_filter": [
+        "heb",
+        "hist",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "sarna",
+        "alter",
+        "hist"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "The planted cup (v 2) and the planted silver of 42:25 form a narrative pair — both Joseph's contrivances, both surfacing the brothers' moral state. Repetition with intensification: silver tested guilt, the cup tests love.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Judah's 'let me remain as a slave in his place' (v 33) prefigures substitutionary atonement — one in place of his brother, willing exchange. The pattern points to Christ: the Lion of Judah (49:9; Rev 5:5) takes the place of the guilty.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Judah's transformation completes — the man who said 'let us sell him' (37:26-27) now says 'let me bear it' (v 33). Repentance is reversed pattern, not regret; the redemptive arc bends through the same sinner becoming a saviour-figure.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Judah's substitution speech anticipates the Lion of Judah who substitutes himself in Gethsemane and at Golgotha — 'let this cup pass... not my will' (Mk 14:36) answered with 'into your hands' (Lk 23:46). The gospel pattern is fixed.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Judah speaks for seventeen verses (vv 18-34) without naming his own welfare once — the speech is entirely about his father and his brother. Pray, when you must plead for another, in this register: self emptied of self.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

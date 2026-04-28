@@ -1,0 +1,48 @@
+{
+  "lenses": [
+    {
+      "lens_id": "redemptive",
+      "guidance": "God speaks at Beersheba (v 3) — 'do not be afraid to go down to Egypt; I will make you into a great nation there' — the covenant promise extending into exile. The pattern Exodus and the prophets will exposit begins here.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The seventy who descend (v 27) anticipate the seventy elders at Sinai (Ex 24:1, 9), the seventy on whom the Spirit rests (Num 11:24-25), and the seventy Christ sends out (Lk 10:1) — a numerical thread across Scripture.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Israel 'offered sacrifices to the God of his father Isaac' before going down (v 1). Worship at the threshold of every major move; receive the promise on God's terms before boarding the cart.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}
