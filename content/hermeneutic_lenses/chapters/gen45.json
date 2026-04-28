@@ -1,0 +1,96 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "Joseph's threefold 'I am Joseph' / 'God sent me' / 'you sold me' (vv 4-8) restates the same fact in three theological registers — identity, providence, sin — without softening any. Narrative structure as theological exegesis.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "'God sent me before you to preserve life' (v 5) reframes the brothers' crime without erasing it. The covenant plan to preserve a remnant runs through, not around, human evil — the redemptive arc bends but does not break.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "'Hurry and bring my father here' (v 9) — the rejected son now lord of Egypt sends emissaries to gather his household into safety. The pattern foreshadows Christ sending his apostles to gather the Father's family from every nation.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "The rejected brother now lord receives his returning brothers with weeping and kisses (vv 14-15). Christ — rejected and exalted — receives the very ones whose sin sent him to the cross (Acts 2:36-38 names the same pattern).",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "'It was not you who sent me' (v 8) compresses canonical theology: human freedom and divine sovereignty operating on the same act. The thread runs to Acts 2:23 — Christ 'delivered up by God's deliberate plan' through human hands.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Joseph cannot wait — 'make all his servants leave!' (v 1) — and weeps so loudly Egypt hears (v 2). Forgiveness as bodily release. Repent today of the careful management of pain you call control; let the tears come when they come.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

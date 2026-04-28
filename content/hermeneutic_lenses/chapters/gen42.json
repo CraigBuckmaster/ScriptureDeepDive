@@ -1,0 +1,64 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The dreams of 37:5-11 are now enacted — brothers bow to Joseph (v 6). The narrative pivots on 'Joseph remembered the dreams' (v 9): the structure of gen 37's prophecy becomes gen 42's stage direction.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The brothers' guilt finally surfaces — 'we are paying the penalty for what we did to our brother' (v 21) — twenty years on. Genuine repentance is part of the redemptive arc; covenant restoration requires moral change, not just grain.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Reuben's 'did I not tell you?' (v 22) and his offer of his two sons (v 37) echo throughout Scripture's pattern of inadequate intercession that prepares for adequate substitution — answered by Judah in gen 44 and by Christ.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Joseph weeps when he hears their confession (v 24), then resumes the test. Tears alongside truth-telling: holding people accountable can be heart-broken without being sentimental. Trust the slow work of repentance.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

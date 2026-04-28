@@ -1,0 +1,80 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The book ends with two oaths — Joseph swearing to bury Jacob in Canaan (vv 5-6) and the brothers swearing to carry Joseph's bones (v 25). Genesis closes with framing promises about land, structurally linking patriarchal end to exodus.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "'You meant evil against me, but God meant it for good' (v 20) is the redemptive hermeneutic of the whole book — the covenant promise has steered through every fall, deception, and famine since Genesis 3.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Joseph's 'you meant evil... God meant good' (v 20) is the theological grammar of the cross. Acts 2:23 names the same logic — Christ 'delivered up by God's plan and by lawless hands'. The gospel is gen 50:20 enacted in Jesus.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Joseph speaks kindly to them and provides for their families (v 21) — words and bread together. Forgive as you hope to be forgiven; let mercy flow into food, employment, and daily care for those you have released.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Joseph's bones in a coffin in Egypt (v 26) is Genesis's last word — and Hebrews 11:22 names this his act of faith. The bones travel later to Sinai (Ex 13:19) and Shechem (Josh 24:32), threading Genesis throughout Scripture.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

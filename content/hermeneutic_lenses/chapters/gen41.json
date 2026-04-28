@@ -1,0 +1,84 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "Pharaoh renames Joseph 'Zaphenath-paneah' (v 45), an Egyptian title traditionally rendered 'revealer of secrets' or 'the god speaks and he lives'. The Hebrew narrator preserves the alien name: even imperial speech serves the covenant story.",
+      "panel_filter": [
+        "heb",
+        "hist",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "sarna",
+        "alter",
+        "hist"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Joseph rises from prison to Pharaoh's right hand in a single day (vv 14, 40-43) — the pattern of righteous suffering followed by exaltation. Philippians 2:8-9 names this shape in Christ; the chapter is its prophetic preview.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The interpreter Pharaoh's magicians could not produce (v 8) is found in a Hebrew prisoner. The covenant promise advances by placing the covenant-bearer inside Egyptian power — preparation for the larger redemptive arc Exodus reverses.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Joseph names his son Ephraim 'for God has made me fruitful in the land of my affliction' (v 52) — exaltation that does not forget the pit. Christ's resurrection wounds (Jn 20:27) carry the same grammar: glory bears the marks of suffering.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "'It is not in me; God will give Pharaoh a favourable answer' (v 16) — the man with the gift refuses the credit. Worship in success: name God when others applaud you, and trust that his providence has been arranging the long wait.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "Reuben's failed pledge (42:37) is replaced by Judah's accepted one (v 9) — the narrative hands the leadership baton from firstborn to fourth-born. The structure previews 49:8-12: 'the sceptre will not depart from Judah'.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Jacob's prayer 'may God Almighty grant you mercy' (v 14) names what the chapter requires — covenant promise advancing through human terror. The patriarch finally entrusts Benjamin to the same God who took Joseph and gave salvation.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Judah's pledge of himself for Benjamin (v 9) anticipates Esther's 'if I perish, I perish' (Esth 4:16) and Paul's 'I could wish that I myself were accursed' (Rom 9:3). Surety for one's people is a thread across Scripture.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Jacob releases Benjamin with 'if I am bereaved, I am bereaved' (v 14) — surrender phrased as grief. Pray when the only available stance is consent to loss; trust without any certainty of return.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}
