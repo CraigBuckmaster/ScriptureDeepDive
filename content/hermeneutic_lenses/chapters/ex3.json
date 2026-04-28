@@ -1,0 +1,98 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "'I AM WHO I AM' (v 14) — Hebrew ehyeh asher ehyeh, a verbal formula on the root hyh ('to be'). Untensed and unconditioned. The original audience hears self-existence claimed in the same breath as covenant presence (v 12).",
+      "panel_filter": [
+        "heb",
+        "hist",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "sarna",
+        "alter",
+        "hist"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "The bush burns but is not consumed (v 2) — divine presence sustained without destroying its vessel. Patristic readers saw a type of the incarnation: God in flesh that does not consume the human nature he assumes.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "'I have observed... I have heard... I know' (vv 7-9) names the moment covenant memory becomes covenant action. The redemptive arc opened at Gen 15:13-14 is now activated in commission, name, and place (vv 8, 10).",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "When Jesus says 'before Abraham was, I AM' (Jn 8:58) the bush of v 14 is the citation. John's seven 'I am' sayings structure around this single OT root. The God who speaks in fire is the Christ who speaks in flesh.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Horeb (v 1) is named again at 1 Kgs 19:8 in Elijah's encounter, and the v 14 name echoes through Isaiah's 'I am he' formulas (Isa 41:4, 43:10, 45:5) — a canonical thread across Scripture defining God's self-disclosure.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Moses removes his sandals (v 5) before approaching. Worship begins in posture: physical recognition that the ground God names is not the ground we own. Today, draw near with reverence rather than familiarity.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

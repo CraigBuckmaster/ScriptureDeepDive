@@ -1,0 +1,48 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The plague pattern intensifies through repetition — request, refusal, sign, partial concession, hardening (vv 1-15, 16-19, 20-32). The narrative structure trains the reader to expect Pharaoh's relapse before it comes.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The Egyptian magicians' confession 'this is the finger of God' (v 19) echoes later at Lk 11:20, where Jesus casts out demons 'by the finger of God' — a canonical thread linking exodus power to Christ's exorcisms.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Pharaoh's 'pray for me' (v 8, v 28) followed by hardening (v 15, v 32) is the picture of partial repentance. Confess the sin you do not actually intend to leave, and you will find yourself returning to it. Repent fully or not at all.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

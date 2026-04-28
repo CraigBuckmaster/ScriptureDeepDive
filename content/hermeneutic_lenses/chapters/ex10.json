@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The locust-and-darkness pairing (vv 1-20, 21-29) inverts creation imagery — locusts darken the land (v 15), then darkness 'that may be felt' (v 21). The narrative structure rolls back Genesis 1's separation of light from darkness.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Three days of darkness (vv 22-23) directly attack Ra, Egypt's chief deity. The covenant arc dismantles the Egyptian pantheon plague by plague, preparing the people for the redemption Passover will deliver.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "'Darkness over the land' (vv 21-23) anticipates Amos 8:9, Joel 2:31, and the three-hour darkness at the cross (Mt 27:45). A canonical pattern: judgement precedes redemption; the deepest dark is closest to the dawn.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

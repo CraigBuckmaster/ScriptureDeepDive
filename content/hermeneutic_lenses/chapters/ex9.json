@@ -1,0 +1,64 @@
+{
+  "lenses": [
+    {
+      "lens_id": "redemptive",
+      "guidance": "The seventh plague (hail, vv 13-26) introduces a new category: 'Yahweh sent thunder and hail' (v 23). The redemptive arc deploys cosmic-scale weather; covenant Lord commands the elements that Egyptian gods claim.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "mission",
+      "guidance": "'That my name may be proclaimed in all the earth' (v 16) is named as the plagues' purpose. Paul cites this at Rom 9:17. The plague cycle is missional theology in narrative — every nation hearing of Yahweh.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 16's 'raised you up that my name may be proclaimed' is echoed at Rom 9:17 — Paul's argument about election uses Pharaoh as the canonical example. Exodus's local conflict becomes the New Testament's doctrine of sovereign mercy.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Egyptian officials begin to fear Yahweh (vv 20-21) — outsiders hear before Pharaoh hears. Trust that God's word reaches whom it will, and that today the same speech still divides those who shelter from those who don't.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

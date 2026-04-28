@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The 'the LORD said to Moses' refrain begins in earnest here (vv 1, 8, 14, 19), structuring the plague cycle as a narrative of divine speech-act. Each plague follows the same pattern: word, sign, hardening, withdrawal.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Aaron's staff 'swallows' the magicians' staffs (v 12) — Hebrew bala', the same verb used at 1 Cor 15:54 ('death swallowed up in victory'). The pattern points to Christ's victory: divine power assimilates pretender power.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The first plague targets the Nile (vv 17-21) — Egypt's life-source and the river that carried Pharaoh's decreed deaths in 1:22. The redemptive judgement returns blood to the river that demanded it.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The plagues echo through Scripture — Joel 2 reuses locust imagery, Revelation 16's bowl-judgements directly cite the plague pattern (water-to-blood, frogs, sores). A canonical thread of judgement on rebellious empire.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

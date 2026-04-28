@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "'By my name Yahweh I did not make myself known' (v 3) — Hebrew yada' ('know') is relational, not informational. The original audience hears: the patriarchs experienced God; this generation will hear his proper name in action.",
+      "panel_filter": [
+        "heb",
+        "hist",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "sarna",
+        "alter",
+        "hist"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The sevenfold 'I will' (vv 6-8) compresses the redemptive promise: bring out, deliver, redeem, take, be your God, bring in, give. The covenant arc fits in one paragraph; every later act of salvation traces back to these verses.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 3's 'by my name Yahweh I did not make myself known' has been debated across Scripture — does it contradict Gen 17:1's El Shaddai? The sevenfold 'I will' is the canonical answer: the name is revealed by the action it performs.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "'I will redeem you with an outstretched arm' (v 6) is taken up at Lk 1:51 (Mary's Magnificat) and applied to Christ's saving work. The deliverer of Israel becomes the deliverer of all who trust in him.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Israel cannot hear because of 'broken spirit and harsh bondage' (v 9) — pain blocks faith's reception. Pray with this in mind for those whose suffering has made them deaf to comfort. Trust the slow work of restoration.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}
