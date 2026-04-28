@@ -47,6 +47,7 @@ import { TTSControls } from '../components/TTSControls';
 import { useBookmarkedVerses } from '../hooks/useBookmarkedVerses';
 import { useAvailableLenses, useChapterLensContent } from '../hooks/useHermeneuticLens';
 import { LensToggleBar } from '../components/LensToggleBar';
+import { parseLensJson, applyLensToKeys } from '../utils/lensPanelFilter';
 import { TRANSLATION_MAP } from '../db/translationRegistry';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { usePremium } from '../hooks/usePremium';
@@ -162,9 +163,57 @@ function ChapterScreen() {
     chapterNum,
   );
 
+  // ── Hermeneutic lens data (Epic #820) ──
+  // Fetched here (before useChapterPanels) so the filter/reorder transformations
+  // can apply to the section + chapter panels that downstream consumers see.
+  const { data: availableLenses } = useAvailableLenses(chapter?.id);
+  const { data: lensContent } = useChapterLensContent(chapter?.id, activeLens);
+
+  const lensPanelFilter = useMemo(
+    () => parseLensJson(lensContent?.panel_filter_json),
+    [lensContent?.panel_filter_json],
+  );
+  const lensPanelOrder = useMemo(
+    () => parseLensJson(lensContent?.panel_order_json),
+    [lensContent?.panel_order_json],
+  );
+  const lensIsActive =
+    activeLens !== null && (lensPanelFilter !== undefined || lensPanelOrder !== undefined);
+
+  // Section panels: filter+reorder per the active lens. When no lens is active
+  // (or the active lens has neither filter nor order), `sections` passes through
+  // unchanged via referential equality so memoised consumers don't invalidate.
+  const lensFilteredSections = useMemo(() => {
+    if (!lensIsActive) return sections;
+    return sections.map((section) => {
+      const keys = section.panels.map((p) => p.panel_type);
+      const transformedKeys = applyLensToKeys(keys, lensPanelFilter, lensPanelOrder);
+      // Map the transformed key list back to panel objects, dropping any whose
+      // panel_type is no longer present.
+      const byType = new Map<string, typeof section.panels[number]>();
+      for (const p of section.panels) byType.set(p.panel_type, p);
+      const transformedPanels = transformedKeys
+        .map((k) => byType.get(k))
+        .filter((p): p is typeof section.panels[number] => p !== undefined);
+      return { ...section, panels: transformedPanels };
+    });
+  }, [sections, lensIsActive, lensPanelFilter, lensPanelOrder]);
+
+  // Chapter panels: same treatment, single flat list rather than per-section.
+  const lensFilteredChapterPanels = useMemo(() => {
+    if (!lensIsActive) return chapterPanels;
+    const keys = chapterPanels.map((p) => p.panel_type);
+    const transformedKeys = applyLensToKeys(keys, lensPanelFilter, lensPanelOrder);
+    const byType = new Map<string, typeof chapterPanels[number]>();
+    for (const p of chapterPanels) byType.set(p.panel_type, p);
+    return transformedKeys
+      .map((k) => byType.get(k))
+      .filter((p): p is typeof chapterPanels[number] => p !== undefined);
+  }, [chapterPanels, lensIsActive, lensPanelFilter, lensPanelOrder]);
+
   const panels = useChapterPanels({
     chapterId: chapter?.id,
-    sections,
+    sections: lensFilteredSections,
     isPremium,
     bookId,
     chapterNum,
@@ -174,17 +223,18 @@ function ChapterScreen() {
   });
 
   // ── Remaining screen-level logic ──
-  const { data: availableLenses } = useAvailableLenses(chapter?.id);
-  const { data: lensContent } = useChapterLensContent(chapter?.id, activeLens);
   const redLetterVerses = useRedLetter(bookId, chapterNum);
   const notedVerses = useNotedVerses(bookId, chapterNum);
   const { bookmarked, toggleBookmark } = useBookmarkedVerses(bookId, chapterNum);
   const proofTextGuard = useProofTextGuard(bookId, chapterNum, initialVerseNum);
   const guidedStudyState = useGuidedStudyChapterState(chapter?.id);
-  const allSectionPanels = useMemo(() => sections.flatMap((section) => section.panels), [sections]);
+  const allSectionPanels = useMemo(
+    () => lensFilteredSections.flatMap((section) => section.panels),
+    [lensFilteredSections],
+  );
   const studyEstimate = useMemo(
-    () => getStudyDepthEstimate(verses, allSectionPanels, chapterPanels),
-    [verses, allSectionPanels, chapterPanels],
+    () => getStudyDepthEstimate(verses, allSectionPanels, lensFilteredChapterPanels),
+    [verses, allSectionPanels, lensFilteredChapterPanels],
   );
 
   const handleInterlinearPress = useCallback(
@@ -533,8 +583,8 @@ function ChapterScreen() {
           display={{ tier: chapterMode }}
         >
           <ChapterVerseList
-            sections={sections}
-            chapterPanels={chapterPanels}
+            sections={lensFilteredSections}
+            chapterPanels={lensFilteredChapterPanels}
             prayerPrompt={chapter?.prayer_prompt}
             chapterMeta={
               chapter
