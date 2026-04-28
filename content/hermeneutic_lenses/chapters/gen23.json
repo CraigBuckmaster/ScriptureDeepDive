@@ -1,0 +1,16 @@
+{
+  "lenses": [
+    {
+      "lens_id": "redemptive",
+      "guidance": "Abraham buys the cave of Machpelah (vv 17-20) — his only land-holding in Canaan despite the promise that 'all this land' would be his (12:7, 13:15). Hebrews 11:13-16 reads the patriarchs' modest claims as evidence they were 'looking for a country of their own' beyond this earth.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The cave of Machpelah recurs at the end of Genesis: Abraham and Sarah, then Isaac, Rebekah, Leah, and Jacob are all buried there (49:30-31; 50:13). The plot echoes through the canon as the patriarchs' down payment on a promise the new creation will fully deliver (Heb 11:39-40).",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}

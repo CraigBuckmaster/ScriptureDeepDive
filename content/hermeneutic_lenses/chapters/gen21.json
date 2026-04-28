@@ -1,0 +1,28 @@
+{
+  "lenses": [
+    {
+      "lens_id": "redemptive",
+      "guidance": "The promise of 12:1-3, 15:4, 17:19, and 18:10 is fulfilled at v 2: 'Sarah became pregnant and bore a son'. After 25 years of waiting, the redemptive line continues. Isaac's name (yitzhaq, 'he laughs') turns Sarah's earlier laugh of doubt (18:12) into a laugh of joy (v 6).",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Galatians 4:28 reads believers as 'children of promise, like Isaac' — born by God's word, not flesh. The contrast with Ishmael (sent away, v 14) sermons that the line of promise is fulfilled in Christ, not extended by human effort.",
+      "panel_filter": ["cross", "thread", "calvin", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Galatians 4:21-31 reads this chapter allegorically: Hagar/Ishmael = Sinai/slavery (cast out), Sarah/Isaac = the Jerusalem above/freedom. Paul's argument for Gentile inclusion echoes vv 9-12 directly. Hebrews 11:11 commends Sarah's faith.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Sarah's laugh moves from doubt (18:12 — 'after I am worn out, will I now have this pleasure?') to joy (v 6 — 'God has brought me laughter'). The chapter teaches the believer to trust promises that have aged into seeming impossibility.",
+      "panel_filter": ["themes", "cross", "calvin"],
+      "panel_order": ["themes", "cross", "calvin"]
+    }
+  ]
+}

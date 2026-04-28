@@ -1,0 +1,22 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "Narrative irony lands in the Hebrew of v 25: 'why have you ramah me?' — Laban's deception of Jacob uses the same root as Esau's complaint about Jacob in 27:35. The deceiver is deceived; the verb plotted against Esau now turns on Jacob. The text indicts him by echo, no comment.",
+      "panel_filter": ["heb", "hist", "ctx", "sarna", "alter"],
+      "panel_order": ["heb", "alter", "sarna", "ctx", "hist"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Despite the chaos of Laban's swap (vv 21-30), the line of seed advances through Leah — not the favored Rachel. Verses 31-35 introduce Reuben, Simeon, Levi, and Judah. The redemptive line to David and to Christ runs through the unloved wife (Mt 1:2-3).",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Leah's son Judah (v 35) becomes the canonical channel: Jacob's blessing names him 'a lion's cub' from whom 'the scepter will not depart' (49:9-10), and Matthew 1 traces Christ's line through him. The Lion of Judah of Revelation 5:5 is born from this loveless triangle.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}
