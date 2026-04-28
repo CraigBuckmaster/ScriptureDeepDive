@@ -434,10 +434,46 @@ Hard-won lessons from building 66 books. Still relevant for enrichment scripts.
 
 ---
 
-## Quick Reference: What Goes Where
+## 13. Hermeneutic Lenses (Epic #820)
 
-| I need to... | File |
-|--------------|------|
+Lens content is interpretive guidance, not biblical exposition. Different rules apply.
+
+**Directory layout:**
+```
+content/hermeneutic_lenses/
+├── lenses.json              # 8 lens defs: id, name, description, long_description, icon, display_order
+└── chapters/<chapter_id>.json  # one file per chapter that has any lens content
+```
+
+**Per-chapter file shape:**
+```json
+{ "lenses": [
+  { "lens_id": "grammatical",
+    "guidance": "80-280 chars, anchored to a real verse number or proper noun",
+    "panel_filter": ["heb", "hist", "ctx"],   // optional; subset of valid panel keys
+    "panel_order":  ["heb", "ctx", "hist"]    // optional; subset of panel_filter
+  }
+]}
+```
+
+**Coverage strategy: curated sparse.** Only add lenses that genuinely illuminate a chapter. Do not write a "Missional" entry for Leviticus 13 just to fill the grid. Empty `lenses` lists are fine; the in-chapter `LensToggleBar` only renders lenses with content for that chapter.
+
+**Quality bar (every entry, not samples):**
+1. `python3 _tools/schema_validator.py` — schema + panel-key allowlist
+2. `python3 _tools/lens_quality_scorer.py --chapter <id>` — DVCR floor 90
+3. `python3 _tools/accuracy_auditor.py --chapter meta_lens_<id> --tier 2` — verifies the guidance reflects a position the named hermeneutical school actually advocates
+
+**Banned filler patterns** (caught by Relevance scorer): "the lens reveals", "this lens shows", "through this lens", "this passage shows that", "this text teaches that", "in this chapter we see/learn".
+
+**Panel keys** for `panel_filter` / `panel_order`: section panels (`heb`, `cross`, `hist`, `tl`, `places`, `poi`, `ctx`), chapter panels (`lit`, `themes`, `ppl`, `trans`, `src`, `rec`, `hebtext`, `thread`, `tx`, `debate`, `discourse`), and any scholar key from `_tools/config.py:SCHOLAR_REGISTRY`. The validator imports these dynamically — adding a scholar doesn't break the allowlist.
+
+**App consumption:**
+- `LensBrowseScreen` reads `lenses.long_description` directly from DB. No hardcoded copy in the screen.
+- `ChapterScreen` consumes `lensContent.guidance` always; `panel_filter_json` and `panel_order_json` are wired in Phase 1 (sub-issue #820.2).
+- Premium-gated: lens toggle calls `showUpgrade('feature', 'Hermeneutic Lenses')` for free users.
+
+---
+
 | Add a user table/column | `db/userDatabase.ts` (new migration) |
 | Add a content table/column | `_tools/build_sqlite.py` + bump version |
 | Add a new screen | `navigation/types.ts` + stack file + screen file |

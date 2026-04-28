@@ -38,6 +38,15 @@ CONTENT = ROOT / 'content'
 META = CONTENT / 'meta'
 sys.path.insert(0, str(ROOT / '_tools'))
 
+# Subdirectories of content/ that are NOT books and must be skipped by every
+# chapter-walk loop. Kept as a single source of truth so adding a new content
+# directory (e.g. hermeneutic_lenses) only requires one edit, not eleven.
+NON_BOOK_DIRS = frozenset({
+    'meta', 'verses', 'interlinear', 'archaeology', 'life_topics',
+    'historical_interpretations', 'grammar', 'map-styles',
+    'hermeneutic_lenses',
+})
+
 passed = 0
 failed = 0
 warnings = 0
@@ -127,6 +136,177 @@ def _validate_meta_faq():
               f'article is {word_count} words; spec says under 500-ish, cap 700')
 
 
+def _validate_hermeneutic_lenses():
+    """Section 21 HERMENEUTIC LENSES (Epic #820) — validates lens definitions
+    and per-chapter guidance entries.
+
+    Required structure:
+        content/hermeneutic_lenses/
+        ├── lenses.json                    # 8 lens definitions
+        └── chapters/
+            └── <chapter_id>.json          # {lenses: [{lens_id, guidance, ...}]}
+
+    Gracefully passes if directory absent (Phase 0 ships the loader before
+    Phase 2+ writes content).
+    """
+    print("\n--- 21. HERMENEUTIC LENSES ---")
+    lens_dir = CONTENT / 'hermeneutic_lenses'
+    if not lens_dir.is_dir():
+        print("  (directory absent; skipping — expected before Phase 0)")
+        return
+
+    # ── lenses.json ──
+    lenses_path = lens_dir / 'lenses.json'
+    check("hermeneutic_lenses/lenses.json present", lenses_path.exists())
+    if not lenses_path.exists():
+        return
+
+    try:
+        lenses = json.loads(lenses_path.read_text(encoding='utf-8'))
+    except json.JSONDecodeError as err:
+        check(f"lenses.json valid JSON", False, str(err))
+        return
+
+    check("lenses.json is a list", isinstance(lenses, list))
+    if not isinstance(lenses, list):
+        return
+
+    seen_ids: set[str] = set()
+    seen_orders: set[int] = set()
+    id_pattern = re.compile(r"^[a-z][a-z0-9_]*$")
+    for i, lens in enumerate(lenses):
+        ctx = f"lens[{i}]"
+        if not isinstance(lens, dict):
+            check(f"{ctx} is object", False)
+            continue
+        for required in ('id', 'name', 'description', 'display_order'):
+            check(f"{ctx} has '{required}'",
+                  required in lens and lens[required] not in (None, ''),
+                  f"missing or empty {required}")
+        lid = lens.get('id', '')
+        if lid:
+            check(f"{ctx} id '{lid}' format", bool(id_pattern.match(lid)),
+                  "must match ^[a-z][a-z0-9_]*$")
+            check(f"{ctx} id '{lid}' unique", lid not in seen_ids)
+            seen_ids.add(lid)
+        order = lens.get('display_order')
+        if isinstance(order, int):
+            check(f"{ctx} display_order {order} unique",
+                  order not in seen_orders)
+            seen_orders.add(order)
+        # Optional length checks for the description fields.
+        desc = lens.get('description', '')
+        if desc:
+            check(f"{ctx} description length 20-160", 20 <= len(desc) <= 160,
+                  f"got {len(desc)}")
+        long_desc = lens.get('long_description')
+        if long_desc:
+            check(f"{ctx} long_description length 80-500",
+                  80 <= len(long_desc) <= 500, f"got {len(long_desc)}")
+
+    valid_lens_ids = seen_ids
+
+    # ── chapter files ──
+    chapters_dir = lens_dir / 'chapters'
+    if not chapters_dir.is_dir():
+        print("  chapters/ directory absent (expected; Phase 2+ adds content)")
+        return
+
+    # Build the panel-key allowlist using the same source as lens_quality_scorer.
+    try:
+        from panel_taxonomy import (
+            CORE_SECTION_PANELS as _CORE,
+            CHAPTER_PANEL_TYPES as _CHTYPES,
+            load_scholar_keys as _lsk,
+        )
+        all_panel_keys = _CORE | _CHTYPES | _lsk(CONTENT)
+    except ImportError:
+        all_panel_keys = set()
+        warn("panel_taxonomy not importable — skipping panel-key allowlist check")
+
+    # Build the set of valid chapter_ids from books.json + chapter files.
+    valid_chapter_ids: set[str] = set()
+    for book_dir in CONTENT.iterdir():
+        if not book_dir.is_dir() or book_dir.name in NON_BOOK_DIRS:
+            continue
+        for chap_file in book_dir.glob('*.json'):
+            try:
+                cid = json.loads(chap_file.read_text(encoding='utf-8')).get('chapter_id')
+                if cid:
+                    valid_chapter_ids.add(cid)
+            except (json.JSONDecodeError, OSError):
+                continue
+
+    chapter_files = sorted(chapters_dir.glob('*.json'))
+    print(f"  chapter files: {len(chapter_files)}")
+    total_entries = 0
+    for cf in chapter_files:
+        chapter_id = cf.stem
+        if valid_chapter_ids:
+            check(f"chapters/{cf.name}: chapter_id '{chapter_id}' exists",
+                  chapter_id in valid_chapter_ids)
+        try:
+            data = json.loads(cf.read_text(encoding='utf-8'))
+        except json.JSONDecodeError as err:
+            check(f"chapters/{cf.name}: valid JSON", False, str(err))
+            continue
+        check(f"chapters/{cf.name}: has 'lenses' list",
+              isinstance(data.get('lenses'), list))
+        seen_lens_for_chapter: set[str] = set()
+        for j, entry in enumerate(data.get('lenses', []) or []):
+            ctx = f"chapters/{cf.name}#{j}"
+            if not isinstance(entry, dict):
+                check(f"{ctx} is object", False)
+                continue
+            lens_id = entry.get('lens_id', '')
+            check(f"{ctx} has lens_id", bool(lens_id))
+            if lens_id and valid_lens_ids:
+                check(f"{ctx} lens_id '{lens_id}' is registered",
+                      lens_id in valid_lens_ids)
+            check(f"{ctx} lens_id '{lens_id}' unique within chapter",
+                  lens_id not in seen_lens_for_chapter,
+                  "same lens listed twice for one chapter")
+            seen_lens_for_chapter.add(lens_id)
+
+            guidance = entry.get('guidance', '')
+            check(f"{ctx} has guidance", bool(guidance))
+            if guidance:
+                check(f"{ctx} guidance length 80-280",
+                      80 <= len(guidance) <= 280,
+                      f"got {len(guidance)}")
+
+            for field_name in ('panel_filter', 'panel_order'):
+                fval = entry.get(field_name)
+                if fval is None:
+                    continue
+                check(f"{ctx} {field_name} is list",
+                      isinstance(fval, list))
+                if not isinstance(fval, list):
+                    continue
+                check(f"{ctx} {field_name} non-empty",
+                      len(fval) > 0,
+                      "empty list would hide everything; omit instead")
+                check(f"{ctx} {field_name} values are strings",
+                      all(isinstance(k, str) for k in fval))
+                check(f"{ctx} {field_name} no duplicates",
+                      len(set(fval)) == len(fval))
+                if all_panel_keys:
+                    bad = [k for k in fval if k not in all_panel_keys]
+                    check(f"{ctx} {field_name} keys all valid",
+                          not bad,
+                          f"unknown keys: {bad}")
+
+            if 'panel_filter' in entry and 'panel_order' in entry:
+                f_set = set(entry.get('panel_filter') or [])
+                o_set = set(entry.get('panel_order') or [])
+                extra = o_set - f_set
+                check(f"{ctx} panel_order subset of panel_filter",
+                      not extra,
+                      f"order has keys missing from filter: {sorted(extra)}")
+            total_entries += 1
+    print(f"  total entries: {total_entries}")
+
+
 def main():
     """Run all content validation checks and print a summary.
 
@@ -179,7 +359,7 @@ def main():
     books_found = Counter()
 
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
+        if not book_dir.is_dir() or book_dir.name in NON_BOOK_DIRS:
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             total_files += 1
@@ -338,7 +518,7 @@ def main():
     valid_css = {'vhl-divine', 'vhl-place', 'vhl-person', 'vhl-time', 'vhl-key'}
     bad_css = set()
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
+        if not book_dir.is_dir() or book_dir.name in NON_BOOK_DIRS:
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             with open(json_file, encoding='utf-8') as f:
@@ -1084,7 +1264,7 @@ def main():
         tl_checked = 0
         tl_invalid = 0
         for book_dir in sorted(CONTENT.iterdir()):
-            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
+            if not book_dir.is_dir() or book_dir.name in NON_BOOK_DIRS:
                 continue
             for json_file in sorted(book_dir.glob('*.json')):
                 try:
@@ -1213,7 +1393,7 @@ def main():
 
     dup_count = 0
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
+        if not book_dir.is_dir() or book_dir.name in NON_BOOK_DIRS:
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
@@ -1250,7 +1430,7 @@ def main():
 
     oob_tips = 0
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
+        if not book_dir.is_dir() or book_dir.name in NON_BOOK_DIRS:
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
@@ -1277,7 +1457,7 @@ def main():
     if scopes_path_11.exists():
         scopes_data = json.loads(scopes_path_11.read_text(encoding='utf-8'))
         for book_dir in sorted(CONTENT.iterdir()):
-            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
+            if not book_dir.is_dir() or book_dir.name in NON_BOOK_DIRS:
                 continue
             for json_file in sorted(book_dir.glob('*.json')):
                 try:
@@ -1308,7 +1488,7 @@ def main():
 
     word_glosses = defaultdict(set)
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
+        if not book_dir.is_dir() or book_dir.name in NON_BOOK_DIRS:
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
@@ -1354,7 +1534,7 @@ def main():
         }
         unregistered = []
         for book_dir in sorted(CONTENT.iterdir()):
-            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
+            if not book_dir.is_dir() or book_dir.name in NON_BOOK_DIRS:
                 continue
             for json_file in sorted(book_dir.glob('*.json')):
                 try:
@@ -1391,7 +1571,7 @@ def main():
     st2_panel_count = 0
 
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
+        if not book_dir.is_dir() or book_dir.name in NON_BOOK_DIRS:
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
@@ -1450,7 +1630,7 @@ def main():
 
     overlaps = []
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
+        if not book_dir.is_dir() or book_dir.name in NON_BOOK_DIRS:
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
@@ -1480,7 +1660,7 @@ def main():
 
     gaps = []
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations', 'grammar', 'map-styles'):
+        if not book_dir.is_dir() or book_dir.name in NON_BOOK_DIRS:
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
@@ -1980,6 +2160,9 @@ def main():
 
     # ── 20. META-FAQ (Amicus Card #1449) ──
     _validate_meta_faq()
+
+    # ── 21. HERMENEUTIC LENSES (Epic #820) ──
+    _validate_hermeneutic_lenses()
 
     # ── Summary ──
     print(f"\n{'='*60}")

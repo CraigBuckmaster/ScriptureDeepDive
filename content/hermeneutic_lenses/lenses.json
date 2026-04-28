@@ -1,0 +1,66 @@
+[
+  {
+    "id": "grammatical",
+    "name": "Grammatical-Historical",
+    "description": "What did the text mean to its original audience?",
+    "long_description": "Seeks the original meaning of Scripture by analyzing grammar, syntax, genre, and historical setting. The interpreter asks what the human author intended to communicate and what the first hearers would have understood. Foundational for evangelical and reformed exegesis.",
+    "icon": "\ud83d\udcdc",
+    "display_order": 1
+  },
+  {
+    "id": "literary",
+    "name": "Literary",
+    "description": "How does the form of the text shape its meaning?",
+    "long_description": "Attends to the artistry of Scripture: genre, structure, chiasm, parallelism, repetition, and narrative technique. Asks how the way a passage is written carries meaning, treating the Bible as inspired literature whose form sermons its content.",
+    "icon": "\u270d\ufe0f",
+    "display_order": 2
+  },
+  {
+    "id": "typological",
+    "name": "Typological",
+    "description": "How do earlier persons, events, and institutions foreshadow Christ?",
+    "long_description": "Identifies divinely intended patterns (types) in earlier Scripture that find their fulfillment (antitypes) in later revelation, supremely in Christ. Reads Old Testament priests, sacrifices, and exodus events as shadows whose substance arrives in the New.",
+    "icon": "\ud83d\udd2e",
+    "display_order": 3
+  },
+  {
+    "id": "redemptive",
+    "name": "Redemptive-Historical",
+    "description": "Where does this passage fit in the unfolding story of redemption?",
+    "long_description": "Reads every passage within the grand narrative arc of God's redeeming work, from creation through fall, Israel, Christ, church, and new creation. Asks how each text contributes to the single story Scripture is telling.",
+    "icon": "\ud83d\udd04",
+    "display_order": 4
+  },
+  {
+    "id": "christocentric",
+    "name": "Christ-Centered",
+    "description": "How does this text point to, prepare for, or reflect Jesus?",
+    "long_description": "Reads all Scripture as testimony about Christ, following Jesus' own claim that the Law, Prophets, and Writings spoke of him (Luke 24:27, 44). Looks for direct prophecy, typological foreshadowing, and the contrast between human failure and Christ's faithfulness.",
+    "icon": "\u271d\ufe0f",
+    "display_order": 5
+  },
+  {
+    "id": "canonical",
+    "name": "Canonical",
+    "description": "How does this passage relate to the whole Bible's witness?",
+    "long_description": "Reads each text in light of the entire canon of Scripture, asking how earlier and later books illuminate and qualify one another. Emphasizes intertextual connections, theme threads, and the unity of the biblical witness across both testaments.",
+    "icon": "\ud83d\udcd6",
+    "display_order": 6
+  },
+  {
+    "id": "devotional",
+    "name": "Devotional",
+    "description": "What is God saying to me through this text today?",
+    "long_description": "Approaches Scripture as God's living word for the reader's formation and worship. Asks what is to be believed, repented of, hoped for, or obeyed. Application-focused but anchored in what the text actually says, not what we wish it said.",
+    "icon": "\ud83d\ude4f",
+    "display_order": 7
+  },
+  {
+    "id": "mission",
+    "name": "Missional",
+    "description": "How does this passage shape the church's witness to the world?",
+    "long_description": "Reads Scripture as the story of God gathering a people for himself from every nation, tribe, and tongue. Asks how each passage contributes to the church's vocation of bearing witness to Christ in word and deed across cultures.",
+    "icon": "\ud83c\udf0f",
+    "display_order": 8
+  }
+]
