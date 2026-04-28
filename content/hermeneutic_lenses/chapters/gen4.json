@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "Cain's offering 'of the fruit of the ground' (v 3) lacks the qualifiers 'firstborn' and 'fat portions' that mark Abel's (v 4); the syntax signals the difference by what it does not say. God's warning at v 7 personifies sin as a crouching predator.",
+      "panel_filter": ["heb", "hist", "ctx", "sarna", "alter", "net"],
+      "panel_order": ["heb", "alter", "sarna", "net", "ctx", "hist"]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Abel becomes the prototypical righteous sufferer whose blood cries from the ground (v 10). Hebrews 12:24 names Christ's blood as speaking 'a better word than the blood of Abel' — the type and antitype run on the same axis of innocent blood and divine response.",
+      "panel_filter": ["cross", "thread", "themes", "calvin"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Two lines diverge: Cain's expanding city in vv 17-24 versus Seth's line where 'people began to call on the name of the LORD' (v 26). The fall produces two trajectories that the rest of the canon will trace as the world and the people of God.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "The righteous Abel killed by his brother prefigures the righteous Christ killed by his own (John 1:11). Hebrews 11:4 commends Abel's faith; Hebrews 12:24 contrasts his blood with Christ's, which speaks not of vengeance but of forgiveness.",
+      "panel_filter": ["cross", "thread", "calvin", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Cain reappears as a paradigm of unrighteous hatred in 1 John 3:12, Jude 11, and Hebrews 11-12. Abel becomes the first name in the great hall of faith. The Cain-Abel pattern of righteous and unrighteous sons echoes through Esau-Jacob, Saul-David, and beyond.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}

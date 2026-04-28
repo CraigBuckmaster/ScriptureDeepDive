@@ -1,0 +1,22 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter is a toledot ('these are the generations of Adam', v 1) structured by a repeating formula: lived X years, fathered Y, lived Z more years, and died. The relentless 'and he died' is broken twice — by Enoch (v 24) and by Noah, named in hope (vv 28-29).",
+      "panel_filter": ["lit", "themes", "alter", "sarna"],
+      "panel_order": ["lit", "alter", "sarna", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Despite the death-toll formula, the line of Seth is preserved unbroken from Adam to Noah, keeping the seed-promise of 3:15 alive across ten generations. Lamech's prophecy at v 29 names Noah as the one who will bring relief — the redemptive arc continues.",
+      "panel_filter": ["themes", "thread", "cross"],
+      "panel_order": ["themes", "thread", "cross"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "1 Chronicles 1:1-4 condenses this genealogy as the canon's first signal of historical continuity. Luke 3:36-38 traces Christ's lineage back through Noah, Enoch, and Adam — making this list the spine on which the gospel's incarnational claim hangs.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}

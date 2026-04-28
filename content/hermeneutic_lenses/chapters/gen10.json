@@ -1,0 +1,22 @@
+{
+  "lenses": [
+    {
+      "lens_id": "redemptive",
+      "guidance": "The Table of Nations sets the demographic stage on which redemption history will unfold. Babel (ch 11) scatters these nations in judgment; Abraham (ch 12) is called as the answer; Pentecost (Acts 2) reverses Babel by gathering them in. The chapter is a list, but not flat.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "1 Chronicles 1:5-23 reproduces this table almost verbatim. Acts 17:26 echoes its theology: 'from one man he made every nation'. The chapter's seventy nations shape Jesus' sending of the seventy in Luke 10:1 and Revelation 7:9's vision of every nation and tribe.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    },
+    {
+      "lens_id": "mission",
+      "guidance": "This chapter is the missional anchor of the Old Testament. The seventy nations of vv 1-32 are the world that the Abrahamic call (12:3 — 'all peoples on earth will be blessed through you') is given for. Acts 17:26 reads it as the basis for Paul's address to Athens.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}

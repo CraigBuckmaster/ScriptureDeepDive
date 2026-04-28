@@ -1,0 +1,28 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "Noah's burnt offering at v 20 is a 'pleasing aroma' (v 21) to the LORD — language Paul lifts directly to describe Christ's self-offering (Eph 5:2). The post-flood altar prefigures the cross: judgment past, fellowship restored by sacrifice.",
+      "panel_filter": ["cross", "thread", "themes", "calvin"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The chapter pivots on v 1: 'God remembered Noah'. Divine remembering in Scripture is never recall but covenantal action. The promise of v 22 — that seedtime and harvest will not cease — establishes the providential stability without which redemption history could not unfold.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Noah's sacrifice produces the 'pleasing aroma' that placates judgment (v 21); Ephesians 5:2 names Christ's self-offering with the same Greek phrase. The dove that finds rest (vv 11-12) anticipates the Spirit who descends on Christ at his baptism (Mt 3:16).",
+      "panel_filter": ["cross", "thread", "calvin", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The 'pleasing aroma' formula recurs throughout the Levitical sacrificial system (Lev 1-7) and culminates in Eph 5:2 and Phil 4:18, where Christ's death and the church's gifts are named with the same imagery. Noah's altar is the canon's first installment of this thread.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "The legal syntax of the Noahic covenant uses the formula 'I establish my covenant' (vv 9, 11) — covenant-grant language that recurs through Abraham, Sinai, and David. The image-of-God basis for the prohibition of murder at v 6 makes human life rest on imago Dei.",
+      "panel_filter": ["heb", "hist", "ctx", "sarna", "alter"],
+      "panel_order": ["heb", "alter", "sarna", "ctx", "hist"]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "The rainbow (vv 13-16) — God's bow, set in the clouds — is a warrior's bow hung up. The pattern reappears at Revelation 4:3 around the throne and Revelation 10:1 over Christ's head. The sign of judgment-restraint becomes the sign of Christ's reign.",
+      "panel_filter": ["cross", "thread", "themes", "calvin"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The Noahic covenant (vv 8-17) is the canon's first explicit covenant — universal in scope, unconditional in form, the platform on which the more particular Abrahamic and Sinai covenants will be built. Its preservation pledge undergirds the whole biblical history.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "The image of God as the basis for the sanctity of human life (v 6) finds its clearest expression in Christ, who is 'the image of the invisible God' (Col 1:15). Every act of unjust killing is a strike against the image — culminating in the killing of the true Image at Calvary.",
+      "panel_filter": ["cross", "thread", "calvin", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The Noahic covenant's preservation pledge resurfaces across Scripture: Isaiah 54:9-10 invokes it as a guarantee of God's enduring mercy. The rainbow imagery returns at Ezekiel 1:28 and Revelation 4:3. The image-of-God basis for human life is taken up at James 3:9.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}

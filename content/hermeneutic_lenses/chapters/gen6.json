@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "The 'sons of God' / 'daughters of men' clause at vv 1-4 has provoked debate since antiquity (angelic, Sethite, or royal interpretations). The Hebrew nephilim (v 4) means 'fallen ones' or 'giants'. The chapter's tone is grief-laden: 'the LORD regretted' (v 6).",
+      "panel_filter": ["heb", "hist", "ctx", "sarna", "alter", "net"],
+      "panel_order": ["heb", "alter", "sarna", "net", "ctx", "hist"]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "The ark (vv 14-22) is the type that 1 Peter 3:20-21 names as a figure of baptism: salvation through water, by means of a divinely-given vessel. Noah, 'a righteous man' who 'walked with God' (v 9), prefigures the greater righteous one who carries his people through judgment.",
+      "panel_filter": ["cross", "thread", "themes", "calvin"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Universal corruption (vv 5, 11-12) meets divine grief and a redemptive remnant: 'but Noah found favor' (v 8). The pattern of judgment-with-rescue inaugurated here will recur at the exodus, the exile, and supremely at the cross.",
+      "panel_filter": ["themes", "thread", "cross", "calvin"],
+      "panel_order": ["themes", "thread", "cross", "calvin"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Where Adam fails and the world is judged, Noah (a type of Christ) carries his household through the waters of judgment. Christ is the greater ark — the one in whom believers are hidden from the wrath to come (1 Thess 1:10; Col 3:3).",
+      "panel_filter": ["cross", "thread", "calvin", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The flood appears across the canon as a paradigm of universal judgment: Jesus uses Noah's days as the model for the Son of Man's coming (Mt 24:37-39); 2 Peter 2:5 and 3:5-6 invoke the flood to warn of final judgment; Hebrews 11:7 commends Noah's faith.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}

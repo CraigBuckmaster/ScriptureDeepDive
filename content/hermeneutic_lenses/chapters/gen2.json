@@ -1,0 +1,40 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "The 'these are the generations of' (toledot, v 4) opens the second account with a different lens — not contradicting Gen 1 but zooming in on Day 6. The Hebrew adam at v 7 carries wordplay with adamah (ground); humanity is grounded in soil and breath together.",
+      "panel_filter": ["heb", "hist", "ctx", "sarna", "alter", "net"],
+      "panel_order": ["heb", "alter", "sarna", "net", "ctx", "hist"]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "Genesis 2 is the first of the eleven toledot ('generations of') sections that structure the entire book. Where ch 1 sweeps the cosmos, ch 2 narrows to the garden — a deliberate literary zoom rather than a second contradictory account.",
+      "panel_filter": ["lit", "themes", "alter", "sarna"],
+      "panel_order": ["lit", "alter", "sarna", "themes"]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "The seventh-day rest (vv 1-3) institutes the Sabbath that Hebrews 4:9-11 calls a still-awaiting rest for God's people. Eden's garden-temple imagery (vv 8-15) prefigures the tabernacle and the new-creation garden of Revelation 22:1-2.",
+      "panel_filter": ["cross", "thread", "themes", "calvin"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The marriage covenant of vv 22-25 ('one flesh') becomes Paul's analogy for Christ and the church (Eph 5:31-32). The command of v 17 sets the covenant terms whose breach in chapter 3 will require redemption.",
+      "panel_filter": ["themes", "thread", "cross"],
+      "panel_order": ["themes", "thread", "cross"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Adam, formed from dust and given the breath of life (v 7), is the first man whom Paul will pair with Christ as 'the last Adam' (1 Cor 15:45). The garden where God walks with humanity anticipates the new Jerusalem where God dwells with his people (Rev 21:3).",
+      "panel_filter": ["cross", "thread", "calvin", "themes"],
+      "panel_order": ["cross", "thread", "calvin", "themes"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Eden's rivers (vv 10-14), tree of life (v 9), and God-with-humanity intimacy thread through the whole canon, reappearing in Ezekiel 47, Psalm 1, and finally Revelation 22 where the river and tree return in the new creation.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    }
+  ]
+}
