@@ -1,0 +1,52 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "Hebrew asham (vv 6, 7, 15) means guilt — but the same word is the offering and the price paid. Isa 53:10 picks up this exact word for the Servant: his soul makes asham. The Hebrew sets the trajectory.",
+      "panel_filter": [
+        "heb",
+        "milgrom",
+        "calvin",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "milgrom",
+        "calvin",
+        "hebtext"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 14-19 require restitution plus a fifth (v 16) — covenant restoration costs more than the wrong, on purpose. The redemptive arc adds grace to justice: not breaking even, but more given back than was taken.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "The asham pattern — v 15's reparation 'for the wrong he has done' — foreshadows the Servant's substitutionary asham of Isa 53:10-11. Guilt-payment plus reparation, both fulfilled in Christ's offering.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    }
+  ]
+}

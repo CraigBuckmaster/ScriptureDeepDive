@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "Unlike olah and chattat, the shelamim ends in a meal (vv 1-5, 6-11): worshipper, priest, and God all share. The meal-pattern foreshadows the Lord's table — fellowship around a sacrifice, not around a feeling.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The shelamim's shared-meal pattern echoes throughout Scripture — Ex 24:11 (elders eating before God), 1 Kgs 8:62-66 (temple-dedication peace offerings), and Lk 22:17-20 (the cup of the new covenant).",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Hebrew shelamim is from shalom — peace, wholeness. The peace offering names what Christ achieves: 'since we have been justified by faith, we have peace with God' (Rom 5:1). Sinai fellowship made permanent.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "themes"
+      ]
+    }
+  ]
+}
