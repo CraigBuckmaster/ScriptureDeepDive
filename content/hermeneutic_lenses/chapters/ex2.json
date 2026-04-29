@@ -1,0 +1,84 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "Pharaoh's daughter names the child Moses 'because I drew him out of the water' (v 10) — Hebrew mashah, 'to draw out'. The Egyptian princess speaks Hebrew etymology; the original audience hears the deliverer's name pun on deliverance itself.",
+      "panel_filter": [
+        "heb",
+        "hist",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "sarna",
+        "alter",
+        "hist"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "The 'basket' Moses is placed in (v 3) is Hebrew tebah — the same word used only of Noah's ark (Gen 6:14). The narrative repetition signals: God saves a people through a saved deliverer floating on the same word.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Moses is preserved from genocide (vv 1-10), drawn from water (v 10), and grows up to lead his people out of Egypt — the pattern Matthew 2:13-15 explicitly applies to Christ saved from Herod and called out of Egypt.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "God 'remembered his covenant with Abraham' (v 24) — Hebrew zakar, used elsewhere of Noah (Gen 8:1) and Hannah (1 Sam 1:19). The redemptive arc moves when God 'remembers'; deliverance follows the verb.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Moses' first attempt at deliverance fails — he kills, hides, flees (vv 11-15). Forty years in Midian precede the call. Pray when self-effort has collapsed; God's deliverers are shaped by their failures, not exempted from them.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

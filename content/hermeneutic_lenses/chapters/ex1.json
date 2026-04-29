@@ -1,0 +1,64 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The 'be fruitful and multiply' refrain (v 7) deliberately echoes Gen 1:28 — Israel's multiplication is creation-mandate language, framing Pharaoh's policy (v 10) as anti-creation. The narrative's repetition is the structure of the conflict.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Pharaoh's three escalating policies — hard labour (v 11), midwife conscription (v 16), Nile decree (v 22) — all fail to suppress covenant multiplication. The redemptive arc begins with empire's strategic exhaustion against promise.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Shiphrah and Puah's civil disobedience (vv 17-21) is named approvingly across Scripture — the pattern threads to Daniel 3, Acts 4:19 and 5:29 ('we must obey God rather than men'). The first righteous act in Exodus is a refusal.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Pharaoh is unnamed; Shiphrah and Puah are named (v 15). God's moral memory inverts imperial visibility. Today, trust that quiet faithfulness leaves a name where loud power leaves only a title.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

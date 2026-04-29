@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "Moses pleads 'I am slow of speech and tongue' (v 10) — Hebrew kebed peh ukebed lashon, literally 'heavy of mouth and heavy of tongue'. The original audience hears physical impediment, not stage fright; grace works through real disability.",
+      "panel_filter": [
+        "heb",
+        "hist",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "sarna",
+        "alter",
+        "hist"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Moses' near-fatal encounter at the inn (vv 24-26) and Zipporah's circumcision act preserve the deliverer for the deliverance. The covenant sign cannot be neglected by the very man God will use to lead a circumcised people.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The unsettling 'meeting' at the inn (vv 24-26) echoes earlier Jacob-Peniel wrestling (Gen 32:24-32) — encounters of judgement that reshape the covenant-bearer rather than destroy him. A pattern across Scripture.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Moses gives five objections (vv 1, 10, 13) and God answers each with provision — signs, Aaron, the rod. Faith is not the absence of objection but obedience past objection. Pray your fears, then go.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

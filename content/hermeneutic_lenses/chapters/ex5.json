@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "Pharaoh's 'Who is the LORD that I should obey his voice?' (v 2) frames the entire Exodus narrative as a question. The structure of the next twelve chapters is the answer Yahweh gives — through plague, sea, and Sinai.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The first confrontation produces deeper bondage, not deliverance (vv 6-9). The redemptive arc bends through intensified suffering before relief — a pattern the prophets and the cross will both later exhibit.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Moses returns to God with 'why have you sent me at all?' (v 22). Pray when faithfulness seems to produce only harm; God's servants are permitted bewildered prayer without losing their commission.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}
