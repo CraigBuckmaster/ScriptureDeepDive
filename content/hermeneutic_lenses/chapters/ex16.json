@@ -1,0 +1,84 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "When Israel saw the manna they asked 'man hu?' — Hebrew 'what is it?' (v 15). The food's name is the question of perplexed wonder. The original audience hears that divine provision begins where human categories run out.",
+      "panel_filter": [
+        "heb",
+        "hist",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "sarna",
+        "alter",
+        "hist"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "The 'gather only what you need for the day' rule (vv 16-19) and the Sabbath double portion (vv 22-26) teach the calendar's structure before Sinai institutionalises it. The narrative repetition installs daily-trust pattern.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Manna preserved 'as a memorial' in a jar (vv 32-34) becomes one of three relics in the ark (Heb 9:4). The pattern points to Christ — bread kept, not consumed; presence that does not run out.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "John 6's 'I am the bread of life' (Jn 6:35) anchors back to v 4's bread from heaven. The Sabbath jar (v 33) preserves what Christ later embodies: receive daily, store nothing, return for tomorrow.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Some hoarded the manna (v 20) — 'it bred worms and stank'. Daily trust is structural: God provides for today, not tomorrow. Pray for daily bread (Mt 6:11) and stop calculating. Faith is yesterday's manna refused.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

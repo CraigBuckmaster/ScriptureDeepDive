@@ -1,0 +1,48 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "Jethro's visit (vv 1-12) and counsel (vv 13-27) sit between Red Sea and Sinai — narrative pause for organisation. The structure forces a question: what kind of people will receive the Decalogue? An organised one.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Jethro the Midianite priest worships Yahweh (v 11) before Sinai's covenant — a Gentile confession threading forward to the Magi at Bethlehem (Mt 2:11), Cornelius (Acts 10), and the inclusion of the nations across Scripture.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Jethro tells Moses 'you will surely wear yourself out' (v 18). Faithfulness is not the same as exhaustion; healthy ministry delegates. Today, accept the counsel of those who see your patterns more clearly than you do.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

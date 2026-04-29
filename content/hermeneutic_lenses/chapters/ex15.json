@@ -1,0 +1,80 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-18's poetry breaks the narrative prose — Israel's first liturgical text. The chiasm structures around v 11's centre: 'who is like you, Yahweh, among the gods?'. Poetry as theology, not decoration.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The Song of the Sea (vv 1-18) is sung again at Revelation 15:3 as 'the song of Moses and the song of the Lamb' — the chapter's worship becomes the canonical archetype of redeemed-people praise across Scripture.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "v 3's 'Yahweh is a warrior' is taken up in Revelation 19:11-16 of Christ riding to judgement. The same Lord who fights at the Red Sea is the Christ who fights at the parousia — one warrior, two appearances.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Marah's bitter waters made sweet by a tree (vv 23-25) — the redemptive arc continues post-crossing: deliverance is followed by daily provision crises, each resolved by covenant obedience and divine sweetening.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Miriam takes a tambourine 'in her hand' and 'all the women followed her with tambourines and dancing' (v 20). Worship can be embodied. Today, name God's deliverance with body, not just thought; song is the theology women lead first.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

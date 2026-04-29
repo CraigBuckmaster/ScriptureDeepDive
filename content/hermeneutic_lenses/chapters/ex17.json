@@ -1,0 +1,80 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "Two events frame the chapter — water from rock (vv 1-7) and Amalek (vv 8-16) — both naming places: Massah/Meribah (v 7) and Yahweh-Nissi (v 15). The narrative structure binds wilderness provision and battle as twin tests.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Moses strikes the rock (v 6); decades later he strikes a second rock and is barred from the land for it (Num 20:11-12). The pattern teaches: the rock is struck once. Christ struck once for sins (Heb 9:28) is the antitype.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "'The rock that followed them was Christ' (1 Cor 10:4) — Paul's grammar makes the rock at Massah (v 6) not similar to Christ but identified as him. Wilderness sustenance becomes Christology, not metaphor.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Amalek's defeat (v 13) begins a thread — Deut 25:17-19 commands remembrance, 1 Sam 15 sees Saul disobey it, Esther 3 names Haman as 'the Agagite'. The canonical line runs from this battle to the Persian palace.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Moses' arms grow heavy; Aaron and Hur hold them up 'one on each side' (v 12). Intercession is communal — when prayer flags, others pray with you. Today, ask someone to hold your arms when you cannot lift them yourself.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

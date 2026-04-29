@@ -1,0 +1,64 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "'Remember this day' (v 3) frames every subsequent observance. The chapter sits between Passover and Red Sea — the narrative installs liturgical memory before the next deliverance. Identity comes from rehearsed story.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Joseph's bones travel with Israel (v 19) — Gen 50:25's promise carried by the fleeing nation. The pattern of Joseph delivered through Egypt foreshadows Israel delivered through Egypt; both prefigure Christ.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The firstborn consecration (vv 2, 12-13) opens a thread that ends at Hebrews 12:23 ('the assembly of the firstborn enrolled in heaven') and Christ as 'firstborn of all creation' (Col 1:15). The category begins here in liturgy.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "God 'did not lead them by way of the Philistines... lest the people change their minds' (v 17). Trust the longer route; God knows when faith is too young for the direct path. Today, accept detours as mercy.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

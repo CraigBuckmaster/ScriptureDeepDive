@@ -1,0 +1,48 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "v 1 announces 'one more plague' — the chapter functions as a pause before climax, framing ex 12 in advance. The narrative repetition of 'against Pharaoh, against Egypt' (vv 4-7) marks the structural seam between cycle and Passover.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The firstborn theme inaugurated here (v 5) threads across Scripture — Cain/Abel, Esau/Jacob, Manasseh/Ephraim, finally Christ as 'firstborn of all creation' (Col 1:15) and 'firstborn from the dead' (Rev 1:5).",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Moses 'went out from Pharaoh in hot anger' (v 8). Faith permits — sometimes requires — anger at hardened cruelty. Pray your indignation honestly, but channel it into obedience as Moses does in ex 12.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

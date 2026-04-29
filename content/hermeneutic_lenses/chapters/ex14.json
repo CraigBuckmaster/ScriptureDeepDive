@@ -1,0 +1,96 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "v 13's 'fear not, stand firm' inverts to v 15's 'why do you cry?... go forward'. The structure pivots on the divide: human paralysis (vv 10-12), divine pronouncement (vv 13-14), divine command (v 15), miracle (v 21).",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "1 Cor 10:1-2 reads the Red Sea (v 21) as baptism — 'all were baptised into Moses in the cloud and in the sea'. The pattern: emerging through water as a delivered people prefigures Christian baptism's shape.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "At the chapter's end Israel 'feared the LORD and believed' (v 31) — fear and faith as the redemptive shape of the moment. The covenant promise of Ex 6:6-7 was spoken; here it becomes the people's own confession.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Hebrews 11:29 names the Red Sea crossing (v 21) 'by faith' — the impassable made passable. The pattern prefigures the cross: Christ as the way through what cannot be crossed by human strength, by water then blood.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The Red Sea crossing (v 21) echoes through Pss 77, 78, 106, 114 and Isa 43:16's 'who makes a way in the sea'. The crossing becomes Israel's standard image of divine rescue across Scripture.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "'Why do you cry to me? Tell the people to go forward' (v 15) — God interrupts Moses' prayer with command. Pray, then move; trust may need to step into the water before the water steps aside. Faith is verb.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}
