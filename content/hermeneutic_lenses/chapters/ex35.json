@@ -1,0 +1,52 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The unit opens with Sabbath (vv 1-3), then the offering call (vv 4-29), then craftsmen named (vv 30-35). The literary order subordinates work to rest — Sabbath sets the structure before a beam is cut. Form preaches before a tool moves.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 21-29 — 'everyone whose heart was stirred' brings to the offering. The willing-people note is a covenant ideal: redemption that is also welcomed. The arc bends toward a people whose obedience flows from desire, not duress.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "v 21's 'stirred heart' and v 26's 'willing spirit' set the giving-pattern that endures today: not the size of the offering but the inclination of the heart. To respond like the spinners of v 26 is to give with joy.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ]
+    }
+  ]
+}

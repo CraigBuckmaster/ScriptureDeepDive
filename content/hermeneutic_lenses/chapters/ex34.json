@@ -1,0 +1,98 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "vv 6-7's chesed v'emet — covenant-loyalty and faithfulness — is paired Hebrew rhetoric, designed for liturgical reuse. The rhythm of attribute-pairs (gracious-merciful, slow-abundant, keeping-forgiving) reads like a creed-text.",
+      "panel_filter": [
+        "heb",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "sarna",
+        "alter",
+        "hebtext"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "The theophany formula (vv 6-7) interrupts the renewal narrative — bracketed by mountain-ascent (vv 1-4) and shining-face descent (vv 29-35). The Sinai-pattern is bookended; the formula is set apart by literary framing.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 33-35 — Moses puts a veil on after speaking with Yahweh, off when speaking again. The veil-on/veil-off pattern is the type that 2 Cor 3 reads as removed for those in Christ. Glory by encounter prefigures glory by reflection.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 6-7's chesed v'emet (covenant-love and faithfulness) finds full voice in John 1:14: 'full of grace and truth' translates the same Hebrew pair. The Yahweh of Sinai self-discloses as Jesus the Christ in Galilee.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Covenant renewal (v 10) and second tablets (v 27) reveal the promise's design: it can survive Israel's worst breach. The redemptive arc is not waiting for a perfect partner; it is making one, by patient covenant-keeping after rupture.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 6-7's attribute-formula echoes throughout Scripture — Num 14:18 in the spies' crisis, Neh 9:17 in post-exile confession, Pss 103:8 and 145:8 in the praise-canon. Israel learned to pray its theology back to God.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

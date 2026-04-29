@@ -1,0 +1,98 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "v 1's 'make us gods (elohim) who shall go before us' uses the same Hebrew elohim that names Yahweh. v 4's liturgical formula 'these are your gods, O Israel' copies covenant-naming language to crown a calf. Theology is reversed by syntax.",
+      "panel_filter": [
+        "heb",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "sarna",
+        "alter",
+        "hebtext"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "Three narrative movements: descent into apostasy below (vv 1-6), intercession above (vv 7-14), and judgment on return (vv 15-35). The structure mirrors a tragic descent-mediation-execution arc, with Moses moving up and down the mountain.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "v 32 — 'blot me out of your book' — Moses offers his own life as the price of forgiveness. The substitutionary pattern prefigures one greater Mediator who will not merely offer but actually be cut off for the people he loves.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "What Moses offered in v 32 — substitution unto being blotted out — Christ accomplished. He is cut off for transgressors so the names blotted from one book are written in the Lamb's. Mediation completed where Moses could only ask.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "v 14's relenting after intercession is covenant-mercy operating on the day the covenant should die. The promise made to Abraham (cited in Moses's plea, v 13) is older and stronger than Israel's worst breach of it.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The calf episode echoes across Scripture as the paradigm idolatry warning — Deut 9:8-21 retells it, Neh 9:18 confesses it, Ps 106:19-23 sings it, Acts 7:39-43 indicts it, 1 Cor 10:7 warns the church off it.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

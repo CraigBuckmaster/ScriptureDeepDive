@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "vv 1-7 build the bronze altar; v 8 builds the bronze laver. Both bronze, both at the courtyard threshold. The pattern is fixed: sacrifice precedes cleansing precedes approach to the holy. The order of grace, not of human achievement.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "vv 21-31's materials inventory functions as a narrative ledger — Bezalel's craft audited by name, by weight, by who-paid-what. The structure asserts that sacred construction can be counted, and ought to be.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    }
+  ]
+}

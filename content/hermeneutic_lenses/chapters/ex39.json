@@ -1,0 +1,52 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The refrain 'as the LORD commanded Moses' repeats across the chapter (vv 1, 5, 7, 21, 26, 29, 31, 32) — eight beats hammering one note. The repetition is the literary point: obedient pattern-keeping is itself a form of worship.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Aaron's vesting (vv 1-31) anticipates Hebrews 4-10's vesting of the great High Priest. The breastpiece of vv 8-14 carries the twelve names — pattern: the priest carries his people before the Father in the Most Holy place.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 43 — 'Moses saw all the work, and behold, they had done it... and Moses blessed them.' The text echoes Gen 1:31's 'God saw everything... very good' — tabernacle-completion is narrated as a creation-act, with Moses voicing the divine refrain.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "lit"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "lit",
+        "themes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "v 11 reads panim el-panim — face to face. v 14's 'my Presence' is panai, my face. v 23's 'back parts' is achor. The Hebrew chapter is a sustained meditation on whose face goes with Israel and what Moses can literally see of it.",
+      "panel_filter": [
+        "heb",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "sarna",
+        "alter",
+        "hebtext"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "Three scenes built on a presence-motif: the presence-crisis (vv 1-6), Moses at the tent of meeting (vv 7-11), and the glory-request (vv 12-23). The repetition of 'presence' is the structural pivot of the chapter.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Moses sees only Yahweh's 'back parts' (v 23) — partial sight, the shadow of theophany. John 1:18 says no one has seen God except the Son who has made him known; the Sinai shadow anticipates the Bethlehem disclosure.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "v 14 — 'My Presence will go with you' — is the seed of every Immanuel-promise. The presence Israel needs to survive the wilderness arrives in person in Jesus, named God-with-us. Sinai gives the shape; the manger gives the man.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 12-13 and 15-16 model intercession that won't take an evasive answer. Moses prays a holy refusal: 'if your presence does not go, do not send us up from here' (v 15). To pray like Moses is to want God more than the gift.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The face-of-God seeking begun here threads through Pss 27:8 ('your face, LORD, do I seek'), 42:2, and 63:2 to Mt 5:8's 'pure in heart shall see God' and 1 Jn 3:2's 'we shall see him as he is'.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

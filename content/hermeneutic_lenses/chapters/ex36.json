@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "v 6's 'restrain the people from bringing' is the narrative mirror of ex32's 'they brought their gold to Aaron.' The structure inverts the calf-frenzy — same impulse, opposite altar. Generosity to Yahweh undoes the gold poured for an idol.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "v 6's 'more than enough' gives a worship-model for today. To worship in giving is to risk overflowing the need — to trust that the work needs offerers more than it needs measured-out funds. Faithful generosity is its own response to grace.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ]
+    }
+  ]
+}
