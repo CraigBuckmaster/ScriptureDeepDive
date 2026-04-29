@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter's structure unfolds in three movements: erection-command (vv 1-15), execution (vv 16-33), and glory-arrival (vv 34-38). The sevenfold 'as the LORD commanded Moses' refrain bookends execution as obedient pattern-keeping.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "v 34's glory-cloud filling the tabernacle prefigures the wind-and-fire filling at Pentecost and Rev 21:3's tabernacle of God-with-humanity. The pattern is escalating presence: tent, then temple, then person, then people, then city.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "v 34's 'glory of the LORD filled the tabernacle' lands its incarnation in John 1:14: 'the Word became flesh and tabernacled among us' — eskenosen, the same root. The Sinai cloud finds a body in Jesus the Christ.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "heb"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "heb"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Genesis ended with humans cast outside Eden's presence; Exodus ends with Yahweh moving into Israel's camp (v 34). The redemptive promise of Gen 17 and Ex 6 has covered ground: covenant-presence has crossed the threshold.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 36-38's cloud-by-day, fire-by-night threads through Num 9:15-23 (wilderness guidance), 1 Kgs 8:10-11 (temple dedication), Ezek 10 and 43 (departure and return), to John 1:14 and Rev 21:3 — God-presence crossing the canon.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

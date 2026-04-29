@@ -1,0 +1,52 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "vv 6-9 — Bezalel makes the kapporet with two cherubim guarding above. The pattern of guarded access to atonement runs through the tabernacle; the torn-veil of Mt 27:51 announces the guard removed, the seat opened to all.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "The mercy seat of vv 6-9 is Hebrew kapporet; the LXX renders it hilasterion. Paul takes hilasterion and uses it of Christ in Rom 3:25 — the gold-cover-over-the-broken-law is the gospel-shape, and Christ Jesus is the substance.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "heb"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "heb"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "Five furniture pieces — ark, table, lampstand, incense altar, anointing oil — are crafted in narrative parallel. The 'he made' refrain (vv 1, 10, 17, 25, 29) marks each item's completion before moving to the next item.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    }
+  ]
+}

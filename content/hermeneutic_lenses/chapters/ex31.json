@@ -1,0 +1,52 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "Two paired sections: Bezalel's Spirit-gifting (vv 1-11) sets up tabernacle-craft, then the Sabbath sign (vv 12-17) frames the work with rest. v 18's tablets close the unit. The literary structure subordinates work to covenant-rest.",
+      "panel_filter": [
+        "lit",
+        "sarna",
+        "alter",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "sarna",
+        "alter",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Bezalel 'filled with the Spirit of God' (v 3) is the OT's first explicit Spirit-filling formula. The pattern anticipates Pentecost's craftsmen-of-the-gospel filled to build a different sanctuary — the church as living tabernacle.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 12-17 calls Sabbath 'a sign forever' (v 17) — the rhythm marks Israel as God's. The practical pattern: trust that the work continues without you. To rest in obedience here is to confess that Yahweh, not Israel, builds the tabernacle.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "themes",
+        "rec"
+      ],
+      "panel_order": [
+        "mac",
+        "calvin",
+        "themes",
+        "rec"
+      ]
+    }
+  ]
+}
