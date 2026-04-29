@@ -1,0 +1,100 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "'Passover' translates Hebrew pesach (v 11) — the verb suggests both 'pass over' (LXX) and 'protect' (Akkadian cognate). The original audience hears protective presence, not mere bypass; God hovers, not just skips.",
+      "panel_filter": [
+        "heb",
+        "hist",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "sarna",
+        "alter",
+        "hist"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "v 2's 'this month shall be the beginning of months' restarts Israel's calendar at deliverance. The narrative makes redemption not a date but the date — every month henceforth measured from this one.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "The lamb 'without blemish' (v 5), kept four days and slaughtered at twilight (v 6), with blood applied to doorframes (v 7) — the pattern foreshadows Christ. Each instruction prefigures something specific in the gospel.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The substitution principle is established here: a lamb dies in place of the firstborn (vv 12-13). The redemptive arc that began with Genesis 22's ram now becomes liturgy — rescue at the heart of Israel's worship calendar.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "v 46 prohibits breaking the lamb's bones — John 19:36 cites this exact regulation at the cross ('not one of his bones will be broken'). The Passover ritual's smallest detail predicts Christ's preserved body.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The Passover instituted here (v 14) is observed at Joshua's entry (Josh 5:10), Hezekiah's reform (2 Chr 30), Josiah's recovery (2 Kgs 23:21-23), and finally fulfilled at the Last Supper (Lk 22:7-20). A canonical thread.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

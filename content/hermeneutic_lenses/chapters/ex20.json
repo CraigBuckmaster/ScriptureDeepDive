@@ -1,0 +1,98 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "v 2's 'I am the LORD your God who brought you out of Egypt, out of the slave-house' — the prologue. Hebrew grammar puts deliverance before commandment; identity precedes obligation. Grace founds law, not the reverse.",
+      "panel_filter": [
+        "heb",
+        "hist",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "sarna",
+        "alter",
+        "hist"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "The Decalogue divides into two tables — commands 1-4 vertical (vv 3-11), commands 5-10 horizontal (vv 12-17). The structure of love-of-God preceding love-of-neighbour is built into the form before Christ summarises it.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The Ten Commandments arrive only after deliverance — v 2 names the rescue first, then v 3 commands. The redemptive arc shapes the law itself: covenant rules are gift-of-life-with-God, not entry-fee for it.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Jesus summarises the Decalogue (vv 1-17) as 'love God, love neighbour' (Mt 22:37-40), names himself the law's fulfilment (Mt 5:17), and embodies it. Christ alone keeps these commands; Christians keep them in him.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The ten words (vv 3-17) echo through Deuteronomy 5 (re-issued), the prophets (Hos 4:1-2 names them), Jesus (Mt 19:18-19), and James 2:11. A canonical thread: same commands, four canonical voices, one law.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "'The people stood far off' (v 18) — fear at God's audible voice. Reverence is part of right reception; today, draw near (Heb 10:22) only because Christ has made the access fearless. Awe and intimacy together.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

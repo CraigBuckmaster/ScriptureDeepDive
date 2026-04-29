@@ -1,0 +1,84 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "'Kingdom of priests and holy nation' (v 6) — Hebrew mamleket kohanim. Each Israelite is priest by vocation; the nation as a whole mediates God's presence outward. The original audience hears corporate priesthood.",
+      "panel_filter": [
+        "heb",
+        "hist",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "sarna",
+        "alter",
+        "hist"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "The theophany structure escalates — three days of consecration (vv 10-11), boundary lines (v 12), trumpet blast (v 16), smoke and fire (v 18), shaking mountain (v 18). The narrative pace is liturgical preparation.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Sinai's fire-and-smoke theophany (vv 16-19) is the type Hebrews 12:18-24 names — and Mount Zion (Heb 12:22) is the antitype. The pattern: terrified-distance at Sinai becomes confident-approach at the cross.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "God descends to the mountain to meet his people (v 20). The pattern of God-comes-down anchors at the incarnation: 'the Word became flesh and dwelt among us' (Jn 1:14). Sinai's descent becomes Bethlehem's.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 6's 'kingdom of priests and holy nation' is cited at 1 Peter 2:9 — applied directly to the church. The Sinai vocational identity carries across Scripture: Israel-then becomes the church-now without remainder.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}
