@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The seven-day ordination (v 35) and twice-daily offering (vv 38-42) frame priesthood with calendar. The narrative structure binds time itself to atonement; Israel measures days by sacrifice, not just sundial.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Blood is applied to ear, thumb, and toe (v 20) — hearing, doing, walking all consecrated. The pattern of priestly purification covers the whole life. Christ's blood (Heb 10:14) does what these repeated rites only enacted.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "v 36's 'sin offering for atonement' begins seven days of purification before priesthood begins. Christ's once-for-all sacrifice (Heb 7:27) abolishes the cycle while fulfilling its meaning — purified priesthood is now his.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "The lamb morning and evening (vv 38-42) trains daily rhythm — every dawn and dusk shaped by sacrifice. Today, anchor prayer to the same rhythm; let morning and evening name themselves with the cross.",
+      "panel_filter": [
+        "themes",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

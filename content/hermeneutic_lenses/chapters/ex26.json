@@ -1,0 +1,52 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The four coverings (vv 1-14) layer outward from holiness toward weather; the two veils (vv 31-37) gate inward toward holiness. Architectural narrative: the structure is a graded approach to presence.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "The inner veil (vv 31-33) separates Holy Place from Most Holy. The pattern tears at Mark 15:38 from top to bottom; Heb 10:19-20 names Christ's flesh the new way through. The chapter's veil is built to be torn.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "The cherubim woven into the inner veil (v 31) match the ark's cherubim (25:18) — guards on both sides of the boundary. Christ's body torn (Heb 10:20) removes the guard; access is opened by his flesh, not by ours.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

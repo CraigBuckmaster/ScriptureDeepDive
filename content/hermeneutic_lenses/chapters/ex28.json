@@ -1,0 +1,54 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "v 2's 'glory and beauty' — Hebrew kavod ve-tiph'eret. Kavod is presence-weight; tiph'eret is splendour. The original audience hears that priestly clothing carries divine weight, not merely human pageantry.",
+      "panel_filter": [
+        "heb",
+        "hist",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "sarna",
+        "alter",
+        "hist"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Aaron carries the twelve tribes' names on his shoulders and over his heart (vv 9-12, 29) — the high priest physically bears Israel into God's presence. The pattern prefigures Christ as great high priest (Heb 4:14) bearing his people the same way.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "The gold plate inscribed 'holy to the LORD' (vv 36-38) lets Aaron 'bear the iniquity of the holy things' — the priest absorbs imperfection in worship. Christ bears not flawed worship but the worshippers themselves.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

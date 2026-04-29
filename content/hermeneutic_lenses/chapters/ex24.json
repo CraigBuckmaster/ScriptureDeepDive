@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter has two ascents — elders to mid-mountain (v 9), Moses to the cloud (v 18). The narrative structure of graded-access maps the tabernacle's coming spatial holiness; geography teaches theology.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Moses sprinkles half the blood on the altar, half on the people (vv 6-8) — the ratifying ritual binds the two parties. The pattern foreshadows Christ's blood binding God and humanity in one new covenant.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "v 8's 'the blood of the covenant' is the formula Christ redeploys at Mt 26:28: 'this is my blood of the covenant'. The Last Supper deliberately rewrites this mountain into the upper room — same blood-grammar.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "'They beheld God, and ate and drank' (v 11) — the covenant meal where mercy could have meant death. The redemptive arc establishes table-fellowship with God as covenant's destination, not just commandment-keeping.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 11's elders eating and drinking before God threads to Isaiah 25:6's eschatological banquet, Christ's table (Lk 22:30), and Rev 19:9's marriage supper of the Lamb — covenant meal across Scripture.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

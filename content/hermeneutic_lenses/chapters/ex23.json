@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter binds three threads — courtroom justice (vv 1-9), Sabbath rhythm (vv 10-13), festival calendar (vv 14-17). Narrative structure makes worship and justice inseparable: covenant life integrates both.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The Sabbath-year (vv 10-11) lets the land rest 'so that the poor of your people may eat'. The redemptive arc rests creation itself; covenant rhythm restores both soil and the dispossessed simultaneously.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "'My angel will go before you' with 'my name in him' (vv 20-21) prefigures Christ — the divine presence in agent form, who must be obeyed. Patristic readers saw the angel of Yahweh as pre-incarnate appearance.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The three festivals (vv 14-17) — Unleavened Bread, Harvest, Ingathering — fix the calendar that Lev 23 expands and Deut 16 reaffirms. The thread runs to John's Gospel where each feast frames a sign.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

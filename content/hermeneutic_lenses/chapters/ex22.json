@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter's pivot is at v 21 — from property cases to the alien, widow, and orphan. The narrative structure binds covenant ethics to memory: 'you were aliens in Egypt' (v 21) grounds the law in Israel's own rescue.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "'If you lend money to my people, to the poor among you, you shall not exact interest' (v 25). Covenant economics limit exploitation; the redemptive arc shapes how Israel trades, not just how Israel worships.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Care for widow, orphan, and alien (vv 21-22) opens a thread running through Deut 10:18, the prophets (Isa 1:17, Jer 22:3), to James 1:27 — true religion as covenant ethics enacted across Scripture.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

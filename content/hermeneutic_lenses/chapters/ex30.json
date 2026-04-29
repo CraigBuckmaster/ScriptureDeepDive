@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "Five elements — incense altar, census tax, bronze basin, anointing oil, incense recipe — each gets its own short section. The narrative structure of repeated 'the LORD said to Moses' (vv 11, 17, 22, 34) marks five distinct words.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "The half-shekel atonement-money (vv 11-16) is 'the same for rich and poor' (v 15) — covenant atonement levels the human field. The pattern points to Christ's ransom: one price, every soul, no scaling.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The incense altar (vv 1-10) carries prayer-imagery across Scripture — Ps 141:2 ('let my prayer be incense'), Lk 1:10's prayer at the hour of incense, Rev 5:8's prayers as incense before the throne.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}
