@@ -1,0 +1,52 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter moves outward — altar (vv 1-8), courtyard (vv 9-19), lamp (vv 20-21). The narrative structure inverts ch 25-26's inward-from-ark sequence; entry comes by altar, presence comes by ark, light through both.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "The bronze altar (vv 1-8) sits at the courtyard entrance — sacrifice precedes approach. The pattern matches the cross at Christianity's entrance: no path to presence that does not pass through atonement.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The lamp burns 'from evening until morning' continually (v 21) — covenant presence persists through every dark watch. The redemptive arc keeps a flame Israel cannot extinguish, prefiguring the unquenchable light of Christ.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    }
+  ]
+}

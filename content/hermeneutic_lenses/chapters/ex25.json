@@ -1,0 +1,68 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "The 'mercy seat' (vv 17-22) is Hebrew kapporet — root kafar ('to cover, atone'). The original audience hears atonement-cover, not throne-cushion; the lid is where sin is covered, not where God reposes.",
+      "panel_filter": [
+        "heb",
+        "hist",
+        "sarna",
+        "alter",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "sarna",
+        "alter",
+        "hist"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "v 8's 'let them make me a sanctuary, that I may dwell among them' begins a pattern that anticipates the incarnation (Jn 1:14's eskēnōsen, 'tabernacled') and Rev 21:3's final dwelling — tent prefigures temple prefigures God-with-us.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Two cherubim guard the ark (v 18) — recalling Gen 3:24's cherubim guarding Eden's tree. The mercy seat between them is where access is restored. Christ as both throne and atonement reopens what Eden's cherubim closed.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "cross",
+        "thread",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "What Moses sees on the mountain (v 40) echoes throughout Scripture — Hebrews 8:5 names it 'a copy and shadow of the heavenly things', and Heb 9:24 places Christ entering the heavenly archetype the tabernacle merely copied.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

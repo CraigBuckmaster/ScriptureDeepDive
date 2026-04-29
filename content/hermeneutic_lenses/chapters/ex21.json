@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The Book of the Covenant opens (v 1) with case law — 'when... if... then'. The structure shifts from Decalogue absolutes (ch 20) to applied jurisprudence; the narrative trains the reader: principles must become procedure.",
+      "panel_filter": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "alter",
+        "sarna",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "The seven-year servant-release (vv 2-6) embeds redemption into Israel's economy. Bondage is bounded; the redemptive arc keeps no one perpetually owned. Compare Lev 25's Jubilee — covenant law is liberation calendar.",
+      "panel_filter": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ],
+      "panel_order": [
+        "themes",
+        "thread",
+        "calvin",
+        "cross"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 24's lex talionis ('eye for eye') is corrected, not abolished, by Jesus at Mt 5:38-42 — the principle limits revenge; Christ moves to renunciation. A canonical thread: law restrains, gospel transforms.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}
