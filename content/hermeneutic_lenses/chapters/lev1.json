@@ -1,0 +1,68 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "The 'olah goes up entirely in smoke (vv 6-9, 12-13) — wholly given is the type's signature. The pattern prefigures Christ offering himself wholly to God (Heb 10:5-10), no portion withheld for the offerer.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 3 and 10 require a male without blemish — Hebrew tamim, complete. Heb 9:14 takes that requirement up: Christ offered himself without blemish to God. The Sinai standard finds its perfection in Jesus.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "heb"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "heb"
+      ]
+    },
+    {
+      "lens_id": "grammatical",
+      "guidance": "Hebrew 'olah (vv 3, 6, 9) is built on the verb 'alah, to go up. The offering is itself a going-up — its smoke rises to God. The Hebrew names what the eye sees: ascent as worship.",
+      "panel_filter": [
+        "heb",
+        "milgrom",
+        "calvin",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "milgrom",
+        "calvin",
+        "hebtext"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "Three parallel descents from herd (vv 3-9), flock (vv 10-13), and bird (vv 14-17). The structure makes one point: the offering varies by means; the standard does not. Worship has tiers but no class.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "v 1's esh zarah — strange or foreign fire — uses the adjective zar, what is alien, illegitimate. The same root appears at Num 3:4 and 26:61. The Hebrew warning travels: unauthorized worship, however well-meant, is foreign.",
+      "panel_filter": [
+        "heb",
+        "milgrom",
+        "calvin",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "milgrom",
+        "calvin",
+        "hebtext"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter pivots on vv 1-3: action, judgment, divine speech. The literary structure makes the speech of v 3 the chapter's center — not the death of the priests, but the meaning of holiness God assigns to it.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "v 3's 'those who come near me must regard me as holy' addresses today's worshipper too. To respond rightly is to obey God's pattern of approach, not to invent one. Reverent faith trusts the Word over the gut.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 3's principle — among those who approach me I will be sanctified — echoes throughout Scripture as a sober refrain: Acts 5:1-11 (Ananias and Sapphira), 1 Cor 11:30 (the Lord's table), Heb 12:28-29 (acceptable worship).",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

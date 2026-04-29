@@ -1,0 +1,68 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "Hebrew chattat (vv 3, 14, 23, 28) carries both 'sin' and 'sin offering' — the same word names the problem and the remedy. The lexical doubling preaches: the offering takes the sinner's name on itself.",
+      "panel_filter": [
+        "heb",
+        "milgrom",
+        "calvin",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "milgrom",
+        "calvin",
+        "hebtext"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Blood applied to the horns of the altar (vv 7, 18, 25, 30, 34) — the pattern is contact-atonement: where the worshipper meets God, the blood meets first. Fulfilled at the cross where Christ's blood opens approach.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 13-21 cover unintentional sin even of the whole congregation — none too small, none too corporate. 1 Jn 2:2 lifts that scope to its limit: Jesus is 'the propitiation… for the sins of the whole world.'",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 2, 13, 22, 27 — the unintentional sin still requires a sacrifice. Today the pattern teaches: ignorance is not innocence; we draw near in confession even of what we did not see at the time.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ]
+    }
+  ]
+}

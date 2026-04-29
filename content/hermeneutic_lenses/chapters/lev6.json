@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter shifts audience as a structural pivot: vv 1-7 still address the people, then vv 8-30 turn to Aaron and his sons (v 9). The form changes who is hearing — and therefore who must perform the procedures.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 12-13 — the fire on the altar shall be kept burning, it shall not go out. The pattern reads as a worship-discipline today: tend the fire of devotion before it dies. Continuity in obedience is itself an offering.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ]
+    }
+  ]
+}

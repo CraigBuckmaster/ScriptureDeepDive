@@ -1,0 +1,52 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "Anointing oil (vv 10-12), blood on ear-thumb-toe (vv 23-24), and seven days of waiting (vv 33-35) — the ordination pattern foreshadows the qualified High Priest of Heb 5:1-10, anointed and consecrated.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Blood applied to Aaron's right ear, thumb, and toe (v 24) consecrates hearing, action, and walk. Heb 9:11-14 takes the priestly-pattern to its head: Christ's blood consecrates a perfect High Priest forever.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "heb"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "heb"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "Structured as ritual-narrative: command (v 1), gather (v 4), wash (v 6), clothe (vv 7-9), anoint (vv 10-12), sacrifice (vv 14-29), wait (v 33). Each step is a marked liturgical beat in the chapter's form.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

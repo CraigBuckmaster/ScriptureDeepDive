@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "v 1's eighth-day pattern foreshadows new beginning across the type-chain: circumcision on the eighth (Gen 17:12), Solomon's temple-dedication eighth (2 Chr 7:9), Christ's resurrection on the day after the seventh (Lk 24:1).",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 22-23 — Aaron blesses the people, then he and Moses bless together. Heb 9:28 reads the priest-blessing pattern eschatologically: Christ 'will appear a second time… to bring salvation'. Blessing made permanent.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "heb"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "heb"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 24's flame motif echoes across Scripture — Gen 15:17 (Abrahamic covenant), 1 Kgs 18:38 (Carmel contest), 2 Chr 7:1 (temple dedication), Acts 2:3 (Pentecost). Divine acceptance signed in flame, again and again.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 22-24 closes the inaugural day with flame and shouting — the people fall on their faces. To respond rightly today is to bow before commenting. Worship that has seen God act prostrates first; it speaks afterward.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ]
+    }
+  ]
+}

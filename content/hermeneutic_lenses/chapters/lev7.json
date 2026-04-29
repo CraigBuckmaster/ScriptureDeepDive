@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "Five offerings each get a Torah heading: guilt (v 1), fellowship (v 11), priests' due (vv 28-36), and a closing colophon (vv 37-38). The literary form is teaching-text; the chapter signals it is meant to be taught.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 11-15's todah (thanksgiving) fellowship offering echoes throughout Scripture — Pss 50:14, 100:4, and 116:17 each call worship a todah. The grateful-meal motif runs across the canon as a constant note.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

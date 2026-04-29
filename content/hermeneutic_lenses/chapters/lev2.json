@@ -1,0 +1,52 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "Hebrew minchah (v 1) is tribute, gift — used elsewhere for what Cain brought (Gen 4) and what kings bring vassal-style. The original audience would hear it as a fitting protocol: subject brings tribute to king.",
+      "panel_filter": [
+        "heb",
+        "milgrom",
+        "calvin",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "milgrom",
+        "calvin",
+        "hebtext"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 11-13 — no leaven, no honey, but salt of the covenant. Leaven anticipates Christ's warning against the leaven of the Pharisees (Mt 16:6); covenant-salt anticipates Mk 9:50's saltiness imperative.",
+      "panel_filter": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "cross",
+        "calvin",
+        "mac",
+        "thread"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "v 14's firstfruits — first and best, not the leftover. To respond as Israel did is to give God the head of the increase, not the tail. To trust the Giver of the harvest with the first sheaf is itself a worship-act today.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ]
+    }
+  ]
+}
