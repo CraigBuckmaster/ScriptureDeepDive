@@ -1,0 +1,98 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "Hebrew kaphar (cover, atone) is the chapter's master verb, threaded across v 6, 11, 16, 17, 18, 20, 24, 27, 30, 32, 33, 34. The noun kapporet (mercy seat, vv 13-15) is built from the same root. Word and place share a stem.",
+      "panel_filter": [
+        "heb",
+        "milgrom",
+        "hebtext",
+        "calvin"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "milgrom",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 7-10's two goats form a paired type — one slain, one released. Together they prefigure what one figure accomplishes: death endured and guilt removed. The pattern anticipates Christ in Heb 9:6-14's fulfillment.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "v 2's once-a-year entry behind the veil is what Jesus does once-for-all. The Aaronic restriction (only him, only this day, only with blood) frames Heb 9:11-12 — Christ entered the heavenly holy place by his own blood.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The chapter's vocabulary — kaphar, kapporet, blood, the curtain — is the canonical lexicon Hebrews 9-10 adopts whole. Heb argues this chapter verse by verse rather than merely echo it. Fulfillment is read across Scripture.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "v 29's 'deny yourselves' annual command (cf. v 31's sabbath of complete rest) shapes Israel's calendar around repentance. Today's worshipper trusts the same atonement, not by self-denial but by faith in the once-offered cross.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 29-34's perpetual statute frames atonement as the spine of Israel's covenant year. The annual rhythm of repeated covering is the redemptive arc compressed into one day, repeated until the day Christ ends repetition.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "vv 2-3's repeated 'the priest shall examine' — the imperative shapes the chapter as diagnostic protocol. The Hebrew ra'ah (look at, inspect) governs the rhythm. Priestly sight is given the authority to declare clean.",
+      "panel_filter": [
+        "heb",
+        "milgrom",
+        "hebtext",
+        "calvin"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "milgrom",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter is a procedural inclusio of inspection cycles — vv 4-8 (skin), 18-23 (boil), 24-28 (burn), 29-37 (head), 47-58 (cloth). Repetition of seven-day quarantine builds a structure of patient discernment.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

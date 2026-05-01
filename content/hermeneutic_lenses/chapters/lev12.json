@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 6-8's offering — a lamb, or two doves for the poor — is what Mary brings at Lk 2:22-24. Christ's mother performs the rite for Christ. The poverty offering puts the Messiah's family inside this chapter's law.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 3's eighth-day circumcision is fulfilled at Lk 2:21, the verse before purification at Lk 2:22-24. The canon binds this procedural chapter to the infancy narrative — echoes across Scripture into the gospel.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

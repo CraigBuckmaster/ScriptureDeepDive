@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "vv 6-18's repeated 'do not have sexual relations with...' (Hebrew lo tegalleh ervah, 'do not uncover the nakedness of') forms a litany of imperatives. The Hebrew formula governs the chapter — relations named by negation.",
+      "panel_filter": [
+        "heb",
+        "milgrom",
+        "hebtext",
+        "calvin"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "milgrom",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 26's command for the native and the sojourner alike echoes the equality logic running across Scripture from Lev 19:34 to Eph 2:11-22. Holiness applies inside Israel and to those who join her — a canon-wide thread.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 24-28's land-vomits-out motif (the same image at v 25, v 28) reframes sexual sin as covenant pollution. The promise of the land is contingent on Israel's holiness — exile threatens the redemptive arc itself.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 2 and 37 form an inclusio — 'be holy' opens, 'I am the LORD' closes. The chapter's structure brackets a sprawl of commands inside a single envelope of identity. The frame holds together what looks miscellaneous.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "mission",
+      "guidance": "vv 33-34's 'love the foreigner as yourself' extends the love-command to the outsider. The verse turns Israel's holiness outward toward the nations among them — a mission posture written into community life, not added later.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 9-10's gleaning command — leave the corners, leave the gleanings — shapes the worshipper's posture toward the poor and the foreigner. To obey is to release the harvest's edge as worship of the God who provides.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 18's love-of-neighbour command echoes across the canon: cited at Mt 22:39, Mk 12:31, Lk 10:27, Rom 13:9, Gal 5:14, Jas 2:8. Christ and Paul and James all read this single verse as the law's summary thread.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 35-36's honest weights — the same ephah, the same hin — bind covenant ethics to the marketplace. The redemption of Israel includes commerce. Holiness is not cordoned off from labour; it pervades the workday.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}
