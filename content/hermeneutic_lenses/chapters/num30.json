@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "vv 2-15's repeated formula — 'if a man makes a vow' / 'if a woman makes a vow' — uses Hebrew neder (vow) and esar (binding pledge) as paired nouns. The literal force is sworn obligation; word becomes legal instrument by speech alone.",
+      "panel_filter": [
+        "heb",
+        "milgrom",
+        "ashley",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "milgrom",
+        "ashley"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "v 2's 'when a man makes a vow... he must not break his word' shapes the worshipper's posture toward speech. To pray today is to mean what is said; the heart that promises lightly cheapens its eventual obedience to the LORD.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

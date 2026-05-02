@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-49's forty-two stages — 'they set out from X and camped at Y' — repeat one verbal formula across nearly fifty verses. The structure refuses summary; each leg is named. Repetition itself becomes the chapter's testimony to providence.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 50-56's command to drive out the inhabitants and destroy idols closes the wilderness account by anchoring the redemptive arc forward into Joshua. The promise begun with Abraham reaches the threshold; covenant faithfulness expects covenant action.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

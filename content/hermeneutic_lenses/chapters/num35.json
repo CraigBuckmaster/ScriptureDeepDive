@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-8's Levitical towns and vv 9-34's cities of refuge are paired by intent — Levites scatter through the land, six of their cities serve as sanctuaries. The structure makes mercy and ministry concurrent: priestly presence with protective space.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 9-15's six cities — three west, three east of Jordan — establish refuge as covenant pattern. The shadow runs forward to Heb 6:18's 'we who have fled to take hold of the hope set before us have strong encouragement.' Refuge prefigures Christ.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 25-28's manslayer protected until the high priest's death names the chapter's center. Christ the great high priest's death is what frees the one fleeing judgment — the typology runs explicitly from cities of refuge to the cross of Jesus.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 9-34's blood-redeemer (goel haddam) threads across Scripture into Deut 19's reaffirmation, Josh 20's implementation, Ruth's kinsman-redeemer, and Heb 12:24's 'sprinkled blood that speaks a better word than the blood of Abel.' The canon escalates.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 11-12's 'so that anyone who kills a person accidentally may flee there' names the rhythm of running to safety. To trust today is to flee toward the appointed refuge before pursuit catches up. Faith is acted out at speed before vindication arrives.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

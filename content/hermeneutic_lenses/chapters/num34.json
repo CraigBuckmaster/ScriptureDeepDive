@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-12's perimeter description — south, west, north, east — and vv 13-29's tribal allotters form a two-part literary structure. Boundaries first, then assignments. The chapter's form treats the land as a defined gift rather than open territory.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 1-12's land boundaries echo throughout Scripture into Ezek 47:13-20's eschatological land allotment, where the same cardinal-direction structure recurs. The canonical map is not abandoned at exile but extended at the prophetic horizon.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

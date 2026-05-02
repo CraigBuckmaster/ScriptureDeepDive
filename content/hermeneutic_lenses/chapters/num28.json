@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-31's calendar moves outward from the daily (vv 3-8), to weekly Sabbath (vv 9-10), to monthly New Moon (vv 11-15), to annual Passover and Weeks (vv 16-31). The structure builds time itself into worship — every interval claimed.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 3-4's morning-and-evening lamb names the rhythm of unceasing worship. To trust today is to recognize that constancy is not invented in moments of zeal but built into the day's shape. Worship is not occasion but ordinary habit.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

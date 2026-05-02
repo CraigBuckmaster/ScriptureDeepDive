@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter's four movements — battle (vv 1-12), Moses's rebuke (vv 13-20), purification (vv 21-24), spoil-division (vv 25-54) — frame holy war in liturgical key. The structure makes warfare itself a sequence of sacred protocols, not free action.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 16's reference to 'the affair of Peor' explicitly threads to num25; the Midianite seduction is named here as Balaam's actual counsel. The canon ties 2 Pet 2:15 / Jude 11 / Rev 2:14's anti-Balaam citations to this verse's accusation.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 21-24's purification of objects passed through fire or water reads beyond its setting. To trust today is to know that even what is rightly used must be cleansed; nothing comes into the camp from foreign ground without the LORD's washing.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-15's request, vv 16-32's negotiated settlement, vv 33-42's allotment form a three-part structure — petition, conditional grant, fulfillment. The chapter's form treats covenant inheritance as bargained obligation, not unconditional gift.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 23's 'be sure your sin will find you out' echoes throughout Scripture into Gal 6:7 ('a man reaps what he sows') and Heb 4:13 ('nothing is hidden from God's sight'). The verse threads forward as canonical principle, not just covenant warning.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}
