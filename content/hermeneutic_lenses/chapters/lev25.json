@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 8-13's Jubilee — proclaim liberty throughout the land — is what Jesus reads at Lk 4:18-19 from Isa 61:1-2, declaring 'the year of the Lord's favor' fulfilled. Messiah inaugurates Lev 25's economy in his hometown synagogue.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 23-28's land-redemption logic — 'the land is mine; you reside in it as foreigners' — makes property a covenant trust. The redemptive arc returns the alienated to their inheritance, a pattern of restoration in Israel's calendar.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 25-28's goel — kinsman-redeemer who buys back forfeited property — threads across Scripture from Boaz at Ruth 4 to Job 19:25's 'I know that my redeemer lives' to Christ as the great Goel. The canonical role is one continuous office.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "mission",
+      "guidance": "vv 47-55's case of a poor Israelite bought by a foreign sojourner — redeemed by kinsman or self — embeds the foreign sojourner inside Israel's economy. The covenant arrangement reaches outward to the nations within the law itself.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 18-22's 'I will send my blessing in the sixth year' calls trust where common sense calls for storage. To obey the sabbath year is to rest in the LORD's provision — the heart's posture today as much as Israel's then.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}
