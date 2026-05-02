@@ -1,0 +1,52 @@
+{
+  "lenses": [
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 16-19's Levite-as-substitute reasoning ('I have taken them in place of the firstborn... given as gifts to Aaron') ties Levite service to the redemption arc begun at Passover. What the Israel-firstborn was spared for, the Levite is given over for.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 5-7's Levite cleansing — sprinkled with water of cleansing, shaved, washed — prefigures consecration patterns the NT reads into Christian initiation. The shadow of separation by water runs from Levitical service toward baptismal language.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 1-4's lampstand command — the seven lamps lit toward the front — places priestly duty into daily rhythm. To trust the constant light is to obey the daily tending. The faith of Aaron showed in lamps lit, day after day, tedium turned to worship.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

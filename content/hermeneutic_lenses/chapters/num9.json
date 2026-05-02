@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 15-23's cloud-and-fire threads from Ex 13:21-22 through 1 Kgs 8:10-11's temple cloud to Mt 17:5's transfiguration cloud and Acts 2:3's tongues of fire. The pillar of visibility runs throughout Scripture as God's mobile presence.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 15-16's cloud over the tabernacle is the visible kavod (glory). Jn 1:14's logos that 'tabernacled among us' takes up the same image; Acts 1:9's cloud receives Christ at the ascension. Jesus inhabits and inherits Numbers' cloud.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 17-23's pattern — 'when the cloud lifted, the Israelites set out; wherever the cloud settled, they encamped' — trains the worshipper's posture today. To trust is to wait when nothing moves; to obey is to break camp when it does.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 6-13's Second Passover — provision for those defiled or absent — is the chapter's hidden mercy. The covenant feast opens a second time so no Israelite forfeits redemption by accident. The arc of grace bends toward the distant.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

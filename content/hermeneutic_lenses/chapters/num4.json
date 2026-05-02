@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "v 47's avodat avodah ('work of service') doubles the Hebrew noun for emphasis. The root avad means both 'work' and 'worship' — Levite hauling is liturgy in disguise, sacred labor and sacred worship sharing a single verb.",
+      "panel_filter": [
+        "heb",
+        "milgrom",
+        "ashley",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "milgrom",
+        "ashley"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 15, 18-20's 'they must not touch the holy things or they will die' establishes the shadow of holy distance. 2 Sam 6:6-7's Uzzah — struck dead for steadying the ark — extends the warning. The pattern: holiness kills the unmediated.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    }
+  ]
+}

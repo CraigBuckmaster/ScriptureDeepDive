@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 12-83 repeat an identical offering formula twelve times — one per tribe, one per day. The structure refuses abbreviation. Repetition is the rhetoric: each tribe deserves the full inventory, each leader named. Equal honor through identical form.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "v 89's coda — Moses heard the voice from between the cherubim — closes the chapter with intimate response to corporate giving. To worship today is to bring what is equal among brethren and trust that the same voice still speaks.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}
