@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter's six movements — Hormah victory (vv 1-3), serpents and the bronze pole (vv 4-9), Beer well-song (vv 10-20), Sihon and Og defeated (vv 21-35) — alternate judgment with deliverance. The structure prepares Israel for entry.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 8-9's bronze serpent on a pole is what Jesus names at Jn 3:14-15: 'just as Moses lifted up the snake in the wilderness, so the Son of Man must be lifted up.' Christ explicitly cites this passage as a type of his cross.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 8-9's looking-and-living establishes the gospel pattern. The bitten Israelite is healed not by climbing the pole but by faith's gaze. The shadow prefigures justification by faith — the look at the lifted-up one is what saves.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 8-9's bronze serpent threads across Scripture into 2 Kgs 18:4 (Hezekiah breaks 'Nehushtan,' the venerated relic) to Jn 3:14-15. The canon contains both the type's institution and its fulfillment, with caution against idolizing the symbol.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 4-5's grumbling — 'we detest this miserable food' (the manna) — names the heart's contempt for ordinary grace. To trust today is to receive what is given without complaint, lest the cure for grumbling become a bronze serpent on a pole.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter's three movements — Miriam's death (v 1), Meribah and Moses's failure (vv 2-13), Edom refusal and Aaron's death (vv 14-29) — frame leadership transition. The structure marks loss: prophetess gone, leader disqualified, priest at rest.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 7-11's struck rock — 'water came out abundantly' — is what 1 Cor 10:4 names: 'they drank from the spiritual rock that accompanied them, and that rock was Christ.' Paul's identification makes the wilderness rock a christological anchor.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 7-12's two strikes (commanded once, struck twice) prefigure why the rock in Ex 17 was struck once and the rock here was meant to be spoken to. The pattern: Christ smitten once for sin (Heb 9:28); thereafter we speak, not strike.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 12's verdict on Moses — 'because you did not trust me enough to honor me as holy' — echoes throughout Scripture. Ps 106:32-33 cites it; Deut 32:51 returns to it. Moses's failure threads canonically as warning to leaders.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 10-12's anger turned to action — Moses striking instead of speaking — names the heart's failure under provocation. To trust today is to obey the LORD's exact word, not the heart's logic. Even the meek prophet was disqualified by frustration.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}
