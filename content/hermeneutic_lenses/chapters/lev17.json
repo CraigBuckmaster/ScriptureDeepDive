@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "christocentric",
+      "guidance": "v 11's 'the life of a creature is in the blood... it is the blood that makes atonement' is the chapter's centre. Heb 9:22 cites this verse directly. Christ's blood is what Lev 17:11 anticipates — gospel grounded here.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 11's life-blood logic threads across Scripture: from this verse to Heb 9:22 to Mt 26:28's 'this is my blood of the covenant'. The canon stitches these texts together as one argument. The thread is unbroken from altar to cross.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-9 (central altar, six speech formulas) and vv 10-16 (blood prohibition, repetition of 'anyone... who eats blood') form a doublet structure. The chapter is built on parallelism: place of slaughter, treatment of blood.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 3-7's prohibition against field-slaughter — bring every offering to the tent — gathers Israel's worship to one centre. The covenant logic anticipates a single sacrifice at one altar, the redemptive arc's final shape.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

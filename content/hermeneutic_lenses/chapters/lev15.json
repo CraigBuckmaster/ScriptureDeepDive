@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 25-30's woman-with-discharge protocol is reversed at Mk 5:25-34. The woman with the issue of blood touches Jesus and the contagion runs the opposite direction — uncleanness flows out, healing flows in.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "v 31's 'keep the Israelites separate from things that defile' frames discharge laws as covenant boundary-keeping. The redemption of Israel includes the body and the dwelling — promise of presence requires purity.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

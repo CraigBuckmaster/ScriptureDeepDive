@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 9-21's penalty list (death, cut off, childlessness) escalates by consequence. vv 22-26 close as exhortation, framing the list inside a covenant-and-land argument. The structure moves from case to call across the chapter.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 7's 'consecrate yourselves and be holy' echoes Lev 11:44 and Lev 19:2, threading the same imperative across the holiness code. The canonical refrain holds: identity precedes obedience throughout Scripture.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 22-23's land-vomits-you-out warning (echoing Lev 18:25, 28) ties penalty to covenant promise. Israel's tenure depends on holiness — the redemptive arc bends here toward exile if the call is refused.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

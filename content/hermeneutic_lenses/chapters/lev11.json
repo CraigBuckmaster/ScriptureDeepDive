@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 44-45's 'be holy because I am holy' echoes at 1 Pet 1:16 as the rule for the church. Mk 7:19's 'thus he declared all foods clean' marks the canonical pivot — these laws are read across Scripture as fulfilled.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Food laws separate Israel from the nations. The covenant logic of vv 44-45 ties dietary practice to the redemptive arc — a holy people set apart so the salvation promise can travel through them to the world.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Clean/unclean categories foreshadow a deeper sorting. Acts 10:9-16 reverses the pattern when the sheet descends to Peter: the type-system gives way as he sees that no food, and no people, are unclean.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    }
+  ]
+}
