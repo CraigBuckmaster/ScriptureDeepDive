@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 38-41's tassels (tzitzit) command — fringes on garment corners as visual reminder of the LORD's commands — threads across Scripture into Mt 9:20 and 14:36, where sufferers reach for the kraspedon (tassel/hem) of Jesus's garment.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "v 39's purpose — 'you will look at it and remember all the commands of the LORD' — embeds the law in clothing. To live by sight as well as memory, to wear what one is meant to obey, trains worship into the everyday seam.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

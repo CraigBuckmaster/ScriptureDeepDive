@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "v 3's 'Now Moses was very humble (anav)' is a parenthetical aside in third person. The Hebrew anav means pressed down, dependent — not modest in the modern sense. The literal force: a man crushed by his burden, leaning on the LORD.",
+      "panel_filter": [
+        "heb",
+        "milgrom",
+        "ashley",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "milgrom",
+        "ashley"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 6-8's 'with Moses I speak face to face... clearly, not in riddles' establishes Moses as the prophet-type. Heb 3:1-6 reads this passage explicitly, contrasting Moses (faithful as a servant) with Christ (faithful as a son). Pattern fulfilled.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 6-8's 'face to face' speech with Moses is what 2 Cor 4:6 brings to fulfillment in 'the face of Jesus Christ.' What Moses had as singular grant becomes general gospel — 'we all, with unveiled face, behold the glory' (2 Cor 3:18).",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 10-15's Miriam stricken with leprosy threads across Scripture as the prophet-judgment pattern. 2 Chr 26:16-21's Uzziah and 2 Kgs 5:27's Gehazi each carry the canonical motif — opposing God's order leaves a visible mark.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

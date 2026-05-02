@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-10's trumpet instructions and vv 11-36's departure narrative form a hinge — instruction precedes movement. The cloud lifts at v 11; the chapter pivots from preparation to journey. vv 35-36's 'rise up... return' bookends the new phase.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 33-34's 'the ark of the covenant of the LORD went before them... to find them a place to rest' is the chapter's center. Christ as the greater ark leading his people to rest at Heb 4:9-11; Jesus goes ahead 'to prepare a place' at Jn 14:2-3.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 1-10's trumpets serve assembly, war, festival, alarm. The image threads across Scripture from Joshua 6's Jericho to Joel 2:1's day-of-the-LORD trumpet to 1 Cor 15:52 and Rev 11:15. Same instrument, escalating call.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 33-36's prayers ('Rise up... Return') frame the wilderness journey with petition. The worshipper today walks the same pattern: when the cloud moves, pray for the LORD's leading; when it rests, pray for his return. Discipleship by petition.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

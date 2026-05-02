@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 21-24's tithe to the Levites — the firstfruits and offerings as their inheritance — threads across Scripture into Heb 7:8-10's argument that Levi himself paid tithes through Abraham to Melchizedek. The chapter's economy is canonical scaffold.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 8-20's priestly portion — 'I myself have given you charge of my offerings' — frames priestly provision as covenant gift, not transactional wage. The priest receives because the LORD gives; the redemptive logic is recognition, not earning.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}
