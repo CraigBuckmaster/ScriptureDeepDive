@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "vv 2-3's se'u et-ro'sh ('lift the head') is the Hebrew idiom for census. The verb nasa is literally 'to lift up' — the count is dignifying, not just bureaucratic; each head in the congregation is raised to be named and recognized.",
+      "panel_filter": [
+        "heb",
+        "milgrom",
+        "ashley",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "milgrom",
+        "ashley"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 2's command 'take a census of the whole Israelite community' threads across Scripture — David's later census (2 Sam 24) draws judgment, while Rev 7:4-8's seal-count of 144,000 echoes Numbers' twelve-tribe roster as the redeemed gathered.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 2-3's military census — every man able to bear arms — counts the wilderness generation that Heb 3:7-19 names as the type of those who fall in unbelief. The pattern of counting becomes the pattern of judgment.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    }
+  ]
+}

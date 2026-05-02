@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-4 (excluding the unclean), vv 5-10 (restitution for wronging a neighbor), vv 11-31 (ordeal for suspected adultery) form a triple structure of community boundaries — body, property, intimacy each policed in turn.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 5-7's restitution-plus-a-fifth — 'when anyone wrongs another, they must add a fifth of the value to it' — echoes throughout Scripture into Lk 19:8 where Zacchaeus pays back fourfold. The restorative principle threads from law to gospel.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

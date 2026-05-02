@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "vv 12-13's Levite-for-firstborn substitution — 'I have taken the Levites in place of all the firstborn' — establishes a redemption-by-substitute pattern. The shadow of substitutionary atonement runs from Passover lamb to Levite to Christ.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 1-4's recall of Aaron's sons — Nadab and Abihu having died — keeps the warning fresh. The priesthood roster echoes throughout Scripture as a vocational thread; 1 Chr 6 reproduces it; Heb 7 reads it as anticipating a different priest entirely.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

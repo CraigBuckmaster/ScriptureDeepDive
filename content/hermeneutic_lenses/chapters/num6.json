@@ -1,0 +1,98 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "vv 24-26's Aaronic blessing has a threefold structure — three couplets, each beginning 'May the LORD' and intensifying. The Hebrew has three words, then five, then seven; the rhetorical rhythm builds. Liturgical poetry, designed for memory.",
+      "panel_filter": [
+        "heb",
+        "milgrom",
+        "ashley",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "milgrom",
+        "ashley"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-21's Nazirite vow and vv 22-27's Aaronic blessing form a chapter doublet — voluntary human consecration met by divine declarative blessing. The structure pairs ascent (the vow) with descent (the blessing) of holiness.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 1-8's Nazirite separation — no wine, no razor, no death-contact — prefigures the consecrated one in canonical type. Samson, Samuel, John the Baptist all stand in this line. The pattern points forward to Christ, the Holy One of God.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 24-26's threefold blessing — bless and keep, face shine, peace — finds its echo in 2 Cor 13:14: 'the grace of the Lord Jesus Christ, the love of God, the fellowship of the Holy Spirit.' Trinitarian benediction grows from Aaronic seed.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 24-26's Aaronic blessing threads across Scripture — Ps 67:1 echoes 'God be gracious and bless us'; Lk 1:79 reaches to those 'in darkness' with peace; Jude 24-25 closes the canon with a parallel benediction. Liturgy across time.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 22-27 is the priestly blessing pronounced over Israel weekly. To pray it today is to receive what the LORD speaks — keeping, shining, peace. The worshipper does not generate this favor; it is bestowed. Trust precedes obedience.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}
