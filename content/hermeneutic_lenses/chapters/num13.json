@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 26-33's two reports — ten spies' negative, Joshua and Caleb's positive — build a contrast on the same evidence. Same fruit, same fortifications, opposite conclusions. The chapter's structure makes faith and unbelief turn on interpretation.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 23-24's single cluster of grapes carried on a pole between two men — fruit from Eshcol — was read by Theodoret and Origen as foreshadowing Christ on the cross between two criminals. The pattern carries the promised land's fruit.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 17-29's spy mission threads across Scripture. Josh 2's two spies plus Rahab succeed where these twelve fail; Heb 3:7-19 reads this passage as the canonical warning for those who hear God's voice. Same mission, opposite outcomes.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "v 33's 'we became like grasshoppers in our own eyes, and we were the same in their eyes' is the chapter's psychological key. The heart distorts size when faith fails. To trust today is to recover the right scale: God large, giants small.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

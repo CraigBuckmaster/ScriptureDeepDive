@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter's five-movement form — rebellion (vv 1-12), Moses's intercession (vv 13-19), verdict (vv 20-25), forty years decreed (vv 26-35), Hormah defeat (vv 36-45) — is the wilderness generation's defining narrative.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 13-19's intercession — Moses pleading the divine name — partially turns judgment but cannot prevent the forty-year sentence. Christ is the greater intercessor (Heb 7:25, 'always lives to intercede') who secures full deliverance, not delay.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 22-23's 'they have tested me ten times' is the verse Ps 95:8-11 distills into 'Today, if you hear his voice, do not harden your hearts.' Heb 3:7-19 then quotes Ps 95 in full and reads Num 14 as the canonical warning to the church.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 1-4's weeping and wishing for Egypt — 'wouldn't it be better for us to go back?' — names the heart's regression in trial. To live by faith today is to refuse the rear-view; the wilderness is the path, not the abandonment.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 26-35's forty-year sentence, harsh as it is, is also covenant mercy. The next generation enters; the promise to the patriarchs is not revoked. The redemptive arc bends through wilderness without breaking — judgment is purgative.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-15's challenge, vv 16-35's confrontation and judgment, vv 36-50's plague and Aaron's intercession form the chapter's three-act structure. Each act ends with God's holiness asserted — by speech, by ground, by atonement.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 47-48's Aaron 'stood between the living and the dead, and the plague stopped' is a priestly type. The censer that judges (vv 35-40) becomes the censer that saves (v 47). Christ stands at the same threshold, the pattern fulfilled in his cross.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 5's 'the LORD will show who is his' is what 2 Tim 2:19 cites: 'The Lord knows those who are his.' Jude 11 names 'the rebellion of Korah' as the canonical warning. The chapter's verses thread directly into NT writings.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 31-33's 'the ground opened... and they went down alive into the realm of the dead' is the chapter's soberest moment. To worship today is to walk humbly before the One who delineates priest from layman. Pride before holiness is judged.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}
