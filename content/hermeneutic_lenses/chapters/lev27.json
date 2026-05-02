@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "vv 1-8's valuation table — male twenty to sixty: fifty shekels of silver — uses cardinal numbers to fix worth. The Hebrew erkecha ('your valuation') treats human dedication as a noun, vowed and priced — cult speech borrowing commerce.",
+      "panel_filter": [
+        "heb",
+        "milgrom",
+        "hebtext",
+        "calvin"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "milgrom",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 28-29's herem (devoted things, irredeemable) and vv 30-33's tithe close the book by framing surrender as covenant return. What Israel offers belongs already to the LORD — the redemptive logic is recognition, not transfer.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

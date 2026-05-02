@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 3-13 (blessings) and vv 14-39 (curses, escalating in five waves of sevenfold judgment) frame a covenant-treaty form. vv 40-45's confession-and-restoration epilogue closes the structure — promise, threat, return.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 14-39's curses are the canonical template Deut 28 expands and that the prophets thread throughout exile literature — Jer 16:13, Dan 9:11-13, and Lam 1:5 each echo Lev 26's covenant-breach pattern across Scripture.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 40-45's confession-and-remembrance promise — 'I will remember my covenant with Jacob, with Isaac, with Abraham' — anchors the redemptive arc beyond exile. The promise to the patriarchs holds even when Sinai is broken.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 40-42's confession formula — 'they will confess their sins... and the sins of their ancestors' — models the worshipper today. To repent is not to bargain but to acknowledge, and to trust the covenant memory of the LORD.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "vv 6-8's repeated qadosh / qodesh — 'be holy', 'the bread is holy', 'the priest is holy' — uses the Hebrew root in noun and adjective. The imperative tehyu qedoshim ('be holy') governs the chapter's priestly grammar.",
+      "panel_filter": [
+        "heb",
+        "milgrom",
+        "hebtext",
+        "calvin"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "milgrom",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 17-23's unblemished priest requirement — no defect at the altar — is what Heb 7:26 identifies in Christ: 'holy, blameless, pure, set apart from sinners.' The physical-perfection rule anticipates the moral perfection of Jesus.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 10-15's high priest restrictions — no torn clothes, no contact with the dead, no leaving the sanctuary — shape a type of unbroken access. Heb 7-9 reads them as foreshadowing Christ's once-for-all sanctuary entry.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 8's 'regard them as holy because they offer the food of your God' echoes throughout Scripture into the priestly identity of all believers — 1 Pet 2:9's 'royal priesthood' reads back across the canon to this verse.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

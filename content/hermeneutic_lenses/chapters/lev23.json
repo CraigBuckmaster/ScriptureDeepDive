@@ -1,0 +1,98 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter builds a calendar of seven appointed times: Sabbath (v 3), Passover (vv 4-8), Firstfruits (vv 9-14), Weeks (vv 15-22), Trumpets (vv 23-25), Atonement (vv 26-32), Tabernacles (vv 33-43). The form is a liturgical year.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 4-8's Passover — slain, blood-marked, eaten in haste — is what 1 Cor 5:7 names: 'Christ, our Passover lamb, has been sacrificed.' The first feast in Lev 23's cycle anchors the gospel's central vocabulary.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 9-14's Firstfruits — wave the first sheaf of the harvest — is the type 1 Cor 15:20-23 names: 'Christ has been raised from the dead, the firstfruits of those who have fallen asleep.' The pattern is resurrection.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 15-22's count of fifty days from Firstfruits sets the calendar Acts 2 enacts — the Spirit's outpouring lands on the day Israel celebrated covenant grain. The redemptive arc unfolds on Lev 23's clock.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 33-43's Tabernacles — booths, branches, the dwelling-with-the-people image — echoes throughout Scripture into Jn 7:37-39's living water and Rev 21:3's 'God's dwelling place is now among the people.'",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 39-43's command to live in booths recalls the LORD's wilderness provision. To worship today is to remember being delivered — the feast trains the heart to repent of self-sufficiency and trust the One who tabernacled among his people.",
+      "panel_filter": [
+        "mac",
+        "calvin",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}
