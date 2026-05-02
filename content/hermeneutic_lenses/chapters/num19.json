@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "vv 2-3's parah adummah ('red heifer') is rare specification — color and gender both matter. The Hebrew adummah shares its root with adam (man, ground) and dam (blood). Earth, humanity, and blood gather in one descriptor.",
+      "panel_filter": [
+        "heb",
+        "milgrom",
+        "ashley",
+        "hebtext"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "milgrom",
+        "ashley"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 2-10's heifer slain outside the camp, its ashes mixed with water for purification, is the pattern Heb 9:13-14 names: 'how much more, then, will the blood of Christ... cleanse our consciences.' The shadow gives way to substance.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 3-4's heifer slain 'outside the camp' is what Heb 13:11-12 reads christologically: 'Jesus also suffered outside the city gate to make the people holy through his own blood.' The location matters; the cross fulfils Lev/Num's geography.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 11-22's death-defilement and seven-day cleansing rule threads across Scripture into Eph 2:1-5 and Col 2:13 — those 'dead in trespasses' raised by Christ. The canon answers the chapter's recurring question: who can touch death and live?",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 17-19's hyssop bundle dipped in the cleansing water echoes Ex 12:22 (Passover) and Ps 51:7 ('cleanse me with hyssop'). The covenant arc threads one cleansing instrument across the redemptive history of Israel.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

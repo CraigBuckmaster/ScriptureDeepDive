@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "christocentric",
+      "guidance": "v 17's 'a star will come out of Jacob; a scepter will rise out of Israel' is read messianically across Scripture. Mt 2:2's 'we have seen his star' echoes the Balaam oracle; the wise men come to the king the pagan prophet announced.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 17-19's star-and-scepter pair forms a royal type — astronomical sign plus governing instrument. Rev 22:16's 'I am the bright morning star' returns to the Balaam image, Christ identifying himself with what was foretold from the plains of Moab.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 17's 'star out of Jacob' echoes throughout Scripture as messianic anchor. Qumran (CD 7, 4Q175) cites it; rabbinic literature reads it of bar-Kokhba; Mt 2 reads it of Christ. The verse threads across pre-Christian and Christian readings.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "mission",
+      "guidance": "v 17's word is delivered by a foreign prophet to a foreign king on behalf of the nations watching Israel. The oracle that Israel will rule comes outward through Balaam's mouth — God's gospel proclamation runs through the most unlikely vessel.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "calvin",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    }
+  ]
+}

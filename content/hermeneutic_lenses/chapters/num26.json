@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-51 reproduces the form of Num 1's census but with the new generation. The structure is not redundant — it's covenant accounting. Same tribes, fresh names, renewed roster. The form witnesses that the wilderness verdict has run its course.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 64-65's note — 'not one of them was among those counted by Moses and Aaron... for the LORD had told those Israelites they would surely die in the wilderness' — closes a covenant chapter. The redemptive arc continues with the next generation.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

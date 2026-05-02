@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter's two movements — sexual/cultic apostasy with Moab (vv 1-5) and Phinehas's intervention (vv 6-15) — pivot on a single act. The structure presents zealous priesthood as the answer to seductive syncretism, plague stopped by spear.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 10-13's Phinehas's covenant of peace — 'because he was zealous for his God' — is what Ps 106:30-31 echoes: 'this was credited to him as righteousness for endless generations.' The same crediting-as-righteousness language threads forward to Rom 4.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 12-13's covenant of peace and 'lasting priesthood' grants Phinehas's line continuity. The redemptive arc keeps the priesthood faithful through a son's zeal, even as the priestly father's generation dies in the wilderness.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

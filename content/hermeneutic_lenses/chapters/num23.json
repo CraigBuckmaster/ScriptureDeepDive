@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-12 (first oracle) and vv 13-26 (second oracle) follow identical literary form: seven altars built, sacrifices offered, Balaam withdraws to receive the word, returns to Balak with poetic blessing. The structure makes repetition the rhetoric.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 19's 'God is not human, that he should lie, not a human being, that he should change his mind' echoes throughout Scripture into 1 Sam 15:29, Mal 3:6, Heb 6:18, Jas 1:17. The oracle gives the canon one of its core attributes — divine reliability.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 21-23's 'no misfortune is seen in Jacob, no misery observed in Israel' speaks the covenant verdict over the people Balaam was hired to curse. The redemptive arc protects what cannot be cursed; the promise to Abraham still stands.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}
