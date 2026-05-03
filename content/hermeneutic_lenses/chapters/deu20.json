@@ -1,0 +1,52 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 5-7's exemption list — newly built house, newly planted vineyard, newly betrothed wife — releases men whose lives are mid-completion. The structural narrative privileges full-life over headcount; conquest serves life, not the reverse.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 10-18 distinguish distant cities (terms-of-peace first) from Canaanite cities (devoted to destruction). The covenant logic of the redemption arc: peace offered, idolatry rooted out where it would corrupt the promise-land.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 1-4's priestly address before battle — 'do not be afraid; do not panic... the LORD your God is with you' — disciplines the heart against numerical anxiety. To trust today is to keep counting Egypt-deliverance higher than enemy chariots.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

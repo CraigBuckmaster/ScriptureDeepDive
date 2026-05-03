@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 3-21's clean-and-unclean food list is echoed at Lev 11 and later relativized at Acts 10:9-16 (Peter's rooftop vision) and Mk 7:19 ('declared all foods clean'). The canonical line moves from boundary-marker to fulfilled boundary.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 3-21's dietary distinctions are the type — outward separation marking inward holiness — that Mk 7:19 names fulfilled. The shadow ordered Israel's body around covenant; the substance is now access through Christ.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 28-29 ground the third-year tithe in care for the foreigner, fatherless, and widow — worship is tied to social provision. To respond today is to let liturgy and largesse be one practice; the heart bends both.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

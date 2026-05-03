@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-12 collect do-not-ignore laws — strayed ox, fallen donkey, bird with eggs, parapet rail. The structural framing extends covenant holiness to neighbour-care across property-lines, not just sanctuary purity. Sacred and civic blur.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 1-4's repeated 'do not ignore' the lost donkey, the fallen ox — Jesus picks up this ethic at Lk 14:5. To live faithfully today is to refuse the bystander posture; the heart sees what the eye prefers not to.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

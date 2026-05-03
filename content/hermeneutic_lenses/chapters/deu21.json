@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 22-23 — 'anyone who is hung on a pole is under God's curse' — is what Paul quotes directly at Gal 3:13: 'Christ redeemed us from the curse of the law by becoming a curse for us.' The cross is read through this verse.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 1-9's unsolved-murder ritual — heifer slain, elders wash hands over the body in the valley — is the type of substitutionary cleansing for unaccounted blood. The community cannot bear unatoned death; another life intervenes.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter collects five edge-of-life cases — unsolved murder (vv 1-9), captive wife (vv 10-14), firstborn rights (vv 15-17), rebellious son (vv 18-21), hanged body (vv 22-23). The structure escalates from procedure to curse.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 18-21's rebellious-son procedure — never recorded as enacted in OT narrative — is canonically inverted at Lk 15:11-32, where the rebellious son returns and is welcomed not stoned. The same statute, recast under grace.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 22-23 require bodies hung on a tree to be buried before sundown — even the cursed dead receive land-respect. The covenant carries even the cursed; Christ's burial (Mk 15:42-46) fulfills this ordinance for the world's sin.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}
