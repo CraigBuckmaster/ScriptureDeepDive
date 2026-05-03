@@ -1,0 +1,52 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "vv 1-8's Passover prefigures Christ the Paschal lamb (1 Cor 5:7); vv 9-12's Weeks prefigures Pentecost (Acts 2:1-4) where the Spirit comes fifty days after Christ's resurrection. The festival calendar is a christological scaffold.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-17's three-festival cycle — Passover (spring), Weeks (early summer), Tabernacles (autumn) — frames Israel's year as covenant memory. The structure is liturgical narrative: redemption recalled, harvest received, wilderness rehearsed.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 16-17's 'no one should appear before the LORD empty-handed; each must bring as he is able' shapes worship as glad response, not extraction. To live faithfully today is to bring what we have, scaled to what we have received.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

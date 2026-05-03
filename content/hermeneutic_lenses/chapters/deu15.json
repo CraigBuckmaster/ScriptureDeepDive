@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-18 form a structural chiasm: debt remitted (vv 1-6), poor neighbour (vv 7-11), slave freed (vv 12-15), generous heart enacts release (vv 16-18). Each turn deepens — relief, then disposition, then enacted freedom.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 12-15 ground slave-release in remembered redemption: 'remember that you were slaves in Egypt and the LORD your God redeemed you.' The covenant's economic ethic — freedom flowing from freedom — comes straight from the exodus.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 1-2's seventh-year 'release' (shemittah) — the same word LXX uses for aphesis, 'forgiveness' — is echoed at Lk 4:18-19 where Jesus reads Isa 61's Jubilee announcement. Christ proclaims the year of the LORD's favor.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 7-11 watch the heart that calculates the approaching release year and tightens its fist: 'do not be hardhearted or tightfisted toward your fellow Israelite.' To live by faith today is to give freely under the calendar's pressure.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 1-3's seven-year debt-release threads to Lev 25's Jubilee year, then to Isa 61's anointed-proclamation, and lands at Lk 4:18-19. The canonical line runs from Sinai economics to the Nazareth synagogue's announcement.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

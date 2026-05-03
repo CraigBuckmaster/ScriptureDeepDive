@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 14-20 form an ironic king-charter: must not multiply horses, wives, gold; must write a copy of the Torah and read it daily. The structure inverts ancient-Near-East kingship — the king is Torah's servant, not its master.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 16-17 forbid horses, wives, and gold; 1 Kgs 10:14-11:8 records Solomon publicly violating all three. The canonical thread runs from Deuteronomy's prohibition to the chronicler's verdict and to Ps 72's righteous-king ideal.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 18-20 — the king must write a Torah-copy and read it daily — prefigures the King who is himself the Word (Jn 1:1, 14). Christ is the true Davidic ruler who not only obeys Torah but embodies and fulfills it.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 14-20 set up the covenant-king motif the redemption arc requires: a Davidic son who keeps the law of God. The promise running through 2 Sam 7 to Christ rests on this foundational charter — kings under Torah, never above.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

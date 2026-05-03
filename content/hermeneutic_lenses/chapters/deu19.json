@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-14's refuge-city framework — three given now, three to add if borders extend (v 9) — extends Num 35's structure into Canaan. The literary form is graduated mercy: the system grows with the land it serves.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 15's 'two or three witnesses' threshold is echoed at Mt 18:16, 2 Cor 13:1, 1 Tim 5:19, and Heb 10:28. The procedural rule threads from Sinai justice into New Testament church discipline as the standard for serious accusation.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 1-13's city-of-refuge — the manslayer flees and is preserved from the avenger — is the type Heb 6:18 echoes: those who flee for refuge to Christ have strong encouragement to hold the hope set before them.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 15-19 promise 'a prophet like me from among your fellow Israelites' — Peter applies this to Christ at Acts 3:22-23 and Stephen at Acts 7:37. Jn 6:14 and 7:40 show crowds asking if Jesus is 'the Prophet.'",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 15-19's prophet-like-Moses is the type Christ fulfills — same mediation between God and people, same words placed in the prophet's mouth (v 18). The Mosaic shadow finds its substance in the one who speaks God's full Word.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 20-22's prophet-test (does the word come true?) threads to Jer 28's Hananiah and lands at Heb 1:1-2: 'in these last days God has spoken to us by his Son.' The canonical line runs from Sinai to the incarnation.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-8's priestly portions and vv 15-22's prophet-criteria pair the two anointed offices. Together with deu17's king-charter, the structure completes Israel's threefold mediator-frame: prophet, priest, king.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 15-19's promise of a coming prophet keeps the covenant arc forward-leaning — Moses's voice is not the last. The redemption-story expects more from God; the unfolding plan anticipates the prophet who will close the line.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}
