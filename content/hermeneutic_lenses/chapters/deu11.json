@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 26-32 set up the blessing-and-curse pairing on Mounts Gerizim and Ebal — the structural seedling of deu27's later ceremony. The narrative frames the covenant as a two-ways choice before the Jordan crossing.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 26-32's two-ways choice — set blessing and curse before you — is echoed across Scripture at Josh 24:15 ('choose this day'), 1 Kgs 18:21 ('how long will you waver?'), and Mt 7:13-14 (the two gates).",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

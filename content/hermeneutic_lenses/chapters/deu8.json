@@ -1,0 +1,68 @@
+{
+  "lenses": [
+    {
+      "lens_id": "christocentric",
+      "guidance": "v 3's 'man does not live on bread alone' is the verse Jesus quotes against the wilderness tempter at Mt 4:4. Christ recapitulates Israel's forty-year testing in forty days and succeeds where the wilderness generation failed.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-2's command — 'remember how the LORD your God led you these forty years... to test you' — frames the wilderness as pedagogical narrative. The structure is purpose-driven: discipline, then land.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 7-10's land description — wheat, barley, vines, figs, pomegranates, oil, honey — caps the redemption arc that began with manna. The covenant promise lands on a table that needs no daily sky-bread anymore.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 11-18 warn the prosperous heart not to say 'my power and the strength of my hands have produced this wealth.' To live faithfully today is to remember v 18 — 'it is he who gives you the ability to produce wealth.'",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 13-21 retell Ex 32's golden calf for the new generation. Heb 12:18-29 later reads Sinai's terror through the gospel — the canonical witness keeps the mountain but changes the relation; those drawn near in Christ no longer flinch.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 4-6 forbid the prosperous heart from saying 'because of my righteousness the LORD has brought me in.' To live by grace today is to refuse the merit-fiction even when the land is good and the conquest is granted.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 25-29 record Moses's intercession — he pleads the LORD's name, the redemption from Egypt, and the patriarchal oath. The covenant is grounded on God's history, not Israel's. Rom 11:28-29 echoes this irrevocable election.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

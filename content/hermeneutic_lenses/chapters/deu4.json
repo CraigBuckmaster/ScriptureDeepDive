@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "grammatical",
+      "guidance": "vv 39-40's 'acknowledge and take to heart' uses Hebrew imperatives stacked for solemnity — yada (know) and shub (return to heart). The grammar is catechetical: command first, then ground in 'the LORD is God; there is no other.'",
+      "panel_filter": [
+        "craigie",
+        "heb",
+        "hebtext",
+        "tigay"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "craigie",
+        "tigay"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "vv 25-31's foreseeing of exile and restoration introduces the prophetic narrative form into Moses's farewell. The author sees beyond his own horizon, framing exile as covenant-conditional and return as the LORD's compassion.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 25-31's exile-and-return forecast condenses the covenant arc: scatter, seek with all the heart (v 29), restoration. The redemptive plan in miniature, written before the events, naming what later prophets would expand.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 35, 39's 'the LORD is God; there is no other' becomes the canonical refrain — Isa 45:5-6 ('I am the LORD, and there is no other') and 1 Cor 8:6 ('one God, the Father') echo this confession across the whole Bible.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

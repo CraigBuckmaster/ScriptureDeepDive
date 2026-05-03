@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "Moses opens with narrative-recap (vv 6-46), retelling the Horeb commission and Kadesh failure for the generation that did not live them. The framing makes the covenant address rest on remembered history, not abstract law.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 19-46 retell the spy crisis of Num 13-14 — same disaster, condensed, recast for the new generation. Heb 3:7-19 then reads it across Scripture as the warning to the church: an unbelieving heart still keeps Sabbath rest at bay.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

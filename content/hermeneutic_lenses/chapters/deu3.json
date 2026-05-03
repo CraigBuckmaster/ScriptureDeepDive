@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 23-29 mark the structural pivot of the book: Moses begs to cross over, is denied, and shows Joshua the land from Pisgah. The narrative turn — leader stays, people enter — frames everything that follows.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 26's 'the LORD was angry with me on your account' picks up the Num 20:12 disqualification and threads it through Ps 106:32 — the canonical lament for Moses's barred entry. The mediator falls short of the rest he proclaims.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 27-28's Pisgah-view command — 'look... but you will not cross' — is the redemption arc's bittersweet hinge. The promise is seen but not entered by Moses; Joshua's leading anticipates a greater rest still to come.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

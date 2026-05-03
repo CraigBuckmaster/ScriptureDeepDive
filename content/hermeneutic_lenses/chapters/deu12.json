@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "canonical",
+      "guidance": "The 'place the LORD will choose' refrain (vv 5, 11, 14, 18, 21, 26) becomes the canonical thread that runs to Jerusalem's temple, then dissolves at Jn 4:21 — neither on this mountain nor in Jerusalem, but in spirit and truth.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 5-14's one-sanctuary principle prefigures the singular access-point. Jn 2:19-21 names Christ as the temple, the type fulfilled — the place where God meets his people is no longer a location but a person.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 1-4's destroy-the-high-places command makes covenant purity the precondition of inheritance. Mixed worship halts the redemption arc; the conquest of land is also the conquest of cult, with the gods of Canaan first.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}
