@@ -5,6 +5,9 @@
  * dot centred on the event row. Events with images get a larger, glowing dot;
  * events without get a smaller, semi-transparent dot.
  *
+ * World variant (#1809): outline-ring dot + recessive line — world history is
+ * context, not narrative.
+ *
  * Part of Card #1264 (Timeline Phase 1).
  */
 
@@ -12,6 +15,8 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
 export const SPINE_GUTTER_WIDTH = 32;
+
+export type TimelineSpineVariant = 'default' | 'world';
 
 export interface TimelineSpineProps {
   /** Era hex — spine and dot inherit this colour. */
@@ -26,6 +31,8 @@ export interface TimelineSpineProps {
   isLast?: boolean;
   /** Row height, so the spine takes up exactly the same vertical space as the card. */
   rowHeight?: number;
+  /** Visual variant. `'world'` = outline-ring dot + faint line for world history events. */
+  variant?: TimelineSpineVariant;
 }
 
 export function TimelineSpine({
@@ -35,10 +42,14 @@ export function TimelineSpine({
   isFirst = false,
   isLast = false,
   rowHeight,
+  variant = 'default',
 }: TimelineSpineProps) {
-  const dotSize = hasImage ? 10 : 7;
-  const dotOpacity = hasImage ? 1 : 0.5;
+  const isWorld = variant === 'world';
+
+  const dotSize = isWorld ? 6 : hasImage ? 10 : 7;
+  const dotOpacity = isWorld || hasImage ? 1 : 0.5;
   const lineColor = eraColor + '30';
+  const lineOpacity = isWorld ? 0.3 : 1;
 
   return (
     <View
@@ -52,6 +63,7 @@ export function TimelineSpine({
           styles.lineHalf,
           {
             backgroundColor: isFirst ? 'transparent' : lineColor,
+            opacity: lineOpacity,
           },
         ]}
       />
@@ -63,14 +75,14 @@ export function TimelineSpine({
             width: dotSize,
             height: dotSize,
             borderRadius: dotSize / 2,
-            backgroundColor: eraColor,
+            backgroundColor: isWorld ? 'transparent' : eraColor,
             opacity: dotOpacity,
-            borderWidth: hasImage ? 2 : 0,
+            borderWidth: isWorld ? 1.5 : hasImage ? 2 : 0,
             borderColor: eraColor,
             // Soft halo for image-bearing (or active) events via shadow.
             shadowColor: eraColor, // intentional override-color
-            shadowOpacity: hasImage || isActive ? 0.6 : 0,
-            shadowRadius: hasImage || isActive ? 4 : 0,
+            shadowOpacity: !isWorld && (hasImage || isActive) ? 0.6 : 0,
+            shadowRadius: !isWorld && (hasImage || isActive) ? 4 : 0,
             shadowOffset: { width: 0, height: 0 },
           },
         ]}
@@ -81,6 +93,7 @@ export function TimelineSpine({
           styles.lineHalf,
           {
             backgroundColor: isLast ? 'transparent' : lineColor,
+            opacity: lineOpacity,
           },
         ]}
       />

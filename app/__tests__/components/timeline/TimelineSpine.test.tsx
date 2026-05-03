@@ -68,4 +68,49 @@ describe('TimelineSpine', () => {
     const merged = Object.assign({}, ...styleArr);
     expect(merged.backgroundColor).toBe('transparent');
   });
+
+  describe("variant='world'", () => {
+    it('uses a transparent fill with a colored 1.5px border on the dot', () => {
+      const { UNSAFE_getAllByType } = renderWithProviders(
+        <TimelineSpine eraColor="#8a6e3a" hasImage={false} variant="world" />,
+      );
+      const { View } = require('react-native');
+      const views = UNSAFE_getAllByType(View);
+      const dot = views[2];
+      const styleArr = Array.isArray(dot.props.style) ? dot.props.style : [dot.props.style];
+      const merged = Object.assign({}, ...styleArr);
+      expect(merged.backgroundColor).toBe('transparent');
+      expect(merged.borderWidth).toBe(1.5);
+      expect(merged.borderColor).toBe('#8a6e3a');
+      expect(merged.width).toBe(6);
+    });
+
+    it('keeps the dot at size 6 regardless of hasImage', () => {
+      const { UNSAFE_getAllByType } = renderWithProviders(
+        <TimelineSpine eraColor="#8a6e3a" hasImage variant="world" />,
+      );
+      const { View } = require('react-native');
+      const views = UNSAFE_getAllByType(View);
+      const dot = views[2];
+      const styleArr = Array.isArray(dot.props.style) ? dot.props.style : [dot.props.style];
+      const merged = Object.assign({}, ...styleArr);
+      expect(merged.width).toBe(6);
+    });
+
+    it('reduces the line opacity', () => {
+      const { UNSAFE_getAllByType } = renderWithProviders(
+        <TimelineSpine eraColor="#8a6e3a" hasImage={false} variant="world" />,
+      );
+      const { View } = require('react-native');
+      const views = UNSAFE_getAllByType(View);
+      const topHalf = views[1];
+      const bottomHalf = views[3];
+      const merge = (n: { props: { style: unknown } }) => {
+        const s = Array.isArray(n.props.style) ? n.props.style : [n.props.style];
+        return Object.assign({}, ...s);
+      };
+      expect(merge(topHalf).opacity).toBe(0.3);
+      expect(merge(bottomHalf).opacity).toBe(0.3);
+    });
+  });
 });

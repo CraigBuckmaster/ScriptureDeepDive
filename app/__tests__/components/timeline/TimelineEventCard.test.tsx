@@ -98,6 +98,93 @@ describe('TimelineEventCard', () => {
   });
 });
 
+describe('TimelineEventCard world variant', () => {
+  function makeWorldEntry(overrides: Partial<TimelineEntry> = {}): TimelineEntry {
+    return {
+      id: 'ur-founded',
+      name: 'Rise of Ur (Sumer)',
+      category: 'world',
+      era: null,
+      year: -3500,
+      summary: 'Sumerian city.',
+      scripture_ref: null,
+      chapter_link: null,
+      people_json: null,
+      region: 'mesopotamia',
+      ...overrides,
+    };
+  }
+
+  it('renders the WORLD HISTORY eyebrow', () => {
+    const { getByText } = renderWithProviders(
+      <TimelineEventCard
+        event={makeWorldEntry()}
+        eraColor="#8a6e3a"
+        isExpanded={false}
+        onToggleExpand={jest.fn()}
+      />,
+    );
+    expect(getByText('WORLD HISTORY')).toBeTruthy();
+  });
+
+  it('renders the region label from the canonical taxonomy', () => {
+    const { getByText } = renderWithProviders(
+      <TimelineEventCard
+        event={makeWorldEntry()}
+        eraColor="#8a6e3a"
+        isExpanded={false}
+        onToggleExpand={jest.fn()}
+      />,
+    );
+    expect(getByText('Mesopotamia')).toBeTruthy();
+  });
+
+  it('does not render scripture_ref slot for world events', () => {
+    const { queryByText } = renderWithProviders(
+      <TimelineEventCard
+        event={makeWorldEntry({ scripture_ref: 'Genesis 1' })}
+        eraColor="#8a6e3a"
+        isExpanded={false}
+        onToggleExpand={jest.fn()}
+      />,
+    );
+    expect(queryByText('Genesis 1')).toBeNull();
+  });
+
+  it('does not render people pills or chapter button when expanded', () => {
+    const { queryByText } = renderWithProviders(
+      <TimelineEventCard
+        event={makeWorldEntry({
+          people_json: '["abraham"]',
+          chapter_link: 'ot/genesis_12.html',
+        })}
+        eraColor="#8a6e3a"
+        isExpanded
+        onToggleExpand={jest.fn()}
+      />,
+    );
+    expect(queryByText('abraham')).toBeNull();
+    expect(queryByText('Go to chapter →')).toBeNull();
+  });
+
+  it('falls back gracefully when region is unknown', () => {
+    const { getByText, queryByText } = renderWithProviders(
+      <TimelineEventCard
+        event={makeWorldEntry({ region: 'atlantis' })}
+        eraColor="#8a6e3a"
+        isExpanded={false}
+        onToggleExpand={jest.fn()}
+      />,
+    );
+    // Card still renders
+    expect(getByText('Rise of Ur (Sumer)')).toBeTruthy();
+    expect(getByText('WORLD HISTORY')).toBeTruthy();
+    // No region pill rendered for unknown region
+    expect(queryByText('Mesopotamia')).toBeNull();
+    expect(queryByText('atlantis')).toBeNull();
+  });
+});
+
 describe('formatTimelineYear', () => {
   it('formats negative years as BC', () => {
     expect(formatTimelineYear(-4000)).toBe('4000 BC');

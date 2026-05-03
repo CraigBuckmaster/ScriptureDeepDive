@@ -4,13 +4,18 @@
  * Collapsed: year + scripture ref header, title, subtitle, optional image.
  * Expanded: full summary + people pills + chapter link.
  *
+ * World-history variant (#1809): when `event.category === 'world'`, the card
+ * renders a "WORLD HISTORY" eyebrow, a region pill (icon + label) keyed off
+ * the canonical region taxonomy, and suppresses scripture/people/chapter UI.
+ *
  * Part of Card #1264 (Timeline Phase 1).
  */
 
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { useTheme, radii, fontFamily, spacing } from '../../theme';
+import { useTheme, radii, fontFamily, spacing, categoryColors } from '../../theme';
 import type { TimelineEntry } from '../../types';
+import { resolveRegion } from '../../utils/worldRegions';
 
 export interface TimelineEventCardProps {
   event: TimelineEntry;
@@ -64,8 +69,16 @@ export function TimelineEventCard({
 }: TimelineEventCardProps) {
   const { base } = useTheme();
 
+  const isWorld = event.category === 'world';
+  const region = isWorld ? resolveRegion(event.region) : null;
+  const RegionIcon = region?.icon;
+
   const people = parsePeopleJson(event.people_json);
   const chapter = parseChapterLink(event.chapter_link);
+
+  const borderColor = isWorld
+    ? (region?.color ?? categoryColors.world) + '40'
+    : eraColor + '20';
 
   return (
     <TouchableOpacity
@@ -78,15 +91,32 @@ export function TimelineEventCard({
         styles.card,
         {
           backgroundColor: base.bgElevated,
-          borderColor: eraColor + '20',
+          borderColor,
         },
       ]}
     >
+      {isWorld ? (
+        <Text style={[styles.eyebrow, { color: base.textMuted }]}>WORLD HISTORY</Text>
+      ) : null}
       <View style={styles.header}>
         <Text style={[styles.year, { color: eraColor }]}>
           {formatTimelineYear(event.year)}
         </Text>
-        {event.scripture_ref ? (
+        {isWorld ? (
+          region ? (
+            <View
+              style={[
+                styles.regionPill,
+                { backgroundColor: region.color + '99', borderColor: region.color + '99' },
+              ]}
+            >
+              {RegionIcon ? (
+                <RegionIcon size={10} color={base.text} />
+              ) : null}
+              <Text style={[styles.regionLabel, { color: base.text }]}>{region.label}</Text>
+            </View>
+          ) : null
+        ) : event.scripture_ref ? (
           <Text style={[styles.ref, { color: base.gold }]}>{event.scripture_ref}</Text>
         ) : null}
       </View>
@@ -99,7 +129,7 @@ export function TimelineEventCard({
           {event.summary}
         </Text>
       ) : null}
-      {isExpanded && people.length > 0 ? (
+      {!isWorld && isExpanded && people.length > 0 ? (
         <View style={styles.peopleRow}>
           {people.map((personId) => (
             <TouchableOpacity
@@ -115,7 +145,7 @@ export function TimelineEventCard({
           ))}
         </View>
       ) : null}
-      {isExpanded && chapter ? (
+      {!isWorld && isExpanded && chapter ? (
         <TouchableOpacity
           onPress={() => onChapterPress?.(chapter.bookId, chapter.chapterNum)}
           style={[
@@ -139,6 +169,11 @@ const styles = StyleSheet.create({
     padding: spacing.sm + 2,
     gap: 4,
   },
+  eyebrow: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 8,
+    letterSpacing: 1.5,
+  },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -152,6 +187,19 @@ const styles = StyleSheet.create({
   ref: {
     fontFamily: fontFamily.uiMedium,
     fontSize: 8,
+  },
+  regionPill: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    borderWidth: 1,
+    borderRadius: radii.pill,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+  },
+  regionLabel: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 9,
   },
   title: {
     fontFamily: fontFamily.uiMedium,
