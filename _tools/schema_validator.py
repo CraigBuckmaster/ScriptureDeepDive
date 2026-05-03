@@ -1385,6 +1385,42 @@ def main():
 
         print(f"  era_config: {len(era_config)} eras, {enriched_eras} enriched")
 
+        # ── World events schema (#1809) ──
+        from world_regions import WORLD_REGION_KEYS
+        world_events = tl_data.get('world_events', [])
+        check("world_events is list", isinstance(world_events, list),
+              f"got {type(world_events).__name__}")
+        if isinstance(world_events, list):
+            seen_world_ids = set()
+            for we in world_events:
+                wid = we.get('id') if isinstance(we, dict) else None
+                label = f"world_event '{wid}'" if wid else "world_event"
+                check(f"{label} is dict", isinstance(we, dict))
+                if not isinstance(we, dict):
+                    continue
+                check(f"{label} id is non-empty string",
+                      isinstance(wid, str) and len(wid) > 0,
+                      "missing or non-string id")
+                if isinstance(wid, str):
+                    check(f"{label} id is unique",
+                          wid not in seen_world_ids,
+                          f"duplicate id: {wid}")
+                    seen_world_ids.add(wid)
+                check(f"{label} name is non-empty string",
+                      isinstance(we.get('name'), str) and len(we.get('name', '')) > 0,
+                      "missing or non-string name")
+                check(f"{label} year is int",
+                      isinstance(we.get('year'), int) and not isinstance(we.get('year'), bool),
+                      f"year is {type(we.get('year')).__name__}")
+                region = we.get('region')
+                check(f"{label} region is canonical key",
+                      isinstance(region, str) and region in WORLD_REGION_KEYS,
+                      f"region {region!r} not in {sorted(WORLD_REGION_KEYS)}")
+                check(f"{label} summary is non-empty string",
+                      isinstance(we.get('summary'), str) and len(we.get('summary', '')) > 0,
+                      "missing or non-string summary")
+            print(f"  world_events: {len(world_events)} entries, {len(seen_world_ids)} unique ids")
+
     else:
         print("  timelines.json not found — skipping")
 
