@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 7-11's Atonement-day offerings echo Lev 16's procedure forward into the calendar; vv 12-38's Tabernacles offerings (descending bull count) thread across Scripture toward Zech 14:16-19's eschatological feast and Rev 7:9's palm-bearing nations.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 1-6's trumpets, vv 7-11's atonement, vv 12-38's booths frame the autumn cluster as covenant climax. The redemptive arc that opened in Exodus closes its fiscal year here — call, cleansing, and dwelling-with arranged in sequence.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes",
+        "calvin"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

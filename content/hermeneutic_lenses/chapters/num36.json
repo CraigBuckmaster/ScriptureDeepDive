@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter forms an inclusio with num27 — daughters of Zelophehad open the book's closing pair, and close it. vv 1-12's marriage-within-tribe rule completes vv 1-11 of num27. The structure brackets the legal innovation with its constraint.",
+      "panel_filter": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "milgrom",
+        "ashley",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 13's coda — 'these are the commands and regulations the LORD gave through Moses to the Israelites on the plains of Moab' — closes Numbers as the canonical hinge before Deuteronomy's renewal sermons. The book ends pointing forward across Scripture.",
+      "panel_filter": [
+        "cross",
+        "thread",
+        "themes"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}
