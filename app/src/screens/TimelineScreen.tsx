@@ -8,7 +8,7 @@
  * Part of Card #1264 (Timeline Phase 1).
  */
 
-import React, { useCallback, useEffect, useMemo, useReducer, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import {
   FlatList,
   StyleSheet,
@@ -130,6 +130,7 @@ function TimelineRow({
         isActive={isExpanded}
         isFirst={isFirst}
         isLast={isLast}
+        variant={event.category === 'world' ? 'world' : 'default'}
       />
       <View style={styles.rowCard}>
         <TimelineEventCard
@@ -162,6 +163,7 @@ function TimelineScreen() {
   const [personFilter, setPersonFilter] = useState<{ id: string; name: string } | null>(
     null,
   );
+  const flatListRef = useRef<FlatList<TimelineEntry>>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -213,6 +215,18 @@ function TimelineScreen() {
     [eras, expandedEraContext],
   );
 
+  const worldEventsInEra = useMemo(() => {
+    if (!expandedEra || expandedEra.range_start == null || expandedEra.range_end == null) {
+      return [];
+    }
+    return events.filter(
+      (e) =>
+        e.category === 'world' &&
+        e.year >= expandedEra.range_start! &&
+        e.year <= expandedEra.range_end!,
+    );
+  }, [events, expandedEra]);
+
   const eraColorFor = useCallback(
     (eraId: string | null): string => {
       if (!eraId) return base.gold;
@@ -250,6 +264,15 @@ function TimelineScreen() {
       });
     },
     [navigation],
+  );
+
+  const handleWorldEventPress = useCallback(
+    (eventId: string) => {
+      const idx = visible.findIndex((e) => e.id === eventId);
+      if (idx < 0) return;
+      flatListRef.current?.scrollToIndex({ index: idx, animated: true, viewPosition: 0.3 });
+    },
+    [visible],
   );
 
   const handleChapterPress = useCallback(
@@ -302,6 +325,8 @@ function TimelineScreen() {
             era={expandedEra}
             onPersonPress={handleContextPersonPress}
             onBookPress={handleContextBookPress}
+            worldEvents={worldEventsInEra}
+            onWorldEventPress={handleWorldEventPress}
           />
         </View>
       ) : null}
@@ -353,6 +378,7 @@ function TimelineScreen() {
       </View>
 
       <FlatList
+        ref={flatListRef}
         data={visible}
         keyExtractor={(e) => e.id}
         contentContainerStyle={styles.listContent}

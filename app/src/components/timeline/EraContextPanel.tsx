@@ -12,12 +12,19 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, fontFamily, radii, spacing } from '../../theme';
 import type { EraRow } from '../../db/content/reference';
+import type { TimelineEntry } from '../../types';
+import { resolveRegion } from '../../utils/worldRegions';
 import { formatEraRange } from './TimelineEraStrip';
+import { formatTimelineYear } from './TimelineEventCard';
 
 export interface EraContextPanelProps {
   era: EraRow;
   onPersonPress?: (personName: string) => void;
   onBookPress?: (bookName: string) => void;
+  /** World-history events whose year falls within this era's range. */
+  worldEvents?: TimelineEntry[];
+  /** Tap handler for a world event row — typically scrolls timeline to it. */
+  onWorldEventPress?: (eventId: string) => void;
 }
 
 /** Theme entry from key_themes JSON. */
@@ -59,7 +66,13 @@ function parseThemes(input: string | null | undefined): ThemeEntry[] {
   return [];
 }
 
-export function EraContextPanel({ era, onPersonPress, onBookPress }: EraContextPanelProps) {
+export function EraContextPanel({
+  era,
+  onPersonPress,
+  onBookPress,
+  worldEvents,
+  onWorldEventPress,
+}: EraContextPanelProps) {
   const { base } = useTheme();
   const accent = era.hex ?? base.gold;
 
@@ -173,6 +186,37 @@ export function EraContextPanel({ era, onPersonPress, onBookPress }: EraContextP
           </View>
         </View>
       ) : null}
+
+      {worldEvents && worldEvents.length > 0 ? (
+        <View style={styles.section}>
+          <Text style={[styles.sectionLabel, { color: base.textMuted }]}>World Context</Text>
+          <View style={styles.worldList}>
+            {worldEvents.map((we) => {
+              const region = resolveRegion(we.region);
+              const RegionIcon = region?.icon;
+              return (
+                <TouchableOpacity
+                  key={we.id}
+                  onPress={() => onWorldEventPress?.(we.id)}
+                  accessibilityRole="button"
+                  accessibilityLabel={`Scroll to ${we.name}`}
+                  style={styles.worldRow}
+                >
+                  <Text style={[styles.worldYear, { color: accent }]}>
+                    {formatTimelineYear(we.year)}
+                  </Text>
+                  {RegionIcon ? (
+                    <RegionIcon size={11} color={region!.color} />
+                  ) : null}
+                  <Text style={[styles.worldName, { color: base.text }]} numberOfLines={1}>
+                    {we.name}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+        </View>
+      ) : null}
     </View>
   );
 }
@@ -247,5 +291,24 @@ const styles = StyleSheet.create({
   pillLabel: {
     fontFamily: fontFamily.uiMedium,
     fontSize: 10,
+  },
+  worldList: {
+    gap: 4,
+  },
+  worldRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+  },
+  worldYear: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 9,
+    letterSpacing: 0.5,
+    minWidth: 56,
+  },
+  worldName: {
+    fontFamily: fontFamily.ui,
+    fontSize: 11,
+    flexShrink: 1,
   },
 });
