@@ -1,0 +1,96 @@
+{
+  "lenses": [
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 4-5 are the verses Jesus names as the greatest commandment at Mk 12:29-30 — the Messiah anchors his ethic on Israel's foundational confession. The Shema becomes Christ's own creed of love-with-all.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 4-5 are echoed across the New Testament — Mk 12:29-30, Mt 22:37, Lk 10:27 — and at Jas 2:19 ('you believe that there is one God; good!'). No Old Testament verse threads more directly into the canonical witness of Jesus.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "vv 20-25 set the catechetical form — 'when your son asks in time to come, what is the meaning?' The structure embeds covenant teaching inside narrative answer; the household becomes the place of formation, not just the temple.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 6-9 prescribe the heart-shaping practice — talk of these words at home and away, bind them on hand and forehead, write them on the doorposts. To live them today is to repeat them until they become the air the household breathes.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 10-12 warn that when the covenant promise is fulfilled — cities not built, wells not dug, vineyards not planted — Israel will be tempted to forget. Prosperity threatens the redemption arc more than persecution; full hands forget.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "mission",
+      "guidance": "vv 20-25's son-asking catechesis is mission shaped as inheritance: every generation must hear the exodus story afresh, sent outward to its own children. The household becomes the first missional cell of witness.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

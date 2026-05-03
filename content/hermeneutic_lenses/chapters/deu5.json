@@ -1,0 +1,68 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter divides at v 22: vv 6-21 give the divine address, vv 22-33 the people's terror and Moses's mediation. The bipartite structure makes intercession the second movement, not the first; mediator and law are inseparable.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "grammatical",
+      "guidance": "vv 12-15 reground the Sabbath in redemption from Egypt rather than Ex 20's creation rationale. Same imperative — 'observe' (shamor) replaces 'remember' (zakhor) — but the original audience now hears Sabbath as freedmen's ordinance.",
+      "panel_filter": [
+        "craigie",
+        "heb",
+        "hebtext",
+        "tigay"
+      ],
+      "panel_order": [
+        "heb",
+        "hebtext",
+        "craigie",
+        "tigay"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 23-31 show Moses standing between holy mountain and trembling people — the mediator-pattern that anticipates Christ as the better Mediator (Heb 12:18-24), where the same God's voice no longer terrifies but draws near in grace.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 28-29 record the LORD's wish — 'oh, that their hearts would be inclined to fear me and keep all my commands always' — naming the heart-disposition the law cannot itself produce. To obey today is to ask what only grace can give.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

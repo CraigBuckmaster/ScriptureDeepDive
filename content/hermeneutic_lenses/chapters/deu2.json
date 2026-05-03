@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 4-19 form a triple refrain — pass through Edom, Moab, Ammon without provocation — before vv 24-37 turn on Sihon. The repetition of restraint sets the structure: covenant-defined kin borders, then designated conquest.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 4-9, 19's restraint toward Edom, Moab, and Ammon — kin given their own inheritance — shows the redemption arc is not blanket conquest. The covenant promise is shaped by genealogy; Israel's land has covenantal limits.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

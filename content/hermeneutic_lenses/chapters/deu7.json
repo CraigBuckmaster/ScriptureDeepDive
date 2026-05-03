@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 7-8 ground election not in Israel's size but in covenant love: 'because the LORD loved you and kept the oath he swore to your ancestors.' The redemption arc rests on God's prior promise, not human merit.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 7-8's election language is later echoed at Mal 1:2-3 ('Jacob I loved'), Rom 9:11-13 (which quotes that line), and Eph 1:4-5. The canonical thread is unbroken: chosen because loved, not loved because chosen.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 17-26's fear-not refrain — 'do not be afraid... the LORD your God is with you' — addresses the heart that counts numbers. To trust today is to remember what God did to Pharaoh (v 18) when the fear comes.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

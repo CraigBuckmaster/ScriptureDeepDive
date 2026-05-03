@@ -1,0 +1,68 @@
+{
+  "lenses": [
+    {
+      "lens_id": "christocentric",
+      "guidance": "v 16's 'circumcise your hearts, and do not be stiff-necked any longer' is named fulfilled in Christ at Rom 2:29, Phil 3:3, and Col 2:11. The outward sign points to inward grace given by the Spirit through the gospel.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "v 16's heart-circumcision is the type that Jer 31:33 and Ezek 36:26 prefigure as fulfillment — a heart of flesh, the law inscribed not on stone but in the people. The external rite anticipates internal regeneration.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "vv 12-22 ('what does the LORD require?') condense the law into fear, walk, love, serve, keep. The literary form anticipates Mic 6:8's later distillation — same compression, same five-word ethic of God-with-neighbour.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 17-19 ground hospitality in remembered grace: 'love the foreigner residing among you, for you yourselves were foreigners in Egypt.' To live faithfully today is to let the heart turn outward where the law turns it.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}
