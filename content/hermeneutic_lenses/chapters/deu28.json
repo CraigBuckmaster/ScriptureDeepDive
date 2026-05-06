@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter's structure is asymmetric — vv 1-14's blessings get fourteen verses, vv 15-68's curses get fifty-four. The literary form makes covenant breach the central narrative, not the optional case; the bulk warns the heart.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 64-68's exile-and-Egypt-return forecast — 'the LORD will scatter you among all nations' — is the covenant arc's hinge. The redemption story bends through scattering before restoration; nothing of Israel's later exile is unforetold.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 49's 'a nation from far away... whose language you will not understand' is echoed at Jer 5:15 and Isa 5:26-30 in their warnings of Babylon, then at 1 Cor 14:21 in Paul's reading of tongues. A canonical thread of foreign-language judgment.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 47-48 name the spiritual root of the curses: 'because you did not serve the LORD your God joyfully and gladly in the time of prosperity.' To worship today is to keep the heart joyful when the hand is full, not only when empty.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 53-57's siege-cannibalism horror prefigures the covenant-curse at its most undone state. 2 Kgs 6:24-29 and Lam 4:10 record the literal pattern in Israel's history — the shadow-curse fulfilled in time, awaiting the curse-bearer.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    }
+  ]
+}

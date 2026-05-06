@@ -1,0 +1,84 @@
+{
+  "lenses": [
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 1-10 forecast covenant restoration after exile — gather, return, circumcise the heart (v 6), prosper. The redemption arc's full curve is here in miniature: scattering, repentance, regenerated hearts, restored land, fruitful covenant.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 11-14's 'the word is very near you' — Paul quotes this at Rom 10:6-9 and reads it as the gospel: 'the word of faith we proclaim... if you confess Jesus is Lord.' The Mosaic word-nearness is the gospel's nearness in Christ.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 19-20's 'choose life... that you and your children may live, and that you may love the LORD your God' addresses the heart's central decision. To respond today is to keep choosing — life is not a one-time election but daily allegiance.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "vv 15-20's two-ways structure — life-and-good versus death-and-evil, blessing versus curse — uses parallelism to compress the whole book's argument into six verses. The literary form makes assent unavoidable; the choice is binary by design.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "v 6's 'the LORD your God will circumcise your hearts' is the prefigured fulfillment of v 16's command (deu10:16). What Israel was told to do is what God himself will do — the type points forward to the new-covenant work of regeneration.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 11-26's twelve-curse litany — each closing 'and all the people shall say, Amen' — uses antiphonal repetition to build covenant solemnity. The structure makes assent corporate; no Israelite stands outside the people's voice.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "v 26 — 'cursed is anyone who does not uphold the words of this law by carrying them out' — is the verse Paul quotes at Gal 3:10 to set up vv 13's resolution: Christ became a curse for us. The shadow demands what only the cross satisfies.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "v 26's covenant curse on the law-breaker is what Christ bears at Gal 3:10-13 — 'Christ redeemed us from the curse of the law by becoming a curse for us.' The Ebal litany finds its answer at Calvary, not at Sinai's altar.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 1-8's altar-on-uncut-stones, plastered and inscribed with the law, threads to Josh 8:30-35's enactment, then forward through Heb 12:18-24 — the canonical line traces from Ebal to Zion to the church's better mountain.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

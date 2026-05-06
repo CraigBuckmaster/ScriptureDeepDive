@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-12's death-narrative — Pisgah ascent, divine burial, thirty-day mourning, prophetic-incomparability verdict — closes the Pentateuch with elegy. The form is final-witness; vv 10-12's epitaph fixes Moses as the unmatched mediator.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 10-12's verdict — 'no prophet has risen in Israel like Moses, whom the LORD knew face to face' — sets the bar Christ alone surpasses (Heb 3:1-6, where Jesus is more than Moses; Jn 1:17, the law through Moses, grace through Jesus).",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 6's hidden-burial — 'no one knows where his grave is' — threads to Jude 9's tradition about Michael disputing over Moses's body, and to Mt 17:3's transfiguration where Moses appears alive with Christ. A canonical line on the prophet's afterlife.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

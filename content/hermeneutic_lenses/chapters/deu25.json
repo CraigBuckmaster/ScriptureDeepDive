@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "canonical",
+      "guidance": "v 4 — 'do not muzzle an ox while it is treading out the grain' — is quoted at 1 Cor 9:9 and 1 Tim 5:18 as warrant for paying gospel workers. The canonical thread runs from threshing-floor regulation to Pauline ministry ethics.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "vv 17-19's Amalek-remember command bookends the chapter against vv 1-3's flogging-limit. The structural framing pairs measured discipline within Israel against unmeasured destruction of the merciless enemy at the wilderness rear.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 5-10's levirate marriage — kinsman raises seed for the dead brother — is the pattern Ruth 4 draws on (Boaz the kinsman-redeemer) and Mt 1:5 names in Christ's genealogy. The shadow prefigures redemption through kin.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 1-4's divorce regulation is what Jesus addresses at Mt 19:7-9 and Mk 10:2-12 — Christ reads Moses's allowance as a concession to hardness of heart, not a creational ideal. The canonical line tightens the marriage bond.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 14-15's prompt-payment to the day-labourer — 'pay them their wages each day before sunset' — and vv 17-22's gleaning rights name the vulnerable as the heart's first test. To live faithfully today is to refuse delayed mercy.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 17-22 ground vulnerable-protection in the exodus: 'remember that you were slaves in Egypt and the LORD your God redeemed you from there.' The covenant ethic flows directly from redemption history; freed people free others.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}
