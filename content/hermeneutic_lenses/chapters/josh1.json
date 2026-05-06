@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-9's commission uses fourfold imperative repetition — 'be strong and courageous' (vv 6, 7, 9), 'do not be afraid' (v 9). The structural refrain locks the leadership transfer; the form is exhortation, not instruction.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 5b-6's 'I will never leave you nor forsake you' is quoted at Heb 13:5-6 to ground Christian confidence. The canonical thread runs from Joshua's commission to the church's assurance — same divine promise, same antidote to fear.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 2-6 hand the covenant promise across a generation: same land oath given to Moses, now activated in Joshua. The redemption arc keeps the promise intact across leadership transitions; the giver does not change when the bearer does.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 7-8's 'meditate on this Book of the Law day and night' frames Joshua's success as Word-shaped. To live faithfully today is to trust that the same scripture-saturated obedience produces the same kind of courage under pressure.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

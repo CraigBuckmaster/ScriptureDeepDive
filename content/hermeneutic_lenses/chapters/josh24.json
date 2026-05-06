@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-13's divine-speech recital of redemption history — Abraham, Egypt, exodus, conquest — uses 'I' refrain twenty times. The structural rhetoric makes God the actor; Israel's choice in vv 14-15 responds to grace already enacted.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 2-13's recital traces the redemption arc from Abraham (v 3) through exodus (v 6) to conquest (v 11). The structural compression makes Joshua's covenant the inheritance of every prior covenant; promise-fulfillment is cumulative.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 14-15's 'choose this day whom you will serve' is the covenant-summons Christ recasts at Mt 6:24 ('no one can serve two masters... God or money'). The Shechem question becomes the gospel's discipleship question across testaments.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 14-15's two-ways summons threads to Deut 30:19 (life or death), 1 Kgs 18:21 (Elijah on Carmel), and Mt 7:13-14 (two gates). The canonical line of decision-rhetoric runs from Moab to Shechem to the Sermon on the Mount.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 14-15's 'as for me and my household, we will serve the LORD' models the leader's confession — staking the family on a choice the family has not yet made. To respond today is to lead one's household toward obedience first.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

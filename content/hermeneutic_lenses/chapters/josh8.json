@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 30-35's altar-on-Ebal and Torah-reading enacts the Deut 27 command verbatim — Joshua does what Moses prescribed. The canonical thread connects Sinai code to Shechem ceremony; obedience completes the covenant.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-29's ambush narrative (military) and vv 30-35's covenant ceremony (liturgical) are paired in a single chapter. The structural juxtaposition makes conquest and worship one act; victory's frame is the altar, not the sword.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 30-35's Ebal-Gerizim ceremony reactivates the Deuteronomic covenant on conquered ground — promise embedded into landscape. The redemption arc is now spatially located; covenant has a place, not just a people.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

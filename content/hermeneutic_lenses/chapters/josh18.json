@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-10's Shiloh-survey narrative pivots on v 1's tabernacle-pitching — the sacred centre relocates from Gilgal to Shiloh. The structural movement makes the partition theologically grounded; allotment proceeds from the LORD's tent outward.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 1's Shiloh-tabernacle threads to 1 Sam 1-4 (Eli, Samuel, the ark) and forward to Jer 7:12-14 ('go to my place in Shiloh... see what I did to it'). The canonical line traces sanctuary continuity from conquest to exile.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

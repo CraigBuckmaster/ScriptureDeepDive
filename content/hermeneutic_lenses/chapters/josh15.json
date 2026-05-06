@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-12's Judah-boundary description and vv 20-62's town list use surveyor's repetition — 'the boundary went up... the boundary turned... the boundary ended.' The literary form is administrative geography, fixing covenant inheritance in space.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 13-19's Caleb-Othniel narrative threads forward — Othniel becomes the first judge (Judg 3:9-11). A canonical line runs from the conquest's faithful kinsman to the era of cyclical deliverance that follows Joshua's death.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 43-45's three-fold refrain — 'the LORD gave Israel all the land... the LORD gave them rest... not one of all the LORD's good promises failed' — closes the partition narrative. The structural triad is theological summary; the land-conquest book ends in benediction.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 45's 'not one of all the LORD's good promises... failed' threads to 2 Cor 1:20 ('all God's promises are Yes in Christ'). The canonical line connects the conquest's promise-keeping summary to the gospel's promise-fulfillment center.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

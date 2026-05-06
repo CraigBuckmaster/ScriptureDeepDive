@@ -1,0 +1,52 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 6-15's Caleb narrative is structured as memory-citation — 'forty-five years ago,' 'the LORD has kept me alive.' The form is testimony; the structure makes Caleb's claim rest on past divine promise (Num 14:24) made present.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 10-12's 'I am still as strong today as the day Moses sent me out... give me this hill country' models persistent faith. To trust today is to claim what God promised long ago and to act on it while there is strength to do so.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 6-14's Caleb-inheritance honours a forty-five-year-old promise (Num 14:24) — 'because he followed the LORD wholeheartedly.' The redemption arc keeps individual covenant promises across generational gaps.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

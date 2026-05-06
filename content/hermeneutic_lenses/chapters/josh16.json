@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "v 10's 'they did not dislodge the Canaanites... so the Canaanites live among the people of Ephraim to this day' breaks the boundary-list narrative with a structural confession. The form admits conquest's incompleteness chapter by chapter.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "v 10's failure-to-drive-out preserves the seed of later covenant trouble (Judg 1-3). The redemption arc is honest about where Israel fell short; the unfinished work in Ephraim becomes the next book's theological problem.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

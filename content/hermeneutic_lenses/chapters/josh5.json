@@ -1,0 +1,68 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "vv 13-15's Commander of the LORD's army — 'I am' — prefigures the divine-warrior Christ at Rev 19:11-16. The pattern is the same: Joshua removes sandals, John falls as dead. Holy ground recurs where the Captain stands.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-12 stage three covenant resets before the conquest begins — circumcision (vv 1-9), Passover (vv 10-11), manna ceasing (v 12). The structure marks transition: wilderness rites finished, land-rites beginning.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 9's 'today I have rolled away the reproach of Egypt from you' names a covenant turning-point — the slavery shame is closed at the threshold of inheritance. The redemption arc rolls forward only when the past is cut away.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 13-15 model the right response to divine encounter — 'what message does my Lord have for his servant?' The heart that meets God on holy ground asks for orders, not assurances. To draw near today is to bow first, then listen.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

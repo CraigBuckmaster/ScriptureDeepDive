@@ -1,0 +1,66 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-26's Achan-narrative inverts jos6's Jericho-victory: same army, same God, opposite outcome. The literary structure pairs success-by-obedience with defeat-by-hidden-sin; the chapter is the conquest's dark mirror.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 1's 'Israel acted unfaithfully... so the LORD's anger burned' is canonically echoed at Acts 5:1-11 (Ananias and Sapphira). Same pattern: hidden theft inside the covenant community, divine intervention, fear falling on all.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 1-26 establish the pattern Heb 12:1's 'sin that so easily entangles' draws on — corporate consequence for individual breach. The shadow recurs throughout the canon; the church is one body, not a collection of individuals.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 19-21's 'tell me what you have done' invites confession before the judgment. Achan's late confession could not undo the outcome; to repent today is to confess before the Spirit must reveal what we hid from ourselves.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

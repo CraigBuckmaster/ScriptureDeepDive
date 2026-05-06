@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 16-23's summary refrain — 'Joshua took the whole land, just as the LORD had directed Moses' — closes the conquest narrative. The structural closure is theological: completion-language. The remainder of the book is partition, not battle.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 23's 'so the land had rest from war' anticipates the rest-language of Heb 4:8-9 — Joshua's rest is not the final rest. The redemption arc keeps the promise open: a greater Joshua brings greater rest still to come.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}
