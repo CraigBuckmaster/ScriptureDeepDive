@@ -45,6 +45,7 @@ export function useChapterData(bookId: string | null, chapterNum: number): Chapt
     if (!bookId) {
       // No book to load: clear the initial loading flag so consumers can
       // render a not-found/empty state instead of an indefinite skeleton.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsLoading(false);
       return;
     }
