@@ -1,4 +1,4 @@
-import { FEATURE_FLAGS, isFlagEnabled, type FeatureFlag } from '../featureFlags';
+import { FEATURE_FLAGS, isFlagEnabled, type CompileFeatureFlag } from '../featureFlags';
 
 describe('featureFlags', () => {
   it('GUIDED_STUDY_AMICUS_SYNTHESIS defaults to false', () => {
@@ -6,11 +6,11 @@ describe('featureFlags', () => {
     expect(isFlagEnabled('GUIDED_STUDY_AMICUS_SYNTHESIS')).toBe(false);
   });
 
-  it('FEATURE_FLAGS is exhaustively typed by FeatureFlag', () => {
-    // Round-trip through FeatureFlag — caller can iterate via a typed
+  it('FEATURE_FLAGS is exhaustively typed by CompileFeatureFlag', () => {
+    // Round-trip through CompileFeatureFlag — caller can iterate via a typed
     // narrowing. If a flag is added to FEATURE_FLAGS without updating the
     // type, tsc fails on this assignment.
-    const keys = Object.keys(FEATURE_FLAGS) as FeatureFlag[];
+    const keys = Object.keys(FEATURE_FLAGS) as CompileFeatureFlag[];
     expect(keys).toContain('GUIDED_STUDY_AMICUS_SYNTHESIS');
     for (const key of keys) {
       expect(typeof FEATURE_FLAGS[key]).toBe('boolean');

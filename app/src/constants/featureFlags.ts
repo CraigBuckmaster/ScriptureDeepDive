@@ -31,4 +31,5 @@ export const featureFlags = {
     isDev() && process.env.EXPO_PUBLIC_SENTRY_SMOKE === 'true',
 } as const;
 
-export type FeatureFlag = keyof typeof featureFlags;
+/** Env-driven feature flag key (distinct from the compile-time CompileFeatureFlag). */
+export type EnvFeatureFlag = keyof typeof featureFlags;

@@ -27,13 +27,6 @@ jest.mock('@/hooks/useAvailableVoices', () => ({
   useAvailableVoices: jest.fn().mockReturnValue([]),
 }));
 
-// Mock expo-av
-jest.mock('expo-av', () => ({
-  Audio: {
-    setAudioModeAsync: jest.fn().mockResolvedValue(undefined),
-  },
-}));
-
 // Mock expo-speech
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
