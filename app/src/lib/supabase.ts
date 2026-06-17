@@ -7,11 +7,13 @@
  *
  * To activate auth:
  *   1. Create a Supabase project at supabase.com
- *   2. npm install @supabase/supabase-js react-native-url-polyfill @react-native-async-storage/async-storage
+ *   2. npm install @supabase/supabase-js react-native-url-polyfill @react-native-async-storage/async-storage expo-secure-store
  *   3. Set SUPABASE_URL and SUPABASE_ANON_KEY below
  *   4. Build a dev client: npx expo run:ios (or eas build)
  *   5. Set CONFIGURED = true
  */
+
+import { logger } from '../utils/logger';
 
 // ── Configuration ──────────────────────────────────────────────
 const CONFIGURED = !!process.env.SUPABASE_URL;
@@ -51,11 +53,25 @@ export function getSupabase(): SupabaseClient | null {
   try {
     require('react-native-url-polyfill/auto');
     const { createClient } = require('@supabase/supabase-js');
-    const AsyncStorage = require('@react-native-async-storage/async-storage').default;
+
+    // Persist the session (access + refresh JWTs) in the Keychain/Keystore via
+    // SecureStore rather than plaintext AsyncStorage. Fall back to AsyncStorage
+    // only if SecureStore is genuinely unavailable, logging the downgrade.
+    let storage;
+    try {
+      const { createSecureStorage } = require('./secureStorage');
+      storage = createSecureStorage();
+    } catch {
+      logger.warn(
+        'supabase',
+        'SecureStore unavailable — falling back to AsyncStorage for the auth session (less secure)',
+      );
+      storage = require('@react-native-async-storage/async-storage').default;
+    }
 
     _client = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
       auth: {
-        storage: AsyncStorage,
+        storage,
         autoRefreshToken: true,
         persistSession: true,
         detectSessionInUrl: false,
