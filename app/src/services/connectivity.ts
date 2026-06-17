@@ -16,7 +16,6 @@ type Listener = (connected: boolean) => void;
 let _connected = true;
 const _listeners = new Set<Listener>();
 let _started = false;
-let _polling = false;
 let _pollTimer: ReturnType<typeof setInterval> | null = null;
 let _netinfoUnsub: (() => void) | null = null;
 
@@ -79,7 +78,6 @@ export function startMonitoring(): void {
   // Polling fallback: check reachability every 15 seconds.
   // Require two consecutive failures before marking offline so a single
   // slow/blocked fetch on startup doesn't flash the banner incorrectly.
-  _polling = true;
   let _consecutiveFails = 0;
   const check = async () => {
     try {
@@ -116,7 +114,6 @@ export function stopMonitoring(): void {
     clearInterval(_pollTimer);
     _pollTimer = null;
   }
-  _polling = false;
   _started = false;
   _listeners.clear();
 }

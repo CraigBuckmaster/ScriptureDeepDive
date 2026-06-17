@@ -289,7 +289,10 @@ export function useDifficultPassage(passageId: string | undefined): DifficultPas
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     loadData();
-    // Invalidate any in-flight load on unmount / passageId change.
+    // Invalidate any in-flight load on unmount / passageId change. We
+    // intentionally mutate the live ref here (not a copied value) so a load
+    // still in flight sees the bumped generation and drops its result.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     return () => { genRef.current++; };
   }, [loadData]);
 
