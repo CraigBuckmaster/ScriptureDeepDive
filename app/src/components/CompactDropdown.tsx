@@ -5,7 +5,7 @@
  * Open: overlay with options, active item gets a checkmark, tap-outside dismisses.
  * NO CHEVRONS — the pill shape is sufficient affordance.
  *
- * Used by TranslationDropdown (Phase 3) and ViewModeDropdown (Phase 4).
+ * Used by ViewModeDropdown and other compact selectors.
  */
 
 import React, { useState, useRef, useCallback } from 'react';

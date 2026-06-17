@@ -5,7 +5,7 @@
  * + gloss (gold bold) + paragraph (body with TappableReference).
  *
  * WORD STUDY TRIGGER: Tapping a word INSIDE this panel opens the
- * WordStudyPopup (if a matching entry exists). This is the actual
+ * LexiconSheet (if a matching entry exists). This is the actual
  * path to the lexicon — NOT from VHL highlighting in verse text.
  */
 

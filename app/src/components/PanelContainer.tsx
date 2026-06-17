@@ -10,7 +10,6 @@ import { View, TouchableOpacity, Text, StyleSheet, Platform, UIManager } from 'r
 import { useTheme, spacing } from '../theme';
 import { lightImpact } from '../utils/haptics';
 import type { ParsedRef } from '../types';
-import { PanelCallbacksProvider } from './panels/PanelCallbacksContext';
 import { PanelRenderer } from './panels/PanelRenderer';
 
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
@@ -40,11 +39,6 @@ export function PanelContainer({
 }: Props) {
   const { base, getPanelColors } = useTheme();
 
-  const callbacks = useMemo(() => ({
-    onRefPress, onWordStudyPress, onScholarPress,
-    onPersonPress, onPlacePress, onEventPress,
-  }), [onRefPress, onWordStudyPress, onScholarPress, onPersonPress, onPlacePress, onEventPress]);
-
   // panelStyle must be computed before any early return so hook call order
   // stays consistent across renders. getPanelColors() is pure (theme-keyed).
   const colors = getPanelColors(panelType);
@@ -73,19 +67,17 @@ export function PanelContainer({
         </TouchableOpacity>
       )}
 
-      <PanelCallbacksProvider value={callbacks}>
-        <PanelRenderer
-          panelType={panelType}
-          contentJson={contentJson}
-          onRefPress={onRefPress}
-          onWordStudyPress={onWordStudyPress}
-          onScholarPress={onScholarPress}
-          onPersonPress={onPersonPress}
-          onPlacePress={onPlacePress}
-          onEventPress={onEventPress}
-          defaultTab={defaultTab}
-        />
-      </PanelCallbacksProvider>
+      <PanelRenderer
+        panelType={panelType}
+        contentJson={contentJson}
+        onRefPress={onRefPress}
+        onWordStudyPress={onWordStudyPress}
+        onScholarPress={onScholarPress}
+        onPersonPress={onPersonPress}
+        onPlacePress={onPlacePress}
+        onEventPress={onEventPress}
+        defaultTab={defaultTab}
+      />
     </View>
   );
 }

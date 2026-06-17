@@ -77,20 +77,6 @@ export async function signOut(): Promise<{ error?: string }> {
   return {};
 }
 
-export function getCurrentUser(): { id: string; [key: string]: unknown } | null {
-  const { getSupabase, isSupabaseAvailable } = getAuth();
-  if (!isSupabaseAvailable()) return null;
-  const supabase = getSupabase();
-  if (!supabase) return null;
-
-  // getSession() is async but getUser() returns cached data synchronously
-  // via supabase-js internals. We return the user from the current session.
-  return supabase.auth.getUser?.()?.then?.((r: unknown) => {
-    const result = r as { data?: { user?: unknown } };
-    return result?.data?.user ?? null;
-  }) ?? null;
-}
-
 export async function getCurrentSession(): Promise<{ id: string; [key: string]: unknown } | null> {
   const { getSupabase, isSupabaseAvailable } = getAuth();
   if (!isSupabaseAvailable()) return null;

@@ -1,6 +1,6 @@
 /**
  * ChapterModePicker — Bottom sheet for switching the chapter reading mode
- * from the chapter nav bar. Mirrors the AuthorshipSheet structure.
+ * from the chapter nav bar.
  *
  * Tap a mode to persist via settingsStore.setChapterMode and close. No
  * "Recommended" pip — onboarding owns that affordance.
