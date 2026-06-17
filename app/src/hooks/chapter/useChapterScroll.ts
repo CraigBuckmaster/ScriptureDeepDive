@@ -39,6 +39,22 @@ export function useChapterScroll({
   const [scrollProgress, setScrollProgress] = useState(0);
   const planDayCompletedRef = useRef(false);
 
+  // Track pending scroll timers so they can be cleared on chapter change /
+  // unmount, preventing scrollTo from firing against a stale chapter.
+  const timersRef = useRef<Set<ReturnType<typeof setTimeout>>>(new Set());
+  const schedule = useCallback((fn: () => void, ms: number) => {
+    const id = setTimeout(() => {
+      timersRef.current.delete(id);
+      fn();
+    }, ms);
+    timersRef.current.add(id);
+  }, []);
+  const clearTimers = useCallback(() => {
+    timersRef.current.forEach(clearTimeout);
+    timersRef.current.clear();
+  }, []);
+  useEffect(() => () => clearTimers(), [clearTimers]);
+
   // Mark plan day complete when scrolled past 80%
   useEffect(() => {
     if (planId && planDayNum && scrollProgress >= 0.8 && !planDayCompletedRef.current) {
@@ -49,13 +65,14 @@ export function useChapterScroll({
 
   // Reset on chapter change
   useEffect(() => {
+    clearTimers();
     planDayCompletedRef.current = false;
     scrollRef.current?.scrollTo({ y: 0, animated: false });
     clearActivePanel();
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setScrollProgress(0);
     verseYMap.current = {};
-  }, [bookId, chapterNum, clearActivePanel]);
+  }, [bookId, chapterNum, clearActivePanel, clearTimers]);
 
   // Scroll progress tracking
   const handleScroll = useCallback((e: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -73,12 +90,12 @@ export function useChapterScroll({
       const secY = sectionYMap.current[activePanel.sectionId];
       const y = btnY ?? secY;
       if (y !== undefined) {
-        setTimeout(() => {
+        schedule(() => {
           scrollRef.current?.scrollTo({ y: Math.max(0, y - 80), animated: true });
         }, 100);
       }
     }
-  }, [activePanel]);
+  }, [activePanel, schedule]);
 
   // Auto-scroll to a specific verse when navigated with verseNum param.
   //
@@ -116,10 +133,10 @@ export function useChapterScroll({
     scrolledToInitialVerse.current = true;
     const targetY = Math.max(0, verseY - 80);
     // 50ms delay lets any remaining sibling layouts settle before animating.
-    setTimeout(() => {
+    schedule(() => {
       scrollRef.current?.scrollTo({ y: targetY, animated: true });
     }, 50);
-  }, [initialVerseNum]);
+  }, [initialVerseNum, schedule]);
 
   // Fast-path: if layout already happened (e.g. cached chapter), scroll now.
   useEffect(() => {

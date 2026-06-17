@@ -23,6 +23,11 @@ jest.mock('@/lib/supabase', () => ({
   isSupabaseAvailable: jest.fn(() => true),
 }));
 
+const mockGetCurrentSession = jest.fn();
+jest.mock('@/services/auth', () => ({
+  getCurrentSession: () => mockGetCurrentSession(),
+}));
+
 import { enqueue, getPendingCount, flushQueue } from '@/services/syncQueue';
 import { getSupabase } from '@/lib/supabase';
 
@@ -42,6 +47,8 @@ describe('syncQueue service', () => {
     mockGetFirstAsync.mockResolvedValue({ count: 0 });
     mockGetAllAsync.mockResolvedValue([]);
     (getSupabase as jest.Mock).mockReturnValue(mockSupabase);
+    // flushQueue resolves the live session and skips when signed out.
+    mockGetCurrentSession.mockResolvedValue({ id: 'u1' });
   });
 
   describe('enqueue', () => {
@@ -229,6 +236,37 @@ describe('syncQueue service', () => {
       const result = await flushQueue();
 
       expect(result).toBe(0);
+    });
+
+    it('skips flushing when there is no authenticated session', async () => {
+      mockGetCurrentSession.mockResolvedValue(null);
+      const chain = makeChain({ error: null });
+      mockSupabaseFrom.mockReturnValue(chain);
+      mockGetAllAsync.mockResolvedValue([
+        { id: 9, operation: 'submit_flag', payload_json: JSON.stringify({ user_id: 'u1', content_id: 'c1', content_type: 'topic', reason: 'spam' }), created_at: '2026-01-01', attempts: 0, last_error: null },
+      ]);
+
+      const result = await flushQueue();
+
+      // No write attempt and no attempt-count bump while signed out.
+      expect(result).toBe(0);
+      expect(mockSupabaseFrom).not.toHaveBeenCalled();
+      expect(mockRunAsync).not.toHaveBeenCalled();
+    });
+
+    it('uses the live session id for queued mutations (offline enqueue had none)', async () => {
+      mockGetCurrentSession.mockResolvedValue({ id: 'live-user' });
+      const chain = makeChain({ error: null });
+      mockSupabaseFrom.mockReturnValue(chain);
+      mockGetAllAsync.mockResolvedValue([
+        { id: 10, operation: 'submit_flag', payload_json: JSON.stringify({ user_id: undefined, content_id: 'c1', content_type: 'topic', reason: 'spam' }), created_at: '2026-01-01', attempts: 0, last_error: null },
+      ]);
+
+      await flushQueue();
+
+      expect(chain.insert).toHaveBeenCalledWith(
+        expect.objectContaining({ user_id: 'live-user', content_id: 'c1' }),
+      );
     });
   });
 });

@@ -7,17 +7,30 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { getHighlightsForChapter, type VerseHighlight } from '../../db/user';
 import { HIGHLIGHT_COLORS } from '../../components/HighlightColorPicker';
+import { logger } from '../../utils/logger';
 
 export function useChapterHighlights(bookId: string, chapterNum: number) {
   const [highlights, setHighlights] = useState<VerseHighlight[]>([]);
 
+  // Manual reload (e.g. after the user adds a highlight). Errors are logged,
+  // not thrown, to avoid an unhandled rejection.
   const loadHighlights = useCallback(() => {
-    if (bookId) getHighlightsForChapter(bookId, chapterNum).then(setHighlights);
+    if (!bookId) return;
+    getHighlightsForChapter(bookId, chapterNum)
+      .then(setHighlights)
+      .catch((err) => logger.warn('useChapterHighlights', 'reload failed', err));
   }, [bookId, chapterNum]);
 
+  // Auto-load on chapter change, guarded so a slow load for a previous chapter
+  // can't overwrite the current chapter's highlights after a fast switch.
   useEffect(() => {
-    loadHighlights();
-  }, [loadHighlights]);
+    if (!bookId) return;
+    let cancelled = false;
+    getHighlightsForChapter(bookId, chapterNum)
+      .then((h) => { if (!cancelled) setHighlights(h); })
+      .catch((err) => { if (!cancelled) logger.warn('useChapterHighlights', 'load failed', err); });
+    return () => { cancelled = true; };
+  }, [bookId, chapterNum]);
 
   // Build verseNum → highlight hex color map for rendering
   const highlightMap = useMemo(() => {

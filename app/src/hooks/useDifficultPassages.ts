@@ -5,7 +5,7 @@
  * scholar info and related chapters for detail screen.
  */
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { getDb } from '../db/database';
 import { logger } from '../utils/logger';
 
@@ -87,6 +87,7 @@ export function useDifficultPassages() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    let cancelled = false;
     const load = async () => {
       try {
         const db = getDb();
@@ -129,16 +130,17 @@ export function useDifficultPassages() {
           tags: JSON.parse(row.tags_json || '[]'),
         }));
 
-        setPassages(parsed);
+        if (!cancelled) setPassages(parsed);
       } catch (err) {
         logger.error('useDifficultPassages', 'Failed to load difficult passages', err);
-        setError('Failed to load difficult passages');
+        if (!cancelled) setError('Failed to load difficult passages');
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     };
 
     load();
+    return () => { cancelled = true; };
   }, []);
 
   return { passages, loading, error };
@@ -153,12 +155,18 @@ export function useDifficultPassage(passageId: string | undefined): DifficultPas
   const [relatedChapters, setRelatedChapters] = useState<RelatedChapterWithName[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  // Monotonic token so a slow load for a previous passageId can't overwrite
+  // the current one after a fast switch (and to drop results after unmount).
+  const genRef = useRef(0);
 
   const loadData = useCallback(async () => {
     if (!passageId) {
       setLoading(false);
       return;
     }
+
+    const gen = ++genRef.current;
+    const live = () => gen === genRef.current;
 
     try {
       setLoading(true);
@@ -189,6 +197,7 @@ export function useDifficultPassage(passageId: string | undefined): DifficultPas
         [passageId]
       );
 
+      if (!live()) return;
       if (!row) {
         setError('Passage not found');
         setLoading(false);
@@ -210,6 +219,7 @@ export function useDifficultPassage(passageId: string | undefined): DifficultPas
         further_reading: JSON.parse(row.further_reading_json || '[]'),
         tags: JSON.parse(row.tags_json || '[]'),
       };
+      if (!live()) return;
       setPassage(passageData);
 
       // 2. Fetch scholar details for responses
@@ -234,6 +244,7 @@ export function useDifficultPassage(passageId: string | undefined): DifficultPas
             tradition: s.tradition,
           });
         }
+        if (!live()) return;
         setScholars(scholarMap);
       } else {
         setScholars(new Map());
@@ -259,14 +270,17 @@ export function useDifficultPassage(passageId: string | undefined): DifficultPas
             book_name: bookNameMap.get(rc.book_dir) || rc.book_dir,
           })
         );
+        if (!live()) return;
         setRelatedChapters(chaptersWithNames);
       } else {
         setRelatedChapters([]);
       }
 
+      if (!live()) return;
       setLoading(false);
     } catch (err) {
       logger.error('useDifficultPassage', 'Failed to load passage data', err);
+      if (!live()) return;
       setError('Failed to load passage data');
       setLoading(false);
     }
@@ -275,6 +289,8 @@ export function useDifficultPassage(passageId: string | undefined): DifficultPas
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     loadData();
+    // Invalidate any in-flight load on unmount / passageId change.
+    return () => { genRef.current++; };
   }, [loadData]);
 
   return { passage, scholars, relatedChapters, loading, error };

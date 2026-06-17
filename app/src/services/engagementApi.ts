@@ -11,6 +11,7 @@
 
 import { getSupabase } from '../lib/supabase';
 import { flagContent as flagContentLocally } from '../db/userMutations';
+import { getUserDb } from '../db/userDatabase';
 import { logger } from '../utils/logger';
 import { getCurrentSession } from './auth';
 import { enqueue } from './syncQueue';
@@ -175,7 +176,6 @@ export async function submitFlag(
 
     // Mark local copy as synced
     try {
-      const { getUserDb } = require('../db/userDatabase');
       await getUserDb().runAsync(
         'UPDATE flagged_content SET synced = 1 WHERE content_id = ? AND content_type = ?',
         [contentId, contentType],

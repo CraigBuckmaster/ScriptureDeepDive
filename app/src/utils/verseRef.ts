@@ -15,7 +15,7 @@
  * Without verse: "genesis 1" (chapter-level note)
  */
 export function formatVerseRef(bookId: string, ch: number, v?: number): string {
-  return v ? `${bookId} ${ch}:${v}` : `${bookId} ${ch}`;
+  return v != null ? `${bookId} ${ch}:${v}` : `${bookId} ${ch}`;
 }
 
 /**
@@ -71,7 +71,7 @@ export function displayRef(ref: string): string {
     .replace(/_/g, ' ')
     .replace(/\b\w/g, (c) => c.toUpperCase());
 
-  return parsed.v
+  return parsed.v != null
     ? `${bookName} ${parsed.ch}:${parsed.v}`
     : `${bookName} ${parsed.ch}`;
 }

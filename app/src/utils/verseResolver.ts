@@ -228,8 +228,8 @@ export function splitMultiRef(refString: string): string[] {
  * Check if a book is live (has content in the app).
  */
 export function isLiveBook(bookId: string): boolean {
-  const book = BOOK_TABLE.find((b) => b.id === bookId);
-  return !!book; // actual live check done via DB; this is a fast existence check
+  // O(1) via the prebuilt index; .id check keeps id-only semantics (not aliases).
+  return _bookIndex.get(bookId)?.id === bookId; // actual live check done via DB; this is a fast existence check
 }
 
 export interface ResolvedVerse {

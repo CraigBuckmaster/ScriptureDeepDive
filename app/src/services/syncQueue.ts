@@ -10,6 +10,7 @@
 import { getUserDb } from '../db/userDatabase';
 import { getSupabase } from '../lib/supabase';
 import { logger } from '../utils/logger';
+import { getCurrentSession } from './auth';
 
 export type SyncOperation =
   | 'submit_flag'
@@ -65,6 +66,14 @@ export async function flushQueue(): Promise<number> {
   const supabase = getSupabase();
   if (!supabase) return 0;
 
+  // Re-resolve the current user at flush time: mutations queued while offline
+  // or signed-out were enqueued with an undefined user_id, which the server
+  // would reject on every retry. Prefer the live session id.
+  const sessionUserId = (await getCurrentSession())?.id;
+  // Without an authenticated session every user-scoped write fails RLS, so
+  // defer the whole flush rather than burn retry attempts.
+  if (!sessionUserId) return 0;
+
   let synced = 0;
 
   try {
@@ -75,23 +84,17 @@ export async function flushQueue(): Promise<number> {
     for (const entry of entries) {
       try {
         const payload = JSON.parse(entry.payload_json);
-        const success = await executeSyncOperation(supabase, entry.operation, payload);
+        const success = await executeSyncOperation(supabase, entry.operation, payload, sessionUserId);
 
         if (success) {
           await getUserDb().runAsync('DELETE FROM sync_queue WHERE id = ?', [entry.id]);
           synced++;
         } else {
-          await getUserDb().runAsync(
-            'UPDATE sync_queue SET attempts = attempts + 1, last_error = ? WHERE id = ?',
-            ['Server rejected', entry.id],
-          );
+          await bumpAttempt(entry, 'Server rejected');
         }
       } catch (err) {
         const msg = err instanceof Error ? err.message : 'Unknown error';
-        await getUserDb().runAsync(
-          'UPDATE sync_queue SET attempts = attempts + 1, last_error = ? WHERE id = ?',
-          [msg, entry.id],
-        );
+        await bumpAttempt(entry, msg);
         logger.warn('SyncQueue', `Failed to sync entry ${entry.id}: ${msg}`);
       }
     }
@@ -106,17 +109,57 @@ export async function flushQueue(): Promise<number> {
 }
 
 /**
+ * Increment an entry's attempt counter and surface it when it crosses into
+ * the dead-letter state (attempts >= MAX_ATTEMPTS), so exhausted mutations
+ * are observable instead of silently disappearing from every query.
+ */
+async function bumpAttempt(entry: QueueEntry, error: string): Promise<void> {
+  await getUserDb().runAsync(
+    'UPDATE sync_queue SET attempts = attempts + 1, last_error = ? WHERE id = ?',
+    [error, entry.id],
+  );
+  if (entry.attempts + 1 >= MAX_ATTEMPTS) {
+    logger.error(
+      'SyncQueue',
+      `Dead-letter: ${entry.operation} entry ${entry.id} exhausted ${MAX_ATTEMPTS} attempts (${error})`,
+    );
+  }
+}
+
+/**
+ * Count of entries that have exhausted their retries (dead-letters), so the
+ * UI can surface that some offline changes could not be saved.
+ */
+export async function getDeadLetterCount(): Promise<number> {
+  try {
+    const row = await getUserDb().getFirstAsync<{ count: number }>(
+      `SELECT COUNT(*) as count FROM sync_queue WHERE attempts >= ${MAX_ATTEMPTS}`,
+    );
+    return row?.count ?? 0;
+  } catch {
+    return 0;
+  }
+}
+
+/**
  * Execute a single sync operation against Supabase.
  */
 async function executeSyncOperation(
   supabase: import('../lib/supabase').SupabaseClient,
   operation: SyncOperation,
   payload: Record<string, unknown>,
+  sessionUserId?: string,
 ): Promise<boolean> {
+  // Prefer the live session id over the (possibly undefined) enqueued one.
+  const userId = sessionUserId ?? (payload.user_id as string | undefined);
+  // Every operation is scoped to a user; without one the server will reject
+  // it, so leave it queued (return false) rather than send a null user_id.
+  if (!userId) return false;
+
   switch (operation) {
     case 'submit_flag': {
       const { error } = await supabase.from('content_flags').insert({
-        user_id: payload.user_id,
+        user_id: userId,
         content_id: payload.content_id,
         content_type: payload.content_type,
         reason: payload.reason,
@@ -130,11 +173,11 @@ async function executeSyncOperation(
         const { error } = await supabase
           .from('upvotes')
           .delete()
-          .match({ user_id: payload.user_id, topic_id: payload.topic_id });
+          .match({ user_id: userId, topic_id: payload.topic_id });
         return !error;
       }
       const { error } = await supabase.from('upvotes').upsert(
-        { user_id: payload.user_id, topic_id: payload.topic_id },
+        { user_id: userId, topic_id: payload.topic_id },
         { onConflict: 'user_id,topic_id' },
       );
       return !error;
@@ -143,7 +186,7 @@ async function executeSyncOperation(
     case 'set_star_rating': {
       const { error } = await supabase.from('star_ratings').upsert(
         {
-          user_id: payload.user_id,
+          user_id: userId,
           topic_id: payload.topic_id,
           rating: payload.rating,
         },

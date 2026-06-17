@@ -115,8 +115,10 @@ function decodeGreek(code: string): DecodedMorphology {
       const cas = GREEK_CASE[cleanDetail[3]] ?? cleanDetail[3];
       const num = GREEK_NUMBER[cleanDetail[4]] ?? cleanDetail[4];
       const gen = GREEK_GENDER[cleanDetail[5]] ?? cleanDetail[5];
-      // Replace the (inapplicable) person/number parts with case/number/gender.
-      parts.splice(3);
+      // Drop the (inapplicable) Person/Number parts — indices 4,5 in `parts`
+      // (which begins with Part of Speech, Tense, Voice, Mood) — and replace
+      // them with case/number/gender.
+      parts.splice(4);
       parts.push({ label: 'Case', value: cas });
       parts.push({ label: 'Number', value: num });
       parts.push({ label: 'Gender', value: gen });
