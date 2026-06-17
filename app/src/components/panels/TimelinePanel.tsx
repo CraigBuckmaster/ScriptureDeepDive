@@ -19,10 +19,11 @@ interface Props {
 export function TimelinePanel({ events, onEventPress, onRefPress }: Props) {
   const { base, getPanelColors } = useTheme();
   const colors = getPanelColors('tl');
+  const list = Array.isArray(events) ? events : [];
 
   return (
     <View style={[styles.container, { gap: spacing.sm }]}>
-      {events.map((event, i) => (
+      {list.map((event, i) => (
         <View
           key={i}
           style={[styles.eventCard, {

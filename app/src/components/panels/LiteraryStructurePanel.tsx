@@ -18,7 +18,7 @@ interface Props { data: LitPanel; defaultTab?: string; }
 
 export function LiteraryStructurePanel({ data, defaultTab }: Props) {
   const tabs: TabConfig[] = useMemo(() => [
-    { key: 'structure', label: 'Structure', hasData: data.rows.length > 0 },
+    { key: 'structure', label: 'Structure', hasData: Array.isArray(data.rows) && data.rows.length > 0 },
     { key: 'chiasm', label: 'Chiasm View', hasData: !!data.chiasm },
   ], [data]);
 
@@ -41,9 +41,11 @@ function StructureView({ data }: Props) {
   const { content } = useTypography();
   const colors = getPanelColors('lit');
 
+  const rows = Array.isArray(data.rows) ? data.rows : [];
+
   return (
     <View style={styles.structureContainer}>
-      {data.rows.map((row, i) => (
+      {rows.map((row, i) => (
         <View
           key={i}
           style={[

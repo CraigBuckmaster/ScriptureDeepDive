@@ -42,7 +42,12 @@ export function useChapterData(bookId: string | null, chapterNum: number): Chapt
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (!bookId) return;
+    if (!bookId) {
+      // No book to load: clear the initial loading flag so consumers can
+      // render a not-found/empty state instead of an indefinite skeleton.
+      setIsLoading(false);
+      return;
+    }
     let cancelled = false;
 
     async function load() {

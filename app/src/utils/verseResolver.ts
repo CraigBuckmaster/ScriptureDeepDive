@@ -102,7 +102,10 @@ export interface ParsedRef {
   bookId: string;
   bookName: string;
   chapter: number;
+  /** End chapter for cross-chapter ranges (e.g. "Gen 1:1–2:3"). Undefined for single-chapter refs. */
+  chapterEnd?: number;
   verseStart?: number;
+  /** End verse. For cross-chapter ranges this is the verse within `chapterEnd`. */
   verseEnd?: number;
 }
 
@@ -152,15 +155,17 @@ export function parseReference(refString: string): ParsedRef | null {
 
   // Match: optional number prefix + book name + chapter + optional verse range
   // "1 Cor 13:4-7", "Gen 1:1", "Ps 23", "Isaiah 53:4–6"
+  // Groups: 1=book, 2=chapter, 3=verseStart, 4=endChapter (cross-chapter), 5=endVerse
   const m = s.match(
-    /^(\d?\s*[A-Za-z][A-Za-z .]+?)\s+(\d+)(?::(\d+)(?:\s*[-–—]\s*(?:\d+:)?(\d+))?)?$/
+    /^(\d?\s*[A-Za-z][A-Za-z .]+?)\s+(\d+)(?::(\d+)(?:\s*[-–—]\s*(?:(\d+):)?(\d+))?)?$/
   );
   if (!m) return null;
 
   const bookStr = m[1].trim();
   const chapter = parseInt(m[2], 10);
   const verseStart = m[3] ? parseInt(m[3], 10) : undefined;
-  const verseEnd = m[4] ? parseInt(m[4], 10) : undefined;
+  const chapterEnd = m[4] ? parseInt(m[4], 10) : undefined;
+  const verseEnd = m[5] ? parseInt(m[5], 10) : undefined;
 
   const book = getBookByName(bookStr);
   if (!book) return null;
@@ -169,6 +174,7 @@ export function parseReference(refString: string): ParsedRef | null {
     bookId: book.id,
     bookName: book.name,
     chapter,
+    chapterEnd: chapterEnd && chapterEnd !== chapter ? chapterEnd : undefined,
     verseStart,
     verseEnd: verseEnd ?? verseStart,
   };
@@ -181,11 +187,30 @@ export async function resolveVerseText(
   ref: ParsedRef,
   translation: string = 'kjv'
 ): Promise<string[]> {
-  const verses = await getVerses(ref.bookId, ref.chapter, translation);
-  if (!ref.verseStart) return verses.map((v) => v.text);
-  return verses
-    .filter((v) => v.verse_num >= ref.verseStart! && v.verse_num <= (ref.verseEnd ?? ref.verseStart!))
-    .map((v) => v.text);
+  const startChapter = ref.chapter;
+  const endChapter = ref.chapterEnd ?? ref.chapter;
+
+  // Single-chapter (common) path.
+  if (endChapter === startChapter) {
+    const verses = await getVerses(ref.bookId, startChapter, translation);
+    if (!ref.verseStart) return verses.map((v) => v.text);
+    return verses
+      .filter((v) => v.verse_num >= ref.verseStart! && v.verse_num <= (ref.verseEnd ?? ref.verseStart!))
+      .map((v) => v.text);
+  }
+
+  // Cross-chapter range (e.g. "Gen 1:1–2:3"): clamp the first chapter at
+  // verseStart and the last chapter at verseEnd; include full chapters between.
+  const out: string[] = [];
+  for (let ch = startChapter; ch <= endChapter; ch++) {
+    const verses = await getVerses(ref.bookId, ch, translation);
+    for (const v of verses) {
+      if (ch === startChapter && ref.verseStart && v.verse_num < ref.verseStart) continue;
+      if (ch === endChapter && ref.verseEnd && v.verse_num > ref.verseEnd) continue;
+      out.push(v.text);
+    }
+  }
+  return out;
 }
 
 /**

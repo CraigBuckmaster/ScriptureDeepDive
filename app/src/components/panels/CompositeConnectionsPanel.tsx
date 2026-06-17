@@ -21,7 +21,7 @@ interface Props {
 
 export function CompositeConnectionsPanel({ data, onRefPress, defaultTab }: Props) {
   const tabs: TabConfig[] = useMemo(() => [
-    { key: 'refs', label: 'Cross-References', hasData: data.refs.length > 0 },
+    { key: 'refs', label: 'Cross-References', hasData: Array.isArray(data.refs) && data.refs.length > 0 },
     { key: 'echoes', label: 'Echoes & Allusions', hasData: Array.isArray(data.echoes) && data.echoes.length > 0 },
   ], [data]);
 
@@ -30,9 +30,9 @@ export function CompositeConnectionsPanel({ data, onRefPress, defaultTab }: Prop
       {(activeKey) => {
         switch (activeKey) {
           case 'refs':
-            return <CrossRefPanel entries={data.refs} onRefPress={onRefPress} />;
+            return <CrossRefPanel entries={Array.isArray(data.refs) ? data.refs : []} onRefPress={onRefPress} />;
           case 'echoes':
-            return <EchoesView entries={data.echoes!} onRefPress={onRefPress} />;
+            return <EchoesView entries={Array.isArray(data.echoes) ? data.echoes : []} onRefPress={onRefPress} />;
           default:
             return null;
         }
