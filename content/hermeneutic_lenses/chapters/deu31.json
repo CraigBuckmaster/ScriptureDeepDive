@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-8 hand off to Joshua; vv 9-13 deposit the Torah for septennial reading; vv 19-22 commission the witness-Song. The structure makes leadership-transfer, written-text, and sung-memory the three vehicles of covenant continuity.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 7-8 — 'be strong and courageous; do not be afraid... the LORD your God goes with you' — are echoed at Josh 1:5-9, where Joshua hears the same charge from the LORD, and at Heb 13:5-6, where it is read across Scripture as gospel comfort.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 16-21's prediction — 'this people will rise up and prostitute themselves to the foreign gods' — names covenant failure as foreseen, not surprise. The redemption arc anticipates the breach; the Song will witness against it on schedule.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-29's tribal-blessing form parallels Gen 49 (Jacob's blessing) — same poetic genre, same family scope, same closing address to the LORD. The literary symmetry frames the Pentateuch with patriarchal benediction at start and finish.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 26-29's closing doxology — 'there is no one like the God of Jeshurun, who rides on the heavens to help you' — caps the redemption arc with covenant-confidence. The book ends not on curse but on the LORD's incomparability.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 8-11's blessing on Levi — 'they shall teach Jacob your judgments... they shall put incense before you' — threads forward to Mal 2:4-7 and finds its priestly fulfillment-pattern at Heb 7:11-25 in the better priesthood of Christ.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

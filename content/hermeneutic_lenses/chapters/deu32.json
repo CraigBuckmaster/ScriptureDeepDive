@@ -1,0 +1,80 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The Song's tricolon-and-bicolon parallelism, divine-versus-Israel contrasts, and central courtroom-summons (vv 1, 'hear, O heavens... earth') give it sustained Hebrew poetry-form. The structure is judicial witness, not lyric praise.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 21 — 'they made me jealous by what is no god... I will make them envious by those who are no people' — is quoted at Rom 10:19 in Paul's argument that Gentile inclusion was foretold. A canonical thread anchoring the church's mission.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "v 43 — 'rejoice, you nations, with his people' (LXX includes 'let all God's angels worship him') — is quoted at Heb 1:6 of the Son. The Song's closing summons becomes the New Testament's ascription of worship to Christ.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 39-43's covenant-vindication — 'I put to death and I bring to life... I will take vengeance on my adversaries and repay those who hate me' — is echoed at Rom 12:19 and Heb 10:30. The redemption arc keeps God as judge of his people's enemies.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "mission",
+      "guidance": "v 21's 'I will make them envious by those who are no people' names Gentile inclusion as a missional consequence of Israel's failure. Paul reads this at Rom 10:19 and 11:11-14 — the nations gathered are part of the Song's design.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

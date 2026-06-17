@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 5-10's 'wandering Aramean' confession is the structural credo of Israel — exodus narrated in first person at the firstfruits altar. The form makes worship history-telling; the people remember themselves into covenant identity.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "mission",
+      "guidance": "vv 18-19's covenant pledge — 'a people holy to the LORD... to be set in praise, fame, and honor high above all the nations' — names Israel's vocation outward. The set-apart people exists for the wider world's witness.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 16-19's bilateral covenant pledge — 'you have declared... and the LORD has declared' — closes the legal corpus of Deuteronomy. The redemption arc rests on a two-sided promise, not a unilateral decree, before deu27's curses.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

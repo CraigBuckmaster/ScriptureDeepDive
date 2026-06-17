@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 10-15's covenant-summons — 'all of you are standing today... men, women, children, foreigners, even those not here today' — uses inclusion-rhetoric to bind generations not yet born. The form universalizes covenant present-tense.",
+      "panel_filter": [
+        "craigie",
+        "lit",
+        "themes",
+        "tigay"
+      ],
+      "panel_order": [
+        "lit",
+        "craigie",
+        "tigay",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "v 4's 'to this day the LORD has not given you a mind that understands' names the covenant's hidden necessity. Heart-renewal must come from God; the redemption arc requires the new-covenant promise of Jer 31 and Ezek 36 to land.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 29's 'the secret things belong to the LORD our God, but the things revealed belong to us and our children' is echoed at Rom 11:33-36 and 1 Cor 2:7-10. A canonical thread on the limit and gift of revelation.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}
