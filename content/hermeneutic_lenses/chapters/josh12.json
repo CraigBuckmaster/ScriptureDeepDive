@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 9-24's enumeration of thirty-one defeated kings uses formulaic refrain — 'the king of X, one' — for tabulation. The structural form is administrative; the literary effect is overwhelming completeness, a covenant-ledger of victory.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 1-24's defeated-kings list anticipates the larger canonical pattern — Rev 19:19's kings of the earth gathered against the rider on the white horse. The earlier conquest threads forward to the eschatological battle.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

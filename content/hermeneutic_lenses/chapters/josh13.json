@@ -1,0 +1,36 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-7's 'Joshua was old; very much land remains' frames the partition narrative with honesty — conquest is incomplete. The structural acknowledgment makes the redemption story open-ended; possession proceeds without total completion.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 1-7's incomplete-conquest tension — promise given, land partially possessed — is the redemption arc's unfinished posture. The covenant keeps moving forward; complete fulfillment is not where the text leaves the reader.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

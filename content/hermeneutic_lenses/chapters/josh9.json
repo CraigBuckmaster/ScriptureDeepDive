@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-15's deception-narrative pivots on v 14's literary key — 'they did not inquire of the LORD.' The structural failure is procedural; the chapter teaches that covenant-making without divine inquiry binds Israel to its mistakes.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 15-27's Gibeonite preservation — sworn oath kept despite the deception — shows covenant integrity outweighing tactical advantage. The redemption arc honors oaths even when extracted by trickery; God's people keep their word.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 15's Gibeonite-oath threads to 2 Sam 21:1-9, where Saul's later violation brings famine on David's reign. The canonical line shows oath-breach echoing forward across centuries; covenant memory is generationally binding.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

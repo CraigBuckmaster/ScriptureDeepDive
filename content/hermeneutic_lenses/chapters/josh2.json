@@ -1,0 +1,80 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-24's narrative is structured around Rahab's three-part confession (vv 9-11) — 'I know,' 'we have heard,' 'the LORD your God is God in heaven above and on the earth below.' The form is creedal; the Canaanite outsider speaks Israel's faith.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 12-21's scarlet-cord pledge — Rahab's household saved by the visible sign in the window — is read by Heb 11:31 as faith and by Mt 1:5 as Christ's genealogy. The Canaanite prostitute becomes ancestor of Jesus.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "vv 18-21's scarlet cord prefigures the Passover-blood pattern — a sign in the window marks the household for life amid judgment. The shadow recurs from Egypt to Jericho and points forward to the cross's covering.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 9-11's Rahab confession threads to Mt 1:5 (genealogy of Christ), Heb 11:31 (heroes of faith), and Jas 2:25 (faith proved by works). No outsider in the Old Testament receives more New Testament canonical attention.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "mission",
+      "guidance": "vv 8-13 show the gospel reaching the nations from inside Canaan — the conquest's first convert is a Jericho woman, not an Israelite. The covenant's outward witness lands in enemy territory before the walls fall.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

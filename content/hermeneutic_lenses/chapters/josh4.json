@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-9's twelve-stones memorial uses repetition — taken from the riverbed (v 8), set up at Gilgal (v 20) — to make the crossing instrument permanent. The structural form is monument: the river will resume, the stones will not.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 6-7 and 21-24's catechetical pattern — 'when your children ask, what do these stones mean?' — frames covenant memory as parental responsibility. To respond today is to keep a household's stories tied to God's action.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "v 24's 'so that all the peoples of the earth might know the hand of the LORD is mighty' echoes Ex 14:18 (Egyptians know) and threads to Hab 2:14 (the earth filled with the knowledge of the LORD). A canonical witness-arc.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}

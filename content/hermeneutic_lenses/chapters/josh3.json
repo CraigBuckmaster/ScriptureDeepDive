@@ -1,0 +1,68 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 14-17's crossing-narrative parallels Ex 14's Red Sea crossing — same waters-stopped motif, same dry-ground passage, same priestly leadership. The literary form makes Jordan the second exodus, framing entry as deliverance redux.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "The Jordan crossing is the type Christian baptism draws on: water-passage from wilderness-wandering to promise-land, foreshadowing the believer's transfer from death to life. The shadow recurs at every baptismal font.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "mac",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "calvin"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 7-13 enact the covenant-promise Moses heard at Ex 33:14 — 'my Presence will go with you.' The ark in the river is the covenant-bearing centre; the redemption arc bends through this midstream pause.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 5's 'consecrate yourselves, for tomorrow the LORD will do amazing things among you' addresses the heart's preparation. To trust today is to expect the wonder God promises and to ready oneself for it, not assume routine.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

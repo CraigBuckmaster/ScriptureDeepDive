@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 10-34's altar-misunderstanding narrative is structured around three speeches — Phinehas's accusation (vv 16-20), the Transjordan defense (vv 21-29), the resolution (vv 30-34). The form is judicial: charge, defense, verdict, peace.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 16-20's 'do not rebel against the LORD' rhetoric echoes Num 25's Baal-Peor incident — same Phinehas, same zeal-against-apostasy. The canonical line shows Phinehas as the priestly figure against false worship across generations.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 22's 'the Mighty One, God, the LORD! The Mighty One, God, the LORD! He knows!' models prayer under accusation — the heart that calls God as witness against itself, ready to be condemned if guilty. To respond today is to invite that scrutiny.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

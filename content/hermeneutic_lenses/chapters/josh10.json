@@ -1,0 +1,50 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-15's southern-campaign narrative climaxes at v 13's poetic citation from the Book of Jashar — the sun-stops moment is preserved in older verse-form. The structural shift to poetry marks the day as Israel's sung memory.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "vv 12-14's sun-stopping miracle echoes back at Hab 3:11 ('sun and moon stood still in their places') and forward at Rev 6:12-14's cosmic upheavals. A canonical thread of celestial signs accompanying covenant battle.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "v 14's 'never has there been a day like it before or since, when the LORD listened to a man' models the prayer of faith. To trust today is to keep asking the God who answered Joshua audibly to answer his people still.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    }
+  ]
+}

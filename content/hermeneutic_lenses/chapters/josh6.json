@@ -1,0 +1,82 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "vv 1-21's seven-day march builds suspense through structural repetition — six days circling once, seventh day circling seven times then shouting. The form makes obedience the narrative's slow burn; the walls fall on the literary climax.",
+      "panel_filter": [
+        "hess",
+        "howard",
+        "lit",
+        "themes"
+      ],
+      "panel_order": [
+        "lit",
+        "howard",
+        "hess",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "vv 20's walls-fall-by-faith is named at Heb 11:30 ('by faith the walls of Jericho fell, after the army had marched around them for seven days'). The chapter is read across Scripture as faith-in-action prefiguring gospel obedience.",
+      "panel_filter": [
+        "cross",
+        "mac",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "mac",
+        "cross",
+        "thread",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "vv 22-25's Rahab-rescue keeps the redemption arc intact mid-judgment — the Canaanite woman and her household are spared, brought into Israel, woven into Christ's genealogy (Mt 1:5). Mercy survives the herem.",
+      "panel_filter": [
+        "calvin",
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "vv 1-5's strange instructions — march, blow trumpets, shout — invite faith without explanation. To trust today is to obey the God who sometimes commands the absurd; the wall's fall vindicates only the people who already walked.",
+      "panel_filter": [
+        "calvin",
+        "mac",
+        "rec",
+        "themes"
+      ],
+      "panel_order": [
+        "mac",
+        "rec",
+        "calvin",
+        "themes"
+      ]
+    },
+    {
+      "lens_id": "mission",
+      "guidance": "vv 23-25's incorporation of Rahab's family among Israel inverts the conquest narrative — destruction outside, deliverance inside the same wall. The covenant's missional reach saves whoever clings to the scarlet cord.",
+      "panel_filter": [
+        "cross",
+        "themes",
+        "thread"
+      ],
+      "panel_order": [
+        "thread",
+        "cross",
+        "themes"
+      ]
+    }
+  ]
+}
