@@ -66,7 +66,14 @@ export function getSupabase(): SupabaseClient | null {
         'supabase',
         'SecureStore unavailable — falling back to AsyncStorage for the auth session (less secure)',
       );
-      storage = require('@react-native-async-storage/async-storage').default;
+      // Keep this require inside a try block so Metro treats it as an OPTIONAL
+      // dependency (it is not a declared dep). A require in a catch block is
+      // resolved as mandatory and breaks `expo export` bundling.
+      try {
+        storage = require('@react-native-async-storage/async-storage').default;
+      } catch {
+        storage = undefined;
+      }
     }
 
     _client = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
