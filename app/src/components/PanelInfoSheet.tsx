@@ -75,7 +75,7 @@ export function PanelInfoSheet({ visible, panelType, onClose, onGoToFullBio }: P
         accessibilityRole="button"
         accessibilityLabel="Close panel info"
       />
-      <SafeAreaView style={[styles.sheet, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
+      <SafeAreaView accessibilityViewIsModal={true} style={[styles.sheet, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
         <View style={styles.content}>
           <View style={[styles.handle, { backgroundColor: base.textMuted }]} />
 

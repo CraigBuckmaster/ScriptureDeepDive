@@ -93,7 +93,7 @@ export const FlagReasonPicker = memo(function FlagReasonPicker({
         style={styles.overlay}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
-        <View style={[styles.sheet, { backgroundColor: base.bgElevated }]}>
+        <View accessibilityViewIsModal={true} style={[styles.sheet, { backgroundColor: base.bgElevated }]}>
           <Text style={[styles.title, { color: base.text }]}>Report Content</Text>
           <Text style={[styles.subtitle, { color: base.textMuted }]}>
             Why are you reporting this?

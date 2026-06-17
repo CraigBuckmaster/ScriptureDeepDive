@@ -78,7 +78,7 @@ export function VerseLongPressMenu({
       <TouchableWithoutFeedback onPress={onClose}>
         <View style={styles.backdrop}>
           <TouchableWithoutFeedback>
-            <View style={[styles.sheet, { backgroundColor: base.bgElevated }]}>
+            <View accessibilityViewIsModal={true} style={[styles.sheet, { backgroundColor: base.bgElevated }]}>
               {/* Verse preview */}
               <Text style={[styles.refLabel, { color: base.gold }]} accessibilityRole="header">{verseRef}</Text>
               <Text style={[styles.preview, { color: base.textDim }]} numberOfLines={3}>{verseText}</Text>

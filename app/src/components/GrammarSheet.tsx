@@ -41,7 +41,7 @@ export function GrammarSheet({ visible, morphologyCode, onClose, onArticlePress 
       <TouchableWithoutFeedback onPress={onClose}>
         <View style={styles.backdrop}>
           <TouchableWithoutFeedback>
-            <View style={[styles.sheet, { backgroundColor: base.bgElevated }]}>
+            <View accessibilityViewIsModal={true} style={[styles.sheet, { backgroundColor: base.bgElevated }]}>
               {/* Header */}
               <View style={styles.header}>
                 <View>

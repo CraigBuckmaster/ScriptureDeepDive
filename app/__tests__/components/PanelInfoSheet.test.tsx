@@ -59,7 +59,9 @@ describe('PanelInfoSheet', () => {
     const { getByLabelText } = renderWithProviders(
       <PanelInfoSheet visible={true} panelType="historical" onClose={onClose} />,
     );
-    fireEvent.press(getByLabelText('Close panel info'));
+    // The backdrop sits behind the modal sheet (accessibilityViewIsModal), so it is
+    // hidden from the default accessibility tree — include hidden elements to reach it.
+    fireEvent.press(getByLabelText('Close panel info', { includeHiddenElements: true }));
     expect(onClose).toHaveBeenCalled();
   });
 

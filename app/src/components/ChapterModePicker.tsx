@@ -40,6 +40,7 @@ export function ChapterModePicker({ visible, currentMode, onClose }: Props) {
         accessibilityLabel="Close mode picker"
       />
       <SafeAreaView
+        accessibilityViewIsModal={true}
         style={[
           styles.sheet,
           { backgroundColor: base.bgElevated, borderColor: base.border },

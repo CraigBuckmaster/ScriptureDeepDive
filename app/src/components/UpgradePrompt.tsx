@@ -81,7 +81,7 @@ export function UpgradePrompt({ visible, onClose, variant, featureName }: Props)
         accessibilityRole="button"
         accessibilityLabel="Dismiss upgrade prompt"
       />
-      <SafeAreaView style={[styles.sheet, {
+      <SafeAreaView accessibilityViewIsModal={true} style={[styles.sheet, {
         backgroundColor: base.bgElevated, borderColor: base.border,
       }]}>
         <ScrollView contentContainerStyle={styles.content}>

@@ -73,7 +73,7 @@ export function CompactDropdown({ value, secondaryLabel, options, onSelect, dire
         <TouchableWithoutFeedback onPress={() => setOpen(false)}>
           <View style={styles.backdrop}>
             <TouchableWithoutFeedback>
-              <View style={[
+              <View accessibilityViewIsModal={true} style={[
                 styles.menu,
                 { backgroundColor: base.bgElevated, borderColor: base.border },
                 pillLayout && {
