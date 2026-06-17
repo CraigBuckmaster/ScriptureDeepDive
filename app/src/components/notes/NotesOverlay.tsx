@@ -63,7 +63,7 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
   return (
     <Modal visible={visible} animationType="slide" presentationStyle="fullScreen">
       <SafeAreaProvider>
-        <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
+        <SafeAreaView accessibilityViewIsModal={true} style={[styles.container, { backgroundColor: base.bg }]}>
           {/* Header — outside KAV so it doesn't shift with keyboard */}
           <View style={[styles.header, { borderBottomColor: base.border }]}>
             <Text style={[styles.headerTitle, { color: base.text }]}>

@@ -5,7 +5,7 @@
  * Open: overlay with options, active item gets a checkmark, tap-outside dismisses.
  * NO CHEVRONS — the pill shape is sufficient affordance.
  *
- * Used by TranslationDropdown (Phase 3) and ViewModeDropdown (Phase 4).
+ * Used by ViewModeDropdown and other compact selectors.
  */
 
 import React, { useState, useRef, useCallback } from 'react';
@@ -73,7 +73,7 @@ export function CompactDropdown({ value, secondaryLabel, options, onSelect, dire
         <TouchableWithoutFeedback onPress={() => setOpen(false)}>
           <View style={styles.backdrop}>
             <TouchableWithoutFeedback>
-              <View style={[
+              <View accessibilityViewIsModal={true} style={[
                 styles.menu,
                 { backgroundColor: base.bgElevated, borderColor: base.border },
                 pillLayout && {

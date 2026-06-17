@@ -85,8 +85,20 @@ class ContentUpdaterService {
   /**
    * Main entry point. Checks remote manifest and applies updates
    * if a newer version is available.
+   *
+   * Only a non-failed outcome updates lastCheckTime, so a transient
+   * failure remains retryable before the full CHECK_INTERVAL elapses
+   * instead of being debounced for the whole window.
    */
   async checkForUpdates(): Promise<UpdateResult> {
+    const result = await this.runUpdateCheck();
+    if (result.status !== 'failed') {
+      this.lastCheckTime = Date.now();
+    }
+    return result;
+  }
+
+  private async runUpdateCheck(): Promise<UpdateResult> {
     try {
       const manifest = await this.fetchManifest();
       const installedVersion = await this.getInstalledVersion();
@@ -117,8 +129,6 @@ class ContentUpdaterService {
       const message = err instanceof Error ? err.message : String(err);
       logger.error(TAG, 'Update check failed', err);
       return { status: 'failed', error: message };
-    } finally {
-      this.lastCheckTime = Date.now();
     }
   }
 

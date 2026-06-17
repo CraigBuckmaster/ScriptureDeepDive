@@ -61,12 +61,17 @@ jobs:
         run: pip install boto3 Pillow
 
       - name: Run fix_missing_art
+        # Pass workflow inputs via env (not direct ${{ }} interpolation) and
+        # quote them so a value with shell metacharacters can't inject commands.
+        env:
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          ONLY: ${{ github.event.inputs.only }}
         run: |
-          args=""
-          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
-            args="$args --dry-run"
+          args=()
+          if [ "$DRY_RUN" = "true" ]; then
+            args+=(--dry-run)
           fi
-          if [ -n "${{ github.event.inputs.only }}" ]; then
-            args="$args --only ${{ github.event.inputs.only }}"
+          if [ -n "$ONLY" ]; then
+            args+=(--only "$ONLY")
           fi
-          python _tools/fix_missing_art.py $args
+          python _tools/fix_missing_art.py "${args[@]}"

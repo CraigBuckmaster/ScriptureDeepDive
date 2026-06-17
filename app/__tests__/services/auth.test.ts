@@ -31,7 +31,6 @@ import {
   signUpWithEmail,
   signInWithMagicLink,
   signOut,
-  getCurrentUser,
   getCurrentSession,
   onAuthStateChange,
 } from '@/services/auth';
@@ -126,16 +125,6 @@ describe('auth service', () => {
 
       expect(result).toEqual({});
       expect(mockSignOut).toHaveBeenCalled();
-    });
-  });
-
-  describe('getCurrentUser', () => {
-    it('returns null when unavailable', () => {
-      mockIsSupabaseAvailable.mockReturnValue(false);
-
-      const result = getCurrentUser();
-
-      expect(result).toBeNull();
     });
   });
 

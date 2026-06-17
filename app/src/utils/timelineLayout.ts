@@ -154,7 +154,7 @@ export function computeTickMarks(): { x: number; label: string; major: boolean }
   const ticks: { x: number; label: string; major: boolean }[] = [];
   for (let year = -4000; year <= 100; year += 100) {
     const x = yearToX(year);
-    const major = year % 500 === 0 || year === 0 || year === 33;
+    const major = year % 500 === 0 || year === 0;
     if (major || (year % 200 === 0)) {
       ticks.push({ x, label: formatYear(year), major });
     }

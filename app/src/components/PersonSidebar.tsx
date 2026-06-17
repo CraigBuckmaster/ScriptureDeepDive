@@ -81,7 +81,7 @@ export function PersonSidebar({
   return (
     <Modal visible={visible} transparent animationType="slide">
       <TouchableOpacity style={styles.backdrop} activeOpacity={1} onPress={onClose} />
-      <SafeAreaView style={[styles.sheet, {
+      <SafeAreaView accessibilityViewIsModal={true} style={[styles.sheet, {
         backgroundColor: base.bgElevated, borderColor: base.border,
       }]}>
         {/* Sticky header */}

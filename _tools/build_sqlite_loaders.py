@@ -1358,6 +1358,13 @@ def populate_hermeneutic_lenses(cur):
             lens_count += 1
 
     # 2. Load chapter lens content
+    #
+    # Lens chapter files are named with a book abbreviation + chapter number
+    # (e.g. "gen1", "deu13", "2sa19"). The chapters table, however, keys rows by
+    # the canonical "{book_id}_{chapter_num}" id (e.g. "genesis_1"). The stem
+    # MUST be translated into that canonical id — otherwise chapter_lens_content
+    # rows never join the chapters table and the entire hermeneutic-lens feature
+    # is silently unreachable at runtime.
     chapters_dir = lenses_dir / 'chapters'
     if chapters_dir.is_dir():
         # Build set of valid lens IDs for validation
@@ -1366,9 +1373,35 @@ def populate_hermeneutic_lenses(cur):
         for row in cur.fetchall():
             valid_lenses.add(row[0])
 
+        # Canonical chapter ids + distinct book ids from the already-populated
+        # chapters table (populate_chapters runs first), used to resolve the
+        # abbreviated lens filename stems.
+        cur.execute('SELECT id FROM chapters')
+        valid_chapter_ids = {row[0] for row in cur.fetchall()}
+        book_ids = sorted({cid.rsplit('_', 1)[0] for cid in valid_chapter_ids})
+
+        def resolve_chapter_id(stem: str) -> str:
+            m = re.match(r'^(\d*[a-z]+)(\d+)$', stem)
+            assert m, f"Unrecognized lens chapter filename stem: {stem!r}"
+            prefix, num = m.group(1), m.group(2)
+            # Match the book whose underscore-stripped id starts with the
+            # abbreviation prefix (e.g. "gen"->"genesis", "2sa"->"2_samuel").
+            matches = [b for b in book_ids if b.replace('_', '').startswith(prefix)]
+            assert len(matches) == 1, (
+                f"Lens stem {stem!r} (prefix {prefix!r}) resolved to {matches!r}; "
+                f"expected exactly one book. Add an explicit mapping if the "
+                f"abbreviation is ambiguous."
+            )
+            chapter_id = f"{matches[0]}_{num}"
+            assert chapter_id in valid_chapter_ids, (
+                f"Lens stem {stem!r} resolved to {chapter_id!r}, which is not a "
+                f"chapter in the chapters table."
+            )
+            return chapter_id
+
         for json_file in sorted(chapters_dir.glob('*.json')):
             data = _load_json(json_file)
-            chapter_id = json_file.stem
+            chapter_id = resolve_chapter_id(json_file.stem)
             for entry in data.get('lenses', []):
                 lens_id = entry['lens_id']
                 assert lens_id in valid_lenses, \

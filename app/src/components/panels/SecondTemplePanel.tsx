@@ -207,7 +207,7 @@ function UnlockedBody({
         onRefPress={onRefPress}
       />
 
-      {data.citation_refs.length > 0 ? (
+      {Array.isArray(data.citation_refs) && data.citation_refs.length > 0 ? (
         <View style={styles.citationsWrap}>
           {data.citation_refs.map((cit, i) => (
             <CitationBadge
@@ -220,7 +220,7 @@ function UnlockedBody({
         </View>
       ) : null}
 
-      {data.extrabiblical_ids.length > 0 && onExtraBiblicalPress ? (
+      {Array.isArray(data.extrabiblical_ids) && data.extrabiblical_ids.length > 0 && onExtraBiblicalPress ? (
         <View style={styles.chipsWrap}>
           {data.extrabiblical_ids.map((id) => (
             <TouchableOpacity

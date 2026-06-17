@@ -33,25 +33,27 @@ export function CompositeContextPanel({ data, onRefPress, defaultTab }: Props) {
       {(activeKey) => {
         switch (activeKey) {
           case 'context':
-            return (
+            return data.context ? (
               <View style={styles.tabContent}>
-                <TappableReference text={data.context!} onRefPress={onRefPress} />
+                <TappableReference text={data.context} onRefPress={onRefPress} />
               </View>
-            );
+            ) : null;
           case 'historical':
-            return (
+            return data.historical ? (
               <View style={styles.tabContent}>
-                <TappableReference text={data.historical!} onRefPress={onRefPress} />
+                <TappableReference text={data.historical} onRefPress={onRefPress} />
               </View>
-            );
+            ) : null;
           case 'audience':
-            return (
+            return data.audience ? (
               <View style={styles.tabContent}>
-                <TappableReference text={data.audience!} onRefPress={onRefPress} />
+                <TappableReference text={data.audience} onRefPress={onRefPress} />
               </View>
-            );
+            ) : null;
           case 'ane':
-            return <ANEParallelView entries={data.ane!} onRefPress={onRefPress} />;
+            return Array.isArray(data.ane) && data.ane.length > 0
+              ? <ANEParallelView entries={data.ane} onRefPress={onRefPress} />
+              : null;
           default:
             return null;
         }

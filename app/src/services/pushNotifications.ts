@@ -46,11 +46,15 @@ export async function registerForPushNotifications(): Promise<string | null> {
     const tokenData = await Notifications.getExpoPushTokenAsync();
     const token = tokenData.data;
 
+    // Capture this device's previous token (before overwriting locally) so the
+    // Supabase sync can clean it up if the Expo token rotated.
+    const previousToken = await getStoredPushToken();
+
     // Store locally
     await savePushTokenLocally(token);
 
     // Sync to Supabase (fire-and-forget)
-    savePushToken(token).catch((err) => {
+    savePushToken(token, previousToken ?? undefined).catch((err) => {
       logger.warn('PushNotifications', 'Failed to sync token to Supabase', err);
     });
 
@@ -71,7 +75,7 @@ async function savePushTokenLocally(token: string): Promise<void> {
 /**
  * Sync push token to Supabase. Graceful if Supabase is unavailable.
  */
-export async function savePushToken(token: string): Promise<boolean> {
+export async function savePushToken(token: string, previousToken?: string): Promise<boolean> {
   const supabase = getSupabase();
   if (!supabase) return false;
 
@@ -92,6 +96,19 @@ export async function savePushToken(token: string): Promise<boolean> {
     if (error) {
       logger.warn('PushNotifications', 'Failed to save token to Supabase', error);
       return false;
+    }
+
+    // Remove this device's previous (rotated) token so dead tokens don't
+    // accumulate for the user. Scoped to the exact old token, so other devices
+    // on the same platform are unaffected.
+    if (previousToken && previousToken !== token) {
+      const { error: delError } = await supabase
+        .from('push_tokens')
+        .delete()
+        .match({ user_id: user.id, token: previousToken });
+      if (delError) {
+        logger.warn('PushNotifications', 'Failed to remove rotated token', delError);
+      }
     }
 
     return true;

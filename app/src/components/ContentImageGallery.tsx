@@ -226,7 +226,10 @@ function ZoomViewer({ image, visible, onClose }: ZoomViewerProps) {
     >
       <GestureHandlerRootView style={styles.modalRoot}>
         {/* overlay-color: intentional — fullscreen image viewer backdrop */}
-        <View style={[styles.modalBg, { backgroundColor: 'rgba(0,0,0,0.95)' }]}>
+        <View
+          style={[styles.modalBg, { backgroundColor: 'rgba(0,0,0,0.95)' }]}
+          accessibilityViewIsModal={true}
+        >
           {/* Close button */}
           <TouchableOpacity
             onPress={handleClose}

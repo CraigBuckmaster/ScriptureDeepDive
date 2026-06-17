@@ -261,10 +261,12 @@ describe('ChapterScreen', () => {
     expect(getByTestId('chapter-skeleton')).toBeTruthy();
   });
 
-  it('renders loading skeleton when chapter is null', () => {
+  it('renders a not-found state when the chapter is missing (loaded, null)', () => {
     mockChapterData.chapter = null as any;
-    const { getByTestId } = renderWithProviders(<ChapterScreen />);
-    expect(getByTestId('chapter-skeleton')).toBeTruthy();
+    mockChapterData.isLoading = false;
+    const { getByText, queryByTestId } = renderWithProviders(<ChapterScreen />);
+    expect(getByText('Chapter not found')).toBeTruthy();
+    expect(queryByTestId('chapter-skeleton')).toBeNull();
   });
 
   it('renders chapter content when loaded', () => {

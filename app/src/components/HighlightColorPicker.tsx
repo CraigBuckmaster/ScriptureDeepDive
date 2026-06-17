@@ -30,7 +30,7 @@ export function HighlightColorPicker({ visible, currentColor, onSelect, onClose 
   return (
     <Modal visible={visible} transparent animationType="fade">
       <TouchableOpacity style={styles.backdrop} activeOpacity={1} onPress={onClose}>
-        <View style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
+        <View accessibilityViewIsModal={true} style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
           <Text style={[styles.label, { color: base.textMuted }]}>HIGHLIGHT COLOR</Text>
 
           <View style={styles.colorRow}>

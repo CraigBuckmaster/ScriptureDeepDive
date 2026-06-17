@@ -43,6 +43,7 @@ import { ChapterHeader } from '../components/ChapterHeader';
 import { QnavOverlay } from '../components/QnavOverlay';
 import { NotesOverlay } from '../components/notes';
 import { ChapterSkeleton } from '../components/ChapterSkeleton';
+import EmptyState from '../components/EmptyState';
 import { TTSControls } from '../components/TTSControls';
 import { useBookmarkedVerses } from '../hooks/useBookmarkedVerses';
 import { useAvailableLenses, useChapterLensContent } from '../hooks/useHermeneuticLens';
@@ -372,7 +373,22 @@ function ChapterScreen() {
     ? (TRANSLATION_MAP.get(translation)?.label ?? translation.toUpperCase())
     : undefined;
 
-  if (isLoading || !chapter) return <ChapterSkeleton />;
+  // Invalid/missing route params (or a chapter that doesn't exist in the DB)
+  // would otherwise drive NaN navigation math and an indefinite skeleton.
+  const hasValidParams = !!bookId && typeof chapterNum === 'number' && !Number.isNaN(chapterNum);
+  if (isLoading && hasValidParams) return <ChapterSkeleton />;
+  if (!hasValidParams || !chapter) {
+    return (
+      <View style={[styles.container, { backgroundColor: base.bg }]}>
+        <EmptyState
+          variant="error"
+          title="Chapter not found"
+          subtitle="We couldn't load this passage. Try going back and selecting it again."
+          action={navigation.canGoBack() ? { label: 'Go back', onPress: () => navigation.goBack() } : undefined}
+        />
+      </View>
+    );
+  }
 
   return (
     <View style={[styles.container, { backgroundColor: base.bg }]}>

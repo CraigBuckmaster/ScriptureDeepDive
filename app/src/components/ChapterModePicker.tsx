@@ -1,6 +1,6 @@
 /**
  * ChapterModePicker — Bottom sheet for switching the chapter reading mode
- * from the chapter nav bar. Mirrors the AuthorshipSheet structure.
+ * from the chapter nav bar.
  *
  * Tap a mode to persist via settingsStore.setChapterMode and close. No
  * "Recommended" pip — onboarding owns that affordance.
@@ -40,6 +40,7 @@ export function ChapterModePicker({ visible, currentMode, onClose }: Props) {
         accessibilityLabel="Close mode picker"
       />
       <SafeAreaView
+        accessibilityViewIsModal={true}
         style={[
           styles.sheet,
           { backgroundColor: base.bgElevated, borderColor: base.border },

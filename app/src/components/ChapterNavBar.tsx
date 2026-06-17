@@ -189,7 +189,7 @@ export function ChapterNavBar({
         <TouchableWithoutFeedback onPress={() => setComparePicker(false)}>
           <View style={styles.pickerBackdrop}>
             <TouchableWithoutFeedback>
-              <View style={[styles.pickerMenu, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
+              <View accessibilityViewIsModal={true} style={[styles.pickerMenu, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
                 <Text style={[styles.pickerTitle, { color: base.text }]}>Compare with:</Text>
                 {TRANSLATION_OPTIONS.filter(o => o.key !== translation).map((opt) => (
                   <TouchableOpacity

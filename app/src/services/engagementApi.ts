@@ -11,6 +11,7 @@
 
 import { getSupabase } from '../lib/supabase';
 import { flagContent as flagContentLocally } from '../db/userMutations';
+import { getUserDb } from '../db/userDatabase';
 import { logger } from '../utils/logger';
 import { getCurrentSession } from './auth';
 import { enqueue } from './syncQueue';
@@ -158,8 +159,9 @@ export async function submitFlag(
     });
 
     if (error) {
-      // If server rejects (e.g. rate limit RLS), queue for retry
-      if (error.code === '42501') {
+      // Rate-limit rejection: '42501' (legacy RLS policy) or '23514'
+      // (check_violation raised by the BEFORE INSERT rate-limit trigger).
+      if (error.code === '42501' || error.code === '23514' || /flag_rate_limit/.test(error.message ?? '')) {
         return { success: false, rateLimited: true };
       }
       logger.warn('EngagementApi', 'Flag submit failed, queuing', error);
@@ -175,7 +177,6 @@ export async function submitFlag(
 
     // Mark local copy as synced
     try {
-      const { getUserDb } = require('../db/userDatabase');
       await getUserDb().runAsync(
         'UPDATE flagged_content SET synced = 1 WHERE content_id = ? AND content_type = ?',
         [contentId, contentType],

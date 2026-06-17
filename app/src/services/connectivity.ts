@@ -15,8 +15,10 @@ type Listener = (connected: boolean) => void;
 
 let _connected = true;
 const _listeners = new Set<Listener>();
+let _started = false;
 let _polling = false;
 let _pollTimer: ReturnType<typeof setInterval> | null = null;
+let _netinfoUnsub: (() => void) | null = null;
 
 /**
  * Whether the app currently has network connectivity.
@@ -55,12 +57,17 @@ function setConnected(value: boolean) {
  * otherwise falls back to periodic fetch-based checks.
  */
 export function startMonitoring(): void {
-  if (_polling) return;
+  // Master guard covers BOTH the NetInfo and polling paths so a second call
+  // never registers a duplicate listener.
+  if (_started) return;
+  _started = true;
 
   try {
     // Try NetInfo (available in dev builds, not Expo Go)
     const NetInfo = require('@react-native-community/netinfo');
-    NetInfo.addEventListener((state: { isConnected: boolean | null }) => {
+    // addEventListener returns an unsubscribe fn — retain it so stopMonitoring
+    // can remove the listener instead of leaking it.
+    _netinfoUnsub = NetInfo.addEventListener((state: { isConnected: boolean | null }) => {
       setConnected(state.isConnected !== false);
     });
     logger.info('Connectivity', 'Using NetInfo');
@@ -101,10 +108,15 @@ export function startMonitoring(): void {
  * Stop monitoring (for cleanup in tests or when app suspends).
  */
 export function stopMonitoring(): void {
+  if (_netinfoUnsub) {
+    _netinfoUnsub();
+    _netinfoUnsub = null;
+  }
   if (_pollTimer) {
     clearInterval(_pollTimer);
     _pollTimer = null;
   }
   _polling = false;
+  _started = false;
   _listeners.clear();
 }

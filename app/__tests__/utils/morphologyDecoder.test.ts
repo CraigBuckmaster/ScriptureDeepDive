@@ -139,6 +139,19 @@ describe('morphologyDecoder', () => {
         ]));
       });
 
+      it('decodes a participle with case/number/gender (not person)', () => {
+        const result = decodeMorphology('V-PAP-NSM');
+        expect(result.parts).toEqual(expect.arrayContaining([
+          { label: 'Tense', value: 'Present' },
+          { label: 'Voice', value: 'Active' },
+          { label: 'Mood', value: 'Participle' },
+          { label: 'Case', value: 'Nominative' },
+          { label: 'Number', value: 'Singular' },
+          { label: 'Gender', value: 'Masculine' },
+        ]));
+        expect(result.parts.some((p) => p.label === 'Person')).toBe(false);
+      });
+
       it('decodes Aorist Middle Subjunctive', () => {
         const result = decodeMorphology('V-AMS-1P');
         expect(result.parts).toEqual(expect.arrayContaining([
@@ -184,31 +197,6 @@ describe('morphologyDecoder', () => {
           { label: 'Mood', value: 'Infinitive' },
         ]));
         // Infinitive shouldn't have person if detail is only 3 chars
-        expect(personParts).toHaveLength(0);
-      });
-
-      it('falls back to person/number for short participle codes', () => {
-        // V-PAP-NSM → cleanDetail 'PAPNSM' (6 chars) — participle branch needs 7+
-        const result = decodeMorphology('V-PAP-NSM');
-        expect(result.parts).toEqual(expect.arrayContaining([
-          { label: 'Mood', value: 'Participle' },
-        ]));
-        // With 6-char detail, positions 3/4 map to Person/Number
-        expect(result.parts.find((p) => p.label === 'Person')).toBeDefined();
-      });
-
-      it('decodes Participle with case/number/gender when detail is 7+ chars', () => {
-        // Synthesize a 7-char cleanDetail to trigger participle branch
-        // V-PAP-3NSM → cleanDetail 'PAP3NSM' (7 chars)
-        const result = decodeMorphology('V-PAP-3NSM');
-        expect(result.parts).toEqual(expect.arrayContaining([
-          { label: 'Mood', value: 'Participle' },
-          { label: 'Case', value: 'Nominative' },
-          { label: 'Number', value: 'Singular' },
-          { label: 'Gender', value: 'Masculine' },
-        ]));
-        // Should have replaced person/number with case/number/gender
-        const personParts = result.parts.filter((p) => p.label === 'Person');
         expect(personParts).toHaveLength(0);
       });
 

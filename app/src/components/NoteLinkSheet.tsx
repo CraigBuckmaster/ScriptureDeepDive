@@ -66,7 +66,7 @@ export function NoteLinkSheet({ visible, onClose, currentNoteId, linkedNoteIds, 
       >
         <TouchableOpacity style={styles.backdrop} onPress={onClose} activeOpacity={1} />
 
-        <SafeAreaView edges={['bottom']} style={[styles.sheet, { backgroundColor: base.bgElevated }]}>
+        <SafeAreaView accessibilityViewIsModal={true} edges={['bottom']} style={[styles.sheet, { backgroundColor: base.bgElevated }]}>
           {/* Header */}
           <View style={[styles.header, { borderBottomColor: base.border }]}>
             <Text style={[styles.headerTitle, { color: base.text }]}>Link to Note</Text>

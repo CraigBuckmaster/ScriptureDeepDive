@@ -109,12 +109,15 @@ function decodeGreek(code: string): DecodedMorphology {
       const number = GREEK_NUMBER[cleanDetail[4]] ?? cleanDetail[4];
       parts.push({ label: 'Number', value: number });
     }
-    // Participles may also carry case-number-gender
-    if (mood === 'Participle' && cleanDetail.length >= 7) {
-      const cas = GREEK_CASE[cleanDetail[4]] ?? cleanDetail[4];
-      const num = GREEK_NUMBER[cleanDetail[5]] ?? cleanDetail[5];
-      const gen = GREEK_GENDER[cleanDetail[6]] ?? cleanDetail[6];
-      // Replace person/number with case/number/gender
+    // Participles carry case-number-gender (not person), starting at index 3.
+    // e.g. "PAPNSM" → Present Active Participle, Nominative Singular Masculine.
+    if (mood === 'Participle' && cleanDetail.length >= 6) {
+      const cas = GREEK_CASE[cleanDetail[3]] ?? cleanDetail[3];
+      const num = GREEK_NUMBER[cleanDetail[4]] ?? cleanDetail[4];
+      const gen = GREEK_GENDER[cleanDetail[5]] ?? cleanDetail[5];
+      // Drop the (inapplicable) Person/Number parts — indices 4,5 in `parts`
+      // (which begins with Part of Speech, Tense, Voice, Mood) — and replace
+      // them with case/number/gender.
       parts.splice(4);
       parts.push({ label: 'Case', value: cas });
       parts.push({ label: 'Number', value: num });

@@ -11,6 +11,21 @@ describe('parseReference', () => {
     expect(r?.verseStart).toBe(4);
     expect(r?.verseEnd).toBe(7);
   });
+  it('parses a cross-chapter range without fabricating a wrong verse', () => {
+    const r = parseReference('Genesis 1:1-2:3');
+    expect(r?.bookId).toBe('genesis');
+    expect(r?.chapter).toBe(1);
+    expect(r?.chapterEnd).toBe(2);
+    expect(r?.verseStart).toBe(1);
+    expect(r?.verseEnd).toBe(3);
+  });
+  it('does not set chapterEnd for a same-chapter range', () => {
+    const r = parseReference('Gen 1:1-3');
+    expect(r?.chapter).toBe(1);
+    expect(r?.chapterEnd).toBeUndefined();
+    expect(r?.verseStart).toBe(1);
+    expect(r?.verseEnd).toBe(3);
+  });
   it('parses chapter-only', () => {
     const r = parseReference('Ps 23');
     expect(r?.bookId).toBe('psalms');

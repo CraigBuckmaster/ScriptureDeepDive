@@ -21,8 +21,9 @@ export const FEATURE_FLAGS = {
   GUIDED_STUDY_AMICUS_SYNTHESIS: false,
 } as const;
 
-export type FeatureFlag = keyof typeof FEATURE_FLAGS;
+/** Compile-time feature flag key (distinct from the env-driven EnvFeatureFlag). */
+export type CompileFeatureFlag = keyof typeof FEATURE_FLAGS;
 
-export function isFlagEnabled(flag: FeatureFlag): boolean {
+export function isFlagEnabled(flag: CompileFeatureFlag): boolean {
   return FEATURE_FLAGS[flag];
 }
