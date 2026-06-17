@@ -357,6 +357,9 @@ def main():
     ch_panel_type_counts = Counter()
     hebtext_html = 0
     books_found = Counter()
+    # chapter_id is the logical key referenced by audit tooling and lens
+    # authoring; enforce it is present, non-empty, and unique across the corpus.
+    chapter_id_owner: dict[str, str] = {}
 
     for book_dir in sorted(CONTENT.iterdir()):
         if not book_dir.is_dir() or book_dir.name in NON_BOOK_DIRS:
@@ -373,9 +376,22 @@ def main():
                 continue
 
             # Required keys
-            for key in ('book_dir', 'chapter_num', 'title', 'sections'):
+            for key in ('book_dir', 'chapter_id', 'chapter_num', 'title', 'sections'):
                 if key not in data:
                     check(f"{json_file.name} has '{key}'", False)
+
+            # chapter_id must be a non-empty string and unique across the corpus.
+            cid = data.get('chapter_id')
+            if not isinstance(cid, str) or not cid.strip():
+                check(f"{json_file.name} chapter_id non-empty string", False,
+                      f"got {cid!r}")
+            else:
+                prior = chapter_id_owner.get(cid)
+                if prior is not None:
+                    check(f"{book_dir.name}/{json_file.name} chapter_id unique", False,
+                          f"chapter_id {cid!r} also used by {prior}")
+                else:
+                    chapter_id_owner[cid] = f"{book_dir.name}/{json_file.name}"
 
             # Schema version check
             sv = data.get('schema_version', '0.0')
