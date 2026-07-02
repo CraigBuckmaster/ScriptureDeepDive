@@ -60,8 +60,19 @@ jest.mock('@/hooks/useReviewQueue', () => ({
 }));
 
 const RHYTHM = [{ week: '2026-W27', weekStart: '2026-06-29', sessions: 2, reviews: 1 }];
+const mockStartStudyPlan = jest.fn();
 jest.mock('@/services/study', () => ({
   getWeeklyRhythm: jest.fn().mockResolvedValue(RHYTHM),
+  startStudyPlan: (...args: unknown[]) => mockStartStudyPlan(...args),
+}));
+
+jest.mock('@/hooks', () => ({
+  useBooks: jest.fn().mockReturnValue({
+    liveBooks: [
+      { id: 'genesis', name: 'Genesis', testament: 'ot', total_chapters: 50, book_order: 1, is_live: true },
+      { id: 'john', name: 'John', testament: 'nt', total_chapters: 21, book_order: 43, is_live: true, starter: 1 },
+    ],
+  }),
 }));
 
 import StudyHubScreen from '@/screens/StudyHubScreen';
@@ -106,20 +117,27 @@ function stubReviewQueue(dueItems: GuidedReviewItem[]) {
   mockUseReviewQueue.mockReturnValue({
     dueItems,
     completeItem: mockCompleteItem,
+    isLoading: false,
     reload: jest.fn().mockResolvedValue(undefined),
   });
 }
 
-beforeEach(() => {
-  jest.clearAllMocks();
+function stubContinuePlan(overrides: Record<string, unknown> = {}) {
   mockUseContinuePlan.mockReturnValue({
     plan: PLAN,
     items: ITEMS,
     target: { bookId: 'jonah', chapterNum: 2, step: 'explore' },
     estimateMin: 12,
+    hasAnyPlan: true,
     isLoading: false,
     reload: jest.fn().mockResolvedValue(undefined),
+    ...overrides,
   });
+}
+
+beforeEach(() => {
+  jest.clearAllMocks();
+  stubContinuePlan();
   stubReviewQueue([reviewItem(1, 'What did the storm reveal?')]);
 });
 
@@ -163,16 +181,65 @@ describe('StudyHubScreen (#1832)', () => {
     expect(mockNavigate).toHaveBeenCalledWith('PlanPicker', { segment: 'book' });
   });
 
-  it('renders no hero region when there is no active plan', async () => {
-    mockUseContinuePlan.mockReturnValue({
-      plan: null, items: [], target: null, estimateMin: null,
-      isLoading: false, reload: jest.fn().mockResolvedValue(undefined),
-    });
+  it('renders no hero region when there is no active plan (but plans existed before)', async () => {
+    stubContinuePlan({ plan: null, items: [], target: null, estimateMin: null, hasAnyPlan: true });
     const { queryByText, getByText } = render(<StudyHubScreen />);
     expect(queryByText('CONTINUE')).toBeNull();
     expect(queryByText('Resume')).toBeNull();
+    // First-run card must NOT reappear once a plan has ever existed.
+    expect(queryByText('Begin your first study')).toBeNull();
     // The rest of the hub still renders.
     await waitFor(() => expect(getByText('The Biblical World')).toBeTruthy());
+  });
+
+  it('first run (#1837): no plan ever + no reviews shows the invitation card', async () => {
+    stubContinuePlan({ plan: null, items: [], target: null, estimateMin: null, hasAnyPlan: false });
+    stubReviewQueue([]);
+    const { getByText, getByLabelText } = render(<StudyHubScreen />);
+    expect(getByText('Begin your first study')).toBeTruthy();
+    // Starter meta present -> John is the starter book.
+    expect(getByText('Study John')).toBeTruthy();
+    expect(getByLabelText('Choose something else to study')).toBeTruthy();
+  });
+
+  it('first run (#1837): one tap creates the starter plan and opens session 1', async () => {
+    stubContinuePlan({ plan: null, items: [], target: null, estimateMin: null, hasAnyPlan: false });
+    stubReviewQueue([]);
+    mockStartStudyPlan.mockResolvedValue({
+      planId: 'plan-first',
+      mode: 'deep',
+      firstRef: { bookId: 'john', chapterNum: 1 },
+    });
+    const { getByLabelText } = render(<StudyHubScreen />);
+
+    fireEvent.press(getByLabelText('Study John — begin your first guided session'));
+    await waitFor(() => {
+      expect(mockStartStudyPlan).toHaveBeenCalledWith({
+        planType: 'book',
+        sourceId: 'john',
+        title: 'John',
+      });
+      expect(mockNavigate).toHaveBeenCalledWith('StudySession', {
+        bookId: 'john',
+        chapterNum: 1,
+        planId: 'plan-first',
+      });
+    });
+  });
+
+  it('first run (#1837): secondary action opens the picker on the book segment', async () => {
+    stubContinuePlan({ plan: null, items: [], target: null, estimateMin: null, hasAnyPlan: false });
+    stubReviewQueue([]);
+    const { getByLabelText } = render(<StudyHubScreen />);
+    fireEvent.press(getByLabelText('Choose something else to study'));
+    expect(mockNavigate).toHaveBeenCalledWith('PlanPicker', { segment: 'book' });
+  });
+
+  it('first run (#1837): a due review suppresses the invitation card', async () => {
+    stubContinuePlan({ plan: null, items: [], target: null, estimateMin: null, hasAnyPlan: false });
+    stubReviewQueue([reviewItem(1, 'What did the storm reveal?')]);
+    const { queryByText } = render(<StudyHubScreen />);
+    expect(queryByText('Begin your first study')).toBeNull();
   });
 
   it('completes the current review on "Recall it"', async () => {
