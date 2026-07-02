@@ -21,7 +21,8 @@ CREATE TABLE books (
   is_live BOOLEAN DEFAULT 0,
   genre TEXT,
   genre_label TEXT,
-  genre_guidance TEXT
+  genre_guidance TEXT,
+  starter BOOLEAN DEFAULT 0
 );
 
 CREATE TABLE chapters (
