@@ -6,7 +6,7 @@
  */
 import { useCallback, useEffect, useState } from 'react';
 import { getChapterPanels, getSectionPanels, getSections, getVerses } from '../db/content';
-import { getStudyPlanItems } from '../db/userQueries';
+import { getStudyPlanItems, getStudyPlans } from '../db/userQueries';
 import { getStudyDepthEstimate } from '../services/guidedStudy';
 import { getActivePlan, resumeTarget, type ResumeTarget } from '../services/study';
 import type { SectionPanel, StudyPlan, StudyPlanItem } from '../types';
@@ -18,6 +18,12 @@ export interface ContinuePlanState {
   target: ResumeTarget | null;
   /** Estimated minutes for the next chapter (null while loading/unknown). */
   estimateMin: number | null;
+  /**
+   * True when ANY plan exists, including archived/completed ones —
+   * the first-run card (#1837) must never reappear once a plan has
+   * ever existed, even after everything is finished or archived.
+   */
+  hasAnyPlan: boolean;
   isLoading: boolean;
   reload: () => Promise<void>;
 }
@@ -27,12 +33,17 @@ export function useContinuePlan(): ContinuePlanState {
   const [items, setItems] = useState<StudyPlanItem[]>([]);
   const [target, setTarget] = useState<ResumeTarget | null>(null);
   const [estimateMin, setEstimateMin] = useState<number | null>(null);
+  const [hasAnyPlan, setHasAnyPlan] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   const reload = useCallback(async () => {
     setIsLoading(true);
     try {
-      const activePlan = await getActivePlan();
+      const [activePlan, allPlans] = await Promise.all([
+        getActivePlan(),
+        getStudyPlans(true), // include archived — see hasAnyPlan doc
+      ]);
+      setHasAnyPlan(allPlans.length > 0);
       if (!activePlan) {
         setPlan(null);
         setItems([]);
@@ -79,5 +90,5 @@ export function useContinuePlan(): ContinuePlanState {
     void reload();
   }, [reload]);
 
-  return { plan, items, target, estimateMin, isLoading, reload };
+  return { plan, items, target, estimateMin, hasAnyPlan, isLoading, reload };
 }

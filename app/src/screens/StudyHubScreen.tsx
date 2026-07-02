@@ -15,6 +15,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect, useNavigation, useScrollToTop } from '@react-navigation/native';
 import { BeginSomethingNew, type PlanPickerSegment } from '../components/study/BeginSomethingNew';
 import { ContinueHero } from '../components/study/ContinueHero';
+import { FirstRunCard } from '../components/study/FirstRunCard';
 import {
   LibrarySections,
   PREMIUM_SCREENS,
@@ -23,12 +24,13 @@ import { ReviewRecallCard } from '../components/study/ReviewRecallCard';
 import { RhythmLine } from '../components/study/RhythmLine';
 import { UpgradePrompt } from '../components/UpgradePrompt';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+import { useBooks } from '../hooks';
 import { useContinuePlan } from '../hooks/useContinuePlan';
 import { useExploreImages } from '../hooks/useExploreImages';
 import { usePremium } from '../hooks/usePremium';
 import { useReviewQueue } from '../hooks/useReviewQueue';
 import type { ScreenNavProp } from '../navigation/types';
-import { getWeeklyRhythm, type WeeklyRhythm } from '../services/study';
+import { getWeeklyRhythm, startStudyPlan, type WeeklyRhythm } from '../services/study';
 import { fontFamily, spacing, useTheme } from '../theme';
 import { logger } from '../utils/logger';
 
@@ -40,8 +42,17 @@ function StudyHubScreen() {
 
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
   const imageRegistry = useExploreImages();
-  const { plan, items, target, estimateMin, reload: reloadPlan } = useContinuePlan();
-  const { dueItems, completeItem, reload: reloadReviews } = useReviewQueue();
+  const {
+    plan,
+    items,
+    target,
+    estimateMin,
+    hasAnyPlan,
+    isLoading: planLoading,
+    reload: reloadPlan,
+  } = useContinuePlan();
+  const { dueItems, completeItem, isLoading: reviewsLoading, reload: reloadReviews } = useReviewQueue();
+  const { liveBooks } = useBooks();
 
   const [rhythm, setRhythm] = useState<WeeklyRhythm[]>([]);
   const [reviewIndex, setReviewIndex] = useState(0);
@@ -87,6 +98,38 @@ function StudyHubScreen() {
     [navigation],
   );
 
+  // First-run state (#1837): the user has never had a plan (archived
+  // and completed ones count as "had") and nothing is due for review.
+  // The starter book comes from books meta (`starter: true`); until
+  // the pipeline carries that flag, fall back to the first live book
+  // in canonical order — still content-derived, never hardcoded.
+  const starterBook = liveBooks.find((b) => !!b.starter) ?? liveBooks[0] ?? null;
+  const showFirstRun =
+    !planLoading && !reviewsLoading && !hasAnyPlan && dueItems.length === 0 && starterBook != null;
+  const [startingFirstPlan, setStartingFirstPlan] = useState(false);
+
+  const handleStudyStarter = useCallback(async () => {
+    if (!starterBook || startingFirstPlan) return;
+    setStartingFirstPlan(true);
+    try {
+      const started = await startStudyPlan({
+        planType: 'book',
+        sourceId: starterBook.id,
+        title: starterBook.name,
+      });
+      if (!started) return;
+      navigation.navigate('StudySession', {
+        bookId: started.firstRef.bookId,
+        chapterNum: started.firstRef.chapterNum,
+        planId: started.planId,
+      });
+    } catch (err) {
+      logger.warn('StudyHub', 'Failed to start first study plan', err);
+    } finally {
+      setStartingFirstPlan(false);
+    }
+  }, [navigation, starterBook, startingFirstPlan]);
+
   const currentReview =
     dueItems.length > 0 ? dueItems[reviewIndex % dueItems.length] : null;
 
@@ -129,6 +172,17 @@ function StudyHubScreen() {
         <Text style={[styles.title, { color: base.gold }]} accessibilityRole="header">
           Study
         </Text>
+
+        {/* ── First-run invitation (#1837): no plan ever + no reviews ─── */}
+        {showFirstRun && starterBook && (
+          <View style={styles.block}>
+            <FirstRunCard
+              starterBookName={starterBook.name}
+              onStudyStarter={handleStudyStarter}
+              onChooseSomethingElse={() => handlePickSegment('book')}
+            />
+          </View>
+        )}
 
         {/* ── Continue hero (hidden entirely when no active plan) ─── */}
         {plan && target && (
