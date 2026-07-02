@@ -137,14 +137,30 @@ describe('StudyHubScreen (#1832)', () => {
     });
   });
 
-  it('resumes the plan into StudySession with the paused step', async () => {
+  it('resumes the plan into StudySession with the paused step and planId', async () => {
     const { getByLabelText } = render(<StudyHubScreen />);
     fireEvent.press(getByLabelText('Resume Jonah at Jonah 2'));
     expect(mockNavigate).toHaveBeenCalledWith('StudySession', {
       bookId: 'jonah',
       chapterNum: 2,
+      planId: 'plan-1',
       initialStep: 'explore',
     });
+  });
+
+  it('opens StudyPlanDetail from the hero chevron (#1833)', async () => {
+    const { getByLabelText } = render(<StudyHubScreen />);
+    fireEvent.press(getByLabelText('Open Jonah plan details'));
+    expect(mockNavigate).toHaveBeenCalledWith('StudyPlanDetail', { planId: 'plan-1' });
+  });
+
+  it('renders the Begin-something-new row and opens the picker preselected (#1833)', async () => {
+    const { getByText, getByLabelText } = render(<StudyHubScreen />);
+    expect(getByText('BEGIN SOMETHING NEW')).toBeTruthy();
+    fireEvent.press(getByLabelText('Begin studying a journey'));
+    expect(mockNavigate).toHaveBeenCalledWith('PlanPicker', { segment: 'journey' });
+    fireEvent.press(getByLabelText('Begin studying a book'));
+    expect(mockNavigate).toHaveBeenCalledWith('PlanPicker', { segment: 'book' });
   });
 
   it('renders no hero region when there is no active plan', async () => {

@@ -8,7 +8,8 @@
     "is_live": true,
     "genre": "theological_narrative",
     "genre_label": "Theological Narrative",
-    "genre_guidance": "Structured around toledot formulas · ANE counter-narrative · Focus on who and why, not how and when"
+    "genre_guidance": "Structured around toledot formulas · ANE counter-narrative · Focus on who and why, not how and when",
+    "starter": true
   },
   {
     "id": "exodus",
@@ -206,7 +207,8 @@
     "is_live": true,
     "genre": "poetry",
     "genre_label": "Hebrew Poetry",
-    "genre_guidance": "Parallelism, not rhyme, drives structure · Superscriptions provide context · Five-book division mirrors Torah"
+    "genre_guidance": "Parallelism, not rhyme, drives structure · Superscriptions provide context · Five-book division mirrors Torah",
+    "starter": true
   },
   {
     "id": "proverbs",
@@ -217,7 +219,8 @@
     "is_live": true,
     "genre": "wisdom",
     "genre_label": "Wisdom Literature",
-    "genre_guidance": "Proverbial sayings are observations, not promises · Fear of the Lord as organizing principle · Two-way theology (wisdom vs. folly)"
+    "genre_guidance": "Proverbial sayings are observations, not promises · Fear of the Lord as organizing principle · Two-way theology (wisdom vs. folly)",
+    "starter": true
   },
   {
     "id": "ecclesiastes",
@@ -470,7 +473,8 @@
     "is_live": true,
     "genre": "gospel",
     "genre_label": "Gospel",
-    "genre_guidance": "Seven signs structure · \"I AM\" sayings · High christology from prologue · Symbolic and theological throughout"
+    "genre_guidance": "Seven signs structure · \"I AM\" sayings · High christology from prologue · Symbolic and theological throughout",
+    "starter": true
   },
   {
     "id": "acts",
@@ -492,7 +496,8 @@
     "is_live": true,
     "genre": "epistle",
     "genre_label": "Epistle",
-    "genre_guidance": "Theological treatise format · Diatribe style (imagined objector) · Righteousness of God as central theme"
+    "genre_guidance": "Theological treatise format · Diatribe style (imagined objector) · Righteousness of God as central theme",
+    "starter": true
   },
   {
     "id": "1_corinthians",

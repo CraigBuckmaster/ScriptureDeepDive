@@ -57,6 +57,8 @@ const SubmissionDetailScreen = lazySuspense(() => import('../screens/SubmissionD
 const SubmissionFeedScreen = lazySuspense(() => import('../screens/SubmissionFeedScreen'));
 const ChapterScreen = lazySuspense(() => import('../screens/ChapterScreen'));
 const StudySessionScreen = lazySuspense(() => import('../screens/StudySessionScreen'));
+const PlanPickerScreen = lazySuspense(() => import('../screens/PlanPickerScreen'));
+const StudyPlanDetailScreen = lazySuspense(() => import('../screens/StudyPlanDetailScreen'));
 
 const Stack = createStackNavigator<ExploreStackParamList>();
 
@@ -133,6 +135,12 @@ export function ExploreStack() {
       <Stack.Screen name="SubmissionFeed" component={SubmissionFeedScreen} />
       <Stack.Screen name="Chapter" component={ChapterScreen} />
       <Stack.Screen name="StudySession" component={StudySessionScreen} />
+      <Stack.Screen
+        name="PlanPicker"
+        component={PlanPickerScreen}
+        options={{ presentation: 'modal' }}
+      />
+      <Stack.Screen name="StudyPlanDetail" component={StudyPlanDetailScreen} />
     </Stack.Navigator>
   );
 }

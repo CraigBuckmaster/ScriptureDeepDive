@@ -39,7 +39,8 @@ import {
   getVerses,
 } from '../db/content';
 import { getCapturedInputs, getGuidedStudyQuestionForSession } from '../db/userQueries';
-import { setCapturedInputs } from '../db/userMutations';
+import { setCapturedInputs, setPreference } from '../db/userMutations';
+import { completePlanItemForSession, LAST_MODE_PREF_KEY } from '../services/study';
 import { useBooks, useGuidedStudySession, usePremium } from '../hooks';
 import { completeGuidedStudySession } from '../db/userMutations';
 import {
@@ -83,13 +84,15 @@ interface RouteParams {
   chapterNum: number;
   initialStep?: GuidedStudyStep;
   verseNum?: number;
+  /** Unified study plan this session belongs to (#1833). */
+  planId?: string;
 }
 
 function StudySessionScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<NavigationProp<ParamListBase>>();
   const route = useRoute<RouteProp<{ StudySession: RouteParams }, 'StudySession'>>();
-  const { bookId, chapterNum, initialStep } = route.params;
+  const { bookId, chapterNum, initialStep, planId } = route.params;
   const translation = useSettingsStore((s) => s.translation);
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
   const { liveBooks } = useBooks();
@@ -209,6 +212,15 @@ function StudySessionScreen() {
     (key: SceneInputKey, value: string) => updateCapturedField({ step: 'scene', key }, value),
     [updateCapturedField],
   );
+
+  // Remember the chosen mode so the one-decision plan picker (#1833)
+  // can default to it without ever asking.
+  const handleModeChange = useCallback((mode: GuidedStudyMode) => {
+    setStudyMode(mode);
+    void setPreference(LAST_MODE_PREF_KEY, mode).catch((err) =>
+      logger.warn('StudySessionScreen', 'Failed to persist last study mode', err),
+    );
+  }, []);
 
   // Preserves #1654. The codex branch (codex/amicus-auth-access-hardening)
   // was cut before #1654 merged and reverts this guard. Do NOT remove it
@@ -463,7 +475,7 @@ function StudySessionScreen() {
           onSelect={goStep}
           carryForwardSteps={stepsWithCarryForward(plan.mode, capturedInputs)}
         />
-        <StudyModeSelector value={studyMode} onChange={setStudyMode} />
+        <StudyModeSelector value={studyMode} onChange={handleModeChange} />
 
         {session.currentStep === 'scene' && (
           <View style={styles.section}>
@@ -675,7 +687,17 @@ function StudySessionScreen() {
                 })
               }
               onMarkComplete={() => {
-                if (sessionId != null) void completeGuidedStudySession(sessionId);
+                if (sessionId != null) {
+                  void completeGuidedStudySession(sessionId);
+                  // Plan wiring (#1833): completing a plan-launched
+                  // session also completes/links the matching item.
+                  if (planId) {
+                    void completePlanItemForSession(planId, bookId, chapterNum, sessionId).catch(
+                      (err) =>
+                        logger.warn('StudySessionScreen', 'Failed to complete plan item', err),
+                    );
+                  }
+                }
                 navigation.goBack();
               }}
               onRestart={() =>

@@ -13,6 +13,13 @@ export interface Book {
   genre?: string;
   genre_label?: string;
   genre_guidance?: string;
+  /**
+   * Starter-shelf flag from content/meta/books.json (#1833). Optional:
+   * absent until the content pipeline carries the column into
+   * scripture.db, so consumers must treat it as best-effort (SQLite
+   * stores it as 0/1 when present).
+   */
+  starter?: boolean | number;
 }
 
 export interface Chapter {

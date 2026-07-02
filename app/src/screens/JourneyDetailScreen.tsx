@@ -6,10 +6,13 @@
  */
 
 import React, { useState, useCallback } from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { GraduationCap } from 'lucide-react-native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
+import { startStudyPlan } from '../services/study';
+import { logger } from '../utils/logger';
 import { useJourneyDetail } from '../hooks/useJourneyDetail';
 import { usePremium } from '../hooks/usePremium';
 import { ScreenHeader } from '../components/ScreenHeader';
@@ -18,7 +21,7 @@ import { JourneyStopsTimeline } from '../components/JourneyStopsTimeline';
 import { LinkedJourneySheet } from '../components/LinkedJourneySheet';
 import { UpgradePrompt } from '../components/UpgradePrompt';
 import { BadgeChip } from '../components/BadgeChip';
-import { useTheme, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily, radii } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const FREE_STOP_COUNT = 3;
@@ -55,6 +58,34 @@ function JourneyDetailScreen() {
     setLinkedSheetJourneyId(null);
     setLinkedSheetIntro(null);
   }, []);
+
+  // "Study this journey" (#1833): adopt the journey as a unified study
+  // plan and open session 1 directly — one decision, no mode prompt.
+  const [startingPlan, setStartingPlan] = useState(false);
+  const handleStudyJourney = useCallback(async () => {
+    if (!journey || startingPlan) return;
+    setStartingPlan(true);
+    try {
+      const started = await startStudyPlan({
+        planType: 'journey',
+        sourceId: journey.id,
+        title: journey.title,
+      });
+      if (!started) {
+        logger.warn('JourneyDetail', `Journey "${journey.id}" has no scripture stops to study`);
+        return;
+      }
+      navigation.navigate('StudySession', {
+        bookId: started.firstRef.bookId,
+        chapterNum: started.firstRef.chapterNum,
+        planId: started.planId,
+      });
+    } catch (err) {
+      logger.warn('JourneyDetail', 'Failed to start journey plan', err);
+    } finally {
+      setStartingPlan(false);
+    }
+  }, [journey, navigation, startingPlan]);
 
   if (isLoading) {
     return (
@@ -108,6 +139,19 @@ function JourneyDetailScreen() {
             {journey.description}
           </Text>
         ) : null}
+
+        {/* Study this journey (#1833) */}
+        <TouchableOpacity
+          onPress={handleStudyJourney}
+          disabled={startingPlan}
+          activeOpacity={0.72}
+          accessibilityRole="button"
+          accessibilityLabel={`Study this journey: ${journey.title}`}
+          style={[styles.studyButton, { backgroundColor: base.gold }]}
+        >
+          <GraduationCap size={16} color={base.bg} />
+          <Text style={[styles.studyButtonLabel, { color: base.bg }]}>Study this journey</Text>
+        </TouchableOpacity>
 
         {/* Stops Timeline */}
         <View style={styles.timelineSection}>
@@ -201,6 +245,20 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     paddingHorizontal: spacing.md,
     marginBottom: spacing.lg,
+  },
+  studyButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    minHeight: 44,
+    borderRadius: radii.md,
+    marginHorizontal: spacing.md,
+    marginBottom: spacing.lg,
+  },
+  studyButtonLabel: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 14,
   },
   timelineSection: {
     paddingHorizontal: spacing.md,
