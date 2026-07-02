@@ -236,7 +236,13 @@ export interface Submission {
 
 export interface AppNotification {
   id: string;
-  type: 'new_submission' | 'submission_approved' | 'submission_rejected' | 'trust_upgraded';
+  type:
+    | 'new_submission'
+    | 'submission_approved'
+    | 'submission_rejected'
+    | 'trust_upgraded'
+    // Review-due nudge (#1841) — taps route to the Study hub.
+    | 'review_due';
   title: string;
   body: string;
   target_id?: string;

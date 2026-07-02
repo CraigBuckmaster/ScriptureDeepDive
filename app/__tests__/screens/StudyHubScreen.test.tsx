@@ -61,9 +61,11 @@ jest.mock('@/hooks/useReviewQueue', () => ({
 
 const RHYTHM = [{ week: '2026-W27', weekStart: '2026-06-29', sessions: 2, reviews: 1 }];
 const mockStartStudyPlan = jest.fn();
+const mockMaybeInsertReviewNudge = jest.fn().mockResolvedValue(true);
 jest.mock('@/services/study', () => ({
   getWeeklyRhythm: jest.fn().mockResolvedValue(RHYTHM),
   startStudyPlan: (...args: unknown[]) => mockStartStudyPlan(...args),
+  maybeInsertReviewNudge: (...args: unknown[]) => mockMaybeInsertReviewNudge(...args),
 }));
 
 jest.mock('@/hooks', () => ({
@@ -270,5 +272,16 @@ describe('StudyHubScreen (#1832)', () => {
     stubReviewQueue([]);
     const { queryByText } = render(<StudyHubScreen />);
     expect(queryByText('Recall it')).toBeNull();
+  });
+
+  it('drops a review nudge when due items exist, none when the queue is empty (#1841)', async () => {
+    render(<StudyHubScreen />);
+    await waitFor(() => expect(mockMaybeInsertReviewNudge).toHaveBeenCalledWith(1));
+
+    jest.clearAllMocks();
+    stubContinuePlan();
+    stubReviewQueue([]);
+    render(<StudyHubScreen />);
+    expect(mockMaybeInsertReviewNudge).not.toHaveBeenCalled();
   });
 });
