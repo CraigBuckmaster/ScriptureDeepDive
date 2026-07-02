@@ -22,6 +22,7 @@ import {
   EvidenceTrailRow,
   NextChapterNudge,
   PanelRecommendationRow,
+  SessionReader,
   StudyModeSelector,
   StudySessionStepper,
   SynthesisFreeRecap,
@@ -114,6 +115,9 @@ function StudySessionScreen() {
   const [synthesisDraft, setSynthesisDraft] = useState(session.synthesis);
   const [reviewSaved, setReviewSaved] = useState(false);
   const [studyMode, setStudyMode] = useState<GuidedStudyMode>('deep');
+  // Reader expand preference (#1834) — per-session component state
+  // only; survives step switches because the screen owns it.
+  const [readerExpanded, setReaderExpanded] = useState(false);
   const [capturedInputs, setCapturedInputsState] = useState<CapturedInputs>({});
   const captureSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -480,6 +484,11 @@ function StudySessionScreen() {
         {session.currentStep === 'scene' && (
           <View style={styles.section}>
             <Text style={[styles.heading, { color: base.text }]}>Set the Scene</Text>
+            <SessionReader
+              verses={verses}
+              initiallyExpanded={readerExpanded}
+              onToggle={setReaderExpanded}
+            />
             <StepBanner step="scene" />
             <ModePromptList step="scene" />
             {plan.sceneRows.map((row) => (
@@ -515,6 +524,11 @@ function StudySessionScreen() {
         {session.currentStep === 'observe' && (
           <View style={styles.section}>
             <Text style={[styles.heading, { color: base.text }]}>Observe</Text>
+            <SessionReader
+              verses={verses}
+              initiallyExpanded={readerExpanded}
+              onToggle={setReaderExpanded}
+            />
             <StepBanner step="observe" />
             <ModePromptList step="observe" />
             {plan.legacyPrompts.map((prompt) => (

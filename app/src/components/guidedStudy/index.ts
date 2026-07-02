@@ -6,6 +6,7 @@ export { EvidenceTrailRow } from './EvidenceTrailRow';
 export { HomeReviewDueCard } from './HomeReviewDueCard';
 export { NextChapterNudge } from './NextChapterNudge';
 export { PanelRecommendationRow } from './PanelRecommendationRow';
+export { SessionReader } from './SessionReader';
 export { StudyModeSelector } from './StudyModeSelector';
 export { StudySessionCTA } from './StudySessionCTA';
 export { StudySessionStepper } from './StudySessionStepper';
