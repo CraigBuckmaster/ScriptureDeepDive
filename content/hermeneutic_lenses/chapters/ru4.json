@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "redemptive",
+      "guidance": "At the gate Boaz redeems the land and takes Ruth (vv 1-10); the closing genealogy (vv 17-22) runs to David. The redemption of one widow advances the covenant story toward the king.",
+      "panel_filter": ["themes", "thread", "cross", "hubbard"],
+      "panel_order": ["themes", "thread", "cross", "hubbard"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "The genealogy crowning the book (vv 18-22) carries Perez to David — and the New Testament extends the same line to Jesus (Mt 1:3-6). Boaz's redemption serves the coming of Christ.",
+      "panel_filter": ["cross", "thread", "calvin", "themes"],
+      "panel_order": ["cross", "calvin", "thread", "themes"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "The Perez-to-David line (vv 18-22) reaches back to Judah and Tamar (Gen 38) and forward to Matthew's genealogy (Mt 1:3-6) — Ruth's story a hinge echoed across Scripture's redemptive record.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    },
+    {
+      "lens_id": "typological",
+      "guidance": "Boaz the goel pays the price to redeem the land and raise up the dead man's name (vv 4-10); his costly kinsman-redemption is the Old Testament pattern fulfilled when Christ redeems his people.",
+      "panel_filter": ["cross", "thread", "hubbard", "calvin"],
+      "panel_order": ["hubbard", "cross", "thread", "calvin"]
+    },
+    {
+      "lens_id": "mission",
+      "guidance": "Ruth the Moabite becomes great-grandmother of David (vv 17, 22) — a foreigner woven into the royal and messianic line. The book shows the nations drawn into God's redemptive purpose.",
+      "panel_filter": ["themes", "hist", "thread", "cross"],
+      "panel_order": ["themes", "hist", "thread", "cross"]
+    }
+  ]
+}

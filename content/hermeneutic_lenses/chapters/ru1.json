@@ -1,0 +1,34 @@
+{
+  "lenses": [
+    {
+      "lens_id": "literary",
+      "guidance": "The chapter frames Naomi's journey from full to empty: she leaves with husband and sons and returns bereft, renaming herself Mara, 'bitter' (v 20). The repeated Hebrew shuv ('return') drives the narrative's homeward motif.",
+      "panel_filter": ["lit", "themes", "heb", "alter"],
+      "panel_order": ["lit", "alter", "heb", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Famine drives the family from Bethlehem, the 'house of bread' (v 1); the turn comes when 'the LORD had visited his people and given them food' (v 6). The bleak opening sets the redemptive arc that runs through Boaz to David.",
+      "panel_filter": ["themes", "thread", "cross", "hubbard"],
+      "panel_order": ["themes", "thread", "cross", "hubbard"]
+    },
+    {
+      "lens_id": "canonical",
+      "guidance": "Ruth's identity as a Moabite (v 4) stands against the exclusion of Deut 23:3, yet later Scripture threads her into the Messiah's line (Mt 1:5) — an intertextual reversal that resounds across Scripture.",
+      "panel_filter": ["cross", "thread", "themes"],
+      "panel_order": ["thread", "cross", "themes"]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Ruth's vow — 'your people shall be my people, and your God my God' (vv 16-17) — models a covenant faith that clings (Hebrew dabaq) when circumstances offer nothing, calling the reader to trust God in loss.",
+      "panel_filter": ["calvin", "hubbard", "themes"],
+      "panel_order": ["calvin", "hubbard", "themes"]
+    },
+    {
+      "lens_id": "mission",
+      "guidance": "A Moabite widow confesses Israel's God (vv 16-17) before any king reigns — the nations drawn inward to the LORD's people. Ruth's turn shows the covenant's outward pull toward every people, not Israel alone.",
+      "panel_filter": ["themes", "hist", "thread", "cross"],
+      "panel_order": ["themes", "hist", "thread", "cross"]
+    }
+  ]
+}

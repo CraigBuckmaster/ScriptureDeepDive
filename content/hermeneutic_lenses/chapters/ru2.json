@@ -1,0 +1,28 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "Boaz enters as a 'worthy man' and kinsman of Elimelech (vv 1, 20); his role as goel, kinsman-redeemer, sets the pattern the New Testament sees fulfilled in Christ's redemption of his people.",
+      "panel_filter": ["cross", "thread", "themes", "hubbard"],
+      "panel_order": ["hubbard", "cross", "thread", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Ruth 'happened' to glean in Boaz's field (v 3), the narrator's irony pointing to providence. Hesed, covenant kindness, drives the redemptive plot as Boaz shelters the foreign widow.",
+      "panel_filter": ["themes", "thread", "cross", "hubbard"],
+      "panel_order": ["themes", "hubbard", "thread", "cross"]
+    },
+    {
+      "lens_id": "christocentric",
+      "guidance": "Boaz blesses Ruth for taking refuge 'under the wings' of the LORD (v 12); the redeemer who covers the destitute foreshadows Christ, the greater Redeemer in whom the helpless find refuge.",
+      "panel_filter": ["cross", "thread", "calvin", "themes"],
+      "panel_order": ["cross", "calvin", "thread", "themes"]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Boaz's prayer over Ruth — 'a full reward from the LORD, under whose wings you have come to take refuge' (v 12) — invites the weary to trust God's sheltering care, met in worship.",
+      "panel_filter": ["calvin", "hubbard", "themes"],
+      "panel_order": ["calvin", "hubbard", "themes"]
+    }
+  ]
+}

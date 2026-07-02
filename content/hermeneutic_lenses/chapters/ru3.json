@@ -1,0 +1,28 @@
+{
+  "lenses": [
+    {
+      "lens_id": "typological",
+      "guidance": "At the threshing floor Ruth asks Boaz to 'spread your wings over your servant, for you are a redeemer' (v 9); the goel claiming the destitute prefigures Christ the Redeemer who claims his bride.",
+      "panel_filter": ["cross", "thread", "hubbard", "calvin"],
+      "panel_order": ["hubbard", "cross", "thread", "calvin"]
+    },
+    {
+      "lens_id": "literary",
+      "guidance": "The night threshing-floor scene mirrors the daytime field of Ruth 2; 'wings/cloak' (Hebrew kanaph, v 9) echoes Boaz's blessing at 2:12 — a deliberate verbal bookend binding the two encounters.",
+      "panel_filter": ["lit", "heb", "themes", "alter"],
+      "panel_order": ["lit", "heb", "alter", "themes"]
+    },
+    {
+      "lens_id": "redemptive",
+      "guidance": "Ruth's bold appeal (v 9) advances the redeemer institution: the goel must restore the family line. Naomi's emptiness moves toward fullness as the covenant plan presses on toward David.",
+      "panel_filter": ["themes", "thread", "cross", "hubbard"],
+      "panel_order": ["themes", "thread", "hubbard", "cross"]
+    },
+    {
+      "lens_id": "devotional",
+      "guidance": "Boaz commends Ruth's loyalty as kindness 'greater than the first' (v 10) and acts with integrity, not haste. The chapter invites patient trust that God will resolve what we cannot force.",
+      "panel_filter": ["calvin", "hubbard", "themes"],
+      "panel_order": ["calvin", "hubbard", "themes"]
+    }
+  ]
+}
