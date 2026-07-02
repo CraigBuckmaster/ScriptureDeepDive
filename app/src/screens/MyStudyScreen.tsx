@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, type NavigationProp, type ParamListBase } from '@react-navigation/native';
 import { ArrowLeft, Check, Clock, MessageSquare } from 'lucide-react-native';
+import { isFlagEnabled } from '../config/featureFlags';
 import { usePremium, useReviewQueue } from '../hooks';
 import { UpgradePrompt } from '../components/UpgradePrompt';
 import { formatChapterRef, getGuidedStudyStepLabel } from '../services/guidedStudy';
@@ -22,6 +23,17 @@ function chapterRouteParams(chapterId: string, initialStep?: string) {
 function MyStudyScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<NavigationProp<ParamListBase>>();
+
+  // #1836: with the study_hub flag on, MyStudy becomes a thin redirect
+  // to the Study tab hub. Pop this screen off its own stack FIRST so
+  // returning to the More tab lands on the previous screen instead of
+  // bouncing back here (no navigation loop). Flag off: unchanged.
+  const redirectToHub = isFlagEnabled('study_hub');
+  useEffect(() => {
+    if (!redirectToHub) return;
+    if (navigation.canGoBack()) navigation.goBack();
+    navigation.getParent()?.navigate('ExploreTab', { screen: 'StudyHub' });
+  }, [navigation, redirectToHub]);
   const {
     dueItems,
     allItems,
@@ -99,6 +111,9 @@ function MyStudyScreen() {
           : `Help me continue my guided study of ${formatChapterRef(session.chapter_id)}. I am currently at ${getGuidedStudyStepLabel(session.current_step)}.`,
     });
   }
+
+  // Render nothing while the flag-on redirect (#1836) is in flight.
+  if (redirectToHub) return null;
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>

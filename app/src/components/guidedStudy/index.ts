@@ -8,6 +8,8 @@ export { EvidenceTrailRow } from './EvidenceTrailRow';
 export { HomeReviewDueCard } from './HomeReviewDueCard';
 export { NextChapterNudge } from './NextChapterNudge';
 export { PanelRecommendationRow } from './PanelRecommendationRow';
+export { ResumeBeat } from './ResumeBeat';
+export { SavedIndicator } from './SavedIndicator';
 export { SessionReader } from './SessionReader';
 export { StudyModeSelector } from './StudyModeSelector';
 export { StudySessionCTA } from './StudySessionCTA';

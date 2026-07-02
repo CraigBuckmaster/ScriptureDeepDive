@@ -24,6 +24,8 @@ import {
   NextChapterNudge,
   type EvidenceSheetItem,
   PanelRecommendationRow,
+  ResumeBeat,
+  SavedIndicator,
   SessionReader,
   StudyModeSelector,
   StudySessionStepper,
@@ -49,6 +51,7 @@ import { completeGuidedStudySession } from '../db/userMutations';
 import {
   buildCarryForwardItems,
   buildGuidedStudyPlan,
+  completionPayoffCopy,
   formatChapterRef,
   getPromptBinding,
   setCapturedText,
@@ -120,6 +123,11 @@ function StudySessionScreen() {
   // Reader expand preference (#1834) — per-session component state
   // only; survives step switches because the screen owns it.
   const [readerExpanded, setReaderExpanded] = useState(false);
+  // Saved indicator (#1836): bumped ONLY after a capture persist
+  // resolves — never optimistically.
+  const [captureSavedTick, setCaptureSavedTick] = useState(0);
+  // Resume beat (#1836): step to announce when resuming mid-session.
+  const [resumeBeatStep, setResumeBeatStep] = useState<GuidedStudyStep | null>(null);
   const [capturedInputs, setCapturedInputsState] = useState<CapturedInputs>({});
   const captureSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -205,7 +213,13 @@ function StudySessionScreen() {
         if (sid != null) {
           if (captureSaveTimerRef.current) clearTimeout(captureSaveTimerRef.current);
           captureSaveTimerRef.current = setTimeout(() => {
-            void setCapturedInputs(sid, next);
+            // Saved indicator (#1836) bumps only when the persist
+            // actually resolved — a failed write shows nothing.
+            void setCapturedInputs(sid, next)
+              .then(() => setCaptureSavedTick((tick) => tick + 1))
+              .catch((err) =>
+                logger.warn('StudySessionScreen', 'Failed to persist captured inputs', err),
+              );
           }, 500);
         }
         return next;
@@ -245,6 +259,20 @@ function StudySessionScreen() {
       void setSessionStep(initialStep);
     }
   }, [currentStep, initialStep, sessionId, setSessionStep]);
+
+  // Resume beat (#1836): once per session load, when the session comes
+  // back past the scene step with existing responses, surface one
+  // dismissible "picking up where you left off" line. Ref-guarded like
+  // the initialStep sync so step taps never re-trigger it.
+  const resumeBeatShownForSessionRef = useRef<number | null>(null);
+  useEffect(() => {
+    if (sessionId == null || session.isLoading) return;
+    if (resumeBeatShownForSessionRef.current === sessionId) return;
+    resumeBeatShownForSessionRef.current = sessionId;
+    if (currentStep !== 'scene' && Object.keys(session.responses).length > 0) {
+      setResumeBeatStep(currentStep);
+    }
+  }, [currentStep, session.isLoading, session.responses, sessionId]);
 
   // Soft "after 3 sessions" upgrade nudge (#1742). Fires once per device
   // for free users who reach the review step with >= 3 completed sessions.
@@ -513,6 +541,10 @@ function StudySessionScreen() {
           carryForwardSteps={stepsWithCarryForward(plan.mode, capturedInputs)}
         />
         <StudyModeSelector value={studyMode} onChange={handleModeChange} />
+        {resumeBeatStep && (
+          <ResumeBeat step={resumeBeatStep} onDismiss={() => setResumeBeatStep(null)} />
+        )}
+        <SavedIndicator savedTick={captureSavedTick} />
 
         {session.currentStep === 'scene' && (
           <View style={styles.section}>
@@ -717,7 +749,7 @@ function StudySessionScreen() {
             <ModePromptList step="review" />
             <Text style={[styles.body, { color: base.textDim }]}>
               {reviewSaved
-                ? 'Saved. Your review prompts and concept vocabulary are ready in My Study.'
+                ? completionPayoffCopy()
                 : isPremium
                   ? 'Save your synthesis to create spaced review prompts for this chapter.'
                   : 'Review prompts and concept vocabulary are included with Companion+.'}
