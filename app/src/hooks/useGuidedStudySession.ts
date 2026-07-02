@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   createOrResumeGuidedStudySession,
+  markGuidedTrailItemVisited,
   setGuidedStudyStep,
   upsertGuidedStudyResponse,
   upsertGuidedStudySynthesis,
@@ -30,11 +31,22 @@ const EMPTY_SYNTHESIS: GuidedSynthesisDraft = {
   key_connection: '',
 };
 
+/** Parse a visited/deferred trail JSON column into a clean string[]. */
+function parseTrailJson(json: string | null | undefined): string[] {
+  try {
+    const parsed: unknown = JSON.parse(json ?? '[]');
+    return Array.isArray(parsed) ? parsed.filter((k): k is string => typeof k === 'string') : [];
+  } catch {
+    return [];
+  }
+}
+
 export function useGuidedStudySession(chapterId: string | undefined) {
   const [sessionId, setSessionId] = useState<number | null>(null);
   const [currentStep, setCurrentStepState] = useState<GuidedStudyStep>('scene');
   const [responses, setResponses] = useState<Record<string, GuidedStudyResponse>>({});
   const [synthesis, setSynthesis] = useState<GuidedSynthesisDraft>(EMPTY_SYNTHESIS);
+  const [visitedTrail, setVisitedTrail] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -59,6 +71,7 @@ export function useGuidedStudySession(chapterId: string | undefined) {
         setCurrentStepState(session?.current_step ?? 'scene');
         setResponses(Object.fromEntries(responseRows.map((row) => [row.prompt_key, row])));
         setSynthesis(synthesisRowToDraft(synthesisRow));
+        setVisitedTrail(parseTrailJson(session?.visited_trail_json));
       } catch (err) {
         logger.error('useGuidedStudySession', 'Failed to load guided session', err);
       } finally {
@@ -77,6 +90,21 @@ export function useGuidedStudySession(chapterId: string | undefined) {
       if (sessionId != null) {
         await setGuidedStudyStep(sessionId, step).catch((err) =>
           logger.warn('useGuidedStudySession', 'Failed to persist current step', err),
+        );
+      }
+    },
+    [sessionId],
+  );
+
+  // Visited evidence trail (#1835): optimistic in-memory set backed by
+  // guided_study_sessions.visited_trail_json (migration v26) so checks
+  // survive app kill + session resume.
+  const markTrailItemVisited = useCallback(
+    (key: string) => {
+      setVisitedTrail((prev) => (prev.includes(key) ? prev : [...prev, key]));
+      if (sessionId != null) {
+        void markGuidedTrailItemVisited(sessionId, key).catch((err) =>
+          logger.warn('useGuidedStudySession', 'Failed to persist visited trail item', err),
         );
       }
     },
@@ -136,8 +164,10 @@ export function useGuidedStudySession(chapterId: string | undefined) {
       currentStep,
       responses,
       synthesis,
+      visitedTrail,
       isLoading,
       setCurrentStep,
+      markTrailItemVisited,
       saveResponse,
       saveSynthesis,
       savePremiumReview,
@@ -147,8 +177,10 @@ export function useGuidedStudySession(chapterId: string | undefined) {
       currentStep,
       responses,
       synthesis,
+      visitedTrail,
       isLoading,
       setCurrentStep,
+      markTrailItemVisited,
       saveResponse,
       saveSynthesis,
       savePremiumReview,

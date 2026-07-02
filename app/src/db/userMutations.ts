@@ -480,6 +480,37 @@ export async function setSynthesisStrategy(
   );
 }
 
+/**
+ * Append an evidence-trail key to a session's visited set (#1835).
+ * Idempotent: appending an already-visited key is a no-op. Runs in a
+ * transaction so concurrent appends can't drop keys.
+ */
+export async function markGuidedTrailItemVisited(sessionId: number, key: string): Promise<void> {
+  const db = getUserDb();
+  await db.withTransactionAsync(async () => {
+    const row = await db.getFirstAsync<{ visited_trail_json: string | null }>(
+      'SELECT visited_trail_json FROM guided_study_sessions WHERE id = ?',
+      [sessionId],
+    );
+    if (!row) return;
+    let visited: string[] = [];
+    try {
+      const parsed: unknown = JSON.parse(row.visited_trail_json ?? '[]');
+      if (Array.isArray(parsed)) visited = parsed.filter((k): k is string => typeof k === 'string');
+    } catch (err) {
+      logger.warn('userMutations', `Bad visited_trail_json on session ${sessionId} — resetting`, err);
+    }
+    if (visited.includes(key)) return;
+    visited.push(key);
+    await db.runAsync(
+      `UPDATE guided_study_sessions
+       SET visited_trail_json = ?, updated_at = datetime('now')
+       WHERE id = ?`,
+      [JSON.stringify(visited), sessionId],
+    );
+  });
+}
+
 export async function upsertGuidedStudyResponse(
   sessionId: number,
   promptKey: string,

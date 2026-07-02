@@ -800,6 +800,15 @@ const MIGRATIONS: Migration[] = [
       ALTER TABLE guided_study_sessions ADD COLUMN plan_id TEXT;
     `,
   },
+  {
+    version: 26,
+    description:
+      'Evidence trail state (#1835) — visited_trail_json on guided_study_sessions, plus deferred_trail_json reserved for time-adaptive sessions (#1842; that issue must NOT add its own migration).',
+    sql: `
+      ALTER TABLE guided_study_sessions ADD COLUMN visited_trail_json TEXT;
+      ALTER TABLE guided_study_sessions ADD COLUMN deferred_trail_json TEXT;
+    `,
+  },
 ];
 
 /**

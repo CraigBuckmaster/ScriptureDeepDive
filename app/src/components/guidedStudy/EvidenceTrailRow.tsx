@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { ChevronRight } from 'lucide-react-native';
+import { Check, ChevronRight } from 'lucide-react-native';
 import { fontFamily, MIN_TOUCH_TARGET, radii, spacing, useTheme } from '../../theme';
 import type { GuidedEvidenceTrailItem } from '../../services/guidedStudy';
 import { ConfidenceBadge } from './ConfidenceBadge';
@@ -9,9 +9,11 @@ interface Props {
   item: GuidedEvidenceTrailItem;
   index: number;
   onPress: () => void;
+  /** Gold check when this trail key was already opened (#1835). */
+  visited?: boolean;
 }
 
-export function EvidenceTrailRow({ item, index, onPress }: Props) {
+export function EvidenceTrailRow({ item, index, onPress, visited = false }: Props) {
   const { base } = useTheme();
   const isFirst = index === 0;
 
@@ -27,7 +29,7 @@ export function EvidenceTrailRow({ item, index, onPress }: Props) {
         },
       ]}
       accessibilityRole="button"
-      accessibilityLabel={`Open ${item.title}`}
+      accessibilityLabel={visited ? `Open ${item.title}, visited` : `Open ${item.title}`}
     >
       <View style={[styles.stripe, { backgroundColor: base.gold }]} />
       <View style={[styles.indexPill, { borderColor: `${base.gold}45` }]}>
@@ -43,7 +45,13 @@ export function EvidenceTrailRow({ item, index, onPress }: Props) {
         </View>
         <Text style={[styles.subtitle, { color: base.textMuted }]}>{item.subtitle}</Text>
       </View>
-      <ChevronRight size={15} color={base.textMuted} />
+      {visited ? (
+        <View testID={`trail-visited-${item.key}`}>
+          <Check size={15} color={base.gold} />
+        </View>
+      ) : (
+        <ChevronRight size={15} color={base.textMuted} />
+      )}
     </TouchableOpacity>
   );
 }
