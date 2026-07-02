@@ -19,8 +19,10 @@ import {
 import { ArrowLeft, MessageSquare } from 'lucide-react-native';
 import {
   CarriedForwardBanner,
+  EvidencePanelSheet,
   EvidenceTrailRow,
   NextChapterNudge,
+  type EvidenceSheetItem,
   PanelRecommendationRow,
   SessionReader,
   StudyModeSelector,
@@ -401,6 +403,37 @@ function StudySessionScreen() {
     [bookId, chapterNum, navigation],
   );
 
+  // Evidence panel sheet (#1835): evidence opens in place; the only way
+  // out of the session is the sheet's explicit "Open full chapter" link.
+  const [sheetItem, setSheetItem] = useState<EvidenceSheetItem | null>(null);
+
+  const findPanelContent = useCallback(
+    (panelType: string, sectionNum?: number): string | null => {
+      if (sectionNum != null) {
+        const section = sections.find((s) => s.section_num === sectionNum);
+        return section?.panels.find((p) => p.panel_type === panelType)?.content_json ?? null;
+      }
+      return chapterPanels.find((p) => p.panel_type === panelType)?.content_json ?? null;
+    },
+    [sections, chapterPanels],
+  );
+
+  const openEvidence = useCallback(
+    (item: EvidenceSheetItem) => {
+      setSheetItem(item);
+      session.markTrailItemVisited(item.key);
+    },
+    [session],
+  );
+
+  const closeEvidenceSheet = useCallback(() => setSheetItem(null), []);
+
+  const openSheetItemFullChapter = useCallback(() => {
+    const item = sheetItem;
+    setSheetItem(null);
+    if (item) openRecommendation(item.panelType, item.sectionNum);
+  }, [openRecommendation, sheetItem]);
+
   const askAmicus = useCallback(async () => {
     if (!isPremium) {
       showUpgrade('feature', 'Companion Study Partner');
@@ -562,16 +595,26 @@ function StudySessionScreen() {
               Open the panels in this order to build context before conclusions.
             </Text>
             {plan.evidenceTrail.length > 0 ? (
-              <View style={styles.trailList}>
-                {plan.evidenceTrail.map((item, index) => (
-                  <EvidenceTrailRow
-                    key={item.key}
-                    item={item}
-                    index={index}
-                    onPress={() => openRecommendation(item.panelType, item.sectionNum)}
-                  />
-                ))}
-              </View>
+              <>
+                <View style={styles.trailList}>
+                  {plan.evidenceTrail.map((item, index) => (
+                    <EvidenceTrailRow
+                      key={item.key}
+                      item={item}
+                      index={index}
+                      visited={session.visitedTrail.includes(item.key)}
+                      onPress={() => openEvidence(item)}
+                    />
+                  ))}
+                </View>
+                <Text style={[styles.trailProgress, { color: base.textMuted }]}>
+                  {
+                    plan.evidenceTrail.filter((item) => session.visitedTrail.includes(item.key))
+                      .length
+                  }{' '}
+                  of {plan.evidenceTrail.length} opened
+                </Text>
+              </>
             ) : (
               <View
                 style={[
@@ -583,7 +626,7 @@ function StudySessionScreen() {
                   <PanelRecommendationRow
                     key={rec.key}
                     recommendation={rec}
-                    onPress={() => openRecommendation(rec.panelType, rec.sectionNum)}
+                    onPress={() => openEvidence(rec)}
                   />
                 ))}
               </View>
@@ -721,6 +764,14 @@ function StudySessionScreen() {
           </View>
         )}
       </ScrollView>
+
+      <EvidencePanelSheet
+        visible={sheetItem != null}
+        item={sheetItem}
+        contentJson={sheetItem ? findPanelContent(sheetItem.panelType, sheetItem.sectionNum) : null}
+        onClose={closeEvidenceSheet}
+        onOpenFullChapter={openSheetItemFullChapter}
+      />
 
       {upgradeRequest && (
         <UpgradePrompt
@@ -911,6 +962,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: radii.md,
     paddingHorizontal: spacing.md,
+    marginBottom: spacing.md,
+  },
+  trailProgress: {
+    fontFamily: fontFamily.ui,
+    fontSize: 12,
+    textAlign: 'center',
+    marginTop: -spacing.xs,
     marginBottom: spacing.md,
   },
   trailList: {

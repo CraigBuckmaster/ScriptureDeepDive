@@ -2,6 +2,8 @@ export { CarriedForwardBanner } from './CarriedForwardBanner';
 export type { CarriedForwardItem } from './CarriedForwardBanner';
 export { ConfidenceBadge } from './ConfidenceBadge';
 export { ContextGuardBanner } from './ContextGuardBanner';
+export { EvidencePanelSheet } from './EvidencePanelSheet';
+export type { EvidenceSheetItem } from './EvidencePanelSheet';
 export { EvidenceTrailRow } from './EvidenceTrailRow';
 export { HomeReviewDueCard } from './HomeReviewDueCard';
 export { NextChapterNudge } from './NextChapterNudge';

@@ -69,6 +69,10 @@ export interface GuidedStudySession {
   synthesis_strategy?: string | null;
   /** Unified study plans (#1831, migration v25). NULL for sessions started outside a plan. */
   plan_id?: string | null;
+  /** Visited evidence-trail keys, JSON string[] (#1835, migration v26). */
+  visited_trail_json?: string | null;
+  /** Deferred evidence-trail keys for time-adaptive sessions, JSON string[] (#1842; column reserved by migration v26). */
+  deferred_trail_json?: string | null;
 }
 
 // ── Unified study plans (#1831, migration v25) ────────────────────
