@@ -35,6 +35,7 @@ function planFor(mode: GuidedStudyMode): GuidedStudyPlan {
     evidenceTrail: [],
     betterQuestionPrompt: '',
     conceptChips: [],
+    observationChips: [],
   };
 }
 

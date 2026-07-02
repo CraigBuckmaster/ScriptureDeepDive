@@ -48,6 +48,12 @@ export interface CapturedInputs {
     artifact_generated?: boolean;
     next_chapter_accepted?: boolean;
   };
+  /**
+   * Observation-chip selections (#1839) — chip labels the user marked
+   * on the Observe step. Additive: absent in pre-#1839 stored JSON,
+   * which safeParseCapturedInputs tolerates by design.
+   */
+  observeSelections?: string[];
 }
 
 export function emptyCapturedInputs(): CapturedInputs {

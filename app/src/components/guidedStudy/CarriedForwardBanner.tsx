@@ -22,6 +22,12 @@ export interface CarriedForwardItem {
   sourceStep: GuidedStudyStep;
   label: string;
   content: string;
+  /**
+   * Observation-chip selections (#1839). When present, the expanded
+   * banner renders these as pills; `content` stays as the collapsed
+   * preview / screen-reader text.
+   */
+  chips?: string[];
 }
 
 interface CarriedForwardBannerProps {
@@ -78,9 +84,19 @@ export function CarriedForwardBanner({
           <Text style={[styles.itemLabel, { color: base.textMuted }]}>
             {item.label.toUpperCase()}
           </Text>
-          <Text style={[styles.itemContent, { color: base.textDim }]}>
-            {collapsed ? previewOf(item.content) : item.content}
-          </Text>
+          {item.chips && item.chips.length > 0 && !collapsed ? (
+            <View style={styles.chipRow}>
+              {item.chips.map((chip) => (
+                <View key={chip} style={[styles.chip, { borderColor: `${base.gold}35` }]}>
+                  <Text style={[styles.chipText, { color: base.gold }]}>{chip}</Text>
+                </View>
+              ))}
+            </View>
+          ) : (
+            <Text style={[styles.itemContent, { color: base.textDim }]}>
+              {collapsed ? previewOf(item.content) : item.content}
+            </Text>
+          )}
         </View>
       ))}
     </TouchableOpacity>
@@ -119,5 +135,21 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.body,
     fontSize: 13,
     lineHeight: 20,
+  },
+  chipRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 6,
+    marginTop: 2,
+  },
+  chip: {
+    borderWidth: 1,
+    borderRadius: 16,
+    paddingHorizontal: spacing.sm,
+    paddingVertical: 3,
+  },
+  chipText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 11,
   },
 });

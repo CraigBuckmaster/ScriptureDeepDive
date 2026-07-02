@@ -7,6 +7,7 @@ export type { EvidenceSheetItem } from './EvidencePanelSheet';
 export { EvidenceTrailRow } from './EvidenceTrailRow';
 export { HomeReviewDueCard } from './HomeReviewDueCard';
 export { NextChapterNudge } from './NextChapterNudge';
+export { ObservationChips } from './ObservationChips';
 export { PanelRecommendationRow } from './PanelRecommendationRow';
 export { ResumeBeat } from './ResumeBeat';
 export { SavedIndicator } from './SavedIndicator';

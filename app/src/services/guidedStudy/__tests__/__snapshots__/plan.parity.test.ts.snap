@@ -64,6 +64,20 @@ exports[`plan parity for mode=deep chapter gen_1 1`] = `
   ],
   "mode": "deep",
   "modeLabel": "Deep study",
+  "observationChips": [
+    {
+      "id": "genre:theological-narrative",
+      "label": "Theological Narrative",
+    },
+    {
+      "id": "creation",
+      "label": "Creation",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -238,6 +252,24 @@ exports[`plan parity for mode=deep chapter isa_53 1`] = `
   ],
   "mode": "deep",
   "modeLabel": "Deep study",
+  "observationChips": [
+    {
+      "id": "genre:prophecy",
+      "label": "Prophecy",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+    {
+      "id": "judgment",
+      "label": "Judgment",
+    },
+    {
+      "id": "suffering",
+      "label": "Suffering",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -401,6 +433,16 @@ exports[`plan parity for mode=deep chapter prov_3 1`] = `
   ],
   "mode": "deep",
   "modeLabel": "Deep study",
+  "observationChips": [
+    {
+      "id": "genre:wisdom",
+      "label": "Wisdom",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -556,6 +598,12 @@ exports[`plan parity for mode=deep chapter psa_23 1`] = `
   ],
   "mode": "deep",
   "modeLabel": "Deep study",
+  "observationChips": [
+    {
+      "id": "genre:psalm",
+      "label": "Psalm",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -723,6 +771,16 @@ exports[`plan parity for mode=deep chapter rom_8 1`] = `
   ],
   "mode": "deep",
   "modeLabel": "Deep study",
+  "observationChips": [
+    {
+      "id": "genre:letter",
+      "label": "Letter",
+    },
+    {
+      "id": "spirit",
+      "label": "Spirit",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -885,6 +943,20 @@ exports[`plan parity for mode=devotional chapter gen_1 1`] = `
   ],
   "mode": "devotional",
   "modeLabel": "Devotional",
+  "observationChips": [
+    {
+      "id": "genre:theological-narrative",
+      "label": "Theological Narrative",
+    },
+    {
+      "id": "creation",
+      "label": "Creation",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -1035,6 +1107,24 @@ exports[`plan parity for mode=devotional chapter isa_53 1`] = `
   ],
   "mode": "devotional",
   "modeLabel": "Devotional",
+  "observationChips": [
+    {
+      "id": "genre:prophecy",
+      "label": "Prophecy",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+    {
+      "id": "judgment",
+      "label": "Judgment",
+    },
+    {
+      "id": "suffering",
+      "label": "Suffering",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -1180,6 +1270,16 @@ exports[`plan parity for mode=devotional chapter prov_3 1`] = `
   ],
   "mode": "devotional",
   "modeLabel": "Devotional",
+  "observationChips": [
+    {
+      "id": "genre:wisdom",
+      "label": "Wisdom",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -1317,6 +1417,12 @@ exports[`plan parity for mode=devotional chapter psa_23 1`] = `
   ],
   "mode": "devotional",
   "modeLabel": "Devotional",
+  "observationChips": [
+    {
+      "id": "genre:psalm",
+      "label": "Psalm",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -1458,6 +1564,16 @@ exports[`plan parity for mode=devotional chapter rom_8 1`] = `
   ],
   "mode": "devotional",
   "modeLabel": "Devotional",
+  "observationChips": [
+    {
+      "id": "genre:letter",
+      "label": "Letter",
+    },
+    {
+      "id": "spirit",
+      "label": "Spirit",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -1604,6 +1720,20 @@ exports[`plan parity for mode=quick chapter gen_1 1`] = `
   ],
   "mode": "quick",
   "modeLabel": "Quick pass",
+  "observationChips": [
+    {
+      "id": "genre:theological-narrative",
+      "label": "Theological Narrative",
+    },
+    {
+      "id": "creation",
+      "label": "Creation",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -1748,6 +1878,24 @@ exports[`plan parity for mode=quick chapter isa_53 1`] = `
   ],
   "mode": "quick",
   "modeLabel": "Quick pass",
+  "observationChips": [
+    {
+      "id": "genre:prophecy",
+      "label": "Prophecy",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+    {
+      "id": "judgment",
+      "label": "Judgment",
+    },
+    {
+      "id": "suffering",
+      "label": "Suffering",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -1888,6 +2036,16 @@ exports[`plan parity for mode=quick chapter prov_3 1`] = `
   ],
   "mode": "quick",
   "modeLabel": "Quick pass",
+  "observationChips": [
+    {
+      "id": "genre:wisdom",
+      "label": "Wisdom",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -2019,6 +2177,12 @@ exports[`plan parity for mode=quick chapter psa_23 1`] = `
   ],
   "mode": "quick",
   "modeLabel": "Quick pass",
+  "observationChips": [
+    {
+      "id": "genre:psalm",
+      "label": "Psalm",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -2154,6 +2318,16 @@ exports[`plan parity for mode=quick chapter rom_8 1`] = `
   ],
   "mode": "quick",
   "modeLabel": "Quick pass",
+  "observationChips": [
+    {
+      "id": "genre:letter",
+      "label": "Letter",
+    },
+    {
+      "id": "spirit",
+      "label": "Spirit",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -2301,6 +2475,20 @@ exports[`plan parity for mode=teaching chapter gen_1 1`] = `
   ],
   "mode": "teaching",
   "modeLabel": "Teaching prep",
+  "observationChips": [
+    {
+      "id": "genre:theological-narrative",
+      "label": "Theological Narrative",
+    },
+    {
+      "id": "creation",
+      "label": "Creation",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -2479,6 +2667,24 @@ exports[`plan parity for mode=teaching chapter isa_53 1`] = `
   ],
   "mode": "teaching",
   "modeLabel": "Teaching prep",
+  "observationChips": [
+    {
+      "id": "genre:prophecy",
+      "label": "Prophecy",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+    {
+      "id": "judgment",
+      "label": "Judgment",
+    },
+    {
+      "id": "suffering",
+      "label": "Suffering",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -2653,6 +2859,16 @@ exports[`plan parity for mode=teaching chapter prov_3 1`] = `
   ],
   "mode": "teaching",
   "modeLabel": "Teaching prep",
+  "observationChips": [
+    {
+      "id": "genre:wisdom",
+      "label": "Wisdom",
+    },
+    {
+      "id": "covenant",
+      "label": "Covenant",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -2819,6 +3035,12 @@ exports[`plan parity for mode=teaching chapter psa_23 1`] = `
   ],
   "mode": "teaching",
   "modeLabel": "Teaching prep",
+  "observationChips": [
+    {
+      "id": "genre:psalm",
+      "label": "Psalm",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,
@@ -2997,6 +3219,16 @@ exports[`plan parity for mode=teaching chapter rom_8 1`] = `
   ],
   "mode": "teaching",
   "modeLabel": "Teaching prep",
+  "observationChips": [
+    {
+      "id": "genre:letter",
+      "label": "Letter",
+    },
+    {
+      "id": "spirit",
+      "label": "Spirit",
+    },
+  ],
   "recommendations": [
     {
       "confidence": undefined,

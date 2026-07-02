@@ -125,6 +125,11 @@ export interface GuidedStudyPlan {
   evidenceTrail: GuidedEvidenceTrailItem[];
   betterQuestionPrompt: string;
   conceptChips: GuidedConceptChip[];
+  /**
+   * Selectable Observe-step chips (#1839): concept chips merged with
+   * repeated-word candidates from the chapter text.
+   */
+  observationChips: GuidedConceptChip[];
 }
 
 export interface GuidedStudyPlanInput {
