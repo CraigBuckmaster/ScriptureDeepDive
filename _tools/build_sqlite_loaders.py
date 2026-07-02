@@ -185,10 +185,11 @@ def populate_books(cur):
     books = _load_json(META / 'books.json')
     for b in books:
         cur.execute(
-            'INSERT INTO books (id, name, testament, total_chapters, book_order, is_live, genre, genre_label, genre_guidance) '
-            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            'INSERT INTO books (id, name, testament, total_chapters, book_order, is_live, genre, genre_label, genre_guidance, starter) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (b['id'], b['name'], b['testament'], b['total_chapters'],
-             b['book_order'], b['is_live'], b.get('genre'), b.get('genre_label'), b.get('genre_guidance'))
+             b['book_order'], b['is_live'], b.get('genre'), b.get('genre_label'), b.get('genre_guidance'),
+             b.get('starter', False))
         )
     return len(books)
 
