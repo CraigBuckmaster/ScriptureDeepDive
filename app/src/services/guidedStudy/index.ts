@@ -3,6 +3,7 @@ export { MODE_DEFINITIONS, getModeDefinition } from './modes/definitions';
 export { buildGuidedStudyPlan } from './plan';
 export { buildGuidedStudyNextAction, formatChapterRef, getGuidedStudyStepLabel } from './personal';
 export { buildReviewItemsFromSynthesis, nextIntervalAfter, REVIEW_INTERVAL_DAYS } from './review';
+export { completionPayoffCopy, reviewReturnPhrase } from './reviewCopy';
 export {
   buildCarryForwardItems,
   getCapturedText,
