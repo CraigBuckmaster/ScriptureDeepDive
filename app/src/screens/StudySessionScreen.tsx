@@ -19,7 +19,10 @@ import {
 import { ArrowLeft, MessageSquare } from 'lucide-react-native';
 import {
   CarriedForwardBanner,
+  EncounterCallout,
   EvidencePanelSheet,
+  selectEncounterCallout,
+  type EncounterCalloutData,
   EvidenceTrailRow,
   NextChapterNudge,
   type EvidenceSheetItem,
@@ -45,7 +48,11 @@ import {
   getSectionPanels,
   getVerses,
 } from '../db/content';
-import { getCapturedInputs, getGuidedStudyQuestionForSession } from '../db/userQueries';
+import {
+  getCapturedInputs,
+  getConceptEncounterHistory,
+  getGuidedStudyQuestionForSession,
+} from '../db/userQueries';
 import { setCapturedInputs, setGuidedDeferredTrail, setPreference } from '../db/userMutations';
 import {
   completePlanItemForSession,
@@ -139,6 +146,10 @@ function StudySessionScreen() {
   const [timeBudgetMin, setTimeBudgetMin] = useState<number | null>(null);
   // Trail kinds the plan's previous session deferred (#1842).
   const [priorDeferredKeys, setPriorDeferredKeys] = useState<string[]>([]);
+  // Concept encounter callout (#1843): one per session, dismissible in
+  // component state only.
+  const [encounterCallout, setEncounterCallout] = useState<EncounterCalloutData | null>(null);
+  const [encounterDismissed, setEncounterDismissed] = useState(false);
   const [capturedInputs, setCapturedInputsState] = useState<CapturedInputs>({});
   const captureSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -373,6 +384,38 @@ function StudySessionScreen() {
       cancelled = true;
     };
   }, [planId, sessionId]);
+
+  // Longitudinal study memory (#1843): when this plan's concept chips
+  // intersect prior encounters (total >= 2, with a prior chapter to
+  // point back to), surface at most one callout — highest count wins.
+  useEffect(() => {
+    if (!plan || !chapter) return;
+    const conceptIds = plan.conceptChips.map((chip) => chip.id);
+    if (conceptIds.length === 0) return;
+    let cancelled = false;
+    void getConceptEncounterHistory(conceptIds)
+      .then((rows) => {
+        if (!cancelled) setEncounterCallout(selectEncounterCallout(rows, chapter.id));
+      })
+      .catch((err) =>
+        logger.warn('StudySessionScreen', 'Failed to load concept encounter history', err),
+      );
+    return () => {
+      cancelled = true;
+    };
+  }, [plan, chapter]);
+
+  const openEncounterChapter = useCallback(
+    (chapterId: string) => {
+      const match = chapterId.match(/^(.+)_(\d+)$/);
+      if (!match) return;
+      navigation.navigate('Chapter', {
+        bookId: match[1],
+        chapterNum: parseInt(match[2], 10),
+      });
+    },
+    [navigation],
+  );
 
   // Deferred kinds from last time lead today's trail (#1842).
   const displayTrail = useMemo(
@@ -627,6 +670,13 @@ function StudySessionScreen() {
             <Text style={[styles.heading, { color: base.text }]}>Set the Scene</Text>
             {Object.keys(session.responses).length === 0 && (
               <TimeBudgetSelector value={timeBudgetMin} onChange={setTimeBudgetMin} />
+            )}
+            {encounterCallout && !encounterDismissed && (
+              <EncounterCallout
+                callout={encounterCallout}
+                onOpenChapter={openEncounterChapter}
+                onDismiss={() => setEncounterDismissed(true)}
+              />
             )}
             <SessionReader
               verses={verses}

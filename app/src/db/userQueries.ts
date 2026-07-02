@@ -667,6 +667,43 @@ export async function getRecentGuidedStudyTakeaways(
   );
 }
 
+/**
+ * Encounter history rows for a set of concept ids (#1843), one row per
+ * (concept, chapter). `concept_encounters` (migration v19) carries no
+ * session/response FK — verified against the schema — so the "you
+ * wrote…" excerpt joins to the chapter's most recent non-empty
+ * synthesis takeaway: always the user's own words, never generated.
+ */
+export interface ConceptEncounterHistoryRow {
+  concept_id: string;
+  concept_label: string;
+  chapter_id: string;
+  encounter_count: number;
+  last_seen_at: string;
+  /** User's own prior words from that chapter (synthesis takeaway), if any. */
+  prior_response: string | null;
+}
+
+export async function getConceptEncounterHistory(
+  conceptIds: string[],
+): Promise<ConceptEncounterHistoryRow[]> {
+  if (conceptIds.length === 0) return [];
+  const placeholders = conceptIds.map(() => '?').join(',');
+  return getUserDb().getAllAsync<ConceptEncounterHistoryRow>(
+    `SELECT ce.concept_id, ce.concept_label, ce.chapter_id, ce.encounter_count, ce.last_seen_at,
+            (SELECT syn.takeaway
+             FROM guided_study_synthesis syn
+             JOIN guided_study_sessions gs ON gs.id = syn.session_id
+             WHERE gs.chapter_id = ce.chapter_id AND trim(syn.takeaway) != ''
+             ORDER BY syn.updated_at DESC
+             LIMIT 1) AS prior_response
+     FROM concept_encounters ce
+     WHERE ce.concept_id IN (${placeholders})
+     ORDER BY ce.encounter_count DESC, ce.last_seen_at DESC`,
+    conceptIds,
+  );
+}
+
 export async function getConceptEncounters(limit: number = 30): Promise<ConceptEncounter[]> {
   return getUserDb().getAllAsync<ConceptEncounter>(
     `SELECT * FROM concept_encounters
