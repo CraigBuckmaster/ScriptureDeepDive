@@ -2,6 +2,7 @@ import type { SectionPanel } from '../../types';
 import { resolveGenre } from '../../utils/genre';
 import { getModeDefinition } from './modes/definitions';
 import { buildRepetitionChips, mergeObservationChips } from './observationChips';
+import { applyTimeBudget } from './timeBudget';
 import {
   GUIDED_STUDY_STEPS,
   type ConfidenceLevel,
@@ -368,6 +369,15 @@ export function buildGuidedStudyPlan(input: GuidedStudyPlanInput): GuidedStudyPl
 
   const conceptChips = buildConceptChips(input);
 
+  // #1842 (additive fields only — see issue card): a time budget sorts
+  // the trail by the mode's panelWeights and trims it; no budget passes
+  // the trail through untouched with an empty deferred list.
+  const { trail: budgetedTrail, deferredTrail } = applyTimeBudget(
+    buildEvidenceTrail(mode, allRecommendations),
+    input,
+    def.panelWeights,
+  );
+
   return {
     chapterId: input.chapter.id,
     title: chapterTitle,
@@ -377,10 +387,11 @@ export function buildGuidedStudyPlan(input: GuidedStudyPlanInput): GuidedStudyPl
     stepPrompts,
     legacyPrompts,
     recommendations: allRecommendations.slice(0, def.recommendationLimit),
-    evidenceTrail: buildEvidenceTrail(mode, allRecommendations),
+    evidenceTrail: budgetedTrail,
     betterQuestionPrompt: betterQuestion,
     conceptChips,
     // #1839 (additive field only — see issue card): Observe-step chips.
     observationChips: mergeObservationChips(conceptChips, buildRepetitionChips(input.verses)),
+    deferredTrail,
   };
 }

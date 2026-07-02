@@ -25,6 +25,7 @@ function planFor(mode: GuidedStudyMode): GuidedStudyPlan {
     betterQuestionPrompt: '',
     conceptChips: [],
     observationChips: [],
+    deferredTrail: [],
   };
 }
 

@@ -130,6 +130,12 @@ export interface GuidedStudyPlan {
    * repeated-word candidates from the chapter text.
    */
   observationChips: GuidedConceptChip[];
+  /**
+   * Trail items trimmed away by the time budget (#1842). Empty when no
+   * budget was set. Persisted per session (deferred_trail_json) so the
+   * plan's next session can front-load them.
+   */
+  deferredTrail: GuidedEvidenceTrailItem[];
 }
 
 export interface GuidedStudyPlanInput {
@@ -140,4 +146,9 @@ export interface GuidedStudyPlanInput {
   verses: Verse[];
   bookIntro?: ParsedBookIntro | null;
   mode?: GuidedStudyMode;
+  /**
+   * Minute budget for this session (#1842). Unset = full session,
+   * byte-identical to pre-budget behavior.
+   */
+  timeBudgetMin?: number;
 }

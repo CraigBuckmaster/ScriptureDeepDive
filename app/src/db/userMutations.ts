@@ -511,6 +511,20 @@ export async function markGuidedTrailItemVisited(sessionId: number, key: string)
   });
 }
 
+/**
+ * Persist the session's deferred evidence-trail keys (#1842, column
+ * from migration v26). An empty list clears the column so a session
+ * that returns to Full leaves nothing behind.
+ */
+export async function setGuidedDeferredTrail(sessionId: number, keys: string[]): Promise<void> {
+  await getUserDb().runAsync(
+    `UPDATE guided_study_sessions
+     SET deferred_trail_json = ?, updated_at = datetime('now')
+     WHERE id = ?`,
+    [keys.length > 0 ? JSON.stringify(keys) : null, sessionId],
+  );
+}
+
 export async function upsertGuidedStudyResponse(
   sessionId: number,
   promptKey: string,

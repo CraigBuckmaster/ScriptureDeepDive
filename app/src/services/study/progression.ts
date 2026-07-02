@@ -7,6 +7,7 @@
  */
 import {
   getGuidedStudySession,
+  getLatestDeferredTrailJson,
   getStudyPlanItems,
   getStudyPlans,
 } from '../../db/userQueries';
@@ -67,6 +68,26 @@ export async function percentComplete(planId: string): Promise<number> {
   if (items.length === 0) return 0;
   const done = items.filter((item) => item.completed_at != null).length;
   return Math.round((done / items.length) * 100);
+}
+
+/**
+ * Deferred evidence-trail keys from the plan's most recent prior
+ * session (#1842) — the next session prepends the matching trail
+ * kinds. Empty when nothing was deferred or the JSON is unreadable.
+ */
+export async function getPriorDeferredTrail(
+  planId: string,
+  currentSessionId: number,
+): Promise<string[]> {
+  try {
+    const json = await getLatestDeferredTrailJson(planId, currentSessionId);
+    if (!json) return [];
+    const parsed: unknown = JSON.parse(json);
+    return Array.isArray(parsed) ? parsed.filter((k): k is string => typeof k === 'string') : [];
+  } catch (err) {
+    logger.warn('studyPlans', `getPriorDeferredTrail: bad deferred_trail_json on ${planId}`, err);
+    return [];
+  }
 }
 
 /**

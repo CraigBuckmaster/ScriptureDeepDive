@@ -15,6 +15,7 @@ export {
 export {
   getActivePlan,
   getNextItem,
+  getPriorDeferredTrail,
   percentComplete,
   resumeTarget,
   type ResumeTarget,
