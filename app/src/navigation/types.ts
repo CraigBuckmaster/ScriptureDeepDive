@@ -77,6 +77,9 @@ export type HomeStackParamList = {
 
 export type ExploreStackParamList = {
   ExploreMenu: undefined;
+  // Unified Study System hub (#1832) — root of the tab when the
+  // `study_hub` feature flag is on; ExploreMenu stays the fallback root.
+  StudyHub: undefined;
   GenealogyTree: { personId?: string } | undefined;
   PersonDetail: { personId: string };
   Map: { storyId?: string; placeId?: string; personId?: string };

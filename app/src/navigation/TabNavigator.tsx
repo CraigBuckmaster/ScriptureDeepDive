@@ -1,5 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home, Library, Compass, Search, MessageSquare, MoreHorizontal } from 'lucide-react-native';
+import { Home, Library, GraduationCap, Search, MessageSquare, MoreHorizontal } from 'lucide-react-native';
+import { isFlagEnabled } from '../config/featureFlags';
 import { useSettingsStore } from '../stores';
 import { useTheme } from '../theme';
 import { AmicusStack } from './AmicusStack';
@@ -65,12 +66,17 @@ export function TabNavigator() {
         name="ExploreTab"
         component={ExploreStack}
         options={{
-          tabBarLabel: 'Explore',
-          tabBarIcon: ({ color, size }) => <Compass color={color} size={size} />,
+          tabBarLabel: 'Study',
+          tabBarIcon: ({ color, size }) => <GraduationCap color={color} size={size} />,
         }}
         listeners={({ navigation }) => ({
           tabPress: () => {
-            navigation.navigate('ExploreTab', { screen: 'ExploreMenu' });
+            // Route names are stable (#1832): the tab renames to Study but the
+            // stack/routes stay ExploreTab/ExploreMenu. The hub only becomes
+            // the tab-press target behind the study_hub flag.
+            navigation.navigate('ExploreTab', {
+              screen: isFlagEnabled('study_hub') ? 'StudyHub' : 'ExploreMenu',
+            });
           },
         })}
       />
