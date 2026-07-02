@@ -3,11 +3,17 @@
  * reading plans into the unified study-plan tables (#1831).
  *
  * Runs once at startup after migrations, guarded by the `app_meta`
- * key `legacy_plans_migrated = '1'`. Every `reading_plans` row becomes
- * a `study_plans` row (plan_type 'custom', source_id = legacy id,
- * default_mode 'quick'); its `chapters_json` days become
+ * key `legacy_plans_migrated = '1'`. Every STARTED `reading_plans` row
+ * (one with plan_progress rows — `startPlan` seeds a row per day)
+ * becomes a `study_plans` row (plan_type 'custom', source_id = legacy
+ * id, default_mode 'quick'); its `chapters_json` days become
  * `study_plan_items` rows (kind 'reading', one per chapter); and
  * `plan_progress.completed_at` is copied onto the matching items.
+ *
+ * Untouched curated seeds (migration v6 ships 10 to every install) do
+ * NOT migrate — otherwise every fresh install would "have plans",
+ * polluting getActivePlan()/the hub hero and making the first-run
+ * state (#1837) unreachable. See the #1837 issue comment.
  *
  * The legacy tables are never dropped or altered — they stay readable
  * until #1838 retires the write paths. Idempotency comes from three
@@ -62,8 +68,18 @@ export async function migrateLegacyPlans(): Promise<void> {
 
   const legacyPlans = await db.getAllAsync<ReadingPlan>('SELECT * FROM reading_plans');
 
+  let migratedCount = 0;
   await db.withTransactionAsync(async () => {
     for (const legacy of legacyPlans) {
+      const progress = await db.getAllAsync<PlanProgress>(
+        'SELECT * FROM plan_progress WHERE plan_id = ?',
+        [legacy.id],
+      );
+      // Only plans the user actually started carry over. Untouched
+      // curated seeds stay legacy-only (readable until #1838).
+      if (progress.length === 0) continue;
+      migratedCount++;
+
       const planId = `legacy_${legacy.id}`;
       await db.runAsync(
         `INSERT OR IGNORE INTO study_plans
@@ -72,10 +88,6 @@ export async function migrateLegacyPlans(): Promise<void> {
         [planId, legacy.id, legacy.name],
       );
 
-      const progress = await db.getAllAsync<PlanProgress>(
-        'SELECT * FROM plan_progress WHERE plan_id = ?',
-        [legacy.id],
-      );
       const completedByDay = new Map<number, string>();
       for (const p of progress) {
         if (p.completed_at) completedByDay.set(p.day_num, p.completed_at);
@@ -110,5 +122,8 @@ export async function migrateLegacyPlans(): Promise<void> {
     );
   });
 
-  logger.info('studyPlans', `migrateLegacyPlans: seeded ${legacyPlans.length} legacy plan(s)`);
+  logger.info(
+    'studyPlans',
+    `migrateLegacyPlans: seeded ${migratedCount} started legacy plan(s) of ${legacyPlans.length}`,
+  );
 }
