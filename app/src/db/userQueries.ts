@@ -255,6 +255,10 @@ export async function getStudyPlans(includeArchived = false): Promise<StudyPlan[
   );
 }
 
+export async function getStudyPlan(planId: string): Promise<StudyPlan | null> {
+  return getUserDb().getFirstAsync<StudyPlan>('SELECT * FROM study_plans WHERE id = ?', [planId]);
+}
+
 export async function getStudyPlanItems(planId: string): Promise<StudyPlanItem[]> {
   return getUserDb().getAllAsync<StudyPlanItem>(
     'SELECT * FROM study_plan_items WHERE plan_id = ? ORDER BY item_num',

@@ -25,6 +25,12 @@ export interface StudySessionParam {
   chapterNum: number;
   initialStep?: GuidedStudyStep;
   verseNum?: number;
+  /**
+   * Unified study plan the session belongs to (#1833). When set,
+   * completing the session also completes/links the matching
+   * study_plan_items row.
+   */
+  planId?: string;
 }
 
 export type ReadStackParamList = {
@@ -80,6 +86,11 @@ export type ExploreStackParamList = {
   // Unified Study System hub (#1832) — root of the tab when the
   // `study_hub` feature flag is on; ExploreMenu stays the fallback root.
   StudyHub: undefined;
+  // One-decision plan picker (#1833), presented as a modal sheet.
+  PlanPicker: { segment?: 'book' | 'journey' | 'topic' } | undefined;
+  // Unified plan detail (#1833). Distinct from the legacy PlanDetail
+  // (reading plans) on Home/More stacks — do not conflate.
+  StudyPlanDetail: { planId: string };
   GenealogyTree: { personId?: string } | undefined;
   PersonDetail: { personId: string };
   Map: { storyId?: string; placeId?: string; personId?: string };

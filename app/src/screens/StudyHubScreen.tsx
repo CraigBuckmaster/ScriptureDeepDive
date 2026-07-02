@@ -13,6 +13,7 @@ import React, { useCallback, useRef, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect, useNavigation, useScrollToTop } from '@react-navigation/native';
+import { BeginSomethingNew, type PlanPickerSegment } from '../components/study/BeginSomethingNew';
 import { ContinueHero } from '../components/study/ContinueHero';
 import {
   LibrarySections,
@@ -65,13 +66,26 @@ function StudyHubScreen() {
   );
 
   const handleResume = useCallback(() => {
-    if (!target) return;
+    if (!target || !plan) return;
     navigation.navigate('StudySession', {
       bookId: target.bookId,
       chapterNum: target.chapterNum,
+      planId: plan.id,
       ...(target.step ? { initialStep: target.step } : {}),
     });
-  }, [navigation, target]);
+  }, [navigation, plan, target]);
+
+  const handleOpenPlanDetail = useCallback(() => {
+    if (!plan) return;
+    navigation.navigate('StudyPlanDetail', { planId: plan.id });
+  }, [navigation, plan]);
+
+  const handlePickSegment = useCallback(
+    (segment: PlanPickerSegment) => {
+      navigation.navigate('PlanPicker', { segment });
+    },
+    [navigation],
+  );
 
   const currentReview =
     dueItems.length > 0 ? dueItems[reviewIndex % dueItems.length] : null;
@@ -125,9 +139,15 @@ function StudyHubScreen() {
               target={target}
               estimateMin={estimateMin}
               onResume={handleResume}
+              onOpenDetail={handleOpenPlanDetail}
             />
           </View>
         )}
+
+        {/* ── Begin something new (#1833) ─── */}
+        <View style={styles.block}>
+          <BeginSomethingNew onPick={handlePickSegment} />
+        </View>
 
         {/* ── Review card — one due prompt at a time ─── */}
         {currentReview && (

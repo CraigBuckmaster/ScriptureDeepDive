@@ -27,3 +27,12 @@ export {
   type WeeklyRhythm,
 } from './rhythm';
 export { migrateLegacyPlans } from './migrateLegacyPlans';
+export {
+  completePlanItemForSession,
+  getDefaultStudyMode,
+  LAST_MODE_PREF_KEY,
+  resolveDefaultMode,
+  startStudyPlan,
+  type StartedStudyPlan,
+  type StartStudyPlanArgs,
+} from './adoption';
