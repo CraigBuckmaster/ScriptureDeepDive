@@ -9,7 +9,7 @@
  * With no active plan the hero region renders nothing (the first-run
  * empty state is #1837; the plan picker row is #1833).
  */
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect, useNavigation, useScrollToTop } from '@react-navigation/native';
@@ -30,7 +30,12 @@ import { useExploreImages } from '../hooks/useExploreImages';
 import { usePremium } from '../hooks/usePremium';
 import { useReviewQueue } from '../hooks/useReviewQueue';
 import type { ScreenNavProp } from '../navigation/types';
-import { getWeeklyRhythm, startStudyPlan, type WeeklyRhythm } from '../services/study';
+import {
+  getWeeklyRhythm,
+  maybeInsertReviewNudge,
+  startStudyPlan,
+  type WeeklyRhythm,
+} from '../services/study';
 import { fontFamily, spacing, useTheme } from '../theme';
 import { logger } from '../utils/logger';
 
@@ -75,6 +80,15 @@ function StudyHubScreen() {
       void reloadRhythm();
     }, [reloadPlan, reloadReviews, reloadRhythm]),
   );
+
+  // Review-due nudge (#1841): when the hub sees due items, drop at
+  // most one quiet in-app notification per calendar day (the service
+  // dedupes; repeated focus/reloads are no-ops).
+  useEffect(() => {
+    if (dueItems.length > 0) {
+      void maybeInsertReviewNudge(dueItems.length);
+    }
+  }, [dueItems.length]);
 
   const handleResume = useCallback(() => {
     if (!target || !plan) return;

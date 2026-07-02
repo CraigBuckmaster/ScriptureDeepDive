@@ -16,6 +16,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { Bell, CheckCheck } from 'lucide-react-native';
+import { isFlagEnabled } from '../config/featureFlags';
 import type { ScreenNavProp } from '../navigation/types';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
@@ -34,11 +35,18 @@ function NotificationFeedScreen() {
       if (!item.is_read) {
         markRead(item.id);
       }
-      // Navigate to content if target info is available
-      // For now, just mark as read — navigation targets will be added
-      // as content types are defined
+      // Review-due nudge (#1841): land on the Study tab hub. Route
+      // names are stable, so flag-off falls back to ExploreMenu.
+      if (item.target_type === 'study_hub') {
+        navigation.getParent()?.navigate('ExploreTab', {
+          screen: isFlagEnabled('study_hub') ? 'StudyHub' : 'ExploreMenu',
+        });
+        return;
+      }
+      // Other target types: just mark as read — navigation targets
+      // will be added as content types are defined.
     },
-    [markRead],
+    [markRead, navigation],
   );
 
   const renderItem = useCallback(

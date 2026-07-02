@@ -723,6 +723,30 @@ export async function recordConceptEncounter(
   );
 }
 
+// ── In-app notifications (write) ──────────────────────────────────
+
+export interface InsertAppNotificationArgs {
+  id: string;
+  type: string;
+  title: string;
+  body: string;
+  targetId?: string | null;
+  targetType?: string | null;
+}
+
+/**
+ * Insert a row into the in-app notification feed. OR IGNORE on the
+ * caller-supplied id, so deterministic ids double as dedupe keys
+ * (e.g. the daily review nudge, #1841).
+ */
+export async function insertAppNotification(args: InsertAppNotificationArgs): Promise<void> {
+  await getUserDb().runAsync(
+    `INSERT OR IGNORE INTO app_notifications (id, type, title, body, target_id, target_type)
+     VALUES (?, ?, ?, ?, ?, ?)`,
+    [args.id, args.type, args.title, args.body, args.targetId ?? null, args.targetType ?? null],
+  );
+}
+
 export async function flagContent(
   contentId: string,
   contentType: string,

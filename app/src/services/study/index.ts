@@ -27,6 +27,7 @@ export {
   type WeeklyRhythm,
 } from './rhythm';
 export { migrateLegacyPlans } from './migrateLegacyPlans';
+export { maybeInsertReviewNudge, REVIEW_NUDGE_TYPE, reviewNudgeBody } from './reviewNudge';
 export {
   completePlanItemForSession,
   getDefaultStudyMode,
