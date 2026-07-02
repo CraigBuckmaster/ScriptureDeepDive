@@ -32,6 +32,7 @@ import {
   StudySessionStepper,
   SynthesisFreeRecap,
   SynthesisPremiumDraft,
+  TimeBudgetSelector,
 } from '../components/guidedStudy';
 import { UpgradePrompt } from '../components/UpgradePrompt';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
@@ -45,8 +46,12 @@ import {
   getVerses,
 } from '../db/content';
 import { getCapturedInputs, getGuidedStudyQuestionForSession } from '../db/userQueries';
-import { setCapturedInputs, setPreference } from '../db/userMutations';
-import { completePlanItemForSession, LAST_MODE_PREF_KEY } from '../services/study';
+import { setCapturedInputs, setGuidedDeferredTrail, setPreference } from '../db/userMutations';
+import {
+  completePlanItemForSession,
+  getPriorDeferredTrail,
+  LAST_MODE_PREF_KEY,
+} from '../services/study';
 import { useBooks, useGuidedStudySession, usePremium } from '../hooks';
 import { completeGuidedStudySession } from '../db/userMutations';
 import {
@@ -55,6 +60,7 @@ import {
   completionPayoffCopy,
   formatChapterRef,
   getPromptBinding,
+  prependDeferredKinds,
   setCapturedText,
   stepsWithCarryForward,
   type CapturedTextRef,
@@ -129,6 +135,10 @@ function StudySessionScreen() {
   const [captureSavedTick, setCaptureSavedTick] = useState(0);
   // Resume beat (#1836): step to announce when resuming mid-session.
   const [resumeBeatStep, setResumeBeatStep] = useState<GuidedStudyStep | null>(null);
+  // Time budget (#1842): null = Full (today's behavior, default).
+  const [timeBudgetMin, setTimeBudgetMin] = useState<number | null>(null);
+  // Trail kinds the plan's previous session deferred (#1842).
+  const [priorDeferredKeys, setPriorDeferredKeys] = useState<string[]>([]);
   const [capturedInputs, setCapturedInputsState] = useState<CapturedInputs>({});
   const captureSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -332,8 +342,43 @@ function StudySessionScreen() {
       verses,
       bookIntro,
       mode: studyMode,
+      ...(timeBudgetMin != null ? { timeBudgetMin } : {}),
     });
-  }, [book, chapter, sections, chapterPanels, verses, bookIntro, studyMode]);
+  }, [book, chapter, sections, chapterPanels, verses, bookIntro, studyMode, timeBudgetMin]);
+
+  // Persist this session's deferred trail keys (#1842) so the plan's
+  // next session can front-load them. An empty list clears the column.
+  useEffect(() => {
+    if (sessionId == null || !plan) return;
+    void setGuidedDeferredTrail(
+      sessionId,
+      plan.deferredTrail.map((item) => item.key),
+    ).catch((err) =>
+      logger.warn('StudySessionScreen', 'Failed to persist deferred trail', err),
+    );
+  }, [sessionId, plan]);
+
+  // Load the previous plan session's deferrals once per session (#1842).
+  useEffect(() => {
+    if (!planId || sessionId == null) return;
+    let cancelled = false;
+    void getPriorDeferredTrail(planId, sessionId)
+      .then((keys) => {
+        if (!cancelled) setPriorDeferredKeys(keys);
+      })
+      .catch((err) =>
+        logger.warn('StudySessionScreen', 'Failed to load prior deferred trail', err),
+      );
+    return () => {
+      cancelled = true;
+    };
+  }, [planId, sessionId]);
+
+  // Deferred kinds from last time lead today's trail (#1842).
+  const displayTrail = useMemo(
+    () => (plan ? prependDeferredKinds(plan.evidenceTrail, priorDeferredKeys) : []),
+    [plan, priorDeferredKeys],
+  );
 
   const synthesisStrategy = useMemo(
     () =>
@@ -580,6 +625,9 @@ function StudySessionScreen() {
         {session.currentStep === 'scene' && (
           <View style={styles.section}>
             <Text style={[styles.heading, { color: base.text }]}>Set the Scene</Text>
+            {Object.keys(session.responses).length === 0 && (
+              <TimeBudgetSelector value={timeBudgetMin} onChange={setTimeBudgetMin} />
+            )}
             <SessionReader
               verses={verses}
               initiallyExpanded={readerExpanded}
@@ -662,10 +710,10 @@ function StudySessionScreen() {
             <Text style={[styles.sectionIntro, { color: base.textDim }]}>
               Open the panels in this order to build context before conclusions.
             </Text>
-            {plan.evidenceTrail.length > 0 ? (
+            {displayTrail.length > 0 ? (
               <>
                 <View style={styles.trailList}>
-                  {plan.evidenceTrail.map((item, index) => (
+                  {displayTrail.map((item, index) => (
                     <EvidenceTrailRow
                       key={item.key}
                       item={item}
@@ -677,10 +725,10 @@ function StudySessionScreen() {
                 </View>
                 <Text style={[styles.trailProgress, { color: base.textMuted }]}>
                   {
-                    plan.evidenceTrail.filter((item) => session.visitedTrail.includes(item.key))
+                    displayTrail.filter((item) => session.visitedTrail.includes(item.key))
                       .length
                   }{' '}
-                  of {plan.evidenceTrail.length} opened
+                  of {displayTrail.length} opened
                 </Text>
               </>
             ) : (

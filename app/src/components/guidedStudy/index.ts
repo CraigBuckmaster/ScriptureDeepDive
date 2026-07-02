@@ -16,4 +16,5 @@ export { StudyModeSelector } from './StudyModeSelector';
 export { StudySessionCTA } from './StudySessionCTA';
 export { StudySessionStepper } from './StudySessionStepper';
 export { SynthesisFreeRecap } from './SynthesisFreeRecap';
+export { TimeBudgetSelector } from './TimeBudgetSelector';
 export { SynthesisPremiumDraft } from './SynthesisPremiumDraft';

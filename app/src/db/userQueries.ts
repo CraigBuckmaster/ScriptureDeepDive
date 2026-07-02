@@ -266,6 +266,24 @@ export async function getStudyPlanItems(planId: string): Promise<StudyPlanItem[]
   );
 }
 
+/**
+ * The most recent OTHER session of a plan that deferred trail items
+ * (#1842). Returns the raw deferred_trail_json, or null.
+ */
+export async function getLatestDeferredTrailJson(
+  planId: string,
+  excludeSessionId: number,
+): Promise<string | null> {
+  const row = await getUserDb().getFirstAsync<{ deferred_trail_json: string | null }>(
+    `SELECT deferred_trail_json FROM guided_study_sessions
+     WHERE plan_id = ? AND id != ? AND deferred_trail_json IS NOT NULL
+     ORDER BY updated_at DESC
+     LIMIT 1`,
+    [planId, excludeSessionId],
+  );
+  return row?.deferred_trail_json ?? null;
+}
+
 // ── Reading Stats ─────────────────────────────────────────────────
 
 export interface ReadingStats {

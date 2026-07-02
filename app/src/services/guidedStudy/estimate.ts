@@ -19,6 +19,14 @@ function minutesForWords(words: number, wpm: number): number {
   return Math.max(1, Math.ceil(words / wpm));
 }
 
+/**
+ * Reading-minutes estimate for a single panel's content_json, using
+ * the same heuristics as the depth estimate above (#1842). Minimum 1.
+ */
+export function estimatePanelMinutes(contentJson: string): number {
+  return minutesForWords(countWords(stripJsonNoise(contentJson)), PANEL_WORDS_PER_MINUTE);
+}
+
 export function getStudyDepthEstimate(
   verses: Verse[],
   sectionPanels: SectionPanel[],

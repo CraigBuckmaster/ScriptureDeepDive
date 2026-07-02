@@ -1,4 +1,5 @@
-export { getStudyDepthEstimate } from './estimate';
+export { estimatePanelMinutes, getStudyDepthEstimate } from './estimate';
+export { applyTimeBudget, estimateTrailItemMinutes, prependDeferredKinds } from './timeBudget';
 export { MODE_DEFINITIONS, getModeDefinition } from './modes/definitions';
 export { buildGuidedStudyPlan } from './plan';
 export { buildGuidedStudyNextAction, formatChapterRef, getGuidedStudyStepLabel } from './personal';
