@@ -169,6 +169,23 @@ export function buildCarryForwardItems(
     if (!content) continue;
     items.push({ sourceStep: spec.ref.step, label: spec.label, content });
   }
+
+  // Observation-chip selections (#1839) carry into Explore/Synthesize
+  // alongside typed text, rendered as a chip list by the banner.
+  if (step === 'explore' || step === 'synthesize') {
+    const selections = (captured.observeSelections ?? []).filter(
+      (s) => typeof s === 'string' && s.trim().length > 0,
+    );
+    if (selections.length > 0) {
+      items.push({
+        sourceStep: 'observe',
+        label: 'What you marked',
+        content: selections.join(' · '),
+        chips: selections,
+      });
+    }
+  }
+
   return items;
 }
 

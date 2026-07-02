@@ -43,6 +43,7 @@ function planFor(mode: GuidedStudyMode, title = 'Romans 8'): GuidedStudyPlan {
     evidenceTrail: [],
     betterQuestionPrompt: '',
     conceptChips: [],
+    observationChips: [],
   };
 }
 

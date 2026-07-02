@@ -23,6 +23,7 @@ import {
   EvidenceTrailRow,
   NextChapterNudge,
   type EvidenceSheetItem,
+  ObservationChips,
   PanelRecommendationRow,
   ResumeBeat,
   SavedIndicator,
@@ -231,6 +232,36 @@ function StudySessionScreen() {
   const updateSceneInput = useCallback(
     (key: SceneInputKey, value: string) => updateCapturedField({ step: 'scene', key }, value),
     [updateCapturedField],
+  );
+
+  // Observation chips (#1839): toggle a chip label in/out of
+  // observeSelections with the same debounced persist + saved tick the
+  // text captures use.
+  const toggleObserveSelection = useCallback(
+    (label: string) => {
+      const sid = sessionId;
+      setCapturedInputsState((prev) => {
+        const current = prev.observeSelections ?? [];
+        const next: CapturedInputs = {
+          ...prev,
+          observeSelections: current.includes(label)
+            ? current.filter((l) => l !== label)
+            : [...current, label],
+        };
+        if (sid != null) {
+          if (captureSaveTimerRef.current) clearTimeout(captureSaveTimerRef.current);
+          captureSaveTimerRef.current = setTimeout(() => {
+            void setCapturedInputs(sid, next)
+              .then(() => setCaptureSavedTick((tick) => tick + 1))
+              .catch((err) =>
+                logger.warn('StudySessionScreen', 'Failed to persist observation chips', err),
+              );
+          }, 500);
+        }
+        return next;
+      });
+    },
+    [sessionId],
   );
 
   // Remember the chosen mode so the one-decision plan picker (#1833)
@@ -614,6 +645,11 @@ function StudySessionScreen() {
                 />
               </View>
             ))}
+            <ObservationChips
+              chips={plan.observationChips}
+              selected={capturedInputs.observeSelections ?? []}
+              onToggle={toggleObserveSelection}
+            />
             <PrimaryButton label="Explore study panels" onPress={() => goStep('explore')} />
           </View>
         )}

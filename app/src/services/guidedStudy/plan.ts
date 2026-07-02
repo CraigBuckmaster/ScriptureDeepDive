@@ -1,6 +1,7 @@
 import type { SectionPanel } from '../../types';
 import { resolveGenre } from '../../utils/genre';
 import { getModeDefinition } from './modes/definitions';
+import { buildRepetitionChips, mergeObservationChips } from './observationChips';
 import {
   GUIDED_STUDY_STEPS,
   type ConfidenceLevel,
@@ -365,6 +366,8 @@ export function buildGuidedStudyPlan(input: GuidedStudyPlanInput): GuidedStudyPl
     });
   }
 
+  const conceptChips = buildConceptChips(input);
+
   return {
     chapterId: input.chapter.id,
     title: chapterTitle,
@@ -376,6 +379,8 @@ export function buildGuidedStudyPlan(input: GuidedStudyPlanInput): GuidedStudyPl
     recommendations: allRecommendations.slice(0, def.recommendationLimit),
     evidenceTrail: buildEvidenceTrail(mode, allRecommendations),
     betterQuestionPrompt: betterQuestion,
-    conceptChips: buildConceptChips(input),
+    conceptChips,
+    // #1839 (additive field only — see issue card): Observe-step chips.
+    observationChips: mergeObservationChips(conceptChips, buildRepetitionChips(input.verses)),
   };
 }
