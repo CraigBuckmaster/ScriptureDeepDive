@@ -37,6 +37,15 @@ const LEGACY_PLANS: ReadingPlan[] = [
     total_days: 1,
     chapters_json: JSON.stringify([{ day: 1, chapters: ['1_samuel_16', '1_samuel_17'] }]),
   },
+  {
+    // Curated seed the user never started (no plan_progress rows) —
+    // must NOT migrate, or every fresh install "has plans" (#1837).
+    id: 'untouched_seed',
+    name: 'Untouched Seed',
+    description: 'Shipped with the app, never started.',
+    total_days: 1,
+    chapters_json: JSON.stringify([{ day: 1, chapters: ['genesis_1'] }]),
+  },
 ];
 
 const LEGACY_PROGRESS: PlanProgress[] = [
@@ -105,7 +114,7 @@ beforeEach(() => {
 });
 
 describe('migrateLegacyPlans (#1831)', () => {
-  it('seeds one custom study plan per legacy reading plan', async () => {
+  it('seeds one custom study plan per STARTED legacy reading plan', async () => {
     await migrateLegacyPlans();
 
     expect(mockDb.studyPlans.size).toBe(2);
@@ -117,6 +126,14 @@ describe('migrateLegacyPlans (#1831)', () => {
     )?.[0] as string;
     expect(insertPlanSql).toContain("'custom'");
     expect(insertPlanSql).toContain("'quick'");
+  });
+
+  it('skips curated seeds the user never started (no plan_progress rows)', async () => {
+    await migrateLegacyPlans();
+    expect(mockDb.studyPlans.has('legacy_untouched_seed')).toBe(false);
+    expect(mockDb.planItems.has('legacy_untouched_seed:1')).toBe(false);
+    // Guard still set — the seed is done even when plans are skipped.
+    expect(mockDb.appMeta.get('legacy_plans_migrated')).toBe('1');
   });
 
   it('expands chapters_json into reading items and copies day completion onto them', async () => {
@@ -184,7 +201,8 @@ describe('migrateLegacyPlans (#1831)', () => {
           chapters_json: JSON.stringify([{ day: 1, chapters: ['???', 'genesis_1'] }]),
         },
       ],
-      [],
+      // Started (has a progress row) so the plan qualifies for migration.
+      [{ plan_id: 'broken', day_num: 1, completed_at: null }],
     );
 
     await migrateLegacyPlans();
