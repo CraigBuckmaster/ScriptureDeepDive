@@ -27,6 +27,8 @@ import type {
   GuidedStudySession,
   GuidedStudySynthesis,
   GuidedStudyTakeawaySummary,
+  StudyPlan,
+  StudyPlanItem,
 } from '../types';
 import {
   emptyCapturedInputs,
@@ -234,6 +236,30 @@ export async function getPlanProgress(planId: string): Promise<PlanProgress[]> {
 export async function getActivePlanId(): Promise<string | null> {
   const id = await getPreference('active_plan');
   return id && id.length > 0 ? id : null;
+}
+
+// ── Unified Study Plans (read) — #1831, migration v25 ─────────────
+
+/**
+ * All study plans, newest first. Archived plans are excluded unless
+ * `includeArchived` is set.
+ */
+export async function getStudyPlans(includeArchived = false): Promise<StudyPlan[]> {
+  if (includeArchived) {
+    return getUserDb().getAllAsync<StudyPlan>(
+      'SELECT * FROM study_plans ORDER BY created_at DESC, id DESC',
+    );
+  }
+  return getUserDb().getAllAsync<StudyPlan>(
+    'SELECT * FROM study_plans WHERE archived_at IS NULL ORDER BY created_at DESC, id DESC',
+  );
+}
+
+export async function getStudyPlanItems(planId: string): Promise<StudyPlanItem[]> {
+  return getUserDb().getAllAsync<StudyPlanItem>(
+    'SELECT * FROM study_plan_items WHERE plan_id = ? ORDER BY item_num',
+    [planId],
+  );
 }
 
 // ── Reading Stats ─────────────────────────────────────────────────

@@ -54,15 +54,16 @@ describe('migration v24 — captured_inputs columns on guided_study_sessions', (
     expect(mockWithTransactionAsync).not.toHaveBeenCalled();
   });
 
-  it('applies exactly one transaction when only versions 1..23 have run (v24 is the only pending one)', async () => {
+  it('runs v24 (and any later migrations) when only versions 1..23 have run', async () => {
     jest.doMock('react-native', () => ({ Platform: { OS: 'ios' } }));
     jest.resetModules();
-    const { initUserDatabase } = require('@/db/userDatabase');
+    const { MIGRATION_COUNT, initUserDatabase } = require('@/db/userDatabase');
     mockGetAllAsync.mockResolvedValueOnce(
       Array.from({ length: 23 }, (_, i) => ({ version: i + 1 })),
     );
     await initUserDatabase();
-    expect(mockWithTransactionAsync).toHaveBeenCalledTimes(1);
+    // v24 plus whatever has been appended since — one transaction each.
+    expect(mockWithTransactionAsync).toHaveBeenCalledTimes(MIGRATION_COUNT - 23);
   });
 
   it("v24's SQL adds the three captured-inputs columns to guided_study_sessions", async () => {

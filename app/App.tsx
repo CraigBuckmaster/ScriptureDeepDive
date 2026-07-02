@@ -29,12 +29,14 @@ import { pruneEvents } from './src/services/analytics';
 import { checkAndScheduleReengagement } from './src/services/reengagement';
 import { rescheduleIfStale } from './src/services/notifications';
 import { initializePurchases, syncPremiumStatus } from './src/services/purchases';
+import { migrateLegacyPlans } from './src/services/study';
 import { flushQueue } from './src/services/syncQueue';
 import { RootNavigator } from './src/navigation';
 import type { TabParamList } from './src/navigation/types';
 import { useNotificationRouter } from './src/hooks/useNotificationRouter';
 import { ErrorBoundary } from './src/components/ErrorBoundary';
 import { closeAllTranslationDbs } from './src/db/translationManager';
+import { logger } from './src/utils/logger';
 import { ContentUpdateProvider } from './src/providers/ContentUpdateProvider';
 import { AmicusConsentProvider } from './src/services/amicus/consent';
 import type { PromotePeekResult } from './src/services/amicus';
@@ -208,6 +210,14 @@ function AppShell() {
  */
 async function hydrateAppState(): Promise<void> {
   await initUserDatabase(); // User DB (user.db) — never replaced, migrated
+  // One-time seed of legacy reading plans into the unified study-plan
+  // tables (#1831). Best-effort: on failure the app_meta guard stays
+  // unset and the seed retries on the next launch.
+  try {
+    await migrateLegacyPlans();
+  } catch (err) {
+    logger.error('studyPlans', 'migrateLegacyPlans failed — will retry next launch', err);
+  }
   // Bind an anonymous identifier to Sentry so crashes from a single
   // install roll up under one user. Best-effort — if it fails we
   // just don't get per-user grouping this session.

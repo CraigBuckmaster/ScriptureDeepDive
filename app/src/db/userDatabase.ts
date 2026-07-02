@@ -772,6 +772,34 @@ const MIGRATIONS: Migration[] = [
       ALTER TABLE guided_study_sessions ADD COLUMN synthesis_strategy TEXT;
     `,
   },
+  {
+    version: 25,
+    description:
+      'Unified study plans (#1831) — study_plans + study_plan_items, plan_id on guided_study_sessions. Legacy reading_plans/plan_progress stay untouched (read-only).',
+    sql: `
+      CREATE TABLE IF NOT EXISTS study_plans (
+        id TEXT PRIMARY KEY,
+        plan_type TEXT NOT NULL,          -- 'book' | 'journey' | 'topical' | 'custom'
+        source_id TEXT NOT NULL,          -- book_id | journey_id | topic_id
+        title TEXT NOT NULL,
+        default_mode TEXT NOT NULL,       -- GuidedStudyMode
+        created_at TEXT NOT NULL,
+        archived_at TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS study_plan_items (
+        plan_id TEXT NOT NULL REFERENCES study_plans(id),
+        item_num INTEGER NOT NULL,
+        kind TEXT NOT NULL,               -- 'session' | 'reading'
+        ref_json TEXT NOT NULL,           -- {"bookId","chapterNum","verseStart"?,"stopId"?}
+        session_id TEXT,
+        completed_at TEXT,
+        PRIMARY KEY (plan_id, item_num)
+      );
+
+      ALTER TABLE guided_study_sessions ADD COLUMN plan_id TEXT;
+    `,
+  },
 ];
 
 /**

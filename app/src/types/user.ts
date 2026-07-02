@@ -67,6 +67,56 @@ export interface GuidedStudySession {
   mode_artifact_json?: string | null;
   /** Phase 2.2 (#1731). NULL for pre-migration rows. */
   synthesis_strategy?: string | null;
+  /** Unified study plans (#1831, migration v25). NULL for sessions started outside a plan. */
+  plan_id?: string | null;
+}
+
+// ── Unified study plans (#1831, migration v25) ────────────────────
+
+export const STUDY_PLAN_TYPES = ['book', 'journey', 'topical', 'custom'] as const;
+
+export type StudyPlanType = (typeof STUDY_PLAN_TYPES)[number];
+
+export const STUDY_PLAN_ITEM_KINDS = ['session', 'reading'] as const;
+
+export type StudyPlanItemKind = (typeof STUDY_PLAN_ITEM_KINDS)[number];
+
+export interface StudyPlan {
+  id: string;
+  plan_type: StudyPlanType;
+  /** book_id | journey_id | topic_id | legacy reading_plan id (for plan_type 'custom'). */
+  source_id: string;
+  title: string;
+  /** GuidedStudyMode key ('quick' | 'deep' | 'teaching' | 'devotional'). */
+  default_mode: string;
+  created_at: string;
+  archived_at: string | null;
+}
+
+/** Parsed shape of `study_plan_items.ref_json`. */
+export interface StudyPlanItemRef {
+  bookId: string;
+  chapterNum: number;
+  verseStart?: number;
+  stopId?: number;
+}
+
+export interface StudyPlanItem {
+  plan_id: string;
+  item_num: number;
+  kind: StudyPlanItemKind;
+  ref_json: string;
+  session_id: string | null;
+  completed_at: string | null;
+}
+
+/**
+ * Unsaved plan item as produced by the `services/study/planTemplates`
+ * builders — `item_num` is assigned by `createStudyPlan` on insert.
+ */
+export interface StudyPlanItemDraft {
+  kind: StudyPlanItemKind;
+  ref: StudyPlanItemRef;
 }
 
 export interface GuidedStudyResponse {

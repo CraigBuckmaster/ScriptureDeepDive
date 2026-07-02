@@ -5,6 +5,7 @@
  * via getUserDb().
  */
 
+import * as Crypto from 'expo-crypto';
 import { serializeAmicusChapterRef, type AmicusEntryPoint } from '../services/amicus/context';
 import { emitAmicusUsageChanged } from '../services/amicus/usageEvents';
 import {
@@ -14,7 +15,7 @@ import {
 } from '../services/guidedStudy/capturedInputs';
 import { logger } from '../utils/logger';
 import { nextIntervalAfter } from '../services/guidedStudy/review';
-import type { GuidedStudyStep } from '../types';
+import type { GuidedStudyStep, StudyPlanItemDraft, StudyPlanType } from '../types';
 import { getUserDb } from './userDatabase';
 import type { ReadingPlan } from './userQueries';
 
@@ -191,6 +192,78 @@ export async function abandonPlan(planId: string): Promise<void> {
     await getUserDb().runAsync(
       "INSERT OR REPLACE INTO user_preferences (key, value) VALUES ('active_plan', '')",
     );
+  });
+}
+
+// ── Unified Study Plans (write) — #1831, migration v25 ───────────
+
+export interface CreateStudyPlanArgs {
+  /** Optional stable id — generated (UUID v4) when omitted. */
+  id?: string;
+  planType: StudyPlanType;
+  sourceId: string;
+  title: string;
+  defaultMode: string;
+  items: StudyPlanItemDraft[];
+}
+
+/**
+ * Insert a study plan and its items in one transaction.
+ * Items receive sequential `item_num` values starting at 1.
+ * Returns the plan id.
+ */
+export async function createStudyPlan(args: CreateStudyPlanArgs): Promise<string> {
+  const planId = args.id ?? Crypto.randomUUID();
+  await getUserDb().withTransactionAsync(async () => {
+    await getUserDb().runAsync(
+      `INSERT INTO study_plans (id, plan_type, source_id, title, default_mode, created_at)
+       VALUES (?, ?, ?, ?, ?, datetime('now'))`,
+      [planId, args.planType, args.sourceId, args.title, args.defaultMode],
+    );
+    for (let i = 0; i < args.items.length; i++) {
+      const item = args.items[i];
+      await getUserDb().runAsync(
+        'INSERT INTO study_plan_items (plan_id, item_num, kind, ref_json) VALUES (?, ?, ?, ?)',
+        [planId, i + 1, item.kind, JSON.stringify(item.ref)],
+      );
+    }
+  });
+  return planId;
+}
+
+export async function completeStudyPlanItem(planId: string, itemNum: number): Promise<void> {
+  await getUserDb().runAsync(
+    `UPDATE study_plan_items SET completed_at = datetime('now')
+     WHERE plan_id = ? AND item_num = ? AND completed_at IS NULL`,
+    [planId, itemNum],
+  );
+}
+
+export async function archiveStudyPlan(planId: string): Promise<void> {
+  await getUserDb().runAsync(
+    "UPDATE study_plans SET archived_at = datetime('now') WHERE id = ? AND archived_at IS NULL",
+    [planId],
+  );
+}
+
+/**
+ * Attach a guided study session to a plan item (both directions:
+ * `study_plan_items.session_id` and `guided_study_sessions.plan_id`).
+ */
+export async function linkSessionToPlanItem(
+  planId: string,
+  itemNum: number,
+  sessionId: number,
+): Promise<void> {
+  await getUserDb().withTransactionAsync(async () => {
+    await getUserDb().runAsync(
+      'UPDATE study_plan_items SET session_id = ? WHERE plan_id = ? AND item_num = ?',
+      [String(sessionId), planId, itemNum],
+    );
+    await getUserDb().runAsync('UPDATE guided_study_sessions SET plan_id = ? WHERE id = ?', [
+      planId,
+      sessionId,
+    ]);
   });
 }
 
