@@ -19,6 +19,17 @@ export const FEATURE_FLAGS = {
    * When false, premium users get the structured-form synthesis path.
    */
   GUIDED_STUDY_AMICUS_SYNTHESIS: false,
+
+  /**
+   * Unified Study System (#1830): makes StudyHubScreen the root of the
+   * Explore/Study tab instead of ExploreMenuScreen. Before flipping true
+   * (#1838, only after on-device verification of the whole spine):
+   *   - Continue hero resumes the active plan into StudySession correctly.
+   *   - Review card cycles due items and completes them.
+   *   - Flag-off behavior is byte-for-byte identical to master.
+   * When false, the Explore tab renders ExploreMenuScreen exactly as today.
+   */
+  study_hub: false,
 } as const;
 
 /** Compile-time feature flag key (distinct from the env-driven EnvFeatureFlag). */

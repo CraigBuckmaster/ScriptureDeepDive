@@ -1,6 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
+import { isFlagEnabled } from '../config/featureFlags';
 import ExploreMenuScreen from '../screens/ExploreMenuScreen';
+import StudyHubScreen from '../screens/StudyHubScreen';
 import { useTheme } from '../theme';
 import type { ExploreStackParamList } from './types';
 import { lazySuspense } from './lazySuspense';
@@ -63,12 +65,16 @@ export function ExploreStack() {
 
   return (
     <Stack.Navigator
+      // study_hub (#1832) is a compile-time flag, so the initial route is
+      // fixed for the lifetime of the process — no remount concerns.
+      initialRouteName={isFlagEnabled('study_hub') ? 'StudyHub' : 'ExploreMenu'}
       screenOptions={{
         headerShown: false,
         cardStyle: { backgroundColor: base.bg },
         gestureEnabled: true,
       }}
     >
+      <Stack.Screen name="StudyHub" component={StudyHubScreen} />
       <Stack.Screen name="ExploreMenu" component={ExploreMenuScreen} />
       <Stack.Screen
         name="GenealogyTree"

@@ -3,10 +3,11 @@
  *   1. Jump-to category pills (horizontal scroll)
  *   2. Start Here banner (new users, chaptersRead < 5)
  *   3. Recommended for You with editorial RecommendedCards
- *   4. Horizontal feature carousels with image cards + count CTAs
+ *   4. Library shelves (components/study/LibrarySections — extracted in
+ *      #1832 so the Study hub renders the same sections)
  *   5. Gold separators between sections
  *
- * Part of Epic #1071 (#1077).
+ * Part of Epic #1071 (#1077); flag-off root of the Study tab (#1830).
  */
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
@@ -19,99 +20,16 @@ import { useTheme, spacing, fontFamily } from '../theme';
 import { usePremium } from '../hooks/usePremium';
 import { useExploreRecommendations } from '../hooks/useExploreRecommendations';
 import { useExploreImages } from '../hooks/useExploreImages';
-import { FeatureCard, CARD_WIDTH, type FeatureCardData } from '../components/FeatureCard';
 import { RecommendedCard } from '../components/RecommendedCard';
 import { StartHereBanner } from '../components/StartHereBanner';
 import { UpgradePrompt } from '../components/UpgradePrompt';
-import { JourneyBrowseSection } from '../components/JourneyBrowseSection';
 import {
-  ProphecyChainCard,
-  DebatePreviewList,
-  WordStudyPreviewList,
-  LifeTopicGrid,
-  FullWidthImageCard,
-  GlossySectionWrapper,
-  PROPHECY_CHAIN_CARD_WIDTH,
-} from '../components/explore';
-import { useProphecyChains } from '../hooks/useProphecyChains';
+  LibrarySections,
+  LIBRARY_SECTIONS,
+  PREMIUM_SCREENS,
+} from '../components/study/LibrarySections';
 import { getReadingStats, getPreference, setPreference } from '../db/user';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
-
-// ── Section data ───────────────────────────────────────────────
-
-interface FeatureSection {
-  id: string;
-  label: string;
-  subtitle: string;
-  features: FeatureCardData[];
-}
-
-const PREMIUM_SCREENS: Record<string, string> = {
-  Concordance: 'Concordance Search',
-  ContentLibrary: 'Content Library',
-  ThreadBrowse: 'Cross-Reference Threading',
-  HowWeGotTheBibleLanding: 'How We Got The Bible',
-};
-
-const SECTIONS: FeatureSection[] = [
-  {
-    id: 'biblical-world', label: 'The Biblical World', subtitle: 'Where, when, and who',
-    features: [
-      { title: 'People',    subtitle: '282 people on a zoomable family tree with bios',                color: '#e86040', screen: 'GenealogyTree' }, // data-color: intentional
-      { title: 'Timeline',  subtitle: '543 events from creation to revelation',                        color: '#70b8e8', screen: 'Timeline' }, // data-color: intentional
-      { title: 'Map',       subtitle: '28 journeys with route overlays across 73 places',              color: '#81C784', screen: 'Map' }, // data-color: intentional
-      { title: 'Periods',   subtitle: '12 eras from creation to the apostolic age',                    color: '#8a6e3a', screen: 'Periods', premium: true }, // data-color: intentional
-      { title: 'Story',     subtitle: '8 acts in God\'s redemptive narrative',                          color: '#c8a040', screen: 'RedemptiveArc', premium: true }, // data-color: intentional
-    ],
-  },
-  {
-    id: 'themes', label: 'Themes & Connections', subtitle: 'Trace ideas across Scripture',
-    features: [
-      { title: 'Guided Journeys',    subtitle: '60 journeys \u2014 people, concepts, themes',             color: '#bfa050', screen: 'JourneyBrowse' }, // data-color: intentional
-      { title: 'Topical Index',      subtitle: 'What does the Bible say about...?',                    color: '#c8a040', screen: 'TopicBrowse' }, // data-color: intentional
-      { title: 'Prophecy',           subtitle: '50 chains \u2014 OT to NT fulfillment',                color: '#e8a070', screen: 'ProphecyBrowse' }, // data-color: intentional
-      { title: 'Threads',            subtitle: 'One idea across 31 chains',                            color: '#9090e0', screen: 'ThreadBrowse', premium: true }, // data-color: intentional
-      { title: 'Gospel Harmony',     subtitle: 'Parallel accounts across four Gospels',                color: '#70d098', screen: 'HarmonyBrowse' }, // data-color: intentional
-    ],
-  },
-  {
-    id: 'journeys', label: 'Journeys', subtitle: 'Follow a life or trace an idea across Scripture',
-    features: [], // Custom renderer — uses JourneyBrowseSection instead of FeatureCards
-  },
-  {
-    id: 'language', label: 'Language & Reference', subtitle: 'Original words and definitions',
-    features: [
-      { title: 'Word Studies', subtitle: 'Hebrew & Greek deep dives',                                  color: '#e890b8', screen: 'WordStudyBrowse' }, // data-color: intentional
-      { title: 'Concordance',  subtitle: 'Every occurrence of a word',                                 color: '#70b8e8', screen: 'Concordance', premium: true }, // data-color: intentional
-      { title: 'Dictionary',   subtitle: 'Definitions for every biblical term',                         color: '#c090e0', screen: 'DictionaryBrowse' }, // data-color: intentional
-    ],
-  },
-  {
-    id: 'scholarly', label: 'Scholarly Analysis', subtitle: 'Academic perspectives & debate',
-    features: [
-      { title: 'Scholars',             subtitle: 'Browse all 54 by tradition',                            color: '#a0b8d0', screen: 'ScholarBrowse' }, // data-color: intentional
-      { title: 'Debates',              subtitle: '303 topics where scholars disagree',                    color: '#d08080', screen: 'DebateBrowse' }, // data-color: intentional
-      { title: 'Difficult Passages',   subtitle: '53 hard texts with multi-view responses',               color: '#FFB74D', screen: 'DifficultPassagesBrowse' }, // data-color: intentional
-      { title: 'How We Got The Bible', subtitle: 'Canon, manuscripts, translations, and the books Jude quoted', color: '#c89858', screen: 'HowWeGotTheBibleLanding', premium: true }, // data-color: intentional
-      { title: 'Content Library',      subtitle: 'Discourse, manuscripts & more',                          color: '#b8a0d0', screen: 'ContentLibrary', premium: true }, // data-color: intentional
-    ],
-  },
-  {
-    id: 'life', label: 'Life & Faith', subtitle: 'Biblical guidance for everyday life',
-    features: [
-      { title: 'Life Topics', subtitle: 'Practical guidance from Scripture',                             color: '#81C784', screen: 'LifeTopics' }, // data-color: intentional
-    ],
-  },
-  {
-    id: 'deep-dive', label: 'Deep Dive', subtitle: 'Advanced study tools',
-    features: [
-      { title: 'Hermeneutic Lenses', subtitle: 'Read Scripture through 8 interpretive frameworks',     color: '#BA68C8', screen: 'LensBrowse' }, // data-color: intentional
-      { title: 'Archaeology',        subtitle: 'Real artifacts that illuminate the text',                color: '#b07d4f', screen: 'ArchaeologyBrowse' }, // data-color: intentional
-      { title: 'Time-Travel Reader', subtitle: 'Augustine, Luther & modern scholars',                   color: '#8a6a3a', screen: 'TimeTravelBrowse' }, // data-color: intentional
-      { title: 'Grammar',            subtitle: 'Verb forms & syntax in plain English',                  color: '#7a9ab0', screen: 'GrammarBrowse' }, // data-color: intentional
-    ],
-  },
-];
 
 // ── Component ──────────────────────────────────────────────────
 
@@ -123,7 +41,6 @@ function ExploreMenuScreen() {
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
   const { recommendations, bookName } = useExploreRecommendations();
   const imageRegistry = useExploreImages();
-  const { chains: prophecyChains } = useProphecyChains();
 
   const [activeJump, setActiveJump] = useState<string | null>(null);
   const [chaptersRead, setChaptersRead] = useState<number | null>(null);
@@ -137,7 +54,7 @@ function ExploreMenuScreen() {
   // ── Preload initial card images on mount ───────────────────
   useEffect(() => {
     const urls: string[] = [];
-    for (const section of SECTIONS.slice(0, 2)) {
+    for (const section of LIBRARY_SECTIONS.slice(0, 2)) {
       for (const f of section.features.slice(0, 3)) {
         const fi = imageRegistry[f.screen];
         if (fi?.images?.[0]) urls.push(fi.images[0].url);
@@ -171,237 +88,12 @@ function ExploreMenuScreen() {
     setActiveJump((prev) => prev === sectionId ? null : sectionId);
   }, []);
 
-  // ── Image lookup (flat registry keyed by screen name) ──────
   const getScreenImages = useCallback((screenName: string) => {
     return imageRegistry[screenName];
   }, [imageRegistry]);
 
-  const handleProphecyPress = useCallback((chainId: string) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    navigation.navigate('ProphecyDetail' as any, { chainId } as any);
-  }, [navigation]);
-
-  const handleDebatePress = useCallback((debateId: string) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    navigation.navigate('DebateDetail' as any, { topicId: debateId } as any);
-  }, [navigation]);
-
-  const handleWordStudyPress = useCallback((id: string) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    navigation.navigate('WordStudyDetail' as any, { wordId: id } as any);
-  }, [navigation]);
-
-  const handleLifeCategoryPress = useCallback((categoryId: string) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    navigation.navigate('LifeTopics' as any, { categoryId } as any);
-  }, [navigation]);
-
   const showStartHere = chaptersRead !== null && chaptersRead < 5 && !startHereDismissed;
   const showRecommendations = !showStartHere && recommendations.length > 0;
-  const filteredSections = activeJump ? SECTIONS.filter((s) => s.id === activeJump) : SECTIONS;
-
-  // ── Per-section content renderer ────────────────────────────
-  const renderSectionContent = (section: FeatureSection) => {
-    switch (section.id) {
-      case 'journeys':
-        return <JourneyBrowseSection />;
-      case 'themes':
-        return (
-          <View style={styles.sectionGap}>
-            {prophecyChains.length > 0 && (
-              <ScrollView
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                contentContainerStyle={styles.carouselContent}
-                decelerationRate="fast"
-                snapToInterval={PROPHECY_CHAIN_CARD_WIDTH + spacing.sm}
-              >
-                {prophecyChains.slice(0, 4).map((chain) => (
-                  <ProphecyChainCard
-                    key={chain.id}
-                    chain={chain}
-                    onPress={() => handleProphecyPress(chain.id)}
-                  />
-                ))}
-              </ScrollView>
-            )}
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={styles.carouselContent}
-              decelerationRate="fast"
-            >
-              {section.features.map((f, cardIndex) => {
-                const imgData = getScreenImages(f.screen);
-                return (
-                  <FeatureCard
-                    key={f.screen}
-                    feature={f}
-                    onPress={() => handleNavigate(f.screen)}
-                    isPremium={isPremium}
-                    images={imgData?.images}
-                    count={imgData?.count}
-                    noun={imgData?.noun}
-                    onImagePress={handleDeepLink}
-                    staggerMs={cardIndex * 1200}
-                    compact
-                  />
-                );
-              })}
-            </ScrollView>
-          </View>
-        );
-      case 'scholarly': {
-        // Debates renders as the preview strip above; everything else flows
-        // into the horizontal carousel below. Denylist (vs. allowlist) so
-        // future cards added to SECTIONS surface automatically — same
-        // pattern as the 'language' case for WordStudyBrowse.
-        const carouselFeatures = section.features.filter(
-          (f) => f.screen !== 'DebateBrowse',
-        );
-        const totalDebates = getScreenImages('DebateBrowse')?.count ?? undefined;
-        return (
-          <View style={styles.sectionGap}>
-            <DebatePreviewList
-              onDebatePress={handleDebatePress}
-              onSeeAll={() => handleNavigate('DebateBrowse')}
-              totalCount={totalDebates ?? undefined}
-            />
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={styles.carouselContent}
-              decelerationRate="fast"
-            >
-              {carouselFeatures.map((f, cardIndex) => {
-                const imgData = getScreenImages(f.screen);
-                return (
-                  <FeatureCard
-                    key={f.screen}
-                    feature={f}
-                    onPress={() => handleNavigate(f.screen)}
-                    isPremium={isPremium}
-                    images={imgData?.images}
-                    count={imgData?.count}
-                    noun={imgData?.noun}
-                    onImagePress={handleDeepLink}
-                    staggerMs={cardIndex * 1200}
-                    compact
-                  />
-                );
-              })}
-            </ScrollView>
-          </View>
-        );
-      }
-      case 'language': {
-        const splitFeatures = section.features.filter(
-          (f) => f.screen !== 'WordStudyBrowse',
-        );
-        const totalWords = getScreenImages('WordStudyBrowse')?.count ?? undefined;
-        return (
-          <View style={styles.sectionGap}>
-            <WordStudyPreviewList
-              onWordPress={handleWordStudyPress}
-              onSeeAll={() => handleNavigate('WordStudyBrowse')}
-              totalCount={totalWords ?? undefined}
-            />
-            <View style={styles.row3}>
-              {splitFeatures.map((f, i) => {
-                const imgData = getScreenImages(f.screen);
-                return (
-                  <View key={f.screen} style={styles.rowCell}>
-                    <FeatureCard
-                      feature={f}
-                      onPress={() => handleNavigate(f.screen)}
-                      isPremium={isPremium}
-                      images={imgData?.images}
-                      count={imgData?.count}
-                      noun={imgData?.noun}
-                      onImagePress={handleDeepLink}
-                      staggerMs={i * 1200}
-                      compact
-                    />
-                  </View>
-                );
-              })}
-            </View>
-          </View>
-        );
-      }
-      case 'life': {
-        const lifeImage = getScreenImages('LifeTopics');
-        return (
-          <View style={styles.sectionGap}>
-            <FullWidthImageCard
-              title="Life Topics"
-              subtitle="Practical guidance from Scripture"
-              image={lifeImage?.images?.[0] ?? null}
-              count={lifeImage?.count ?? null}
-              noun={lifeImage?.noun}
-              onPress={() => handleNavigate('LifeTopics')}
-            />
-            <LifeTopicGrid onCategoryPress={handleLifeCategoryPress} />
-          </View>
-        );
-      }
-      case 'deep-dive':
-        return (
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={styles.carouselContent}
-            decelerationRate="fast"
-            snapToInterval={CARD_WIDTH + spacing.sm}
-          >
-            {section.features.map((f, cardIndex) => {
-              const imgData = getScreenImages(f.screen);
-              return (
-                <FeatureCard
-                  key={f.screen}
-                  feature={f}
-                  onPress={() => handleNavigate(f.screen)}
-                  isPremium={isPremium}
-                  images={imgData?.images}
-                  count={imgData?.count}
-                  noun={imgData?.noun}
-                  onImagePress={handleDeepLink}
-                  staggerMs={cardIndex * 1200}
-                />
-              );
-            })}
-          </ScrollView>
-        );
-      case 'biblical-world':
-      default:
-        return (
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={styles.carouselContent}
-            decelerationRate="fast"
-            snapToInterval={CARD_WIDTH + spacing.sm}
-          >
-            {section.features.map((f, cardIndex) => {
-              const imgData = getScreenImages(f.screen);
-              return (
-                <FeatureCard
-                  key={f.screen}
-                  feature={f}
-                  onPress={() => handleNavigate(f.screen)}
-                  isPremium={isPremium}
-                  images={imgData?.images}
-                  count={imgData?.count}
-                  noun={imgData?.noun}
-                  onImagePress={handleDeepLink}
-                  staggerMs={cardIndex * 1200}
-                />
-              );
-            })}
-          </ScrollView>
-        );
-    }
-  };
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
@@ -415,7 +107,7 @@ function ExploreMenuScreen() {
           contentContainerStyle={styles.pillScroll}
           style={styles.pillContainer}
         >
-          {SECTIONS.map((s) => (
+          {LIBRARY_SECTIONS.map((s) => (
             <TouchableOpacity
               key={s.id}
               onPress={() => handleJumpTo(s.id)}
@@ -471,18 +163,14 @@ function ExploreMenuScreen() {
           </View>
         )}
 
-        {/* ── Sections with varied layouts ─── */}
-        {filteredSections.map((section, sectionIndex) => (
-          <View key={section.id}>
-            <GlossySectionWrapper sectionIndex={sectionIndex}>
-              <View style={styles.section}>
-                <Text style={[styles.sectionLabel, { color: base.gold }]}>{section.label}</Text>
-                <Text style={[styles.sectionSubtitle, { color: base.textMuted }]}>{section.subtitle}</Text>
-                {renderSectionContent(section)}
-              </View>
-            </GlossySectionWrapper>
-          </View>
-        ))}
+        {/* ── Library shelves (shared with the Study hub) ─── */}
+        <LibrarySections
+          imageRegistry={imageRegistry}
+          isPremium={isPremium}
+          onNavigate={handleNavigate}
+          onDeepLink={handleDeepLink}
+          filterSectionId={activeJump}
+        />
 
         {/* Show all link when filtered */}
         {activeJump && (
@@ -529,18 +217,8 @@ const styles = StyleSheet.create({
   recsLabel: { fontFamily: fontFamily.uiMedium, fontSize: 10, letterSpacing: 1, marginBottom: 2 },
   recsSubtitle: { fontFamily: fontFamily.ui, fontSize: 10, marginBottom: spacing.sm },
 
-  // Sections
-  section: { marginBottom: spacing.md },
-  sectionLabel: { fontFamily: fontFamily.displayMedium, fontSize: 13, letterSpacing: 0.5, marginBottom: 2 },
-  sectionSubtitle: { fontFamily: fontFamily.ui, fontSize: 11, marginBottom: spacing.sm },
-
   // Carousels
   carouselContent: { gap: spacing.sm },
-
-  // Split/grid rows
-  sectionGap: { gap: spacing.md },
-  row3: { flexDirection: 'row', gap: spacing.sm },
-  rowCell: { flex: 1 },
 
   // Show all
   showAllBtn: {
