@@ -15,12 +15,12 @@ interface Props {
 }
 
 /** Map difficulty level to dot color. */
-function getDifficultyColor(level: number, base: { gold: string; textMuted: string; danger: string }): string {
+function getDifficultyColor(level: number, base: { gold: string; textMuted: string; danger: string; warning: string }): string {
   switch (level) {
     case 1: return base.textMuted;
     case 2: return base.gold + '90';
     case 3: return base.gold;
-    case 4: return '#e8a040'; // data-color: intentional
+    case 4: return base.warning;
     case 5: return base.danger;
     default: return base.textMuted;
   }

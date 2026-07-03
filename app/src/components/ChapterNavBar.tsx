@@ -14,7 +14,7 @@ import { View, Text, TouchableOpacity, Modal, StyleSheet, TouchableWithoutFeedba
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft, ChevronLeft, ChevronRight, Info, Volume2, Check, Layers } from 'lucide-react-native';
 import { lightImpact, selectionFeedback } from '../utils/haptics';
-import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET, overlay } from '../theme';
 import { TRANSLATIONS } from '../db/translationRegistry';
 import type { ChapterMode } from '../stores/settingsStore';
 import { CompactDropdown, type DropdownOption } from './CompactDropdown';
@@ -281,7 +281,7 @@ const styles = StyleSheet.create({
     borderRadius: radii.md,
     minWidth: 200,
     overflow: 'hidden',
-    shadowColor: '#000', // overlay-color: intentional (RN shadow must be #000 on iOS)
+    shadowColor: overlay.black, // RN shadow must stay black on iOS
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,

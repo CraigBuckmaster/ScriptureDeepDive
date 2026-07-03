@@ -15,7 +15,7 @@
 
 import React, { memo, useMemo } from 'react';
 import { GeoJSONSource, Layer } from '@maplibre/maplibre-react-native';
-import { eras } from '../../theme';
+import { eras, mapColors } from '../../theme';
 import type { MapStory } from '../../types';
 import { safeParse } from '../../utils/logger';
 
@@ -125,7 +125,7 @@ function closeRing(coords: number[][]): number[][] {
 }
 
 export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
-  const eraColor = eras[story.era] ?? '#bfa050'; // data-color: intentional (gold fallback for unknown era — MapLibre GL)
+  const eraColor = eras[story.era] ?? mapColors.storyGold;
 
   const regionsFC = useMemo(() => {
     const regions = safeParse<RawRegion[]>(story.regions_json, []);
@@ -178,7 +178,7 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           filter={['!', ['get', 'dashed']] as any}
           style={{
-            lineColor: '#bfa050', // data-color: intentional (gold story path — MapLibre GL)
+            lineColor: mapColors.storyGold,
             lineWidth: 2,
             lineCap: 'round',
             lineJoin: 'round',
@@ -190,7 +190,7 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           filter={['get', 'dashed'] as any}
           style={{
-            lineColor: '#bfa050', // data-color: intentional (gold dashed path — MapLibre GL)
+            lineColor: mapColors.storyGold,
             lineWidth: 2,
             lineCap: 'round',
             lineJoin: 'round',
@@ -215,8 +215,8 @@ export const StoryOverlays = memo(function StoryOverlays({ story }: Props) {
             textRotate: ['get', 'bearing'] as any,
             textRotationAlignment: 'map',
             textPitchAlignment: 'map',
-            textColor: '#bfa050',   // data-color: intentional (gold arrowhead — MapLibre GL)
-            textHaloColor: '#1a1610', // data-color: intentional (dark halo against map bg — MapLibre GL)
+            textColor: mapColors.storyGold,
+            textHaloColor: mapColors.darkHalo,
             textHaloWidth: 1.5,
             textAllowOverlap: true,
             textIgnorePlacement: true,

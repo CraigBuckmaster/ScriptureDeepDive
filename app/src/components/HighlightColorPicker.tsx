@@ -5,16 +5,16 @@
 
 import React from 'react';
 import { Alert, View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, overlay, userHighlightColors } from '../theme';
 import { selectionFeedback } from '../utils/haptics';
 
 export const HIGHLIGHT_COLORS = [
-  { name: 'gold', hex: '#bfa050', label: 'Key verses' }, // data-color: intentional
-  { name: 'blue', hex: '#5b8fb9', label: 'Commands' }, // data-color: intentional
-  { name: 'green', hex: '#5fa87a', label: 'Prayers' }, // data-color: intentional
-  { name: 'purple', hex: '#8b7cb8', label: 'Study later' }, // data-color: intentional
-  { name: 'coral', hex: '#c47a6a', label: 'Prophecy' }, // data-color: intentional
-  { name: 'teal', hex: '#5ba8a0', label: 'Themes' }, // data-color: intentional
+  { name: 'gold', hex: userHighlightColors.gold, label: 'Key verses' },
+  { name: 'blue', hex: userHighlightColors.blue, label: 'Commands' },
+  { name: 'green', hex: userHighlightColors.green, label: 'Prayers' },
+  { name: 'purple', hex: userHighlightColors.purple, label: 'Study later' },
+  { name: 'coral', hex: userHighlightColors.coral, label: 'Prophecy' },
+  { name: 'teal', hex: userHighlightColors.teal, label: 'Themes' },
 ];
 
 interface Props {
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     borderWidth: 3,
   },
   checkmark: {
-    color: '#fff', // overlay-color: intentional (white checkmark on color swatch)
+    color: overlay.white, // white checkmark on color swatch — mode-invariant
     fontSize: 14,
   },
   removeButton: {

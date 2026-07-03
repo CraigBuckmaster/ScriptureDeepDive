@@ -17,17 +17,8 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { X, Plus, Check, Folder } from 'lucide-react-native';
 import { getCollections, createCollection } from '../db/user';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, collectionPresetColors } from '../theme';
 import type { StudyCollection } from '../types';
-
-const PRESET_COLORS = [
-  '#bfa050', // data-color: intentional (gold)
-  '#70b8e8', // data-color: intentional (blue)
-  '#70d098', // data-color: intentional (green)
-  '#e890b8', // data-color: intentional (pink)
-  '#c090e0', // data-color: intentional (purple)
-  '#e8a070', // data-color: intentional (orange)
-];
 
 interface Props {
   visible: boolean;
@@ -41,7 +32,7 @@ export function CollectionPicker({ visible, onClose, currentCollectionId, onSele
   const [collections, setCollections] = useState<StudyCollection[]>([]);
   const [showCreate, setShowCreate] = useState(false);
   const [newName, setNewName] = useState('');
-  const [newColor, setNewColor] = useState(PRESET_COLORS[0]);
+  const [newColor, setNewColor] = useState(collectionPresetColors[0]);
 
   useEffect(() => {
     if (visible) {
@@ -92,7 +83,7 @@ export function CollectionPicker({ visible, onClose, currentCollectionId, onSele
                 autoFocus
               />
               <View style={styles.colorRow}>
-                {PRESET_COLORS.map((color) => (
+                {collectionPresetColors.map((color) => (
                   <TouchableOpacity
                     key={color}
                     onPress={() => setNewColor(color)}

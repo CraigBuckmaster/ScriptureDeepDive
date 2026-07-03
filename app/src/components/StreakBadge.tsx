@@ -24,7 +24,7 @@ function StreakBadge({ streak }: Props) {
   return (
     <View style={styles.wrapper}>
       {/* Subtle gold glow halo rendered behind the badge. */}
-      <View style={[styles.glow, { backgroundColor: base.gold }]} pointerEvents="none" />
+      <View style={[styles.glow, { backgroundColor: base.gold, shadowColor: base.gold }]} pointerEvents="none" />
       <TouchableOpacity
         onPress={() => shareStreak(streak)}
         activeOpacity={0.7}
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     opacity: 0.12,
     // iOS shadow for the glow halo. RN shadows must originate from a solid
     // background, so this semi-opaque pill provides the substrate.
-    shadowColor: '#bfa050', // overlay-color: intentional (gold halo)
+    // shadowColor (base.gold) is applied inline so it tracks the theme.
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.8,
     shadowRadius: 8,

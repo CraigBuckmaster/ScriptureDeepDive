@@ -6,7 +6,8 @@
  *   const { base } = useTheme();  // theme-aware colors
  */
 
-export { panels, scholars, eras, eraNames, eraPillLabels, categoryColors, categories, severity, families, prophecyCategories, roles, testament, timelineSvg, churchEras, churchEraLabels } from './colors';
+export { panels, scholars, eras, eraNames, eraPillLabels, categoryColors, categories, severity, families, prophecyCategories, roles, testament, timelineSvg, churchEras, churchEraLabels, overlay, brand, userHighlightColors, collectionPresetColors } from './colors';
+export { mapColors, placeTypeColors, testamentEra } from './mapColors';
 export type { PanelColors } from './colors';
 export { fontFamily, typography, scaledTypography, buildTypography } from './typography';
 export type { TypographyPreset, TypographyMap, BuiltTypography } from './typography';

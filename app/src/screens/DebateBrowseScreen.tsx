@@ -21,19 +21,6 @@ import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 type Nav = ScreenNavProp<'Explore', 'DebateBrowse'>;
 
-/**
- * Per-category accent colors kept as-is — they're used on the card's left
- * border + tradition dots to preserve at-a-glance category differentiation.
- * The filter bar itself uses the monochrome gold pills now (#1359).
- */
-const CATEGORY_COLORS: Record<string, string> = {
-  theological: '#64B5F6', // data-color: intentional
-  ethical: '#81C784', // data-color: intentional
-  historical: '#FFB74D', // data-color: intentional
-  textual: '#BA68C8', // data-color: intentional
-  interpretive: '#4FC3F7', // data-color: intentional
-};
-
 function getPositionTraditions(topic: DebateTopicSummary): string[] {
   try {
     const positions = JSON.parse(topic.positions_json || '[]');
@@ -48,7 +35,7 @@ function getPositionTraditions(topic: DebateTopicSummary): string[] {
 }
 
 function DebateBrowseScreen() {
-  const { base } = useTheme();
+  const { base, debateCategories } = useTheme();
   const navigation = useNavigation<Nav>();
   const {
     topics,
@@ -69,7 +56,9 @@ function DebateBrowseScreen() {
 
   const renderCard = useCallback(
     ({ item }: { item: DebateTopicSummary }) => {
-      const catColor = CATEGORY_COLORS[item.category] || base.textDim;
+      // Card left border + tradition dots keep per-category accents for
+      // at-a-glance differentiation; filter bar uses monochrome gold (#1359).
+      const catColor = debateCategories[item.category] || base.textDim;
       const traditions = getPositionTraditions(item);
 
       return (
