@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react-native';
 import { createRef } from 'react';
-import type { ScrollView } from 'react-native';
+import type { ReaderScrollable } from '@/components/ChapterVerseList';
 
 const mockPlay = jest.fn();
 const mockStop = jest.fn();
@@ -37,7 +37,7 @@ function createOptions(overrides = {}) {
   return {
     verses: mockVerses as any,
     sections: mockSections as any,
-    scrollRef: createRef<ScrollView>(),
+    scrollRef: createRef<ReaderScrollable>(),
     sectionYMap: { current: {} as Record<string, number> },
     verseYMap: { current: {} as Record<number, number> },
     bookId: 'genesis',
