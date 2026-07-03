@@ -46,6 +46,8 @@ import { RelatedContentCarousel } from './RelatedContentCarousel';
 import { MapChip } from './map/MapChip';
 import { PanelInfoSheet } from './PanelInfoSheet';
 import RelatedLifeTopics from './RelatedLifeTopics';
+import { GenreBanner } from './GenreBanner';
+import { ContextGuardBanner } from './guidedStudy';
 import { GoldSeparator } from './GoldSeparator';
 
 export interface ChapterMeta {
@@ -81,6 +83,10 @@ interface Props {
   header?: React.ReactElement | null;
   /** Post-list chrome (next-chapter hint) — rendered for the footer item. */
   footer?: React.ReactElement | null;
+  /** Context-guard CTA (D4 #1874) — navigate to the suggested chapter. */
+  onReadContext?: (guard: import('../types').ProofTextGuard) => void;
+  /** Guided-study CTA renderer (D4 #1874) — element built by ChapterScreen. */
+  renderStudyCta?: () => React.ReactElement | null;
   onScroll?: (e: NativeSyntheticEvent<NativeScrollEvent>) => void;
   contentContainerStyle?: StyleProp<ViewStyle>;
 }
@@ -93,6 +99,8 @@ const ChapterVerseList = forwardRef<ReaderScrollable, Props>(function ChapterVer
     chapterMeta,
     header,
     footer,
+    onReadContext,
+    renderStudyCta,
     onScroll,
     contentContainerStyle,
   }: Props,
@@ -143,9 +151,21 @@ const ChapterVerseList = forwardRef<ReaderScrollable, Props>(function ChapterVer
         case 'chapterHeader':
           return header ?? null;
 
+        case 'contextGuard':
+          return (
+            <ContextGuardBanner
+              guard={item.guard}
+              onReadContext={() => onReadContext?.(item.guard)}
+            />
+          );
+
+        case 'studySessionCta':
+          return renderStudyCta?.() ?? null;
+
         case 'genreBanner':
-          // Emitted only when opts.genre is set — D4 (#1874) territory.
-          return null;
+          return (
+            <GenreBanner genreLabel={item.genreLabel} genreGuidance={item.genreGuidance} />
+          );
 
         case 'sectionHeader': {
           const depth = isFocus ? undefined : panel.depthMap.get(item.sectionId);
@@ -256,6 +276,8 @@ const ChapterVerseList = forwardRef<ReaderScrollable, Props>(function ChapterVer
     [
       header,
       footer,
+      onReadContext,
+      renderStudyCta,
       isFocus,
       sectionById,
       panel,

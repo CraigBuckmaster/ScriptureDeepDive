@@ -22,7 +22,6 @@ import { useSwipeNavigation } from '../hooks/useSwipeNavigation';
 import { useNotedVerses } from '../hooks/useNotedVerses';
 import { useSettingsStore, useReaderStore } from '../stores';
 import { recordVisit } from '../db/user';
-import { GenreBanner } from '../components/GenreBanner';
 import { resolveGenre } from '../utils/genre';
 import { useTranslationSwitch } from '../hooks/useTranslationSwitch';
 import { useStoreReview } from '../hooks/useStoreReview';
@@ -58,7 +57,7 @@ import { useChapterScroll } from '../hooks/chapter/useChapterScroll';
 import { useChapterPanels } from '../hooks/chapter/useChapterPanels';
 import { useProofTextGuard } from '../hooks/useProofTextGuard';
 import { getStudyDepthEstimate } from '../services/guidedStudy';
-import { ContextGuardBanner, StudySessionCTA } from '../components/guidedStudy';
+import { StudySessionCTA } from '../components/guidedStudy';
 import { useGuidedStudyChapterState } from '../hooks';
 
 interface CrossTabNavigation {
@@ -181,9 +180,14 @@ function ChapterScreen() {
       .filter((p): p is (typeof chapterPanels)[number] => p !== undefined);
   }, [chapterPanels, lensIsActive, lensPanelFilter, lensPanelOrder]);
 
+  const proofTextGuard = useProofTextGuard(bookId, chapterNum, initialVerseNum);
   // Flat reader item model (#1871) — built once here so scroll anchoring
   // (#1873) and the FlashList renderer (#1872) share the same indices.
-  // GenreBanner stays header chrome until D4 (#1874), hence genre: null.
+  const genre = useMemo(
+    () => (chapter ? resolveGenre(bookData, chapter) : null),
+    [bookData, chapter],
+  );
+
   const { items: chapterItems, verseIndexMap } = useMemo(
     () =>
       buildChapterItems(lensFilteredSections, lensFilteredChapterPanels, {
@@ -195,11 +199,15 @@ function ChapterScreen() {
           chapterCoaching: chapterCoaching ?? null,
           dismissedTips,
         },
-        genre: null,
+        genre,
+        proofTextGuard,
+        showStudyCta: true,
         prayerPrompt: chapter?.prayer_prompt,
         mapStoryLinkId: chapter?.map_story_link_id,
       }),
     [
+      genre,
+      proofTextGuard,
       lensFilteredSections,
       lensFilteredChapterPanels,
       chapterMode,
@@ -246,7 +254,6 @@ function ChapterScreen() {
   const redLetterVerses = useRedLetter(bookId, chapterNum);
   const notedVerses = useNotedVerses(bookId, chapterNum);
   const { bookmarked, toggleBookmark } = useBookmarkedVerses(bookId, chapterNum);
-  const proofTextGuard = useProofTextGuard(bookId, chapterNum, initialVerseNum);
   const guidedStudyState = useGuidedStudyChapterState(chapter?.id);
   const allSectionPanels = useMemo(
     () => lensFilteredSections.flatMap((section) => section.panels),
@@ -471,43 +478,32 @@ function ChapterScreen() {
         }
       />
 
-      {!isFocus && proofTextGuard ? (
-        <ContextGuardBanner
-          guard={proofTextGuard}
-          onReadContext={() =>
-            navigation.navigate('Chapter', {
-              bookId: proofTextGuard.suggested_book_id,
-              chapterNum: proofTextGuard.suggested_chapter_num,
-            })
-          }
-        />
-      ) : null}
-
-      {!isFocus ? (
-        <StudySessionCTA
-          estimate={studyEstimate}
-          mode={guidedStudyState.mode}
-          currentStep={guidedStudyState.activeSession?.current_step}
-          dueCount={guidedStudyState.dueCount}
-          onPress={() =>
-            navigation.navigate('StudySession', {
-              bookId,
-              chapterNum,
-              initialStep: guidedStudyState.initialStep,
-              verseNum: initialVerseNum,
-            })
-          }
-        />
-      ) : null}
-
-      {(() => {
-        if (isFocus) return null;
-        const genre = resolveGenre(bookData, chapter);
-        return genre ? (
-          <GenreBanner genreLabel={genre.label} genreGuidance={genre.guidance} />
-        ) : null;
-      })()}
     </>
+  );
+
+  // Context guard CTA target (contextGuard item, D4 #1874).
+  const handleReadContext = (guard: (typeof proofTextGuard) & object) =>
+    navigation.navigate('Chapter', {
+      bookId: guard.suggested_book_id,
+      chapterNum: guard.suggested_chapter_num,
+    });
+
+  // Guided-study CTA (studySessionCta item, D4 #1874).
+  const renderStudyCta = () => (
+    <StudySessionCTA
+      estimate={studyEstimate}
+      mode={guidedStudyState.mode}
+      currentStep={guidedStudyState.activeSession?.current_step}
+      dueCount={guidedStudyState.dueCount}
+      onPress={() =>
+        navigation.navigate('StudySession', {
+          bookId,
+          chapterNum,
+          initialStep: guidedStudyState.initialStep,
+          verseNum: initialVerseNum,
+        })
+      }
+    />
   );
 
   const readerFooter = (
@@ -648,6 +644,8 @@ function ChapterScreen() {
             items={chapterItems}
             sections={lensFilteredSections}
             chapterPanels={lensFilteredChapterPanels}
+            onReadContext={handleReadContext}
+            renderStudyCta={renderStudyCta}
             header={readerHeader}
             footer={readerFooter}
             // eslint-disable-next-line react-hooks/refs -- stable handler from hook
