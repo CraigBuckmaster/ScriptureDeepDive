@@ -42,6 +42,7 @@ import { useBookmarkedVerses } from '../hooks/useBookmarkedVerses';
 import { useAvailableLenses, useChapterLensContent } from '../hooks/useHermeneuticLens';
 import { LensToggleBar } from '../components/LensToggleBar';
 import { parseLensJson, applyLensToKeys } from '../utils/lensPanelFilter';
+import { buildChapterItems } from '../utils/chapterItems';
 import { TRANSLATION_MAP } from '../db/translationRegistry';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { usePremium } from '../hooks/usePremium';
@@ -124,26 +125,6 @@ function ChapterScreen() {
   } = useChapterData(bookId, chapterNum);
 
   // ─��� Extracted hooks ──
-  const scroll = useChapterScroll({
-    bookId,
-    chapterNum,
-    initialVerseNum,
-    isLoading,
-    versesLength: verses.length,
-    planId,
-    planDayNum,
-  });
-
-  const ttsHook = useChapterTTS({
-    verses,
-    sections,
-    bookId,
-    chapterNum,
-    scrollRef: scroll.scrollRef,
-    sectionYMap: scroll.sectionYMap,
-    verseYMap: scroll.verseYMap,
-  });
-
   const { highlights, highlightMap, loadHighlights } = useChapterHighlights(bookId, chapterNum);
 
   const { coachingTips, chapterCoaching, dismissedTips, handleDismissTip } = useChapterCoaching(
@@ -199,6 +180,56 @@ function ChapterScreen() {
       .map((k) => byType.get(k))
       .filter((p): p is (typeof chapterPanels)[number] => p !== undefined);
   }, [chapterPanels, lensIsActive, lensPanelFilter, lensPanelOrder]);
+
+  // Flat reader item model (#1871) — built once here so scroll anchoring
+  // (#1873) and the FlashList renderer (#1872) share the same indices.
+  // GenreBanner stays header chrome until D4 (#1874), hence genre: null.
+  const { items: chapterItems, verseIndexMap } = useMemo(
+    () =>
+      buildChapterItems(lensFilteredSections, lensFilteredChapterPanels, {
+        mode: chapterMode,
+        lensKeys: [],
+        coaching: {
+          studyCoachEnabled,
+          sectionTips: coachingTips,
+          chapterCoaching: chapterCoaching ?? null,
+          dismissedTips,
+        },
+        genre: null,
+        prayerPrompt: chapter?.prayer_prompt,
+        mapStoryLinkId: chapter?.map_story_link_id,
+      }),
+    [
+      lensFilteredSections,
+      lensFilteredChapterPanels,
+      chapterMode,
+      studyCoachEnabled,
+      coachingTips,
+      chapterCoaching,
+      dismissedTips,
+      chapter?.prayer_prompt,
+      chapter?.map_story_link_id,
+    ],
+  );
+
+  const scroll = useChapterScroll({
+    bookId,
+    chapterNum,
+    initialVerseNum,
+    isLoading,
+    versesLength: verses.length,
+    planId,
+    planDayNum,
+    items: chapterItems,
+    verseIndexMap,
+  });
+
+  const ttsHook = useChapterTTS({
+    verses,
+    bookId,
+    chapterNum,
+    scrollToVerse: scroll.scrollToVerse,
+  });
 
   const panels = useChapterPanels({
     chapterId: chapter?.id,
@@ -614,9 +645,9 @@ function ChapterScreen() {
           <ChapterVerseList
             // eslint-disable-next-line react-hooks/refs -- passing ref to component is idiomatic
             ref={scroll.scrollRef}
+            items={chapterItems}
             sections={lensFilteredSections}
             chapterPanels={lensFilteredChapterPanels}
-            prayerPrompt={chapter?.prayer_prompt}
             header={readerHeader}
             footer={readerFooter}
             // eslint-disable-next-line react-hooks/refs -- stable handler from hook
