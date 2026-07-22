@@ -14,7 +14,7 @@ import {
   TouchableWithoutFeedback, type LayoutRectangle,
 } from 'react-native';
 import { Check } from 'lucide-react-native';
-import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET, overlay } from '../theme';
 import { selectionFeedback } from '../utils/haptics';
 
 export interface DropdownOption {
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     borderRadius: radii.md,
     overflow: 'hidden',
     // Subtle shadow on iOS
-    shadowColor: '#000', // overlay-color: intentional (RN shadow must be #000 on iOS)
+    shadowColor: overlay.black, // RN shadow must stay black on iOS
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,

@@ -71,7 +71,7 @@ export function LinkedJourneySheet({
       backgroundStyle={{ backgroundColor: base.bgElevated }}
       handleIndicatorStyle={{ backgroundColor: base.textMuted, width: 40 }}
     >
-      <View style={styles.header}>
+      <View style={[styles.header, { borderBottomColor: base.border }]}>
         <View style={styles.headerText}>
           {journey && (
             <>
@@ -164,7 +164,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     paddingBottom: spacing.sm,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: '#3333',
   },
   headerText: {
     flex: 1,

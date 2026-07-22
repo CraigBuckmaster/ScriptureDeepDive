@@ -15,7 +15,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Image } from 'expo-image';
 import { ArrowRight } from 'lucide-react-native';
 import { useContentImages } from '../hooks/useContentImages';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, overlay } from '../theme';
 import type { ContentImage } from '../types';
 import type { RecentChapter } from '../types';
 
@@ -237,7 +237,7 @@ export function ContinueReadingHero({ mostRecent, onPress }: Props) {
                 <View
                   key={i}
                   style={[styles.dot, {
-                    backgroundColor: i === activeIndex ? '#fff' : 'rgba(255,255,255,0.4)', // overlay-color: intentional
+                    backgroundColor: i === activeIndex ? overlay.white : 'rgba(255,255,255,0.4)', // overlay-color: intentional
                   }]}
                 />
               ))}
@@ -293,7 +293,7 @@ const styles = StyleSheet.create({
     right: 0,
     height: Math.round(IMAGE_HEIGHT * 0.5),
     backgroundColor: 'transparent',
-    shadowColor: '#000', // overlay-color: intentional (RN shadow must be #000 on iOS)
+    shadowColor: overlay.black, // RN shadow must stay black on iOS
     shadowOffset: { width: 0, height: -16 },
     shadowOpacity: 0.65,
     shadowRadius: 16,
@@ -303,7 +303,7 @@ const styles = StyleSheet.create({
     bottom: 6,
     left: 10,
     right: 30,
-    color: '#fff', // overlay-color: intentional (caption on image)
+    color: overlay.white, // caption on image — mode-invariant
     fontFamily: fontFamily.ui,
     fontSize: 11,
     textShadowColor: 'rgba(0,0,0,0.8)', // overlay-color: intentional

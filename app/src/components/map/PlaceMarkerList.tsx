@@ -12,6 +12,7 @@
 
 import React, { memo, useMemo, useCallback } from 'react';
 import { GeoJSONSource, Layer } from '@maplibre/maplibre-react-native';
+import { mapColors } from '../../theme';
 import type { Place, MapStory } from '../../types';
 import { safeParse } from '../../utils/logger';
 
@@ -147,15 +148,15 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const circleColorExpr: any = [
     'case',
-    isActive, '#f5e6b8', // data-color: intentional (warm highlight — active place marker, MapLibre GL)
-    '#bfa050',           // data-color: intentional (gold — default place marker, MapLibre GL)
+    isActive, mapColors.markerActive,
+    mapColors.storyGold,
   ];
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const circleStrokeColorExpr: any = [
     'case',
-    isActive, '#bfa050', // data-color: intentional (gold stroke on active — MapLibre GL)
-    '#1a1610',           // data-color: intentional (dark stroke on inactive — MapLibre GL)
+    isActive, mapColors.storyGold,
+    mapColors.darkHalo,
   ];
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -211,11 +212,11 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
           textSize: ['match', ['get', 'priority'], 1, 13, 2, 12, 3, 11, 4, 10, 11] as any,
           textColor: [
             'case',
-            isActive, '#f5e6b8', // data-color: intentional (warm highlight label — active, MapLibre GL)
-            '#bfa050',           // data-color: intentional (gold label — default, MapLibre GL)
+            isActive, mapColors.markerActive,
+            mapColors.storyGold,
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           ] as any,
-          textHaloColor: '#1a1610', // data-color: intentional (dark halo against map bg — MapLibre GL)
+          textHaloColor: mapColors.darkHalo,
           textHaloWidth: 1.5,
           textOffset: [0, 1.1],
           textAnchor: 'top',

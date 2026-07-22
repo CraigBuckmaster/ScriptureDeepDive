@@ -16,10 +16,10 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import { useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../../theme';
+import { useTheme, spacing, fontFamily, MIN_TOUCH_TARGET, overlay } from '../../theme';
 import { submitFlag } from '../../services/engagementApi';
 
-const SUBMIT_BUTTON_TEXT = '#fff'; // overlay-color: intentional (white text on gold submit button)
+const SUBMIT_BUTTON_TEXT = overlay.white; // white text on gold submit button — mode-invariant
 
 const REASONS = [
   'Spam',

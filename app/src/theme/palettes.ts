@@ -6,7 +6,7 @@
  * Panel, scholar, and era colors are generated via transforms.ts.
  */
 
-import { panels, scholars, eras, categoryColors, categories, severity, families, prophecyCategories, roles, testament, timelineSvg } from './colors';
+import { panels, scholars, eras, categoryColors, categories, severity, families, prophecyCategories, roles, testament, timelineSvg, discourseNodes, echoTypes, debateCategories, debatePosition, trustLevels, contributionStatus, libraryAccents } from './colors';
 import type { PanelColors } from './colors';
 import { transformPanelColors, transformAccentColor } from './transforms';
 
@@ -30,6 +30,7 @@ export interface BaseColors {
   navText: string;
   danger: string;
   success: string;
+  warning: string;
   redLetter: string;
   // ── Subtle section tints (Explore redesign) ───────────────────────
   tintWarm: string;
@@ -52,6 +53,13 @@ export interface ThemePalette {
   roles: Record<string, string>;
   testament: Record<string, string>;
   timelineSvg: Record<string, string>;
+  discourseNodes: Record<string, string>;
+  echoTypes: Record<string, string>;
+  debateCategories: Record<string, string>;
+  debatePosition: Record<string, string>;
+  trustLevels: Record<number, string>;
+  contributionStatus: Record<string, string>;
+  libraryAccents: Record<string, string>;
   statusBarStyle: 'light-content' | 'dark-content';
 }
 
@@ -75,6 +83,7 @@ const darkBase: BaseColors = {
   navText: '#d8ccb0',
   danger: '#e05a6a',
   success: '#81C784',
+  warning: '#e8a040',
   redLetter: '#d4847a',
   tintWarm: 'rgba(191,160,80,0.04)',
   tintEmber: 'rgba(160,100,50,0.05)',
@@ -99,6 +108,7 @@ const sepiaBase: BaseColors = {
   navText: '#4a3e2c',
   danger: '#c04848',
   success: '#4a8a4a',
+  warning: '#9a6420',          // darkened for light bg, matches gold treatment
   redLetter: '#9a3a2a',        // WCAG AA: 5.7:1 on bg
   tintWarm: 'rgba(136,104,24,0.04)',
   tintEmber: 'rgba(120,80,40,0.05)',
@@ -123,6 +133,7 @@ const lightBase: BaseColors = {
   navText: '#333333',
   danger: '#d04040',
   success: '#388e38',
+  warning: '#8a5818',
   redLetter: '#9e3a30',
   tintWarm: 'rgba(138,106,24,0.03)',
   tintEmber: 'rgba(120,80,40,0.04)',
@@ -190,6 +201,13 @@ export function buildPalette(mode: ThemeMode): ThemePalette {
     roles: transformRecord(roles as unknown as Record<string, string>, mode),
     testament: transformRecord(testament as unknown as Record<string, string>, mode),
     timelineSvg: transformRecord(timelineSvg as unknown as Record<string, string>, mode),
+    discourseNodes: transformRecord(discourseNodes, mode),
+    echoTypes: transformRecord(echoTypes as unknown as Record<string, string>, mode),
+    debateCategories: transformRecord(debateCategories as unknown as Record<string, string>, mode),
+    debatePosition: transformRecord(debatePosition as unknown as Record<string, string>, mode),
+    trustLevels: transformRecord(trustLevels as unknown as Record<string, string>, mode),
+    contributionStatus: transformRecord(contributionStatus, mode),
+    libraryAccents: transformRecord(libraryAccents, mode),
     statusBarStyle: mode === 'dark' ? 'light-content' : 'dark-content',
   };
 }
