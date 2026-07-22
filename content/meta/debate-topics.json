@@ -22249,5 +22249,93 @@
       "textual-criticism",
       "hwgtb"
     ]
+  },
+  {
+    "id": "justification-faith-alone-or-faith-and-works",
+    "title": "Justification: Faith Alone or Faith and Works?",
+    "category": "theological",
+    "book_id": "james",
+    "chapters": [
+      2
+    ],
+    "passage": "James 2:14-26; Romans 3:28-4:8; Galatians 2:16; Ephesians 2:8-10",
+    "question": "Paul says a person is justified by faith apart from works (Romans 3:28); James says a person is justified by works and not by faith alone (James 2:24). Are they contradicting each other, and what role do works play in salvation?",
+    "context": "This is the defining debate of the Protestant Reformation and remains the central dividing line between Protestant and Catholic soteriology. Luther famously called James 'an epistle of straw' because James 2:24 appears to flatly deny sola fide. Both authors appeal to the same figure — Abraham — but to different moments: Paul cites Genesis 15:6 (belief credited as righteousness before any act), while James cites Genesis 22 (the offering of Isaac) as faith 'completed' by works. The interpretive question turns on whether Paul and James use 'works' and 'justified' in the same sense, and on whether justification is a one-time forensic declaration or a process in which faith and works cooperate.",
+    "positions": [
+      {
+        "id": "faith-alone-justifies-works-are-evidence",
+        "label": "Faith alone justifies; works are the necessary evidence",
+        "tradition_family": "reformed",
+        "scholar_ids": [
+          "calvin",
+          "schreiner"
+        ],
+        "proponents": "Reformation and Reformed tradition; confessional Protestantism",
+        "argument": "Justification is a forensic declaration received through faith alone, but justifying faith is never alone — it inevitably produces works as its fruit. James condemns a counterfeit faith of bare assent, not the Reformation's sola fide.",
+        "strengths": "Preserves Paul's emphatic exclusion of works from justification (Romans 4:4-5, Ephesians 2:8-9); Calvin's formulation ('faith alone justifies, but the faith that justifies is not alone') accounts for both corpora; James's target is demonstrably dead faith — even demons believe (James 2:19).",
+        "weaknesses": "Must read 'justified' in James 2:24 in a demonstrative sense ('shown to be righteous') that some argue the Greek does not require; risks making assurance dependent on introspection about the quality of one's works.",
+        "key_verses": [
+          "Romans 3:28",
+          "Romans 4:4-5",
+          "Ephesians 2:8-10",
+          "James 2:19"
+        ]
+      },
+      {
+        "id": "paul-and-james-use-terms-differently",
+        "label": "No contradiction: Paul and James answer different questions",
+        "tradition_family": "evangelical",
+        "scholar_ids": [
+          "moo",
+          "mccartney"
+        ],
+        "proponents": "Broad evangelical scholarship on James",
+        "argument": "Paul's polemic targets 'works of the law' — Torah observance claimed as grounds for right standing; James targets professed faith with no corresponding life. 'Faith' in James 2:14 means bare intellectual assent, which neither Paul nor James thinks saves. The two are allies against different errors.",
+        "strengths": "Attends closely to the distinct rhetorical situations (Judaizing legalism vs. antinomian presumption); explains why both can cite Abraham without conflict — Genesis 15 and Genesis 22 as root and fruit; majority position in modern commentaries on James.",
+        "weaknesses": "James 2:24 still uses dikaioo of Abraham's act, and some argue the semantic distinction is finer than the harmonization requires; critical scholars contend James may be responding to a garbled form of Paulinism, implying real tension in the early church.",
+        "key_verses": [
+          "Romans 3:28",
+          "Galatians 2:16",
+          "James 2:14",
+          "James 2:21-24"
+        ]
+      },
+      {
+        "id": "faith-formed-by-love-works-cooperate",
+        "label": "Faith working through love: works cooperate in justification",
+        "tradition_family": "patristic",
+        "scholar_ids": [
+          "augustine"
+        ],
+        "proponents": "Augustinian, Catholic, and Orthodox traditions",
+        "argument": "Justifying faith is faith formed by love (Galatians 5:6) — a living reality that works. Justification is not only an initial declaration but a transformative process in which grace-enabled works genuinely participate, which is why James can say a person is justified by works and not by faith alone.",
+        "strengths": "Takes James 2:24 in its plain sense without a demonstrative gloss; coheres with judgment-according-to-works texts (Matthew 25:31-46, Romans 2:6-13, 2 Corinthians 5:10); Augustine's insistence that even cooperating works are wholly gifts of grace guards against crude merit theology.",
+        "weaknesses": "Protestants argue it blurs Paul's justification/sanctification distinction and undercuts the gratuity of Romans 4:4-5; assurance becomes provisional in ways Paul's 'no condemnation' language (Romans 8:1) seems to resist.",
+        "key_verses": [
+          "James 2:24",
+          "Galatians 5:6",
+          "Romans 2:6-13",
+          "Matthew 25:31-46"
+        ]
+      }
+    ],
+    "synthesis": "Nearly all traditions agree on two boundary markers: salvation is by grace, and genuine faith transforms conduct. The disagreement concerns the grammar of 'justify' — one-time forensic verdict versus declarative-and-transformative process — and whether works function as evidence of justification or as grace-enabled participants in it. Read in context, Paul and James share more than the proof-texts suggest: Paul expects faith to work through love (Galatians 5:6) and warns the unrighteous will not inherit the kingdom (1 Corinthians 6:9-10), while James grounds everything in the 'implanted word' that saves (James 1:21). The choice between the positions ultimately tracks a reader's wider theology of grace, assurance, and final judgment.",
+    "related_passages": [
+      "Genesis 15:6",
+      "Genesis 22:1-19",
+      "Habakkuk 2:4",
+      "Galatians 5:6",
+      "Romans 2:6-13",
+      "Titus 3:5-8"
+    ],
+    "tags": [
+      "justification",
+      "faith",
+      "works",
+      "sola-fide",
+      "reformation",
+      "soteriology",
+      "paul-and-james"
+    ]
   }
 ]
