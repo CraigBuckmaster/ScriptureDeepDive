@@ -34,10 +34,6 @@ const NAME_GAP = 8;            // circle bottom edge → name baseline
 // Accessibility — every interactive node should have a 44 pt touch target
 const MIN_TOUCH_H = 44;
 
-// Flat fills — match the wireframe's dark backgrounds
-const SPINE_FILL = '#1a1810'; // data-color: intentional (SVG spine node fill — warm-dark bg)
-const SAT_FILL = '#181612';   // data-color: intentional (SVG satellite node fill — warm-dark bg)
-
 interface Props {
   node: LayoutNode;
   dimmed: boolean;
@@ -111,9 +107,11 @@ export const TreeNode = memo(function TreeNode({
 
   // Fill — messianic uses the radial gradient defined on TreeCanvas;
   // everything else uses a flat dark colour.
+  // Flat fills track the theme (near-identical to the old wireframe
+  // constants in dark mode; adapt in sepia/light).
   const nodeFill = onMessianicLine
     ? 'url(#messianic-node-fill)'
-    : (isSpine ? SPINE_FILL : SAT_FILL);
+    : (isSpine ? base.bg3 : base.bgSurface);
 
   // Initial letter — first character of the person's name, uppercased
   const initial = (data.name?.[0] ?? '').toUpperCase();

@@ -11,7 +11,7 @@ import { Platform, Pressable, StyleSheet, View, type ViewStyle } from 'react-nat
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useNavigation, type NavigationProp, type ParamListBase } from '@react-navigation/native';
 import { Lock, MessageSquare } from 'lucide-react-native';
-import { useTheme } from '../../theme';
+import { useTheme, overlay } from '../../theme';
 import { useAmicusFab } from '../../contexts/AmicusFabContext';
 import { useAmicusChapterStudyThread } from '../../hooks/useAmicusChapterStudyThread';
 import { useAmicusAccess } from '../../hooks/useAmicusAccess';
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     ...Platform.select({
       ios: {
-        shadowColor: '#000',
+        shadowColor: overlay.black,
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.25,
         shadowRadius: 4,

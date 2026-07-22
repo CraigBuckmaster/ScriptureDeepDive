@@ -18,19 +18,14 @@ import {
   radii,
   fontFamily,
   MIN_TOUCH_TARGET,
+  placeTypeColors,
 } from '../../theme';
 import type { Place } from '../../types';
 
 const MAX_RESULTS = 8;
 
 /** Colour of the leading dot in each result row. Mirrors PlaceLabel. */
-const TYPE_COLORS: Record<Place['type'], string> = {
-  city: '#d4b483',     // data-color: intentional (warm sand — built environment)
-  mountain: '#d4b483', // data-color: intentional (warm sand — terrain)
-  site: '#d4b483',     // data-color: intentional (warm sand — archaeological site)
-  water: '#90c8d8',    // data-color: intentional (steel blue — water body)
-  region: '#b8a070',   // data-color: intentional (muted gold — region boundary)
-};
+const TYPE_COLORS: Record<Place['type'], string> = placeTypeColors;
 
 export interface PlaceSearchBarProps {
   places: Place[];

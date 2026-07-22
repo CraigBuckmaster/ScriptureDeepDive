@@ -5,7 +5,7 @@
 
 import React, { useEffect, useMemo } from 'react';
 import { Animated, Text, StyleSheet } from 'react-native';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, overlay } from '../theme';
 
 interface Props {
   message: string | null;
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     paddingVertical: spacing.sm + 2,
     paddingHorizontal: spacing.md,
-    shadowColor: '#000', // overlay-color: intentional (RN shadow must be #000 on iOS)
+    shadowColor: overlay.black, // RN shadow must stay black on iOS
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 4,

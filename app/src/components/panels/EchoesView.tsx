@@ -24,15 +24,8 @@ const TYPE_LABELS: Record<EchoType, string> = {
   typological: 'Typological',
 };
 
-const TYPE_COLORS: Record<EchoType, string> = {
-  direct_quote: '#64B5F6', // data-color: intentional
-  allusion: '#81C784', // data-color: intentional
-  echo: '#FFB74D', // data-color: intentional
-  typological: '#BA68C8', // data-color: intentional
-};
-
 export function EchoesView({ entries, onRefPress }: Props) {
-  const { base, getPanelColors } = useTheme();
+  const { base, getPanelColors, echoTypes } = useTheme();
   const colors = getPanelColors('cross');
 
   const handleRefPress = (ref: string) => {
@@ -43,7 +36,7 @@ export function EchoesView({ entries, onRefPress }: Props) {
   return (
     <View style={styles.container}>
       {entries.map((entry, i) => {
-        const typeColor = TYPE_COLORS[entry.type] ?? base.textMuted;
+        const typeColor = echoTypes[entry.type] ?? base.textMuted;
         const typeLabel = TYPE_LABELS[entry.type] ?? entry.type;
 
         return (

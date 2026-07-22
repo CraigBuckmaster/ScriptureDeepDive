@@ -15,7 +15,7 @@
 import React, { memo } from 'react';
 import { GeoJSONSource, Layer } from '@maplibre/maplibre-react-native';
 import { useAncientBorders } from '../../hooks/useAncientBorders';
-import { eras } from '../../theme';
+import { eras, mapColors } from '../../theme';
 
 interface Props {
   /** Currently-selected era id — 'all' or null disables the layer. */
@@ -32,7 +32,7 @@ export const AncientBorderLayer = memo(function AncientBorderLayer({
   if (showModern) return null;
   if (!era || era === 'all') return null;
 
-  const eraColor = (era && eras[era]) || '#bfa050'; // data-color: intentional (gold fallback for unknown era — MapLibre GL)
+  const eraColor = (era && eras[era]) || mapColors.storyGold;
 
   return (
     <GeoJSONSource

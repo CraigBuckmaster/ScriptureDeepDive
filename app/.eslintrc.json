@@ -54,5 +54,24 @@
     "no-useless-escape": "warn",
     "prefer-const": "warn"
   },
-  "ignorePatterns": ["node_modules/", "babel.config.js", "metro.config.js", "jest.setup.js", "scripts/"]
+  "ignorePatterns": ["node_modules/", "babel.config.js", "metro.config.js", "jest.setup.js", "scripts/"],
+  "overrides": [
+    {
+      "files": ["src/screens/**/*.ts", "src/screens/**/*.tsx", "src/components/**/*.ts", "src/components/**/*.tsx"],
+      "excludedFiles": ["**/__tests__/**", "**/*.test.*", "src/screens/dev/**", "src/components/GospelColors.ts"],
+      "rules": {
+        "no-restricted-syntax": [
+          "error",
+          {
+            "selector": "Literal[value=/#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})([^0-9a-zA-Z]|$)/]",
+            "message": "Hardcoded hex color. Use useTheme() tokens (base.*, panels.*, ...) instead; color data belongs in src/theme/colors.ts. See DEV_GUIDE §5 and #1898."
+          },
+          {
+            "selector": "TemplateElement[value.raw=/#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})([^0-9a-zA-Z]|$)/]",
+            "message": "Hardcoded hex color in template string. Use useTheme() tokens instead; color data belongs in src/theme/colors.ts. See DEV_GUIDE §5 and #1898."
+          }
+        ]
+      }
+    }
+  ]
 }

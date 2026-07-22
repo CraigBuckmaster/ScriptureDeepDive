@@ -18,7 +18,7 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Image } from 'expo-image';
 import { ArrowLeft } from 'lucide-react-native';
-import { useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, fontFamily, MIN_TOUCH_TARGET, overlay } from '../theme';
 
 interface Props {
   title: string;
@@ -36,7 +36,7 @@ interface Props {
 
 const NO_IMAGE_HEIGHT = 100;
 
-const OVERLAY_TITLE = '#ffffff'; // overlay-color: intentional (title over dark gradient)
+const OVERLAY_TITLE = overlay.white; // title over dark gradient — mode-invariant
 const OVERLAY_SUBTITLE = 'rgba(255,255,255,0.85)'; // overlay-color: intentional
 const BACK_BG = 'rgba(0,0,0,0.35)'; // overlay-color: intentional
 
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     // a transparent view. Avoids pulling in expo-linear-gradient for this
     // single use case (same approach as GoldSeparator).
     backgroundColor: 'transparent',
-    shadowColor: '#000', // overlay-color: intentional
+    shadowColor: overlay.black,
     shadowOffset: { width: 0, height: -12 },
     shadowOpacity: 0.6,
     shadowRadius: 14,

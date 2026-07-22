@@ -25,6 +25,7 @@ const base = {
   verseNum: '#999',
   navText: '#fff',
   danger: '#c00',
+    warning: '#e8a040',
   success: '#0c0',
   redLetter: '#c33',
   tintWarm: '#333',

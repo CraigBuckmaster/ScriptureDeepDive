@@ -4,13 +4,7 @@
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { spacing, radii, fontFamily } from '../theme';
-
-const LEVEL_COLORS: Record<0 | 1 | 2, string> = {
-  0: '#888888', // data-color: intentional
-  1: '#bfa050', // data-color: intentional
-  2: '#50b060', // data-color: intentional
-};
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 const LEVEL_LABELS: Record<0 | 1 | 2, string> = {
   0: 'New',
@@ -24,7 +18,8 @@ interface Props {
 }
 
 function TrustBadge({ level, label }: Props) {
-  const color = LEVEL_COLORS[level];
+  const { trustLevels } = useTheme();
+  const color = trustLevels[level];
   const text = label ?? LEVEL_LABELS[level];
 
   return (

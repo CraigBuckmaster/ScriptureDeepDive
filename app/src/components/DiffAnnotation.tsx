@@ -16,6 +16,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { DIFF_TYPE_COLORS, DIFF_TYPE_BG } from './GospelColors';
 import { gospelColor, GOSPEL_SHORT } from './GospelColors';
 
 export interface DiffAnnotationData {
@@ -50,22 +51,6 @@ const DIFF_TYPE_LABELS: Record<string, string> = {
   reordering: 'Reordering',
   wording: 'Wording',
   theological_emphasis: 'Theological Emphasis',
-};
-
-const DIFF_TYPE_COLORS: Record<string, string> = {
-  addition: '#4a8c5c', // data-color: intentional
-  omission: '#8c4a4a', // data-color: intentional
-  reordering: '#8a6e1a', // data-color: intentional
-  wording: '#8a6e1a', // data-color: intentional
-  theological_emphasis: '#8a6e1a', // data-color: intentional
-};
-
-const DIFF_TYPE_BG: Record<string, string> = {
-  addition: '#4a8c5c22', // data-color: intentional
-  omission: '#8c4a4a22', // data-color: intentional
-  reordering: '#bfa05022', // data-color: intentional
-  wording: '#bfa05022', // data-color: intentional
-  theological_emphasis: '#bfa05022', // data-color: intentional
 };
 
 interface Props {
