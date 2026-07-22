@@ -38,10 +38,10 @@ import { logger } from '../utils/logger';
 
 /* ── Trust level helpers ──────────────────────────────────────────── */
 
-const TRUST_LEVELS: Record<number, { label: string; color: string }> = {
-  0: { label: 'New Member', color: '#888' }, // data-color: intentional
-  1: { label: 'Contributor', color: '#bfa050' }, // data-color: intentional
-  2: { label: 'Trusted', color: '#50b060' }, // data-color: intentional
+const TRUST_LEVEL_LABELS: Record<number, string> = {
+  0: 'New Member',
+  1: 'Contributor',
+  2: 'Trusted',
 };
 
 function getTrustLevel(_user: { app_metadata?: Record<string, unknown> }): number {
@@ -51,7 +51,7 @@ function getTrustLevel(_user: { app_metadata?: Record<string, unknown> }): numbe
 /* ── Component ────────────────────────────────────────────────────── */
 
 function UserProfileScreen() {
-  const { base } = useTheme();
+  const { base, trustLevels } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'UserProfile'>>();
   const user = useAuthStore((s) => s.user);
   const signOut = useAuthStore((s) => s.signOut);
@@ -73,7 +73,10 @@ function UserProfileScreen() {
   /* ── Derived values ────────────────────────────────────────────── */
 
   const trustLevel = user ? getTrustLevel(user) : 0;
-  const trustInfo = TRUST_LEVELS[trustLevel] ?? TRUST_LEVELS[0];
+  const trustInfo = {
+    label: TRUST_LEVEL_LABELS[trustLevel] ?? TRUST_LEVEL_LABELS[0],
+    color: trustLevels[trustLevel] ?? trustLevels[0],
+  };
 
   const email = profile?.email ?? user?.email ?? '';
   const providerRaw = profile?.provider ?? user?.app_metadata?.provider ?? 'email';
@@ -260,14 +263,6 @@ function getInitials(name: string): string {
 
 /* ── Sub-components ───────────────────────────────────────────────── */
 
-const STATUS_COLORS: Record<SubmissionStatus, string> = {
-  draft: '#888', // data-color: intentional
-  pending: '#d4a843', // data-color: intentional
-  approved: '#50b060', // data-color: intentional
-  rejected: '#cc4444', // data-color: intentional
-  flagged: '#cc6633', // data-color: intentional
-};
-
 function StatusBadge({
   status,
   base: _base,
@@ -275,7 +270,8 @@ function StatusBadge({
   status: SubmissionStatus;
   base: ReturnType<typeof useTheme>['base'];
 }) {
-  const color = STATUS_COLORS[status] ?? '#888'; // data-color: intentional (fallback)
+  const { contributionStatus, trustLevels } = useTheme();
+  const color = contributionStatus[status] ?? trustLevels[0];
   return (
     <View style={[styles.statusBadge, { backgroundColor: color + '20' }]}>
       <Text style={[styles.statusText, { color }]}>

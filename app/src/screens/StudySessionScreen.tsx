@@ -87,7 +87,7 @@ import { useAmicusAccess } from '../hooks/useAmicusAccess';
 import type { CapturedInputs } from '../services/guidedStudy/capturedInputs';
 import { launchAmicusStudyThread } from '../services/amicus';
 import { useSettingsStore } from '../stores';
-import { fontFamily, radii, spacing, useTheme } from '../theme';
+import { fontFamily, overlay, radii, spacing, useTheme } from '../theme';
 import type {
   Book,
   Chapter,
@@ -1166,7 +1166,7 @@ const styles = StyleSheet.create({
     marginTop: spacing.sm,
   },
   primaryText: {
-    color: '#111111',
+    color: overlay.onGold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 14,
   },

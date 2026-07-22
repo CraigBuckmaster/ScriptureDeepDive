@@ -6,12 +6,13 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useTheme, fontFamily } from '../theme';
+import { GOSPEL_DOT_COLORS } from './GospelColors';
 
 export const GOSPEL_CONFIG: Record<string, { abbrev: string; color: string; name: string }> = {
-  matthew: { abbrev: 'M', color: '#70b8e8', name: 'Matthew' }, // data-color: intentional
-  mark:    { abbrev: 'Mk', color: '#e86040', name: 'Mark' }, // data-color: intentional
-  luke:    { abbrev: 'L', color: '#81C784', name: 'Luke' }, // data-color: intentional
-  john:    { abbrev: 'J', color: '#b090d0', name: 'John' }, // data-color: intentional
+  matthew: { abbrev: 'M', color: GOSPEL_DOT_COLORS.matthew, name: 'Matthew' },
+  mark:    { abbrev: 'Mk', color: GOSPEL_DOT_COLORS.mark, name: 'Mark' },
+  luke:    { abbrev: 'L', color: GOSPEL_DOT_COLORS.luke, name: 'Luke' },
+  john:    { abbrev: 'J', color: GOSPEL_DOT_COLORS.john, name: 'John' },
 };
 
 const GOSPEL_ORDER = ['matthew', 'mark', 'luke', 'john'];

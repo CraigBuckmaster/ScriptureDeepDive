@@ -1,6 +1,4 @@
 import { renderHook, act } from '@testing-library/react-native';
-import { createRef } from 'react';
-import type { ScrollView } from 'react-native';
 
 const mockPlay = jest.fn();
 const mockStop = jest.fn();
@@ -29,17 +27,12 @@ const mockVerses = [
   { id: 3, book_id: 'genesis', chapter_num: 1, verse_num: 3, translation: 'esv', text: 'Let there be light' },
 ];
 
-const mockSections = [
-  { id: 'sec1', chapter_id: 'ch1', section_num: 1, header: 'Creation', verse_start: 1, verse_end: 3 },
-];
+const mockScrollToVerse = jest.fn();
 
 function createOptions(overrides = {}) {
   return {
     verses: mockVerses as any,
-    sections: mockSections as any,
-    scrollRef: createRef<ScrollView>(),
-    sectionYMap: { current: {} as Record<string, number> },
-    verseYMap: { current: {} as Record<number, number> },
+    scrollToVerse: mockScrollToVerse,
     bookId: 'genesis',
     chapterNum: 1,
     ...overrides,
@@ -51,6 +44,22 @@ describe('useChapterTTS', () => {
     jest.clearAllMocks();
     mockTTSState.currentVerse = 0;
     mockTTSState.isPlaying = false;
+  });
+
+  it('auto-follows the active verse via scrollToVerse while playing (#1873)', () => {
+    const { result } = renderHook(() => useChapterTTS(createOptions()));
+
+    act(() => {
+      result.current.toggleTTS();
+    });
+
+    // currentVerse 0 → verse_num 1, anchored 120px from the top.
+    expect(mockScrollToVerse).toHaveBeenCalledWith(1, 120, true);
+  });
+
+  it('does not auto-scroll when TTS is inactive', () => {
+    renderHook(() => useChapterTTS(createOptions()));
+    expect(mockScrollToVerse).not.toHaveBeenCalled();
   });
 
   it('starts with ttsActive false and no activeVerseNum', () => {

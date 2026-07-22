@@ -1,38 +1,36 @@
 /**
  * useChapterTTS — Encapsulates text-to-speech state and auto-scroll behavior.
  *
- * Extracted from ChapterScreen (#970).
+ * Extracted from ChapterScreen (#970). D3 (#1873): auto-follow goes
+ * through useChapterScroll's scrollToVerse (scrollToIndex under the
+ * hood) instead of onLayout y-maps — scrollToIndex estimates offsets
+ * for unmounted blocks, so the old font-size position estimation is
+ * gone with it.
  */
 
-import { useState, useEffect, useCallback, type RefObject } from 'react';
-import type { ScrollView } from 'react-native';
+import { useState, useEffect, useCallback } from 'react';
 import { useTTS } from '../useTTS';
 import { useSettingsStore } from '../../stores';
-import { useTypography } from '../../theme';
-import type { Verse, Section } from '../../types';
+import type { Verse } from '../../types';
+
+/** Anchored a little deeper than deep-link jumps so context stays visible. */
+const TTS_TOP_OFFSET = 120;
 
 interface UseChapterTTSOptions {
   verses: Verse[];
-  sections: Section[];
-  scrollRef: RefObject<ScrollView | null>;
-  sectionYMap: RefObject<Record<string, number>>;
-  verseYMap: RefObject<Record<number, number>>;
+  /** Index-based verse anchor from useChapterScroll (#1873). */
+  scrollToVerse: (verseNum: number, topOffset?: number, animated?: boolean) => void;
   bookId: string;
   chapterNum: number;
 }
 
 export function useChapterTTS({
   verses,
-  sections,
-  scrollRef,
-  sectionYMap,
-  verseYMap,
+  scrollToVerse,
   bookId,
   chapterNum,
 }: UseChapterTTSOptions) {
   const ttsVoice = useSettingsStore((s) => s.ttsVoice);
-  const { content } = useTypography();
-  const verseFontSize = content.bodyLg.fontSize;
   const tts = useTTS(verses, ttsVoice || undefined);
   const [ttsActive, setTtsActive] = useState(false);
 
@@ -41,33 +39,8 @@ export function useChapterTTS({
     if (!ttsActive || verses.length === 0) return;
     const verseNum = verses[tts.currentVerse]?.verse_num;
     if (verseNum == null) return;
-
-    const verseY = verseYMap.current[verseNum];
-    if (verseY != null) {
-      scrollRef.current?.scrollTo({
-        y: Math.max(0, verseY - 120),
-        animated: true,
-      });
-      return;
-    }
-
-    // Fallback: estimate position if layout hasn't fired yet
-    const sec = sections.find(
-      (s) => verseNum >= s.verse_start && verseNum <= s.verse_end,
-    );
-    if (!sec) return;
-    const sectionY = sectionYMap.current[sec.id];
-    if (sectionY == null) return;
-    const verseIndex = verseNum - sec.verse_start;
-    const estimatedVerseHeight = verseFontSize * 1.6 + 16;
-    const verseOffsetY = 52 + verseIndex * estimatedVerseHeight;
-
-    scrollRef.current?.scrollTo({
-      y: Math.max(0, sectionY + verseOffsetY - 120),
-      animated: true,
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- scrollRef, sectionYMap, verseYMap are stable refs
-  }, [ttsActive, tts.currentVerse, verses, sections, verseFontSize]);
+    scrollToVerse(verseNum, TTS_TOP_OFFSET, true);
+  }, [ttsActive, tts.currentVerse, verses, scrollToVerse]);
 
   // Stop TTS on chapter change
   useEffect(() => {

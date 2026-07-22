@@ -1,8 +1,9 @@
 /**
  * ChapterScreen — The main reading experience (90% of user time).
  *
- * Layout: ChapterNavBar (sticky top) → ScrollView (ChapterHeader →
- * sections.map(SectionBlock) → ScholarlyBlock). QnavOverlay via modal.
+ * Layout: ChapterNavBar (sticky top) → FlashList (#1872) over the flat
+ * ChapterListItem model (#1871): chapterHeader chrome → section items →
+ * scholarly/coaching/related items → footer. QnavOverlay via modal.
  *
  * Data: useChapterData loads everything. readerStore manages panel state.
  *
@@ -11,15 +12,7 @@
  */
 
 import React, { useCallback, useMemo, useState, useEffect } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Platform,
-  UIManager,
-  StyleSheet,
-} from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { ChevronRight } from 'lucide-react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
@@ -29,7 +22,6 @@ import { useSwipeNavigation } from '../hooks/useSwipeNavigation';
 import { useNotedVerses } from '../hooks/useNotedVerses';
 import { useSettingsStore, useReaderStore } from '../stores';
 import { recordVisit } from '../db/user';
-import { GenreBanner } from '../components/GenreBanner';
 import { resolveGenre } from '../utils/genre';
 import { useTranslationSwitch } from '../hooks/useTranslationSwitch';
 import { useStoreReview } from '../hooks/useStoreReview';
@@ -49,6 +41,7 @@ import { useBookmarkedVerses } from '../hooks/useBookmarkedVerses';
 import { useAvailableLenses, useChapterLensContent } from '../hooks/useHermeneuticLens';
 import { LensToggleBar } from '../components/LensToggleBar';
 import { parseLensJson, applyLensToKeys } from '../utils/lensPanelFilter';
+import { buildChapterItems } from '../utils/chapterItems';
 import { TRANSLATION_MAP } from '../db/translationRegistry';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { usePremium } from '../hooks/usePremium';
@@ -64,7 +57,7 @@ import { useChapterScroll } from '../hooks/chapter/useChapterScroll';
 import { useChapterPanels } from '../hooks/chapter/useChapterPanels';
 import { useProofTextGuard } from '../hooks/useProofTextGuard';
 import { getStudyDepthEstimate } from '../services/guidedStudy';
-import { ContextGuardBanner, StudySessionCTA } from '../components/guidedStudy';
+import { StudySessionCTA } from '../components/guidedStudy';
 import { useGuidedStudyChapterState } from '../hooks';
 
 interface CrossTabNavigation {
@@ -76,11 +69,6 @@ interface ConcordanceParams {
   original?: string;
   transliteration?: string;
   gloss?: string | null;
-}
-
-// Enable LayoutAnimation on Android
-if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
-  UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 
 function ChapterScreen() {
@@ -136,26 +124,6 @@ function ChapterScreen() {
   } = useChapterData(bookId, chapterNum);
 
   // ─��� Extracted hooks ──
-  const scroll = useChapterScroll({
-    bookId,
-    chapterNum,
-    initialVerseNum,
-    isLoading,
-    versesLength: verses.length,
-    planId,
-    planDayNum,
-  });
-
-  const ttsHook = useChapterTTS({
-    verses,
-    sections,
-    bookId,
-    chapterNum,
-    scrollRef: scroll.scrollRef,
-    sectionYMap: scroll.sectionYMap,
-    verseYMap: scroll.verseYMap,
-  });
-
   const { highlights, highlightMap, loadHighlights } = useChapterHighlights(bookId, chapterNum);
 
   const { coachingTips, chapterCoaching, dismissedTips, handleDismissTip } = useChapterCoaching(
@@ -191,11 +159,11 @@ function ChapterScreen() {
       const transformedKeys = applyLensToKeys(keys, lensPanelFilter, lensPanelOrder);
       // Map the transformed key list back to panel objects, dropping any whose
       // panel_type is no longer present.
-      const byType = new Map<string, typeof section.panels[number]>();
+      const byType = new Map<string, (typeof section.panels)[number]>();
       for (const p of section.panels) byType.set(p.panel_type, p);
       const transformedPanels = transformedKeys
         .map((k) => byType.get(k))
-        .filter((p): p is typeof section.panels[number] => p !== undefined);
+        .filter((p): p is (typeof section.panels)[number] => p !== undefined);
       return { ...section, panels: transformedPanels };
     });
   }, [sections, lensIsActive, lensPanelFilter, lensPanelOrder]);
@@ -205,12 +173,71 @@ function ChapterScreen() {
     if (!lensIsActive) return chapterPanels;
     const keys = chapterPanels.map((p) => p.panel_type);
     const transformedKeys = applyLensToKeys(keys, lensPanelFilter, lensPanelOrder);
-    const byType = new Map<string, typeof chapterPanels[number]>();
+    const byType = new Map<string, (typeof chapterPanels)[number]>();
     for (const p of chapterPanels) byType.set(p.panel_type, p);
     return transformedKeys
       .map((k) => byType.get(k))
-      .filter((p): p is typeof chapterPanels[number] => p !== undefined);
+      .filter((p): p is (typeof chapterPanels)[number] => p !== undefined);
   }, [chapterPanels, lensIsActive, lensPanelFilter, lensPanelOrder]);
+
+  const proofTextGuard = useProofTextGuard(bookId, chapterNum, initialVerseNum);
+  // Flat reader item model (#1871) — built once here so scroll anchoring
+  // (#1873) and the FlashList renderer (#1872) share the same indices.
+  const genre = useMemo(
+    () => (chapter ? resolveGenre(bookData, chapter) : null),
+    [bookData, chapter],
+  );
+
+  const { items: chapterItems, verseIndexMap } = useMemo(
+    () =>
+      buildChapterItems(lensFilteredSections, lensFilteredChapterPanels, {
+        mode: chapterMode,
+        lensKeys: [],
+        coaching: {
+          studyCoachEnabled,
+          sectionTips: coachingTips,
+          chapterCoaching: chapterCoaching ?? null,
+          dismissedTips,
+        },
+        genre,
+        proofTextGuard,
+        showStudyCta: true,
+        prayerPrompt: chapter?.prayer_prompt,
+        mapStoryLinkId: chapter?.map_story_link_id,
+      }),
+    [
+      genre,
+      proofTextGuard,
+      lensFilteredSections,
+      lensFilteredChapterPanels,
+      chapterMode,
+      studyCoachEnabled,
+      coachingTips,
+      chapterCoaching,
+      dismissedTips,
+      chapter?.prayer_prompt,
+      chapter?.map_story_link_id,
+    ],
+  );
+
+  const scroll = useChapterScroll({
+    bookId,
+    chapterNum,
+    initialVerseNum,
+    isLoading,
+    versesLength: verses.length,
+    planId,
+    planDayNum,
+    items: chapterItems,
+    verseIndexMap,
+  });
+
+  const ttsHook = useChapterTTS({
+    verses,
+    bookId,
+    chapterNum,
+    scrollToVerse: scroll.scrollToVerse,
+  });
 
   const panels = useChapterPanels({
     chapterId: chapter?.id,
@@ -227,7 +254,6 @@ function ChapterScreen() {
   const redLetterVerses = useRedLetter(bookId, chapterNum);
   const notedVerses = useNotedVerses(bookId, chapterNum);
   const { bookmarked, toggleBookmark } = useBookmarkedVerses(bookId, chapterNum);
-  const proofTextGuard = useProofTextGuard(bookId, chapterNum, initialVerseNum);
   const guidedStudyState = useGuidedStudyChapterState(chapter?.id);
   const allSectionPanels = useMemo(
     () => lensFilteredSections.flatMap((section) => section.panels),
@@ -384,11 +410,122 @@ function ChapterScreen() {
           variant="error"
           title="Chapter not found"
           subtitle="We couldn't load this passage. Try going back and selecting it again."
-          action={navigation.canGoBack() ? { label: 'Go back', onPress: () => navigation.goBack() } : undefined}
+          action={
+            navigation.canGoBack()
+              ? { label: 'Go back', onPress: () => navigation.goBack() }
+              : undefined
+          }
         />
       </View>
     );
   }
+
+  // Pre-section chrome + next-chapter hint scroll WITH the FlashList as
+  // its chapterHeader/footer items (#1872). ContextGuardBanner /
+  // StudySessionCTA / GenreBanner become their own list items in D4
+  // (#1874).
+  const readerHeader = (
+    <>
+      {activeLens && lensContent?.guidance ? (
+        <View
+          style={[
+            styles.lensGuidance,
+            { backgroundColor: base.gold + '10', borderColor: base.gold + '30' },
+          ]}
+        >
+          <Text style={[styles.lensGuidanceLabel, { color: base.gold }]}>
+            {availableLenses.find((l) => l.id === activeLens)?.name ?? 'Lens'} Guidance
+          </Text>
+          <Text style={[styles.lensGuidanceText, { color: base.textDim }]}>
+            {lensContent.guidance}
+          </Text>
+        </View>
+      ) : null}
+
+      <ChapterHeader
+        chapter={chapter}
+        noteCount={noteCount}
+        onNotesPress={toggleNotes}
+        onTimelinePress={
+          chapter.timeline_link_event
+            ? () =>
+                rootNavigation.navigate('ExploreTab', {
+                  screen: 'Timeline',
+                  params: { eventId: chapter.timeline_link_event },
+                })
+            : undefined
+        }
+        onMapPress={
+          chapter.map_story_link_id
+            ? () =>
+                rootNavigation.navigate('ExploreTab', {
+                  screen: 'Map',
+                  params: { storyId: chapter.map_story_link_id },
+                })
+            : undefined
+        }
+        storyActName={storyActName}
+        onStoryPress={
+          chapter.redemptive_act
+            ? () => {
+                if (!isPremium) {
+                  showUpgrade('explore', 'The Story of the Bible');
+                  return;
+                }
+                rootNavigation.navigate('ExploreTab', { screen: 'RedemptiveArc' });
+              }
+            : undefined
+        }
+      />
+
+    </>
+  );
+
+  // Context guard CTA target (contextGuard item, D4 #1874).
+  const handleReadContext = (guard: (typeof proofTextGuard) & object) =>
+    navigation.navigate('Chapter', {
+      bookId: guard.suggested_book_id,
+      chapterNum: guard.suggested_chapter_num,
+    });
+
+  // Guided-study CTA (studySessionCta item, D4 #1874).
+  const renderStudyCta = () => (
+    <StudySessionCTA
+      estimate={studyEstimate}
+      mode={guidedStudyState.mode}
+      currentStep={guidedStudyState.activeSession?.current_step}
+      dueCount={guidedStudyState.dueCount}
+      onPress={() =>
+        navigation.navigate('StudySession', {
+          bookId,
+          chapterNum,
+          initialStep: guidedStudyState.initialStep,
+          verseNum: initialVerseNum,
+        })
+      }
+    />
+  );
+
+  const readerFooter = (
+    <>
+      {/* Card #1362: subtle next-chapter hint at the bottom of the scroll.
+            Duplicates the swipe-next affordance for users who prefer tap. */}
+      {hasNext && (
+        <TouchableOpacity
+          onPress={goNext}
+          activeOpacity={0.7}
+          style={styles.nextChapterHint}
+          accessibilityRole="button"
+          accessibilityLabel={`Next chapter — ${bookData?.name ?? bookId} ${chapterNum + 1}`}
+        >
+          <Text style={[styles.nextChapterText, { color: base.textMuted }]}>
+            {`Next: ${bookData?.name ?? bookId} ${chapterNum + 1}`}
+          </Text>
+          <ChevronRight size={14} color={base.gold} />
+        </TouchableOpacity>
+      )}
+    </>
+  );
 
   return (
     <View style={[styles.container, { backgroundColor: base.bg }]}>
@@ -453,106 +590,9 @@ function ChapterScreen() {
         />
       </View>
 
-      <ScrollView
-        // eslint-disable-next-line react-hooks/refs -- passing ref to component is idiomatic
-        ref={scroll.scrollRef}
-        style={styles.scroll}
-        contentContainerStyle={styles.scrollContent}
-        // eslint-disable-next-line react-hooks/refs -- stable handler from hook
-        onScroll={scroll.handleScroll}
-        scrollEventThrottle={32}
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
-      >
-        {activeLens && lensContent?.guidance ? (
-          <View
-            style={[
-              styles.lensGuidance,
-              { backgroundColor: base.gold + '10', borderColor: base.gold + '30' },
-            ]}
-          >
-            <Text style={[styles.lensGuidanceLabel, { color: base.gold }]}>
-              {availableLenses.find((l) => l.id === activeLens)?.name ?? 'Lens'} Guidance
-            </Text>
-            <Text style={[styles.lensGuidanceText, { color: base.textDim }]}>
-              {lensContent.guidance}
-            </Text>
-          </View>
-        ) : null}
-
-        <ChapterHeader
-          chapter={chapter}
-          noteCount={noteCount}
-          onNotesPress={toggleNotes}
-          onTimelinePress={
-            chapter.timeline_link_event
-              ? () =>
-                  rootNavigation.navigate('ExploreTab', {
-                    screen: 'Timeline',
-                    params: { eventId: chapter.timeline_link_event },
-                  })
-              : undefined
-          }
-          onMapPress={
-            chapter.map_story_link_id
-              ? () =>
-                  rootNavigation.navigate('ExploreTab', {
-                    screen: 'Map',
-                    params: { storyId: chapter.map_story_link_id },
-                  })
-              : undefined
-          }
-          storyActName={storyActName}
-          onStoryPress={
-            chapter.redemptive_act
-              ? () => {
-                  if (!isPremium) {
-                    showUpgrade('explore', 'The Story of the Bible');
-                    return;
-                  }
-                  rootNavigation.navigate('ExploreTab', { screen: 'RedemptiveArc' });
-                }
-              : undefined
-          }
-        />
-
-        {!isFocus && proofTextGuard ? (
-          <ContextGuardBanner
-            guard={proofTextGuard}
-            onReadContext={() =>
-              navigation.navigate('Chapter', {
-                bookId: proofTextGuard.suggested_book_id,
-                chapterNum: proofTextGuard.suggested_chapter_num,
-              })
-            }
-          />
-        ) : null}
-
-        {!isFocus ? (
-          <StudySessionCTA
-            estimate={studyEstimate}
-            mode={guidedStudyState.mode}
-            currentStep={guidedStudyState.activeSession?.current_step}
-            dueCount={guidedStudyState.dueCount}
-            onPress={() =>
-              navigation.navigate('StudySession', {
-                bookId,
-                chapterNum,
-                initialStep: guidedStudyState.initialStep,
-                verseNum: initialVerseNum,
-              })
-            }
-          />
-        ) : null}
-
-        {(() => {
-          if (isFocus) return null;
-          const genre = resolveGenre(bookData, chapter);
-          return genre ? (
-            <GenreBanner genreLabel={genre.label} genreGuidance={genre.guidance} />
-          ) : null;
-        })()}
-
+      {/* Swipe-nav touch handlers live on the wrapper View now that the
+          FlashList owns scrolling (#1872). */}
+      <View style={styles.scroll} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
         <ChapterReaderProvider
           verse={{
             verses,
@@ -599,9 +639,18 @@ function ChapterScreen() {
           display={{ tier: chapterMode }}
         >
           <ChapterVerseList
+            // eslint-disable-next-line react-hooks/refs -- passing ref to component is idiomatic
+            ref={scroll.scrollRef}
+            items={chapterItems}
             sections={lensFilteredSections}
             chapterPanels={lensFilteredChapterPanels}
-            prayerPrompt={chapter?.prayer_prompt}
+            onReadContext={handleReadContext}
+            renderStudyCta={renderStudyCta}
+            header={readerHeader}
+            footer={readerFooter}
+            // eslint-disable-next-line react-hooks/refs -- stable handler from hook
+            onScroll={scroll.handleScroll}
+            contentContainerStyle={styles.scrollContent}
             chapterMeta={
               chapter
                 ? {
@@ -615,24 +664,7 @@ function ChapterScreen() {
             }
           />
         </ChapterReaderProvider>
-
-        {/* Card #1362: subtle next-chapter hint at the bottom of the scroll.
-            Duplicates the swipe-next affordance for users who prefer tap. */}
-        {hasNext && (
-          <TouchableOpacity
-            onPress={goNext}
-            activeOpacity={0.7}
-            style={styles.nextChapterHint}
-            accessibilityRole="button"
-            accessibilityLabel={`Next chapter — ${bookData?.name ?? bookId} ${chapterNum + 1}`}
-          >
-            <Text style={[styles.nextChapterText, { color: base.textMuted }]}>
-              {`Next: ${bookData?.name ?? bookId} ${chapterNum + 1}`}
-            </Text>
-            <ChevronRight size={14} color={base.gold} />
-          </TouchableOpacity>
-        )}
-      </ScrollView>
+      </View>
 
       {ttsHook.ttsActive && (
         <TTSControls

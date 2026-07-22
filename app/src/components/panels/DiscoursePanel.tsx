@@ -6,7 +6,8 @@
  */
 
 import React, { useState, useCallback } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, LayoutAnimation } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import Animated, { LinearTransition } from 'react-native-reanimated';
 import { ChevronDown, ChevronRight } from 'lucide-react-native';
 import { useTheme, spacing, radii, fontFamily } from '../../theme';
 
@@ -46,23 +47,6 @@ interface Props {
   data: DiscourseData;
 }
 
-// ── Color mapping by node type ───────────────────────────────────────
-
-const NODE_TYPE_COLORS: Record<NodeType, string> = {
-  thesis: '#bfa050',       // data-color: intentional (gold)
-  premise: '#70b8e8',      // data-color: intentional (blue)
-  ground: '#70d098',       // data-color: intentional (green)
-  inference: '#c090e0',    // data-color: intentional (purple)
-  conclusion: '#e8a070',   // data-color: intentional (orange)
-  contrast: '#e07070',     // data-color: intentional (red)
-  concession: '#a0a0c0',   // data-color: intentional (gray-blue)
-  purpose: '#80c8c0',      // data-color: intentional (teal)
-  result: '#d8b870',       // data-color: intentional (warm gold)
-  illustration: '#b8a090', // data-color: intentional (taupe)
-  exhortation: '#e890b8',  // data-color: intentional (pink)
-  doxology: '#c8c080',     // data-color: intentional (olive gold)
-};
-
 const NODE_TYPE_LABELS: Record<NodeType, string> = {
   thesis: 'Thesis',
   premise: 'Premise',
@@ -86,19 +70,20 @@ interface NodeCardProps {
 }
 
 function NodeCard({ node, depth }: NodeCardProps) {
-  const { base } = useTheme();
+  const { base, discourseNodes } = useTheme();
   const [expanded, setExpanded] = useState(depth === 0);
   const hasChildren = node.children && node.children.length > 0;
-  const color = NODE_TYPE_COLORS[node.type] || base.gold;
+  const color = discourseNodes[node.type] || base.gold;
   const label = NODE_TYPE_LABELS[node.type] || node.type;
 
+  // Reanimated layout transition (#1872) — LayoutAnimation is unsafe
+  // inside FlashList's recycled cells.
   const toggleExpand = useCallback(() => {
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     setExpanded((prev) => !prev);
   }, []);
 
   return (
-    <View style={[styles.nodeWrapper, { marginLeft: depth * 16 }]}>
+    <Animated.View layout={LinearTransition.duration(180)} style={[styles.nodeWrapper, { marginLeft: depth * 16 }]}>
       <View style={[styles.nodeCard, { borderLeftColor: color, backgroundColor: base.bgElevated }]}>
         {/* Header row */}
         <View style={styles.nodeHeader}>
@@ -141,7 +126,7 @@ function NodeCard({ node, depth }: NodeCardProps) {
           ))}
         </View>
       )}
-    </View>
+    </Animated.View>
   );
 }
 

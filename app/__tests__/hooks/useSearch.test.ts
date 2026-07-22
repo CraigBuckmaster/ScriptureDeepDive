@@ -40,6 +40,31 @@ jest.mock('@/utils/logger', () => ({
   logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
 }));
 
+// ── Semantic lane mocks (#1876) ──
+const mockIsPremium = { value: false };
+const mockIsConnected = jest.fn(() => true);
+const mockGetAmicusAuthToken: jest.Mock = jest.fn(async () => 'receipt-token-1234567890');
+const mockSearchVersesSemantic: jest.Mock = jest.fn(async () => [] as any[]);
+
+jest.mock('@/hooks/usePremium', () => ({
+  usePremium: () => ({
+    isPremium: mockIsPremium.value,
+    upgradeRequest: null,
+    showUpgrade: jest.fn(),
+    dismissUpgrade: jest.fn(),
+  }),
+}));
+jest.mock('@/services/connectivity', () => ({
+  isConnected: () => mockIsConnected(),
+}));
+jest.mock('@/services/amicus/authToken', () => ({
+  getAmicusAuthToken: (...args: any[]) => mockGetAmicusAuthToken(...args),
+}));
+jest.mock('@/services/search/semanticVerses', () => ({
+  ...jest.requireActual('@/services/search/semanticVerses'),
+  searchVersesSemantic: (...args: any[]) => mockSearchVersesSemantic(...args),
+}));
+
 import { useSearch, buildOrderedGroups } from '@/hooks/useSearch';
 import type { UniversalSearchResults } from '@/hooks/useSearch';
 
@@ -56,6 +81,10 @@ describe('useSearch', () => {
     mockGetAllDifficultPassages.mockResolvedValue([]);
     mockSearchLifeTopics.mockResolvedValue([]);
     mockSearchDiscoveries.mockResolvedValue([]);
+    mockIsPremium.value = false;
+    mockIsConnected.mockReturnValue(true);
+    mockGetAmicusAuthToken.mockResolvedValue('receipt-token-1234567890');
+    mockSearchVersesSemantic.mockResolvedValue([]);
   });
 
   afterEach(() => jest.useRealTimers());
@@ -228,6 +257,99 @@ describe('useSearch', () => {
 
     await waitFor(() => expect(result.current.isLoading).toBe(false));
     expect(mockSearchVerses).toHaveBeenCalledWith('exodus', 50);
+  });
+
+  // ── Semantic verse lane (#1876) ──
+
+  const ftsVerse = (bookId: string, ch: number, v: number) => ({
+    id: ch * 1000 + v,
+    book_id: bookId,
+    chapter_num: ch,
+    verse_num: v,
+    translation: 'kjv',
+    text: `${bookId} ${ch}:${v}`,
+  });
+
+  describe('semantic verse lane', () => {
+    it('does not run for free users', async () => {
+      mockIsPremium.value = false;
+      const { result } = renderHook(() => useSearch('steadfast love'));
+      await jest.advanceTimersByTimeAsync(600);
+      await waitFor(() => expect(result.current.isLoading).toBe(false));
+      expect(mockSearchVersesSemantic).not.toHaveBeenCalled();
+    });
+
+    it('does not run offline', async () => {
+      mockIsPremium.value = true;
+      mockIsConnected.mockReturnValue(false);
+      const { result } = renderHook(() => useSearch('steadfast love'));
+      await jest.advanceTimersByTimeAsync(600);
+      await waitFor(() => expect(result.current.isLoading).toBe(false));
+      expect(mockSearchVersesSemantic).not.toHaveBeenCalled();
+    });
+
+    it('skips silently when no auth token is available', async () => {
+      mockIsPremium.value = true;
+      mockGetAmicusAuthToken.mockResolvedValue(null);
+      const ftsRows = [ftsVerse('genesis', 1, 1)];
+      mockSearchVerses.mockResolvedValue(ftsRows);
+
+      const { result } = renderHook(() => useSearch('steadfast love'));
+      await jest.advanceTimersByTimeAsync(600);
+      await waitFor(() => expect(result.current.isLoading).toBe(false));
+
+      expect(mockSearchVersesSemantic).not.toHaveBeenCalled();
+      expect(result.current.results.verses).toEqual(ftsRows);
+    });
+
+    it('waits the extra lane debounce (500ms total) before embedding', async () => {
+      mockIsPremium.value = true;
+      const { result } = renderHook(() => useSearch('steadfast love'));
+
+      // Main debounce fired, lane-local 200ms not yet elapsed.
+      await jest.advanceTimersByTimeAsync(400);
+      expect(mockSearchVersesSemantic).not.toHaveBeenCalled();
+
+      await jest.advanceTimersByTimeAsync(200);
+      await waitFor(() => expect(result.current.isLoading).toBe(false));
+      expect(mockSearchVersesSemantic).toHaveBeenCalledWith(
+        'steadfast love',
+        'receipt-token-1234567890',
+      );
+    });
+
+    it('merges semantic hits with FTS via RRF (both-lanes verse first)', async () => {
+      mockIsPremium.value = true;
+      const g11 = ftsVerse('genesis', 1, 1);
+      const j316 = ftsVerse('john', 3, 16);
+      const p231 = ftsVerse('psalms', 23, 1);
+      mockSearchVerses.mockResolvedValue([g11, j316]);
+      mockSearchVersesSemantic.mockResolvedValue([j316, p231]);
+
+      const { result } = renderHook(() => useSearch('steadfast love'));
+      await jest.advanceTimersByTimeAsync(600);
+      await waitFor(() => expect(result.current.isLoading).toBe(false));
+
+      // j316 appears in both lanes → outranks the FTS #1.
+      expect(result.current.results.verses.map((v) => v.id)).toEqual([
+        j316.id, g11.id, p231.id,
+      ]);
+    });
+
+    it('falls back to FTS-only on AmicusError without surfacing a failure', async () => {
+      mockIsPremium.value = true;
+      const ftsRows = [ftsVerse('genesis', 1, 1), ftsVerse('genesis', 1, 2)];
+      mockSearchVerses.mockResolvedValue(ftsRows);
+      mockSearchVersesSemantic.mockRejectedValue(new Error('AmicusError: OFFLINE'));
+
+      const { result } = renderHook(() => useSearch('steadfast love'));
+      await jest.advanceTimersByTimeAsync(600);
+      await waitFor(() => expect(result.current.isLoading).toBe(false));
+
+      expect(result.current.results.verses).toEqual(ftsRows);
+      // Other lanes unaffected
+      expect(result.current.results.people).toEqual([]);
+    });
   });
 });
 

@@ -11,7 +11,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 import { Image } from 'expo-image';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, overlay } from '../theme';
 import type { ExploreImage } from '../types';
 
 export interface FeatureCardData {
@@ -145,7 +145,7 @@ export function FeatureCard({
                   <View
                     key={i}
                     style={[styles.dot, {
-                      backgroundColor: i === activeIndex ? '#fff' : 'rgba(255,255,255,0.4)', // overlay-color: intentional
+                      backgroundColor: i === activeIndex ? overlay.white : 'rgba(255,255,255,0.4)', // overlay-color: intentional
                     }]}
                   />
                 ))}
@@ -246,7 +246,7 @@ const styles = StyleSheet.create({
     height: 32,
     backgroundColor: 'transparent',
     // Simulated gradient via layered shadow
-    shadowColor: '#000', // overlay-color: intentional
+    shadowColor: overlay.black,
     shadowOffset: { width: 0, height: -8 },
     shadowOpacity: 0.5,
     shadowRadius: 8,
@@ -256,7 +256,7 @@ const styles = StyleSheet.create({
     bottom: 4,
     left: 6,
     right: 24,
-    color: '#fff', // overlay-color: intentional (caption on image)
+    color: overlay.white, // caption on image — mode-invariant
     fontFamily: fontFamily.ui,
     fontSize: 11,
     textShadowColor: 'rgba(0,0,0,0.8)', // overlay-color: intentional
