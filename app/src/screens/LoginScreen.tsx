@@ -21,7 +21,7 @@ import { useAuthStore } from '../stores';
 import { useAuth } from '../hooks/useAuth';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { AuthInput } from '../components/AuthInput';
-import { useTheme, spacing, fontFamily, radii } from '../theme';
+import { useTheme, spacing, fontFamily, radii, brand, overlay } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 function LoginScreen() {
@@ -105,18 +105,18 @@ function LoginScreen() {
         {/* Social buttons */}
         <TouchableOpacity
           onPress={handleGoogle}
-          style={[styles.socialButton, { backgroundColor: '#fff' }]} // brand-color: intentional (Google white)
+          style={[styles.socialButton, { backgroundColor: brand.googleBg }]}
           activeOpacity={0.7}
         >
-          <Text style={[styles.socialButtonText, { color: '#1f1f1f' }]}>{/* brand-color: intentional (Google dark) */}Continue with Google</Text>
+          <Text style={[styles.socialButtonText, { color: brand.googleText }]}>Continue with Google</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           onPress={handleFacebook}
-          style={[styles.socialButton, { backgroundColor: '#1877F2', marginTop: spacing.sm }]} // brand-color: intentional (Facebook blue)
+          style={[styles.socialButton, { backgroundColor: brand.facebookBg, marginTop: spacing.sm }]}
           activeOpacity={0.7}
         >
-          <Text style={[styles.socialButtonText, { color: '#fff' }]}>{/* brand-color: intentional (Facebook white) */}Continue with Facebook</Text>
+          <Text style={[styles.socialButtonText, { color: brand.facebookText }]}>Continue with Facebook</Text>
         </TouchableOpacity>
 
         {/* Divider */}
@@ -270,7 +270,7 @@ const styles = StyleSheet.create({
   primaryButtonText: {
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 16,
-    color: '#1a1a1a', // data-color: intentional (dark text on gold button)
+    color: overlay.onGold,
   },
   magicLinkButton: {
     height: 48,

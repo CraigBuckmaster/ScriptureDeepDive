@@ -30,10 +30,10 @@ import {
   restorePurchases,
   type PlanInfo,
 } from '../services/purchases';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, overlay } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-const GOLD_BUTTON_DARK = '#1a1a1a'; // data-color: intentional (dark text/elements on gold CTA button)
+const GOLD_BUTTON_DARK = overlay.onGold; // dark text/elements on gold CTA button
 
 interface PartnerCapability {
   Icon: typeof BookOpen;
@@ -414,7 +414,7 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 9,
     letterSpacing: 0.8,
-    color: '#1a1a1a', // data-color: intentional — dark text on gold badge
+    color: overlay.onGold,
   },
   planCard: {
     borderWidth: 1.5,
@@ -446,7 +446,7 @@ const styles = StyleSheet.create({
     marginBottom: spacing.md,
   },
   purchaseBtnText: {
-    color: '#1a1a1a', // data-color: intentional (dark text on gold button)
+    color: overlay.onGold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 16,
   },

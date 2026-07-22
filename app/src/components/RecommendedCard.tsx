@@ -12,7 +12,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 import { Image } from 'expo-image';
 import { ChevronRight } from 'lucide-react-native';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, overlay } from '../theme';
 import type { ExploreImage } from '../types';
 import type { ExploreRecommendation } from '../hooks/useExploreRecommendations';
 
@@ -141,7 +141,7 @@ export function RecommendedCard({
                   <View
                     key={i}
                     style={[styles.dot, {
-                      backgroundColor: i === safeIndex ? '#fff' : 'rgba(255,255,255,0.4)', // overlay-color: intentional
+                      backgroundColor: i === safeIndex ? overlay.white : 'rgba(255,255,255,0.4)', // overlay-color: intentional
                     }]}
                   />
                 ))}
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
     right: 0,
     height: 40,
     backgroundColor: 'transparent',
-    shadowColor: '#000', // overlay-color: intentional
+    shadowColor: overlay.black,
     shadowOffset: { width: 0, height: -10 },
     shadowOpacity: 0.5,
     shadowRadius: 10,

@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, overlay } from '../theme';
 import type { HermeneuticLens } from '../types';
 
 interface Props {
@@ -42,7 +42,7 @@ function LensToggleBarInner({ lenses, activeLensId, onSelect }: Props) {
           <Text
             style={[
               styles.pillText,
-              { color: activeLensId === null ? '#000' : base.textMuted }, // data-color: intentional (dark text on gold active pill)
+              { color: activeLensId === null ? overlay.onGold : base.textMuted },
             ]}
           >
             Default
@@ -70,7 +70,7 @@ function LensToggleBarInner({ lenses, activeLensId, onSelect }: Props) {
               <Text
                 style={[
                   styles.pillText,
-                  { color: isActive ? '#000' : base.textMuted }, // data-color: intentional (dark text on gold active pill)
+                  { color: isActive ? overlay.onGold : base.textMuted },
                 ]}
               >
                 {lens.name}

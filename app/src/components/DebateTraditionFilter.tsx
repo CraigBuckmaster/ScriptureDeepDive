@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, overlay } from '../theme';
 import { families } from '../theme/colors';
 
 interface Props {
@@ -73,7 +73,7 @@ function DebateTraditionFilter({ traditions, activeFilter, onSelect }: Props) {
             <Text
               style={[
                 styles.pillText,
-                { color: isActive ? '#fff' : color }, // data-color: intentional (white text on colored pill)
+                { color: isActive ? overlay.white : color }, // white text on colored pill — mode-invariant
               ]}
             >
               {TRADITION_LABELS[t] || t}

@@ -18,7 +18,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { NavigationProp } from '@react-navigation/native';
 import type { TabParamList } from '../navigation/types';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, overlay } from '../theme';
 import type { UpgradeVariant } from '../hooks/usePremium';
 
 interface Props {
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   ctaText: {
-    color: '#1a1a1a', // data-color: intentional (dark text on gold CTA button)
+    color: overlay.onGold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 15,
   },

@@ -12,6 +12,7 @@
 
 import React, { memo, useMemo } from 'react';
 import { GeoJSONSource, Layer } from '@maplibre/maplibre-react-native';
+import { mapColors } from '../../theme';
 import type { PersonArcStop } from '../../hooks/usePersonArc';
 
 interface Props {
@@ -20,8 +21,8 @@ interface Props {
   color?: string;
 }
 
-/** Amber, distinct from story-path gold (#bfa050). */
-const ARC_COLOR = '#e09050'; // data-color: intentional (person arc amber — MapLibre GL)
+/** Amber, distinct from story-path gold — see theme/mapColors.ts. */
+const ARC_COLOR = mapColors.arcAmber;
 
 function arcLineFeatureCollection(stops: PersonArcStop[]): GeoJSON.FeatureCollection {
   if (stops.length < 2) return { type: 'FeatureCollection', features: [] };
@@ -94,7 +95,7 @@ export const PersonArcLayer = memo(function PersonArcLayer({
           style={{
             circleRadius: 10,
             circleColor: color,
-            circleStrokeColor: '#1a1610', // data-color: intentional (dark stroke against map bg — MapLibre GL)
+            circleStrokeColor: mapColors.darkHalo,
             circleStrokeWidth: 1.5,
           }}
         />
@@ -106,7 +107,7 @@ export const PersonArcLayer = memo(function PersonArcLayer({
             textField: ['get', 'label'] as any,
             textFont: ['Noto Sans Regular'],
             textSize: 11,
-            textColor: '#1a1610', // data-color: intentional (dark label on amber stop circle — MapLibre GL)
+            textColor: mapColors.darkHalo,
             textIgnorePlacement: true,
           }}
         />
@@ -121,7 +122,7 @@ export const PersonArcLayer = memo(function PersonArcLayer({
             textFont: ['Noto Sans Italic'],
             textSize: 11,
             textColor: color,
-            textHaloColor: '#1a1610', // data-color: intentional (dark halo against map bg — MapLibre GL)
+            textHaloColor: mapColors.darkHalo,
             textHaloWidth: 1.3,
             textOffset: [0, 1.4],
             textAnchor: 'top',
