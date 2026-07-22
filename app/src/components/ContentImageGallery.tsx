@@ -40,7 +40,7 @@ import {
   Gesture,
   GestureHandlerRootView,
 } from 'react-native-gesture-handler';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, overlay } from '../theme';
 import { ImageCredit } from './ImageCredit';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
@@ -424,7 +424,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   closeText: {
-    color: '#fff', // overlay-color: intentional (white text on dark modal)
+    color: overlay.white, // white text on dark modal — mode-invariant
     fontSize: 18,
     fontWeight: '600',
   },

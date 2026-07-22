@@ -20,6 +20,7 @@ const mockBase: ThemePalette['base'] = {
   verseNum: '#9a8a6a',
   navText: '#d8ccb0',
   danger: '#e05a6a',
+  warning: '#e8a040',
   success: '#81C784',
   redLetter: '#d4847a',
   tintWarm: '#1a1508',

@@ -8,7 +8,7 @@ import { usePremium, useReviewQueue } from '../hooks';
 import { UpgradePrompt } from '../components/UpgradePrompt';
 import { formatChapterRef, getGuidedStudyStepLabel } from '../services/guidedStudy';
 import { launchAmicusStudyThread } from '../services/amicus';
-import { fontFamily, radii, spacing, useTheme } from '../theme';
+import { fontFamily, overlay, radii, spacing, useTheme } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 import type { GuidedStudyQuestion, GuidedStudySession, GuidedStudyTakeawaySummary } from '../types';
 
@@ -508,7 +508,7 @@ const styles = StyleSheet.create({
     marginTop: spacing.md,
   },
   primaryText: {
-    color: '#111111',
+    color: overlay.onGold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 14,
   },

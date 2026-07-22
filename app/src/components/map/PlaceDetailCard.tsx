@@ -26,6 +26,9 @@ import {
   eraNames,
   fontFamily,
   MIN_TOUCH_TARGET,
+  mapColors,
+  placeTypeColors,
+  testamentEra,
 } from '../../theme';
 import { lightImpact } from '../../utils/haptics';
 import { safeParse } from '../../utils/logger';
@@ -52,18 +55,9 @@ const TYPE_LABELS: Record<Place['type'], string> = {
   site: 'Site',
 };
 
-const TYPE_COLORS: Record<Place['type'], string> = {
-  city: '#d4b483',     // data-color: intentional (warm sand — built environment)
-  mountain: '#d4b483', // data-color: intentional (warm sand — terrain)
-  site: '#d4b483',     // data-color: intentional (warm sand — archaeological site)
-  water: '#90c8d8',    // data-color: intentional (steel blue — water body)
-  region: '#b8a070',   // data-color: intentional (muted gold — region boundary)
-};
+const TYPE_COLORS: Record<Place['type'], string> = placeTypeColors;
 
-const TESTAMENT_COLORS = {
-  OT: '#d4a05a', // data-color: intentional (amber — Old Testament era)
-  NT: '#5ea073', // data-color: intentional (green — New Testament era)
-};
+const TESTAMENT_COLORS = testamentEra;
 
 /** Format a coordinate to 2 decimals with N/S, E/W suffix. */
 export function formatCoord(value: number, axis: 'lat' | 'lon'): string {
@@ -283,11 +277,11 @@ export function PlaceDetailCard({
                 accessibilityLabel={`Show ${p.name}'s geographic arc`}
                 style={[
                   styles.storyChip,
-                  { backgroundColor: '#e09050' + '1A', borderColor: '#e09050' + '40' }, // data-color: intentional (amber arc — matches PersonArcLayer ARC_COLOR)
+                  { backgroundColor: mapColors.arcAmber + '1A', borderColor: mapColors.arcAmber + '40' }, // matches PersonArcLayer ARC_COLOR
                 ]}
               >
                 <Text
-                  style={[styles.storyChipText, { color: '#e09050' }]} // data-color: intentional (amber arc text — matches PersonArcLayer ARC_COLOR)
+                  style={[styles.storyChipText, { color: mapColors.arcAmber }]} // matches PersonArcLayer ARC_COLOR
                   numberOfLines={1}
                 >
                   {p.name}

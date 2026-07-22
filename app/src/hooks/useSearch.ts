@@ -3,6 +3,13 @@
  * Debounced at 300ms. Searches verses, people, books, concepts,
  * map stories, timeline events, life topics, and difficult passages.
  *
+ * Premium + online adds a semantic verse lane (#1876): the query is
+ * embedded via the Amicus proxy, vector-matched against the chunk index,
+ * and the resulting verses merge with FTS hits via Reciprocal Rank
+ * Fusion. Any semantic failure degrades silently to FTS-only. The
+ * semantic lane debounces at 500ms total (embed round-trip) — 300ms
+ * shared + 200ms lane-local.
+ *
  * Includes reference parsing: typing "Gen 3:15" or "Romans 8" produces
  * a direct-navigation result at the top of the list.
  *
@@ -17,8 +24,18 @@ import {
   searchLifeTopics, searchDiscoveries,
 } from '../db/content';
 import { getBookByName } from '../utils/verseResolver';
+import { searchVersesSemantic, mergeVersesRRF } from '../services/search/semanticVerses';
+import { getAmicusAuthToken } from '../services/amicus/authToken';
+import { isConnected } from '../services/connectivity';
 import type { Verse, Person, Book, MapStory, TimelineEntry, DifficultPassage, Concept, LifeTopic, ArchaeologicalDiscovery } from '../types';
 import { logger } from '../utils/logger';
+import { usePremium } from './usePremium';
+
+/**
+ * Extra debounce for the semantic lane only: 300ms shared timer + this
+ * = 500ms before the embed round-trip fires (#1876).
+ */
+const SEMANTIC_EXTRA_DEBOUNCE_MS = 200;
 
 // ── Result types ────────────────────────────────────────────────────
 
@@ -189,6 +206,7 @@ export function useSearch(query: string) {
   const [isLoading, setIsLoading] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const cacheRef = useRef<StaticCaches | null>(null);
+  const { isPremium } = usePremium();
 
   useEffect(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
@@ -210,13 +228,37 @@ export function useSearch(query: string) {
 
         const caches = await loadCaches(cacheRef);
 
+        // Semantic verse lane (#1876) — premium + online only. Waits its
+        // lane-local debounce, then embeds via the proxy. Any failure
+        // (AmicusError: offline, unauthorized, embed/vec failure) degrades
+        // silently to FTS-only — never a user-facing error.
+        const semanticPromise: Promise<Verse[]> =
+          isPremium && isConnected()
+            ? (async () => {
+                await new Promise((r) => setTimeout(r, SEMANTIC_EXTRA_DEBOUNCE_MS));
+                const authToken = await getAmicusAuthToken();
+                if (!authToken) return [];
+                return searchVersesSemantic(trimmed, authToken);
+              })().catch((err) => {
+                logger.warn('Search', 'Semantic verse lane failed — FTS only', err);
+                return [] as Verse[];
+              })
+            : Promise.resolve([] as Verse[]);
+
         // FTS queries + client-side filters in parallel
-        const [verses, rawPeople, lifeTopics, archaeology] = await Promise.all([
+        const [ftsVerses, rawPeople, lifeTopics, archaeology, semanticVerses] = await Promise.all([
           searchVerses(trimmed, 50),
           searchPeople(trimmed),
           searchLifeTopics(trimmed).catch(() => [] as LifeTopic[]),
           searchDiscoveries(trimmed).catch(() => [] as ArchaeologicalDiscovery[]),
+          semanticPromise,
         ]);
+
+        // RRF merge (k=60), deduped by verse ref. No semantic hits → FTS
+        // list passes through untouched.
+        const verses = semanticVerses.length > 0
+          ? mergeVersesRRF(ftsVerses, semanticVerses)
+          : ftsVerses;
 
         // Sort people by relevance
         const people = rawPeople.sort(
@@ -249,7 +291,7 @@ export function useSearch(query: string) {
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, [query]);
+  }, [query, isPremium]);
 
   return { results, isLoading };
 }

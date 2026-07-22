@@ -244,6 +244,148 @@ export const timelineSvg = {
   tick: '#5a4a28',
 } as const;
 
+// ── Discourse Node Colors (DiscoursePanel argument trees) ─────────
+// Keyed by discourse node type. Transformed per mode via buildPalette.
+
+export const discourseNodes: Record<string, string> = {
+  thesis: '#bfa050',
+  premise: '#70b8e8',
+  ground: '#70d098',
+  inference: '#c090e0',
+  conclusion: '#e8a070',
+  contrast: '#e07070',
+  concession: '#a0a0c0',
+  purpose: '#80c8c0',
+  result: '#d8b870',
+  illustration: '#b8a090',
+  exhortation: '#e890b8',
+  doxology: '#c8c080',
+} as const;
+
+// ── Echo Type Colors (Connections hub EchoesView) ─────────────────
+
+export const echoTypes = {
+  direct_quote: '#64B5F6',
+  allusion: '#81C784',
+  echo: '#FFB74D',
+  typological: '#BA68C8',
+} as const;
+
+// ── Debate Topic Category Colors (DebateBrowseScreen) ─────────────
+// Distinct from `categories` (difficult passages) — same hues, different
+// key set, tuned independently. Do not merge without a visual pass.
+
+export const debateCategories = {
+  theological: '#64B5F6',
+  ethical: '#81C784',
+  historical: '#FFB74D',
+  textual: '#BA68C8',
+  interpretive: '#4FC3F7',
+} as const;
+
+// ── Debate Position Analysis Colors (DebatePositionCard) ──────────
+
+export const debatePosition = {
+  strengths: '#4CAF50',
+  weaknesses: '#F44336',
+} as const;
+
+// ── Trust Level Colors (TrustBadge, UserProfileScreen) ────────────
+
+export const trustLevels: Record<number, string> = {
+  0: '#888888',
+  1: '#bfa050',
+  2: '#50b060',
+} as const;
+
+// ── Contribution Status Colors (UserProfileScreen) ────────────────
+
+export const contributionStatus: Record<string, string> = {
+  draft: '#888888',
+  pending: '#d4a843',
+  approved: '#50b060',
+  rejected: '#cc4444',
+  flagged: '#cc6633',
+} as const;
+
+// ── Library Shelf Accents (LibrarySections feature cards) ─────────
+// Keyed by destination screen name.
+
+export const libraryAccents: Record<string, string> = {
+  GenealogyTree: '#e86040',
+  Timeline: '#70b8e8',
+  Map: '#81C784',
+  Periods: '#8a6e3a',
+  RedemptiveArc: '#c8a040',
+  JourneyBrowse: '#bfa050',
+  TopicBrowse: '#c8a040',
+  ProphecyBrowse: '#e8a070',
+  ThreadBrowse: '#9090e0',
+  HarmonyBrowse: '#70d098',
+  WordStudyBrowse: '#e890b8',
+  Concordance: '#70b8e8',
+  DictionaryBrowse: '#c090e0',
+  ScholarBrowse: '#a0b8d0',
+  DebateBrowse: '#d08080',
+  DifficultPassagesBrowse: '#FFB74D',
+  HowWeGotTheBibleLanding: '#c89858',
+  ContentLibrary: '#b8a0d0',
+  LifeTopics: '#81C784',
+  LensBrowse: '#BA68C8',
+  ArchaeologyBrowse: '#b07d4f',
+  TimeTravelBrowse: '#8a6a3a',
+  GrammarBrowse: '#7a9ab0',
+} as const;
+
+// ── Overlay Colors (mode-invariant by design — never transformed) ──
+// For content rendered over photos, dark gradients, gold fills, or as
+// RN shadows. These deliberately do NOT change with the theme.
+
+export const overlay = {
+  /** RN shadowColor — must stay black for iOS shadows to render correctly. */
+  black: '#000000',
+  /** Text/dots/icons over photos and dark image gradients. */
+  white: '#ffffff',
+  /** Dark text on gold buttons/badges — readable on gold in every mode. */
+  onGold: '#1a1a1a',
+} as const;
+
+// ── Third-Party Brand Colors (auth provider buttons) ──────────────
+// Fixed by each provider's brand guidelines — never themed.
+
+export const brand = {
+  googleBg: '#ffffff',
+  googleText: '#1f1f1f',
+  facebookBg: '#1877F2',
+  facebookText: '#ffffff',
+} as const;
+
+// ── User Highlight Palette (HighlightColorPicker) ──────────────────
+// The `name` key is persisted to user.db (verse_highlights.color); the hex
+// is presentation. Mode-invariant so saved highlights look stable.
+
+export const userHighlightColors: Record<string, string> = {
+  gold: '#bfa050',
+  blue: '#5b8fb9',
+  green: '#5fa87a',
+  purple: '#8b7cb8',
+  coral: '#c47a6a',
+  teal: '#5ba8a0',
+} as const;
+
+// ── Collection Preset Colors (CollectionPicker) ────────────────────
+// Persisted verbatim to user.db (highlight_collections.color) — never
+// transformed, or saved collections would drift between modes.
+
+export const collectionPresetColors: string[] = [
+  '#bfa050', // gold
+  '#70b8e8', // blue
+  '#70d098', // green
+  '#e890b8', // pink
+  '#c090e0', // purple
+  '#e8a070', // orange
+];
+
 // ── Church History Era Colors (Time-Travel Reader) ────────────
 
 export const churchEras: Record<string, string> = {

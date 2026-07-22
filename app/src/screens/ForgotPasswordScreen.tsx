@@ -19,7 +19,7 @@ import type { ScreenNavProp } from '../navigation/types';
 import { useAuthStore } from '../stores';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { AuthInput } from '../components/AuthInput';
-import { useTheme, spacing, fontFamily, radii } from '../theme';
+import { useTheme, spacing, fontFamily, radii, overlay } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 function ForgotPasswordScreen() {
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
   primaryButtonText: {
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 16,
-    color: '#1a1a1a', // data-color: intentional
+    color: overlay.onGold,
   },
   successText: {
     fontFamily: fontFamily.ui,

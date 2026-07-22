@@ -10,7 +10,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Image } from 'expo-image';
-import { useTheme, spacing, radii, fontFamily } from '../../theme';
+import { useTheme, spacing, radii, fontFamily, overlay } from '../../theme';
 import type { ExploreImage } from '../../types';
 
 const IMAGE_HEIGHT = 85;
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     right: 0,
     height: 32,
     backgroundColor: 'transparent', // overlay-color: intentional
-    shadowColor: '#000', // overlay-color: intentional
+    shadowColor: overlay.black,
     shadowOffset: { width: 0, height: -8 },
     shadowOpacity: 0.5,
     shadowRadius: 8,

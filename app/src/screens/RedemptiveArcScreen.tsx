@@ -22,7 +22,7 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { BadgeChip } from '../components/BadgeChip';
 import { UpgradePrompt } from '../components/UpgradePrompt';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily, overlay } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const FREE_ACT_COUNT = 2;
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
   actNumText: {
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 14,
-    color: '#1a1a1a', // data-color: intentional (dark text on gold badge)
+    color: overlay.onGold,
   },
   actName: {
     fontFamily: fontFamily.displayMedium,

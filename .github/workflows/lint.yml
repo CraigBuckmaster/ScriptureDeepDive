@@ -33,5 +33,11 @@ jobs:
       - name: ESLint
         run: npx eslint src/ --max-warnings 0 || echo "::warning::ESLint found issues"
 
+      # Hex color guard (#1898) — error-level rules only, HARD FAIL.
+      # Blocks hardcoded hex color literals in src/screens/ and
+      # src/components/ (no-restricted-syntax override in .eslintrc.json).
+      - name: Hex color guard
+        run: npx eslint src/screens src/components --quiet
+
       - name: Prettier check
         run: npx prettier --check "src/**/*.{ts,tsx}" || echo "::warning::Prettier found formatting issues"
