@@ -10,6 +10,8 @@
  *
  * Coverage map (current render tree → items):
  *   ChapterHeader                        → chapterHeader
+ *   ContextGuardBanner (study/deep)      → contextGuard (D4 #1874)
+ *   StudySessionCTA (study/deep)         → studySessionCta (D4 #1874)
  *   GenreBanner (study/deep)             → genreBanner
  *   per section:
  *     GoldSeparator (between sections)   → sectionHeader.showSeparator
@@ -40,6 +42,7 @@ import type {
   ChapterPanel,
   CoachingTip,
   ChapterCoaching,
+  ProofTextGuard,
 } from '../types';
 import type { ChapterMode } from '../stores/settingsStore';
 import { filterPanelKeys } from './lensPanelFilter';
@@ -61,6 +64,17 @@ export interface GenreBannerItem extends ItemBase {
   type: 'genreBanner';
   genreLabel: string;
   genreGuidance: string;
+}
+
+/** Proof-text context guard banner (D4 #1874) — study/deep only. */
+export interface ContextGuardItem extends ItemBase {
+  type: 'contextGuard';
+  guard: ProofTextGuard;
+}
+
+/** Guided-study session CTA slot (D4 #1874) — study/deep only. */
+export interface StudySessionCtaItem extends ItemBase {
+  type: 'studySessionCta';
 }
 
 export interface SectionHeaderItem extends ItemBase {
@@ -129,6 +143,8 @@ export interface FooterItem extends ItemBase {
 
 export type ChapterListItem =
   | ChapterHeaderItem
+  | ContextGuardItem
+  | StudySessionCtaItem
   | GenreBannerItem
   | SectionHeaderItem
   | VerseBlockItem
@@ -163,6 +179,10 @@ export interface BuildChapterItemsOpts {
   coaching: ChapterCoachingOpts;
   /** Genre banner content (resolveGenre output), study/deep only. */
   genre?: { label: string; guidance: string } | null;
+  /** Proof-text guard for the chapter (useProofTextGuard), study/deep only. */
+  proofTextGuard?: ProofTextGuard | null;
+  /** Emit the guided-study CTA slot (rendered via renderStudyCta), study/deep only. */
+  showStudyCta?: boolean;
   prayerPrompt?: string | null;
   relatedLifeTopicsJson?: string | null;
   /** map_story_link_id — emits the mapChip slot in study/deep. */
@@ -203,6 +223,19 @@ export function buildChapterItems(
 
   // Chapter header — always first, all modes.
   items.push({ type: 'chapterHeader', key: makeKey('chapterHeader', 0, 0) });
+
+  // Context guard + study CTA — study/deep only, in today's visual order:
+  // guard, CTA, then genre banner (D4 #1874).
+  if (!isRead && opts.proofTextGuard) {
+    items.push({
+      type: 'contextGuard',
+      key: makeKey('contextGuard', 0, 0),
+      guard: opts.proofTextGuard,
+    });
+  }
+  if (!isRead && opts.showStudyCta) {
+    items.push({ type: 'studySessionCta', key: makeKey('studySessionCta', 0, 0) });
+  }
 
   // Genre banner — study/deep only.
   if (!isRead && opts.genre) {

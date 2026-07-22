@@ -326,6 +326,48 @@ describe('buildChapterItems — coaching gating', () => {
 
 // ── Optional slots ─────────────────────────────────────────────────
 
+describe('buildChapterItems — contextGuard + studySessionCta (D4 #1874)', () => {
+  const GUARD = {
+    ref: 'jeremiah 29:11',
+    book_id: 'jeremiah',
+    chapter_num: 29,
+    verse_num: 11,
+    common_misreading: 'A personal promise of prosperity.',
+    actual_context_summary: 'Spoken to exiles facing 70 years in Babylon.',
+    suggested_book_id: 'jeremiah',
+    suggested_chapter_num: 29,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } as any;
+
+  it('emits guard, CTA, then genre banner after the chapter header', () => {
+    const { items } = buildChapterItems(SECTIONS, CHAPTER_PANELS, opts({
+      proofTextGuard: GUARD,
+      showStudyCta: true,
+    }));
+    expect(types(items).slice(0, 4)).toEqual([
+      'chapterHeader', 'contextGuard', 'studySessionCta', 'genreBanner',
+    ]);
+    const [guard] = byType(items, 'contextGuard');
+    expect(guard.guard).toBe(GUARD);
+  });
+
+  it('hides both in read mode', () => {
+    const { items } = buildChapterItems(SECTIONS, CHAPTER_PANELS, opts({
+      mode: 'read',
+      proofTextGuard: GUARD,
+      showStudyCta: true,
+    }));
+    expect(types(items)).not.toContain('contextGuard');
+    expect(types(items)).not.toContain('studySessionCta');
+  });
+
+  it('omits both when absent from opts', () => {
+    const { items } = buildChapterItems(SECTIONS, CHAPTER_PANELS, opts());
+    expect(types(items)).not.toContain('contextGuard');
+    expect(types(items)).not.toContain('studySessionCta');
+  });
+});
+
 describe('buildChapterItems — optional slots', () => {
   it('omits genreBanner, prayerPrompt, lifeTopics, and mapChip when absent', () => {
     const { items } = buildChapterItems(
