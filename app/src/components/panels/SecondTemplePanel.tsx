@@ -17,7 +17,6 @@
 
 import React, { useCallback, useState } from 'react';
 import {
-  LayoutAnimation,
   Pressable,
   StyleSheet,
   Text,
@@ -54,8 +53,10 @@ export function SecondTemplePanel({
   const [expanded, setExpanded] = useState(true);
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
 
+  // Reanimated-free toggle (#1872): LayoutAnimation is unsafe inside
+  // FlashList's recycled cells; the expand/collapse renders instantly and
+  // the cell resize animates via the list's layout pass.
   const toggleExpand = useCallback(() => {
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     setExpanded((prev) => !prev);
   }, []);
 

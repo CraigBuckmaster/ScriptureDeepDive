@@ -5,7 +5,7 @@
  */
 
 import { useState, useCallback, useEffect, useMemo, type RefObject } from 'react';
-import { LayoutAnimation, type ScrollView } from 'react-native';
+import type { ReaderScrollable } from '../../components/ChapterVerseList';
 import { useReaderStore, useSettingsStore } from '../../stores';
 import { useStudyDepth } from '../useStudyDepth';
 import { useStudyRecorder } from '../useStudyRecorder';
@@ -23,7 +23,7 @@ interface UseChapterPanelsOptions {
   chapterNum: number;
   openPanel?: { sectionNum?: number; panelType: string } | null;
   isLoading: boolean;
-  scrollRef: RefObject<ScrollView | null>;
+  scrollRef: RefObject<ReaderScrollable | null>;
 }
 
 export function useChapterPanels({
@@ -53,10 +53,11 @@ export function useChapterPanels({
   // Study session recording (premium only)
   const { recordEvent } = useStudyRecorder(chapterId, isPremium);
 
-  // Panel toggle — single-open policy with animation
+  // Panel toggle — single-open policy. Open/close animates via Reanimated
+  // layout transitions on the panel container (#1872) — LayoutAnimation is
+  // unsafe inside FlashList's recycled cells.
   const handleSectionPanelToggle = useCallback(
     (sectionId: string, panelType: string) => {
-      LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
       const isOpen = activePanel?.sectionId === sectionId && activePanel?.panelType === panelType;
       setActivePanel(sectionId, panelType);
       recordOpen(sectionId, panelType);
@@ -71,7 +72,6 @@ export function useChapterPanels({
 
   const handleChapterPanelToggle = useCallback(
     (panelType: string) => {
-      LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
       const isOpen =
         activePanel?.sectionId === '__chapter__' && activePanel?.panelType === panelType;
       setActivePanel('__chapter__', panelType);

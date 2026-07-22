@@ -51,7 +51,7 @@ const mockChapterData = {
       id: 'sec_1',
       chapter_id: 'genesis_1',
       section_num: 1,
-      heading: 'The Beginning',
+      header: 'The Beginning',
       verse_start: 1,
       verse_end: 5,
       panels: [],
@@ -171,7 +171,7 @@ jest.mock('@/components/SectionBlock', () => ({
     const React = require('react');
     const { Text } = require('react-native');
     return React.createElement('SectionBlock', null,
-      React.createElement(Text, null, props.section.heading),
+      React.createElement(Text, null, props.section.header),
     );
   },
 }));

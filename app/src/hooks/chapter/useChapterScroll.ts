@@ -6,7 +6,8 @@
  */
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { ScrollView, NativeSyntheticEvent, NativeScrollEvent } from 'react-native';
+import type { NativeSyntheticEvent, NativeScrollEvent } from 'react-native';
+import type { ReaderScrollable } from '../../components/ChapterVerseList';
 import { useReaderStore } from '../../stores';
 import { completePlanDay } from '../../db/user';
 
@@ -32,7 +33,8 @@ export function useChapterScroll({
   const activePanel = useReaderStore((s) => s.activePanel);
   const clearActivePanel = useReaderStore((s) => s.clearActivePanel);
 
-  const scrollRef = useRef<ScrollView>(null);
+  // FlashList-backed scroll surface (#1872); scrollTo maps to scrollToOffset.
+  const scrollRef = useRef<ReaderScrollable>(null);
   const sectionYMap = useRef<Record<string, number>>({});
   const verseYMap = useRef<Record<number, number>>({});
   const btnRowYMap = useRef<Record<string, number>>({});

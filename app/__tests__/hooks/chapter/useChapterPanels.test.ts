@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react-native';
 import { createRef } from 'react';
-import type { ScrollView } from 'react-native';
+import type { ReaderScrollable } from '@/components/ChapterVerseList';
 import { LayoutAnimation } from 'react-native';
 
 // --- Store mock ---
@@ -84,7 +84,7 @@ function createOptions(overrides = {}) {
     chapterNum: 1,
     openPanel: null as { sectionNum?: number; panelType: string } | null,
     isLoading: false,
-    scrollRef: createRef<ScrollView>(),
+    scrollRef: createRef<ReaderScrollable>(),
     ...overrides,
   };
 }
@@ -117,7 +117,7 @@ describe('useChapterPanels', () => {
     });
   });
 
-  it('handleSectionPanelToggle triggers LayoutAnimation', () => {
+  it('handleSectionPanelToggle does NOT use LayoutAnimation (#1872 — unsafe in FlashList cells)', () => {
     const configSpy = jest.spyOn(LayoutAnimation, 'configureNext');
     const { result } = renderHook(() => useChapterPanels(createOptions()));
 
@@ -125,7 +125,7 @@ describe('useChapterPanels', () => {
       result.current.handleSectionPanelToggle('sec-1', 'heb');
     });
 
-    expect(configSpy).toHaveBeenCalledWith(LayoutAnimation.Presets.easeInEaseOut);
+    expect(configSpy).not.toHaveBeenCalled();
     configSpy.mockRestore();
   });
 

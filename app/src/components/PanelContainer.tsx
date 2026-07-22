@@ -6,15 +6,12 @@
  */
 
 import React, { useMemo } from 'react';
-import { View, TouchableOpacity, Text, StyleSheet, Platform, UIManager } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import Animated, { FadeIn, LinearTransition } from 'react-native-reanimated';
 import { useTheme, spacing } from '../theme';
 import { lightImpact } from '../utils/haptics';
 import type { ParsedRef } from '../types';
 import { PanelRenderer } from './panels/PanelRenderer';
-
-if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
-  UIManager.setLayoutAnimationEnabledExperimental(true);
-}
 
 interface Props {
   panelType: string;
@@ -50,7 +47,9 @@ export function PanelContainer({
   if (!isOpen) return null;
 
   return (
-    <View
+    <Animated.View
+      entering={FadeIn.duration(150)}
+      layout={LinearTransition.duration(150)}
       style={[styles.panel, panelStyle]}
       accessibilityLiveRegion="polite"
     >
@@ -78,7 +77,7 @@ export function PanelContainer({
         onEventPress={onEventPress}
         defaultTab={defaultTab}
       />
-    </View>
+    </Animated.View>
   );
 }
 

@@ -6,7 +6,8 @@
  */
 
 import React, { useState, useCallback } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, LayoutAnimation } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import Animated, { LinearTransition } from 'react-native-reanimated';
 import { ChevronDown, ChevronRight } from 'lucide-react-native';
 import { useTheme, spacing, radii, fontFamily } from '../../theme';
 
@@ -75,13 +76,14 @@ function NodeCard({ node, depth }: NodeCardProps) {
   const color = discourseNodes[node.type] || base.gold;
   const label = NODE_TYPE_LABELS[node.type] || node.type;
 
+  // Reanimated layout transition (#1872) — LayoutAnimation is unsafe
+  // inside FlashList's recycled cells.
   const toggleExpand = useCallback(() => {
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     setExpanded((prev) => !prev);
   }, []);
 
   return (
-    <View style={[styles.nodeWrapper, { marginLeft: depth * 16 }]}>
+    <Animated.View layout={LinearTransition.duration(180)} style={[styles.nodeWrapper, { marginLeft: depth * 16 }]}>
       <View style={[styles.nodeCard, { borderLeftColor: color, backgroundColor: base.bgElevated }]}>
         {/* Header row */}
         <View style={styles.nodeHeader}>
@@ -124,7 +126,7 @@ function NodeCard({ node, depth }: NodeCardProps) {
           ))}
         </View>
       )}
-    </View>
+    </Animated.View>
   );
 }
 

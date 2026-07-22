@@ -5,7 +5,7 @@
  */
 
 import { useState, useEffect, useCallback, type RefObject } from 'react';
-import type { ScrollView } from 'react-native';
+import type { ReaderScrollable } from '../../components/ChapterVerseList';
 import { useTTS } from '../useTTS';
 import { useSettingsStore } from '../../stores';
 import { useTypography } from '../../theme';
@@ -14,7 +14,7 @@ import type { Verse, Section } from '../../types';
 interface UseChapterTTSOptions {
   verses: Verse[];
   sections: Section[];
-  scrollRef: RefObject<ScrollView | null>;
+  scrollRef: RefObject<ReaderScrollable | null>;
   sectionYMap: RefObject<Record<string, number>>;
   verseYMap: RefObject<Record<number, number>>;
   bookId: string;
