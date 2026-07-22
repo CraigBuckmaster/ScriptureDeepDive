@@ -32,7 +32,7 @@ import type { Section, SectionPanel, ChapterPanel } from '../types';
 import { useRelatedContent } from '../hooks/useRelatedContent';
 import { useMapChipData } from '../hooks/useMapChipData';
 import { useTheme, spacing, fontFamily } from '../theme';
-import { buildChapterItems, type ChapterListItem } from '../utils/chapterItems';
+import type { ChapterListItem } from '../utils/chapterItems';
 import { useChapterReader } from './ChapterReaderContext';
 import { SectionHeader } from './SectionHeader';
 import { VerseBlock } from './VerseBlock';
@@ -70,10 +70,11 @@ export interface ReaderScrollable {
 type SectionWithPanels = Section & { panels: SectionPanel[] };
 
 interface Props {
+  /** Flat reader items — built by ChapterScreen via buildChapterItems
+   *  (#1871/#1873) so scroll anchoring shares the same indices. */
+  items: ChapterListItem[];
   sections: SectionWithPanels[];
   chapterPanels: ChapterPanel[];
-  prayerPrompt?: string | null;
-  relatedLifeTopicsJson?: string | null;
   chapterMeta?: ChapterMeta | null;
   /** Pre-section chrome (lens guidance, ChapterHeader, banners) — rendered
    *  for the model's chapterHeader item so it scrolls with the list. */
@@ -86,10 +87,9 @@ interface Props {
 
 const ChapterVerseList = forwardRef<ReaderScrollable, Props>(function ChapterVerseList(
   {
+    items,
     sections,
     chapterPanels,
-    prayerPrompt,
-    relatedLifeTopicsJson,
     chapterMeta,
     header,
     footer,
@@ -126,40 +126,6 @@ const ChapterVerseList = forwardRef<ReaderScrollable, Props>(function ChapterVer
       (navigation as any).navigate('ExploreTab', { screen: 'ScholarBio', params: { scholarId } });
     },
     [navigation],
-  );
-
-  // ── Flat item model (#1871) ─────────────────────────────────
-  // Lens filtering already ran upstream in ChapterScreen, so lensKeys is
-  // empty (the builder's filter is idempotent either way). The genre
-  // banner stays in `header` chrome until D4 (#1874) moves it to its item.
-  const { items } = useMemo(
-    () =>
-      buildChapterItems(sections, chapterPanels, {
-        mode: display.tier,
-        lensKeys: [],
-        coaching: {
-          studyCoachEnabled: coaching.studyCoachEnabled,
-          sectionTips: coaching.coachingTips,
-          chapterCoaching: coaching.chapterCoaching ?? null,
-          dismissedTips: coaching.dismissedTips,
-        },
-        genre: null,
-        prayerPrompt,
-        relatedLifeTopicsJson,
-        mapStoryLinkId: chapterMeta?.map_story_link_id,
-      }),
-    [
-      sections,
-      chapterPanels,
-      display.tier,
-      coaching.studyCoachEnabled,
-      coaching.coachingTips,
-      coaching.chapterCoaching,
-      coaching.dismissedTips,
-      prayerPrompt,
-      relatedLifeTopicsJson,
-      chapterMeta?.map_story_link_id,
-    ],
   );
 
   const sectionById = useMemo(() => {

@@ -1,15 +1,28 @@
 /**
- * useChapterScroll — Scroll refs, progress tracking, layout callbacks,
- * and auto-scroll to panel/verse behaviors.
+ * useChapterScroll — Scroll ref, progress tracking, and index-based
+ * auto-scroll behaviors for the FlashList reader.
  *
- * Extracted from ChapterScreen (#970).
+ * Extracted from ChapterScreen (#970); rewritten for virtualization in
+ * D3 (#1873): all anchor jumps go through scrollToIndex against the
+ * ChapterListItem model (#1871) instead of accumulated onLayout y-maps,
+ * which report cell-relative coordinates under FlashList (#1872).
+ *
+ * Verse precision: verseIndexMap targets the verse's verseBlock item
+ * (a section's verse run). For verses deeper in a block we refine with
+ * the verse's cell-relative offset captured by handleVerseLayout — a
+ * two-phase jump when the block isn't mounted yet (scrollToIndex mounts
+ * it, the verse's onLayout then triggers the precise follow-up).
  */
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { NativeSyntheticEvent, NativeScrollEvent } from 'react-native';
 import type { ReaderScrollable } from '../../components/ChapterVerseList';
+import type { ChapterListItem } from '../../utils/chapterItems';
 import { useReaderStore } from '../../stores';
 import { completePlanDay } from '../../db/user';
+
+/** Gap between the viewport top and an anchored verse/panel row. */
+const ANCHOR_TOP_OFFSET = 80;
 
 interface UseChapterScrollOptions {
   bookId: string;
@@ -19,6 +32,10 @@ interface UseChapterScrollOptions {
   versesLength: number;
   planId?: string;
   planDayNum?: number;
+  /** Flat reader items (#1871) — drives index lookup for anchor jumps. */
+  items: ChapterListItem[];
+  /** verse_num → index of its verseBlock item, from buildChapterItems. */
+  verseIndexMap: Map<number, number>;
 }
 
 export function useChapterScroll({
@@ -29,20 +46,29 @@ export function useChapterScroll({
   versesLength,
   planId,
   planDayNum,
+  items,
+  verseIndexMap,
 }: UseChapterScrollOptions) {
   const activePanel = useReaderStore((s) => s.activePanel);
   const clearActivePanel = useReaderStore((s) => s.clearActivePanel);
 
-  // FlashList-backed scroll surface (#1872); scrollTo maps to scrollToOffset.
   const scrollRef = useRef<ReaderScrollable>(null);
-  const sectionYMap = useRef<Record<string, number>>({});
-  const verseYMap = useRef<Record<number, number>>({});
-  const btnRowYMap = useRef<Record<string, number>>({});
+  /** verse_num → y within its verseBlock cell (cell-relative, #1872). */
+  const verseCellOffsets = useRef<Record<number, number>>({});
   const [scrollProgress, setScrollProgress] = useState(0);
   const planDayCompletedRef = useRef(false);
 
+  /** sectionId → index of the section's panelRow item. */
+  const panelRowIndexMap = useMemo(() => {
+    const map = new Map<string, number>();
+    items.forEach((item, index) => {
+      if (item.type === 'panelRow') map.set(item.sectionId, index);
+    });
+    return map;
+  }, [items]);
+
   // Track pending scroll timers so they can be cleared on chapter change /
-  // unmount, preventing scrollTo from firing against a stale chapter.
+  // unmount, preventing scrollToIndex from firing against a stale chapter.
   const timersRef = useRef<Set<ReturnType<typeof setTimeout>>>(new Set());
   const schedule = useCallback((fn: () => void, ms: number) => {
     const id = setTimeout(() => {
@@ -73,7 +99,7 @@ export function useChapterScroll({
     clearActivePanel();
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setScrollProgress(0);
-    verseYMap.current = {};
+    verseCellOffsets.current = {};
   }, [bookId, chapterNum, clearActivePanel, clearTimers]);
 
   // Scroll progress tracking
@@ -85,103 +111,95 @@ export function useChapterScroll({
     }
   }, []);
 
-  // Auto-scroll to button row when a panel opens
+  /**
+   * Anchor a verse near the top of the viewport. Uses the verse's
+   * verseBlock index plus its cell-relative offset when the block has
+   * laid out (0 until then — i.e. the block's top).
+   */
+  const scrollToVerse = useCallback(
+    (verseNum: number, topOffset: number = ANCHOR_TOP_OFFSET, animated: boolean = true) => {
+      const index = verseIndexMap.get(verseNum);
+      if (index == null) return;
+      const cellOffset = verseCellOffsets.current[verseNum] ?? 0;
+      // FlatList/FlashList semantics: final offset = itemOffset - viewOffset,
+      // so viewOffset = topOffset - cellOffset lands the verse at topOffset.
+      scrollRef.current?.scrollToIndex({
+        index,
+        viewOffset: topOffset - cellOffset,
+        animated,
+      });
+    },
+    [verseIndexMap],
+  );
+
+  // Auto-scroll to the section's button row when a panel opens
   useEffect(() => {
     if (activePanel && activePanel.sectionId !== '__chapter__') {
-      const btnY = btnRowYMap.current[activePanel.sectionId];
-      const secY = sectionYMap.current[activePanel.sectionId];
-      const y = btnY ?? secY;
-      if (y !== undefined) {
+      const index = panelRowIndexMap.get(activePanel.sectionId);
+      if (index != null) {
         schedule(() => {
-          scrollRef.current?.scrollTo({ y: Math.max(0, y - 80), animated: true });
+          scrollRef.current?.scrollToIndex({
+            index,
+            viewOffset: ANCHOR_TOP_OFFSET,
+            animated: true,
+          });
         }, 100);
       }
     }
-  }, [activePanel, schedule]);
+  }, [activePanel, panelRowIndexMap, schedule]);
 
-  // Auto-scroll to a specific verse when navigated with verseNum param.
+  // Auto-scroll to a specific verse when navigated with verseNum param
+  // (deep links, note/highlight anchors, plan days).
   //
-  // RACE NOTES:
-  //   1. The previous version only scrolled via an effect that ran when
-  //      isLoading flipped to false. At that moment, React Native's onLayout
-  //      callbacks haven't fired yet, so verseYMap is empty and the scroll
-  //      was silently dropped. Layout callbacks don't trigger a re-render,
-  //      so the effect never retried.
-  //   2. onLayout order across nested views is not guaranteed — a verse's
-  //      onLayout can fire before its enclosing section's onLayout. If we
-  //      scrolled immediately using sectionY + verseY, sectionY might still
-  //      be 0 and the computed target would be wrong.
-  //
-  // Fix: track scroll as *pending* when the target is set. Attempt to flush
-  // from both handleVerseLayout and handleSectionLayout — whichever completes
-  // the picture last triggers the actual scroll. We require a non-zero
-  // sectionY to flush (scrolling to y=0 is what a zero-offset target looks
-  // like, and would be indistinguishable from an uninitialised section at
-  // the very top; we treat the top-of-chapter case as already-scrolled so
-  // flushing it is a no-op anyway).
+  // Two-phase under virtualization: the first jump targets the verse's
+  // block (scrollToIndex estimates offsets for unmounted cells and mounts
+  // the block); once the verse's own onLayout reports its cell-relative
+  // offset, a second jump lands it exactly. Verses at a block's top need
+  // no refinement — phase one is already exact.
   const scrolledToInitialVerse = useRef(false);
+  const refinePending = useRef(false);
   useEffect(() => {
     scrolledToInitialVerse.current = false;
+    refinePending.current = false;
   }, [bookId, chapterNum]);
 
-  const tryFlushInitialScroll = useCallback((sectionId: string) => {
-    if (!initialVerseNum || scrolledToInitialVerse.current) return;
-    const sectionY = sectionYMap.current[sectionId];
-    const verseY = verseYMap.current[initialVerseNum];
-    // Need both pieces. verseYMap values are stored as (sectionY + verseRelative),
-    // so if section wasn't known at store time, verseY here is effectively just
-    // verseRelative. We re-derive from the refs rather than trusting a stale sum.
-    if (sectionY == null || verseY == null) return;
-    scrolledToInitialVerse.current = true;
-    const targetY = Math.max(0, verseY - 80);
-    // 50ms delay lets any remaining sibling layouts settle before animating.
-    schedule(() => {
-      scrollRef.current?.scrollTo({ y: targetY, animated: true });
-    }, 50);
-  }, [initialVerseNum, schedule]);
-
-  // Fast-path: if layout already happened (e.g. cached chapter), scroll now.
   useEffect(() => {
     if (!initialVerseNum || scrolledToInitialVerse.current || isLoading) return;
-    // We don't know which section the verse is in; iterate and try each.
-    // Ref map is small (one key per section), so this is cheap.
-    for (const sectionId of Object.keys(sectionYMap.current)) {
-      tryFlushInitialScroll(sectionId);
-      if (scrolledToInitialVerse.current) break;
+    if (!verseIndexMap.has(initialVerseNum)) return;
+    scrolledToInitialVerse.current = true;
+    refinePending.current = verseCellOffsets.current[initialVerseNum] == null;
+    // 50ms delay lets the first layout pass settle before jumping.
+    schedule(() => scrollToVerse(initialVerseNum, ANCHOR_TOP_OFFSET, true), 50);
+  }, [initialVerseNum, isLoading, versesLength, verseIndexMap, schedule, scrollToVerse]);
+
+  // Layout callbacks — wired from the item renderers (#1872).
+  // Section/button-row positions are no longer used for scroll math
+  // (indices replaced them); the callbacks remain in the context contract
+  // until the D5 (#1875) cleanup pass.
+  const handleSectionLayout = useCallback((_sectionId: string, _y: number) => {}, []);
+
+  const handleVerseLayout = useCallback((verseNum: number, y: number, _sectionId: string) => {
+    verseCellOffsets.current[verseNum] = y;
+
+    // Phase-two refinement: the deep-link target just laid out inside its
+    // block — re-anchor with the now-known offset (no-op when y === 0).
+    if (verseNum === initialVerseNum && refinePending.current) {
+      refinePending.current = false;
+      if (y !== 0) {
+        schedule(() => scrollToVerse(verseNum, ANCHOR_TOP_OFFSET, true), 50);
+      }
     }
-  }, [initialVerseNum, isLoading, versesLength, tryFlushInitialScroll]);
+  }, [initialVerseNum, schedule, scrollToVerse]);
 
-  // Layout callbacks
-  const handleSectionLayout = useCallback((sectionId: string, y: number) => {
-    sectionYMap.current[sectionId] = y;
-    // A section's position became known — if we were waiting on it for
-    // the initial verse scroll, try to flush now.
-    tryFlushInitialScroll(sectionId);
-  }, [tryFlushInitialScroll]);
-
-  const handleVerseLayout = useCallback((verseNum: number, y: number, sectionId: string) => {
-    const sectionY = sectionYMap.current[sectionId] ?? 0;
-    verseYMap.current[verseNum] = sectionY + y;
-
-    // The target verse just laid out — try to flush.
-    if (initialVerseNum === verseNum) {
-      tryFlushInitialScroll(sectionId);
-    }
-  }, [initialVerseNum, tryFlushInitialScroll]);
-
-  const handleBtnRowLayout = useCallback((sectionId: string, _sectionY: number, rowY: number) => {
-    const secY = sectionYMap.current[sectionId] ?? 0;
-    btnRowYMap.current[sectionId] = secY + rowY;
-  }, []);
+  const handleBtnRowLayout = useCallback((_sectionId: string, _sectionY: number, _rowY: number) => {}, []);
 
   return {
     scrollRef,
-    sectionYMap,
-    verseYMap,
     scrollProgress,
     handleScroll,
     handleSectionLayout,
     handleVerseLayout,
     handleBtnRowLayout,
+    scrollToVerse,
   };
 }
